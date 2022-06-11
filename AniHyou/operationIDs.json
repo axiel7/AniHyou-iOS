@@ -1,0 +1,22 @@
+{
+  "86739110cc7be4b02b9154330ae817fbe49bd6385369bb1008d36725cfb84689": {
+    "name": "Animes",
+    "source": "query Animes($page: Int, $perPage: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(type: ANIME) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
+  },
+  "c70aa2eb985f619b2b31205d7933f8c23f9f7223a5c873a60f466a345431902d": {
+    "name": "SeasonalAnime",
+    "source": "query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(season: $season, seasonYear: $seasonYear, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
+  },
+  "5f582fe74d9c97dd0b26578014b739bea5a8c6ab54dd26c694303c09addc5325": {
+    "name": "TodayAiringAnimes",
+    "source": "query TodayAiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    airingSchedules(\n      sort: $sort\n      airingAt_greater: $airingAtGreater\n      airingAt_lesser: $airingAtLesser\n    ) {\n      __typename\n      media {\n        __typename\n        id\n        title {\n          __typename\n          romaji\n        }\n        coverImage {\n          __typename\n          large\n        }\n      }\n      timeUntilAiring\n    }\n  }\n}"
+  },
+  "ec7d04d6891f8e79e71703a143f2f875fbf59882ecd47b49110fe5f897365891": {
+    "name": "UserAnimeList",
+    "source": "query UserAnimeList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status) {\n      __typename\n      progress\n      media {\n        __typename\n        id\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          timeUntilAiring\n        }\n      }\n    }\n  }\n}"
+  },
+  "12ff6349aa9750b00191bed3eebedeed732925ec3d496582785a2cc3d190e3dd": {
+    "name": "Viewer",
+    "source": "query Viewer {\n  Viewer {\n    __typename\n    id\n    name\n    avatar {\n      __typename\n      large\n    }\n    bannerImage\n    about\n  }\n}"
+  }
+}

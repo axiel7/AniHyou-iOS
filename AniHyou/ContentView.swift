@@ -7,15 +7,72 @@
 
 import SwiftUI
 
+extension View {
+    func tabItemAnime() -> some View {
+        self
+            .tabItem {
+                Image(systemName: "play.tv")
+                Text("Anime")
+            }
+    }
+    func tabItemManga() -> some View {
+        self
+            .tabItem {
+                Image(systemName: "book")
+                Text("Manga")
+            }
+    }
+    func tabItemProfile() -> some View {
+        self
+            .tabItem {
+                Image(systemName: "person")
+                Text("Profile")
+            }
+    }
+}
+
 struct ContentView: View {
+    
+    @State var justLogged: Bool = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            
+            if isLoggedIn() || justLogged {
+                Text("Anime list view")
+                    .tabItemAnime()
+            } else {
+                NotLoggedView(onSuccessLogin: { justLogged = true })
+                    .tabItemAnime()
+            }
+            
+            if isLoggedIn() || justLogged {
+                Text("Manga list view")
+                    .tabItemManga()
+            } else {
+                NotLoggedView(onSuccessLogin: { justLogged = true })
+                    .tabItemManga()
+            }
+            
+            if isLoggedIn() || justLogged {
+                ProfileView()
+                    .tabItemProfile()
+            } else {
+                NotLoggedView(onSuccessLogin: { justLogged = true })
+                    .tabItemProfile()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
     }
 }

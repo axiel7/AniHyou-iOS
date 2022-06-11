@@ -11,6 +11,28 @@
 		481AD4E02851CE73001779EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DF2851CE73001779EE /* ContentView.swift */; };
 		481AD4E22851CE74001779EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AD4E12851CE74001779EE /* Assets.xcassets */; };
 		481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AD4E42851CE74001779EE /* Preview Assets.xcassets */; };
+		481AD4EE2851CF90001779EE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 481AD4ED2851CF90001779EE /* Apollo */; };
+		481AD4F12851D84C001779EE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F02851D84C001779EE /* API.swift */; };
+		481AD4F62851D917001779EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F52851D917001779EE /* HomeView.swift */; };
+		481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F72851D927001779EE /* HomeViewModel.swift */; };
+		481AD4FA2851DA02001779EE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F92851DA02001779EE /* Network.swift */; };
+		481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */; };
+		481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */; };
+		481AD502285207B1001779EE /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD501285207B1001779EE /* DateUtils.swift */; };
+		481AD50728522D74001779EE /* VListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD50628522D74001779EE /* VListItemView.swift */; };
+		48643F412853C13300D7C328 /* UserAnimeList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48643F402853C13300D7C328 /* UserAnimeList.graphql */; };
+		48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */; };
+		48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48643F442853C54800D7C328 /* ProfileViewModel.swift */; };
+		488C267928537B5F0005EE15 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267828537B5F0005EE15 /* StringUtils.swift */; };
+		488C267B2853801A0005EE15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267A2853801A0005EE15 /* Constants.swift */; };
+		488C267E285380D90005EE15 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267D285380D90005EE15 /* ProfileView.swift */; };
+		488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26822853881F0005EE15 /* LoginViewModel.swift */; };
+		488C268828539CC30005EE15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 488C268728539CC30005EE15 /* KeychainSwift */; };
+		488C268A28539D5C0005EE15 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* Utils.swift */; };
+		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
+		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
+		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
+		48E4BBDB285484D50070DDD6 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 48E4BBDA285484D50070DDD6 /* netfox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +41,31 @@
 		481AD4DF2851CE73001779EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		481AD4E12851CE74001779EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		481AD4E42851CE74001779EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		481AD4EF2851D698001779EE /* Animes.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Animes.graphql; sourceTree = "<group>"; };
+		481AD4F02851D84C001779EE /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		481AD4F52851D917001779EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		481AD4F72851D927001779EE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		481AD4F92851DA02001779EE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HListItemWithSubtitleView.swift; sourceTree = "<group>"; };
+		481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPlaceholderView.swift; sourceTree = "<group>"; };
+		481AD4FF285204E9001779EE /* TodayAiringAnimes.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TodayAiringAnimes.graphql; sourceTree = "<group>"; };
+		481AD501285207B1001779EE /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		481AD50428522139001779EE /* SeasonalAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SeasonalAnime.graphql; sourceTree = "<group>"; };
+		481AD50628522D74001779EE /* VListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VListItemView.swift; sourceTree = "<group>"; };
+		48643F402853C13300D7C328 /* UserAnimeList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAnimeList.graphql; sourceTree = "<group>"; };
+		48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerBasicInfo.graphql; sourceTree = "<group>"; };
+		48643F442853C54800D7C328 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		488C267828537B5F0005EE15 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		488C267A2853801A0005EE15 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		488C267D285380D90005EE15 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		488C267F2853822E0005EE15 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		488C26802853837B0005EE15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		488C2681285386600005EE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		488C26822853881F0005EE15 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		488C268928539D5C0005EE15 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
+		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
+		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
+				481AD4EE2851CF90001779EE /* Apollo in Frameworks */,
+				48E4BBDB285484D50070DDD6 /* netfox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +101,22 @@
 		481AD4DC2851CE73001779EE /* AniHyou */ = {
 			isa = PBXGroup;
 			children = (
+				488C2681285386600005EE15 /* Info.plist */,
+				488C268D28539EFE0005EE15 /* Network */,
+				481AD5032852211C001779EE /* Queries */,
+				481AD4F32851D87E001779EE /* Views */,
+				481AD4F22851D878001779EE /* Screens */,
 				481AD4DD2851CE73001779EE /* AniHyouApp.swift */,
 				481AD4DF2851CE73001779EE /* ContentView.swift */,
+				481AD4F02851D84C001779EE /* API.swift */,
 				481AD4E12851CE74001779EE /* Assets.xcassets */,
 				481AD4E32851CE74001779EE /* Preview Content */,
+				488C268928539D5C0005EE15 /* Utils.swift */,
+				481AD501285207B1001779EE /* DateUtils.swift */,
+				488C267828537B5F0005EE15 /* StringUtils.swift */,
+				488C267A2853801A0005EE15 /* Constants.swift */,
+				488C267F2853822E0005EE15 /* Config.xcconfig */,
+				488C26802853837B0005EE15 /* .gitignore */,
 			);
 			path = AniHyou;
 			sourceTree = "<group>";
@@ -67,6 +129,67 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		481AD4F22851D878001779EE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				488C267C285380CB0005EE15 /* Profile */,
+				481AD4F42851D8F8001779EE /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		481AD4F32851D87E001779EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */,
+				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
+				481AD50628522D74001779EE /* VListItemView.swift */,
+				488C26902853A10D0005EE15 /* NotLoggedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		481AD4F42851D8F8001779EE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				481AD4F52851D917001779EE /* HomeView.swift */,
+				481AD4F72851D927001779EE /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		481AD5032852211C001779EE /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				481AD4EF2851D698001779EE /* Animes.graphql */,
+				481AD4FF285204E9001779EE /* TodayAiringAnimes.graphql */,
+				481AD50428522139001779EE /* SeasonalAnime.graphql */,
+				48643F402853C13300D7C328 /* UserAnimeList.graphql */,
+				48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		488C267C285380CB0005EE15 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				488C267D285380D90005EE15 /* ProfileView.swift */,
+				488C26822853881F0005EE15 /* LoginViewModel.swift */,
+				48643F442853C54800D7C328 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		488C268D28539EFE0005EE15 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				481AD4F92851DA02001779EE /* Network.swift */,
+				488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */,
+				488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 481AD4E82851CE74001779EE /* Build configuration list for PBXNativeTarget "AniHyou" */;
 			buildPhases = (
+				481AD4EB2851CEB6001779EE /* Apollo */,
 				481AD4D62851CE73001779EE /* Sources */,
 				481AD4D72851CE73001779EE /* Frameworks */,
 				481AD4D82851CE73001779EE /* Resources */,
@@ -83,6 +207,11 @@
 			dependencies = (
 			);
 			name = AniHyou;
+			packageProductDependencies = (
+				481AD4ED2851CF90001779EE /* Apollo */,
+				488C268728539CC30005EE15 /* KeychainSwift */,
+				48E4BBDA285484D50070DDD6 /* netfox */,
+			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +240,11 @@
 				Base,
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
+			packageReferences = (
+				481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */,
+			);
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,11 +260,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
+				48643F412853C13300D7C328 /* UserAnimeList.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
+				48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		481AD4EB2851CEB6001779EE /* Apollo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Apollo;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\ncd \"${SRCROOT}\"/ApolloCodegen\nxcrun -sdk macosx swift run ApolloCodegen generate\n\n# propagate the xcrun call's return code to Xcode\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		481AD4D62851CE73001779EE /* Sources */ = {
@@ -138,7 +295,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				481AD4E02851CE73001779EE /* ContentView.swift in Sources */,
+				48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */,
+				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
+				481AD4F12851D84C001779EE /* API.swift in Sources */,
+				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
+				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
+				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
+				488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */,
+				488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */,
+				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
+				488C268A28539D5C0005EE15 /* Utils.swift in Sources */,
+				481AD502285207B1001779EE /* DateUtils.swift in Sources */,
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,
+				481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */,
+				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
+				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,
+				481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */,
+				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
+				488C267B2853801A0005EE15 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +321,7 @@
 /* Begin XCBuildConfiguration section */
 		481AD4E62851CE74001779EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488C267F2853822E0005EE15 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -207,6 +382,7 @@
 		};
 		481AD4E72851CE74001779EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488C267F2853822E0005EE15 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -270,6 +446,7 @@
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AniHyou/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +476,7 @@
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AniHyou/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +517,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.51.2;
+			};
+		};
+		488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		481AD4ED2851CF90001779EE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		488C268728539CC30005EE15 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		48E4BBDA285484D50070DDD6 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 481AD4D22851CE73001779EE /* Project object */;
 }

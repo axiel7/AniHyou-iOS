@@ -1,0 +1,13 @@
+query Animes($page: Int, $perPage: Int) {
+  Page(page: $page, perPage: $perPage) {
+    media(type: ANIME) {
+      id
+      title {
+        romaji
+      }
+      coverImage {
+        large
+      }
+    }
+  }
+}

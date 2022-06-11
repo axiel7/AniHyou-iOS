@@ -1,0 +1,11 @@
+query Viewer {
+  Viewer {
+    id
+    name
+    avatar {
+      large
+    }
+    bannerImage
+    about
+  }
+}

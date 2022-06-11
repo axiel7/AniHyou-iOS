@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import netfox
 
 @main
 struct AniHyouApp: App {
+    
+    init() {
+        #if DEBUG
+        NFX.sharedInstance().start()
+        #endif
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

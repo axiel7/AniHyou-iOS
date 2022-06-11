@@ -1,0 +1,16 @@
+query TodayAiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {
+  Page(page: $page, perPage: $perPage) {
+    airingSchedules(sort: $sort, airingAt_greater: $airingAtGreater, airingAt_lesser: $airingAtLesser) {
+      media {
+        id
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+      timeUntilAiring
+    }
+  }
+}
