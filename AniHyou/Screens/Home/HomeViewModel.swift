@@ -19,7 +19,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var animes = [AnimesQuery.Data.Page.Medium?]()
     
-    func getAnimes(page: Int = 0) {
+    func getAnimes(page: Int = 1) {
         Network.shared.apollo.fetch(query: AnimesQuery(page: page)) { result in
             switch result {
             case .success(let graphQLResult):
@@ -37,7 +37,7 @@ class HomeViewModel: ObservableObject {
     // MARK: Airing animes
     @Published var todaySchedules = [TodayAiringAnimesQuery.Data.Page.AiringSchedule?]()
     
-    func getAiringAnimes(page: Int = 0) {
+    func getAiringAnimes(page: Int = 1) {
         let now = Date.now
         let todayTimestamp = Int(now.timeIntervalSince1970)
         
@@ -66,7 +66,7 @@ class HomeViewModel: ObservableObject {
     // MARK: Season animes
     @Published var seasonAnimes = [SeasonalAnimeQuery.Data.Page.Medium?]()
     
-    func getSeasonAnimes(page: Int = 0) {
+    func getSeasonAnimes(page: Int = 1) {
         Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: page, perPage: 10, season: nowSeason, seasonYear: nowYear, sort: [MediaSort.popularityDesc])) { result in
             switch result {
             case .success(let graphQLResult):
