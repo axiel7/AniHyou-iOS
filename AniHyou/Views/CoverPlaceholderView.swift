@@ -26,5 +26,6 @@ struct CoverPlaceholderView: View {
 struct CoverPlaceholderView_Previews: PreviewProvider {
     static var previews: some View {
         CoverPlaceholderView(systemName: "hourglass", width: 80, height: 120)
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -38,5 +38,6 @@ struct VListItemView: View {
 struct VListItemView_Previews: PreviewProvider {
     static var previews: some View {
         VListItemView(title: "Cowboy Bebop: Tengoku no Tobira and a large title", imageUrl: "")
+            .previewLayout(.sizeThatFits)
     }
 }
