@@ -22,10 +22,10 @@ struct ProfileView: View {
                             .resizable()
                             .scaledToFill()
                             .frame(height: bannerHeight)
+                            .clipped()
                     } else {
                         Image("Square")
                             .resizable()
-                            .scaledToFill()
                             .foregroundColor(.gray)
                             .frame(height: bannerHeight)
                     }
@@ -52,11 +52,13 @@ struct ProfileView: View {
                         .font(.title2)
                         .frame(alignment: .center)
                 }//:VStack
-                .offset(y: -20)
+                .offset(y: -65)
                 
                 Spacer()
             }//:VStack
         }//:VScrollView
+        .ignoresSafeArea(edges: .top)
+        
         .onAppear {
             viewModel.getUserInfo()
         }
@@ -67,7 +69,10 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
             ProfileView()
-                .tabItemProfile()
+                .tabItem {
+                    Image(systemName: "person.circle")
+                    Text("Profile")
+                }
         }
     }
 }
