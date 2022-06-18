@@ -455,6 +455,248 @@ public enum MediaListStatus: RawRepresentable, Equatable, Hashable, CaseIterable
   }
 }
 
+/// Media list sort enums
+public enum MediaListSort: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case mediaId
+  case mediaIdDesc
+  case score
+  case scoreDesc
+  case status
+  case statusDesc
+  case progress
+  case progressDesc
+  case progressVolumes
+  case progressVolumesDesc
+  case `repeat`
+  case repeatDesc
+  case priority
+  case priorityDesc
+  case startedOn
+  case startedOnDesc
+  case finishedOn
+  case finishedOnDesc
+  case addedTime
+  case addedTimeDesc
+  case updatedTime
+  case updatedTimeDesc
+  case mediaTitleRomaji
+  case mediaTitleRomajiDesc
+  case mediaTitleEnglish
+  case mediaTitleEnglishDesc
+  case mediaTitleNative
+  case mediaTitleNativeDesc
+  case mediaPopularity
+  case mediaPopularityDesc
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "MEDIA_ID": self = .mediaId
+      case "MEDIA_ID_DESC": self = .mediaIdDesc
+      case "SCORE": self = .score
+      case "SCORE_DESC": self = .scoreDesc
+      case "STATUS": self = .status
+      case "STATUS_DESC": self = .statusDesc
+      case "PROGRESS": self = .progress
+      case "PROGRESS_DESC": self = .progressDesc
+      case "PROGRESS_VOLUMES": self = .progressVolumes
+      case "PROGRESS_VOLUMES_DESC": self = .progressVolumesDesc
+      case "REPEAT": self = .repeat
+      case "REPEAT_DESC": self = .repeatDesc
+      case "PRIORITY": self = .priority
+      case "PRIORITY_DESC": self = .priorityDesc
+      case "STARTED_ON": self = .startedOn
+      case "STARTED_ON_DESC": self = .startedOnDesc
+      case "FINISHED_ON": self = .finishedOn
+      case "FINISHED_ON_DESC": self = .finishedOnDesc
+      case "ADDED_TIME": self = .addedTime
+      case "ADDED_TIME_DESC": self = .addedTimeDesc
+      case "UPDATED_TIME": self = .updatedTime
+      case "UPDATED_TIME_DESC": self = .updatedTimeDesc
+      case "MEDIA_TITLE_ROMAJI": self = .mediaTitleRomaji
+      case "MEDIA_TITLE_ROMAJI_DESC": self = .mediaTitleRomajiDesc
+      case "MEDIA_TITLE_ENGLISH": self = .mediaTitleEnglish
+      case "MEDIA_TITLE_ENGLISH_DESC": self = .mediaTitleEnglishDesc
+      case "MEDIA_TITLE_NATIVE": self = .mediaTitleNative
+      case "MEDIA_TITLE_NATIVE_DESC": self = .mediaTitleNativeDesc
+      case "MEDIA_POPULARITY": self = .mediaPopularity
+      case "MEDIA_POPULARITY_DESC": self = .mediaPopularityDesc
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .mediaId: return "MEDIA_ID"
+      case .mediaIdDesc: return "MEDIA_ID_DESC"
+      case .score: return "SCORE"
+      case .scoreDesc: return "SCORE_DESC"
+      case .status: return "STATUS"
+      case .statusDesc: return "STATUS_DESC"
+      case .progress: return "PROGRESS"
+      case .progressDesc: return "PROGRESS_DESC"
+      case .progressVolumes: return "PROGRESS_VOLUMES"
+      case .progressVolumesDesc: return "PROGRESS_VOLUMES_DESC"
+      case .repeat: return "REPEAT"
+      case .repeatDesc: return "REPEAT_DESC"
+      case .priority: return "PRIORITY"
+      case .priorityDesc: return "PRIORITY_DESC"
+      case .startedOn: return "STARTED_ON"
+      case .startedOnDesc: return "STARTED_ON_DESC"
+      case .finishedOn: return "FINISHED_ON"
+      case .finishedOnDesc: return "FINISHED_ON_DESC"
+      case .addedTime: return "ADDED_TIME"
+      case .addedTimeDesc: return "ADDED_TIME_DESC"
+      case .updatedTime: return "UPDATED_TIME"
+      case .updatedTimeDesc: return "UPDATED_TIME_DESC"
+      case .mediaTitleRomaji: return "MEDIA_TITLE_ROMAJI"
+      case .mediaTitleRomajiDesc: return "MEDIA_TITLE_ROMAJI_DESC"
+      case .mediaTitleEnglish: return "MEDIA_TITLE_ENGLISH"
+      case .mediaTitleEnglishDesc: return "MEDIA_TITLE_ENGLISH_DESC"
+      case .mediaTitleNative: return "MEDIA_TITLE_NATIVE"
+      case .mediaTitleNativeDesc: return "MEDIA_TITLE_NATIVE_DESC"
+      case .mediaPopularity: return "MEDIA_POPULARITY"
+      case .mediaPopularityDesc: return "MEDIA_POPULARITY_DESC"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: MediaListSort, rhs: MediaListSort) -> Bool {
+    switch (lhs, rhs) {
+      case (.mediaId, .mediaId): return true
+      case (.mediaIdDesc, .mediaIdDesc): return true
+      case (.score, .score): return true
+      case (.scoreDesc, .scoreDesc): return true
+      case (.status, .status): return true
+      case (.statusDesc, .statusDesc): return true
+      case (.progress, .progress): return true
+      case (.progressDesc, .progressDesc): return true
+      case (.progressVolumes, .progressVolumes): return true
+      case (.progressVolumesDesc, .progressVolumesDesc): return true
+      case (.repeat, .repeat): return true
+      case (.repeatDesc, .repeatDesc): return true
+      case (.priority, .priority): return true
+      case (.priorityDesc, .priorityDesc): return true
+      case (.startedOn, .startedOn): return true
+      case (.startedOnDesc, .startedOnDesc): return true
+      case (.finishedOn, .finishedOn): return true
+      case (.finishedOnDesc, .finishedOnDesc): return true
+      case (.addedTime, .addedTime): return true
+      case (.addedTimeDesc, .addedTimeDesc): return true
+      case (.updatedTime, .updatedTime): return true
+      case (.updatedTimeDesc, .updatedTimeDesc): return true
+      case (.mediaTitleRomaji, .mediaTitleRomaji): return true
+      case (.mediaTitleRomajiDesc, .mediaTitleRomajiDesc): return true
+      case (.mediaTitleEnglish, .mediaTitleEnglish): return true
+      case (.mediaTitleEnglishDesc, .mediaTitleEnglishDesc): return true
+      case (.mediaTitleNative, .mediaTitleNative): return true
+      case (.mediaTitleNativeDesc, .mediaTitleNativeDesc): return true
+      case (.mediaPopularity, .mediaPopularity): return true
+      case (.mediaPopularityDesc, .mediaPopularityDesc): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [MediaListSort] {
+    return [
+      .mediaId,
+      .mediaIdDesc,
+      .score,
+      .scoreDesc,
+      .status,
+      .statusDesc,
+      .progress,
+      .progressDesc,
+      .progressVolumes,
+      .progressVolumesDesc,
+      .repeat,
+      .repeatDesc,
+      .priority,
+      .priorityDesc,
+      .startedOn,
+      .startedOnDesc,
+      .finishedOn,
+      .finishedOnDesc,
+      .addedTime,
+      .addedTimeDesc,
+      .updatedTime,
+      .updatedTimeDesc,
+      .mediaTitleRomaji,
+      .mediaTitleRomajiDesc,
+      .mediaTitleEnglish,
+      .mediaTitleEnglishDesc,
+      .mediaTitleNative,
+      .mediaTitleNativeDesc,
+      .mediaPopularity,
+      .mediaPopularityDesc,
+    ]
+  }
+}
+
+/// The current releasing status of the media
+public enum MediaStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  /// Has completed and is no longer being released
+  case finished
+  /// Currently releasing
+  case releasing
+  /// To be released at a later date
+  case notYetReleased
+  /// Ended before the work could be finished
+  case cancelled
+  /// Version 2 only. Is currently paused from releasing and will resume at a later date
+  case hiatus
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "FINISHED": self = .finished
+      case "RELEASING": self = .releasing
+      case "NOT_YET_RELEASED": self = .notYetReleased
+      case "CANCELLED": self = .cancelled
+      case "HIATUS": self = .hiatus
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .finished: return "FINISHED"
+      case .releasing: return "RELEASING"
+      case .notYetReleased: return "NOT_YET_RELEASED"
+      case .cancelled: return "CANCELLED"
+      case .hiatus: return "HIATUS"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: MediaStatus, rhs: MediaStatus) -> Bool {
+    switch (lhs, rhs) {
+      case (.finished, .finished): return true
+      case (.releasing, .releasing): return true
+      case (.notYetReleased, .notYetReleased): return true
+      case (.cancelled, .cancelled): return true
+      case (.hiatus, .hiatus): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [MediaStatus] {
+    return [
+      .finished,
+      .releasing,
+      .notYetReleased,
+      .cancelled,
+      .hiatus,
+    ]
+  }
+}
+
 public final class AnimesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -1276,16 +1518,19 @@ public final class TodayAiringAnimesQuery: GraphQLQuery {
   }
 }
 
-public final class UserAnimeListQuery: GraphQLQuery {
+public final class UserMediaListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query UserAnimeList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus) {
+    query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {
       Page(page: $page, perPage: $perPage) {
         __typename
-        mediaList(userId: $userId, type: $type, status: $status) {
+        mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
           __typename
+          status
+          score
           progress
+          progressVolumes
           media {
             __typename
             id
@@ -1294,6 +1539,8 @@ public final class UserAnimeListQuery: GraphQLQuery {
               userPreferred
             }
             episodes
+            chapters
+            volumes
             coverImage {
               __typename
               large
@@ -1301,34 +1548,42 @@ public final class UserAnimeListQuery: GraphQLQuery {
             nextAiringEpisode {
               __typename
               episode
-              timeUntilAiring
+              airingAt
             }
+            status
+            type
           }
+        }
+        pageInfo {
+          __typename
+          hasNextPage
         }
       }
     }
     """
 
-  public let operationName: String = "UserAnimeList"
+  public let operationName: String = "UserMediaList"
 
-  public let operationIdentifier: String? = "ec7d04d6891f8e79e71703a143f2f875fbf59882ecd47b49110fe5f897365891"
+  public let operationIdentifier: String? = "5b8e6d0ad7da6e3a682dbfdea8f066bd31364b8803f816c7514fbb8d09104b5f"
 
   public var page: Int?
   public var perPage: Int?
   public var userId: Int?
   public var type: MediaType?
   public var status: MediaListStatus?
+  public var sort: [MediaListSort?]?
 
-  public init(page: Int? = nil, perPage: Int? = nil, userId: Int? = nil, type: MediaType? = nil, status: MediaListStatus? = nil) {
+  public init(page: Int? = nil, perPage: Int? = nil, userId: Int? = nil, type: MediaType? = nil, status: MediaListStatus? = nil, sort: [MediaListSort?]? = nil) {
     self.page = page
     self.perPage = perPage
     self.userId = userId
     self.type = type
     self.status = status
+    self.sort = sort
   }
 
   public var variables: GraphQLMap? {
-    return ["page": page, "perPage": perPage, "userId": userId, "type": type, "status": status]
+    return ["page": page, "perPage": perPage, "userId": userId, "type": type, "status": status, "sort": sort]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -1365,7 +1620,8 @@ public final class UserAnimeListQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("mediaList", arguments: ["userId": GraphQLVariable("userId"), "type": GraphQLVariable("type"), "status": GraphQLVariable("status")], type: .list(.object(MediaList.selections))),
+          GraphQLField("mediaList", arguments: ["userId": GraphQLVariable("userId"), "type": GraphQLVariable("type"), "status": GraphQLVariable("status"), "sort": GraphQLVariable("sort")], type: .list(.object(MediaList.selections))),
+          GraphQLField("pageInfo", type: .object(PageInfo.selections)),
         ]
       }
 
@@ -1375,8 +1631,8 @@ public final class UserAnimeListQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(mediaList: [MediaList?]? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Page", "mediaList": mediaList.flatMap { (value: [MediaList?]) -> [ResultMap?] in value.map { (value: MediaList?) -> ResultMap? in value.flatMap { (value: MediaList) -> ResultMap in value.resultMap } } }])
+      public init(mediaList: [MediaList?]? = nil, pageInfo: PageInfo? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Page", "mediaList": mediaList.flatMap { (value: [MediaList?]) -> [ResultMap?] in value.map { (value: MediaList?) -> ResultMap? in value.flatMap { (value: MediaList) -> ResultMap in value.resultMap } } }, "pageInfo": pageInfo.flatMap { (value: PageInfo) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -1397,13 +1653,26 @@ public final class UserAnimeListQuery: GraphQLQuery {
         }
       }
 
+      /// The pagination information
+      public var pageInfo: PageInfo? {
+        get {
+          return (resultMap["pageInfo"] as? ResultMap).flatMap { PageInfo(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "pageInfo")
+        }
+      }
+
       public struct MediaList: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["MediaList"]
 
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("status", type: .scalar(MediaListStatus.self)),
+            GraphQLField("score", type: .scalar(Double.self)),
             GraphQLField("progress", type: .scalar(Int.self)),
+            GraphQLField("progressVolumes", type: .scalar(Int.self)),
             GraphQLField("media", type: .object(Medium.selections)),
           ]
         }
@@ -1414,8 +1683,8 @@ public final class UserAnimeListQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(progress: Int? = nil, media: Medium? = nil) {
-          self.init(unsafeResultMap: ["__typename": "MediaList", "progress": progress, "media": media.flatMap { (value: Medium) -> ResultMap in value.resultMap }])
+        public init(status: MediaListStatus? = nil, score: Double? = nil, progress: Int? = nil, progressVolumes: Int? = nil, media: Medium? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaList", "status": status, "score": score, "progress": progress, "progressVolumes": progressVolumes, "media": media.flatMap { (value: Medium) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -1427,6 +1696,26 @@ public final class UserAnimeListQuery: GraphQLQuery {
           }
         }
 
+        /// The watching/reading status
+        public var status: MediaListStatus? {
+          get {
+            return resultMap["status"] as? MediaListStatus
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "status")
+          }
+        }
+
+        /// The score of the entry
+        public var score: Double? {
+          get {
+            return resultMap["score"] as? Double
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "score")
+          }
+        }
+
         /// The amount of episodes/chapters consumed by the user
         public var progress: Int? {
           get {
@@ -1434,6 +1723,16 @@ public final class UserAnimeListQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "progress")
+          }
+        }
+
+        /// The amount of volumes read by the user
+        public var progressVolumes: Int? {
+          get {
+            return resultMap["progressVolumes"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "progressVolumes")
           }
         }
 
@@ -1455,8 +1754,12 @@ public final class UserAnimeListQuery: GraphQLQuery {
               GraphQLField("id", type: .nonNull(.scalar(Int.self))),
               GraphQLField("title", type: .object(Title.selections)),
               GraphQLField("episodes", type: .scalar(Int.self)),
+              GraphQLField("chapters", type: .scalar(Int.self)),
+              GraphQLField("volumes", type: .scalar(Int.self)),
               GraphQLField("coverImage", type: .object(CoverImage.selections)),
               GraphQLField("nextAiringEpisode", type: .object(NextAiringEpisode.selections)),
+              GraphQLField("status", type: .scalar(MediaStatus.self)),
+              GraphQLField("type", type: .scalar(MediaType.self)),
             ]
           }
 
@@ -1466,8 +1769,8 @@ public final class UserAnimeListQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(id: Int, title: Title? = nil, episodes: Int? = nil, coverImage: CoverImage? = nil, nextAiringEpisode: NextAiringEpisode? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Media", "id": id, "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "episodes": episodes, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }, "nextAiringEpisode": nextAiringEpisode.flatMap { (value: NextAiringEpisode) -> ResultMap in value.resultMap }])
+          public init(id: Int, title: Title? = nil, episodes: Int? = nil, chapters: Int? = nil, volumes: Int? = nil, coverImage: CoverImage? = nil, nextAiringEpisode: NextAiringEpisode? = nil, status: MediaStatus? = nil, type: MediaType? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Media", "id": id, "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "episodes": episodes, "chapters": chapters, "volumes": volumes, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }, "nextAiringEpisode": nextAiringEpisode.flatMap { (value: NextAiringEpisode) -> ResultMap in value.resultMap }, "status": status, "type": type])
           }
 
           public var __typename: String {
@@ -1509,6 +1812,26 @@ public final class UserAnimeListQuery: GraphQLQuery {
             }
           }
 
+          /// The amount of chapters the manga has when complete
+          public var chapters: Int? {
+            get {
+              return resultMap["chapters"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "chapters")
+            }
+          }
+
+          /// The amount of volumes the manga has when complete
+          public var volumes: Int? {
+            get {
+              return resultMap["volumes"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "volumes")
+            }
+          }
+
           /// The cover images of the media
           public var coverImage: CoverImage? {
             get {
@@ -1526,6 +1849,26 @@ public final class UserAnimeListQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue?.resultMap, forKey: "nextAiringEpisode")
+            }
+          }
+
+          /// The current releasing status of the media
+          public var status: MediaStatus? {
+            get {
+              return resultMap["status"] as? MediaStatus
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "status")
+            }
+          }
+
+          /// The type of the media; anime or manga
+          public var type: MediaType? {
+            get {
+              return resultMap["type"] as? MediaType
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "type")
             }
           }
 
@@ -1616,7 +1959,7 @@ public final class UserAnimeListQuery: GraphQLQuery {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
                 GraphQLField("episode", type: .nonNull(.scalar(Int.self))),
-                GraphQLField("timeUntilAiring", type: .nonNull(.scalar(Int.self))),
+                GraphQLField("airingAt", type: .nonNull(.scalar(Int.self))),
               ]
             }
 
@@ -1626,8 +1969,8 @@ public final class UserAnimeListQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(episode: Int, timeUntilAiring: Int) {
-              self.init(unsafeResultMap: ["__typename": "AiringSchedule", "episode": episode, "timeUntilAiring": timeUntilAiring])
+            public init(episode: Int, airingAt: Int) {
+              self.init(unsafeResultMap: ["__typename": "AiringSchedule", "episode": episode, "airingAt": airingAt])
             }
 
             public var __typename: String {
@@ -1649,15 +1992,55 @@ public final class UserAnimeListQuery: GraphQLQuery {
               }
             }
 
-            /// Seconds until episode starts airing
-            public var timeUntilAiring: Int {
+            /// The time the episode airs at
+            public var airingAt: Int {
               get {
-                return resultMap["timeUntilAiring"]! as! Int
+                return resultMap["airingAt"]! as! Int
               }
               set {
-                resultMap.updateValue(newValue, forKey: "timeUntilAiring")
+                resultMap.updateValue(newValue, forKey: "airingAt")
               }
             }
+          }
+        }
+      }
+
+      public struct PageInfo: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["PageInfo"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("hasNextPage", type: .scalar(Bool.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(hasNextPage: Bool? = nil) {
+          self.init(unsafeResultMap: ["__typename": "PageInfo", "hasNextPage": hasNextPage])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// If there is another page
+        public var hasNextPage: Bool? {
+          get {
+            return resultMap["hasNextPage"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "hasNextPage")
           }
         }
       }
@@ -1840,6 +2223,96 @@ public final class ViewerQuery: GraphQLQuery {
           set {
             resultMap.updateValue(newValue, forKey: "large")
           }
+        }
+      }
+    }
+  }
+}
+
+public final class ViewerIdQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query ViewerId {
+      Viewer {
+        __typename
+        id
+      }
+    }
+    """
+
+  public let operationName: String = "ViewerId"
+
+  public let operationIdentifier: String? = "5682e020cd7301f0cec94e49dc3cadd809c6f6dea6fdfe29bc03d2a110c46acd"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("Viewer", type: .object(Viewer.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(viewer: Viewer? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "Viewer": viewer.flatMap { (value: Viewer) -> ResultMap in value.resultMap }])
+    }
+
+    /// Get the currently authenticated user
+    public var viewer: Viewer? {
+      get {
+        return (resultMap["Viewer"] as? ResultMap).flatMap { Viewer(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "Viewer")
+      }
+    }
+
+    public struct Viewer: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["User"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: Int) {
+        self.init(unsafeResultMap: ["__typename": "User", "id": id])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The id of the user
+      public var id: Int {
+        get {
+          return resultMap["id"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
     }

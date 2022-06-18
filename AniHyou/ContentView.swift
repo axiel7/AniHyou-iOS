@@ -44,7 +44,7 @@ struct ContentView: View {
                 }
             
             if isLoggedIn() || justLogged {
-                Text("Anime list view")
+                MediaListStatusView(mediaType: .anime)
                     .tabItemAnime()
             } else {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
@@ -52,7 +52,7 @@ struct ContentView: View {
             }
             
             if isLoggedIn() || justLogged {
-                Text("Manga list view")
+                MediaListStatusView(mediaType: .manga)
                     .tabItemManga()
             } else {
                 NotLoggedView(onSuccessLogin: { justLogged = true })

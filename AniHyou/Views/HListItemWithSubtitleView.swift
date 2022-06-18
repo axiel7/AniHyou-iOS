@@ -11,11 +11,11 @@ private let coverWidth: CGFloat = 80
 private let coverHeight: CGFloat = 120
 
 extension Image {
-    func imageCover() -> some View {
+    func imageCover(width: CGFloat, height: CGFloat) -> some View {
         self
             .resizable()
             .scaledToFill()
-            .frame(width: coverWidth, height: coverHeight)
+            .frame(width: width, height: height)
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
@@ -29,7 +29,7 @@ struct HListItemWithSubtitleView: View {
         HStack {
             AsyncImage(url: URL(string: imageUrl ?? "")) { phase in
                 if let image = phase.image {
-                    image.imageCover()
+                    image.imageCover(width: coverWidth, height: coverHeight)
                 } else if phase.error != nil {
                     CoverPlaceholderView(systemName: "exclamationmark.triangle", width: coverWidth, height: coverHeight)
                 } else {

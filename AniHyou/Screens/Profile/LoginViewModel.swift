@@ -51,7 +51,21 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
            let expirationDate = queryItems.filter ({ $0.name == "expires_in" }).first?.value {
             KeychainSwift().set(token, forKey: USER_TOKEN_KEY)
             UserDefaults.standard.set(expirationDate, forKey: "token_expiration")
+            getUserId()
             self.isLoginSuccess = true
+        }
+    }
+    
+    private func getUserId() {
+        Network.shared.apollo.fetch(query: ViewerIdQuery()) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let id = graphQLResult.data?.viewer?.id {
+                    UserDefaults.standard.set(id, forKey: "user_id")
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

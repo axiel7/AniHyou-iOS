@@ -12,3 +12,7 @@ func isLoggedIn() -> Bool {
     //KeychainSwift().clear()
     return KeychainSwift().get(USER_TOKEN_KEY) != nil
 }
+
+func userId() -> Int {
+    return UserDefaults.standard.integer(forKey: "user_id")
+}

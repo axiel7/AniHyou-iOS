@@ -11,12 +11,16 @@
     "name": "TodayAiringAnimes",
     "source": "query TodayAiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    airingSchedules(\n      sort: $sort\n      airingAt_greater: $airingAtGreater\n      airingAt_lesser: $airingAtLesser\n    ) {\n      __typename\n      media {\n        __typename\n        id\n        title {\n          __typename\n          romaji\n        }\n        coverImage {\n          __typename\n          large\n        }\n      }\n      timeUntilAiring\n    }\n  }\n}"
   },
-  "ec7d04d6891f8e79e71703a143f2f875fbf59882ecd47b49110fe5f897365891": {
-    "name": "UserAnimeList",
-    "source": "query UserAnimeList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status) {\n      __typename\n      progress\n      media {\n        __typename\n        id\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          timeUntilAiring\n        }\n      }\n    }\n  }\n}"
+  "5b8e6d0ad7da6e3a682dbfdea8f066bd31364b8803f816c7514fbb8d09104b5f": {
+    "name": "UserMediaList",
+    "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        id\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          airingAt\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
   },
   "12ff6349aa9750b00191bed3eebedeed732925ec3d496582785a2cc3d190e3dd": {
     "name": "Viewer",
     "source": "query Viewer {\n  Viewer {\n    __typename\n    id\n    name\n    avatar {\n      __typename\n      large\n    }\n    bannerImage\n    about\n  }\n}"
+  },
+  "5682e020cd7301f0cec94e49dc3cadd809c6f6dea6fdfe29bc03d2a110c46acd": {
+    "name": "ViewerId",
+    "source": "query ViewerId {\n  Viewer {\n    __typename\n    id\n  }\n}"
   }
 }

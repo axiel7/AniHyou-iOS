@@ -20,9 +20,15 @@
 		481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */; };
 		481AD502285207B1001779EE /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD501285207B1001779EE /* DateUtils.swift */; };
 		481AD50728522D74001779EE /* VListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD50628522D74001779EE /* VListItemView.swift */; };
-		48643F412853C13300D7C328 /* UserAnimeList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48643F402853C13300D7C328 /* UserAnimeList.graphql */; };
 		48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */; };
 		48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48643F442853C54800D7C328 /* ProfileViewModel.swift */; };
+		486ED200285DD329002D29E1 /* UserMediaList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 486ED1FF285DD329002D29E1 /* UserMediaList.graphql */; };
+		486ED205285DD484002D29E1 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED204285DD484002D29E1 /* MediaListView.swift */; };
+		486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED206285DD4D8002D29E1 /* MediaListItemView.swift */; };
+		486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED208285DD649002D29E1 /* MediaListStatusView.swift */; };
+		486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
+		486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 486ED20E285DDE03002D29E1 /* ViewerId.graphql */; };
+		486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED213285E3261002D29E1 /* MediaDetailsView.swift */; };
 		488C267928537B5F0005EE15 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267828537B5F0005EE15 /* StringUtils.swift */; };
 		488C267B2853801A0005EE15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267A2853801A0005EE15 /* Constants.swift */; };
 		488C267E285380D90005EE15 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267D285380D90005EE15 /* ProfileView.swift */; };
@@ -52,9 +58,15 @@
 		481AD501285207B1001779EE /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		481AD50428522139001779EE /* SeasonalAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SeasonalAnime.graphql; sourceTree = "<group>"; };
 		481AD50628522D74001779EE /* VListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VListItemView.swift; sourceTree = "<group>"; };
-		48643F402853C13300D7C328 /* UserAnimeList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAnimeList.graphql; sourceTree = "<group>"; };
 		48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerBasicInfo.graphql; sourceTree = "<group>"; };
 		48643F442853C54800D7C328 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		486ED1FF285DD329002D29E1 /* UserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserMediaList.graphql; sourceTree = "<group>"; };
+		486ED204285DD484002D29E1 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
+		486ED206285DD4D8002D29E1 /* MediaListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemView.swift; sourceTree = "<group>"; };
+		486ED208285DD649002D29E1 /* MediaListStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListStatusView.swift; sourceTree = "<group>"; };
+		486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewModel.swift; sourceTree = "<group>"; };
+		486ED20E285DDE03002D29E1 /* ViewerId.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerId.graphql; sourceTree = "<group>"; };
+		486ED213285E3261002D29E1 /* MediaDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsView.swift; sourceTree = "<group>"; };
 		488C267828537B5F0005EE15 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		488C267A2853801A0005EE15 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		488C267D285380D90005EE15 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -132,8 +144,11 @@
 		481AD4F22851D878001779EE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				486ED210285E3215002D29E1 /* MediaDetails */,
+				486ED201285DD344002D29E1 /* MediaList */,
 				488C267C285380CB0005EE15 /* Profile */,
 				481AD4F42851D8F8001779EE /* Home */,
+				486ED208285DD649002D29E1 /* MediaListStatusView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -145,6 +160,7 @@
 				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
 				481AD50628522D74001779EE /* VListItemView.swift */,
 				488C26902853A10D0005EE15 /* NotLoggedView.swift */,
+				486ED206285DD4D8002D29E1 /* MediaListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,10 +180,28 @@
 				481AD4EF2851D698001779EE /* Animes.graphql */,
 				481AD4FF285204E9001779EE /* TodayAiringAnimes.graphql */,
 				481AD50428522139001779EE /* SeasonalAnime.graphql */,
-				48643F402853C13300D7C328 /* UserAnimeList.graphql */,
 				48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */,
+				486ED1FF285DD329002D29E1 /* UserMediaList.graphql */,
+				486ED20E285DDE03002D29E1 /* ViewerId.graphql */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		486ED201285DD344002D29E1 /* MediaList */ = {
+			isa = PBXGroup;
+			children = (
+				486ED204285DD484002D29E1 /* MediaListView.swift */,
+				486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */,
+			);
+			path = MediaList;
+			sourceTree = "<group>";
+		};
+		486ED210285E3215002D29E1 /* MediaDetails */ = {
+			isa = PBXGroup;
+			children = (
+				486ED213285E3261002D29E1 /* MediaDetailsView.swift */,
+			);
+			path = MediaDetails;
 			sourceTree = "<group>";
 		};
 		488C267C285380CB0005EE15 /* Profile */ = {
@@ -260,9 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
-				48643F412853C13300D7C328 /* UserAnimeList.graphql in Resources */,
+				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
 				48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */,
+				486ED200285DD329002D29E1 /* UserMediaList.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +312,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/AniHyou/Queries/*.graphql",
 			);
 			name = Apollo;
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/AniHyou/API.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -301,14 +338,19 @@
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
+				486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */,
 				488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */,
+				486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */,
+				486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */,
 				488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */,
 				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
 				488C268A28539D5C0005EE15 /* Utils.swift in Sources */,
 				481AD502285207B1001779EE /* DateUtils.swift in Sources */,
+				486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */,
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,
 				481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
+				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
 				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,
 				481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,

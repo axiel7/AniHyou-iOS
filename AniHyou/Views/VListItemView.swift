@@ -18,7 +18,7 @@ struct VListItemView: View {
         VStack {
             AsyncImage(url: URL(string: imageUrl ?? "")) { phase in
                 if let image = phase.image {
-                    image.imageCover()
+                    image.imageCover(width: coverWidth, height: coverHeight)
                 } else if phase.error != nil {
                     CoverPlaceholderView(systemName: "exclamationmark.triangle", width: coverWidth, height: coverHeight)
                 } else {
