@@ -7,7 +7,7 @@
 		<key>AniHyou.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
 		</dict>
 		<key>SQLite (Playground) 1.xcscheme</key>
 		<dict>
@@ -29,6 +29,14 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>481AD4D92851CE73001779EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
