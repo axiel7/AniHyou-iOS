@@ -11,26 +11,11 @@ struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
     private let avatarSize: CGFloat = 110
-    private let bannerHeight: CGFloat = 150
     
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                AsyncImage(url: URL(string: viewModel.userInfo?.bannerImage ?? "")) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: bannerHeight)
-                            .clipped()
-                    } else {
-                        Image("Square")
-                            .resizable()
-                            .foregroundColor(.gray)
-                            .frame(height: bannerHeight)
-                    }
-                }
-                .ignoresSafeArea()
+                TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: 150)
                 
                 VStack {
                     AsyncImage(url: URL(string: viewModel.userInfo?.avatar?.large ?? "")) { phase in
