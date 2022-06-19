@@ -1,0 +1,39 @@
+query MediaDetails($mediaId: Int) {
+  Media(id: $mediaId) {
+    title {
+      romaji
+      english
+      native
+    }
+    type
+    format
+    status
+    description
+    startDate {
+      year
+      month
+      day
+    }
+    endDate {
+      year
+      month
+      day
+    }
+    season
+    episodes
+    duration
+    chapters
+    volumes
+    coverImage {
+      large
+      color
+    }
+    bannerImage
+    averageScore
+    meanScore
+    popularity
+    genres
+    synonyms
+    favourites
+  }
+}

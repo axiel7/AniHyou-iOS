@@ -17,7 +17,9 @@ struct MediaListView: View {
         List {
             ForEach(viewModel.mediaList, id: \.?.media?.id) {
                 if let item = $0 {
-                    MediaListItemView(item: item)
+                    NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
+                        MediaListItemView(item: item)
+                    }
                 }
             }
             

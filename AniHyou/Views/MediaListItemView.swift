@@ -16,15 +16,7 @@ struct MediaListItemView: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: item.media?.coverImage?.large ?? "")) { phase in
-                if let image = phase.image {
-                    image.imageCover(width: coverWidth, height: coverHeight)
-                } else if phase.error != nil {
-                    CoverPlaceholderView(systemName: "exclamationmark.triangle", width: coverWidth, height: coverHeight)
-                } else {
-                    CoverPlaceholderView(systemName: "hourglass", width: coverWidth, height: coverHeight)
-                }
-            }
+            MediaCoverView(imageUrl: item.media?.coverImage?.large, width: coverWidth, height: coverHeight)
             
             VStack(alignment: .leading) {
                 Text(item.media?.title?.userPreferred ?? "")

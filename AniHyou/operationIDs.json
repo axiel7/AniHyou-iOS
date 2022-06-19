@@ -3,6 +3,10 @@
     "name": "Animes",
     "source": "query Animes($page: Int, $perPage: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(type: ANIME) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
   },
+  "b6c7682cd49985237926bb003209d2bd04b4e5b718f17058b9df2c17ae2ef80e": {
+    "name": "MediaDetails",
+    "source": "query MediaDetails($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    title {\n      __typename\n      romaji\n      english\n      native\n    }\n    type\n    format\n    status\n    description\n    startDate {\n      __typename\n      year\n      month\n      day\n    }\n    endDate {\n      __typename\n      year\n      month\n      day\n    }\n    season\n    episodes\n    duration\n    chapters\n    volumes\n    coverImage {\n      __typename\n      large\n      color\n    }\n    bannerImage\n    averageScore\n    meanScore\n    popularity\n    genres\n    synonyms\n    favourites\n  }\n}"
+  },
   "c70aa2eb985f619b2b31205d7933f8c23f9f7223a5c873a60f466a345431902d": {
     "name": "SeasonalAnime",
     "source": "query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(season: $season, seasonYear: $seasonYear, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
@@ -15,9 +19,9 @@
     "name": "UserMediaList",
     "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        id\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          airingAt\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
   },
-  "12ff6349aa9750b00191bed3eebedeed732925ec3d496582785a2cc3d190e3dd": {
+  "90c42616ac03e8025c7d6b7f45168f6411dc6325c98da4914b04564ad675b2e9": {
     "name": "Viewer",
-    "source": "query Viewer {\n  Viewer {\n    __typename\n    id\n    name\n    avatar {\n      __typename\n      large\n    }\n    bannerImage\n    about\n  }\n}"
+    "source": "query Viewer {\n  Viewer {\n    __typename\n    id\n    name\n    avatar {\n      __typename\n      large\n    }\n    bannerImage\n    about\n    options {\n      __typename\n      profileColor\n    }\n  }\n}"
   },
   "5682e020cd7301f0cec94e49dc3cadd809c6f6dea6fdfe29bc03d2a110c46acd": {
     "name": "ViewerId",

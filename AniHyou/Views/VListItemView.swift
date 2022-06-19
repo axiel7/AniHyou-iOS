@@ -16,20 +16,14 @@ struct VListItemView: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: imageUrl ?? "")) { phase in
-                if let image = phase.image {
-                    image.imageCover(width: coverWidth, height: coverHeight)
-                } else if phase.error != nil {
-                    CoverPlaceholderView(systemName: "exclamationmark.triangle", width: coverWidth, height: coverHeight)
-                } else {
-                    CoverPlaceholderView(systemName: "hourglass", width: coverWidth, height: coverHeight)
-                }
-            }
+            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight)
             
             Text(title)
                 .font(.system(size: 13))
                 .padding(.bottom, 2)
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.primary)
         }
         .frame(width: coverWidth + 15)
     }

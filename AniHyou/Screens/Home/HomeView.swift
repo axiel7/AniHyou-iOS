@@ -31,8 +31,11 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
                                 ForEach(viewModel.todaySchedules, id: \.?.media?.id) {
-                                    let item = $0
-                                    HListItemWithSubtitleView(title: item?.media?.title?.romaji ?? "", subtitle: "Airing in \(timestampToHoursOrMinutes(ms: item?.timeUntilAiring))", imageUrl: item?.media?.coverImage?.large)
+                                    if let item = $0 {
+                                        NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
+                                            HListItemWithSubtitleView(title: item.media?.title?.romaji ?? "", subtitle: "Airing in \(timestampToHoursOrMinutes(ms: item.timeUntilAiring))", imageUrl: item.media?.coverImage?.large)
+                                        }
+                                    }
                                 }
                             }
                         }//:HScrollView
@@ -51,8 +54,11 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
                             ForEach(viewModel.seasonAnimes, id: \.?.id) {
-                                let item = $0
-                                VListItemView(title: item?.title?.romaji ?? "", imageUrl: item?.coverImage?.large)
+                                if let item = $0 {
+                                    NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                        VListItemView(title: item.title?.romaji ?? "", imageUrl: item.coverImage?.large)
+                                    }
+                                }
                             }
                         }
                     }//:HScrollView

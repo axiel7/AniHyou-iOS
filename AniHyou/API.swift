@@ -4,6 +4,201 @@
 import Apollo
 import Foundation
 
+/// Media type enum, anime or manga.
+public enum MediaType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  /// Japanese Anime
+  case anime
+  /// Asian comic
+  case manga
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "ANIME": self = .anime
+      case "MANGA": self = .manga
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .anime: return "ANIME"
+      case .manga: return "MANGA"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: MediaType, rhs: MediaType) -> Bool {
+    switch (lhs, rhs) {
+      case (.anime, .anime): return true
+      case (.manga, .manga): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [MediaType] {
+    return [
+      .anime,
+      .manga,
+    ]
+  }
+}
+
+/// The format the media was released in
+public enum MediaFormat: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  /// Anime broadcast on television
+  case tv
+  /// Anime which are under 15 minutes in length and broadcast on television
+  case tvShort
+  /// Anime movies with a theatrical release
+  case movie
+  /// Special episodes that have been included in DVD/Blu-ray releases, picture dramas, pilots, etc
+  case special
+  /// (Original Video Animation) Anime that have been released directly on DVD/Blu-ray without originally going through a theatrical release or television broadcast
+  case ova
+  /// (Original Net Animation) Anime that have been originally released online or are only available through streaming services.
+  case ona
+  /// Short anime released as a music video
+  case music
+  /// Professionally published manga with more than one chapter
+  case manga
+  /// Written books released as a series of light novels
+  case novel
+  /// Manga with just one chapter
+  case oneShot
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "TV": self = .tv
+      case "TV_SHORT": self = .tvShort
+      case "MOVIE": self = .movie
+      case "SPECIAL": self = .special
+      case "OVA": self = .ova
+      case "ONA": self = .ona
+      case "MUSIC": self = .music
+      case "MANGA": self = .manga
+      case "NOVEL": self = .novel
+      case "ONE_SHOT": self = .oneShot
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .tv: return "TV"
+      case .tvShort: return "TV_SHORT"
+      case .movie: return "MOVIE"
+      case .special: return "SPECIAL"
+      case .ova: return "OVA"
+      case .ona: return "ONA"
+      case .music: return "MUSIC"
+      case .manga: return "MANGA"
+      case .novel: return "NOVEL"
+      case .oneShot: return "ONE_SHOT"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: MediaFormat, rhs: MediaFormat) -> Bool {
+    switch (lhs, rhs) {
+      case (.tv, .tv): return true
+      case (.tvShort, .tvShort): return true
+      case (.movie, .movie): return true
+      case (.special, .special): return true
+      case (.ova, .ova): return true
+      case (.ona, .ona): return true
+      case (.music, .music): return true
+      case (.manga, .manga): return true
+      case (.novel, .novel): return true
+      case (.oneShot, .oneShot): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [MediaFormat] {
+    return [
+      .tv,
+      .tvShort,
+      .movie,
+      .special,
+      .ova,
+      .ona,
+      .music,
+      .manga,
+      .novel,
+      .oneShot,
+    ]
+  }
+}
+
+/// The current releasing status of the media
+public enum MediaStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  /// Has completed and is no longer being released
+  case finished
+  /// Currently releasing
+  case releasing
+  /// To be released at a later date
+  case notYetReleased
+  /// Ended before the work could be finished
+  case cancelled
+  /// Version 2 only. Is currently paused from releasing and will resume at a later date
+  case hiatus
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "FINISHED": self = .finished
+      case "RELEASING": self = .releasing
+      case "NOT_YET_RELEASED": self = .notYetReleased
+      case "CANCELLED": self = .cancelled
+      case "HIATUS": self = .hiatus
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .finished: return "FINISHED"
+      case .releasing: return "RELEASING"
+      case .notYetReleased: return "NOT_YET_RELEASED"
+      case .cancelled: return "CANCELLED"
+      case .hiatus: return "HIATUS"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: MediaStatus, rhs: MediaStatus) -> Bool {
+    switch (lhs, rhs) {
+      case (.finished, .finished): return true
+      case (.releasing, .releasing): return true
+      case (.notYetReleased, .notYetReleased): return true
+      case (.cancelled, .cancelled): return true
+      case (.hiatus, .hiatus): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [MediaStatus] {
+    return [
+      .finished,
+      .releasing,
+      .notYetReleased,
+      .cancelled,
+      .hiatus,
+    ]
+  }
+}
+
 public enum MediaSeason: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   /// Months December to February
@@ -345,49 +540,6 @@ public enum AiringSort: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
   }
 }
 
-/// Media type enum, anime or manga.
-public enum MediaType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
-  public typealias RawValue = String
-  /// Japanese Anime
-  case anime
-  /// Asian comic
-  case manga
-  /// Auto generated constant for unknown enum values
-  case __unknown(RawValue)
-
-  public init?(rawValue: RawValue) {
-    switch rawValue {
-      case "ANIME": self = .anime
-      case "MANGA": self = .manga
-      default: self = .__unknown(rawValue)
-    }
-  }
-
-  public var rawValue: RawValue {
-    switch self {
-      case .anime: return "ANIME"
-      case .manga: return "MANGA"
-      case .__unknown(let value): return value
-    }
-  }
-
-  public static func == (lhs: MediaType, rhs: MediaType) -> Bool {
-    switch (lhs, rhs) {
-      case (.anime, .anime): return true
-      case (.manga, .manga): return true
-      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
-      default: return false
-    }
-  }
-
-  public static var allCases: [MediaType] {
-    return [
-      .anime,
-      .manga,
-    ]
-  }
-}
-
 /// Media list watching/reading status enum.
 public enum MediaListStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
@@ -636,67 +788,6 @@ public enum MediaListSort: RawRepresentable, Equatable, Hashable, CaseIterable, 
   }
 }
 
-/// The current releasing status of the media
-public enum MediaStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
-  public typealias RawValue = String
-  /// Has completed and is no longer being released
-  case finished
-  /// Currently releasing
-  case releasing
-  /// To be released at a later date
-  case notYetReleased
-  /// Ended before the work could be finished
-  case cancelled
-  /// Version 2 only. Is currently paused from releasing and will resume at a later date
-  case hiatus
-  /// Auto generated constant for unknown enum values
-  case __unknown(RawValue)
-
-  public init?(rawValue: RawValue) {
-    switch rawValue {
-      case "FINISHED": self = .finished
-      case "RELEASING": self = .releasing
-      case "NOT_YET_RELEASED": self = .notYetReleased
-      case "CANCELLED": self = .cancelled
-      case "HIATUS": self = .hiatus
-      default: self = .__unknown(rawValue)
-    }
-  }
-
-  public var rawValue: RawValue {
-    switch self {
-      case .finished: return "FINISHED"
-      case .releasing: return "RELEASING"
-      case .notYetReleased: return "NOT_YET_RELEASED"
-      case .cancelled: return "CANCELLED"
-      case .hiatus: return "HIATUS"
-      case .__unknown(let value): return value
-    }
-  }
-
-  public static func == (lhs: MediaStatus, rhs: MediaStatus) -> Bool {
-    switch (lhs, rhs) {
-      case (.finished, .finished): return true
-      case (.releasing, .releasing): return true
-      case (.notYetReleased, .notYetReleased): return true
-      case (.cancelled, .cancelled): return true
-      case (.hiatus, .hiatus): return true
-      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
-      default: return false
-    }
-  }
-
-  public static var allCases: [MediaStatus] {
-    return [
-      .finished,
-      .releasing,
-      .notYetReleased,
-      .cancelled,
-      .hiatus,
-    ]
-  }
-}
-
 public final class AnimesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -940,6 +1031,587 @@ public final class AnimesQuery: GraphQLQuery {
             set {
               resultMap.updateValue(newValue, forKey: "large")
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class MediaDetailsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query MediaDetails($mediaId: Int) {
+      Media(id: $mediaId) {
+        __typename
+        title {
+          __typename
+          romaji
+          english
+          native
+        }
+        type
+        format
+        status
+        description
+        startDate {
+          __typename
+          year
+          month
+          day
+        }
+        endDate {
+          __typename
+          year
+          month
+          day
+        }
+        season
+        episodes
+        duration
+        chapters
+        volumes
+        coverImage {
+          __typename
+          large
+          color
+        }
+        bannerImage
+        averageScore
+        meanScore
+        popularity
+        genres
+        synonyms
+        favourites
+      }
+    }
+    """
+
+  public let operationName: String = "MediaDetails"
+
+  public let operationIdentifier: String? = "b6c7682cd49985237926bb003209d2bd04b4e5b718f17058b9df2c17ae2ef80e"
+
+  public var mediaId: Int?
+
+  public init(mediaId: Int? = nil) {
+    self.mediaId = mediaId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["mediaId": mediaId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("Media", arguments: ["id": GraphQLVariable("mediaId")], type: .object(Medium.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(media: Medium? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "Media": media.flatMap { (value: Medium) -> ResultMap in value.resultMap }])
+    }
+
+    /// Media query
+    public var media: Medium? {
+      get {
+        return (resultMap["Media"] as? ResultMap).flatMap { Medium(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "Media")
+      }
+    }
+
+    public struct Medium: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Media"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("title", type: .object(Title.selections)),
+          GraphQLField("type", type: .scalar(MediaType.self)),
+          GraphQLField("format", type: .scalar(MediaFormat.self)),
+          GraphQLField("status", type: .scalar(MediaStatus.self)),
+          GraphQLField("description", type: .scalar(String.self)),
+          GraphQLField("startDate", type: .object(StartDate.selections)),
+          GraphQLField("endDate", type: .object(EndDate.selections)),
+          GraphQLField("season", type: .scalar(MediaSeason.self)),
+          GraphQLField("episodes", type: .scalar(Int.self)),
+          GraphQLField("duration", type: .scalar(Int.self)),
+          GraphQLField("chapters", type: .scalar(Int.self)),
+          GraphQLField("volumes", type: .scalar(Int.self)),
+          GraphQLField("coverImage", type: .object(CoverImage.selections)),
+          GraphQLField("bannerImage", type: .scalar(String.self)),
+          GraphQLField("averageScore", type: .scalar(Int.self)),
+          GraphQLField("meanScore", type: .scalar(Int.self)),
+          GraphQLField("popularity", type: .scalar(Int.self)),
+          GraphQLField("genres", type: .list(.scalar(String.self))),
+          GraphQLField("synonyms", type: .list(.scalar(String.self))),
+          GraphQLField("favourites", type: .scalar(Int.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(title: Title? = nil, type: MediaType? = nil, format: MediaFormat? = nil, status: MediaStatus? = nil, description: String? = nil, startDate: StartDate? = nil, endDate: EndDate? = nil, season: MediaSeason? = nil, episodes: Int? = nil, duration: Int? = nil, chapters: Int? = nil, volumes: Int? = nil, coverImage: CoverImage? = nil, bannerImage: String? = nil, averageScore: Int? = nil, meanScore: Int? = nil, popularity: Int? = nil, genres: [String?]? = nil, synonyms: [String?]? = nil, favourites: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Media", "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "type": type, "format": format, "status": status, "description": description, "startDate": startDate.flatMap { (value: StartDate) -> ResultMap in value.resultMap }, "endDate": endDate.flatMap { (value: EndDate) -> ResultMap in value.resultMap }, "season": season, "episodes": episodes, "duration": duration, "chapters": chapters, "volumes": volumes, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }, "bannerImage": bannerImage, "averageScore": averageScore, "meanScore": meanScore, "popularity": popularity, "genres": genres, "synonyms": synonyms, "favourites": favourites])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The official titles of the media in various languages
+      public var title: Title? {
+        get {
+          return (resultMap["title"] as? ResultMap).flatMap { Title(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "title")
+        }
+      }
+
+      /// The type of the media; anime or manga
+      public var type: MediaType? {
+        get {
+          return resultMap["type"] as? MediaType
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "type")
+        }
+      }
+
+      /// The format the media was released in
+      public var format: MediaFormat? {
+        get {
+          return resultMap["format"] as? MediaFormat
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "format")
+        }
+      }
+
+      /// The current releasing status of the media
+      public var status: MediaStatus? {
+        get {
+          return resultMap["status"] as? MediaStatus
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "status")
+        }
+      }
+
+      /// Short description of the media's story and characters
+      public var description: String? {
+        get {
+          return resultMap["description"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "description")
+        }
+      }
+
+      /// The first official release date of the media
+      public var startDate: StartDate? {
+        get {
+          return (resultMap["startDate"] as? ResultMap).flatMap { StartDate(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "startDate")
+        }
+      }
+
+      /// The last official release date of the media
+      public var endDate: EndDate? {
+        get {
+          return (resultMap["endDate"] as? ResultMap).flatMap { EndDate(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "endDate")
+        }
+      }
+
+      /// The season the media was initially released in
+      public var season: MediaSeason? {
+        get {
+          return resultMap["season"] as? MediaSeason
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "season")
+        }
+      }
+
+      /// The amount of episodes the anime has when complete
+      public var episodes: Int? {
+        get {
+          return resultMap["episodes"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "episodes")
+        }
+      }
+
+      /// The general length of each anime episode in minutes
+      public var duration: Int? {
+        get {
+          return resultMap["duration"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "duration")
+        }
+      }
+
+      /// The amount of chapters the manga has when complete
+      public var chapters: Int? {
+        get {
+          return resultMap["chapters"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "chapters")
+        }
+      }
+
+      /// The amount of volumes the manga has when complete
+      public var volumes: Int? {
+        get {
+          return resultMap["volumes"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "volumes")
+        }
+      }
+
+      /// The cover images of the media
+      public var coverImage: CoverImage? {
+        get {
+          return (resultMap["coverImage"] as? ResultMap).flatMap { CoverImage(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "coverImage")
+        }
+      }
+
+      /// The banner image of the media
+      public var bannerImage: String? {
+        get {
+          return resultMap["bannerImage"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "bannerImage")
+        }
+      }
+
+      /// A weighted average score of all the user's scores of the media
+      public var averageScore: Int? {
+        get {
+          return resultMap["averageScore"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "averageScore")
+        }
+      }
+
+      /// Mean score of all the user's scores of the media
+      public var meanScore: Int? {
+        get {
+          return resultMap["meanScore"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "meanScore")
+        }
+      }
+
+      /// The number of users with the media on their list
+      public var popularity: Int? {
+        get {
+          return resultMap["popularity"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "popularity")
+        }
+      }
+
+      /// The genres of the media
+      public var genres: [String?]? {
+        get {
+          return resultMap["genres"] as? [String?]
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "genres")
+        }
+      }
+
+      /// Alternative titles of the media
+      public var synonyms: [String?]? {
+        get {
+          return resultMap["synonyms"] as? [String?]
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "synonyms")
+        }
+      }
+
+      /// The amount of user's who have favourited the media
+      public var favourites: Int? {
+        get {
+          return resultMap["favourites"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "favourites")
+        }
+      }
+
+      public struct Title: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaTitle"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("romaji", type: .scalar(String.self)),
+            GraphQLField("english", type: .scalar(String.self)),
+            GraphQLField("native", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(romaji: String? = nil, english: String? = nil, native: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji, "english": english, "native": native])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The romanization of the native language title
+        public var romaji: String? {
+          get {
+            return resultMap["romaji"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "romaji")
+          }
+        }
+
+        /// The official english title
+        public var english: String? {
+          get {
+            return resultMap["english"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "english")
+          }
+        }
+
+        /// Official title in it's native language
+        public var native: String? {
+          get {
+            return resultMap["native"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "native")
+          }
+        }
+      }
+
+      public struct StartDate: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["FuzzyDate"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("year", type: .scalar(Int.self)),
+            GraphQLField("month", type: .scalar(Int.self)),
+            GraphQLField("day", type: .scalar(Int.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(year: Int? = nil, month: Int? = nil, day: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "FuzzyDate", "year": year, "month": month, "day": day])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Numeric Year (2017)
+        public var year: Int? {
+          get {
+            return resultMap["year"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "year")
+          }
+        }
+
+        /// Numeric Month (3)
+        public var month: Int? {
+          get {
+            return resultMap["month"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "month")
+          }
+        }
+
+        /// Numeric Day (24)
+        public var day: Int? {
+          get {
+            return resultMap["day"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "day")
+          }
+        }
+      }
+
+      public struct EndDate: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["FuzzyDate"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("year", type: .scalar(Int.self)),
+            GraphQLField("month", type: .scalar(Int.self)),
+            GraphQLField("day", type: .scalar(Int.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(year: Int? = nil, month: Int? = nil, day: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "FuzzyDate", "year": year, "month": month, "day": day])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Numeric Year (2017)
+        public var year: Int? {
+          get {
+            return resultMap["year"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "year")
+          }
+        }
+
+        /// Numeric Month (3)
+        public var month: Int? {
+          get {
+            return resultMap["month"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "month")
+          }
+        }
+
+        /// Numeric Day (24)
+        public var day: Int? {
+          get {
+            return resultMap["day"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "day")
+          }
+        }
+      }
+
+      public struct CoverImage: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaCoverImage"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("large", type: .scalar(String.self)),
+            GraphQLField("color", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(large: String? = nil, color: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large, "color": color])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The cover image url of the media at a large size
+        public var large: String? {
+          get {
+            return resultMap["large"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "large")
+          }
+        }
+
+        /// Average #hex color of cover image
+        public var color: String? {
+          get {
+            return resultMap["color"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "color")
           }
         }
       }
@@ -2063,13 +2735,17 @@ public final class ViewerQuery: GraphQLQuery {
         }
         bannerImage
         about
+        options {
+          __typename
+          profileColor
+        }
       }
     }
     """
 
   public let operationName: String = "Viewer"
 
-  public let operationIdentifier: String? = "12ff6349aa9750b00191bed3eebedeed732925ec3d496582785a2cc3d190e3dd"
+  public let operationIdentifier: String? = "90c42616ac03e8025c7d6b7f45168f6411dc6325c98da4914b04564ad675b2e9"
 
   public init() {
   }
@@ -2114,6 +2790,7 @@ public final class ViewerQuery: GraphQLQuery {
           GraphQLField("avatar", type: .object(Avatar.selections)),
           GraphQLField("bannerImage", type: .scalar(String.self)),
           GraphQLField("about", type: .scalar(String.self)),
+          GraphQLField("options", type: .object(Option.selections)),
         ]
       }
 
@@ -2123,8 +2800,8 @@ public final class ViewerQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: Int, name: String, avatar: Avatar? = nil, bannerImage: String? = nil, about: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "avatar": avatar.flatMap { (value: Avatar) -> ResultMap in value.resultMap }, "bannerImage": bannerImage, "about": about])
+      public init(id: Int, name: String, avatar: Avatar? = nil, bannerImage: String? = nil, about: String? = nil, options: Option? = nil) {
+        self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "avatar": avatar.flatMap { (value: Avatar) -> ResultMap in value.resultMap }, "bannerImage": bannerImage, "about": about, "options": options.flatMap { (value: Option) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -2186,6 +2863,16 @@ public final class ViewerQuery: GraphQLQuery {
         }
       }
 
+      /// The user's general options
+      public var options: Option? {
+        get {
+          return (resultMap["options"] as? ResultMap).flatMap { Option(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "options")
+        }
+      }
+
       public struct Avatar: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["UserAvatar"]
 
@@ -2222,6 +2909,46 @@ public final class ViewerQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "large")
+          }
+        }
+      }
+
+      public struct Option: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["UserOptions"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("profileColor", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(profileColor: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "UserOptions", "profileColor": profileColor])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Profile highlight color (blue, purple, pink, orange, red, green, gray)
+        public var profileColor: String? {
+          get {
+            return resultMap["profileColor"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "profileColor")
           }
         }
       }
