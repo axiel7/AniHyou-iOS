@@ -25,22 +25,29 @@ struct TopBannerView: View {
                     }
                     .resizable()
                     .scaledToFill()
-                    .frame(height: height)
+                    .frame(width: geo.size.width, height: geo.frame(in: .global).minY <= 0 ? geo.size.height : geo.size.height + geo.frame(in: .global).minY)
                     .clipped()
-            } else {
-                Image("Square")
-                    .resizable()
-                    .foregroundColor(Color(placeholderHexColor) ?? .gray)
-                    .frame(height: height)
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .background {
+                        LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.4)]), startPoint: .bottom, endPoint: .top)
+                            .padding(.bottom, 20)
+                    }
             }
+            .offset(y: geo.frame(in: .global).minY <= 0 ? 0 : -geo.frame(in: .global).minY)
+            .frame(width: geo.size.width, height: geo.frame(in: .global).minY <= 0 ? geo.size.height : geo.size.height + geo.frame(in: .global).minY)
         }
-        .ignoresSafeArea()
+        .frame(minHeight: height)
     }
 }
 
 struct TopBannerView_Previews: PreviewProvider {
     static var previews: some View {
-        TopBannerView(height: 120)
-            .previewLayout(.sizeThatFits)
+        ScrollView {
+            VStack {
+                TopBannerView(height: 120)
+                Spacer()
+            }
+        }
     }
 }
