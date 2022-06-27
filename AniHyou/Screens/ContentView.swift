@@ -11,37 +11,38 @@ extension View {
     func tabItemAnime() -> some View {
         self
             .tabItem {
-                Image(systemName: "play.tv")
-                Text("Anime")
+                Label("Anime", systemImage: "play.tv")
             }
+            .tag(1)
     }
     func tabItemManga() -> some View {
         self
             .tabItem {
-                Image(systemName: "book")
-                Text("Manga")
+                Label("Manga", systemImage: "book")
             }
+            .tag(2)
     }
     func tabItemProfile() -> some View {
         self
             .tabItem {
-                Image(systemName: "person")
-                Text("Profile")
+                Label("Profile", systemImage: "person")
             }
+            .tag(3)
     }
 }
 
 struct ContentView: View {
     
     @State var justLogged: Bool = false
+    @AppStorage("selected_tab_index") var selectedTabIndex: Int = 0
     
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTabIndex) {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
+                    Label("Home", systemImage: "house")
                 }
+                .tag(0)
             
             if isLoggedIn() || justLogged {
                 MediaListStatusView(mediaType: .anime)
