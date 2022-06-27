@@ -5,21 +5,17 @@ query MediaDetails($mediaId: Int) {
       english
       native
     }
-    type
     format
     status
     description
     startDate {
-      year
-      month
-      day
+      ...FuzzyDate
     }
     endDate {
-      year
-      month
-      day
+      ...FuzzyDate
     }
     season
+    seasonYear
     episodes
     duration
     chapters
@@ -33,7 +29,36 @@ query MediaDetails($mediaId: Int) {
     meanScore
     popularity
     genres
-    synonyms
+    studios {
+      nodes {
+        name
+        isAnimationStudio
+      }
+    }
     favourites
+    type
+    nextAiringEpisode {
+      timeUntilAiring
+      episode
+    }
+    mediaListEntry {
+      status
+      score
+      progress
+      progressVolumes
+      startedAt {
+        ...FuzzyDate
+      }
+      completedAt {
+        ...FuzzyDate
+      }
+    }
+    source
   }
+}
+
+fragment FuzzyDate on FuzzyDate {
+  day
+  month
+  year
 }

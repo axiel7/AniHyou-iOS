@@ -24,4 +24,52 @@ class MediaDetailsViewModel: ObservableObject {
         }
     }
     
+    var genresFormatted: String? {
+        guard mediaDetails != nil else { return nil }
+        guard mediaDetails?.genres != nil else { return nil }
+        return mediaDetails!.genres!.compactMap { $0 }.joined(separator: ", ")
+    }
+    
+    /// Returns a string with the season and year if has it
+    var seasonFormatted: String? {
+        guard mediaDetails != nil else { return nil }
+        guard mediaDetails?.season != nil else { return nil }
+        if mediaDetails?.seasonYear != nil {
+            return "\(mediaDetails!.season!.formatted) \(mediaDetails!.seasonYear!)"
+        } else {
+            return mediaDetails?.season?.formatted
+        }
+    }
+    
+    /// Returns a string with the studios comma separated
+    var studiosFormatted: String? {
+        guard mediaDetails != nil else { return nil }
+        guard mediaDetails?.studios?.nodes != nil else { return nil }
+        var strStudios = ""
+        for studio in mediaDetails!.studios!.nodes! {
+            if studio?.isAnimationStudio == true {
+                if let name = studio?.name {
+                    strStudios += "\(name), "
+                }
+            }
+        }
+        if strStudios.isEmpty { return nil }
+        else { return String(strStudios.dropLast(2)) }
+    }
+    
+    /// Returns a string with the producers comma separated
+    var producersFormatted: String? {
+        guard mediaDetails != nil else { return nil }
+        guard mediaDetails?.studios?.nodes != nil else { return nil }
+        var strProducers = ""
+        for producer in mediaDetails!.studios!.nodes! {
+            if producer?.isAnimationStudio == false {
+                if let name = producer?.name {
+                    strProducers += "\(name), "
+                }
+            }
+        }
+        if strProducers.isEmpty { return nil }
+        else { return String(strProducers.dropLast(2)) }
+    }
 }

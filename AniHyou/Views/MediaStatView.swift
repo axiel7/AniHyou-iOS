@@ -9,21 +9,22 @@ import SwiftUI
 
 struct MediaStatView: View {
     
-    var statTitle: String
-    var statValue: String
+    var name: String
+    var value: String
     var showDivider = true
     
     var body: some View {
         VStack {
-            Text(statTitle)
+            Text(name)
                 .font(.caption2)
                 .textCase(.uppercase)
                 .foregroundColor(.gray)
                 .padding(.bottom, 1)
-            Text(statValue)
+            Text(value)
                 .bold()
                 .foregroundColor(.gray)
         }
+        .padding(.trailing, showDivider ? 0 : 8)
         if showDivider {
             Divider()
                 .padding(8)
@@ -33,6 +34,6 @@ struct MediaStatView: View {
 
 struct MediaStatView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaStatView(statTitle: "Average Score", statValue: "88%")
+        MediaStatView(name: "Average Score", value: "88%")
     }
 }
