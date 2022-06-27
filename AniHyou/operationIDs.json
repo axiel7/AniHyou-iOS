@@ -1,11 +1,15 @@
 {
-  "86739110cc7be4b02b9154330ae817fbe49bd6385369bb1008d36725cfb84689": {
+  "af08a183a12daf451c727ad622b7a2111f850a7f83f45e7de00dd9259cc74716": {
     "name": "Animes",
-    "source": "query Animes($page: Int, $perPage: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(type: ANIME) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
+    "source": "query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(type: ANIME, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
   },
-  "b6c7682cd49985237926bb003209d2bd04b4e5b718f17058b9df2c17ae2ef80e": {
+  "74e9be4ba7204d8c7373f611b329f0e4f4250b08c1ec31fc1b292c10d4d627ce": {
+    "name": "MediaChart",
+    "source": "query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(sort: $sort, type: $type) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      format\n      startDate {\n        __typename\n        year\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n      currentPage\n    }\n  }\n}"
+  },
+  "1c24bcef25cbe199bb4d3ce02372c55e7fdaa2794071baac5a35f13aff7b04d3": {
     "name": "MediaDetails",
-    "source": "query MediaDetails($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    title {\n      __typename\n      romaji\n      english\n      native\n    }\n    type\n    format\n    status\n    description\n    startDate {\n      __typename\n      year\n      month\n      day\n    }\n    endDate {\n      __typename\n      year\n      month\n      day\n    }\n    season\n    episodes\n    duration\n    chapters\n    volumes\n    coverImage {\n      __typename\n      large\n      color\n    }\n    bannerImage\n    averageScore\n    meanScore\n    popularity\n    genres\n    synonyms\n    favourites\n  }\n}"
+    "source": "query MediaDetails($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    title {\n      __typename\n      romaji\n      english\n      native\n    }\n    format\n    status\n    description\n    startDate {\n      __typename\n      ...FuzzyDate\n    }\n    endDate {\n      __typename\n      ...FuzzyDate\n    }\n    season\n    seasonYear\n    episodes\n    duration\n    chapters\n    volumes\n    coverImage {\n      __typename\n      large\n      color\n    }\n    bannerImage\n    averageScore\n    meanScore\n    popularity\n    genres\n    studios {\n      __typename\n      nodes {\n        __typename\n        name\n        isAnimationStudio\n      }\n    }\n    favourites\n    type\n    nextAiringEpisode {\n      __typename\n      timeUntilAiring\n      episode\n    }\n    mediaListEntry {\n      __typename\n      status\n      score\n      progress\n      progressVolumes\n      startedAt {\n        __typename\n        ...FuzzyDate\n      }\n      completedAt {\n        __typename\n        ...FuzzyDate\n      }\n    }\n    source\n  }\n}\nfragment FuzzyDate on FuzzyDate {\n  __typename\n  day\n  month\n  year\n}"
   },
   "c70aa2eb985f619b2b31205d7933f8c23f9f7223a5c873a60f466a345431902d": {
     "name": "SeasonalAnime",
@@ -15,9 +19,17 @@
     "name": "TodayAiringAnimes",
     "source": "query TodayAiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    airingSchedules(\n      sort: $sort\n      airingAt_greater: $airingAtGreater\n      airingAt_lesser: $airingAtLesser\n    ) {\n      __typename\n      media {\n        __typename\n        id\n        title {\n          __typename\n          romaji\n        }\n        coverImage {\n          __typename\n          large\n        }\n      }\n      timeUntilAiring\n    }\n  }\n}"
   },
-  "5b8e6d0ad7da6e3a682dbfdea8f066bd31364b8803f816c7514fbb8d09104b5f": {
+  "86e29646168ed3e503a6822e05a3f107d762bbb0159bb8ee45465b3538879210": {
+    "name": "UpdateEntry",
+    "source": "mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {\n  SaveMediaListEntry(\n    mediaId: $mediaId\n    status: $status\n    score: $score\n    progress: $progress\n    progressVolumes: $progressVolumes\n    startedAt: $startedAt\n    completedAt: $completedAt\n  ) {\n    __typename\n    id\n    mediaId\n  }\n}"
+  },
+  "c5e2751c73bc60a908aa3ddbcc4b67fc2979d906817073805330e8bdcecad8ae": {
+    "name": "UpdateEntryProgress",
+    "source": "mutation UpdateEntryProgress($mediaId: Int, $progress: Int) {\n  SaveMediaListEntry(mediaId: $mediaId, progress: $progress) {\n    __typename\n    id\n    mediaId\n    progress\n  }\n}"
+  },
+  "e4485dc7a5dafc7486b71a340d691e8c3f87b669bd0e8371971e4cbf86845524": {
     "name": "UserMediaList",
-    "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        id\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          airingAt\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
+    "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      id\n      mediaId\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          airingAt\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
   },
   "90c42616ac03e8025c7d6b7f45168f6411dc6325c98da4914b04564ad675b2e9": {
     "name": "Viewer",
