@@ -25,7 +25,7 @@ struct MediaListItemView: View {
                 Spacer()
                 
                 Text("\(item.progress ?? 0)/\(totalProgress ?? 0)")
-                ProgressView(value: Float(item.progress ?? 0), total: Float(totalProgress ?? 100))
+                ProgressView(value: Float(item.progress ?? 0), total: Float(totalProgress ?? Int.max))
             }
         }
         .frame(height: coverHeight)
@@ -45,7 +45,7 @@ struct MediaListItemView: View {
 struct MediaListItemView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MediaListItemView(item: UserMediaListQuery.Data.Page.MediaList())
+        MediaListItemView(item: UserMediaListQuery.Data.Page.MediaList(id: 1, mediaId: 1))
             .previewLayout(.sizeThatFits)
     }
 }

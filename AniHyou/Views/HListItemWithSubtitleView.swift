@@ -23,12 +23,15 @@ struct HListItemWithSubtitleView: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.title3)
+                    .foregroundColor(.primary)
                     .padding(.bottom, 2)
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                 Text(subtitle)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
             }
         }//:HStack
         .frame(width: 280, height: coverHeight + 20, alignment: .leading)

@@ -15,9 +15,9 @@ struct MediaListView: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.mediaList, id: \.?.media?.id) {
+            ForEach(viewModel.mediaList, id: \.?.id) {
                 if let item = $0 {
-                    NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
+                    NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
                         MediaListItemView(item: item)
                     }
                     .swipeActions {

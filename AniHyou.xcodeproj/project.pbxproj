@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */; };
+		481A6B0B2863944800AB9C89 /* UpdateEntryProgress.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */; };
+		481A6B0D2864BEB500AB9C89 /* UpdateEntry.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */; };
+		481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 481A6B0F2864CD0F00AB9C89 /* Kingfisher */; };
 		481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DD2851CE73001779EE /* AniHyouApp.swift */; };
 		481AD4E02851CE73001779EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DF2851CE73001779EE /* ContentView.swift */; };
 		481AD4E22851CE74001779EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AD4E12851CE74001779EE /* Assets.xcassets */; };
@@ -30,6 +34,8 @@
 		4832B036285F9E1900E79D27 /* ExpandableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B035285F9E1900E79D27 /* ExpandableTextView.swift */; };
 		48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */; };
 		48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48643F442853C54800D7C328 /* ProfileViewModel.swift */; };
+		48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0B2860CBF40064C70A /* MediaListEditView.swift */; };
+		48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */; };
 		486ED200285DD329002D29E1 /* UserMediaList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 486ED1FF285DD329002D29E1 /* UserMediaList.graphql */; };
 		486ED205285DD484002D29E1 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED204285DD484002D29E1 /* MediaListView.swift */; };
 		486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED206285DD4D8002D29E1 /* MediaListItemView.swift */; };
@@ -47,9 +53,19 @@
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
 		48E4BBDB285484D50070DDD6 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 48E4BBDA285484D50070DDD6 /* netfox */; };
+		48FC9474286656F600C87F56 /* MediaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9473286656F600C87F56 /* MediaInfoView.swift */; };
+		48FC9479286852A300C87F56 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9478286852A300C87F56 /* ExploreView.swift */; };
+		48FC947B2868653E00C87F56 /* RectangleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947A2868653E00C87F56 /* RectangleTextView.swift */; };
+		48FC947D2868C09400C87F56 /* MediaChart.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48FC947C2868C09400C87F56 /* MediaChart.graphql */; };
+		48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */; };
+		48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94802868C0F400C87F56 /* MediaChartListView.swift */; };
+		48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94822868C6DB00C87F56 /* ChartListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerToggleView.swift; sourceTree = "<group>"; };
+		481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntryProgress.graphql; sourceTree = "<group>"; };
+		481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntry.graphql; sourceTree = "<group>"; };
 		481AD4DA2851CE73001779EE /* AniHyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniHyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		481AD4DD2851CE73001779EE /* AniHyouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniHyouApp.swift; sourceTree = "<group>"; };
 		481AD4DF2851CE73001779EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +92,8 @@
 		4832B035285F9E1900E79D27 /* ExpandableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTextView.swift; sourceTree = "<group>"; };
 		48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerBasicInfo.graphql; sourceTree = "<group>"; };
 		48643F442853C54800D7C328 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		48650F0B2860CBF40064C70A /* MediaListEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListEditView.swift; sourceTree = "<group>"; };
+		48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListEditViewModel.swift; sourceTree = "<group>"; };
 		486ED1FF285DD329002D29E1 /* UserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserMediaList.graphql; sourceTree = "<group>"; };
 		486ED204285DD484002D29E1 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
 		486ED206285DD4D8002D29E1 /* MediaListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemView.swift; sourceTree = "<group>"; };
@@ -94,6 +112,13 @@
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
+		48FC9473286656F600C87F56 /* MediaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoView.swift; sourceTree = "<group>"; };
+		48FC9478286852A300C87F56 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		48FC947A2868653E00C87F56 /* RectangleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleTextView.swift; sourceTree = "<group>"; };
+		48FC947C2868C09400C87F56 /* MediaChart.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaChart.graphql; sourceTree = "<group>"; };
+		48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		48FC94802868C0F400C87F56 /* MediaChartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaChartListView.swift; sourceTree = "<group>"; };
+		48FC94822868C6DB00C87F56 /* ChartListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */,
 				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
 				481AD4EE2851CF90001779EE /* Apollo in Frameworks */,
 				48E4BBDB285484D50070DDD6 /* netfox in Frameworks */,
@@ -135,7 +161,6 @@
 				481AD4F32851D87E001779EE /* Views */,
 				481AD4F22851D878001779EE /* Screens */,
 				481AD4DD2851CE73001779EE /* AniHyouApp.swift */,
-				481AD4DF2851CE73001779EE /* ContentView.swift */,
 				481AD4F02851D84C001779EE /* API.swift */,
 				481AD4E12851CE74001779EE /* Assets.xcassets */,
 				481AD4E32851CE74001779EE /* Preview Content */,
@@ -159,6 +184,8 @@
 		481AD4F22851D878001779EE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				481AD4DF2851CE73001779EE /* ContentView.swift */,
+				48FC94772868528900C87F56 /* Explore */,
 				486ED210285E3215002D29E1 /* MediaDetails */,
 				486ED201285DD344002D29E1 /* MediaList */,
 				488C267C285380CB0005EE15 /* Profile */,
@@ -179,6 +206,10 @@
 				4832B02F285F3CDD00E79D27 /* MediaCoverView.swift */,
 				4832B033285F953100E79D27 /* MediaStatView.swift */,
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
+				481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */,
+				48FC9473286656F600C87F56 /* MediaInfoView.swift */,
+				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
+				48FC94822868C6DB00C87F56 /* ChartListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +233,9 @@
 				486ED1FF285DD329002D29E1 /* UserMediaList.graphql */,
 				486ED20E285DDE03002D29E1 /* ViewerId.graphql */,
 				4832B026285F279600E79D27 /* MediaDetails.graphql */,
+				481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */,
+				481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */,
+				48FC947C2868C09400C87F56 /* MediaChart.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -232,6 +266,8 @@
 			children = (
 				486ED213285E3261002D29E1 /* MediaDetailsView.swift */,
 				4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */,
+				48650F0B2860CBF40064C70A /* MediaListEditView.swift */,
+				48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */,
 			);
 			path = MediaDetails;
 			sourceTree = "<group>";
@@ -256,6 +292,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		48FC94772868528900C87F56 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				48FC9478286852A300C87F56 /* ExploreView.swift */,
+				48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */,
+				48FC94802868C0F400C87F56 /* MediaChartListView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,6 +323,7 @@
 				481AD4ED2851CF90001779EE /* Apollo */,
 				488C268728539CC30005EE15 /* KeychainSwift */,
 				48E4BBDA285484D50070DDD6 /* netfox */,
+				481A6B0F2864CD0F00AB9C89 /* Kingfisher */,
 			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
@@ -310,6 +357,7 @@
 				481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */,
+				481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
 			projectDirPath = "";
@@ -328,9 +376,12 @@
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
 				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
+				48FC947D2868C09400C87F56 /* MediaChart.graphql in Resources */,
 				4832B027285F279600E79D27 /* MediaDetails.graphql in Resources */,
 				48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */,
+				481A6B0D2864BEB500AB9C89 /* UpdateEntry.graphql in Resources */,
 				486ED200285DD329002D29E1 /* UserMediaList.graphql in Resources */,
+				481A6B0B2863944800AB9C89 /* UpdateEntryProgress.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,23 +417,31 @@
 			files = (
 				481AD4E02851CE73001779EE /* ContentView.swift in Sources */,
 				4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */,
+				48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */,
 				48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */,
 				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
 				481AD4F12851D84C001779EE /* API.swift in Sources */,
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
+				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */,
+				48FC9479286852A300C87F56 /* ExploreView.swift in Sources */,
 				488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */,
 				4832B02E285F38DC00E79D27 /* TopBannerView.swift in Sources */,
+				481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */,
 				4832B036285F9E1900E79D27 /* ExpandableTextView.swift in Sources */,
 				486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */,
+				48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */,
 				486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */,
 				4832B030285F3CDD00E79D27 /* MediaCoverView.swift in Sources */,
+				48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */,
 				488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */,
 				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
 				488C268A28539D5C0005EE15 /* Utils.swift in Sources */,
 				4832B034285F953100E79D27 /* MediaStatView.swift in Sources */,
+				48FC947B2868653E00C87F56 /* RectangleTextView.swift in Sources */,
+				48FC9474286656F600C87F56 /* MediaInfoView.swift in Sources */,
 				481AD502285207B1001779EE /* DateUtils.swift in Sources */,
 				486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */,
 				4832B032285F406300E79D27 /* StringsPreview.swift in Sources */,
@@ -394,6 +453,7 @@
 				4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */,
 				481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
+				48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */,
 				488C267B2853801A0005EE15 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +661,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios";
@@ -628,6 +696,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		481A6B0F2864CD0F00AB9C89 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		481AD4ED2851CF90001779EE /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */;

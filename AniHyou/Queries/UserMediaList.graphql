@@ -1,12 +1,13 @@
 query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {
   Page(page: $page, perPage: $perPage) {
     mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
+      id
+      mediaId
       status
       score
       progress
       progressVolumes
       media {
-        id
         title {
           userPreferred
         }
