@@ -16,7 +16,7 @@ struct MediaListItemView: View {
     
     var body: some View {
         HStack {
-            MediaCoverView(imageUrl: item.media?.coverImage?.large, width: coverWidth, height: coverHeight)
+            MediaCoverView(imageUrl: item.media?.coverImage?.large, width: coverWidth, height: coverHeight, cancelOnDisappear: true)
             
             VStack(alignment: .leading) {
                 Text(item.media?.title?.userPreferred ?? "")

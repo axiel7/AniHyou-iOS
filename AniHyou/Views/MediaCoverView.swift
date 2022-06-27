@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import Kingfisher
 
-extension Image {
+extension KFImage {
     func imageCover(width: CGFloat, height: CGFloat) -> some View {
         self
             .resizable()
@@ -22,17 +23,15 @@ struct MediaCoverView: View {
     var imageUrl: String?
     var width: CGFloat
     var height: CGFloat
+    var cancelOnDisappear = false
     
     var body: some View {
-        AsyncImage(url: URL(string: imageUrl ?? "")) { phase in
-            if let image = phase.image {
-                image.imageCover(width: width, height: height)
-            } else if phase.error != nil {
-                CoverPlaceholderView(systemName: "exclamationmark.triangle", width: width, height: height)
-            } else {
+        KFImage(URL(string: imageUrl ?? ""))
+            .placeholder {
                 CoverPlaceholderView(systemName: "hourglass", width: width, height: height)
             }
-        }
+            .cancelOnDisappear(cancelOnDisappear)
+            .imageCover(width: width, height: height)
     }
 }
 

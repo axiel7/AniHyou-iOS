@@ -16,7 +16,7 @@ struct VListItemView: View {
     
     var body: some View {
         VStack {
-            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight)
+            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight, cancelOnDisappear: true)
             
             Text(title)
                 .font(.system(size: 13))

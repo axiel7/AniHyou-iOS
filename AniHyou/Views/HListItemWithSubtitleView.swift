@@ -17,7 +17,7 @@ struct HListItemWithSubtitleView: View {
     
     var body: some View {
         HStack {
-            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight)
+            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight, cancelOnDisappear: true)
                 .padding(.trailing, 8)
             
             VStack(alignment: .leading) {

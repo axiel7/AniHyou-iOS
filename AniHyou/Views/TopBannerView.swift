@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TopBannerView: View {
     
@@ -14,9 +15,14 @@ struct TopBannerView: View {
     var height: CGFloat
     
     var body: some View {
-        AsyncImage(url: URL(string: imageUrl ?? "")) { phase in
-            if let image = phase.image {
-                image
+        GeometryReader { geo in
+            ZStack {
+                KFImage(URL(string: imageUrl ?? ""))
+                    .placeholder {
+                        Rectangle()
+                            .foregroundColor(Color(placeholderHexColor) ?? .gray)
+                            .scaledToFill()
+                    }
                     .resizable()
                     .scaledToFill()
                     .frame(height: height)
