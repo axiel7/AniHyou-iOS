@@ -66,6 +66,12 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemProfile()
             }
+            
+            ExploreView()
+                .tabItem {
+                    Label("Explore", systemImage: "magnifyingglass")
+                }
+                .tag(4)
         }
     }
 }

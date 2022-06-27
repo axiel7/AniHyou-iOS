@@ -14,6 +14,13 @@ extension String {
     }
 }
 
+extension Int {
+    
+    var stringValue: String {
+        return "\(self)"
+    }
+}
+
 extension MediaSeason {
     
     var formatted: String {
