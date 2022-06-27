@@ -20,6 +20,14 @@ struct MediaListView: View {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
                         MediaListItemView(item: item)
                     }
+                    .swipeActions {
+                        if status == .current {
+                            Button("+1") {
+                                viewModel.updateEntryProgress(mediaId: item.mediaId, progress: item.progress! + 1)
+                            }
+                            .tint(.green)
+                        }
+                    }
                 }
             }
             

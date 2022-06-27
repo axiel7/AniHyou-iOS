@@ -56,13 +56,23 @@ struct MediaDetailsView: View {
                         
                         Spacer()
                         Button(action: {
-                            
+                            if viewModel.mediaDetails?.mediaListEntry?.status == nil {
+                                //add to list
+                            } else {
+                                //open
+                                showingMediaListSheet = true
+                            }
                         }) {
-                            Text("Watching")
+                            Text(viewModel.mediaDetails?.mediaListEntry?.status?.localizedName ?? "Add to List")
                                 .bold()
                                 .textCase(.uppercase)
                         }
                         .buttonStyle(.borderedProminent)
+                        .sheet(isPresented: $showingMediaListSheet) {
+                            if let mediaList = viewModel.mediaDetails?.mediaListEntry {
+                                MediaListEditView(mediaId: mediaId, mediaList: mediaList)
+                            }
+                        }
                     }//:VStack
                     .padding(.leading, 12)
                     .padding(.trailing, 8)

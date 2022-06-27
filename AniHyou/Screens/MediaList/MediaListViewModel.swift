@@ -31,4 +31,17 @@ class MediaListViewModel: ObservableObject {
         }
     }
     
+    func updateEntryProgress(mediaId: Int, progress: Int) {
+        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(mediaId: mediaId, progress: progress)) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let data = graphQLResult.data?.saveMediaListEntry {
+                    print(data)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }
