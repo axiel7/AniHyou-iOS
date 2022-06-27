@@ -1,6 +1,6 @@
-query Animes($page: Int, $perPage: Int) {
+query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {
   Page(page: $page, perPage: $perPage) {
-    media(type: ANIME) {
+    media(type: ANIME, sort: $sort) {
       id
       title {
         romaji

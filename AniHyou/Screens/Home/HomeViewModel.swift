@@ -17,23 +17,6 @@ class HomeViewModel: ObservableObject {
         nowSeason = now.season
     }
     
-    @Published var animes = [AnimesQuery.Data.Page.Medium?]()
-    
-    func getAnimes(page: Int = 1) {
-        Network.shared.apollo.fetch(query: AnimesQuery(page: page)) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let animes = page.media {
-                        self.animes = animes
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     // MARK: Airing animes
     @Published var todaySchedules = [TodayAiringAnimesQuery.Data.Page.AiringSchedule?]()
     
@@ -73,6 +56,24 @@ class HomeViewModel: ObservableObject {
                 if let page = graphQLResult.data?.page {
                     if let animes = page.media {
                         self.seasonAnimes = animes
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: Trending animes
+    @Published var trendingAnimes = [AnimesQuery.Data.Page.Medium?]()
+    
+    func getTrendingAnimes(page: Int = 1) {
+        Network.shared.apollo.fetch(query: AnimesQuery(page: page, sort: [.trendingDesc])) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let page = graphQLResult.data?.page {
+                    if let animes = page.media {
+                        self.trendingAnimes = animes
                     }
                 }
             case .failure(let error):

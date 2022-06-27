@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+extension Text {
+    
+    func sectionTitle() -> some View {
+        self
+            .font(.title2)
+            .bold()
+            .padding(.top, 8)
+            .padding(.leading, 15)
+    }
+}
+
 struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
@@ -18,13 +29,11 @@ struct HomeView: View {
                 VStack(alignment: .leading) {
                     // MARK: Airing section
                     Text("Airing Today")
-                        .font(.title2)
-                        .bold()
-                        .padding(.top, 8)
-                        .padding(.leading, 15)
+                        .sectionTitle()
                     ZStack {
                         if viewModel.todaySchedules.count == 0 {
-                            Text("No animes for today")
+                            Text("No animes for today\n(*´-`)")
+                                .multilineTextAlignment(.center)
                                 .frame(alignment: .center)
                         }
                         
@@ -33,11 +42,12 @@ struct HomeView: View {
                                 ForEach(viewModel.todaySchedules, id: \.?.media?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
-                                            HListItemWithSubtitleView(title: item.media?.title?.romaji ?? "", subtitle: "Airing in \(timestampToHoursOrMinutes(ms: item.timeUntilAiring))", imageUrl: item.media?.coverImage?.large)
+                                            HListItemWithSubtitleView(title: item.media?.title?.romaji ?? "", subtitle: "Airing in \(item.timeUntilAiring.timestampToDaysOrHoursOrMinutes())", imageUrl: item.media?.coverImage?.large)
                                         }
                                     }
                                 }
-                            }
+                            }//:HStack
+                            .padding(.leading, 8)
                         }//:HScrollView
                         .frame(height: 145)
                         .onAppear {
@@ -46,45 +56,60 @@ struct HomeView: View {
                     }//:ZStack
                     
                     // MARK: season section
-                    Text("\(viewModel.nowSeason.localizedName) \(String(viewModel.nowYear))")
-                        .font(.title2)
-                        .bold()
-                        .padding(.top, 8)
-                        .padding(.leading, 15)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack {
-                            ForEach(viewModel.seasonAnimes, id: \.?.id) {
-                                if let item = $0 {
-                                    NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                        VListItemView(title: item.title?.romaji ?? "", imageUrl: item.coverImage?.large)
+                    Text("\(viewModel.nowSeason.formatted) \(String(viewModel.nowYear))")
+                        .sectionTitle()
+                    ZStack {
+                        if viewModel.seasonAnimes.count == 0 {
+                            ProgressView()
+                        }
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                ForEach(viewModel.seasonAnimes, id: \.?.id) {
+                                    if let item = $0 {
+                                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                            VListItemView(title: item.title?.romaji ?? "", imageUrl: item.coverImage?.large)
+                                        }
                                     }
                                 }
-                            }
+                            }//:HStack
+                            .padding(.leading, 8)
+                        }//:HScrollView
+                        .frame(height: 165)
+                        .onAppear {
+                            viewModel.getSeasonAnimes()
                         }
-                    }//:HScrollView
-                    .onAppear {
-                        viewModel.getSeasonAnimes()
-                    }
+                    }//:ZStack
+                    
+                    //MARK: trending section
+                    Text("Trending Now")
+                        .sectionTitle()
+                    ZStack {
+                        if viewModel.trendingAnimes.count == 0 {
+                            ProgressView()
+                        }
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                ForEach(viewModel.trendingAnimes, id: \.?.id) {
+                                    if let item = $0 {
+                                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                            VListItemView(title: item.title?.romaji ?? "", imageUrl: item.coverImage?.large)
+                                        }
+                                    }
+                                }
+                            }//:HStack
+                            .padding(.leading, 8)
+                        }//:HScrollView
+                        .frame(height: 165)
+                        .onAppear {
+                            viewModel.getTrendingAnimes()
+                        }
+                    }//:ZStack
                     
                 }//:VStack
             }//:VScrollView
             .navigationTitle("Home")
         }//:NavigationView
     }
-    
-    private func timestampToHoursOrMinutes(ms: Int?) -> String {
-        guard let ms = ms else {
-            return "0 h"
-        }
-
-        let hours = ms / 3600
-        if hours < 1 {
-            let minutes = (ms % 3600) / 60
-            return "\(minutes) min"
-        }
-        return "\(hours) h"
-    }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
