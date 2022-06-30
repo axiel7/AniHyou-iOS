@@ -25,7 +25,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
                     // MARK: Airing section
                     Text("Airing Soon")

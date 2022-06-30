@@ -39,7 +39,6 @@ struct MediaListEditView: View {
                         Text(status.localizedName)
                     }
                 }
-                .pickerStyle(.automatic)
                 
                 Section {
                     HStack {
