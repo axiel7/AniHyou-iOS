@@ -68,7 +68,7 @@ struct ContentView: View {
                     .tabItemProfile()
             }
             
-            ExploreView()
+            RootExploreView()
                 .tabItem {
                     Label("Explore", systemImage: "magnifyingglass")
                 }

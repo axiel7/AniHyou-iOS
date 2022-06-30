@@ -1,0 +1,20 @@
+query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType) {
+  Page(page: $page, perPage: $perPage) {
+    pageInfo {
+      hasNextPage
+    }
+    media(search: $search, type: $type, sort: SEARCH_MATCH) {
+      id
+      title {
+        romaji
+      }
+      format
+      coverImage {
+        large
+      }
+      startDate {
+        year
+      }
+    }
+  }
+}

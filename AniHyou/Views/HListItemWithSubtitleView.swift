@@ -11,8 +11,9 @@ private let coverWidth: CGFloat = 80
 private let coverHeight: CGFloat = 120
 
 struct HListItemWithSubtitleView: View {
-    var title: String
-    var subtitle: String
+    
+    var title: String?
+    var subtitle: String?
     var imageUrl: String?
     
     var body: some View {
@@ -21,27 +22,27 @@ struct HListItemWithSubtitleView: View {
                 .padding(.trailing, 8)
             
             VStack(alignment: .leading) {
-                Text(title)
+                Text(title ?? "")
                     .font(.title3)
                     .foregroundColor(.primary)
                     .padding(.bottom, 2)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                Text(subtitle)
+                Text(subtitle ?? "")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
             }
         }//:HStack
-        .frame(width: 280, height: coverHeight + 20, alignment: .leading)
-        .padding(.leading, 8)
     }
 }
 
 struct HListItemWithSubtitleView_Previews: PreviewProvider {
     static var previews: some View {
         HListItemWithSubtitleView(title: "Cowboy Bebop: Tengoku no Tobira and a large title", subtitle: "Airing in 59 min", imageUrl: "https://picsum.photos/300/200")
+            .frame(width: 280, alignment: .leading)
+            .padding(.leading, 8)
             .previewLayout(.sizeThatFits)
     }
 }

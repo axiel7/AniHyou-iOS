@@ -32,6 +32,7 @@
 		4832B032285F406300E79D27 /* StringsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B031285F406300E79D27 /* StringsPreview.swift */; };
 		4832B034285F953100E79D27 /* MediaStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B033285F953100E79D27 /* MediaStatView.swift */; };
 		4832B036285F9E1900E79D27 /* ExpandableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B035285F9E1900E79D27 /* ExpandableTextView.swift */; };
+		4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */; };
 		48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */; };
 		48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48643F442853C54800D7C328 /* ProfileViewModel.swift */; };
 		48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0B2860CBF40064C70A /* MediaListEditView.swift */; };
@@ -52,6 +53,9 @@
 		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
+		48AB01F4286B6A4B004DC7FF /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB01F3286B6A4B004DC7FF /* SearchType.swift */; };
+		48AB01F6286B6F3C004DC7FF /* SearchMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48AB01F5286B6F3C004DC7FF /* SearchMedia.graphql */; };
+		48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB01F7286B724A004DC7FF /* SearchViewModel.swift */; };
 		48E4BBDB285484D50070DDD6 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 48E4BBDA285484D50070DDD6 /* netfox */; };
 		48FC9474286656F600C87F56 /* MediaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9473286656F600C87F56 /* MediaInfoView.swift */; };
 		48FC9479286852A300C87F56 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9478286852A300C87F56 /* ExploreView.swift */; };
@@ -78,7 +82,7 @@
 		481AD4F92851DA02001779EE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HListItemWithSubtitleView.swift; sourceTree = "<group>"; };
 		481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPlaceholderView.swift; sourceTree = "<group>"; };
-		481AD4FF285204E9001779EE /* TodayAiringAnimes.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TodayAiringAnimes.graphql; sourceTree = "<group>"; };
+		481AD4FF285204E9001779EE /* AiringAnimes.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AiringAnimes.graphql; sourceTree = "<group>"; };
 		481AD501285207B1001779EE /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		481AD50428522139001779EE /* SeasonalAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SeasonalAnime.graphql; sourceTree = "<group>"; };
 		481AD50628522D74001779EE /* VListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VListItemView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		4832B031285F406300E79D27 /* StringsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsPreview.swift; sourceTree = "<group>"; };
 		4832B033285F953100E79D27 /* MediaStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStatView.swift; sourceTree = "<group>"; };
 		4832B035285F9E1900E79D27 /* ExpandableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTextView.swift; sourceTree = "<group>"; };
+		4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootExploreView.swift; sourceTree = "<group>"; };
 		48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerBasicInfo.graphql; sourceTree = "<group>"; };
 		48643F442853C54800D7C328 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		48650F0B2860CBF40064C70A /* MediaListEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListEditView.swift; sourceTree = "<group>"; };
@@ -112,6 +117,9 @@
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
+		48AB01F3286B6A4B004DC7FF /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
+		48AB01F5286B6F3C004DC7FF /* SearchMedia.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchMedia.graphql; sourceTree = "<group>"; };
+		48AB01F7286B724A004DC7FF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		48FC9473286656F600C87F56 /* MediaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoView.swift; sourceTree = "<group>"; };
 		48FC9478286852A300C87F56 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		48FC947A2868653E00C87F56 /* RectangleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleTextView.swift; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				488C2681285386600005EE15 /* Info.plist */,
+				48AB01F2286B6A2F004DC7FF /* Model */,
 				488C268D28539EFE0005EE15 /* Network */,
 				481AD5032852211C001779EE /* Queries */,
 				481AD4F32851D87E001779EE /* Views */,
@@ -227,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				481AD4EF2851D698001779EE /* Animes.graphql */,
-				481AD4FF285204E9001779EE /* TodayAiringAnimes.graphql */,
+				481AD4FF285204E9001779EE /* AiringAnimes.graphql */,
 				481AD50428522139001779EE /* SeasonalAnime.graphql */,
 				48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */,
 				486ED1FF285DD329002D29E1 /* UserMediaList.graphql */,
@@ -236,6 +245,7 @@
 				481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */,
 				481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */,
 				48FC947C2868C09400C87F56 /* MediaChart.graphql */,
+				48AB01F5286B6F3C004DC7FF /* SearchMedia.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -292,12 +302,22 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		48AB01F2286B6A2F004DC7FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48AB01F3286B6A4B004DC7FF /* SearchType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		48FC94772868528900C87F56 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
 				48FC9478286852A300C87F56 /* ExploreView.swift */,
 				48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */,
 				48FC94802868C0F400C87F56 /* MediaChartListView.swift */,
+				48AB01F7286B724A004DC7FF /* SearchViewModel.swift */,
+				4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -373,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AB01F6286B6F3C004DC7FF /* SearchMedia.graphql in Resources */,
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
 				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
@@ -422,8 +443,10 @@
 				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
 				481AD4F12851D84C001779EE /* API.swift in Sources */,
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
+				48AB01F4286B6A4B004DC7FF /* SearchType.swift in Sources */,
 				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
+				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */,
 				48FC9479286852A300C87F56 /* ExploreView.swift in Sources */,
@@ -450,6 +473,7 @@
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
 				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,
+				48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */,
 				4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */,
 				481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
