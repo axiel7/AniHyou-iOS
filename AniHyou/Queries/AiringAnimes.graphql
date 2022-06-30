@@ -1,0 +1,16 @@
+query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int) {
+  Page(page: $page, perPage: $perPage) {
+    airingSchedules(sort: $sort, airingAt_greater: $airingAtGreater) {
+      media {
+        id
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+      timeUntilAiring
+    }
+  }
+}

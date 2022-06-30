@@ -28,21 +28,23 @@ struct HomeView: View {
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
                     // MARK: Airing section
-                    Text("Airing Today")
+                    Text("Airing Soon")
                         .sectionTitle()
                     ZStack {
-                        if viewModel.todaySchedules.count == 0 {
-                            Text("No animes for today\n(*´-`)")
+                        if viewModel.airingAnimes.count == 0 {
+                            Text("No anime for today\n(*´-`)")
                                 .multilineTextAlignment(.center)
                                 .frame(alignment: .center)
                         }
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
-                                ForEach(viewModel.todaySchedules, id: \.?.media?.id) {
+                                ForEach(viewModel.airingAnimes, id: \.?.media?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
-                                            HListItemWithSubtitleView(title: item.media?.title?.romaji ?? "", subtitle: "Airing in \(item.timeUntilAiring.timestampToDaysOrHoursOrMinutes())", imageUrl: item.media?.coverImage?.large)
+                                            HListItemWithSubtitleView(title: item.media?.title?.romaji, subtitle: "Airing in \(item.timeUntilAiring.timestampToDaysOrHoursOrMinutes())", imageUrl: item.media?.coverImage?.large)
+                                                .padding(.leading, 8)
+                                                .frame(width: 280, alignment: .leading)
                                         }
                                     }
                                 }

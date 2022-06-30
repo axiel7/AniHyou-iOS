@@ -18,26 +18,17 @@ class HomeViewModel: ObservableObject {
     }
     
     // MARK: Airing animes
-    @Published var todaySchedules = [TodayAiringAnimesQuery.Data.Page.AiringSchedule?]()
+    @Published var airingAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule?]()
     
     func getAiringAnimes(page: Int = 1) {
-        let now = Date.now
-        let todayTimestamp = Int(now.timeIntervalSince1970)
+        let todayTimestamp = Int(Date.now.timeIntervalSince1970)
         
-        let calendar = Calendar(identifier: .gregorian)
-        let ymd = calendar.dateComponents([.year, .month, .day], from: now)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let todayFinal = dateFormatter.date(from: "\(ymd.year!)-\(ymd.month!)-\(ymd.day!) 23:59:59")
-        let todayFinalTimestamp = Int(todayFinal!.timeIntervalSince1970)
-        
-        Network.shared.apollo.fetch(query: TodayAiringAnimesQuery(page: page, perPage: 10, sort: [AiringSort.time], airingAtGreater: todayTimestamp, airingAtLesser: todayFinalTimestamp)) { result in
+        Network.shared.apollo.fetch(query: AiringAnimesQuery(page: page, perPage: 10, sort: [AiringSort.time], airingAtGreater: todayTimestamp)) { result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let schedules = page.airingSchedules {
-                        self.todaySchedules = schedules
+                        self.airingAnimes = schedules
                     }
                 }
             case .failure(let error):

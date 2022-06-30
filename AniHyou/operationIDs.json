@@ -1,4 +1,8 @@
 {
+  "6b1b4855bda9e3a63b690fcbf7aa72767f8dae71be9fb65266329cdd3a560e86": {
+    "name": "AiringAnimes",
+    "source": "query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    airingSchedules(sort: $sort, airingAt_greater: $airingAtGreater) {\n      __typename\n      media {\n        __typename\n        id\n        title {\n          __typename\n          romaji\n        }\n        coverImage {\n          __typename\n          large\n        }\n      }\n      timeUntilAiring\n    }\n  }\n}"
+  },
   "af08a183a12daf451c727ad622b7a2111f850a7f83f45e7de00dd9259cc74716": {
     "name": "Animes",
     "source": "query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(type: ANIME, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
@@ -11,13 +15,13 @@
     "name": "MediaDetails",
     "source": "query MediaDetails($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    title {\n      __typename\n      romaji\n      english\n      native\n    }\n    format\n    status\n    description\n    startDate {\n      __typename\n      ...FuzzyDate\n    }\n    endDate {\n      __typename\n      ...FuzzyDate\n    }\n    season\n    seasonYear\n    episodes\n    duration\n    chapters\n    volumes\n    coverImage {\n      __typename\n      large\n      color\n    }\n    bannerImage\n    averageScore\n    meanScore\n    popularity\n    genres\n    studios {\n      __typename\n      nodes {\n        __typename\n        name\n        isAnimationStudio\n      }\n    }\n    favourites\n    type\n    nextAiringEpisode {\n      __typename\n      timeUntilAiring\n      episode\n    }\n    mediaListEntry {\n      __typename\n      status\n      score\n      progress\n      progressVolumes\n      startedAt {\n        __typename\n        ...FuzzyDate\n      }\n      completedAt {\n        __typename\n        ...FuzzyDate\n      }\n    }\n    source\n  }\n}\nfragment FuzzyDate on FuzzyDate {\n  __typename\n  day\n  month\n  year\n}"
   },
+  "0a0687c1fa0d4b34f19bec7d84de3a1a69498f3e8babe7c8f405d51dcc9088ae": {
+    "name": "SearchMedia",
+    "source": "query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n    media(search: $search, type: $type, sort: SEARCH_MATCH) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      format\n      coverImage {\n        __typename\n        large\n      }\n      startDate {\n        __typename\n        year\n      }\n    }\n  }\n}"
+  },
   "c70aa2eb985f619b2b31205d7933f8c23f9f7223a5c873a60f466a345431902d": {
     "name": "SeasonalAnime",
     "source": "query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(season: $season, seasonYear: $seasonYear, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
-  },
-  "5f582fe74d9c97dd0b26578014b739bea5a8c6ab54dd26c694303c09addc5325": {
-    "name": "TodayAiringAnimes",
-    "source": "query TodayAiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    airingSchedules(\n      sort: $sort\n      airingAt_greater: $airingAtGreater\n      airingAt_lesser: $airingAtLesser\n    ) {\n      __typename\n      media {\n        __typename\n        id\n        title {\n          __typename\n          romaji\n        }\n        coverImage {\n          __typename\n          large\n        }\n      }\n      timeUntilAiring\n    }\n  }\n}"
   },
   "86e29646168ed3e503a6822e05a3f107d762bbb0159bb8ee45465b3538879210": {
     "name": "UpdateEntry",
