@@ -224,17 +224,14 @@
 		481AD4F32851D87E001779EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48CA07AA28703B530048854E /* Media */,
+				48CA07AB28703BB20048854E /* MediaDetails */,
 				481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */,
-				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
 				481AD50628522D74001779EE /* VListItemView.swift */,
-				488C26902853A10D0005EE15 /* NotLoggedView.swift */,
-				486ED206285DD4D8002D29E1 /* MediaListItemView.swift */,
 				4832B02D285F38DC00E79D27 /* TopBannerView.swift */,
-				4832B02F285F3CDD00E79D27 /* MediaCoverView.swift */,
-				4832B033285F953100E79D27 /* MediaStatView.swift */,
+				488C26902853A10D0005EE15 /* NotLoggedView.swift */,
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
 				481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */,
-				48FC9473286656F600C87F56 /* MediaInfoView.swift */,
 				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
 				48CA07B428706D8F0048854E /* CircleImageView.swift */,
 			);
