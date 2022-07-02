@@ -11,7 +11,8 @@ struct MediaListEditView: View {
     @Environment(\.dismiss) var dismiss
     
     var mediaId: Int
-    var mediaList: MediaDetailsQuery.Data.Medium.MediaListEntry
+    var mediaType: MediaType
+    var mediaList: MediaDetailsQuery.Data.Medium.MediaListEntry?
     
     @StateObject var viewModel = MediaListEditViewModel()
     @State var status: MediaListStatus = .planning
@@ -58,7 +59,7 @@ struct MediaListEditView: View {
                             .frame(width: 80)
                         Stepper("Episodes", value: $progress, in: 0...Int.max)
                     }
-                    if mediaList.progressVolumes != nil {
+                    if mediaType == .manga {
                         HStack {
                             TextField("", value: $progressVolumes, formatter: NumberFormatter())
                                 .keyboardType(.numberPad)
@@ -106,36 +107,36 @@ struct MediaListEditView: View {
     }
     
     private func setValues() {
-        self.status = self.mediaList.status ?? .planning
-        self.progress = self.mediaList.progress ?? 0
-        self.progressVolumes = self.mediaList.progressVolumes ?? 0
-        self.score = self.mediaList.score ?? 0
-        if let startedYear = self.mediaList.startedAt?.year {
-            if let startedMonth = self.mediaList.startedAt?.month {
-                if let startedDay = self.mediaList.startedAt?.day {
+        self.status = self.mediaList?.status ?? .planning
+        self.progress = self.mediaList?.progress ?? 0
+        self.progressVolumes = self.mediaList?.progressVolumes ?? 0
+        self.score = self.mediaList?.score ?? 0
+        if let startedYear = self.mediaList?.startedAt?.year {
+            if let startedMonth = self.mediaList?.startedAt?.month {
+                if let startedDay = self.mediaList?.startedAt?.day {
                     if let startDate = date(year: startedYear, month: startedMonth, day: startedDay) {
                         self.startDate = startDate
                     }
                 }
             }
         }
-        self.isStartDateSet = self.mediaList.startedAt?.year != nil
+        self.isStartDateSet = self.mediaList?.startedAt?.year != nil
         
-        if let completedYear = self.mediaList.completedAt?.year {
-            if let completedMonth = self.mediaList.completedAt?.month {
-                if let completedDay = self.mediaList.completedAt?.day {
+        if let completedYear = self.mediaList?.completedAt?.year {
+            if let completedMonth = self.mediaList?.completedAt?.month {
+                if let completedDay = self.mediaList?.completedAt?.day {
                     if let finishDate = date(year: completedYear, month: completedMonth, day: completedDay) {
                         self.finishDate = finishDate
                     }
                 }
             }
         }
-        self.isFinishDateSet = self.mediaList.completedAt?.year != nil
+        self.isFinishDateSet = self.mediaList?.completedAt?.year != nil
     }
 }
 
 struct MediaListEditView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaListEditView(mediaId: 1, mediaList: MediaDetailsQuery.Data.Medium.MediaListEntry())
+        MediaListEditView(mediaId: 1, mediaType: .anime)
     }
 }

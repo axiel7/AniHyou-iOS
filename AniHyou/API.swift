@@ -5285,13 +5285,31 @@ public final class UpdateEntryMutation: GraphQLMutation {
         __typename
         id
         mediaId
+        status
+        score
+        progress
+        progressVolumes
+        startedAt {
+          __typename
+          ...FuzzyDate
+        }
+        completedAt {
+          __typename
+          ...FuzzyDate
+        }
       }
     }
     """
 
   public let operationName: String = "UpdateEntry"
 
-  public let operationIdentifier: String? = "86e29646168ed3e503a6822e05a3f107d762bbb0159bb8ee45465b3538879210"
+  public let operationIdentifier: String? = "d55e64437153ce6137aa5eb8f1c899db6262e2c6f9a63a69b84883ee42cf6dcb"
+
+  public var queryDocument: String {
+    var document: String = operationDefinition
+    document.append("\n" + FuzzyDate.fragmentDefinition)
+    return document
+  }
 
   public var mediaId: Int?
   public var status: MediaListStatus?
@@ -5352,6 +5370,12 @@ public final class UpdateEntryMutation: GraphQLMutation {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(Int.self))),
           GraphQLField("mediaId", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("status", type: .scalar(MediaListStatus.self)),
+          GraphQLField("score", type: .scalar(Double.self)),
+          GraphQLField("progress", type: .scalar(Int.self)),
+          GraphQLField("progressVolumes", type: .scalar(Int.self)),
+          GraphQLField("startedAt", type: .object(StartedAt.selections)),
+          GraphQLField("completedAt", type: .object(CompletedAt.selections)),
         ]
       }
 
@@ -5361,8 +5385,8 @@ public final class UpdateEntryMutation: GraphQLMutation {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: Int, mediaId: Int) {
-        self.init(unsafeResultMap: ["__typename": "MediaList", "id": id, "mediaId": mediaId])
+      public init(id: Int, mediaId: Int, status: MediaListStatus? = nil, score: Double? = nil, progress: Int? = nil, progressVolumes: Int? = nil, startedAt: StartedAt? = nil, completedAt: CompletedAt? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaList", "id": id, "mediaId": mediaId, "status": status, "score": score, "progress": progress, "progressVolumes": progressVolumes, "startedAt": startedAt.flatMap { (value: StartedAt) -> ResultMap in value.resultMap }, "completedAt": completedAt.flatMap { (value: CompletedAt) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -5391,6 +5415,244 @@ public final class UpdateEntryMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "mediaId")
+        }
+      }
+
+      /// The watching/reading status
+      public var status: MediaListStatus? {
+        get {
+          return resultMap["status"] as? MediaListStatus
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "status")
+        }
+      }
+
+      /// The score of the entry
+      public var score: Double? {
+        get {
+          return resultMap["score"] as? Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "score")
+        }
+      }
+
+      /// The amount of episodes/chapters consumed by the user
+      public var progress: Int? {
+        get {
+          return resultMap["progress"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "progress")
+        }
+      }
+
+      /// The amount of volumes read by the user
+      public var progressVolumes: Int? {
+        get {
+          return resultMap["progressVolumes"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "progressVolumes")
+        }
+      }
+
+      /// When the entry was started by the user
+      public var startedAt: StartedAt? {
+        get {
+          return (resultMap["startedAt"] as? ResultMap).flatMap { StartedAt(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "startedAt")
+        }
+      }
+
+      /// When the entry was completed by the user
+      public var completedAt: CompletedAt? {
+        get {
+          return (resultMap["completedAt"] as? ResultMap).flatMap { CompletedAt(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "completedAt")
+        }
+      }
+
+      public struct StartedAt: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["FuzzyDate"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("day", type: .scalar(Int.self)),
+            GraphQLField("month", type: .scalar(Int.self)),
+            GraphQLField("year", type: .scalar(Int.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(day: Int? = nil, month: Int? = nil, year: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "FuzzyDate", "day": day, "month": month, "year": year])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Numeric Day (24)
+        public var day: Int? {
+          get {
+            return resultMap["day"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "day")
+          }
+        }
+
+        /// Numeric Month (3)
+        public var month: Int? {
+          get {
+            return resultMap["month"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "month")
+          }
+        }
+
+        /// Numeric Year (2017)
+        public var year: Int? {
+          get {
+            return resultMap["year"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "year")
+          }
+        }
+
+        public var fragments: Fragments {
+          get {
+            return Fragments(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+
+        public struct Fragments {
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public var fuzzyDate: FuzzyDate {
+            get {
+              return FuzzyDate(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
+        }
+      }
+
+      public struct CompletedAt: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["FuzzyDate"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("day", type: .scalar(Int.self)),
+            GraphQLField("month", type: .scalar(Int.self)),
+            GraphQLField("year", type: .scalar(Int.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(day: Int? = nil, month: Int? = nil, year: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "FuzzyDate", "day": day, "month": month, "year": year])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Numeric Day (24)
+        public var day: Int? {
+          get {
+            return resultMap["day"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "day")
+          }
+        }
+
+        /// Numeric Month (3)
+        public var month: Int? {
+          get {
+            return resultMap["month"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "month")
+          }
+        }
+
+        /// Numeric Year (2017)
+        public var year: Int? {
+          get {
+            return resultMap["year"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "year")
+          }
+        }
+
+        public var fragments: Fragments {
+          get {
+            return Fragments(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+
+        public struct Fragments {
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public var fuzzyDate: FuzzyDate {
+            get {
+              return FuzzyDate(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
         }
       }
     }

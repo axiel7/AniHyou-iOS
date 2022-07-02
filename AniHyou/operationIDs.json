@@ -31,9 +31,9 @@
     "name": "SeasonalAnime",
     "source": "query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(season: $season, seasonYear: $seasonYear, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
   },
-  "86e29646168ed3e503a6822e05a3f107d762bbb0159bb8ee45465b3538879210": {
+  "d55e64437153ce6137aa5eb8f1c899db6262e2c6f9a63a69b84883ee42cf6dcb": {
     "name": "UpdateEntry",
-    "source": "mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {\n  SaveMediaListEntry(\n    mediaId: $mediaId\n    status: $status\n    score: $score\n    progress: $progress\n    progressVolumes: $progressVolumes\n    startedAt: $startedAt\n    completedAt: $completedAt\n  ) {\n    __typename\n    id\n    mediaId\n  }\n}"
+    "source": "mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {\n  SaveMediaListEntry(\n    mediaId: $mediaId\n    status: $status\n    score: $score\n    progress: $progress\n    progressVolumes: $progressVolumes\n    startedAt: $startedAt\n    completedAt: $completedAt\n  ) {\n    __typename\n    id\n    mediaId\n    status\n    score\n    progress\n    progressVolumes\n    startedAt {\n      __typename\n      ...FuzzyDate\n    }\n    completedAt {\n      __typename\n      ...FuzzyDate\n    }\n  }\n}\nfragment FuzzyDate on FuzzyDate {\n  __typename\n  day\n  month\n  year\n}"
   },
   "c5e2751c73bc60a908aa3ddbcc4b67fc2979d906817073805330e8bdcecad8ae": {
     "name": "UpdateEntryProgress",
