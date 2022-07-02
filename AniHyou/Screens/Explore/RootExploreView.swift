@@ -19,7 +19,8 @@ struct RootExploreView: View {
             ExploreView(viewModel: viewModel)
                 .navigationTitle("Explore")
         }
-        .searchable(text: $viewModel.search, placement: .toolbar, prompt: "Anime, Manga, and More")
+        .navigationViewStyle(.stack)
+        .searchable(text: $viewModel.search, placement: .navigationBarDrawer, prompt: "Anime, Manga, and More")
         .onSubmit(of: .search) {
             viewModel.runSearch()
         }

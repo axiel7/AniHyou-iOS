@@ -111,6 +111,7 @@ struct HomeView: View {
             }//:VScrollView
             .navigationTitle("Home")
         }//:NavigationView
+        .navigationViewStyle(.stack)
     }
 }
 
