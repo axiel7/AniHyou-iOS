@@ -326,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				48AB01F3286B6A4B004DC7FF /* SearchType.swift */,
+				48CA07A8287035530048854E /* MediaInfoType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

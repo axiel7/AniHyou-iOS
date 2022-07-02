@@ -8,14 +8,16 @@
 import SwiftUI
 import Kingfisher
 
+private let coverWidth: CGFloat = 100
+private let coverHeight: CGFloat = 153
+private let bannerHeight: CGFloat = 180
+
 struct MediaDetailsView: View {
     
     var mediaId: Int
     @StateObject private var viewModel = MediaDetailsViewModel()
     @State private var showingMediaListSheet = false
-    private let coverWidth: CGFloat = 100
-    private let coverHeight: CGFloat = 153
-    private let bannerHeight: CGFloat = 200
+    @State private var infoType: MediaInfoType = .general
     
     var body: some View {
         if viewModel.mediaDetails != nil {
@@ -97,33 +99,39 @@ struct MediaDetailsView: View {
                         .padding(.leading)
                         .padding(.trailing)
                     
-                    Divider()
-                        .padding()
-                    // MARK: Other info
+                    
+                    
+                    Picker("Info type", selection: $infoType) {
+                        ForEach(MediaInfoType.allCases, id: \.self) { type in
+                            Label(type.formatted, systemImage: type.systemImage)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .labelStyle(.iconOnly)
+                    .padding(8)
+                    
+                    //Divider().padding()
+                    
+                    // MARK: More info
                     Group {
-                        Text("Information")
-                            .font(.title3)
-                            .bold()
-                            .padding(.leading)
-                        MediaInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
-                        if isAnime {
-                            MediaInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
-                        } else {
-                            MediaInfoView(name: "Chapters", value: viewModel.mediaDetails?.chapters?.formatted())
-                            MediaInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
+                        switch infoType {
+                        case .general:
+                            MediaGeneralInfoView(viewModel: viewModel)
+                        case .charactersAndStaff:
+                            MediaCharactersAndStaffView(viewModel: viewModel)
+                                .onAppear {
+                                    viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
+                                }
+                        case .relationsAndRecommendations:
+                            MediaRelationsAndRecommendationsView(viewModel: viewModel)
+                                .onAppear {
+                                    viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
+                                }
+                        case .stats:
+                            Text("stats")
+                        case .reviewsAndThreads:
+                            Text("reviewsAndThreads")
                         }
-                        MediaInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDate.formatted())
-                        MediaInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDate.formatted())
-                        
-                        if isAnime {
-                            MediaInfoView(name: "Season", value: viewModel.seasonFormatted)
-                            MediaInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true)
-                            MediaInfoView(name: "Producers", value: viewModel.producersFormatted, isExpandable: true)
-                        }
-                        MediaInfoView(name: "Source", value: viewModel.mediaDetails?.source?.formatted)
-                        MediaInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji)
-                        MediaInfoView(name: "English", value: viewModel.mediaDetails?.title?.english)
-                        MediaInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native)
                     }
                     
                     //Spacer()
@@ -138,10 +146,6 @@ struct MediaDetailsView: View {
                 }
         }
         
-    }
-    
-    var isAnime: Bool {
-        return viewModel.mediaDetails?.type == .anime
     }
 }
 
