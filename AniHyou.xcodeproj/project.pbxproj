@@ -438,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CA07B928709FFF0048854E /* MediaRelationsAndRecommendations.graphql in Resources */,
 				48AB01F6286B6F3C004DC7FF /* SearchMedia.graphql in Resources */,
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
 				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
@@ -527,6 +528,8 @@
 				48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */,
 				4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */,
 				481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */,
+				48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */,
+				48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
 				48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */,
 				488C267B2853801A0005EE15 /* Constants.swift in Sources */,

@@ -3980,6 +3980,662 @@ public final class MediaDetailsQuery: GraphQLQuery {
   }
 }
 
+public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query MediaRelationsAndRecommendations($mediaId: Int) {
+      Media(id: $mediaId) {
+        __typename
+        relations {
+          __typename
+          edges {
+            __typename
+            ...MediaRelated
+          }
+        }
+        recommendations(page: 1, sort: RATING_DESC) {
+          __typename
+          nodes {
+            __typename
+            ...MediaRecommended
+          }
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "MediaRelationsAndRecommendations"
+
+  public let operationIdentifier: String? = "17ea6fb12df12741c68325b6610f351ae2032d69ce0d47d6767110aa03f5dee2"
+
+  public var queryDocument: String {
+    var document: String = operationDefinition
+    document.append("\n" + MediaRelated.fragmentDefinition)
+    document.append("\n" + MediaRecommended.fragmentDefinition)
+    return document
+  }
+
+  public var mediaId: Int?
+
+  public init(mediaId: Int? = nil) {
+    self.mediaId = mediaId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["mediaId": mediaId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("Media", arguments: ["id": GraphQLVariable("mediaId")], type: .object(Medium.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(media: Medium? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "Media": media.flatMap { (value: Medium) -> ResultMap in value.resultMap }])
+    }
+
+    /// Media query
+    public var media: Medium? {
+      get {
+        return (resultMap["Media"] as? ResultMap).flatMap { Medium(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "Media")
+      }
+    }
+
+    public struct Medium: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Media"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("relations", type: .object(Relation.selections)),
+          GraphQLField("recommendations", arguments: ["page": 1, "sort": "RATING_DESC"], type: .object(Recommendation.selections)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(relations: Relation? = nil, recommendations: Recommendation? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Media", "relations": relations.flatMap { (value: Relation) -> ResultMap in value.resultMap }, "recommendations": recommendations.flatMap { (value: Recommendation) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// Other media in the same or connecting franchise
+      public var relations: Relation? {
+        get {
+          return (resultMap["relations"] as? ResultMap).flatMap { Relation(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "relations")
+        }
+      }
+
+      /// User recommendations for similar media
+      public var recommendations: Recommendation? {
+        get {
+          return (resultMap["recommendations"] as? ResultMap).flatMap { Recommendation(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "recommendations")
+        }
+      }
+
+      public struct Relation: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaConnection"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("edges", type: .list(.object(Edge.selections))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(edges: [Edge?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaConnection", "edges": edges.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var edges: [Edge?]? {
+          get {
+            return (resultMap["edges"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Edge?] in value.map { (value: ResultMap?) -> Edge? in value.flatMap { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) } } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }, forKey: "edges")
+          }
+        }
+
+        public struct Edge: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["MediaEdge"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("relationType", type: .scalar(MediaRelation.self)),
+              GraphQLField("node", type: .object(Node.selections)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(relationType: MediaRelation? = nil, node: Node? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaEdge", "relationType": relationType, "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// The type of relation to the parent model
+          public var relationType: MediaRelation? {
+            get {
+              return resultMap["relationType"] as? MediaRelation
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "relationType")
+            }
+          }
+
+          public var node: Node? {
+            get {
+              return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
+            }
+            set {
+              resultMap.updateValue(newValue?.resultMap, forKey: "node")
+            }
+          }
+
+          public var fragments: Fragments {
+            get {
+              return Fragments(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
+
+          public struct Fragments {
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public var mediaRelated: MediaRelated {
+              get {
+                return MediaRelated(unsafeResultMap: resultMap)
+              }
+              set {
+                resultMap += newValue.resultMap
+              }
+            }
+          }
+
+          public struct Node: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["Media"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+                GraphQLField("title", type: .object(Title.selections)),
+                GraphQLField("format", type: .scalar(MediaFormat.self)),
+                GraphQLField("coverImage", type: .object(CoverImage.selections)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(id: Int, title: Title? = nil, format: MediaFormat? = nil, coverImage: CoverImage? = nil) {
+              self.init(unsafeResultMap: ["__typename": "Media", "id": id, "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "format": format, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The id of the media
+            public var id: Int {
+              get {
+                return resultMap["id"]! as! Int
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "id")
+              }
+            }
+
+            /// The official titles of the media in various languages
+            public var title: Title? {
+              get {
+                return (resultMap["title"] as? ResultMap).flatMap { Title(unsafeResultMap: $0) }
+              }
+              set {
+                resultMap.updateValue(newValue?.resultMap, forKey: "title")
+              }
+            }
+
+            /// The format the media was released in
+            public var format: MediaFormat? {
+              get {
+                return resultMap["format"] as? MediaFormat
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "format")
+              }
+            }
+
+            /// The cover images of the media
+            public var coverImage: CoverImage? {
+              get {
+                return (resultMap["coverImage"] as? ResultMap).flatMap { CoverImage(unsafeResultMap: $0) }
+              }
+              set {
+                resultMap.updateValue(newValue?.resultMap, forKey: "coverImage")
+              }
+            }
+
+            public struct Title: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["MediaTitle"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("romaji", type: .scalar(String.self)),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(romaji: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// The romanization of the native language title
+              public var romaji: String? {
+                get {
+                  return resultMap["romaji"] as? String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "romaji")
+                }
+              }
+            }
+
+            public struct CoverImage: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["MediaCoverImage"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("large", type: .scalar(String.self)),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(large: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// The cover image url of the media at a large size
+              public var large: String? {
+                get {
+                  return resultMap["large"] as? String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "large")
+                }
+              }
+            }
+          }
+        }
+      }
+
+      public struct Recommendation: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["RecommendationConnection"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("nodes", type: .list(.object(Node.selections))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(nodes: [Node?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "RecommendationConnection", "nodes": nodes.flatMap { (value: [Node?]) -> [ResultMap?] in value.map { (value: Node?) -> ResultMap? in value.flatMap { (value: Node) -> ResultMap in value.resultMap } } }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nodes: [Node?]? {
+          get {
+            return (resultMap["nodes"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Node?] in value.map { (value: ResultMap?) -> Node? in value.flatMap { (value: ResultMap) -> Node in Node(unsafeResultMap: value) } } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [Node?]) -> [ResultMap?] in value.map { (value: Node?) -> ResultMap? in value.flatMap { (value: Node) -> ResultMap in value.resultMap } } }, forKey: "nodes")
+          }
+        }
+
+        public struct Node: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Recommendation"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("mediaRecommendation", type: .object(MediaRecommendation.selections)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(mediaRecommendation: MediaRecommendation? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Recommendation", "mediaRecommendation": mediaRecommendation.flatMap { (value: MediaRecommendation) -> ResultMap in value.resultMap }])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// The recommended media
+          public var mediaRecommendation: MediaRecommendation? {
+            get {
+              return (resultMap["mediaRecommendation"] as? ResultMap).flatMap { MediaRecommendation(unsafeResultMap: $0) }
+            }
+            set {
+              resultMap.updateValue(newValue?.resultMap, forKey: "mediaRecommendation")
+            }
+          }
+
+          public var fragments: Fragments {
+            get {
+              return Fragments(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
+
+          public struct Fragments {
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public var mediaRecommended: MediaRecommended {
+              get {
+                return MediaRecommended(unsafeResultMap: resultMap)
+              }
+              set {
+                resultMap += newValue.resultMap
+              }
+            }
+          }
+
+          public struct MediaRecommendation: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["Media"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+                GraphQLField("title", type: .object(Title.selections)),
+                GraphQLField("format", type: .scalar(MediaFormat.self)),
+                GraphQLField("coverImage", type: .object(CoverImage.selections)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(id: Int, title: Title? = nil, format: MediaFormat? = nil, coverImage: CoverImage? = nil) {
+              self.init(unsafeResultMap: ["__typename": "Media", "id": id, "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "format": format, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The id of the media
+            public var id: Int {
+              get {
+                return resultMap["id"]! as! Int
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "id")
+              }
+            }
+
+            /// The official titles of the media in various languages
+            public var title: Title? {
+              get {
+                return (resultMap["title"] as? ResultMap).flatMap { Title(unsafeResultMap: $0) }
+              }
+              set {
+                resultMap.updateValue(newValue?.resultMap, forKey: "title")
+              }
+            }
+
+            /// The format the media was released in
+            public var format: MediaFormat? {
+              get {
+                return resultMap["format"] as? MediaFormat
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "format")
+              }
+            }
+
+            /// The cover images of the media
+            public var coverImage: CoverImage? {
+              get {
+                return (resultMap["coverImage"] as? ResultMap).flatMap { CoverImage(unsafeResultMap: $0) }
+              }
+              set {
+                resultMap.updateValue(newValue?.resultMap, forKey: "coverImage")
+              }
+            }
+
+            public struct Title: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["MediaTitle"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("romaji", type: .scalar(String.self)),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(romaji: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// The romanization of the native language title
+              public var romaji: String? {
+                get {
+                  return resultMap["romaji"] as? String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "romaji")
+                }
+              }
+            }
+
+            public struct CoverImage: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["MediaCoverImage"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("large", type: .scalar(String.self)),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(large: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// The cover image url of the media at a large size
+              public var large: String? {
+                get {
+                  return resultMap["large"] as? String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "large")
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class SearchMediaQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -6392,6 +7048,445 @@ public struct FuzzyDate: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "year")
+    }
+  }
+}
+
+public struct MediaRelated: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment MediaRelated on MediaEdge {
+      __typename
+      relationType
+      node {
+        __typename
+        id
+        title {
+          __typename
+          romaji
+        }
+        format
+        coverImage {
+          __typename
+          large
+        }
+      }
+    }
+    """
+
+  public static let possibleTypes: [String] = ["MediaEdge"]
+
+  public static var selections: [GraphQLSelection] {
+    return [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("relationType", type: .scalar(MediaRelation.self)),
+      GraphQLField("node", type: .object(Node.selections)),
+    ]
+  }
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(relationType: MediaRelation? = nil, node: Node? = nil) {
+    self.init(unsafeResultMap: ["__typename": "MediaEdge", "relationType": relationType, "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  /// The type of relation to the parent model
+  public var relationType: MediaRelation? {
+    get {
+      return resultMap["relationType"] as? MediaRelation
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "relationType")
+    }
+  }
+
+  public var node: Node? {
+    get {
+      return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
+    }
+    set {
+      resultMap.updateValue(newValue?.resultMap, forKey: "node")
+    }
+  }
+
+  public struct Node: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Media"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("title", type: .object(Title.selections)),
+        GraphQLField("format", type: .scalar(MediaFormat.self)),
+        GraphQLField("coverImage", type: .object(CoverImage.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(id: Int, title: Title? = nil, format: MediaFormat? = nil, coverImage: CoverImage? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Media", "id": id, "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "format": format, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    /// The id of the media
+    public var id: Int {
+      get {
+        return resultMap["id"]! as! Int
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "id")
+      }
+    }
+
+    /// The official titles of the media in various languages
+    public var title: Title? {
+      get {
+        return (resultMap["title"] as? ResultMap).flatMap { Title(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "title")
+      }
+    }
+
+    /// The format the media was released in
+    public var format: MediaFormat? {
+      get {
+        return resultMap["format"] as? MediaFormat
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "format")
+      }
+    }
+
+    /// The cover images of the media
+    public var coverImage: CoverImage? {
+      get {
+        return (resultMap["coverImage"] as? ResultMap).flatMap { CoverImage(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "coverImage")
+      }
+    }
+
+    public struct Title: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["MediaTitle"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("romaji", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(romaji: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The romanization of the native language title
+      public var romaji: String? {
+        get {
+          return resultMap["romaji"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "romaji")
+        }
+      }
+    }
+
+    public struct CoverImage: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["MediaCoverImage"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("large", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(large: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The cover image url of the media at a large size
+      public var large: String? {
+        get {
+          return resultMap["large"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "large")
+        }
+      }
+    }
+  }
+}
+
+public struct MediaRecommended: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment MediaRecommended on Recommendation {
+      __typename
+      mediaRecommendation {
+        __typename
+        id
+        title {
+          __typename
+          romaji
+        }
+        format
+        coverImage {
+          __typename
+          large
+        }
+      }
+    }
+    """
+
+  public static let possibleTypes: [String] = ["Recommendation"]
+
+  public static var selections: [GraphQLSelection] {
+    return [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("mediaRecommendation", type: .object(MediaRecommendation.selections)),
+    ]
+  }
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(mediaRecommendation: MediaRecommendation? = nil) {
+    self.init(unsafeResultMap: ["__typename": "Recommendation", "mediaRecommendation": mediaRecommendation.flatMap { (value: MediaRecommendation) -> ResultMap in value.resultMap }])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  /// The recommended media
+  public var mediaRecommendation: MediaRecommendation? {
+    get {
+      return (resultMap["mediaRecommendation"] as? ResultMap).flatMap { MediaRecommendation(unsafeResultMap: $0) }
+    }
+    set {
+      resultMap.updateValue(newValue?.resultMap, forKey: "mediaRecommendation")
+    }
+  }
+
+  public struct MediaRecommendation: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Media"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("title", type: .object(Title.selections)),
+        GraphQLField("format", type: .scalar(MediaFormat.self)),
+        GraphQLField("coverImage", type: .object(CoverImage.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(id: Int, title: Title? = nil, format: MediaFormat? = nil, coverImage: CoverImage? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Media", "id": id, "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "format": format, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    /// The id of the media
+    public var id: Int {
+      get {
+        return resultMap["id"]! as! Int
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "id")
+      }
+    }
+
+    /// The official titles of the media in various languages
+    public var title: Title? {
+      get {
+        return (resultMap["title"] as? ResultMap).flatMap { Title(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "title")
+      }
+    }
+
+    /// The format the media was released in
+    public var format: MediaFormat? {
+      get {
+        return resultMap["format"] as? MediaFormat
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "format")
+      }
+    }
+
+    /// The cover images of the media
+    public var coverImage: CoverImage? {
+      get {
+        return (resultMap["coverImage"] as? ResultMap).flatMap { CoverImage(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "coverImage")
+      }
+    }
+
+    public struct Title: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["MediaTitle"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("romaji", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(romaji: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The romanization of the native language title
+      public var romaji: String? {
+        get {
+          return resultMap["romaji"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "romaji")
+        }
+      }
+    }
+
+    public struct CoverImage: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["MediaCoverImage"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("large", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(large: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The cover image url of the media at a large size
+      public var large: String? {
+        get {
+          return resultMap["large"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "large")
+        }
+      }
     }
   }
 }
