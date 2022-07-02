@@ -8,15 +8,17 @@
 import SwiftUI
 import Kingfisher
 
+private let avatarSize: CGFloat = 110
+private let bannerHeight: CGFloat = 150
+
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
-    private let avatarSize: CGFloat = 110
     
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: 150)
+                TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: bannerHeight)
                 
                 VStack {
                     CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)

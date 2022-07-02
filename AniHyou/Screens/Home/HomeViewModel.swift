@@ -59,7 +59,7 @@ class HomeViewModel: ObservableObject {
     @Published var trendingAnimes = [AnimesQuery.Data.Page.Medium?]()
     
     func getTrendingAnimes(page: Int = 1) {
-        Network.shared.apollo.fetch(query: AnimesQuery(page: page, sort: [.trendingDesc])) { result in
+        Network.shared.apollo.fetch(query: AnimesQuery(page: page, perPage: 10, sort: [.trendingDesc])) { result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

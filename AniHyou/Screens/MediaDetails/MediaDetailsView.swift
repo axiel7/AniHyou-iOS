@@ -24,49 +24,42 @@ struct MediaDetailsView: View {
             ScrollView(.vertical) {
                 LazyVStack(alignment: .leading) {
                     // MARK: Header
-                    TopBannerView(imageUrl: viewModel.mediaDetails?.bannerImage, placeholderHexColor: viewModel.mediaDetails?.coverImage?.color, height: bannerHeight)
+                    TopBannerView(imageUrl: viewModel.mediaDetails!.bannerImage, placeholderHexColor: viewModel.mediaDetails!.coverImage?.color, height: bannerHeight)
                     
                     // MARK: Main info
                     HStack(alignment: .top) {
                         
-                        MediaCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.large, width: coverWidth, height: coverHeight)
+                        MediaCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.large, width: coverWidth, height: coverHeight)
                         
                         VStack(alignment: .leading) {
                             
-                            Text(viewModel.mediaDetails?.title?.romaji ?? "")
+                            Text(viewModel.mediaDetails!.title?.romaji ?? "")
                                 .font(.title3)
                                 .bold()
                                 .lineLimit(3)
                                 .padding(.bottom, 1)
                             
-                            Text(viewModel.mediaDetails?.format?.formatted ?? "Unknown")
+                            Text(viewModel.mediaDetails!.format?.formatted ?? "Unknown")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             
                             Spacer()
                             Button(action: {
-                                if viewModel.mediaDetails?.mediaListEntry?.status == nil {
-                                    //add to list
-                                } else {
-                                    //open
-                                    showingMediaListSheet = true
-                                }
+                                showingMediaListSheet = true
                             }) {
-                                Text(viewModel.mediaDetails?.mediaListEntry?.status?.localizedName ?? "Add to List")
+                                Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
                                     .bold()
                                     .textCase(.uppercase)
                             }
                             .buttonStyle(.borderedProminent)
                             .sheet(isPresented: $showingMediaListSheet) {
-                                if let mediaList = viewModel.mediaDetails?.mediaListEntry {
-                                    MediaListEditView(mediaId: mediaId, mediaList: mediaList)
-                                }
+                                MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
                             }
                         }//:VStack
                         .padding(.leading, 12)
                         .padding(.trailing, 8)
                         
-                        Spacer()
+                        //Spacer()
                     }//:HStack
                     .padding(.top)
                     .padding(.leading)

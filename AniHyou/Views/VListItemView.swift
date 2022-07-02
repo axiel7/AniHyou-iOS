@@ -25,7 +25,7 @@ struct VListItemView: View {
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.primary)
         }
-        .frame(width: coverWidth + 25, height: coverHeight + 50, alignment: .top)
+        .frame(width: coverWidth + 20, height: coverHeight + 50, alignment: .top)
     }
 }
 
