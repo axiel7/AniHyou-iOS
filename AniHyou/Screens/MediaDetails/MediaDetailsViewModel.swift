@@ -24,6 +24,42 @@ class MediaDetailsViewModel: ObservableObject {
         }
     }
     
+    @Published var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Medium?
+    
+    func getMediaCharactersAndStaff(mediaId: Int) {
+        Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: mediaId)) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let media = graphQLResult.data?.media {
+                    self.mediaCharactersAndStaff = media
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Medium?
+    
+    func getMediaRelationsAndRecommendations(mediaId: Int) {
+        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(mediaId: mediaId)) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let media = graphQLResult.data?.media {
+                    self.mediaRelationsAndRecommendations = media
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    //MARK: calculated variables
+    
+    var isAnime: Bool {
+        return mediaDetails?.type == .anime
+    }
+    
     var genresFormatted: String? {
         guard mediaDetails != nil else { return nil }
         guard mediaDetails?.genres != nil else { return nil }

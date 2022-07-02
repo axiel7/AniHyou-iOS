@@ -19,17 +19,8 @@ struct ProfileView: View {
                 TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: 150)
                 
                 VStack {
-                    KFImage(URL(string: viewModel.userInfo?.avatar?.large ?? ""))
-                        .placeholder {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .shadow(radius: 7)
-                                .frame(width: avatarSize, height: avatarSize, alignment: .center)
-                        }
-                        .resizable()
-                        .clipShape(Circle())
+                    CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
                         .shadow(radius: 7)
-                        .frame(width: avatarSize, height: avatarSize, alignment: .center)
                     
                     Text(viewModel.userInfo?.name ?? "axiel7")
                         .font(.title2)

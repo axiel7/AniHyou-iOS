@@ -7,6 +7,10 @@
     "name": "Animes",
     "source": "query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(type: ANIME, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
   },
+  "aa70f90140c6e0c7fc9e3e4b959f1482d5599475b0cf5a0d9f59fe3d90573043": {
+    "name": "MediaCharactersAndStaff",
+    "source": "query MediaCharactersAndStaff($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    characters(page: 1, perPage: 25) {\n      __typename\n      edges {\n        __typename\n        ...MediaCharacter\n      }\n    }\n    staff(page: 1, perPage: 25) {\n      __typename\n      edges {\n        __typename\n        ...MediaStaff\n      }\n    }\n  }\n}\nfragment MediaCharacter on CharacterEdge {\n  __typename\n  role\n  node {\n    __typename\n    id\n    name {\n      __typename\n      full\n    }\n    image {\n      __typename\n      medium\n    }\n  }\n  voiceActors(language: JAPANESE) {\n    __typename\n    id\n    name {\n      __typename\n      full\n    }\n    image {\n      __typename\n      medium\n    }\n  }\n}\nfragment MediaStaff on StaffEdge {\n  __typename\n  role\n  node {\n    __typename\n    id\n    name {\n      __typename\n      full\n    }\n    image {\n      __typename\n      medium\n    }\n  }\n}"
+  },
   "74e9be4ba7204d8c7373f611b329f0e4f4250b08c1ec31fc1b292c10d4d627ce": {
     "name": "MediaChart",
     "source": "query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(sort: $sort, type: $type) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      format\n      startDate {\n        __typename\n        year\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n      currentPage\n    }\n  }\n}"
