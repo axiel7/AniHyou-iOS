@@ -9,7 +9,6 @@ import Foundation
 import KeychainSwift
 
 func isLoggedIn() -> Bool {
-    //KeychainSwift().clear()
     return KeychainSwift().get(USER_TOKEN_KEY) != nil
 }
 

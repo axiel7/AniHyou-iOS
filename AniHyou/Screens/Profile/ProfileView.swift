@@ -14,6 +14,7 @@ private let bannerHeight: CGFloat = 150
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
+    @State private var showLogOutDialog = false
     
     var body: some View {
         ScrollView(.vertical) {
@@ -24,7 +25,7 @@ struct ProfileView: View {
                     CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
                         .shadow(radius: 7)
                     
-                    Text(viewModel.userInfo?.name ?? "axiel7")
+                    Text(viewModel.userInfo?.name ?? "")
                         .font(.title2)
                         .bold()
                         .frame(alignment: .center)
@@ -32,10 +33,19 @@ struct ProfileView: View {
                 .offset(y: -65)
                 
                 Spacer()
+                
+                Button("Log out") {
+                    showLogOutDialog = true
+                }
+                .buttonStyle(.bordered)
+                .confirmationDialog("Are you sure you want to log out?", isPresented: $showLogOutDialog) {
+                    Button("Log out", role: .destructive) { viewModel.logOut() }
+                } message: {
+                    Text("Are you sure you want to log out?")
+                }
             }//:VStack
         }//:VScrollView
         .ignoresSafeArea(edges: .top)
-        
         .onAppear {
             viewModel.getUserInfo()
         }

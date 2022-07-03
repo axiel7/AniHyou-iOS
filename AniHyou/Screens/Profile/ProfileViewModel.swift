@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import KeychainSwift
 
 class ProfileViewModel: ObservableObject {
     
@@ -23,6 +24,12 @@ class ProfileViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func logOut() {
+        KeychainSwift().delete(USER_TOKEN_KEY)
+        UserDefaults.standard.removeObject(forKey: "user_id")
+        UserDefaults.standard.removeObject(forKey: "token_expiration")
     }
     
 }
