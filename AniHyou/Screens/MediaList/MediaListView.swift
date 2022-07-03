@@ -23,7 +23,7 @@ struct MediaListView: View {
                     .swipeActions {
                         if status == .current {
                             Button("+1") {
-                                viewModel.updateEntryProgress(mediaId: item.mediaId, progress: item.progress! + 1)
+                                viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
                             }
                             .tint(.green)
                         }
@@ -39,6 +39,9 @@ struct MediaListView: View {
             }
         }
         .navigationTitle(status.localizedName)
+        .refreshable {
+            viewModel.refreshList()
+        }
     }
 }
 

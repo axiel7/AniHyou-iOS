@@ -15,9 +15,9 @@
     "name": "MediaChart",
     "source": "query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(sort: $sort, type: $type) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      format\n      startDate {\n        __typename\n        year\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n      currentPage\n    }\n  }\n}"
   },
-  "1c24bcef25cbe199bb4d3ce02372c55e7fdaa2794071baac5a35f13aff7b04d3": {
+  "00cbfa5b55d8a1b2bb8091b4785ab10290c648b256ae34114a451cea94721ae6": {
     "name": "MediaDetails",
-    "source": "query MediaDetails($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    title {\n      __typename\n      romaji\n      english\n      native\n    }\n    format\n    status\n    description\n    startDate {\n      __typename\n      ...FuzzyDate\n    }\n    endDate {\n      __typename\n      ...FuzzyDate\n    }\n    season\n    seasonYear\n    episodes\n    duration\n    chapters\n    volumes\n    coverImage {\n      __typename\n      large\n      color\n    }\n    bannerImage\n    averageScore\n    meanScore\n    popularity\n    genres\n    studios {\n      __typename\n      nodes {\n        __typename\n        name\n        isAnimationStudio\n      }\n    }\n    favourites\n    type\n    nextAiringEpisode {\n      __typename\n      timeUntilAiring\n      episode\n    }\n    mediaListEntry {\n      __typename\n      status\n      score\n      progress\n      progressVolumes\n      startedAt {\n        __typename\n        ...FuzzyDate\n      }\n      completedAt {\n        __typename\n        ...FuzzyDate\n      }\n    }\n    source\n  }\n}\nfragment FuzzyDate on FuzzyDate {\n  __typename\n  day\n  month\n  year\n}"
+    "source": "query MediaDetails($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    title {\n      __typename\n      romaji\n      english\n      native\n    }\n    format\n    status\n    description\n    startDate {\n      __typename\n      ...FuzzyDate\n    }\n    endDate {\n      __typename\n      ...FuzzyDate\n    }\n    season\n    seasonYear\n    episodes\n    duration\n    chapters\n    volumes\n    coverImage {\n      __typename\n      large\n      color\n    }\n    bannerImage\n    averageScore\n    meanScore\n    popularity\n    genres\n    studios {\n      __typename\n      nodes {\n        __typename\n        name\n        isAnimationStudio\n      }\n    }\n    favourites\n    type\n    nextAiringEpisode {\n      __typename\n      timeUntilAiring\n      episode\n    }\n    mediaListEntry {\n      __typename\n      id\n      status\n      score\n      progress\n      progressVolumes\n      startedAt {\n        __typename\n        ...FuzzyDate\n      }\n      completedAt {\n        __typename\n        ...FuzzyDate\n      }\n    }\n    source\n  }\n}\nfragment FuzzyDate on FuzzyDate {\n  __typename\n  day\n  month\n  year\n}"
   },
   "17ea6fb12df12741c68325b6610f351ae2032d69ce0d47d6767110aa03f5dee2": {
     "name": "MediaRelationsAndRecommendations",
@@ -35,9 +35,9 @@
     "name": "UpdateEntry",
     "source": "mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {\n  SaveMediaListEntry(\n    mediaId: $mediaId\n    status: $status\n    score: $score\n    progress: $progress\n    progressVolumes: $progressVolumes\n    startedAt: $startedAt\n    completedAt: $completedAt\n  ) {\n    __typename\n    id\n    mediaId\n    status\n    score\n    progress\n    progressVolumes\n    startedAt {\n      __typename\n      ...FuzzyDate\n    }\n    completedAt {\n      __typename\n      ...FuzzyDate\n    }\n  }\n}\nfragment FuzzyDate on FuzzyDate {\n  __typename\n  day\n  month\n  year\n}"
   },
-  "c5e2751c73bc60a908aa3ddbcc4b67fc2979d906817073805330e8bdcecad8ae": {
+  "7396f24139df2cefaa5ffd9649c325c5e39768fde4f258866dedb9799736a938": {
     "name": "UpdateEntryProgress",
-    "source": "mutation UpdateEntryProgress($mediaId: Int, $progress: Int) {\n  SaveMediaListEntry(mediaId: $mediaId, progress: $progress) {\n    __typename\n    id\n    mediaId\n    progress\n  }\n}"
+    "source": "mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int) {\n  SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress) {\n    __typename\n    id\n    mediaId\n    progress\n  }\n}"
   },
   "e4485dc7a5dafc7486b71a340d691e8c3f87b669bd0e8371971e4cbf86845524": {
     "name": "UserMediaList",

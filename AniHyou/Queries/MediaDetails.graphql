@@ -42,6 +42,7 @@ query MediaDetails($mediaId: Int) {
       episode
     }
     mediaListEntry {
+      id
       status
       score
       progress

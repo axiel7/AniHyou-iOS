@@ -2913,6 +2913,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
         }
         mediaListEntry {
           __typename
+          id
           status
           score
           progress
@@ -2933,7 +2934,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
 
   public let operationName: String = "MediaDetails"
 
-  public let operationIdentifier: String? = "1c24bcef25cbe199bb4d3ce02372c55e7fdaa2794071baac5a35f13aff7b04d3"
+  public let operationIdentifier: String? = "00cbfa5b55d8a1b2bb8091b4785ab10290c648b256ae34114a451cea94721ae6"
 
   public var queryDocument: String {
     var document: String = operationDefinition
@@ -3710,6 +3711,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(Int.self))),
             GraphQLField("status", type: .scalar(MediaListStatus.self)),
             GraphQLField("score", type: .scalar(Double.self)),
             GraphQLField("progress", type: .scalar(Int.self)),
@@ -3725,8 +3727,8 @@ public final class MediaDetailsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(status: MediaListStatus? = nil, score: Double? = nil, progress: Int? = nil, progressVolumes: Int? = nil, startedAt: StartedAt? = nil, completedAt: CompletedAt? = nil) {
-          self.init(unsafeResultMap: ["__typename": "MediaList", "status": status, "score": score, "progress": progress, "progressVolumes": progressVolumes, "startedAt": startedAt.flatMap { (value: StartedAt) -> ResultMap in value.resultMap }, "completedAt": completedAt.flatMap { (value: CompletedAt) -> ResultMap in value.resultMap }])
+        public init(id: Int, status: MediaListStatus? = nil, score: Double? = nil, progress: Int? = nil, progressVolumes: Int? = nil, startedAt: StartedAt? = nil, completedAt: CompletedAt? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaList", "id": id, "status": status, "score": score, "progress": progress, "progressVolumes": progressVolumes, "startedAt": startedAt.flatMap { (value: StartedAt) -> ResultMap in value.resultMap }, "completedAt": completedAt.flatMap { (value: CompletedAt) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -3735,6 +3737,16 @@ public final class MediaDetailsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The id of the list entry
+        public var id: Int {
+          get {
+            return resultMap["id"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
           }
         }
 
@@ -5663,8 +5675,8 @@ public final class UpdateEntryProgressMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation UpdateEntryProgress($mediaId: Int, $progress: Int) {
-      SaveMediaListEntry(mediaId: $mediaId, progress: $progress) {
+    mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int) {
+      SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress) {
         __typename
         id
         mediaId
@@ -5675,18 +5687,18 @@ public final class UpdateEntryProgressMutation: GraphQLMutation {
 
   public let operationName: String = "UpdateEntryProgress"
 
-  public let operationIdentifier: String? = "c5e2751c73bc60a908aa3ddbcc4b67fc2979d906817073805330e8bdcecad8ae"
+  public let operationIdentifier: String? = "7396f24139df2cefaa5ffd9649c325c5e39768fde4f258866dedb9799736a938"
 
-  public var mediaId: Int?
+  public var saveMediaListEntryId: Int?
   public var progress: Int?
 
-  public init(mediaId: Int? = nil, progress: Int? = nil) {
-    self.mediaId = mediaId
+  public init(saveMediaListEntryId: Int? = nil, progress: Int? = nil) {
+    self.saveMediaListEntryId = saveMediaListEntryId
     self.progress = progress
   }
 
   public var variables: GraphQLMap? {
-    return ["mediaId": mediaId, "progress": progress]
+    return ["saveMediaListEntryId": saveMediaListEntryId, "progress": progress]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -5694,7 +5706,7 @@ public final class UpdateEntryProgressMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("SaveMediaListEntry", arguments: ["mediaId": GraphQLVariable("mediaId"), "progress": GraphQLVariable("progress")], type: .object(SaveMediaListEntry.selections)),
+        GraphQLField("SaveMediaListEntry", arguments: ["id": GraphQLVariable("saveMediaListEntryId"), "progress": GraphQLVariable("progress")], type: .object(SaveMediaListEntry.selections)),
       ]
     }
 

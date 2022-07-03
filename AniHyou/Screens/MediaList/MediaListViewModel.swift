@@ -15,7 +15,7 @@ class MediaListViewModel: ObservableObject {
     var hasNextPage = true
     
     func getUserMediaList(type: MediaType, status: MediaListStatus) {
-        Network.shared.apollo.fetch(query: UserMediaListQuery(page: currentPage, perPage: 25, userId: userId(), type: type, status: status, sort: [.mediaTitleRomaji])) { result in
+        Network.shared.apollo.fetch(query: UserMediaListQuery(page: currentPage, perPage: 25, userId: userId(), type: type, status: status, sort: [.updatedTimeDesc])) { result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -31,8 +31,14 @@ class MediaListViewModel: ObservableObject {
         }
     }
     
-    func updateEntryProgress(mediaId: Int, progress: Int) {
-        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(mediaId: mediaId, progress: progress)) { result in
+    func refreshList() {
+        currentPage = 1
+        hasNextPage = true
+        mediaList = []
+    }
+    
+    func updateEntryProgress(entryId: Int, progress: Int) {
+        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: entryId, progress: progress)) { result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {
