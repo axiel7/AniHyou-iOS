@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-private let imageSize: CGFloat = 70
-
 struct StaffView: View {
+    
+    static let imageSize: CGFloat = 70
     
     var staff: MediaStaff
     
     var body: some View {
         HStack {
-            CircleImageView(imageUrl: staff.node?.image?.medium, size: imageSize)
+            CircleImageView(imageUrl: staff.node?.image?.medium, size: StaffView.imageSize)
             
             VStack(alignment: .leading) {
                 Text(staff.node?.name?.full ?? "")
@@ -28,7 +28,7 @@ struct StaffView: View {
                     .font(.footnote)
             }
         }
-        .frame(height: imageSize)
+        .frame(height: StaffView.imageSize)
     }
 }
 

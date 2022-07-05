@@ -12,33 +12,51 @@ struct MediaCharactersAndStaffView: View {
     @ObservedObject var viewModel: MediaDetailsViewModel
     
     var body: some View {
-        LazyVStack(alignment: .leading) {
+        VStack(alignment: .leading) {
             
             Text("Staff")
                 .font(.title3)
                 .bold()
                 .padding(.leading)
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    ForEach(viewModel.mediaCharactersAndStaff?.staff?.edges ?? [], id: \.?.node?.id) {
-                        if let staff = $0 {
-                            StaffView(staff: staff.fragments.mediaStaff)
-                                .padding(.trailing)
+            ZStack {
+                if viewModel.mediaCharactersAndStaff == nil {
+                    ProgressView()
+                }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(viewModel.mediaCharactersAndStaff?.staff?.edges ?? [], id: \.?.node?.id) {
+                            if let staff = $0 {
+                                StaffView(staff: staff.fragments.mediaStaff)
+                                    .padding(.trailing)
+                            }
                         }
                     }
+                    .padding(.leading)
                 }
-                .padding(.leading)
             }
+            .frame(height: StaffView.imageSize)
             .padding(.bottom)
             
             Text("Characters")
                 .font(.title3)
                 .bold()
                 .padding(.leading)
-            ForEach(viewModel.mediaCharactersAndStaff?.characters?.edges ?? [], id: \.?.node?.id) {
-                if let character = $0 {
-                    CharacterView(character: character.fragments.mediaCharacter)
-                        .padding(.bottom)
+            ZStack(alignment: .center) {
+                if viewModel.mediaCharactersAndStaff == nil {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                    .padding(.top)
+                }
+                LazyVStack {
+                    ForEach(viewModel.mediaCharactersAndStaff?.characters?.edges ?? [], id: \.?.node?.id) {
+                        if let character = $0 {
+                            CharacterView(character: character.fragments.mediaCharacter)
+                                .padding(.bottom)
+                        }
+                    }
                 }
             }
             .padding(.leading)

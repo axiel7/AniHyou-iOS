@@ -18,37 +18,48 @@ struct MediaRelationsAndRecommendationsView: View {
                 .font(.title3)
                 .bold()
                 .padding(.leading)
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    ForEach(viewModel.mediaRelationsAndRecommendations?.relations?.edges ?? [], id: \.?.node?.id) {
-                        if let relation = $0 {
-                            NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
-                                HListItemWithSubtitleView(title: relation.node?.title?.romaji, subtitle: "\(relation.relationType?.formatted ?? "") · \(relation.node?.format?.formatted ?? "")", imageUrl: relation.node?.coverImage?.large)
-                                    .padding(.trailing)
-                                    .frame(maxWidth: 280)
+            ZStack {
+                if viewModel.mediaRelationsAndRecommendations == nil {
+                    ProgressView()
+                }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(viewModel.mediaRelationsAndRecommendations?.relations?.edges ?? [], id: \.?.node?.id) {
+                            if let relation = $0 {
+                                NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
+                                    HListItemWithSubtitleView(title: relation.node?.title?.romaji, subtitle: "\(relation.relationType?.formatted ?? "") · \(relation.node?.format?.formatted ?? "")", imageUrl: relation.node?.coverImage?.large)
+                                        .padding(.trailing)
+                                        .frame(maxWidth: 280)
+                                }
                             }
                         }
                     }
                 }
-                .padding(.leading)
             }
+            .frame(height: HListItemWithSubtitleView.coverHeight)
             .padding(.bottom)
             
             Text("Recommendations")
                 .font(.title3)
                 .bold()
                 .padding(.leading)
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    ForEach(viewModel.mediaRelationsAndRecommendations?.recommendations?.nodes ?? [], id: \.?.mediaRecommendation?.id) {
-                        if let recommendation = $0?.mediaRecommendation {
-                            NavigationLink(destination: MediaDetailsView(mediaId: recommendation.id)) {
-                                VListItemView(title: recommendation.title?.romaji ?? "", imageUrl: recommendation.coverImage?.large)
+            ZStack {
+                if viewModel.mediaRelationsAndRecommendations == nil {
+                    ProgressView()
+                        .padding(.top)
+                }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(viewModel.mediaRelationsAndRecommendations?.recommendations?.nodes ?? [], id: \.?.mediaRecommendation?.id) {
+                            if let recommendation = $0?.mediaRecommendation {
+                                NavigationLink(destination: MediaDetailsView(mediaId: recommendation.id)) {
+                                    VListItemView(title: recommendation.title?.romaji ?? "", imageUrl: recommendation.coverImage?.large)
+                                }
                             }
                         }
                     }
+                    .padding(.leading, 4)
                 }
-                .padding(.leading, 4)
             }
             .padding(.bottom)
         }

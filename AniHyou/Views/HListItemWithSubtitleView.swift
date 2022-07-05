@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-private let coverWidth: CGFloat = 80
-private let coverHeight: CGFloat = 120
-
 struct HListItemWithSubtitleView: View {
+    
+    static let coverWidth: CGFloat = 80
+    static let coverHeight: CGFloat = 120
     
     var title: String?
     var subtitle: String?
@@ -18,7 +18,7 @@ struct HListItemWithSubtitleView: View {
     
     var body: some View {
         HStack {
-            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight, cancelOnDisappear: true)
+            MediaCoverView(imageUrl: imageUrl, width: HListItemWithSubtitleView.coverWidth, height: HListItemWithSubtitleView.coverHeight, cancelOnDisappear: true)
                 .padding(.trailing, 8)
             
             VStack(alignment: .leading) {
