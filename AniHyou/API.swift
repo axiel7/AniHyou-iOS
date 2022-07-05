@@ -2889,6 +2889,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
         coverImage {
           __typename
           large
+          extraLarge
           color
         }
         bannerImage
@@ -2934,7 +2935,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
 
   public let operationName: String = "MediaDetails"
 
-  public let operationIdentifier: String? = "00cbfa5b55d8a1b2bb8091b4785ab10290c648b256ae34114a451cea94721ae6"
+  public let operationIdentifier: String? = "04426bd880abbaa5a338b3e22778c3ee18baf35fa2998a70199a446eab87c11f"
 
   public var queryDocument: String {
     var document: String = operationDefinition
@@ -3520,6 +3521,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("large", type: .scalar(String.self)),
+            GraphQLField("extraLarge", type: .scalar(String.self)),
             GraphQLField("color", type: .scalar(String.self)),
           ]
         }
@@ -3530,8 +3532,8 @@ public final class MediaDetailsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(large: String? = nil, color: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large, "color": color])
+        public init(large: String? = nil, extraLarge: String? = nil, color: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "large": large, "extraLarge": extraLarge, "color": color])
         }
 
         public var __typename: String {
@@ -3550,6 +3552,16 @@ public final class MediaDetailsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "large")
+          }
+        }
+
+        /// The cover image url of the media at its largest size. If this size isn't available, large will be provided instead.
+        public var extraLarge: String? {
+          get {
+            return resultMap["extraLarge"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "extraLarge")
           }
         }
 

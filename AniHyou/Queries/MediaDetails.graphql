@@ -22,6 +22,7 @@ query MediaDetails($mediaId: Int) {
     volumes
     coverImage {
       large
+      extraLarge
       color
     }
     bannerImage

@@ -16,7 +16,8 @@ struct MediaDetailsView: View {
     
     var mediaId: Int
     @StateObject private var viewModel = MediaDetailsViewModel()
-    @State private var showingMediaListSheet = false
+    @State private var showingEditSheet = false
+    @State private var showingCoverSheet = false
     @State private var infoType: MediaInfoType = .general
     
     var body: some View {
@@ -30,6 +31,12 @@ struct MediaDetailsView: View {
                     HStack(alignment: .top) {
                         
                         MediaCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.large, width: coverWidth, height: coverHeight)
+                            .sheet(isPresented: $showingCoverSheet) {
+                                FullCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.extraLarge)
+                            }
+                            .onTapGesture {
+                                showingCoverSheet = true
+                            }
                         
                         VStack(alignment: .leading) {
                             
@@ -45,14 +52,14 @@ struct MediaDetailsView: View {
                             
                             Spacer()
                             Button(action: {
-                                showingMediaListSheet = true
+                                showingEditSheet = true
                             }) {
                                 Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
                                     .bold()
                                     .textCase(.uppercase)
                             }
                             .buttonStyle(.borderedProminent)
-                            .sheet(isPresented: $showingMediaListSheet) {
+                            .sheet(isPresented: $showingEditSheet) {
                                 MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
                             }
                         }//:VStack
@@ -92,8 +99,7 @@ struct MediaDetailsView: View {
                         .padding(.leading)
                         .padding(.trailing)
                     
-                    
-                    
+                    // MARK: More info
                     Picker("Info type", selection: $infoType) {
                         ForEach(MediaInfoType.allCases, id: \.self) { type in
                             Label(type.formatted, systemImage: type.systemImage)
@@ -105,7 +111,6 @@ struct MediaDetailsView: View {
                     
                     //Divider().padding()
                     
-                    // MARK: More info
                     Group {
                         switch infoType {
                         case .general:
@@ -126,8 +131,7 @@ struct MediaDetailsView: View {
                             Text("reviewsAndThreads")
                         }
                     }
-                    
-                    //Spacer()
+                    .frame(minWidth: 120)
                 }//:VStack
                 .padding(.bottom)
             }//:VScrollView
