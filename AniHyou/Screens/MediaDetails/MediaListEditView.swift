@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MediaListEditView: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     
     var mediaId: Int
     var mediaType: MediaType
@@ -90,7 +90,7 @@ struct MediaListEditView: View {
                     
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        viewModel.updateEntry(mediaId: mediaId, status: status, score: score, progress: progress, progressVolumes: progressVolumes, startedAt: startDate, completedAt: finishDate)
+                        viewModel.updateEntry(mediaId: mediaId, status: status, score: score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil)
                     }
                     .font(.bold(.body)())
                 }

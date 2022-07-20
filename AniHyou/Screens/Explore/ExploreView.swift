@@ -20,18 +20,13 @@ struct ExploreView: View {
                 switch viewModel.type {
                 case .anime, .manga:
                     List {
-                        HStack {
-                            Text("Search type")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
-                            Spacer()
-                            Picker("Search type", selection: $viewModel.type) {
-                                ForEach(SearchType.allCases, id: \.self) { type in
-                                    Text(type.formatted)
-                                }
+                        Picker("Search type", selection: $viewModel.type) {
+                            ForEach(SearchType.allCases, id: \.self) { type in
+                                Text(type.formatted)
                             }
-                            .pickerStyle(.menu)
                         }
+                        .pickerStyle(.menu)
+                        
                         ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                             if item != nil {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {

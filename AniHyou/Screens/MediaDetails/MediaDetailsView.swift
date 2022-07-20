@@ -18,6 +18,7 @@ struct MediaDetailsView: View {
     @StateObject private var viewModel = MediaDetailsViewModel()
     @State private var showingEditSheet = false
     @State private var showingCoverSheet = false
+    @State private var showingNotLoggedAlert = false
     @State private var infoType: MediaInfoType = .general
     
     var body: some View {
@@ -52,7 +53,11 @@ struct MediaDetailsView: View {
                             
                             Spacer()
                             Button(action: {
-                                showingEditSheet = true
+                                if isLoggedIn() {
+                                    showingEditSheet = true
+                                } else {
+                                    showingNotLoggedAlert = true
+                                }
                             }) {
                                 Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
                                     .bold()
@@ -61,6 +66,9 @@ struct MediaDetailsView: View {
                             .buttonStyle(.borderedProminent)
                             .sheet(isPresented: $showingEditSheet) {
                                 MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
+                            }
+                            .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
+                                Button("OK", role: .cancel) { }
                             }
                         }//:VStack
                         .padding(.leading, 12)
