@@ -12,11 +12,11 @@ class MediaDetailsViewModel: ObservableObject {
     @Published var mediaDetails: MediaDetailsQuery.Data.Medium?
     
     func getMediaDetails(id: Int) {
-        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: id)) { result in
+        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: id)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {
-                    self.mediaDetails = media
+                    self?.mediaDetails = media
                 }
             case .failure(let error):
                 print(error)
@@ -27,11 +27,11 @@ class MediaDetailsViewModel: ObservableObject {
     @Published var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Medium?
     
     func getMediaCharactersAndStaff(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: mediaId)) { result in
+        Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: mediaId)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {
-                    self.mediaCharactersAndStaff = media
+                    self?.mediaCharactersAndStaff = media
                 }
             case .failure(let error):
                 print(error)
@@ -42,7 +42,7 @@ class MediaDetailsViewModel: ObservableObject {
     @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Medium?
     
     func getMediaRelationsAndRecommendations(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(mediaId: mediaId)) { result in
+        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(mediaId: mediaId)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {

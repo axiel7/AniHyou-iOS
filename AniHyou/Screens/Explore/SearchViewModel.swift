@@ -37,12 +37,12 @@ class SearchViewModel: ObservableObject {
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
     
     private func searchMedia(type: MediaType) {
-        Network.shared.apollo.fetch(query: SearchMediaQuery(page: 1, perPage: 25, search: search, type: type)) { result in
+        Network.shared.apollo.fetch(query: SearchMediaQuery(page: 1, perPage: 25, search: search, type: type)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let media = page.media {
-                        self.searchedMedia = media
+                        self?.searchedMedia = media
                         //self.currentPage += 1
                         //self.hasNextPage = page.pageInfo?.hasNextPage == true
                     }

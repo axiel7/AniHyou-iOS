@@ -20,12 +20,12 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
     @Published var isLoginSuccess = false
     
     func login() {
-        let authSession = ASWebAuthenticationSession(url: URL(string: "\(ANILIST_AUTH_URL)?client_id=\(clientId)&response_type=token")!, callbackURLScheme: ANIHYOU_SCHEME) { (url, error) in
+        let authSession = ASWebAuthenticationSession(url: URL(string: "\(ANILIST_AUTH_URL)?client_id=\(clientId)&response_type=token")!, callbackURLScheme: ANIHYOU_SCHEME) { [weak self] (url, error) in
             if let error = error {
                 print(error)
                 return
             } else if let url = url {
-                self.processResponseUrl(url: url)
+                self?.processResponseUrl(url: url)
             }
         }
         
