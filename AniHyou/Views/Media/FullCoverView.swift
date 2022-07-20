@@ -8,6 +8,8 @@
 import SwiftUI
 import Kingfisher
 
+private var image: KFCrossPlatformImage?
+
 struct FullCoverView: View {
     
     var imageUrl: String?
@@ -22,11 +24,21 @@ struct FullCoverView: View {
                     .placeholder {
                         ProgressView()
                     }
+                    .onSuccess { result in
+                        image = result.image
+                    }
                     .resizable()
                     .scaleFactor(1)
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .padding()
+                    .onDrag {
+                        if let i = image {
+                            return NSItemProvider(object: i)
+                        } else {
+                            return NSItemProvider(contentsOf: URL(string: imageUrl ?? "")) ?? NSItemProvider()
+                        }
+                    }
             }//:VStack
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
