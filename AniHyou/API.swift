@@ -5837,7 +5837,7 @@ public final class UserMediaListQuery: GraphQLQuery {
             nextAiringEpisode {
               __typename
               episode
-              airingAt
+              timeUntilAiring
             }
             status
             type
@@ -5853,7 +5853,7 @@ public final class UserMediaListQuery: GraphQLQuery {
 
   public let operationName: String = "UserMediaList"
 
-  public let operationIdentifier: String? = "e4485dc7a5dafc7486b71a340d691e8c3f87b669bd0e8371971e4cbf86845524"
+  public let operationIdentifier: String? = "e5445a2a14bf782846fc03704dba21ffef5c3002db04e265373f7169c95d1a46"
 
   public var page: Int?
   public var perPage: Int?
@@ -6259,7 +6259,7 @@ public final class UserMediaListQuery: GraphQLQuery {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
                 GraphQLField("episode", type: .nonNull(.scalar(Int.self))),
-                GraphQLField("airingAt", type: .nonNull(.scalar(Int.self))),
+                GraphQLField("timeUntilAiring", type: .nonNull(.scalar(Int.self))),
               ]
             }
 
@@ -6269,8 +6269,8 @@ public final class UserMediaListQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(episode: Int, airingAt: Int) {
-              self.init(unsafeResultMap: ["__typename": "AiringSchedule", "episode": episode, "airingAt": airingAt])
+            public init(episode: Int, timeUntilAiring: Int) {
+              self.init(unsafeResultMap: ["__typename": "AiringSchedule", "episode": episode, "timeUntilAiring": timeUntilAiring])
             }
 
             public var __typename: String {
@@ -6292,13 +6292,13 @@ public final class UserMediaListQuery: GraphQLQuery {
               }
             }
 
-            /// The time the episode airs at
-            public var airingAt: Int {
+            /// Seconds until episode starts airing
+            public var timeUntilAiring: Int {
               get {
-                return resultMap["airingAt"]! as! Int
+                return resultMap["timeUntilAiring"]! as! Int
               }
               set {
-                resultMap.updateValue(newValue, forKey: "airingAt")
+                resultMap.updateValue(newValue, forKey: "timeUntilAiring")
               }
             }
           }

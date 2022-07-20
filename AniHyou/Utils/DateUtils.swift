@@ -48,13 +48,13 @@ extension Int {
     
     /// Converts miliseconds to days, hours or minutes.
     /// Depending if there are enough days, hours or minutes.
-    /// Eg. If days > 1 returns number of days + " days"
+    /// Eg. If days >= 1 returns number of days + " days"
     func timestampToDaysOrHoursOrMinutes() -> String {
         let days = self / 86400
-        if days > 1 { return "\(days) days" }
+        if days >= 1 { return "\(days) days" }
         else {
             let hours = self / 3600
-            if hours > 1 { return "\(hours) h" }
+            if hours >= 1 { return "\(hours) h" }
             else {
                 let minutes = (self % 3600) / 60
                 return "\(minutes) min"

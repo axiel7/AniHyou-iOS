@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-private let coverWidth: CGFloat = 73
-private let coverHeight: CGFloat = 110
+private let coverWidth: CGFloat = 77
+private let coverHeight: CGFloat = 115
 
 struct MediaListItemView: View {
     
@@ -26,8 +26,16 @@ struct MediaListItemView: View {
                 
                 Spacer()
                 
-                Text("\(item.progress ?? 0)/\(totalProgress ?? 0)")
-                ProgressView(value: Float(item.progress ?? 0), total: Float(totalProgress ?? Int.max))
+                if let airing = item.media?.nextAiringEpisode {
+                    Text("Ep \(airing.episode) airing in \(airing.timeUntilAiring.timestampToDaysOrHoursOrMinutes())")
+                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                        .lineLimit(1)
+                        .padding(.bottom, 1)
+                }
+                
+                Text("\(progress ?? 0)/\(totalProgress ?? 0)")
+                ProgressView(value: Float(progress ?? 0), total: Float(totalProgress ?? Int.max))
             }
         }
         .frame(height: coverHeight)

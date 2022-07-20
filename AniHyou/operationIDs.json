@@ -47,9 +47,9 @@
     "name": "UpdateEntryProgress",
     "source": "mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int) {\n  SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress) {\n    __typename\n    id\n    mediaId\n    progress\n  }\n}"
   },
-  "e4485dc7a5dafc7486b71a340d691e8c3f87b669bd0e8371971e4cbf86845524": {
+  "e5445a2a14bf782846fc03704dba21ffef5c3002db04e265373f7169c95d1a46": {
     "name": "UserMediaList",
-    "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      id\n      mediaId\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          airingAt\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
+    "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      id\n      mediaId\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          timeUntilAiring\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
   },
   "90c42616ac03e8025c7d6b7f45168f6411dc6325c98da4914b04564ad675b2e9": {
     "name": "Viewer",
