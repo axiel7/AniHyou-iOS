@@ -6,13 +6,13 @@
 - View animes airing soon
 - This season animes
 - Trending animes
-- Anime/Manga info
+- Anime/Manga info, characters, staff, recommendations, relations, reviews
 - Manage Anime/Manga list (status, progress, score, dates)
 - Search animes, mangas, characters, staff, studios and users
 - Anime and Manga charts (top and popular)
 
 ## Coming features
-- More Anime/Manga info (characters, staff, trailer, stats...)
+- Anime/Manga stats
 - User profile stats
 - User score prefered settings (default is 10 point decimal)
 - User title format settings (default is romaji)
@@ -20,8 +20,9 @@
 - Notifications
 
 ## Technologies used
-- [SwiftUI](https://developer.apple.com/xcode/swiftui/)
-- [Apollo](https://github.com/apollographql/apollo-ios)
+- [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
+- [Apollo iOS Client](https://github.com/apollographql/apollo-ios)
+- [SwiftUI](https://developer.apple.com/xcode/swiftui)
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
 - [netfox](https://github.com/kasketis/netfox)
