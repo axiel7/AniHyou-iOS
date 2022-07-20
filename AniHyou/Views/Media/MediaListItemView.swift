@@ -13,6 +13,8 @@ private let coverHeight: CGFloat = 110
 struct MediaListItemView: View {
     
     var item: UserMediaListQuery.Data.Page.MediaList
+    @ObservedObject var viewModel: MediaListViewModel
+    @State var progress: Int?
     
     var body: some View {
         HStack {
@@ -31,6 +33,19 @@ struct MediaListItemView: View {
         .frame(height: coverHeight)
         .padding(.top, 8)
         .padding(.bottom, 8)
+        .onChange(of: viewModel.updatedEntryId) { id in
+            //since the property change in the object cannot be observed
+            //and the apollo object is inmutable
+            //it is neccesary to update it manually with an aux variable
+            if id == item.id {
+                progress = viewModel.updatedProgress ?? 0
+            }
+        }
+        .onAppear {
+            if progress == nil {
+                progress = item.progress
+            }
+        }
     }
     
     var totalProgress: Int? {
@@ -45,7 +60,7 @@ struct MediaListItemView: View {
 struct MediaListItemView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MediaListItemView(item: UserMediaListQuery.Data.Page.MediaList(id: 1, mediaId: 1))
+        MediaListItemView(item: UserMediaListQuery.Data.Page.MediaList(id: 1, mediaId: 1), viewModel: MediaListViewModel())
             .previewLayout(.sizeThatFits)
     }
 }

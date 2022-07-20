@@ -18,10 +18,10 @@ struct MediaListView: View {
             ForEach(viewModel.mediaList, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                        MediaListItemView(item: item)
+                        MediaListItemView(item: item, viewModel: viewModel)
                     }
                     .swipeActions {
-                        if status == .current {
+                        if viewModel.mediaListStatus == .current {
                             Button("+1") {
                                 viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
                             }
@@ -29,18 +29,22 @@ struct MediaListView: View {
                         }
                     }
                 }
-            }
+            }//:ForEach
             
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {
-                        viewModel.getUserMediaList(type: type, status: status)
+                        viewModel.getUserMediaList()
                     }
             }
-        }
-        .navigationTitle(status.localizedName)
+        }//:List
+        .navigationTitle(viewModel.mediaListStatus.localizedName)
         .refreshable {
             viewModel.refreshList()
+        }
+        .onAppear {
+            viewModel.mediaType = type
+            viewModel.mediaListStatus = status
         }
     }
 }
