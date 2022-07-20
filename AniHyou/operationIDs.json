@@ -23,6 +23,14 @@
     "name": "MediaRelationsAndRecommendations",
     "source": "query MediaRelationsAndRecommendations($mediaId: Int) {\n  Media(id: $mediaId) {\n    __typename\n    relations {\n      __typename\n      edges {\n        __typename\n        ...MediaRelated\n      }\n    }\n    recommendations(page: 1, sort: RATING_DESC) {\n      __typename\n      nodes {\n        __typename\n        ...MediaRecommended\n      }\n    }\n  }\n}\nfragment MediaRelated on MediaEdge {\n  __typename\n  relationType\n  node {\n    __typename\n    id\n    title {\n      __typename\n      romaji\n    }\n    format\n    coverImage {\n      __typename\n      large\n    }\n  }\n}\nfragment MediaRecommended on Recommendation {\n  __typename\n  mediaRecommendation {\n    __typename\n    id\n    title {\n      __typename\n      romaji\n    }\n    format\n    coverImage {\n      __typename\n      large\n    }\n  }\n}"
   },
+  "8a4fd56dbde9b8f53464ed4f7f249918516182c115bce363ba5ee84495ab566b": {
+    "name": "MediaReviews",
+    "source": "query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) {\n  Media(id: $mediaId) {\n    __typename\n    reviews(page: $page, perPage: $perPage, sort: RATING_DESC) {\n      __typename\n      nodes {\n        __typename\n        id\n        summary\n        score\n        user {\n          __typename\n          name\n        }\n      }\n    }\n  }\n}"
+  },
+  "4d0a080dcf952285a7c12973499caa09a096433fb477b6a3d02d92c91695584a": {
+    "name": "ReviewDetails",
+    "source": "query ReviewDetails($reviewId: Int) {\n  Review(id: $reviewId) {\n    __typename\n    id\n    body(asHtml: true)\n    score\n    rating\n    ratingAmount\n    user {\n      __typename\n      name\n      avatar {\n        __typename\n        medium\n      }\n    }\n  }\n}"
+  },
   "0a0687c1fa0d4b34f19bec7d84de3a1a69498f3e8babe7c8f405d51dcc9088ae": {
     "name": "SearchMedia",
     "source": "query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n    media(search: $search, type: $type, sort: SEARCH_MATCH) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      format\n      coverImage {\n        __typename\n        large\n      }\n      startDate {\n        __typename\n        year\n      }\n    }\n  }\n}"

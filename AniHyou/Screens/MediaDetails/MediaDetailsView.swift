@@ -128,9 +128,12 @@ struct MediaDetailsView: View {
                         case .stats:
                             Text("stats")
                         case .reviewsAndThreads:
-                            Text("reviewsAndThreads")
+                            MediaReviewsAndThreadsView(viewModel: viewModel)
+                                .onAppear {
+                                    viewModel.getMediaReviews(mediaId: mediaId)
+                                }
                         }
-                    }
+                    }//:Group
                     .frame(minWidth: 120)
                 }//:VStack
                 .padding(.bottom)
