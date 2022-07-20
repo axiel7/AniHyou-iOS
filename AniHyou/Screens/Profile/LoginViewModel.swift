@@ -51,6 +51,7 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
            let expirationDate = queryItems.filter ({ $0.name == "expires_in" }).first?.value {
             KeychainSwift().set(token, forKey: USER_TOKEN_KEY)
             UserDefaults.standard.set(expirationDate, forKey: "token_expiration")
+            UserDefaults.standard.set(true, forKey: "is_logged_in")
             getUserId()
             self.isLoginSuccess = true
         }

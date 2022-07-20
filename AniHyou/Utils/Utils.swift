@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import KeychainSwift
 
 func isLoggedIn() -> Bool {
-    return KeychainSwift().get(USER_TOKEN_KEY) != nil
+    return UserDefaults.standard.bool(forKey: "is_logged_in")
 }
 
 func userId() -> Int {

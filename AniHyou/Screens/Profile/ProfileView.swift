@@ -15,6 +15,7 @@ struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
+    @Binding var justLogged: Bool
     
     var body: some View {
         ScrollView(.vertical) {
@@ -39,7 +40,10 @@ struct ProfileView: View {
                 }
                 .buttonStyle(.bordered)
                 .confirmationDialog("Are you sure you want to log out?", isPresented: $showLogOutDialog) {
-                    Button("Log out", role: .destructive) { viewModel.logOut() }
+                    Button("Log out", role: .destructive) {
+                        viewModel.logOut()
+                        justLogged = false
+                    }
                 } message: {
                     Text("Are you sure you want to log out?")
                 }
@@ -55,7 +59,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            ProfileView()
+            ProfileView(justLogged: .constant(false))
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")
