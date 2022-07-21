@@ -18,6 +18,7 @@ struct ReviewDetailsView: View {
                 WebView(htmlString: $viewModel.reviewBody, baseURL: .constant(nil))
             }
         }
+        .navigationTitle(viewModel.reviewDetails?.user?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             viewModel.getReviewDetails(reviewId: reviewId)

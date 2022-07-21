@@ -61,6 +61,6 @@ struct ExpandableTextView: View {
 
 struct ExpandableTextView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpandableTextView(loremIpsum)
+        ExpandableTextView("")
     }
 }

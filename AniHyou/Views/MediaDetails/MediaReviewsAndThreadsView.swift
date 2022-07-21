@@ -23,18 +23,23 @@ struct MediaReviewsAndThreadsView: View {
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: gridRows, spacing: 8) {
-                        ForEach(viewModel.mediaReviews!.nodes ?? [], id: \.?.id) {
-                            if let review = $0 {
-                                NavigationLink(destination: ReviewDetailsView(reviewId: review.id)) {
-                                    ReviewItemView(review: review)
+                ZStack {
+                    if viewModel.mediaReviews?.nodes?.count == 0 {
+                        Text("No reviews")
+                    }
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: gridRows, spacing: 8) {
+                            ForEach(viewModel.mediaReviews!.nodes ?? [], id: \.?.id) {
+                                if let review = $0 {
+                                    NavigationLink(destination: ReviewDetailsView(reviewId: review.id)) {
+                                        ReviewItemView(review: review)
+                                    }
                                 }
                             }
-                        }
-                    }//:HGrid
-                    .padding(.leading)
-                }//:HScrollView
+                        }//:HGrid
+                        .padding(.leading)
+                    }//:HScrollView
+                }//:ZStack
                 .frame(height: 320)
             }//:VStack
         } else {

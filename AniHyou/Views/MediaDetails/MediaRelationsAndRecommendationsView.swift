@@ -15,31 +15,29 @@ struct MediaRelationsAndRecommendationsView: View {
         if viewModel.mediaRelationsAndRecommendations != nil {
             VStack(alignment: .leading) {
                 
-                //MARK: Relations
-                Text("Relations")
-                    .font(.title3)
-                    .bold()
-                    .padding(.leading)
-                ZStack {
-                    if viewModel.mediaRelationsAndRecommendations == nil {
-                        ProgressView()
-                    }
+                if viewModel.mediaRelationsAndRecommendations?.relations?.edges?.count ?? 0 > 0 {
+                    //MARK: Relations
+                    Text("Relations")
+                        .font(.title3)
+                        .bold()
+                        .padding(.leading)
+                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
                             ForEach(viewModel.mediaRelationsAndRecommendations?.relations?.edges ?? [], id: \.?.node?.id) {
                                 if let relation = $0 {
                                     NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
                                         HListItemWithSubtitleView(title: relation.node?.title?.romaji, subtitle: "\(relation.relationType?.formatted ?? "") · \(relation.node?.format?.formatted ?? "")", imageUrl: relation.node?.coverImage?.large)
-                                            .frame(maxWidth: 280)
+                                            .padding(.leading)
+                                            .frame(width: 280, alignment: .leading)
                                     }
-                                    .padding(.trailing)
                                 }
                             }
                         }//HStack
                     }//:HScrollView
-                }//:ZStack
-                .frame(height: HListItemWithSubtitleView.coverHeight)
-                .padding(.bottom)
+                    .frame(height: HListItemWithSubtitleView.coverHeight)
+                    .padding(.bottom)
+                }
                 
                 //MARK: Recommendations
                 Text("Recommendations")
@@ -50,6 +48,8 @@ struct MediaRelationsAndRecommendationsView: View {
                     if viewModel.mediaRelationsAndRecommendations == nil {
                         ProgressView()
                             .padding(.top)
+                    } else if viewModel.mediaRelationsAndRecommendations?.recommendations?.nodes?.count == 0 {
+                        Text("No recommendations")
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
@@ -61,7 +61,7 @@ struct MediaRelationsAndRecommendationsView: View {
                                 }
                             }
                         }//:HStack
-                        .padding(.leading, 4)
+                        .padding(.leading, 8)
                     }//:HScrollView
                 }//:ZStack
                 .padding(.bottom)
