@@ -52,23 +52,42 @@ struct MediaDetailsView: View {
                                 .foregroundColor(.gray)
                             
                             Spacer()
-                            Button(action: {
-                                if isLoggedIn() {
-                                    showingEditSheet = true
-                                } else {
-                                    showingNotLoggedAlert = true
+                            
+                            HStack {
+                                Button {
+                                    if isLoggedIn() {
+                                        showingEditSheet = true
+                                    } else {
+                                        showingNotLoggedAlert = true
+                                    }
+                                } label: {
+                                    Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
+                                        .bold()
+                                        .textCase(.uppercase)
+                                }//:Button
+                                .buttonStyle(.borderedProminent)
+                                .sheet(isPresented: $showingEditSheet) {
+                                    MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
                                 }
-                            }) {
-                                Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
-                                    .bold()
-                                    .textCase(.uppercase)
-                            }
-                            .buttonStyle(.borderedProminent)
-                            .sheet(isPresented: $showingEditSheet) {
-                                MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
-                            }
-                            .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
-                                Button("OK", role: .cancel) { }
+                                .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
+                                    Button("OK", role: .cancel) { }
+                                }
+                                Spacer()
+                                Button {
+                                    switch viewModel.mediaDetails!.type {
+                                    case .anime:
+                                        shareSheet(url: "\(ANILIST_ANIME_URL)\(mediaId)")
+                                    case .manga:
+                                        shareSheet(url: "\(ANILIST_MANGA_URL)\(mediaId)")
+                                    default:
+                                        break
+                                    }
+                                } label: {
+                                    Label("Share", systemImage: "square.and.arrow.up")
+                                        .labelButtonIcon()
+                                }
+                                .padding(.trailing)
+                                
                             }
                         }//:VStack
                         .padding(.leading, 12)
@@ -153,7 +172,14 @@ struct MediaDetailsView: View {
                     viewModel.getMediaDetails(id: mediaId)
                 }
         }
-        
+    }
+    
+    func shareSheet(url: String?) {
+        guard let url = url else { return }
+        guard let urlShare = URL(string: url) else { return }
+        let activityVC = UIActivityViewController(activityItems: [urlShare], applicationActivities: nil)
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.keyWindow?.rootViewController?.present(activityVC, animated: true, completion: nil)
     }
 }
 
