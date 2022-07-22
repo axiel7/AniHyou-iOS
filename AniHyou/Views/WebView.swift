@@ -42,6 +42,9 @@ struct WebView: UIViewRepresentable {
                     margin-top: 1em;
                     margin-bottom: 1em;
                 }
+                a {
+                    color: #526CFD;
+                }
                 .center {
                     display: block;
                     margin-left: auto;
@@ -64,6 +67,9 @@ struct WebView: UIViewRepresentable {
                     max-width: 100%;
                     margin-top: 1em;
                     margin-bottom: 1em;
+                }
+                a {
+                    color: #526CFD;
                 }
                 .center {
                     display: block;
