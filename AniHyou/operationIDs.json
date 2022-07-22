@@ -47,6 +47,10 @@
     "name": "UpdateEntryProgress",
     "source": "mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int) {\n  SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress) {\n    __typename\n    id\n    mediaId\n    progress\n  }\n}"
   },
+  "d6c550e6d5a329e28112cd372b62a36078803d0f2bcf632626151a2126f9a4f0": {
+    "name": "UserAbout",
+    "source": "query UserAbout($userId: Int) {\n  User(id: $userId) {\n    __typename\n    about(asHtml: true)\n  }\n}"
+  },
   "e5445a2a14bf782846fc03704dba21ffef5c3002db04e265373f7169c95d1a46": {
     "name": "UserMediaList",
     "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      id\n      mediaId\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          timeUntilAiring\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"

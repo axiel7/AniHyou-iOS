@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4809995E288B2977005AE427 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995D288B2977005AE427 /* SettingsView.swift */; };
+		48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995F288B29A9005AE427 /* SettingsViewModel.swift */; };
+		48099963288B2C60005AE427 /* UserAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48099962288B2C60005AE427 /* UserAboutView.swift */; };
+		48099965288B2E9C005AE427 /* UserAbout.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48099964288B2E9C005AE427 /* UserAbout.graphql */; };
 		481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */; };
 		481A6B0B2863944800AB9C89 /* UpdateEntryProgress.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */; };
 		481A6B0D2864BEB500AB9C89 /* UpdateEntry.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */; };
@@ -84,6 +88,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4809995D288B2977005AE427 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4809995F288B29A9005AE427 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		48099962288B2C60005AE427 /* UserAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAboutView.swift; sourceTree = "<group>"; };
+		48099964288B2E9C005AE427 /* UserAbout.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAbout.graphql; sourceTree = "<group>"; };
 		481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerToggleView.swift; sourceTree = "<group>"; };
 		481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntryProgress.graphql; sourceTree = "<group>"; };
 		481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntry.graphql; sourceTree = "<group>"; };
@@ -178,6 +186,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4809995C288B295F005AE427 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4809995D288B2977005AE427 /* SettingsView.swift */,
+				4809995F288B29A9005AE427 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		48099961288B2BE7005AE427 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				488C26902853A10D0005EE15 /* NotLoggedView.swift */,
+				488C26822853881F0005EE15 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		481AD4D12851CE73001779EE = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				481AD4DF2851CE73001779EE /* ContentView.swift */,
+				48099961288B2BE7005AE427 /* Login */,
+				4809995C288B295F005AE427 /* Settings */,
 				48FC94772868528900C87F56 /* Explore */,
 				486ED210285E3215002D29E1 /* MediaDetails */,
 				486ED201285DD344002D29E1 /* MediaList */,
@@ -248,7 +276,6 @@
 				481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */,
 				481AD50628522D74001779EE /* VListItemView.swift */,
 				4832B02D285F38DC00E79D27 /* TopBannerView.swift */,
-				488C26902853A10D0005EE15 /* NotLoggedView.swift */,
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
 				481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */,
 				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
@@ -285,6 +312,7 @@
 				48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */,
 				484A6D5F28747FD50044C34A /* MediaReviews.graphql */,
 				484A6D61287480CC0044C34A /* ReviewDetails.graphql */,
+				48099964288B2E9C005AE427 /* UserAbout.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -351,8 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				488C267D285380D90005EE15 /* ProfileView.swift */,
-				488C26822853881F0005EE15 /* LoginViewModel.swift */,
 				48643F442853C54800D7C328 /* ProfileViewModel.swift */,
+				48099962288B2C60005AE427 /* UserAboutView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -487,6 +515,7 @@
 				48CA07B928709FFF0048854E /* MediaRelationsAndRecommendations.graphql in Resources */,
 				48AB01F6286B6F3C004DC7FF /* SearchMedia.graphql in Resources */,
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
+				48099965288B2E9C005AE427 /* UserAbout.graphql in Resources */,
 				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
 				484A6D62287480CC0044C34A /* ReviewDetails.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
@@ -549,7 +578,9 @@
 				488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */,
 				4832B02E285F38DC00E79D27 /* TopBannerView.swift in Sources */,
 				48CA07B528706D8F0048854E /* CircleImageView.swift in Sources */,
+				4809995E288B2977005AE427 /* SettingsView.swift in Sources */,
 				484A6D69287481500044C34A /* ReviewDetailsView.swift in Sources */,
+				48099963288B2C60005AE427 /* UserAboutView.swift in Sources */,
 				48CA07A9287035530048854E /* MediaInfoType.swift in Sources */,
 				481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */,
 				484A6D6D28772D120044C34A /* WebView.swift in Sources */,
@@ -575,6 +606,7 @@
 				4832B032285F406300E79D27 /* StringsPreview.swift in Sources */,
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,
 				481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */,
+				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
 				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,

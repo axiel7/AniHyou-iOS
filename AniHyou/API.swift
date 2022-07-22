@@ -6326,6 +6326,103 @@ public final class UpdateEntryProgressMutation: GraphQLMutation {
   }
 }
 
+public final class UserAboutQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query UserAbout($userId: Int) {
+      User(id: $userId) {
+        __typename
+        about(asHtml: true)
+      }
+    }
+    """
+
+  public let operationName: String = "UserAbout"
+
+  public let operationIdentifier: String? = "d6c550e6d5a329e28112cd372b62a36078803d0f2bcf632626151a2126f9a4f0"
+
+  public var userId: Int?
+
+  public init(userId: Int? = nil) {
+    self.userId = userId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["userId": userId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("User", arguments: ["id": GraphQLVariable("userId")], type: .object(User.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(user: User? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "User": user.flatMap { (value: User) -> ResultMap in value.resultMap }])
+    }
+
+    /// User query
+    public var user: User? {
+      get {
+        return (resultMap["User"] as? ResultMap).flatMap { User(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "User")
+      }
+    }
+
+    public struct User: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["User"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("about", arguments: ["asHtml": true], type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(about: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "User", "about": about])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The bio written by user (Markdown)
+      public var about: String? {
+        get {
+          return resultMap["about"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "about")
+        }
+      }
+    }
+  }
+}
+
 public final class UserMediaListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

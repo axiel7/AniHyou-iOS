@@ -61,7 +61,7 @@ struct ContentView: View {
             }
             
             if isLoggedIn() || justLogged {
-                ProfileView(justLogged: $justLogged)
+                ProfileView()
                     .tabItemProfile()
             } else {
                 NotLoggedView(onSuccessLogin: { justLogged = true })

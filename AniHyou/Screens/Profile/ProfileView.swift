@@ -11,55 +11,66 @@ import Kingfisher
 private let avatarSize: CGFloat = 110
 private let bannerHeight: CGFloat = 150
 
+extension Label {
+    func labelButtonIcon() -> some View {
+        self
+            .labelStyle(.iconOnly)
+            .font(.system(size: 22))
+    }
+}
+
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
-    @Binding var justLogged: Bool
     
     var body: some View {
-        ScrollView(.vertical) {
-            VStack {
-                TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: bannerHeight)
-                
+        NavigationView {
+            ScrollView(.vertical) {
                 VStack {
-                    CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
-                        .shadow(radius: 7)
+                    TopBannerView(imageUrl: viewModel.myUserInfo?.bannerImage, placeholderHexColor: viewModel.myUserInfo?.hexColor, height: bannerHeight)
                     
-                    Text(viewModel.userInfo?.name ?? "")
-                        .font(.title2)
-                        .bold()
-                        .frame(alignment: .center)
+                    HStack {
+                        NavigationLink(destination: UserAboutView(userId: viewModel.myUserInfo?.id ?? 0)) {
+                            Label("About", systemImage: "info.circle")
+                                .labelButtonIcon()
+                        }
+                        .padding()
+                        Spacer()
+                        NavigationLink(destination: SettingsView()) {
+                            Label("Settings", systemImage: "gearshape")
+                                .labelButtonIcon()
+                        }
+                        .padding()
+                    }//:HStack
+                    
+                    VStack {
+                        CircleImageView(imageUrl: viewModel.myUserInfo?.avatar?.large, size: avatarSize)
+                            .shadow(radius: 7)
+                        
+                        Text(viewModel.myUserInfo?.name ?? "")
+                            .font(.title2)
+                            .bold()
+                            .frame(alignment: .center)
+                    }//:VStack
+                    .offset(y: -125)
+                    
+                    Spacer()
+                    
                 }//:VStack
-                .offset(y: -65)
-                
-                Spacer()
-                
-                Button("Log out") {
-                    showLogOutDialog = true
-                }
-                .buttonStyle(.bordered)
-                .confirmationDialog("Are you sure you want to log out?", isPresented: $showLogOutDialog) {
-                    Button("Log out", role: .destructive) {
-                        viewModel.logOut()
-                        justLogged = false
-                    }
-                } message: {
-                    Text("Are you sure you want to log out?")
-                }
-            }//:VStack
-        }//:VScrollView
-        .ignoresSafeArea(edges: .top)
-        .onAppear {
-            viewModel.getUserInfo()
-        }
+            }//:VScrollView
+            .ignoresSafeArea(edges: .top)
+            .onAppear {
+                viewModel.getMyUserInfo()
+            }
+        }//:NavigationView
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            ProfileView(justLogged: .constant(false))
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")

@@ -11,14 +11,14 @@ import KeychainSwift
 
 class ProfileViewModel: ObservableObject {
     
-    @Published var userInfo: ViewerQuery.Data.Viewer?
+    @Published var myUserInfo: ViewerQuery.Data.Viewer?
     
-    func getUserInfo() {
+    func getMyUserInfo() {
         Network.shared.apollo.fetch(query: ViewerQuery()) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let viewer = graphQLResult.data?.viewer {
-                    self?.userInfo = viewer
+                    self?.myUserInfo = viewer
                 }
             case .failure(let error):
                 print(error)
@@ -34,6 +34,21 @@ class ProfileViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "token_expiration")
         UserDefaults.standard.removeObject(forKey: "is_logged_in")
         isLoggedOut = true
+    }
+    
+    @Published var userAbout: String = ""
+    
+    func getUserAbout(userId: Int) {
+        Network.shared.apollo.fetch(query: UserAboutQuery(userId: userId)) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let about = graphQLResult.data?.user?.about {
+                    self?.userAbout = about
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
