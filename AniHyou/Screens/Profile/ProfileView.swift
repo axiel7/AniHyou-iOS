@@ -17,6 +17,13 @@ extension Label {
             .labelStyle(.iconOnly)
             .font(.system(size: 22))
     }
+    
+    func toolbarMaterialLabel() -> some View {
+        self
+            .frame(width: 32, height: 32)
+            .background(.ultraThinMaterial)
+            .clipShape(Circle())
+    }
 }
 
 struct ProfileView: View {
@@ -33,15 +40,9 @@ struct ProfileView: View {
                     HStack {
                         NavigationLink(destination: UserAboutView(userId: viewModel.myUserInfo?.id ?? 0)) {
                             Label("About", systemImage: "info.circle")
-                                .labelButtonIcon()
                         }
                         .padding()
                         Spacer()
-                        NavigationLink(destination: SettingsView()) {
-                            Label("Settings", systemImage: "gearshape")
-                                .labelButtonIcon()
-                        }
-                        .padding()
                     }//:HStack
                     
                     VStack {
@@ -59,11 +60,19 @@ struct ProfileView: View {
                     
                 }//:VStack
             }//:VScrollView
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink(destination: SettingsView()) {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                }
+            }
             .ignoresSafeArea(edges: .top)
             .onAppear {
                 viewModel.getMyUserInfo()
             }
         }//:NavigationView
+        .navigationViewStyle(.stack)
     }
 }
 
