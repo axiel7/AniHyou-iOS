@@ -91,6 +91,23 @@ struct MediaDetailsView: View {
                 .padding(.bottom)
             }//:VScrollView
             .edgesIgnoringSafeArea(.top)
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        switch viewModel.mediaDetails!.type {
+                        case .anime:
+                            shareSheet(url: "\(ANILIST_ANIME_URL)\(mediaId)")
+                        case .manga:
+                            shareSheet(url: "\(ANILIST_MANGA_URL)\(mediaId)")
+                        default:
+                            break
+                        }
+                    } label: {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                    .padding(.trailing)
+                }
+            }
         } else {
             ProgressView()
                 .onAppear {
