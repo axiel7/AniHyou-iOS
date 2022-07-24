@@ -9,9 +9,18 @@ import Foundation
 
 class MediaDetailsViewModel: ObservableObject {
     
+    var mediaId: Int = 0
+    
+    init(mediaId: Int? = nil) {
+        if mediaId != nil {
+            self.mediaId = mediaId!
+        }
+    }
+    
     @Published var mediaDetails: MediaDetailsQuery.Data.Medium?
     
     func getMediaDetails(id: Int) {
+        mediaId = id
         Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: id)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
@@ -122,5 +131,11 @@ class MediaDetailsViewModel: ObservableObject {
         }
         if strProducers.isEmpty { return nil }
         else { return String(strProducers.dropLast(2)) }
+    }
+    
+    var streamingLinks: [MediaDetailsQuery.Data.Medium.ExternalLink?] {
+        guard mediaDetails != nil else { return [] }
+        guard mediaDetails?.externalLinks != nil else { return [] }
+        return mediaDetails!.externalLinks!.filter { $0?.type == .streaming }
     }
 }

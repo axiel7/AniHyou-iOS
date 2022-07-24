@@ -56,6 +56,13 @@ query MediaDetails($mediaId: Int) {
       }
     }
     source
+    externalLinks {
+      id
+      url
+      site
+      type
+      icon
+    }
   }
 }
 

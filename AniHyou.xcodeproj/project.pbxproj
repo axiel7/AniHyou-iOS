@@ -28,6 +28,9 @@
 		481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */; };
 		481AD502285207B1001779EE /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD501285207B1001779EE /* DateUtils.swift */; };
 		481AD50728522D74001779EE /* VListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD50628522D74001779EE /* VListItemView.swift */; };
+		481E2D67288C008200D91A54 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E2D66288C008200D91A54 /* NotificationsView.swift */; };
+		481E2D69288C00B900D91A54 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */; };
+		481E2D6B288C168100D91A54 /* MediaDetailsMainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E2D6A288C168100D91A54 /* MediaDetailsMainInfo.swift */; };
 		4832B027285F279600E79D27 /* MediaDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4832B026285F279600E79D27 /* MediaDetails.graphql */; };
 		4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */; };
 		4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
@@ -111,6 +114,9 @@
 		481AD501285207B1001779EE /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		481AD50428522139001779EE /* SeasonalAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SeasonalAnime.graphql; sourceTree = "<group>"; };
 		481AD50628522D74001779EE /* VListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VListItemView.swift; sourceTree = "<group>"; };
+		481E2D66288C008200D91A54 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		481E2D6A288C168100D91A54 /* MediaDetailsMainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsMainInfo.swift; sourceTree = "<group>"; };
 		4832B026285F279600E79D27 /* MediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaDetails.graphql; sourceTree = "<group>"; };
 		4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewModel.swift; sourceTree = "<group>"; };
 		4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIUtils.swift; sourceTree = "<group>"; };
@@ -290,6 +296,8 @@
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
 				481AD4F72851D927001779EE /* HomeViewModel.swift */,
+				481E2D66288C008200D91A54 /* NotificationsView.swift */,
+				481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 				48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */,
 				484A6D68287481500044C34A /* ReviewDetailsView.swift */,
 				484A6D6E28772D8C0044C34A /* ReviewDetailsViewModel.swift */,
+				481E2D6A288C168100D91A54 /* MediaDetailsMainInfo.swift */,
 			);
 			path = MediaDetails;
 			sourceTree = "<group>";
@@ -571,6 +580,7 @@
 				484A6D6B287484C40044C34A /* MediaReviewsAndThreadsView.swift in Sources */,
 				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
+				481E2D67288C008200D91A54 /* NotificationsView.swift in Sources */,
 				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */,
@@ -598,8 +608,10 @@
 				4832B034285F953100E79D27 /* MediaStatView.swift in Sources */,
 				48FC947B2868653E00C87F56 /* RectangleTextView.swift in Sources */,
 				484A6D6F28772D8C0044C34A /* ReviewDetailsViewModel.swift in Sources */,
+				481E2D69288C00B900D91A54 /* NotificationsViewModel.swift in Sources */,
 				48CA07B728707DF80048854E /* StaffView.swift in Sources */,
 				48E80F9E28734DA5002765FC /* FullCoverView.swift in Sources */,
+				481E2D6B288C168100D91A54 /* MediaDetailsMainInfo.swift in Sources */,
 				48FC9474286656F600C87F56 /* MediaInfoView.swift in Sources */,
 				481AD502285207B1001779EE /* DateUtils.swift in Sources */,
 				486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */,
@@ -747,7 +759,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
@@ -778,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;

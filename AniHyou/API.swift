@@ -728,6 +728,51 @@ public enum MediaSource: RawRepresentable, Equatable, Hashable, CaseIterable, Ap
   }
 }
 
+public enum ExternalLinkType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case info
+  case streaming
+  case social
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "INFO": self = .info
+      case "STREAMING": self = .streaming
+      case "SOCIAL": self = .social
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .info: return "INFO"
+      case .streaming: return "STREAMING"
+      case .social: return "SOCIAL"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: ExternalLinkType, rhs: ExternalLinkType) -> Bool {
+    switch (lhs, rhs) {
+      case (.info, .info): return true
+      case (.streaming, .streaming): return true
+      case (.social, .social): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [ExternalLinkType] {
+    return [
+      .info,
+      .streaming,
+      .social,
+    ]
+  }
+}
+
 /// Date object that allows for incomplete date values (fuzzy)
 public struct FuzzyDateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
@@ -2929,13 +2974,21 @@ public final class MediaDetailsQuery: GraphQLQuery {
           }
         }
         source
+        externalLinks {
+          __typename
+          id
+          url
+          site
+          type
+          icon
+        }
       }
     }
     """
 
   public let operationName: String = "MediaDetails"
 
-  public let operationIdentifier: String? = "04426bd880abbaa5a338b3e22778c3ee18baf35fa2998a70199a446eab87c11f"
+  public let operationIdentifier: String? = "ce17f7f6664ed29558afabb9ed511c7333b7f9519b0869fa46c6fb04eabc963a"
 
   public var queryDocument: String {
     var document: String = operationDefinition
@@ -3012,6 +3065,7 @@ public final class MediaDetailsQuery: GraphQLQuery {
           GraphQLField("nextAiringEpisode", type: .object(NextAiringEpisode.selections)),
           GraphQLField("mediaListEntry", type: .object(MediaListEntry.selections)),
           GraphQLField("source", type: .scalar(MediaSource.self)),
+          GraphQLField("externalLinks", type: .list(.object(ExternalLink.selections))),
         ]
       }
 
@@ -3021,8 +3075,8 @@ public final class MediaDetailsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(title: Title? = nil, format: MediaFormat? = nil, status: MediaStatus? = nil, description: String? = nil, startDate: StartDate? = nil, endDate: EndDate? = nil, season: MediaSeason? = nil, seasonYear: Int? = nil, episodes: Int? = nil, duration: Int? = nil, chapters: Int? = nil, volumes: Int? = nil, coverImage: CoverImage? = nil, bannerImage: String? = nil, averageScore: Int? = nil, meanScore: Int? = nil, popularity: Int? = nil, genres: [String?]? = nil, studios: Studio? = nil, favourites: Int? = nil, type: MediaType? = nil, nextAiringEpisode: NextAiringEpisode? = nil, mediaListEntry: MediaListEntry? = nil, source: MediaSource? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Media", "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "format": format, "status": status, "description": description, "startDate": startDate.flatMap { (value: StartDate) -> ResultMap in value.resultMap }, "endDate": endDate.flatMap { (value: EndDate) -> ResultMap in value.resultMap }, "season": season, "seasonYear": seasonYear, "episodes": episodes, "duration": duration, "chapters": chapters, "volumes": volumes, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }, "bannerImage": bannerImage, "averageScore": averageScore, "meanScore": meanScore, "popularity": popularity, "genres": genres, "studios": studios.flatMap { (value: Studio) -> ResultMap in value.resultMap }, "favourites": favourites, "type": type, "nextAiringEpisode": nextAiringEpisode.flatMap { (value: NextAiringEpisode) -> ResultMap in value.resultMap }, "mediaListEntry": mediaListEntry.flatMap { (value: MediaListEntry) -> ResultMap in value.resultMap }, "source": source])
+      public init(title: Title? = nil, format: MediaFormat? = nil, status: MediaStatus? = nil, description: String? = nil, startDate: StartDate? = nil, endDate: EndDate? = nil, season: MediaSeason? = nil, seasonYear: Int? = nil, episodes: Int? = nil, duration: Int? = nil, chapters: Int? = nil, volumes: Int? = nil, coverImage: CoverImage? = nil, bannerImage: String? = nil, averageScore: Int? = nil, meanScore: Int? = nil, popularity: Int? = nil, genres: [String?]? = nil, studios: Studio? = nil, favourites: Int? = nil, type: MediaType? = nil, nextAiringEpisode: NextAiringEpisode? = nil, mediaListEntry: MediaListEntry? = nil, source: MediaSource? = nil, externalLinks: [ExternalLink?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Media", "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "format": format, "status": status, "description": description, "startDate": startDate.flatMap { (value: StartDate) -> ResultMap in value.resultMap }, "endDate": endDate.flatMap { (value: EndDate) -> ResultMap in value.resultMap }, "season": season, "seasonYear": seasonYear, "episodes": episodes, "duration": duration, "chapters": chapters, "volumes": volumes, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }, "bannerImage": bannerImage, "averageScore": averageScore, "meanScore": meanScore, "popularity": popularity, "genres": genres, "studios": studios.flatMap { (value: Studio) -> ResultMap in value.resultMap }, "favourites": favourites, "type": type, "nextAiringEpisode": nextAiringEpisode.flatMap { (value: NextAiringEpisode) -> ResultMap in value.resultMap }, "mediaListEntry": mediaListEntry.flatMap { (value: MediaListEntry) -> ResultMap in value.resultMap }, "source": source, "externalLinks": externalLinks.flatMap { (value: [ExternalLink?]) -> [ResultMap?] in value.map { (value: ExternalLink?) -> ResultMap? in value.flatMap { (value: ExternalLink) -> ResultMap in value.resultMap } } }])
       }
 
       public var __typename: String {
@@ -3271,6 +3325,16 @@ public final class MediaDetailsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "source")
+        }
+      }
+
+      /// External links to another site related to the media
+      public var externalLinks: [ExternalLink?]? {
+        get {
+          return (resultMap["externalLinks"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [ExternalLink?] in value.map { (value: ResultMap?) -> ExternalLink? in value.flatMap { (value: ResultMap) -> ExternalLink in ExternalLink(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [ExternalLink?]) -> [ResultMap?] in value.map { (value: ExternalLink?) -> ResultMap? in value.flatMap { (value: ExternalLink) -> ResultMap in value.resultMap } } }, forKey: "externalLinks")
         }
       }
 
@@ -3997,6 +4061,89 @@ public final class MediaDetailsQuery: GraphQLQuery {
                 resultMap += newValue.resultMap
               }
             }
+          }
+        }
+      }
+
+      public struct ExternalLink: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaExternalLink"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("url", type: .scalar(String.self)),
+            GraphQLField("site", type: .nonNull(.scalar(String.self))),
+            GraphQLField("type", type: .scalar(ExternalLinkType.self)),
+            GraphQLField("icon", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: Int, url: String? = nil, site: String, type: ExternalLinkType? = nil, icon: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaExternalLink", "id": id, "url": url, "site": site, "type": type, "icon": icon])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The id of the external link
+        public var id: Int {
+          get {
+            return resultMap["id"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        /// The url of the external link or base url of link source
+        public var url: String? {
+          get {
+            return resultMap["url"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "url")
+          }
+        }
+
+        /// The links website site name
+        public var site: String {
+          get {
+            return resultMap["site"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "site")
+          }
+        }
+
+        public var type: ExternalLinkType? {
+          get {
+            return resultMap["type"] as? ExternalLinkType
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "type")
+          }
+        }
+
+        /// The icon image url of the site. Not available for all links. Transparent PNG 64x64
+        public var icon: String? {
+          get {
+            return resultMap["icon"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "icon")
           }
         }
       }

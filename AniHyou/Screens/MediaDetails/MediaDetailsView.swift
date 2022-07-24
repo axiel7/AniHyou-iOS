@@ -6,19 +6,13 @@
 //
 
 import SwiftUI
-import Kingfisher
 
-private let coverWidth: CGFloat = 100
-private let coverHeight: CGFloat = 153
 private let bannerHeight: CGFloat = 180
 
 struct MediaDetailsView: View {
     
     var mediaId: Int
     @StateObject private var viewModel = MediaDetailsViewModel()
-    @State private var showingEditSheet = false
-    @State private var showingCoverSheet = false
-    @State private var showingNotLoggedAlert = false
     @State private var infoType: MediaInfoType = .general
     
     var body: some View {
@@ -29,74 +23,7 @@ struct MediaDetailsView: View {
                     TopBannerView(imageUrl: viewModel.mediaDetails!.bannerImage, placeholderHexColor: viewModel.mediaDetails!.coverImage?.color, height: bannerHeight)
                     
                     // MARK: Main info
-                    HStack(alignment: .top) {
-                        
-                        MediaCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.large, width: coverWidth, height: coverHeight)
-                            .sheet(isPresented: $showingCoverSheet) {
-                                FullCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.extraLarge)
-                            }
-                            .onTapGesture {
-                                showingCoverSheet = true
-                            }
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text(viewModel.mediaDetails!.title?.romaji ?? "")
-                                .font(.title3)
-                                .bold()
-                                .lineLimit(3)
-                                .padding(.bottom, 1)
-                            
-                            Text(viewModel.mediaDetails!.format?.formatted ?? "Unknown")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                            
-                            Spacer()
-                            
-                            HStack {
-                                Button {
-                                    if isLoggedIn() {
-                                        showingEditSheet = true
-                                    } else {
-                                        showingNotLoggedAlert = true
-                                    }
-                                } label: {
-                                    Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
-                                        .bold()
-                                        .textCase(.uppercase)
-                                }//:Button
-                                .buttonStyle(.borderedProminent)
-                                .sheet(isPresented: $showingEditSheet) {
-                                    MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
-                                }
-                                .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
-                                    Button("OK", role: .cancel) { }
-                                }
-                                Spacer()
-                                Button {
-                                    switch viewModel.mediaDetails!.type {
-                                    case .anime:
-                                        shareSheet(url: "\(ANILIST_ANIME_URL)\(mediaId)")
-                                    case .manga:
-                                        shareSheet(url: "\(ANILIST_MANGA_URL)\(mediaId)")
-                                    default:
-                                        break
-                                    }
-                                } label: {
-                                    Label("Share", systemImage: "square.and.arrow.up")
-                                        .labelButtonIcon()
-                                }
-                                .padding(.trailing)
-                                
-                            }
-                        }//:VStack
-                        .padding(.leading, 12)
-                        .padding(.trailing, 8)
-                        
-                        //Spacer()
-                    }//:HStack
-                    .padding(.top)
-                    .padding(.leading)
+                    MediaDetailsMainInfo(viewModel: viewModel)
                     
                     // MARK: Main stats
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -135,8 +62,6 @@ struct MediaDetailsView: View {
                     .pickerStyle(.segmented)
                     .labelStyle(.iconOnly)
                     .padding(8)
-                    
-                    //Divider().padding()
                     
                     Group {
                         switch infoType {
