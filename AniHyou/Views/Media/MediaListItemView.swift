@@ -27,8 +27,10 @@ struct MediaListItemView: View {
                 Spacer()
                 
                 if let airing = item.media?.nextAiringEpisode {
-                    Text("Ep \(airing.episode) airing in \(airing.timeUntilAiring.timestampToDaysOrHoursOrMinutes())")
-                        .foregroundColor(.gray)
+                    let isBehind = progress ?? 0 < airing.episode - 1
+                    
+                    Text(isBehind ? "\((airing.episode - 1) - (progress ?? 0)) episodes behind" : "Ep \(airing.episode) airing in \(airing.timeUntilAiring.timestampToDaysOrHoursOrMinutes())")
+                        .foregroundColor(isBehind ? .accentColor : .gray)
                         .font(.subheadline)
                         .lineLimit(1)
                         .padding(.bottom, 1)
