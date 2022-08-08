@@ -222,3 +222,73 @@ extension MediaRelation {
         }
     }
 }
+
+extension MediaListSort {
+    
+    var localizedName: String {
+        switch self {
+        case .mediaId:
+            return "Id"
+        case .mediaIdDesc:
+            return "Id"
+        case .score:
+            return "Score"
+        case .scoreDesc:
+            return "Score"
+        case .status:
+            return "Status"
+        case .statusDesc:
+            return "Status"
+        case .progress:
+            return "Progress"
+        case .progressDesc:
+            return "Progress"
+        case .progressVolumes:
+            return "Progress"
+        case .progressVolumesDesc:
+            return "progress"
+        case .repeat:
+            return "Repeat"
+        case .repeatDesc:
+            return "Repeat"
+        case .priority:
+            return "Priority"
+        case .priorityDesc:
+            return "Priority"
+        case .startedOn:
+            return "Started"
+        case .startedOnDesc:
+            return "Started"
+        case .finishedOn:
+            return "Finished"
+        case .finishedOnDesc:
+            return "Finished"
+        case .addedTime:
+            return "Added"
+        case .addedTimeDesc:
+            return "Last Added"
+        case .updatedTime:
+            return "Updated"
+        case .updatedTimeDesc:
+            return "Last Updated"
+        case .mediaTitleRomaji:
+            return "Title"
+        case .mediaTitleRomajiDesc:
+            return "Title"
+        case .mediaTitleEnglish:
+            return "Title"
+        case .mediaTitleEnglishDesc:
+            return "Title"
+        case .mediaTitleNative:
+            return "Title"
+        case .mediaTitleNativeDesc:
+            return "Title"
+        case .mediaPopularity:
+            return "Popularity"
+        case .mediaPopularityDesc:
+            return "Popularity"
+        case .__unknown(let rawValue):
+            return rawValue
+        }
+    }
+}
