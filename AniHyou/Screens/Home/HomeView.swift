@@ -21,7 +21,7 @@ extension Text {
 struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
-    @State private var queryString = ""
+    @State private var showingNotificationsSheet = false
     
     var body: some View {
         NavigationView {
@@ -106,10 +106,21 @@ struct HomeView: View {
                             viewModel.getTrendingAnimes()
                         }
                     }//:ZStack
-                    
                 }//:VStack
             }//:VScrollView
             .navigationTitle("Home")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        showingNotificationsSheet = true
+                    } label: {
+                        Label("Notifications", systemImage: "bell")
+                    }
+                    .sheet(isPresented: $showingNotificationsSheet) {
+                        NotificationsView()
+                    }
+                }
+            }
         }//:NavigationView
         .navigationViewStyle(.stack)
     }
