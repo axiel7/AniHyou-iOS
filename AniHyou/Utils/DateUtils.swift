@@ -73,6 +73,13 @@ extension Int {
             }
         }
     }
+    
+    func timestampToDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        return dateFormatter.string(from: Date(timeIntervalSince1970: Double(self)))
+    }
 }
 
 extension FuzzyDate {

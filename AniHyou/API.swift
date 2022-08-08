@@ -773,6 +773,117 @@ public enum ExternalLinkType: RawRepresentable, Equatable, Hashable, CaseIterabl
   }
 }
 
+/// Thread sort enums
+public enum ThreadSort: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case id
+  case idDesc
+  case title
+  case titleDesc
+  case createdAt
+  case createdAtDesc
+  case updatedAt
+  case updatedAtDesc
+  case repliedAt
+  case repliedAtDesc
+  case replyCount
+  case replyCountDesc
+  case viewCount
+  case viewCountDesc
+  case isSticky
+  case searchMatch
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "ID": self = .id
+      case "ID_DESC": self = .idDesc
+      case "TITLE": self = .title
+      case "TITLE_DESC": self = .titleDesc
+      case "CREATED_AT": self = .createdAt
+      case "CREATED_AT_DESC": self = .createdAtDesc
+      case "UPDATED_AT": self = .updatedAt
+      case "UPDATED_AT_DESC": self = .updatedAtDesc
+      case "REPLIED_AT": self = .repliedAt
+      case "REPLIED_AT_DESC": self = .repliedAtDesc
+      case "REPLY_COUNT": self = .replyCount
+      case "REPLY_COUNT_DESC": self = .replyCountDesc
+      case "VIEW_COUNT": self = .viewCount
+      case "VIEW_COUNT_DESC": self = .viewCountDesc
+      case "IS_STICKY": self = .isSticky
+      case "SEARCH_MATCH": self = .searchMatch
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .id: return "ID"
+      case .idDesc: return "ID_DESC"
+      case .title: return "TITLE"
+      case .titleDesc: return "TITLE_DESC"
+      case .createdAt: return "CREATED_AT"
+      case .createdAtDesc: return "CREATED_AT_DESC"
+      case .updatedAt: return "UPDATED_AT"
+      case .updatedAtDesc: return "UPDATED_AT_DESC"
+      case .repliedAt: return "REPLIED_AT"
+      case .repliedAtDesc: return "REPLIED_AT_DESC"
+      case .replyCount: return "REPLY_COUNT"
+      case .replyCountDesc: return "REPLY_COUNT_DESC"
+      case .viewCount: return "VIEW_COUNT"
+      case .viewCountDesc: return "VIEW_COUNT_DESC"
+      case .isSticky: return "IS_STICKY"
+      case .searchMatch: return "SEARCH_MATCH"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: ThreadSort, rhs: ThreadSort) -> Bool {
+    switch (lhs, rhs) {
+      case (.id, .id): return true
+      case (.idDesc, .idDesc): return true
+      case (.title, .title): return true
+      case (.titleDesc, .titleDesc): return true
+      case (.createdAt, .createdAt): return true
+      case (.createdAtDesc, .createdAtDesc): return true
+      case (.updatedAt, .updatedAt): return true
+      case (.updatedAtDesc, .updatedAtDesc): return true
+      case (.repliedAt, .repliedAt): return true
+      case (.repliedAtDesc, .repliedAtDesc): return true
+      case (.replyCount, .replyCount): return true
+      case (.replyCountDesc, .replyCountDesc): return true
+      case (.viewCount, .viewCount): return true
+      case (.viewCountDesc, .viewCountDesc): return true
+      case (.isSticky, .isSticky): return true
+      case (.searchMatch, .searchMatch): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [ThreadSort] {
+    return [
+      .id,
+      .idDesc,
+      .title,
+      .titleDesc,
+      .createdAt,
+      .createdAtDesc,
+      .updatedAt,
+      .updatedAtDesc,
+      .repliedAt,
+      .repliedAtDesc,
+      .replyCount,
+      .replyCountDesc,
+      .viewCount,
+      .viewCountDesc,
+      .isSticky,
+      .searchMatch,
+    ]
+  }
+}
+
 /// Date object that allows for incomplete date values (fuzzy)
 public struct FuzzyDateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
@@ -5072,6 +5183,277 @@ public final class MediaReviewsQuery: GraphQLQuery {
   }
 }
 
+public final class MediaThreadsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) {
+      Page(page: $page, perPage: $perPage) {
+        __typename
+        threads(mediaCategoryId: $mediaCategoryId, sort: $sort) {
+          __typename
+          id
+          title
+          body(asHtml: true)
+          viewCount
+          replyCount
+          likeCount
+          createdAt
+          user {
+            __typename
+            name
+          }
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "MediaThreads"
+
+  public let operationIdentifier: String? = "e3d460560a636281e85ba9db43a5b5c90544c93954679a4651f0c1a20224382a"
+
+  public var page: Int?
+  public var perPage: Int?
+  public var mediaCategoryId: Int?
+  public var sort: [ThreadSort?]?
+
+  public init(page: Int? = nil, perPage: Int? = nil, mediaCategoryId: Int? = nil, sort: [ThreadSort?]? = nil) {
+    self.page = page
+    self.perPage = perPage
+    self.mediaCategoryId = mediaCategoryId
+    self.sort = sort
+  }
+
+  public var variables: GraphQLMap? {
+    return ["page": page, "perPage": perPage, "mediaCategoryId": mediaCategoryId, "sort": sort]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("Page", arguments: ["page": GraphQLVariable("page"), "perPage": GraphQLVariable("perPage")], type: .object(Page.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(page: Page? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "Page": page.flatMap { (value: Page) -> ResultMap in value.resultMap }])
+    }
+
+    public var page: Page? {
+      get {
+        return (resultMap["Page"] as? ResultMap).flatMap { Page(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "Page")
+      }
+    }
+
+    public struct Page: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Page"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("threads", arguments: ["mediaCategoryId": GraphQLVariable("mediaCategoryId"), "sort": GraphQLVariable("sort")], type: .list(.object(Thread.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(threads: [Thread?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Page", "threads": threads.flatMap { (value: [Thread?]) -> [ResultMap?] in value.map { (value: Thread?) -> ResultMap? in value.flatMap { (value: Thread) -> ResultMap in value.resultMap } } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var threads: [Thread?]? {
+        get {
+          return (resultMap["threads"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Thread?] in value.map { (value: ResultMap?) -> Thread? in value.flatMap { (value: ResultMap) -> Thread in Thread(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Thread?]) -> [ResultMap?] in value.map { (value: Thread?) -> ResultMap? in value.flatMap { (value: Thread) -> ResultMap in value.resultMap } } }, forKey: "threads")
+        }
+      }
+
+      public struct Thread: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Thread"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("title", type: .scalar(String.self)),
+            GraphQLField("body", arguments: ["asHtml": true], type: .scalar(String.self)),
+            GraphQLField("viewCount", type: .scalar(Int.self)),
+            GraphQLField("replyCount", type: .scalar(Int.self)),
+            GraphQLField("likeCount", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("createdAt", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("user", type: .object(User.selections)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: Int, title: String? = nil, body: String? = nil, viewCount: Int? = nil, replyCount: Int? = nil, likeCount: Int, createdAt: Int, user: User? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Thread", "id": id, "title": title, "body": body, "viewCount": viewCount, "replyCount": replyCount, "likeCount": likeCount, "createdAt": createdAt, "user": user.flatMap { (value: User) -> ResultMap in value.resultMap }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The id of the thread
+        public var id: Int {
+          get {
+            return resultMap["id"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        /// The title of the thread
+        public var title: String? {
+          get {
+            return resultMap["title"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "title")
+          }
+        }
+
+        /// The text body of the thread (Markdown)
+        public var body: String? {
+          get {
+            return resultMap["body"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "body")
+          }
+        }
+
+        /// The number of times users have viewed the thread
+        public var viewCount: Int? {
+          get {
+            return resultMap["viewCount"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "viewCount")
+          }
+        }
+
+        /// The number of comments on the thread
+        public var replyCount: Int? {
+          get {
+            return resultMap["replyCount"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "replyCount")
+          }
+        }
+
+        /// The amount of likes the thread has
+        public var likeCount: Int {
+          get {
+            return resultMap["likeCount"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "likeCount")
+          }
+        }
+
+        /// The time of the thread creation
+        public var createdAt: Int {
+          get {
+            return resultMap["createdAt"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        /// The owner of the thread
+        public var user: User? {
+          get {
+            return (resultMap["user"] as? ResultMap).flatMap { User(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "user")
+          }
+        }
+
+        public struct User: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["User"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String) {
+            self.init(unsafeResultMap: ["__typename": "User", "name": name])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// The name of the user
+          public var name: String {
+            get {
+              return resultMap["name"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class ReviewDetailsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -5951,6 +6333,239 @@ public final class SeasonalAnimeQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "large")
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class ThreadCommentsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {
+      Page(page: $page, perPage: $perPage) {
+        __typename
+        threadComments(threadId: $threadId) {
+          __typename
+          id
+          comment
+          likeCount
+          createdAt
+          user {
+            __typename
+            name
+          }
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "ThreadComments"
+
+  public let operationIdentifier: String? = "5ef77ea9f8dc4dfeba6bcd21416dcb94cb7de2f7bb122551c9ea894971ac4197"
+
+  public var page: Int?
+  public var perPage: Int?
+  public var threadId: Int?
+
+  public init(page: Int? = nil, perPage: Int? = nil, threadId: Int? = nil) {
+    self.page = page
+    self.perPage = perPage
+    self.threadId = threadId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["page": page, "perPage": perPage, "threadId": threadId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("Page", arguments: ["page": GraphQLVariable("page"), "perPage": GraphQLVariable("perPage")], type: .object(Page.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(page: Page? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "Page": page.flatMap { (value: Page) -> ResultMap in value.resultMap }])
+    }
+
+    public var page: Page? {
+      get {
+        return (resultMap["Page"] as? ResultMap).flatMap { Page(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "Page")
+      }
+    }
+
+    public struct Page: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Page"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("threadComments", arguments: ["threadId": GraphQLVariable("threadId")], type: .list(.object(ThreadComment.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(threadComments: [ThreadComment?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Page", "threadComments": threadComments.flatMap { (value: [ThreadComment?]) -> [ResultMap?] in value.map { (value: ThreadComment?) -> ResultMap? in value.flatMap { (value: ThreadComment) -> ResultMap in value.resultMap } } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var threadComments: [ThreadComment?]? {
+        get {
+          return (resultMap["threadComments"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [ThreadComment?] in value.map { (value: ResultMap?) -> ThreadComment? in value.flatMap { (value: ResultMap) -> ThreadComment in ThreadComment(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [ThreadComment?]) -> [ResultMap?] in value.map { (value: ThreadComment?) -> ResultMap? in value.flatMap { (value: ThreadComment) -> ResultMap in value.resultMap } } }, forKey: "threadComments")
+        }
+      }
+
+      public struct ThreadComment: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["ThreadComment"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("comment", type: .scalar(String.self)),
+            GraphQLField("likeCount", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("createdAt", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("user", type: .object(User.selections)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: Int, comment: String? = nil, likeCount: Int, createdAt: Int, user: User? = nil) {
+          self.init(unsafeResultMap: ["__typename": "ThreadComment", "id": id, "comment": comment, "likeCount": likeCount, "createdAt": createdAt, "user": user.flatMap { (value: User) -> ResultMap in value.resultMap }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The id of the comment
+        public var id: Int {
+          get {
+            return resultMap["id"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        /// The text content of the comment (Markdown)
+        public var comment: String? {
+          get {
+            return resultMap["comment"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "comment")
+          }
+        }
+
+        /// The amount of likes the comment has
+        public var likeCount: Int {
+          get {
+            return resultMap["likeCount"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "likeCount")
+          }
+        }
+
+        /// The time of the comments creation
+        public var createdAt: Int {
+          get {
+            return resultMap["createdAt"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        /// The user who created the comment
+        public var user: User? {
+          get {
+            return (resultMap["user"] as? ResultMap).flatMap { User(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "user")
+          }
+        }
+
+        public struct User: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["User"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String) {
+            self.init(unsafeResultMap: ["__typename": "User", "name": name])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// The name of the user
+          public var name: String {
+            get {
+              return resultMap["name"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
             }
           }
         }

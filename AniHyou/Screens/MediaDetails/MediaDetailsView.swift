@@ -83,6 +83,7 @@ struct MediaDetailsView: View {
                             MediaReviewsAndThreadsView(viewModel: viewModel)
                                 .onAppear {
                                     viewModel.getMediaReviews(mediaId: mediaId)
+                                    viewModel.getMediaThreads(mediaId: mediaId)
                                 }
                         }
                     }//:Group

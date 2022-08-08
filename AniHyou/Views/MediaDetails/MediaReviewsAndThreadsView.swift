@@ -16,17 +16,50 @@ struct MediaReviewsAndThreadsView: View {
     ]
     
     var body: some View {
-        if viewModel.mediaReviews != nil {
-            VStack(alignment: .leading) {
-                
-                Text("Reviews")
+        VStack(alignment: .leading) {
+            
+            if viewModel.mediaThreads.count > 0 {
+                Text("Threads")
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                ZStack {
-                    if viewModel.mediaReviews?.nodes?.count == 0 {
-                        Text("No reviews")
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 8) {
+                        ForEach(viewModel.mediaThreads, id: \.?.id) {
+                            if let thread = $0 {
+                                NavigationLink(destination: ThreadDetailsView(thread: thread)) {
+                                    ThreadItemView(thread: thread)
+                                }
+                            }
+                        }
+                    }//:HStack
+                    .padding(.leading)
+                    .frame(height: 160)
+                }//:HScrollView
+            }
+            
+            Text("Reviews")
+                .font(.title3)
+                .bold()
+                .padding(.leading)
+            ZStack {
+                if viewModel.mediaReviews == nil {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                            .padding()
+                        Spacer()
                     }
+                }
+                else if viewModel.mediaReviews?.nodes?.count == 0 {
+                    HStack {
+                        Spacer()
+                        Text("No reviews")
+                            .padding()
+                        Spacer()
+                    }
+                }
+                else {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: gridRows, spacing: 8) {
                             ForEach(viewModel.mediaReviews!.nodes ?? [], id: \.?.id) {
@@ -39,17 +72,11 @@ struct MediaReviewsAndThreadsView: View {
                         }//:HGrid
                         .padding(.leading)
                     }//:HScrollView
-                }//:ZStack
-                .frame(height: 320)
-            }//:VStack
-        } else {
-            HStack {
-                Spacer()
-                ProgressView()
-                    .padding()
-                Spacer()
-            }
-        }
+                    .frame(height: 320)
+                }
+            }//:ZStack
+            //.frame(maxHeight: 320)
+        }//:VStack
     }
 }
 

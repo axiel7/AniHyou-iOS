@@ -27,6 +27,10 @@
     "name": "MediaReviews",
     "source": "query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) {\n  Media(id: $mediaId) {\n    __typename\n    reviews(page: $page, perPage: $perPage, sort: RATING_DESC) {\n      __typename\n      nodes {\n        __typename\n        id\n        summary\n        score\n        user {\n          __typename\n          name\n        }\n      }\n    }\n  }\n}"
   },
+  "e3d460560a636281e85ba9db43a5b5c90544c93954679a4651f0c1a20224382a": {
+    "name": "MediaThreads",
+    "source": "query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    threads(mediaCategoryId: $mediaCategoryId, sort: $sort) {\n      __typename\n      id\n      title\n      body(asHtml: true)\n      viewCount\n      replyCount\n      likeCount\n      createdAt\n      user {\n        __typename\n        name\n      }\n    }\n  }\n}"
+  },
   "4d0a080dcf952285a7c12973499caa09a096433fb477b6a3d02d92c91695584a": {
     "name": "ReviewDetails",
     "source": "query ReviewDetails($reviewId: Int) {\n  Review(id: $reviewId) {\n    __typename\n    id\n    body(asHtml: true)\n    score\n    rating\n    ratingAmount\n    user {\n      __typename\n      name\n      avatar {\n        __typename\n        medium\n      }\n    }\n  }\n}"
@@ -38,6 +42,10 @@
   "c70aa2eb985f619b2b31205d7933f8c23f9f7223a5c873a60f466a345431902d": {
     "name": "SeasonalAnime",
     "source": "query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(season: $season, seasonYear: $seasonYear, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
+  },
+  "5ef77ea9f8dc4dfeba6bcd21416dcb94cb7de2f7bb122551c9ea894971ac4197": {
+    "name": "ThreadComments",
+    "source": "query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    threadComments(threadId: $threadId) {\n      __typename\n      id\n      comment\n      likeCount\n      createdAt\n      user {\n        __typename\n        name\n      }\n    }\n  }\n}"
   },
   "d55e64437153ce6137aa5eb8f1c899db6262e2c6f9a63a69b84883ee42cf6dcb": {
     "name": "UpdateEntry",
