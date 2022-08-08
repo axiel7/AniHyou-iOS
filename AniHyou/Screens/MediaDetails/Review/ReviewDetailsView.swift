@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RichText
 
 struct ReviewDetailsView: View {
     
@@ -13,9 +14,15 @@ struct ReviewDetailsView: View {
     @StateObject private var viewModel = ReviewDetailsViewModel()
     
     var body: some View {
-        VStack {
-            if !viewModel.reviewBody.isEmpty {
-                WebView(htmlString: $viewModel.reviewBody, baseURL: .constant(nil))
+        ScrollView(.vertical) {
+            if viewModel.reviewBody != nil {
+                RichText(html: viewModel.reviewBody!)
+                    .linkColor(light: .accentColor, dark: .accentColor)
+                    .placeholder {
+                        ProgressView()
+                    }
+            } else {
+                ProgressView()
             }
         }
         .navigationTitle(viewModel.reviewDetails?.user?.name ?? "")

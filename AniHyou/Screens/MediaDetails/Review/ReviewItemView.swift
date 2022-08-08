@@ -20,6 +20,7 @@ struct ReviewItemView: View {
                 .multilineTextAlignment(.center)
                 .padding()
                 .foregroundColor(.primary)
+            Spacer()
             HStack {
                 Text("\(review.score ?? 0)/100")
                     .foregroundColor(.primary)

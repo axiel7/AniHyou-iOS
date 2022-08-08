@@ -10,7 +10,7 @@ import Foundation
 class ReviewDetailsViewModel: ObservableObject {
     
     @Published var reviewDetails: ReviewDetailsQuery.Data.Review?
-    @Published var reviewBody: String = ""
+    @Published var reviewBody: String?
     
     func getReviewDetails(reviewId: Int) {
         Network.shared.apollo.fetch(query: ReviewDetailsQuery(reviewId: reviewId)) { [weak self] result in
