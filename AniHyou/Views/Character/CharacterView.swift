@@ -22,7 +22,7 @@ struct CharacterView: View {
                         .font(.system(size: 13))
                         .multilineTextAlignment(.leading)
                         .lineLimit(3)
-                    Text(character.role?.formatted ?? "")
+                    Text(character.role?.localizedName ?? "")
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }

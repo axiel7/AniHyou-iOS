@@ -37,7 +37,7 @@ struct MediaDetailsMainInfo: View {
                     .lineLimit(3)
                     .padding(.bottom, 1)
                 
-                Text(viewModel.mediaDetails!.format?.formatted ?? "Unknown")
+                Text(viewModel.mediaDetails!.format?.localizedName ?? "Unknown")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 

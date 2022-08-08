@@ -95,9 +95,9 @@ class MediaDetailsViewModel: ObservableObject {
         guard mediaDetails != nil else { return nil }
         guard mediaDetails?.season != nil else { return nil }
         if mediaDetails?.seasonYear != nil {
-            return "\(mediaDetails!.season!.formatted) \(mediaDetails!.seasonYear!)"
+            return "\(mediaDetails!.season!.localizedName) \(mediaDetails!.seasonYear!)"
         } else {
-            return mediaDetails?.season?.formatted
+            return mediaDetails?.season?.localizedName
         }
     }
     

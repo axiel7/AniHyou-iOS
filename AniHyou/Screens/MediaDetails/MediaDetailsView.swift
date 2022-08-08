@@ -31,11 +31,11 @@ struct MediaDetailsView: View {
                             Divider()
                             HStack {
                                 if let schedule = viewModel.mediaDetails?.nextAiringEpisode {
-                                    MediaStatView(name: "Airing", value: "Ep \(schedule.episode) in \(schedule.timeUntilAiring.timestampToDaysOrHoursOrMinutes())")
+                                    MediaStatView(name: "Airing", value: "Ep \(schedule.episode) in \(schedule.timeUntilAiring.timestampToLegibleText())")
                                 }
                                 MediaStatView(name: "Average Score", value: "\(viewModel.mediaDetails?.averageScore ?? 0)%")
                                 MediaStatView(name: "Mean Score", value: "\(viewModel.mediaDetails?.meanScore ?? 0)%")
-                                MediaStatView(name: "Status", value: viewModel.mediaDetails?.status?.formatted ?? "Unknown")
+                                MediaStatView(name: "Status", value: viewModel.mediaDetails?.status?.localizedName ?? "Unknown")
                                 MediaStatView(name: "Popularity", value: (viewModel.mediaDetails?.popularity ?? 0).formatted())
                                 MediaStatView(name: "Favorites", value: (viewModel.mediaDetails?.favourites ?? 0).formatted(), showDivider: false)
                             }

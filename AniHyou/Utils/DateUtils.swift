@@ -46,12 +46,24 @@ extension Date {
 
 extension Int {
     
-    /// Converts miliseconds to days, hours or minutes.
-    /// Depending if there are enough days, hours or minutes.
-    /// Eg. If days >= 1 returns number of days + " days"
-    func timestampToDaysOrHoursOrMinutes() -> String {
+    /// Converts seconds to years, months, weeks, days, hours or minutes.
+    /// Depending if there is enough time.
+    /// Eg. If days greater than 1 and less than 6, returns "x days"
+    func timestampToLegibleText() -> String {
         let days = self / 86400
-        if days >= 1 { return "\(days) days" }
+        if days > 6 {
+            let weeks = self / 604800
+            if weeks > 4 {
+                let months = self / 2628000000
+                if months > 12 {
+                    let years = self / 31540000000
+                    return "\(years) years"
+                }
+                else { return "\(months) months" }
+            }
+            else { return "\(weeks) weeks" }
+        }
+        else if days >= 1 { return "\(days) days" }
         else {
             let hours = self / 3600
             if hours >= 1 { return "\(hours) h" }

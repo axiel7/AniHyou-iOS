@@ -27,7 +27,7 @@ struct MediaRelationsAndRecommendationsView: View {
                             ForEach(viewModel.mediaRelationsAndRecommendations?.relations?.edges ?? [], id: \.?.node?.id) {
                                 if let relation = $0 {
                                     NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
-                                        HListItemWithSubtitleView(title: relation.node?.title?.romaji, subtitle: "\(relation.relationType?.formatted ?? "") · \(relation.node?.format?.formatted ?? "")", imageUrl: relation.node?.coverImage?.large)
+                                        HListItemWithSubtitleView(title: relation.node?.title?.romaji, subtitle: "\(relation.relationType?.localizedName ?? "") · \(relation.node?.format?.localizedName ?? "")", imageUrl: relation.node?.coverImage?.large)
                                             .padding(.leading)
                                             .frame(width: 280, alignment: .leading)
                                     }

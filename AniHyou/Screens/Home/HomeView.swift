@@ -42,7 +42,7 @@ struct HomeView: View {
                                 ForEach(viewModel.airingAnimes, id: \.?.media?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
-                                            HListItemWithSubtitleView(title: item.media?.title?.romaji, subtitle: "Airing in \(item.timeUntilAiring.timestampToDaysOrHoursOrMinutes())", imageUrl: item.media?.coverImage?.large)
+                                            HListItemWithSubtitleView(title: item.media?.title?.romaji, subtitle: "Airing in \(item.timeUntilAiring.timestampToLegibleText())", imageUrl: item.media?.coverImage?.large)
                                                 .padding(.leading, 8)
                                                 .frame(width: 280, alignment: .leading)
                                         }
@@ -58,7 +58,7 @@ struct HomeView: View {
                     }//:ZStack
                     
                     // MARK: season section
-                    Text("\(viewModel.nowSeason.formatted) \(String(viewModel.nowYear))")
+                    Text("\(viewModel.nowSeason.localizedName) \(String(viewModel.nowYear))")
                         .sectionTitle()
                     ZStack {
                         if viewModel.seasonAnimes.count == 0 {

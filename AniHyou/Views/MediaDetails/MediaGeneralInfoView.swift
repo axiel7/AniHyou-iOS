@@ -32,7 +32,7 @@ struct MediaGeneralInfoView: View {
                 MediaInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true)
                 MediaInfoView(name: "Producers", value: viewModel.producersFormatted, isExpandable: true)
             }
-            MediaInfoView(name: "Source", value: viewModel.mediaDetails?.source?.formatted)
+            MediaInfoView(name: "Source", value: viewModel.mediaDetails?.source?.localizedName)
             MediaInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
             MediaInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
             MediaInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)
