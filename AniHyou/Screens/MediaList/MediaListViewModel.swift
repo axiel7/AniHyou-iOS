@@ -18,9 +18,10 @@ class MediaListViewModel: ObservableObject {
     
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
+    @Published var sort: MediaListSort = .updatedTimeDesc
     
     func getUserMediaList() {
-        Network.shared.apollo.fetch(query: UserMediaListQuery(page: currentPage, perPage: 25, userId: userId(), type: mediaType, status: mediaListStatus, sort: [.updatedTimeDesc]), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserMediaListQuery(page: currentPage, perPage: 25, userId: userId(), type: mediaType, status: mediaListStatus, sort: [sort]), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

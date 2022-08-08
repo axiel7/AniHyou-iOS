@@ -38,8 +38,25 @@ struct MediaListView: View {
                     }
             }
         }//:List
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Menu {
+                    Picker("Sort", selection: $viewModel.sort) {
+                        Text("Title").tag(MediaListSort.mediaTitleNativeDesc)
+                        Text("Score").tag(MediaListSort.scoreDesc)
+                        Text("Last Updated").tag(MediaListSort.updatedTimeDesc)
+                        Text("Last Added").tag(MediaListSort.addedTimeDesc)
+                    }
+                } label: {
+                    Image(systemName: "arrow.up.arrow.down")
+                }
+            }
+        }
         .navigationTitle(viewModel.mediaListStatus.localizedName)
         .refreshable {
+            viewModel.refreshList()
+        } 
+        .onChange(of: viewModel.sort) { _ in
             viewModel.refreshList()
         }
         .onAppear {
@@ -51,6 +68,8 @@ struct MediaListView: View {
 
 struct MediaListView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaListView(type: .anime, status: .current)
+        NavigationView {
+            MediaListView(type: .anime, status: .current)
+        }
     }
 }
