@@ -36,7 +36,7 @@ class ProfileViewModel: ObservableObject {
         isLoggedOut = true
     }
     
-    @Published var userAbout: String = ""
+    @Published var userAbout: String?
     
     func getUserAbout(userId: Int) {
         Network.shared.apollo.fetch(query: UserAboutQuery(userId: userId)) { [weak self] result in

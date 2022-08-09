@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RichText
 
 struct UserAboutView: View {
     
@@ -14,8 +15,12 @@ struct UserAboutView: View {
     
     var body: some View {
         VStack {
-            if !viewModel.userAbout.isEmpty {
-                WebView(htmlString: $viewModel.userAbout, baseURL: .constant(nil))
+            if viewModel.userAbout != nil {
+                RichText(html: viewModel.userAbout!)
+                    .linkColor(light: .accentColor, dark: .accentColor)
+                    .placeholder {
+                        ProgressView()
+                    }
             } else {
                 ProgressView()
             }
