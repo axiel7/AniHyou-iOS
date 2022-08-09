@@ -27,7 +27,6 @@ struct ThreadDetailsView: View {
                         .foregroundColor(.gray)
                     
                     RichText(html: thread.body ?? "So this is an amazing anime\nWhat do you think about it?\nDid you like it?\nLet me know!")
-                        .linkColor(light: .accentColor, dark: .accentColor)
                         .placeholder {
                             ProgressView()
                         }

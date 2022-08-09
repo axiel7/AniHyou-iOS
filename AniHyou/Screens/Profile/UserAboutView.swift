@@ -14,10 +14,9 @@ struct UserAboutView: View {
     @StateObject private var viewModel = ProfileViewModel()
     
     var body: some View {
-        VStack {
+        ScrollView(.vertical) {
             if viewModel.userAbout != nil {
                 RichText(html: viewModel.userAbout!)
-                    .linkColor(light: .accentColor, dark: .accentColor)
                     .placeholder {
                         ProgressView()
                     }

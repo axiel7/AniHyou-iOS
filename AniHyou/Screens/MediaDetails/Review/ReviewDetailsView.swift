@@ -17,7 +17,6 @@ struct ReviewDetailsView: View {
         ScrollView(.vertical) {
             if viewModel.reviewBody != nil {
                 RichText(html: viewModel.reviewBody!)
-                    .linkColor(light: .accentColor, dark: .accentColor)
                     .placeholder {
                         ProgressView()
                     }
