@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import RichText
 
 extension Color {
     
@@ -49,5 +50,16 @@ extension Color {
         } else {
             return nil
         }
+    }
+}
+
+extension RichText {
+    func defaultStyle() -> RichText {
+        self
+            .imageRadius(8)
+            .linkColor(light: .accentColor, dark: .accentColor)
+            .placeholder {
+                ProgressView()
+            }
     }
 }

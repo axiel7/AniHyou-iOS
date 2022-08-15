@@ -15,35 +15,54 @@ struct ThreadDetailsView: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            LazyVStack(alignment: .leading) {
+            LazyVStack {
+                //MARK: thread info
                 VStack(alignment: .leading) {
-                    Text(thread.title ?? "This is a very large thread title to test the lenght of this text view in SwiftUI omg this anime is amazing")
+                    Text(thread.title ?? "")
                         .bold()
                         .font(.title3)
+                        .padding(.leading)
                         .padding(.bottom, 1)
                     
                     Text(thread.createdAt.timestampToDateString())
                         .font(.footnote)
                         .foregroundColor(.gray)
+                        .padding(.leading)
                     
-                    RichText(html: thread.body ?? "So this is an amazing anime\nWhat do you think about it?\nDid you like it?\nLet me know!")
-                        .placeholder {
-                            ProgressView()
-                        }
-                        .padding(.top)
-                        .padding(.bottom)
+                    RichText(html: thread.body ?? "")
+                        .defaultStyle()
+                        .fontType(.system)
+                        .padding(.horizontal, 4)
                     
                     HStack {
                         Label("\(thread.likeCount)", systemImage: "heart")
                         Spacer()
-                        Text(thread.user?.name ?? "AVeryLargeUsername")
+                        Text(thread.user?.name ?? "")
                             .lineLimit(1)
                             .foregroundColor(.primary)
                     }
+                    .padding(.horizontal)
                 }//:VStack
-                .padding()
+                .padding(.bottom)
                 
-                Spacer()
+                //MARK: thread comments
+                ForEach(viewModel.threadComments, id: \.?.id) {
+                    if let comment = $0 {
+                        VStack {
+                            Divider()
+                                .padding(.vertical, 4)
+                            ThreadCommentItemView(comment: comment)
+                        }
+                    }
+                }
+                .padding(.bottom)
+                
+                if viewModel.hasNextPage {
+                    ProgressView()
+                        .onAppear {
+                            viewModel.getThreadComments(threadId: thread.id)
+                        }
+                }
             }//:LazyVStack
         }//:VScrollView
         .navigationBarTitleDisplayMode(.inline)

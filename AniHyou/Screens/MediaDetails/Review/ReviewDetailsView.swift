@@ -17,9 +17,7 @@ struct ReviewDetailsView: View {
         ScrollView(.vertical) {
             if viewModel.reviewBody != nil {
                 RichText(html: viewModel.reviewBody!)
-                    .placeholder {
-                        ProgressView()
-                    }
+                    .defaultStyle()
             } else {
                 ProgressView()
             }

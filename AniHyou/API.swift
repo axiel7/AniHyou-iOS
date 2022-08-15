@@ -6351,7 +6351,7 @@ public final class ThreadCommentsQuery: GraphQLQuery {
         threadComments(threadId: $threadId) {
           __typename
           id
-          comment
+          comment(asHtml: false)
           likeCount
           createdAt
           user {
@@ -6359,13 +6359,18 @@ public final class ThreadCommentsQuery: GraphQLQuery {
             name
           }
         }
+        pageInfo {
+          __typename
+          currentPage
+          hasNextPage
+        }
       }
     }
     """
 
   public let operationName: String = "ThreadComments"
 
-  public let operationIdentifier: String? = "5ef77ea9f8dc4dfeba6bcd21416dcb94cb7de2f7bb122551c9ea894971ac4197"
+  public let operationIdentifier: String? = "5e03802493cddaeb44755978a8a70f077d4b468f003cb9d18dad404100aba36c"
 
   public var page: Int?
   public var perPage: Int?
@@ -6416,6 +6421,7 @@ public final class ThreadCommentsQuery: GraphQLQuery {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("threadComments", arguments: ["threadId": GraphQLVariable("threadId")], type: .list(.object(ThreadComment.selections))),
+          GraphQLField("pageInfo", type: .object(PageInfo.selections)),
         ]
       }
 
@@ -6425,8 +6431,8 @@ public final class ThreadCommentsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(threadComments: [ThreadComment?]? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Page", "threadComments": threadComments.flatMap { (value: [ThreadComment?]) -> [ResultMap?] in value.map { (value: ThreadComment?) -> ResultMap? in value.flatMap { (value: ThreadComment) -> ResultMap in value.resultMap } } }])
+      public init(threadComments: [ThreadComment?]? = nil, pageInfo: PageInfo? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Page", "threadComments": threadComments.flatMap { (value: [ThreadComment?]) -> [ResultMap?] in value.map { (value: ThreadComment?) -> ResultMap? in value.flatMap { (value: ThreadComment) -> ResultMap in value.resultMap } } }, "pageInfo": pageInfo.flatMap { (value: PageInfo) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -6447,6 +6453,16 @@ public final class ThreadCommentsQuery: GraphQLQuery {
         }
       }
 
+      /// The pagination information
+      public var pageInfo: PageInfo? {
+        get {
+          return (resultMap["pageInfo"] as? ResultMap).flatMap { PageInfo(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "pageInfo")
+        }
+      }
+
       public struct ThreadComment: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["ThreadComment"]
 
@@ -6454,7 +6470,7 @@ public final class ThreadCommentsQuery: GraphQLQuery {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("id", type: .nonNull(.scalar(Int.self))),
-            GraphQLField("comment", type: .scalar(String.self)),
+            GraphQLField("comment", arguments: ["asHtml": false], type: .scalar(String.self)),
             GraphQLField("likeCount", type: .nonNull(.scalar(Int.self))),
             GraphQLField("createdAt", type: .nonNull(.scalar(Int.self))),
             GraphQLField("user", type: .object(User.selections)),
@@ -6567,6 +6583,57 @@ public final class ThreadCommentsQuery: GraphQLQuery {
             set {
               resultMap.updateValue(newValue, forKey: "name")
             }
+          }
+        }
+      }
+
+      public struct PageInfo: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["PageInfo"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("currentPage", type: .scalar(Int.self)),
+            GraphQLField("hasNextPage", type: .scalar(Bool.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(currentPage: Int? = nil, hasNextPage: Bool? = nil) {
+          self.init(unsafeResultMap: ["__typename": "PageInfo", "currentPage": currentPage, "hasNextPage": hasNextPage])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The current page
+        public var currentPage: Int? {
+          get {
+            return resultMap["currentPage"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "currentPage")
+          }
+        }
+
+        /// If there is another page
+        public var hasNextPage: Bool? {
+          get {
+            return resultMap["hasNextPage"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "hasNextPage")
           }
         }
       }

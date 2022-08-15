@@ -43,9 +43,9 @@
     "name": "SeasonalAnime",
     "source": "query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(season: $season, seasonYear: $seasonYear, sort: $sort) {\n      __typename\n      id\n      title {\n        __typename\n        romaji\n      }\n      coverImage {\n        __typename\n        large\n      }\n    }\n  }\n}"
   },
-  "5ef77ea9f8dc4dfeba6bcd21416dcb94cb7de2f7bb122551c9ea894971ac4197": {
+  "5e03802493cddaeb44755978a8a70f077d4b468f003cb9d18dad404100aba36c": {
     "name": "ThreadComments",
-    "source": "query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    threadComments(threadId: $threadId) {\n      __typename\n      id\n      comment\n      likeCount\n      createdAt\n      user {\n        __typename\n        name\n      }\n    }\n  }\n}"
+    "source": "query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    threadComments(threadId: $threadId) {\n      __typename\n      id\n      comment(asHtml: false)\n      likeCount\n      createdAt\n      user {\n        __typename\n        name\n      }\n    }\n    pageInfo {\n      __typename\n      currentPage\n      hasNextPage\n    }\n  }\n}"
   },
   "d55e64437153ce6137aa5eb8f1c899db6262e2c6f9a63a69b84883ee42cf6dcb": {
     "name": "UpdateEntry",
