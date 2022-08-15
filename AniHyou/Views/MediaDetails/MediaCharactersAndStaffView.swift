@@ -32,9 +32,9 @@ struct MediaCharactersAndStaffView: View {
                             }
                         }
                     }//:HGrid
+                    .frame(height: StaffView.imageSize * 2 + 20)
                     .padding(.leading)
                 }//:HScrollView
-                .frame(minHeight: StaffView.imageSize, maxHeight: StaffView.imageSize * 2 + 8)
                 .padding(.bottom)
                 
                 Text("Characters")
@@ -50,8 +50,7 @@ struct MediaCharactersAndStaffView: View {
                         }
                     }
                 }//:VStack
-                .padding(.leading)
-                .padding(.trailing)
+                .padding(.horizontal)
             }//:VStack
         } else {
             HStack {

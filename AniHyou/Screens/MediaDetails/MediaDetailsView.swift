@@ -61,7 +61,7 @@ struct MediaDetailsView: View {
                     }
                     .pickerStyle(.segmented)
                     .labelStyle(.iconOnly)
-                    .padding(8)
+                    .padding()
                     
                     Group {
                         switch infoType {

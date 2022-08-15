@@ -17,16 +17,16 @@ struct ExploreView: View {
     var body: some View {
         ZStack {
             if isSearching {
-                switch viewModel.type {
-                case .anime, .manga:
-                    List {
-                        Picker("Search type", selection: $viewModel.type) {
-                            ForEach(SearchType.allCases, id: \.self) { type in
-                                Text(type.formatted)
-                            }
+                List {
+                    Picker("Search type", selection: $viewModel.type) {
+                        ForEach(SearchType.allCases, id: \.self) { type in
+                            Label(type.localizedName, systemImage: type.systemImage)
                         }
-                        .pickerStyle(.menu)
-                        
+                    }
+                    .pickerStyle(.menu)
+                    
+                    switch viewModel.type {
+                    case .anime, .manga:
                         ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                             if item != nil {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
@@ -34,17 +34,18 @@ struct ExploreView: View {
                                 }
                             }
                         }
-                    }
-                    .listStyle(.insetGrouped)
-                case .characters:
-                    Text("Characters")
-                case .staff:
-                    Text("Staff")
-                case .studios:
-                    Text("Studios")
-                case .users:
-                    Text("Users")
-                }//:switch
+                    case .characters:
+                        Text("Characters")
+                    case .staff:
+                        Text("Staff")
+                    case .studios:
+                        Text("Studios")
+                    case .users:
+                        Text("Users")
+                    }//:switch
+                }//:List
+                .listStyle(.insetGrouped)
+                
             } else {//not searched
                 ScrollView(.vertical) {
                         //MARK: Charts

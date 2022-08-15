@@ -16,7 +16,7 @@ public enum MediaInfoType: Equatable, Hashable, CaseIterable {
 }
 
 extension MediaInfoType {
-    var formatted: String {
+    var localizedName: String {
         switch self {
         case .general:
             return "General"

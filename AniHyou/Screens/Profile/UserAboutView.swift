@@ -17,9 +17,7 @@ struct UserAboutView: View {
         ScrollView(.vertical) {
             if viewModel.userAbout != nil {
                 RichText(html: viewModel.userAbout!)
-                    .placeholder {
-                        ProgressView()
-                    }
+                    .defaultStyle()
             } else {
                 ProgressView()
             }

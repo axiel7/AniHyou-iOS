@@ -17,7 +17,7 @@ public enum SearchType: Equatable, Hashable, CaseIterable {
 }
 
 extension SearchType {
-    var formatted: String {
+    var localizedName: String {
         switch self {
         case .anime:
             return "Anime"
@@ -31,6 +31,23 @@ extension SearchType {
             return "Studios"
         case .users:
             return "Users"
+        }
+    }
+    
+    var systemImage: String {
+        switch self {
+        case .anime:
+            return "play.tv"
+        case .manga:
+            return "book"
+        case .characters:
+            return "face.smiling"
+        case .staff:
+            return "person.text.rectangle"
+        case .studios:
+            return "paintbrush.pointed"
+        case .users:
+            return "person"
         }
     }
 }

@@ -75,7 +75,6 @@ struct MediaReviewsAndThreadsView: View {
                     .frame(height: 320)
                 }
             }//:ZStack
-            //.frame(maxHeight: 320)
         }//:VStack
     }
 }
