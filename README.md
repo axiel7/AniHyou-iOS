@@ -1,6 +1,7 @@
 # ![app-icon](https://github.com/axiel7/AniHyou/blob/main/AniHyou/Assets.xcassets/AppIcon.appiconset/AniHyou%20logo%2040.png) AniHyou
 
 ### Another unofficial iOS AniList client
+![screenshots](https://axiel7.github.io/assets/anihyou.58717379ec9cfda91ca1c970f44d2ce6.png)
 
 ## Current features
 - View animes airing soon
