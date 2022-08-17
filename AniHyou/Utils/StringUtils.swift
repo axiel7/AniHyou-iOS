@@ -12,6 +12,8 @@ extension String {
     var htmlStripped: String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
+    
+    var firstCapitalized: String { prefix(1).capitalized + dropFirst() }
 }
 
 extension Int {

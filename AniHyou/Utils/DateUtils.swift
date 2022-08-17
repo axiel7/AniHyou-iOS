@@ -49,7 +49,7 @@ extension Int {
     /// Converts seconds to years, months, weeks, days, hours or minutes.
     /// Depending if there is enough time.
     /// Eg. If days greater than 1 and less than 6, returns "x days"
-    func timestampToLegibleText() -> String {
+    func secondsToLegibleText() -> String {
         let days = self / 86400
         if days > 6 {
             let weeks = self / 604800
@@ -78,7 +78,15 @@ extension Int {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        return dateFormatter.string(from: Date(timeIntervalSince1970: Double(self)))
+        return dateFormatter.string(from: self.timestampToDate())
+    }
+    
+    func timestampToDate() -> Date {
+        return Date(timeIntervalSince1970: Double(self))
+    }
+    
+    func timestampIntervalSinceNow() -> Int {
+        return Int(abs(self.timestampToDate().timeIntervalSinceNow))
     }
 }
 

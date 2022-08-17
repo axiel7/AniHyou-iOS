@@ -22,7 +22,6 @@ struct UserAboutView: View {
                 ProgressView()
             }
         }
-        .navigationTitle("About")
         .onAppear {
             viewModel.getUserAbout(userId: userId)
         }

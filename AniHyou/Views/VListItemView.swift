@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-private let coverWidth: CGFloat = 80
-private let coverHeight: CGFloat = 120
-
 struct VListItemView: View {
+    static let coverWidth: CGFloat = 80
+    static let coverHeight: CGFloat = 120
+    
     var title: String
     var imageUrl: String?
     
     var body: some View {
         VStack {
-            MediaCoverView(imageUrl: imageUrl, width: coverWidth, height: coverHeight, cancelOnDisappear: true)
+            MediaCoverView(imageUrl: imageUrl, width: VListItemView.coverWidth, height: VListItemView.coverHeight, cancelOnDisappear: true)
                 .padding(.top, 4)
             
             Text(title)
@@ -25,7 +25,7 @@ struct VListItemView: View {
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.primary)
         }
-        .frame(width: coverWidth + 20, height: coverHeight + 50, alignment: .top)
+        .frame(width: VListItemView.coverWidth + 20, height: VListItemView.coverHeight + 50, alignment: .top)
     }
 }
 

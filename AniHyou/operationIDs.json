@@ -59,6 +59,30 @@
     "name": "UserAbout",
     "source": "query UserAbout($userId: Int) {\n  User(id: $userId) {\n    __typename\n    about(asHtml: true)\n  }\n}"
   },
+  "14396df24bd86c998bfc2ac04be4e0d0527b8ca97dd5a51f2acfef4d345555f1": {
+    "name": "UserActivity",
+    "source": "query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    activities(userId: $userId, sort: $sort) {\n      __typename\n      ... on TextActivity {\n        __typename\n        id\n        type\n        text\n        createdAt\n      }\n      ... on ListActivity {\n        __typename\n        id\n        type\n        status\n        progress\n        createdAt\n        media {\n          __typename\n          id\n          title {\n            __typename\n            userPreferred\n          }\n          coverImage {\n            __typename\n            medium\n          }\n        }\n      }\n    }\n    pageInfo {\n      __typename\n      currentPage\n      hasNextPage\n    }\n  }\n}"
+  },
+  "d9dab029926abdab41917b9faaa3c2b4462c5ce86e98e8e630cd1a893c3a0304": {
+    "name": "UserFavoritesAnime",
+    "source": "query UserFavoritesAnime($userId: Int, $page: Int, $perPage: Int) {\n  User(id: $userId) {\n    __typename\n    favourites {\n      __typename\n      anime(page: $page, perPage: $perPage) {\n        __typename\n        nodes {\n          __typename\n          id\n          title {\n            __typename\n            userPreferred\n          }\n          coverImage {\n            __typename\n            large\n          }\n        }\n        pageInfo {\n          __typename\n          currentPage\n          hasNextPage\n        }\n      }\n    }\n  }\n}"
+  },
+  "3cf23c7a10098a8b78057003acd94a8b491cc8cf0327a1ac94bca00bda672bb7": {
+    "name": "UserFavoritesCharacter",
+    "source": "query UserFavoritesCharacter($userId: Int, $page: Int, $perPage: Int) {\n  User(id: $userId) {\n    __typename\n    favourites {\n      __typename\n      characters(page: $page, perPage: $perPage) {\n        __typename\n        nodes {\n          __typename\n          id\n          name {\n            __typename\n            userPreferred\n          }\n          image {\n            __typename\n            large\n          }\n        }\n        pageInfo {\n          __typename\n          currentPage\n          hasNextPage\n        }\n      }\n    }\n  }\n}"
+  },
+  "1e9b2afc0809f71cf29d540dfd85e70b25234ed1afd0224e4403328427acabec": {
+    "name": "UserFavoritesManga",
+    "source": "query UserFavoritesManga($userId: Int, $page: Int, $perPage: Int) {\n  User(id: $userId) {\n    __typename\n    favourites {\n      __typename\n      manga(page: $page, perPage: $perPage) {\n        __typename\n        nodes {\n          __typename\n          id\n          title {\n            __typename\n            userPreferred\n          }\n          coverImage {\n            __typename\n            large\n          }\n        }\n        pageInfo {\n          __typename\n          currentPage\n          hasNextPage\n        }\n      }\n    }\n  }\n}"
+  },
+  "54acf368561dae5aa54ceecfb6ca061a4690bbc1f55ea86532c211ff3c8acd5c": {
+    "name": "UserFavoritesStaff",
+    "source": "query UserFavoritesStaff($userId: Int, $page: Int, $perPage: Int) {\n  User(id: $userId) {\n    __typename\n    favourites {\n      __typename\n      staff(page: $page, perPage: $perPage) {\n        __typename\n        nodes {\n          __typename\n          id\n          name {\n            __typename\n            userPreferred\n          }\n          image {\n            __typename\n            large\n          }\n        }\n        pageInfo {\n          __typename\n          currentPage\n          hasNextPage\n        }\n      }\n    }\n  }\n}"
+  },
+  "875ed8f5f2b2d6e62d6e9debb570149bf06b401f99bf41fb638d3dfcf4ff14d8": {
+    "name": "UserFavoritesStudio",
+    "source": "query UserFavoritesStudio($userId: Int, $page: Int, $perPage: Int) {\n  User(id: $userId) {\n    __typename\n    favourites {\n      __typename\n      studios(page: $page, perPage: $perPage) {\n        __typename\n        nodes {\n          __typename\n          id\n          name\n        }\n        pageInfo {\n          __typename\n          currentPage\n          hasNextPage\n        }\n      }\n    }\n  }\n}"
+  },
   "e5445a2a14bf782846fc03704dba21ffef5c3002db04e265373f7169c95d1a46": {
     "name": "UserMediaList",
     "source": "query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {\n      __typename\n      id\n      mediaId\n      status\n      score\n      progress\n      progressVolumes\n      media {\n        __typename\n        title {\n          __typename\n          userPreferred\n        }\n        episodes\n        chapters\n        volumes\n        coverImage {\n          __typename\n          large\n        }\n        nextAiringEpisode {\n          __typename\n          episode\n          timeUntilAiring\n        }\n        status\n        type\n      }\n    }\n    pageInfo {\n      __typename\n      hasNextPage\n    }\n  }\n}"
