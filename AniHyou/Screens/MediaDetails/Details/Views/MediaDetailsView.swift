@@ -116,14 +116,6 @@ struct MediaDetailsView: View {
                 }
         }
     }
-    
-    func shareSheet(url: String?) {
-        guard let url = url else { return }
-        guard let urlShare = URL(string: url) else { return }
-        let activityVC = UIActivityViewController(activityItems: [urlShare], applicationActivities: nil)
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        windowScene?.keyWindow?.rootViewController?.present(activityVC, animated: true, completion: nil)
-    }
 }
 
 struct MediaDetailsView_Previews: PreviewProvider {
