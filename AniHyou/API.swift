@@ -1280,7 +1280,7 @@ public final class AiringAnimesQuery: GraphQLQuery {
             id
             title {
               __typename
-              romaji
+              userPreferred
             }
             coverImage {
               __typename
@@ -1295,7 +1295,7 @@ public final class AiringAnimesQuery: GraphQLQuery {
 
   public let operationName: String = "AiringAnimes"
 
-  public let operationIdentifier: String? = "6b1b4855bda9e3a63b690fcbf7aa72767f8dae71be9fb65266329cdd3a560e86"
+  public let operationIdentifier: String? = "42f426759f96005bf356e5a753cc6586a4953c871a9ea50ff43d48f985f2511b"
 
   public var page: Int?
   public var perPage: Int?
@@ -1496,7 +1496,7 @@ public final class AiringAnimesQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                GraphQLField("romaji", type: .scalar(String.self)),
+                GraphQLField("userPreferred", type: .scalar(String.self)),
               ]
             }
 
@@ -1506,8 +1506,8 @@ public final class AiringAnimesQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(romaji: String? = nil) {
-              self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+            public init(userPreferred: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
             }
 
             public var __typename: String {
@@ -1519,13 +1519,13 @@ public final class AiringAnimesQuery: GraphQLQuery {
               }
             }
 
-            /// The romanization of the native language title
-            public var romaji: String? {
+            /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+            public var userPreferred: String? {
               get {
-                return resultMap["romaji"] as? String
+                return resultMap["userPreferred"] as? String
               }
               set {
-                resultMap.updateValue(newValue, forKey: "romaji")
+                resultMap.updateValue(newValue, forKey: "userPreferred")
               }
             }
           }
@@ -1587,7 +1587,7 @@ public final class AnimesQuery: GraphQLQuery {
           id
           title {
             __typename
-            romaji
+            userPreferred
           }
           coverImage {
             __typename
@@ -1600,7 +1600,7 @@ public final class AnimesQuery: GraphQLQuery {
 
   public let operationName: String = "Animes"
 
-  public let operationIdentifier: String? = "af08a183a12daf451c727ad622b7a2111f850a7f83f45e7de00dd9259cc74716"
+  public let operationIdentifier: String? = "87b7ae1a08cc9e06826afa9f170dc7656d77f7390637fb31e48de1c2291e0bbb"
 
   public var page: Int?
   public var perPage: Int?
@@ -1749,7 +1749,7 @@ public final class AnimesQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("romaji", type: .scalar(String.self)),
+              GraphQLField("userPreferred", type: .scalar(String.self)),
             ]
           }
 
@@ -1759,8 +1759,8 @@ public final class AnimesQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(romaji: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+          public init(userPreferred: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
           }
 
           public var __typename: String {
@@ -1772,13 +1772,13 @@ public final class AnimesQuery: GraphQLQuery {
             }
           }
 
-          /// The romanization of the native language title
-          public var romaji: String? {
+          /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+          public var userPreferred: String? {
             get {
-              return resultMap["romaji"] as? String
+              return resultMap["userPreferred"] as? String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "romaji")
+              resultMap.updateValue(newValue, forKey: "userPreferred")
             }
           }
         }
@@ -1854,7 +1854,7 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
 
   public let operationName: String = "MediaCharactersAndStaff"
 
-  public let operationIdentifier: String? = "aa70f90140c6e0c7fc9e3e4b959f1482d5599475b0cf5a0d9f59fe3d90573043"
+  public let operationIdentifier: String? = "60dc2dc4e4c06506a236421001960a6429b27b2edb78a13f8e7c3d8c39ff2925"
 
   public var queryDocument: String {
     var document: String = operationDefinition
@@ -2144,7 +2144,7 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("full", type: .scalar(String.self)),
+                  GraphQLField("userPreferred", type: .scalar(String.self)),
                 ]
               }
 
@@ -2154,8 +2154,8 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(full: String? = nil) {
-                self.init(unsafeResultMap: ["__typename": "CharacterName", "full": full])
+              public init(userPreferred: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "CharacterName", "userPreferred": userPreferred])
               }
 
               public var __typename: String {
@@ -2167,13 +2167,13 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
                 }
               }
 
-              /// The character's first and last name
-              public var full: String? {
+              /// The currently authenticated users preferred name language. Default romaji for non-authenticated
+              public var userPreferred: String? {
                 get {
-                  return resultMap["full"] as? String
+                  return resultMap["userPreferred"] as? String
                 }
                 set {
-                  resultMap.updateValue(newValue, forKey: "full")
+                  resultMap.updateValue(newValue, forKey: "userPreferred")
                 }
               }
             }
@@ -2286,7 +2286,7 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("full", type: .scalar(String.self)),
+                  GraphQLField("userPreferred", type: .scalar(String.self)),
                 ]
               }
 
@@ -2296,8 +2296,8 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(full: String? = nil) {
-                self.init(unsafeResultMap: ["__typename": "StaffName", "full": full])
+              public init(userPreferred: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "StaffName", "userPreferred": userPreferred])
               }
 
               public var __typename: String {
@@ -2309,13 +2309,13 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
                 }
               }
 
-              /// The person's first and last name
-              public var full: String? {
+              /// The currently authenticated users preferred name language. Default romaji for non-authenticated
+              public var userPreferred: String? {
                 get {
-                  return resultMap["full"] as? String
+                  return resultMap["userPreferred"] as? String
                 }
                 set {
-                  resultMap.updateValue(newValue, forKey: "full")
+                  resultMap.updateValue(newValue, forKey: "userPreferred")
                 }
               }
             }
@@ -2544,7 +2544,7 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("full", type: .scalar(String.self)),
+                  GraphQLField("userPreferred", type: .scalar(String.self)),
                 ]
               }
 
@@ -2554,8 +2554,8 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(full: String? = nil) {
-                self.init(unsafeResultMap: ["__typename": "StaffName", "full": full])
+              public init(userPreferred: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "StaffName", "userPreferred": userPreferred])
               }
 
               public var __typename: String {
@@ -2567,13 +2567,13 @@ public final class MediaCharactersAndStaffQuery: GraphQLQuery {
                 }
               }
 
-              /// The person's first and last name
-              public var full: String? {
+              /// The currently authenticated users preferred name language. Default romaji for non-authenticated
+              public var userPreferred: String? {
                 get {
-                  return resultMap["full"] as? String
+                  return resultMap["userPreferred"] as? String
                 }
                 set {
-                  resultMap.updateValue(newValue, forKey: "full")
+                  resultMap.updateValue(newValue, forKey: "userPreferred")
                 }
               }
             }
@@ -2636,7 +2636,7 @@ public final class MediaChartQuery: GraphQLQuery {
           id
           title {
             __typename
-            romaji
+            userPreferred
           }
           format
           startDate {
@@ -2659,7 +2659,7 @@ public final class MediaChartQuery: GraphQLQuery {
 
   public let operationName: String = "MediaChart"
 
-  public let operationIdentifier: String? = "74e9be4ba7204d8c7373f611b329f0e4f4250b08c1ec31fc1b292c10d4d627ce"
+  public let operationIdentifier: String? = "b48dece046ce7db2ac1ab930c778fe2fcef82f10c5cdeb1e4f6ea16a8c3fe7e1"
 
   public var page: Int?
   public var perPage: Int?
@@ -2843,7 +2843,7 @@ public final class MediaChartQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("romaji", type: .scalar(String.self)),
+              GraphQLField("userPreferred", type: .scalar(String.self)),
             ]
           }
 
@@ -2853,8 +2853,8 @@ public final class MediaChartQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(romaji: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+          public init(userPreferred: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
           }
 
           public var __typename: String {
@@ -2866,13 +2866,13 @@ public final class MediaChartQuery: GraphQLQuery {
             }
           }
 
-          /// The romanization of the native language title
-          public var romaji: String? {
+          /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+          public var userPreferred: String? {
             get {
-              return resultMap["romaji"] as? String
+              return resultMap["userPreferred"] as? String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "romaji")
+              resultMap.updateValue(newValue, forKey: "userPreferred")
             }
           }
         }
@@ -4289,7 +4289,7 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
   public let operationName: String = "MediaRelationsAndRecommendations"
 
-  public let operationIdentifier: String? = "17ea6fb12df12741c68325b6610f351ae2032d69ce0d47d6767110aa03f5dee2"
+  public let operationIdentifier: String? = "b7b2eb5c629dd5a5c2b003863110d541d35a4ab3039263e12f44e97da0ed1307"
 
   public var queryDocument: String {
     var document: String = operationDefinition
@@ -4579,7 +4579,7 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("romaji", type: .scalar(String.self)),
+                  GraphQLField("userPreferred", type: .scalar(String.self)),
                 ]
               }
 
@@ -4589,8 +4589,8 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(romaji: String? = nil) {
-                self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+              public init(userPreferred: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
               }
 
               public var __typename: String {
@@ -4602,13 +4602,13 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
                 }
               }
 
-              /// The romanization of the native language title
-              public var romaji: String? {
+              /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+              public var userPreferred: String? {
                 get {
-                  return resultMap["romaji"] as? String
+                  return resultMap["userPreferred"] as? String
                 }
                 set {
-                  resultMap.updateValue(newValue, forKey: "romaji")
+                  resultMap.updateValue(newValue, forKey: "userPreferred")
                 }
               }
             }
@@ -4838,7 +4838,7 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("romaji", type: .scalar(String.self)),
+                  GraphQLField("userPreferred", type: .scalar(String.self)),
                 ]
               }
 
@@ -4848,8 +4848,8 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(romaji: String? = nil) {
-                self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+              public init(userPreferred: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
               }
 
               public var __typename: String {
@@ -4861,13 +4861,13 @@ public final class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
                 }
               }
 
-              /// The romanization of the native language title
-              public var romaji: String? {
+              /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+              public var userPreferred: String? {
                 get {
-                  return resultMap["romaji"] as? String
+                  return resultMap["userPreferred"] as? String
                 }
                 set {
-                  resultMap.updateValue(newValue, forKey: "romaji")
+                  resultMap.updateValue(newValue, forKey: "userPreferred")
                 }
               }
             }
@@ -5725,7 +5725,7 @@ public final class SearchMediaQuery: GraphQLQuery {
           id
           title {
             __typename
-            romaji
+            userPreferred
           }
           format
           coverImage {
@@ -5743,7 +5743,7 @@ public final class SearchMediaQuery: GraphQLQuery {
 
   public let operationName: String = "SearchMedia"
 
-  public let operationIdentifier: String? = "0a0687c1fa0d4b34f19bec7d84de3a1a69498f3e8babe7c8f405d51dcc9088ae"
+  public let operationIdentifier: String? = "17ca6e240d37c69b083bb9a515dc06c9d5ef59fa207c322f85c47759e7f3ec69"
 
   public var page: Int?
   public var perPage: Int?
@@ -5967,7 +5967,7 @@ public final class SearchMediaQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("romaji", type: .scalar(String.self)),
+              GraphQLField("userPreferred", type: .scalar(String.self)),
             ]
           }
 
@@ -5977,8 +5977,8 @@ public final class SearchMediaQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(romaji: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+          public init(userPreferred: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
           }
 
           public var __typename: String {
@@ -5990,13 +5990,13 @@ public final class SearchMediaQuery: GraphQLQuery {
             }
           }
 
-          /// The romanization of the native language title
-          public var romaji: String? {
+          /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+          public var userPreferred: String? {
             get {
-              return resultMap["romaji"] as? String
+              return resultMap["userPreferred"] as? String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "romaji")
+              resultMap.updateValue(newValue, forKey: "userPreferred")
             }
           }
         }
@@ -6097,7 +6097,7 @@ public final class SeasonalAnimeQuery: GraphQLQuery {
           id
           title {
             __typename
-            romaji
+            userPreferred
           }
           coverImage {
             __typename
@@ -6110,7 +6110,7 @@ public final class SeasonalAnimeQuery: GraphQLQuery {
 
   public let operationName: String = "SeasonalAnime"
 
-  public let operationIdentifier: String? = "c70aa2eb985f619b2b31205d7933f8c23f9f7223a5c873a60f466a345431902d"
+  public let operationIdentifier: String? = "30fe4b8ea7d2e0642f9d35ba6d1679b9964c4cc8ad11c8903ca3e6ecd9f77662"
 
   public var page: Int?
   public var perPage: Int?
@@ -6263,7 +6263,7 @@ public final class SeasonalAnimeQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("romaji", type: .scalar(String.self)),
+              GraphQLField("userPreferred", type: .scalar(String.self)),
             ]
           }
 
@@ -6273,8 +6273,8 @@ public final class SeasonalAnimeQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(romaji: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+          public init(userPreferred: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
           }
 
           public var __typename: String {
@@ -6286,13 +6286,13 @@ public final class SeasonalAnimeQuery: GraphQLQuery {
             }
           }
 
-          /// The romanization of the native language title
-          public var romaji: String? {
+          /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+          public var userPreferred: String? {
             get {
-              return resultMap["romaji"] as? String
+              return resultMap["userPreferred"] as? String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "romaji")
+              resultMap.updateValue(newValue, forKey: "userPreferred")
             }
           }
         }
@@ -8132,7 +8132,7 @@ public struct MediaCharacter: GraphQLFragment {
         id
         name {
           __typename
-          full
+          userPreferred
         }
         image {
           __typename
@@ -8144,7 +8144,7 @@ public struct MediaCharacter: GraphQLFragment {
         id
         name {
           __typename
-          full
+          userPreferred
         }
         image {
           __typename
@@ -8280,7 +8280,7 @@ public struct MediaCharacter: GraphQLFragment {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("full", type: .scalar(String.self)),
+          GraphQLField("userPreferred", type: .scalar(String.self)),
         ]
       }
 
@@ -8290,8 +8290,8 @@ public struct MediaCharacter: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(full: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "CharacterName", "full": full])
+      public init(userPreferred: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "CharacterName", "userPreferred": userPreferred])
       }
 
       public var __typename: String {
@@ -8303,13 +8303,13 @@ public struct MediaCharacter: GraphQLFragment {
         }
       }
 
-      /// The character's first and last name
-      public var full: String? {
+      /// The currently authenticated users preferred name language. Default romaji for non-authenticated
+      public var userPreferred: String? {
         get {
-          return resultMap["full"] as? String
+          return resultMap["userPreferred"] as? String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "full")
+          resultMap.updateValue(newValue, forKey: "userPreferred")
         }
       }
     }
@@ -8422,7 +8422,7 @@ public struct MediaCharacter: GraphQLFragment {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("full", type: .scalar(String.self)),
+          GraphQLField("userPreferred", type: .scalar(String.self)),
         ]
       }
 
@@ -8432,8 +8432,8 @@ public struct MediaCharacter: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(full: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "StaffName", "full": full])
+      public init(userPreferred: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "StaffName", "userPreferred": userPreferred])
       }
 
       public var __typename: String {
@@ -8445,13 +8445,13 @@ public struct MediaCharacter: GraphQLFragment {
         }
       }
 
-      /// The person's first and last name
-      public var full: String? {
+      /// The currently authenticated users preferred name language. Default romaji for non-authenticated
+      public var userPreferred: String? {
         get {
-          return resultMap["full"] as? String
+          return resultMap["userPreferred"] as? String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "full")
+          resultMap.updateValue(newValue, forKey: "userPreferred")
         }
       }
     }
@@ -8510,7 +8510,7 @@ public struct MediaStaff: GraphQLFragment {
         id
         name {
           __typename
-          full
+          userPreferred
         }
         image {
           __typename
@@ -8635,7 +8635,7 @@ public struct MediaStaff: GraphQLFragment {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("full", type: .scalar(String.self)),
+          GraphQLField("userPreferred", type: .scalar(String.self)),
         ]
       }
 
@@ -8645,8 +8645,8 @@ public struct MediaStaff: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(full: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "StaffName", "full": full])
+      public init(userPreferred: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "StaffName", "userPreferred": userPreferred])
       }
 
       public var __typename: String {
@@ -8658,13 +8658,13 @@ public struct MediaStaff: GraphQLFragment {
         }
       }
 
-      /// The person's first and last name
-      public var full: String? {
+      /// The currently authenticated users preferred name language. Default romaji for non-authenticated
+      public var userPreferred: String? {
         get {
-          return resultMap["full"] as? String
+          return resultMap["userPreferred"] as? String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "full")
+          resultMap.updateValue(newValue, forKey: "userPreferred")
         }
       }
     }
@@ -8796,7 +8796,7 @@ public struct MediaRelated: GraphQLFragment {
         id
         title {
           __typename
-          romaji
+          userPreferred
         }
         format
         coverImage {
@@ -8933,7 +8933,7 @@ public struct MediaRelated: GraphQLFragment {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("romaji", type: .scalar(String.self)),
+          GraphQLField("userPreferred", type: .scalar(String.self)),
         ]
       }
 
@@ -8943,8 +8943,8 @@ public struct MediaRelated: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(romaji: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+      public init(userPreferred: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
       }
 
       public var __typename: String {
@@ -8956,13 +8956,13 @@ public struct MediaRelated: GraphQLFragment {
         }
       }
 
-      /// The romanization of the native language title
-      public var romaji: String? {
+      /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+      public var userPreferred: String? {
         get {
-          return resultMap["romaji"] as? String
+          return resultMap["userPreferred"] as? String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "romaji")
+          resultMap.updateValue(newValue, forKey: "userPreferred")
         }
       }
     }
@@ -9020,7 +9020,7 @@ public struct MediaRecommended: GraphQLFragment {
         id
         title {
           __typename
-          romaji
+          userPreferred
         }
         format
         coverImage {
@@ -9147,7 +9147,7 @@ public struct MediaRecommended: GraphQLFragment {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("romaji", type: .scalar(String.self)),
+          GraphQLField("userPreferred", type: .scalar(String.self)),
         ]
       }
 
@@ -9157,8 +9157,8 @@ public struct MediaRecommended: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(romaji: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MediaTitle", "romaji": romaji])
+      public init(userPreferred: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MediaTitle", "userPreferred": userPreferred])
       }
 
       public var __typename: String {
@@ -9170,13 +9170,13 @@ public struct MediaRecommended: GraphQLFragment {
         }
       }
 
-      /// The romanization of the native language title
-      public var romaji: String? {
+      /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+      public var userPreferred: String? {
         get {
-          return resultMap["romaji"] as? String
+          return resultMap["userPreferred"] as? String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "romaji")
+          resultMap.updateValue(newValue, forKey: "userPreferred")
         }
       }
     }

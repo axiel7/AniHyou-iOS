@@ -18,7 +18,7 @@ struct StaffView: View {
             CircleImageView(imageUrl: staff.node?.image?.medium, size: StaffView.imageSize)
             
             VStack(alignment: .leading) {
-                Text(staff.node?.name?.full ?? "")
+                Text(staff.node?.name?.userPreferred ?? "")
                     .lineLimit(1)
                     .multilineTextAlignment(.leading)
                 Text(staff.role ?? "")

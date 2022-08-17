@@ -4,7 +4,7 @@ query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGrea
       media {
         id
         title {
-          romaji
+          userPreferred
         }
         coverImage {
           large

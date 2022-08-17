@@ -18,7 +18,7 @@ fragment MediaRelated on MediaEdge {
   node {
     id
     title {
-      romaji
+      userPreferred
     }
     format
     coverImage {
@@ -31,7 +31,7 @@ fragment MediaRecommended on Recommendation {
   mediaRecommendation {
     id
     title {
-      romaji
+      userPreferred
     }
     format
     coverImage {

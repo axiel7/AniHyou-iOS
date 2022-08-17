@@ -6,7 +6,7 @@ query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType) 
     media(search: $search, type: $type, sort: SEARCH_MATCH) {
       id
       title {
-        romaji
+        userPreferred
       }
       format
       coverImage {

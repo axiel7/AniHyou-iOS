@@ -27,7 +27,7 @@ struct MediaRelationsAndRecommendationsView: View {
                             ForEach(viewModel.mediaRelationsAndRecommendations?.relations?.edges ?? [], id: \.?.node?.id) {
                                 if let relation = $0 {
                                     NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
-                                        HListItemWithSubtitleView(title: relation.node?.title?.romaji, subtitle: "\(relation.relationType?.localizedName ?? "") · \(relation.node?.format?.localizedName ?? "")", imageUrl: relation.node?.coverImage?.large)
+                                        HListItemWithSubtitleView(title: relation.node?.title?.userPreferred, subtitle: "\(relation.relationType?.localizedName ?? "") · \(relation.node?.format?.localizedName ?? "")", imageUrl: relation.node?.coverImage?.large)
                                             .padding(.leading)
                                             .frame(width: 280, alignment: .leading)
                                     }
@@ -56,7 +56,7 @@ struct MediaRelationsAndRecommendationsView: View {
                             ForEach(viewModel.mediaRelationsAndRecommendations?.recommendations?.nodes ?? [], id: \.?.mediaRecommendation?.id) {
                                 if let recommendation = $0?.mediaRecommendation {
                                     NavigationLink(destination: MediaDetailsView(mediaId: recommendation.id)) {
-                                        VListItemView(title: recommendation.title?.romaji ?? "", imageUrl: recommendation.coverImage?.large)
+                                        VListItemView(title: recommendation.title?.userPreferred ?? "", imageUrl: recommendation.coverImage?.large)
                                     }
                                 }
                             }

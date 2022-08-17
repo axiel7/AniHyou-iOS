@@ -18,7 +18,7 @@ struct CharacterView: View {
             HStack {
                 CircleImageView(imageUrl: character.node?.image?.medium, size: imageSize)
                 VStack(alignment: .leading) {
-                    Text(character.node?.name?.full ?? "")
+                    Text(character.node?.name?.userPreferred ?? "")
                         .font(.system(size: 13))
                         .multilineTextAlignment(.leading)
                         .lineLimit(3)
@@ -34,7 +34,7 @@ struct CharacterView: View {
             if character.voiceActors?.isEmpty == false {
                 HStack {
                     VStack(alignment: .trailing) {
-                        Text(character.voiceActors?[0]?.name?.full ?? "")
+                        Text(character.voiceActors?[0]?.name?.userPreferred ?? "")
                             .font(.footnote)
                             .multilineTextAlignment(.trailing)
                             .lineLimit(3)

@@ -27,7 +27,7 @@ struct ChartListItemView: View {
                 .padding(.trailing, 8)
             
             VStack(alignment: .leading) {
-                Text(item.title?.romaji ?? "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST")
+                Text(item.title?.userPreferred ?? "")
                     .font(.body)
                     .foregroundColor(.primary)
                     .padding(.bottom, 2)

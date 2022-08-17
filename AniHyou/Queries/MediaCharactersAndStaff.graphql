@@ -18,7 +18,7 @@ fragment MediaCharacter on CharacterEdge {
   node {
     id
     name {
-      full
+      userPreferred
     }
     image {
       medium
@@ -27,7 +27,7 @@ fragment MediaCharacter on CharacterEdge {
   voiceActors(language: JAPANESE) {
     id
     name {
-      full
+      userPreferred
     }
     image {
       medium
@@ -40,7 +40,7 @@ fragment MediaStaff on StaffEdge {
   node {
     id
     name {
-      full
+      userPreferred
     }
     image {
       medium

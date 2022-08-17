@@ -42,7 +42,7 @@ struct HomeView: View {
                                 ForEach(viewModel.airingAnimes, id: \.?.media?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
-                                            HListItemWithSubtitleView(title: item.media?.title?.romaji, subtitle: "Airing in \(item.timeUntilAiring.timestampToLegibleText())", imageUrl: item.media?.coverImage?.large)
+                                            HListItemWithSubtitleView(title: item.media?.title?.userPreferred, subtitle: "Airing in \(item.timeUntilAiring.secondsToLegibleText())", imageUrl: item.media?.coverImage?.large)
                                                 .padding(.leading, 8)
                                                 .frame(width: 280, alignment: .leading)
                                         }
@@ -69,7 +69,7 @@ struct HomeView: View {
                                 ForEach(viewModel.seasonAnimes, id: \.?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                            VListItemView(title: item.title?.romaji ?? "", imageUrl: item.coverImage?.large)
+                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large)
                                         }
                                     }
                                 }
@@ -94,7 +94,7 @@ struct HomeView: View {
                                 ForEach(viewModel.trendingAnimes, id: \.?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                            VListItemView(title: item.title?.romaji ?? "", imageUrl: item.coverImage?.large)
+                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large)
                                         }
                                     }
                                 }
