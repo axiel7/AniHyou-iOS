@@ -12,6 +12,7 @@ private let coverHeight: CGFloat = 153
 
 struct MediaDetailsMainInfo: View {
     
+    var mediaId: Int
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showingEditSheet = false
     @State private var showingCoverSheet = false
@@ -58,7 +59,7 @@ struct MediaDetailsMainInfo: View {
                     }//:Button
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showingEditSheet) {
-                        MediaListEditView(mediaId: viewModel.mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
+                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
                     }
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
@@ -94,6 +95,6 @@ struct MediaDetailsMainInfo: View {
 
 struct MediaDetailsMainInfo_Previews: PreviewProvider {
     static var previews: some View {
-        MediaDetailsMainInfo(viewModel: MediaDetailsViewModel(mediaId: 140960))
+        MediaDetailsMainInfo(mediaId: 1, viewModel: MediaDetailsViewModel())
     }
 }

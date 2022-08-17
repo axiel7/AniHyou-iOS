@@ -23,7 +23,7 @@ struct MediaDetailsView: View {
                     TopBannerView(imageUrl: viewModel.mediaDetails!.bannerImage, placeholderHexColor: viewModel.mediaDetails!.coverImage?.color, height: bannerHeight)
                     
                     // MARK: Main info
-                    MediaDetailsMainInfo(viewModel: viewModel)
+                    MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
                     
                     // MARK: Main stats
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -31,7 +31,7 @@ struct MediaDetailsView: View {
                             Divider()
                             HStack {
                                 if let schedule = viewModel.mediaDetails?.nextAiringEpisode {
-                                    MediaStatView(name: "Airing", value: "Ep \(schedule.episode) in \(schedule.timeUntilAiring.timestampToLegibleText())")
+                                    MediaStatView(name: "Airing", value: "Ep \(schedule.episode) in \(schedule.timeUntilAiring.secondsToLegibleText())")
                                 }
                                 MediaStatView(name: "Average Score", value: "\(viewModel.mediaDetails?.averageScore ?? 0)%")
                                 MediaStatView(name: "Mean Score", value: "\(viewModel.mediaDetails?.meanScore ?? 0)%")
@@ -39,8 +39,7 @@ struct MediaDetailsView: View {
                                 MediaStatView(name: "Popularity", value: (viewModel.mediaDetails?.popularity ?? 0).formatted())
                                 MediaStatView(name: "Favorites", value: (viewModel.mediaDetails?.favourites ?? 0).formatted(), showDivider: false)
                             }
-                            .padding(.top, 4)
-                            .padding(.bottom, 4)
+                            .padding(.vertical, 4)
                             Divider()
                         }//:VStack
                         .padding(.leading)
@@ -56,38 +55,30 @@ struct MediaDetailsView: View {
                     // MARK: More info
                     Picker("Info type", selection: $infoType) {
                         ForEach(MediaInfoType.allCases, id: \.self) { type in
-                            Label(type.formatted, systemImage: type.systemImage)
+                            Label(type.localizedName, systemImage: type.systemImage)
                         }
                     }
                     .pickerStyle(.segmented)
                     .labelStyle(.iconOnly)
                     .padding()
                     
-                    Group {
+                    ZStack {
                         switch infoType {
                         case .general:
                             MediaGeneralInfoView(viewModel: viewModel)
                         case .charactersAndStaff:
-                            MediaCharactersAndStaffView(viewModel: viewModel)
-                                .onAppear {
-                                    viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
-                                }
+                            MediaCharactersAndStaffView(mediaId: mediaId)
                         case .relationsAndRecommendations:
-                            MediaRelationsAndRecommendationsView(viewModel: viewModel)
-                                .onAppear {
-                                    viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
-                                }
+                            MediaRelationsAndRecommendationsView(mediaId: mediaId)
                         case .stats:
-                            Text("stats")
+                            VStack(alignment: .center) {
+                                Text("Coming soon")
+                            }
                         case .reviewsAndThreads:
-                            MediaReviewsAndThreadsView(viewModel: viewModel)
-                                .onAppear {
-                                    viewModel.getMediaReviews(mediaId: mediaId)
-                                    viewModel.getMediaThreads(mediaId: mediaId)
-                                }
+                            MediaReviewsAndThreadsView(mediaId: mediaId)
                         }
-                    }//:Group
-                    .frame(minWidth: 120)
+                    }//:ZStack
+                    .frame(minHeight: 200)
                 }//:VStack
                 .padding(.bottom)
             }//:VScrollView
@@ -95,7 +86,7 @@ struct MediaDetailsView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        switch viewModel.mediaDetails!.type {
+                        switch viewModel.mediaDetails?.type {
                         case .anime:
                             shareSheet(url: "\(ANILIST_ANIME_URL)\(mediaId)")
                         case .manga:
@@ -112,7 +103,7 @@ struct MediaDetailsView: View {
         } else {
             ProgressView()
                 .onAppear {
-                    viewModel.getMediaDetails(id: mediaId)
+                    viewModel.getMediaDetails(mediaId: mediaId)
                 }
         }
     }

@@ -9,83 +9,14 @@ import Foundation
 
 class MediaDetailsViewModel: ObservableObject {
     
-    var mediaId: Int = 0
-    
-    init(mediaId: Int? = nil) {
-        if mediaId != nil {
-            self.mediaId = mediaId!
-        }
-    }
-    
     @Published var mediaDetails: MediaDetailsQuery.Data.Medium?
     
-    func getMediaDetails(id: Int) {
-        mediaId = id
-        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: id)) { [weak self] result in
+    func getMediaDetails(mediaId: Int) {
+        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: mediaId)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {
                     self?.mediaDetails = media
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    @Published var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Medium?
-    
-    func getMediaCharactersAndStaff(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: mediaId)) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.media {
-                    self?.mediaCharactersAndStaff = media
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Medium?
-    
-    func getMediaRelationsAndRecommendations(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(mediaId: mediaId)) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.media {
-                    self?.mediaRelationsAndRecommendations = media
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    @Published var mediaReviews: MediaReviewsQuery.Data.Medium.Review?
-    
-    func getMediaReviews(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaReviewsQuery(mediaId: mediaId, page: 1, perPage: 10)) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let reviews = graphQLResult.data?.media?.reviews {
-                    self?.mediaReviews = reviews
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    @Published var mediaThreads = [MediaThreadsQuery.Data.Page.Thread?]()
-    
-    func getMediaThreads(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaThreadsQuery(page: 1, perPage: 10, mediaCategoryId: mediaId, sort: [.isSticky, .createdAtDesc])) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let threads = graphQLResult.data?.page?.threads {
-                    self?.mediaThreads = threads
                 }
             case .failure(let error):
                 print(error)

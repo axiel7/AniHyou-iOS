@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MediaReviewsAndThreadsView: View {
     
-    @ObservedObject var viewModel: MediaDetailsViewModel
+    var mediaId: Int
+    @StateObject var viewModel = ReviewThreadViewModel()
     private let gridRows = [
         GridItem(.flexible(), spacing: 0, alignment: .leading),
         GridItem(.flexible(), spacing: 0, alignment: .leading)
@@ -48,6 +49,9 @@ struct MediaReviewsAndThreadsView: View {
                         Spacer()
                         ProgressView()
                             .padding()
+                            .onAppear {
+                                viewModel.getMediaReviews(mediaId: mediaId)
+                            }
                         Spacer()
                     }
                 }
@@ -76,11 +80,14 @@ struct MediaReviewsAndThreadsView: View {
                 }
             }//:ZStack
         }//:VStack
+        .onAppear {
+            viewModel.getMediaThreads(mediaId: mediaId)
+        }
     }
 }
 
 struct MediaReviewsAndThreadsView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaReviewsAndThreadsView(viewModel: MediaDetailsViewModel())
+        MediaReviewsAndThreadsView(mediaId: 1)
     }
 }

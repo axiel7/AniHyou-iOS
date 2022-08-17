@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MediaCharactersAndStaffView: View {
     
-    @ObservedObject var viewModel: MediaDetailsViewModel
+    var mediaId: Int
+    @StateObject var viewModel = CharacterStaffViewModel()
     private let gridRows = [
         GridItem(.fixed(StaffView.imageSize), alignment: .leading),
         GridItem(.fixed(StaffView.imageSize), alignment: .leading)
@@ -57,6 +58,9 @@ struct MediaCharactersAndStaffView: View {
                 Spacer()
                 ProgressView()
                     .padding()
+                    .onAppear {
+                        viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
+                    }
                 Spacer()
             }
         }
@@ -65,6 +69,6 @@ struct MediaCharactersAndStaffView: View {
 
 struct MediaCharactersAndStaffView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaCharactersAndStaffView(viewModel: MediaDetailsViewModel())
+        MediaCharactersAndStaffView(mediaId: 1)
     }
 }

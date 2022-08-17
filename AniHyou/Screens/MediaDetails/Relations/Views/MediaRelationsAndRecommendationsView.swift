@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MediaRelationsAndRecommendationsView: View {
     
-    @ObservedObject var viewModel: MediaDetailsViewModel
+    var mediaId: Int
+    @StateObject var viewModel = RelationRecommendationViewModel()
     
     var body: some View {
         if viewModel.mediaRelationsAndRecommendations != nil {
@@ -71,6 +72,9 @@ struct MediaRelationsAndRecommendationsView: View {
                 Spacer()
                 ProgressView()
                     .padding()
+                    .onAppear {
+                        viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
+                    }
                 Spacer()
             }
         }
@@ -79,6 +83,6 @@ struct MediaRelationsAndRecommendationsView: View {
 
 struct MediaRelationsAndRecommendationsView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaRelationsAndRecommendationsView(viewModel: MediaDetailsViewModel())
+        MediaRelationsAndRecommendationsView(mediaId: 1)
     }
 }
