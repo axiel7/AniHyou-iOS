@@ -1,5 +1,7 @@
 # ![app-icon](https://github.com/axiel7/AniHyou/blob/main/AniHyou/Assets.xcassets/AppIcon.appiconset/AniHyou%20logo%2040.png) AniHyou
 
+Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
+
 ### Another unofficial iOS AniList client
 ![screenshots](https://axiel7.github.io/assets/anihyou.58717379ec9cfda91ca1c970f44d2ce6.png)
 
