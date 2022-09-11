@@ -57,7 +57,7 @@ struct MediaListEditView: View {
                             .keyboardType(.numberPad)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 80)
-                        Stepper("Episodes", value: $progress, in: 0...Int.max)
+                        Stepper(mediaType == .anime ? "Episodes" : "Chapters", value: $progress, in: 0...Int.max)
                     }
                     if mediaType == .manga {
                         HStack {
