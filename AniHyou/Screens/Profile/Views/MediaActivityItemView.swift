@@ -20,6 +20,7 @@ struct MediaActivityItemView: View {
                     .font(.subheadline)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
+                    .foregroundColor(.primary)
                 
                 Text(activity.createdAt.timestampIntervalSinceNow().secondsToLegibleText() + " ago")
                     .font(.subheadline)
