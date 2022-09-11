@@ -45,16 +45,14 @@ class MediaListViewModel: ObservableObject {
         forceReload = true
     }
     
-    @Published var updatedEntryId: Int? = nil
-    var updatedProgress: Int? = nil
+    @Published var updatedEntry = UpdatedMediaEntry()
     
     func updateEntryProgress(entryId: Int, progress: Int) {
         Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: entryId, progress: progress)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {
-                    self?.updatedEntryId = data.id
-                    self?.updatedProgress = data.progress
+                    self?.updatedEntry = UpdatedMediaEntry(mediaId: data.id, progress: data.progress)
                 }
             case .failure(let error):
                 print(error)

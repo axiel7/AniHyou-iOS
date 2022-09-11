@@ -18,7 +18,7 @@ struct MediaListView: View {
             ForEach(viewModel.mediaList, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                        MediaListItemView(item: item, viewModel: viewModel)
+                        MediaListItemView(item: item)
                     }
                     .swipeActions {
                         if viewModel.mediaListStatus == .current {
@@ -57,6 +57,9 @@ struct MediaListView: View {
             viewModel.refreshList()
         } 
         .onChange(of: viewModel.sort) { _ in
+            viewModel.refreshList()
+        }
+        .onChange(of: viewModel.updatedEntry) { _ in
             viewModel.refreshList()
         }
         .onAppear {
