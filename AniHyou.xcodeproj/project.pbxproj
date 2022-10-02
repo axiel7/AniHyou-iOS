@@ -277,6 +277,7 @@
 				488C268D28539EFE0005EE15 /* Network */,
 				481AD5032852211C001779EE /* Queries */,
 				481AD4F32851D87E001779EE /* Views */,
+				48CA07B428706D8F0048854E /* CircleImageView.swift */,
 				481AD4F22851D878001779EE /* Screens */,
 				481AD4DD2851CE73001779EE /* AniHyouApp.swift */,
 				481AD4F02851D84C001779EE /* API.swift */,
@@ -324,7 +325,6 @@
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
 				481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */,
 				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
-				48CA07B428706D8F0048854E /* CircleImageView.swift */,
 				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
 			);
 			path = Views;
