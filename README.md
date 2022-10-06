@@ -15,12 +15,7 @@ Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 - Anime and Manga charts (top and popular)
 
 ## Coming features
-- Anime/Manga stats
-- User profile stats
-- User score prefered settings (default is 10 point decimal)
-- User title format settings (default is romaji)
-- User NSFW settings
-- Notifications
+- [See project](https://github.com/users/axiel7/projects/2/views/1)
 
 ## Technologies used
 - [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
