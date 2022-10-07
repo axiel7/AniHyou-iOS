@@ -17,7 +17,7 @@ struct MediaListStatusView: View {
         NavigationStack(path: $selection) {
             List(MediaListStatusAllCases, id: \.self) { status in
                 NavigationLink(value: status) {
-                    Label(status.localizedName, systemImage: status.systemIcon)
+                    Label(status.localizedName, systemImage: status.systemImage)
                 }
             }//:List
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")

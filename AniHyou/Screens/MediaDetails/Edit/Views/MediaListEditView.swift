@@ -38,7 +38,7 @@ struct MediaListEditView: View {
             Form(content: {
                 Picker("Status", selection: $status) {
                     ForEach(MediaListStatusAllCases, id: \.self) { status in
-                        Text(status.localizedName)
+                        Label(status.localizedName, systemImage: status.systemImage)
                     }
                 }
                 

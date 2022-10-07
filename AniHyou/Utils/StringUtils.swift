@@ -44,7 +44,7 @@ extension MediaListStatus {
     }
     
     /// System symbol name representing this status
-    var systemIcon: String {
+    var systemImage: String {
         switch self {
         case .current:
             return "play.circle"
