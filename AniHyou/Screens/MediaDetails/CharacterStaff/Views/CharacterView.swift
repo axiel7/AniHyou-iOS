@@ -22,7 +22,7 @@ struct CharacterView: View {
                         .font(.system(size: 13))
                         .multilineTextAlignment(.leading)
                         .lineLimit(3)
-                    Text(character.role?.localizedName ?? "")
+                    Text(character.role?.value?.localizedName ?? "")
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }
@@ -53,7 +53,7 @@ struct CharacterView: View {
 
 struct CharacterView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterView(character: MediaCharacter())
+        CharacterView(character: MediaCharacter(fieldData: nil, variables: nil))
             .padding()
     }
 }

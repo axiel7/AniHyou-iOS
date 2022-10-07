@@ -9,10 +9,10 @@ import Foundation
 
 class CharacterStaffViewModel: ObservableObject {
     
-    @Published var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Medium?
+    @Published var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Media?
     
     func getMediaCharactersAndStaff(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: mediaId)) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: .some(mediaId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {

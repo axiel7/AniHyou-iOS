@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import API
 
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss
     
     var mediaId: Int
     var mediaType: MediaType
-    var mediaList: MediaDetailsQuery.Data.Medium.MediaListEntry?
+    var mediaList: MediaDetailsQuery.Data.Media.MediaListEntry?
     
     @StateObject var viewModel = MediaListEditViewModel()
     @State var status: MediaListStatus = .planning
@@ -34,9 +35,9 @@ struct MediaListEditView: View {
     
     var body: some View {
         NavigationView {
-            Form {
+            Form(content: {
                 Picker("Status", selection: $status) {
-                    ForEach(MediaListStatus.allCases, id: \.self) { status in
+                    ForEach(MediaListStatusAllCases, id: \.self) { status in
                         Text(status.localizedName)
                     }
                 }
@@ -79,9 +80,9 @@ struct MediaListEditView: View {
                     
                 }
                 
-            }//:Form
+            })//:Form
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
+            .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
                         dismiss()
@@ -89,12 +90,13 @@ struct MediaListEditView: View {
                 }
                     
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save") {
+                    Button("Save", action: {
                         viewModel.updateEntry(mediaId: mediaId, status: status, score: score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil)
-                    }
+                    })
                     .font(.bold(.body)())
+                    
                 }
-            }//:Toolbar
+            })//:Toolbar
         }//:NavigationView
         .onAppear {
             setValues()
@@ -107,7 +109,7 @@ struct MediaListEditView: View {
     }
     
     private func setValues() {
-        self.status = self.mediaList?.status ?? .planning
+        self.status = self.mediaList?.status?.value ?? .planning
         self.progress = self.mediaList?.progress ?? 0
         self.progressVolumes = self.mediaList?.progressVolumes ?? 0
         self.score = self.mediaList?.score ?? 0

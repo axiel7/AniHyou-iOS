@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import API
 
 class HomeViewModel: ObservableObject {
     private let now = Date.now
@@ -23,7 +24,7 @@ class HomeViewModel: ObservableObject {
     func getAiringAnimes(page: Int = 1) {
         let todayTimestamp = Int(Date.now.timeIntervalSince1970)
         
-        Network.shared.apollo.fetch(query: AiringAnimesQuery(page: page, perPage: 10, sort: [AiringSort.time], airingAtGreater: todayTimestamp)) { [weak self] result in
+        Network.shared.apollo.fetch(query: AiringAnimesQuery(page: .some(page), perPage: .some(10), sort: .some([.case(.time)]), airingAtGreater: .some(todayTimestamp))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -41,7 +42,7 @@ class HomeViewModel: ObservableObject {
     @Published var seasonAnimes = [SeasonalAnimeQuery.Data.Page.Medium?]()
     
     func getSeasonAnimes(page: Int = 1) {
-        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: page, perPage: 10, season: nowSeason, seasonYear: nowYear, sort: [MediaSort.popularityDesc])) { [weak self] result in
+        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(page), perPage: .some(10), season: .some(.case(nowSeason)), seasonYear: .some(nowYear), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -59,7 +60,7 @@ class HomeViewModel: ObservableObject {
     @Published var trendingAnimes = [AnimesQuery.Data.Page.Medium?]()
     
     func getTrendingAnimes(page: Int = 1) {
-        Network.shared.apollo.fetch(query: AnimesQuery(page: page, perPage: 10, sort: [.trendingDesc])) { [weak self] result in
+        Network.shared.apollo.fetch(query: AnimesQuery(page: .some(page), perPage: .some(10), sort: .some([.case(.trendingDesc)]))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

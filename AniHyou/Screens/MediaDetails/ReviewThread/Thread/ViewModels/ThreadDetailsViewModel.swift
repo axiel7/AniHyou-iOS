@@ -16,7 +16,7 @@ class ThreadDetailsViewModel: ObservableObject {
     var hasNextPage = true
     
     func getThreadComments(threadId: Int) {
-        Network.shared.apollo.fetch(query: ThreadCommentsQuery(page: currentPage, perPage: 25, threadId: threadId)) { [weak self] result in
+        Network.shared.apollo.fetch(query: ThreadCommentsQuery(page: .some(currentPage), perPage: .some(25), threadId: .some(threadId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

@@ -9,10 +9,10 @@ import Foundation
 
 class RelationRecommendationViewModel: ObservableObject {
     
-    @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Medium?
+    @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Media?
     
     func getMediaRelationsAndRecommendations(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(mediaId: mediaId)) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(mediaId: .some(mediaId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {

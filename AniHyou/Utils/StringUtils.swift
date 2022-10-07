@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import API
 
 extension String {
     
@@ -39,8 +40,6 @@ extension MediaListStatus {
             return "Dropped"
         case .repeating:
             return "Repeating"
-        default:
-            return "Unknown"
         }
     }
     
@@ -59,8 +58,6 @@ extension MediaListStatus {
             return "trash"
         case .repeating:
             return "repeat"
-        default:
-            return "questionmark.circle"
         }
     }
 }
@@ -77,8 +74,6 @@ extension MediaSeason {
             return "Summer"
         case .fall:
             return "Fall"
-        default:
-            return "Spring"
         }
     }
 }
@@ -107,8 +102,6 @@ extension MediaFormat {
             return "Novel"
         case .oneShot:
             return "OneShot"
-        case .__unknown(let rawValue):
-            return rawValue
         }
     }
 }
@@ -127,8 +120,6 @@ extension MediaStatus {
             return "Cancelled"
         case .hiatus:
             return "Hiatus"
-        case .__unknown(let rawValue):
-            return rawValue
         }
     }
 }
@@ -167,8 +158,6 @@ extension MediaSource {
             return "Multimedia project"
         case .pictureBook:
             return "Picture book"
-        case .__unknown(let rawValue):
-            return rawValue
         }
     }
 }
@@ -183,8 +172,6 @@ extension CharacterRole {
             return "Supporting"
         case .background:
             return "Background"
-        case .__unknown(let rawValue):
-            return rawValue
         }
     }
 }
@@ -219,8 +206,6 @@ extension MediaRelation {
             return "Compilation"
         case .contains:
             return "Contains"
-        case .__unknown(let rawValue):
-            return rawValue
         }
     }
 }
@@ -289,8 +274,6 @@ extension MediaListSort {
             return "Popularity"
         case .mediaPopularityDesc:
             return "Popularity"
-        case .__unknown(let rawValue):
-            return rawValue
         }
     }
 }

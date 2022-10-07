@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import API
 
 class MediaListViewModel: ObservableObject {
     
@@ -21,7 +22,7 @@ class MediaListViewModel: ObservableObject {
     @Published var sort: MediaListSort = .updatedTimeDesc
     
     func getUserMediaList() {
-        Network.shared.apollo.fetch(query: UserMediaListQuery(page: currentPage, perPage: 25, userId: userId(), type: mediaType, status: mediaListStatus, sort: [sort]), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserMediaListQuery(page: .some(currentPage), perPage: .some(25), userId: .some(userId()), type: .some(.case(mediaType)), status: .some(.case(mediaListStatus)), sort: .some([.case(sort)])), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -48,7 +49,7 @@ class MediaListViewModel: ObservableObject {
     @Published var updatedEntry = UpdatedMediaEntry()
     
     func updateEntryProgress(entryId: Int, progress: Int) {
-        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: entryId, progress: progress)) { [weak self] result in
+        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: .some(entryId), progress: .some(progress))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {

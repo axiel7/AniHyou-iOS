@@ -71,6 +71,6 @@ struct ThreadDetailsView: View {
 
 struct ThreadDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ThreadDetailsView(thread: MediaThreadsQuery.Data.Page.Thread(id: 0, likeCount: 0, createdAt: 1659666438))
+        ThreadDetailsView(thread: MediaThreadsQuery.Data.Page.Thread(fieldData: nil, variables: nil))
     }
 }

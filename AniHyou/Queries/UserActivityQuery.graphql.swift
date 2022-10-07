@@ -1,0 +1,260 @@
+// @generated
+// This file was automatically generated and should not be edited.
+
+import ApolloAPI
+@_exported import enum ApolloAPI.GraphQLEnum
+@_exported import enum ApolloAPI.GraphQLNullable
+import API
+
+public class UserActivityQuery: GraphQLQuery {
+  public static let operationName: String = "UserActivity"
+  public static let document: DocumentType = .notPersisted(
+    definition: .init(
+      """
+      query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) {
+        Page(page: $page, perPage: $perPage) {
+          __typename
+          activities(userId: $userId, sort: $sort) {
+            __typename
+            ... on TextActivity {
+              id
+              type
+              text
+              createdAt
+            }
+            ... on ListActivity {
+              id
+              type
+              status
+              progress
+              createdAt
+              media {
+                __typename
+                id
+                title {
+                  __typename
+                  userPreferred
+                }
+                coverImage {
+                  __typename
+                  medium
+                }
+              }
+            }
+          }
+          pageInfo {
+            __typename
+            currentPage
+            hasNextPage
+          }
+        }
+      }
+      """
+    ))
+
+  public var page: GraphQLNullable<Int>
+  public var perPage: GraphQLNullable<Int>
+  public var userId: GraphQLNullable<Int>
+  public var sort: GraphQLNullable<[GraphQLEnum<API.ActivitySort>?]>
+
+  public init(
+    page: GraphQLNullable<Int>,
+    perPage: GraphQLNullable<Int>,
+    userId: GraphQLNullable<Int>,
+    sort: GraphQLNullable<[GraphQLEnum<API.ActivitySort>?]>
+  ) {
+    self.page = page
+    self.perPage = perPage
+    self.userId = userId
+    self.sort = sort
+  }
+
+  public var __variables: Variables? { [
+    "page": page,
+    "perPage": perPage,
+    "userId": userId,
+    "sort": sort
+  ] }
+
+  public struct Data: API.SelectionSet {
+    public let __data: DataDict
+    public init(data: DataDict) { __data = data }
+
+    public static var __parentType: ParentType { API.Objects.Query }
+    public static var __selections: [Selection] { [
+      .field("Page", Page?.self, arguments: [
+        "page": .variable("page"),
+        "perPage": .variable("perPage")
+      ]),
+    ] }
+
+    public var page: Page? { __data["Page"] }
+
+    /// Page
+    ///
+    /// Parent Type: `Page`
+    public struct Page: API.SelectionSet {
+      public let __data: DataDict
+      public init(data: DataDict) { __data = data }
+
+      public static var __parentType: ParentType { API.Objects.Page }
+      public static var __selections: [Selection] { [
+        .field("activities", [Activity?]?.self, arguments: [
+          "userId": .variable("userId"),
+          "sort": .variable("sort")
+        ]),
+        .field("pageInfo", PageInfo?.self),
+      ] }
+
+      public var activities: [Activity?]? { __data["activities"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
+
+      /// Page.Activity
+      ///
+      /// Parent Type: `ActivityUnion`
+      public struct Activity: API.SelectionSet {
+        public let __data: DataDict
+        public init(data: DataDict) { __data = data }
+
+        public static var __parentType: ParentType { API.Unions.ActivityUnion }
+        public static var __selections: [Selection] { [
+          .inlineFragment(AsTextActivity.self),
+          .inlineFragment(AsListActivity.self),
+        ] }
+
+        public var asTextActivity: AsTextActivity? { _asInlineFragment() }
+        public var asListActivity: AsListActivity? { _asInlineFragment() }
+
+        /// Page.Activity.AsTextActivity
+        ///
+        /// Parent Type: `TextActivity`
+        public struct AsTextActivity: API.InlineFragment {
+          public let __data: DataDict
+          public init(data: DataDict) { __data = data }
+
+          public static var __parentType: ParentType { API.Objects.TextActivity }
+          public static var __selections: [Selection] { [
+            .field("id", Int.self),
+            .field("type", GraphQLEnum<API.ActivityType>?.self),
+            .field("text", String?.self),
+            .field("createdAt", Int.self),
+          ] }
+
+          /// The id of the activity
+          public var id: Int { __data["id"] }
+          /// The type of activity
+          public var type: GraphQLEnum<API.ActivityType>? { __data["type"] }
+          /// The status text (Markdown)
+          public var text: String? { __data["text"] }
+          /// The time the activity was created at
+          public var createdAt: Int { __data["createdAt"] }
+        }
+
+        /// Page.Activity.AsListActivity
+        ///
+        /// Parent Type: `ListActivity`
+        public struct AsListActivity: API.InlineFragment {
+          public let __data: DataDict
+          public init(data: DataDict) { __data = data }
+
+          public static var __parentType: ParentType { API.Objects.ListActivity }
+          public static var __selections: [Selection] { [
+            .field("id", Int.self),
+            .field("type", GraphQLEnum<API.ActivityType>?.self),
+            .field("status", String?.self),
+            .field("progress", String?.self),
+            .field("createdAt", Int.self),
+            .field("media", Media?.self),
+          ] }
+
+          /// The id of the activity
+          public var id: Int { __data["id"] }
+          /// The type of activity
+          public var type: GraphQLEnum<API.ActivityType>? { __data["type"] }
+          /// The list item's textual status
+          public var status: String? { __data["status"] }
+          /// The list progress made
+          public var progress: String? { __data["progress"] }
+          /// The time the activity was created at
+          public var createdAt: Int { __data["createdAt"] }
+          /// The associated media to the activity update
+          public var media: Media? { __data["media"] }
+
+          /// Page.Activity.AsListActivity.Media
+          ///
+          /// Parent Type: `Media`
+          public struct Media: API.SelectionSet {
+            public let __data: DataDict
+            public init(data: DataDict) { __data = data }
+
+            public static var __parentType: ParentType { API.Objects.Media }
+            public static var __selections: [Selection] { [
+              .field("id", Int.self),
+              .field("title", Title?.self),
+              .field("coverImage", CoverImage?.self),
+            ] }
+
+            /// The id of the media
+            public var id: Int { __data["id"] }
+            /// The official titles of the media in various languages
+            public var title: Title? { __data["title"] }
+            /// The cover images of the media
+            public var coverImage: CoverImage? { __data["coverImage"] }
+
+            /// Page.Activity.AsListActivity.Media.Title
+            ///
+            /// Parent Type: `MediaTitle`
+            public struct Title: API.SelectionSet {
+              public let __data: DataDict
+              public init(data: DataDict) { __data = data }
+
+              public static var __parentType: ParentType { API.Objects.MediaTitle }
+              public static var __selections: [Selection] { [
+                .field("userPreferred", String?.self),
+              ] }
+
+              /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+              public var userPreferred: String? { __data["userPreferred"] }
+            }
+
+            /// Page.Activity.AsListActivity.Media.CoverImage
+            ///
+            /// Parent Type: `MediaCoverImage`
+            public struct CoverImage: API.SelectionSet {
+              public let __data: DataDict
+              public init(data: DataDict) { __data = data }
+
+              public static var __parentType: ParentType { API.Objects.MediaCoverImage }
+              public static var __selections: [Selection] { [
+                .field("medium", String?.self),
+              ] }
+
+              /// The cover image url of the media at medium size
+              public var medium: String? { __data["medium"] }
+            }
+          }
+        }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: API.SelectionSet {
+        public let __data: DataDict
+        public init(data: DataDict) { __data = data }
+
+        public static var __parentType: ParentType { API.Objects.PageInfo }
+        public static var __selections: [Selection] { [
+          .field("currentPage", Int?.self),
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// The current page
+        public var currentPage: Int? { __data["currentPage"] }
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
+      }
+    }
+  }
+}

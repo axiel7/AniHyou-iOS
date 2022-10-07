@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import ApolloAPI
 import KeychainSwift
 
 class TokenAddingInterceptor: ApolloInterceptor {

@@ -15,7 +15,7 @@ class UserActivityViewModel: ObservableObject {
     @Published var activities = [UserActivityQuery.Data.Page.Activity?]()
     
     func getUserActivity(userId: Int) {
-        Network.shared.apollo.fetch(query: UserActivityQuery(page: currentPage, perPage: 20, userId: userId, sort: [.idDesc])) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserActivityQuery(page: .some(currentPage), perPage: .some(20), userId: .some(userId), sort: .some([.case(.idDesc)]))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

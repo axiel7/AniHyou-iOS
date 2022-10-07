@@ -44,7 +44,7 @@ struct MediaListItemView: View {
     }
     
     var totalProgress: Int? {
-        if item.media?.type == .anime {
+        if item.media?.type?.value == .anime {
             return item.media?.episodes
         } else {
             return item.media?.chapters
@@ -55,7 +55,7 @@ struct MediaListItemView: View {
 struct MediaListItemView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MediaListItemView(item: UserMediaListQuery.Data.Page.MediaList(id: 1, mediaId: 1))
+        MediaListItemView(item: UserMediaListQuery.Data.Page.MediaList(fieldData: nil, variables: nil))
             .previewLayout(.sizeThatFits)
     }
 }

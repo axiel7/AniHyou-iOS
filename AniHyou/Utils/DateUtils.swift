@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import API
 
 extension Date {
     var tomorrow: Date? {
@@ -40,7 +41,7 @@ extension Date {
     }
     
     func toFuzzyDate() -> FuzzyDateInput {
-        return FuzzyDateInput(year: self.year, month: self.month, day: self.day)
+        return FuzzyDateInput(year: GraphQLNullable<Int>(integerLiteral: self.year), month: GraphQLNullable<Int>(integerLiteral:  self.month), day: GraphQLNullable<Int>(integerLiteral: self.day))
     }
 }
 

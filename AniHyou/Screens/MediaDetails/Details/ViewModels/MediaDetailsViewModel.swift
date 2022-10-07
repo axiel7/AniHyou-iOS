@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import API
 
 class MediaDetailsViewModel: ObservableObject {
     
-    @Published var mediaDetails: MediaDetailsQuery.Data.Medium?
+    @Published var mediaDetails: MediaDetailsQuery.Data.Media?
     
     func getMediaDetails(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: mediaId)) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: .some(mediaId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let media = graphQLResult.data?.media {
@@ -27,7 +28,7 @@ class MediaDetailsViewModel: ObservableObject {
     //MARK: calculated variables
     
     var isAnime: Bool {
-        return mediaDetails?.type == .anime
+        return mediaDetails?.type?.value == .anime
     }
     
     var genresFormatted: String? {
@@ -41,9 +42,9 @@ class MediaDetailsViewModel: ObservableObject {
         guard mediaDetails != nil else { return nil }
         guard mediaDetails?.season != nil else { return nil }
         if mediaDetails?.seasonYear != nil {
-            return "\(mediaDetails!.season!.localizedName) \(mediaDetails!.seasonYear!)"
+            return "\(mediaDetails!.season!.value?.localizedName) \(mediaDetails!.seasonYear!)"
         } else {
-            return mediaDetails?.season?.localizedName
+            return mediaDetails?.season?.value?.localizedName
         }
     }
     
@@ -79,9 +80,9 @@ class MediaDetailsViewModel: ObservableObject {
         else { return String(strProducers.dropLast(2)) }
     }
     
-    var streamingLinks: [MediaDetailsQuery.Data.Medium.ExternalLink?] {
+    var streamingLinks: [MediaDetailsQuery.Data.Media.ExternalLink?] {
         guard mediaDetails != nil else { return [] }
         guard mediaDetails?.externalLinks != nil else { return [] }
-        return mediaDetails!.externalLinks!.filter { $0?.type == .streaming }
+        return mediaDetails!.externalLinks!.filter { $0?.type?.value == .streaming }
     }
 }

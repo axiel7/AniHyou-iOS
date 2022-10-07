@@ -13,7 +13,7 @@ class ReviewDetailsViewModel: ObservableObject {
     @Published var reviewBody: String?
     
     func getReviewDetails(reviewId: Int) {
-        Network.shared.apollo.fetch(query: ReviewDetailsQuery(reviewId: reviewId)) { [weak self] result in
+        Network.shared.apollo.fetch(query: ReviewDetailsQuery(reviewId: .some(reviewId))) { [weak self] result in
             switch (result) {
             case .success(let graphQLResult):
                 if let review = graphQLResult.data?.review {

@@ -17,7 +17,7 @@ class Network {
         let provider = NetworkInterceptorProvider(client: client, store: store)
         let transport = RequestChainNetworkTransport(interceptorProvider: provider, endpointURL: URL(string: ANILIST_GRAPHQL)!)
         let apolloClient = ApolloClient(networkTransport: transport, store: store)
-        apolloClient.cacheKeyForObject = { $0["id"] }
+        //apolloClient.cacheKeyForObject = { $0["id"] }
         return apolloClient
     }()
 }

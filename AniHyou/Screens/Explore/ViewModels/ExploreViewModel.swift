@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import API
 
 class ExploreViewModel: ObservableObject {
     
@@ -15,7 +16,7 @@ class ExploreViewModel: ObservableObject {
     var hasNextPage = true
     
     func getMediaChart(type: MediaType, sort: MediaSort) {
-        Network.shared.apollo.fetch(query: MediaChartQuery(page: currentPage, perPage: 25, sort: [sort], type: type)) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaChartQuery(page: .some(currentPage), perPage: .some(25), sort: .some([.case(sort)]), type: .some(.case(type)))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

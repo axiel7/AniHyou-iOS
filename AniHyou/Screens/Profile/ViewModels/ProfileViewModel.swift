@@ -39,7 +39,7 @@ class ProfileViewModel: ObservableObject {
     @Published var userAbout: String?
     
     func getUserAbout(userId: Int) {
-        Network.shared.apollo.fetch(query: UserAboutQuery(userId: userId)) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserAboutQuery(userId: .some(userId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let about = graphQLResult.data?.user?.about {

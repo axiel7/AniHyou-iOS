@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import API
 
 private let avatarSize: CGFloat = 110
 private let bannerHeight: CGFloat = 30

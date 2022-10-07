@@ -1,68 +1,88 @@
 {
-  "pins" : [
-    {
-      "identity" : "apollo-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apollographql/apollo-ios",
-      "state" : {
-        "revision" : "42646f765d22dac0f22bfff48590102195c76da4",
-        "version" : "0.53.0"
+  "object": {
+    "pins": [
+      {
+        "package": "Apollo",
+        "repositoryURL": "https://github.com/apollographql/apollo-ios",
+        "state": {
+          "branch": null,
+          "revision": "33065d3b3c97fc35ac42bf28f826cac6c61c779e",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "InflectorKit",
+        "repositoryURL": "https://github.com/mattt/InflectorKit",
+        "state": {
+          "branch": null,
+          "revision": "d8cbcc04972690aaa5fc760a2b9ddb3e9f0decd7",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "d108a1fa6189e661f91560548ef48651ed8d93b9",
+          "version": "20.0.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "017f94ccfdacabb1ae7f45b75b4217b24c06e6ac",
+          "version": "7.4.0"
+        }
+      },
+      {
+        "package": "netfox",
+        "repositoryURL": "https://github.com/kasketis/netfox",
+        "state": {
+          "branch": null,
+          "revision": "557576032736fd3140422baefb68b8f76c55088f",
+          "version": "1.21.0"
+        }
+      },
+      {
+        "package": "RichText",
+        "repositoryURL": "https://github.com/NuPlay/RichText.git",
+        "state": {
+          "branch": null,
+          "revision": "247a88bdb1577ccf4bc386515184bbf21e8d4c05",
+          "version": "2.1.0"
+        }
+      },
+      {
+        "package": "SQLite.swift",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "4d543d811ee644fa4cc4bfa0be996b4dd6ba0f54",
+          "version": "0.13.3"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
+        "state": {
+          "branch": null,
+          "revision": "9f39744e025c7d377987f30b03770805dcb0bcd1",
+          "version": "1.1.4"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections",
+        "state": {
+          "branch": null,
+          "revision": "f504716c27d2e5d4144fa4794b12129301d17729",
+          "version": "1.0.3"
+        }
       }
-    },
-    {
-      "identity" : "chartview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/AppPear/ChartView",
-      "state" : {
-        "revision" : "caa75ecbc0d68f2b50d714909566406f80214186",
-        "version" : "2.0.0-beta.2"
-      }
-    },
-    {
-      "identity" : "keychain-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/evgenyneu/keychain-swift.git",
-      "state" : {
-        "revision" : "d108a1fa6189e661f91560548ef48651ed8d93b9",
-        "version" : "20.0.0"
-      }
-    },
-    {
-      "identity" : "kingfisher",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onevcat/Kingfisher.git",
-      "state" : {
-        "revision" : "be1a1acb283a702b99b630f586877ba02234b4cb",
-        "version" : "7.3.2"
-      }
-    },
-    {
-      "identity" : "netfox",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kasketis/netfox",
-      "state" : {
-        "revision" : "557576032736fd3140422baefb68b8f76c55088f",
-        "version" : "1.21.0"
-      }
-    },
-    {
-      "identity" : "richtext",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/NuPlay/RichText.git",
-      "state" : {
-        "revision" : "247a88bdb1577ccf4bc386515184bbf21e8d4c05",
-        "version" : "2.1.0"
-      }
-    },
-    {
-      "identity" : "sqlite.swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephencelis/SQLite.swift.git",
-      "state" : {
-        "revision" : "4d543d811ee644fa4cc4bfa0be996b4dd6ba0f54",
-        "version" : "0.13.3"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

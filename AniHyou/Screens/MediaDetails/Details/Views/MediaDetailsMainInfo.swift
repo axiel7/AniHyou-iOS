@@ -38,7 +38,7 @@ struct MediaDetailsMainInfo: View {
                     .lineLimit(3)
                     .padding(.bottom, 1)
                 
-                Text(viewModel.mediaDetails!.format?.localizedName ?? "Unknown")
+                Text(viewModel.mediaDetails!.format?.value?.localizedName ?? "Unknown")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
@@ -53,13 +53,13 @@ struct MediaDetailsMainInfo: View {
                             showingNotLoggedAlert = true
                         }
                     } label: {
-                        Text(viewModel.mediaDetails!.mediaListEntry?.status?.localizedName ?? "Add to List")
+                        Text(viewModel.mediaDetails!.mediaListEntry?.status?.value?.localizedName ?? "Add to List")
                             .bold()
                             .textCase(.uppercase)
                     }//:Button
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showingEditSheet) {
-                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!, mediaList: viewModel.mediaDetails!.mediaListEntry)
+                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!.value!, mediaList: viewModel.mediaDetails!.mediaListEntry)
                     }
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }

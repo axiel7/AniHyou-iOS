@@ -33,7 +33,7 @@ struct ChartListItemView: View {
                     .padding(.bottom, 2)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
-                Text("\(item.format?.localizedName ?? "Unknown") · \(item.startDate?.year?.stringValue ?? "")")
+                Text("\(item.format?.value?.localizedName ?? "Unknown") · \(item.startDate?.year?.stringValue ?? "")")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(1)
@@ -47,6 +47,6 @@ struct ChartListItemView: View {
 
 struct ChartListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartListItemView(item: MediaChartQuery.Data.Page.Medium(id: 1), position: 100)
+        ChartListItemView(item: MediaChartQuery.Data.Page.Medium(fieldData: nil, variables: nil), position: 100)
     }
 }

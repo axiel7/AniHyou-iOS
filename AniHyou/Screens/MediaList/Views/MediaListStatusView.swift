@@ -6,22 +6,24 @@
 //
 
 import SwiftUI
+import API
 
 struct MediaListStatusView: View {
     
     var mediaType: MediaType
-    @State private var selection: Int? = MediaListStatus.current.hashValue
+    @State private var selection: [MediaListStatus] = [.current]
     
     var body: some View {
-        NavigationView {
-            List(MediaListStatus.allCases, id: \.hashValue) { status in
-                NavigationLink(tag: status.hashValue, selection: $selection) {
-                    MediaListView(type: mediaType, status: status)
-                } label: {
+        NavigationStack(path: $selection) {
+            List(MediaListStatusAllCases, id: \.self) { status in
+                NavigationLink(value: status) {
                     Label(status.localizedName, systemImage: status.systemIcon)
                 }
             }//:List
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")
+            .navigationDestination(for: MediaListStatus.self) { status in
+                MediaListView(type: mediaType, status: status)
+            }
         }//:NavigationView
     }
 }

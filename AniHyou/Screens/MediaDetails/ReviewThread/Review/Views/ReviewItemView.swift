@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import API
 
 struct ReviewItemView: View {
     
-    var review: MediaReviewsQuery.Data.Medium.Review.Node
+    var review: MediaReviewsQuery.Data.Media.Reviews.Node
     
     var body: some View {
         VStack {
@@ -41,6 +42,6 @@ struct ReviewItemView: View {
 
 struct ReviewItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewItemView(review: MediaReviewsQuery.Data.Medium.Review.Node(id: 1))
+        ReviewItemView(review: MediaReviewsQuery.Data.Media.Reviews.Node(fieldData: nil, variables: nil))
     }
 }

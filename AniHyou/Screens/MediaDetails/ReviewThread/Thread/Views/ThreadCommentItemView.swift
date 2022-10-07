@@ -39,6 +39,6 @@ struct ThreadCommentItemView: View {
 
 struct ThreadCommentItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ThreadCommentItemView(comment: ThreadCommentsQuery.Data.Page.ThreadComment(id: 0, likeCount: 0, createdAt: 0))
+        ThreadCommentItemView(comment: ThreadCommentsQuery.Data.Page.ThreadComment(fieldData: nil, variables: nil))
     }
 }

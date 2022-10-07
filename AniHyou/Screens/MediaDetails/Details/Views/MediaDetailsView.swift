@@ -35,7 +35,7 @@ struct MediaDetailsView: View {
                                 }
                                 MediaStatView(name: "Average Score", value: "\(viewModel.mediaDetails?.averageScore ?? 0)%")
                                 MediaStatView(name: "Mean Score", value: "\(viewModel.mediaDetails?.meanScore ?? 0)%")
-                                MediaStatView(name: "Status", value: viewModel.mediaDetails?.status?.localizedName ?? "Unknown")
+                                MediaStatView(name: "Status", value: viewModel.mediaDetails?.status?.value?.localizedName ?? "Unknown")
                                 MediaStatView(name: "Popularity", value: (viewModel.mediaDetails?.popularity ?? 0).formatted())
                                 MediaStatView(name: "Favorites", value: (viewModel.mediaDetails?.favourites ?? 0).formatted(), showDivider: false)
                             }
@@ -86,7 +86,7 @@ struct MediaDetailsView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        switch viewModel.mediaDetails?.type {
+                        switch viewModel.mediaDetails?.type?.value {
                         case .anime:
                             shareSheet(url: "\(ANILIST_ANIME_URL)\(mediaId)")
                         case .manga:

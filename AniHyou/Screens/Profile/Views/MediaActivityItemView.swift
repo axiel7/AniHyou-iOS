@@ -39,6 +39,6 @@ struct MediaActivityItemView: View {
 
 struct MediaActivityItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaActivityItemView(activity: UserActivityQuery.Data.Page.Activity.AsListActivity(id: 0, createdAt: 0))
+        MediaActivityItemView(activity: UserActivityQuery.Data.Page.Activity.AsListActivity(fieldData: nil, variables: nil))
     }
 }
