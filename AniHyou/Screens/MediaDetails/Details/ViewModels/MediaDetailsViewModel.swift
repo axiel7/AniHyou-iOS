@@ -40,9 +40,9 @@ class MediaDetailsViewModel: ObservableObject {
     /// Returns a string with the season and year if has it
     var seasonFormatted: String? {
         guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.season != nil else { return nil }
+        guard mediaDetails?.season?.value != nil else { return nil }
         if mediaDetails?.seasonYear != nil {
-            return "\(mediaDetails!.season!.value?.localizedName) \(mediaDetails!.seasonYear!)"
+            return "\(mediaDetails!.season!.value!.localizedName) \(mediaDetails!.seasonYear!)"
         } else {
             return mediaDetails?.season?.value?.localizedName
         }
