@@ -107,6 +107,14 @@
 		48AF5394289E7371006D40B6 /* ThreadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */; };
 		48AF5396289E7701006D40B6 /* ThreadComments.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48AF5395289E7701006D40B6 /* ThreadComments.graphql */; };
 		48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */; };
+		48C608EB290D1526004781C2 /* SearchStaff.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48C608EA290D1526004781C2 /* SearchStaff.graphql */; };
+		48C608ED290D15DF004781C2 /* SearchCharacter.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48C608EC290D15DF004781C2 /* SearchCharacter.graphql */; };
+		48C608EF290D164F004781C2 /* SearchStudio.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48C608EE290D164F004781C2 /* SearchStudio.graphql */; };
+		48C608F1290D16C3004781C2 /* SearchUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48C608F0290D16C3004781C2 /* SearchUser.graphql */; };
+		48C608F6290D18BB004781C2 /* SearchStudioQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F2290D18BB004781C2 /* SearchStudioQuery.graphql.swift */; };
+		48C608F7290D18BB004781C2 /* SearchUserQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F3290D18BB004781C2 /* SearchUserQuery.graphql.swift */; };
+		48C608F8290D18BB004781C2 /* SearchCharacterQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F4290D18BB004781C2 /* SearchCharacterQuery.graphql.swift */; };
+		48C608F9290D18BB004781C2 /* SearchStaffQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F5290D18BB004781C2 /* SearchStaffQuery.graphql.swift */; };
 		48CA07A9287035530048854E /* MediaInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07A8287035530048854E /* MediaInfoType.swift */; };
 		48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */; };
 		48CA07AF287063420048854E /* MediaCharactersAndStaff.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48CA07AE287063420048854E /* MediaCharactersAndStaff.graphql */; };
@@ -246,6 +254,14 @@
 		48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsView.swift; sourceTree = "<group>"; };
 		48AF5395289E7701006D40B6 /* ThreadComments.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThreadComments.graphql; sourceTree = "<group>"; };
 		48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsViewModel.swift; sourceTree = "<group>"; };
+		48C608EA290D1526004781C2 /* SearchStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStaff.graphql; sourceTree = "<group>"; };
+		48C608EC290D15DF004781C2 /* SearchCharacter.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCharacter.graphql; sourceTree = "<group>"; };
+		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
+		48C608F0290D16C3004781C2 /* SearchUser.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchUser.graphql; sourceTree = "<group>"; };
+		48C608F2290D18BB004781C2 /* SearchStudioQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStudioQuery.graphql.swift; sourceTree = "<group>"; };
+		48C608F3290D18BB004781C2 /* SearchUserQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserQuery.graphql.swift; sourceTree = "<group>"; };
+		48C608F4290D18BB004781C2 /* SearchCharacterQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCharacterQuery.graphql.swift; sourceTree = "<group>"; };
+		48C608F5290D18BB004781C2 /* SearchStaffQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStaffQuery.graphql.swift; sourceTree = "<group>"; };
 		48CA07A8287035530048854E /* MediaInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoType.swift; sourceTree = "<group>"; };
 		48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGeneralInfoView.swift; sourceTree = "<group>"; };
 		48CA07AE287063420048854E /* MediaCharactersAndStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaCharactersAndStaff.graphql; sourceTree = "<group>"; };
@@ -429,6 +445,10 @@
 				48F763ED28ACE0CA00C82D75 /* UserFavoritesCharacter.graphql */,
 				48F763EF28ACE1DA00C82D75 /* UserFavoriteStaff.graphql */,
 				48F763F128ACE20900C82D75 /* UserFavoriteStudio.graphql */,
+				48C608EA290D1526004781C2 /* SearchStaff.graphql */,
+				48C608EC290D15DF004781C2 /* SearchCharacter.graphql */,
+				48C608EE290D164F004781C2 /* SearchStudio.graphql */,
+				48C608F0290D16C3004781C2 /* SearchUser.graphql */,
 				4870AAED28EC7551008431B5 /* AiringAnimesQuery.graphql.swift */,
 				4870AAFF28EC7551008431B5 /* AnimesQuery.graphql.swift */,
 				4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */,
@@ -458,6 +478,10 @@
 				4870AAF628EC7551008431B5 /* UserMediaListQuery.graphql.swift */,
 				4870AAF028EC7551008431B5 /* ViewerIdQuery.graphql.swift */,
 				4870AAE828EC7550008431B5 /* ViewerQuery.graphql.swift */,
+				48C608F4290D18BB004781C2 /* SearchCharacterQuery.graphql.swift */,
+				48C608F5290D18BB004781C2 /* SearchStaffQuery.graphql.swift */,
+				48C608F2290D18BB004781C2 /* SearchStudioQuery.graphql.swift */,
+				48C608F3290D18BB004781C2 /* SearchUserQuery.graphql.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -901,14 +925,18 @@
 				48AB01F6286B6F3C004DC7FF /* SearchMedia.graphql in Resources */,
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
 				48099965288B2E9C005AE427 /* UserAbout.graphql in Resources */,
+				48C608EF290D164F004781C2 /* SearchStudio.graphql in Resources */,
 				48F763F028ACE1DA00C82D75 /* UserFavoriteStaff.graphql in Resources */,
 				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
 				484A6D62287480CC0044C34A /* ReviewDetails.graphql in Resources */,
 				48F763EE28ACE0CA00C82D75 /* UserFavoritesCharacter.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
+				48C608EB290D1526004781C2 /* SearchStaff.graphql in Resources */,
+				48C608ED290D15DF004781C2 /* SearchCharacter.graphql in Resources */,
 				484A6D6028747FD50044C34A /* MediaReviews.graphql in Resources */,
 				48FC947D2868C09400C87F56 /* MediaChart.graphql in Resources */,
 				48AF5396289E7701006D40B6 /* ThreadComments.graphql in Resources */,
+				48C608F1290D16C3004781C2 /* SearchUser.graphql in Resources */,
 				48CA07AF287063420048854E /* MediaCharactersAndStaff.graphql in Resources */,
 				4832B027285F279600E79D27 /* MediaDetails.graphql in Resources */,
 				48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */,
@@ -978,6 +1006,7 @@
 				481E2D67288C008200D91A54 /* NotificationsView.swift in Sources */,
 				48F7641628ACECA900C82D75 /* UserActivityView.swift in Sources */,
 				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
+				48C608F7290D18BB004781C2 /* SearchUserQuery.graphql.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
@@ -996,6 +1025,8 @@
 				48FBC66228CE3E88009AAF4A /* UpdatedMediaEntry.swift in Sources */,
 				48099963288B2C60005AE427 /* UserAboutView.swift in Sources */,
 				48CA07A9287035530048854E /* MediaInfoType.swift in Sources */,
+				48C608F8290D18BB004781C2 /* SearchCharacterQuery.graphql.swift in Sources */,
+				48C608F9290D18BB004781C2 /* SearchStaffQuery.graphql.swift in Sources */,
 				481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */,
 				4870AB1C28EC7551008431B5 /* AnimesQuery.graphql.swift in Sources */,
 				4832B036285F9E1900E79D27 /* ExpandableTextView.swift in Sources */,
@@ -1036,6 +1067,7 @@
 				4870AB0528EC7551008431B5 /* ViewerQuery.graphql.swift in Sources */,
 				4870AB1828EC7551008431B5 /* MediaRelationsAndRecommendationsQuery.graphql.swift in Sources */,
 				4870AB0728EC7551008431B5 /* UpdateEntryMutation.graphql.swift in Sources */,
+				48C608F6290D18BB004781C2 /* SearchStudioQuery.graphql.swift in Sources */,
 				486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */,
 				4832B032285F406300E79D27 /* StringsPreview.swift in Sources */,
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,

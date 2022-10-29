@@ -35,20 +35,36 @@ struct ExploreView: View {
                             }
                         }
                     case .characters:
-                        Text("Characters")
+                        ForEach(viewModel.searchedCharacters, id: \.?.id) { item in
+                            if item != nil {
+                                HListItemWithSubtitleView(title: item!.name?.userPreferred, imageUrl: item!.image?.medium)
+                            }
+                        }
                     case .staff:
-                        Text("Staff")
+                        ForEach(viewModel.searchedStaff, id: \.?.id) { item in
+                            if item != nil {
+                                HListItemWithSubtitleView(title: item!.name?.userPreferred, imageUrl: item!.image?.medium)
+                            }
+                        }
                     case .studios:
-                        Text("Studios")
+                        ForEach(viewModel.searchedStudios, id: \.?.id) { item in
+                            if item != nil {
+                                HListItemWithSubtitleView(title: item!.name)
+                            }
+                        }
                     case .users:
-                        Text("Users")
+                        ForEach(viewModel.searchedUsers, id: \.?.id) { item in
+                            if item != nil {
+                                HListItemWithSubtitleView(title: item!.name, imageUrl: item!.avatar?.medium)
+                            }
+                        }
                     }//:switch
                 }//:List
                 .listStyle(.insetGrouped)
                 
             } else {//not searched
                 ScrollView(.vertical) {
-                        //MARK: Charts
+                    //MARK: Charts
                     VStack(alignment: .leading) {
 
                         Text("Charts")

@@ -34,6 +34,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Favourites": return API.Objects.Favourites
     case "MediaConnection": return API.Objects.MediaConnection
     case "PageInfo": return API.Objects.PageInfo
+    case "UserAvatar": return API.Objects.UserAvatar
     case "StudioConnection": return API.Objects.StudioConnection
     case "Studio": return API.Objects.Studio
     case "CharacterConnection": return API.Objects.CharacterConnection
@@ -55,7 +56,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "CharacterEdge": return API.Objects.CharacterEdge
     case "StaffEdge": return API.Objects.StaffEdge
     case "ThreadComment": return API.Objects.ThreadComment
-    case "UserAvatar": return API.Objects.UserAvatar
     case "UserOptions": return API.Objects.UserOptions
     case "TextActivity": return API.Objects.TextActivity
     case "ListActivity": return API.Objects.ListActivity
