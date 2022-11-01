@@ -11,19 +11,18 @@ import API
 struct MediaListStatusView: View {
     
     var mediaType: MediaType
-    @State private var selection: [MediaListStatus] = [.current]
+    @State private var selection: MediaListStatus? = .current
     
     var body: some View {
-        NavigationStack(path: $selection) {
-            List(MediaListStatusAllCases, id: \.self) { status in
-                NavigationLink(value: status) {
+        NavigationView {
+            List(MediaListStatusAllCases, id: \.self, selection: $selection) { status in
+                NavigationLink {
+                    MediaListView(type: mediaType, status: status)
+                } label: {
                     Label(status.localizedName, systemImage: status.systemImage)
                 }
             }//:List
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")
-            .navigationDestination(for: MediaListStatus.self) { status in
-                MediaListView(type: mediaType, status: status)
-            }
         }//:NavigationView
     }
 }
