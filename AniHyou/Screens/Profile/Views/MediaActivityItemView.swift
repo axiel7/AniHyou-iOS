@@ -33,7 +33,11 @@ struct MediaActivityItemView: View {
     }
     
     private var activityText: String {
-        return "\(activity.status?.firstCapitalized ?? "") \(activity.progress ?? "") of \(activity.media?.title?.userPreferred ?? "")"
+        if activity.progress != nil {
+            return "\(activity.status?.firstCapitalized ?? "") \(activity.progress!) of \(activity.media?.title?.userPreferred ?? "")"
+        } else {
+            return "\(activity.status?.firstCapitalized ?? "") \(activity.media?.title?.userPreferred ?? "")"
+        }
     }
 }
 
