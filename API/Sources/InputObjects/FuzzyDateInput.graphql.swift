@@ -25,19 +25,19 @@ public struct FuzzyDateInput: InputObject {
 
   /// Numeric Year (2017)
   public var year: GraphQLNullable<Int> {
-    get { __data.year }
-    set { __data.year = newValue }
+    get { __data["year"] }
+    set { __data["year"] = newValue }
   }
 
   /// Numeric Month (3)
   public var month: GraphQLNullable<Int> {
-    get { __data.month }
-    set { __data.month = newValue }
+    get { __data["month"] }
+    set { __data["month"] = newValue }
   }
 
   /// Numeric Day (24)
   public var day: GraphQLNullable<Int> {
-    get { __data.day }
-    set { __data.day = newValue }
+    get { __data["day"] }
+    set { __data["day"] = newValue }
   }
 }

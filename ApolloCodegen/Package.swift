@@ -10,7 +10,7 @@ let package = Package(
     ],
     dependencies: [
         // The Apollo library - make sure this version matches the version in your iOS project!
-        .package(url: "https://github.com/apollographql/apollo-ios.git", from: "1.0.2"),
+        .package(url: "https://github.com/apollographql/apollo-ios.git", from: "1.0.3"),
         
         // The official Swift argument parser.
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.1.4"),
