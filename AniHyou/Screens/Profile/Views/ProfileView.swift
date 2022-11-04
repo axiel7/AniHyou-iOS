@@ -49,11 +49,17 @@ struct ProfileView: View {
                             case .about:
                                 UserAboutView(userId: viewModel.myUserInfo!.id)
                             case .stats:
-                                Text("Stats")
+                                VStack(alignment: .center) {
+                                    Text("Coming Soon")
+                                }
+                                .frame(maxWidth: .infinity)
                             case .favorites:
                                 UserFavoritesView(userId: viewModel.myUserInfo!.id)
                             case .social:
-                                Text("Social")
+                                VStack(alignment: .center) {
+                                    Text("Coming Soon")
+                                }
+                                .frame(maxWidth: .infinity)
                             }
                         } header: {
                             Picker("Info type", selection: $infoType) {
@@ -99,15 +105,6 @@ struct ProfileView: View {
                     .bold()
                     .frame(alignment: .center)
                     .transition(.move(edge: .top))
-                
-                /*Picker("Info type", selection: $infoType) {
-                    ForEach(ProfileInfoType.allCases, id: \.self) { type in
-                        Label(type.localizedName, systemImage: type.systemImage)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .labelStyle(.iconOnly)
-                .padding()*/
             }
             .padding(.top, 85)
         }
