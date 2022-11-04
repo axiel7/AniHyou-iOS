@@ -74,6 +74,7 @@ struct MediaDetailsView: View {
                             VStack(alignment: .center) {
                                 Text("Coming soon")
                             }
+                            .frame(maxWidth: .infinity)
                         case .reviewsAndThreads:
                             MediaReviewsAndThreadsView(mediaId: mediaId)
                         }
@@ -85,16 +86,7 @@ struct MediaDetailsView: View {
             .edgesIgnoringSafeArea(.top)
             .toolbar {
                 ToolbarItem {
-                    Button {
-                        switch viewModel.mediaDetails?.type?.value {
-                        case .anime:
-                            shareSheet(url: "\(ANILIST_ANIME_URL)\(mediaId)")
-                        case .manga:
-                            shareSheet(url: "\(ANILIST_MANGA_URL)\(mediaId)")
-                        default:
-                            break
-                        }
-                    } label: {
+                    ShareLink(item: viewModel.mediaShareLink ?? "") {
                         Label("Share", systemImage: "square.and.arrow.up")
                     }
                     .padding(.trailing)

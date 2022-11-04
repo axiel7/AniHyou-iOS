@@ -12,6 +12,7 @@ public class MediaDetailsQuery: GraphQLQuery {
       query MediaDetails($mediaId: Int) {
         Media(id: $mediaId) {
           __typename
+          id
           title {
             __typename
             romaji
@@ -121,6 +122,7 @@ public class MediaDetailsQuery: GraphQLQuery {
 
       public static var __parentType: ParentType { API.Objects.Media }
       public static var __selections: [Selection] { [
+        .field("id", Int.self),
         .field("title", Title?.self),
         .field("format", GraphQLEnum<API.MediaFormat>?.self),
         .field("status", GraphQLEnum<API.MediaStatus>?.self),
@@ -148,6 +150,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("externalLinks", [ExternalLink?]?.self),
       ] }
 
+      /// The id of the media
+      public var id: Int { __data["id"] }
       /// The official titles of the media in various languages
       public var title: Title? { __data["title"] }
       /// The format the media was released in

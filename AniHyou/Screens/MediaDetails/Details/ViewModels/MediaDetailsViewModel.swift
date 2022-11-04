@@ -85,4 +85,16 @@ class MediaDetailsViewModel: ObservableObject {
         guard mediaDetails?.externalLinks != nil else { return [] }
         return mediaDetails!.externalLinks!.filter { $0?.type?.value == .streaming }
     }
+    
+    var mediaShareLink: String? {
+        guard mediaDetails != nil else { return nil }
+        switch mediaDetails!.type?.value {
+        case .anime:
+            return "\(ANILIST_ANIME_URL)\(mediaDetails!.id)"
+        case .manga:
+            return "\(ANILIST_MANGA_URL)\(mediaDetails!.id)"
+        default:
+            return nil
+        }
+    }
 }
