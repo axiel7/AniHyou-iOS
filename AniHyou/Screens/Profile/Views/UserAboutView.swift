@@ -19,7 +19,11 @@ struct UserAboutView: View {
                 RichText(html: viewModel.userAbout!)
                     .defaultStyle()
             } else {
-                ProgressView()
+                HStack {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
             }
         }
         .onAppear {
