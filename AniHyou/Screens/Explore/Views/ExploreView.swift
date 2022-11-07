@@ -63,54 +63,58 @@ struct ExploreView: View {
                 .listStyle(.insetGrouped)
                 
             } else {//not searched
-                ScrollView(.vertical) {
-                    //MARK: Charts
-                    VStack(alignment: .leading) {
-
-                        Text("Charts")
-                            .font(.title2)
-                            .bold()
-                            .padding(.top, 8)
-                            .padding(.leading, 15)
-                        Divider()
-                            .padding(.leading)
-                            .padding(.trailing)
-
-                        //MARK: top
-                        HStack(alignment: .center) {
-                            NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
-                                RectangleTextView(text: "Top 100 Anime", color: Color("AniListBlue"))
-                                    .padding(.leading)
-                                    .frame(maxWidth: .infinity, minHeight: cardHeight)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
-                                RectangleTextView(text: "Top 100 Manga", color: Color("AniListGreen"))
-                                    .padding(.trailing)
-                                    .frame(maxWidth: .infinity, minHeight: cardHeight)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        }//:HStack
-
-                        //MARK: popular
-                        HStack(alignment: .center) {
-                            NavigationLink(destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)) {
-                                RectangleTextView(text: "Popular Anime", color: Color("AniListOrange"))
-                                    .padding(.leading)
-                                    .frame(maxWidth: .infinity, minHeight: cardHeight)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            NavigationLink(destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)) {
-                                RectangleTextView(text: "Popular Manga", color: Color("AniListRed"))
-                                    .padding(.trailing)
-                                    .frame(maxWidth: .infinity, minHeight: cardHeight)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        }//:HStack
-                    }//:VStack
-                }//:VScrollView
+                preSearchView
             }//:else
         }//:ZStack
+    }
+    
+    var preSearchView: some View {
+        ScrollView(.vertical) {
+            //MARK: Charts
+            VStack(alignment: .leading) {
+
+                Text("Charts")
+                    .font(.title2)
+                    .bold()
+                    .padding(.top, 8)
+                    .padding(.leading, 15)
+                Divider()
+                    .padding(.leading)
+                    .padding(.trailing)
+
+                //MARK: top
+                HStack(alignment: .center) {
+                    NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
+                        RectangleTextView(text: "Top 100 Anime", color: Color("AniListBlue"))
+                            .padding(.leading)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
+                        RectangleTextView(text: "Top 100 Manga", color: Color("AniListGreen"))
+                            .padding(.trailing)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }//:HStack
+
+                //MARK: popular
+                HStack(alignment: .center) {
+                    NavigationLink(destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)) {
+                        RectangleTextView(text: "Popular Anime", color: Color("AniListOrange"))
+                            .padding(.leading)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)) {
+                        RectangleTextView(text: "Popular Manga", color: Color("AniListRed"))
+                            .padding(.trailing)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }//:HStack
+            }//:VStack
+        }//:VScrollView
     }
 }
 
