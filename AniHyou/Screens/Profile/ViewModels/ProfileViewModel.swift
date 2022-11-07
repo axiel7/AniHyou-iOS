@@ -11,14 +11,27 @@ import KeychainSwift
 
 class ProfileViewModel: ObservableObject {
     
-    @Published var myUserInfo: ViewerQuery.Data.Viewer?
+    @Published var userInfo: UserInfo?
     
     func getMyUserInfo() {
         Network.shared.apollo.fetch(query: ViewerQuery()) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
-                if let viewer = graphQLResult.data?.viewer {
-                    self?.myUserInfo = viewer
+                if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
+                    self?.userInfo = viewer
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getUserInfo(userId: Int) {
+        Network.shared.apollo.fetch(query: UserBasicInfoQuery(userId: .some(userId))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let user = graphQLResult.data?.user?.fragments.userInfo {
+                    self?.userInfo = user
                 }
             case .failure(let error):
                 print(error)
@@ -53,7 +66,7 @@ class ProfileViewModel: ObservableObject {
     
 }
 
-extension ViewerQuery.Data.Viewer {
+extension UserInfo {
     var hexColor: String {
         if let color = self.options?.profileColor {
             if color.hasPrefix("#") { return color }

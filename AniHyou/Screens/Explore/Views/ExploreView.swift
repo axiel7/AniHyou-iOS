@@ -55,7 +55,9 @@ struct ExploreView: View {
                     case .users:
                         ForEach(viewModel.searchedUsers, id: \.?.id) { item in
                             if item != nil {
-                                HListItemWithSubtitleView(title: item!.name, imageUrl: item!.avatar?.medium)
+                                NavigationLink(destination: ProfileView(userId: item!.id)) {
+                                    HListItemWithSubtitleView(title: item!.name, imageUrl: item!.avatar?.medium)
+                                }
                             }
                         }
                     }//:switch

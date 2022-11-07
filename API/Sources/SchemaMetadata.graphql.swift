@@ -41,6 +41,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Character": return API.Objects.Character
     case "CharacterName": return API.Objects.CharacterName
     case "CharacterImage": return API.Objects.CharacterImage
+    case "UserOptions": return API.Objects.UserOptions
     case "MediaEdge": return API.Objects.MediaEdge
     case "RecommendationConnection": return API.Objects.RecommendationConnection
     case "Recommendation": return API.Objects.Recommendation
@@ -56,7 +57,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "CharacterEdge": return API.Objects.CharacterEdge
     case "StaffEdge": return API.Objects.StaffEdge
     case "ThreadComment": return API.Objects.ThreadComment
-    case "UserOptions": return API.Objects.UserOptions
     case "TextActivity": return API.Objects.TextActivity
     case "ListActivity": return API.Objects.ListActivity
     case "MessageActivity": return API.Objects.MessageActivity

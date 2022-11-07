@@ -1,14 +1,18 @@
 query Viewer {
   Viewer {
-    id
-    name
-    avatar {
-      large
-    }
-    bannerImage
-    about
-    options {
-      profileColor
-    }
+    ...UserInfo
+  }
+}
+
+fragment UserInfo on User {
+  id
+  name
+  avatar {
+    large
+  }
+  bannerImage
+  about
+  options {
+    profileColor
   }
 }

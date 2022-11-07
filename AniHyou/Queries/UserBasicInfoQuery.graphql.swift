@@ -4,13 +4,13 @@
 @_exported import ApolloAPI
 import API
 
-public class ViewerQuery: GraphQLQuery {
-  public static let operationName: String = "Viewer"
+public class UserBasicInfoQuery: GraphQLQuery {
+  public static let operationName: String = "UserBasicInfo"
   public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
-      query Viewer {
-        Viewer {
+      query UserBasicInfo($userId: Int) {
+        User(id: $userId) {
           __typename
           ...UserInfo
         }
@@ -19,7 +19,13 @@ public class ViewerQuery: GraphQLQuery {
       fragments: [UserInfo.self]
     ))
 
-  public init() {}
+  public var userId: GraphQLNullable<Int>
+
+  public init(userId: GraphQLNullable<Int>) {
+    self.userId = userId
+  }
+
+  public var __variables: Variables? { ["userId": userId] }
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
@@ -27,16 +33,16 @@ public class ViewerQuery: GraphQLQuery {
 
     public static var __parentType: ParentType { API.Objects.Query }
     public static var __selections: [Selection] { [
-      .field("Viewer", Viewer?.self),
+      .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
 
-    /// Get the currently authenticated user
-    public var viewer: Viewer? { __data["Viewer"] }
+    /// User query
+    public var user: User? { __data["User"] }
 
-    /// Viewer
+    /// User
     ///
     /// Parent Type: `User`
-    public struct Viewer: API.SelectionSet {
+    public struct User: API.SelectionSet {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 

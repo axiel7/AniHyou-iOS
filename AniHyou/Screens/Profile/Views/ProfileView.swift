@@ -29,6 +29,10 @@ extension Label {
 
 struct ProfileView: View {
     
+    var userId: Int? = nil
+    var isMyProfile: Bool {
+        return userId == nil
+    }
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
     @State private var infoType: ProfileInfoType = .activity
@@ -41,20 +45,20 @@ struct ProfileView: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                     
-                    if viewModel.myUserInfo != nil {
+                    if viewModel.userInfo != nil {
                         Section {
                             switch infoType {
                             case .activity:
-                                UserActivityView(userId: viewModel.myUserInfo!.id)
+                                UserActivityView(userId: viewModel.userInfo!.id)
                             case .about:
-                                UserAboutView(userId: viewModel.myUserInfo!.id)
+                                UserAboutView(userId: viewModel.userInfo!.id)
                             case .stats:
                                 VStack(alignment: .center) {
                                     Text("Coming Soon")
                                 }
                                 .frame(maxWidth: .infinity)
                             case .favorites:
-                                UserFavoritesView(userId: viewModel.myUserInfo!.id)
+                                UserFavoritesView(userId: viewModel.userInfo!.id)
                             case .social:
                                 VStack(alignment: .center) {
                                     Text("Coming Soon")
@@ -76,15 +80,21 @@ struct ProfileView: View {
                 //:LazyVStack
             }//:VScrollView
             .toolbar {
-                ToolbarItem {
-                    NavigationLink(destination: SettingsView()) {
-                        Label("Settings", systemImage: "gearshape")
+                if isMyProfile {
+                    ToolbarItem {
+                        NavigationLink(destination: SettingsView()) {
+                            Label("Settings", systemImage: "gearshape")
+                        }
                     }
                 }
             }
             .ignoresSafeArea(edges: .top)
             .onAppear {
-                viewModel.getMyUserInfo()
+                if isMyProfile {
+                    viewModel.getMyUserInfo()
+                } else {
+                    viewModel.getUserInfo(userId: userId!)
+                }
             }
         }//:NavigationView
         .navigationViewStyle(.stack)
@@ -93,14 +103,14 @@ struct ProfileView: View {
     
     var profileHeader: some View {
         ZStack {
-            TopBannerView(imageUrl: viewModel.myUserInfo?.bannerImage, placeholderHexColor: viewModel.myUserInfo?.hexColor, height: bannerHeight)
+            TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: bannerHeight)
                 .frame(height: bannerHeight)
             
             VStack {
-                CircleImageView(imageUrl: viewModel.myUserInfo?.avatar?.large, size: avatarSize)
+                CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
                     .shadow(radius: 7)
                  
-                 Text(viewModel.myUserInfo?.name ?? "")
+                 Text(viewModel.userInfo?.name ?? "")
                     .font(.title2)
                     .bold()
                     .frame(alignment: .center)
