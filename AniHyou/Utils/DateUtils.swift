@@ -55,9 +55,9 @@ extension Int {
         if days > 6 {
             let weeks = self / 604800
             if weeks > 4 {
-                let months = self / 2628000000
+                let months = self / 2629746
                 if months > 12 {
-                    let years = self / 31540000000
+                    let years = self / 31556952
                     return "\(years) years"
                 }
                 else { return "\(months) months" }
