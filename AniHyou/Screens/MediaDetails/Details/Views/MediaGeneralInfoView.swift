@@ -17,25 +17,25 @@ struct MediaGeneralInfoView: View {
                 .font(.title3)
                 .bold()
                 .padding(.leading)
-            MediaInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
+            HInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
             if viewModel.isAnime {
-                MediaInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
+                HInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
             } else {
-                MediaInfoView(name: "Chapters", value: viewModel.mediaDetails?.chapters?.formatted())
-                MediaInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
+                HInfoView(name: "Chapters", value: viewModel.mediaDetails?.chapters?.formatted())
+                HInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
             }
-            MediaInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDate.formatted())
-            MediaInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDate.formatted())
+            HInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDate.formatted())
+            HInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDate.formatted())
             
             if viewModel.isAnime {
-                MediaInfoView(name: "Season", value: viewModel.seasonFormatted)
-                MediaInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true)
-                MediaInfoView(name: "Producers", value: viewModel.producersFormatted, isExpandable: true)
+                HInfoView(name: "Season", value: viewModel.seasonFormatted)
+                HInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true)
+                HInfoView(name: "Producers", value: viewModel.producersFormatted, isExpandable: true)
             }
-            MediaInfoView(name: "Source", value: viewModel.mediaDetails?.source?.value?.localizedName)
-            MediaInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
-            MediaInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
-            MediaInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)
+            HInfoView(name: "Source", value: viewModel.mediaDetails?.source?.value?.localizedName)
+            HInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
+            HInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
+            HInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)
         }
     }
 }

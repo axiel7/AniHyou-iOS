@@ -63,3 +63,15 @@ extension RichText {
             }
     }
 }
+
+var spoilerCss =
+    """
+    .markdown_spoiler {
+        color: grey;
+        background-color: grey;
+    }
+
+    .markdown_spoiler:hover, .markdown_spoiler:focus, .markdown_spoiler:active {
+        background-color: transparent;
+    }
+    """

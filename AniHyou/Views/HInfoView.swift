@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MediaInfoView: View {
+struct HInfoView: View {
     
     var name: String
     var value: String?
@@ -47,8 +47,7 @@ struct MediaInfoView: View {
                 }
             }
         }
-        .padding(.leading)
-        .padding(.trailing)
+        .padding(.horizontal)
         .padding(.top, 7)
     }
 }
@@ -56,8 +55,8 @@ struct MediaInfoView: View {
 struct MediaInfoView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            MediaInfoView(name: "Start date", value: "12-12-2012")
-            MediaInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
+            HInfoView(name: "Start date", value: "12-12-2012")
+            HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
         }
     }
 }

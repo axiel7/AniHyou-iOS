@@ -94,10 +94,15 @@ extension Int {
 extension FuzzyDate {
     
     func formatted() -> String {
-        guard (self.year != nil) else { return "Unknown" }
+        let year = self.year ?? 1970
         guard (self.month != nil) else { return "Unknown" }
         guard (self.day != nil) else { return "Unknown" }
-        if let date = date(year: self.year!, month: self.month!, day: self.day!) {
+        if let date = date(year: year, month: self.month!, day: self.day!) {
+            if year == 1970 {
+                let dateFormatter = DateFormatter()
+                dateFormatter.setLocalizedDateFormatFromTemplate("MMMM dd")
+                return dateFormatter.string(from: date)
+            }
             return date.formatted(date: .abbreviated, time: .omitted)
         }
         else { return "Unknown" }
