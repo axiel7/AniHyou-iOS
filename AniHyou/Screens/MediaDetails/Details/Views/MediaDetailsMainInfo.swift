@@ -22,9 +22,9 @@ struct MediaDetailsMainInfo: View {
     var body: some View {
         HStack(alignment: .top) {
             
-            MediaCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.large, width: coverWidth, height: coverHeight)
+            MediaCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.large, width: coverWidth, height: coverHeight)
                 .sheet(isPresented: $showingCoverSheet) {
-                    FullCoverView(imageUrl: viewModel.mediaDetails!.coverImage?.extraLarge)
+                    FullCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.extraLarge)
                 }
                 .onTapGesture {
                     showingCoverSheet = true
@@ -32,13 +32,13 @@ struct MediaDetailsMainInfo: View {
             
             VStack(alignment: .leading) {
                 
-                Text(viewModel.mediaDetails!.title?.romaji ?? "")
+                Text(viewModel.mediaDetails?.title?.romaji ?? "")
                     .font(.title3)
                     .bold()
                     .lineLimit(3)
                     .padding(.bottom, 1)
                 
-                Text(viewModel.mediaDetails!.format?.value?.localizedName ?? "Unknown")
+                Text(viewModel.mediaDetails?.format?.value?.localizedName ?? "Unknown")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
@@ -53,7 +53,7 @@ struct MediaDetailsMainInfo: View {
                             showingNotLoggedAlert = true
                         }
                     } label: {
-                        Text(viewModel.mediaDetails!.mediaListEntry?.status?.value?.localizedName ?? "Add to List")
+                        Text(viewModel.mediaDetails?.mediaListEntry?.status?.value?.localizedName ?? "Add to List")
                             .bold()
                             .textCase(.uppercase)
                     }//:Button
@@ -83,7 +83,7 @@ struct MediaDetailsMainInfo: View {
                             }
                         }
                     }
-                }
+                }//:HStack
             }//:VStack
             .padding(.leading, 12)
             .padding(.trailing, 8)
