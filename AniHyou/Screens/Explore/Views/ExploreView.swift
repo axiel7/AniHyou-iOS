@@ -45,7 +45,9 @@ struct ExploreView: View {
                     case .staff:
                         ForEach(viewModel.searchedStaff, id: \.?.id) { item in
                             if item != nil {
-                                HListItemWithSubtitleView(title: item!.name?.userPreferred, imageUrl: item!.image?.medium)
+                                NavigationLink(destination: StaffDetailsView(staffId: item!.id)) {
+                                    HListItemWithSubtitleView(title: item!.name?.userPreferred, imageUrl: item!.image?.medium)
+                                }
                             }
                         }
                     case .studios:
