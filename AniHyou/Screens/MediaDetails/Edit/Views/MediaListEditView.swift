@@ -19,7 +19,6 @@ struct MediaListEditView: View {
     @State var status: MediaListStatus = .planning
     @State var progress: Int = 0
     @State var progressVolumes: Int = 0
-    @State var score: Double = 0
     @State var startDate: Date = Date()
     @State var isStartDateSet: Bool = false
     @State var finishDate: Date = Date()
@@ -44,11 +43,11 @@ struct MediaListEditView: View {
                 
                 Section {
                     HStack {
-                        TextField("", value: $score, formatter: formatter)
+                        TextField("", value: $viewModel.score, formatter: formatter)
                             .keyboardType(.decimalPad)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 80)
-                        Stepper("Score", value: $score, in: 0...10, step: 0.5)
+                        Stepper("Score", value: $viewModel.score, in: 0...10, step: 0.5)
                     }
                 }
                 
@@ -91,7 +90,7 @@ struct MediaListEditView: View {
                     
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save", action: {
-                        viewModel.updateEntry(mediaId: mediaId, status: status, score: score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil)
+                        viewModel.updateEntry(mediaId: mediaId, status: status, score: viewModel.score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil)
                     })
                     .font(.bold(.body)())
                     
@@ -112,7 +111,7 @@ struct MediaListEditView: View {
         self.status = self.mediaList?.status?.value ?? .planning
         self.progress = self.mediaList?.progress ?? 0
         self.progressVolumes = self.mediaList?.progressVolumes ?? 0
-        self.score = self.mediaList?.score ?? 0
+        viewModel.score = self.mediaList?.score ?? 0
         if let startedYear = self.mediaList?.startedAt?.year {
             if let startedMonth = self.mediaList?.startedAt?.month {
                 if let startedDay = self.mediaList?.startedAt?.day {

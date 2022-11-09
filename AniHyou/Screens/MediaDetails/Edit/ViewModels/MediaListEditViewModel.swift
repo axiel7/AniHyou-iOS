@@ -39,4 +39,11 @@ class MediaListEditViewModel: ObservableObject {
         }
     }
     
+    @Published var score: Double = 0 {
+        didSet {
+            if score > 10 {
+                score = oldValue
+            }
+        }
+    }
 }
