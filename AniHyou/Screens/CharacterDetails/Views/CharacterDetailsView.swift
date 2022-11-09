@@ -24,7 +24,7 @@ struct CharacterDetailsView: View {
                         .multilineTextAlignment(.center)
                         .bold()
                     
-                    Text(viewModel.character?.name?.native ?? "")
+                    Text(viewModel.character!.name?.native ?? "")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray)
@@ -36,15 +36,14 @@ struct CharacterDetailsView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
-                            HInfoView(name: "Birthday", value: viewModel.character?.dateOfBirth?.fragments.fuzzyDate.formatted())
-                            HInfoView(name: "Age", value: viewModel.character?.age)
-                            HInfoView(name: "Gender", value: viewModel.character?.gender)
-                            HInfoView(name: "Blood type", value: viewModel.character?.bloodType)
+                            HInfoView(name: "Birthday", value: viewModel.character!.dateOfBirth?.fragments.fuzzyDate.formatted())
+                            HInfoView(name: "Age", value: viewModel.character!.age)
+                            HInfoView(name: "Gender", value: viewModel.character!.gender)
+                            HInfoView(name: "Blood type", value: viewModel.character!.bloodType)
                             
-                            RichText(html: viewModel.character?.description ?? "")
+                            RichText(html: viewModel.character!.description ?? "")
                                 .defaultStyle()
                                 .customCSS(spoilerCss)
-                                //.padding(.all)
                         }
                     }
                 }
