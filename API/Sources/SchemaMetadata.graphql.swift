@@ -50,10 +50,10 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Thread": return API.Objects.Thread
     case "ReviewConnection": return API.Objects.ReviewConnection
     case "Review": return API.Objects.Review
-    case "StaffConnection": return API.Objects.StaffConnection
     case "Staff": return API.Objects.Staff
     case "StaffName": return API.Objects.StaffName
     case "StaffImage": return API.Objects.StaffImage
+    case "StaffConnection": return API.Objects.StaffConnection
     case "CharacterEdge": return API.Objects.CharacterEdge
     case "StaffEdge": return API.Objects.StaffEdge
     case "ThreadComment": return API.Objects.ThreadComment
