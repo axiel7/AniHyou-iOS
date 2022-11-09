@@ -1,0 +1,7 @@
+query StudioDetails($studioId: Int) {
+  Studio(id: $studioId) {
+    id
+    name
+    isAnimationStudio
+  }
+}
