@@ -75,3 +75,16 @@ var spoilerCss =
         background-color: transparent;
     }
     """
+
+func shareSheet(url: String) {
+    let url = URL(string: url)
+    let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+
+    let allScenes = UIApplication.shared.connectedScenes
+    let scene = allScenes.first { $0.activationState == .foregroundActive }
+
+    if let windowScene = scene as? UIWindowScene {
+        windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
+    }
+
+}

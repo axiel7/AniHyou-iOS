@@ -20,9 +20,8 @@ struct StaffDetailsView: View {
                     CircleImageView(imageUrl: viewModel.staff!.image?.large, size: 150)
                     
                     Text(viewModel.staff!.name?.userPreferred ?? "")
-                        .font(.title3)
+                        .font(.title3.weight(.bold))
                         .multilineTextAlignment(.center)
-                        .bold()
                     
                     Text(viewModel.staff!.name?.native ?? "")
                         .font(.subheadline)

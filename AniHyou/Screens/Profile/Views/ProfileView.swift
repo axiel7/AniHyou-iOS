@@ -80,8 +80,8 @@ struct ProfileView: View {
                 //:LazyVStack
             }//:VScrollView
             .toolbar {
-                if isMyProfile {
-                    ToolbarItem {
+                ToolbarItem {
+                    if isMyProfile {
                         NavigationLink(destination: SettingsView()) {
                             Label("Settings", systemImage: "gearshape")
                         }
