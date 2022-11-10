@@ -15,36 +15,40 @@ struct CharacterView: View {
     
     var body: some View {
         HStack {
-            HStack {
-                CircleImageView(imageUrl: character.node?.image?.medium, size: imageSize)
-                VStack(alignment: .leading) {
-                    Text(character.node?.name?.userPreferred ?? "")
-                        .font(.system(size: 13))
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(3)
-                    Text(character.role?.value?.localizedName ?? "")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                }
+            NavigationLink(destination: CharacterDetailsView(characterId: character.node!.id)) {
+                HStack {
+                    CircleImageView(imageUrl: character.node?.image?.medium, size: imageSize)
+                    VStack(alignment: .leading) {
+                        Text(character.node?.name?.userPreferred ?? "")
+                            .font(.system(size: 13))
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(3)
+                            .foregroundColor(.primary)
+                        Text(character.role?.value?.localizedName ?? "")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                    }
+                }//:HStack
             }
-            //.frame(width: .infinity)
             
             Spacer()
             
             if character.voiceActors?.isEmpty == false {
-                HStack {
-                    VStack(alignment: .trailing) {
-                        Text(character.voiceActors?[0]?.name?.userPreferred ?? "")
-                            .font(.footnote)
-                            .multilineTextAlignment(.trailing)
-                            .lineLimit(3)
-                        Text("Japanese")
-                            .font(.footnote)
-                            .foregroundColor(.gray)
-                    }
-                    CircleImageView(imageUrl: character.voiceActors?[0]?.image?.medium, size: imageSize)
+                NavigationLink(destination: StaffDetailsView(staffId: character.voiceActors![0]!.id)) {
+                    HStack {
+                        VStack(alignment: .trailing) {
+                            Text(character.voiceActors![0]!.name?.userPreferred ?? "")
+                                .font(.footnote)
+                                .multilineTextAlignment(.trailing)
+                                .lineLimit(3)
+                                .foregroundColor(.primary)
+                            Text("Japanese")
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        }
+                        CircleImageView(imageUrl: character.voiceActors![0]!.image?.medium, size: imageSize)
+                    }//:HStack
                 }
-                //.frame(width: .infinity)
             }
         }
         .frame(height: imageSize)

@@ -25,33 +25,15 @@ struct MediaCharactersAndStaffView: View {
                     .bold()
                     .padding(.leading)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: gridRows, spacing: 16) {
-                        ForEach(viewModel.mediaCharactersAndStaff?.staff?.edges ?? [], id: \.?.node?.id) {
-                            if let staff = $0 {
-                                StaffView(staff: staff.fragments.mediaStaff)
-                            }
-                        }
-                    }//:HGrid
-                    .frame(height: StaffView.imageSize * 2 + 20)
-                    .padding(.leading)
-                }//:HScrollView
-                .padding(.bottom)
+                staffHScrollView
                 
                 Text("Characters")
                     .font(.title3)
                     .bold()
                     .padding(.leading)
                 
-                LazyVStack {
-                    ForEach(viewModel.mediaCharactersAndStaff?.characters?.edges ?? [], id: \.?.node?.id) {
-                        if let character = $0 {
-                            CharacterView(character: character.fragments.mediaCharacter)
-                                .padding(.bottom)
-                        }
-                    }
-                }//:VStack
-                .padding(.horizontal)
+                charactersVScrollView
+                
             }//:VStack
         } else {
             HStack {
@@ -64,6 +46,33 @@ struct MediaCharactersAndStaffView: View {
                 Spacer()
             }
         }
+    }
+    
+    var staffHScrollView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHGrid(rows: gridRows, spacing: 16) {
+                ForEach(viewModel.mediaCharactersAndStaff?.staff?.edges ?? [], id: \.?.node?.id) {
+                    if let staff = $0 {
+                        StaffView(staff: staff.fragments.mediaStaff)
+                    }
+                }
+            }//:HGrid
+            .frame(height: StaffView.imageSize * 2 + 20)
+            .padding(.leading)
+        }//:HScrollView
+        .padding(.bottom)
+    }
+    
+    var charactersVScrollView: some View {
+        LazyVStack {
+            ForEach(viewModel.mediaCharactersAndStaff?.characters?.edges ?? [], id: \.?.node?.id) {
+                if let character = $0 {
+                    CharacterView(character: character.fragments.mediaCharacter)
+                        .padding(.bottom)
+                }
+            }
+        }//:VStack
+        .padding(.horizontal)
     }
 }
 
