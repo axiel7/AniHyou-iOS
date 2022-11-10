@@ -80,6 +80,26 @@ struct UserFavoritesView: View {
         
         Divider()
         
+        //MARK: staff
+        FavoriteSectionGrid(title: "Staff", columns: gridColumns) {
+            ForEach(viewModel.favoritesStaff, id: \.?.id) {
+                if let staff = $0 {
+                    NavigationLink(destination: StaffDetailsView(staffId: staff.id)) {
+                        VListItemView(title: staff.name?.userPreferred ?? "", imageUrl: staff.image?.large)
+                    }
+                }
+            }
+            
+            if viewModel.hasNextPageStaff {
+                ProgressView()
+                    .onAppear {
+                        viewModel.getFavoritesStaff(userId: userId)
+                    }
+            }
+        }
+        
+        Divider()
+        
         //MARK: studios
         FavoriteSectionGrid(title: "Studios", columns: [GridItem(.adaptive(minimum: 80), alignment: .leading)]) {
             ForEach(viewModel.favoritesStudio, id: \.?.id) {
