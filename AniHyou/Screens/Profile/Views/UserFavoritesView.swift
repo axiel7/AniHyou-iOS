@@ -64,7 +64,9 @@ struct UserFavoritesView: View {
         FavoriteSectionGrid(title: "Characters", columns: gridColumns) {
             ForEach(viewModel.favoritesCharacters, id: \.?.id) {
                 if let character = $0 {
-                    VListItemView(title: character.name?.userPreferred ?? "", imageUrl: character.image?.large)
+                    NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
+                        VListItemView(title: character.name?.userPreferred ?? "", imageUrl: character.image?.large)
+                    }
                 }
             }
             
