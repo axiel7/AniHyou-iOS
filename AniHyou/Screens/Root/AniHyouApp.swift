@@ -11,6 +11,8 @@ import netfox
 @main
 struct AniHyouApp: App {
     
+    @StateObject private var globalAppState = GlobalAppState.shared
+    
     init() {
         #if DEBUG
         NFX.sharedInstance().start()
@@ -20,6 +22,7 @@ struct AniHyouApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .id(globalAppState.globalId)
         }
     }
 }

@@ -18,6 +18,7 @@ class SettingsViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "token_expiration")
         UserDefaults.standard.removeObject(forKey: "is_logged_in")
         isLoggedOut = true
+        GlobalAppState.shared.globalId = UUID()
     }
     
 }
