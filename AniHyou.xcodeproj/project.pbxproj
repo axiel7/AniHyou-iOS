@@ -141,6 +141,7 @@
 		48E7CAF328AA512D00F9CE24 /* UserActivity.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */; };
 		48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */; };
 		48E80F9E28734DA5002765FC /* FullCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E80F9D28734DA5002765FC /* FullCoverView.swift */; };
+		48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */; };
 		48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */; };
 		48F763EA28ACDFBB00C82D75 /* UserFavoritesAnime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */; };
 		48F763EC28ACE01E00C82D75 /* UserFavoritesManga.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */; };
@@ -300,6 +301,7 @@
 		48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserActivity.graphql; sourceTree = "<group>"; };
 		48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaActivityItemView.swift; sourceTree = "<group>"; };
 		48E80F9D28734DA5002765FC /* FullCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCoverView.swift; sourceTree = "<group>"; };
+		48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppState.swift; sourceTree = "<group>"; };
 		48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesView.swift; sourceTree = "<group>"; };
 		48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesAnime.graphql; sourceTree = "<group>"; };
 		48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesManga.graphql; sourceTree = "<group>"; };
@@ -409,7 +411,6 @@
 				481AD5032852211C001779EE /* Queries */,
 				481AD4F32851D87E001779EE /* Views */,
 				481AD4F22851D878001779EE /* Screens */,
-				481AD4DD2851CE73001779EE /* AniHyouApp.swift */,
 				481AD4E12851CE74001779EE /* Assets.xcassets */,
 				481AD4E32851CE74001779EE /* Preview Content */,
 				4832B02A285F35CE00E79D27 /* Utils */,
@@ -432,7 +433,7 @@
 		481AD4F22851D878001779EE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				481AD4DF2851CE73001779EE /* ContentView.swift */,
+				48EE80FB2920ECE300344DA5 /* Root */,
 				48099961288B2BE7005AE427 /* Login */,
 				4809995C288B295F005AE427 /* Settings */,
 				48FC94772868528900C87F56 /* Explore */,
@@ -687,6 +688,16 @@
 				48E80F9D28734DA5002765FC /* FullCoverView.swift */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		48EE80FB2920ECE300344DA5 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				481AD4DD2851CE73001779EE /* AniHyouApp.swift */,
+				481AD4DF2851CE73001779EE /* ContentView.swift */,
+				48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		48F763F328ACE4B500C82D75 /* Views */ = {
@@ -1171,6 +1182,7 @@
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,
 				481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */,
 				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
+				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
 				4870AB0228EC7551008431B5 /* MediaReviewsQuery.graphql.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
@@ -1316,7 +1328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
@@ -1333,7 +1345,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axiel7.AniHyou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1348,7 +1360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
@@ -1365,7 +1377,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axiel7.AniHyou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
