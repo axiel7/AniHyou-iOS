@@ -16,6 +16,8 @@ struct MediaListEditView: View {
     var mediaList: MediaDetailsQuery.Data.Media.MediaListEntry?
     
     @StateObject var viewModel = MediaListEditViewModel()
+    @State var showDeleteDialog = false
+    
     @State var status: MediaListStatus = .planning
     @State var progress: Int = 0
     @State var progressVolumes: Int = 0
@@ -41,13 +43,13 @@ struct MediaListEditView: View {
                     }
                 }
                 
-                Section {
+                Section("Score") {
                     HStack {
                         TextField("", value: $viewModel.score, formatter: formatter)
                             .keyboardType(.decimalPad)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 80)
-                        Stepper("Score", value: $viewModel.score, in: 0...10, step: 0.5)
+                        Stepper("/10", value: $viewModel.score, in: 0...10, step: 0.5)
                     }
                 }
                 
@@ -76,8 +78,14 @@ struct MediaListEditView: View {
                 }
                 
                 Button("Delete", role: .destructive) {
-                    
+                    showDeleteDialog = true
                 }
+                .confirmationDialog("Delete this entry?", isPresented: $showDeleteDialog) {
+                    Button("Delete", role: .destructive) {
+                        viewModel.deleteEntry(entryId: mediaList!.id)
+                    }
+                }
+                .disabled(mediaList == nil)
                 
             })//:Form
             .navigationBarTitleDisplayMode(.inline)

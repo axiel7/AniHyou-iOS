@@ -39,6 +39,19 @@ class MediaListEditViewModel: ObservableObject {
         }
     }
     
+    func deleteEntry(entryId: Int) {
+        Network.shared.apollo.perform(mutation: DeleteMediaListMutation(mediaListEntryId: .some(entryId))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let deleted = graphQLResult.data?.deleteMediaListEntry?.deleted {
+                    self?.isUpdateSuccess = deleted
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     @Published var score: Double = 0 {
         didSet {
             if score > 10 {

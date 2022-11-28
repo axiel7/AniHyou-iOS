@@ -37,6 +37,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "UserAvatar": return API.Objects.UserAvatar
     case "StudioConnection": return API.Objects.StudioConnection
     case "Studio": return API.Objects.Studio
+    case "Deleted": return API.Objects.Deleted
     case "CharacterConnection": return API.Objects.CharacterConnection
     case "Character": return API.Objects.Character
     case "CharacterName": return API.Objects.CharacterName
