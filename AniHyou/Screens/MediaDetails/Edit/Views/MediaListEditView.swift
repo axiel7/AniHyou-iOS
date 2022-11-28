@@ -84,6 +84,8 @@ struct MediaListEditView: View {
                     Button("Delete", role: .destructive) {
                         viewModel.deleteEntry(entryId: mediaList!.id)
                     }
+                } message: {
+                    Text("Delete this entry?")
                 }
                 .disabled(mediaList == nil)
                 
