@@ -6,7 +6,7 @@ import API
 
 public class UserMediaListQuery: GraphQLQuery {
   public static let operationName: String = "UserMediaList"
-  public static let document: DocumentType = .notPersisted(
+  public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       """
       query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {

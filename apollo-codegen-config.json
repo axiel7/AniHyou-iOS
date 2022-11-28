@@ -1,0 +1,29 @@
+{
+  "schemaName" : "API",
+  "input" : {
+    "operationSearchPaths" : [
+      "AniHyou/Queries/*.graphql"
+    ],
+    "schemaSearchPaths" : [
+      "schema.graphqls"
+    ]
+  },
+  "output" : {
+    "testMocks" : {
+      "none" : {
+      }
+    },
+    "schemaTypes" : {
+      "path" : "./API",
+      "moduleType" : {
+        "swiftPackageManager" : {
+            
+        }
+      }
+    },
+    "operations" : {
+      "relative" : {
+      }
+    }
+  }
+}

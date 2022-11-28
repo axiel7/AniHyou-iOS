@@ -6,7 +6,7 @@ import API
 
 public class UserAboutQuery: GraphQLQuery {
   public static let operationName: String = "UserAbout"
-  public static let document: DocumentType = .notPersisted(
+  public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       """
       query UserAbout($userId: Int) {
