@@ -6,7 +6,7 @@ import API
 
 public class UserFavoritesStudioQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesStudio"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       query UserFavoritesStudio($userId: Int, $page: Int, $perPage: Int) {

@@ -6,7 +6,7 @@ import API
 
 public class SearchStudioQuery: GraphQLQuery {
   public static let operationName: String = "SearchStudio"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       query SearchStudio($page: Int, $perPage: Int, $search: String) {

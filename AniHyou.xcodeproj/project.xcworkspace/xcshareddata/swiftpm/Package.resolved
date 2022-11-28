@@ -1,86 +1,88 @@
 {
-  "pins" : [
-    {
-      "identity" : "apollo-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apollographql/apollo-ios",
-      "state" : {
-        "revision" : "014660b14262df15f0d2c7b7e973d0a53be27b7e",
-        "version" : "1.0.5"
+  "object": {
+    "pins": [
+      {
+        "package": "Apollo",
+        "repositoryURL": "https://github.com/apollographql/apollo-ios",
+        "state": {
+          "branch": null,
+          "revision": "4b13a927b581c40d06f2c65f593f672a52c0c812",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "InflectorKit",
+        "repositoryURL": "https://github.com/mattt/InflectorKit",
+        "state": {
+          "branch": null,
+          "revision": "d8cbcc04972690aaa5fc760a2b9ddb3e9f0decd7",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "d108a1fa6189e661f91560548ef48651ed8d93b9",
+          "version": "20.0.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "44e891bdb61426a95e31492a67c7c0dfad1f87c5",
+          "version": "7.4.1"
+        }
+      },
+      {
+        "package": "netfox",
+        "repositoryURL": "https://github.com/kasketis/netfox",
+        "state": {
+          "branch": null,
+          "revision": "557576032736fd3140422baefb68b8f76c55088f",
+          "version": "1.21.0"
+        }
+      },
+      {
+        "package": "RichText",
+        "repositoryURL": "https://github.com/NuPlay/RichText.git",
+        "state": {
+          "branch": null,
+          "revision": "48b840c46295111390f018ef5832f1e81567e32f",
+          "version": "2.1.1"
+        }
+      },
+      {
+        "package": "SQLite.swift",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "4d543d811ee644fa4cc4bfa0be996b4dd6ba0f54",
+          "version": "0.13.3"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
+        "state": {
+          "branch": null,
+          "revision": "9f39744e025c7d377987f30b03770805dcb0bcd1",
+          "version": "1.1.4"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections",
+        "state": {
+          "branch": null,
+          "revision": "f504716c27d2e5d4144fa4794b12129301d17729",
+          "version": "1.0.3"
+        }
       }
-    },
-    {
-      "identity" : "inflectorkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mattt/InflectorKit",
-      "state" : {
-        "revision" : "d8cbcc04972690aaa5fc760a2b9ddb3e9f0decd7",
-        "version" : "1.0.0"
-      }
-    },
-    {
-      "identity" : "keychain-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/evgenyneu/keychain-swift.git",
-      "state" : {
-        "revision" : "d108a1fa6189e661f91560548ef48651ed8d93b9",
-        "version" : "20.0.0"
-      }
-    },
-    {
-      "identity" : "kingfisher",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onevcat/Kingfisher.git",
-      "state" : {
-        "revision" : "44e891bdb61426a95e31492a67c7c0dfad1f87c5",
-        "version" : "7.4.1"
-      }
-    },
-    {
-      "identity" : "netfox",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kasketis/netfox",
-      "state" : {
-        "revision" : "557576032736fd3140422baefb68b8f76c55088f",
-        "version" : "1.21.0"
-      }
-    },
-    {
-      "identity" : "richtext",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/NuPlay/RichText.git",
-      "state" : {
-        "revision" : "48b840c46295111390f018ef5832f1e81567e32f",
-        "version" : "2.1.1"
-      }
-    },
-    {
-      "identity" : "sqlite.swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephencelis/SQLite.swift.git",
-      "state" : {
-        "revision" : "4d543d811ee644fa4cc4bfa0be996b4dd6ba0f54",
-        "version" : "0.13.3"
-      }
-    },
-    {
-      "identity" : "swift-argument-parser",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-argument-parser.git",
-      "state" : {
-        "revision" : "fddd1c00396eed152c45a46bea9f47b98e59301d",
-        "version" : "1.2.0"
-      }
-    },
-    {
-      "identity" : "swift-collections",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-collections",
-      "state" : {
-        "revision" : "f504716c27d2e5d4144fa4794b12129301d17729",
-        "version" : "1.0.3"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

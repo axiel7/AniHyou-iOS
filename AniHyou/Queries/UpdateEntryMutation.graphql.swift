@@ -6,7 +6,7 @@ import API
 
 public class UpdateEntryMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntry"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {

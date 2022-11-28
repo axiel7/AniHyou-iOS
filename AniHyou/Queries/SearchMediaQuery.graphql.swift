@@ -6,7 +6,7 @@ import API
 
 public class SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType) {

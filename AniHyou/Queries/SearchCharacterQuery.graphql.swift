@@ -6,7 +6,7 @@ import API
 
 public class SearchCharacterQuery: GraphQLQuery {
   public static let operationName: String = "SearchCharacter"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       query SearchCharacter($page: Int, $perPage: Int, $search: String) {

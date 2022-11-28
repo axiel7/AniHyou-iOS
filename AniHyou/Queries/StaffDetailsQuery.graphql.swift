@@ -6,7 +6,7 @@ import API
 
 public class StaffDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StaffDetails"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       query StaffDetails($staffId: Int) {

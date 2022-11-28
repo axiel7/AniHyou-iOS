@@ -6,7 +6,7 @@ import API
 
 public class ViewerQuery: GraphQLQuery {
   public static let operationName: String = "Viewer"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let document: DocumentType = .notPersisted(
     definition: .init(
       """
       query Viewer {
