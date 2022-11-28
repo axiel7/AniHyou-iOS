@@ -6,7 +6,7 @@ import API
 
 public class MediaCharactersAndStaffQuery: GraphQLQuery {
   public static let operationName: String = "MediaCharactersAndStaff"
-  public static let document: DocumentType = .notPersisted(
+  public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       """
       query MediaCharactersAndStaff($mediaId: Int) {

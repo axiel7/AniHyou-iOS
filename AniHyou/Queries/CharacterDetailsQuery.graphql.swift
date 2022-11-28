@@ -6,7 +6,7 @@ import API
 
 public class CharacterDetailsQuery: GraphQLQuery {
   public static let operationName: String = "CharacterDetails"
-  public static let document: DocumentType = .notPersisted(
+  public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       """
       query CharacterDetails($characterId: Int) {
