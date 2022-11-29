@@ -153,6 +153,7 @@ Tests/ApolloCodegenTests/scripts directory
 Tests/ApolloCodegenTests/Schema
 Tests/ApolloCodegenTests/Output
 SwiftScripts/.build-**
+apollo-ios-cli
 
 # Local Netlify folder
 .netlify
