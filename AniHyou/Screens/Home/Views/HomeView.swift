@@ -109,7 +109,7 @@ struct HomeView: View {
                 }//:VStack
             }//:VScrollView
             .navigationTitle("Home")
-            .toolbar {
+            /*.toolbar {
                 ToolbarItem {
                     Button {
                         showingNotificationsSheet = true
@@ -120,7 +120,7 @@ struct HomeView: View {
                         NotificationsView()
                     }
                 }
-            }
+            }*/
         }//:NavigationView
         .navigationViewStyle(.stack)
     }
