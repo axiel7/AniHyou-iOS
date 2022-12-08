@@ -657,6 +657,7 @@
 				48CA07A8287035530048854E /* MediaInfoType.swift */,
 				4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */,
 				48FBC66128CE3E88009AAF4A /* UpdatedMediaEntry.swift */,
+				480F8824294262F3004773CC /* AnimeSeason.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1130,6 +1131,7 @@
 				486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */,
 				489C7E982919393B004B0B39 /* StudioDetailsQuery.graphql.swift in Sources */,
 				4870AB1A28EC7551008431B5 /* UpdateEntryProgressMutation.graphql.swift in Sources */,
+				480F8825294262F3004773CC /* AnimeSeason.swift in Sources */,
 				48CA07B1287064B30048854E /* MediaCharactersAndStaffView.swift in Sources */,
 				48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */,
 				4832B030285F3CDD00E79D27 /* MediaCoverView.swift in Sources */,

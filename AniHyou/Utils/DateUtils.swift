@@ -40,6 +40,16 @@ extension Date {
         }
     }
     
+    func getCurrentAnimeSeason() -> AnimeSeason {
+        var animeSeason = AnimeSeason(year: self.year, season: self.season)
+        //if december, the winter season is next year
+        if self.month == 12 {
+            animeSeason.year += 1
+        }
+        
+        return animeSeason
+    }
+    
     func toFuzzyDate() -> FuzzyDateInput {
         return FuzzyDateInput(year: GraphQLNullable<Int>(integerLiteral: self.year), month: GraphQLNullable<Int>(integerLiteral:  self.month), day: GraphQLNullable<Int>(integerLiteral: self.day))
     }

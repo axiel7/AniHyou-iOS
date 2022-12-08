@@ -58,7 +58,7 @@ struct HomeView: View {
                     }//:ZStack
                     
                     // MARK: season section
-                    Text("\(viewModel.nowSeason.localizedName) \(String(viewModel.nowYear))")
+                    Text("\(viewModel.nowAnimeSeason.season.localizedName) \(String(viewModel.nowAnimeSeason.year))")
                         .sectionTitle()
                     ZStack {
                         if viewModel.seasonAnimes.count == 0 {

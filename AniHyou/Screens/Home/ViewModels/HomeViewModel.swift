@@ -10,12 +10,10 @@ import API
 
 class HomeViewModel: ObservableObject {
     private let now = Date.now
-    @Published var nowYear = 2022
-    @Published var nowSeason = MediaSeason.spring
+    @Published var nowAnimeSeason = AnimeSeason(year: 2022, season: .spring)
     
     init() {
-        nowYear = now.year
-        nowSeason = now.season
+        nowAnimeSeason = now.getCurrentAnimeSeason()
     }
     
     // MARK: Airing animes
@@ -42,7 +40,7 @@ class HomeViewModel: ObservableObject {
     @Published var seasonAnimes = [SeasonalAnimeQuery.Data.Page.Medium?]()
     
     func getSeasonAnimes(page: Int = 1) {
-        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(page), perPage: .some(10), season: .some(.case(nowSeason)), seasonYear: .some(nowYear), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(page), perPage: .some(10), season: .some(.case(nowAnimeSeason.season)), seasonYear: .some(nowAnimeSeason.year), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
