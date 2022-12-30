@@ -18,4 +18,10 @@ let ANILIST_GRAPHQL = "https://graphql.anilist.co/graphql"
 let ANILIST_ANIME_URL = "\(ANILIST_URL)/anime/"
 let ANILIST_MANGA_URL = "\(ANILIST_URL)/manga/"
 
+// Preferences keys
 let USER_TOKEN_KEY = "user_token"
+let USER_ID_KEY = "user_id"
+let USER_COLOR_KEY = "user_color"
+let USER_SCORE_KEY = "user_score"
+let USER_TITLE_LANG_KEY = "user_title_lang"
+let USER_NAMES_LANG_KEY = "user_names_lang"

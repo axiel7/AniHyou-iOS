@@ -43,6 +43,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "CharacterName": return API.Objects.CharacterName
     case "CharacterImage": return API.Objects.CharacterImage
     case "UserOptions": return API.Objects.UserOptions
+    case "MediaListOptions": return API.Objects.MediaListOptions
     case "MediaEdge": return API.Objects.MediaEdge
     case "RecommendationConnection": return API.Objects.RecommendationConnection
     case "Recommendation": return API.Objects.Recommendation

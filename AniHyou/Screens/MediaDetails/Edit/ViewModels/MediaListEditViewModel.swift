@@ -10,6 +10,13 @@ import API
 
 class MediaListEditViewModel: ObservableObject {
     
+    var scoreFormat: ScoreFormat {
+        if let formatRaw = UserDefaults.standard.string(forKey: USER_SCORE_KEY) {
+            return ScoreFormat(rawValue: formatRaw) ?? .point10Decimal
+        }
+        else { return ScoreFormat.point10Decimal }
+    }
+    
     @Published var isUpdateSuccess = false
     
     func updateEntry(mediaId: Int, status: MediaListStatus?, score: Double?, progress: Int?, progressVolumes: Int?, startedAt: Date?, completedAt: Date?) {

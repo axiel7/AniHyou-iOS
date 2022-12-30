@@ -19,6 +19,12 @@ class ProfileViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
                     self?.userInfo = viewer
+                    //update preferences
+                    UserDefaults.standard.set(viewer.options?.profileColor, forKey: USER_COLOR_KEY)
+                    UserDefaults.standard.set(nil, forKey: "testnil")
+                    UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
+                    UserDefaults.standard.set(viewer.options?.titleLanguage?.value?.rawValue, forKey: USER_TITLE_LANG_KEY)
+                    UserDefaults.standard.set(viewer.mediaListOptions?.scoreFormat?.value?.rawValue, forKey: USER_SCORE_KEY)
                 }
             case .failure(let error):
                 print(error)
@@ -43,9 +49,13 @@ class ProfileViewModel: ObservableObject {
     
     func logOut() {
         KeychainSwift().delete(USER_TOKEN_KEY)
-        UserDefaults.standard.removeObject(forKey: "user_id")
+        UserDefaults.standard.removeObject(forKey: USER_ID_KEY)
         UserDefaults.standard.removeObject(forKey: "token_expiration")
         UserDefaults.standard.removeObject(forKey: "is_logged_in")
+        UserDefaults.standard.removeObject(forKey: USER_COLOR_KEY)
+        UserDefaults.standard.removeObject(forKey: USER_NAMES_LANG_KEY)
+        UserDefaults.standard.removeObject(forKey: USER_TITLE_LANG_KEY)
+        UserDefaults.standard.removeObject(forKey: USER_SCORE_KEY)
         isLoggedOut = true
     }
     

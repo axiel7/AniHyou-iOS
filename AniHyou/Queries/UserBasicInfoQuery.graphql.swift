@@ -63,6 +63,8 @@ public class UserBasicInfoQuery: GraphQLQuery {
       public var about: String? { __data["about"] }
       /// The user's general options
       public var options: UserInfo.Options? { __data["options"] }
+      /// The user's media list options
+      public var mediaListOptions: UserInfo.MediaListOptions? { __data["mediaListOptions"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict

@@ -52,17 +52,21 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
             KeychainSwift().set(token, forKey: USER_TOKEN_KEY)
             UserDefaults.standard.set(expirationDate, forKey: "token_expiration")
             UserDefaults.standard.set(true, forKey: "is_logged_in")
-            getUserId()
+            getUserIdAndOptions()
             self.isLoginSuccess = true
         }
     }
     
-    private func getUserId() {
+    private func getUserIdAndOptions() {
         Network.shared.apollo.fetch(query: ViewerIdQuery()) { result in
             switch result {
             case .success(let graphQLResult):
-                if let id = graphQLResult.data?.viewer?.id {
-                    UserDefaults.standard.set(id, forKey: "user_id")
+                if let viewer = graphQLResult.data?.viewer {
+                    UserDefaults.standard.set(viewer.id, forKey: USER_ID_KEY)
+                    UserDefaults.standard.set(viewer.options?.profileColor, forKey: USER_COLOR_KEY)
+                    UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
+                    UserDefaults.standard.set(viewer.options?.titleLanguage?.value?.rawValue, forKey: USER_TITLE_LANG_KEY)
+                    UserDefaults.standard.set(viewer.mediaListOptions?.scoreFormat?.value?.rawValue, forKey: USER_SCORE_KEY)
                 }
             case .failure(let error):
                 print(error)

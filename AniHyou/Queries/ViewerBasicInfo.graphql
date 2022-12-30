@@ -14,5 +14,10 @@ fragment UserInfo on User {
   about
   options {
     profileColor
+    staffNameLanguage
+    titleLanguage
+  }
+  mediaListOptions {
+    scoreFormat
   }
 }
