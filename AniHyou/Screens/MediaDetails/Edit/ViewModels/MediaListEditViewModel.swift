@@ -10,6 +10,14 @@ import API
 
 class MediaListEditViewModel: ObservableObject {
     
+    @Published var score: Double = 0 {
+        didSet {
+            if score > 10 {
+                score = oldValue
+            }
+        }
+    }
+    
     var scoreFormat: ScoreFormat {
         if let formatRaw = UserDefaults.standard.string(forKey: USER_SCORE_KEY) {
             return ScoreFormat(rawValue: formatRaw) ?? .point10
@@ -85,14 +93,6 @@ class MediaListEditViewModel: ObservableObject {
                 }
             case .failure(let error):
                 print(error)
-            }
-        }
-    }
-    
-    @Published var score: Double = 0 {
-        didSet {
-            if score > 10 {
-                score = oldValue
             }
         }
     }
