@@ -18,11 +18,13 @@ struct StarRatingView: View {
     
     var body: some View {
         HStack {
-            ForEach(1...5, id: \.self) { number in
-                image(for: Double(number))
-                    .foregroundColor(number > Int(rating) ? offColor : onColor)
+            ForEach(1...5, id: \.self) {
+                let number = Double($0)
+                image(for: number)
+                    .foregroundColor(number > rating ? offColor : onColor)
                     .onTapGesture {
-                        rating = Double(number)
+                        if rating == number { rating = 0 }
+                        else { rating = number }
                     }
             }
         }
