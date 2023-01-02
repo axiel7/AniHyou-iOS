@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		480300D3291BC56F00E3047B /* StaffDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480300D2291BC56E00E3047B /* StaffDetailsViewModel.swift */; };
 		480300D5291BC57A00E3047B /* StaffDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480300D4291BC57A00E3047B /* StaffDetailsView.swift */; };
+		4806BBAF2963369700CB07A6 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806BBAE2963369700CB07A6 /* StarRatingView.swift */; };
+		4806BBB12963398C00CB07A6 /* SmileyRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */; };
 		4809995E288B2977005AE427 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995D288B2977005AE427 /* SettingsView.swift */; };
 		48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995F288B29A9005AE427 /* SettingsViewModel.swift */; };
 		48099963288B2C60005AE427 /* UserAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48099962288B2C60005AE427 /* UserAboutView.swift */; };
@@ -170,6 +172,8 @@
 /* Begin PBXFileReference section */
 		480300D2291BC56E00E3047B /* StaffDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetailsViewModel.swift; sourceTree = "<group>"; };
 		480300D4291BC57A00E3047B /* StaffDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetailsView.swift; sourceTree = "<group>"; };
+		4806BBAE2963369700CB07A6 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileyRatingView.swift; sourceTree = "<group>"; };
 		4809995D288B2977005AE427 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4809995F288B29A9005AE427 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		48099962288B2C60005AE427 /* UserAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAboutView.swift; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
 				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
 				48CA07B428706D8F0048854E /* CircleImageView.swift */,
+				4806BBAE2963369700CB07A6 /* StarRatingView.swift */,
+				4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1112,6 +1118,7 @@
 				4870AB0E28EC7551008431B5 /* FuzzyDate.graphql.swift in Sources */,
 				4870AB0A28EC7551008431B5 /* AiringAnimesQuery.graphql.swift in Sources */,
 				4809995E288B2977005AE427 /* SettingsView.swift in Sources */,
+				4806BBAF2963369700CB07A6 /* StarRatingView.swift in Sources */,
 				4870AB0F28EC7551008431B5 /* MediaDetailsQuery.graphql.swift in Sources */,
 				484A6D69287481500044C34A /* ReviewDetailsView.swift in Sources */,
 				48FBC66228CE3E88009AAF4A /* UpdatedMediaEntry.swift in Sources */,
@@ -1185,6 +1192,7 @@
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
 				48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */,
 				4870AB0928EC7551008431B5 /* SeasonalAnimeQuery.graphql.swift in Sources */,
+				4806BBB12963398C00CB07A6 /* SmileyRatingView.swift in Sources */,
 				480A41A528ECA1A30066288D /* ModelUtils.swift in Sources */,
 				488C267B2853801A0005EE15 /* Constants.swift in Sources */,
 				488B7ABF291A6C7E00156D80 /* CharacterDetailsView.swift in Sources */,
@@ -1348,7 +1356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;

@@ -44,12 +44,28 @@ struct MediaListEditView: View {
                 }
                 
                 Section("Score") {
-                    HStack {
-                        TextField("", value: $viewModel.score, formatter: formatter)
-                            .keyboardType(.decimalPad)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 80)
-                        Stepper("/10", value: $viewModel.score, in: 0...10, step: 0.5)
+                    switch viewModel.scoreFormat {
+                    case .point5:
+                        HStack {
+                            Spacer()
+                            StarRatingView(rating: $viewModel.score)
+                            Spacer()
+                        }
+                    case .point3:
+                        HStack {
+                            Spacer()
+                            SmileyRatingView(rating: $viewModel.score)
+                            Spacer()
+                        }
+                    default:
+                        HStack {
+                            TextField("", value: $viewModel.score, formatter: formatter)
+                                .keyboardType(.decimalPad)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(width: 80)
+                            
+                            Stepper("/\(viewModel.scoreHint)", value: $viewModel.score, in: viewModel.scoreRange, step: viewModel.scoreStep)
+                        }
                     }
                 }
                 
