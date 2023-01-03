@@ -46,6 +46,8 @@
 		4832B032285F406300E79D27 /* StringsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B031285F406300E79D27 /* StringsPreview.swift */; };
 		4832B034285F953100E79D27 /* MediaStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B033285F953100E79D27 /* MediaStatView.swift */; };
 		4832B036285F9E1900E79D27 /* ExpandableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B035285F9E1900E79D27 /* ExpandableTextView.swift */; };
+		4837455D2964192000E81CA3 /* StudioDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4837455C2964192000E81CA3 /* StudioDetailsView.swift */; };
+		4837455F2964192F00E81CA3 /* StudioDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4837455E2964192E00E81CA3 /* StudioDetailsViewModel.swift */; };
 		483CEABB289E67A000D30266 /* MediaThreads.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 483CEABA289E67A000D30266 /* MediaThreads.graphql */; };
 		483CEABE289E688400D30266 /* ThreadItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CEABD289E688400D30266 /* ThreadItemView.swift */; };
 		484A6D6028747FD50044C34A /* MediaReviews.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 484A6D5F28747FD50044C34A /* MediaReviews.graphql */; };
@@ -210,6 +212,8 @@
 		4832B031285F406300E79D27 /* StringsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsPreview.swift; sourceTree = "<group>"; };
 		4832B033285F953100E79D27 /* MediaStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStatView.swift; sourceTree = "<group>"; };
 		4832B035285F9E1900E79D27 /* ExpandableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTextView.swift; sourceTree = "<group>"; };
+		4837455C2964192000E81CA3 /* StudioDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioDetailsView.swift; sourceTree = "<group>"; };
+		4837455E2964192E00E81CA3 /* StudioDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioDetailsViewModel.swift; sourceTree = "<group>"; };
 		483CEABA289E67A000D30266 /* MediaThreads.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaThreads.graphql; sourceTree = "<group>"; };
 		483CEABD289E688400D30266 /* ThreadItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadItemView.swift; sourceTree = "<group>"; };
 		4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoType.swift; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 				481AD4F42851D8F8001779EE /* Home */,
 				488B7ABB291A6C3A00156D80 /* CharacterDetails */,
 				480300CD291BC50B00E3047B /* StaffDetails */,
+				48374559296418D600E81CA3 /* StudioDetails */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -582,6 +587,31 @@
 				480A41A428ECA1A30066288D /* ModelUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		48374559296418D600E81CA3 /* StudioDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4837455B2964190B00E81CA3 /* Views */,
+				4837455A2964190300E81CA3 /* ViewModels */,
+			);
+			path = StudioDetails;
+			sourceTree = "<group>";
+		};
+		4837455A2964190300E81CA3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4837455E2964192E00E81CA3 /* StudioDetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4837455B2964190B00E81CA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4837455C2964192000E81CA3 /* StudioDetailsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		486ED201285DD344002D29E1 /* MediaList */ = {
@@ -1097,6 +1127,7 @@
 				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
 				48F7640828ACE70800C82D75 /* CharacterStaffViewModel.swift in Sources */,
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
+				4837455D2964192000E81CA3 /* StudioDetailsView.swift in Sources */,
 				489C7E9C29193A7B004B0B39 /* UserInfo.graphql.swift in Sources */,
 				48F7641428ACEC6000C82D75 /* UserActivityViewModel.swift in Sources */,
 				48F7641828ACF31800C82D75 /* UserFavoritesViewModel.swift in Sources */,
@@ -1162,6 +1193,7 @@
 				48FC9474286656F600C87F56 /* HInfoView.swift in Sources */,
 				481AD502285207B1001779EE /* DateUtils.swift in Sources */,
 				4870AB1428EC7551008431B5 /* MediaChartQuery.graphql.swift in Sources */,
+				4837455F2964192F00E81CA3 /* StudioDetailsViewModel.swift in Sources */,
 				4870AB1228EC7551008431B5 /* UserFavoritesMangaQuery.graphql.swift in Sources */,
 				4870AB1D28EC7551008431B5 /* UserActivityQuery.graphql.swift in Sources */,
 				4870AB1328EC7551008431B5 /* UserMediaListQuery.graphql.swift in Sources */,

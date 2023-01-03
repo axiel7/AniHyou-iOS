@@ -53,7 +53,9 @@ struct ExploreView: View {
                     case .studios:
                         ForEach(viewModel.searchedStudios, id: \.?.id) { item in
                             if item != nil {
-                                HListItemWithSubtitleView(title: item!.name)
+                                NavigationLink(destination: StudioDetailsView(studioId: item!.id)) {
+                                    HListItemWithSubtitleView(title: item!.name)
+                                }
                             }
                         }
                     case .users:

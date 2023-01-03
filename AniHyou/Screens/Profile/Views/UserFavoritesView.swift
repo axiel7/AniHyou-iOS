@@ -110,15 +110,18 @@ struct UserFavoritesView: View {
         Divider()
         
         //MARK: studios
-        FavoriteSectionGrid(title: "Studios", columns: [GridItem(.adaptive(minimum: 80), alignment: .leading)]) {
+        FavoriteSectionGrid(title: "Studios", columns: gridColumns) {
             ForEach(viewModel.favoritesStudio, id: \.?.id) {
                 if let studio = $0 {
-                    Text(studio.name)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(1)
-                        .padding()
-                        .background(.regularMaterial)
-                        .cornerRadius(8)
+                    NavigationLink(destination: StudioDetailsView(studioId: studio.id)) {
+                        Text(studio.name)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(1)
+                            .padding()
+                            .background(.regularMaterial)
+                            .foregroundColor(.primary)
+                            .cornerRadius(8)
+                    }
                 }
             }
             
