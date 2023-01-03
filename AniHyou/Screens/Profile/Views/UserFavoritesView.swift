@@ -34,7 +34,7 @@ struct UserFavoritesView: View {
                     }
             }
             else if viewModel.favoritesAnime.isEmpty {
-                Text("No favorites")
+                EmptyFavoritesText()
             }
         }
         
@@ -56,6 +56,9 @@ struct UserFavoritesView: View {
                         viewModel.getFavoritesManga(userId: userId)
                     }
             }
+            else if viewModel.favoritesManga.isEmpty {
+                EmptyFavoritesText()
+            }
         }
         
         Divider()
@@ -76,6 +79,9 @@ struct UserFavoritesView: View {
                         viewModel.getFavoritesCharacter(userId: userId)
                     }
             }
+            else if viewModel.favoritesCharacters.isEmpty {
+                EmptyFavoritesText()
+            }
         }
         
         Divider()
@@ -95,6 +101,9 @@ struct UserFavoritesView: View {
                     .onAppear {
                         viewModel.getFavoritesStaff(userId: userId)
                     }
+            }
+            else if viewModel.favoritesStaff.isEmpty {
+                EmptyFavoritesText()
             }
         }
         
@@ -119,6 +128,10 @@ struct UserFavoritesView: View {
                         viewModel.getFavoritesStudio(userId: userId)
                     }
             }
+            
+            if viewModel.favoritesStudio.isEmpty {
+                EmptyFavoritesText()
+            }
         }
     }
     
@@ -138,6 +151,18 @@ struct UserFavoritesView: View {
                     content
                 }
                 .frame(minHeight: 200)
+            }
+        }
+    }
+    
+    private struct EmptyFavoritesText: View {
+        var text = "No favorites"
+        
+        var body: some View {
+            HStack {
+                Spacer()
+                Text(text)
+                Spacer()
             }
         }
     }
