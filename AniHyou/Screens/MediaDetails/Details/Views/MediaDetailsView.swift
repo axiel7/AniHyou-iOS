@@ -19,13 +19,13 @@ struct MediaDetailsView: View {
         if viewModel.mediaDetails != nil {
             ScrollView(.vertical) {
                 LazyVStack(alignment: .leading) {
-                    // MARK: Header
+                    // MARK: - Header
                     TopBannerView(imageUrl: viewModel.mediaDetails!.bannerImage, placeholderHexColor: viewModel.mediaDetails!.coverImage?.color, height: bannerHeight)
                     
-                    // MARK: Main info
+                    // MARK: - Main info
                     MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
                     
-                    // MARK: Main stats
+                    // MARK: - Main stats
                     ScrollView(.horizontal, showsIndicators: false) {
                         VStack {
                             Divider()
@@ -46,13 +46,13 @@ struct MediaDetailsView: View {
                     }//:HScrollView
                     .padding(.top)
                     
-                    // MARK: synopsis
+                    // MARK: - Synopsis
                     ExpandableTextView(viewModel.mediaDetails?.description?.htmlStripped)
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
                     
-                    // MARK: More info
+                    // MARK: - More info
                     Picker("Info type", selection: $infoType) {
                         ForEach(MediaInfoType.allCases, id: \.self) { type in
                             Label(type.localizedName, systemImage: type.systemImage)

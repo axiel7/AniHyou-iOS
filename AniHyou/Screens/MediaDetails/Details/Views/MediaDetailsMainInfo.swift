@@ -32,11 +32,12 @@ struct MediaDetailsMainInfo: View {
             
             VStack(alignment: .leading) {
                 
-                Text(viewModel.mediaDetails?.title?.romaji ?? "")
+                Text(viewModel.mediaDetails?.title?.userPreferred ?? "")
                     .font(.title3)
                     .bold()
                     .lineLimit(3)
                     .padding(.bottom, 1)
+                    .textSelection(.enabled)
                 
                 Text(viewModel.mediaDetails?.format?.value?.localizedName ?? "Unknown")
                     .font(.subheadline)

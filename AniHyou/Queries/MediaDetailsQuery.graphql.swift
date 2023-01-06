@@ -15,6 +15,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           id
           title {
             __typename
+            userPreferred
             romaji
             english
             native
@@ -212,11 +213,14 @@ public class MediaDetailsQuery: GraphQLQuery {
 
         public static var __parentType: ParentType { API.Objects.MediaTitle }
         public static var __selections: [Selection] { [
+          .field("userPreferred", String?.self),
           .field("romaji", String?.self),
           .field("english", String?.self),
           .field("native", String?.self),
         ] }
 
+        /// The currently authenticated users preferred title language. Default romaji for non-authenticated
+        public var userPreferred: String? { __data["userPreferred"] }
         /// The romanization of the native language title
         public var romaji: String? { __data["romaji"] }
         /// The official english title

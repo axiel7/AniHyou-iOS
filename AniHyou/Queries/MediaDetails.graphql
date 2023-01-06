@@ -2,6 +2,7 @@ query MediaDetails($mediaId: Int) {
   Media(id: $mediaId) {
     id
     title {
+      userPreferred
       romaji
       english
       native
