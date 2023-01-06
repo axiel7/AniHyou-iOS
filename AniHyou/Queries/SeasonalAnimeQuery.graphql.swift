@@ -24,6 +24,10 @@ public class SeasonalAnimeQuery: GraphQLQuery {
               large
             }
           }
+          pageInfo {
+            __typename
+            hasNextPage
+          }
         }
       }
       """
@@ -85,9 +89,12 @@ public class SeasonalAnimeQuery: GraphQLQuery {
           "seasonYear": .variable("seasonYear"),
           "sort": .variable("sort")
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
       public var media: [Medium?]? { __data["media"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
 
       /// Page.Medium
       ///
@@ -141,6 +148,22 @@ public class SeasonalAnimeQuery: GraphQLQuery {
           /// The cover image url of the media at a large size
           public var large: String? { __data["large"] }
         }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: API.SelectionSet {
+        public let __data: DataDict
+        public init(data: DataDict) { __data = data }
+
+        public static var __parentType: ParentType { API.Objects.PageInfo }
+        public static var __selections: [Selection] { [
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }

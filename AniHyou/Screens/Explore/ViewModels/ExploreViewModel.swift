@@ -10,27 +10,56 @@ import API
 
 class ExploreViewModel: ObservableObject {
     
+    //MARK: - Charts
     @Published var mediaChart = [MediaChartQuery.Data.Page.Medium?]()
     
-    var currentPage = 1
-    var hasNextPage = true
+    var currentPageChart = 1
+    var hasNextPageChart = true
     
     func getMediaChart(type: MediaType, sort: MediaSort) {
-        Network.shared.apollo.fetch(query: MediaChartQuery(page: .some(currentPage), perPage: .some(25), sort: .some([.case(sort)]), type: .some(.case(type)))) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaChartQuery(page: .some(currentPageChart), perPage: .some(25), sort: .some([.case(sort)]), type: .some(.case(type)))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let media = page.media {
                         self?.mediaChart.append(contentsOf: media)
-                        self?.currentPage += 1
+                        self?.currentPageChart += 1
                         
                         // limit top 100 results
-                        if (page.pageInfo?.currentPage ?? self?.currentPage) ?? 1 >= 100 * 25 {
-                            self?.hasNextPage = false
+                        if (page.pageInfo?.currentPage ?? self?.currentPageChart) ?? 1 >= 100 * 25 {
+                            self?.hasNextPageChart = false
                         } else {
-                            self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
+                            self?.hasNextPageChart = page.pageInfo?.hasNextPage ?? false
                         }
                     }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    //MARK: - Anime Season
+    @Published var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium?]()
+    
+    var currentPageSeason = 1
+    var hasNextPageSeason = true
+    
+    func getAnimeSeasonal(season: MediaSeason, year: Int, resetPage: Bool = false) {
+        if resetPage { currentPageSeason = 1 }
+        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(currentPageSeason), perPage: .some(25), season: .some(.case(season)), seasonYear: .some(year), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let page = graphQLResult.data?.page {
+                    if let media = page.media {
+                        if resetPage {
+                            self?.animeSeasonal = media
+                        } else {
+                            self?.animeSeasonal.append(contentsOf: media)
+                        }
+                    }
+                    self?.currentPageSeason += 1
+                    self?.hasNextPageSeason = page.pageInfo?.hasNextPage ?? false
                 }
             case .failure(let error):
                 print(error)

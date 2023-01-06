@@ -127,6 +127,47 @@ struct ExploreView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }//:HStack
+                
+                //MARK: - Anime season
+                Text("Anime Season")
+                    .font(.title2)
+                    .bold()
+                    .padding(.top, 8)
+                    .padding(.leading, 15)
+                Divider()
+                    .padding(.horizontal)
+                
+                //MARK: Spring, Summer
+                HStack(alignment: .center) {
+                    NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
+                        RectangleTextView(text: "Spring", color: Color("AniListPink"))
+                            .padding(.leading)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
+                        RectangleTextView(text: "Summer", color: .yellow)
+                            .padding(.trailing)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }//:HStack
+                
+                //MARK: Fall, Winter
+                HStack(alignment: .center) {
+                    NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
+                        RectangleTextView(text: "Fall", color: .brown)
+                            .padding(.leading)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
+                        RectangleTextView(text: "Winter", color: .blue)
+                            .padding(.trailing)
+                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }//:HStack
             }//:VStack
         }//:VScrollView
     }

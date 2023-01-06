@@ -27,6 +27,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Media": return API.Objects.Media
     case "MediaTitle": return API.Objects.MediaTitle
     case "MediaCoverImage": return API.Objects.MediaCoverImage
+    case "PageInfo": return API.Objects.PageInfo
     case "MediaTag": return API.Objects.MediaTag
     case "Mutation": return API.Objects.Mutation
     case "MediaList": return API.Objects.MediaList
@@ -34,7 +35,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "User": return API.Objects.User
     case "Favourites": return API.Objects.Favourites
     case "MediaConnection": return API.Objects.MediaConnection
-    case "PageInfo": return API.Objects.PageInfo
     case "UserAvatar": return API.Objects.UserAvatar
     case "StudioConnection": return API.Objects.StudioConnection
     case "Studio": return API.Objects.Studio
