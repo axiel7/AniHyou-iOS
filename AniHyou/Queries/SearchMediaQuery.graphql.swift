@@ -9,14 +9,20 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       """
-      query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType) {
+      query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String]) {
         Page(page: $page, perPage: $perPage) {
           __typename
           pageInfo {
             __typename
             hasNextPage
           }
-          media(search: $search, type: $type, sort: SEARCH_MATCH) {
+          media(
+            search: $search
+            type: $type
+            sort: $sort
+            genre_in: $genre_in
+            tag_in: $tag_in
+          ) {
             __typename
             id
             title {
@@ -42,24 +48,36 @@ public class SearchMediaQuery: GraphQLQuery {
   public var perPage: GraphQLNullable<Int>
   public var search: GraphQLNullable<String>
   public var type: GraphQLNullable<GraphQLEnum<API.MediaType>>
+  public var sort: GraphQLNullable<[GraphQLEnum<API.MediaSort>?]>
+  public var genre_in: GraphQLNullable<[String?]>
+  public var tag_in: GraphQLNullable<[String?]>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
     search: GraphQLNullable<String>,
-    type: GraphQLNullable<GraphQLEnum<API.MediaType>>
+    type: GraphQLNullable<GraphQLEnum<API.MediaType>>,
+    sort: GraphQLNullable<[GraphQLEnum<API.MediaSort>?]>,
+    genre_in: GraphQLNullable<[String?]>,
+    tag_in: GraphQLNullable<[String?]>
   ) {
     self.page = page
     self.perPage = perPage
     self.search = search
     self.type = type
+    self.sort = sort
+    self.genre_in = genre_in
+    self.tag_in = tag_in
   }
 
   public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "search": search,
-    "type": type
+    "type": type,
+    "sort": sort,
+    "genre_in": genre_in,
+    "tag_in": tag_in
   ] }
 
   public struct Data: API.SelectionSet {
@@ -89,7 +107,9 @@ public class SearchMediaQuery: GraphQLQuery {
         .field("media", [Medium?]?.self, arguments: [
           "search": .variable("search"),
           "type": .variable("type"),
-          "sort": "SEARCH_MATCH"
+          "sort": .variable("sort"),
+          "genre_in": .variable("genre_in"),
+          "tag_in": .variable("tag_in")
         ]),
       ] }
 

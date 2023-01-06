@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import API
 
 private let cardHeight: CGFloat = 90
 
@@ -13,6 +14,7 @@ struct ExploreView: View {
     
     @ObservedObject var viewModel: SearchViewModel
     @Environment(\.isSearching) private var isSearching
+    @State private var isGenreSheetPresented = false
     
     var body: some View {
         ZStack {
@@ -27,6 +29,11 @@ struct ExploreView: View {
                     
                     switch viewModel.type {
                     case .anime, .manga:
+                        
+                        mediaSortSelector
+                        
+                        genreTagSelector
+                        
                         ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                             if item != nil {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
@@ -123,6 +130,39 @@ struct ExploreView: View {
                 }//:HStack
             }//:VStack
         }//:VScrollView
+    }
+    
+    var mediaSortSelector: some View {
+        Picker("Sort", selection: $viewModel.sortMedia) {
+            Text("Search Match").tag(MediaSort.searchMatch)
+            Text("Popularity").tag(MediaSort.popularityDesc)
+            Text("Score").tag(MediaSort.scoreDesc)
+            Text("Trending").tag(MediaSort.trendingDesc)
+            Text("Favorites").tag(MediaSort.favouritesDesc)
+            Text("Release Date").tag(MediaSort.startDateDesc)
+        }
+        .onChange(of: viewModel.sortMedia) { _ in
+            viewModel.runSearch()
+        }
+    }
+    
+    var genreTagSelector: some View {
+        Button(action: { isGenreSheetPresented.toggle() }) {
+            HStack {
+                Text("Genres")
+                    .foregroundColor(.primary)
+                Spacer()
+                Text(viewModel.selectedGenresTagsJoined)
+                    .foregroundColor(.gray)
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }//:HStack
+        }//:Button
+        .sheet(isPresented: $isGenreSheetPresented) {
+            GenreTagSelectionView(viewModel: viewModel, onDone: {
+                viewModel.runSearch()
+            })
+        }//:Sheet
     }
 }
 
