@@ -85,17 +85,16 @@ struct ExploreView: View {
     
     var preSearchView: some View {
         ScrollView(.vertical) {
-            //MARK: Charts
             VStack(alignment: .leading) {
 
+                //MARK: - Charts
                 Text("Charts")
                     .font(.title2)
                     .bold()
                     .padding(.top, 8)
                     .padding(.leading, 15)
                 Divider()
-                    .padding(.leading)
-                    .padding(.trailing)
+                    .padding(.horizontal)
 
                 //MARK: top
                 HStack(alignment: .center) {
