@@ -84,6 +84,7 @@ struct ProfileView: View {
                     if isMyProfile {
                         NavigationLink(destination: SettingsView()) {
                             Label("Settings", systemImage: "gearshape")
+                                .shadow(radius: 10)
                         }
                     }
                 }
