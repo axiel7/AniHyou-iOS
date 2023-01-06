@@ -70,13 +70,14 @@ struct HomeView: View {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                             VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large)
+                                                .padding(.trailing, 2)
                                         }
                                     }
                                 }
                             }//:HStack
-                            .padding(.leading, 8)
+                            .padding(.leading, 12)
                         }//:HScrollView
-                        .frame(height: 165)
+                        .frame(height: 180)
                         .onAppear {
                             viewModel.getSeasonAnimes()
                         }
@@ -95,13 +96,14 @@ struct HomeView: View {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                             VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large)
+                                                .padding(.trailing, 2)
                                         }
                                     }
                                 }
                             }//:HStack
-                            .padding(.leading, 8)
+                            .padding(.leading, 12)
                         }//:HScrollView
-                        .frame(height: 165)
+                        .frame(height: 180)
                         .onAppear {
                             viewModel.getTrendingAnimes()
                         }

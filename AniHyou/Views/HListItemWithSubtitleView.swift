@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HListItemWithSubtitleView: View {
     
-    static let coverWidth: CGFloat = 80
-    static let coverHeight: CGFloat = 120
+    static let coverWidth: CGFloat = 90
+    static let coverHeight: CGFloat = 130
     
     var title: String?
     var subtitle: String?
@@ -23,9 +23,9 @@ struct HListItemWithSubtitleView: View {
             
             VStack(alignment: .leading) {
                 Text(title ?? "")
-                    .font(.title3)
+                    .font(.system(size: 16))
                     .foregroundColor(.primary)
-                    .padding(.bottom, 2)
+                    .padding(.bottom, 1)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 Text(subtitle ?? "")

@@ -9,23 +9,23 @@ import SwiftUI
 
 struct VListItemView: View {
     static let coverWidth: CGFloat = 90
-    static let coverHeight: CGFloat = 125
+    static let coverHeight: CGFloat = 130
     
     var title: String
     var imageUrl: String?
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             MediaCoverView(imageUrl: imageUrl, width: VListItemView.coverWidth, height: VListItemView.coverHeight, cancelOnDisappear: true)
                 .padding(.top, 4)
             
             Text(title)
-                .font(.system(size: 13))
+                .font(.system(size: 12))
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.primary)
         }
-        .frame(width: VListItemView.coverWidth + 20, height: VListItemView.coverHeight + 50, alignment: .top)
+        .frame(width: VListItemView.coverWidth, height: VListItemView.coverHeight + 50, alignment: .top)
     }
 }
 
