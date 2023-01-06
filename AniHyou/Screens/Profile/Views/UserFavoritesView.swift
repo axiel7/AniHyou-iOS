@@ -12,7 +12,7 @@ struct UserFavoritesView: View {
     var userId: Int
     @StateObject private var viewModel = UserFavoritesViewModel()
     private let gridColumns = [
-        GridItem(.adaptive(minimum: VListItemView.coverWidth + 20))
+        GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
     ]
     
     var body: some View {

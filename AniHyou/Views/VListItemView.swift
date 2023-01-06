@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct VListItemView: View {
-    static let coverWidth: CGFloat = 80
-    static let coverHeight: CGFloat = 120
+    static let coverWidth: CGFloat = 90
+    static let coverHeight: CGFloat = 125
     
     var title: String
     var imageUrl: String?
