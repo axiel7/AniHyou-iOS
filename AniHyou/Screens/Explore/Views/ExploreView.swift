@@ -83,7 +83,7 @@ struct ExploreView: View {
         }//:ZStack
     }
     
-    var preSearchView: some View {
+    private var preSearchView: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
 
@@ -172,7 +172,7 @@ struct ExploreView: View {
         }//:VScrollView
     }
     
-    var mediaSortSelector: some View {
+    private var mediaSortSelector: some View {
         Picker("Sort", selection: $viewModel.sortMedia) {
             Text("Search Match").tag(MediaSort.searchMatch)
             Text("Popularity").tag(MediaSort.popularityDesc)
@@ -186,7 +186,7 @@ struct ExploreView: View {
         }
     }
     
-    var genreTagSelector: some View {
+    private var genreTagSelector: some View {
         Button(action: { isGenreSheetPresented.toggle() }) {
             HStack {
                 Text("Genres")

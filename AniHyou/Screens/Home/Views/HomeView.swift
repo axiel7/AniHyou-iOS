@@ -27,7 +27,7 @@ struct HomeView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
-                    // MARK: Airing section
+                    // MARK: - Airing
                     Text("Airing Soon")
                         .sectionTitle()
                     ZStack {
@@ -56,10 +56,16 @@ struct HomeView: View {
                             viewModel.getAiringAnimes()
                         }
                     }//:ZStack
+                    Divider()
                     
-                    // MARK: season section
-                    Text("\(viewModel.nowAnimeSeason.season.localizedName) \(String(viewModel.nowAnimeSeason.year))")
-                        .sectionTitle()
+                    // MARK: - Season
+                    HStack {
+                        Text("\(viewModel.nowAnimeSeason.season.localizedName) \(String(viewModel.nowAnimeSeason.year))")
+                            .sectionTitle()
+                        Spacer()
+                        NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nowAnimeSeason.season))
+                            .padding(.horizontal)
+                    }
                     ZStack {
                         if viewModel.seasonAnimes.count == 0 {
                             ProgressView()
@@ -82,8 +88,9 @@ struct HomeView: View {
                             viewModel.getSeasonAnimes()
                         }
                     }//:ZStack
+                    Divider()
                     
-                    //MARK: trending section
+                    //MARK: - Trending
                     Text("Trending Now")
                         .sectionTitle()
                     ZStack {
