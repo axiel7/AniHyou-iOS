@@ -58,11 +58,12 @@ struct MediaRelationsAndRecommendationsView: View {
                                 if let recommendation = $0?.mediaRecommendation {
                                     NavigationLink(destination: MediaDetailsView(mediaId: recommendation.id)) {
                                         VListItemView(title: recommendation.title?.userPreferred ?? "", imageUrl: recommendation.coverImage?.large)
+                                            .padding(.trailing, 2)
                                     }
                                 }
                             }
                         }//:HStack
-                        .padding(.leading, 8)
+                        .padding(.leading, 12)
                     }//:HScrollView
                 }//:ZStack
                 .padding(.bottom)
