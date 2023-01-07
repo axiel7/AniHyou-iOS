@@ -22,7 +22,7 @@ class HomeViewModel: ObservableObject {
     func getAiringAnimes(page: Int = 1) {
         let todayTimestamp = Int(Date.now.timeIntervalSince1970)
         
-        Network.shared.apollo.fetch(query: AiringAnimesQuery(page: .some(page), perPage: .some(10), sort: .some([.case(.time)]), airingAtGreater: .some(todayTimestamp))) { [weak self] result in
+        Network.shared.apollo.fetch(query: AiringAnimesQuery(page: .some(page), perPage: .some(10), sort: .some([.case(.time)]), airingAtGreater: .some(todayTimestamp), airingAtLesser: .none)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

@@ -154,6 +154,8 @@
 		48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */; };
 		48E80F9E28734DA5002765FC /* FullCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E80F9D28734DA5002765FC /* FullCoverView.swift */; };
 		48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */; };
+		48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE81332969DDC00074482F /* CalendarAnimeView.swift */; };
+		48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE81352969DE1C0074482F /* CalendarViewModel.swift */; };
 		48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */; };
 		48F763EA28ACDFBB00C82D75 /* UserFavoritesAnime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */; };
 		48F763EC28ACE01E00C82D75 /* UserFavoritesManga.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */; };
@@ -326,6 +328,8 @@
 		48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaActivityItemView.swift; sourceTree = "<group>"; };
 		48E80F9D28734DA5002765FC /* FullCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCoverView.swift; sourceTree = "<group>"; };
 		48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppState.swift; sourceTree = "<group>"; };
+		48EE81332969DDC00074482F /* CalendarAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAnimeView.swift; sourceTree = "<group>"; };
+		48EE81352969DE1C0074482F /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesView.swift; sourceTree = "<group>"; };
 		48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesAnime.graphql; sourceTree = "<group>"; };
 		48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesManga.graphql; sourceTree = "<group>"; };
@@ -785,6 +789,7 @@
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
 				481E2D66288C008200D91A54 /* NotificationsView.swift */,
+				48EE81332969DDC00074482F /* CalendarAnimeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -794,6 +799,7 @@
 			children = (
 				481AD4F72851D927001779EE /* HomeViewModel.swift */,
 				481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */,
+				48EE81352969DE1C0074482F /* CalendarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1214,6 +1220,7 @@
 				4837455F2964192F00E81CA3 /* StudioDetailsViewModel.swift in Sources */,
 				4870AB1228EC7551008431B5 /* UserFavoritesMangaQuery.graphql.swift in Sources */,
 				4870AB1D28EC7551008431B5 /* UserActivityQuery.graphql.swift in Sources */,
+				48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */,
 				4870AB1328EC7551008431B5 /* UserMediaListQuery.graphql.swift in Sources */,
 				480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */,
 				489C7E9A29193944004B0B39 /* UserBasicInfoQuery.graphql.swift in Sources */,
@@ -1232,6 +1239,7 @@
 				4870AB0228EC7551008431B5 /* MediaReviewsQuery.graphql.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
+				48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */,
 				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,
 				48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */,
 				484A6D64287480FB0044C34A /* ReviewItemView.swift in Sources */,

@@ -25,18 +25,22 @@ extension Date {
         return Calendar(identifier: .gregorian).component(.day, from: self)
     }
     
+    var weekday: Int {
+        return Calendar(identifier: .gregorian).component(.weekday, from: self)
+    }
+    
     var season: MediaSeason {
         switch self.month {
         case 1, 2, 12:
-            return MediaSeason.winter
+            return .winter
         case 3, 4, 5:
-            return MediaSeason.spring
+            return .spring
         case 6, 7, 8:
-            return MediaSeason.summer
+            return .summer
         case 9, 10, 11:
-            return MediaSeason.fall
+            return .fall
         default:
-            return MediaSeason.spring
+            return .spring
         }
     }
     
@@ -48,6 +52,18 @@ extension Date {
         }
         
         return animeSeason
+    }
+    
+    func getThisWeekdayTimestamp(weekday: Int, isEndOfDay: Bool) -> Int {
+        let diff = weekday - self.weekday
+        if let weekdayDate = Calendar.current.date(byAdding: .day, value: diff, to: self) {
+            if isEndOfDay {
+                return Int(Calendar.current.date(byAdding: DateComponents(day: 1, second: -1), to: weekdayDate)!.timeIntervalSince1970)
+            } else {
+                return Int(Calendar.current.startOfDay(for: weekdayDate).timeIntervalSince1970)
+            }
+        }
+        else { return 0 }
     }
     
     func toFuzzyDate() -> FuzzyDateInput {

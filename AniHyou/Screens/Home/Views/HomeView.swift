@@ -28,8 +28,13 @@ struct HomeView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
                     // MARK: - Airing
-                    Text("Airing Soon")
-                        .sectionTitle()
+                    HStack {
+                        Text("Airing Soon")
+                            .sectionTitle()
+                        Spacer()
+                        NavigationLink("See All", destination: CalendarAnimeView())
+                            .padding(.horizontal)
+                    }
                     ZStack {
                         if viewModel.airingAnimes.count == 0 {
                             Text("No anime for today\n(*´-`)")

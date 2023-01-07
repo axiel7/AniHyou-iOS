@@ -9,10 +9,14 @@ public class AiringAnimesQuery: GraphQLQuery {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       """
-      query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int) {
+      query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {
         Page(page: $page, perPage: $perPage) {
           __typename
-          airingSchedules(sort: $sort, airingAt_greater: $airingAtGreater) {
+          airingSchedules(
+            sort: $sort
+            airingAt_greater: $airingAtGreater
+            airingAt_lesser: $airingAtLesser
+          ) {
             __typename
             media {
               __typename
@@ -28,6 +32,10 @@ public class AiringAnimesQuery: GraphQLQuery {
             }
             timeUntilAiring
           }
+          pageInfo {
+            __typename
+            hasNextPage
+          }
         }
       }
       """
@@ -37,24 +45,28 @@ public class AiringAnimesQuery: GraphQLQuery {
   public var perPage: GraphQLNullable<Int>
   public var sort: GraphQLNullable<[GraphQLEnum<API.AiringSort>?]>
   public var airingAtGreater: GraphQLNullable<Int>
+  public var airingAtLesser: GraphQLNullable<Int>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
     sort: GraphQLNullable<[GraphQLEnum<API.AiringSort>?]>,
-    airingAtGreater: GraphQLNullable<Int>
+    airingAtGreater: GraphQLNullable<Int>,
+    airingAtLesser: GraphQLNullable<Int>
   ) {
     self.page = page
     self.perPage = perPage
     self.sort = sort
     self.airingAtGreater = airingAtGreater
+    self.airingAtLesser = airingAtLesser
   }
 
   public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "sort": sort,
-    "airingAtGreater": airingAtGreater
+    "airingAtGreater": airingAtGreater,
+    "airingAtLesser": airingAtLesser
   ] }
 
   public struct Data: API.SelectionSet {
@@ -82,11 +94,15 @@ public class AiringAnimesQuery: GraphQLQuery {
       public static var __selections: [Selection] { [
         .field("airingSchedules", [AiringSchedule?]?.self, arguments: [
           "sort": .variable("sort"),
-          "airingAt_greater": .variable("airingAtGreater")
+          "airingAt_greater": .variable("airingAtGreater"),
+          "airingAt_lesser": .variable("airingAtLesser")
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
       public var airingSchedules: [AiringSchedule?]? { __data["airingSchedules"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
 
       /// Page.AiringSchedule
       ///
@@ -159,6 +175,22 @@ public class AiringAnimesQuery: GraphQLQuery {
             public var large: String? { __data["large"] }
           }
         }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: API.SelectionSet {
+        public let __data: DataDict
+        public init(data: DataDict) { __data = data }
+
+        public static var __parentType: ParentType { API.Objects.PageInfo }
+        public static var __selections: [Selection] { [
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }
