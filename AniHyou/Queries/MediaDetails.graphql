@@ -45,11 +45,7 @@ query MediaDetails($mediaId: Int) {
       episode
     }
     mediaListEntry {
-      id
-      status
-      score
-      progress
-      progressVolumes
+      ...BasicMediaListEntry
       startedAt {
         ...FuzzyDate
       }

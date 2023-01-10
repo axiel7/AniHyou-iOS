@@ -13,20 +13,21 @@ struct MediaListEditView: View {
     
     var mediaId: Int
     var mediaType: MediaType
-    var mediaList: MediaDetailsQuery.Data.Media.MediaListEntry?
+    var mediaList: BasicMediaListEntry?
+    var onSave: () -> Void = {}
     
-    @StateObject var viewModel = MediaListEditViewModel()
-    @State var showDeleteDialog = false
+    @StateObject private var viewModel = MediaListEditViewModel()
+    @State private var showDeleteDialog = false
     
-    @State var status: MediaListStatus = .planning
-    @State var progress: Int = 0
-    @State var progressVolumes: Int = 0
-    @State var startDate: Date = Date()
-    @State var isStartDateSet: Bool = false
-    @State var finishDate: Date = Date()
-    @State var isFinishDateSet: Bool = false
-    @State var showStartDate = false
-    @State var showFinishDate = false
+    @State private var status: MediaListStatus = .planning
+    @State private var progress = 0
+    @State private var progressVolumes = 0
+    @State private var startDate = Date()
+    @State private var isStartDateSet = false
+    @State private var finishDate = Date()
+    @State private var isFinishDateSet = false
+    @State private var showStartDate = false
+    @State private var showFinishDate = false
     
     private let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -128,6 +129,7 @@ struct MediaListEditView: View {
         }
         .onChange(of: viewModel.isUpdateSuccess) { isUpdateSuccess in
             if isUpdateSuccess {
+                onSave()
                 dismiss()
             }
         }

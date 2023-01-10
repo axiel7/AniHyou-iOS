@@ -60,7 +60,7 @@ struct MediaDetailsMainInfo: View {
                     }//:Button
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showingEditSheet) {
-                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!.value!, mediaList: viewModel.mediaDetails!.mediaListEntry)
+                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!.value!, mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry)
                     }
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }

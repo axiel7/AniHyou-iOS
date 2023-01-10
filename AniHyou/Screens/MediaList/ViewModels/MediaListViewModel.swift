@@ -12,6 +12,7 @@ import API
 class MediaListViewModel: ObservableObject {
     
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
+    var selectedItem: UserMediaListQuery.Data.Page.MediaList? = nil
     
     var currentPage = 1
     var hasNextPage = true

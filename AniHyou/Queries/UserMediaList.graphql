@@ -1,12 +1,8 @@
 query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {
   Page(page: $page, perPage: $perPage) {
     mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
-      id
+      ...BasicMediaListEntry
       mediaId
-      status
-      score
-      progress
-      progressVolumes
       media {
         title {
           userPreferred
@@ -28,5 +24,19 @@ query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $
     pageInfo {
       hasNextPage
     }
+  }
+}
+
+fragment BasicMediaListEntry on MediaList {
+  id
+  status
+  score
+  progress
+  progressVolumes
+  startedAt {
+    ...FuzzyDate
+  }
+  completedAt {
+    ...FuzzyDate
   }
 }

@@ -14,12 +14,8 @@ public class UserMediaListQuery: GraphQLQuery {
           __typename
           mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
             __typename
-            id
+            ...BasicMediaListEntry
             mediaId
-            status
-            score
-            progress
-            progressVolumes
             media {
               __typename
               title {
@@ -48,7 +44,8 @@ public class UserMediaListQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """,
+      fragments: [BasicMediaListEntry.self, FuzzyDate.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -128,19 +125,16 @@ public class UserMediaListQuery: GraphQLQuery {
 
         public static var __parentType: ParentType { API.Objects.MediaList }
         public static var __selections: [Selection] { [
-          .field("id", Int.self),
           .field("mediaId", Int.self),
-          .field("status", GraphQLEnum<API.MediaListStatus>?.self),
-          .field("score", Double?.self),
-          .field("progress", Int?.self),
-          .field("progressVolumes", Int?.self),
           .field("media", Media?.self),
+          .fragment(BasicMediaListEntry.self),
         ] }
 
-        /// The id of the list entry
-        public var id: Int { __data["id"] }
         /// The id of the media
         public var mediaId: Int { __data["mediaId"] }
+        public var media: Media? { __data["media"] }
+        /// The id of the list entry
+        public var id: Int { __data["id"] }
         /// The watching/reading status
         public var status: GraphQLEnum<API.MediaListStatus>? { __data["status"] }
         /// The score of the entry
@@ -149,7 +143,17 @@ public class UserMediaListQuery: GraphQLQuery {
         public var progress: Int? { __data["progress"] }
         /// The amount of volumes read by the user
         public var progressVolumes: Int? { __data["progressVolumes"] }
-        public var media: Media? { __data["media"] }
+        /// When the entry was started by the user
+        public var startedAt: StartedAt? { __data["startedAt"] }
+        /// When the entry was completed by the user
+        public var completedAt: CompletedAt? { __data["completedAt"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(data: DataDict) { __data = data }
+
+          public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
+        }
 
         /// Page.MediaList.Media
         ///
@@ -236,6 +240,53 @@ public class UserMediaListQuery: GraphQLQuery {
             public var episode: Int { __data["episode"] }
             /// Seconds until episode starts airing
             public var timeUntilAiring: Int { __data["timeUntilAiring"] }
+          }
+        }
+        /// Page.MediaList.StartedAt
+        ///
+        /// Parent Type: `FuzzyDate`
+        public struct StartedAt: API.SelectionSet {
+          public let __data: DataDict
+          public init(data: DataDict) { __data = data }
+
+          public static var __parentType: ParentType { API.Objects.FuzzyDate }
+
+          /// Numeric Day (24)
+          public var day: Int? { __data["day"] }
+          /// Numeric Month (3)
+          public var month: Int? { __data["month"] }
+          /// Numeric Year (2017)
+          public var year: Int? { __data["year"] }
+
+          public struct Fragments: FragmentContainer {
+            public let __data: DataDict
+            public init(data: DataDict) { __data = data }
+
+            public var fuzzyDate: FuzzyDate { _toFragment() }
+          }
+        }
+
+        /// Page.MediaList.CompletedAt
+        ///
+        /// Parent Type: `FuzzyDate`
+        public struct CompletedAt: API.SelectionSet {
+          public let __data: DataDict
+          public init(data: DataDict) { __data = data }
+
+          public static var __parentType: ParentType { API.Objects.FuzzyDate }
+
+          /// Numeric Day (24)
+          public var day: Int? { __data["day"] }
+          /// Numeric Month (3)
+          public var month: Int? { __data["month"] }
+          /// Numeric Year (2017)
+          public var year: Int? { __data["year"] }
+
+          public struct Fragments: FragmentContainer {
+            public let __data: DataDict
+            public init(data: DataDict) { __data = data }
+
+            public var fuzzyDate: FuzzyDate { _toFragment() }
           }
         }
       }

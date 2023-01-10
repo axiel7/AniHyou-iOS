@@ -13,6 +13,7 @@ struct MediaListView: View {
     var type: MediaType
     var status: MediaListStatus
     @StateObject private var viewModel = MediaListViewModel()
+    @State private var showingEditSheet = false
     
     var body: some View {
         List {
@@ -28,6 +29,13 @@ struct MediaListView: View {
                             }
                             .tint(.green)
                         }
+                        Button(action: {
+                            viewModel.selectedItem = item
+                            showingEditSheet = true
+                        }) {
+                            Label("Edit", systemImage: "square.and.pencil")
+                        }
+                        .tint(.blue)
                     }
                 }
             }//:ForEach
@@ -39,6 +47,13 @@ struct MediaListView: View {
                     }
             }
         }//:List
+        .sheet(isPresented: $showingEditSheet) {
+            if viewModel.selectedItem != nil {
+                MediaListEditView(mediaId: viewModel.selectedItem!.mediaId, mediaType: type, mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry) {
+                    viewModel.refreshList()
+                }
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Menu {

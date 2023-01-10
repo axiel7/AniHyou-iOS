@@ -65,11 +65,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           }
           mediaListEntry {
             __typename
-            id
-            status
-            score
-            progress
-            progressVolumes
+            ...BasicMediaListEntry
             startedAt {
               __typename
               ...FuzzyDate
@@ -91,7 +87,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         }
       }
       """,
-      fragments: [FuzzyDate.self]
+      fragments: [FuzzyDate.self, BasicMediaListEntry.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>
@@ -367,15 +363,15 @@ public class MediaDetailsQuery: GraphQLQuery {
 
         public static var __parentType: ParentType { API.Objects.MediaList }
         public static var __selections: [Selection] { [
-          .field("id", Int.self),
-          .field("status", GraphQLEnum<API.MediaListStatus>?.self),
-          .field("score", Double?.self),
-          .field("progress", Int?.self),
-          .field("progressVolumes", Int?.self),
           .field("startedAt", StartedAt?.self),
           .field("completedAt", CompletedAt?.self),
+          .fragment(BasicMediaListEntry.self),
         ] }
 
+        /// When the entry was started by the user
+        public var startedAt: StartedAt? { __data["startedAt"] }
+        /// When the entry was completed by the user
+        public var completedAt: CompletedAt? { __data["completedAt"] }
         /// The id of the list entry
         public var id: Int { __data["id"] }
         /// The watching/reading status
@@ -386,10 +382,13 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var progress: Int? { __data["progress"] }
         /// The amount of volumes read by the user
         public var progressVolumes: Int? { __data["progressVolumes"] }
-        /// When the entry was started by the user
-        public var startedAt: StartedAt? { __data["startedAt"] }
-        /// When the entry was completed by the user
-        public var completedAt: CompletedAt? { __data["completedAt"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(data: DataDict) { __data = data }
+
+          public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
+        }
 
         /// Media.MediaListEntry.StartedAt
         ///
