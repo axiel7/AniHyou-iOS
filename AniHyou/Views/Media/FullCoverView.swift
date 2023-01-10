@@ -42,8 +42,10 @@ struct FullCoverView: View {
             }//:VStack
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button("Done") {
+                    Button(action: {
                         dismiss()
+                    }) {
+                        Text("Done").bold()
                     }
                 }
             }
