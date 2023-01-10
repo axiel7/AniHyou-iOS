@@ -54,6 +54,7 @@ extension Date {
         return animeSeason
     }
     
+    /// returns the requesed weekday timestamp (start or end of the day)
     func getThisWeekdayTimestamp(weekday: Int, isEndOfDay: Bool) -> Int {
         let diff = weekday - self.weekday
         if let weekdayDate = Calendar.current.date(byAdding: .day, value: diff, to: self) {

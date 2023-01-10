@@ -12,7 +12,6 @@ import SwiftUI
 struct RootExploreView: View {
     
     @StateObject private var viewModel = SearchViewModel()
-    @State var searchText: String = ""
     
     var body: some View {
         NavigationView {

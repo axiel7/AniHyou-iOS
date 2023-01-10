@@ -33,8 +33,8 @@ extension View {
 
 struct ContentView: View {
     
-    @State var justLogged: Bool = false
-    @AppStorage("selected_tab_index") var selectedTabIndex: Int = 0
+    @State private var justLogged: Bool = false
+    @AppStorage("selected_tab_index") private var selectedTabIndex: Int = 0
     
     var body: some View {
         TabView(selection: $selectedTabIndex) {

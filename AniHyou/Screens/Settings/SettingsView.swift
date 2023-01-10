@@ -11,7 +11,7 @@ struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewModel()
     @State private var showLogOutDialog = false
-    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
     var body: some View {
         Form {
