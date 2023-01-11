@@ -6,18 +6,11 @@
 //
 
 import SwiftUI
-import netfox
 
 @main
 struct AniHyouApp: App {
     
     @StateObject private var globalAppState = GlobalAppState.shared
-    
-    init() {
-        #if DEBUG
-        NFX.sharedInstance().start()
-        #endif
-    }
     
     var body: some Scene {
         WindowGroup {

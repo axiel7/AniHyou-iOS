@@ -150,7 +150,6 @@
 		48CA07B928709FFF0048854E /* MediaRelationsAndRecommendations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */; };
 		48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */; };
 		48E03D0F2965A49D0080C60A /* GenreTagCollectionQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */; };
-		48E4BBDB285484D50070DDD6 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 48E4BBDA285484D50070DDD6 /* netfox */; };
 		48E7CAF328AA512D00F9CE24 /* UserActivity.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */; };
 		48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */; };
 		48E80F9E28734DA5002765FC /* FullCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E80F9D28734DA5002765FC /* FullCoverView.swift */; };
@@ -366,7 +365,13 @@
 				481AD4EE2851CF90001779EE /* Apollo in Frameworks */,
 				480F882929426995004773CC /* API in Frameworks */,
 				48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */,
-				48E4BBDB285484D50070DDD6 /* netfox in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F27907296EFE77000827F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,7 +1040,6 @@
 			packageProductDependencies = (
 				481AD4ED2851CF90001779EE /* Apollo */,
 				488C268728539CC30005EE15 /* KeychainSwift */,
-				48E4BBDA285484D50070DDD6 /* netfox */,
 				481A6B0F2864CD0F00AB9C89 /* Kingfisher */,
 				48604D7A28A15AD1006A6AF8 /* RichText */,
 				480F882829426995004773CC /* API */,
@@ -1071,7 +1075,6 @@
 			packageReferences = (
 				481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */,
 				481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */,
 			);
@@ -1506,14 +1509,6 @@
 				minimumVersion = 20.0.0;
 			};
 		};
-		48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kasketis/netfox";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.21.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1540,11 +1535,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
-		};
-		48E4BBDA285484D50070DDD6 /* netfox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 48E4BBD9285484D50070DDD6 /* XCRemoteSwiftPackageReference "netfox" */;
-			productName = netfox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
