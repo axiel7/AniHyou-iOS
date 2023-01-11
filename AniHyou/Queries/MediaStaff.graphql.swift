@@ -27,8 +27,8 @@ public struct MediaStaff: API.SelectionSet, Fragment {
   public let __data: DataDict
   public init(data: DataDict) { __data = data }
 
-  public static var __parentType: ParentType { API.Objects.StaffEdge }
-  public static var __selections: [Selection] { [
+  public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffEdge }
+  public static var __selections: [ApolloAPI.Selection] { [
     .field("role", String?.self),
     .field("node", Node?.self),
   ] }
@@ -44,8 +44,8 @@ public struct MediaStaff: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Staff }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Staff }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("id", Int.self),
       .field("name", Name?.self),
       .field("image", Image?.self),
@@ -65,8 +65,8 @@ public struct MediaStaff: API.SelectionSet, Fragment {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.StaffName }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffName }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("userPreferred", String?.self),
       ] }
 
@@ -81,8 +81,8 @@ public struct MediaStaff: API.SelectionSet, Fragment {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.StaffImage }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffImage }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("medium", String?.self),
       ] }
 

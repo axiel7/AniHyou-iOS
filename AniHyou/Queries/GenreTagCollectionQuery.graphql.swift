@@ -8,7 +8,7 @@ public class GenreTagCollectionQuery: GraphQLQuery {
   public static let operationName: String = "GenreTagCollectionQuery"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query GenreTagCollectionQuery {
         GenreCollection
         MediaTagCollection {
@@ -17,7 +17,7 @@ public class GenreTagCollectionQuery: GraphQLQuery {
           name
         }
       }
-      """
+      """#
     ))
 
   public init() {}
@@ -26,8 +26,8 @@ public class GenreTagCollectionQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("GenreCollection", [String?]?.self),
       .field("MediaTagCollection", [MediaTagCollection?]?.self),
     ] }
@@ -44,8 +44,8 @@ public class GenreTagCollectionQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.MediaTag }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTag }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("name", String.self),
       ] }

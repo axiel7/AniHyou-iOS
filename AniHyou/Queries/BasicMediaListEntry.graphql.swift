@@ -27,8 +27,8 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
   public let __data: DataDict
   public init(data: DataDict) { __data = data }
 
-  public static var __parentType: ParentType { API.Objects.MediaList }
-  public static var __selections: [Selection] { [
+  public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
+  public static var __selections: [ApolloAPI.Selection] { [
     .field("id", Int.self),
     .field("status", GraphQLEnum<API.MediaListStatus>?.self),
     .field("score", Double?.self),
@@ -60,8 +60,8 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.FuzzyDate }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
+    public static var __selections: [ApolloAPI.Selection] { [
       .fragment(FuzzyDate.self),
     ] }
 
@@ -87,8 +87,8 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.FuzzyDate }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
+    public static var __selections: [ApolloAPI.Selection] { [
       .fragment(FuzzyDate.self),
     ] }
 

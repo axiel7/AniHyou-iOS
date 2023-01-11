@@ -32,8 +32,8 @@ public struct UserInfo: API.SelectionSet, Fragment {
   public let __data: DataDict
   public init(data: DataDict) { __data = data }
 
-  public static var __parentType: ParentType { API.Objects.User }
-  public static var __selections: [Selection] { [
+  public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+  public static var __selections: [ApolloAPI.Selection] { [
     .field("id", Int.self),
     .field("name", String.self),
     .field("avatar", Avatar?.self),
@@ -65,8 +65,8 @@ public struct UserInfo: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.UserAvatar }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.UserAvatar }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("large", String?.self),
     ] }
 
@@ -81,8 +81,8 @@ public struct UserInfo: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.UserOptions }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.UserOptions }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("profileColor", String?.self),
       .field("staffNameLanguage", GraphQLEnum<API.UserStaffNameLanguage>?.self),
       .field("titleLanguage", GraphQLEnum<API.UserTitleLanguage>?.self),
@@ -103,8 +103,8 @@ public struct UserInfo: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.MediaListOptions }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaListOptions }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("scoreFormat", GraphQLEnum<API.ScoreFormat>?.self),
     ] }
 

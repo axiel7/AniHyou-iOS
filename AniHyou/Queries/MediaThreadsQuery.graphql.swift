@@ -8,7 +8,7 @@ public class MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) {
         Page(page: $page, perPage: $perPage) {
           __typename
@@ -28,7 +28,7 @@ public class MediaThreadsQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -59,8 +59,8 @@ public class MediaThreadsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
@@ -76,8 +76,8 @@ public class MediaThreadsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Page }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("threads", [Thread?]?.self, arguments: [
           "mediaCategoryId": .variable("mediaCategoryId"),
           "sort": .variable("sort")
@@ -93,8 +93,8 @@ public class MediaThreadsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.Thread }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.Thread }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("title", String?.self),
           .field("body", String?.self, arguments: ["asHtml": true]),
@@ -129,8 +129,8 @@ public class MediaThreadsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.User }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("name", String.self),
           ] }
 

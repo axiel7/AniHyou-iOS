@@ -8,7 +8,7 @@ public class ThreadCommentsQuery: GraphQLQuery {
   public static let operationName: String = "ThreadComments"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {
         Page(page: $page, perPage: $perPage) {
           __typename
@@ -30,7 +30,7 @@ public class ThreadCommentsQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -57,8 +57,8 @@ public class ThreadCommentsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
@@ -74,8 +74,8 @@ public class ThreadCommentsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Page }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("threadComments", [ThreadComment?]?.self, arguments: ["threadId": .variable("threadId")]),
         .field("pageInfo", PageInfo?.self),
       ] }
@@ -91,8 +91,8 @@ public class ThreadCommentsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.ThreadComment }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.ThreadComment }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("comment", String?.self, arguments: ["asHtml": false]),
           .field("likeCount", Int.self),
@@ -118,8 +118,8 @@ public class ThreadCommentsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.User }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("name", String.self),
           ] }
 
@@ -135,8 +135,8 @@ public class ThreadCommentsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.PageInfo }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
         ] }

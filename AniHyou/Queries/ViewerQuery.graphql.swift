@@ -8,14 +8,14 @@ public class ViewerQuery: GraphQLQuery {
   public static let operationName: String = "Viewer"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query Viewer {
         Viewer {
           __typename
           ...UserInfo
         }
       }
-      """,
+      """#,
       fragments: [UserInfo.self]
     ))
 
@@ -25,8 +25,8 @@ public class ViewerQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Viewer", Viewer?.self),
     ] }
 
@@ -40,8 +40,8 @@ public class ViewerQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.User }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+      public static var __selections: [ApolloAPI.Selection] { [
         .fragment(UserInfo.self),
       ] }
 

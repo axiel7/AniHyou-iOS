@@ -8,7 +8,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
   public static let operationName: String = "MediaCharactersAndStaff"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query MediaCharactersAndStaff($mediaId: Int) {
         Media(id: $mediaId) {
           __typename
@@ -28,7 +28,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
           }
         }
       }
-      """,
+      """#,
       fragments: [MediaCharacter.self, MediaStaff.self]
     ))
 
@@ -44,8 +44,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
     ] }
 
@@ -59,8 +59,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Media }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("characters", Characters?.self, arguments: [
           "page": 1,
           "perPage": 25
@@ -83,8 +83,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.CharacterConnection }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterConnection }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("edges", [Edge?]?.self),
         ] }
 
@@ -97,8 +97,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.CharacterEdge }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterEdge }
+          public static var __selections: [ApolloAPI.Selection] { [
             .fragment(MediaCharacter.self),
           ] }
 
@@ -124,8 +124,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.StaffConnection }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffConnection }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("edges", [Edge?]?.self),
         ] }
 
@@ -138,8 +138,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.StaffEdge }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffEdge }
+          public static var __selections: [ApolloAPI.Selection] { [
             .fragment(MediaStaff.self),
           ] }
 

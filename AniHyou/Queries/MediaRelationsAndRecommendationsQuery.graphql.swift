@@ -8,7 +8,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
   public static let operationName: String = "MediaRelationsAndRecommendations"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query MediaRelationsAndRecommendations($mediaId: Int) {
         Media(id: $mediaId) {
           __typename
@@ -28,7 +28,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
           }
         }
       }
-      """,
+      """#,
       fragments: [MediaRelated.self, MediaRecommended.self]
     ))
 
@@ -44,8 +44,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
     ] }
 
@@ -59,8 +59,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Media }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("relations", Relations?.self),
         .field("recommendations", Recommendations?.self, arguments: [
           "page": 1,
@@ -80,8 +80,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.MediaConnection }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaConnection }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("edges", [Edge?]?.self),
         ] }
 
@@ -94,8 +94,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.MediaEdge }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaEdge }
+          public static var __selections: [ApolloAPI.Selection] { [
             .fragment(MediaRelated.self),
           ] }
 
@@ -119,8 +119,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.RecommendationConnection }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.RecommendationConnection }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("nodes", [Node?]?.self),
         ] }
 
@@ -133,8 +133,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.Recommendation }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.Recommendation }
+          public static var __selections: [ApolloAPI.Selection] { [
             .fragment(MediaRecommended.self),
           ] }
 

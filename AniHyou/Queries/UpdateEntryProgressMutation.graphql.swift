@@ -8,7 +8,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntryProgress"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int) {
         SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress) {
           __typename
@@ -17,7 +17,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
           progress
         }
       }
-      """
+      """#
     ))
 
   public var saveMediaListEntryId: GraphQLNullable<Int>
@@ -40,8 +40,8 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Mutation }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Mutation }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("SaveMediaListEntry", SaveMediaListEntry?.self, arguments: [
         "id": .variable("saveMediaListEntryId"),
         "progress": .variable("progress")
@@ -58,8 +58,8 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.MediaList }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("mediaId", Int.self),
         .field("progress", Int?.self),

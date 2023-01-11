@@ -8,7 +8,7 @@ public class SearchStaffQuery: GraphQLQuery {
   public static let operationName: String = "SearchStaff"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query SearchStaff($page: Int, $perPage: Int, $search: String) {
         Page(page: $page, perPage: $perPage) {
           __typename
@@ -31,7 +31,7 @@ public class SearchStaffQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -58,8 +58,8 @@ public class SearchStaffQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
@@ -75,8 +75,8 @@ public class SearchStaffQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Page }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("staff", [Staff?]?.self, arguments: [
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
@@ -95,8 +95,8 @@ public class SearchStaffQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.Staff }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.Staff }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("name", Name?.self),
           .field("image", Image?.self),
@@ -119,8 +119,8 @@ public class SearchStaffQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.StaffName }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffName }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("userPreferred", String?.self),
           ] }
 
@@ -135,8 +135,8 @@ public class SearchStaffQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.StaffImage }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffImage }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("medium", String?.self),
           ] }
 
@@ -152,8 +152,8 @@ public class SearchStaffQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.PageInfo }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("hasNextPage", Bool?.self),
         ] }
 

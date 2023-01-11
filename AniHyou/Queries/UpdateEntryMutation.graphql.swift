@@ -8,7 +8,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntry"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {
         SaveMediaListEntry(
           mediaId: $mediaId
@@ -36,7 +36,7 @@ public class UpdateEntryMutation: GraphQLMutation {
           }
         }
       }
-      """,
+      """#,
       fragments: [FuzzyDate.self]
     ))
 
@@ -80,8 +80,8 @@ public class UpdateEntryMutation: GraphQLMutation {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Mutation }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Mutation }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("SaveMediaListEntry", SaveMediaListEntry?.self, arguments: [
         "mediaId": .variable("mediaId"),
         "status": .variable("status"),
@@ -103,8 +103,8 @@ public class UpdateEntryMutation: GraphQLMutation {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.MediaList }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("mediaId", Int.self),
         .field("status", GraphQLEnum<API.MediaListStatus>?.self),
@@ -139,8 +139,8 @@ public class UpdateEntryMutation: GraphQLMutation {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.FuzzyDate }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
+        public static var __selections: [ApolloAPI.Selection] { [
           .fragment(FuzzyDate.self),
         ] }
 
@@ -166,8 +166,8 @@ public class UpdateEntryMutation: GraphQLMutation {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.FuzzyDate }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
+        public static var __selections: [ApolloAPI.Selection] { [
           .fragment(FuzzyDate.self),
         ] }
 

@@ -17,8 +17,8 @@ public struct FuzzyDate: API.SelectionSet, Fragment {
   public let __data: DataDict
   public init(data: DataDict) { __data = data }
 
-  public static var __parentType: ParentType { API.Objects.FuzzyDate }
-  public static var __selections: [Selection] { [
+  public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
+  public static var __selections: [ApolloAPI.Selection] { [
     .field("day", Int?.self),
     .field("month", Int?.self),
     .field("year", Int?.self),

@@ -8,7 +8,7 @@ public class ViewerIdQuery: GraphQLQuery {
   public static let operationName: String = "ViewerId"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query ViewerId {
         Viewer {
           __typename
@@ -25,7 +25,7 @@ public class ViewerIdQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public init() {}
@@ -34,8 +34,8 @@ public class ViewerIdQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Viewer", Viewer?.self),
     ] }
 
@@ -49,8 +49,8 @@ public class ViewerIdQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.User }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("options", Options?.self),
         .field("mediaListOptions", MediaListOptions?.self),
@@ -70,8 +70,8 @@ public class ViewerIdQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.UserOptions }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.UserOptions }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("profileColor", String?.self),
           .field("staffNameLanguage", GraphQLEnum<API.UserStaffNameLanguage>?.self),
           .field("titleLanguage", GraphQLEnum<API.UserTitleLanguage>?.self),
@@ -92,8 +92,8 @@ public class ViewerIdQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.MediaListOptions }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaListOptions }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("scoreFormat", GraphQLEnum<API.ScoreFormat>?.self),
         ] }
 

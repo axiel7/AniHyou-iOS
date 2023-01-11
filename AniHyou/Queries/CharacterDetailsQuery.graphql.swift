@@ -8,7 +8,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
   public static let operationName: String = "CharacterDetails"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query CharacterDetails($characterId: Int) {
         Character(id: $characterId) {
           __typename
@@ -34,7 +34,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
           bloodType
         }
       }
-      """,
+      """#,
       fragments: [FuzzyDate.self]
     ))
 
@@ -50,8 +50,8 @@ public class CharacterDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Character", Character?.self, arguments: ["id": .variable("characterId")]),
     ] }
 
@@ -65,8 +65,8 @@ public class CharacterDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Character }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Character }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("name", Name?.self),
         .field("image", Image?.self),
@@ -101,8 +101,8 @@ public class CharacterDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.CharacterName }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterName }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("userPreferred", String?.self),
           .field("native", String?.self),
           .field("alternative", [String?]?.self),
@@ -126,8 +126,8 @@ public class CharacterDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.CharacterImage }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterImage }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("large", String?.self),
         ] }
 
@@ -142,8 +142,8 @@ public class CharacterDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.FuzzyDate }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
+        public static var __selections: [ApolloAPI.Selection] { [
           .fragment(FuzzyDate.self),
         ] }
 

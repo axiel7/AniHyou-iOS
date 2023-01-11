@@ -8,14 +8,14 @@ public class DeleteMediaListMutation: GraphQLMutation {
   public static let operationName: String = "DeleteMediaList"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       mutation DeleteMediaList($mediaListEntryId: Int) {
         DeleteMediaListEntry(id: $mediaListEntryId) {
           __typename
           deleted
         }
       }
-      """
+      """#
     ))
 
   public var mediaListEntryId: GraphQLNullable<Int>
@@ -30,8 +30,8 @@ public class DeleteMediaListMutation: GraphQLMutation {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Mutation }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Mutation }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("DeleteMediaListEntry", DeleteMediaListEntry?.self, arguments: ["id": .variable("mediaListEntryId")]),
     ] }
 
@@ -45,8 +45,8 @@ public class DeleteMediaListMutation: GraphQLMutation {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Deleted }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Deleted }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("deleted", Bool?.self),
       ] }
 

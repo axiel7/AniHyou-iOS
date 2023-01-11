@@ -8,7 +8,7 @@ public class UserActivityQuery: GraphQLQuery {
   public static let operationName: String = "UserActivity"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) {
         Page(page: $page, perPage: $perPage) {
           __typename
@@ -47,7 +47,7 @@ public class UserActivityQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -78,8 +78,8 @@ public class UserActivityQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
@@ -95,8 +95,8 @@ public class UserActivityQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Page }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("activities", [Activity?]?.self, arguments: [
           "userId": .variable("userId"),
           "sort": .variable("sort")
@@ -115,8 +115,8 @@ public class UserActivityQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Unions.ActivityUnion }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Unions.ActivityUnion }
+        public static var __selections: [ApolloAPI.Selection] { [
           .inlineFragment(AsTextActivity.self),
           .inlineFragment(AsListActivity.self),
         ] }
@@ -131,8 +131,8 @@ public class UserActivityQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.TextActivity }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.TextActivity }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("type", GraphQLEnum<API.ActivityType>?.self),
             .field("text", String?.self),
@@ -156,8 +156,8 @@ public class UserActivityQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.ListActivity }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.ListActivity }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("type", GraphQLEnum<API.ActivityType>?.self),
             .field("status", String?.self),
@@ -186,8 +186,8 @@ public class UserActivityQuery: GraphQLQuery {
             public let __data: DataDict
             public init(data: DataDict) { __data = data }
 
-            public static var __parentType: ParentType { API.Objects.Media }
-            public static var __selections: [Selection] { [
+            public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+            public static var __selections: [ApolloAPI.Selection] { [
               .field("id", Int.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
@@ -207,8 +207,8 @@ public class UserActivityQuery: GraphQLQuery {
               public let __data: DataDict
               public init(data: DataDict) { __data = data }
 
-              public static var __parentType: ParentType { API.Objects.MediaTitle }
-              public static var __selections: [Selection] { [
+              public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
+              public static var __selections: [ApolloAPI.Selection] { [
                 .field("userPreferred", String?.self),
               ] }
 
@@ -223,8 +223,8 @@ public class UserActivityQuery: GraphQLQuery {
               public let __data: DataDict
               public init(data: DataDict) { __data = data }
 
-              public static var __parentType: ParentType { API.Objects.MediaCoverImage }
-              public static var __selections: [Selection] { [
+              public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
+              public static var __selections: [ApolloAPI.Selection] { [
                 .field("medium", String?.self),
               ] }
 
@@ -242,8 +242,8 @@ public class UserActivityQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.PageInfo }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
         ] }

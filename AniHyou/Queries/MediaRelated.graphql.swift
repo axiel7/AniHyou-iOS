@@ -28,8 +28,8 @@ public struct MediaRelated: API.SelectionSet, Fragment {
   public let __data: DataDict
   public init(data: DataDict) { __data = data }
 
-  public static var __parentType: ParentType { API.Objects.MediaEdge }
-  public static var __selections: [Selection] { [
+  public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaEdge }
+  public static var __selections: [ApolloAPI.Selection] { [
     .field("relationType", GraphQLEnum<API.MediaRelation>?.self),
     .field("node", Node?.self),
   ] }
@@ -45,8 +45,8 @@ public struct MediaRelated: API.SelectionSet, Fragment {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Media }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("id", Int.self),
       .field("title", Title?.self),
       .field("format", GraphQLEnum<API.MediaFormat>?.self),
@@ -69,8 +69,8 @@ public struct MediaRelated: API.SelectionSet, Fragment {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.MediaTitle }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("userPreferred", String?.self),
       ] }
 
@@ -85,8 +85,8 @@ public struct MediaRelated: API.SelectionSet, Fragment {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.MediaCoverImage }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("large", String?.self),
       ] }
 

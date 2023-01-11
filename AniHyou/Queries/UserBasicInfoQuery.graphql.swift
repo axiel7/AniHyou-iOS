@@ -8,14 +8,14 @@ public class UserBasicInfoQuery: GraphQLQuery {
   public static let operationName: String = "UserBasicInfo"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query UserBasicInfo($userId: Int) {
         User(id: $userId) {
           __typename
           ...UserInfo
         }
       }
-      """,
+      """#,
       fragments: [UserInfo.self]
     ))
 
@@ -31,8 +31,8 @@ public class UserBasicInfoQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
 
@@ -46,8 +46,8 @@ public class UserBasicInfoQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.User }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+      public static var __selections: [ApolloAPI.Selection] { [
         .fragment(UserInfo.self),
       ] }
 

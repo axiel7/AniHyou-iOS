@@ -8,7 +8,7 @@ public class SearchStudioQuery: GraphQLQuery {
   public static let operationName: String = "SearchStudio"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query SearchStudio($page: Int, $perPage: Int, $search: String) {
         Page(page: $page, perPage: $perPage) {
           __typename
@@ -19,7 +19,7 @@ public class SearchStudioQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -46,8 +46,8 @@ public class SearchStudioQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
@@ -63,8 +63,8 @@ public class SearchStudioQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Page }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("studios", [Studio?]?.self, arguments: [
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
@@ -80,8 +80,8 @@ public class SearchStudioQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.Studio }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.Studio }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("name", String.self),
         ] }

@@ -8,7 +8,7 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesManga"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query UserFavoritesManga($userId: Int, $page: Int, $perPage: Int) {
         User(id: $userId) {
           __typename
@@ -37,7 +37,7 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var userId: GraphQLNullable<Int>
@@ -64,8 +64,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
 
@@ -79,8 +79,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.User }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("favourites", Favourites?.self),
       ] }
 
@@ -94,8 +94,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.Favourites }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.Favourites }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("manga", Manga?.self, arguments: [
             "page": .variable("page"),
             "perPage": .variable("perPage")
@@ -112,8 +112,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.MediaConnection }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaConnection }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("nodes", [Node?]?.self),
             .field("pageInfo", PageInfo?.self),
           ] }
@@ -129,8 +129,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
             public let __data: DataDict
             public init(data: DataDict) { __data = data }
 
-            public static var __parentType: ParentType { API.Objects.Media }
-            public static var __selections: [Selection] { [
+            public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+            public static var __selections: [ApolloAPI.Selection] { [
               .field("id", Int.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
@@ -150,8 +150,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
               public let __data: DataDict
               public init(data: DataDict) { __data = data }
 
-              public static var __parentType: ParentType { API.Objects.MediaTitle }
-              public static var __selections: [Selection] { [
+              public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
+              public static var __selections: [ApolloAPI.Selection] { [
                 .field("userPreferred", String?.self),
               ] }
 
@@ -166,8 +166,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
               public let __data: DataDict
               public init(data: DataDict) { __data = data }
 
-              public static var __parentType: ParentType { API.Objects.MediaCoverImage }
-              public static var __selections: [Selection] { [
+              public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
+              public static var __selections: [ApolloAPI.Selection] { [
                 .field("large", String?.self),
               ] }
 
@@ -183,8 +183,8 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
             public let __data: DataDict
             public init(data: DataDict) { __data = data }
 
-            public static var __parentType: ParentType { API.Objects.PageInfo }
-            public static var __selections: [Selection] { [
+            public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
+            public static var __selections: [ApolloAPI.Selection] { [
               .field("currentPage", Int?.self),
               .field("hasNextPage", Bool?.self),
             ] }

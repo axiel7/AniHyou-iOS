@@ -8,7 +8,7 @@ public class StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {
         Studio(id: $studioId) {
           __typename
@@ -37,7 +37,7 @@ public class StudioDetailsQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var studioId: GraphQLNullable<Int>
@@ -64,8 +64,8 @@ public class StudioDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Studio", Studio?.self, arguments: ["id": .variable("studioId")]),
     ] }
 
@@ -79,8 +79,8 @@ public class StudioDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Studio }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Studio }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("name", String.self),
         .field("favourites", Int?.self),
@@ -111,8 +111,8 @@ public class StudioDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.MediaConnection }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaConnection }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("nodes", [Node?]?.self),
           .field("pageInfo", PageInfo?.self),
         ] }
@@ -128,8 +128,8 @@ public class StudioDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.Media }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("coverImage", CoverImage?.self),
             .field("title", Title?.self),
@@ -149,8 +149,8 @@ public class StudioDetailsQuery: GraphQLQuery {
             public let __data: DataDict
             public init(data: DataDict) { __data = data }
 
-            public static var __parentType: ParentType { API.Objects.MediaCoverImage }
-            public static var __selections: [Selection] { [
+            public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
+            public static var __selections: [ApolloAPI.Selection] { [
               .field("large", String?.self),
             ] }
 
@@ -165,8 +165,8 @@ public class StudioDetailsQuery: GraphQLQuery {
             public let __data: DataDict
             public init(data: DataDict) { __data = data }
 
-            public static var __parentType: ParentType { API.Objects.MediaTitle }
-            public static var __selections: [Selection] { [
+            public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
+            public static var __selections: [ApolloAPI.Selection] { [
               .field("userPreferred", String?.self),
             ] }
 
@@ -182,8 +182,8 @@ public class StudioDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.PageInfo }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("hasNextPage", Bool?.self),
           ] }
 

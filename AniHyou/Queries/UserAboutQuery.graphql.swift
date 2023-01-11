@@ -8,14 +8,14 @@ public class UserAboutQuery: GraphQLQuery {
   public static let operationName: String = "UserAbout"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query UserAbout($userId: Int) {
         User(id: $userId) {
           __typename
           about(asHtml: true)
         }
       }
-      """
+      """#
     ))
 
   public var userId: GraphQLNullable<Int>
@@ -30,8 +30,8 @@ public class UserAboutQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
 
@@ -45,8 +45,8 @@ public class UserAboutQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.User }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("about", String?.self, arguments: ["asHtml": true]),
       ] }
 

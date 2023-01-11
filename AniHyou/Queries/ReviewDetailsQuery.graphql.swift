@@ -8,7 +8,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
   public static let operationName: String = "ReviewDetails"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query ReviewDetails($reviewId: Int) {
         Review(id: $reviewId) {
           __typename
@@ -27,7 +27,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var reviewId: GraphQLNullable<Int>
@@ -42,8 +42,8 @@ public class ReviewDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Review", Review?.self, arguments: ["id": .variable("reviewId")]),
     ] }
 
@@ -57,8 +57,8 @@ public class ReviewDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Review }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Review }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("id", Int.self),
         .field("body", String?.self, arguments: ["asHtml": true]),
         .field("score", Int?.self),
@@ -87,8 +87,8 @@ public class ReviewDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.User }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("name", String.self),
           .field("avatar", Avatar?.self),
         ] }
@@ -105,8 +105,8 @@ public class ReviewDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.UserAvatar }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.UserAvatar }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("medium", String?.self),
           ] }
 

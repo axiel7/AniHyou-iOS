@@ -8,7 +8,7 @@ public class AnimesQuery: GraphQLQuery {
   public static let operationName: String = "Animes"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
-      """
+      #"""
       query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {
         Page(page: $page, perPage: $perPage) {
           __typename
@@ -26,7 +26,7 @@ public class AnimesQuery: GraphQLQuery {
           }
         }
       }
-      """
+      """#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -53,8 +53,8 @@ public class AnimesQuery: GraphQLQuery {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { API.Objects.Query }
-    public static var __selections: [Selection] { [
+    public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
+    public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
@@ -70,8 +70,8 @@ public class AnimesQuery: GraphQLQuery {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { API.Objects.Page }
-      public static var __selections: [Selection] { [
+      public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
+      public static var __selections: [ApolloAPI.Selection] { [
         .field("media", [Medium?]?.self, arguments: [
           "type": "ANIME",
           "sort": .variable("sort")
@@ -87,8 +87,8 @@ public class AnimesQuery: GraphQLQuery {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { API.Objects.Media }
-        public static var __selections: [Selection] { [
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
+        public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("title", Title?.self),
           .field("coverImage", CoverImage?.self),
@@ -108,8 +108,8 @@ public class AnimesQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.MediaTitle }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("userPreferred", String?.self),
           ] }
 
@@ -124,8 +124,8 @@ public class AnimesQuery: GraphQLQuery {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { API.Objects.MediaCoverImage }
-          public static var __selections: [Selection] { [
+          public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
+          public static var __selections: [ApolloAPI.Selection] { [
             .field("large", String?.self),
           ] }
 
