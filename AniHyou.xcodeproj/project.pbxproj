@@ -157,6 +157,7 @@
 		48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */; };
 		48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE81332969DDC00074482F /* CalendarAnimeView.swift */; };
 		48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE81352969DE1C0074482F /* CalendarViewModel.swift */; };
+		48F278E4296ECED8000827F7 /* MediaTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F278E3296ECED8000827F7 /* MediaTagItemView.swift */; };
 		48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */; };
 		48F763EA28ACDFBB00C82D75 /* UserFavoritesAnime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */; };
 		48F763EC28ACE01E00C82D75 /* UserFavoritesManga.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */; };
@@ -332,6 +333,7 @@
 		48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppState.swift; sourceTree = "<group>"; };
 		48EE81332969DDC00074482F /* CalendarAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAnimeView.swift; sourceTree = "<group>"; };
 		48EE81352969DE1C0074482F /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		48F278E3296ECED8000827F7 /* MediaTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTagItemView.swift; sourceTree = "<group>"; };
 		48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesView.swift; sourceTree = "<group>"; };
 		48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesAnime.graphql; sourceTree = "<group>"; };
 		48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesManga.graphql; sourceTree = "<group>"; };
@@ -751,6 +753,7 @@
 				4832B02F285F3CDD00E79D27 /* MediaCoverView.swift */,
 				4832B033285F953100E79D27 /* MediaStatView.swift */,
 				48E80F9D28734DA5002765FC /* FullCoverView.swift */,
+				48F278E3296ECED8000827F7 /* MediaTagItemView.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -1252,6 +1255,7 @@
 				48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */,
 				48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */,
 				4884AAB02965AC94009A3B8C /* GenreTagSelectionView.swift in Sources */,
+				48F278E4296ECED8000827F7 /* MediaTagItemView.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
 				48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */,
 				4870AB0928EC7551008431B5 /* SeasonalAnimeQuery.graphql.swift in Sources */,

@@ -61,6 +61,12 @@ query MediaDetails($mediaId: Int) {
       type
       icon
     }
+    tags {
+      id
+      name
+      rank
+      isMediaSpoiler
+    }
   }
 }
 

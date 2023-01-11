@@ -84,6 +84,13 @@ public class MediaDetailsQuery: GraphQLQuery {
             type
             icon
           }
+          tags {
+            __typename
+            id
+            name
+            rank
+            isMediaSpoiler
+          }
         }
       }
       """#,
@@ -145,6 +152,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("mediaListEntry", MediaListEntry?.self),
         .field("source", GraphQLEnum<API.MediaSource>?.self),
         .field("externalLinks", [ExternalLink?]?.self),
+        .field("tags", [Tag?]?.self),
       ] }
 
       /// The id of the media
@@ -199,6 +207,8 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var source: GraphQLEnum<API.MediaSource>? { __data["source"] }
       /// External links to another site related to the media
       public var externalLinks: [ExternalLink?]? { __data["externalLinks"] }
+      /// List of tags that describes elements and themes of the media
+      public var tags: [Tag?]? { __data["tags"] }
 
       /// Media.Title
       ///
@@ -470,6 +480,31 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var type: GraphQLEnum<API.ExternalLinkType>? { __data["type"] }
         /// The icon image url of the site. Not available for all links. Transparent PNG 64x64
         public var icon: String? { __data["icon"] }
+      }
+
+      /// Media.Tag
+      ///
+      /// Parent Type: `MediaTag`
+      public struct Tag: API.SelectionSet {
+        public let __data: DataDict
+        public init(data: DataDict) { __data = data }
+
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTag }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("id", Int.self),
+          .field("name", String.self),
+          .field("rank", Int?.self),
+          .field("isMediaSpoiler", Bool?.self),
+        ] }
+
+        /// The id of the tag
+        public var id: Int { __data["id"] }
+        /// The name of the tag
+        public var name: String { __data["name"] }
+        /// The relevance ranking of the tag out of the 100 for this media
+        public var rank: Int? { __data["rank"] }
+        /// If the tag is a spoiler for this media
+        public var isMediaSpoiler: Bool? { __data["isMediaSpoiler"] }
       }
     }
   }
