@@ -157,6 +157,11 @@
 		48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE81332969DDC00074482F /* CalendarAnimeView.swift */; };
 		48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE81352969DE1C0074482F /* CalendarViewModel.swift */; };
 		48F278E4296ECED8000827F7 /* MediaTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F278E3296ECED8000827F7 /* MediaTagItemView.swift */; };
+		48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2790C296EFE77000827F7 /* AniHyouShouApp.swift */; };
+		48F2790F296EFE77000827F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2790E296EFE77000827F7 /* ContentView.swift */; };
+		48F27911296EFE78000827F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F27910296EFE78000827F7 /* Assets.xcassets */; };
+		48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F27913296EFE78000827F7 /* Preview Assets.xcassets */; };
+		48F27917296EFE78000827F7 /* AniHyou.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 48F2790A296EFE77000827F7 /* AniHyou.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */; };
 		48F763EA28ACDFBB00C82D75 /* UserFavoritesAnime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */; };
 		48F763EC28ACE01E00C82D75 /* UserFavoritesManga.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */; };
@@ -178,6 +183,30 @@
 		48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94802868C0F400C87F56 /* MediaChartListView.swift */; };
 		48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94822868C6DB00C87F56 /* ChartListItemView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48F27915296EFE78000827F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481AD4D22851CE73001779EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48F27909296EFE77000827F7;
+			remoteInfo = "AniHyouShou Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48F27918296EFE78000827F7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				48F27917296EFE78000827F7 /* AniHyou.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		480300D2291BC56E00E3047B /* StaffDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -333,6 +362,11 @@
 		48EE81332969DDC00074482F /* CalendarAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAnimeView.swift; sourceTree = "<group>"; };
 		48EE81352969DE1C0074482F /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		48F278E3296ECED8000827F7 /* MediaTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTagItemView.swift; sourceTree = "<group>"; };
+		48F2790A296EFE77000827F7 /* AniHyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniHyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F2790C296EFE77000827F7 /* AniHyouShouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniHyouShouApp.swift; sourceTree = "<group>"; };
+		48F2790E296EFE77000827F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		48F27910296EFE78000827F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48F27913296EFE78000827F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesView.swift; sourceTree = "<group>"; };
 		48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesAnime.graphql; sourceTree = "<group>"; };
 		48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesManga.graphql; sourceTree = "<group>"; };
@@ -434,6 +468,7 @@
 			children = (
 				480F88262942695D004773CC /* Packages */,
 				481AD4DC2851CE73001779EE /* AniHyou */,
+				48F2790B296EFE77000827F7 /* AniHyouShou Watch App */,
 				481AD4DB2851CE73001779EE /* Products */,
 				486F240228EC7C96006CD0CB /* Frameworks */,
 			);
@@ -443,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				481AD4DA2851CE73001779EE /* AniHyou.app */,
+				48F2790A296EFE77000827F7 /* AniHyou.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -773,6 +809,25 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		48F2790B296EFE77000827F7 /* AniHyouShou Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				48F2790C296EFE77000827F7 /* AniHyouShouApp.swift */,
+				48F2790E296EFE77000827F7 /* ContentView.swift */,
+				48F27910296EFE78000827F7 /* Assets.xcassets */,
+				48F27912296EFE78000827F7 /* Preview Content */,
+			);
+			path = "AniHyouShou Watch App";
+			sourceTree = "<group>";
+		};
+		48F27912296EFE78000827F7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				48F27913296EFE78000827F7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		48F763F328ACE4B500C82D75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,10 +1086,12 @@
 				481AD4D62851CE73001779EE /* Sources */,
 				481AD4D72851CE73001779EE /* Frameworks */,
 				481AD4D82851CE73001779EE /* Resources */,
+				48F27918296EFE78000827F7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				48F27916296EFE78000827F7 /* PBXTargetDependency */,
 			);
 			name = AniHyou;
 			packageProductDependencies = (
@@ -1048,6 +1105,23 @@
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
 			productType = "com.apple.product-type.application";
 		};
+		48F27909296EFE77000827F7 /* AniHyouShou Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F2791B296EFE78000827F7 /* Build configuration list for PBXNativeTarget "AniHyouShou Watch App" */;
+			buildPhases = (
+				48F27906296EFE77000827F7 /* Sources */,
+				48F27907296EFE77000827F7 /* Frameworks */,
+				48F27908296EFE77000827F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AniHyouShou Watch App";
+			productName = "AniHyouShou Watch App";
+			productReference = 48F2790A296EFE77000827F7 /* AniHyou.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1055,11 +1129,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					481AD4D92851CE73001779EE = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					48F27909296EFE77000827F7 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
@@ -1083,6 +1160,7 @@
 			projectRoot = "";
 			targets = (
 				481AD4D92851CE73001779EE /* AniHyou */,
+				48F27909296EFE77000827F7 /* AniHyouShou Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -1125,6 +1203,15 @@
 				48E7CAF328AA512D00F9CE24 /* UserActivity.graphql in Resources */,
 				486ED200285DD329002D29E1 /* UserMediaList.graphql in Resources */,
 				481A6B0B2863944800AB9C89 /* UpdateEntryProgress.graphql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F27908296EFE77000827F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */,
+				48F27911296EFE78000827F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1270,7 +1357,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48F27906296EFE77000827F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F2790F296EFE77000827F7 /* ContentView.swift in Sources */,
+				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48F27916296EFE78000827F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48F27909296EFE77000827F7 /* AniHyouShou Watch App */;
+			targetProxy = 48F27915296EFE78000827F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		481AD4E62851CE74001779EE /* Debug */ = {
@@ -1392,6 +1496,7 @@
 		481AD4E92851CE74001779EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1424,6 +1529,7 @@
 		481AD4EA2851CE74001779EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1453,6 +1559,66 @@
 			};
 			name = Release;
 		};
+		48F27919296EFE78000827F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AniHyouShou Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = SGU98T456G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.axiel7.AniHyou;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axiel7.AniHyou.watchkitapp;
+				PRODUCT_NAME = AniHyou;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		48F2791A296EFE78000827F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AniHyouShou Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = SGU98T456G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.axiel7.AniHyou;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axiel7.AniHyou.watchkitapp;
+				PRODUCT_NAME = AniHyou;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1470,6 +1636,15 @@
 			buildConfigurations = (
 				481AD4E92851CE74001779EE /* Debug */,
 				481AD4EA2851CE74001779EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F2791B296EFE78000827F7 /* Build configuration list for PBXNativeTarget "AniHyouShou Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F27919296EFE78000827F7 /* Debug */,
+				48F2791A296EFE78000827F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
