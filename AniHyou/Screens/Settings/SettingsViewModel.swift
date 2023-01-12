@@ -24,6 +24,7 @@ class SettingsViewModel: ObservableObject {
     func syncAccountWithAppleWatch() {
         if let token = KeychainSwift().get(USER_TOKEN_KEY) {
             WatchConnectivityManager.shared.send(key: USER_TOKEN_KEY, data: token)
+            WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(userId()))
         }
     }
     

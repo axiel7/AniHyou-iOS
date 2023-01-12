@@ -12,3 +12,12 @@ var MediaListStatusAllCases: [MediaListStatus] {
     return [MediaListStatus.current, MediaListStatus.planning, MediaListStatus.completed, MediaListStatus.dropped, MediaListStatus.paused, MediaListStatus.repeating]
 }
 
+extension UserMediaListQuery.Data.Page.MediaList {
+    var totalProgress: Int? {
+        if self.media?.type?.value == .anime {
+            return self.media?.episodes
+        } else {
+            return self.media?.chapters
+        }
+    }
+}

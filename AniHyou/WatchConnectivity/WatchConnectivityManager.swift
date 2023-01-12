@@ -23,7 +23,7 @@ final class WatchConnectivityManager: NSObject, ObservableObject {
         }
     }
     
-    func send(key: String, data: Any) {
+    func send(key: String, data: String) {
         guard WCSession.default.activationState == .activated else {
             return
         }

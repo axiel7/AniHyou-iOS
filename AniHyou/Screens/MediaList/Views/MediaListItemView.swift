@@ -34,21 +34,13 @@ struct MediaListItemView: View {
                         .padding(.bottom, 1)
                 }
                 
-                Text("\(item.progress ?? 0)/\(totalProgress ?? 0)")
-                ProgressView(value: Float(item.progress ?? 0), total: Float(totalProgress ?? Int.max))
+                Text("\(item.progress ?? 0)/\(item.totalProgress ?? 0)")
+                ProgressView(value: Float(item.progress ?? 0), total: Float(item.totalProgress ?? Int.max))
             }
         }
         .frame(height: coverHeight)
         .padding(.top, 8)
         .padding(.bottom, 8)
-    }
-    
-    var totalProgress: Int? {
-        if item.media?.type?.value == .anime {
-            return item.media?.episodes
-        } else {
-            return item.media?.chapters
-        }
     }
 }
 

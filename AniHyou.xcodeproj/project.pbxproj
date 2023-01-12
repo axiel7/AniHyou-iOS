@@ -174,6 +174,15 @@
 		48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2792A29700DFA000827F7 /* MainViewModel.swift */; };
 		48F2792C29700F33000827F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267A2853801A0005EE15 /* Constants.swift */; };
 		48F2792D29701C9B000827F7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* Utils.swift */; };
+		48F2793129702894000827F7 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2793029702894000827F7 /* MediaListView.swift */; };
+		48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
+		48F279332970299D000827F7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F92851DA02001779EE /* Network.swift */; };
+		48F27934297029A0000827F7 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
+		48F27935297029A3000827F7 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
+		48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBC66128CE3E88009AAF4A /* UpdatedMediaEntry.swift */; };
+		48F2793729702F08000827F7 /* ViewerIdQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAF028EC7551008431B5 /* ViewerIdQuery.graphql.swift */; };
+		48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2793829703747000827F7 /* UpdateMediaEntryView.swift */; };
+		48F2793A29703E96000827F7 /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A41A428ECA1A30066288D /* ModelUtils.swift */; };
 		48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */; };
 		48F763EA28ACDFBB00C82D75 /* UserFavoritesAnime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */; };
 		48F763EC28ACE01E00C82D75 /* UserFavoritesManga.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */; };
@@ -381,6 +390,8 @@
 		48F27913296EFE78000827F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48F27927296F0CFC000827F7 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		48F2792A29700DFA000827F7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		48F2793029702894000827F7 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
+		48F2793829703747000827F7 /* UpdateMediaEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMediaEntryView.swift; sourceTree = "<group>"; };
 		48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesView.swift; sourceTree = "<group>"; };
 		48F763E928ACDFBB00C82D75 /* UserFavoritesAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesAnime.graphql; sourceTree = "<group>"; };
 		48F763EB28ACE01E00C82D75 /* UserFavoritesManga.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserFavoritesManga.graphql; sourceTree = "<group>"; };
@@ -830,11 +841,10 @@
 		48F2790B296EFE77000827F7 /* AniHyouShou Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				48F2790C296EFE77000827F7 /* AniHyouShouApp.swift */,
-				48F2790E296EFE77000827F7 /* ContentView.swift */,
+				48F2792E29702835000827F7 /* Root */,
+				48F2792F29702842000827F7 /* MediaList */,
 				48F27910296EFE78000827F7 /* Assets.xcassets */,
 				48F27912296EFE78000827F7 /* Preview Content */,
-				48F2792A29700DFA000827F7 /* MainViewModel.swift */,
 			);
 			path = "AniHyouShou Watch App";
 			sourceTree = "<group>";
@@ -853,6 +863,25 @@
 				48F27927296F0CFC000827F7 /* WatchConnectivityManager.swift */,
 			);
 			path = WatchConnectivity;
+			sourceTree = "<group>";
+		};
+		48F2792E29702835000827F7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				48F2790C296EFE77000827F7 /* AniHyouShouApp.swift */,
+				48F2790E296EFE77000827F7 /* ContentView.swift */,
+				48F2792A29700DFA000827F7 /* MainViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		48F2792F29702842000827F7 /* MediaList */ = {
+			isa = PBXGroup;
+			children = (
+				48F2793029702894000827F7 /* MediaListView.swift */,
+				48F2793829703747000827F7 /* UpdateMediaEntryView.swift */,
+			);
+			path = MediaList;
 			sourceTree = "<group>";
 		};
 		48F763F328ACE4B500C82D75 /* Views */ = {
@@ -1394,15 +1423,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F279332970299D000827F7 /* Network.swift in Sources */,
 				48F27923296F0949000827F7 /* UpdateEntryProgressMutation.graphql.swift in Sources */,
+				48F27934297029A0000827F7 /* TokenAddingInterceptor.swift in Sources */,
 				48F2790F296EFE77000827F7 /* ContentView.swift in Sources */,
+				48F2793729702F08000827F7 /* ViewerIdQuery.graphql.swift in Sources */,
+				48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */,
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F27925296F095A000827F7 /* BasicMediaListEntry.graphql.swift in Sources */,
 				48F27922296F0937000827F7 /* FuzzyDate.graphql.swift in Sources */,
+				48F2793129702894000827F7 /* MediaListView.swift in Sources */,
 				48F2792D29701C9B000827F7 /* Utils.swift in Sources */,
+				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,
+				48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */,
 				48F27924296F0955000827F7 /* UserMediaListQuery.graphql.swift in Sources */,
+				48F27935297029A3000827F7 /* NetworkInterceptorProvider.swift in Sources */,
 				48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */,
+				48F2793A29703E96000827F7 /* ModelUtils.swift in Sources */,
 				48F2792C29700F33000827F7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
