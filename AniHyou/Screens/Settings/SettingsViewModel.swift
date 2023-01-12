@@ -21,4 +21,10 @@ class SettingsViewModel: ObservableObject {
         GlobalAppState.shared.globalId = UUID()
     }
     
+    func syncAccountWithAppleWatch() {
+        if let token = KeychainSwift().get(USER_TOKEN_KEY) {
+            WatchConnectivityManager.shared.send(key: USER_TOKEN_KEY, data: token)
+        }
+    }
+    
 }

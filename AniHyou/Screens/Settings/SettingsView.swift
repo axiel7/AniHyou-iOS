@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewModel()
+    @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
     @State private var showLogOutDialog = false
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
@@ -21,15 +23,22 @@ struct SettingsView: View {
                 Text("You may need to login again in your browser")
             }
             
-            Button("Log out", role: .destructive) {
-                showLogOutDialog = true
-            }
-            .confirmationDialog("Are you sure you want to log out?", isPresented: $showLogOutDialog) {
-                Button("Log out", role: .destructive) {
-                    viewModel.logOut()
+            Section {
+                if connectivityManager.isWatchAppInstalled {
+                    Button("Sync account with Apple Watch") {
+                        viewModel.syncAccountWithAppleWatch()
+                    }
                 }
-            } message: {
-                Text("Are you sure you want to log out?")
+                Button("Log out", role: .destructive) {
+                    showLogOutDialog = true
+                }
+                .confirmationDialog("Are you sure you want to log out?", isPresented: $showLogOutDialog) {
+                    Button("Log out", role: .destructive) {
+                        viewModel.logOut()
+                    }
+                } message: {
+                    Text("Are you sure you want to log out?")
+                }
             }
             
             Section {
