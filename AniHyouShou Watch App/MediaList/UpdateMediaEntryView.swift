@@ -24,7 +24,7 @@ struct UpdateMediaEntryView: View {
                     Text("\(currentProgress)/\(entry!.totalProgress ?? 0)")
 
                     Button("+1") {
-                        viewModel.updateEntryProgress(entryId: entry!.id, progress: entry!.progress! + 1)
+                        viewModel.updateEntryProgress(entryId: entry!.id, progress: currentProgress + 1)
                     }
                 }
             } else {
