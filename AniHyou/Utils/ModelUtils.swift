@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import API
 
 var MediaListStatusAllCases: [MediaListStatus] {
@@ -19,5 +20,11 @@ extension UserMediaListQuery.Data.Page.MediaList {
         } else {
             return self.media?.chapters
         }
+    }
+    
+    var coverColorWithAlpha: Color? {
+        if let color = self.media?.coverImage?.color {
+            return Color(color + "88")
+        } else { return nil }
     }
 }

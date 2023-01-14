@@ -22,6 +22,7 @@ struct MediaListView: View {
                         NavigationLink(destination: UpdateMediaEntryView(entry: entry, viewModel: viewModel)) {
                             MediaListItemView(item: entry)
                         }
+                        .listItemTint(entry.coverColorWithAlpha)
                     }
                 }
                 

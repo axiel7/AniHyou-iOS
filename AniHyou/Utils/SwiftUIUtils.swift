@@ -7,7 +7,9 @@
 
 import Foundation
 import SwiftUI
+#if os(iOS)
 import RichText
+#endif
 
 extension Color {
     
@@ -53,6 +55,7 @@ extension Color {
     }
 }
 
+#if os(iOS)
 extension RichText {
     func defaultStyle() -> RichText {
         self
@@ -63,6 +66,7 @@ extension RichText {
             }
     }
 }
+
 
 var spoilerCss =
     """
@@ -88,3 +92,4 @@ func shareSheet(url: String) {
     }
 
 }
+#endif

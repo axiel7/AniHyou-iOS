@@ -28,6 +28,7 @@ public class UserMediaListQuery: GraphQLQuery {
               coverImage {
                 __typename
                 large
+                color
               }
               nextAiringEpisode {
                 __typename
@@ -217,10 +218,13 @@ public class UserMediaListQuery: GraphQLQuery {
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("large", String?.self),
+              .field("color", String?.self),
             ] }
 
             /// The cover image url of the media at a large size
             public var large: String? { __data["large"] }
+            /// Average #hex color of cover image
+            public var color: String? { __data["color"] }
           }
 
           /// Page.MediaList.Media.NextAiringEpisode

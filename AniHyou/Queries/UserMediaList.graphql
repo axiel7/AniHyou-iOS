@@ -12,6 +12,7 @@ query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $
         volumes
         coverImage {
           large
+          color
         }
         nextAiringEpisode {
           episode

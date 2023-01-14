@@ -26,6 +26,7 @@ struct UpdateMediaEntryView: View {
                     Button("+1") {
                         viewModel.updateEntryProgress(entryId: entry!.id, progress: currentProgress + 1)
                     }
+                    .tint(Color(entry!.media?.coverImage?.color))
                 }
             } else {
                 Text("Error no entry")
