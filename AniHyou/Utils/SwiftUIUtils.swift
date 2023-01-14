@@ -47,7 +47,7 @@ extension Color {
             let red = Double(Int(color >> 24) & 0x000000FF) / 255
             let green = Double(Int(color >> 16) & 0x000000FF) / 255
             let blue = Double(Int(color >> 8) & 0x000000FF) / 255
-            let alpha = Double(Int(color) & 0x000000FF) / 255
+            let alpha = Double(color & 0x000000FF) / 255
             self.init(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
         } else {
             return nil
