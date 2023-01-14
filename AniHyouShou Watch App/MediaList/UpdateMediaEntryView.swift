@@ -23,8 +23,15 @@ struct UpdateMediaEntryView: View {
                     
                     Text("\(currentProgress)/\(entry!.totalProgress ?? 0)")
 
-                    Button("+1") {
+                    Button(action: {
                         viewModel.updateEntryProgress(entryId: entry!.id, progress: currentProgress + 1)
+                    }) {
+                        if viewModel.isLoading {
+                            ProgressView()
+                            .frame(height: 13)
+                        } else {
+                            Text("+1")
+                        }
                     }
                     .tint(Color(entry!.media?.coverImage?.color))
                 }
