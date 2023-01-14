@@ -66,7 +66,7 @@
 		48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */; };
 		486ED200285DD329002D29E1 /* UserMediaList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 486ED1FF285DD329002D29E1 /* UserMediaList.graphql */; };
 		486ED205285DD484002D29E1 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED204285DD484002D29E1 /* MediaListView.swift */; };
-		486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED206285DD4D8002D29E1 /* MediaListItemView.swift */; };
+		486ED207285DD4D8002D29E1 /* MediaListItemStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */; };
 		486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED208285DD649002D29E1 /* MediaListStatusView.swift */; };
 		486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
 		486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 486ED20E285DDE03002D29E1 /* ViewerId.graphql */; };
@@ -125,6 +125,7 @@
 		489C7E9A29193944004B0B39 /* UserBasicInfoQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489C7E9929193944004B0B39 /* UserBasicInfoQuery.graphql.swift */; };
 		489C7E9C29193A7B004B0B39 /* UserInfo.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489C7E9B29193A7B004B0B39 /* UserInfo.graphql.swift */; };
 		48A29C582972B00700BF53B8 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
+		48A29C5A2972B9EB00BF53B8 /* MediaListItemMinimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */; };
 		48AB01F4286B6A4B004DC7FF /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB01F3286B6A4B004DC7FF /* SearchType.swift */; };
 		48AB01F6286B6F3C004DC7FF /* SearchMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48AB01F5286B6F3C004DC7FF /* SearchMedia.graphql */; };
 		48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB01F7286B724A004DC7FF /* SearchViewModel.swift */; };
@@ -291,7 +292,7 @@
 		48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListEditViewModel.swift; sourceTree = "<group>"; };
 		486ED1FF285DD329002D29E1 /* UserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserMediaList.graphql; sourceTree = "<group>"; };
 		486ED204285DD484002D29E1 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
-		486ED206285DD4D8002D29E1 /* MediaListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemView.swift; sourceTree = "<group>"; };
+		486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemStandardView.swift; sourceTree = "<group>"; };
 		486ED208285DD649002D29E1 /* MediaListStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListStatusView.swift; sourceTree = "<group>"; };
 		486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewModel.swift; sourceTree = "<group>"; };
 		486ED20E285DDE03002D29E1 /* ViewerId.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerId.graphql; sourceTree = "<group>"; };
@@ -351,6 +352,7 @@
 		489C7E972919393B004B0B39 /* StudioDetailsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudioDetailsQuery.graphql.swift; sourceTree = "<group>"; };
 		489C7E9929193944004B0B39 /* UserBasicInfoQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBasicInfoQuery.graphql.swift; sourceTree = "<group>"; };
 		489C7E9B29193A7B004B0B39 /* UserInfo.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.graphql.swift; sourceTree = "<group>"; };
+		48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemMinimalView.swift; sourceTree = "<group>"; };
 		48AB01F3286B6A4B004DC7FF /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		48AB01F5286B6F3C004DC7FF /* SearchMedia.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchMedia.graphql; sourceTree = "<group>"; };
 		48AB01F7286B724A004DC7FF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -1018,7 +1020,8 @@
 			children = (
 				486ED204285DD484002D29E1 /* MediaListView.swift */,
 				486ED208285DD649002D29E1 /* MediaListStatusView.swift */,
-				486ED206285DD4D8002D29E1 /* MediaListItemView.swift */,
+				486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */,
+				48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1296,6 +1299,7 @@
 				4851578B28A4060C007923A6 /* ThreadCommentItemView.swift in Sources */,
 				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
 				48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */,
+				48A29C5A2972B9EB00BF53B8 /* MediaListItemMinimalView.swift in Sources */,
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
 				489622532934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift in Sources */,
 				4870AB1628EC7551008431B5 /* MediaCharacter.graphql.swift in Sources */,
@@ -1320,7 +1324,7 @@
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
 				4870AB1B28EC7551008431B5 /* MediaRecommended.graphql.swift in Sources */,
-				486ED207285DD4D8002D29E1 /* MediaListItemView.swift in Sources */,
+				486ED207285DD4D8002D29E1 /* MediaListItemStandardView.swift in Sources */,
 				483CEABE289E688400D30266 /* ThreadItemView.swift in Sources */,
 				48FC9479286852A300C87F56 /* ExploreView.swift in Sources */,
 				488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */,

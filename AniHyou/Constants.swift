@@ -25,3 +25,6 @@ let USER_COLOR_KEY = "user_color"
 let USER_SCORE_KEY = "user_score"
 let USER_TITLE_LANG_KEY = "user_title_lang"
 let USER_NAMES_LANG_KEY = "user_names_lang"
+
+let SELECTED_TAB_KEY = "selected_tab_index"
+let LIST_STYLE_KEY = "list_style"

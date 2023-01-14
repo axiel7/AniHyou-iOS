@@ -14,9 +14,19 @@ struct SettingsView: View {
     @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
     @State private var showLogOutDialog = false
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     
     var body: some View {
         Form {
+            Section {
+                Picker("List style", selection: $listStyle) {
+                    Text("Standard").tag(0)
+                    Text("Minimal").tag(1)
+                }
+            } header: {
+                Text("Display")
+            }
+            
             Section {
                 Link("AniList account settings", destination: URL(string: "https://anilist.co/settings/account")!)
             } footer: {

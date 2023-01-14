@@ -14,13 +14,19 @@ struct MediaListView: View {
     var status: MediaListStatus
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
+    @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     
     var body: some View {
         List {
             ForEach(viewModel.mediaList, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                        MediaListItemView(item: item)
+                        switch listStyle {
+                        case 1:
+                            MediaListItemMinimalView(item: item)
+                        default:
+                            MediaListItemStandardView(item: item)
+                        }
                     }
                     .swipeActions {
                         if viewModel.mediaListStatus == .current {

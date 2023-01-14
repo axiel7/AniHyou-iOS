@@ -20,7 +20,7 @@ struct MediaListView: View {
                 ForEach(viewModel.mediaList, id: \.?.id) {
                     if let entry = $0 {
                         NavigationLink(destination: UpdateMediaEntryView(entry: entry, viewModel: viewModel)) {
-                            MediaListItemView(item: entry)
+                            MediaListItemStandardView(item: entry)
                         }
                         .listItemTint(entry.coverColorWithAlpha)
                     }
@@ -45,7 +45,7 @@ struct MediaListView: View {
     }
 }
 
-struct MediaListItemView: View {
+struct MediaListItemStandardView: View {
     
     var item: UserMediaListQuery.Data.Page.MediaList
     
