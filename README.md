@@ -6,13 +6,15 @@
 
 Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 
+**There's a watchOS version also!**
+
 ![screenshots](https://axiel7.github.io/assets/anihyou.58717379ec9cfda91ca1c970f44d2ce6.png)
 
 ## Current features
-- View animes airing soon
-- This season animes
+- Animes airing soon and weekly calendar
+- Seasonal animes
 - Trending animes
-- Anime/Manga info, characters, staff, recommendations, relations, reviews
+- Anime/Manga info, tags, characters, staff, recommendations, relations, reviews...
 - Manage Anime/Manga list (status, progress, score, dates)
 - Search animes, mangas, characters, staff, studios and users
 - Anime and Manga charts (top and popular)
@@ -26,4 +28,3 @@ Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui)
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
-- [netfox](https://github.com/kasketis/netfox)
