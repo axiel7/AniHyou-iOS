@@ -28,3 +28,8 @@ Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui)
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
+
+## Building
+- Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
+```
+ANILIST_CLIENT_ID = XXXX
