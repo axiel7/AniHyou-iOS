@@ -71,10 +71,7 @@ struct MediaDetailsView: View {
                         case .relationsAndRecommendations:
                             MediaRelationsAndRecommendationsView(mediaId: mediaId)
                         case .stats:
-                            VStack(alignment: .center) {
-                                Text("Coming soon")
-                            }
-                            .frame(maxWidth: .infinity)
+                            MediaStatsView(mediaId: mediaId)
                         case .reviewsAndThreads:
                             MediaReviewsAndThreadsView(mediaId: mediaId)
                         }

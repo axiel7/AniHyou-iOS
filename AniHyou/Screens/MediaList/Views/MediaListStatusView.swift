@@ -15,7 +15,7 @@ struct MediaListStatusView: View {
     
     var body: some View {
         NavigationView {
-            List(MediaListStatusAllCases, id: \.self) { status in
+            List(MediaListStatus.allCases, id: \.self) { status in
                 NavigationLink(tag: status, selection: $selection) {
                     MediaListView(type: mediaType, status: status)
                 } label: {

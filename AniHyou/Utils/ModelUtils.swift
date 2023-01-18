@@ -9,10 +9,6 @@ import Foundation
 import SwiftUI
 import API
 
-var MediaListStatusAllCases: [MediaListStatus] {
-    return [MediaListStatus.current, MediaListStatus.planning, MediaListStatus.completed, MediaListStatus.dropped, MediaListStatus.paused, MediaListStatus.repeating]
-}
-
 extension UserMediaListQuery.Data.Page.MediaList {
     var totalProgress: Int? {
         if self.media?.type?.value == .anime {
@@ -67,7 +63,22 @@ extension MediaListStatus {
         }
     }
     
-    
+    var color: Color {
+        switch self {
+        case .current:
+            return .blue
+        case .planning:
+            return .green
+        case .completed:
+            return .purple
+        case .dropped:
+            return .red
+        case .paused:
+            return .yellow
+        case .repeating:
+            return .blue
+        }
+    }
 }
 
 extension MediaSeason {
@@ -282,6 +293,27 @@ extension MediaListSort {
             return "Popularity"
         case .mediaPopularityDesc:
             return "Popularity"
+        }
+    }
+}
+
+extension MediaRankType {
+    
+    var systemImage: String {
+        switch self {
+        case .rated:
+            return "star"
+        case .popular:
+            return "heart"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .rated:
+            return .yellow
+        case .popular:
+            return .pink
         }
     }
 }
