@@ -19,25 +19,31 @@ struct MediaGeneralInfoView: View {
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
-                HInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
-                if viewModel.isAnime {
-                    HInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
-                } else {
-                    HInfoView(name: "Chapters", value: viewModel.mediaDetails?.chapters?.formatted())
-                    HInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
+                Group {
+                    HInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
+                    if viewModel.isAnime {
+                        HInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
+                    } else {
+                        HInfoView(name: "Chapters", value: viewModel.mediaDetails?.chapters?.formatted())
+                        HInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
+                    }
+                    if let duration = viewModel.mediaDetails?.duration {
+                        HInfoView(name: "Duration", value: duration.minutesToLegibleText())
+                    }
+                    HInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDate.formatted())
+                    HInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDate.formatted())
                 }
-                HInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDate.formatted())
-                HInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDate.formatted())
-                
-                if viewModel.isAnime {
-                    HInfoView(name: "Season", value: viewModel.seasonFormatted)
-                    HInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true)
-                    HInfoView(name: "Producers", value: viewModel.producersFormatted, isExpandable: true)
+                Group {
+                    if viewModel.isAnime {
+                        HInfoView(name: "Season", value: viewModel.seasonFormatted)
+                        HInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true)
+                        HInfoView(name: "Producers", value: viewModel.producersFormatted, isExpandable: true)
+                    }
+                    HInfoView(name: "Source", value: viewModel.mediaDetails?.source?.value?.localizedName)
+                    HInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
+                    HInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
+                    HInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)
                 }
-                HInfoView(name: "Source", value: viewModel.mediaDetails?.source?.value?.localizedName)
-                HInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
-                HInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
-                HInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)
             }
             
             Group {

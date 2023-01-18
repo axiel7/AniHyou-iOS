@@ -102,6 +102,15 @@ extension Int {
         }
     }
     
+    func minutesToLegibleText() -> String {
+        let hours = self / 60
+        if hours >= 1 {
+            let minutes = self % 60
+            return "\(hours) hours, \(minutes) min"
+        }
+        else { return "\(self) min" }
+    }
+    
     func timestampToDateString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
