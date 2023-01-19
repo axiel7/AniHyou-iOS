@@ -12,9 +12,6 @@ struct MediaStatsView: View {
     
     @StateObject private var viewModel = MediaStatsViewModel()
     var mediaId: Int
-    private let rankingColumns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
     
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -44,6 +41,13 @@ struct MediaStatsView: View {
                     .padding(.horizontal)
                     .padding(.top)
                 HorizontalBarStatsView(stats: viewModel.statusDistribution)
+                
+                Text("Score distribution")
+                    .font(.title3)
+                    .bold()
+                    .padding(.horizontal)
+                    .padding(.top)
+                VerticalBarsStatsView(stats: viewModel.scoreDistribution)
             }
         }
         .padding(.bottom)

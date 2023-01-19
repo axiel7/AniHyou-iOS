@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MediaStatsViewModel: ObservableObject {
     
     @Published var isLoading = true
     @Published var statusDistribution = [Stat]()
+    @Published var scoreDistribution = [Stat]()
     @Published var rankings = [MediaStatsQuery.Data.Media.Ranking?]()
     
     func getMediaStats(mediaId: Int) {
@@ -22,6 +24,11 @@ class MediaStatsViewModel: ObservableObject {
                     media.stats?.statusDistribution?.forEach {
                         if let stat = $0 {
                             self?.statusDistribution.append(Stat(id: stat.status!.value!.localizedName, value: CGFloat(stat.amount ?? 0), color: stat.status!.value!.color))
+                        }
+                    }
+                    media.stats?.scoreDistribution?.forEach {
+                        if let stat = $0 {
+                            self?.scoreDistribution.append(Stat(id: String(stat.score ?? 0), value: CGFloat(stat.amount ?? 0), color: Color("Score\(String(stat.score ?? 10))")))
                         }
                     }
                     self?.rankings = media.rankings ?? []
