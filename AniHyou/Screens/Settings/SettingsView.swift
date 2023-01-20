@@ -21,6 +21,7 @@ struct SettingsView: View {
             Section {
                 Picker("List style", selection: $listStyle) {
                     Text("Standard").tag(0)
+                    Text("Compact").tag(2)
                     Text("Minimal").tag(1)
                 }
             } header: {

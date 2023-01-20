@@ -157,6 +157,7 @@
 		48CA07B728707DF80048854E /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07B628707DF80048854E /* StaffView.swift */; };
 		48CA07B928709FFF0048854E /* MediaRelationsAndRecommendations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */; };
 		48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */; };
+		48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */; };
 		48E03D0F2965A49D0080C60A /* GenreTagCollectionQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */; };
 		48E12595297942DC002DF6CA /* VerticalBarsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E12594297942DC002DF6CA /* VerticalBarsStatsView.swift */; };
 		48E7CAF328AA512D00F9CE24 /* UserActivity.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */; };
@@ -391,6 +392,7 @@
 		48CA07B628707DF80048854E /* StaffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffView.swift; sourceTree = "<group>"; };
 		48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaRelationsAndRecommendations.graphql; sourceTree = "<group>"; };
 		48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRelationsAndRecommendationsView.swift; sourceTree = "<group>"; };
+		48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemCompactView.swift; sourceTree = "<group>"; };
 		48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GenreTagCollectionQuery.graphql; sourceTree = "<group>"; };
 		48E12594297942DC002DF6CA /* VerticalBarsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBarsStatsView.swift; sourceTree = "<group>"; };
 		48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserActivity.graphql; sourceTree = "<group>"; };
@@ -1075,6 +1077,7 @@
 				486ED208285DD649002D29E1 /* MediaListStatusView.swift */,
 				486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */,
 				48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */,
+				48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1352,6 +1355,7 @@
 				4870AB0B28EC7551008431B5 /* SearchMediaQuery.graphql.swift in Sources */,
 				4851578B28A4060C007923A6 /* ThreadCommentItemView.swift in Sources */,
 				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
+				48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */,
 				48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */,
 				48A29C5A2972B9EB00BF53B8 /* MediaListItemMinimalView.swift in Sources */,
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,

@@ -24,6 +24,8 @@ struct MediaListView: View {
                         switch listStyle {
                         case 1:
                             MediaListItemMinimalView(item: item)
+                        case 2:
+                            MediaListItemCompactView(item: item)
                         default:
                             MediaListItemStandardView(item: item)
                         }
