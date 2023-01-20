@@ -144,6 +144,8 @@ public class UserMediaListQuery: GraphQLQuery {
         public var progress: Int? { __data["progress"] }
         /// The amount of volumes read by the user
         public var progressVolumes: Int? { __data["progressVolumes"] }
+        /// The amount of times the user has rewatched/read the media
+        public var `repeat`: Int? { __data["repeat"] }
         /// When the entry was started by the user
         public var startedAt: StartedAt? { __data["startedAt"] }
         /// When the entry was completed by the user

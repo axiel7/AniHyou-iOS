@@ -392,6 +392,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var progress: Int? { __data["progress"] }
         /// The amount of volumes read by the user
         public var progressVolumes: Int? { __data["progressVolumes"] }
+        /// The amount of times the user has rewatched/read the media
+        public var `repeat`: Int? { __data["repeat"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict

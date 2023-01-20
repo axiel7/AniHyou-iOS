@@ -13,6 +13,7 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
       score
       progress
       progressVolumes
+      repeat
       startedAt {
         __typename
         ...FuzzyDate
@@ -34,6 +35,7 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
     .field("score", Double?.self),
     .field("progress", Int?.self),
     .field("progressVolumes", Int?.self),
+    .field("repeat", Int?.self),
     .field("startedAt", StartedAt?.self),
     .field("completedAt", CompletedAt?.self),
   ] }
@@ -48,6 +50,8 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
   public var progress: Int? { __data["progress"] }
   /// The amount of volumes read by the user
   public var progressVolumes: Int? { __data["progressVolumes"] }
+  /// The amount of times the user has rewatched/read the media
+  public var `repeat`: Int? { __data["repeat"] }
   /// When the entry was started by the user
   public var startedAt: StartedAt? { __data["startedAt"] }
   /// When the entry was completed by the user

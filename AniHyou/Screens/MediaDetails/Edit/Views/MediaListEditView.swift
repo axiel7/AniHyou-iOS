@@ -22,6 +22,7 @@ struct MediaListEditView: View {
     @State private var status: MediaListStatus = .planning
     @State private var progress = 0
     @State private var progressVolumes = 0
+    @State private var repeatCount = 0
     @State private var startDate = Date()
     @State private var isStartDateSet = false
     @State private var finishDate = Date()
@@ -29,7 +30,8 @@ struct MediaListEditView: View {
     @State private var showStartDate = false
     @State private var showFinishDate = false
     
-    private let formatter: NumberFormatter = {
+    private let textFieldWidth: CGFloat = 65
+    private let decimalFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter
@@ -60,10 +62,10 @@ struct MediaListEditView: View {
                         }
                     default:
                         HStack {
-                            TextField("", value: $viewModel.score, formatter: formatter)
+                            TextField("", value: $viewModel.score, formatter: decimalFormatter)
                                 .keyboardType(.decimalPad)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: 80)
+                                .frame(width: textFieldWidth)
                             
                             Stepper("/\(viewModel.scoreHint)", value: $viewModel.score, in: viewModel.scoreRange, step: viewModel.scoreStep)
                         }
@@ -74,8 +76,8 @@ struct MediaListEditView: View {
                     HStack {
                         TextField("", value: $progress, formatter: NumberFormatter())
                             .keyboardType(.numberPad)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 80)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: textFieldWidth)
                         Stepper(mediaType == .anime ? "Episodes" : "Chapters", value: $progress, in: 0...Int.max)
                     }
                     if mediaType == .manga {
@@ -83,9 +85,19 @@ struct MediaListEditView: View {
                             TextField("", value: $progressVolumes, formatter: NumberFormatter())
                                 .keyboardType(.numberPad)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: 80)
+                                .frame(width: textFieldWidth)
                             Stepper("Volumes", value: $progressVolumes, in: 0...Int.max)
                         }
+                    }
+                }
+                
+                Section {
+                    HStack {
+                        TextField("", value: $repeatCount, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: textFieldWidth)
+                        Stepper("Repeat Count", value: $repeatCount, in: 0...Int.max)
                     }
                 }
                 
@@ -108,7 +120,7 @@ struct MediaListEditView: View {
                 
             })//:Form
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar(content: {
+            .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
                         dismiss()
@@ -116,13 +128,16 @@ struct MediaListEditView: View {
                 }
                     
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save", action: {
-                        viewModel.updateEntry(mediaId: mediaId, status: status, score: viewModel.score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil)
-                    })
-                    .font(.bold(.body)())
-                    
+                    if viewModel.isLoading {
+                        ProgressView()
+                    } else {
+                        Button("Save", action: {
+                            viewModel.updateEntry(mediaId: mediaId, status: status, score: viewModel.score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil, repeatCount: repeatCount)
+                        })
+                        .font(.bold(.body)())
+                    }
                 }
-            })//:Toolbar
+            }//:Toolbar
         }//:NavigationView
         .onAppear {
             setValues()
@@ -139,6 +154,7 @@ struct MediaListEditView: View {
         self.status = self.mediaList?.status?.value ?? .planning
         self.progress = self.mediaList?.progress ?? 0
         self.progressVolumes = self.mediaList?.progressVolumes ?? 0
+        self.repeatCount = self.mediaList?.repeat ?? 0
         viewModel.score = self.mediaList?.score ?? 0
         if let startedYear = self.mediaList?.startedAt?.year {
             if let startedMonth = self.mediaList?.startedAt?.month {

@@ -9,7 +9,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput) {
+      mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int) {
         SaveMediaListEntry(
           mediaId: $mediaId
           status: $status
@@ -18,6 +18,7 @@ public class UpdateEntryMutation: GraphQLMutation {
           progressVolumes: $progressVolumes
           startedAt: $startedAt
           completedAt: $completedAt
+          repeat: $repeat
         ) {
           __typename
           id
@@ -26,6 +27,7 @@ public class UpdateEntryMutation: GraphQLMutation {
           score
           progress
           progressVolumes
+          repeat
           startedAt {
             __typename
             ...FuzzyDate
@@ -47,6 +49,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public var progressVolumes: GraphQLNullable<Int>
   public var startedAt: GraphQLNullable<API.FuzzyDateInput>
   public var completedAt: GraphQLNullable<API.FuzzyDateInput>
+  public var `repeat`: GraphQLNullable<Int>
 
   public init(
     mediaId: GraphQLNullable<Int>,
@@ -55,7 +58,8 @@ public class UpdateEntryMutation: GraphQLMutation {
     progress: GraphQLNullable<Int>,
     progressVolumes: GraphQLNullable<Int>,
     startedAt: GraphQLNullable<API.FuzzyDateInput>,
-    completedAt: GraphQLNullable<API.FuzzyDateInput>
+    completedAt: GraphQLNullable<API.FuzzyDateInput>,
+    `repeat`: GraphQLNullable<Int>
   ) {
     self.mediaId = mediaId
     self.status = status
@@ -64,6 +68,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     self.progressVolumes = progressVolumes
     self.startedAt = startedAt
     self.completedAt = completedAt
+    self.`repeat` = `repeat`
   }
 
   public var __variables: Variables? { [
@@ -73,7 +78,8 @@ public class UpdateEntryMutation: GraphQLMutation {
     "progress": progress,
     "progressVolumes": progressVolumes,
     "startedAt": startedAt,
-    "completedAt": completedAt
+    "completedAt": completedAt,
+    "repeat": `repeat`
   ] }
 
   public struct Data: API.SelectionSet {
@@ -89,7 +95,8 @@ public class UpdateEntryMutation: GraphQLMutation {
         "progress": .variable("progress"),
         "progressVolumes": .variable("progressVolumes"),
         "startedAt": .variable("startedAt"),
-        "completedAt": .variable("completedAt")
+        "completedAt": .variable("completedAt"),
+        "repeat": .variable("repeat")
       ]),
     ] }
 
@@ -111,6 +118,7 @@ public class UpdateEntryMutation: GraphQLMutation {
         .field("score", Double?.self),
         .field("progress", Int?.self),
         .field("progressVolumes", Int?.self),
+        .field("repeat", Int?.self),
         .field("startedAt", StartedAt?.self),
         .field("completedAt", CompletedAt?.self),
       ] }
@@ -127,6 +135,8 @@ public class UpdateEntryMutation: GraphQLMutation {
       public var progress: Int? { __data["progress"] }
       /// The amount of volumes read by the user
       public var progressVolumes: Int? { __data["progressVolumes"] }
+      /// The amount of times the user has rewatched/read the media
+      public var `repeat`: Int? { __data["repeat"] }
       /// When the entry was started by the user
       public var startedAt: StartedAt? { __data["startedAt"] }
       /// When the entry was completed by the user
