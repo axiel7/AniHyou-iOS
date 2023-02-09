@@ -16,7 +16,20 @@ struct NotificationsView: View {
         NavigationView {
             Group {
                 if isLoggedIn() {
-                    Text("No notifications")
+                    List {
+                        ForEach(viewModel.notifications) {
+                            if let notification = $0 {
+                                NotificationItemView(notification: notification)
+                            }
+                        }
+                        
+                        if viewModel.hasNextPage {
+                            ProgressView()
+                                .onAppear {
+                                    viewModel.getNotifications()
+                                }
+                        }
+                    }
                 } else {
                     NotLoggedView(onSuccessLogin: { dismiss() })
                 }

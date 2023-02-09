@@ -1,0 +1,12 @@
+// @generated
+// This file was automatically generated and should not be edited.
+
+import ApolloAPI
+
+public extension Objects {
+  /// Notification for when an episode of anime airs
+  static let AiringNotification = Object(
+    typename: "AiringNotification",
+    implementedInterfaces: []
+  )
+}

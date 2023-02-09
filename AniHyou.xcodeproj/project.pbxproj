@@ -158,6 +158,10 @@
 		48CA07B928709FFF0048854E /* MediaRelationsAndRecommendations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */; };
 		48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */; };
 		48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */; };
+		48DD40432994DED000FED7BF /* NotificationQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48DD40422994DED000FED7BF /* NotificationQuery.graphql */; };
+		48DD40472994E9E000FED7BF /* NotificationsQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD40462994E9E000FED7BF /* NotificationsQuery.graphql.swift */; };
+		48DD40492994EA9200FED7BF /* GenericNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD40482994EA9200FED7BF /* GenericNotification.swift */; };
+		48DD404E2994FF6500FED7BF /* NotificationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD404D2994FF6500FED7BF /* NotificationItemView.swift */; };
 		48E03D0F2965A49D0080C60A /* GenreTagCollectionQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */; };
 		48E12595297942DC002DF6CA /* VerticalBarsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E12594297942DC002DF6CA /* VerticalBarsStatsView.swift */; };
 		48E7CAF328AA512D00F9CE24 /* UserActivity.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */; };
@@ -393,6 +397,10 @@
 		48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaRelationsAndRecommendations.graphql; sourceTree = "<group>"; };
 		48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRelationsAndRecommendationsView.swift; sourceTree = "<group>"; };
 		48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemCompactView.swift; sourceTree = "<group>"; };
+		48DD40422994DED000FED7BF /* NotificationQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = NotificationQuery.graphql; sourceTree = "<group>"; };
+		48DD40462994E9E000FED7BF /* NotificationsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsQuery.graphql.swift; sourceTree = "<group>"; };
+		48DD40482994EA9200FED7BF /* GenericNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNotification.swift; sourceTree = "<group>"; };
+		48DD404D2994FF6500FED7BF /* NotificationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemView.swift; sourceTree = "<group>"; };
 		48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GenreTagCollectionQuery.graphql; sourceTree = "<group>"; };
 		48E12594297942DC002DF6CA /* VerticalBarsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBarsStatsView.swift; sourceTree = "<group>"; };
 		48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserActivity.graphql; sourceTree = "<group>"; };
@@ -573,6 +581,7 @@
 				488B7ABB291A6C3A00156D80 /* CharacterDetails */,
 				480300CD291BC50B00E3047B /* StaffDetails */,
 				48374559296418D600E81CA3 /* StudioDetails */,
+				48DD404A2994FF2000FED7BF /* Notification */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -644,6 +653,7 @@
 				489622502934E4E400C6CB3F /* DeleteMediaList.graphql */,
 				48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */,
 				488763D92978180B00402934 /* MediaStats.graphql */,
+				48DD40422994DED000FED7BF /* NotificationQuery.graphql */,
 				4870AAED28EC7551008431B5 /* AiringAnimesQuery.graphql.swift */,
 				4870AAFF28EC7551008431B5 /* AnimesQuery.graphql.swift */,
 				4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */,
@@ -686,6 +696,7 @@
 				4884AAAD2965A79D009A3B8C /* GenreTagCollectionQuery.graphql.swift */,
 				481C4B53296D854200399D6C /* BasicMediaListEntry.graphql.swift */,
 				488763DB2978183800402934 /* MediaStatsQuery.graphql.swift */,
+				48DD40462994E9E000FED7BF /* NotificationsQuery.graphql.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -844,6 +855,7 @@
 				480F8824294262F3004773CC /* AnimeSeason.swift */,
 				48BCA59829672334005D3405 /* Genre.swift */,
 				488763D72977F8FF00402934 /* Stat.swift */,
+				48DD40482994EA9200FED7BF /* GenericNotification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -884,6 +896,32 @@
 				48F278E3296ECED8000827F7 /* MediaTagItemView.swift */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		48DD404A2994FF2000FED7BF /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				48DD404C2994FF4D00FED7BF /* Views */,
+				48DD404B2994FF4600FED7BF /* ViewModels */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		48DD404B2994FF4600FED7BF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		48DD404C2994FF4D00FED7BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				481E2D66288C008200D91A54 /* NotificationsView.swift */,
+				48DD404D2994FF6500FED7BF /* NotificationItemView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		48EE80FB2920ECE300344DA5 /* Root */ = {
@@ -968,7 +1006,6 @@
 			isa = PBXGroup;
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
-				481E2D66288C008200D91A54 /* NotificationsView.swift */,
 				48EE81332969DDC00074482F /* CalendarAnimeView.swift */,
 			);
 			path = Views;
@@ -978,7 +1015,6 @@
 			isa = PBXGroup;
 			children = (
 				481AD4F72851D927001779EE /* HomeViewModel.swift */,
-				481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */,
 				48EE81352969DE1C0074482F /* CalendarViewModel.swift */,
 			);
 			path = ViewModels;
@@ -1315,6 +1351,7 @@
 				489C7E8E2918FF02004B0B39 /* StaffDetails.graphql in Resources */,
 				48C608F1290D16C3004781C2 /* SearchUser.graphql in Resources */,
 				48E03D0F2965A49D0080C60A /* GenreTagCollectionQuery.graphql in Resources */,
+				48DD40432994DED000FED7BF /* NotificationQuery.graphql in Resources */,
 				48CA07AF287063420048854E /* MediaCharactersAndStaff.graphql in Resources */,
 				4832B027285F279600E79D27 /* MediaDetails.graphql in Resources */,
 				48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */,
@@ -1354,6 +1391,7 @@
 				4870AB0628EC7551008431B5 /* MediaRelated.graphql.swift in Sources */,
 				4870AB0B28EC7551008431B5 /* SearchMediaQuery.graphql.swift in Sources */,
 				4851578B28A4060C007923A6 /* ThreadCommentItemView.swift in Sources */,
+				48DD40492994EA9200FED7BF /* GenericNotification.swift in Sources */,
 				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
 				48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */,
 				48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */,
@@ -1379,6 +1417,7 @@
 				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
 				480300D3291BC56F00E3047B /* StaffDetailsViewModel.swift in Sources */,
 				48C608F7290D18BB004781C2 /* SearchUserQuery.graphql.swift in Sources */,
+				48DD40472994E9E000FED7BF /* NotificationsQuery.graphql.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
@@ -1444,6 +1483,7 @@
 				4870AB1228EC7551008431B5 /* UserFavoritesMangaQuery.graphql.swift in Sources */,
 				4870AB1D28EC7551008431B5 /* UserActivityQuery.graphql.swift in Sources */,
 				48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */,
+				48DD404E2994FF6500FED7BF /* NotificationItemView.swift in Sources */,
 				4870AB1328EC7551008431B5 /* UserMediaListQuery.graphql.swift in Sources */,
 				480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */,
 				489C7E9A29193944004B0B39 /* UserBasicInfoQuery.graphql.swift in Sources */,

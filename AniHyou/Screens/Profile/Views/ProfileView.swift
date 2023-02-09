@@ -35,6 +35,7 @@ struct ProfileView: View {
     }
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
+    @State private var showingNotificationsSheet = false
     @State private var infoType: ProfileInfoType = .activity
     
     var body: some View {
@@ -107,15 +108,33 @@ struct ProfileView: View {
             TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: bannerHeight)
                 .frame(height: bannerHeight)
             
-            VStack {
-                CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
-                    .shadow(radius: 7)
-                 
-                 Text(viewModel.userInfo?.name ?? "")
+            HStack {
+                Label(String(viewModel.userInfo?.unreadNotificationCount ?? 0), systemImage: "bell")
                     .font(.title2)
-                    .bold()
-                    .frame(alignment: .center)
-                    .transition(.move(edge: .top))
+                    .foregroundColor(.clear)
+                    .padding(.horizontal, 16)
+                Spacer()
+                VStack {
+                    CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
+                        .shadow(radius: 7)
+                    
+                    Text(viewModel.userInfo?.name ?? "")
+                        .font(.title2)
+                        .bold()
+                        .frame(alignment: .center)
+                        .transition(.move(edge: .top))
+                }
+                Spacer()
+                
+                Button(action: { showingNotificationsSheet = true }) {
+                    Label(String(viewModel.userInfo?.unreadNotificationCount ?? 0), systemImage: "bell")
+                        .font(.title2)
+                }
+                .padding(.horizontal, 16)
+                .padding(.top)
+                .sheet(isPresented: $showingNotificationsSheet) {
+                    NotificationsView()
+                }
             }
             .padding(.top, 85)
         }

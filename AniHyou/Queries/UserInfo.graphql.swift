@@ -26,6 +26,7 @@ public struct UserInfo: API.SelectionSet, Fragment {
         __typename
         scoreFormat
       }
+      unreadNotificationCount
     }
     """ }
 
@@ -41,6 +42,7 @@ public struct UserInfo: API.SelectionSet, Fragment {
     .field("about", String?.self),
     .field("options", Options?.self),
     .field("mediaListOptions", MediaListOptions?.self),
+    .field("unreadNotificationCount", Int?.self),
   ] }
 
   /// The id of the user
@@ -57,6 +59,8 @@ public struct UserInfo: API.SelectionSet, Fragment {
   public var options: Options? { __data["options"] }
   /// The user's media list options
   public var mediaListOptions: MediaListOptions? { __data["mediaListOptions"] }
+  /// The number of unread notifications the user has
+  public var unreadNotificationCount: Int? { __data["unreadNotificationCount"] }
 
   /// Avatar
   ///

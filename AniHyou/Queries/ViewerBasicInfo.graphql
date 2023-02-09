@@ -20,4 +20,5 @@ fragment UserInfo on User {
   mediaListOptions {
     scoreFormat
   }
+  unreadNotificationCount
 }

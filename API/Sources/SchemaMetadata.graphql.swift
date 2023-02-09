@@ -61,6 +61,23 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "StaffName": return API.Objects.StaffName
     case "StaffImage": return API.Objects.StaffImage
     case "StaffConnection": return API.Objects.StaffConnection
+    case "AiringNotification": return API.Objects.AiringNotification
+    case "FollowingNotification": return API.Objects.FollowingNotification
+    case "ActivityMessageNotification": return API.Objects.ActivityMessageNotification
+    case "ActivityMentionNotification": return API.Objects.ActivityMentionNotification
+    case "ActivityReplyNotification": return API.Objects.ActivityReplyNotification
+    case "ActivityReplySubscribedNotification": return API.Objects.ActivityReplySubscribedNotification
+    case "ActivityLikeNotification": return API.Objects.ActivityLikeNotification
+    case "ActivityReplyLikeNotification": return API.Objects.ActivityReplyLikeNotification
+    case "ThreadCommentMentionNotification": return API.Objects.ThreadCommentMentionNotification
+    case "ThreadCommentReplyNotification": return API.Objects.ThreadCommentReplyNotification
+    case "ThreadCommentSubscribedNotification": return API.Objects.ThreadCommentSubscribedNotification
+    case "ThreadCommentLikeNotification": return API.Objects.ThreadCommentLikeNotification
+    case "ThreadLikeNotification": return API.Objects.ThreadLikeNotification
+    case "RelatedMediaAdditionNotification": return API.Objects.RelatedMediaAdditionNotification
+    case "MediaDataChangeNotification": return API.Objects.MediaDataChangeNotification
+    case "MediaMergeNotification": return API.Objects.MediaMergeNotification
+    case "MediaDeletionNotification": return API.Objects.MediaDeletionNotification
     case "CharacterEdge": return API.Objects.CharacterEdge
     case "StaffEdge": return API.Objects.StaffEdge
     case "ThreadComment": return API.Objects.ThreadComment
