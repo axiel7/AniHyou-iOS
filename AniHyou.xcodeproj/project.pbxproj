@@ -1891,8 +1891,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NuPlay/RichText.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				kind = exactVersion;
+				version = 2.1.1;
 			};
 		};
 		488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {

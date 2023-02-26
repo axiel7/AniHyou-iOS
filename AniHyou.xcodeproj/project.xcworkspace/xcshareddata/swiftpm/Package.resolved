@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apollographql/apollo-ios",
       "state" : {
-        "revision" : "e123b5fdbaaf926d98a6833f25cbdff51e22200b",
-        "version" : "1.0.6"
+        "revision" : "f9a452cf786e02cafff85c4acf9f72e99011b3ad",
+        "version" : "1.0.7"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "90135885ef506506620c4911cefb55a95ca2a9a2",
-        "version" : "7.5.0"
+        "revision" : "af4be924ad984cf4d16f4ae4df424e79a443d435",
+        "version" : "7.6.2"
       }
     },
     {
