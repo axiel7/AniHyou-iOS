@@ -61,10 +61,7 @@ struct ProfileView: View {
                             case .favorites:
                                 UserFavoritesView(userId: viewModel.userInfo!.id)
                             case .social:
-                                VStack(alignment: .center) {
-                                    Text("Coming Soon")
-                                }
-                                .frame(maxWidth: .infinity)
+                                UserSocialView(userId: viewModel.userInfo!.id)
                             }
                         } header: {
                             Picker("Info type", selection: $infoType) {
@@ -109,10 +106,12 @@ struct ProfileView: View {
                 .frame(height: bannerHeight)
             
             HStack {
-                Label(String(viewModel.userInfo?.unreadNotificationCount ?? 0), systemImage: "bell")
-                    .font(.title2)
-                    .foregroundColor(.clear)
-                    .padding(.horizontal, 16)
+                if isMyProfile {
+                    Label(String(viewModel.userInfo?.unreadNotificationCount ?? 0), systemImage: "bell")
+                        .font(.title2)
+                        .foregroundColor(.clear)
+                        .padding(.horizontal, 16)
+                }
                 Spacer()
                 VStack {
                     CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
@@ -126,14 +125,16 @@ struct ProfileView: View {
                 }
                 Spacer()
                 
-                Button(action: { showingNotificationsSheet = true }) {
-                    Label(String(viewModel.userInfo?.unreadNotificationCount ?? 0), systemImage: "bell")
-                        .font(.title2)
-                }
-                .padding(.horizontal, 16)
-                .padding(.top)
-                .sheet(isPresented: $showingNotificationsSheet) {
-                    NotificationsView()
+                if isMyProfile {
+                    Button(action: { showingNotificationsSheet = true }) {
+                        Label(String(viewModel.userInfo?.unreadNotificationCount ?? 0), systemImage: "bell")
+                            .font(.title2)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top)
+                    .sheet(isPresented: $showingNotificationsSheet) {
+                        NotificationsView()
+                    }
                 }
             }
             .padding(.top, 85)

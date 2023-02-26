@@ -17,6 +17,13 @@
 		48099965288B2E9C005AE427 /* UserAbout.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48099964288B2E9C005AE427 /* UserAbout.graphql */; };
 		480A41A528ECA1A30066288D /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A41A428ECA1A30066288D /* ModelUtils.swift */; };
 		480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */; };
+		480D769929AB64FB00B56DE1 /* FollowersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 480D769829AB64FB00B56DE1 /* FollowersQuery.graphql */; };
+		480D769B29AB652000B56DE1 /* FollowingsQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 480D769A29AB652000B56DE1 /* FollowingsQuery.graphql */; };
+		480D769D29AB65E100B56DE1 /* FollowersQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D769C29AB65E100B56DE1 /* FollowersQuery.graphql.swift */; };
+		480D769F29AB65E700B56DE1 /* FollowingsQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D769E29AB65E700B56DE1 /* FollowingsQuery.graphql.swift */; };
+		480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D76A029AB661E00B56DE1 /* UserSocialView.swift */; };
+		480D76A329AB67D600B56DE1 /* UserFollow.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D76A229AB67D600B56DE1 /* UserFollow.graphql.swift */; };
+		480D76A529AB6A9800B56DE1 /* UserSocialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D76A429AB6A9800B56DE1 /* UserSocialViewModel.swift */; };
 		480F8825294262F3004773CC /* AnimeSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F8824294262F3004773CC /* AnimeSeason.swift */; };
 		480F882929426995004773CC /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 480F882829426995004773CC /* API */; };
 		481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */; };
@@ -253,6 +260,13 @@
 		48099962288B2C60005AE427 /* UserAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAboutView.swift; sourceTree = "<group>"; };
 		48099964288B2E9C005AE427 /* UserAbout.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAbout.graphql; sourceTree = "<group>"; };
 		480A41A428ECA1A30066288D /* ModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtils.swift; sourceTree = "<group>"; };
+		480D769829AB64FB00B56DE1 /* FollowersQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FollowersQuery.graphql; sourceTree = "<group>"; };
+		480D769A29AB652000B56DE1 /* FollowingsQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FollowingsQuery.graphql; sourceTree = "<group>"; };
+		480D769C29AB65E100B56DE1 /* FollowersQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersQuery.graphql.swift; sourceTree = "<group>"; };
+		480D769E29AB65E700B56DE1 /* FollowingsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingsQuery.graphql.swift; sourceTree = "<group>"; };
+		480D76A029AB661E00B56DE1 /* UserSocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialView.swift; sourceTree = "<group>"; };
+		480D76A229AB67D600B56DE1 /* UserFollow.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollow.graphql.swift; sourceTree = "<group>"; };
+		480D76A429AB6A9800B56DE1 /* UserSocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialViewModel.swift; sourceTree = "<group>"; };
 		480F8824294262F3004773CC /* AnimeSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSeason.swift; sourceTree = "<group>"; };
 		480F88272942695D004773CC /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
 		481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerToggleView.swift; sourceTree = "<group>"; };
@@ -654,6 +668,8 @@
 				48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */,
 				488763D92978180B00402934 /* MediaStats.graphql */,
 				48DD40422994DED000FED7BF /* NotificationQuery.graphql */,
+				480D769829AB64FB00B56DE1 /* FollowersQuery.graphql */,
+				480D769A29AB652000B56DE1 /* FollowingsQuery.graphql */,
 				4870AAED28EC7551008431B5 /* AiringAnimesQuery.graphql.swift */,
 				4870AAFF28EC7551008431B5 /* AnimesQuery.graphql.swift */,
 				4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */,
@@ -697,6 +713,9 @@
 				481C4B53296D854200399D6C /* BasicMediaListEntry.graphql.swift */,
 				488763DB2978183800402934 /* MediaStatsQuery.graphql.swift */,
 				48DD40462994E9E000FED7BF /* NotificationsQuery.graphql.swift */,
+				480D769C29AB65E100B56DE1 /* FollowersQuery.graphql.swift */,
+				480D769E29AB65E700B56DE1 /* FollowingsQuery.graphql.swift */,
+				480D76A229AB67D600B56DE1 /* UserFollow.graphql.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -988,6 +1007,7 @@
 				48F7641528ACECA900C82D75 /* UserActivityView.swift */,
 				48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */,
 				48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */,
+				480D76A029AB661E00B56DE1 /* UserSocialView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -998,6 +1018,7 @@
 				48643F442853C54800D7C328 /* ProfileViewModel.swift */,
 				48F7641328ACEC6000C82D75 /* UserActivityViewModel.swift */,
 				48F7641728ACF31800C82D75 /* UserFavoritesViewModel.swift */,
+				480D76A429AB6A9800B56DE1 /* UserSocialViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1342,6 +1363,7 @@
 				489C7E92291900C7004B0B39 /* UserBasicInfo.graphql in Resources */,
 				48F763EE28ACE0CA00C82D75 /* UserFavoritesCharacter.graphql in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
+				480D769B29AB652000B56DE1 /* FollowingsQuery.graphql in Resources */,
 				48C608EB290D1526004781C2 /* SearchStaff.graphql in Resources */,
 				48C608ED290D15DF004781C2 /* SearchCharacter.graphql in Resources */,
 				489C7E902918FF98004B0B39 /* StudioDetails.graphql in Resources */,
@@ -1353,6 +1375,7 @@
 				48E03D0F2965A49D0080C60A /* GenreTagCollectionQuery.graphql in Resources */,
 				48DD40432994DED000FED7BF /* NotificationQuery.graphql in Resources */,
 				48CA07AF287063420048854E /* MediaCharactersAndStaff.graphql in Resources */,
+				480D769929AB64FB00B56DE1 /* FollowersQuery.graphql in Resources */,
 				4832B027285F279600E79D27 /* MediaDetails.graphql in Resources */,
 				48643F432853C50400D7C328 /* ViewerBasicInfo.graphql in Resources */,
 				483CEABB289E67A000D30266 /* MediaThreads.graphql in Resources */,
@@ -1399,6 +1422,7 @@
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
 				489622532934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift in Sources */,
 				4870AB1628EC7551008431B5 /* MediaCharacter.graphql.swift in Sources */,
+				480D769D29AB65E100B56DE1 /* FollowersQuery.graphql.swift in Sources */,
 				48AB01F4286B6A4B004DC7FF /* SearchType.swift in Sources */,
 				488763D62977F83F00402934 /* HorizontalBarStatsView.swift in Sources */,
 				4870AB1128EC7551008431B5 /* MediaCharactersAndStaffQuery.graphql.swift in Sources */,
@@ -1413,6 +1437,7 @@
 				48F7641428ACEC6000C82D75 /* UserActivityViewModel.swift in Sources */,
 				48F7641828ACF31800C82D75 /* UserFavoritesViewModel.swift in Sources */,
 				481E2D67288C008200D91A54 /* NotificationsView.swift in Sources */,
+				480D769F29AB65E700B56DE1 /* FollowingsQuery.graphql.swift in Sources */,
 				48F7641628ACECA900C82D75 /* UserActivityView.swift in Sources */,
 				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
 				480300D3291BC56F00E3047B /* StaffDetailsViewModel.swift in Sources */,
@@ -1420,6 +1445,7 @@
 				48DD40472994E9E000FED7BF /* NotificationsQuery.graphql.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
+				480D76A529AB6A9800B56DE1 /* UserSocialViewModel.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
 				4870AB1B28EC7551008431B5 /* MediaRecommended.graphql.swift in Sources */,
 				486ED207285DD4D8002D29E1 /* MediaListItemStandardView.swift in Sources */,
@@ -1462,6 +1488,7 @@
 				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
 				488C268A28539D5C0005EE15 /* Utils.swift in Sources */,
 				4870AB0328EC7551008431B5 /* UserFavoritesCharacterQuery.graphql.swift in Sources */,
+				480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */,
 				4832B034285F953100E79D27 /* MediaStatView.swift in Sources */,
 				488763E329781ADC00402934 /* MediaStatsViewModel.swift in Sources */,
 				48FC947B2868653E00C87F56 /* RectangleTextView.swift in Sources */,
@@ -1480,6 +1507,7 @@
 				4870AB1428EC7551008431B5 /* MediaChartQuery.graphql.swift in Sources */,
 				48BCA59929672334005D3405 /* Genre.swift in Sources */,
 				4837455F2964192F00E81CA3 /* StudioDetailsViewModel.swift in Sources */,
+				480D76A329AB67D600B56DE1 /* UserFollow.graphql.swift in Sources */,
 				4870AB1228EC7551008431B5 /* UserFavoritesMangaQuery.graphql.swift in Sources */,
 				4870AB1D28EC7551008431B5 /* UserActivityQuery.graphql.swift in Sources */,
 				48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */,
