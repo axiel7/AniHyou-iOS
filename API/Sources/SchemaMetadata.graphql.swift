@@ -81,6 +81,14 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "CharacterEdge": return API.Objects.CharacterEdge
     case "StaffEdge": return API.Objects.StaffEdge
     case "ThreadComment": return API.Objects.ThreadComment
+    case "UserStatisticTypes": return API.Objects.UserStatisticTypes
+    case "UserStatistics": return API.Objects.UserStatistics
+    case "UserScoreStatistic": return API.Objects.UserScoreStatistic
+    case "UserFormatStatistic": return API.Objects.UserFormatStatistic
+    case "UserStatusStatistic": return API.Objects.UserStatusStatistic
+    case "UserCountryStatistic": return API.Objects.UserCountryStatistic
+    case "UserReleaseYearStatistic": return API.Objects.UserReleaseYearStatistic
+    case "UserStartYearStatistic": return API.Objects.UserStartYearStatistic
     case "TextActivity": return API.Objects.TextActivity
     case "ListActivity": return API.Objects.ListActivity
     case "MessageActivity": return API.Objects.MessageActivity

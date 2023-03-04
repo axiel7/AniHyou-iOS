@@ -111,6 +111,10 @@ extension Int {
         else { return "\(self) min" }
     }
     
+    func minutesToDays() -> Double {
+        return Double(self) / 1440
+    }
+    
     func timestampToDateString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium

@@ -54,10 +54,7 @@ struct ProfileView: View {
                             case .about:
                                 UserAboutView(userId: viewModel.userInfo!.id)
                             case .stats:
-                                VStack(alignment: .center) {
-                                    Text("Coming Soon")
-                                }
-                                .frame(maxWidth: .infinity)
+                                UserStatsHostView(userId: viewModel.userInfo!.id)
                             case .favorites:
                                 UserFavoritesView(userId: viewModel.userInfo!.id)
                             case .social:

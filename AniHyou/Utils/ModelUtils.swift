@@ -123,6 +123,31 @@ extension MediaFormat {
             return "OneShot"
         }
     }
+    
+    var color: Color {
+        switch self {
+        case .tv:
+            return .accentColor
+        case .tvShort:
+            return Color("Score90")
+        case .movie:
+            return Color("Score100")
+        case .special:
+            return Color("Score50")
+        case .ova:
+            return Color("Score30")
+        case .ona:
+            return Color("Score20")
+        case .music:
+            return Color("Score60")
+        case .manga:
+            return .accentColor
+        case .novel:
+            return Color("Score90")
+        case .oneShot:
+            return Color("Score70")
+        }
+    }
 }
 
 extension MediaStatus {
