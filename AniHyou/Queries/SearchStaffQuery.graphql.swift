@@ -56,7 +56,7 @@ public class SearchStaffQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -73,10 +73,11 @@ public class SearchStaffQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("staff", [Staff?]?.self, arguments: [
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
@@ -93,10 +94,11 @@ public class SearchStaffQuery: GraphQLQuery {
       /// Parent Type: `Staff`
       public struct Staff: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.Staff }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("id", Int.self),
           .field("name", Name?.self),
           .field("image", Image?.self),
@@ -117,10 +119,11 @@ public class SearchStaffQuery: GraphQLQuery {
         /// Parent Type: `StaffName`
         public struct Name: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffName }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("userPreferred", String?.self),
           ] }
 
@@ -133,10 +136,11 @@ public class SearchStaffQuery: GraphQLQuery {
         /// Parent Type: `StaffImage`
         public struct Image: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffImage }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("medium", String?.self),
           ] }
 
@@ -150,10 +154,11 @@ public class SearchStaffQuery: GraphQLQuery {
       /// Parent Type: `PageInfo`
       public struct PageInfo: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("hasNextPage", Bool?.self),
         ] }
 

@@ -42,6 +42,6 @@ struct ReviewItemView: View {
 
 struct ReviewItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewItemView(review: MediaReviewsQuery.Data.Media.Reviews.Node(fieldData: nil, variables: nil))
+        ReviewItemView(review: .init(_fieldData: nil))
     }
 }

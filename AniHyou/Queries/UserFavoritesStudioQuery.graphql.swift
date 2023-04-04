@@ -55,7 +55,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -70,10 +70,11 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
     /// Parent Type: `User`
     public struct User: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("favourites", Favourites?.self),
       ] }
 
@@ -85,10 +86,11 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
       /// Parent Type: `Favourites`
       public struct Favourites: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.Favourites }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("studios", Studios?.self, arguments: [
             "page": .variable("page"),
             "perPage": .variable("perPage")
@@ -103,10 +105,11 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
         /// Parent Type: `StudioConnection`
         public struct Studios: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.StudioConnection }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("nodes", [Node?]?.self),
             .field("pageInfo", PageInfo?.self),
           ] }
@@ -120,10 +123,11 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
           /// Parent Type: `Studio`
           public struct Node: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.Studio }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("id", Int.self),
               .field("name", String.self),
             ] }
@@ -139,10 +143,11 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
           /// Parent Type: `PageInfo`
           public struct PageInfo: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("currentPage", Int?.self),
               .field("hasNextPage", Bool?.self),
             ] }

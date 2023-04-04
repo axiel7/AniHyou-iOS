@@ -76,7 +76,7 @@ public class UserActivityQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -93,10 +93,11 @@ public class UserActivityQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("activities", [Activity?]?.self, arguments: [
           "userId": .variable("userId"),
           "sort": .variable("sort")
@@ -113,10 +114,11 @@ public class UserActivityQuery: GraphQLQuery {
       /// Parent Type: `ActivityUnion`
       public struct Activity: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Unions.ActivityUnion }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .inlineFragment(AsTextActivity.self),
           .inlineFragment(AsListActivity.self),
         ] }
@@ -129,8 +131,9 @@ public class UserActivityQuery: GraphQLQuery {
         /// Parent Type: `TextActivity`
         public struct AsTextActivity: API.InlineFragment {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
+          public typealias RootEntityType = Page.Activity
           public static var __parentType: ApolloAPI.ParentType { API.Objects.TextActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -154,8 +157,9 @@ public class UserActivityQuery: GraphQLQuery {
         /// Parent Type: `ListActivity`
         public struct AsListActivity: API.InlineFragment {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
+          public typealias RootEntityType = Page.Activity
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ListActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -184,10 +188,11 @@ public class UserActivityQuery: GraphQLQuery {
           /// Parent Type: `Media`
           public struct Media: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("id", Int.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
@@ -205,10 +210,11 @@ public class UserActivityQuery: GraphQLQuery {
             /// Parent Type: `MediaTitle`
             public struct Title: API.SelectionSet {
               public let __data: DataDict
-              public init(data: DataDict) { __data = data }
+              public init(_dataDict: DataDict) { __data = _dataDict }
 
               public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
               public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
                 .field("userPreferred", String?.self),
               ] }
 
@@ -221,10 +227,11 @@ public class UserActivityQuery: GraphQLQuery {
             /// Parent Type: `MediaCoverImage`
             public struct CoverImage: API.SelectionSet {
               public let __data: DataDict
-              public init(data: DataDict) { __data = data }
+              public init(_dataDict: DataDict) { __data = _dataDict }
 
               public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
               public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
                 .field("medium", String?.self),
               ] }
 
@@ -240,10 +247,11 @@ public class UserActivityQuery: GraphQLQuery {
       /// Parent Type: `PageInfo`
       public struct PageInfo: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
         ] }

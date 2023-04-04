@@ -79,7 +79,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -94,10 +94,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
     /// Parent Type: `User`
     public struct User: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("statistics", Statistics?.self),
       ] }
 
@@ -109,10 +110,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
       /// Parent Type: `UserStatisticTypes`
       public struct Statistics: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.UserStatisticTypes }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("anime", Anime?.self),
         ] }
 
@@ -123,10 +125,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
         /// Parent Type: `UserStatistics`
         public struct Anime: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.UserStatistics }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("count", Int.self),
             .field("episodesWatched", Int.self),
             .field("minutesWatched", Int.self),
@@ -157,10 +160,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// Parent Type: `UserScoreStatistic`
           public struct Score: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.UserScoreStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("score", Int?.self),
@@ -176,10 +180,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// Parent Type: `UserFormatStatistic`
           public struct Format: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.UserFormatStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("meanScore", Double.self),
@@ -197,10 +202,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// Parent Type: `UserStatusStatistic`
           public struct Status: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.UserStatusStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("meanScore", Double.self),
@@ -218,10 +224,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// Parent Type: `UserCountryStatistic`
           public struct Country: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.UserCountryStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("meanScore", Double.self),
@@ -239,10 +246,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// Parent Type: `UserReleaseYearStatistic`
           public struct ReleaseYear: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.UserReleaseYearStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("meanScore", Double.self),
@@ -260,10 +268,11 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// Parent Type: `UserStartYearStatistic`
           public struct StartYear: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.UserStartYearStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("meanScore", Double.self),

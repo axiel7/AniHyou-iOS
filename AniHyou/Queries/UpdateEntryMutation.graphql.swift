@@ -84,7 +84,7 @@ public class UpdateEntryMutation: GraphQLMutation {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -108,10 +108,11 @@ public class UpdateEntryMutation: GraphQLMutation {
     /// Parent Type: `MediaList`
     public struct SaveMediaListEntry: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("id", Int.self),
         .field("mediaId", Int.self),
         .field("status", GraphQLEnum<API.MediaListStatus>?.self),
@@ -147,10 +148,11 @@ public class UpdateEntryMutation: GraphQLMutation {
       /// Parent Type: `FuzzyDate`
       public struct StartedAt: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .fragment(FuzzyDate.self),
         ] }
 
@@ -163,7 +165,7 @@ public class UpdateEntryMutation: GraphQLMutation {
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var fuzzyDate: FuzzyDate { _toFragment() }
         }
@@ -174,10 +176,11 @@ public class UpdateEntryMutation: GraphQLMutation {
       /// Parent Type: `FuzzyDate`
       public struct CompletedAt: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .fragment(FuzzyDate.self),
         ] }
 
@@ -190,7 +193,7 @@ public class UpdateEntryMutation: GraphQLMutation {
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var fuzzyDate: FuzzyDate { _toFragment() }
         }

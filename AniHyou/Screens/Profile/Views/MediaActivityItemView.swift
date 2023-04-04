@@ -9,11 +9,11 @@ import SwiftUI
 
 struct MediaActivityItemView: View {
     
-    var activity: UserActivityQuery.Data.Page.Activity.AsListActivity
+    var activity: UserActivityQuery.Data.Page.Activity.AsListActivity?
     
     var body: some View {
         HStack(alignment: .center) {
-            MediaCoverView(imageUrl: activity.media?.coverImage?.medium ?? "", width: 53, height: 80, cancelOnDisappear: false)
+            MediaCoverView(imageUrl: activity?.media?.coverImage?.medium ?? "", width: 53, height: 80, cancelOnDisappear: false)
             
             VStack(alignment: .leading) {
                 Text(activityText)
@@ -22,7 +22,7 @@ struct MediaActivityItemView: View {
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
                 
-                Text(activity.createdAt.timestampIntervalSinceNow().secondsToLegibleText() + " ago")
+                Text((activity?.createdAt.timestampIntervalSinceNow().secondsToLegibleText() ?? "") + " ago")
                     .font(.subheadline)
                     .lineLimit(1)
                     .multilineTextAlignment(.leading)
@@ -33,16 +33,16 @@ struct MediaActivityItemView: View {
     }
     
     private var activityText: String {
-        if activity.progress != nil {
-            return "\(activity.status?.firstCapitalized ?? "") \(activity.progress!) of \(activity.media?.title?.userPreferred ?? "")"
+        if activity?.progress != nil {
+            return "\(activity?.status?.firstCapitalized ?? "") \(activity?.progress! ?? "") of \(activity?.media?.title?.userPreferred ?? "")"
         } else {
-            return "\(activity.status?.firstCapitalized ?? "") \(activity.media?.title?.userPreferred ?? "")"
+            return "\(activity?.status?.firstCapitalized ?? "") \(activity?.media?.title?.userPreferred ?? "")"
         }
     }
 }
 
 struct MediaActivityItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaActivityItemView(activity: UserActivityQuery.Data.Page.Activity.AsListActivity(fieldData: nil, variables: nil))
+        MediaActivityItemView(activity: nil)
     }
 }

@@ -52,7 +52,7 @@ public class MediaReviewsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -67,10 +67,11 @@ public class MediaReviewsQuery: GraphQLQuery {
     /// Parent Type: `Media`
     public struct Media: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("reviews", Reviews?.self, arguments: [
           "page": .variable("page"),
           "perPage": .variable("perPage"),
@@ -86,10 +87,11 @@ public class MediaReviewsQuery: GraphQLQuery {
       /// Parent Type: `ReviewConnection`
       public struct Reviews: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.ReviewConnection }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
         ] }
 
@@ -100,10 +102,11 @@ public class MediaReviewsQuery: GraphQLQuery {
         /// Parent Type: `Review`
         public struct Node: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.Review }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("id", Int.self),
             .field("summary", String?.self),
             .field("score", Int?.self),
@@ -124,10 +127,11 @@ public class MediaReviewsQuery: GraphQLQuery {
           /// Parent Type: `User`
           public struct User: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("name", String.self),
             ] }
 

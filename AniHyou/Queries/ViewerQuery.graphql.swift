@@ -23,7 +23,7 @@ public class ViewerQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -38,10 +38,11 @@ public class ViewerQuery: GraphQLQuery {
     /// Parent Type: `User`
     public struct Viewer: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .fragment(UserInfo.self),
       ] }
 
@@ -64,7 +65,7 @@ public class ViewerQuery: GraphQLQuery {
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var userInfo: UserInfo { _toFragment() }
       }

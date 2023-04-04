@@ -38,6 +38,6 @@ struct StaffView: View {
 
 struct StaffView_Previews: PreviewProvider {
     static var previews: some View {
-        StaffView(staff: MediaStaff(fieldData: nil, variables: nil))
+        StaffView(staff: .init(_fieldData: nil))
     }
 }

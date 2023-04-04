@@ -17,10 +17,8 @@ struct NotificationsView: View {
             Group {
                 if isLoggedIn() {
                     List {
-                        ForEach(viewModel.notifications) {
-                            if let notification = $0 {
-                                NotificationItemView(notification: notification)
-                            }
+                        ForEach(viewModel.notifications) { notification in
+                            NotificationItemView(notification: notification)
                         }
                         
                         if viewModel.hasNextPage {

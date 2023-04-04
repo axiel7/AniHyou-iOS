@@ -71,7 +71,7 @@ public class AiringAnimesQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -88,10 +88,11 @@ public class AiringAnimesQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("airingSchedules", [AiringSchedule?]?.self, arguments: [
           "sort": .variable("sort"),
           "airingAt_greater": .variable("airingAtGreater"),
@@ -109,10 +110,11 @@ public class AiringAnimesQuery: GraphQLQuery {
       /// Parent Type: `AiringSchedule`
       public struct AiringSchedule: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.AiringSchedule }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("media", Media?.self),
           .field("timeUntilAiring", Int.self),
         ] }
@@ -127,10 +129,11 @@ public class AiringAnimesQuery: GraphQLQuery {
         /// Parent Type: `Media`
         public struct Media: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("id", Int.self),
             .field("title", Title?.self),
             .field("coverImage", CoverImage?.self),
@@ -148,10 +151,11 @@ public class AiringAnimesQuery: GraphQLQuery {
           /// Parent Type: `MediaTitle`
           public struct Title: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("userPreferred", String?.self),
             ] }
 
@@ -164,10 +168,11 @@ public class AiringAnimesQuery: GraphQLQuery {
           /// Parent Type: `MediaCoverImage`
           public struct CoverImage: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("large", String?.self),
             ] }
 
@@ -182,10 +187,11 @@ public class AiringAnimesQuery: GraphQLQuery {
       /// Parent Type: `PageInfo`
       public struct PageInfo: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("hasNextPage", Bool?.self),
         ] }
 

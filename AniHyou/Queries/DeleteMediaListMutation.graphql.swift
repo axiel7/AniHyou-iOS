@@ -28,7 +28,7 @@ public class DeleteMediaListMutation: GraphQLMutation {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -43,10 +43,11 @@ public class DeleteMediaListMutation: GraphQLMutation {
     /// Parent Type: `Deleted`
     public struct DeleteMediaListEntry: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Deleted }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("deleted", Bool?.self),
       ] }
 

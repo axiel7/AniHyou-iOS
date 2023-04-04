@@ -49,7 +49,7 @@ public class MediaStatsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -64,10 +64,11 @@ public class MediaStatsQuery: GraphQLQuery {
     /// Parent Type: `Media`
     public struct Media: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("stats", Stats?.self),
         .field("rankings", [Ranking?]?.self),
       ] }
@@ -81,10 +82,11 @@ public class MediaStatsQuery: GraphQLQuery {
       /// Parent Type: `MediaStats`
       public struct Stats: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaStats }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("statusDistribution", [StatusDistribution?]?.self),
           .field("scoreDistribution", [ScoreDistribution?]?.self),
         ] }
@@ -97,10 +99,11 @@ public class MediaStatsQuery: GraphQLQuery {
         /// Parent Type: `StatusDistribution`
         public struct StatusDistribution: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.StatusDistribution }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("status", GraphQLEnum<API.MediaListStatus>?.self),
             .field("amount", Int?.self),
           ] }
@@ -116,10 +119,11 @@ public class MediaStatsQuery: GraphQLQuery {
         /// Parent Type: `ScoreDistribution`
         public struct ScoreDistribution: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ScoreDistribution }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("score", Int?.self),
             .field("amount", Int?.self),
           ] }
@@ -135,10 +139,11 @@ public class MediaStatsQuery: GraphQLQuery {
       /// Parent Type: `MediaRank`
       public struct Ranking: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaRank }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("id", Int.self),
           .field("rank", Int.self),
           .field("context", String.self),

@@ -26,10 +26,11 @@ public struct MediaRelated: API.SelectionSet, Fragment {
     """ }
 
   public let __data: DataDict
-  public init(data: DataDict) { __data = data }
+  public init(_dataDict: DataDict) { __data = _dataDict }
 
   public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaEdge }
   public static var __selections: [ApolloAPI.Selection] { [
+    .field("__typename", String.self),
     .field("relationType", GraphQLEnum<API.MediaRelation>?.self),
     .field("node", Node?.self),
   ] }
@@ -43,10 +44,11 @@ public struct MediaRelated: API.SelectionSet, Fragment {
   /// Parent Type: `Media`
   public struct Node: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
     public static var __selections: [ApolloAPI.Selection] { [
+      .field("__typename", String.self),
       .field("id", Int.self),
       .field("title", Title?.self),
       .field("format", GraphQLEnum<API.MediaFormat>?.self),
@@ -67,10 +69,11 @@ public struct MediaRelated: API.SelectionSet, Fragment {
     /// Parent Type: `MediaTitle`
     public struct Title: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("userPreferred", String?.self),
       ] }
 
@@ -83,10 +86,11 @@ public struct MediaRelated: API.SelectionSet, Fragment {
     /// Parent Type: `MediaCoverImage`
     public struct CoverImage: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("large", String?.self),
       ] }
 

@@ -26,10 +26,11 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
     """ }
 
   public let __data: DataDict
-  public init(data: DataDict) { __data = data }
+  public init(_dataDict: DataDict) { __data = _dataDict }
 
   public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
   public static var __selections: [ApolloAPI.Selection] { [
+    .field("__typename", String.self),
     .field("id", Int.self),
     .field("status", GraphQLEnum<API.MediaListStatus>?.self),
     .field("score", Double?.self),
@@ -62,10 +63,11 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
   /// Parent Type: `FuzzyDate`
   public struct StartedAt: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
     public static var __selections: [ApolloAPI.Selection] { [
+      .field("__typename", String.self),
       .fragment(FuzzyDate.self),
     ] }
 
@@ -78,7 +80,7 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
 
     public struct Fragments: FragmentContainer {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public var fuzzyDate: FuzzyDate { _toFragment() }
     }
@@ -89,10 +91,11 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
   /// Parent Type: `FuzzyDate`
   public struct CompletedAt: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
     public static var __selections: [ApolloAPI.Selection] { [
+      .field("__typename", String.self),
       .fragment(FuzzyDate.self),
     ] }
 
@@ -105,7 +108,7 @@ public struct BasicMediaListEntry: API.SelectionSet, Fragment {
 
     public struct Fragments: FragmentContainer {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public var fuzzyDate: FuzzyDate { _toFragment() }
     }

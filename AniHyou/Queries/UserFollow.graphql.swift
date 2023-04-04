@@ -18,10 +18,11 @@ public struct UserFollow: API.SelectionSet, Fragment {
     """ }
 
   public let __data: DataDict
-  public init(data: DataDict) { __data = data }
+  public init(_dataDict: DataDict) { __data = _dataDict }
 
   public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
   public static var __selections: [ApolloAPI.Selection] { [
+    .field("__typename", String.self),
     .field("id", Int.self),
     .field("name", String.self),
     .field("avatar", Avatar?.self),
@@ -39,10 +40,11 @@ public struct UserFollow: API.SelectionSet, Fragment {
   /// Parent Type: `UserAvatar`
   public struct Avatar: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.UserAvatar }
     public static var __selections: [ApolloAPI.Selection] { [
+      .field("__typename", String.self),
       .field("large", String?.self),
     ] }
 

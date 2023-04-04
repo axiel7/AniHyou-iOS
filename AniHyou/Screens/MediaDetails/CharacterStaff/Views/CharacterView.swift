@@ -57,7 +57,7 @@ struct CharacterView: View {
 
 struct CharacterView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterView(character: MediaCharacter(fieldData: nil, variables: nil))
+        CharacterView(character: .init(_fieldData: nil))
             .padding()
     }
 }

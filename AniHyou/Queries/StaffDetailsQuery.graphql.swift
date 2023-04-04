@@ -54,7 +54,7 @@ public class StaffDetailsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -69,10 +69,11 @@ public class StaffDetailsQuery: GraphQLQuery {
     /// Parent Type: `Staff`
     public struct Staff: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Staff }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("id", Int.self),
         .field("name", Name?.self),
         .field("image", Image?.self),
@@ -115,10 +116,11 @@ public class StaffDetailsQuery: GraphQLQuery {
       /// Parent Type: `StaffName`
       public struct Name: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffName }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("userPreferred", String?.self),
           .field("native", String?.self),
           .field("alternative", [String?]?.self),
@@ -137,10 +139,11 @@ public class StaffDetailsQuery: GraphQLQuery {
       /// Parent Type: `StaffImage`
       public struct Image: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffImage }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("large", String?.self),
         ] }
 
@@ -153,10 +156,11 @@ public class StaffDetailsQuery: GraphQLQuery {
       /// Parent Type: `FuzzyDate`
       public struct DateOfBirth: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .fragment(FuzzyDate.self),
         ] }
 
@@ -169,7 +173,7 @@ public class StaffDetailsQuery: GraphQLQuery {
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var fuzzyDate: FuzzyDate { _toFragment() }
         }
@@ -180,10 +184,11 @@ public class StaffDetailsQuery: GraphQLQuery {
       /// Parent Type: `FuzzyDate`
       public struct DateOfDeath: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .fragment(FuzzyDate.self),
         ] }
 
@@ -196,7 +201,7 @@ public class StaffDetailsQuery: GraphQLQuery {
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var fuzzyDate: FuzzyDate { _toFragment() }
         }

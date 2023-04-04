@@ -47,6 +47,6 @@ struct ChartListItemView: View {
 
 struct ChartListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartListItemView(item: MediaChartQuery.Data.Page.Medium(fieldData: nil, variables: nil), position: 100)
+        ChartListItemView(item: .init(_fieldData: nil), position: 100)
     }
 }

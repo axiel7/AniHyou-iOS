@@ -32,7 +32,7 @@ public class ViewerIdQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -47,10 +47,11 @@ public class ViewerIdQuery: GraphQLQuery {
     /// Parent Type: `User`
     public struct Viewer: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("id", Int.self),
         .field("options", Options?.self),
         .field("mediaListOptions", MediaListOptions?.self),
@@ -68,10 +69,11 @@ public class ViewerIdQuery: GraphQLQuery {
       /// Parent Type: `UserOptions`
       public struct Options: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.UserOptions }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("profileColor", String?.self),
           .field("staffNameLanguage", GraphQLEnum<API.UserStaffNameLanguage>?.self),
           .field("titleLanguage", GraphQLEnum<API.UserTitleLanguage>?.self),
@@ -90,10 +92,11 @@ public class ViewerIdQuery: GraphQLQuery {
       /// Parent Type: `MediaListOptions`
       public struct MediaListOptions: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaListOptions }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("scoreFormat", GraphQLEnum<API.ScoreFormat>?.self),
         ] }
 

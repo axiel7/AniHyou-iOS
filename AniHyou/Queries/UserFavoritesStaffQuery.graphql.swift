@@ -62,7 +62,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -77,10 +77,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
     /// Parent Type: `User`
     public struct User: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("favourites", Favourites?.self),
       ] }
 
@@ -92,10 +93,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
       /// Parent Type: `Favourites`
       public struct Favourites: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.Favourites }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("staff", Staff?.self, arguments: [
             "page": .variable("page"),
             "perPage": .variable("perPage")
@@ -110,10 +112,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
         /// Parent Type: `StaffConnection`
         public struct Staff: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffConnection }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("nodes", [Node?]?.self),
             .field("pageInfo", PageInfo?.self),
           ] }
@@ -127,10 +130,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
           /// Parent Type: `Staff`
           public struct Node: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.Staff }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("id", Int.self),
               .field("name", Name?.self),
               .field("image", Image?.self),
@@ -148,10 +152,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
             /// Parent Type: `StaffName`
             public struct Name: API.SelectionSet {
               public let __data: DataDict
-              public init(data: DataDict) { __data = data }
+              public init(_dataDict: DataDict) { __data = _dataDict }
 
               public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffName }
               public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
                 .field("userPreferred", String?.self),
               ] }
 
@@ -164,10 +169,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
             /// Parent Type: `StaffImage`
             public struct Image: API.SelectionSet {
               public let __data: DataDict
-              public init(data: DataDict) { __data = data }
+              public init(_dataDict: DataDict) { __data = _dataDict }
 
               public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffImage }
               public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
                 .field("large", String?.self),
               ] }
 
@@ -181,10 +187,11 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
           /// Parent Type: `PageInfo`
           public struct PageInfo: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("currentPage", Int?.self),
               .field("hasNextPage", Bool?.self),
             ] }

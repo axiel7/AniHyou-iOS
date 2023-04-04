@@ -42,7 +42,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -57,10 +57,11 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
     /// Parent Type: `Media`
     public struct Media: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("relations", Relations?.self),
         .field("recommendations", Recommendations?.self, arguments: [
           "page": 1,
@@ -78,10 +79,11 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
       /// Parent Type: `MediaConnection`
       public struct Relations: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaConnection }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("edges", [Edge?]?.self),
         ] }
 
@@ -92,10 +94,11 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         /// Parent Type: `MediaEdge`
         public struct Edge: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaEdge }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .fragment(MediaRelated.self),
           ] }
 
@@ -105,7 +108,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var mediaRelated: MediaRelated { _toFragment() }
           }
@@ -117,10 +120,11 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
       /// Parent Type: `RecommendationConnection`
       public struct Recommendations: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.RecommendationConnection }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
         ] }
 
@@ -131,10 +135,11 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         /// Parent Type: `Recommendation`
         public struct Node: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.Recommendation }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .fragment(MediaRecommended.self),
           ] }
 
@@ -143,7 +148,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var mediaRecommended: MediaRecommended { _toFragment() }
           }

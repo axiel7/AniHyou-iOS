@@ -51,7 +51,7 @@ public class SearchCharacterQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -68,10 +68,11 @@ public class SearchCharacterQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("characters", [Character?]?.self, arguments: [
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
@@ -85,10 +86,11 @@ public class SearchCharacterQuery: GraphQLQuery {
       /// Parent Type: `Character`
       public struct Character: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.Character }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("id", Int.self),
           .field("name", Name?.self),
           .field("image", Image?.self),
@@ -106,10 +108,11 @@ public class SearchCharacterQuery: GraphQLQuery {
         /// Parent Type: `CharacterName`
         public struct Name: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterName }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("userPreferred", String?.self),
           ] }
 
@@ -122,10 +125,11 @@ public class SearchCharacterQuery: GraphQLQuery {
         /// Parent Type: `CharacterImage`
         public struct Image: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterImage }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("medium", String?.self),
           ] }
 

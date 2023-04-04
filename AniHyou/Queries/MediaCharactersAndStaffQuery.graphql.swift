@@ -42,7 +42,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -57,10 +57,11 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
     /// Parent Type: `Media`
     public struct Media: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("characters", Characters?.self, arguments: [
           "page": 1,
           "perPage": 25
@@ -81,10 +82,11 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
       /// Parent Type: `CharacterConnection`
       public struct Characters: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterConnection }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("edges", [Edge?]?.self),
         ] }
 
@@ -95,10 +97,11 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
         /// Parent Type: `CharacterEdge`
         public struct Edge: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.CharacterEdge }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .fragment(MediaCharacter.self),
           ] }
 
@@ -110,7 +113,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var mediaCharacter: MediaCharacter { _toFragment() }
           }
@@ -122,10 +125,11 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
       /// Parent Type: `StaffConnection`
       public struct Staff: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffConnection }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("edges", [Edge?]?.self),
         ] }
 
@@ -136,10 +140,11 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
         /// Parent Type: `StaffEdge`
         public struct Edge: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.StaffEdge }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .fragment(MediaStaff.self),
           ] }
 
@@ -149,7 +154,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var mediaStaff: MediaStaff { _toFragment() }
           }

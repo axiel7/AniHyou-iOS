@@ -57,7 +57,7 @@ public class MediaThreadsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -74,10 +74,11 @@ public class MediaThreadsQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("threads", [Thread?]?.self, arguments: [
           "mediaCategoryId": .variable("mediaCategoryId"),
           "sort": .variable("sort")
@@ -91,10 +92,11 @@ public class MediaThreadsQuery: GraphQLQuery {
       /// Parent Type: `Thread`
       public struct Thread: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.Thread }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("id", Int.self),
           .field("title", String?.self),
           .field("body", String?.self, arguments: ["asHtml": true]),
@@ -127,10 +129,11 @@ public class MediaThreadsQuery: GraphQLQuery {
         /// Parent Type: `User`
         public struct User: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("name", String.self),
           ] }
 

@@ -83,7 +83,7 @@ public class UserMediaListQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -100,10 +100,11 @@ public class UserMediaListQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("mediaList", [MediaList?]?.self, arguments: [
           "userId": .variable("userId"),
           "type": .variable("type"),
@@ -122,10 +123,11 @@ public class UserMediaListQuery: GraphQLQuery {
       /// Parent Type: `MediaList`
       public struct MediaList: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("mediaId", Int.self),
           .field("media", Media?.self),
           .fragment(BasicMediaListEntry.self),
@@ -153,7 +155,7 @@ public class UserMediaListQuery: GraphQLQuery {
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
         }
@@ -163,10 +165,11 @@ public class UserMediaListQuery: GraphQLQuery {
         /// Parent Type: `Media`
         public struct Media: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("title", Title?.self),
             .field("episodes", Int?.self),
             .field("chapters", Int?.self),
@@ -199,10 +202,11 @@ public class UserMediaListQuery: GraphQLQuery {
           /// Parent Type: `MediaTitle`
           public struct Title: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("userPreferred", String?.self),
             ] }
 
@@ -215,10 +219,11 @@ public class UserMediaListQuery: GraphQLQuery {
           /// Parent Type: `MediaCoverImage`
           public struct CoverImage: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("large", String?.self),
               .field("color", String?.self),
             ] }
@@ -234,10 +239,11 @@ public class UserMediaListQuery: GraphQLQuery {
           /// Parent Type: `AiringSchedule`
           public struct NextAiringEpisode: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.AiringSchedule }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("episode", Int.self),
               .field("timeUntilAiring", Int.self),
             ] }
@@ -253,7 +259,7 @@ public class UserMediaListQuery: GraphQLQuery {
         /// Parent Type: `FuzzyDate`
         public struct StartedAt: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
 
@@ -266,7 +272,7 @@ public class UserMediaListQuery: GraphQLQuery {
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var fuzzyDate: FuzzyDate { _toFragment() }
           }
@@ -277,7 +283,7 @@ public class UserMediaListQuery: GraphQLQuery {
         /// Parent Type: `FuzzyDate`
         public struct CompletedAt: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
 
@@ -290,7 +296,7 @@ public class UserMediaListQuery: GraphQLQuery {
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var fuzzyDate: FuzzyDate { _toFragment() }
           }
@@ -302,10 +308,11 @@ public class UserMediaListQuery: GraphQLQuery {
       /// Parent Type: `PageInfo`
       public struct PageInfo: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("hasNextPage", Bool?.self),
         ] }
 

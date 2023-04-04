@@ -48,7 +48,7 @@ public class SearchUserQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -65,10 +65,11 @@ public class SearchUserQuery: GraphQLQuery {
     /// Parent Type: `Page`
     public struct Page: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("users", [User?]?.self, arguments: [
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
@@ -82,10 +83,11 @@ public class SearchUserQuery: GraphQLQuery {
       /// Parent Type: `User`
       public struct User: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("id", Int.self),
           .field("name", String.self),
           .field("avatar", Avatar?.self),
@@ -103,10 +105,11 @@ public class SearchUserQuery: GraphQLQuery {
         /// Parent Type: `UserAvatar`
         public struct Avatar: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.UserAvatar }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("medium", String?.self),
           ] }
 

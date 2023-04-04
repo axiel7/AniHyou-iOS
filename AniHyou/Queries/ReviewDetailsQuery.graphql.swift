@@ -40,7 +40,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -55,10 +55,11 @@ public class ReviewDetailsQuery: GraphQLQuery {
     /// Parent Type: `Review`
     public struct Review: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Review }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("id", Int.self),
         .field("body", String?.self, arguments: ["asHtml": true]),
         .field("score", Int?.self),
@@ -85,10 +86,11 @@ public class ReviewDetailsQuery: GraphQLQuery {
       /// Parent Type: `User`
       public struct User: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.User }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("name", String.self),
           .field("avatar", Avatar?.self),
         ] }
@@ -103,10 +105,11 @@ public class ReviewDetailsQuery: GraphQLQuery {
         /// Parent Type: `UserAvatar`
         public struct Avatar: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.UserAvatar }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("medium", String?.self),
           ] }
 

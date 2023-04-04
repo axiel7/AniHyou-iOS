@@ -62,7 +62,7 @@ public class StudioDetailsQuery: GraphQLQuery {
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -77,10 +77,11 @@ public class StudioDetailsQuery: GraphQLQuery {
     /// Parent Type: `Studio`
     public struct Studio: API.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { API.Objects.Studio }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("id", Int.self),
         .field("name", String.self),
         .field("favourites", Int?.self),
@@ -109,10 +110,11 @@ public class StudioDetailsQuery: GraphQLQuery {
       /// Parent Type: `MediaConnection`
       public struct Media: API.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaConnection }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
           .field("pageInfo", PageInfo?.self),
         ] }
@@ -126,10 +128,11 @@ public class StudioDetailsQuery: GraphQLQuery {
         /// Parent Type: `Media`
         public struct Node: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("id", Int.self),
             .field("coverImage", CoverImage?.self),
             .field("title", Title?.self),
@@ -147,10 +150,11 @@ public class StudioDetailsQuery: GraphQLQuery {
           /// Parent Type: `MediaCoverImage`
           public struct CoverImage: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaCoverImage }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("large", String?.self),
             ] }
 
@@ -163,10 +167,11 @@ public class StudioDetailsQuery: GraphQLQuery {
           /// Parent Type: `MediaTitle`
           public struct Title: API.SelectionSet {
             public let __data: DataDict
-            public init(data: DataDict) { __data = data }
+            public init(_dataDict: DataDict) { __data = _dataDict }
 
             public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTitle }
             public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
               .field("userPreferred", String?.self),
             ] }
 
@@ -180,10 +185,11 @@ public class StudioDetailsQuery: GraphQLQuery {
         /// Parent Type: `PageInfo`
         public struct PageInfo: API.SelectionSet {
           public let __data: DataDict
-          public init(data: DataDict) { __data = data }
+          public init(_dataDict: DataDict) { __data = _dataDict }
 
           public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
             .field("hasNextPage", Bool?.self),
           ] }
 
