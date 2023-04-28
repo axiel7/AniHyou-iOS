@@ -43,7 +43,7 @@ struct AiringScheduleItemText: View {
     var body: some View {
         let airing = item!.media!.nextAiringEpisode!
         let isBehind = item?.progress ?? 0 < airing.episode - 1
-        Text(isBehind ? "\((airing.episode - 1) - (item?.progress ?? 0)) episodes behind" : "Ep \(airing.episode) airing in \(airing.timeUntilAiring.secondsToLegibleText())")
+        Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episodes](inflect: true) behind" : "Ep \(airing.episode) airing in \(airing.timeUntilAiring.secondsToLegibleText())")
             .foregroundColor(isBehind ? .accentColor : .gray)
             .font(.subheadline)
             .lineLimit(1)
