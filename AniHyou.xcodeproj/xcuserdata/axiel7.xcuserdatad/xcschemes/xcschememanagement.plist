@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>AniHyou WidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>AniHyou.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -24,14 +29,14 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>SQLite (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
 		</dict>
 		<key>SQLite (Playground) 3.xcscheme</key>
 		<dict>
@@ -93,6 +98,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>481AD4D92851CE73001779EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48EFCDD429FFAD200096BF6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48F27909296EFE77000827F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
