@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct NotLoggedView: View {
     @StateObject private var viewModel = LoginViewModel()
@@ -23,6 +24,7 @@ struct NotLoggedView: View {
         }
         .onReceive(viewModel.$isLoginSuccess) { isSuccess in
             if isSuccess {
+                WidgetCenter.shared.reloadAllTimelines()
                 onSuccessLogin()
             }
         }

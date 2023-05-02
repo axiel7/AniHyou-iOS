@@ -1986,7 +1986,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "AniHyou WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = SGU98T456G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AniHyou Widget/Info.plist";
@@ -1998,7 +1998,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2016,7 +2016,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "AniHyou WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = SGU98T456G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AniHyou Widget/Info.plist";
@@ -2028,7 +2028,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

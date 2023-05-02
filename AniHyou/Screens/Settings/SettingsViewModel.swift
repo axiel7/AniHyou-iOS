@@ -7,6 +7,7 @@
 
 import Foundation
 import KeychainSwift
+import WidgetKit
 
 class SettingsViewModel: ObservableObject {
     
@@ -18,6 +19,7 @@ class SettingsViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "token_expiration")
         UserDefaults.standard.removeObject(forKey: "is_logged_in")
         isLoggedOut = true
+        WidgetCenter.shared.reloadAllTimelines()
         GlobalAppState.shared.globalId = UUID()
     }
     

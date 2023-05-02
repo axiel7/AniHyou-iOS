@@ -10,10 +10,13 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
+        
         SimpleEntry(
             date: Date(),
             animeList: [],
-            placeholderText: "Your anime list here"
+            placeholderText: "Your anime list here",
+            widgetSize: context.displaySize,
+            widgetFamily: context.family
         )
     }
 
@@ -21,7 +24,9 @@ struct Provider: TimelineProvider {
         let entry = SimpleEntry(
             date: Date(),
             animeList: [],
-            placeholderText: "Your anime list here"
+            placeholderText: "Your anime list here",
+            widgetSize: context.displaySize,
+            widgetFamily: context.family
         )
         completion(entry)
     }
@@ -30,8 +35,13 @@ struct Provider: TimelineProvider {
         let date = Date()
         let userId = UserDefaults(suiteName: "group.com.axiel7.AniHyou")?.integer(forKey: USER_ID_KEY) ?? 0
         
+        if userId == 0 {
+            let entry = SimpleEntry(date: date, animeList: [], placeholderText: "Login to use this widget", widgetSize: context.displaySize, widgetFamily: context.family)
+            completion(Timeline(entries: [entry], policy: .never))
+        }
+        
         //update interval
-        let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: date)!
+        var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: date)!
         
         Network.shared.apollo.fetch(query: UserCurrentAnimeListQuery(userId: .some(userId))) { result in
             switch result {
@@ -40,19 +50,28 @@ struct Provider: TimelineProvider {
                     var tempList = mediaList.sorted(by: { item1, item2 in item1?.media?.nextAiringEpisode?.timeUntilAiring ?? 0 < item2?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
                     })
                     tempList.removeAll(where: { item in item?.media?.status != .releasing })
-                    tempList = Array(tempList.prefix(5))
+                    
+                    var maxItems = 6
+                    if context.family == .systemMedium {
+                        maxItems = 3
+                    }
+                    tempList = Array(tempList.prefix(maxItems))
                     
                     let entry = SimpleEntry(
                         date: nextUpdateDate,
                         animeList: tempList,
-                        placeholderText: nil
+                        placeholderText: nil,
+                        widgetSize: context.displaySize,
+                        widgetFamily: context.family
                     )
                     let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                     completion(timeline)
                 }
             case .failure(let error):
                 print(error)
-                completion(Timeline(entries: [], policy: .after(nextUpdateDate)))
+                nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
+                let entry = SimpleEntry(date: nextUpdateDate, animeList: [], placeholderText: "Error updating", widgetSize: context.displaySize, widgetFamily: context.family)
+                completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             }
         }
     }
@@ -62,6 +81,8 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let animeList: [UserCurrentAnimeListQuery.Data.Page.MediaList?]
     let placeholderText: String?
+    let widgetSize: CGSize
+    let widgetFamily: WidgetFamily
 }
 
 struct AniHyou_WidgetEntryView : View {
@@ -79,37 +100,36 @@ struct AniHyou_WidgetEntryView : View {
                     Text("No airing animes")
                 }
                 else {
-                    ForEach(entry.animeList, id: \.?.mediaId) {
-                        if let item = $0 {
-                            if let nextAiringEpisode = item.media?.nextAiringEpisode {
-                                Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
-                                    Text(item.media?.title?.userPreferred ?? "")
+                    ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
+                        if item != nil {
+                            if let nextAiringEpisode = item!.media?.nextAiringEpisode {
+                                Link(destination: URL(string: "anihyou://media/\(item!.mediaId)")!) {
+                                    Text(item!.media?.title?.userPreferred ?? "")
                                         .font(.system(size: 14))
                                         .lineLimit(1)
                                         .padding(.horizontal)
+                                        .frame(width: entry.widgetSize.width, alignment: .leading)
                                     
-                                    Text("Ep \(nextAiringEpisode.episode) airing in \(calculateAiringTime(airingAt: nextAiringEpisode.airingAt))")
+                                    Text("Ep \(nextAiringEpisode.episode) airing on \(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)).formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated).hour().minute()))")
                                         .font(.system(size: 12))
                                         .lineLimit(1)
-                                        .padding(.horizontal)
                                         .foregroundColor(.accentColor)
-                                    Divider()
-                                        .padding(.leading)
-                                }
+                                        .padding(.horizontal)
+                                        .frame(width: entry.widgetSize.width, alignment: .leading)
+                                    
+                                    if (index + 1) < entry.animeList.count {
+                                        Divider()
+                                            .padding(.leading)
+                                    }
+                                }//:Link
                             }
                         }
                     }
                 }
             }//:VStack
+            .padding(.vertical)
+            .frame(height: entry.widgetSize.height, alignment: entry.placeholderText == nil ? .top : .center)
         }//:ZStack
-    }
-    
-    func calculateAiringTime(airingAt: Int?) -> String {
-        guard airingAt != nil else {
-            return "??"
-        }
-        let currentTime = Int(Date.now.timeIntervalSince1970 * 1)
-        return ((airingAt!) - currentTime).secondsToLegibleText()
     }
 }
 
@@ -129,7 +149,14 @@ struct AniHyou_Widget: Widget {
 
 struct AniHyou_Widget_Previews: PreviewProvider {
     static var previews: some View {
-        AniHyou_WidgetEntryView(entry: SimpleEntry(date: Date(), animeList: [], placeholderText: "This is a preview"))
+        let entry = SimpleEntry(
+            date: Date(),
+            animeList: [],
+            placeholderText: "This is a preview",
+            widgetSize: CGSize(width: 291, height: 141),
+            widgetFamily: .systemLarge
+        )
+        AniHyou_WidgetEntryView(entry: entry)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

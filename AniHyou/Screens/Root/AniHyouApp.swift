@@ -16,23 +16,26 @@ struct AniHyouApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if openMediaDetails == false {
-                ContentView()
-                    .id(globalAppState.globalId)
-                    .onAppear {
-                        //transfer use id from old app versions
-                        if userId() == 0 {
-                            saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
+            Group {
+                if openMediaDetails == false {
+                    ContentView()
+                        .id(globalAppState.globalId)
+                        .onAppear {
+                            //transfer use id from old app versions
+                            if userId() == 0 {
+                                saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
+                            }
                         }
-                    }
-                    .onOpenURL { url in
-                        if url.scheme == "anihyou" {
-                            openMediaDetails = true
-                            mediaId = Int(url.lastPathComponent) ?? 0
-                        }
-                    }
-            } else {
-                MediaDetailsView(mediaId: mediaId)
+                } else {
+                    MediaDetailsView(mediaId: mediaId)
+                        .id(mediaId)
+                }
+            }
+            .onOpenURL { url in
+                if url.scheme == "anihyou" {
+                    openMediaDetails = true
+                    mediaId = Int(url.lastPathComponent) ?? 0
+                }
             }
         }
     }
