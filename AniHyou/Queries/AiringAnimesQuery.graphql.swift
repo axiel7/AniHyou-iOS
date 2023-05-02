@@ -29,6 +29,7 @@ public class AiringAnimesQuery: GraphQLQuery {
                 __typename
                 large
               }
+              meanScore
             }
             timeUntilAiring
           }
@@ -137,6 +138,7 @@ public class AiringAnimesQuery: GraphQLQuery {
             .field("id", Int.self),
             .field("title", Title?.self),
             .field("coverImage", CoverImage?.self),
+            .field("meanScore", Int?.self),
           ] }
 
           /// The id of the media
@@ -145,6 +147,8 @@ public class AiringAnimesQuery: GraphQLQuery {
           public var title: Title? { __data["title"] }
           /// The cover images of the media
           public var coverImage: CoverImage? { __data["coverImage"] }
+          /// Mean score of all the user's scores of the media
+          public var meanScore: Int? { __data["meanScore"] }
 
           /// Page.AiringSchedule.Media.Title
           ///

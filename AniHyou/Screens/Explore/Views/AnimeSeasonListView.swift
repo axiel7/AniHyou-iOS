@@ -15,7 +15,7 @@ struct AnimeSeasonListView: View {
     @State var selectedYear = Date.now.year
     @StateObject private var viewModel = ExploreViewModel()
     private let gridColumns = [
-        GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
+        GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
     
     var body: some View {
@@ -24,7 +24,7 @@ struct AnimeSeasonListView: View {
                 ForEach(viewModel.animeSeasonal, id: \.?.id) {
                     if let media = $0 {
                         NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                            VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
+                            VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
                         }
                     }
                 }

@@ -46,7 +46,7 @@ struct HomeView: View {
                                 ForEach(viewModel.airingAnimes, id: \.?.media?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.media!.id)) {
-                                            HListItemWithSubtitleView(title: item.media?.title?.userPreferred, subtitle: "Airing in \(item.timeUntilAiring.secondsToLegibleText())", imageUrl: item.media?.coverImage?.large)
+                                            HListItemWithSubtitleView(title: item.media?.title?.userPreferred, subtitle: "Airing in \(item.timeUntilAiring.secondsToLegibleText())", imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore)
                                                 .padding(.leading, 8)
                                                 .frame(width: 280, alignment: .leading)
                                         }
@@ -75,19 +75,19 @@ struct HomeView: View {
                             ProgressView()
                         }
                         ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack {
+                            LazyHStack(alignment: .top) {
                                 ForEach(viewModel.seasonAnimes, id: \.?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large)
-                                                .padding(.trailing, 2)
+                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                                .padding(.trailing, 4)
                                         }
                                     }
                                 }
                             }//:HStack
-                            .padding(.leading, 12)
+                            .padding(.leading, 14)
                         }//:HScrollView
-                        .frame(height: 180)
+                        .frame(minHeight: 180)
                         .onAppear {
                             viewModel.getSeasonAnimes()
                         }
@@ -102,19 +102,19 @@ struct HomeView: View {
                             ProgressView()
                         }
                         ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack {
+                            LazyHStack(alignment: .top) {
                                 ForEach(viewModel.trendingAnimes, id: \.?.id) {
                                     if let item = $0 {
                                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large)
-                                                .padding(.trailing, 2)
+                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                                .padding(.trailing, 4)
                                         }
                                     }
                                 }
                             }//:HStack
-                            .padding(.leading, 12)
+                            .padding(.leading, 14)
                         }//:HScrollView
-                        .frame(height: 180)
+                        .frame(minHeight: 180)
                         .onAppear {
                             viewModel.getTrendingAnimes()
                         }

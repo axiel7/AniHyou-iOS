@@ -15,6 +15,7 @@ struct HListItemWithSubtitleView: View {
     var title: String?
     var subtitle: String?
     var imageUrl: String?
+    var meanScore: Int?
     
     var body: some View {
         HStack {
@@ -33,6 +34,17 @@ struct HListItemWithSubtitleView: View {
                     .foregroundColor(.gray)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
+                if meanScore != nil {
+                    HStack(alignment: .bottom, spacing: 4) {
+                        Image(systemName: "star.fill")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                        Text("\(meanScore!)%")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.vertical, 1)
+                }
             }
         }//:HStack
     }
@@ -40,7 +52,7 @@ struct HListItemWithSubtitleView: View {
 
 struct HListItemWithSubtitleView_Previews: PreviewProvider {
     static var previews: some View {
-        HListItemWithSubtitleView(title: "Cowboy Bebop: Tengoku no Tobira and a large title", subtitle: "Airing in 59 min", imageUrl: "https://picsum.photos/300/200")
+        HListItemWithSubtitleView(title: "Cowboy Bebop: Tengoku no Tobira and a large title", subtitle: "Airing in 59 min", imageUrl: "https://picsum.photos/300/200", meanScore: 78)
             .frame(width: 280, alignment: .leading)
             .padding(.leading, 8)
             .previewLayout(.sizeThatFits)
