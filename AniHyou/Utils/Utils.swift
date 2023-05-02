@@ -12,11 +12,11 @@ func isLoggedIn() -> Bool {
 }
 
 func userId() -> Int {
-    return UserDefaults(suiteName: "group.com.axiel7.AniHyou")?.integer(forKey: USER_ID_KEY) ?? 0
+    return UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
 }
 
 func saveUserId(id: Int) {
-    UserDefaults(suiteName: "group.com.axiel7.AniHyou")?.set(id, forKey: USER_ID_KEY)
+    UserDefaults(suiteName: ANIHYOU_GROUP)?.set(id, forKey: USER_ID_KEY)
 }
 
 func refreshUserIdAndOptions() {

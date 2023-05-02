@@ -33,7 +33,7 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let date = Date()
-        let userId = UserDefaults(suiteName: "group.com.axiel7.AniHyou")?.integer(forKey: USER_ID_KEY) ?? 0
+        let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
         
         if userId == 0 {
             let entry = SimpleEntry(date: date, animeList: [], placeholderText: "Login to use this widget", widgetSize: context.displaySize, widgetFamily: context.family)
