@@ -30,7 +30,7 @@ struct TopBannerView: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .background {
-                        LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.4)]), startPoint: .bottom, endPoint: .top)
+                        LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.6)]), startPoint: .bottom, endPoint: .top)
                             .padding(.bottom, 20)
                     }
             }
