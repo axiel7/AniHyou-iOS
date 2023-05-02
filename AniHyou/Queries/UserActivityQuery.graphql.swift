@@ -133,7 +133,7 @@ public class UserActivityQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Activity
+          public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
           public static var __parentType: ApolloAPI.ParentType { API.Objects.TextActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -159,7 +159,7 @@ public class UserActivityQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Activity
+          public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ListActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),

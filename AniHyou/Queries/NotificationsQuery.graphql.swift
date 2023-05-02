@@ -400,7 +400,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.AiringNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -489,7 +489,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.FollowingNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -558,7 +558,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ActivityMessageNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -630,7 +630,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ActivityMentionNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -702,7 +702,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ActivityReplyNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -774,7 +774,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ActivityReplySubscribedNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -846,7 +846,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ActivityLikeNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -918,7 +918,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ActivityReplyLikeNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -990,7 +990,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ThreadCommentMentionNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1062,7 +1062,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ThreadCommentReplyNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1134,7 +1134,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ThreadCommentSubscribedNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1206,7 +1206,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ThreadCommentLikeNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1278,7 +1278,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.ThreadLikeNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1350,7 +1350,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.RelatedMediaAdditionNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1436,7 +1436,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaDataChangeNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1522,7 +1522,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaMergeNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
@@ -1611,7 +1611,7 @@ public class NotificationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = Page.Notification
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
           public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaDeletionNotification }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
