@@ -6,7 +6,7 @@
 
 Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 
-**There's a watchOS version!**
+**⌚️There's a watchOS version!**
 
 ![screenshots](https://axiel7.github.io/assets/anihyou.58717379ec9cfda91ca1c970f44d2ce6.png)
 
@@ -19,6 +19,7 @@ Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 - Search animes, mangas, characters, staff, studios and users
 - Anime and Manga charts (top and popular)
 - User profile info (activity, bio, favorites)
+- Airing animes Widget
 
 ## Coming features
 - [See project](https://github.com/users/axiel7/projects/2/views/1)
