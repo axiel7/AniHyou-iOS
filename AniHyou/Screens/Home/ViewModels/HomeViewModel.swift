@@ -11,9 +11,11 @@ import API
 class HomeViewModel: ObservableObject {
     private let now = Date.now
     @Published var nowAnimeSeason = AnimeSeason(year: 2022, season: .spring)
+    var nextAnimeSeason = AnimeSeason(year: 2022, season: .summer)
     
     init() {
         nowAnimeSeason = now.getCurrentAnimeSeason()
+        nextAnimeSeason = now.getNextAnimeSeason()
     }
     
     // MARK: Airing animes
@@ -64,6 +66,24 @@ class HomeViewModel: ObservableObject {
                 if let page = graphQLResult.data?.page {
                     if let animes = page.media {
                         self?.trendingAnimes = animes
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: next season
+    @Published var nextSeasonAnimes = [SeasonalAnimeQuery.Data.Page.Medium?]()
+    
+    func getNextSeasonAnimes(page: Int = 1) {
+        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(page), perPage: .some(10), season: .some(.case(nextAnimeSeason.season)), seasonYear: .some(nextAnimeSeason.year), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let page = graphQLResult.data?.page {
+                    if let animes = page.media {
+                        self?.nextSeasonAnimes = animes
                     }
                 }
             case .failure(let error):

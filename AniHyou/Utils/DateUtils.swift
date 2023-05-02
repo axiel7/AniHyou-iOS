@@ -54,6 +54,22 @@ extension Date {
         return animeSeason
     }
     
+    func getNextAnimeSeason() -> AnimeSeason {
+        var current = getCurrentAnimeSeason()
+        switch current.season {
+        case .winter:
+            current.season = .spring
+            current.year += 1
+        case .spring:
+            current.season = .summer
+        case .summer:
+            current.season = .fall
+        case .fall:
+            current.season = .winter
+        }
+        return current
+    }
+    
     /// returns the requesed weekday timestamp (start or end of the day)
     func getThisWeekdayTimestamp(weekday: Int, isEndOfDay: Bool) -> Int {
         let diff = weekday - self.weekday
