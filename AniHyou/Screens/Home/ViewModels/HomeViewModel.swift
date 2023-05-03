@@ -57,10 +57,10 @@ class HomeViewModel: ObservableObject {
     }
     
     // MARK: Trending animes
-    @Published var trendingAnimes = [AnimesQuery.Data.Page.Medium?]()
+    @Published var trendingAnimes = [MediaSortedQuery.Data.Page.Medium?]()
     
     func getTrendingAnimes(page: Int = 1) {
-        Network.shared.apollo.fetch(query: AnimesQuery(page: .some(page), perPage: .some(10), sort: .some([.case(.trendingDesc)]))) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaSortedQuery(page: .some(page), perPage: .some(10), type: .some(.case(.anime)), sort: .some([.case(.trendingDesc)]))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -84,6 +84,24 @@ class HomeViewModel: ObservableObject {
                 if let page = graphQLResult.data?.page {
                     if let animes = page.media {
                         self?.nextSeasonAnimes = animes
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: Trending manga
+    @Published var trendingManga = [MediaSortedQuery.Data.Page.Medium?]()
+    
+    func getTrendingManga(page: Int = 1) {
+        Network.shared.apollo.fetch(query: MediaSortedQuery(page: .some(page), perPage: .some(10), type: .some(.case(.manga)), sort: .some([.case(.trendingDesc)]))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let page = graphQLResult.data?.page {
+                    if let media = page.media {
+                        self?.trendingManga = media
                     }
                 }
             case .failure(let error):

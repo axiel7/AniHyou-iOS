@@ -105,7 +105,6 @@
 		4870AB1928EC7551008431B5 /* UserFavoritesAnimeQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAFC28EC7551008431B5 /* UserFavoritesAnimeQuery.graphql.swift */; };
 		4870AB1A28EC7551008431B5 /* UpdateEntryProgressMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAFD28EC7551008431B5 /* UpdateEntryProgressMutation.graphql.swift */; };
 		4870AB1B28EC7551008431B5 /* MediaRecommended.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAFE28EC7551008431B5 /* MediaRecommended.graphql.swift */; };
-		4870AB1C28EC7551008431B5 /* AnimesQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAFF28EC7551008431B5 /* AnimesQuery.graphql.swift */; };
 		4870AB1D28EC7551008431B5 /* UserActivityQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AB0028EC7551008431B5 /* UserActivityQuery.graphql.swift */; };
 		4884AAAE2965A79D009A3B8C /* GenreTagCollectionQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884AAAD2965A79D009A3B8C /* GenreTagCollectionQuery.graphql.swift */; };
 		4884AAB02965AC94009A3B8C /* GenreTagSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */; };
@@ -115,6 +114,7 @@
 		488763DC2978183800402934 /* MediaStatsQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763DB2978183800402934 /* MediaStatsQuery.graphql.swift */; };
 		488763E129781AD200402934 /* MediaStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763E029781AD200402934 /* MediaStatsView.swift */; };
 		488763E329781ADC00402934 /* MediaStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763E229781ADC00402934 /* MediaStatsViewModel.swift */; };
+		488A91192A023E5F00C7FF94 /* MediaSortedQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A91182A023E5F00C7FF94 /* MediaSortedQuery.graphql.swift */; };
 		488B7ABF291A6C7E00156D80 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488B7ABE291A6C7E00156D80 /* CharacterDetailsView.swift */; };
 		488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488B7AC0291A6D0800156D80 /* CharacterDetailsViewModel.swift */; };
 		488C267928537B5F0005EE15 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267828537B5F0005EE15 /* StringUtils.swift */; };
@@ -324,7 +324,7 @@
 		481AD4DF2851CE73001779EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		481AD4E12851CE74001779EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		481AD4E42851CE74001779EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		481AD4EF2851D698001779EE /* Animes.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Animes.graphql; sourceTree = "<group>"; };
+		481AD4EF2851D698001779EE /* MediaSorted.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaSorted.graphql; sourceTree = "<group>"; };
 		481AD4F52851D917001779EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		481AD4F72851D927001779EE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		481AD4F92851DA02001779EE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -397,7 +397,6 @@
 		4870AAFC28EC7551008431B5 /* UserFavoritesAnimeQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFavoritesAnimeQuery.graphql.swift; sourceTree = "<group>"; };
 		4870AAFD28EC7551008431B5 /* UpdateEntryProgressMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateEntryProgressMutation.graphql.swift; sourceTree = "<group>"; };
 		4870AAFE28EC7551008431B5 /* MediaRecommended.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaRecommended.graphql.swift; sourceTree = "<group>"; };
-		4870AAFF28EC7551008431B5 /* AnimesQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimesQuery.graphql.swift; sourceTree = "<group>"; };
 		4870AB0028EC7551008431B5 /* UserActivityQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityQuery.graphql.swift; sourceTree = "<group>"; };
 		4884AAAD2965A79D009A3B8C /* GenreTagCollectionQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTagCollectionQuery.graphql.swift; sourceTree = "<group>"; };
 		4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTagSelectionView.swift; sourceTree = "<group>"; };
@@ -407,6 +406,7 @@
 		488763DB2978183800402934 /* MediaStatsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaStatsQuery.graphql.swift; sourceTree = "<group>"; };
 		488763E029781AD200402934 /* MediaStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStatsView.swift; sourceTree = "<group>"; };
 		488763E229781ADC00402934 /* MediaStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStatsViewModel.swift; sourceTree = "<group>"; };
+		488A91182A023E5F00C7FF94 /* MediaSortedQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaSortedQuery.graphql.swift; sourceTree = "<group>"; };
 		488B7ABE291A6C7E00156D80 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 		488B7AC0291A6D0800156D80 /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
 		488C267828537B5F0005EE15 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -715,7 +715,7 @@
 		481AD5032852211C001779EE /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				481AD4EF2851D698001779EE /* Animes.graphql */,
+				481AD4EF2851D698001779EE /* MediaSorted.graphql */,
 				481AD4FF285204E9001779EE /* AiringAnimes.graphql */,
 				481AD50428522139001779EE /* SeasonalAnime.graphql */,
 				48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */,
@@ -755,8 +755,8 @@
 				480D769A29AB652000B56DE1 /* FollowingsQuery.graphql */,
 				48DBAF7729B0776A00A75167 /* UserStatsAnimeOverview.graphql */,
 				48EFCDEF29FFB3320096BF6E /* UserCurrentAnimeList.graphql */,
+				488A91182A023E5F00C7FF94 /* MediaSortedQuery.graphql.swift */,
 				4870AAED28EC7551008431B5 /* AiringAnimesQuery.graphql.swift */,
-				4870AAFF28EC7551008431B5 /* AnimesQuery.graphql.swift */,
 				4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */,
 				4870AAF928EC7551008431B5 /* MediaCharacter.graphql.swift */,
 				4870AAF428EC7551008431B5 /* MediaCharactersAndStaffQuery.graphql.swift */,
@@ -1636,8 +1636,8 @@
 				48CA07A9287035530048854E /* MediaInfoType.swift in Sources */,
 				48C608F8290D18BB004781C2 /* SearchCharacterQuery.graphql.swift in Sources */,
 				48C608F9290D18BB004781C2 /* SearchStaffQuery.graphql.swift in Sources */,
+				488A91192A023E5F00C7FF94 /* MediaSortedQuery.graphql.swift in Sources */,
 				481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */,
-				4870AB1C28EC7551008431B5 /* AnimesQuery.graphql.swift in Sources */,
 				4832B036285F9E1900E79D27 /* ExpandableTextView.swift in Sources */,
 				4884AAAE2965A79D009A3B8C /* GenreTagCollectionQuery.graphql.swift in Sources */,
 				486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */,

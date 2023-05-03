@@ -155,6 +155,35 @@ struct HomeView: View {
                         }//:ZStack
                         .padding(.bottom)
                     }
+                    
+                    //MARK: - Trending manga
+                    Group {
+                        Text("Trending Manga")
+                            .sectionTitle()
+                        ZStack {
+                            if viewModel.trendingManga.count == 0 {
+                                ProgressView()
+                            }
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(alignment: .top) {
+                                    ForEach(viewModel.trendingManga, id: \.?.id) {
+                                        if let item = $0 {
+                                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                                VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                                    .padding(.trailing, 4)
+                                            }
+                                        }
+                                    }
+                                }//:HStack
+                                .padding(.leading, 14)
+                            }//:HScrollView
+                            .frame(minHeight: 180)
+                            .onAppear {
+                                viewModel.getTrendingManga()
+                            }
+                        }//:ZStack
+                        .padding(.bottom)
+                    }
                 }//:VStack
             }//:VScrollView
             .navigationTitle("Home")

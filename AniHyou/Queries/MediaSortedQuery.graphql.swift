@@ -4,15 +4,15 @@
 @_exported import ApolloAPI
 import API
 
-public class AnimesQuery: GraphQLQuery {
-  public static let operationName: String = "Animes"
+public class MediaSortedQuery: GraphQLQuery {
+  public static let operationName: String = "MediaSorted"
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {
+      query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) {
         Page(page: $page, perPage: $perPage) {
           __typename
-          media(type: ANIME, sort: $sort) {
+          media(type: $type, sort: $sort) {
             __typename
             id
             title {
@@ -32,21 +32,25 @@ public class AnimesQuery: GraphQLQuery {
 
   public var page: GraphQLNullable<Int>
   public var perPage: GraphQLNullable<Int>
+  public var type: GraphQLNullable<GraphQLEnum<API.MediaType>>
   public var sort: GraphQLNullable<[GraphQLEnum<API.MediaSort>?]>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
+    type: GraphQLNullable<GraphQLEnum<API.MediaType>>,
     sort: GraphQLNullable<[GraphQLEnum<API.MediaSort>?]>
   ) {
     self.page = page
     self.perPage = perPage
+    self.type = type
     self.sort = sort
   }
 
   public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
+    "type": type,
     "sort": sort
   ] }
 
@@ -75,7 +79,7 @@ public class AnimesQuery: GraphQLQuery {
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("media", [Medium?]?.self, arguments: [
-          "type": "ANIME",
+          "type": .variable("type"),
           "sort": .variable("sort")
         ]),
       ] }

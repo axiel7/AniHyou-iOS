@@ -1,6 +1,6 @@
-query Animes($page: Int, $perPage: Int, $sort: [MediaSort]) {
+query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) {
   Page(page: $page, perPage: $perPage) {
-    media(type: ANIME, sort: $sort) {
+    media(type: $type, sort: $sort) {
       id
       title {
         userPreferred
