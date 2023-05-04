@@ -188,8 +188,6 @@
 		48EFCDDC29FFAD200096BF6E /* AniHyou_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EFCDDB29FFAD200096BF6E /* AniHyou_WidgetBundle.swift */; };
 		48EFCDDE29FFAD200096BF6E /* AniHyou_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EFCDDD29FFAD200096BF6E /* AniHyou_Widget.swift */; };
 		48EFCDE129FFAD210096BF6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EFCDE029FFAD210096BF6E /* Assets.xcassets */; };
-		48EFCDE329FFAD210096BF6E /* AniHyou_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48EFCDDF29FFAD210096BF6E /* AniHyou_Widget.intentdefinition */; };
-		48EFCDE429FFAD210096BF6E /* AniHyou_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48EFCDDF29FFAD210096BF6E /* AniHyou_Widget.intentdefinition */; };
 		48EFCDE729FFAD210096BF6E /* AniHyou WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 48EFCDD529FFAD200096BF6E /* AniHyou WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48EFCDEC29FFB09D0096BF6E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F92851DA02001779EE /* Network.swift */; };
 		48EFCDED29FFB0A00096BF6E /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
@@ -481,7 +479,6 @@
 		48EFCDD829FFAD200096BF6E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		48EFCDDB29FFAD200096BF6E /* AniHyou_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniHyou_WidgetBundle.swift; sourceTree = "<group>"; };
 		48EFCDDD29FFAD200096BF6E /* AniHyou_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniHyou_Widget.swift; sourceTree = "<group>"; };
-		48EFCDDF29FFAD210096BF6E /* AniHyou_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = AniHyou_Widget.intentdefinition; sourceTree = "<group>"; };
 		48EFCDE029FFAD210096BF6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48EFCDE229FFAD210096BF6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48EFCDEF29FFB3320096BF6E /* UserCurrentAnimeList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserCurrentAnimeList.graphql; sourceTree = "<group>"; };
@@ -1074,7 +1071,6 @@
 			children = (
 				48EFCDDB29FFAD200096BF6E /* AniHyou_WidgetBundle.swift */,
 				48EFCDDD29FFAD200096BF6E /* AniHyou_Widget.swift */,
-				48EFCDDF29FFAD210096BF6E /* AniHyou_Widget.intentdefinition */,
 				48EFCDE029FFAD210096BF6E /* Assets.xcassets */,
 				48EFCDE229FFAD210096BF6E /* Info.plist */,
 			);
@@ -1719,7 +1715,6 @@
 				4870AB0928EC7551008431B5 /* SeasonalAnimeQuery.graphql.swift in Sources */,
 				488763D82977F8FF00402934 /* Stat.swift in Sources */,
 				4806BBB12963398C00CB07A6 /* SmileyRatingView.swift in Sources */,
-				48EFCDE429FFAD210096BF6E /* AniHyou_Widget.intentdefinition in Sources */,
 				488763DC2978183800402934 /* MediaStatsQuery.graphql.swift in Sources */,
 				480A41A528ECA1A30066288D /* ModelUtils.swift in Sources */,
 				488C267B2853801A0005EE15 /* Constants.swift in Sources */,
@@ -1735,7 +1730,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48EFCDEE29FFB0A30096BF6E /* NetworkInterceptorProvider.swift in Sources */,
-				48EFCDE329FFAD210096BF6E /* AniHyou_Widget.intentdefinition in Sources */,
 				48EFCDED29FFB0A00096BF6E /* TokenAddingInterceptor.swift in Sources */,
 				48EFCE0429FFF50C0096BF6E /* AnimeSeason.swift in Sources */,
 				48EFCDDC29FFAD200096BF6E /* AniHyou_WidgetBundle.swift in Sources */,
