@@ -92,7 +92,7 @@ struct AniHyou_WidgetEntryView : View {
         ZStack {
             Color("WidgetBackground")
                 .ignoresSafeArea()
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 0) {
                 if entry.placeholderText != nil {
                     Text(entry.placeholderText!)
                 }
@@ -120,6 +120,7 @@ struct AniHyou_WidgetEntryView : View {
                                     if (index + 1) < entry.animeList.count {
                                         Divider()
                                             .padding(.leading)
+                                            .padding(.vertical, 8)
                                     }
                                 }//:Link
                             }
