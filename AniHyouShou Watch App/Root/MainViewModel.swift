@@ -18,8 +18,9 @@ class MainViewModel: ObservableObject {
             KeychainSwift().set(value, forKey: USER_TOKEN_KEY)
             UserDefaults.standard.set(true, forKey: "is_logged_in")
         case USER_ID_KEY:
-            UserDefaults.standard.set(value, forKey: USER_ID_KEY)
-            justLoggedIn = true
+            let id = Int(value)
+            saveUserId(id: id ?? 0)
+            justLoggedIn = id != nil
             break
         default:
             return
