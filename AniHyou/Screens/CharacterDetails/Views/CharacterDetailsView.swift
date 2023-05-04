@@ -43,6 +43,7 @@ struct CharacterDetailsView: View {
                             RichText(html: viewModel.character!.description ?? "")
                                 .defaultStyle()
                                 .customCSS(spoilerCss)
+                                .padding()
                         }
                     }
                 }

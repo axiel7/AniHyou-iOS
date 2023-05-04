@@ -18,6 +18,8 @@ struct ReviewDetailsView: View {
             if viewModel.reviewBody != nil {
                 RichText(html: viewModel.reviewBody!)
                     .defaultStyle()
+                    .customCSS(spoilerCss)
+                    .padding()
             } else {
                 ProgressView()
             }

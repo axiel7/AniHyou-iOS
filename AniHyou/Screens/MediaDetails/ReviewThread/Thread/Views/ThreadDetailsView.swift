@@ -31,8 +31,8 @@ struct ThreadDetailsView: View {
                     
                     RichText(html: thread.body ?? "")
                         .defaultStyle()
-                        .fontType(.system)
-                        .padding(.horizontal, 4)
+                        .customCSS(spoilerCss)
+                        .padding(.horizontal)
                     
                     HStack {
                         Label("\(thread.likeCount)", systemImage: "heart")

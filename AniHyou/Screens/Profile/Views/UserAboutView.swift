@@ -18,6 +18,7 @@ struct UserAboutView: View {
             if viewModel.userAbout != nil {
                 RichText(html: viewModel.userAbout!)
                     .defaultStyle()
+                    .padding()
             } else {
                 HStack {
                     Spacer()

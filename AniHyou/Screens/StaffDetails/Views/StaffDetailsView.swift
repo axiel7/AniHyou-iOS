@@ -43,6 +43,7 @@ struct StaffDetailsView: View {
                             
                             RichText(html: viewModel.staff!.description ?? "")
                                 .defaultStyle()
+                                .padding()
                         }
                     }
                 }

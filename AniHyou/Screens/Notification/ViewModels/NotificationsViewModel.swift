@@ -22,7 +22,7 @@ class NotificationsViewModel: ObservableObject {
                         var tempList = [GenericNotification]()
                         notifications.forEach {
                             if let noti = $0?.asAiringNotification {
-                                let text = "\(noti.contexts?[safe: 0] ?? "")\(noti.episode)\(noti.contexts?[safe: 1] ?? "")\(noti.media?.title?.userPreferred ?? "")\(noti.contexts?[safe: 2] ?? "")"
+                                let text = "\(String(describing: noti.contexts?[safe: 0] ?? ""))\(noti.episode)\(String(describing: noti.contexts?[safe: 1] ?? ""))\(noti.media?.title?.userPreferred ?? "")\(String(describing: noti.contexts?[safe: 2] ?? ""))"
                                 tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.media?.coverImage?.medium, contentId: noti.animeId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
                             }
                             else if let noti = $0?.asFollowingNotification {
