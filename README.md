@@ -1,5 +1,7 @@
 # ![app-icon](https://github.com/axiel7/AniHyou/blob/main/AniHyou/Assets.xcassets/AppIcon.appiconset/AniHyou%20logo%2040.png) AniHyou
 
+[![Donate](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/axiel7)
+
 ### Another unofficial iOS AniList client
 
 [<img alt="App Store" height="80" src="https://github.com/axiel7/AniHyou/blob/main/AppStore-badge.png?raw=true"/>](https://apps.apple.com/us/app/anihyou/id1635777325)
