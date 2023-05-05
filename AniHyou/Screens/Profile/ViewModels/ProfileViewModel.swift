@@ -70,10 +70,10 @@ class ProfileViewModel: ObservableObject {
                 if let about = graphQLResult.data?.user?.about {
                     self?.userAbout = about
                 }
-                self?.isLoadingAbout = false
             case .failure(let error):
                 print(error)
             }
+            self?.isLoadingAbout = false
         }
     }
     
