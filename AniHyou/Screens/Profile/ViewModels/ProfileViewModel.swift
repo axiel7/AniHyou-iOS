@@ -60,14 +60,17 @@ class ProfileViewModel: ObservableObject {
     }
     
     @Published var userAbout: String?
+    @Published var isLoadingAbout = false
     
     func getUserAbout(userId: Int) {
+        self.isLoadingAbout = true
         Network.shared.apollo.fetch(query: UserAboutQuery(userId: .some(userId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let about = graphQLResult.data?.user?.about {
                     self?.userAbout = about
                 }
+                self?.isLoadingAbout = false
             case .failure(let error):
                 print(error)
             }

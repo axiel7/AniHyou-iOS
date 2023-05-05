@@ -19,7 +19,7 @@ struct UserAboutView: View {
                 RichText(html: viewModel.userAbout!)
                     .defaultStyle()
                     .padding()
-            } else {
+            } else if viewModel.isLoadingAbout {
                 HStack {
                     Spacer()
                     ProgressView()
