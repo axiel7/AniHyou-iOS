@@ -86,6 +86,25 @@ class MediaDetailsViewModel: ObservableObject {
         return mediaDetails!.externalLinks!.filter { $0?.type?.value == .streaming }
     }
     
+    var externalLinks: [MediaDetailsQuery.Data.Media.ExternalLink?] {
+        guard mediaDetails != nil else { return [] }
+        guard mediaDetails?.externalLinks != nil else { return [] }
+        return mediaDetails!.externalLinks!.filter { $0?.type?.value != .streaming }
+    }
+    
+    var trailerLink: String? {
+        guard mediaDetails != nil else { return nil }
+        guard mediaDetails?.trailer != nil else { return nil }
+        switch mediaDetails?.trailer?.site {
+        case "youtube":
+            return YOUTUBE_VIDEO_URL + (mediaDetails?.trailer?.id ?? "")
+        case "dailymotion":
+            return DAILYMOTION_VIDEO_URL + (mediaDetails?.trailer?.id ?? "")
+        default:
+            return nil
+        }
+    }
+    
     var mediaShareLink: String? {
         guard mediaDetails != nil else { return nil }
         switch mediaDetails!.type?.value {

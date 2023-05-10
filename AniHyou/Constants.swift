@@ -18,6 +18,9 @@ let ANILIST_GRAPHQL = "https://graphql.anilist.co/graphql"
 let ANILIST_ANIME_URL = "\(ANILIST_URL)/anime/"
 let ANILIST_MANGA_URL = "\(ANILIST_URL)/manga/"
 
+let YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v="
+let DAILYMOTION_VIDEO_URL = "https://www.dailymotion.com/video/"
+
 // Preferences keys
 let USER_TOKEN_KEY = "user_token"
 let USER_ID_KEY = "user_id"

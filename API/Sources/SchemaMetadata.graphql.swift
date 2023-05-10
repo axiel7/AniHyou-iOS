@@ -54,6 +54,8 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Recommendation": return API.Objects.Recommendation
     case "AiringSchedule": return API.Objects.AiringSchedule
     case "MediaExternalLink": return API.Objects.MediaExternalLink
+    case "MediaTrailer": return API.Objects.MediaTrailer
+    case "MediaStreamingEpisode": return API.Objects.MediaStreamingEpisode
     case "Thread": return API.Objects.Thread
     case "ReviewConnection": return API.Objects.ReviewConnection
     case "Review": return API.Objects.Review

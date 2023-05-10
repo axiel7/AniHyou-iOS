@@ -82,7 +82,19 @@ public class MediaDetailsQuery: GraphQLQuery {
             url
             site
             type
-            icon
+          }
+          trailer {
+            __typename
+            id
+            site
+            thumbnail
+          }
+          streamingEpisodes {
+            __typename
+            url
+            title
+            site
+            thumbnail
           }
           tags {
             __typename
@@ -153,6 +165,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("mediaListEntry", MediaListEntry?.self),
         .field("source", GraphQLEnum<API.MediaSource>?.self),
         .field("externalLinks", [ExternalLink?]?.self),
+        .field("trailer", Trailer?.self),
+        .field("streamingEpisodes", [StreamingEpisode?]?.self),
         .field("tags", [Tag?]?.self),
       ] }
 
@@ -208,6 +222,10 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var source: GraphQLEnum<API.MediaSource>? { __data["source"] }
       /// External links to another site related to the media
       public var externalLinks: [ExternalLink?]? { __data["externalLinks"] }
+      /// Media trailer or advertisement
+      public var trailer: Trailer? { __data["trailer"] }
+      /// Data and links to legal streaming episodes on external sites
+      public var streamingEpisodes: [StreamingEpisode?]? { __data["streamingEpisodes"] }
       /// List of tags that describes elements and themes of the media
       public var tags: [Tag?]? { __data["tags"] }
 
@@ -482,7 +500,6 @@ public class MediaDetailsQuery: GraphQLQuery {
           .field("url", String?.self),
           .field("site", String.self),
           .field("type", GraphQLEnum<API.ExternalLinkType>?.self),
-          .field("icon", String?.self),
         ] }
 
         /// The id of the external link
@@ -492,8 +509,55 @@ public class MediaDetailsQuery: GraphQLQuery {
         /// The links website site name
         public var site: String { __data["site"] }
         public var type: GraphQLEnum<API.ExternalLinkType>? { __data["type"] }
-        /// The icon image url of the site. Not available for all links. Transparent PNG 64x64
-        public var icon: String? { __data["icon"] }
+      }
+
+      /// Media.Trailer
+      ///
+      /// Parent Type: `MediaTrailer`
+      public struct Trailer: API.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaTrailer }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("id", String?.self),
+          .field("site", String?.self),
+          .field("thumbnail", String?.self),
+        ] }
+
+        /// The trailer video id
+        public var id: String? { __data["id"] }
+        /// The site the video is hosted by (Currently either youtube or dailymotion)
+        public var site: String? { __data["site"] }
+        /// The url for the thumbnail image of the video
+        public var thumbnail: String? { __data["thumbnail"] }
+      }
+
+      /// Media.StreamingEpisode
+      ///
+      /// Parent Type: `MediaStreamingEpisode`
+      public struct StreamingEpisode: API.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaStreamingEpisode }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("url", String?.self),
+          .field("title", String?.self),
+          .field("site", String?.self),
+          .field("thumbnail", String?.self),
+        ] }
+
+        /// The url of the episode
+        public var url: String? { __data["url"] }
+        /// Title of the episode
+        public var title: String? { __data["title"] }
+        /// The site location of the streaming episodes
+        public var site: String? { __data["site"] }
+        /// Url of episode image thumbnail
+        public var thumbnail: String? { __data["thumbnail"] }
       }
 
       /// Media.Tag

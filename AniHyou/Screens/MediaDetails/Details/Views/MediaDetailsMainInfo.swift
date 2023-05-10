@@ -67,22 +67,11 @@ struct MediaDetailsMainInfo: View {
                     }
                     Spacer()
                     
-                    //MARK: Streaming button
-                    if !viewModel.streamingLinks.isEmpty {
-                        Button {
-                            showingPlayPopover = true
-                        } label: {
-                            Label("Play", systemImage: "play.circle")
-                                .labelButtonIcon()
-                        }
-                        .padding()
-                        .confirmationDialog("Streaming sites", isPresented: $showingPlayPopover) {
-                            ForEach(viewModel.streamingLinks, id: \.?.id) { item in
-                                if item != nil {
-                                    Link(item!.site, destination: URL(string: item!.url ?? "")!)
-                                }
-                            }
-                        }
+                    //MARK: Multimedia button
+                    NavigationLink(destination: MediaMultimediaView(viewModel: viewModel)) {
+                        Label("Play", systemImage: "play.circle")
+                            .labelButtonIcon()
+                            .padding()
                     }
                 }//:HStack
             }//:VStack

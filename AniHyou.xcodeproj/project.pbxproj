@@ -155,6 +155,8 @@
 		48C608F7290D18BB004781C2 /* SearchUserQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F3290D18BB004781C2 /* SearchUserQuery.graphql.swift */; };
 		48C608F8290D18BB004781C2 /* SearchCharacterQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F4290D18BB004781C2 /* SearchCharacterQuery.graphql.swift */; };
 		48C608F9290D18BB004781C2 /* SearchStaffQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C608F5290D18BB004781C2 /* SearchStaffQuery.graphql.swift */; };
+		48C6F9E02A0BB4D00084ED8E /* MediaMultimediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6F9DF2A0BB4D00084ED8E /* MediaMultimediaView.swift */; };
+		48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */; };
 		48CA07A9287035530048854E /* MediaInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07A8287035530048854E /* MediaInfoType.swift */; };
 		48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */; };
 		48CA07AF287063420048854E /* MediaCharactersAndStaff.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48CA07AE287063420048854E /* MediaCharactersAndStaff.graphql */; };
@@ -446,6 +448,8 @@
 		48C608F3290D18BB004781C2 /* SearchUserQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserQuery.graphql.swift; sourceTree = "<group>"; };
 		48C608F4290D18BB004781C2 /* SearchCharacterQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCharacterQuery.graphql.swift; sourceTree = "<group>"; };
 		48C608F5290D18BB004781C2 /* SearchStaffQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStaffQuery.graphql.swift; sourceTree = "<group>"; };
+		48C6F9DF2A0BB4D00084ED8E /* MediaMultimediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMultimediaView.swift; sourceTree = "<group>"; };
+		48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
 		48CA07A8287035530048854E /* MediaInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoType.swift; sourceTree = "<group>"; };
 		48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGeneralInfoView.swift; sourceTree = "<group>"; };
 		48CA07AE287063420048854E /* MediaCharactersAndStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaCharactersAndStaff.graphql; sourceTree = "<group>"; };
@@ -854,6 +858,7 @@
 			isa = PBXGroup;
 			children = (
 				48F763F728ACE52600C82D75 /* Details */,
+				48C6F9DC2A0BB49F0084ED8E /* Multimedia */,
 				48F7640428ACE6A500C82D75 /* CharacterStaff */,
 				48F7640928ACE7A900C82D75 /* Relations */,
 				488763DD29781AAC00402934 /* Stats */,
@@ -991,6 +996,31 @@
 				48F763FE28ACE60700C82D75 /* ViewModels */,
 			);
 			path = Thread;
+			sourceTree = "<group>";
+		};
+		48C6F9DC2A0BB49F0084ED8E /* Multimedia */ = {
+			isa = PBXGroup;
+			children = (
+				48C6F9DE2A0BB4C00084ED8E /* Views */,
+				48C6F9DD2A0BB4AF0084ED8E /* ViewModels */,
+			);
+			path = Multimedia;
+			sourceTree = "<group>";
+		};
+		48C6F9DD2A0BB4AF0084ED8E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		48C6F9DE2A0BB4C00084ED8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48C6F9DF2A0BB4D00084ED8E /* MediaMultimediaView.swift */,
+				48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		48CA07AA28703B530048854E /* Media */ = {
@@ -1629,6 +1659,7 @@
 				48E12595297942DC002DF6CA /* VerticalBarsStatsView.swift in Sources */,
 				48FBC66228CE3E88009AAF4A /* UpdatedMediaEntry.swift in Sources */,
 				48099963288B2C60005AE427 /* UserAboutView.swift in Sources */,
+				48C6F9E02A0BB4D00084ED8E /* MediaMultimediaView.swift in Sources */,
 				48CA07A9287035530048854E /* MediaInfoType.swift in Sources */,
 				48C608F8290D18BB004781C2 /* SearchCharacterQuery.graphql.swift in Sources */,
 				48C608F9290D18BB004781C2 /* SearchStaffQuery.graphql.swift in Sources */,
@@ -1645,6 +1676,7 @@
 				486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */,
 				489C7E982919393B004B0B39 /* StudioDetailsQuery.graphql.swift in Sources */,
 				4870AB1A28EC7551008431B5 /* UpdateEntryProgressMutation.graphql.swift in Sources */,
+				48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */,
 				480F8825294262F3004773CC /* AnimeSeason.swift in Sources */,
 				48CA07B1287064B30048854E /* MediaCharactersAndStaffView.swift in Sources */,
 				48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */,
