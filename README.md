@@ -10,7 +10,7 @@ Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 
 Follow the development on the official Discord server:
 
-[![Discord Banner 3](https://discordapp.com/api/guilds/741059285122940928/widget.png?style=banner3)](https://discord.gg/CTv3WdfxHh)
+[![Discord Banner 3](https://discordapp.com/api/guilds/741059285122940928/widget.png?style=banner2)](https://discord.gg/CTv3WdfxHh)
 
 **⌚️There's a watchOS version!**
 
