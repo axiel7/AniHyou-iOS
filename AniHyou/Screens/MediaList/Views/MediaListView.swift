@@ -31,7 +31,7 @@ struct MediaListView: View {
                         }
                     }
                     .swipeActions {
-                        if viewModel.mediaListStatus == .current {
+                        if viewModel.mediaListStatus == .current || viewModel.mediaListStatus == .repeating {
                             Button("+1") {
                                 viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
                             }
@@ -97,6 +97,7 @@ struct MediaListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             MediaListView(type: .anime, status: .current)
+            MediaListView(type: .anime, status: .repeating)
         }
     }
 }
