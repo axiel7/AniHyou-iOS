@@ -83,9 +83,6 @@ struct MediaListView: View {
         .onChange(of: viewModel.sort) { _ in
             viewModel.refreshList()
         }
-        .onChange(of: viewModel.updatedEntry) { _ in
-            viewModel.refreshList()
-        }
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = status

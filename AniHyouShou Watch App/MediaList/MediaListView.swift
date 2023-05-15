@@ -34,9 +34,6 @@ struct MediaListView: View {
                 }
             }
             .navigationTitle(type == .anime ? "Anime" : "Manga")
-            .onChange(of: viewModel.updatedEntry) { _ in
-                viewModel.refreshList()
-            }
         }
         .onAppear {
             viewModel.mediaType = type

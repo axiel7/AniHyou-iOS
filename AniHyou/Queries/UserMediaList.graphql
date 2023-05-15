@@ -28,8 +28,10 @@ query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $
   }
 }
 
-fragment BasicMediaListEntry on MediaList {
+fragment BasicMediaListEntry on MediaList
+@apollo_client_ios_localCacheMutation {
   id
+  mediaId
   status
   score
   progress
