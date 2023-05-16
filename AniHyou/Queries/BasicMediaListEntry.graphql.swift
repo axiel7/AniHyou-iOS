@@ -100,21 +100,23 @@ public struct BasicMediaListEntry: API.MutableSelectionSet, Fragment {
     startedAt: StartedAt? = nil,
     completedAt: CompletedAt? = nil
   ) {
-    self.init(_dataDict: DataDict(data: [
-      "__typename": API.Objects.MediaList.typename,
-      "id": id,
-      "mediaId": mediaId,
-      "status": status,
-      "score": score,
-      "progress": progress,
-      "progressVolumes": progressVolumes,
-      "repeat": `repeat`,
-      "startedAt": startedAt._fieldData,
-      "completedAt": completedAt._fieldData,
-      "__fulfilled": Set([
+    self.init(_dataDict: DataDict(
+      data: [
+        "__typename": API.Objects.MediaList.typename,
+        "id": id,
+        "mediaId": mediaId,
+        "status": status,
+        "score": score,
+        "progress": progress,
+        "progressVolumes": progressVolumes,
+        "repeat": `repeat`,
+        "startedAt": startedAt._fieldData,
+        "completedAt": completedAt._fieldData,
+      ],
+      fulfilledFragments: [
         ObjectIdentifier(Self.self)
-      ])
-    ]))
+      ]
+    ))
   }
 
   /// StartedAt
@@ -163,16 +165,18 @@ public struct BasicMediaListEntry: API.MutableSelectionSet, Fragment {
       month: Int? = nil,
       year: Int? = nil
     ) {
-      self.init(_dataDict: DataDict(data: [
-        "__typename": API.Objects.FuzzyDate.typename,
-        "day": day,
-        "month": month,
-        "year": year,
-        "__fulfilled": Set([
+      self.init(_dataDict: DataDict(
+        data: [
+          "__typename": API.Objects.FuzzyDate.typename,
+          "day": day,
+          "month": month,
+          "year": year,
+        ],
+        fulfilledFragments: [
           ObjectIdentifier(Self.self),
           ObjectIdentifier(FuzzyDate.self)
-        ])
-      ]))
+        ]
+      ))
     }
   }
 
@@ -222,16 +226,18 @@ public struct BasicMediaListEntry: API.MutableSelectionSet, Fragment {
       month: Int? = nil,
       year: Int? = nil
     ) {
-      self.init(_dataDict: DataDict(data: [
-        "__typename": API.Objects.FuzzyDate.typename,
-        "day": day,
-        "month": month,
-        "year": year,
-        "__fulfilled": Set([
+      self.init(_dataDict: DataDict(
+        data: [
+          "__typename": API.Objects.FuzzyDate.typename,
+          "day": day,
+          "month": month,
+          "year": year,
+        ],
+        fulfilledFragments: [
           ObjectIdentifier(Self.self),
           ObjectIdentifier(FuzzyDate.self)
-        ])
-      ]))
+        ]
+      ))
     }
   }
 }
