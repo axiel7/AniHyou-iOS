@@ -14,6 +14,10 @@ class MediaListViewModel: ObservableObject {
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList? = nil
     
+    private var idMap: Dictionary<String, Bool> = [String : Bool]()
+    
+    private var mediaSet: Set<UserMediaListQuery.Data.Page.MediaList?> = Set<UserMediaListQuery.Data.Page.MediaList?>()
+    
     var currentPage = 1
     var hasNextPage = true
     var forceReload = false
@@ -23,14 +27,31 @@ class MediaListViewModel: ObservableObject {
     @Published var sort: MediaListSort = .updatedTimeDesc
     
     func getUserMediaList() {
-        Network.shared.apollo.fetch(query: UserMediaListQuery(page: .some(currentPage), perPage: .some(25), userId: .some(userId()), type: .some(.case(mediaType)), status: .some(.case(mediaListStatus)), sort: .some([.case(sort)])), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
+        Network.shared.apollo.fetch(
+            query: UserMediaListQuery(
+                page: .some(currentPage),
+                perPage: .some(25),
+                userId: .some(userId()),
+                type: .some(.case(mediaType)),
+                status: .some(.case(mediaListStatus)),
+                sort: .some([.case(sort)])
+            ),
+            cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+        ) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList {
-                        self?.mediaList.append(contentsOf: list)
-                        self?.currentPage += 1
-                        self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
+                        list.forEach { self?.mediaSet.insert($0) }
+                        
+                        if (page.pageInfo?.hasNextPage)! {
+                            self?.currentPage += 1
+                            self?.hasNextPage = true
+                        } else {
+                            self?.hasNextPage = false
+                        }
+                        
+                        
                     }
                 }
             case .failure(let error):

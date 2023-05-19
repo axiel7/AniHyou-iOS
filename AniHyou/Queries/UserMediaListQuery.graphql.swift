@@ -21,6 +21,8 @@ public class UserMediaListQuery: GraphQLQuery {
               title {
                 __typename
                 userPreferred
+                english
+                romaji
               }
               episodes
               chapters
@@ -37,6 +39,9 @@ public class UserMediaListQuery: GraphQLQuery {
               }
               status
               type
+              bannerImage
+              genres
+              seasonYear
             }
           }
           pageInfo {
@@ -196,6 +201,10 @@ public class UserMediaListQuery: GraphQLQuery {
           public var status: GraphQLEnum<API.MediaStatus>? { __data["status"] }
           /// The type of the media; anime or manga
           public var type: GraphQLEnum<API.MediaType>? { __data["type"] }
+          /// The list of associated genres
+          public var genres: [String]? { __data["genres"]}
+            public var bannerImages: String? { __data["bannerImage"]}
+            public var seasonYear: Int? { __data["seasonYear"]}
 
           /// Page.MediaList.Media.Title
           ///
@@ -208,6 +217,8 @@ public class UserMediaListQuery: GraphQLQuery {
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("userPreferred", String?.self),
+              .field("english", String?.self),
+              .field("romaji", String?.self),
             ] }
 
             /// The currently authenticated users preferred title language. Default romaji for non-authenticated

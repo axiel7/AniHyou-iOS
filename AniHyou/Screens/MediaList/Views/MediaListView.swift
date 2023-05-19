@@ -14,11 +14,12 @@ struct MediaListView: View {
     var status: MediaListStatus
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
+    @State private var searchText = ""
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     
     var body: some View {
         List {
-            ForEach(viewModel.mediaList, id: \.?.id) {
+            ForEach(filteredMediaList, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
                         switch listStyle {
@@ -34,6 +35,7 @@ struct MediaListView: View {
                         if viewModel.mediaListStatus == .current || viewModel.mediaListStatus == .repeating {
                             Button("+1") {
                                 viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                                // should show a sheet to add a rating
                             }
                             .tint(.green)
                         }
@@ -46,8 +48,9 @@ struct MediaListView: View {
                         .tint(.blue)
                     }
                 }
-            }//:ForEach
-            
+
+            }
+                
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {
@@ -55,6 +58,20 @@ struct MediaListView: View {
                     }
             }
         }//:List
+        .searchable(text: $searchText)
+        .refreshable {
+            viewModel.refreshList()
+        }
+        .onChange(of: viewModel.sort) { _ in
+            viewModel.refreshList()
+        }
+        .onChange(of: viewModel.updatedEntry) { _ in
+            viewModel.refreshList()
+        }
+        .onAppear {
+            viewModel.mediaType = type
+            viewModel.mediaListStatus = status
+        }
         .sheet(isPresented: $showingEditSheet) {
             if viewModel.selectedItem != nil {
                 MediaListEditView(mediaId: viewModel.selectedItem!.mediaId, mediaType: type, mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry) {
@@ -77,18 +94,20 @@ struct MediaListView: View {
             }
         }
         .navigationTitle(viewModel.mediaListStatus.localizedName)
-        .refreshable {
-            viewModel.refreshList()
-        } 
-        .onChange(of: viewModel.sort) { _ in
-            viewModel.refreshList()
-        }
-        .onChange(of: viewModel.updatedEntry) { _ in
-            viewModel.refreshList()
-        }
-        .onAppear {
-            viewModel.mediaType = type
-            viewModel.mediaListStatus = status
+    }
+    
+    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
+        if searchText.isEmpty {
+            return viewModel.mediaList
+        } else {
+            let filtered = viewModel.mediaList.filter { ($0?.media?.title?.userPreferred?.contains(searchText))!
+            }
+            if viewModel.hasNextPage {
+                viewModel.getUserMediaList()
+            }
+
+
+            return filtered
         }
     }
 }
