@@ -6,17 +6,18 @@ Another unofficial iOS AniList client
 
 [<img alt="App Store" height="80" src="https://github.com/axiel7/AniHyou/blob/main/AppStore-badge.png?raw=true"/>](https://apps.apple.com/us/app/anihyou/id1635777325)
 
+Android version [here](https://github.com/axiel7/AniHyou-android)
+
 Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
 
 Follow the development on the official Discord server:
 
 [![Discord Banner 3](https://discordapp.com/api/guilds/741059285122940928/widget.png?style=banner2)](https://discord.gg/CTv3WdfxHh)
 
-**⌚️There's a watchOS version!**
-
 ![screenshots](https://axiel7.github.io/assets/anihyou.58717379ec9cfda91ca1c970f44d2ce6.png)
 
 ## Current features
+- **There's a watchOS version!⌚️**
 - Animes airing soon and weekly calendar
 - Seasonal animes
 - Trending animes
