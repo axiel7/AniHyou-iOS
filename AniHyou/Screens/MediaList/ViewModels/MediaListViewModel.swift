@@ -43,6 +43,7 @@ class MediaListViewModel: ObservableObject {
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList {
                         list.forEach { self?.mediaSet.insert($0) }
+                        self?.mediaList.append(contentsOf: list)
                         
                         if (page.pageInfo?.hasNextPage)! {
                             self?.currentPage += 1
