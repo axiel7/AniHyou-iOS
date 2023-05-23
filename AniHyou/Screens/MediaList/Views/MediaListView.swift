@@ -32,8 +32,14 @@ struct MediaListView: View {
                     }
                     .swipeActions {
                         if viewModel.mediaListStatus == .current || viewModel.mediaListStatus == .repeating {
-                            Button("+1") {
+                            Button(action: {
                                 viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                            }) {
+                                if type == .anime {
+                                    Label("Ep", systemImage: "plus.circle")
+                                } else if type == .manga {
+                                    Label("Ch", systemImage: "plus.circle")
+                                }
                             }
                             .tint(.green)
                         }
@@ -41,7 +47,7 @@ struct MediaListView: View {
                             viewModel.selectedItem = item
                             showingEditSheet = true
                         }) {
-                            Label("Edit", systemImage: "square.and.pencil")
+                            Label("Edit", systemImage: "pencil.circle")
                         }
                         .tint(.blue)
                     }
