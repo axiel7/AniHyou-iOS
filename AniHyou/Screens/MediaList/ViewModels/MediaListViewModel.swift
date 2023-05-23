@@ -68,7 +68,6 @@ class MediaListViewModel: ObservableObject {
         forceReload = true
     }
     
-    @Published var updatedEntry = UpdatedMediaEntry()
     @Published var isLoading = false
     
     func updateEntryProgress(entryId: Int, progress: Int) {
@@ -77,7 +76,23 @@ class MediaListViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {
-                    self?.updatedEntry = UpdatedMediaEntry(mediaId: data.id, progress: data.progress)
+                    //Update the cache
+                    Network.shared.apollo.store.withinReadWriteTransaction({ transaction in
+                        do {
+                            try transaction.updateObject(ofType: BasicMediaListEntry.self, withKey: "MediaList:\(entryId).\(data.mediaId)") { (cachedData: inout BasicMediaListEntry) in
+                                cachedData.progress = data.progress
+                            }
+                            
+                            let newObject = try transaction.readObject(ofType: UserMediaListQuery.Data.Page.MediaList.self, withKey: "MediaList:\(entryId).\(data.mediaId)")
+                            if let foundIndex = self?.mediaList.firstIndex(where: { $0?.id == entryId }) {
+                                DispatchQueue.main.async {
+                                    self?.mediaList[foundIndex] = newObject
+                                }
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    })
                 }
             case .failure(let error):
                 print(error)

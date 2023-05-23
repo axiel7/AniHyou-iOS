@@ -34,7 +34,6 @@
 		481AD4E02851CE73001779EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DF2851CE73001779EE /* ContentView.swift */; };
 		481AD4E22851CE74001779EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AD4E12851CE74001779EE /* Assets.xcassets */; };
 		481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AD4E42851CE74001779EE /* Preview Assets.xcassets */; };
-		481AD4EE2851CF90001779EE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 481AD4ED2851CF90001779EE /* Apollo */; };
 		481AD4F62851D917001779EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F52851D917001779EE /* HomeView.swift */; };
 		481AD4F82851D927001779EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F72851D927001779EE /* HomeViewModel.swift */; };
 		481AD4FA2851DA02001779EE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F92851DA02001779EE /* Network.swift */; };
@@ -166,6 +165,9 @@
 		48CA07B728707DF80048854E /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07B628707DF80048854E /* StaffView.swift */; };
 		48CA07B928709FFF0048854E /* MediaRelationsAndRecommendations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */; };
 		48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */; };
+		48D39BE92A1390B7001D47BE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D39BE82A1390B7001D47BE /* Apollo */; };
+		48D39BEB2A1390E8001D47BE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D39BEA2A1390E8001D47BE /* Apollo */; };
+		48D39BED2A1390EF001D47BE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D39BEC2A1390EF001D47BE /* Apollo */; };
 		48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */; };
 		48DBAF7829B0776A00A75167 /* UserStatsAnimeOverview.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48DBAF7729B0776A00A75167 /* UserStatsAnimeOverview.graphql */; };
 		48DBAF7A29B077D300A75167 /* UserStatsAnimeOverviewQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DBAF7929B077D300A75167 /* UserStatsAnimeOverviewQuery.graphql.swift */; };
@@ -200,9 +202,7 @@
 		48EFCDF529FFE70A0096BF6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267A2853801A0005EE15 /* Constants.swift */; };
 		48EFCDF629FFE7160096BF6E /* ViewerIdQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAF028EC7551008431B5 /* ViewerIdQuery.graphql.swift */; };
 		48EFCDF929FFE8E20096BF6E /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 48EFCDF829FFE8E20096BF6E /* API */; };
-		48EFCDFB29FFE8E60096BF6E /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48EFCDFA29FFE8E60096BF6E /* Apollo */; };
 		48EFCDFD29FFE8EB0096BF6E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48EFCDFC29FFE8EB0096BF6E /* KeychainSwift */; };
-		48EFCE0129FFEF580096BF6E /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 48EFCE0029FFEF580096BF6E /* ApolloAPI */; };
 		48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD501285207B1001779EE /* DateUtils.swift */; };
 		48EFCE0329FFF5050096BF6E /* FuzzyDate.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */; };
 		48EFCE0429FFF50C0096BF6E /* AnimeSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F8824294262F3004773CC /* AnimeSeason.swift */; };
@@ -213,7 +213,6 @@
 		48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F27913296EFE78000827F7 /* Preview Assets.xcassets */; };
 		48F27917296EFE78000827F7 /* AniHyou.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 48F2790A296EFE77000827F7 /* AniHyou.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48F2791D296F0927000827F7 /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 48F2791C296F0927000827F7 /* API */; };
-		48F2791F296F092A000827F7 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48F2791E296F092A000827F7 /* Apollo */; };
 		48F27921296F092F000827F7 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48F27920296F092F000827F7 /* KeychainSwift */; };
 		48F27922296F0937000827F7 /* FuzzyDate.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */; };
 		48F27923296F0949000827F7 /* UpdateEntryProgressMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870AAFD28EC7551008431B5 /* UpdateEntryProgressMutation.graphql.swift */; };
@@ -526,9 +525,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D39BE92A1390B7001D47BE /* Apollo in Frameworks */,
 				481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */,
 				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
-				481AD4EE2851CF90001779EE /* Apollo in Frameworks */,
 				480F882929426995004773CC /* API in Frameworks */,
 				48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */,
 			);
@@ -538,9 +537,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48EFCE0129FFEF580096BF6E /* ApolloAPI in Frameworks */,
+				48D39BED2A1390EF001D47BE /* Apollo in Frameworks */,
 				48EFCDF929FFE8E20096BF6E /* API in Frameworks */,
-				48EFCDFB29FFE8E60096BF6E /* Apollo in Frameworks */,
 				48EFCDFD29FFE8EB0096BF6E /* KeychainSwift in Frameworks */,
 				48EFCDD929FFAD200096BF6E /* SwiftUI.framework in Frameworks */,
 				48EFCDD729FFAD200096BF6E /* WidgetKit.framework in Frameworks */,
@@ -552,8 +550,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F27921296F092F000827F7 /* KeychainSwift in Frameworks */,
+				48D39BEB2A1390E8001D47BE /* Apollo in Frameworks */,
 				48F2791D296F0927000827F7 /* API in Frameworks */,
-				48F2791F296F092A000827F7 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1424,11 +1422,11 @@
 			);
 			name = AniHyou;
 			packageProductDependencies = (
-				481AD4ED2851CF90001779EE /* Apollo */,
 				488C268728539CC30005EE15 /* KeychainSwift */,
 				481A6B0F2864CD0F00AB9C89 /* Kingfisher */,
 				48604D7A28A15AD1006A6AF8 /* RichText */,
 				480F882829426995004773CC /* API */,
+				48D39BE82A1390B7001D47BE /* Apollo */,
 			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
@@ -1449,9 +1447,8 @@
 			name = "AniHyou WidgetExtension";
 			packageProductDependencies = (
 				48EFCDF829FFE8E20096BF6E /* API */,
-				48EFCDFA29FFE8E60096BF6E /* Apollo */,
 				48EFCDFC29FFE8EB0096BF6E /* KeychainSwift */,
-				48EFCE0029FFEF580096BF6E /* ApolloAPI */,
+				48D39BEC2A1390EF001D47BE /* Apollo */,
 			);
 			productName = "AniHyou WidgetExtension";
 			productReference = 48EFCDD529FFAD200096BF6E /* AniHyou WidgetExtension.appex */;
@@ -1472,8 +1469,8 @@
 			name = "AniHyouShou Watch App";
 			packageProductDependencies = (
 				48F2791C296F0927000827F7 /* API */,
-				48F2791E296F092A000827F7 /* Apollo */,
 				48F27920296F092F000827F7 /* KeychainSwift */,
+				48D39BEA2A1390E8001D47BE /* Apollo */,
 			);
 			productName = "AniHyouShou Watch App";
 			productReference = 48F2790A296EFE77000827F7 /* AniHyou.app */;
@@ -1510,10 +1507,10 @@
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
-				481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */,
+				48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
 			projectDirPath = "";
@@ -1944,7 +1941,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AniHyou/AniHyou.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
@@ -1961,7 +1958,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axiel7.AniHyou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1978,7 +1975,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AniHyou/AniHyou.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "\"AniHyou/Preview Content\"";
 				DEVELOPMENT_TEAM = SGU98T456G;
 				ENABLE_PREVIEWS = YES;
@@ -1995,7 +1992,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axiel7.AniHyou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2012,7 +2009,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "AniHyou WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = SGU98T456G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AniHyou Widget/Info.plist";
@@ -2024,7 +2021,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2042,7 +2039,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "AniHyou WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = SGU98T456G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AniHyou Widget/Info.plist";
@@ -2054,7 +2051,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2174,14 +2171,6 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NuPlay/RichText.git";
@@ -2198,6 +2187,14 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2210,11 +2207,6 @@
 			package = 481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		481AD4ED2851CF90001779EE /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
-		};
 		48604D7A28A15AD1006A6AF8 /* RichText */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */;
@@ -2225,33 +2217,33 @@
 			package = 488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
+		48D39BE82A1390B7001D47BE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		48D39BEA2A1390E8001D47BE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		48D39BEC2A1390EF001D47BE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
 		48EFCDF829FFE8E20096BF6E /* API */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = API;
-		};
-		48EFCDFA29FFE8E60096BF6E /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
 		};
 		48EFCDFC29FFE8EB0096BF6E /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
-		48EFCE0029FFEF580096BF6E /* ApolloAPI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloAPI;
-		};
 		48F2791C296F0927000827F7 /* API */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = API;
-		};
-		48F2791E296F092A000827F7 /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 481AD4EC2851CF90001779EE /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
 		};
 		48F27920296F092F000827F7 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;

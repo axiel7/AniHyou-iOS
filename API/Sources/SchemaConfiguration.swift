@@ -8,10 +8,21 @@
 import ApolloAPI
 
 public enum SchemaConfiguration: ApolloAPI.SchemaConfiguration {
-  public static func cacheKeyInfo(for type: Object, object: JSONObject) -> CacheKeyInfo? {
-    // Since the AniList API sometimes returns the same id for some queries (https://github.com/AniList/ApiV2-GraphQL-Docs/issues/165)
-    // I won't use the cache key for now.
-    //return CacheKeyInfo(id: "id")
-      return nil
+  public static func cacheKeyInfo(for type: Object, object: ObjectData) -> CacheKeyInfo? {
+      switch type {
+      case Objects.MediaList:
+          guard let id = object._rawData["id"] as? Int else {
+              return nil
+          }
+          guard let mediaId = object._rawData["mediaId"] as? Int else {
+              return CacheKeyInfo(id: "\(id)", uniqueKeyGroup: "MediaList")
+          }
+          return CacheKeyInfo(id: "\(id).\(mediaId)", uniqueKeyGroup: "MediaList")
+      default:
+          guard let id = object._rawData["id"] as? Int else {
+              return nil
+          }
+          return CacheKeyInfo(id: String(id), uniqueKeyGroup: type.__typename)
+      }
   }
 }

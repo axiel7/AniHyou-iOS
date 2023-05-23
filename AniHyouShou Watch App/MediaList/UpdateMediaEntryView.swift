@@ -11,7 +11,6 @@ struct UpdateMediaEntryView: View {
     
     var entry: UserMediaListQuery.Data.Page.MediaList?
     @ObservedObject var viewModel: MediaListViewModel
-    @State private var currentProgress = 0
     
     var body: some View {
         Group {
@@ -21,10 +20,10 @@ struct UpdateMediaEntryView: View {
                         .font(.title3)
                     Spacer()
                     
-                    Text("\(currentProgress)/\(entry!.totalProgress ?? 0)")
+                    Text("\(entry!.progress ?? 0)/\(entry!.totalProgress ?? 0)")
 
                     Button(action: {
-                        viewModel.updateEntryProgress(entryId: entry!.id, progress: currentProgress + 1)
+                        viewModel.updateEntryProgress(entryId: entry!.id, progress: entry!.progress ?? 0 + 1)
                     }) {
                         if viewModel.isLoading {
                             ProgressView()
@@ -41,12 +40,6 @@ struct UpdateMediaEntryView: View {
         }
         .navigationTitle("Back")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            currentProgress = entry?.progress ?? 0
-        }
-        .onChange(of: viewModel.updatedEntry) { updatedEntry in
-            currentProgress = updatedEntry.progress ?? currentProgress
-        }
     }
 }
 

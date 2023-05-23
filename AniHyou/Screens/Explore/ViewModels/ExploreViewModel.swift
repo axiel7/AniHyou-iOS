@@ -10,6 +10,8 @@ import API
 
 class ExploreViewModel: ObservableObject {
     
+    private let perPage = 25
+    
     //MARK: - Charts
     @Published var mediaChart = [MediaChartQuery.Data.Page.Medium?]()
     
@@ -17,7 +19,7 @@ class ExploreViewModel: ObservableObject {
     var hasNextPageChart = true
     
     func getMediaChart(type: MediaType, sort: MediaSort) {
-        Network.shared.apollo.fetch(query: MediaChartQuery(page: .some(currentPageChart), perPage: .some(25), sort: .some([.case(sort)]), type: .some(.case(type)))) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaChartQuery(page: .some(currentPageChart), perPage: .some(perPage), sort: .some([.case(sort)]), type: .some(.case(type)))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -26,7 +28,7 @@ class ExploreViewModel: ObservableObject {
                         self?.currentPageChart += 1
                         
                         // limit top 100 results
-                        if (page.pageInfo?.currentPage ?? self?.currentPageChart) ?? 1 >= 100 * 25 {
+                        if (page.pageInfo?.currentPage ?? self?.currentPageChart) ?? 1 > 100 / self?.perPage ?? 25 {
                             self?.hasNextPageChart = false
                         } else {
                             self?.hasNextPageChart = page.pageInfo?.hasNextPage ?? false
@@ -47,7 +49,7 @@ class ExploreViewModel: ObservableObject {
     
     func getAnimeSeasonal(season: MediaSeason, year: Int, resetPage: Bool = false) {
         if resetPage { currentPageSeason = 1 }
-        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(currentPageSeason), perPage: .some(25), season: .some(.case(season)), seasonYear: .some(year), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(currentPageSeason), perPage: .some(perPage), season: .some(.case(season)), seasonYear: .some(year), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

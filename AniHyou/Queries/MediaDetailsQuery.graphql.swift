@@ -411,6 +411,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var completedAt: CompletedAt? { __data["completedAt"] }
         /// The id of the list entry
         public var id: Int { __data["id"] }
+        /// The id of the media
+        public var mediaId: Int { __data["mediaId"] }
         /// The watching/reading status
         public var status: GraphQLEnum<API.MediaListStatus>? { __data["status"] }
         /// The score of the entry
