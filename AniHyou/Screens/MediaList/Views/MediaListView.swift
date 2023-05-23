@@ -10,7 +10,7 @@ import API
 
 struct MediaListView: View {
     
-    var type: MediaType
+    let type: MediaType
     var status: MediaListStatus
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
@@ -71,9 +71,9 @@ struct MediaListView: View {
         .onChange(of: viewModel.sort) { _ in
             viewModel.refreshList()
         }
-        .onChange(of: viewModel.updatedEntry) { _ in
-            viewModel.refreshList()
-        }
+//        .onChange(of: viewModel.updatedEntry) { _ in
+//            viewModel.refreshList()
+//        }
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = status
@@ -106,10 +106,16 @@ struct MediaListView: View {
         if searchText.isEmpty {
             return viewModel.mediaList
         } else {
-            let filtered = viewModel.mediaList.filter { ($0?.media?.title?.userPreferred?.contains(searchText))!
+            let filtered = viewModel.mediaList.filter {
+                if (($0?.media?.title?.userPreferred) != nil) {
+                    let lowerStr = $0?.media?.title?.userPreferred!.lowercased()
+                    return lowerStr != nil && lowerStr!.contains(searchText.lowercased())
+                }
+                return true
             }
             if viewModel.hasNextPage {
                 viewModel.getUserMediaList()
+                return filtered
             }
 
 

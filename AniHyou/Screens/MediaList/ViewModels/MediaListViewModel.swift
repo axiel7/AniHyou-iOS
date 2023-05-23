@@ -34,10 +34,9 @@ class MediaListViewModel: ObservableObject {
                 userId: .some(userId()),
                 type: .some(.case(mediaType)),
                 status: .some(.case(mediaListStatus)),
-                sort: .some([.case(sort)])
+                sort: .some([.case(sort), .case(.mediaIdDesc)])
             ),
-        Network.shared.apollo.fetch(query: UserMediaListQuery(page: .some(currentPage), perPage: .some(25), userId: .some(userId()), type: .some(.case(mediaType)), status: .some(.case(mediaListStatus)), sort: .some([.case(sort), .case(.mediaIdDesc)])), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
-        ) { [weak self] result in
+            cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
