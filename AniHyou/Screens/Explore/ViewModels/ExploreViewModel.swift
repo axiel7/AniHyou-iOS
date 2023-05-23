@@ -28,7 +28,7 @@ class ExploreViewModel: ObservableObject {
                         self?.currentPageChart += 1
                         
                         // limit top 100 results
-                        if (page.pageInfo?.currentPage ?? self?.currentPageChart) ?? 1 > 100 / self?.perPage ?? 25 {
+                        if (self?.currentPageChart) ?? 1 > 100 / (self?.perPage ?? 25) {
                             self?.hasNextPageChart = false
                         } else {
                             self?.hasNextPageChart = page.pageInfo?.hasNextPage ?? false
