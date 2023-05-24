@@ -56,6 +56,28 @@ class MediaListViewModel: ObservableObject {
         forceReload = false
     }
     
+    @Published var searchText = ""
+    
+    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
+        if searchText.isEmpty {
+            return mediaList
+        } else {
+            let filtered = mediaList.filter {
+                if (($0?.media?.title?.userPreferred) != nil) {
+                    let lowerStr = $0?.media?.title?.userPreferred!.lowercased()
+                    return lowerStr != nil && lowerStr!.contains(searchText.lowercased())
+                }
+                return true
+            }
+            if hasNextPage {
+                getUserMediaList()
+                return filtered
+            }
+
+            return filtered
+        }
+    }
+    
     func refreshList() {
         currentPage = 1
         hasNextPage = true

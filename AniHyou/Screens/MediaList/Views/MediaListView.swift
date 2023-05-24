@@ -14,12 +14,11 @@ struct MediaListView: View {
     var status: MediaListStatus
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
-    @State private var searchText = ""
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     
     var body: some View {
         List {
-            ForEach(filteredMediaList, id: \.?.id) {
+            ForEach(viewModel.filteredMediaList, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
                         switch listStyle {
@@ -64,7 +63,7 @@ struct MediaListView: View {
                     }
             }
         }//:List
-        .searchable(text: $searchText)
+        .searchable(text: $viewModel.searchText)
         .refreshable {
             viewModel.refreshList()
         }
@@ -97,27 +96,6 @@ struct MediaListView: View {
             }
         }
         .navigationTitle(viewModel.mediaListStatus.localizedName)
-    }
-    
-    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
-        if searchText.isEmpty {
-            return viewModel.mediaList
-        } else {
-            let filtered = viewModel.mediaList.filter {
-                if (($0?.media?.title?.userPreferred) != nil) {
-                    let lowerStr = $0?.media?.title?.userPreferred!.lowercased()
-                    return lowerStr != nil && lowerStr!.contains(searchText.lowercased())
-                }
-                return true
-            }
-            if viewModel.hasNextPage {
-                viewModel.getUserMediaList()
-                return filtered
-            }
-
-
-            return filtered
-        }
     }
 }
 
