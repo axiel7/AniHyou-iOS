@@ -8,8 +8,8 @@
 import Foundation
 
 public enum ProfileInfoType: Equatable, Hashable, CaseIterable {
-    case activity
     case about
+    case activity
     case stats
     case favorites
     case social

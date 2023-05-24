@@ -36,7 +36,7 @@ struct ProfileView: View {
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
     @State private var showingNotificationsSheet = false
-    @State private var infoType: ProfileInfoType = .activity
+    @State private var infoType: ProfileInfoType = .about
     
     var body: some View {
         NavigationView {
@@ -49,10 +49,10 @@ struct ProfileView: View {
                     if viewModel.userInfo != nil {
                         Section {
                             switch infoType {
-                            case .activity:
-                                UserActivityView(userId: viewModel.userInfo!.id)
                             case .about:
                                 UserAboutView(userId: viewModel.userInfo!.id)
+                            case .activity:
+                                UserActivityView(userId: viewModel.userInfo!.id)
                             case .stats:
                                 UserStatsHostView(userId: viewModel.userInfo!.id)
                             case .favorites:
