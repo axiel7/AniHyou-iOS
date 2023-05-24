@@ -10,7 +10,7 @@ import API
 
 struct MediaListView: View {
     
-    var type: MediaType
+    let type: MediaType
     var status: MediaListStatus
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
@@ -18,7 +18,7 @@ struct MediaListView: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.mediaList, id: \.?.id) {
+            ForEach(viewModel.filteredMediaList, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
                         switch listStyle {
@@ -36,9 +36,10 @@ struct MediaListView: View {
                                 viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
                             }) {
                                 if type == .anime {
-                                    Label("Ep", systemImage: "plus.circle")
+                                    Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
                                 } else if type == .manga {
-                                    Label("Ch", systemImage: "plus.circle")
+                                    Label("Ch", systemImage: "plus")
                                 }
                             }
                             .tint(.green)
@@ -47,13 +48,14 @@ struct MediaListView: View {
                             viewModel.selectedItem = item
                             showingEditSheet = true
                         }) {
-                            Label("Edit", systemImage: "pencil.circle")
+                            Label("Edit", systemImage: "square.and.pencil")
                         }
                         .tint(.blue)
                     }
                 }
-            }//:ForEach
-            
+
+            }
+                
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {
@@ -61,6 +63,17 @@ struct MediaListView: View {
                     }
             }
         }//:List
+        .searchable(text: $viewModel.searchText)
+        .refreshable {
+            viewModel.refreshList()
+        }
+        .onChange(of: viewModel.sort) { _ in
+            viewModel.refreshList()
+        }
+        .onAppear {
+            viewModel.mediaType = type
+            viewModel.mediaListStatus = status
+        }
         .sheet(isPresented: $showingEditSheet) {
             if viewModel.selectedItem != nil {
                 MediaListEditView(mediaId: viewModel.selectedItem!.mediaId, mediaType: type, mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry) {
@@ -83,16 +96,6 @@ struct MediaListView: View {
             }
         }
         .navigationTitle(viewModel.mediaListStatus.localizedName)
-        .refreshable {
-            viewModel.refreshList()
-        } 
-        .onChange(of: viewModel.sort) { _ in
-            viewModel.refreshList()
-        }
-        .onAppear {
-            viewModel.mediaType = type
-            viewModel.mediaListStatus = status
-        }
     }
 }
 

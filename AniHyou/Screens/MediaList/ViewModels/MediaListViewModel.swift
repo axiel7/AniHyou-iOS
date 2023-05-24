@@ -23,14 +23,30 @@ class MediaListViewModel: ObservableObject {
     @Published var sort: MediaListSort = .updatedTimeDesc
     
     func getUserMediaList() {
-        Network.shared.apollo.fetch(query: UserMediaListQuery(page: .some(currentPage), perPage: .some(25), userId: .some(userId()), type: .some(.case(mediaType)), status: .some(.case(mediaListStatus)), sort: .some([.case(sort), .case(.mediaIdDesc)])), cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
+        Network.shared.apollo.fetch(
+            query: UserMediaListQuery(
+                page: .some(currentPage),
+                perPage: .some(25),
+                userId: .some(userId()),
+                type: .some(.case(mediaType)),
+                status: .some(.case(mediaListStatus)),
+                sort: .some([.case(sort), .case(.mediaIdDesc)])
+            ),
+            cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList {
                         self?.mediaList.append(contentsOf: list)
-                        self?.currentPage += 1
-                        self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
+                        
+                        if (page.pageInfo?.hasNextPage)! {
+                            self?.currentPage += 1
+                            self?.hasNextPage = true
+                        } else {
+                            self?.hasNextPage = false
+                        }
+                        
+                        
                     }
                 }
             case .failure(let error):
@@ -38,6 +54,28 @@ class MediaListViewModel: ObservableObject {
             }
         }
         forceReload = false
+    }
+    
+    @Published var searchText = ""
+    
+    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
+        if searchText.isEmpty {
+            return mediaList
+        } else {
+            let filtered = mediaList.filter {
+                if (($0?.media?.title?.userPreferred) != nil) {
+                    let lowerStr = $0?.media?.title?.userPreferred!.lowercased()
+                    return lowerStr != nil && lowerStr!.contains(searchText.lowercased())
+                }
+                return true
+            }
+            if hasNextPage {
+                getUserMediaList()
+                return filtered
+            }
+
+            return filtered
+        }
     }
     
     func refreshList() {
