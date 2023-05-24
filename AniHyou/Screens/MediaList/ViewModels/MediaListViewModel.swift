@@ -14,10 +14,6 @@ class MediaListViewModel: ObservableObject {
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList? = nil
     
-    private var idMap: Dictionary<String, Bool> = [String : Bool]()
-    
-    private var mediaSet: Set<UserMediaListQuery.Data.Page.MediaList?> = Set<UserMediaListQuery.Data.Page.MediaList?>()
-    
     var currentPage = 1
     var hasNextPage = true
     var forceReload = false
@@ -41,7 +37,6 @@ class MediaListViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList {
-                        list.forEach { self?.mediaSet.insert($0) }
                         self?.mediaList.append(contentsOf: list)
                         
                         if (page.pageInfo?.hasNextPage)! {

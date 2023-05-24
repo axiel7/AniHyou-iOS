@@ -37,10 +37,10 @@ struct MediaListView: View {
                                 viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
                             }) {
                                 if type == .anime {
-                                    Label("Ep", systemImage: "plus.circle")
+                                    Label("Ep", systemImage: "plus")
                                 // should show a sheet to add a rating
                                 } else if type == .manga {
-                                    Label("Ch", systemImage: "plus.circle")
+                                    Label("Ch", systemImage: "plus")
                                 }
                             }
                             .tint(.green)
@@ -49,7 +49,7 @@ struct MediaListView: View {
                             viewModel.selectedItem = item
                             showingEditSheet = true
                         }) {
-                            Label("Edit", systemImage: "pencil.circle")
+                            Label("Edit", systemImage: "square.and.pencil")
                         }
                         .tint(.blue)
                     }
@@ -71,9 +71,6 @@ struct MediaListView: View {
         .onChange(of: viewModel.sort) { _ in
             viewModel.refreshList()
         }
-//        .onChange(of: viewModel.updatedEntry) { _ in
-//            viewModel.refreshList()
-//        }
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = status
