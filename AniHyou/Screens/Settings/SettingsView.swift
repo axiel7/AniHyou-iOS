@@ -54,11 +54,16 @@ struct SettingsView: View {
             
             Section {
                 Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou")!)
-                Text("Developed by axiel7")
             } header: {
                 Text("Information")
             } footer: {
                 Text("Version \(appVersion ?? "")")
+            }
+            
+            Section("Developers") {
+                Link("axiel7", destination: URL(string: "https://github.com/axiel7")!)
+                Link("BitForger", destination: URL(string: "https://github.com/BitForger")!)
+                Link("SquishyLeaf", destination: URL(string: "https://github.com/SquishyLeaf")!)
             }
             
         }
