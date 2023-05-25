@@ -21,7 +21,6 @@ class ProfileViewModel: ObservableObject {
                     self?.userInfo = viewer
                     //update preferences
                     UserDefaults.standard.set(viewer.options?.profileColor, forKey: USER_COLOR_KEY)
-                    UserDefaults.standard.set(nil, forKey: "testnil")
                     UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
                     UserDefaults.standard.set(viewer.options?.titleLanguage?.value?.rawValue, forKey: USER_TITLE_LANG_KEY)
                     UserDefaults.standard.set(viewer.mediaListOptions?.scoreFormat?.value?.rawValue, forKey: USER_SCORE_KEY)
