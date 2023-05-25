@@ -10,7 +10,7 @@ query UserStatsAnimeOverview($userId: Int) {
         scores(sort: MEAN_SCORE) {
           count
           minutesWatched
-          score
+          meanScore
         }
         formats {
           count

@@ -25,7 +25,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
                 __typename
                 count
                 minutesWatched
-                score
+                meanScore
               }
               formats {
                 __typename
@@ -167,12 +167,12 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
-              .field("score", Int?.self),
+              .field("meanScore", Double.self),
             ] }
 
             public var count: Int { __data["count"] }
             public var minutesWatched: Int { __data["minutesWatched"] }
-            public var score: Int? { __data["score"] }
+            public var meanScore: Double { __data["meanScore"] }
           }
 
           /// User.Statistics.Anime.Format

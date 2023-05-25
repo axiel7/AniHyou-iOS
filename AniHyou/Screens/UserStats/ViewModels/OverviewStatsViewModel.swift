@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import API
 
 class OverviewStatsViewModel: ObservableObject {
     
@@ -30,8 +32,9 @@ class OverviewStatsViewModel: ObservableObject {
                     self?.scoreStatsTime.removeAll()
                     data.scores?.forEach {
                         if let score = $0 {
-                            self?.scoreStatsCount.append(Stat(id: String(score.score!), value: CGFloat(score.count), color: .accentColor))
-                            self?.scoreStatsTime.append(Stat(id: String(score.score!), value: CGFloat(score.minutesWatched / 60), color: .accentColor))
+                            let scoreRounded = Int(round(score.meanScore))
+                            self?.scoreStatsCount.append(Stat(id: String(scoreRounded), value: CGFloat(score.count), color: ScoreFormat.point100.scoreColor(score: score.meanScore)))
+                            self?.scoreStatsTime.append(Stat(id: String(scoreRounded), value: CGFloat(score.minutesWatched / 60), color: ScoreFormat.point100.scoreColor(score: score.meanScore)))
                         }
                     }
                     data.formats?.forEach {
