@@ -26,6 +26,8 @@ struct OverviewStatsView: View {
                         Divider()
                         if mediaType == .anime && viewModel.animeStats != nil {
                             mainAnimeStats
+                        } else if mediaType == .manga && viewModel.mangaStats != nil {
+                            mainMangaStats
                         }
                         Divider()
                     }//:VStack
@@ -41,6 +43,8 @@ struct OverviewStatsView: View {
                     Text("Titles Count").tag(0)
                     if mediaType == .anime {
                         Text("Hours Watched").tag(1)
+                    } else if mediaType == .manga {
+                        Text("Chapters Read").tag(1)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -66,8 +70,10 @@ struct OverviewStatsView: View {
                 if viewModel.animeStats == nil {
                     viewModel.getAnimeOverview(userId: userId)
                 }
-            } else {
-                
+            } else if mediaType == .manga {
+                if viewModel.mangaStats == nil {
+                    viewModel.getMangaOverview(userId: userId)
+                }
             }
         }
     }
@@ -78,6 +84,15 @@ struct OverviewStatsView: View {
             MediaStatView(name: "Episodes Watched", value: String(viewModel.animeStats!.episodesWatched))
             MediaStatView(name: "Days Watched", value: String(format: "%.2f", viewModel.animeStats!.minutesWatched.minutesToDays()))
             MediaStatView(name: "Mean Score", value: String(format: "%.2f", viewModel.animeStats!.meanScore), showDivider: false)
+        }
+    }
+    
+    private var mainMangaStats: some View {
+        HStack {
+            MediaStatView(name: "Total Manga", value: String(viewModel.mangaStats!.count))
+            MediaStatView(name: "Chapters Read", value: String(viewModel.mangaStats!.chaptersRead))
+            MediaStatView(name: "Volumes Read", value: String(viewModel.mangaStats!.volumesRead))
+            MediaStatView(name: "Mean Score", value: String(format: "%.2f", viewModel.mangaStats!.meanScore), showDivider: false)
         }
     }
 }

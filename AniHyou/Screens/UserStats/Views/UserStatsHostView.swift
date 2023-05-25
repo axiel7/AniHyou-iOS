@@ -39,6 +39,7 @@ struct UserStatsHostView: View {
             switch statType {
             case .overview:
                 OverviewStatsView(userId: userId, mediaType: mediaType)
+                    .id(mediaType)
             case .genres:
                 Text("Coming soon")
             case .tags:
