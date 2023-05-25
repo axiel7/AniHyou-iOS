@@ -685,6 +685,7 @@
 		481AD4F32851D87E001779EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				482DC3582A1F4856009D96F4 /* Scores */,
 				488763D42977F6FA00402934 /* Stats */,
 				48CA07AA28703B530048854E /* Media */,
 				48FC9473286656F600C87F56 /* HInfoView.swift */,
@@ -696,8 +697,6 @@
 				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
 				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
 				48CA07B428706D8F0048854E /* CircleImageView.swift */,
-				4806BBAE2963369700CB07A6 /* StarRatingView.swift */,
-				4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -804,6 +803,15 @@
 				48EFCDF129FFB39B0096BF6E /* UserCurrentAnimeListQuery.graphql.swift */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		482DC3582A1F4856009D96F4 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				4806BBAE2963369700CB07A6 /* StarRatingView.swift */,
+				4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */,
+			);
+			path = Scores;
 			sourceTree = "<group>";
 		};
 		4832B02A285F35CE00E79D27 /* Utils */ = {
