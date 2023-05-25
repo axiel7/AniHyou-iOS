@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import API
 
 private let coverWidth: CGFloat = 70
 private let coverHeight: CGFloat = 70
@@ -13,6 +14,10 @@ private let coverHeight: CGFloat = 70
 struct MediaListItemCompactView: View {
     
     var item: UserMediaListQuery.Data.Page.MediaList?
+    @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
+    var scoreFormatEnum: ScoreFormat {
+        return ScoreFormat(rawValue: scoreFormat) ?? .point100
+    }
     
     var body: some View {
         HStack {
@@ -30,7 +35,11 @@ struct MediaListItemCompactView: View {
                     Spacer()
                 }
                 
-                Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                HStack {
+                    Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                    Spacer()
+                    MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
+                }
             }//:VStack
         }//:HStack
         .padding(.vertical, 4)

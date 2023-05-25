@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import API
 
 private let coverWidth: CGFloat = 77
 private let coverHeight: CGFloat = 115
@@ -13,6 +14,10 @@ private let coverHeight: CGFloat = 115
 struct MediaListItemStandardView: View {
     
     var item: UserMediaListQuery.Data.Page.MediaList?
+    @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
+    var scoreFormatEnum: ScoreFormat {
+        return ScoreFormat(rawValue: scoreFormat) ?? .point100
+    }
     
     var body: some View {
         HStack {
@@ -28,7 +33,12 @@ struct MediaListItemStandardView: View {
                     AiringScheduleItemText(item: item)
                 }
                 
-                Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                HStack {
+                    Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                    Spacer()
+                    MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
+                }
+                
                 ProgressView(value: Float(item?.progress ?? 0), total: Float(item?.totalProgress ?? Int.max))
             }
         }

@@ -33,3 +33,5 @@ let SELECTED_TAB_KEY = "selected_tab_index"
 let LIST_STYLE_KEY = "list_style"
 
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
+
+let UNKNOWN_CHAR = "─"

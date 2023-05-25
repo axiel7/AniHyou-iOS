@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import API
 
 struct MediaListItemMinimalView: View {
     
     var item: UserMediaListQuery.Data.Page.MediaList?
+    @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
+    var scoreFormatEnum: ScoreFormat {
+        return ScoreFormat(rawValue: scoreFormat) ?? .point100
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,7 +28,11 @@ struct MediaListItemMinimalView: View {
                 Spacer()
             }
             
-            Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+            HStack {
+                Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                Spacer()
+                MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
+            }
         }
         .padding(.vertical, 4)
     }
