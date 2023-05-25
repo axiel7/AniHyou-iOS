@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VerticalBarsStatsView: View {
     
-    private let maxBarHeight: CGFloat = 100
+    private let maxBarHeight: CGFloat = 150
     var stats: [Stat]
     private var maxStatValue: CGFloat = 100
     init(stats: [Stat]) {
