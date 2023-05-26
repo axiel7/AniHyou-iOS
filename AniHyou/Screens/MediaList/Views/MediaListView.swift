@@ -85,7 +85,6 @@ struct MediaListView: View {
             ToolbarItem(placement: .primaryAction) {
                 Menu {
                     Picker("Sort", selection: $viewModel.sort) {
-                        Text("Title").tag(MediaListSort.mediaTitleNativeDesc)
                         Text("Score").tag(MediaListSort.scoreDesc)
                         Text("Last Updated").tag(MediaListSort.updatedTimeDesc)
                         Text("Last Added").tag(MediaListSort.addedTimeDesc)
