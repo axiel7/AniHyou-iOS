@@ -15,93 +15,130 @@ struct MediaDetailsView: View {
     @StateObject private var viewModel = MediaDetailsViewModel()
     @State private var infoType: MediaInfoType = .general
     
+    @Environment(\.dismiss) private var dismiss
+    @State var scrollOffset = CGFloat.zero
+    private var hasScrolled: Bool {
+        withAnimation {
+            scrollOffset > 0
+        }
+    }
+    
     var body: some View {
-        if viewModel.mediaDetails != nil {
-            ScrollView(.vertical) {
-                LazyVStack(alignment: .leading) {
-                    // MARK: - Header
-                    TopBannerView(imageUrl: viewModel.mediaDetails!.bannerImage, placeholderHexColor: viewModel.mediaDetails!.coverImage?.color, height: bannerHeight)
-                    
-                    // MARK: - Main info
-                    MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
-                    
-                    // MARK: - Main stats
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        VStack {
-                            Divider()
-                            HStack {
-                                if let schedule = viewModel.mediaDetails?.nextAiringEpisode {
-                                    MediaStatView(name: "Airing", value: "Ep \(schedule.episode) in \(schedule.timeUntilAiring.secondsToLegibleText())")
+        Group {
+            if viewModel.mediaDetails != nil {
+                ObservableVScrollView(scrollOffset: $scrollOffset) { _ in
+                    LazyVStack(alignment: .leading) {
+                        // MARK: - Header
+                        TopBannerView(imageUrl: viewModel.mediaDetails!.bannerImage, placeholderHexColor: viewModel.mediaDetails!.coverImage?.color, height: bannerHeight)
+                        
+                        // MARK: - Main info
+                        MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
+                        
+                        // MARK: - Main stats
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            VStack {
+                                Divider()
+                                HStack {
+                                    if let schedule = viewModel.mediaDetails?.nextAiringEpisode {
+                                        MediaStatView(name: "Airing", value: "Ep \(schedule.episode) in \(schedule.timeUntilAiring.secondsToLegibleText())")
+                                    }
+                                    MediaStatView(name: "Average Score", value: "\(viewModel.mediaDetails?.averageScore ?? 0)%")
+                                    MediaStatView(name: "Mean Score", value: "\(viewModel.mediaDetails?.meanScore ?? 0)%")
+                                    MediaStatView(name: "Status", value: viewModel.mediaDetails?.status?.value?.localizedName ?? "Unknown")
+                                    MediaStatView(name: "Popularity", value: (viewModel.mediaDetails?.popularity ?? 0).formatted())
+                                    MediaStatView(name: "Favorites", value: (viewModel.mediaDetails?.favourites ?? 0).formatted(), showDivider: false)
                                 }
-                                MediaStatView(name: "Average Score", value: "\(viewModel.mediaDetails?.averageScore ?? 0)%")
-                                MediaStatView(name: "Mean Score", value: "\(viewModel.mediaDetails?.meanScore ?? 0)%")
-                                MediaStatView(name: "Status", value: viewModel.mediaDetails?.status?.value?.localizedName ?? "Unknown")
-                                MediaStatView(name: "Popularity", value: (viewModel.mediaDetails?.popularity ?? 0).formatted())
-                                MediaStatView(name: "Favorites", value: (viewModel.mediaDetails?.favourites ?? 0).formatted(), showDivider: false)
-                            }
-                            .padding(.vertical, 4)
-                            Divider()
-                        }//:VStack
-                        .padding(.leading)
-                    }//:HScrollView
-                    .padding(.top)
-                    
-                    // MARK: - Synopsis
-                    ExpandableTextView(viewModel.mediaDetails?.description?.htmlStripped)
+                                .padding(.vertical, 4)
+                                Divider()
+                            }//:VStack
+                            .padding(.leading)
+                        }//:HScrollView
                         .padding(.top)
-                        .padding(.leading)
-                        .padding(.trailing)
-                    
-                    // MARK: - More info
-                    Picker("Info type", selection: $infoType) {
-                        ForEach(MediaInfoType.allCases, id: \.self) { type in
-                            Label(type.localizedName, systemImage: type.systemImage)
+                        
+                        // MARK: - Synopsis
+                        ExpandableTextView(viewModel.mediaDetails?.description?.htmlStripped)
+                            .padding(.top)
+                            .padding(.leading)
+                            .padding(.trailing)
+                        
+                        // MARK: - More info
+                        Picker("Info type", selection: $infoType) {
+                            ForEach(MediaInfoType.allCases, id: \.self) { type in
+                                Label(type.localizedName, systemImage: type.systemImage)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .labelStyle(.iconOnly)
+                        .padding()
+                        
+                        ZStack {
+                            switch infoType {
+                            case .general:
+                                MediaGeneralInfoView(viewModel: viewModel)
+                            case .charactersAndStaff:
+                                MediaCharactersAndStaffView(mediaId: mediaId)
+                            case .relationsAndRecommendations:
+                                MediaRelationsAndRecommendationsView(mediaId: mediaId)
+                            case .stats:
+                                MediaStatsView(mediaId: mediaId)
+                            case .reviewsAndThreads:
+                                MediaReviewsAndThreadsView(mediaId: mediaId)
+                            }
+                        }//:ZStack
+                        .frame(minHeight: 200)
+                    }//:VStack
+                    .padding(.bottom)
+                }//:VScrollView
+                .edgesIgnoringSafeArea(.top)
+                .toolbar {
+                    ToolbarItem {
+                        if #available(iOS 16.0, *) {
+                            ShareLink(item: viewModel.mediaShareLink ?? "") {
+                                Label("Share", systemImage: "square.and.arrow.up")
+                            }
+                            .padding(.trailing)
+                        } else {
+                            Button {
+                                shareSheet(url: viewModel.mediaShareLink ?? "")
+                            } label: {
+                                Label("Share", systemImage: "square.and.arrow.up")
+                            }
                         }
                     }
-                    .pickerStyle(.segmented)
-                    .labelStyle(.iconOnly)
-                    .padding()
-                    
-                    ZStack {
-                        switch infoType {
-                        case .general:
-                            MediaGeneralInfoView(viewModel: viewModel)
-                        case .charactersAndStaff:
-                            MediaCharactersAndStaffView(mediaId: mediaId)
-                        case .relationsAndRecommendations:
-                            MediaRelationsAndRecommendationsView(mediaId: mediaId)
-                        case .stats:
-                            MediaStatsView(mediaId: mediaId)
-                        case .reviewsAndThreads:
-                            MediaReviewsAndThreadsView(mediaId: mediaId)
-                        }
-                    }//:ZStack
-                    .frame(minHeight: 200)
-                }//:VStack
-                .padding(.bottom)
-            }//:VScrollView
-            .edgesIgnoringSafeArea(.top)
-            .toolbar {
-                ToolbarItem {
-                    if #available(iOS 16.0, *) {
-                        ShareLink(item: viewModel.mediaShareLink ?? "") {
-                            Label("Share", systemImage: "square.and.arrow.up")
-                        }
-                        .padding(.trailing)
-                    } else {
-                        Button {
-                            shareSheet(url: viewModel.mediaShareLink ?? "")
-                        } label: {
-                            Label("Share", systemImage: "square.and.arrow.up")
-                        }
+                }
+            } else {
+                ProgressView()
+                    .onAppear {
+                        viewModel.getMediaDetails(mediaId: mediaId)
                     }
+            }
+        }//:Group
+        .navigationBarBackButtonHidden(!hasScrolled)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                if !hasScrolled {
+                    CircleBackButton(dismiss: dismiss)
+                        .transition(.slide)
                 }
             }
-        } else {
-            ProgressView()
-                .onAppear {
-                    viewModel.getMediaDetails(mediaId: mediaId)
-                }
+        }
+    }
+}
+
+struct CircleBackButton: View {
+    
+    let dismiss: DismissAction
+    
+    var body: some View {
+        Button {
+            dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .foregroundColor(.black)
+                .foregroundStyle(.thickMaterial)
+                .font(.system(size: 16, weight: .semibold))
+                .padding(8)
+                .background(.thinMaterial, in: Circle())
         }
     }
 }
