@@ -80,6 +80,13 @@ class MediaDetailsViewModel: ObservableObject {
         else { return String(strProducers.dropLast(2)) }
     }
     
+    /// Returns a string with the synonyms \n separated
+    var synonymsFormatted: String? {
+        guard mediaDetails != nil else { return nil }
+        guard mediaDetails?.synonyms != nil else { return nil }
+        return mediaDetails!.synonyms!.compactMap { $0 }.joined(separator: "\n")
+    }
+    
     var streamingLinks: [MediaDetailsQuery.Data.Media.ExternalLink?] {
         guard mediaDetails != nil else { return [] }
         guard mediaDetails?.externalLinks != nil else { return [] }

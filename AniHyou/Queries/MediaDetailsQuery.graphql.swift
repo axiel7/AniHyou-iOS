@@ -20,6 +20,7 @@ public class MediaDetailsQuery: GraphQLQuery {
             english
             native
           }
+          synonyms
           format
           status
           description
@@ -141,6 +142,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("__typename", String.self),
         .field("id", Int.self),
         .field("title", Title?.self),
+        .field("synonyms", [String?]?.self),
         .field("format", GraphQLEnum<API.MediaFormat>?.self),
         .field("status", GraphQLEnum<API.MediaStatus>?.self),
         .field("description", String?.self),
@@ -174,6 +176,8 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var id: Int { __data["id"] }
       /// The official titles of the media in various languages
       public var title: Title? { __data["title"] }
+      /// Alternative titles of the media
+      public var synonyms: [String?]? { __data["synonyms"] }
       /// The format the media was released in
       public var format: GraphQLEnum<API.MediaFormat>? { __data["format"] }
       /// The current releasing status of the media

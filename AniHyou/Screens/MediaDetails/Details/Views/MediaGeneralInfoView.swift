@@ -44,6 +44,7 @@ struct MediaGeneralInfoView: View {
                     HInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
                     HInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
                     HInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)
+                    HInfoView(name: "Synonyms", value: viewModel.synonymsFormatted, isExpandable: true)
                 }
             }
             
