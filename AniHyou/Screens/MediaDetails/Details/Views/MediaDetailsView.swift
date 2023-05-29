@@ -90,22 +90,6 @@ struct MediaDetailsView: View {
                     .padding(.bottom)
                 }//:VScrollView
                 .edgesIgnoringSafeArea(.top)
-                .toolbar {
-                    ToolbarItem {
-                        if #available(iOS 16.0, *) {
-                            ShareLink(item: viewModel.mediaShareLink ?? "") {
-                                Label("Share", systemImage: "square.and.arrow.up")
-                            }
-                            .padding(.trailing)
-                        } else {
-                            Button {
-                                shareSheet(url: viewModel.mediaShareLink ?? "")
-                            } label: {
-                                Label("Share", systemImage: "square.and.arrow.up")
-                            }
-                        }
-                    }
-                }
             } else {
                 ProgressView()
                     .onAppear {

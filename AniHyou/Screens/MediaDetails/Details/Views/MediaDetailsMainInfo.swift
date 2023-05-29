@@ -74,6 +74,21 @@ struct MediaDetailsMainInfo: View {
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
                     }
+                    Spacer()
+                    if #available(iOS 16.0, *) {
+                        ShareLink(item: viewModel.mediaShareLink ?? "") {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                        .padding(.trailing)
+                        .labelStyle(.iconOnly)
+                    } else {
+                        Button {
+                            shareSheet(url: viewModel.mediaShareLink ?? "")
+                        } label: {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                        .labelStyle(.iconOnly)
+                    }
                 }//:HStack
             }//:VStack
             .padding(.leading, 12)
