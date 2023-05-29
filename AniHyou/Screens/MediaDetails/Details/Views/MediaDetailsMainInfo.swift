@@ -18,6 +18,9 @@ struct MediaDetailsMainInfo: View {
     @State private var showingCoverSheet = false
     @State private var showingNotLoggedAlert = false
     @State private var showingPlayPopover = false
+    var isNewEntry: Bool {
+        viewModel.mediaDetails?.mediaListEntry == nil
+    }
     
     var body: some View {
         HStack(alignment: .top) {
@@ -54,9 +57,15 @@ struct MediaDetailsMainInfo: View {
                             showingNotLoggedAlert = true
                         }
                     } label: {
-                        Text(viewModel.mediaDetails?.mediaListEntry?.status?.value?.localizedName ?? "Add to List")
-                            .bold()
-                            .textCase(.uppercase)
+                        if isNewEntry {
+                            Label("Add to List", systemImage: "plus")
+                                .font(.system(size: 17, weight: .bold))
+                                .textCase(.uppercase)
+                        } else {
+                            Label(viewModel.mediaDetails?.mediaListEntry?.status?.value?.localizedName ?? "", systemImage: "square.and.pencil")
+                                .font(.system(size: 17, weight: .bold))
+                                .textCase(.uppercase)
+                        }
                     }//:Button
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showingEditSheet) {
