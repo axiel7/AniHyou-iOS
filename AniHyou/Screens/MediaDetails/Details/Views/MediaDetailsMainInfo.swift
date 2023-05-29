@@ -65,14 +65,6 @@ struct MediaDetailsMainInfo: View {
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
                     }
-                    Spacer()
-                    
-                    //MARK: Multimedia button
-                    NavigationLink(destination: MediaMultimediaView(viewModel: viewModel)) {
-                        Label("Play", systemImage: "play.circle")
-                            .labelButtonIcon()
-                            .padding()
-                    }
                 }//:HStack
             }//:VStack
             .padding(.leading, 12)
