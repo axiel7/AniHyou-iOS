@@ -149,6 +149,7 @@
 		48AF5396289E7701006D40B6 /* ThreadComments.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48AF5395289E7701006D40B6 /* ThreadComments.graphql */; };
 		48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ObservableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ObservableScrollView.swift */; };
+		48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */; };
 		48BCA59929672334005D3405 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCA59829672334005D3405 /* Genre.swift */; };
 		48C608EB290D1526004781C2 /* SearchStaff.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48C608EA290D1526004781C2 /* SearchStaff.graphql */; };
 		48C608ED290D15DF004781C2 /* SearchCharacter.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48C608EC290D15DF004781C2 /* SearchCharacter.graphql */; };
@@ -537,6 +538,7 @@
 				481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */,
 				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
 				480F882929426995004773CC /* API in Frameworks */,
+				48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */,
 				48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1447,6 +1449,7 @@
 				48604D7A28A15AD1006A6AF8 /* RichText */,
 				480F882829426995004773CC /* API */,
 				48D39BE82A1390B7001D47BE /* Apollo */,
+				48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */,
 			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
@@ -1531,6 +1534,7 @@
 				481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */,
 				48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */,
 			);
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
 			projectDirPath = "";
@@ -2211,6 +2215,14 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ciaranrobrien/SwiftUIFlow";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		48D39BE72A1390B7001D47BE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -2240,6 +2252,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */;
+			productName = SwiftUIFlow;
 		};
 		48D39BE82A1390B7001D47BE /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;

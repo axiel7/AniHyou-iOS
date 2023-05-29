@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIFlow
 
 struct MediaGeneralInfoView: View {
     
@@ -54,7 +55,11 @@ struct MediaGeneralInfoView: View {
                             .bold()
                             .padding(.horizontal)
                         Spacer()
-                        Button(action: { showSpoilerTags.toggle() }) {
+                        Button(action: {
+                            withAnimation {
+                                showSpoilerTags.toggle()
+                            }
+                        }) {
                             Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
                                 .font(.footnote)
                         }
@@ -62,11 +67,14 @@ struct MediaGeneralInfoView: View {
                     }
                     .padding(.top)
                     
-                    ForEach(mediaTags, id: \.?.id) {
-                        if let tag = $0 {
-                            MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
+                    VFlow(alignment: .leading) {
+                        ForEach(mediaTags, id: \.?.id) {
+                            if let tag = $0 {
+                                MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
+                            }
                         }
                     }
+                    .padding(.horizontal)
                 }
             }
         }
