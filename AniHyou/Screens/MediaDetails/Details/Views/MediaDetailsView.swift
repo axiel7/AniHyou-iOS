@@ -120,9 +120,10 @@ struct CircleBackButton: View {
             Image(systemName: "chevron.left")
                 .foregroundColor(.black)
                 .foregroundStyle(.thickMaterial)
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: 15, weight: .semibold))
                 .padding(8)
-                .background(.thinMaterial, in: Circle())
+                .background(.regularMaterial, in: Circle())
+                .environment(\.colorScheme, .light)
         }
     }
 }
