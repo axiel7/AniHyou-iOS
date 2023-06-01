@@ -25,6 +25,30 @@ class MediaDetailsViewModel: ObservableObject {
         }
     }
     
+    func onEntryUpdated(updatedEntry: BasicMediaListEntry?) {
+        //Update the local cache
+        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+            do {
+                if updatedEntry != nil {
+                    try transaction.updateObject(ofType: BasicMediaListEntry.self, withKey: "MediaList:\(updatedEntry!.id).\(updatedEntry!.mediaId)") { (cachedData: inout BasicMediaListEntry) in
+                        cachedData = updatedEntry!
+                    }
+                }
+                
+                let newObject = try transaction.readObject(ofType: MediaDetailsQuery.Data.Media.self, withKey: "Media:\(updatedEntry?.mediaId ?? (self?.mediaDetails?.id ?? 0))")
+                DispatchQueue.main.async {
+                    self?.mediaDetails = newObject
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
+    
+    func onEntryDeleted() {
+        onEntryUpdated(updatedEntry: nil)
+    }
+    
     //MARK: calculated variables
     
     var isAnime: Bool {

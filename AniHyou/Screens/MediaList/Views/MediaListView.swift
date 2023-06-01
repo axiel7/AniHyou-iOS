@@ -76,9 +76,13 @@ struct MediaListView: View {
         }
         .sheet(isPresented: $showingEditSheet) {
             if viewModel.selectedItem != nil {
-                MediaListEditView(mediaId: viewModel.selectedItem!.mediaId, mediaType: type, mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry) {
-                    viewModel.refreshList()
-                }
+                MediaListEditView(mediaId: viewModel.selectedItem!.mediaId, mediaType: type, mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry,
+                onSave: { updatedEntry in
+                    viewModel.onEntryUpdated(mediaId: updatedEntry.mediaId, entryId: updatedEntry.id, updatedEntry: updatedEntry, progress: nil)
+                },
+                onDelete: {
+                    viewModel.onEntryDeleted(entryId: viewModel.selectedItem!.id)
+                })
             }
         }
         .toolbar {

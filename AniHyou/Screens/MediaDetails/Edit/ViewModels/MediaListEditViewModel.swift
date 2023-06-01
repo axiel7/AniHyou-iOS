@@ -58,6 +58,7 @@ class MediaListEditViewModel: ObservableObject {
     }
     
     @Published var isUpdateSuccess = false
+    var updatedEntry: BasicMediaListEntry? = nil
     
     func updateEntry(mediaId: Int, status: MediaListStatus?, score: Double?, progress: Int?, progressVolumes: Int?, startedAt: Date?, completedAt: Date?, repeatCount: Int?) {
         isLoading = true
@@ -78,7 +79,7 @@ class MediaListEditViewModel: ObservableObject {
                             print(error)
                         }
                     } else {
-                        print(data)
+                        self?.updatedEntry = data.fragments.basicMediaListEntry
                         self?.isUpdateSuccess = true
                     }
                 }
@@ -89,13 +90,15 @@ class MediaListEditViewModel: ObservableObject {
         }
     }
     
+    @Published var isDeleteSuccess = false
+    
     func deleteEntry(entryId: Int) {
         isLoading = true
         Network.shared.apollo.perform(mutation: DeleteMediaListMutation(mediaListEntryId: .some(entryId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let deleted = graphQLResult.data?.deleteMediaListEntry?.deleted {
-                    self?.isUpdateSuccess = deleted
+                    self?.isDeleteSuccess = deleted
                 }
             case .failure(let error):
                 print(error)

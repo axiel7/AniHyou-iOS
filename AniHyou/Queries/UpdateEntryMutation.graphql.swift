@@ -21,25 +21,12 @@ public class UpdateEntryMutation: GraphQLMutation {
           repeat: $repeat
         ) {
           __typename
-          id
+          ...BasicMediaListEntry
           mediaId
-          status
-          score
-          progress
-          progressVolumes
-          repeat
-          startedAt {
-            __typename
-            ...FuzzyDate
-          }
-          completedAt {
-            __typename
-            ...FuzzyDate
-          }
         }
       }
       """#,
-      fragments: [FuzzyDate.self]
+      fragments: [BasicMediaListEntry.self, FuzzyDate.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>
@@ -113,21 +100,14 @@ public class UpdateEntryMutation: GraphQLMutation {
       public static var __parentType: ApolloAPI.ParentType { API.Objects.MediaList }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", Int.self),
         .field("mediaId", Int.self),
-        .field("status", GraphQLEnum<API.MediaListStatus>?.self),
-        .field("score", Double?.self),
-        .field("progress", Int?.self),
-        .field("progressVolumes", Int?.self),
-        .field("repeat", Int?.self),
-        .field("startedAt", StartedAt?.self),
-        .field("completedAt", CompletedAt?.self),
+        .fragment(BasicMediaListEntry.self),
       ] }
 
-      /// The id of the list entry
-      public var id: Int { __data["id"] }
       /// The id of the media
       public var mediaId: Int { __data["mediaId"] }
+      /// The id of the list entry
+      public var id: Int { __data["id"] }
       /// The watching/reading status
       public var status: GraphQLEnum<API.MediaListStatus>? { __data["status"] }
       /// The score of the entry
@@ -143,6 +123,13 @@ public class UpdateEntryMutation: GraphQLMutation {
       /// When the entry was completed by the user
       public var completedAt: CompletedAt? { __data["completedAt"] }
 
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
+      }
+
       /// SaveMediaListEntry.StartedAt
       ///
       /// Parent Type: `FuzzyDate`
@@ -151,10 +138,6 @@ public class UpdateEntryMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
-        public static var __selections: [ApolloAPI.Selection] { [
-          .field("__typename", String.self),
-          .fragment(FuzzyDate.self),
-        ] }
 
         /// Numeric Day (24)
         public var day: Int? { __data["day"] }
@@ -179,10 +162,6 @@ public class UpdateEntryMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { API.Objects.FuzzyDate }
-        public static var __selections: [ApolloAPI.Selection] { [
-          .field("__typename", String.self),
-          .fragment(FuzzyDate.self),
-        ] }
 
         /// Numeric Day (24)
         public var day: Int? { __data["day"] }

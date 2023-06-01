@@ -14,7 +14,8 @@ struct MediaListEditView: View {
     var mediaId: Int
     var mediaType: MediaType
     var mediaList: BasicMediaListEntry?
-    var onSave: () -> Void = {}
+    var onSave: (_ updatedEntry: BasicMediaListEntry) -> Void = { _ in }
+    var onDelete: () -> Void = {}
     
     @StateObject private var viewModel = MediaListEditViewModel()
     @State private var showDeleteDialog = false
@@ -143,8 +144,14 @@ struct MediaListEditView: View {
             setValues()
         }
         .onChange(of: viewModel.isUpdateSuccess) { isUpdateSuccess in
-            if isUpdateSuccess {
-                onSave()
+            if isUpdateSuccess && viewModel.updatedEntry != nil {
+                onSave(viewModel.updatedEntry!)
+                dismiss()
+            }
+        }
+        .onChange(of: viewModel.isDeleteSuccess) { isDeleteSuccess in
+            if isDeleteSuccess {
+                onDelete()
                 dismiss()
             }
         }

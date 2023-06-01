@@ -69,7 +69,13 @@ struct MediaDetailsMainInfo: View {
                     }//:Button
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showingEditSheet) {
-                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!.value!, mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry)
+                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!.value!, mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
+                        onSave: { updatedEntry in
+                            viewModel.onEntryUpdated(updatedEntry: updatedEntry)
+                        },
+                        onDelete: {
+                            viewModel.onEntryDeleted()
+                        })
                     }
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
