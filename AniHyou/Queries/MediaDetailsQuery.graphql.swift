@@ -23,7 +23,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           synonyms
           format
           status
-          description
+          description(asHtml: true)
           startDate {
             __typename
             ...FuzzyDate
@@ -145,7 +145,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("synonyms", [String?]?.self),
         .field("format", GraphQLEnum<API.MediaFormat>?.self),
         .field("status", GraphQLEnum<API.MediaStatus>?.self),
-        .field("description", String?.self),
+        .field("description", String?.self, arguments: ["asHtml": true]),
         .field("startDate", StartDate?.self),
         .field("endDate", EndDate?.self),
         .field("season", GraphQLEnum<API.MediaSeason>?.self),

@@ -15,6 +15,15 @@ extension String {
     }
     
     var firstCapitalized: String { prefix(1).capitalized + dropFirst() }
+    
+    func htmlToAttributedString() -> NSAttributedString? {
+        do {
+            return try NSAttributedString(data: self.data(using: .unicode)!, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }
 
 extension Int {

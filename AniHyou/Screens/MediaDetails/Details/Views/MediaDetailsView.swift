@@ -14,6 +14,7 @@ struct MediaDetailsView: View {
     var mediaId: Int
     @StateObject private var viewModel = MediaDetailsViewModel()
     @State private var infoType: MediaInfoType = .general
+    @State private var attributedSynopsis = NSAttributedString(string: "Loading")
     
     @Environment(\.dismiss) private var dismiss
     @State var scrollOffset = CGFloat.zero
@@ -56,7 +57,7 @@ struct MediaDetailsView: View {
                         .padding(.top)
                         
                         // MARK: - Synopsis
-                        ExpandableTextView(viewModel.mediaDetails?.description?.htmlStripped)
+                        ExpandableTextView(text: $attributedSynopsis)
                             .padding(.top)
                             .padding(.leading)
                             .padding(.trailing)
@@ -104,6 +105,11 @@ struct MediaDetailsView: View {
                     CircleBackButton(dismiss: dismiss)
                         .transition(.slide)
                 }
+            }
+        }
+        .onChange(of: viewModel.mediaDetails) { details in
+            DispatchQueue.main.async {
+                attributedSynopsis = details?.description?.htmlToAttributedString() ?? NSAttributedString(string: "No description")
             }
         }
     }
