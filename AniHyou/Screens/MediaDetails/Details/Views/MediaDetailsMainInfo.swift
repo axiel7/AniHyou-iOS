@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private let coverWidth: CGFloat = 100
+private let coverWidth: CGFloat = 110
 private let coverHeight: CGFloat = 153
 
 struct MediaDetailsMainInfo: View {

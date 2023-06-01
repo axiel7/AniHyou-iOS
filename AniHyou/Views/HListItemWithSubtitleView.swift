@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HListItemWithSubtitleView: View {
     
-    static let coverWidth: CGFloat = 90
+    static let coverWidth: CGFloat = 94
     static let coverHeight: CGFloat = 130
     
     var title: String?
