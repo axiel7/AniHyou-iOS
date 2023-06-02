@@ -32,9 +32,11 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Mutation": return API.Objects.Mutation
     case "MediaList": return API.Objects.MediaList
     case "FuzzyDate": return API.Objects.FuzzyDate
+    case "Staff": return API.Objects.Staff
+    case "MediaConnection": return API.Objects.MediaConnection
+    case "MediaEdge": return API.Objects.MediaEdge
     case "User": return API.Objects.User
     case "Favourites": return API.Objects.Favourites
-    case "MediaConnection": return API.Objects.MediaConnection
     case "UserAvatar": return API.Objects.UserAvatar
     case "StudioConnection": return API.Objects.StudioConnection
     case "Studio": return API.Objects.Studio
@@ -49,7 +51,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "MediaRank": return API.Objects.MediaRank
     case "UserOptions": return API.Objects.UserOptions
     case "MediaListOptions": return API.Objects.MediaListOptions
-    case "MediaEdge": return API.Objects.MediaEdge
     case "RecommendationConnection": return API.Objects.RecommendationConnection
     case "Recommendation": return API.Objects.Recommendation
     case "AiringSchedule": return API.Objects.AiringSchedule
@@ -59,7 +60,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Thread": return API.Objects.Thread
     case "ReviewConnection": return API.Objects.ReviewConnection
     case "Review": return API.Objects.Review
-    case "Staff": return API.Objects.Staff
     case "StaffName": return API.Objects.StaffName
     case "StaffImage": return API.Objects.StaffImage
     case "StaffConnection": return API.Objects.StaffConnection

@@ -12,8 +12,32 @@ struct StaffDetailsView: View {
     
     var staffId: Int
     @StateObject private var viewModel = StaffDetailsViewModel()
+    @State private var infoType: StaffInfoType = .overview
     
     var body: some View {
+        VStack(alignment: .leading) {
+            Picker("", selection: $infoType) {
+                ForEach(StaffInfoType.allCases, id: \.self) { type in
+                    Label(type.localizedName, systemImage: type.systemImage)
+                }
+            }
+            .padding(.horizontal)
+            .padding(.top)
+            
+            switch infoType {
+            case .overview:
+                staffOverview
+            case .media:
+                staffMedia
+            case .characters:
+                staffCharacters
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    @ViewBuilder
+    var staffOverview: some View {
         if viewModel.staff != nil {
             ScrollView(.vertical) {
                 VStack(alignment: .center) {
@@ -54,6 +78,56 @@ struct StaffDetailsView: View {
                     viewModel.getStaffDetails(staffId: staffId)
                 }
         }
+    }
+    
+    private let gridColumns = [
+        GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
+    ]
+    
+    @ViewBuilder
+    var staffMedia: some View {
+        List {
+            Toggle("On my list", isOn: $viewModel.mediaOnMyList)
+            ForEach(viewModel.staffMedia, id: \.value.id) { item in
+                if let media = item.value.node {
+                    NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
+                        HListItemWithSubtitleView(title: media.title?.userPreferred, subtitle: item.staffRoles.joined(separator: ", "), imageUrl: media.coverImage?.large)
+                    }
+                }
+            }
+            if viewModel.hasNextPageMedia {
+                ProgressView()
+                    .onAppear {
+                        viewModel.getStaffMedia(staffId: staffId)
+                    }
+            }
+        }//:List
+        .onChange(of: viewModel.mediaOnMyList) { _ in
+            viewModel.resetStaffMedia()
+        }
+    }
+    
+    @ViewBuilder
+    var staffCharacters: some View {
+        List {
+            ForEach(viewModel.staffCharacters, id: \.?.id) {
+                if let characters = $0?.characters {
+                    ForEach(characters, id: \.?.id) {
+                        if let character = $0 {
+                            NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
+                                HListItemWithSubtitleView(title: character.name?.userPreferred, imageUrl: character.image?.large)
+                            }
+                        }
+                    }
+                }
+            }
+            if viewModel.hasNextPageCharacters {
+                ProgressView()
+                    .onAppear {
+                        viewModel.getStaffCharacters(staffId: staffId)
+                    }
+            }
+        }//:List
     }
 }
 

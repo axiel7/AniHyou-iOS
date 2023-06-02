@@ -25,6 +25,60 @@ class StaffDetailsViewModel: ObservableObject {
         }
     }
     
+    @Published var mediaOnMyList = false
+    @Published var staffMedia = [StaffMediaGrouped]()
+    var pageMedia = 1
+    var hasNextPageMedia = true
+    
+    func getStaffMedia(staffId: Int) {
+        var mediaOnListValue = GraphQLNullable<Bool>.none
+        if mediaOnMyList { mediaOnListValue = .some(true) }
+        Network.shared.apollo.fetch(query: StaffMediaQuery(staffId: .some(staffId), onList: mediaOnListValue, page: .some(pageMedia), perPage: .some(25))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let media = graphQLResult.data?.staff?.staffMedia {
+                    if let edges = media.edges {
+                        var mediaGroupDict = Dictionary<Int, StaffMediaGrouped>()
+                        Dictionary(grouping: edges, by: { $0?.node?.id ?? 0 }).forEach { mediaId, value in
+                            mediaGroupDict[mediaId] = StaffMediaGrouped(value: value[0]!, staffRoles: value.map { $0?.staffRole ?? "" })
+                        }
+                        self?.staffMedia.append(contentsOf: mediaGroupDict.values)
+                    }
+                    
+                    self?.pageMedia = (media.pageInfo?.currentPage ?? self?.pageMedia ?? 1) + 1
+                    self?.hasNextPageMedia = media.pageInfo?.hasNextPage ?? false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func resetStaffMedia() {
+        staffMedia.removeAll()
+        pageMedia = 1
+        hasNextPageMedia = true
+    }
+    
+    @Published var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge?]()
+    var pageCharacters = 1
+    var hasNextPageCharacters = true
+    
+    func getStaffCharacters(staffId: Int) {
+        Network.shared.apollo.fetch(query: StaffCharacterQuery(staffId: .some(staffId), page: .some(pageCharacters), perPage: .some(25))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let characters = graphQLResult.data?.staff?.characterMedia {
+                    self?.staffCharacters.append(contentsOf: characters.edges ?? [])
+                    self?.pageCharacters = (characters.pageInfo?.currentPage ?? self?.pageCharacters ?? 1) + 1
+                    self?.hasNextPageCharacters = characters.pageInfo?.hasNextPage ?? false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     //MARK: calculated variables
     
     var yearsActiveFormatted: String {
