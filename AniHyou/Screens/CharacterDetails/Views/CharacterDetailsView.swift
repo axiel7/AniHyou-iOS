@@ -15,20 +15,22 @@ struct CharacterDetailsView: View {
     @State private var infoType: CharacterInfoType = .overview
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Picker("", selection: $infoType) {
-                ForEach(CharacterInfoType.allCases, id: \.self) { type in
-                    Label(type.localizedName, systemImage: type.systemImage)
+        ScrollView(.vertical) {
+            VStack(alignment: .leading) {
+                Picker("", selection: $infoType) {
+                    ForEach(CharacterInfoType.allCases, id: \.self) { type in
+                        Label(type.localizedName, systemImage: type.systemImage)
+                    }
                 }
-            }
-            .padding(.horizontal)
-            .padding(.top)
-            
-            switch infoType {
-            case .overview:
-                characterOverview
-            case .media:
-                characterMedia
+                .pickerStyle(.segmented)
+                .padding()
+                
+                switch infoType {
+                case .overview:
+                    characterOverview
+                case .media:
+                    characterMedia
+                }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -37,39 +39,37 @@ struct CharacterDetailsView: View {
     @ViewBuilder
     var characterOverview: some View {
         if viewModel.character != nil {
-            ScrollView(.vertical) {
-                VStack(alignment: .center) {
-                    CircleImageView(imageUrl: viewModel.character!.image?.large, size: 150)
-                    
-                    Text(viewModel.character!.name?.userPreferred ?? "")
-                        .font(.title3.weight(.bold))
-                        .multilineTextAlignment(.center)
-                    
-                    Text(viewModel.character!.name?.native ?? "")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.gray)
-                    
-                    Text(viewModel.alternativeNamesFormatted ?? "")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.gray)
-                    
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HInfoView(name: "Birthday", value: viewModel.character!.dateOfBirth?.fragments.fuzzyDate.formatted())
-                            HInfoView(name: "Age", value: viewModel.character!.age)
-                            HInfoView(name: "Gender", value: viewModel.character!.gender)
-                            HInfoView(name: "Blood type", value: viewModel.character!.bloodType)
-                            
-                            RichText(html: viewModel.character!.description ?? "")
-                                .defaultStyle()
-                                .customCSS(spoilerCss)
-                                .padding()
-                        }
+            VStack(alignment: .center) {
+                CircleImageView(imageUrl: viewModel.character!.image?.large, size: 150)
+                
+                Text(viewModel.character!.name?.userPreferred ?? "")
+                    .font(.title3.weight(.bold))
+                    .multilineTextAlignment(.center)
+                
+                Text(viewModel.character!.name?.native ?? "")
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+                
+                Text(viewModel.alternativeNamesFormatted ?? "")
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        HInfoView(name: "Birthday", value: viewModel.character!.dateOfBirth?.fragments.fuzzyDate.formatted())
+                        HInfoView(name: "Age", value: viewModel.character!.age)
+                        HInfoView(name: "Gender", value: viewModel.character!.gender)
+                        HInfoView(name: "Blood type", value: viewModel.character!.bloodType)
+                        
+                        RichText(html: viewModel.character!.description ?? "")
+                            .defaultStyle()
+                            .customCSS(spoilerCss)
+                            .padding()
                     }
                 }
-            }//:VScrollView
+            }//:VStack
         } else {
             ProgressView()
                 .onAppear {
@@ -80,7 +80,7 @@ struct CharacterDetailsView: View {
     
     @ViewBuilder
     var characterMedia: some View {
-        List {
+        LazyVStack(alignment: .leading) {
             ForEach(viewModel.characterMedia, id: \.?.id) {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.node!.id)) {
@@ -94,7 +94,8 @@ struct CharacterDetailsView: View {
                         viewModel.getCharacterMedia(characterId: characterId)
                     }
             }
-        }//:List
+        }//:LazyVStack
+        .padding(.horizontal)
     }
 }
 

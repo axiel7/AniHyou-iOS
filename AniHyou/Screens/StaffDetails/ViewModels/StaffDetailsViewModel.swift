@@ -55,8 +55,8 @@ class StaffDetailsViewModel: ObservableObject {
     }
     
     func resetStaffMedia() {
-        staffMedia.removeAll()
         pageMedia = 1
+        staffMedia.removeAll()
         hasNextPageMedia = true
     }
     
