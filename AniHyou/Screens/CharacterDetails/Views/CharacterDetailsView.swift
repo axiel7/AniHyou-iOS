@@ -12,8 +12,30 @@ struct CharacterDetailsView: View {
     
     var characterId: Int
     @StateObject private var viewModel = CharacterDetailsViewModel()
+    @State private var infoType: CharacterInfoType = .overview
     
     var body: some View {
+        VStack(alignment: .leading) {
+            Picker("", selection: $infoType) {
+                ForEach(CharacterInfoType.allCases, id: \.self) { type in
+                    Label(type.localizedName, systemImage: type.systemImage)
+                }
+            }
+            .padding(.horizontal)
+            .padding(.top)
+            
+            switch infoType {
+            case .overview:
+                characterOverview
+            case .media:
+                characterMedia
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    @ViewBuilder
+    var characterOverview: some View {
         if viewModel.character != nil {
             ScrollView(.vertical) {
                 VStack(alignment: .center) {
@@ -54,6 +76,25 @@ struct CharacterDetailsView: View {
                     viewModel.getCharacterDetails(characterId: characterId)
                 }
         }
+    }
+    
+    @ViewBuilder
+    var characterMedia: some View {
+        List {
+            ForEach(viewModel.characterMedia, id: \.?.id) {
+                if let item = $0 {
+                    NavigationLink(destination: MediaDetailsView(mediaId: item.node!.id)) {
+                        HListItemWithSubtitleView(title: item.node?.title?.userPreferred, subtitle: item.characterRole?.value?.localizedName, imageUrl: item.node?.coverImage?.large)
+                    }
+                }
+            }
+            if viewModel.hasNextPageMedia {
+                ProgressView()
+                    .onAppear {
+                        viewModel.getCharacterMedia(characterId: characterId)
+                    }
+            }
+        }//:List
     }
 }
 
