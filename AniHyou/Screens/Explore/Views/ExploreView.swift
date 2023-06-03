@@ -87,8 +87,8 @@ struct ExploreView: View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
 
-                //MARK: - Charts
-                Text("Charts")
+                //MARK: - Anime
+                Text("Anime")
                     .font(.title2)
                     .bold()
                     .padding(.top, 8)
@@ -99,37 +99,63 @@ struct ExploreView: View {
                 //MARK: top
                 HStack(alignment: .center) {
                     NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
-                        RectangleTextView(text: "Top 100 Anime", color: Color("AniListBlue"))
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                        Label("Top 100", systemImage: "crown.fill")
+                            .foregroundColor(.purple)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
-                        RectangleTextView(text: "Top 100 Manga", color: Color("AniListGreen"))
-                            .padding(.trailing)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }//:HStack
-
-                //MARK: popular
-                HStack(alignment: .center) {
                     NavigationLink(destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)) {
-                        RectangleTextView(text: "Popular Anime", color: Color("AniListOrange"))
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)) {
-                        RectangleTextView(text: "Popular Manga", color: Color("AniListRed"))
-                            .padding(.trailing)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                        Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
+                            .foregroundColor(.red)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }//:HStack
+                .padding(.horizontal)
+                .padding(.vertical, 8)
                 
-                //MARK: - Anime season
-                Text("Anime Season")
+                //MARK: Spring, Summer
+                HStack(alignment: .center) {
+                    NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
+                        Label("Spring", systemImage: "leaf.fill")
+                            .foregroundColor(.green)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
+                        Label("Summer", systemImage: "sun.max.fill")
+                            .foregroundColor(.yellow)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }//:HStack
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+                
+                //MARK: Fall, Winter
+                HStack(alignment: .center) {
+                    NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
+                        Label("Fall", systemImage: "cloud.rain.fill")
+                            .foregroundColor(.brown)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
+                        Label("Winter", systemImage: "snowflake")
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }//:HStack
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+                
+                //MARK: Calendar
+                HStack {
+                    NavigationLink(destination: CalendarAnimeView()) {
+                        Label("Calendar", systemImage: "calendar")
+                            .foregroundColor(.orange)
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+                
+                //MARK: - Manga
+                Text("Manga")
                     .font(.title2)
                     .bold()
                     .padding(.top, 8)
@@ -137,37 +163,20 @@ struct ExploreView: View {
                 Divider()
                     .padding(.horizontal)
                 
-                //MARK: Spring, Summer
                 HStack(alignment: .center) {
-                    NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
-                        RectangleTextView(text: "Spring", color: Color("AniListPink"))
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
+                        Label("Top 100", systemImage: "crown.fill")
+                            .foregroundColor(.purple)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
-                        RectangleTextView(text: "Summer", color: .yellow)
-                            .padding(.trailing)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
+                    NavigationLink(destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)) {
+                        Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
+                            .foregroundColor(.red)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                }//:HStack
-                
-                //MARK: Fall, Winter
-                HStack(alignment: .center) {
-                    NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
-                        RectangleTextView(text: "Fall", color: .brown)
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
-                        RectangleTextView(text: "Winter", color: .blue)
-                            .padding(.trailing)
-                            .frame(maxWidth: .infinity, minHeight: cardHeight)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }//:HStack
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 8)
             }//:VStack
         }//:VScrollView
     }
