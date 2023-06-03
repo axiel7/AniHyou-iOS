@@ -158,7 +158,7 @@ struct HomeView: View {
                                 viewModel.getNextSeasonAnimes()
                             }
                         }//:ZStack
-                        .padding(.bottom)
+                        Divider()
                     }
                     
                     //MARK: - Trending manga
