@@ -15,59 +15,62 @@ struct GenreTagSelectionView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack {
-            HStack {
-                Button("Clear", role: .destructive) {
-                    viewModel.selectedGenres = []
-                    viewModel.selectedTags = []
+        NavigationView {
+            VStack {
+                Picker("Selection type", selection: $selectionType) {
+                    Text("Genres").tag(0)
+                    Text("Tags").tag(1)
                 }
-                Spacer()
-                Button(action: {
-                    onDone()
-                    dismiss()
-                }) {
-                    Text("Done").bold()
-                }
-            }
-            .padding(.horizontal)
-            .padding(.top)
-            
-            Picker("Selection type", selection: $selectionType) {
-                Text("Genres").tag(0)
-                Text("Tags").tag(1)
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            if selectionType == 1 {
-                if viewModel.tagCollection == nil {
-                    ProgressView()
-                        .onAppear {
-                            //viewModel.getGenreTagCollection()
+                .pickerStyle(.segmented)
+                .padding()
+                
+                if selectionType == 1 {
+                    if viewModel.tagCollection == nil {
+                        ProgressView()
+                            .onAppear {
+                                viewModel.getGenreTagCollection()
+                            }
+                        Spacer()
+                    } else {
+                        List(viewModel.filteredTags, selection: $viewModel.selectedTags) { tag in
+                            Text(tag.id)
                         }
-                    Spacer()
+                    }
                 } else {
-                    List(viewModel.tagCollection!, selection: $viewModel.selectedTags) { tag in
-                        Text(tag.id)
+                    if viewModel.genreCollection == nil {
+                        ProgressView()
+                            .onAppear {
+                                viewModel.getGenreTagCollection()
+                            }
+                        Spacer()
+                    } else {
+                        List(viewModel.filteredGenres, selection: $viewModel.selectedGenres) { genre in
+                            Text(genre.id)
+                        }
                     }
                 }
-            } else {
-                if viewModel.genreCollection == nil {
-                    ProgressView()
-                        .onAppear {
-                            viewModel.getGenreTagCollection()
-                        }
-                    Spacer()
-                } else {
-                    List(viewModel.genreCollection!, selection: $viewModel.selectedGenres) { genre in
-                        Text(genre.id)
+            }//:VStack
+            .environment(\.editMode, .constant(.active))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Clear", role: .destructive) {
+                        viewModel.selectedGenres = []
+                        viewModel.selectedTags = []
+                    }
+                    .tint(.red)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        onDone()
+                        dismiss()
+                    }) {
+                        Text("Done").bold()
                     }
                 }
             }
-        }//:VStack
-        .environment(\.editMode, .constant(.active))
+        }//:NavigationView
+        .searchable(text: $viewModel.filterGenreTagText)
     }
-    
 }
 
 struct GenreTagSelectionView_Previews: PreviewProvider {

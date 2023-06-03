@@ -149,6 +149,22 @@ class SearchViewModel: ObservableObject {
         }
     }
     
+    @Published var filterGenreTagText = ""
+    var filteredGenres: [Genre] {
+        guard genreCollection != nil else { return [] }
+        if filterGenreTagText.isEmpty { return genreCollection! }
+        else {
+            return genreCollection!.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
+        }
+    }
+    var filteredTags: [Genre] {
+        guard tagCollection != nil else { return [] }
+        if filterGenreTagText.isEmpty { return tagCollection! }
+        else {
+            return tagCollection!.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
+        }
+    }
+    
     @Published var genreCollection: [Genre]?
     @Published var tagCollection: [Genre]?
     
