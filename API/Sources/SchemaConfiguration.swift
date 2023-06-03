@@ -11,15 +11,15 @@ public enum SchemaConfiguration: ApolloAPI.SchemaConfiguration {
   public static func cacheKeyInfo(for type: Object, object: ObjectData) -> CacheKeyInfo? {
       switch type {
       case Objects.MediaList:
-          guard let id = object._rawData["id"] as? Int else {
+          guard let id = object["id"] as? Int else {
               return nil
           }
-          guard let mediaId = object._rawData["mediaId"] as? Int else {
+          guard let mediaId = object["mediaId"] as? Int else {
               return CacheKeyInfo(id: "\(id)", uniqueKeyGroup: "MediaList")
           }
           return CacheKeyInfo(id: "\(id).\(mediaId)", uniqueKeyGroup: "MediaList")
       default:
-          guard let id = object._rawData["id"] as? Int else {
+          guard let id = object["id"] as? Int else {
               return nil
           }
           return CacheKeyInfo(id: String(id), uniqueKeyGroup: type.__typename)
