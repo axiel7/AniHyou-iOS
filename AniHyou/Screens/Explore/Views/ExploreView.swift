@@ -172,9 +172,10 @@ struct ExploreView: View {
         }//:VScrollView
     }
     
+    @ViewBuilder
     private var mediaSortSelector: some View {
         Picker("Sort", selection: $viewModel.sortMedia) {
-            Text("Search Match").tag(MediaSort.searchMatch)
+            Text("Default").tag(MediaSort.searchMatch)
             Text("Popularity").tag(MediaSort.popularityDesc)
             Text("Score").tag(MediaSort.scoreDesc)
             Text("Trending").tag(MediaSort.trendingDesc)
@@ -183,6 +184,15 @@ struct ExploreView: View {
         }
         .onChange(of: viewModel.sortMedia) { _ in
             viewModel.runSearch()
+        }
+        if viewModel.sortMedia != .searchMatch {
+            Picker("Order", selection: $viewModel.isAscending) {
+                Text("Ascending").tag(true)
+                Text("Descending").tag(false)
+            }
+            .onChange(of: viewModel.isAscending) { _ in
+                viewModel.onChangeSortOrder()
+            }
         }
     }
     

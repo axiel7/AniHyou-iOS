@@ -17,6 +17,7 @@ class SearchViewModel: ObservableObject {
     var search: String = ""
     @Published var type: SearchType = .anime
     @Published var sortMedia: MediaSort = .searchMatch
+    @Published var isAscending = false
     @Published var selectedGenres = Set<String>()
     @Published var selectedTags = Set<String>()
     @Published var selectedGenresTagsJoined = ""
@@ -36,6 +37,34 @@ class SearchViewModel: ObservableObject {
         case .users:
             searchUsers()
         }
+    }
+    
+    func onChangeSortOrder() {
+        switch sortMedia {
+        case .popularity:
+            sortMedia = .popularityDesc
+        case .popularityDesc:
+            sortMedia = .popularity
+        case .score:
+            sortMedia = .scoreDesc
+        case .scoreDesc:
+            sortMedia = .score
+        case .trending:
+            sortMedia = .trendingDesc
+        case .trendingDesc:
+            sortMedia = .trending
+        case .favourites:
+            sortMedia = .favouritesDesc
+        case .favouritesDesc:
+            sortMedia = .favourites
+        case .startDate:
+            sortMedia = .startDateDesc
+        case .startDateDesc:
+            sortMedia = .startDate
+        default:
+            sortMedia = .searchMatch
+        }
+        runSearch()
     }
     
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
