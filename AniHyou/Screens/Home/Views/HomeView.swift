@@ -129,8 +129,13 @@ struct HomeView: View {
                     
                     //MARK: - Next Season
                     Group {
-                        Text("Next Season")
-                            .sectionTitle()
+                        HStack {
+                            Text("Next Season")
+                                .sectionTitle()
+                            Spacer()
+                            NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nextAnimeSeason.season, selectedYear: viewModel.nextAnimeSeason.year))
+                                .padding(.horizontal)
+                        }
                         ZStack {
                             if viewModel.nextSeasonAnimes.count == 0 {
                                 ProgressView()
