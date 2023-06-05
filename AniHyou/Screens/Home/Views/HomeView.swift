@@ -21,6 +21,7 @@ extension Text {
 struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
+    @State private var showNotificationsSheet = false
     
     var body: some View {
         NavigationView {
@@ -192,6 +193,19 @@ struct HomeView: View {
                 }//:VStack
             }//:VScrollView
             .navigationTitle("Home")
+            .toolbar {
+                ToolbarItem {
+                    Button(action: { showNotificationsSheet = true }) {
+                        Label("Notifications", systemImage: viewModel.notificationCount > 0 ? "bell.badge" : "bell")
+                    }
+                    .sheet(isPresented: $showNotificationsSheet) {
+                        NotificationsView()
+                    }
+                    .onAppear {
+                        viewModel.getNotificationCount()
+                    }
+                }
+            }
         }//:NavigationView
         .navigationViewStyle(.stack)
     }

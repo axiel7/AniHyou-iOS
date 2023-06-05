@@ -128,6 +128,8 @@
 		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
+		4892DDEA2A2DD768009AFB63 /* NotificationCount.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */; };
+		4892DDEC2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892DDEB2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift */; };
 		489622512934E4E400C6CB3F /* DeleteMediaList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 489622502934E4E400C6CB3F /* DeleteMediaList.graphql */; };
 		489622532934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489622522934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift */; };
 		489C7E8C2918FE81004B0B39 /* CharacterDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 489C7E8B2918FE81004B0B39 /* CharacterDetails.graphql */; };
@@ -435,6 +437,8 @@
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
+		4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = NotificationCount.graphql; sourceTree = "<group>"; };
+		4892DDEB2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCountQuery.graphql.swift; sourceTree = "<group>"; };
 		489622502934E4E400C6CB3F /* DeleteMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteMediaList.graphql; sourceTree = "<group>"; };
 		489622522934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteMediaListMutation.graphql.swift; sourceTree = "<group>"; };
 		489C7E8B2918FE81004B0B39 /* CharacterDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CharacterDetails.graphql; sourceTree = "<group>"; };
@@ -784,6 +788,7 @@
 				48DBAF7729B0776A00A75167 /* UserStatsAnimeOverview.graphql */,
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
 				48EFCDEF29FFB3320096BF6E /* UserCurrentAnimeList.graphql */,
+				4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */,
 				488A91182A023E5F00C7FF94 /* MediaSortedQuery.graphql.swift */,
 				4870AAED28EC7551008431B5 /* AiringAnimesQuery.graphql.swift */,
 				4870AAF128EC7551008431B5 /* FuzzyDate.graphql.swift */,
@@ -836,6 +841,7 @@
 				48DBAF7929B077D300A75167 /* UserStatsAnimeOverviewQuery.graphql.swift */,
 				482DC35D2A1F5BD9009D96F4 /* UserStatsMangaOverviewQuery.graphql.swift */,
 				48EFCDF129FFB39B0096BF6E /* UserCurrentAnimeListQuery.graphql.swift */,
+				4892DDEB2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -1561,6 +1567,7 @@
 				488763DA2978180B00402934 /* MediaStats.graphql in Resources */,
 				48099965288B2E9C005AE427 /* UserAbout.graphql in Resources */,
 				48C608EF290D164F004781C2 /* SearchStudio.graphql in Resources */,
+				4892DDEA2A2DD768009AFB63 /* NotificationCount.graphql in Resources */,
 				48F763F028ACE1DA00C82D75 /* UserFavoriteStaff.graphql in Resources */,
 				486ED20F285DDE03002D29E1 /* ViewerId.graphql in Resources */,
 				484A6D62287480CC0044C34A /* ReviewDetails.graphql in Resources */,
@@ -1730,6 +1737,7 @@
 				480300D5291BC57A00E3047B /* StaffDetailsView.swift in Sources */,
 				481E2D69288C00B900D91A54 /* NotificationsViewModel.swift in Sources */,
 				48CA07B728707DF80048854E /* StaffView.swift in Sources */,
+				4892DDEC2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift in Sources */,
 				48E80F9E28734DA5002765FC /* FullCoverView.swift in Sources */,
 				4870AB1028EC7551008431B5 /* UserFavoritesStaffQuery.graphql.swift in Sources */,
 				48AF5394289E7371006D40B6 /* ThreadDetailsView.swift in Sources */,
