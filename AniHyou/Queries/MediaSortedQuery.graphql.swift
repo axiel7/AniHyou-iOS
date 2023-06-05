@@ -25,6 +25,11 @@ public class MediaSortedQuery: GraphQLQuery {
             }
             meanScore
           }
+          pageInfo {
+            __typename
+            currentPage
+            hasNextPage
+          }
         }
       }
       """#
@@ -82,9 +87,12 @@ public class MediaSortedQuery: GraphQLQuery {
           "type": .variable("type"),
           "sort": .variable("sort")
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
       public var media: [Medium?]? { __data["media"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
 
       /// Page.Medium
       ///
@@ -144,6 +152,26 @@ public class MediaSortedQuery: GraphQLQuery {
           /// The cover image url of the media at a large size
           public var large: String? { __data["large"] }
         }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: API.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("currentPage", Int?.self),
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// The current page
+        public var currentPage: Int? { __data["currentPage"] }
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }

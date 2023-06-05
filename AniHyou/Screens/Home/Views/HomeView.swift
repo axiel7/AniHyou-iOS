@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-extension Text {
-    
-    func sectionTitle() -> some View {
-        self
-            .font(.title2)
-            .bold()
-            .padding(.top, 8)
-            .padding(.leading, 15)
-    }
-}
-
 struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
@@ -29,13 +18,15 @@ struct HomeView: View {
                 LazyVStack(alignment: .leading) {
                     // MARK: - Airing
                     Group {
-                        HStack {
+                        HStack(alignment: .center) {
                             Text("Airing Soon")
-                                .sectionTitle()
+                                .font(.title2)
+                                .bold()
                             Spacer()
                             NavigationLink("See All", destination: CalendarAnimeView())
-                                .padding(.horizontal)
                         }
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                         ZStack {
                             if viewModel.airingAnimes.count == 0 {
                                 Text("No anime for today\n(*´-`)")
@@ -67,13 +58,15 @@ struct HomeView: View {
                     
                     // MARK: - Season
                     Group {
-                        HStack {
+                        HStack(alignment: .center) {
                             Text("\(viewModel.nowAnimeSeason.season.localizedName) \(String(viewModel.nowAnimeSeason.year))")
-                                .sectionTitle()
+                                .font(.title2)
+                                .bold()
                             Spacer()
                             NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nowAnimeSeason.season))
-                                .padding(.horizontal)
                         }
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                         ZStack {
                             if viewModel.seasonAnimes.count == 0 {
                                 ProgressView()
@@ -99,10 +92,17 @@ struct HomeView: View {
                         Divider()
                     }
                     
-                    //MARK: - Trending
+                    //MARK: - Trending Anime
                     Group {
-                        Text("Trending Now")
-                            .sectionTitle()
+                        HStack(alignment: .center) {
+                            Text("Trending Anime")
+                                .font(.title2)
+                                .bold()
+                            Spacer()
+                            NavigationLink("See All", destination: TrendingListView(viewModel: viewModel, mediaType: .anime))
+                        }
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                         ZStack {
                             if viewModel.trendingAnimes.count == 0 {
                                 ProgressView()
@@ -130,13 +130,15 @@ struct HomeView: View {
                     
                     //MARK: - Next Season
                     Group {
-                        HStack {
+                        HStack(alignment: .center) {
                             Text("Next Season")
-                                .sectionTitle()
+                                .font(.title2)
+                                .bold()
                             Spacer()
                             NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nextAnimeSeason.season, selectedYear: viewModel.nextAnimeSeason.year))
-                                .padding(.horizontal)
                         }
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                         ZStack {
                             if viewModel.nextSeasonAnimes.count == 0 {
                                 ProgressView()
@@ -164,8 +166,15 @@ struct HomeView: View {
                     
                     //MARK: - Trending manga
                     Group {
-                        Text("Trending Manga")
-                            .sectionTitle()
+                        HStack(alignment: .center) {
+                            Text("Trending Manga")
+                                .font(.title2)
+                                .bold()
+                            Spacer()
+                            NavigationLink("See All", destination: TrendingListView(viewModel: viewModel, mediaType: .manga))
+                        }
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                         ZStack {
                             if viewModel.trendingManga.count == 0 {
                                 ProgressView()

@@ -57,6 +57,8 @@ class HomeViewModel: ObservableObject {
     }
     
     // MARK: Trending animes
+    var pageTrendingAnime = 1
+    var hasNextPageTrendingAnime = true
     @Published var trendingAnimes = [MediaSortedQuery.Data.Page.Medium?]()
     
     func getTrendingAnimes(page: Int = 1) {
@@ -64,9 +66,11 @@ class HomeViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
-                    if let animes = page.media {
-                        self?.trendingAnimes = animes
+                    if let media = page.media {
+                        self?.trendingAnimes.append(contentsOf: media)
                     }
+                    self?.hasNextPageTrendingAnime = page.pageInfo?.hasNextPage ?? false
+                    self?.pageTrendingAnime = (page.pageInfo?.currentPage ?? self?.pageTrendingAnime ?? 1) + 1
                 }
             case .failure(let error):
                 print(error)
@@ -93,6 +97,8 @@ class HomeViewModel: ObservableObject {
     }
     
     // MARK: Trending manga
+    var pageTrendingManga = 1
+    var hasNextPageTrendingManga = true
     @Published var trendingManga = [MediaSortedQuery.Data.Page.Medium?]()
     
     func getTrendingManga(page: Int = 1) {
@@ -101,8 +107,10 @@ class HomeViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let media = page.media {
-                        self?.trendingManga = media
+                        self?.trendingManga.append(contentsOf: media)
                     }
+                    self?.hasNextPageTrendingManga = page.pageInfo?.hasNextPage ?? false
+                    self?.pageTrendingManga = (page.pageInfo?.currentPage ?? self?.pageTrendingAnime ?? 1) + 1
                 }
             case .failure(let error):
                 print(error)

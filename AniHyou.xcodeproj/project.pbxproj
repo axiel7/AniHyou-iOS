@@ -130,6 +130,7 @@
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
 		4892DDEA2A2DD768009AFB63 /* NotificationCount.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */; };
 		4892DDEC2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892DDEB2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift */; };
+		4892DDEE2A2DE0B8009AFB63 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */; };
 		489622512934E4E400C6CB3F /* DeleteMediaList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 489622502934E4E400C6CB3F /* DeleteMediaList.graphql */; };
 		489622532934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489622522934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift */; };
 		489C7E8C2918FE81004B0B39 /* CharacterDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 489C7E8B2918FE81004B0B39 /* CharacterDetails.graphql */; };
@@ -439,6 +440,7 @@
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
 		4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = NotificationCount.graphql; sourceTree = "<group>"; };
 		4892DDEB2A2DD7B8009AFB63 /* NotificationCountQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCountQuery.graphql.swift; sourceTree = "<group>"; };
+		4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
 		489622502934E4E400C6CB3F /* DeleteMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteMediaList.graphql; sourceTree = "<group>"; };
 		489622522934E54D00C6CB3F /* DeleteMediaListMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteMediaListMutation.graphql.swift; sourceTree = "<group>"; };
 		489C7E8B2918FE81004B0B39 /* CharacterDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CharacterDetails.graphql; sourceTree = "<group>"; };
@@ -1208,6 +1210,7 @@
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
 				48EE81332969DDC00074482F /* CalendarAnimeView.swift */,
+				4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1660,6 +1663,7 @@
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
 				48DBAF8329B07AB000A75167 /* UserStatType.swift in Sources */,
 				4837455D2964192000E81CA3 /* StudioDetailsView.swift in Sources */,
+				4892DDEE2A2DE0B8009AFB63 /* TrendingListView.swift in Sources */,
 				48DBAF8529B082EA00A75167 /* OverviewStatsViewModel.swift in Sources */,
 				489C7E9C29193A7B004B0B39 /* UserInfo.graphql.swift in Sources */,
 				48F7641428ACEC6000C82D75 /* UserActivityViewModel.swift in Sources */,

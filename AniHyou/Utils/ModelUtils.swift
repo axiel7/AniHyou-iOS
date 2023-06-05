@@ -9,6 +9,17 @@ import Foundation
 import SwiftUI
 import API
 
+extension MediaType {
+    var localizedName: String {
+        switch self {
+        case .anime:
+            return "Anime"
+        case .manga:
+            return "Manga"
+        }
+    }
+}
+
 extension UserMediaListQuery.Data.Page.MediaList {
     var totalProgress: Int? {
         if self.media?.type?.value == .anime {
