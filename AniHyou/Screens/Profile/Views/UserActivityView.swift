@@ -15,11 +15,11 @@ struct UserActivityView: View {
     var body: some View {
         ForEach(viewModel.activities, id: \.?.id) { item in
             if let list = item?.asListActivity {
-                Divider()
                 NavigationLink(destination: MediaDetailsView(mediaId: list.media?.id ?? 0)) {
                     MediaActivityItemView(activity: list)
                         .padding(.horizontal)
                 }
+                Divider()
             }
         }
         if viewModel.hasNextPage {

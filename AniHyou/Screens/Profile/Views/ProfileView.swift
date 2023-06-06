@@ -22,35 +22,55 @@ struct ProfileView: View {
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
     @State private var infoType: ProfileInfoType = .activity
+    @State private var scrollOffset = CGFloat.zero
+    private var hasScrolled: Bool {
+        withAnimation {
+            scrollOffset > 0
+        }
+    }
     
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical) {
-                LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
-                    profileHeader
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets())
-                    
-                    ScrollView(.vertical) {
-                        VStack {
-                            ExpandableRichText(viewModel.userInfo?.about, isHtml: true)
-                        }
+        if isMyProfile {
+            NavigationView {
+                content
+                    .navigationTitle(hasScrolled ? (viewModel.userInfo?.name ?? "Profile") : "")
+                    .navigationBarTitleDisplayMode(.inline)
+            }//:NavigationView
+            .navigationViewStyle(.stack)
+        } else {
+            content
+        }
+    }//:body
+    
+    var content: some View {
+        ObservableVScrollView(scrollOffset: $scrollOffset) { _ in
+            LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
+                profileHeader
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .ignoresSafeArea(edges: .top)
+                
+                ScrollView(.vertical) {
+                    VStack {
+                        ExpandableRichText(viewModel.userInfo?.about, isHtml: true)
                     }
-                    .padding(16)
-                    
-                    if viewModel.userInfo != nil {
-                        Section {
-                            switch infoType {
-                            case .activity:
-                                UserActivityView(userId: viewModel.userInfo!.id)
-                            case .stats:
-                                UserStatsHostView(userId: viewModel.userInfo!.id)
-                            case .favorites:
-                                UserFavoritesView(userId: viewModel.userInfo!.id)
-                            case .social:
-                                UserSocialView(userId: viewModel.userInfo!.id)
-                            }
-                        } header: {
+                }
+                .padding(16)
+                
+                if viewModel.userInfo != nil {
+                    Section {
+                        switch infoType {
+                        case .activity:
+                            UserActivityView(userId: viewModel.userInfo!.id)
+                        case .stats:
+                            UserStatsHostView(userId: viewModel.userInfo!.id)
+                        case .favorites:
+                            UserFavoritesView(userId: viewModel.userInfo!.id)
+                        case .social:
+                            UserSocialView(userId: viewModel.userInfo!.id)
+                        }
+                    } header: {
+                        VStack(spacing: 0) {
                             Picker("Info type", selection: $infoType) {
                                 ForEach(ProfileInfoType.allCases, id: \.self) { type in
                                     Label(type.localizedName, systemImage: type.systemImage)
@@ -59,23 +79,22 @@ struct ProfileView: View {
                             .pickerStyle(.segmented)
                             .labelStyle(.iconOnly)
                             .padding()
-                        }//:Section
-                    }
-                }
-                //:LazyVStack
-            }//:VScrollView
-            .ignoresSafeArea(edges: .top)
-            .onAppear {
-                if isMyProfile {
-                    viewModel.getMyUserInfo()
-                } else {
-                    viewModel.getUserInfo(userId: userId!)
+                            .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))
+                            Divider()
+                        }
+                    }//:Section
                 }
             }
-        }//:NavigationView
-        .navigationViewStyle(.stack)
-        .navigationBarTitleDisplayMode(.inline)
-    }//:body
+            //:LazyVStack
+        }//:VScrollView
+        .onAppear {
+            if isMyProfile {
+                viewModel.getMyUserInfo()
+            } else {
+                viewModel.getUserInfo(userId: userId!)
+            }
+        }
+    }
     
     var profileHeader: some View {
         ZStack {
