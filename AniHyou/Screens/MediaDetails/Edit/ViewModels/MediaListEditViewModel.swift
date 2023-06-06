@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import API
+import AniListAPI
 
 class MediaListEditViewModel: ObservableObject {
     

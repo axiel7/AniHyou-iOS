@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Kingfisher
-import API
+import AniListAPI
 import RichText
 
 private let avatarSize: CGFloat = 110

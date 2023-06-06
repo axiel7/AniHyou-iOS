@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftUIFlow
-import API
+import AniListAPI
 
 private extension MediaTagItemView {
     @ViewBuilder

@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import API
+import AniListAPI
 
 class OverviewStatsViewModel: ObservableObject {
     

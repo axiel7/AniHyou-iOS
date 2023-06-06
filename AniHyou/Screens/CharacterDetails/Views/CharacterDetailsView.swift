@@ -58,7 +58,7 @@ struct CharacterDetailsView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        HInfoView(name: "Birthday", value: viewModel.character!.dateOfBirth?.fragments.fuzzyDate.formatted())
+                        HInfoView(name: "Birthday", value: viewModel.character!.dateOfBirth?.fragments.fuzzyDateFragment.formatted())
                         HInfoView(name: "Age", value: viewModel.character!.age)
                         HInfoView(name: "Gender", value: viewModel.character!.gender)
                         HInfoView(name: "Blood type", value: viewModel.character!.bloodType)

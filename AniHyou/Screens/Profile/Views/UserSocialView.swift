@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import AniListAPI
 
 struct UserSocialView: View {
     

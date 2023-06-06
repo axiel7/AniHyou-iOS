@@ -1,5 +1,5 @@
 {
-  "schemaName" : "API",
+  "schemaNamespace" : "AniListAPI",
   "input" : {
     "operationSearchPaths" : [
       "AniHyou/Queries/*.graphql"
@@ -14,15 +14,14 @@
       }
     },
     "schemaTypes" : {
-      "path" : "./API",
+      "path" : "./AniListAPI",
       "moduleType" : {
         "swiftPackageManager" : {
-            
         }
       }
     },
     "operations" : {
-      "relative" : {
+      "inSchemaModule" : {
       }
     }
   },

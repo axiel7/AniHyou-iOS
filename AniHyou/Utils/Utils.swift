@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AniListAPI
 
 func isLoggedIn() -> Bool {
     return UserDefaults.standard.bool(forKey: "is_logged_in")

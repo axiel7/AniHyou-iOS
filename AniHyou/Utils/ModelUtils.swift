@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import API
+import AniListAPI
 
 extension MediaType {
     var localizedName: String {

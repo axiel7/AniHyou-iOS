@@ -38,9 +38,9 @@ fragment BasicMediaListEntry on MediaList
   progressVolumes
   repeat
   startedAt {
-    ...FuzzyDate
+    ...FuzzyDateFragment
   }
   completedAt {
-    ...FuzzyDate
+    ...FuzzyDateFragment
   }
 }

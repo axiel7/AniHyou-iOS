@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RichText
+import AniListAPI
 
 struct StaffDetailsView: View {
     
@@ -55,9 +56,9 @@ struct StaffDetailsView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        HInfoView(name: "Birth", value: viewModel.staff!.dateOfBirth?.fragments.fuzzyDate.formatted())
+                        HInfoView(name: "Birth", value: viewModel.staff!.dateOfBirth?.fragments.fuzzyDateFragment.formatted())
                         if viewModel.staff!.dateOfDeath?.year != nil {
-                            HInfoView(name: "Death", value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDate.formatted())
+                            HInfoView(name: "Death", value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDateFragment.formatted())
                         }
                         HInfoView(name: "Age", value: viewModel.staff!.age?.stringValue)
                         HInfoView(name: "Gender", value: viewModel.staff!.gender)

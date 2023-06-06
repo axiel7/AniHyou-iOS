@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AniListAPI
 
 struct StaffMediaGrouped: Equatable {
     let value: StaffMediaQuery.Data.Staff.StaffMedia.Edge

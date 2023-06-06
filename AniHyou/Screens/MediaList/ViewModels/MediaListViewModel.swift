@@ -7,7 +7,7 @@
 
 import Foundation
 import Apollo
-import API
+import AniListAPI
 
 class MediaListViewModel: ObservableObject {
     

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import API
+import AniListAPI
 
 struct AnimeSeason {
     var year: Int

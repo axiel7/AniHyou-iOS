@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import API
+import AniListAPI
 
 private let cardHeight: CGFloat = 90
 

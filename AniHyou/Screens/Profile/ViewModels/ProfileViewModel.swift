@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import KeychainSwift
+import AniListAPI
 
 class ProfileViewModel: ObservableObject {
     

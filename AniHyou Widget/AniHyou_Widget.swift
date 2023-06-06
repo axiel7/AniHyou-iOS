@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import AniListAPI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {

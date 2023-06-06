@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import API
+import AniListAPI
 
 extension Date {
     var tomorrow: Date? {
@@ -147,7 +147,7 @@ extension Int {
     }
 }
 
-extension FuzzyDate {
+extension FuzzyDateFragment {
     
     func formatted() -> String {
         let year = self.year ?? 1970

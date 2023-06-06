@@ -13,10 +13,10 @@ query StaffDetails($staffId: Int) {
     primaryOccupations
     gender
     dateOfBirth {
-      ...FuzzyDate
+      ...FuzzyDateFragment
     }
     dateOfDeath {
-      ...FuzzyDate
+      ...FuzzyDateFragment
     }
     age
     yearsActive

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AniListAPI
 
 class MediaStatsViewModel: ObservableObject {
     

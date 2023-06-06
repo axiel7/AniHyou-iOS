@@ -12,10 +12,10 @@ query MediaDetails($mediaId: Int) {
     status
     description(asHtml: true)
     startDate {
-      ...FuzzyDate
+      ...FuzzyDateFragment
     }
     endDate {
-      ...FuzzyDate
+      ...FuzzyDateFragment
     }
     season
     seasonYear
@@ -48,10 +48,10 @@ query MediaDetails($mediaId: Int) {
     mediaListEntry {
       ...BasicMediaListEntry
       startedAt {
-        ...FuzzyDate
+        ...FuzzyDateFragment
       }
       completedAt {
-        ...FuzzyDate
+        ...FuzzyDateFragment
       }
     }
     source
@@ -81,7 +81,7 @@ query MediaDetails($mediaId: Int) {
   }
 }
 
-fragment FuzzyDate on FuzzyDate {
+fragment FuzzyDateFragment on FuzzyDate {
   day
   month
   year

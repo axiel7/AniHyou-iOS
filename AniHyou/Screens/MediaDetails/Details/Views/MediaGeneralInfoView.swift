@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIFlow
+import AniListAPI
 
 struct MediaGeneralInfoView: View {
     
@@ -32,8 +33,8 @@ struct MediaGeneralInfoView: View {
                     if let duration = viewModel.mediaDetails?.duration {
                         HInfoView(name: "Duration", value: duration.minutesToLegibleText())
                     }
-                    HInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDate.formatted())
-                    HInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDate.formatted())
+                    HInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDateFragment.formatted())
+                    HInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDateFragment.formatted())
                 }
                 Group {
                     if viewModel.isAnime {

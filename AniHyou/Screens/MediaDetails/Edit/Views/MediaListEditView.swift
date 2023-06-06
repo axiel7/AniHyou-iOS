@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import API
+import AniListAPI
 
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss

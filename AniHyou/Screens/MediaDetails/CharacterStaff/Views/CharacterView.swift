@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 private let imageSize: CGFloat = 70
 

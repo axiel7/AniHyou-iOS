@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RichText
+import AniListAPI
 
 struct ThreadDetailsView: View {
     

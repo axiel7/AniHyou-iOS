@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 private let coverWidth: CGFloat = 73
 private let coverHeight: CGFloat = 110

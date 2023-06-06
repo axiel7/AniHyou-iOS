@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import API
+import AniListAPI
 
 struct GenericNotification: Identifiable {
     let id: Int

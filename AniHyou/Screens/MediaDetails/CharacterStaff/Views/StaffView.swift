@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 struct StaffView: View {
     

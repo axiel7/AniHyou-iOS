@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AniListAPI
 
 class RelationRecommendationViewModel: ObservableObject {
     
