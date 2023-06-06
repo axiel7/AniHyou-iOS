@@ -19,7 +19,7 @@ struct ProfileBioView: View {
     private var isHtml: Bool
 
     init(_ text: String?, isHtml: Bool?) {
-        self.text = text ?? ""
+        self.text = text ?? "No description"
         self.isHtml = isHtml ?? false
     }
     

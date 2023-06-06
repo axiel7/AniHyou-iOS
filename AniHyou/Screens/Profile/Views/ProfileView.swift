@@ -49,7 +49,7 @@ struct ProfileView: View {
                     if viewModel.userInfo != nil {
                         ScrollView(.vertical) {
                             VStack {
-                                ProfileBioView(viewModel.userInfo?.about!, isHtml: true)
+                                ProfileBioView(viewModel.userInfo?.about, isHtml: true)
                             }
                         }
                         .padding(16)
