@@ -8,7 +8,7 @@
 import SwiftUI
 import RichText
 
-struct ProfileBioView: View {
+struct ExpandableRichText: View {
     
     @State private var expanded: Bool = false
     @State private var truncated: Bool = false
@@ -78,8 +78,8 @@ struct ProfileBioView: View {
     }
 }
 
-struct ProfileBioView_Previews: PreviewProvider {
+struct ExpandableRichText_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileBioView("", isHtml: false)
+        ExpandableRichText("", isHtml: false)
     }
 }

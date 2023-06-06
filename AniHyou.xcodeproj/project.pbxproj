@@ -21,7 +21,7 @@
 		4815DFA62A2ED1D400352A9B /* AniListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4815DFA52A2ED1D400352A9B /* AniListAPI */; };
 		4815DFA82A2ED1DA00352A9B /* AniListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4815DFA72A2ED1DA00352A9B /* AniListAPI */; };
 		4815DFAA2A2ED1DF00352A9B /* AniListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4815DFA92A2ED1DF00352A9B /* AniListAPI */; };
-		4815DFAC2A2ED49F00352A9B /* ProfileBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815DFAB2A2ED49F00352A9B /* ProfileBioView.swift */; };
+		4815DFAC2A2ED49F00352A9B /* ExpandableRichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */; };
 		481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */; };
 		481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 481A6B0F2864CD0F00AB9C89 /* Kingfisher */; };
 		481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DD2851CE73001779EE /* AniHyouApp.swift */; };
@@ -223,7 +223,7 @@
 		480D76A029AB661E00B56DE1 /* UserSocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialView.swift; sourceTree = "<group>"; };
 		480D76A429AB6A9800B56DE1 /* UserSocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialViewModel.swift; sourceTree = "<group>"; };
 		480F8824294262F3004773CC /* AnimeSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSeason.swift; sourceTree = "<group>"; };
-		4815DFAB2A2ED49F00352A9B /* ProfileBioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileBioView.swift; sourceTree = "<group>"; };
+		4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableRichText.swift; sourceTree = "<group>"; };
 		481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerToggleView.swift; sourceTree = "<group>"; };
 		481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntryProgress.graphql; sourceTree = "<group>"; };
 		481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntry.graphql; sourceTree = "<group>"; };
@@ -569,7 +569,7 @@
 				481AD50628522D74001779EE /* VListItemView.swift */,
 				4832B02D285F38DC00E79D27 /* TopBannerView.swift */,
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
-				4815DFAB2A2ED49F00352A9B /* ProfileBioView.swift */,
+				4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */,
 				481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */,
 				48FC947A2868653E00C87F56 /* RectangleTextView.swift */,
 				481AD4FD2851F677001779EE /* CoverPlaceholderView.swift */,
@@ -1391,7 +1391,7 @@
 				488C267E285380D90005EE15 /* ProfileView.swift in Sources */,
 				48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */,
 				48E7CAF628AA519600F9CE24 /* MediaActivityItemView.swift in Sources */,
-				4815DFAC2A2ED49F00352A9B /* ProfileBioView.swift in Sources */,
+				4815DFAC2A2ED49F00352A9B /* ExpandableRichText.swift in Sources */,
 				48A29C5A2972B9EB00BF53B8 /* MediaListItemMinimalView.swift in Sources */,
 				481AD4FE2851F677001779EE /* CoverPlaceholderView.swift in Sources */,
 				48AB01F4286B6A4B004DC7FF /* SearchType.swift in Sources */,
