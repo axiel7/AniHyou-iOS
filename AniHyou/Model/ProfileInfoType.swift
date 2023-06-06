@@ -8,7 +8,6 @@
 import Foundation
 
 public enum ProfileInfoType: Equatable, Hashable, CaseIterable {
-//    case about
     case activity
     case stats
     case favorites
@@ -20,8 +19,6 @@ extension ProfileInfoType {
         switch self {
         case .activity:
             return "Activity"
-//        case .about:
-//            return "About"
         case .stats:
             return "Stats"
         case .favorites:
@@ -35,8 +32,6 @@ extension ProfileInfoType {
         switch self {
         case .activity:
             return "waveform.path.ecg"
-//        case .about:
-//            return "info.circle"
         case .stats:
             return "percent"
         case .favorites:

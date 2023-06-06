@@ -13,21 +13,6 @@ import RichText
 private let avatarSize: CGFloat = 110
 private let bannerHeight: CGFloat = 30
 
-extension Label {
-    func labelButtonIcon() -> some View {
-        self
-            .labelStyle(.iconOnly)
-            .font(.system(size: 22))
-    }
-    
-    func toolbarMaterialLabel() -> some View {
-        self
-            .frame(width: 32, height: 32)
-            .background(.ultraThinMaterial)
-            .clipShape(Circle())
-    }
-}
-
 struct ProfileView: View {
     
     var userId: Int? = nil
@@ -65,8 +50,6 @@ struct ProfileView: View {
                     if viewModel.userInfo != nil {
                         Section {
                             switch infoType {
-//                            case .about:
-//                                UserAboutView(userId: viewModel.userInfo!.id)
                             case .activity:
                                 UserActivityView(userId: viewModel.userInfo!.id)
                             case .stats:
