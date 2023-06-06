@@ -15,7 +15,7 @@ public struct UserInfo: API.SelectionSet, Fragment {
         large
       }
       bannerImage
-      about
+      about(asHtml: true)
       options {
         __typename
         profileColor

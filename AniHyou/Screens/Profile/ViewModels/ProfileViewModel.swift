@@ -19,6 +19,7 @@ class ProfileViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
                     self?.userInfo = viewer
+                    self?.userAbout = viewer.about
                     //update preferences
                     UserDefaults.standard.set(viewer.options?.profileColor, forKey: USER_COLOR_KEY)
                     UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)

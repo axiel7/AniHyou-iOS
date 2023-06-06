@@ -26,7 +26,7 @@ struct ExpandableTextView: View {
             Text(styledText)
                 .lineLimit(self.expanded ? nil : lineLimit)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
+
             Button(action: { self.expanded.toggle() }) {
                 Text(self.expanded ? "Show less" : "Show more")
                     .font(.footnote)
