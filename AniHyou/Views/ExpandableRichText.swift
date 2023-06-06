@@ -10,69 +10,27 @@ import RichText
 
 struct ExpandableRichText: View {
     
-    @State private var expanded: Bool = false
-    @State private var truncated: Bool = false
-    var lineLimit: Int? = 3
-    var fontSize: CGFloat = 16
+    @State private var isExpanded = false
     
-    private var text: String
-    private var isHtml: Bool
+    private var html: String
 
-    init(_ text: String?, isHtml: Bool?) {
-        self.text = text ?? "No description"
-        self.isHtml = isHtml ?? false
-    }
-    
-    private func determineTruncation(_ geometry: GeometryProxy) {
-        // Calculate the bounding box we need to render the
-        // text given the width from the GeometryReader.
-        let total = self.text.boundingRect(
-            with: CGSize(
-                width: geometry.size.width,
-                height: .greatestFiniteMagnitude
-            ),
-            options: .usesLineFragmentOrigin,
-            attributes: [.font: UIFont.systemFont(ofSize: fontSize)],
-            context: nil
-        )
-        
-        if total.size.height > geometry.size.height {
-            self.truncated = true
-        }
+    init(_ html: String?) {
+        self.html = html ?? "No description"
     }
     
     var body: some View {
-        VStack(alignment: .trailing, spacing: 10) {
-            if self.isHtml {
-                RichText(html: self.text)
-                    .defaultStyle()
-                    .frame(maxWidth: .infinity, maxHeight: self.expanded ? .greatestFiniteMagnitude : 32.0, alignment: .topLeading)
-                    .background(GeometryReader { geo in
-                        Color.clear.onAppear {
-                            self.determineTruncation(geo)
-                        }
-                    })
-            } else {
-                Text(self.text)
-                    .font(.system(size: fontSize))
-                    .lineLimit(self.expanded ? nil : lineLimit)
-                    .background(GeometryReader { geometry in
-                        Color.clear.onAppear {
-                            self.determineTruncation(geometry)
-                        }
-                    })
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
+        VStack(alignment: .trailing, spacing: 0) {
+            RichText(html: html)
+                .defaultStyle()
+                .frame(maxWidth: .infinity, maxHeight: isExpanded ? .greatestFiniteMagnitude : 32.0, alignment: .topLeading)
             
-            if self.truncated {
-                Button(action: {
-                    withAnimation {
-                        self.expanded.toggle()
-                    }
-                }) {
-                    Text(self.expanded ? "Show less" : "Show more")
-                        .font(.footnote)
+            Button(action: {
+                withAnimation {
+                    isExpanded.toggle()
                 }
+            }) {
+                Text(isExpanded ? "Show less" : "Show more")
+                    .font(.footnote)
             }
         }
     }
@@ -80,6 +38,6 @@ struct ExpandableRichText: View {
 
 struct ExpandableRichText_Previews: PreviewProvider {
     static var previews: some View {
-        ExpandableRichText("", isHtml: false)
+        ExpandableRichText("")
     }
 }
