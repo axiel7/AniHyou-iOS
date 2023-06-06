@@ -20,7 +20,6 @@ class ProfileViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
                     self?.userInfo = viewer
-                    self?.userAbout = viewer.about
                     //update preferences
                     UserDefaults.standard.set(viewer.options?.profileColor, forKey: USER_COLOR_KEY)
                     UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
@@ -58,24 +57,6 @@ class ProfileViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: USER_TITLE_LANG_KEY)
         UserDefaults.standard.removeObject(forKey: USER_SCORE_KEY)
         isLoggedOut = true
-    }
-    
-    @Published var userAbout: String?
-    @Published var isLoadingAbout = false
-    
-    func getUserAbout(userId: Int) {
-        self.isLoadingAbout = true
-        Network.shared.apollo.fetch(query: UserAboutQuery(userId: .some(userId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let about = graphQLResult.data?.user?.about {
-                    self?.userAbout = about
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoadingAbout = false
-        }
     }
     
 }

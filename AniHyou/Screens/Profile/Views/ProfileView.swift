@@ -46,14 +46,10 @@ struct ProfileView: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                     
-                    if viewModel.userAbout != nil || viewModel.userInfo != nil {
+                    if viewModel.userInfo != nil {
                         ScrollView(.vertical) {
                             VStack {
-                                if isMyProfile {
-                                    ProfileBioView(viewModel.userInfo?.about!, isHtml: true)
-                                } else {
-                                    ProfileBioView(viewModel.userAbout!, isHtml: true)
-                                }
+                                ProfileBioView(viewModel.userInfo?.about!, isHtml: true)
                             }
                         }
                         .padding(16)
@@ -100,7 +96,6 @@ struct ProfileView: View {
                     viewModel.getMyUserInfo()
                 } else {
                     viewModel.getUserInfo(userId: userId!)
-                    viewModel.getUserAbout(userId: userId!)
                 }
             }
         }//:NavigationView
