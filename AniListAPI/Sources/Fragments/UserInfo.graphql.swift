@@ -14,7 +14,7 @@ public struct UserInfo: AniListAPI.SelectionSet, Fragment {
         large
       }
       bannerImage
-      about
+      about(asHtml: true)
       options {
         __typename
         profileColor
@@ -39,7 +39,7 @@ public struct UserInfo: AniListAPI.SelectionSet, Fragment {
     .field("name", String.self),
     .field("avatar", Avatar?.self),
     .field("bannerImage", String?.self),
-    .field("about", String?.self),
+    .field("about", String?.self, arguments: ["asHtml": true]),
     .field("options", Options?.self),
     .field("mediaListOptions", MediaListOptions?.self),
     .field("unreadNotificationCount", Int?.self),
