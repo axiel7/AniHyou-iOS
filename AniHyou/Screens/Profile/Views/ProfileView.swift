@@ -11,7 +11,7 @@ import AniListAPI
 import RichText
 
 private let avatarSize: CGFloat = 110
-private let bannerHeight: CGFloat = 30
+private let bannerHeight: CGFloat = 10
 
 struct ProfileView: View {
     
@@ -33,8 +33,14 @@ struct ProfileView: View {
         if isMyProfile {
             NavigationView {
                 content
-                    .navigationTitle(hasScrolled ? (viewModel.userInfo?.name ?? "Profile") : "")
                     .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Text(viewModel.userInfo?.name ?? "Profile")
+                                .bold()
+                                .opacity(hasScrolled ? 1 : 0)
+                        }
+                    }
             }//:NavigationView
             .navigationViewStyle(.stack)
         } else {
