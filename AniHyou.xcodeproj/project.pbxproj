@@ -13,7 +13,6 @@
 		4806BBB12963398C00CB07A6 /* SmileyRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */; };
 		4809995E288B2977005AE427 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995D288B2977005AE427 /* SettingsView.swift */; };
 		48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995F288B29A9005AE427 /* SettingsViewModel.swift */; };
-		48099963288B2C60005AE427 /* UserAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48099962288B2C60005AE427 /* UserAboutView.swift */; };
 		480A41A528ECA1A30066288D /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A41A428ECA1A30066288D /* ModelUtils.swift */; };
 		480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */; };
 		480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D76A029AB661E00B56DE1 /* UserSocialView.swift */; };
@@ -217,7 +216,6 @@
 		4806BBB02963398C00CB07A6 /* SmileyRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileyRatingView.swift; sourceTree = "<group>"; };
 		4809995D288B2977005AE427 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4809995F288B29A9005AE427 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		48099962288B2C60005AE427 /* UserAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAboutView.swift; sourceTree = "<group>"; };
 		48099964288B2E9C005AE427 /* UserAbout.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserAbout.graphql; sourceTree = "<group>"; };
 		480A41A428ECA1A30066288D /* ModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtils.swift; sourceTree = "<group>"; };
 		480D769829AB64FB00B56DE1 /* FollowersQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FollowersQuery.graphql; sourceTree = "<group>"; };
@@ -979,7 +977,6 @@
 			isa = PBXGroup;
 			children = (
 				488C267D285380D90005EE15 /* ProfileView.swift */,
-				48099962288B2C60005AE427 /* UserAboutView.swift */,
 				48F7641528ACECA900C82D75 /* UserActivityView.swift */,
 				48E7CAF528AA519600F9CE24 /* MediaActivityItemView.swift */,
 				48F763E728ACDE0200C82D75 /* UserFavoritesView.swift */,
@@ -1428,7 +1425,6 @@
 				484A6D69287481500044C34A /* ReviewDetailsView.swift in Sources */,
 				48E12595297942DC002DF6CA /* VerticalBarsStatsView.swift in Sources */,
 				48FBC66228CE3E88009AAF4A /* UpdatedMediaEntry.swift in Sources */,
-				48099963288B2C60005AE427 /* UserAboutView.swift in Sources */,
 				48CA07A9287035530048854E /* MediaInfoType.swift in Sources */,
 				48BB95D12A24464500DE2CD5 /* ObservableScrollView.swift in Sources */,
 				481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */,
