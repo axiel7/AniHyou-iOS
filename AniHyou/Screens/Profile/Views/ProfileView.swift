@@ -31,21 +31,12 @@ struct ProfileView: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                     
-                    if viewModel.userInfo != nil {
-                        ScrollView(.vertical) {
-                            VStack {
-                                ExpandableRichText(viewModel.userInfo?.about, isHtml: true)
-                            }
-                        }
-                        .padding(16)
-                    } else {
+                    ScrollView(.vertical) {
                         VStack {
-                            Spacer()
-                            Text("Unable to load user bio")
-                            Spacer()
+                            ExpandableRichText(viewModel.userInfo?.about, isHtml: true)
                         }
-                        .padding(16)
                     }
+                    .padding(16)
                     
                     if viewModel.userInfo != nil {
                         Section {
