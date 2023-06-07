@@ -42,6 +42,7 @@ struct ExpandableRichText: View {
         VStack(alignment: .trailing, spacing: 0) {
             RichText(html: html)
                 .defaultStyle()
+                .customCSS(spoilerCss)
                 .frame(maxWidth: .infinity, maxHeight: isExpanded ? .greatestFiniteMagnitude : 32.0, alignment: .topLeading)
                 .background(GeometryReader { geo in
                     Color.clear.onAppear {
