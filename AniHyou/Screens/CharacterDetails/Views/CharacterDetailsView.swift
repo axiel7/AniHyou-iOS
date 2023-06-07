@@ -34,6 +34,15 @@ struct CharacterDetailsView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if viewModel.character != nil {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Image(systemName: viewModel.character!.isFavourite ? "heart.fill" : "heart")
+                    }
+                }
+            }
+        }
     }
     
     @ViewBuilder

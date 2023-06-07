@@ -25,6 +25,37 @@ class CharacterDetailsViewModel: ObservableObject {
         }
     }
     
+    func toggleFavorite() {
+        guard character != nil else { return }
+        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: .none, mangaId: .none, characterId: .some(character!.id), staffId: .none, studioId: .none)) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if graphQLResult.data != nil {
+                    self?.onFavoriteToggled()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func onFavoriteToggled() {
+        guard let characterId = character?.id else { return }
+        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+            do {
+                try transaction.updateObject(ofType: IsFavouriteCharacter.self, withKey: "Character:\(characterId)") { (cachedData: inout IsFavouriteCharacter) in
+                    cachedData.isFavourite = !cachedData.isFavourite
+                }
+                let newObject = try transaction.readObject(ofType: CharacterDetailsQuery.Data.Character.self, withKey: "Character:\(characterId)")
+                DispatchQueue.main.async {
+                    self?.character = newObject
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
+    
     @Published var characterMedia = [CharacterMediaQuery.Data.Character.Media.Edge?]()
     var pageMedia = 1
     var hasNextPageMedia = true
