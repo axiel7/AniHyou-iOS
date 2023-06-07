@@ -57,6 +57,7 @@ public class MediaDetailsQuery: GraphQLQuery {
             }
           }
           favourites
+          ...IsFavouriteMedia
           type
           nextAiringEpisode {
             __typename
@@ -106,7 +107,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         }
       }
       """#,
-      fragments: [FuzzyDateFragment.self, BasicMediaListEntry.self]
+      fragments: [FuzzyDateFragment.self, IsFavouriteMedia.self, BasicMediaListEntry.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>
@@ -169,6 +170,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("trailer", Trailer?.self),
         .field("streamingEpisodes", [StreamingEpisode?]?.self),
         .field("tags", [Tag?]?.self),
+        .fragment(IsFavouriteMedia.self),
       ] }
 
       /// The id of the media
@@ -231,6 +233,15 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var streamingEpisodes: [StreamingEpisode?]? { __data["streamingEpisodes"] }
       /// List of tags that describes elements and themes of the media
       public var tags: [Tag?]? { __data["tags"] }
+      /// If the media is marked as favourite by the current authenticated user
+      public var isFavourite: Bool { __data["isFavourite"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var isFavouriteMedia: IsFavouriteMedia { _toFragment() }
+      }
 
       /// Media.Title
       ///
