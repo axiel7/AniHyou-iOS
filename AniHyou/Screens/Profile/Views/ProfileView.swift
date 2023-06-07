@@ -58,7 +58,11 @@ struct ProfileView: View {
                 
                 ScrollView(.vertical) {
                     VStack {
-                        ExpandableRichText(viewModel.userInfo?.about)
+                        if viewModel.userInfo != nil {
+                            ExpandableRichText(viewModel.userInfo?.about)
+                        } else {
+                            ProgressView()
+                        }
                     }
                 }
                 .padding(16)
