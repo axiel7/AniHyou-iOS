@@ -26,6 +26,37 @@ class StaffDetailsViewModel: ObservableObject {
         }
     }
     
+    func toggleFavorite() {
+        guard staff != nil else { return }
+        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: .none, mangaId: .none, characterId: .none, staffId: .some(staff!.id), studioId: .none)) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if graphQLResult.data != nil {
+                    self?.onFavoriteToggled()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func onFavoriteToggled() {
+        guard let staffId = staff?.id else { return }
+        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+            do {
+                try transaction.updateObject(ofType: IsFavouriteStaff.self, withKey: "Staff:\(staffId)") { (cachedData: inout IsFavouriteStaff) in
+                    cachedData.isFavourite = !cachedData.isFavourite
+                }
+                let newObject = try transaction.readObject(ofType: StaffDetailsQuery.Data.Staff.self, withKey: "Staff:\(staffId)")
+                DispatchQueue.main.async {
+                    self?.staff = newObject
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
+    
     @Published var mediaOnMyList = false
     @Published var staffMedia = [StaffMediaGrouped]()
     var pageMedia = 1

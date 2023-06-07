@@ -37,6 +37,15 @@ struct StaffDetailsView: View {
             }//:VStack
         }//:VScrollView
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if viewModel.staff != nil {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Image(systemName: viewModel.staff!.isFavourite ? "heart.fill" : "heart")
+                    }
+                }
+            }
+        }
     }
     
     @ViewBuilder
