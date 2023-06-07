@@ -3,7 +3,7 @@ query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {
     id
     name
     favourites
-    isFavourite
+    ...IsFavouriteStudio
     media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) {
       nodes {
         id
@@ -19,4 +19,10 @@ query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {
       }
     }
   }
+}
+
+fragment IsFavouriteStudio on Studio
+@apollo_client_ios_localCacheMutation {
+  id
+  isFavourite
 }

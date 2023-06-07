@@ -106,6 +106,13 @@ struct MediaDetailsView: View {
                         .transition(.slide)
                 }
             }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if viewModel.mediaDetails != nil {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Image(systemName: viewModel.mediaDetails!.isFavourite ? "heart.fill" : "heart")
+                    }
+                }
+            }
         }
         .onChange(of: viewModel.mediaDetails) { details in
             DispatchQueue.main.async {

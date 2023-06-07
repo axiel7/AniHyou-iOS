@@ -244,6 +244,7 @@
 		481E2D66288C008200D91A54 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		481E2D6A288C168100D91A54 /* MediaDetailsMainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsMainInfo.swift; sourceTree = "<group>"; };
+		482CE57C2A30841200DAE045 /* ToggleFavourite.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToggleFavourite.graphql; sourceTree = "<group>"; };
 		482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListScoreIndicator.swift; sourceTree = "<group>"; };
 		482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaOverview.graphql; sourceTree = "<group>"; };
 		4832B026285F279600E79D27 /* MediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaDetails.graphql; sourceTree = "<group>"; };
@@ -634,6 +635,7 @@
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
 				48EFCDEF29FFB3320096BF6E /* UserCurrentAnimeList.graphql */,
 				4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */,
+				482CE57C2A30841200DAE045 /* ToggleFavourite.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";

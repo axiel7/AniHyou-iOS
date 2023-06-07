@@ -37,10 +37,12 @@ public class StaffDetailsQuery: GraphQLQuery {
           yearsActive
           homeTown
           bloodType
+          ...IsFavouriteStaff
+          favourites
         }
       }
       """#,
-      fragments: [FuzzyDateFragment.self]
+      fragments: [FuzzyDateFragment.self, IsFavouriteStaff.self]
     ))
 
   public var staffId: GraphQLNullable<Int>
@@ -85,6 +87,8 @@ public class StaffDetailsQuery: GraphQLQuery {
         .field("yearsActive", [Int?]?.self),
         .field("homeTown", String?.self),
         .field("bloodType", String?.self),
+        .field("favourites", Int?.self),
+        .fragment(IsFavouriteStaff.self),
       ] }
 
       /// The id of the staff member
@@ -109,6 +113,17 @@ public class StaffDetailsQuery: GraphQLQuery {
       public var homeTown: String? { __data["homeTown"] }
       /// The persons blood type
       public var bloodType: String? { __data["bloodType"] }
+      /// The amount of user's who have favourited the staff member
+      public var favourites: Int? { __data["favourites"] }
+      /// If the staff member is marked as favourite by the currently authenticated user
+      public var isFavourite: Bool { __data["isFavourite"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var isFavouriteStaff: IsFavouriteStaff { _toFragment() }
+      }
 
       /// Staff.Name
       ///

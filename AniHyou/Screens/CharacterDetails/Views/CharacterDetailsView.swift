@@ -34,6 +34,15 @@ struct CharacterDetailsView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if viewModel.character != nil {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Image(systemName: viewModel.character!.isFavourite ? "heart.fill" : "heart")
+                    }
+                }
+            }
+        }
     }
     
     @ViewBuilder
@@ -58,6 +67,7 @@ struct CharacterDetailsView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
+                        HInfoView(name: "Favorites", value: (viewModel.character!.favourites ?? 0).formatted())
                         HInfoView(name: "Birthday", value: viewModel.character!.dateOfBirth?.fragments.fuzzyDateFragment.formatted())
                         HInfoView(name: "Age", value: viewModel.character!.age)
                         HInfoView(name: "Gender", value: viewModel.character!.gender)

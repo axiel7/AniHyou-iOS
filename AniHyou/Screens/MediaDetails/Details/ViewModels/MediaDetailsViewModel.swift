@@ -25,6 +25,39 @@ class MediaDetailsViewModel: ObservableObject {
         }
     }
     
+    func toggleFavorite() {
+        guard mediaDetails != nil else { return }
+        let animeId: GraphQLNullable<Int> = if mediaDetails!.type == .anime { .some(mediaDetails!.id) } else { .none }
+        let mangaId: GraphQLNullable<Int> = if mediaDetails!.type == .manga { .some(mediaDetails!.id) } else { .none }
+        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: animeId, mangaId: mangaId, characterId: .none, staffId: .none, studioId: .none)) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if graphQLResult.data != nil {
+                    self?.onFavoriteToggled()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func onFavoriteToggled() {
+        guard let mediaId = mediaDetails?.id else { return }
+        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+            do {
+                try transaction.updateObject(ofType: IsFavouriteMedia.self, withKey: "Media:\(mediaId)") { (cachedData: inout IsFavouriteMedia) in
+                    cachedData.isFavourite = !cachedData.isFavourite
+                }
+                let newObject = try transaction.readObject(ofType: MediaDetailsQuery.Data.Media.self, withKey: "Media:\(mediaId)")
+                DispatchQueue.main.async {
+                    self?.mediaDetails = newObject
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
+    
     func onEntryUpdated(updatedEntry: BasicMediaListEntry?) {
         //Update the local cache
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in

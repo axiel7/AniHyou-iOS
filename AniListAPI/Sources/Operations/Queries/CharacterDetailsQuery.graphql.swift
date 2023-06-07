@@ -31,10 +31,12 @@ public class CharacterDetailsQuery: GraphQLQuery {
           }
           age
           bloodType
+          ...IsFavouriteCharacter
+          favourites
         }
       }
       """#,
-      fragments: [FuzzyDateFragment.self]
+      fragments: [FuzzyDateFragment.self, IsFavouriteCharacter.self]
     ))
 
   public var characterId: GraphQLNullable<Int>
@@ -75,6 +77,8 @@ public class CharacterDetailsQuery: GraphQLQuery {
         .field("dateOfBirth", DateOfBirth?.self),
         .field("age", String?.self),
         .field("bloodType", String?.self),
+        .field("favourites", Int?.self),
+        .fragment(IsFavouriteCharacter.self),
       ] }
 
       /// The id of the character
@@ -93,6 +97,17 @@ public class CharacterDetailsQuery: GraphQLQuery {
       public var age: String? { __data["age"] }
       /// The characters blood type
       public var bloodType: String? { __data["bloodType"] }
+      /// The amount of user's who have favourited the character
+      public var favourites: Int? { __data["favourites"] }
+      /// If the character is marked as favourite by the currently authenticated user
+      public var isFavourite: Bool { __data["isFavourite"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var isFavouriteCharacter: IsFavouriteCharacter { _toFragment() }
+      }
 
       /// Character.Name
       ///

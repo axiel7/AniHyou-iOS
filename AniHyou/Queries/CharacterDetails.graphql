@@ -17,5 +17,13 @@ query CharacterDetails($characterId: Int) {
     }
     age
     bloodType
+    ...IsFavouriteCharacter
+    favourites
   }
+}
+
+fragment IsFavouriteCharacter on Character
+@apollo_client_ios_localCacheMutation {
+  id
+  isFavourite
 }

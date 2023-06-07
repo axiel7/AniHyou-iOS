@@ -40,6 +40,7 @@ query MediaDetails($mediaId: Int) {
       }
     }
     favourites
+    ...IsFavouriteMedia
     type
     nextAiringEpisode {
       timeUntilAiring
@@ -79,6 +80,12 @@ query MediaDetails($mediaId: Int) {
       isMediaSpoiler
     }
   }
+}
+
+fragment IsFavouriteMedia on Media
+@apollo_client_ios_localCacheMutation {
+  id
+  isFavourite
 }
 
 fragment FuzzyDateFragment on FuzzyDate {
