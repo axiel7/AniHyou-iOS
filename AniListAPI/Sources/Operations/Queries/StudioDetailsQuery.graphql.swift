@@ -14,7 +14,7 @@ public class StudioDetailsQuery: GraphQLQuery {
           id
           name
           favourites
-          isFavourite
+          ...IsFavouriteStudio
           media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) {
             __typename
             nodes {
@@ -36,7 +36,8 @@ public class StudioDetailsQuery: GraphQLQuery {
           }
         }
       }
-      """#
+      """#,
+      fragments: [IsFavouriteStudio.self]
     ))
 
   public var studioId: GraphQLNullable<Int>
@@ -84,13 +85,13 @@ public class StudioDetailsQuery: GraphQLQuery {
         .field("id", Int.self),
         .field("name", String.self),
         .field("favourites", Int?.self),
-        .field("isFavourite", Bool.self),
         .field("media", Media?.self, arguments: [
           "isMain": true,
           "page": .variable("page"),
           "perPage": .variable("perPage"),
           "sort": ["START_DATE_DESC"]
         ]),
+        .fragment(IsFavouriteStudio.self),
       ] }
 
       /// The id of the studio
@@ -99,10 +100,17 @@ public class StudioDetailsQuery: GraphQLQuery {
       public var name: String { __data["name"] }
       /// The amount of user's who have favourited the studio
       public var favourites: Int? { __data["favourites"] }
-      /// If the studio is marked as favourite by the currently authenticated user
-      public var isFavourite: Bool { __data["isFavourite"] }
       /// The media the studio has worked on
       public var media: Media? { __data["media"] }
+      /// If the studio is marked as favourite by the currently authenticated user
+      public var isFavourite: Bool { __data["isFavourite"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var isFavouriteStudio: IsFavouriteStudio { _toFragment() }
+      }
 
       /// Studio.Media
       ///

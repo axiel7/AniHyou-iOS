@@ -10,8 +10,7 @@ import AniListAPI
 
 class StudioDetailsViewModel: ObservableObject {
     
-    @Published var studioName: String?
-    @Published var studioFavorites: Int?
+    @Published var studio: StudioDetailsQuery.Data.Studio?
     @Published var studioMedia = [StudioDetailsQuery.Data.Studio.Media.Node?]()
     var currentPage = 1
     var hasNextPage = true
@@ -21,8 +20,7 @@ class StudioDetailsViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let studio = graphQLResult.data?.studio {
-                    if self?.studioName == nil { self?.studioName = studio.name }
-                    if self?.studioFavorites == nil { self?.studioFavorites = studio.favourites }
+                    self?.studio = studio
                     if let mediaItems = studio.media?.nodes {
                         self?.studioMedia.append(contentsOf: mediaItems)
                         self?.currentPage += 1
@@ -31,8 +29,38 @@ class StudioDetailsViewModel: ObservableObject {
                 }
             case.failure(let error):
                 print(error)
-            
             }
         }
+    }
+    
+    func toggleFavorite() {
+        guard studio != nil else { return }
+        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: .none, mangaId: .none, characterId: .none, staffId: .none, studioId: .some(studio!.id))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if graphQLResult.data != nil {
+                    self?.onFavoriteToggled()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+        
+    func onFavoriteToggled() {
+        guard let studioId = studio?.id else { return }
+        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+            do {
+                try transaction.updateObject(ofType: IsFavouriteStudio.self, withKey: "Studio:\(studioId)") { (cachedData: inout IsFavouriteStudio) in
+                    cachedData.isFavourite = !cachedData.isFavourite
+                }
+                let newObject = try transaction.readObject(ofType: StudioDetailsQuery.Data.Studio.self, withKey: "Studio:\(studioId)")
+                DispatchQueue.main.async {
+                    self?.studio = newObject
+                }
+            } catch {
+                print(error)
+            }
+        })
     }
 }
