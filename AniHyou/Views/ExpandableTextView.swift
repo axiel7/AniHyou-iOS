@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExpandableTextView: View {
     
-    @State private var expanded: Bool = false
+    @State private var isExpanded = false
     var lineLimit: Int? = 3
     var fontSize: CGFloat = 16
     
@@ -24,11 +24,15 @@ struct ExpandableTextView: View {
     var body: some View {
         VStack(alignment: .trailing, spacing: 10) {
             Text(styledText)
-                .lineLimit(self.expanded ? nil : lineLimit)
+                .lineLimit(isExpanded ? nil : lineLimit)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(action: { self.expanded.toggle() }) {
-                Text(self.expanded ? "Show less" : "Show more")
+            Button(action: {
+                withAnimation {
+                    isExpanded.toggle()
+                }
+            }) {
+                Text(isExpanded ? "Show less" : "Show more")
                     .font(.footnote)
             }
         }
