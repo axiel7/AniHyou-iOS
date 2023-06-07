@@ -32,7 +32,7 @@ class MediaDetailsViewModel: ObservableObject {
         Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: animeId, mangaId: mangaId, characterId: .none, staffId: .none, studioId: .none)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
-                if let data = graphQLResult.data {
+                if graphQLResult.data != nil {
                     self?.onFavoriteToggled()
                 }
             case .failure(let error):
