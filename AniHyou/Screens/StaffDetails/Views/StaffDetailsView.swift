@@ -65,6 +65,7 @@ struct StaffDetailsView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
+                        HInfoView(name: "Favorites", value: (viewModel.staff!.favourites ?? 0).formatted())
                         HInfoView(name: "Birth", value: viewModel.staff!.dateOfBirth?.fragments.fuzzyDateFragment.formatted())
                         if viewModel.staff!.dateOfDeath?.year != nil {
                             HInfoView(name: "Death", value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDateFragment.formatted())
