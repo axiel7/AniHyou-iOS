@@ -52,7 +52,7 @@ struct Provider: TimelineProvider {
                     })
                     tempList.removeAll(where: { item in item?.media?.status != .releasing })
                     
-                    var maxItems = 6
+                    var maxItems = 7
                     if context.family == .systemMedium {
                         maxItems = 3
                     }
@@ -88,50 +88,79 @@ struct SimpleEntry: TimelineEntry {
 
 struct AniHyou_WidgetEntryView : View {
     var entry: Provider.Entry
+    
+    var aligment: Alignment {
+        if entry.placeholderText != nil {
+            return .center
+        } else {
+            if entry.widgetFamily == .systemMedium {
+                return .center
+            } else {
+                return .top
+            }
+        }
+    }
+    var paddingLenght: CGFloat? {
+        if aligment == .top { return nil }
+        else { return 0 }
+    }
 
     var body: some View {
-        ZStack {
-            Color("WidgetBackground")
-                .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 0) {
-                if entry.placeholderText != nil {
-                    Text(entry.placeholderText!)
-                }
-                else if entry.animeList.isEmpty {
-                    Text("No airing animes")
-                }
-                else {
-                    ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
-                        if item != nil {
-                            if let nextAiringEpisode = item!.media?.nextAiringEpisode {
-                                Link(destination: URL(string: "anihyou://media/\(item!.mediaId)")!) {
-                                    Text(item!.media?.title?.userPreferred ?? "")
-                                        .font(.system(size: 14))
-                                        .lineLimit(1)
-                                        .padding(.horizontal)
-                                        .frame(width: entry.widgetSize.width, alignment: .leading)
-                                    
-                                    Text("Ep \(nextAiringEpisode.episode) airing on \(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)).formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated).hour().minute()))")
-                                        .font(.system(size: 12))
-                                        .lineLimit(1)
-                                        .foregroundColor(.accentColor)
-                                        .padding(.horizontal)
-                                        .frame(width: entry.widgetSize.width, alignment: .leading)
-                                    
-                                    if (index + 1) < entry.animeList.count {
-                                        Divider()
-                                            .padding(.leading)
-                                            .padding(.vertical, 8)
-                                    }
-                                }//:Link
+        if #available(iOS 17.0, *) {
+            VStack(alignment: .leading) {
+                content
+            }//:VStack
+            .containerBackground(.background, for: .widget)
+            .padding(.vertical, paddingLenght)
+            .frame(height: entry.widgetSize.height, alignment: aligment)
+        } else {
+            ZStack {
+                Color("WidgetBackground")
+                    .ignoresSafeArea()
+                VStack(alignment: .leading) {
+                    content
+                }//:VStack
+                .padding(.vertical, paddingLenght)
+                .frame(height: entry.widgetSize.height, alignment: aligment)
+            }//:ZStack
+        }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        if entry.placeholderText != nil {
+            Text(entry.placeholderText!)
+        }
+        else if entry.animeList.isEmpty {
+            Text("No airing animes")
+        }
+        else {
+            ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
+                if item != nil {
+                    if let nextAiringEpisode = item!.media?.nextAiringEpisode {
+                        Link(destination: URL(string: "anihyou://media/\(item!.mediaId)")!) {
+                            Text(item!.media?.title?.userPreferred ?? "")
+                                .font(.system(size: 14))
+                                .lineLimit(1)
+                                .padding(.horizontal)
+                                .frame(width: entry.widgetSize.width, alignment: .leading)
+                            
+                            Text("Ep \(nextAiringEpisode.episode) airing on \(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)).formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated).hour().minute()))")
+                                .font(.system(size: 12))
+                                .lineLimit(1)
+                                .foregroundColor(.accentColor)
+                                .padding(.horizontal)
+                                .frame(width: entry.widgetSize.width, alignment: .leading)
+                            
+                            if (index + 1) < entry.animeList.count {
+                                Divider()
+                                    .padding(.leading)
                             }
-                        }
+                        }//:Link
                     }
                 }
-            }//:VStack
-            .padding(.vertical)
-            .frame(height: entry.widgetSize.height, alignment: entry.placeholderText == nil ? .top : .center)
-        }//:ZStack
+            }
+        }
     }
 }
 
