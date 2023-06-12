@@ -11,13 +11,16 @@ import ApolloAPI
 import KeychainSwift
 
 class TokenAddingInterceptor: ApolloInterceptor {
+    
+    static var token = KeychainSwift().get(USER_TOKEN_KEY)
+    
     func interceptAsync<Operation: GraphQLOperation>(
         chain: RequestChain,
         request: HTTPRequest<Operation>,
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
 
-            if let token = KeychainSwift().get(USER_TOKEN_KEY) {
+            if let token = TokenAddingInterceptor.token {
                 request.addHeader(name: "Authorization", value: "Bearer \(token)")
             }
             
