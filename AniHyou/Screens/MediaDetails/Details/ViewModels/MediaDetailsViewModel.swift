@@ -27,8 +27,20 @@ class MediaDetailsViewModel: ObservableObject {
     
     func toggleFavorite() {
         guard mediaDetails != nil else { return }
-        let animeId: GraphQLNullable<Int> = if mediaDetails!.type == .anime { .some(mediaDetails!.id) } else { .none }
-        let mangaId: GraphQLNullable<Int> = if mediaDetails!.type == .manga { .some(mediaDetails!.id) } else { .none }
+        var animeId: GraphQLNullable<Int> {
+            if mediaDetails!.type == .anime {
+                return .some(mediaDetails!.id)
+            } else {
+                return .none
+            }
+        }
+        var mangaId: GraphQLNullable<Int> {
+            if mediaDetails!.type == .manga {
+                return .some(mediaDetails!.id)
+            } else {
+                return .none
+            }
+        }
         Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: animeId, mangaId: mangaId, characterId: .none, staffId: .none, studioId: .none)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
