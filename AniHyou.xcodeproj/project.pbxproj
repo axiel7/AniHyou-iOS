@@ -662,6 +662,7 @@
 				488C267828537B5F0005EE15 /* StringUtils.swift */,
 				4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */,
 				480A41A428ECA1A30066288D /* ModelUtils.swift */,
+				48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1752,7 +1753,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "AniHyou WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = SGU98T456G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AniHyou Widget/Info.plist";
@@ -1764,7 +1765,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1782,7 +1783,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "AniHyou WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = SGU98T456G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AniHyou Widget/Info.plist";
@@ -1794,7 +1795,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
