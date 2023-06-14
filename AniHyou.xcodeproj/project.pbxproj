@@ -81,6 +81,9 @@
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
 		4892DDEE2A2DE0B8009AFB63 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */; };
+		48A1A8F32A39861C00ACC6FF /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */; };
+		48A1A8F42A39861C00ACC6FF /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */; };
+		48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */; };
 		48A29C582972B00700BF53B8 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
 		48A29C5A2972B9EB00BF53B8 /* MediaListItemMinimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */; };
 		48AAEEA22A29E08800FC0887 /* StaffInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAEEA12A29E08800FC0887 /* StaffInfoType.swift */; };
@@ -305,6 +308,7 @@
 		489C7E8D2918FF02004B0B39 /* StaffDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = StaffDetails.graphql; sourceTree = "<group>"; };
 		489C7E8F2918FF98004B0B39 /* StudioDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = StudioDetails.graphql; sourceTree = "<group>"; };
 		489C7E91291900C7004B0B39 /* UserBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserBasicInfo.graphql; sourceTree = "<group>"; };
+		48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
 		48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemMinimalView.swift; sourceTree = "<group>"; };
 		48AAEE952A29DE6800FC0887 /* StaffMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaffMedia.graphql; sourceTree = "<group>"; };
 		48AAEE972A29DE7600FC0887 /* StaffCharacter.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaffCharacter.graphql; sourceTree = "<group>"; };
@@ -1384,6 +1388,7 @@
 				48DBAF8129B0796F00A75167 /* UserStatsHostView.swift in Sources */,
 				481AD4E02851CE73001779EE /* ContentView.swift in Sources */,
 				4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */,
+				48A1A8F32A39861C00ACC6FF /* KeychainUtils.swift in Sources */,
 				48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */,
 				48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */,
 				4851578B28A4060C007923A6 /* ThreadCommentItemView.swift in Sources */,
@@ -1509,6 +1514,7 @@
 				48EFCDEC29FFB09D0096BF6E /* Network.swift in Sources */,
 				48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */,
 				48EFCDDE29FFAD200096BF6E /* AniHyou_Widget.swift in Sources */,
+				48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */,
 				48EFCDF529FFE70A0096BF6E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1528,6 +1534,7 @@
 				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,
 				48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */,
+				48A1A8F42A39861C00ACC6FF /* KeychainUtils.swift in Sources */,
 				48F27935297029A3000827F7 /* NetworkInterceptorProvider.swift in Sources */,
 				48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */,
 				48F2793A29703E96000827F7 /* ModelUtils.swift in Sources */,

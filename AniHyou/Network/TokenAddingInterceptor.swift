@@ -12,7 +12,7 @@ import KeychainSwift
 
 class TokenAddingInterceptor: ApolloInterceptor {
     
-    static var token = KeychainSwift().get(USER_TOKEN_KEY)
+    static var token = KeychainUtils.keychain.get(USER_TOKEN_KEY)
     
     func interceptAsync<Operation: GraphQLOperation>(
         chain: RequestChain,

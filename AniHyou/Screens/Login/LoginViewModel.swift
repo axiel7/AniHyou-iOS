@@ -51,7 +51,7 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
            let expirationDate = queryItems.filter ({ $0.name == "expires_in" }).first?.value {
             //save token in the keychain
             TokenAddingInterceptor.token = token
-            KeychainSwift().set(token, forKey: USER_TOKEN_KEY)
+            KeychainUtils.keychain.set(token, forKey: USER_TOKEN_KEY)
             //send token to apple watch
             WatchConnectivityManager.shared.send(key: USER_TOKEN_KEY, data: token)
             //save other data to userdefaults
