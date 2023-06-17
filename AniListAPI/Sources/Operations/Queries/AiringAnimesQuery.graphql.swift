@@ -17,9 +17,10 @@ public class AiringAnimesQuery: GraphQLQuery {
             airingAt_lesser: $airingAtLesser
           ) {
             __typename
+            id
+            mediaId
             media {
               __typename
-              id
               title {
                 __typename
                 userPreferred
@@ -29,11 +30,18 @@ public class AiringAnimesQuery: GraphQLQuery {
                 large
               }
               meanScore
+              mediaListEntry {
+                __typename
+                status
+              }
             }
+            episode
             timeUntilAiring
+            airingAt
           }
           pageInfo {
             __typename
+            currentPage
             hasNextPage
           }
         }
@@ -115,14 +123,26 @@ public class AiringAnimesQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
+          .field("id", Int.self),
+          .field("mediaId", Int.self),
           .field("media", Media?.self),
+          .field("episode", Int.self),
           .field("timeUntilAiring", Int.self),
+          .field("airingAt", Int.self),
         ] }
 
+        /// The id of the airing schedule item
+        public var id: Int { __data["id"] }
+        /// The associate media id of the airing episode
+        public var mediaId: Int { __data["mediaId"] }
         /// The associate media of the airing episode
         public var media: Media? { __data["media"] }
+        /// The airing episode number
+        public var episode: Int { __data["episode"] }
         /// Seconds until episode starts airing
         public var timeUntilAiring: Int { __data["timeUntilAiring"] }
+        /// The time the episode airs at
+        public var airingAt: Int { __data["airingAt"] }
 
         /// Page.AiringSchedule.Media
         ///
@@ -134,20 +154,20 @@ public class AiringAnimesQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("id", Int.self),
             .field("title", Title?.self),
             .field("coverImage", CoverImage?.self),
             .field("meanScore", Int?.self),
+            .field("mediaListEntry", MediaListEntry?.self),
           ] }
 
-          /// The id of the media
-          public var id: Int { __data["id"] }
           /// The official titles of the media in various languages
           public var title: Title? { __data["title"] }
           /// The cover images of the media
           public var coverImage: CoverImage? { __data["coverImage"] }
           /// Mean score of all the user's scores of the media
           public var meanScore: Int? { __data["meanScore"] }
+          /// The authenticated user's media list entry for the media
+          public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
           /// Page.AiringSchedule.Media.Title
           ///
@@ -182,6 +202,23 @@ public class AiringAnimesQuery: GraphQLQuery {
             /// The cover image url of the media at a large size
             public var large: String? { __data["large"] }
           }
+
+          /// Page.AiringSchedule.Media.MediaListEntry
+          ///
+          /// Parent Type: `MediaList`
+          public struct MediaListEntry: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+            ] }
+
+            /// The watching/reading status
+            public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+          }
         }
       }
 
@@ -195,9 +232,12 @@ public class AiringAnimesQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
+          .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
         ] }
 
+        /// The current page
+        public var currentPage: Int? { __data["currentPage"] }
         /// If there is another page
         public var hasNextPage: Bool? { __data["hasNextPage"] }
       }

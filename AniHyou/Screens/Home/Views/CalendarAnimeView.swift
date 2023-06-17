@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CalendarAnimeView: View {
     
-    @State var weekday = Date.now.weekday
+    @State private var weekday = Date.now.weekday
+    @State private var onMylist = false
     
     var body: some View {
         VStack {
@@ -27,18 +28,35 @@ struct CalendarAnimeView: View {
             
             Spacer()
             ScrollView(.vertical) {
-                WeekAnimeListView(weekday: weekday)
+                WeekAnimeListView(weekday: weekday, onMyList: onMylist)
             }
         }
         .navigationBarTitle("Calendar")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu(content: {
+                    Button(action: { onMylist.toggle() }) {
+                        if onMylist {
+                            Label("On my list", systemImage: "checkmark")
+                        } else {
+                            Text("On my list")
+                        }
+                    }
+                }) {
+                    Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+                }
+            }
+        }
     }
 }
 
 struct WeekAnimeListView: View {
     
     var weekday: Int
+    var onMyList: Bool
     @StateObject private var viewModel = CalendarViewModel()
+    
     
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
@@ -46,9 +64,9 @@ struct WeekAnimeListView: View {
     
     var body: some View {
         LazyVGrid(columns: gridColumns) {
-            ForEach(viewModel.weeklyAnimes, id: \.?.media?.id) {
+            ForEach(viewModel.weeklyAnimes, id: \.?.mediaId) {
                 if let media = $0?.media {
-                    NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
+                    NavigationLink(destination: MediaDetailsView(mediaId: $0!.mediaId)) {
                         VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
                     }
                 }
@@ -57,12 +75,15 @@ struct WeekAnimeListView: View {
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {
-                        viewModel.getAiringAnimes(weekday: weekday)
+                        viewModel.getAiringAnimes(weekday: weekday, onMyList: onMyList)
                     }
             }
         }
         .onChange(of: weekday) { day in
-            viewModel.getAiringAnimes(weekday: day, resetPage: true)
+            viewModel.getAiringAnimes(weekday: day, onMyList: onMyList, resetPage: true)
+        }
+        .onChange(of: onMyList) { onList in
+            viewModel.getAiringAnimes(weekday: weekday, onMyList: onList, resetPage: true)
         }
     }
 }
