@@ -38,6 +38,23 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    @Published var airingOnMyList = [AiringOnMyListQuery.Data.Page.Medium?]()
+    
+    func getAiringOnMyList() {
+        Network.shared.apollo.fetch(query: AiringOnMyListQuery(page: .some(1), perPage: .some(25))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let page = graphQLResult.data?.page {
+                    if let media = page.media {
+                        self?.airingOnMyList = media.filter({ $0?.nextAiringEpisode != nil }).sorted(by: { it1, it2 in it1!.nextAiringEpisode!.timeUntilAiring < it2!.nextAiringEpisode!.timeUntilAiring })
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     // MARK: Season animes
     @Published var seasonAnimes = [SeasonalAnimeQuery.Data.Page.Medium?]()
     

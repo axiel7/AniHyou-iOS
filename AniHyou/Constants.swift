@@ -32,6 +32,8 @@ let USER_NAMES_LANG_KEY = "user_names_lang"
 let SELECTED_TAB_KEY = "selected_tab_index"
 let LIST_STYLE_KEY = "list_style"
 
+let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
+
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"

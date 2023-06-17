@@ -17,7 +17,7 @@ struct HomeView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(alignment: .leading) {
                     
-                    airingSoon
+                    airingNext
                     
                     thisSeason
                     
@@ -47,9 +47,11 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    var airingSoon: some View {
+    var airingNext: some View {
+        @AppStorage(AIRING_ON_MY_LIST_KEY) var airingOnMyList = false
+        
         HStack(alignment: .center) {
-            Text("Airing Soon")
+            Text("Airing Next")
                 .font(.title2)
                 .bold()
             Spacer()
@@ -58,7 +60,7 @@ struct HomeView: View {
         .padding(.horizontal)
         .padding(.top, 8)
         ZStack {
-            if viewModel.airingAnimes.count == 0 {
+            if viewModel.airingAnimes.count == 0 || (airingOnMyList && viewModel.airingOnMyList.count == 0) {
                 Text("No anime for today\n(*´-`)")
                     .multilineTextAlignment(.center)
                     .frame(alignment: .center)
@@ -66,12 +68,24 @@ struct HomeView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
-                    ForEach(viewModel.airingAnimes, id: \.?.mediaId) {
-                        if let item = $0 {
-                            NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                                HListItemWithSubtitleView(title: item.media?.title?.userPreferred, subtitle: "Airing in \(item.timeUntilAiring.secondsToLegibleText())", imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore)
-                                    .padding(.leading, 8)
-                                    .frame(width: 280, alignment: .leading)
+                    if airingOnMyList {
+                        ForEach(viewModel.airingOnMyList, id: \.?.id) {
+                            if let item = $0 {
+                                NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                    HListItemWithSubtitleView(title: item.title?.userPreferred, subtitle: "Airing in \(item.nextAiringEpisode?.timeUntilAiring.secondsToLegibleText() ?? UNKNOWN_CHAR)", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                        .padding(.leading, 8)
+                                        .frame(width: 280, alignment: .leading)
+                                }
+                            }
+                        }
+                    } else {
+                        ForEach(viewModel.airingAnimes, id: \.?.mediaId) {
+                            if let item = $0 {
+                                NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
+                                    HListItemWithSubtitleView(title: item.media?.title?.userPreferred, subtitle: "Airing in \(item.timeUntilAiring.secondsToLegibleText())", imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore)
+                                        .padding(.leading, 8)
+                                        .frame(width: 280, alignment: .leading)
+                                }
                             }
                         }
                     }
@@ -80,7 +94,11 @@ struct HomeView: View {
             }//:HScrollView
             .frame(height: 145)
             .onAppear {
-                viewModel.getAiringAnimes()
+                if airingOnMyList {
+                    viewModel.getAiringOnMyList()
+                } else {
+                    viewModel.getAiringAnimes()
+                }
             }
         }//:ZStack
         Divider()

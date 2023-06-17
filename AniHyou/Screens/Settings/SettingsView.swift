@@ -15,6 +15,7 @@ struct SettingsView: View {
     @State private var showLogOutDialog = false
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
+    @AppStorage(AIRING_ON_MY_LIST_KEY) var airingOnMyList = false
     
     var body: some View {
         Form {
@@ -26,6 +27,12 @@ struct SettingsView: View {
                 }
             } header: {
                 Text("Display")
+            }
+            
+            Section {
+                Toggle("Airing on my list", isOn: $airingOnMyList)
+            } footer: {
+                Text("Show only airing soon anime that are in your list")
             }
             
             Section {
