@@ -36,12 +36,15 @@ struct ThreadDetailsView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        HStack(alignment: .center) {
-                            CircleImageView(imageUrl: thread.user?.avatar?.medium, size: 24)
-                            Text(thread.user?.name ?? "")
-                                .lineLimit(1)
-                                .foregroundColor(.primary)
+                        NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
+                            HStack(alignment: .center) {
+                                CircleImageView(imageUrl: thread.user?.avatar?.medium, size: 24)
+                                Text(thread.user?.name ?? "")
+                                    .lineLimit(1)
+                                    .foregroundColor(.primary)
+                            }
                         }
+                        .buttonStyle(.plain)
                         Spacer()
                         Label("\(thread.likeCount)", systemImage: "heart")
                     }

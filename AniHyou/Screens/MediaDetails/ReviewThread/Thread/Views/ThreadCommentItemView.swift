@@ -15,13 +15,17 @@ struct ThreadCommentItemView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                HStack(alignment: .center) {
-                    CircleImageView(imageUrl: comment.user?.avatar?.medium, size: 24)
-                    Text(comment.user?.name ?? "Loading")
-                        .bold()
-                        .font(.subheadline)
-                        .padding(.bottom, 1)
+                NavigationLink(destination: ProfileView(userId: comment.user!.id)) {
+                    HStack(alignment: .center) {
+                        CircleImageView(imageUrl: comment.user?.avatar?.medium, size: 24)
+                        
+                        Text(comment.user?.name ?? "Loading")
+                            .bold()
+                            .font(.subheadline)
+                            .padding(.bottom, 1)
+                    }
                 }
+                .buttonStyle(.plain)
                 Spacer()
                 Text(comment.createdAt.timestampToDateString())
                     .font(.footnote)
