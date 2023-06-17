@@ -36,6 +36,7 @@ struct ContentView: View {
                         .foregroundColor(.accentColor)
                     Text("Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch")
                         .multilineTextAlignment(.center)
+                        .font(.system(size: 15))
                 }
                 .padding()
             }
@@ -44,6 +45,16 @@ struct ContentView: View {
             if !message.isEmpty {
                 Task.init {
                     await viewModel.saveUserData(key: connectivityManager.key, value: message)
+                }
+            }
+        }
+        .onAppear {
+            if userId() == 0 {
+                viewModel.justLoggedIn = false
+                if let token = KeychainUtils.keychain.get(USER_TOKEN_KEY) {
+                    if !token.isEmpty {
+                        viewModel.getUserId()
+                    }
                 }
             }
         }

@@ -7,6 +7,7 @@
 
 import Foundation
 import KeychainSwift
+import AniListAPI
 
 class MainViewModel: ObservableObject {
     
@@ -15,15 +16,26 @@ class MainViewModel: ObservableObject {
     func saveUserData(key: String, value: String) async {
         switch key {
         case USER_TOKEN_KEY:
-            KeychainSwift().set(value, forKey: USER_TOKEN_KEY)
-            UserDefaults.standard.set(true, forKey: "is_logged_in")
-        case USER_ID_KEY:
-            let id = Int(value)
-            saveUserId(id: id ?? 0)
-            justLoggedIn = id != nil
-            break
+            TokenAddingInterceptor.token = value
+            KeychainUtils.keychain.set(value, forKey: USER_TOKEN_KEY)
+            getUserId()
         default:
             return
+        }
+    }
+    
+    func getUserId() {
+        Network.shared.apollo.fetch(query: ViewerIdQuery()) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let viewer = graphQLResult.data?.viewer {
+                    saveUserId(id: viewer.id)
+                    self?.justLoggedIn = true
+                    UserDefaults.standard.set(true, forKey: "is_logged_in")
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ struct UpdateMediaEntryView: View {
                     Text("\(entry!.progress ?? 0)/\(entry!.totalProgress ?? 0)")
 
                     Button(action: {
-                        viewModel.updateEntryProgress(entryId: entry!.id, progress: entry!.progress ?? 0 + 1)
+                        viewModel.updateEntryProgress(entryId: entry!.id, progress: (entry!.progress ?? 0) + 1)
                     }) {
                         if viewModel.isLoading {
                             ProgressView()
@@ -39,7 +39,6 @@ struct UpdateMediaEntryView: View {
                 Text("Error no entry")
             }
         }
-        .navigationTitle("Back")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

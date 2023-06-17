@@ -16,7 +16,7 @@ class CalendarViewModel: ObservableObject {
     var currentPage = 1
     var hasNextPage = true
     
-    func getAiringAnimes(weekday: Int, resetPage: Bool = false) {
+    func getAiringAnimes(weekday: Int, onMyList: Bool, resetPage: Bool = false) {
         if resetPage { currentPage = 1 }
         
         let weekdayStartTimestamp = now.getThisWeekdayTimestamp(weekday: weekday, isEndOfDay: false)
@@ -27,10 +27,14 @@ class CalendarViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let schedules = page.airingSchedules {
+                        var animes = schedules
+                        if onMyList {
+                            animes = schedules.filter({ $0?.media?.mediaListEntry != nil })
+                        }
                         if resetPage {
-                            self?.weeklyAnimes = schedules
+                            self?.weeklyAnimes = animes
                         } else {
-                            self?.weeklyAnimes.append(contentsOf: schedules)
+                            self?.weeklyAnimes.append(contentsOf: animes)
                         }
                         self?.currentPage += 1
                         self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
