@@ -19,7 +19,12 @@ public class ThreadCommentsQuery: GraphQLQuery {
             createdAt
             user {
               __typename
+              id
               name
+              avatar {
+                __typename
+                medium
+              }
             }
           }
           pageInfo {
@@ -122,11 +127,34 @@ public class ThreadCommentsQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
+            .field("id", Int.self),
             .field("name", String.self),
+            .field("avatar", Avatar?.self),
           ] }
 
+          /// The id of the user
+          public var id: Int { __data["id"] }
           /// The name of the user
           public var name: String { __data["name"] }
+          /// The user's avatar images
+          public var avatar: Avatar? { __data["avatar"] }
+
+          /// Page.ThreadComment.User.Avatar
+          ///
+          /// Parent Type: `UserAvatar`
+          public struct Avatar: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("medium", String?.self),
+            ] }
+
+            /// The avatar of user at medium size
+            public var medium: String? { __data["medium"] }
+          }
         }
       }
 

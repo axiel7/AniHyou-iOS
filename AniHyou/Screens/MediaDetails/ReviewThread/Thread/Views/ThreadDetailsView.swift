@@ -36,11 +36,14 @@ struct ThreadDetailsView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        Label("\(thread.likeCount)", systemImage: "heart")
+                        HStack(alignment: .center) {
+                            CircleImageView(imageUrl: thread.user?.avatar?.medium, size: 24)
+                            Text(thread.user?.name ?? "")
+                                .lineLimit(1)
+                                .foregroundColor(.primary)
+                        }
                         Spacer()
-                        Text(thread.user?.name ?? "")
-                            .lineLimit(1)
-                            .foregroundColor(.primary)
+                        Label("\(thread.likeCount)", systemImage: "heart")
                     }
                     .padding(.horizontal)
                 }//:VStack

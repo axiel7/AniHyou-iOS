@@ -9,7 +9,11 @@ query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [Thr
       likeCount
       createdAt
       user {
+        id
         name
+        avatar {
+          medium
+        }
       }
     }
   }

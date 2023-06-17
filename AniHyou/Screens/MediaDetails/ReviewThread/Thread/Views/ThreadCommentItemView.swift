@@ -15,10 +15,13 @@ struct ThreadCommentItemView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(comment.user?.name ?? "ALargeUsername")
-                    .bold()
-                    .font(.subheadline)
-                    .padding(.bottom, 1)
+                HStack(alignment: .center) {
+                    CircleImageView(imageUrl: comment.user?.avatar?.medium, size: 24)
+                    Text(comment.user?.name ?? "Loading")
+                        .bold()
+                        .font(.subheadline)
+                        .padding(.bottom, 1)
+                }
                 Spacer()
                 Text(comment.createdAt.timestampToDateString())
                     .font(.footnote)
@@ -26,12 +29,14 @@ struct ThreadCommentItemView: View {
                     .padding(.bottom, 1)
             }
             
-            Text(.init(comment.comment ?? "Hello"))
+            Text(.init(comment.comment ?? "Loading"))
                 .font(.subheadline)
                 .padding(.bottom, 4)
             
-            Label("\(comment.likeCount)", systemImage: "heart")
-                .font(.system(size: 14))
+            HStack {
+                Spacer()
+                Label("\(comment.likeCount)", systemImage: "heart")
+            }
         }
         .padding(.leading)
         .padding(.trailing)
