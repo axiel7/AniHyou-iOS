@@ -60,7 +60,7 @@ struct HomeView: View {
         .padding(.horizontal)
         .padding(.top, 8)
         ZStack {
-            if viewModel.airingAnimes.count == 0 || (airingOnMyList && viewModel.airingOnMyList.count == 0) {
+            if viewModel.airingAnimes.count == 0 && viewModel.airingOnMyList.count == 0 {
                 Text("No anime for today\n(*´-`)")
                     .multilineTextAlignment(.center)
                     .frame(alignment: .center)
