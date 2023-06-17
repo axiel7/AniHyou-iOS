@@ -12,12 +12,14 @@ public class ReviewDetailsQuery: GraphQLQuery {
         Review(id: $reviewId) {
           __typename
           id
+          summary
           body(asHtml: true)
           score
           rating
           ratingAmount
           user {
             __typename
+            id
             name
             avatar {
               __typename
@@ -60,6 +62,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", Int.self),
+        .field("summary", String?.self),
         .field("body", String?.self, arguments: ["asHtml": true]),
         .field("score", Int?.self),
         .field("rating", Int?.self),
@@ -69,6 +72,8 @@ public class ReviewDetailsQuery: GraphQLQuery {
 
       /// The id of the review
       public var id: Int { __data["id"] }
+      /// A short summary of the review
+      public var summary: String? { __data["summary"] }
       /// The main review body text
       public var body: String? { __data["body"] }
       /// The review score of the media
@@ -90,10 +95,13 @@ public class ReviewDetailsQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
+          .field("id", Int.self),
           .field("name", String.self),
           .field("avatar", Avatar?.self),
         ] }
 
+        /// The id of the user
+        public var id: Int { __data["id"] }
         /// The name of the user
         public var name: String { __data["name"] }
         /// The user's avatar images
