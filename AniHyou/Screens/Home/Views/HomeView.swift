@@ -34,13 +34,13 @@ struct HomeView: View {
                     Button(action: { showNotificationsSheet = true }) {
                         Label("Notifications", systemImage: viewModel.notificationCount > 0 ? "bell.badge" : "bell")
                     }
-                    .sheet(isPresented: $showNotificationsSheet) {
-                        NotificationsView()
-                    }
                     .onAppear {
                         viewModel.getNotificationCount()
                     }
                 }
+            }
+            .sheet(isPresented: $showNotificationsSheet) {
+                NotificationsView()
             }
         }//:NavigationView
         .navigationViewStyle(.stack)
