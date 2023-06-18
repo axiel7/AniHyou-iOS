@@ -8,10 +8,10 @@ public class NotificationsQuery: GraphQLQuery {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      query Notifications($page: Int, $perPage: Int) {
+      query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) {
         Page(page: $page, perPage: $perPage) {
           __typename
-          notifications(resetNotificationCount: true) {
+          notifications(resetNotificationCount: true, type_in: $typeIn) {
             __typename
             ... on AiringNotification {
               id
@@ -299,18 +299,22 @@ public class NotificationsQuery: GraphQLQuery {
 
   public var page: GraphQLNullable<Int>
   public var perPage: GraphQLNullable<Int>
+  public var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>
 
   public init(
     page: GraphQLNullable<Int>,
-    perPage: GraphQLNullable<Int>
+    perPage: GraphQLNullable<Int>,
+    typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>
   ) {
     self.page = page
     self.perPage = perPage
+    self.typeIn = typeIn
   }
 
   public var __variables: Variables? { [
     "page": page,
-    "perPage": perPage
+    "perPage": perPage,
+    "typeIn": typeIn
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -337,7 +341,10 @@ public class NotificationsQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("notifications", [Notification?]?.self, arguments: ["resetNotificationCount": true]),
+        .field("notifications", [Notification?]?.self, arguments: [
+          "resetNotificationCount": true,
+          "type_in": .variable("typeIn")
+        ]),
         .field("pageInfo", PageInfo?.self),
       ] }
 

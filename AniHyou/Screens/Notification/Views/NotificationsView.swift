@@ -17,6 +17,13 @@ struct NotificationsView: View {
             Group {
                 if isLoggedIn() {
                     List {
+                        Picker("Filter", selection: $viewModel.type) {
+                            ForEach(NotificationTypeGrouped.allCases, id: \.self) { type in
+                                Text(type.localizedName)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        
                         ForEach(viewModel.notifications) { notification in
                             NotificationItemView(notification: notification)
                         }
@@ -27,6 +34,9 @@ struct NotificationsView: View {
                                     viewModel.getNotifications()
                                 }
                         }
+                    }
+                    .onChange(of: viewModel.type) { _ in
+                        viewModel.resetPage()
                     }
                 } else {
                     NotLoggedView(onSuccessLogin: { dismiss() })
