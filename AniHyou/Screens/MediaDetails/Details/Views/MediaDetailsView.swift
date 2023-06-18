@@ -102,14 +102,22 @@ struct MediaDetailsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 if !hasScrolled {
-                    CircleBackButton(dismiss: dismiss)
-                        .transition(.slide)
+                    ToolbarIconButton(symbolSystemName: "chevron.left") {
+                        dismiss()
+                    }
+                    .transition(.slide)
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 if viewModel.mediaDetails != nil {
-                    Button(action: { viewModel.toggleFavorite() }) {
-                        Image(systemName: viewModel.mediaDetails!.isFavourite ? "heart.fill" : "heart")
+                    if !hasScrolled {
+                        ToolbarIconButton(symbolSystemName: viewModel.mediaDetails!.isFavourite ? "heart.fill" : "heart") {
+                            viewModel.toggleFavorite()
+                        }
+                    } else {
+                        Button(action: { viewModel.toggleFavorite() }) {
+                            Image(systemName: viewModel.mediaDetails!.isFavourite ? "heart.fill" : "heart")
+                        }
                     }
                 }
             }
@@ -118,25 +126,6 @@ struct MediaDetailsView: View {
             DispatchQueue.main.async {
                 attributedSynopsis = details?.description?.htmlToAttributedString() ?? NSAttributedString(string: "No description")
             }
-        }
-    }
-}
-
-struct CircleBackButton: View {
-    
-    let dismiss: DismissAction
-    
-    var body: some View {
-        Button {
-            dismiss()
-        } label: {
-            Image(systemName: "chevron.left")
-                .foregroundColor(.black)
-                .foregroundStyle(.thickMaterial)
-                .font(.system(size: 15, weight: .semibold))
-                .padding(8)
-                .background(.regularMaterial, in: Circle())
-                .environment(\.colorScheme, .light)
         }
     }
 }

@@ -59,8 +59,10 @@ public class ViewerQuery: GraphQLQuery {
       public var options: UserInfo.Options? { __data["options"] }
       /// The user's media list options
       public var mediaListOptions: UserInfo.MediaListOptions? { __data["mediaListOptions"] }
-      /// The number of unread notifications the user has
-      public var unreadNotificationCount: Int? { __data["unreadNotificationCount"] }
+      /// If the authenticated user if following this user
+      public var isFollowing: Bool? { __data["isFollowing"] }
+      /// If this user if following the authenticated user
+      public var isFollower: Bool? { __data["isFollower"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict

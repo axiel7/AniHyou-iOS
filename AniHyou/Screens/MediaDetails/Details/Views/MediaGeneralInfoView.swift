@@ -50,39 +50,42 @@ struct MediaGeneralInfoView: View {
                 }
             }
             
-            Group {
-                if let mediaTags = viewModel.mediaDetails?.tags {
-                    HStack {
-                        Text("Tags")
-                            .font(.title3)
-                            .bold()
-                            .padding(.horizontal)
-                        Spacer()
-                        Button(action: {
-                            withAnimation {
-                                showSpoilerTags.toggle()
-                            }
-                        }) {
-                            Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
-                                .font(.footnote)
-                        }
-                        .padding(.horizontal)
-                    }
-                    .padding(.top)
-                    
-                    VFlow(alignment: .leading) {
-                        ForEach(mediaTags, id: \.?.id) {
-                            if let tag = $0 {
-                                MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom)
-                }
-            }
+            tags
             
             multimediaContent
+        }
+    }
+    
+    @ViewBuilder
+    var tags: some View {
+        if let mediaTags = viewModel.mediaDetails?.tags {
+            HStack {
+                Text("Tags")
+                    .font(.title3)
+                    .bold()
+                    .padding(.horizontal)
+                Spacer()
+                Button(action: {
+                    withAnimation {
+                        showSpoilerTags.toggle()
+                    }
+                }) {
+                    Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
+                        .font(.footnote)
+                }
+                .padding(.horizontal)
+            }
+            .padding(.top)
+            
+            VFlow(alignment: .leading) {
+                ForEach(mediaTags, id: \.?.id) {
+                    if let tag = $0 {
+                        MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
     }
     
@@ -142,7 +145,7 @@ struct MediaGeneralInfoView: View {
             LazyVGrid(columns: linksColumns) {
                 ForEach(viewModel.streamingLinks, id: \.?.id) {
                     if let item  = $0 {
-                        Link(item.site, destination: URL(string: item.url!)!)
+                        Link(item.displayName, destination: URL(string: item.url!)!)
                             .padding(2)
                     }
                 }
@@ -158,7 +161,7 @@ struct MediaGeneralInfoView: View {
             LazyVGrid(columns: linksColumns) {
                 ForEach(viewModel.externalLinks, id: \.?.id) {
                     if let item  = $0 {
-                        Link(item.site, destination: URL(string: item.url!)!)
+                        Link(item.displayName, destination: URL(string: item.url!)!)
                             .padding(2)
                     }
                 }

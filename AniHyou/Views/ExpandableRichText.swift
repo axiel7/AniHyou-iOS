@@ -59,6 +59,7 @@ struct ExpandableRichText: View {
                     Text(isExpanded ? "Show less" : "Show more")
                         .font(.footnote)
                 }
+                .buttonStyle(.bordered)
             }
         }
     }

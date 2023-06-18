@@ -11,11 +11,16 @@ import AniListAPI
 class NotificationsViewModel: ObservableObject {
     
     @Published var notifications = [GenericNotification]()
+    @Published var type: NotificationTypeGrouped = .all
     var currentPage = 1
     var hasNextPage = true
     
     func getNotifications() {
-        Network.shared.apollo.fetch(query: NotificationsQuery(page: .some(currentPage), perPage: .some(20))) { [weak self] result in
+        var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> = .some(type.value.compactMap { GraphQLEnum($0) })
+        if type == .all {
+            typeIn = .none
+        }
+        Network.shared.apollo.fetch(query: NotificationsQuery(page: .some(currentPage), perPage: .some(20), typeIn: typeIn)) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -106,5 +111,11 @@ class NotificationsViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func resetPage() {
+        notifications.removeAll()
+        currentPage = 1
+        hasNextPage = true
     }
 }

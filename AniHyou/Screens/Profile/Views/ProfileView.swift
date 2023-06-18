@@ -129,6 +129,22 @@ struct ProfileView: View {
                         Label("Settings", systemImage: "gearshape")
                     }
                     .padding(.horizontal)
+                } else {
+                    VStack(alignment: .center) {
+                        if viewModel.userInfo?.isFollowing == true {
+                            Button("Unfollow", action: { viewModel.toggleFollow(userId: userId!) })
+                                .buttonStyle(.bordered)
+                        }
+                        else if viewModel.userInfo?.isFollowing == false {
+                            Button("Follow", action: { viewModel.toggleFollow(userId: userId!) })
+                                .buttonStyle(.borderedProminent)
+                        }
+                        if viewModel.userInfo?.isFollower == true {
+                            Text("Follows you")
+                                .font(.footnote)
+                        }
+                    }
+                    .padding(.horizontal)
                 }
             }
             .padding(.top, 85)

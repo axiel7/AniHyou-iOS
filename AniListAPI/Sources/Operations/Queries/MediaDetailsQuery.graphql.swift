@@ -83,6 +83,7 @@ public class MediaDetailsQuery: GraphQLQuery {
             url
             site
             type
+            language
           }
           trailer {
             __typename
@@ -101,6 +102,7 @@ public class MediaDetailsQuery: GraphQLQuery {
             __typename
             id
             name
+            description
             rank
             isMediaSpoiler
           }
@@ -516,6 +518,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           .field("url", String?.self),
           .field("site", String.self),
           .field("type", GraphQLEnum<AniListAPI.ExternalLinkType>?.self),
+          .field("language", String?.self),
         ] }
 
         /// The id of the external link
@@ -525,6 +528,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         /// The links website site name
         public var site: String { __data["site"] }
         public var type: GraphQLEnum<AniListAPI.ExternalLinkType>? { __data["type"] }
+        /// Language the site content is in. See Staff language field for values.
+        public var language: String? { __data["language"] }
       }
 
       /// Media.Trailer
@@ -588,6 +593,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           .field("__typename", String.self),
           .field("id", Int.self),
           .field("name", String.self),
+          .field("description", String?.self),
           .field("rank", Int?.self),
           .field("isMediaSpoiler", Bool?.self),
         ] }
@@ -596,6 +602,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var id: Int { __data["id"] }
         /// The name of the tag
         public var name: String { __data["name"] }
+        /// A general description of the tag
+        public var description: String? { __data["description"] }
         /// The relevance ranking of the tag out of the 100 for this media
         public var rank: Int? { __data["rank"] }
         /// If the tag is a spoiler for this media

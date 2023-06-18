@@ -61,6 +61,7 @@ query MediaDetails($mediaId: Int) {
       url
       site
       type
+      language
     }
     trailer {
       id
@@ -76,6 +77,7 @@ query MediaDetails($mediaId: Int) {
     tags {
       id
       name
+      description
       rank
       isMediaSpoiler
     }

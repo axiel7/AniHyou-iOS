@@ -406,3 +406,13 @@ extension MediaRankType {
         }
     }
 }
+
+extension MediaDetailsQuery.Data.Media.ExternalLink {
+    var displayName: String {
+        if language != nil {
+            return "\(site) (\(language!))"
+        } else {
+            return site
+        }
+    }
+}
