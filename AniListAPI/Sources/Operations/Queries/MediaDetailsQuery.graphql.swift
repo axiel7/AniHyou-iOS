@@ -101,6 +101,7 @@ public class MediaDetailsQuery: GraphQLQuery {
             __typename
             id
             name
+            description
             rank
             isMediaSpoiler
           }
@@ -588,6 +589,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           .field("__typename", String.self),
           .field("id", Int.self),
           .field("name", String.self),
+          .field("description", String?.self),
           .field("rank", Int?.self),
           .field("isMediaSpoiler", Bool?.self),
         ] }
@@ -596,6 +598,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var id: Int { __data["id"] }
         /// The name of the tag
         public var name: String { __data["name"] }
+        /// A general description of the tag
+        public var description: String? { __data["description"] }
         /// The relevance ranking of the tag out of the 100 for this media
         public var rank: Int? { __data["rank"] }
         /// If the tag is a spoiler for this media

@@ -28,6 +28,7 @@ struct MediaTagItemView: View {
     
     var tag: MediaDetailsQuery.Data.Media.Tag?
     var showSpoiler: Binding<Bool>
+    @State private var showTagDescription = false
     
     var body: some View {
         HStack {
@@ -41,6 +42,19 @@ struct MediaTagItemView: View {
         .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 8))
         .overlay {
             spoilerOverlay
+        }
+        .onTapGesture {
+            if tag?.isMediaSpoiler == true {
+                if showSpoiler.wrappedValue {
+                    showTagDescription = true
+                }
+            } else {
+                showTagDescription = true
+            }
+        }
+        .popover(isPresented: $showTagDescription) {
+            Text(tag?.description ?? "No description")
+                .padding()
         }
     }
 }

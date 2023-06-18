@@ -50,39 +50,42 @@ struct MediaGeneralInfoView: View {
                 }
             }
             
-            Group {
-                if let mediaTags = viewModel.mediaDetails?.tags {
-                    HStack {
-                        Text("Tags")
-                            .font(.title3)
-                            .bold()
-                            .padding(.horizontal)
-                        Spacer()
-                        Button(action: {
-                            withAnimation {
-                                showSpoilerTags.toggle()
-                            }
-                        }) {
-                            Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
-                                .font(.footnote)
-                        }
-                        .padding(.horizontal)
-                    }
-                    .padding(.top)
-                    
-                    VFlow(alignment: .leading) {
-                        ForEach(mediaTags, id: \.?.id) {
-                            if let tag = $0 {
-                                MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom)
-                }
-            }
+            tags
             
             multimediaContent
+        }
+    }
+    
+    @ViewBuilder
+    var tags: some View {
+        if let mediaTags = viewModel.mediaDetails?.tags {
+            HStack {
+                Text("Tags")
+                    .font(.title3)
+                    .bold()
+                    .padding(.horizontal)
+                Spacer()
+                Button(action: {
+                    withAnimation {
+                        showSpoilerTags.toggle()
+                    }
+                }) {
+                    Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
+                        .font(.footnote)
+                }
+                .padding(.horizontal)
+            }
+            .padding(.top)
+            
+            VFlow(alignment: .leading) {
+                ForEach(mediaTags, id: \.?.id) {
+                    if let tag = $0 {
+                        MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
     }
     
