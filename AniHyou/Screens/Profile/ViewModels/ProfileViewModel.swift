@@ -45,6 +45,35 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    func toggleFollow(userId: Int) {
+        Network.shared.apollo.perform(mutation: ToggleFollowMutation(userId: .some(userId))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let user = graphQLResult.data?.toggleFollow {
+                    self?.onToggleFollow(userId: userId, followed: user.isFollowing)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func onToggleFollow(userId: Int, followed: Bool?) {
+        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+            do {
+                try transaction.updateObject(ofType: UserInfo.self, withKey: "User:\(userId)") { (cachedData: inout UserInfo) in
+                    cachedData.isFollowing = followed
+                }
+                let newObject = try transaction.readObject(ofType: UserInfo.self, withKey: "User:\(userId)")
+                DispatchQueue.main.async {
+                    self?.userInfo = newObject
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
+    
     @Published var isLoggedOut = false
     
     func logOut() {
