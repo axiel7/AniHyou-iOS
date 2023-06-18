@@ -145,7 +145,7 @@ struct MediaGeneralInfoView: View {
             LazyVGrid(columns: linksColumns) {
                 ForEach(viewModel.streamingLinks, id: \.?.id) {
                     if let item  = $0 {
-                        Link(item.site, destination: URL(string: item.url!)!)
+                        Link(item.displayName, destination: URL(string: item.url!)!)
                             .padding(2)
                     }
                 }
@@ -161,7 +161,7 @@ struct MediaGeneralInfoView: View {
             LazyVGrid(columns: linksColumns) {
                 ForEach(viewModel.externalLinks, id: \.?.id) {
                     if let item  = $0 {
-                        Link(item.site, destination: URL(string: item.url!)!)
+                        Link(item.displayName, destination: URL(string: item.url!)!)
                             .padding(2)
                     }
                 }

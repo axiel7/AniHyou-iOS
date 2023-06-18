@@ -83,6 +83,7 @@ public class MediaDetailsQuery: GraphQLQuery {
             url
             site
             type
+            language
           }
           trailer {
             __typename
@@ -517,6 +518,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           .field("url", String?.self),
           .field("site", String.self),
           .field("type", GraphQLEnum<AniListAPI.ExternalLinkType>?.self),
+          .field("language", String?.self),
         ] }
 
         /// The id of the external link
@@ -526,6 +528,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         /// The links website site name
         public var site: String { __data["site"] }
         public var type: GraphQLEnum<AniListAPI.ExternalLinkType>? { __data["type"] }
+        /// Language the site content is in. See Staff language field for values.
+        public var language: String? { __data["language"] }
       }
 
       /// Media.Trailer
