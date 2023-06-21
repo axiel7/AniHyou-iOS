@@ -31,16 +31,20 @@ struct MediaListView: View {
                         }
                     }
                     .swipeActions(edge: .leading) {
-                        Button(action: {
-                            viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                        }) {
-                            if type == .anime {
-                                Label("Ep", systemImage: "plus")
-                            // should show a sheet to add a rating
-                            } else if type == .manga {
-                                Label("Ch", systemImage: "plus")
+                        if viewModel.mediaListStatus == .repeating ||
+                            viewModel.mediaListStatus == .current {
+                            Button(action: {
+                                viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                            }) {
+                                if type == .anime {
+                                    Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
+                                } else if type == .manga {
+                                    Label("Ch", systemImage: "plus")
+                                }
                             }
-                        }.tint(.green)
+                            .tint(.green)
+                        }
                     }
                     .swipeActions(edge: .trailing) {
                         Button(action: {
