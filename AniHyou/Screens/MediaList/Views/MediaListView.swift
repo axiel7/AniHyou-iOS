@@ -30,20 +30,19 @@ struct MediaListView: View {
                             MediaListItemStandardView(item: item)
                         }
                     }
-                    .swipeActions {
-                        if viewModel.mediaListStatus == .current || viewModel.mediaListStatus == .repeating {
-                            Button(action: {
-                                viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                            }) {
-                                if type == .anime {
-                                    Label("Ep", systemImage: "plus")
-                                // should show a sheet to add a rating
-                                } else if type == .manga {
-                                    Label("Ch", systemImage: "plus")
-                                }
+                    .swipeActions(edge: .leading) {
+                        Button(action: {
+                            viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                        }) {
+                            if type == .anime {
+                                Label("Ep", systemImage: "plus")
+                            // should show a sheet to add a rating
+                            } else if type == .manga {
+                                Label("Ch", systemImage: "plus")
                             }
-                            .tint(.green)
-                        }
+                        }.tint(.green)
+                    }
+                    .swipeActions(edge: .trailing) {
                         Button(action: {
                             viewModel.selectedItem = item
                             showingEditSheet = true
