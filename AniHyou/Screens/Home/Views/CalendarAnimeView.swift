@@ -34,7 +34,7 @@ struct CalendarAnimeView: View {
         .navigationBarTitle("Calendar")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .navigationBarTrailing) {
                 Menu(content: {
                     Button(action: { onMylist.toggle() }) {
                         if onMylist {
