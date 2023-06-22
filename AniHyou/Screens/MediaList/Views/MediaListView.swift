@@ -15,6 +15,7 @@ struct MediaListView: View {
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
+    @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
     
     var body: some View {
         List {
@@ -31,22 +32,40 @@ struct MediaListView: View {
                         }
                     }
                     .swipeActions(edge: .leading) {
-                        if viewModel.mediaListStatus == .repeating ||
-                            viewModel.mediaListStatus == .current {
-                            Button(action: {
-                                viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                            }) {
-                                if type == .anime {
-                                    Label("Ep", systemImage: "plus")
-                                // should show a sheet to add a rating
-                                } else if type == .manga {
-                                    Label("Ch", systemImage: "plus")
+                        if incrementLongSwipeDirection == .right {
+                            if viewModel.mediaListStatus == .repeating ||
+                                viewModel.mediaListStatus == .current {
+                                Button(action: {
+                                    viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                                }) {
+                                    if type == .anime {
+                                        Label("Ep", systemImage: "plus")
+                                    // should show a sheet to add a rating
+                                    } else if type == .manga {
+                                        Label("Ch", systemImage: "plus")
+                                    }
                                 }
+                                .tint(.green)
                             }
-                            .tint(.green)
                         }
                     }
                     .swipeActions(edge: .trailing) {
+                        if incrementLongSwipeDirection == .left {
+                            if viewModel.mediaListStatus == .repeating ||
+                                viewModel.mediaListStatus == .current {
+                                Button(action: {
+                                    viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                                }) {
+                                    if type == .anime {
+                                        Label("Ep", systemImage: "plus")
+                                    // should show a sheet to add a rating
+                                    } else if type == .manga {
+                                        Label("Ch", systemImage: "plus")
+                                    }
+                                }
+                                .tint(.green)
+                            }
+                        }
                         Button(action: {
                             viewModel.selectedItem = item
                             showingEditSheet = true

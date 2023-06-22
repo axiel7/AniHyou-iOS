@@ -34,6 +34,8 @@ let LIST_STYLE_KEY = "list_style"
 
 let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
 
+let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
+
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"
