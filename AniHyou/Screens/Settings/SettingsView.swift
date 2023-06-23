@@ -8,6 +8,13 @@
 import SwiftUI
 import WatchConnectivity
 
+public enum LongSwipeDirection: String, Equatable, CaseIterable {
+    case left = "Left"
+    case right = "Right"
+    
+    var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
+}
+
 struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewModel()
@@ -16,6 +23,7 @@ struct SettingsView: View {
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     @AppStorage(AIRING_ON_MY_LIST_KEY) var airingOnMyList = false
+    @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) var incrementLongSwipeDirection: LongSwipeDirection = .right
     
     var body: some View {
         Form {
@@ -33,6 +41,17 @@ struct SettingsView: View {
                 Toggle("Airing on my list", isOn: $airingOnMyList)
             } footer: {
                 Text("Show only airing soon anime that are in your list")
+            }
+            
+            Section {
+                Picker("Long Swipe Direction", selection: $incrementLongSwipeDirection) {
+                    ForEach(LongSwipeDirection.allCases, id: \.self) { v in
+                        Text(v.localizedName)
+                            .tag(v)
+                    }
+                }
+            } header: {
+                Text("Increment Episode / Chapter")
             }
             
             Section {

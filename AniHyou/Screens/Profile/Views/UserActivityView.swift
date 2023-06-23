@@ -10,9 +10,26 @@ import SwiftUI
 struct UserActivityView: View {
     
     var userId: Int
+    var isMyProfile: Bool
     @StateObject private var viewModel = UserActivityViewModel()
     
     var body: some View {
+        if !isMyProfile {
+            HStack {
+                Spacer()
+                NavigationLink("Anime List") {
+                    MediaListStatusView(mediaType: .anime, userId: userId)
+                        .id(userId)
+                }
+                Spacer()
+                NavigationLink("Manga List") {
+                    MediaListStatusView(mediaType: .manga, userId: userId)
+                        .id(userId)
+                }
+                Spacer()
+            }
+            .padding()
+        }
         ForEach(viewModel.activities, id: \.?.id) { item in
             if let list = item?.asListActivity {
                 NavigationLink(destination: MediaDetailsView(mediaId: list.media?.id ?? 0)) {
@@ -33,8 +50,10 @@ struct UserActivityView: View {
 
 struct UserActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        List {
-            UserActivityView(userId: 208863)
+        ScrollView(.vertical) {
+            LazyVStack(alignment: .leading) {
+                UserActivityView(userId: 208863, isMyProfile: false)
+            }
         }
     }
 }

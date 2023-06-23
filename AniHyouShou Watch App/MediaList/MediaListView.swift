@@ -29,7 +29,7 @@ struct MediaListView: View {
                 if viewModel.hasNextPage {
                     ProgressView()
                         .onAppear {
-                            viewModel.getUserMediaList()
+                            viewModel.getUserMediaList(otherUserId: nil)
                         }
                 }
             }
