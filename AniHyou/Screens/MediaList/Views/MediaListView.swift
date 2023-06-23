@@ -12,6 +12,10 @@ struct MediaListView: View {
     
     let type: MediaType
     var status: MediaListStatus
+    var userId: Int? = nil
+    var isEditable: Bool {
+        return userId == nil
+    }
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
@@ -32,56 +36,59 @@ struct MediaListView: View {
                         }
                     }
                     .swipeActions(edge: .leading) {
-                        if incrementLongSwipeDirection == .right {
-                            if viewModel.mediaListStatus == .repeating ||
-                                viewModel.mediaListStatus == .current {
-                                Button(action: {
-                                    viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                                }) {
-                                    if type == .anime {
-                                        Label("Ep", systemImage: "plus")
-                                    // should show a sheet to add a rating
-                                    } else if type == .manga {
-                                        Label("Ch", systemImage: "plus")
+                        if isEditable {
+                            if incrementLongSwipeDirection == .right {
+                                if viewModel.mediaListStatus == .repeating ||
+                                    viewModel.mediaListStatus == .current {
+                                    Button(action: {
+                                        viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                                    }) {
+                                        if type == .anime {
+                                            Label("Ep", systemImage: "plus")
+                                            // should show a sheet to add a rating
+                                        } else if type == .manga {
+                                            Label("Ch", systemImage: "plus")
+                                        }
                                     }
+                                    .tint(.green)
                                 }
-                                .tint(.green)
                             }
                         }
                     }
                     .swipeActions(edge: .trailing) {
-                        if incrementLongSwipeDirection == .left {
-                            if viewModel.mediaListStatus == .repeating ||
-                                viewModel.mediaListStatus == .current {
-                                Button(action: {
-                                    viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                                }) {
-                                    if type == .anime {
-                                        Label("Ep", systemImage: "plus")
-                                    // should show a sheet to add a rating
-                                    } else if type == .manga {
-                                        Label("Ch", systemImage: "plus")
+                        if isEditable {
+                            if incrementLongSwipeDirection == .left {
+                                if viewModel.mediaListStatus == .repeating ||
+                                    viewModel.mediaListStatus == .current {
+                                    Button(action: {
+                                        viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
+                                    }) {
+                                        if type == .anime {
+                                            Label("Ep", systemImage: "plus")
+                                            // should show a sheet to add a rating
+                                        } else if type == .manga {
+                                            Label("Ch", systemImage: "plus")
+                                        }
                                     }
+                                    .tint(.green)
                                 }
-                                .tint(.green)
                             }
+                            Button(action: {
+                                viewModel.selectedItem = item
+                                showingEditSheet = true
+                            }) {
+                                Label("Edit", systemImage: "square.and.pencil")
+                            }
+                            .tint(.blue)
                         }
-                        Button(action: {
-                            viewModel.selectedItem = item
-                            showingEditSheet = true
-                        }) {
-                            Label("Edit", systemImage: "square.and.pencil")
-                        }
-                        .tint(.blue)
                     }
                 }
-
             }
                 
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {
-                        viewModel.getUserMediaList()
+                        viewModel.getUserMediaList(otherUserId: userId)
                     }
             }
         }//:List

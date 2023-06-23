@@ -11,13 +11,14 @@ import AniListAPI
 struct MediaListStatusView: View {
     
     var mediaType: MediaType
+    var userId: Int? = nil
     @State private var selection: MediaListStatus? = .current
     
     var body: some View {
         NavigationView {
             List(MediaListStatus.allCases, id: \.self) { status in
                 NavigationLink(tag: status, selection: $selection) {
-                    MediaListView(type: mediaType, status: status)
+                    MediaListView(type: mediaType, status: status, userId: userId)
                 } label: {
                     Label(status.localizedName, systemImage: status.systemImage)
                 }

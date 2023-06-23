@@ -12,7 +12,7 @@ func isLoggedIn() -> Bool {
     return UserDefaults.standard.bool(forKey: "is_logged_in")
 }
 
-func userId() -> Int {
+func authUserId() -> Int {
     return UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
 }
 

@@ -23,7 +23,7 @@ struct AniHyouApp: App {
                         .onAppear {
                             KeychainUtils.keychain.synchronizable = true
                             //transfer use id from old app versions
-                            if userId() == 0 {
+                            if authUserId() == 0 {
                                 saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
                             }
                         }

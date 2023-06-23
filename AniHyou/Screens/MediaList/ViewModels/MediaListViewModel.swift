@@ -11,6 +11,7 @@ import AniListAPI
 
 class MediaListViewModel: ObservableObject {
     
+    var userId: Int = authUserId()
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList? = nil
     
@@ -22,12 +23,13 @@ class MediaListViewModel: ObservableObject {
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
     
-    func getUserMediaList() {
+    func getUserMediaList(otherUserId: Int?) {
+        if otherUserId != nil { userId = otherUserId! }
         Network.shared.apollo.fetch(
             query: UserMediaListQuery(
                 page: .some(currentPage),
                 perPage: .some(25),
-                userId: .some(userId()),
+                userId: .some(userId),
                 type: .some(.case(mediaType)),
                 status: .some(.case(mediaListStatus)),
                 sort: .some([.case(sort), .case(.mediaIdDesc)])
@@ -70,7 +72,7 @@ class MediaListViewModel: ObservableObject {
                 return true
             }
             if hasNextPage {
-                getUserMediaList()
+                getUserMediaList(otherUserId: userId)
                 return filtered
             }
 

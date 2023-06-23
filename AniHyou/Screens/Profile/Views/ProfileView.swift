@@ -71,7 +71,7 @@ struct ProfileView: View {
                     Section {
                         switch infoType {
                         case .activity:
-                            UserActivityView(userId: viewModel.userInfo!.id)
+                            UserActivityView(userId: viewModel.userInfo!.id, isMyProfile: isMyProfile)
                         case .stats:
                             UserStatsHostView(userId: viewModel.userInfo!.id)
                         case .favorites:

@@ -49,7 +49,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            if userId() == 0 {
+            if authUserId() == 0 {
                 viewModel.justLoggedIn = false
                 if let token = KeychainUtils.keychain.get(USER_TOKEN_KEY) {
                     if !token.isEmpty {
