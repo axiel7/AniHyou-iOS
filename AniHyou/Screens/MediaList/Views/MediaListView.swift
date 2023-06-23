@@ -25,63 +25,7 @@ struct MediaListView: View {
         List {
             ForEach(viewModel.filteredMediaList, id: \.?.id) {
                 if let item = $0 {
-                    NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                        switch listStyle {
-                        case 1:
-                            MediaListItemMinimalView(item: item)
-                        case 2:
-                            MediaListItemCompactView(item: item)
-                        default:
-                            MediaListItemStandardView(item: item)
-                        }
-                    }
-                    .swipeActions(edge: .leading) {
-                        if isEditable {
-                            if incrementLongSwipeDirection == .right {
-                                if viewModel.mediaListStatus == .repeating ||
-                                    viewModel.mediaListStatus == .current {
-                                    Button(action: {
-                                        viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                                    }) {
-                                        if type == .anime {
-                                            Label("Ep", systemImage: "plus")
-                                            // should show a sheet to add a rating
-                                        } else if type == .manga {
-                                            Label("Ch", systemImage: "plus")
-                                        }
-                                    }
-                                    .tint(.green)
-                                }
-                            }
-                        }
-                    }
-                    .swipeActions(edge: .trailing) {
-                        if isEditable {
-                            if incrementLongSwipeDirection == .left {
-                                if viewModel.mediaListStatus == .repeating ||
-                                    viewModel.mediaListStatus == .current {
-                                    Button(action: {
-                                        viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1)
-                                    }) {
-                                        if type == .anime {
-                                            Label("Ep", systemImage: "plus")
-                                            // should show a sheet to add a rating
-                                        } else if type == .manga {
-                                            Label("Ch", systemImage: "plus")
-                                        }
-                                    }
-                                    .tint(.green)
-                                }
-                            }
-                            Button(action: {
-                                viewModel.selectedItem = item
-                                showingEditSheet = true
-                            }) {
-                                Label("Edit", systemImage: "square.and.pencil")
-                            }
-                            .tint(.blue)
-                        }
-                    }
+                    buildListItem(item: item)
                 }
             }
                 
@@ -128,6 +72,81 @@ struct MediaListView: View {
             }
         }
         .navigationTitle(viewModel.mediaListStatus.localizedName)
+    }
+    
+    func buildListItem(item: UserMediaListQuery.Data.Page.MediaList!) -> some View {
+        NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
+            switch listStyle {
+            case 1:
+                MediaListItemMinimalView(item: item)
+            case 2:
+                MediaListItemCompactView(item: item)
+            default:
+                MediaListItemStandardView(item: item)
+            }
+        }
+        .swipeActions(edge: .leading) {
+            if isEditable {
+                if incrementLongSwipeDirection == .right {
+                    if shouldShowIncrementButton {
+                        Button(action: {
+                            updateEntryProgress(item: item)
+                        }) {
+                            if type == .anime {
+                                Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
+                            } else if type == .manga {
+                                Label("Ch", systemImage: "plus")
+                            }
+                        }
+                        .tint(.green)
+                    }
+                }
+            }
+        }
+        .swipeActions(edge: .trailing) {
+            if isEditable {
+                if incrementLongSwipeDirection == .left {
+                    if shouldShowIncrementButton {
+                        Button(action: {
+                            updateEntryProgress(item: item)
+                        }) {
+                            if type == .anime {
+                                Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
+                            } else if type == .manga {
+                                Label("Ch", systemImage: "plus")
+                            }
+                        }
+                        .tint(.green)
+                    }
+                }
+                Button(action: {
+                    viewModel.selectedItem = item
+                    showingEditSheet = true
+                }) {
+                    Label("Edit", systemImage: "square.and.pencil")
+                }
+                .tint(.blue)
+            }
+        }
+    }
+    
+    func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList!) {
+        var status: MediaListStatus? = nil
+        if item.status == .planning {
+            status = .current
+        }
+        viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1, status: status)
+    }
+    
+    private var shouldShowIncrementButton: Bool {
+        if viewModel.mediaListStatus == .repeating ||
+            viewModel.mediaListStatus == .current ||
+            viewModel.mediaListStatus == .planning {
+            return true
+        }
+        return false
     }
 }
 
