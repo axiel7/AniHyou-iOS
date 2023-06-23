@@ -24,7 +24,7 @@ struct UpdateMediaEntryView: View {
                     Text("\(entry!.progress ?? 0)/\(entry!.totalProgress ?? 0)")
 
                     Button(action: {
-                        viewModel.updateEntryProgress(entryId: entry!.id, progress: (entry!.progress ?? 0) + 1, status: entry!.status ?? .case(.current))
+                        viewModel.updateEntryProgress(entryId: entry!.id, progress: (entry!.progress ?? 0) + 1, status: nil)
                     }) {
                         if viewModel.isLoading {
                             ProgressView()

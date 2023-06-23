@@ -83,7 +83,7 @@ struct MediaListView: View {
         }
         .swipeActions(edge: .leading) {
             if incrementLongSwipeDirection == .right {
-                if shouldShowIncrementButton() {
+                if shouldShowIncrementButton {
                     Button(action: {
                         updateEntryProgress(item: item)
                     }) {
@@ -100,7 +100,7 @@ struct MediaListView: View {
         }
         .swipeActions(edge: .trailing) {
             if incrementLongSwipeDirection == .left {
-                if shouldShowIncrementButton() {
+                if shouldShowIncrementButton {
                     Button(action: {
                         updateEntryProgress(item: item)
                     }) {
@@ -125,16 +125,14 @@ struct MediaListView: View {
     }
     
     func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList!) {
-        var status: GraphQLEnum<MediaListStatus>
+        var status: MediaListStatus? = nil
         if item.status == .planning {
-            status = .case(.current)
-        } else {
-            status = item.status!
+            status = .current
         }
         viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1, status: status)
     }
     
-    func shouldShowIncrementButton() -> Bool {
+    private var shouldShowIncrementButton: Bool {
         if viewModel.mediaListStatus == .repeating ||
             viewModel.mediaListStatus == .current ||
             viewModel.mediaListStatus == .planning {
