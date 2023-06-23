@@ -8,12 +8,17 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int) {
-        SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress) {
+      mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $status: MediaListStatus) {
+        SaveMediaListEntry(
+          id: $saveMediaListEntryId
+          progress: $progress
+          status: $status
+        ) {
           __typename
           id
           mediaId
           progress
+          status
         }
       }
       """#
@@ -21,18 +26,22 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
 
   public var saveMediaListEntryId: GraphQLNullable<Int>
   public var progress: GraphQLNullable<Int>
+  public var status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
 
   public init(
     saveMediaListEntryId: GraphQLNullable<Int>,
-    progress: GraphQLNullable<Int>
+    progress: GraphQLNullable<Int>,
+    status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
   ) {
     self.saveMediaListEntryId = saveMediaListEntryId
     self.progress = progress
+    self.status = status
   }
 
   public var __variables: Variables? { [
     "saveMediaListEntryId": saveMediaListEntryId,
-    "progress": progress
+    "progress": progress,
+    "status": status
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -43,7 +52,8 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
     public static var __selections: [ApolloAPI.Selection] { [
       .field("SaveMediaListEntry", SaveMediaListEntry?.self, arguments: [
         "id": .variable("saveMediaListEntryId"),
-        "progress": .variable("progress")
+        "progress": .variable("progress"),
+        "status": .variable("status")
       ]),
     ] }
 
@@ -63,6 +73,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
         .field("id", Int.self),
         .field("mediaId", Int.self),
         .field("progress", Int?.self),
+        .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
       ] }
 
       /// The id of the list entry
@@ -71,6 +82,8 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
       public var mediaId: Int { __data["mediaId"] }
       /// The amount of episodes/chapters consumed by the user
       public var progress: Int? { __data["progress"] }
+      /// The watching/reading status
+      public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
     }
   }
 }
