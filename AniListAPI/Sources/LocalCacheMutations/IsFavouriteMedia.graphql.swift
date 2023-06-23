@@ -44,7 +44,7 @@ public struct IsFavouriteMedia: AniListAPI.MutableSelectionSet, Fragment {
         "isFavourite": isFavourite,
       ],
       fulfilledFragments: [
-        ObjectIdentifier(Self.self)
+        ObjectIdentifier(IsFavouriteMedia.self)
       ]
     ))
   }

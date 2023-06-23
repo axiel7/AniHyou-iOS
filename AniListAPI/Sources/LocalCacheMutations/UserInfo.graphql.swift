@@ -118,7 +118,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
         "isFollower": isFollower,
       ],
       fulfilledFragments: [
-        ObjectIdentifier(Self.self)
+        ObjectIdentifier(UserInfo.self)
       ]
     ))
   }
@@ -151,7 +151,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
           "large": large,
         ],
         fulfilledFragments: [
-          ObjectIdentifier(Self.self)
+          ObjectIdentifier(UserInfo.Avatar.self)
         ]
       ))
     }
@@ -201,7 +201,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
           "titleLanguage": titleLanguage,
         ],
         fulfilledFragments: [
-          ObjectIdentifier(Self.self)
+          ObjectIdentifier(UserInfo.Options.self)
         ]
       ))
     }
@@ -235,7 +235,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
           "scoreFormat": scoreFormat,
         ],
         fulfilledFragments: [
-          ObjectIdentifier(Self.self)
+          ObjectIdentifier(UserInfo.MediaListOptions.self)
         ]
       ))
     }

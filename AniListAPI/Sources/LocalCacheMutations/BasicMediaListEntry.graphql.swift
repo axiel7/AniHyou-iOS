@@ -113,7 +113,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "completedAt": completedAt._fieldData,
       ],
       fulfilledFragments: [
-        ObjectIdentifier(Self.self)
+        ObjectIdentifier(BasicMediaListEntry.self)
       ]
     ))
   }
@@ -172,7 +172,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
           "year": year,
         ],
         fulfilledFragments: [
-          ObjectIdentifier(Self.self),
+          ObjectIdentifier(BasicMediaListEntry.StartedAt.self),
           ObjectIdentifier(FuzzyDateFragment.self)
         ]
       ))
@@ -233,7 +233,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
           "year": year,
         ],
         fulfilledFragments: [
-          ObjectIdentifier(Self.self),
+          ObjectIdentifier(BasicMediaListEntry.CompletedAt.self),
           ObjectIdentifier(FuzzyDateFragment.self)
         ]
       ))
