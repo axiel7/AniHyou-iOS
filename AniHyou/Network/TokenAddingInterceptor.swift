@@ -12,6 +12,8 @@ import KeychainSwift
 
 class TokenAddingInterceptor: ApolloInterceptor {
     
+    public var id: String = UUID().uuidString
+    
     static var token = KeychainUtils.keychain.get(USER_TOKEN_KEY)
     
     func interceptAsync<Operation: GraphQLOperation>(
@@ -24,6 +26,6 @@ class TokenAddingInterceptor: ApolloInterceptor {
                 request.addHeader(name: "Authorization", value: "Bearer \(token)")
             }
             
-            chain.proceedAsync(request: request, response: response, completion: completion)
+            chain.proceedAsync(request: request, response: response, interceptor: self, completion: completion)
     }
 }
