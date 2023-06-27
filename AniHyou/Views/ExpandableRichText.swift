@@ -60,7 +60,7 @@ struct ExpandableRichText: View {
                         .font(.footnote)
                 }
                 .buttonStyle(.borderless)
-                .background(.white)
+                .background(.background)
             }
         }
     }

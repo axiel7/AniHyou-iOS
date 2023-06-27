@@ -93,7 +93,7 @@ struct AniHyou_WidgetEntryView : View {
         if entry.placeholderText != nil {
             return .center
         } else {
-            if entry.widgetFamily == .systemMedium {
+            if entry.animeList.count >= 3 {
                 return .center
             } else {
                 return .top
