@@ -90,16 +90,16 @@ struct AniHyou_WidgetEntryView : View {
     var entry: Provider.Entry
     
     var aligment: Alignment {
-            if entry.placeholderText != nil {
+        if entry.placeholderText != nil {
+            return .center
+        } else {
+            if entry.animeList.count >= 3 {
                 return .center
             } else {
-                if entry.animeList.count >= 3 {
-                    return .center
-                } else {
-                    return .top
-                }
+                return .top
             }
         }
+    }
 
     var body: some View {
         ZStack {
