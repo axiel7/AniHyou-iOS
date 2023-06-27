@@ -88,6 +88,18 @@ struct SimpleEntry: TimelineEntry {
 
 struct AniHyou_WidgetEntryView : View {
     var entry: Provider.Entry
+    
+    var aligment: Alignment {
+            if entry.placeholderText != nil {
+                return .center
+            } else {
+                if entry.animeList.count >= 3 {
+                    return .center
+                } else {
+                    return .top
+                }
+            }
+        }
 
     var body: some View {
         ZStack {
@@ -130,7 +142,7 @@ struct AniHyou_WidgetEntryView : View {
                 }
             }//:VStack
             .padding(.vertical)
-            .frame(height: entry.widgetSize.height, alignment: entry.placeholderText == nil ? .top : .center)
+            .frame(height: entry.widgetSize.height, alignment: aligment)
         }//:ZStack
     }
 }
