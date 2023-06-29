@@ -20,7 +20,7 @@ struct TopBannerView: View {
                 KFImage(URL(string: imageUrl ?? ""))
                     .placeholder {
                         Rectangle()
-                            .foregroundColor(Color(placeholderHexColor) ?? .gray)
+                            .foregroundColor(Color(hex: placeholderHexColor) ?? .gray)
                             .scaledToFill()
                     }
                     .resizable()

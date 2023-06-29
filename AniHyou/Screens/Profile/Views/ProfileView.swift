@@ -45,6 +45,7 @@ struct ProfileView: View {
             .navigationViewStyle(.stack)
         } else {
             content
+                .tint(Color(hex: viewModel.userInfo?.options?.profileColor?.profileHexColor) ?? .accentColor)
         }
     }//:body
     
@@ -108,7 +109,7 @@ struct ProfileView: View {
     
     var profileHeader: some View {
         ZStack {
-            TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.hexColor, height: bannerHeight)
+            TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.options?.profileColor?.profileHexColor, height: bannerHeight)
                 .frame(height: bannerHeight)
             
             HStack {

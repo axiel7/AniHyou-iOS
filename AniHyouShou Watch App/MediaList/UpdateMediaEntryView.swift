@@ -33,7 +33,7 @@ struct UpdateMediaEntryView: View {
                             Text("+1")
                         }
                     }
-                    .tint(Color(entry!.media?.coverImage?.color))
+                    .tint(Color(hex: entry!.media?.coverImage?.color))
                 }
             } else {
                 Text("Error no entry")

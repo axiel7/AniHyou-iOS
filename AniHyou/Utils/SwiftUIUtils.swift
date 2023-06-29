@@ -13,7 +13,7 @@ import RichText
 
 extension Color {
     
-    init?(_ hex: String?) {
+    init?(hex: String?) {
         guard var str = hex
         else { return nil }
         
