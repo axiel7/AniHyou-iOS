@@ -31,6 +31,11 @@ let USER_NAMES_LANG_KEY = "user_names_lang"
 
 let SELECTED_TAB_KEY = "selected_tab_index"
 let LIST_STYLE_KEY = "list_style"
+let ACCENT_COLOR_KEY = "accent_color"
+let ACCENT_COLOR_MODE_KEY = "accent_color_mode"
+let CUSTOM_ACCENT_COLOR_KEY = "custom_accent_color"
+
+let ANIHYOU_COLOR = "#526CFD"
 
 let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
 

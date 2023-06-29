@@ -15,15 +15,29 @@ public enum LongSwipeDirection: String, Equatable, CaseIterable {
     var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
 }
 
+public enum AccentColorMode: String, Equatable, CaseIterable {
+    case anihyou = "Default"
+    case profile = "Profile"
+    case custom = "Custom"
+    
+    var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
+}
+
 struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewModel()
     @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
     @State private var showLogOutDialog = false
+    @State private var showColorPicker = false
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
-    @AppStorage(AIRING_ON_MY_LIST_KEY) var airingOnMyList = false
-    @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) var incrementLongSwipeDirection: LongSwipeDirection = .right
+    @AppStorage(AIRING_ON_MY_LIST_KEY) private var airingOnMyList = false
+    @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
+    @AppStorage(USER_COLOR_KEY) private var profileColor: String?
+    @AppStorage(ACCENT_COLOR_MODE_KEY) private var accentColorMode = AccentColorMode.profile
+    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
+    @AppStorage(CUSTOM_ACCENT_COLOR_KEY) private var customAccentColor = "#4D908E"
+    @State private var selectedColor = Color(hex: "#4D908E")!
     
     var body: some View {
         Form {
@@ -32,6 +46,31 @@ struct SettingsView: View {
                     Text("Standard").tag(0)
                     Text("Compact").tag(2)
                     Text("Minimal").tag(1)
+                }
+                Picker("Accent color", selection: $accentColorMode) {
+                    ForEach(AccentColorMode.allCases, id: \.self) { mode in
+                        Text(mode.localizedName).tag(mode)
+                    }
+                }
+                .onChange(of: accentColorMode) { mode in
+                    switch mode {
+                    case .anihyou:
+                        accentColor = ANIHYOU_COLOR
+                    case .profile:
+                        accentColor = profileColor ?? ANIHYOU_COLOR
+                    case .custom:
+                        accentColor = customAccentColor
+                    }
+                }
+                
+                if accentColorMode == .custom {
+                    ColorPicker("Custom color", selection: $selectedColor, supportsOpacity: false)
+                        .onChange(of: selectedColor) { color in
+                            if let hex = color.toHex() {
+                                customAccentColor = hex
+                                accentColor = hex
+                            }
+                        }
                 }
             } header: {
                 Text("Display")
@@ -94,6 +133,9 @@ struct SettingsView: View {
             
         }
         .navigationTitle("Settings")
+        .onAppear {
+            selectedColor = Color(hex: customAccentColor)!
+        }
     }
 }
 

@@ -437,7 +437,7 @@ extension String {
         case "gray":
             return "#677B94"
         default:
-            return "#3DB4F2"
+            return ANIHYOU_COLOR
         }
     }
 }
