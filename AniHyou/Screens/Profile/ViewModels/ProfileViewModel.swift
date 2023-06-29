@@ -21,7 +21,7 @@ class ProfileViewModel: ObservableObject {
                 if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
                     self?.userInfo = viewer
                     //update preferences
-                    UserDefaults.standard.set(viewer.options?.profileColor, forKey: USER_COLOR_KEY)
+                    UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
                     UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
                     UserDefaults.standard.set(viewer.options?.titleLanguage?.value?.rawValue, forKey: USER_TITLE_LANG_KEY)
                     UserDefaults.standard.set(viewer.mediaListOptions?.scoreFormat?.value?.rawValue, forKey: USER_SCORE_KEY)
@@ -88,32 +88,4 @@ class ProfileViewModel: ObservableObject {
         isLoggedOut = true
     }
     
-}
-
-extension UserInfo {
-    var hexColor: String {
-        if let color = self.options?.profileColor {
-            if color.hasPrefix("#") { return color }
-            
-            switch color {
-            case "blue":
-                return "#3DB4F2"
-            case "purple":
-                return "#C063FF"
-            case "pink":
-                return "#FC9DD6"
-            case "orange":
-                return "#EF881B"
-            case "red":
-                return "#E13433"
-            case "green":
-                return "#4DCA51"
-            case "gray":
-                return "#677B94"
-            default:
-                return "#3DB4F2"
-            }
-        }
-        else { return "#3DB4F2" }
-    }
 }

@@ -13,6 +13,7 @@ struct AniHyouApp: App {
     @StateObject private var globalAppState = GlobalAppState.shared
     @State private var openMediaDetails = false
     @State private var mediaId = 0
+    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
     
     var body: some Scene {
         WindowGroup {
@@ -38,6 +39,7 @@ struct AniHyouApp: App {
                     mediaId = Int(url.lastPathComponent) ?? 0
                 }
             }
+            .tint(Color(hex: accentColor) ?? .accentColor)
         }
     }
 }
