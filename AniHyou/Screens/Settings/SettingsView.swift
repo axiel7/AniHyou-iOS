@@ -34,7 +34,7 @@ struct SettingsView: View {
     @AppStorage(AIRING_ON_MY_LIST_KEY) private var airingOnMyList = false
     @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
     @AppStorage(USER_COLOR_KEY) private var profileColor: String?
-    @AppStorage(ACCENT_COLOR_MODE_KEY) private var accentColorMode = AccentColorMode.profile
+    @AppStorage(ACCENT_COLOR_MODE_KEY) private var accentColorMode = AccentColorMode.anihyou
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
     @AppStorage(CUSTOM_ACCENT_COLOR_KEY) private var customAccentColor = "#4D908E"
     @State private var selectedColor = Color(hex: "#4D908E")!
