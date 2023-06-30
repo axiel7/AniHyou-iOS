@@ -13,6 +13,7 @@ struct MediaChartListView: View {
     var title: String
     var type: MediaType
     var sort: MediaSort
+    var status: MediaStatus? = nil
     @StateObject private var viewModel = ExploreViewModel()
     
     var body: some View {
@@ -28,7 +29,7 @@ struct MediaChartListView: View {
             if viewModel.hasNextPageChart {
                 ProgressView()
                     .onAppear {
-                        viewModel.getMediaChart(type: type, sort: sort)
+                        viewModel.getMediaChart(type: type, sort: sort, status: status)
                     }
             }
         }
