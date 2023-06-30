@@ -96,63 +96,7 @@ struct ExploreView: View {
                 Divider()
                     .padding(.horizontal)
 
-                //MARK: top
-                HStack(alignment: .center) {
-                    NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
-                        Label("Top 100", systemImage: "crown.fill")
-                            .foregroundColor(.purple)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)) {
-                        Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
-                            .foregroundColor(.red)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }//:HStack
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-                
-                //MARK: Spring, Summer
-                HStack(alignment: .center) {
-                    NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
-                        Label("Spring", systemImage: "leaf.fill")
-                            .foregroundColor(.green)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
-                        Label("Summer", systemImage: "sun.max.fill")
-                            .foregroundColor(.yellow)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }//:HStack
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-                
-                //MARK: Fall, Winter
-                HStack(alignment: .center) {
-                    NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
-                        Label("Fall", systemImage: "cloud.rain.fill")
-                            .foregroundColor(.brown)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
-                        Label("Winter", systemImage: "snowflake")
-                            .foregroundColor(.blue)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }//:HStack
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-                
-                //MARK: Calendar
-                HStack {
-                    NavigationLink(destination: CalendarAnimeView()) {
-                        Label("Calendar", systemImage: "calendar")
-                            .foregroundColor(.orange)
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.vertical, 8)
+                animeCharts
                 
                 //MARK: - Manga
                 Text("Manga")
@@ -163,22 +107,121 @@ struct ExploreView: View {
                 Divider()
                     .padding(.horizontal)
                 
-                HStack(alignment: .center) {
-                    NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
-                        Label("Top 100", systemImage: "crown.fill")
-                            .foregroundColor(.purple)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    NavigationLink(destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)) {
-                        Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
-                            .foregroundColor(.red)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .padding(.horizontal)
-                .padding(.vertical, 8)
+                mangaCharts
             }//:VStack
         }//:VScrollView
+    }
+    
+    @ViewBuilder
+    private var animeCharts: some View {
+        //MARK: top
+        HStack(alignment: .center) {
+            NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
+                Label("Top 100", systemImage: "crown.fill")
+                    .foregroundColor(.purple)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)) {
+                Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
+                    .foregroundColor(.red)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }//:HStack
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        
+        //MARK: upcoming, airing
+        HStack(alignment: .center) {
+            NavigationLink(destination: MediaChartListView(title: "Upcoming Anime", type: .anime, sort: .popularityDesc, status: .notYetReleased)) {
+                Label("Upcoming", systemImage: "clock.fill")
+                    .foregroundColor(.pink)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(destination: MediaChartListView(title: "Airing Anime", type: .anime, sort: .scoreDesc, status: .releasing)) {
+                Label("Airing", systemImage: "antenna.radiowaves.left.and.right")
+                    .foregroundColor(.indigo)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }//:HStack
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        
+        //MARK: Spring, Summer
+        HStack(alignment: .center) {
+            NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
+                Label("Spring", systemImage: "leaf.fill")
+                    .foregroundColor(.green)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
+                Label("Summer", systemImage: "sun.max.fill")
+                    .foregroundColor(.yellow)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }//:HStack
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        
+        //MARK: Fall, Winter
+        HStack(alignment: .center) {
+            NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
+                Label("Fall", systemImage: "cloud.rain.fill")
+                    .foregroundColor(.brown)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
+                Label("Winter", systemImage: "snowflake")
+                    .foregroundColor(.blue)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }//:HStack
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        
+        //MARK: Calendar
+        HStack {
+            NavigationLink(destination: CalendarAnimeView()) {
+                Label("Calendar", systemImage: "calendar")
+                    .foregroundColor(.orange)
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+    }
+    
+    @ViewBuilder
+    private var mangaCharts: some View {
+        //MARK: top
+        HStack(alignment: .center) {
+            NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
+                Label("Top 100", systemImage: "crown.fill")
+                    .foregroundColor(.purple)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)) {
+                Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
+                    .foregroundColor(.red)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        
+        //MARK: upcoming, publishing
+        HStack(alignment: .center) {
+            NavigationLink(destination: MediaChartListView(title: "Upcoming Manga", type: .manga, sort: .popularityDesc, status: .notYetReleased)) {
+                Label("Upcoming", systemImage: "clock.fill")
+                    .foregroundColor(.pink)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(destination: MediaChartListView(title: "Publishing Manga", type: .manga, sort: .scoreDesc, status: .releasing)) {
+                Label("Publishing", systemImage: "pencil.line")
+                    .foregroundColor(.indigo)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }//:HStack
+        .padding(.horizontal)
+        .padding(.vertical, 8)
     }
     
     @ViewBuilder

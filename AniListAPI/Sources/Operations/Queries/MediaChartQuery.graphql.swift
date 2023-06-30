@@ -8,10 +8,10 @@ public class MediaChartQuery: GraphQLQuery {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType) {
+      query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus) {
         Page(page: $page, perPage: $perPage) {
           __typename
-          media(sort: $sort, type: $type) {
+          media(sort: $sort, type: $type, status: $status) {
             __typename
             id
             title {
@@ -42,24 +42,28 @@ public class MediaChartQuery: GraphQLQuery {
   public var perPage: GraphQLNullable<Int>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
+  public var status: GraphQLNullable<GraphQLEnum<MediaStatus>>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
-    type: GraphQLNullable<GraphQLEnum<MediaType>>
+    type: GraphQLNullable<GraphQLEnum<MediaType>>,
+    status: GraphQLNullable<GraphQLEnum<MediaStatus>>
   ) {
     self.page = page
     self.perPage = perPage
     self.sort = sort
     self.type = type
+    self.status = status
   }
 
   public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "sort": sort,
-    "type": type
+    "type": type,
+    "status": status
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -88,7 +92,8 @@ public class MediaChartQuery: GraphQLQuery {
         .field("__typename", String.self),
         .field("media", [Medium?]?.self, arguments: [
           "sort": .variable("sort"),
-          "type": .variable("type")
+          "type": .variable("type"),
+          "status": .variable("status")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }

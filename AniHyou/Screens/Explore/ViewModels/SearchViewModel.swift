@@ -70,31 +70,10 @@ class SearchViewModel: ObservableObject {
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
     
     private func searchMedia(type: MediaType) {
-        var searchWrap: GraphQLNullable<String> = .none
-        if !search.isEmpty {
-            searchWrap = .some(search)
-        }
         
-        var selectedGenresTags = [String]()
+        selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
         
-        var genreWrap: GraphQLNullable<[String?]> = .none
-        if !selectedGenres.isEmpty {
-            selectedGenresTags = Array(selectedGenres)
-            genreWrap = .some(Array(selectedGenres))
-        }
-        var tagWrap: GraphQLNullable<[String?]> = .none
-        if !selectedTags.isEmpty {
-            if selectedGenresTags.isEmpty {
-                selectedGenresTags = Array(selectedTags)
-            } else {
-                selectedGenresTags += Array(selectedTags)
-            }
-            tagWrap = .some(Array(selectedTags))
-        }
-        
-        selectedGenresTagsJoined = selectedGenresTags.joined(separator: ", ")
-        
-        Network.shared.apollo.fetch(query: SearchMediaQuery(page: .some(1), perPage: .some(perPage), search: searchWrap, type: .some(.case(type)), sort: .some([.case(sortMedia)]), genre_in: genreWrap, tag_in: tagWrap)) { [weak self] result in
+        Network.shared.apollo.fetch(query: SearchMediaQuery(page: .some(1), perPage: .some(perPage), search: someIfNotEmpty(search), type: .some(.case(type)), sort: .some([.case(sortMedia)]), genre_in: someIfNotEmpty(Array(selectedGenres)), tag_in: someIfNotEmpty(Array(selectedTags)))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
