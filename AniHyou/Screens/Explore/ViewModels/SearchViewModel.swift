@@ -73,7 +73,7 @@ class SearchViewModel: ObservableObject {
         
         selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
         
-        Network.shared.apollo.fetch(query: SearchMediaQuery(page: .some(1), perPage: .some(perPage), search: someIfNotEmpty(search), type: .some(.case(type)), sort: .some([.case(sortMedia)]), genre_in: someIfNotEmpty(selectedGenres), tag_in: someIfNotEmpty(selectedTags))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SearchMediaQuery(page: .some(1), perPage: .some(perPage), search: someIfNotEmpty(search), type: .some(.case(type)), sort: .some([.case(sortMedia)]), genre_in: someIfNotEmpty(Array(selectedGenres)), tag_in: someIfNotEmpty(Array(selectedTags)))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
