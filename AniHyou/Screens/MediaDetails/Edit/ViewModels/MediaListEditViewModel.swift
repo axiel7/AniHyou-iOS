@@ -62,15 +62,8 @@ class MediaListEditViewModel: ObservableObject {
     
     func updateEntry(mediaId: Int, status: MediaListStatus?, score: Double?, progress: Int?, progressVolumes: Int?, startedAt: Date?, completedAt: Date?, repeatCount: Int?) {
         isLoading = true
-        let statusQL: GraphQLNullable<GraphQLEnum<MediaListStatus>> = status != nil ? .some(.case(status!)) : .none
-        let scoreQL: GraphQLNullable<Double> = score != nil ? .some(score!) : .none
-        let progressQL: GraphQLNullable<Int> = progress != nil ? .some(progress!) : .none
-        let progressVolumesQL: GraphQLNullable<Int> = progressVolumes != nil ? .some(progressVolumes!) : .none
-        let startedAtQL: GraphQLNullable<FuzzyDateInput> = startedAt != nil ? .some(startedAt!.toFuzzyDate()) : .none
-        let completedAtQL: GraphQLNullable<FuzzyDateInput> = completedAt != nil ? .some(completedAt!.toFuzzyDate()) : .none
-        let repeatQL: GraphQLNullable<Int> = repeatCount != nil ? .some(repeatCount!) : .none
         
-        Network.shared.apollo.perform(mutation: UpdateEntryMutation(mediaId: .some(mediaId), status: statusQL, score: scoreQL, progress: progressQL, progressVolumes: progressVolumesQL, startedAt: startedAtQL, completedAt: completedAtQL, repeat: repeatQL)) { [weak self] result in
+        Network.shared.apollo.perform(mutation: UpdateEntryMutation(mediaId: .some(mediaId), status: someIfNotNil(status), score: someIfNotNil(score), progress: someIfNotNil(progress), progressVolumes: someIfNotNil(progressVolumes), startedAt: someIfNotNil(startedAt?.toFuzzyDate()), completedAt: someIfNotNil(completedAt?.toFuzzyDate()), repeat: someIfNotNil(repeatCount))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {

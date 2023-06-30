@@ -91,8 +91,7 @@ class MediaListViewModel: ObservableObject {
     
     func updateEntryProgress(entryId: Int, progress: Int, status: MediaListStatus?) {
         isLoading = true
-        let statusQl: GraphQLNullable<GraphQLEnum<MediaListStatus>> = status != nil ? .some(.case(status!)) : .none
-        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: .some(entryId), progress: .some(progress), status: statusQl)) { [weak self] result in
+        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: .some(entryId), progress: .some(progress), status: someIfNotNil(status))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {

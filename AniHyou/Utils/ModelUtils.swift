@@ -9,6 +9,44 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+
+func someIfNotNil<T>(_ value: T?) -> GraphQLNullable<T> {
+    guard value != nil else { return .none }
+    return .some(value!)
+}
+
+func someIfNotNil<T>(_ value: (any EnumType)?) -> GraphQLNullable<GraphQLEnum<T>> {
+    guard value != nil else { return .none }
+    guard let value = value as? T else { return .none }
+    return .some(.case(value))
+}
+
+func someIfNotEmpty<T>(_ value: Array<T>?) -> GraphQLNullable<Array<T>> {
+    return someIfNotEmpty(value)
+}
+
+func someIfNotEmpty<T>(_ value: Array<T?>?) -> GraphQLNullable<Array<T?>> {
+    guard value != nil else { return .none }
+    if value!.isEmpty { return .none }
+    return .some(value!)
+}
+
+func someIfNotEmpty<T>(_ value: Set<T>?) -> GraphQLNullable<Array<T>> {
+    return someIfNotEmpty(value)
+}
+
+func someIfNotEmpty<T>(_ value: Set<T?>?) -> GraphQLNullable<Set<T?>> {
+    guard value != nil else { return .none }
+    if value!.isEmpty { return .none }
+    return .some(value!)
+}
+
+func someIfNotEmpty(_ value: String?) -> GraphQLNullable<String> {
+    guard value != nil else { return .none }
+    if value!.isEmpty { return .none }
+    return .some(value!)
+}
+
 extension MediaType {
     var localizedName: String {
         switch self {
