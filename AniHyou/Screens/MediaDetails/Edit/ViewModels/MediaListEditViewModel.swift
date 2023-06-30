@@ -10,6 +10,8 @@ import AniListAPI
 
 class MediaListEditViewModel: ObservableObject {
     
+    var oldEntry: BasicMediaListEntry? = nil
+    
     @Published var isLoading = false
     
     @Published var score: Double = 0 {
@@ -60,10 +62,40 @@ class MediaListEditViewModel: ObservableObject {
     @Published var isUpdateSuccess = false
     var updatedEntry: BasicMediaListEntry? = nil
     
-    func updateEntry(mediaId: Int, status: MediaListStatus?, score: Double?, progress: Int?, progressVolumes: Int?, startedAt: Date?, completedAt: Date?, repeatCount: Int?) {
+    func updateEntry(mediaId: Int, status: MediaListStatus?, score: Double?, progress: Int?, progressVolumes: Int?, startedAt: Date?, completedAt: Date?, repeatCount: Int?, isPrivate: Bool?, notes: String?) {
         isLoading = true
+        var setStatus = status
+        if status == oldEntry?.status?.value { setStatus = nil }
         
-        Network.shared.apollo.perform(mutation: UpdateEntryMutation(mediaId: .some(mediaId), status: someIfNotNil(status), score: someIfNotNil(score), progress: someIfNotNil(progress), progressVolumes: someIfNotNil(progressVolumes), startedAt: someIfNotNil(startedAt?.toFuzzyDate()), completedAt: someIfNotNil(completedAt?.toFuzzyDate()), repeat: someIfNotNil(repeatCount))) { [weak self] result in
+        var setScore = score
+        if score == oldEntry?.score { setScore = nil }
+        
+        var setProgress = progress
+        if progress == oldEntry?.progress { setProgress = nil }
+        
+        var setProgressVolumes = progressVolumes
+        if progressVolumes == oldEntry?.progressVolumes { setProgressVolumes = nil }
+        
+        var setStartedAt = startedAt?.toFuzzyDate()
+        if oldEntry?.startedAt?.fragments.fuzzyDateFragment.isEqual(setStartedAt) == true { setStartedAt = nil }
+        var startedAtQL = someIfNotNil(setStartedAt)
+        if startedAt == nil { startedAtQL = .null } //remove date
+        
+        var setCompletedAt = completedAt?.toFuzzyDate()
+        if oldEntry?.completedAt?.fragments.fuzzyDateFragment.isEqual(setCompletedAt) == true { setCompletedAt = nil }
+        var completedAtQL = someIfNotNil(setCompletedAt)
+        if completedAt == nil { completedAtQL = .null } //remove date
+        
+        var setRepeat = repeatCount
+        if repeatCount == oldEntry?.repeat { setRepeat = nil }
+        
+        var setIsPrivate = isPrivate
+        if isPrivate == oldEntry?.private { setIsPrivate = nil }
+        
+        var setNotes = notes
+        if notes == oldEntry?.notes { setNotes = nil }
+        
+        Network.shared.apollo.perform(mutation: UpdateEntryMutation(mediaId: .some(mediaId), status: someIfNotNil(setStatus), score: someIfNotNil(setScore), progress: someIfNotNil(setProgress), progressVolumes: someIfNotNil(setProgressVolumes), startedAt: startedAtQL, completedAt: completedAtQL, repeat: someIfNotNil(setRepeat), private: someIfNotNil(setIsPrivate), notes: someIfNotNil(setNotes))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {

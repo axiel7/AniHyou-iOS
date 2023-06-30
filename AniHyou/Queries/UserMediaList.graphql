@@ -37,10 +37,12 @@ fragment BasicMediaListEntry on MediaList
   progress
   progressVolumes
   repeat
+  private
   startedAt {
     ...FuzzyDateFragment
   }
   completedAt {
     ...FuzzyDateFragment
   }
+  notes
 }

@@ -439,6 +439,10 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The amount of times the user has rewatched/read the media
         public var `repeat`: Int? { __data["repeat"] }
+        /// If the entry should only be visible to authenticated user
+        public var `private`: Bool? { __data["private"] }
+        /// Text notes
+        public var notes: String? { __data["notes"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict

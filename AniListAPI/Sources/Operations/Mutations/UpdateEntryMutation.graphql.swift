@@ -8,7 +8,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int) {
+      mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $notes: String) {
         SaveMediaListEntry(
           mediaId: $mediaId
           status: $status
@@ -18,6 +18,8 @@ public class UpdateEntryMutation: GraphQLMutation {
           startedAt: $startedAt
           completedAt: $completedAt
           repeat: $repeat
+          private: $private
+          notes: $notes
         ) {
           __typename
           ...BasicMediaListEntry
@@ -36,6 +38,8 @@ public class UpdateEntryMutation: GraphQLMutation {
   public var startedAt: GraphQLNullable<FuzzyDateInput>
   public var completedAt: GraphQLNullable<FuzzyDateInput>
   public var `repeat`: GraphQLNullable<Int>
+  public var `private`: GraphQLNullable<Bool>
+  public var notes: GraphQLNullable<String>
 
   public init(
     mediaId: GraphQLNullable<Int>,
@@ -45,7 +49,9 @@ public class UpdateEntryMutation: GraphQLMutation {
     progressVolumes: GraphQLNullable<Int>,
     startedAt: GraphQLNullable<FuzzyDateInput>,
     completedAt: GraphQLNullable<FuzzyDateInput>,
-    `repeat`: GraphQLNullable<Int>
+    `repeat`: GraphQLNullable<Int>,
+    `private`: GraphQLNullable<Bool>,
+    notes: GraphQLNullable<String>
   ) {
     self.mediaId = mediaId
     self.status = status
@@ -55,6 +61,8 @@ public class UpdateEntryMutation: GraphQLMutation {
     self.startedAt = startedAt
     self.completedAt = completedAt
     self.`repeat` = `repeat`
+    self.`private` = `private`
+    self.notes = notes
   }
 
   public var __variables: Variables? { [
@@ -65,7 +73,9 @@ public class UpdateEntryMutation: GraphQLMutation {
     "progressVolumes": progressVolumes,
     "startedAt": startedAt,
     "completedAt": completedAt,
-    "repeat": `repeat`
+    "repeat": `repeat`,
+    "private": `private`,
+    "notes": notes
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -82,7 +92,9 @@ public class UpdateEntryMutation: GraphQLMutation {
         "progressVolumes": .variable("progressVolumes"),
         "startedAt": .variable("startedAt"),
         "completedAt": .variable("completedAt"),
-        "repeat": .variable("repeat")
+        "repeat": .variable("repeat"),
+        "private": .variable("private"),
+        "notes": .variable("notes")
       ]),
     ] }
 
@@ -117,10 +129,14 @@ public class UpdateEntryMutation: GraphQLMutation {
       public var progressVolumes: Int? { __data["progressVolumes"] }
       /// The amount of times the user has rewatched/read the media
       public var `repeat`: Int? { __data["repeat"] }
+      /// If the entry should only be visible to authenticated user
+      public var `private`: Bool? { __data["private"] }
       /// When the entry was started by the user
       public var startedAt: StartedAt? { __data["startedAt"] }
       /// When the entry was completed by the user
       public var completedAt: CompletedAt? { __data["completedAt"] }
+      /// Text notes
+      public var notes: String? { __data["notes"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict

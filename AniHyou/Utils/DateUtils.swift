@@ -163,6 +163,13 @@ extension FuzzyDateFragment {
         }
         else { return "Unknown" }
     }
+    
+    func isEqual(_ fuzzyDate: FuzzyDateInput?) -> Bool {
+        if self.day != fuzzyDate?.day.unwrapped { return false }
+        else if self.month != fuzzyDate?.month.unwrapped { return false }
+        else if self.year != fuzzyDate?.year.unwrapped { return false }
+        else { return true }
+    }
 }
 
 func date(year: Int, month: Int, day: Int) -> Date? {

@@ -14,6 +14,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
       progress
       progressVolumes
       repeat
+      private
       startedAt {
         __typename
         ...FuzzyDateFragment
@@ -22,6 +23,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         __typename
         ...FuzzyDateFragment
       }
+      notes
     }
     """ }
 
@@ -38,8 +40,10 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     .field("progress", Int?.self),
     .field("progressVolumes", Int?.self),
     .field("repeat", Int?.self),
+    .field("private", Bool?.self),
     .field("startedAt", StartedAt?.self),
     .field("completedAt", CompletedAt?.self),
+    .field("notes", String?.self),
   ] }
 
   /// The id of the list entry
@@ -77,6 +81,11 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     get { __data["repeat"] }
     set { __data["repeat"] = newValue }
   }
+  /// If the entry should only be visible to authenticated user
+  public var `private`: Bool? {
+    get { __data["private"] }
+    set { __data["private"] = newValue }
+  }
   /// When the entry was started by the user
   public var startedAt: StartedAt? {
     get { __data["startedAt"] }
@@ -87,6 +96,11 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     get { __data["completedAt"] }
     set { __data["completedAt"] = newValue }
   }
+  /// Text notes
+  public var notes: String? {
+    get { __data["notes"] }
+    set { __data["notes"] = newValue }
+  }
 
   public init(
     id: Int,
@@ -96,8 +110,10 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     progress: Int? = nil,
     progressVolumes: Int? = nil,
     `repeat`: Int? = nil,
+    `private`: Bool? = nil,
     startedAt: StartedAt? = nil,
-    completedAt: CompletedAt? = nil
+    completedAt: CompletedAt? = nil,
+    notes: String? = nil
   ) {
     self.init(_dataDict: DataDict(
       data: [
@@ -109,8 +125,10 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "progress": progress,
         "progressVolumes": progressVolumes,
         "repeat": `repeat`,
+        "private": `private`,
         "startedAt": startedAt._fieldData,
         "completedAt": completedAt._fieldData,
+        "notes": notes,
       ],
       fulfilledFragments: [
         ObjectIdentifier(BasicMediaListEntry.self)

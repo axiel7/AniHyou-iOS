@@ -30,6 +30,8 @@ struct MediaListEditView: View {
     @State private var isFinishDateSet = false
     @State private var showStartDate = false
     @State private var showFinishDate = false
+    @State private var isPrivate = false
+    @State private var notes = ""
     
     private let textFieldWidth: CGFloat = 65
     private let decimalFormatter: NumberFormatter = {
@@ -107,6 +109,20 @@ struct MediaListEditView: View {
                     DatePickerToggleView(text: "Finish Date", selection: $finishDate, isDateSet: $isFinishDateSet)
                 }
                 
+                Section {
+                    Toggle("Private", isOn: $isPrivate)
+                }
+                
+                Section {
+                    if #available(iOS 16.0, *) {
+                        TextField("Notes", text: $notes, axis: .vertical)
+                            .lineLimit(5)
+                    } else {
+                        TextField("Notes", text: $notes)
+                            .lineLimit(5)
+                    }
+                }
+                
                 Button("Delete", role: .destructive) {
                     showDeleteDialog = true
                 }
@@ -133,7 +149,7 @@ struct MediaListEditView: View {
                         ProgressView()
                     } else {
                         Button("Save", action: {
-                            viewModel.updateEntry(mediaId: mediaId, status: status, score: viewModel.score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil, repeatCount: repeatCount)
+                            viewModel.updateEntry(mediaId: mediaId, status: status, score: viewModel.score, progress: progress, progressVolumes: progressVolumes, startedAt: isStartDateSet ? startDate : nil, completedAt: isFinishDateSet ? finishDate : nil, repeatCount: repeatCount, isPrivate: isPrivate, notes: notes)
                         })
                         .font(.bold(.body)())
                     }
@@ -158,6 +174,7 @@ struct MediaListEditView: View {
     }
     
     private func setValues() {
+        viewModel.oldEntry = self.mediaList
         self.status = self.mediaList?.status?.value ?? .planning
         self.progress = self.mediaList?.progress ?? 0
         self.progressVolumes = self.mediaList?.progressVolumes ?? 0
@@ -184,6 +201,9 @@ struct MediaListEditView: View {
             }
         }
         self.isFinishDateSet = self.mediaList?.completedAt?.year != nil
+        
+        self.isPrivate = self.mediaList?.private ?? false
+        self.notes = self.mediaList?.notes ?? ""
     }
 }
 
