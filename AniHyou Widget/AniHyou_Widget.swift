@@ -90,7 +90,7 @@ struct AniHyou_WidgetEntryView : View {
     var entry: Provider.Entry
     
     var aligment: Alignment {
-        if entry.placeholderText != nil {
+        if entry.placeholderText != nil || entry.animeList.isEmpty {
             return .center
         } else {
             if entry.animeList.count >= 3 {
@@ -132,7 +132,7 @@ struct AniHyou_WidgetEntryView : View {
             Text(entry.placeholderText!)
         }
         else if entry.animeList.isEmpty {
-            Text("No airing animes")
+            Text("No airing anime")
         }
         else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
