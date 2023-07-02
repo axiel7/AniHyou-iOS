@@ -90,7 +90,7 @@ struct AniHyou_WidgetEntryView : View {
     var entry: Provider.Entry
     
     var aligment: Alignment {
-        if entry.placeholderText != nil {
+        if entry.placeholderText != nil || entry.animeList.isEmpty {
             return .center
         } else {
             if entry.animeList.count >= 3 {
