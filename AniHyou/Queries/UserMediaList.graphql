@@ -16,7 +16,7 @@ query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $
         }
         nextAiringEpisode {
           episode
-          timeUntilAiring
+          airingAt
         }
         status
         type
