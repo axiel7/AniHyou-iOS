@@ -36,7 +36,6 @@ public class AiringAnimesQuery: GraphQLQuery {
               }
             }
             episode
-            timeUntilAiring
             airingAt
           }
           pageInfo {
@@ -127,7 +126,6 @@ public class AiringAnimesQuery: GraphQLQuery {
           .field("mediaId", Int.self),
           .field("media", Media?.self),
           .field("episode", Int.self),
-          .field("timeUntilAiring", Int.self),
           .field("airingAt", Int.self),
         ] }
 
@@ -139,8 +137,6 @@ public class AiringAnimesQuery: GraphQLQuery {
         public var media: Media? { __data["media"] }
         /// The airing episode number
         public var episode: Int { __data["episode"] }
-        /// Seconds until episode starts airing
-        public var timeUntilAiring: Int { __data["timeUntilAiring"] }
         /// The time the episode airs at
         public var airingAt: Int { __data["airingAt"] }
 

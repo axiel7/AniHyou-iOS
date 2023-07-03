@@ -53,11 +53,19 @@ struct AiringScheduleItemText: View {
     var body: some View {
         let airing = item!.media!.nextAiringEpisode!
         let isBehind = item?.progress ?? 0 < airing.episode - 1
-        Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episodes](inflect: true) behind" : "Ep \(airing.episode) airing in \(airing.timeUntilAiring.secondsToLegibleText())")
-            .foregroundColor(isBehind ? .accentColor : .gray)
-            .font(.subheadline)
-            .lineLimit(1)
-            .padding(.bottom, 1)
+        HStack(spacing: 1) {
+            Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episodes](inflect: true) behind" : "Ep \(airing.episode) airing in ")
+                .font(.subheadline)
+                .lineLimit(1)
+                
+            if !isBehind {
+                Text(Date(timeIntervalSince1970: Double(airing.airingAt)), style: .relative)
+                    .font(.subheadline)
+                    .lineLimit(1)
+            }
+        }
+        .foregroundColor(isBehind ? .accentColor : .gray)
+        .padding(.bottom, 1)
     }
 }
 

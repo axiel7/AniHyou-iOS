@@ -46,7 +46,7 @@ class HomeViewModel: ObservableObject {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let media = page.media {
-                        self?.airingOnMyList = media.filter({ $0?.nextAiringEpisode != nil }).sorted(by: { it1, it2 in it1!.nextAiringEpisode!.timeUntilAiring < it2!.nextAiringEpisode!.timeUntilAiring })
+                        self?.airingOnMyList = media.filter({ $0?.nextAiringEpisode != nil }).sorted(by: { it1, it2 in it1!.nextAiringEpisode!.airingAt < it2!.nextAiringEpisode!.airingAt })
                     }
                 }
             case .failure(let error):

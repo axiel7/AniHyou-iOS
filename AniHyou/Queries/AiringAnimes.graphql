@@ -16,7 +16,6 @@ query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGrea
         }
       }
       episode
-      timeUntilAiring
       airingAt
     }
     pageInfo {

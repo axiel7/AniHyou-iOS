@@ -72,7 +72,7 @@ struct HomeView: View {
                         ForEach(viewModel.airingOnMyList, id: \.?.id) {
                             if let item = $0 {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                    HListItemWithSubtitleView(title: item.title?.userPreferred, subtitle: "Airing in \(item.nextAiringEpisode?.timeUntilAiring.secondsToLegibleText() ?? UNKNOWN_CHAR)", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                    AiringMediaHorizontalItemView(title: item.title?.userPreferred, imageUrl: item.coverImage?.large, meanScore: item.meanScore, nextEpisode: item.nextAiringEpisode?.episode, airingAt: item.nextAiringEpisode?.airingAt)
                                         .padding(.leading, 8)
                                         .frame(width: 280, alignment: .leading)
                                 }
@@ -82,7 +82,7 @@ struct HomeView: View {
                         ForEach(viewModel.airingAnimes, id: \.?.mediaId) {
                             if let item = $0 {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                                    HListItemWithSubtitleView(title: item.media?.title?.userPreferred, subtitle: "Airing in \(item.timeUntilAiring.secondsToLegibleText())", imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore)
+                                    AiringMediaHorizontalItemView(title: item.media?.title?.userPreferred, imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore, nextEpisode: item.episode, airingAt: item.airingAt)
                                         .padding(.leading, 8)
                                         .frame(width: 280, alignment: .leading)
                                 }

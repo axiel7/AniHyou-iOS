@@ -123,12 +123,18 @@ struct AniHyou_WidgetEntryView : View {
                                         .padding(.horizontal)
                                         .frame(width: entry.widgetSize.width, alignment: .leading)
                                     
-                                    Text("Ep \(nextAiringEpisode.episode) airing on \(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)).formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated).hour().minute()))")
-                                        .font(.system(size: 12))
-                                        .lineLimit(1)
-                                        .foregroundColor(.accentColor)
-                                        .padding(.horizontal)
-                                        .frame(width: entry.widgetSize.width, alignment: .leading)
+                                    HStack(spacing: 1) {
+                                        Text("Ep \(nextAiringEpisode.episode) airing in ")
+                                            .font(.system(size: 12))
+                                            .lineLimit(1)
+                                            
+                                        Text(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)), style: .relative)
+                                            .font(.system(size: 12))
+                                            .lineLimit(1)
+                                    }
+                                    .foregroundColor(.accentColor)
+                                    .padding(.horizontal)
+                                    .frame(width: entry.widgetSize.width, alignment: .leading)
                                     
                                     if (index + 1) < entry.animeList.count {
                                         Divider()

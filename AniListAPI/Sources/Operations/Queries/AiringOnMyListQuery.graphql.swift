@@ -26,7 +26,6 @@ public class AiringOnMyListQuery: GraphQLQuery {
             nextAiringEpisode {
               __typename
               episode
-              timeUntilAiring
               airingAt
             }
           }
@@ -166,14 +165,11 @@ public class AiringOnMyListQuery: GraphQLQuery {
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("episode", Int.self),
-            .field("timeUntilAiring", Int.self),
             .field("airingAt", Int.self),
           ] }
 
           /// The airing episode number
           public var episode: Int { __data["episode"] }
-          /// Seconds until episode starts airing
-          public var timeUntilAiring: Int { __data["timeUntilAiring"] }
           /// The time the episode airs at
           public var airingAt: Int { __data["airingAt"] }
         }
