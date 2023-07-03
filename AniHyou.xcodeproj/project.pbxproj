@@ -82,12 +82,14 @@
 		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
+		4892AB7D2A52E6CE004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
+		4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
+		4892AB7F2A52E718004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
 		4892DDEE2A2DE0B8009AFB63 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */; };
 		489BA4152A52740500B2445E /* AiringMediaHorizontalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BA4142A52740500B2445E /* AiringMediaHorizontalItemView.swift */; };
 		48A1A8F32A39861C00ACC6FF /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */; };
 		48A1A8F42A39861C00ACC6FF /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */; };
 		48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */; };
-		48A29C582972B00700BF53B8 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
 		48A29C5A2972B9EB00BF53B8 /* MediaListItemMinimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */; };
 		48AAEEA22A29E08800FC0887 /* StaffInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAEEA12A29E08800FC0887 /* StaffInfoType.swift */; };
 		48AAEEA42A29E5AE00FC0887 /* StaffMediaGrouped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAEEA32A29E5AE00FC0887 /* StaffMediaGrouped.swift */; };
@@ -308,6 +310,7 @@
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
+		4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = NotificationCount.graphql; sourceTree = "<group>"; };
 		4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
 		489622502934E4E400C6CB3F /* DeleteMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteMediaList.graphql; sourceTree = "<group>"; };
@@ -672,6 +675,7 @@
 				481AD501285207B1001779EE /* DateUtils.swift */,
 				488C267828537B5F0005EE15 /* StringUtils.swift */,
 				4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */,
+				4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */,
 				480A41A428ECA1A30066288D /* ModelUtils.swift */,
 				48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */,
 			);
@@ -1435,6 +1439,7 @@
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
 				480D76A529AB6A9800B56DE1 /* UserSocialViewModel.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
+				4892AB7D2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,
 				486ED207285DD4D8002D29E1 /* MediaListItemStandardView.swift in Sources */,
 				483CEABE289E688400D30266 /* ThreadItemView.swift in Sources */,
 				48FC9479286852A300C87F56 /* ExploreView.swift in Sources */,
@@ -1531,6 +1536,7 @@
 				48EFCDEC29FFB09D0096BF6E /* Network.swift in Sources */,
 				48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */,
 				48EFCDDE29FFAD200096BF6E /* AniHyou_Widget.swift in Sources */,
+				4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,
 				48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */,
 				48EFCDF529FFE70A0096BF6E /* Constants.swift in Sources */,
 			);
@@ -1542,8 +1548,8 @@
 			files = (
 				48F279332970299D000827F7 /* Network.swift in Sources */,
 				48F27934297029A0000827F7 /* TokenAddingInterceptor.swift in Sources */,
+				4892AB7F2A52E718004F07C9 /* ColorUtils.swift in Sources */,
 				48F2790F296EFE77000827F7 /* ContentView.swift in Sources */,
-				48A29C582972B00700BF53B8 /* SwiftUIUtils.swift in Sources */,
 				48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */,
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,

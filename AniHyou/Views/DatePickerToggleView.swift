@@ -13,6 +13,7 @@ struct DatePickerToggleView: View {
     var selection: Binding<Date>
     var isDateSet: Binding<Bool>
     @State private var showDatePicker = false
+    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
     
     var body: some View {
         VStack {
@@ -22,7 +23,7 @@ struct DatePickerToggleView: View {
                     if isDateSet.wrappedValue {
                         Text("\(selection.wrappedValue.formatted(date: .abbreviated, time: .omitted))")
                             .font(.footnote)
-                            .foregroundColor(.accentColor)
+                            .foregroundColor(Color(hex: accentColor))
                     }
                 }
                 .onTapGesture {
