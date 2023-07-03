@@ -102,16 +102,17 @@ var spoilerCss =
     """
 
 func shareSheet(url: String) {
-    let url = URL(string: url)
-    let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
-
-    let allScenes = UIApplication.shared.connectedScenes
-    let scene = allScenes.first { $0.activationState == .foregroundActive }
-
-    if let windowScene = scene as? UIWindowScene {
-        windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
+    DispatchQueue.main.async {
+        let url = URL(string: url)
+        let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+        
+        if let windowScene = scene as? UIWindowScene {
+            windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
+        }
     }
-
 }
 
 // A magic trick for keeping the swipe to back functionality when navigationBarBackButtonHidden is set
