@@ -21,6 +21,12 @@ class SearchViewModel: ObservableObject {
     @Published var selectedGenres = Set<String>()
     @Published var selectedTags = Set<String>()
     @Published var selectedGenresTagsJoined = ""
+    @Published var selectedMediaFormat = Set<MediaFormat>()
+    @Published var selectedMediaFormatJoined = ""
+    @Published var selectedMediaStatus = Set<MediaStatus>()
+    @Published var selectedMediaStatusJoined = ""
+    @Published var selectedYear: Int? = nil
+    @Published var mediaOnMyList = false
     
     func runSearch() {
         switch type {
@@ -72,8 +78,30 @@ class SearchViewModel: ObservableObject {
     private func searchMedia(type: MediaType) {
         
         selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
+        selectedMediaFormatJoined = selectedMediaFormat.map { $0.localizedName }.joined(separator: ", ")
+        selectedMediaStatusJoined = selectedMediaStatus.map { $0.localizedName }.joined(separator: ", ")
         
-        Network.shared.apollo.fetch(query: SearchMediaQuery(page: .some(1), perPage: .some(perPage), search: someIfNotEmpty(search), type: .some(.case(type)), sort: .some([.case(sortMedia)]), genre_in: someIfNotEmpty(Array(selectedGenres)), tag_in: someIfNotEmpty(Array(selectedTags)))) { [weak self] result in
+        //if no query provided but other filters applied and sort is set to default, set sort to popularity
+        if search.isEmpty && sortMedia == .searchMatch && (!selectedGenres.isEmpty || !selectedTags.isEmpty || !selectedMediaFormat.isEmpty || !selectedMediaStatus.isEmpty || selectedYear != nil || mediaOnMyList) {
+            sortMedia = .popularityDesc
+        }
+        
+        var mediaOnListValue = GraphQLNullable<Bool>.none
+        if mediaOnMyList { mediaOnListValue = .some(true) }
+        
+        Network.shared.apollo.fetch(query: SearchMediaQuery(
+            page: .some(1),
+            perPage: .some(perPage),
+            search: someIfNotEmpty(search),
+            type: .some(.case(type)),
+            sort: .some([.case(sortMedia)]),
+            genre_in: someIfNotEmpty(Array(selectedGenres)),
+            tag_in: someIfNotEmpty(Array(selectedTags)),
+            format_in: someEnumArrayIfNotEmpty(Array(selectedMediaFormat)),
+            status_in: someEnumArrayIfNotEmpty(Array(selectedMediaStatus)),
+            seasonYear: someIfNotNil(selectedYear),
+            onList: mediaOnListValue
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

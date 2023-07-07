@@ -8,19 +8,19 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let document: ApolloAPI.DocumentType = .notPersisted(
     definition: .init(
       #"""
-      query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String]) {
+      query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $seasonYear: Int, $onList: Boolean) {
         Page(page: $page, perPage: $perPage) {
           __typename
-          pageInfo {
-            __typename
-            hasNextPage
-          }
           media(
             search: $search
             type: $type
             sort: $sort
             genre_in: $genre_in
             tag_in: $tag_in
+            format_in: $format_in
+            status_in: $status_in
+            seasonYear: $seasonYear
+            onList: $onList
           ) {
             __typename
             id
@@ -28,6 +28,7 @@ public class SearchMediaQuery: GraphQLQuery {
               __typename
               userPreferred
             }
+            meanScore
             format
             coverImage {
               __typename
@@ -37,6 +38,11 @@ public class SearchMediaQuery: GraphQLQuery {
               __typename
               year
             }
+          }
+          pageInfo {
+            __typename
+            currentPage
+            hasNextPage
           }
         }
       }
@@ -50,6 +56,10 @@ public class SearchMediaQuery: GraphQLQuery {
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
   public var genre_in: GraphQLNullable<[String?]>
   public var tag_in: GraphQLNullable<[String?]>
+  public var format_in: GraphQLNullable<[GraphQLEnum<MediaFormat>?]>
+  public var status_in: GraphQLNullable<[GraphQLEnum<MediaStatus>?]>
+  public var seasonYear: GraphQLNullable<Int>
+  public var onList: GraphQLNullable<Bool>
 
   public init(
     page: GraphQLNullable<Int>,
@@ -58,7 +68,11 @@ public class SearchMediaQuery: GraphQLQuery {
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
     genre_in: GraphQLNullable<[String?]>,
-    tag_in: GraphQLNullable<[String?]>
+    tag_in: GraphQLNullable<[String?]>,
+    format_in: GraphQLNullable<[GraphQLEnum<MediaFormat>?]>,
+    status_in: GraphQLNullable<[GraphQLEnum<MediaStatus>?]>,
+    seasonYear: GraphQLNullable<Int>,
+    onList: GraphQLNullable<Bool>
   ) {
     self.page = page
     self.perPage = perPage
@@ -67,6 +81,10 @@ public class SearchMediaQuery: GraphQLQuery {
     self.sort = sort
     self.genre_in = genre_in
     self.tag_in = tag_in
+    self.format_in = format_in
+    self.status_in = status_in
+    self.seasonYear = seasonYear
+    self.onList = onList
   }
 
   public var __variables: Variables? { [
@@ -76,7 +94,11 @@ public class SearchMediaQuery: GraphQLQuery {
     "type": type,
     "sort": sort,
     "genre_in": genre_in,
-    "tag_in": tag_in
+    "tag_in": tag_in,
+    "format_in": format_in,
+    "status_in": status_in,
+    "seasonYear": seasonYear,
+    "onList": onList
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -103,36 +125,23 @@ public class SearchMediaQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("pageInfo", PageInfo?.self),
         .field("media", [Medium?]?.self, arguments: [
           "search": .variable("search"),
           "type": .variable("type"),
           "sort": .variable("sort"),
           "genre_in": .variable("genre_in"),
-          "tag_in": .variable("tag_in")
+          "tag_in": .variable("tag_in"),
+          "format_in": .variable("format_in"),
+          "status_in": .variable("status_in"),
+          "seasonYear": .variable("seasonYear"),
+          "onList": .variable("onList")
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
+      public var media: [Medium?]? { __data["media"] }
       /// The pagination information
       public var pageInfo: PageInfo? { __data["pageInfo"] }
-      public var media: [Medium?]? { __data["media"] }
-
-      /// Page.PageInfo
-      ///
-      /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
-
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-        public static var __selections: [ApolloAPI.Selection] { [
-          .field("__typename", String.self),
-          .field("hasNextPage", Bool?.self),
-        ] }
-
-        /// If there is another page
-        public var hasNextPage: Bool? { __data["hasNextPage"] }
-      }
 
       /// Page.Medium
       ///
@@ -146,6 +155,7 @@ public class SearchMediaQuery: GraphQLQuery {
           .field("__typename", String.self),
           .field("id", Int.self),
           .field("title", Title?.self),
+          .field("meanScore", Int?.self),
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
           .field("coverImage", CoverImage?.self),
           .field("startDate", StartDate?.self),
@@ -155,6 +165,8 @@ public class SearchMediaQuery: GraphQLQuery {
         public var id: Int { __data["id"] }
         /// The official titles of the media in various languages
         public var title: Title? { __data["title"] }
+        /// Mean score of all the user's scores of the media
+        public var meanScore: Int? { __data["meanScore"] }
         /// The format the media was released in
         public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
         /// The cover images of the media
@@ -212,6 +224,26 @@ public class SearchMediaQuery: GraphQLQuery {
           /// Numeric Year (2017)
           public var year: Int? { __data["year"] }
         }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: AniListAPI.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("currentPage", Int?.self),
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// The current page
+        public var currentPage: Int? { __data["currentPage"] }
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }

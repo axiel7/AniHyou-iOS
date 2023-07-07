@@ -14,14 +14,14 @@ struct StarRatingView: View {
     var offImage = Image(systemName: "star")
     var onImage = Image(systemName: "star.fill")
     var offColor = Color.gray
-    var onColor = Color.accentColor
+    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
     
     var body: some View {
         HStack {
             ForEach(1...5, id: \.self) {
                 let number = Double($0)
                 image(for: number)
-                    .foregroundColor(number > rating ? offColor : onColor)
+                    .foregroundColor(number > rating ? offColor : Color(hex: accentColor))
                     .onTapGesture {
                         if rating == number { rating = 0 }
                         else { rating = number }
