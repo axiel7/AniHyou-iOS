@@ -21,16 +21,23 @@ func someIfNotNil<T>(_ value: (any EnumType)?) -> GraphQLNullable<GraphQLEnum<T>
     return .some(.case(value))
 }
 
-func someIfNotEmpty<T>(_ value: Array<T>?) -> GraphQLNullable<Array<T>> {
+func someIfNotEmpty<T>(_ value: [T]?) -> GraphQLNullable<Array<T>> {
     guard value != nil else { return .none }
     if value!.isEmpty { return .none }
     return .some(value!)
 }
 
-func someIfNotEmpty<T>(_ value: Array<T?>?) -> GraphQLNullable<Array<T?>> {
+func someIfNotEmpty<T>(_ value: [T?]?) -> GraphQLNullable<Array<T?>> {
     guard value != nil else { return .none }
     if value!.isEmpty { return .none }
     return .some(value!)
+}
+
+func someEnumArrayIfNotEmpty<T>(_ value: [any EnumType]?) -> GraphQLNullable<[GraphQLEnum<T>?]> {
+    guard value != nil else { return .none }
+    if value!.isEmpty { return .none }
+    guard let value = value as? Array<T> else { return .none }
+    return .some(value.map { .case($0) })
 }
 
 func someIfNotEmpty(_ value: String?) -> GraphQLNullable<String> {

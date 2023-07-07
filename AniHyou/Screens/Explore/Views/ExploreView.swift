@@ -15,6 +15,10 @@ struct ExploreView: View {
     @ObservedObject var viewModel: SearchViewModel
     @Environment(\.isSearching) private var isSearching
     @State private var isGenreSheetPresented = false
+    @State private var isMediaFormatSheetPresented = false
+    @State private var isMediaStatusPresented = false
+    @State private var isYearSheetPresented = false
+    private let currentYear = Date.now.year
     
     var body: some View {
         ZStack {
@@ -33,6 +37,25 @@ struct ExploreView: View {
                         mediaSortSelector
                         
                         genreTagSelector
+                        
+                        mediaFormatSelector
+                        
+                        mediaStatusSelector
+                        
+                        Picker("Year", selection: $viewModel.selectedYear) {
+                            Text("None").tag(Optional<Int>(nil))
+                            ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
+                                Text(String($0)).tag(Optional($0))
+                            }
+                        }
+                        .onChange(of: viewModel.selectedYear) { _ in
+                            viewModel.runSearch()
+                        }
+                        
+                        Toggle("On my list", isOn: $viewModel.mediaOnMyList)
+                            .onChange(of: viewModel.mediaOnMyList) { _ in
+                                viewModel.runSearch()
+                            }
                         
                         ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                             if item != nil {
@@ -264,6 +287,44 @@ struct ExploreView: View {
             GenreTagSelectionView(viewModel: viewModel, onDone: {
                 viewModel.runSearch()
             })
+        }//:Sheet
+    }
+    
+    private var mediaFormatSelector: some View {
+        Button(action: { isMediaFormatSheetPresented.toggle() }) {
+            HStack {
+                Text("Format")
+                    .foregroundColor(.primary)
+                Spacer()
+                Text(viewModel.selectedMediaFormatJoined)
+                    .foregroundColor(.gray)
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }//:HStack
+        }//:Button
+        .sheet(isPresented: $isMediaFormatSheetPresented) {
+            MultiSelectionSheet(values: MediaFormat.allCases, selectedValues: $viewModel.selectedMediaFormat, onDone: { viewModel.runSearch() }) { format in
+                Text(format.localizedName)
+            }
+        }//:Sheet
+    }
+    
+    private var mediaStatusSelector: some View {
+        Button(action: { isMediaStatusPresented.toggle() }) {
+            HStack {
+                Text("Status")
+                    .foregroundColor(.primary)
+                Spacer()
+                Text(viewModel.selectedMediaStatusJoined)
+                    .foregroundColor(.gray)
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }//:HStack
+        }//:Button
+        .sheet(isPresented: $isMediaStatusPresented, onDismiss: { viewModel.runSearch() }) {
+            MultiSelectionSheet(values: MediaStatus.allCases, selectedValues: $viewModel.selectedMediaStatus, onDone: { viewModel.runSearch() }) { status in
+                Text(status.localizedName)
+            }
         }//:Sheet
     }
 }
