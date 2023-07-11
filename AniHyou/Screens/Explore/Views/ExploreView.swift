@@ -18,6 +18,7 @@ struct ExploreView: View {
     @State private var isMediaFormatSheetPresented = false
     @State private var isMediaStatusPresented = false
     @State private var isYearSheetPresented = false
+    @State private var showingMoreFilters = false
     private let currentYear = Date.now.year
     
     var body: some View {
@@ -36,26 +37,41 @@ struct ExploreView: View {
                         
                         mediaSortSelector
                         
-                        genreTagSelector
-                        
-                        mediaFormatSelector
-                        
-                        mediaStatusSelector
-                        
-                        Picker("Year", selection: $viewModel.selectedYear) {
-                            Text("None").tag(Optional<Int>(nil))
-                            ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
-                                Text(String($0)).tag(Optional($0))
+                        if showingMoreFilters {
+                            
+                            genreTagSelector
+                            
+                            mediaFormatSelector
+                            
+                            mediaStatusSelector
+                            
+                            Picker("Year", selection: $viewModel.selectedYear) {
+                                Text("None").tag(Optional<Int>(nil))
+                                ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
+                                    Text(String($0)).tag(Optional($0))
+                                }
                             }
-                        }
-                        .onChange(of: viewModel.selectedYear) { _ in
-                            viewModel.runSearch()
-                        }
-                        
-                        Toggle("On my list", isOn: $viewModel.mediaOnMyList)
-                            .onChange(of: viewModel.mediaOnMyList) { _ in
+                            .onChange(of: viewModel.selectedYear) { _ in
                                 viewModel.runSearch()
                             }
+                            
+                            Toggle("On my list", isOn: $viewModel.mediaOnMyList)
+                                .onChange(of: viewModel.mediaOnMyList) { _ in
+                                    viewModel.runSearch()
+                                }
+                            
+                            Button("Hide filters") {
+                                withAnimation {
+                                    showingMoreFilters = false
+                                }
+                            }
+                        } else {
+                            Button("More filters") {
+                                withAnimation {
+                                    showingMoreFilters = true
+                                }
+                            }
+                        }
                         
                         ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                             if item != nil {
