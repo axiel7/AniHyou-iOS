@@ -20,12 +20,13 @@ struct HInfoView: View {
                 Text(name)
                     .font(.subheadline)
                     .foregroundColor(.gray)
+                    .padding(.trailing)
                 Spacer()
                 if !isExpanded {
                     Text(value ?? "Unknown")
                         .font(.subheadline)
                         .lineLimit(1)
-                        .frame(width: 150, alignment: .trailing)
+                        .frame(alignment: .trailing)
                 }
                 if isExpandable {
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
