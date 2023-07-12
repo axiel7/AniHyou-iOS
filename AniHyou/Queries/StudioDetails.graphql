@@ -13,6 +13,7 @@ query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {
         title {
           userPreferred
         }
+        type
       }
       pageInfo {
         hasNextPage

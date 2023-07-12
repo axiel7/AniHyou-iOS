@@ -77,6 +77,7 @@ struct ExploreView: View {
                             if item != nil {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
                                     HListItemWithSubtitleView(title: item!.title?.userPreferred, subtitle: "\(item!.format?.value?.localizedName ?? "") · \(item!.startDate?.year?.stringValue ?? "")", imageUrl: item!.coverImage?.large)
+                                        .mediaContextMenu(mediaId: item!.id, mediaType: item!.type?.value)
                                 }
                             }
                         }

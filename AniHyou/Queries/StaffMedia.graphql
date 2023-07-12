@@ -8,6 +8,7 @@ query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) {
                     title {
                         userPreferred
                     }
+                    type
                     coverImage {
                         large
                     }

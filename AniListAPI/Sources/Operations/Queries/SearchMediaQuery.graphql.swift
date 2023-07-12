@@ -28,6 +28,7 @@ public class SearchMediaQuery: GraphQLQuery {
               __typename
               userPreferred
             }
+            type
             meanScore
             format
             coverImage {
@@ -155,6 +156,7 @@ public class SearchMediaQuery: GraphQLQuery {
           .field("__typename", String.self),
           .field("id", Int.self),
           .field("title", Title?.self),
+          .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
           .field("meanScore", Int?.self),
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
           .field("coverImage", CoverImage?.self),
@@ -165,6 +167,8 @@ public class SearchMediaQuery: GraphQLQuery {
         public var id: Int { __data["id"] }
         /// The official titles of the media in various languages
         public var title: Title? { __data["title"] }
+        /// The type of the media; anime or manga
+        public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
         /// Mean score of all the user's scores of the media
         public var meanScore: Int? { __data["meanScore"] }
         /// The format the media was released in

@@ -8,6 +8,7 @@ query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) {
                     title {
                         userPreferred
                     }
+                    type
                     coverImage {
                         large
                     }

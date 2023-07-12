@@ -55,6 +55,15 @@ extension MediaType {
             return "Manga"
         }
     }
+    
+    var mediaUrl: String {
+        switch self {
+        case .anime:
+            return ANILIST_ANIME_URL
+        case .manga:
+            return ANILIST_MANGA_URL
+        }
+    }
 }
 
 extension UserMediaListQuery.Data.Page.MediaList {

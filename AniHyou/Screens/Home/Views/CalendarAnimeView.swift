@@ -65,9 +65,10 @@ struct WeekAnimeListView: View {
     var body: some View {
         LazyVGrid(columns: gridColumns) {
             ForEach(viewModel.weeklyAnimes, id: \.?.mediaId) {
-                if let media = $0?.media {
-                    NavigationLink(destination: MediaDetailsView(mediaId: $0!.mediaId)) {
+                if let media = $0?.media, let mediaId = $0?.mediaId {
+                    NavigationLink(destination: MediaDetailsView(mediaId: mediaId)) {
                         VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
+                            .mediaContextMenu(mediaId: mediaId, mediaType: .anime)
                     }
                 }
             }

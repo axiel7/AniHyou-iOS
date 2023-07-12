@@ -33,6 +33,7 @@ struct StudioDetailsView: View {
                         ForEach(viewModel.studioMedia, id: \.?.id) { item in
                             NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
                                 VListItemView(title: item?.title?.userPreferred ?? "", imageUrl: item?.coverImage?.large)
+                                    .mediaContextMenu(mediaId: item!.id, mediaType: item?.type?.value)
                             }
                         }
                         

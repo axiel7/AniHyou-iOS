@@ -20,6 +20,7 @@ fragment MediaRelated on MediaEdge {
     title {
       userPreferred
     }
+    type
     format
     coverImage {
       large
@@ -33,6 +34,7 @@ fragment MediaRecommended on Recommendation {
     title {
       userPreferred
     }
+    type
     format
     coverImage {
       large

@@ -23,6 +23,7 @@ public class CharacterMediaQuery: GraphQLQuery {
                   __typename
                   userPreferred
                 }
+                type
                 coverImage {
                   __typename
                   large
@@ -160,6 +161,7 @@ public class CharacterMediaQuery: GraphQLQuery {
               .field("__typename", String.self),
               .field("id", Int.self),
               .field("title", Title?.self),
+              .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
               .field("coverImage", CoverImage?.self),
             ] }
 
@@ -167,6 +169,8 @@ public class CharacterMediaQuery: GraphQLQuery {
             public var id: Int { __data["id"] }
             /// The official titles of the media in various languages
             public var title: Title? { __data["title"] }
+            /// The type of the media; anime or manga
+            public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
 

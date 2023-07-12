@@ -1,0 +1,24 @@
+query PreviewMediaDetails($mediaId: Int) {
+  Media(id: $mediaId) {
+    title {
+      userPreferred
+    }
+    coverImage {
+      large
+    }
+    meanScore
+    format
+    episodes
+    chapters
+    volumes
+    genres
+    nextAiringEpisode {
+      airingAt
+      episode
+    }
+    mediaListEntry {
+      status
+      progress
+    }
+  }
+}

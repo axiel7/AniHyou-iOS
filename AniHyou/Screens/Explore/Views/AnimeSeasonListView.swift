@@ -25,6 +25,7 @@ struct AnimeSeasonListView: View {
                     if let media = $0 {
                         NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
                             VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
+                                .mediaContextMenu(mediaId: media.id, mediaType: .anime)
                         }
                     }
                 }
