@@ -130,6 +130,7 @@ struct MediaListView: View {
                 .tint(.blue)
             }
         }
+        .mediaContextMenu(mediaId: item.mediaId, mediaType: type)
     }
     
     func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList!) {

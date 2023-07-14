@@ -75,6 +75,7 @@ struct HomeView: View {
                                     AiringMediaHorizontalItemView(title: item.title?.userPreferred, imageUrl: item.coverImage?.large, meanScore: item.meanScore, nextEpisode: item.nextAiringEpisode?.episode, airingAt: item.nextAiringEpisode?.airingAt)
                                         .padding(.leading, 8)
                                         .frame(width: 280, alignment: .leading)
+                                        .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                                 }
                             }
                         }
@@ -85,6 +86,7 @@ struct HomeView: View {
                                     AiringMediaHorizontalItemView(title: item.media?.title?.userPreferred, imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore, nextEpisode: item.episode, airingAt: item.airingAt)
                                         .padding(.leading, 8)
                                         .frame(width: 280, alignment: .leading)
+                                        .mediaContextMenu(mediaId: item.mediaId, mediaType: .anime)
                                 }
                             }
                         }
@@ -126,6 +128,7 @@ struct HomeView: View {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                 VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
                                     .padding(.trailing, 4)
+                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                             }
                         }
                     }
@@ -162,6 +165,7 @@ struct HomeView: View {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                 VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
                                     .padding(.trailing, 4)
+                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                             }
                         }
                     }
@@ -198,6 +202,7 @@ struct HomeView: View {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                 VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
                                     .padding(.trailing, 4)
+                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                             }
                         }
                     }
@@ -234,6 +239,7 @@ struct HomeView: View {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                 VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
                                     .padding(.trailing, 4)
+                                    .mediaContextMenu(mediaId: item.id, mediaType: .manga)
                             }
                         }
                     }

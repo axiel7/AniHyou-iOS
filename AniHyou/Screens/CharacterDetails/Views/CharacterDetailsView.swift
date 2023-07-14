@@ -95,6 +95,7 @@ struct CharacterDetailsView: View {
                 if let item = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.node!.id)) {
                         HListItemWithSubtitleView(title: item.node?.title?.userPreferred, subtitle: item.characterRole?.value?.localizedName, imageUrl: item.node?.coverImage?.large)
+                            .mediaContextMenu(mediaId: item.node!.id, mediaType: item.node!.type?.value)
                     }
                 }
             }

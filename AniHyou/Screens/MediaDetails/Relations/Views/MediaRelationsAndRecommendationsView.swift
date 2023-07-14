@@ -31,6 +31,7 @@ struct MediaRelationsAndRecommendationsView: View {
                                         HListItemWithSubtitleView(title: relation.node?.title?.userPreferred, subtitle: "\(relation.relationType?.value?.localizedName ?? "") · \(relation.node?.format?.value?.localizedName ?? "")", imageUrl: relation.node?.coverImage?.large)
                                             .padding(.leading)
                                             .frame(width: 280, alignment: .leading)
+                                            .mediaContextMenu(mediaId: relation.node!.id, mediaType: relation.node?.type?.value)
                                     }
                                 }
                             }
@@ -59,6 +60,7 @@ struct MediaRelationsAndRecommendationsView: View {
                                     NavigationLink(destination: MediaDetailsView(mediaId: recommendation.id)) {
                                         VListItemView(title: recommendation.title?.userPreferred ?? "", imageUrl: recommendation.coverImage?.large)
                                             .padding(.trailing, 2)
+                                            .mediaContextMenu(mediaId: recommendation.id, mediaType: recommendation.type?.value)
                                     }
                                 }
                             }

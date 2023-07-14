@@ -15,6 +15,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
           __typename
           userPreferred
         }
+        type
         format
         coverImage {
           __typename
@@ -50,6 +51,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
       .field("__typename", String.self),
       .field("id", Int.self),
       .field("title", Title?.self),
+      .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
       .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
       .field("coverImage", CoverImage?.self),
     ] }
@@ -58,6 +60,8 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
     public var id: Int { __data["id"] }
     /// The official titles of the media in various languages
     public var title: Title? { __data["title"] }
+    /// The type of the media; anime or manga
+    public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
     /// The format the media was released in
     public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
     /// The cover images of the media

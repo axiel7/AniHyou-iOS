@@ -103,6 +103,7 @@ struct StaffDetailsView: View {
                 if let media = item.value.node {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
                         HListItemWithSubtitleView(title: media.title?.userPreferred, subtitle: item.staffRoles.joined(separator: ", "), imageUrl: media.coverImage?.large)
+                            .mediaContextMenu(mediaId: media.id, mediaType: media.type?.value)
                     }
                 }
             }

@@ -182,14 +182,7 @@ class MediaDetailsViewModel: ObservableObject {
     }
     
     var mediaShareLink: String? {
-        guard mediaDetails != nil else { return nil }
-        switch mediaDetails!.type?.value {
-        case .anime:
-            return "\(ANILIST_ANIME_URL)\(mediaDetails!.id)"
-        case .manga:
-            return "\(ANILIST_MANGA_URL)\(mediaDetails!.id)"
-        default:
-            return nil
-        }
+        guard let mediaType = mediaDetails?.type?.value else { return nil }
+        return "\(mediaType.mediaUrl)\(mediaDetails!.id)"
     }
 }

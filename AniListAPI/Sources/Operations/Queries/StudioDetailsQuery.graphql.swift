@@ -28,6 +28,7 @@ public class StudioDetailsQuery: GraphQLQuery {
                 __typename
                 userPreferred
               }
+              type
             }
             pageInfo {
               __typename
@@ -143,6 +144,7 @@ public class StudioDetailsQuery: GraphQLQuery {
             .field("id", Int.self),
             .field("coverImage", CoverImage?.self),
             .field("title", Title?.self),
+            .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
           ] }
 
           /// The id of the media
@@ -151,6 +153,8 @@ public class StudioDetailsQuery: GraphQLQuery {
           public var coverImage: CoverImage? { __data["coverImage"] }
           /// The official titles of the media in various languages
           public var title: Title? { __data["title"] }
+          /// The type of the media; anime or manga
+          public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
 
           /// Studio.Media.Node.CoverImage
           ///
