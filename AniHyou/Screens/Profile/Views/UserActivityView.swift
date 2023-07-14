@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct UserActivityView: View {
-    
+
     var userId: Int
     var isMyProfile: Bool
     @StateObject private var viewModel = UserActivityViewModel()
-    
+
     var body: some View {
         if !isMyProfile {
             HStack {

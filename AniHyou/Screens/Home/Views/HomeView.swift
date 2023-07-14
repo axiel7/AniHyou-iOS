@@ -7,33 +7,34 @@
 
 import SwiftUI
 
+// swiftlint:disable type_body_length
 struct HomeView: View {
-    
+
     @StateObject private var viewModel = HomeViewModel()
     @State private var showNotificationsSheet = false
-    
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(alignment: .leading) {
-                    
+
                     airingNext
-                    
+
                     thisSeason
-                    
+
                     trendingAnime
-                    
+
                     nextSeason
-                    
+
                     trendingManga
                 }//:VStack
             }//:VScrollView
             .navigationTitle("Home")
             .toolbar {
                 ToolbarItem {
-                    Button(action: { showNotificationsSheet = true }) {
+                    Button(action: { showNotificationsSheet = true }, label: {
                         Label("Notifications", systemImage: viewModel.notificationCount > 0 ? "bell.badge" : "bell")
-                    }
+                    })
                     .onAppear {
                         viewModel.getNotificationCount()
                     }
@@ -45,11 +46,11 @@ struct HomeView: View {
         }//:NavigationView
         .navigationViewStyle(.stack)
     }
-    
+
     @ViewBuilder
     var airingNext: some View {
         @AppStorage(AIRING_ON_MY_LIST_KEY) var airingOnMyList = false
-        
+
         HStack(alignment: .center) {
             Text("Airing Next")
                 .font(.title2)
@@ -65,17 +66,23 @@ struct HomeView: View {
                     .multilineTextAlignment(.center)
                     .frame(alignment: .center)
             }
-            
+
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
                     if airingOnMyList {
                         ForEach(viewModel.airingOnMyList, id: \.?.id) {
                             if let item = $0 {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                    AiringMediaHorizontalItemView(title: item.title?.userPreferred, imageUrl: item.coverImage?.large, meanScore: item.meanScore, nextEpisode: item.nextAiringEpisode?.episode, airingAt: item.nextAiringEpisode?.airingAt)
-                                        .padding(.leading, 8)
-                                        .frame(width: 280, alignment: .leading)
-                                        .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                    AiringMediaHorizontalItemView(
+                                        title: item.title?.userPreferred,
+                                        imageUrl: item.coverImage?.large,
+                                        meanScore: item.meanScore,
+                                        nextEpisode: item.nextAiringEpisode?.episode,
+                                        airingAt: item.nextAiringEpisode?.airingAt
+                                    )
+                                    .padding(.leading, 8)
+                                    .frame(width: 280, alignment: .leading)
+                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                                 }
                             }
                         }
@@ -83,10 +90,16 @@ struct HomeView: View {
                         ForEach(viewModel.airingAnimes, id: \.?.mediaId) {
                             if let item = $0 {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                                    AiringMediaHorizontalItemView(title: item.media?.title?.userPreferred, imageUrl: item.media?.coverImage?.large, meanScore: item.media?.meanScore, nextEpisode: item.episode, airingAt: item.airingAt)
-                                        .padding(.leading, 8)
-                                        .frame(width: 280, alignment: .leading)
-                                        .mediaContextMenu(mediaId: item.mediaId, mediaType: .anime)
+                                    AiringMediaHorizontalItemView(
+                                        title: item.media?.title?.userPreferred,
+                                        imageUrl: item.media?.coverImage?.large,
+                                        meanScore: item.media?.meanScore,
+                                        nextEpisode: item.episode,
+                                        airingAt: item.airingAt
+                                    )
+                                    .padding(.leading, 8)
+                                    .frame(width: 280, alignment: .leading)
+                                    .mediaContextMenu(mediaId: item.mediaId, mediaType: .anime)
                                 }
                             }
                         }
@@ -105,7 +118,7 @@ struct HomeView: View {
         }//:ZStack
         Divider()
     }
-    
+
     @ViewBuilder
     var thisSeason: some View {
         HStack(alignment: .center) {
@@ -126,9 +139,13 @@ struct HomeView: View {
                     ForEach(viewModel.seasonAnimes, id: \.?.id) {
                         if let item = $0 {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
-                                    .padding(.trailing, 4)
-                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                VListItemView(
+                                    title: item.title?.userPreferred ?? "",
+                                    imageUrl: item.coverImage?.large,
+                                    meanScore: item.meanScore
+                                )
+                                .padding(.trailing, 4)
+                                .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                             }
                         }
                     }
@@ -142,7 +159,7 @@ struct HomeView: View {
         }//:ZStack
         Divider()
     }
-    
+
     @ViewBuilder
     var trendingAnime: some View {
         HStack(alignment: .center) {
@@ -163,9 +180,13 @@ struct HomeView: View {
                     ForEach(viewModel.trendingAnimes, id: \.?.id) {
                         if let item = $0 {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
-                                    .padding(.trailing, 4)
-                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                VListItemView(
+                                    title: item.title?.userPreferred ?? "",
+                                    imageUrl: item.coverImage?.large,
+                                    meanScore: item.meanScore
+                                )
+                                .padding(.trailing, 4)
+                                .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                             }
                         }
                     }
@@ -179,7 +200,7 @@ struct HomeView: View {
         }//:ZStack
         Divider()
     }
-    
+
     @ViewBuilder
     var nextSeason: some View {
         HStack(alignment: .center) {
@@ -187,7 +208,10 @@ struct HomeView: View {
                 .font(.title2)
                 .bold()
             Spacer()
-            NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nextAnimeSeason.season, selectedYear: viewModel.nextAnimeSeason.year))
+            NavigationLink("See All", destination: AnimeSeasonListView(
+                season: viewModel.nextAnimeSeason.season,
+                selectedYear: viewModel.nextAnimeSeason.year)
+            )
         }
         .padding(.horizontal)
         .padding(.top, 8)
@@ -200,9 +224,13 @@ struct HomeView: View {
                     ForEach(viewModel.nextSeasonAnimes, id: \.?.id) {
                         if let item = $0 {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
-                                    .padding(.trailing, 4)
-                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                VListItemView(
+                                    title: item.title?.userPreferred ?? "",
+                                    imageUrl: item.coverImage?.large,
+                                    meanScore: item.meanScore
+                                )
+                                .padding(.trailing, 4)
+                                .mediaContextMenu(mediaId: item.id, mediaType: .anime)
                             }
                         }
                     }
@@ -216,7 +244,7 @@ struct HomeView: View {
         }//:ZStack
         Divider()
     }
-    
+
     @ViewBuilder
     var trendingManga: some View {
         HStack(alignment: .center) {
@@ -237,9 +265,13 @@ struct HomeView: View {
                     ForEach(viewModel.trendingManga, id: \.?.id) {
                         if let item = $0 {
                             NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
-                                    .padding(.trailing, 4)
-                                    .mediaContextMenu(mediaId: item.id, mediaType: .manga)
+                                VListItemView(
+                                    title: item.title?.userPreferred ?? "",
+                                    imageUrl: item.coverImage?.large,
+                                    meanScore: item.meanScore
+                                )
+                                .padding(.trailing, 4)
+                                .mediaContextMenu(mediaId: item.id, mediaType: .manga)
                             }
                         }
                     }
@@ -260,3 +292,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+// swiftlint:enable type_body_length

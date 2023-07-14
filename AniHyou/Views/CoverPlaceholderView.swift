@@ -11,7 +11,7 @@ struct CoverPlaceholderView: View {
     var systemName: String
     var width: CGFloat
     var height: CGFloat
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)

@@ -1,0 +1,5 @@
+disabled_rules:
+  - comment_spacing
+
+excluded: # case-sensitive paths to ignore during linting. Takes precedence over `included`
+  - AniListAPI

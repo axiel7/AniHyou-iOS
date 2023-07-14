@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct HInfoView: View {
-    
+
     var name: String
     var value: String?
     var isExpandable: Bool = false
     @State private var isExpanded: Bool = false
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {

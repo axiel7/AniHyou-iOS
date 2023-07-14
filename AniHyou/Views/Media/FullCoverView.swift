@@ -11,12 +11,12 @@ import Kingfisher
 private var image: KFCrossPlatformImage?
 
 struct FullCoverView: View {
-    
+
     var imageUrl: String?
     @Environment(\.dismiss) private var dismiss
     @State private var screenWidth = UIScreen.main.bounds.width - 100
     @State private var screenHeight = UIScreen.main.bounds.height - 180
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -33,8 +33,8 @@ struct FullCoverView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .padding()
                     .onDrag {
-                        if let i = image {
-                            return NSItemProvider(object: i)
+                        if let image = image {
+                            return NSItemProvider(object: image)
                         } else {
                             return NSItemProvider(contentsOf: URL(string: imageUrl ?? "")) ?? NSItemProvider()
                         }
@@ -42,11 +42,9 @@ struct FullCoverView: View {
             }//:VStack
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button(action: {
-                        dismiss()
-                    }) {
+                    Button(action: { dismiss()}, label: {
                         Text("Done").bold()
-                    }
+                    })
                 }
             }
             .navigationViewStyle(.stack)

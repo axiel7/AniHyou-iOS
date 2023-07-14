@@ -21,7 +21,7 @@ extension CharacterInfoType {
             return "Media"
         }
     }
-    
+
     var systemImage: String {
         switch self {
         case .overview:

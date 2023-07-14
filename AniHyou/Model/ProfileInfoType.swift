@@ -27,7 +27,7 @@ extension ProfileInfoType {
             return "Social"
         }
     }
-    
+
     var systemImage: String {
         switch self {
         case .activity:

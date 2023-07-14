@@ -25,11 +25,11 @@ private extension MediaTagItemView {
 }
 
 struct MediaTagItemView: View {
-    
+
     var tag: MediaDetailsQuery.Data.Media.Tag?
     var showSpoiler: Binding<Bool>
     @State private var showTagDescription = false
-    
+
     var body: some View {
         HStack {
             Text("\(tag?.rank ?? 0)%")

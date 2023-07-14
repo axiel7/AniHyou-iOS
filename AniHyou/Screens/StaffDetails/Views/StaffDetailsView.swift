@@ -10,11 +10,11 @@ import RichText
 import AniListAPI
 
 struct StaffDetailsView: View {
-    
+
     var staffId: Int
     @StateObject private var viewModel = StaffDetailsViewModel()
     @State private var infoType: StaffInfoType = .overview
-    
+
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
@@ -25,7 +25,7 @@ struct StaffDetailsView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                
+
                 switch infoType {
                 case .overview:
                     staffOverview
@@ -40,35 +40,41 @@ struct StaffDetailsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if viewModel.staff != nil {
-                    Button(action: { viewModel.toggleFavorite() }) {
+                    Button(action: { viewModel.toggleFavorite() }, label: {
                         Image(systemName: viewModel.staff!.isFavourite ? "heart.fill" : "heart")
-                    }
+                    })
                 }
             }
         }
     }
-    
+
     @ViewBuilder
     var staffOverview: some View {
         if viewModel.staff != nil {
             VStack(alignment: .center) {
                 CircleImageView(imageUrl: viewModel.staff!.image?.large, size: 150)
-                
+
                 Text(viewModel.staff!.name?.userPreferred ?? "")
                     .font(.title3.weight(.bold))
                     .multilineTextAlignment(.center)
-                
+
                 Text(viewModel.staff!.name?.native ?? "")
                     .font(.subheadline)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
-                
+
                 HStack {
                     VStack(alignment: .leading) {
                         HInfoView(name: "Favorites", value: (viewModel.staff!.favourites ?? 0).formatted())
-                        HInfoView(name: "Birth", value: viewModel.staff!.dateOfBirth?.fragments.fuzzyDateFragment.formatted())
+                        HInfoView(
+                            name: "Birth",
+                            value: viewModel.staff!.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
+                        )
                         if viewModel.staff!.dateOfDeath?.year != nil {
-                            HInfoView(name: "Death", value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDateFragment.formatted())
+                            HInfoView(
+                                name: "Death",
+                                value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDateFragment.formatted()
+                            )
                         }
                         HInfoView(name: "Age", value: viewModel.staff!.age?.stringValue)
                         HInfoView(name: "Gender", value: viewModel.staff!.gender)
@@ -76,7 +82,7 @@ struct StaffDetailsView: View {
                         HInfoView(name: "Years active", value: viewModel.yearsActiveFormatted)
                         HInfoView(name: "Hometown", value: viewModel.staff!.homeTown, isExpandable: true)
                         HInfoView(name: "Occupations", value: viewModel.occupationsFormatted)
-                        
+
                         RichText(html: viewModel.staff!.description ?? "")
                             .defaultStyle()
                             .padding()
@@ -90,11 +96,11 @@ struct StaffDetailsView: View {
                 }
         }
     }
-    
+
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
-    
+
     @ViewBuilder
     var staffMedia: some View {
         LazyVStack(alignment: .leading) {
@@ -102,8 +108,12 @@ struct StaffDetailsView: View {
             ForEach(viewModel.staffMedia, id: \.value.id) { item in
                 if let media = item.value.node {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                        HListItemWithSubtitleView(title: media.title?.userPreferred, subtitle: item.staffRoles.joined(separator: ", "), imageUrl: media.coverImage?.large)
-                            .mediaContextMenu(mediaId: media.id, mediaType: media.type?.value)
+                        HListItemWithSubtitleView(
+                            title: media.title?.userPreferred,
+                            subtitle: item.staffRoles.joined(separator: ", "),
+                            imageUrl: media.coverImage?.large
+                        )
+                        .mediaContextMenu(mediaId: media.id, mediaType: media.type?.value)
                     }
                 }
             }
@@ -119,7 +129,7 @@ struct StaffDetailsView: View {
             viewModel.resetStaffMedia()
         }
     }
-    
+
     @ViewBuilder
     var staffCharacters: some View {
         LazyVStack(alignment: .leading) {
@@ -128,7 +138,10 @@ struct StaffDetailsView: View {
                     ForEach(characters, id: \.?.id) {
                         if let character = $0 {
                             NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
-                                HListItemWithSubtitleView(title: character.name?.userPreferred, imageUrl: character.image?.large)
+                                HListItemWithSubtitleView(
+                                    title: character.name?.userPreferred,
+                                    imageUrl: character.image?.large
+                                )
                             }
                         }
                     }

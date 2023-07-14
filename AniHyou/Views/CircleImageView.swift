@@ -9,11 +9,11 @@ import SwiftUI
 import Kingfisher
 
 struct CircleImageView: View {
-    
+
     var imageUrl: String?
     var size: CGFloat
     var systemPlaceHolder: String = "person.circle.fill"
-    
+
     var body: some View {
         KFImage(URL(string: imageUrl ?? ""))
             .placeholder {

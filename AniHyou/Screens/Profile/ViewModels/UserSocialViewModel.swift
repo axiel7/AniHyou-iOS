@@ -9,13 +9,17 @@ import Foundation
 import AniListAPI
 
 class UserSocialViewModel: ObservableObject {
-    
+
     @Published var followers = [FollowersQuery.Data.Page.Follower?]()
     private var currentPageFollowers = 1
     var hasNextPageFollowers = true
-    
+
     func getFollowers(userId: Int) {
-        Network.shared.apollo.fetch(query: FollowersQuery(userId: userId, page: .some(currentPageFollowers), perPage: .some(25))) { [weak self] result in
+        Network.shared.apollo.fetch(query: FollowersQuery(
+            userId: userId,
+            page: .some(currentPageFollowers),
+            perPage: .some(25)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -30,13 +34,17 @@ class UserSocialViewModel: ObservableObject {
             }
         }
     }
-    
+
     @Published var followings = [FollowingsQuery.Data.Page.Following?]()
     private var currentPageFollowings = 1
     var hasNextPageFollowings = true
-    
+
     func getFollowings(userId: Int) {
-        Network.shared.apollo.fetch(query: FollowingsQuery(userId: userId, page: .some(currentPageFollowings), perPage: .some(25))) { [weak self] result in
+        Network.shared.apollo.fetch(query: FollowingsQuery(
+            userId: userId,
+            page: .some(currentPageFollowings),
+            perPage: .some(25)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

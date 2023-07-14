@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct UserFavoritesView: View {
-    
+
     var userId: Int
     @StateObject private var viewModel = UserFavoritesViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
     ]
-    
+
     var body: some View {
-        
-        //MARK: anime
+
+        // MARK: anime
         FavoriteSectionGrid(title: "Anime", columns: gridColumns) {
             ForEach(viewModel.favoritesAnime, id: \.?.id) {
                 if let media = $0 {
@@ -27,45 +27,46 @@ struct UserFavoritesView: View {
                     }
                 }
             }
-            
+
             if viewModel.hasNextPageAnime {
                 ProgressView()
                     .onAppear {
                         viewModel.getFavoritesAnime(userId: userId)
                     }
-            }
-            else if viewModel.favoritesAnime.isEmpty {
+            } else if viewModel.favoritesAnime.isEmpty {
                 EmptyFavoritesText()
             }
         }
-        
+
         Divider()
-        
-        //MARK: manga
+
+        // MARK: manga
         FavoriteSectionGrid(title: "Manga", columns: gridColumns) {
             ForEach(viewModel.favoritesManga, id: \.?.id) {
                 if let media = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                        VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
-                            .mediaContextMenu(mediaId: media.id, mediaType: .manga)
+                        VListItemView(
+                            title: media.title?.userPreferred ?? "",
+                            imageUrl: media.coverImage?.large
+                        )
+                        .mediaContextMenu(mediaId: media.id, mediaType: .manga)
                     }
                 }
             }
-            
+
             if viewModel.hasNextPageAnime {
                 ProgressView()
                     .onAppear {
                         viewModel.getFavoritesManga(userId: userId)
                     }
-            }
-            else if viewModel.favoritesManga.isEmpty {
+            } else if viewModel.favoritesManga.isEmpty {
                 EmptyFavoritesText()
             }
         }
-        
+
         Divider()
-        
-        //MARK: characters
+
+        // MARK: characters
         FavoriteSectionGrid(title: "Characters", columns: gridColumns) {
             ForEach(viewModel.favoritesCharacters, id: \.?.id) {
                 if let character = $0 {
@@ -74,21 +75,20 @@ struct UserFavoritesView: View {
                     }
                 }
             }
-            
+
             if viewModel.hasNextPageCharacter {
                 ProgressView()
                     .onAppear {
                         viewModel.getFavoritesCharacter(userId: userId)
                     }
-            }
-            else if viewModel.favoritesCharacters.isEmpty {
+            } else if viewModel.favoritesCharacters.isEmpty {
                 EmptyFavoritesText()
             }
         }
-        
+
         Divider()
-        
-        //MARK: staff
+
+        // MARK: staff
         FavoriteSectionGrid(title: "Staff", columns: gridColumns) {
             ForEach(viewModel.favoritesStaff, id: \.?.id) {
                 if let staff = $0 {
@@ -97,21 +97,20 @@ struct UserFavoritesView: View {
                     }
                 }
             }
-            
+
             if viewModel.hasNextPageStaff {
                 ProgressView()
                     .onAppear {
                         viewModel.getFavoritesStaff(userId: userId)
                     }
-            }
-            else if viewModel.favoritesStaff.isEmpty {
+            } else if viewModel.favoritesStaff.isEmpty {
                 EmptyFavoritesText()
             }
         }
-        
+
         Divider()
-        
-        //MARK: studios
+
+        // MARK: studios
         FavoriteSectionGrid(title: "Studios", columns: gridColumns) {
             ForEach(viewModel.favoritesStudio, id: \.?.id) {
                 if let studio = $0 {
@@ -126,32 +125,32 @@ struct UserFavoritesView: View {
                     }
                 }
             }
-            
+
             if viewModel.hasNextPageStudio {
                 ProgressView()
                     .onAppear {
                         viewModel.getFavoritesStudio(userId: userId)
                     }
             }
-            
+
             if viewModel.favoritesStudio.isEmpty {
                 EmptyFavoritesText()
             }
         }
     }
-    
+
     private struct FavoriteSectionGrid<Content: View>: View {
         let title: String
         let columns: [GridItem]
         @ViewBuilder let content: Content
-        
+
         var body: some View {
             Group {
                 Text(title)
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                
+
                 LazyVGrid(columns: columns) {
                     content
                 }
@@ -159,10 +158,10 @@ struct UserFavoritesView: View {
             }
         }
     }
-    
+
     private struct EmptyFavoritesText: View {
         var text = "No favorites"
-        
+
         var body: some View {
             HStack {
                 Spacer()

@@ -9,9 +9,9 @@ import Foundation
 import AniListAPI
 
 class MediaContextMenuViewModel: ObservableObject {
-    
+
     @Published var details: PreviewMediaDetailsQuery.Data.Media?
-    
+
     func getDetails(mediaId: Int) {
         Network.shared.apollo.fetch(query: PreviewMediaDetailsQuery(mediaId: .some(mediaId))) { [weak self] result in
             switch result {

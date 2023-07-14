@@ -9,7 +9,7 @@ import Foundation
 
 final class GlobalAppState: ObservableObject {
     static let shared = GlobalAppState()
-    
+
     // We use this uuid to reset de root content view
     @Published var globalId = UUID()
 }

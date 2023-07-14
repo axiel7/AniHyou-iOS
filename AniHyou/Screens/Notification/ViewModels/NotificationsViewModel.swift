@@ -9,99 +9,34 @@ import Foundation
 import AniListAPI
 
 class NotificationsViewModel: ObservableObject {
-    
+
     @Published var notifications = [GenericNotification]()
     @Published var type: NotificationTypeGrouped = .all
     var currentPage = 1
     var hasNextPage = true
-    
+
     func getNotifications() {
         var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> = .some(type.value.compactMap { GraphQLEnum($0) })
         if type == .all {
             typeIn = .none
         }
-        Network.shared.apollo.fetch(query: NotificationsQuery(page: .some(currentPage), perPage: .some(20), typeIn: typeIn)) { [weak self] result in
+        Network.shared.apollo.fetch(query: NotificationsQuery(
+            page: .some(currentPage),
+            perPage: .some(20),
+            typeIn: typeIn
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let notifications = page.notifications {
                         var tempList = [GenericNotification]()
                         notifications.forEach {
-                            if let noti = $0?.asAiringNotification {
-                                let episodeString = noti.contexts.flatMap { $0[0] } ?? ""
-                                let ofString = noti.contexts.flatMap { $0[1] } ?? ""
-                                let airedString = noti.contexts.flatMap { $0[2] } ?? ""
-                                let text = "\(episodeString)\(noti.episode)\(ofString)\(noti.media?.title?.userPreferred ?? "")\(airedString)"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.media?.coverImage?.medium, contentId: noti.animeId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asFollowingNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.userId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asActivityMessageNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.activityId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asActivityMentionNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.activityId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asActivityReplyNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.activityId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asActivityReplySubscribedNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.activityId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asActivityLikeNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.activityId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asActivityReplyLikeNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.activityId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asThreadCommentMentionNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.commentId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asThreadCommentReplyNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.commentId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asThreadCommentSubscribedNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.commentId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asThreadCommentLikeNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.commentId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asThreadLikeNotification {
-                                let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.user?.avatar?.medium, contentId: noti.threadId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asRelatedMediaAdditionNotification {
-                                let text = "\(noti.media?.title?.userPreferred ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.media?.coverImage?.medium, contentId: noti.mediaId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asMediaDataChangeNotification {
-                                let text = "\(noti.media?.title?.userPreferred ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.media?.coverImage?.medium, contentId: noti.mediaId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asMediaMergeNotification {
-                                let text = "\(noti.media?.title?.userPreferred ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: noti.media?.coverImage?.medium, contentId: noti.mediaId, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
-                            }
-                            else if let noti = $0?.asMediaDeletionNotification {
-                                let text = "\(noti.deletedMediaTitle ?? "")\(noti.context ?? "")"
-                                tempList.append(GenericNotification(id: noti.id, text: text, imageUrl: nil, contentId: 0, type: noti.type!.value!, createdAt: noti.createdAt ?? 0))
+                            if let noti = $0?.toGenericNotification() {
+                                tempList.append(noti)
                             }
                         }
-                        
-                        tempList.sort(by: { a, b in a.createdAt > b.createdAt })
-                        
+                        tempList.sort(by: { first, second in first.createdAt > second.createdAt })
+
                         self?.notifications.append(contentsOf: tempList)
                     }
                     self?.currentPage += 1
@@ -112,7 +47,7 @@ class NotificationsViewModel: ObservableObject {
             }
         }
     }
-    
+
     func resetPage() {
         notifications.removeAll()
         currentPage = 1

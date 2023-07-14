@@ -10,14 +10,14 @@ import Kingfisher
 import AniListAPI
 
 struct UserSocialView: View {
-    
+
     var userId: Int
     @State private var socialType = 0
     @StateObject private var viewModel = UserSocialViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: 95))
     ]
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Picker("", selection: $socialType) {
@@ -34,7 +34,7 @@ struct UserSocialView: View {
                             }
                         }
                     }
-                    
+
                     if viewModel.hasNextPageFollowings {
                         ProgressView()
                             .onAppear {
@@ -49,7 +49,7 @@ struct UserSocialView: View {
                             }
                         }
                     }
-                    
+
                     if viewModel.hasNextPageFollowers {
                         ProgressView()
                             .onAppear {
@@ -65,11 +65,11 @@ struct UserSocialView: View {
 }
 
 struct UserLargeItemView: View {
-    
+
     var user: UserFollow
     private let imageWidth: CGFloat = 80
     private let imageHeight: CGFloat = 80
-    
+
     var body: some View {
         VStack {
             KFImage(URL(string: user.avatar?.large ?? ""))
@@ -77,7 +77,7 @@ struct UserLargeItemView: View {
                     CoverPlaceholderView(systemName: "hourglass", width: imageWidth, height: imageHeight)
                 }
                 .imageCover(width: imageWidth, height: imageHeight)
-            
+
             Text(user.name)
                 .foregroundColor(.primary)
         }

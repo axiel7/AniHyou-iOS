@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// swiftlint:disable type_name
 @main
 struct AniHyouShou_Watch_AppApp: App {
     var body: some Scene {
@@ -22,3 +23,4 @@ struct AniHyouShou_Watch_AppApp: App {
         }
     }
 }
+// swiftlint:enable type_name

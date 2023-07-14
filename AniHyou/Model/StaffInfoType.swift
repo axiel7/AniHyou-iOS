@@ -24,7 +24,7 @@ extension StaffInfoType {
             return "Characters"
         }
     }
-    
+
     var systemImage: String {
         switch self {
         case .overview:

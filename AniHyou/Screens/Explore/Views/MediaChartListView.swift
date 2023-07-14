@@ -9,13 +9,13 @@ import SwiftUI
 import AniListAPI
 
 struct MediaChartListView: View {
-    
+
     var title: String
     var type: MediaType
     var sort: MediaSort
-    var status: MediaStatus? = nil
+    var status: MediaStatus?
     @StateObject private var viewModel = ExploreViewModel()
-    
+
     var body: some View {
         List {
             ForEach(Array(viewModel.mediaChart.enumerated()), id: \.element?.id) { pos, item in
@@ -25,7 +25,7 @@ struct MediaChartListView: View {
                     }
                 }
             }
-            
+
             if viewModel.hasNextPageChart {
                 ProgressView()
                     .onAppear {

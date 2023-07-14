@@ -11,9 +11,9 @@ import AniListAPI
 private let imageSize: CGFloat = 70
 
 struct CharacterView: View {
-    
+
     var character: MediaCharacter
-    
+
     var body: some View {
         HStack {
             NavigationLink(destination: CharacterDetailsView(characterId: character.node!.id)) {
@@ -31,9 +31,9 @@ struct CharacterView: View {
                     }
                 }//:HStack
             }
-            
+
             Spacer()
-            
+
             if character.voiceActors?.isEmpty == false {
                 NavigationLink(destination: StaffDetailsView(staffId: character.voiceActors![0]!.id)) {
                     HStack {

@@ -10,17 +10,20 @@ import AuthenticationServices
 import KeychainSwift
 
 class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
-    
+
     private let clientId = Bundle.main.object(forInfoDictionaryKey: "ANILIST_CLIENT_ID") as? String ?? ""
-    
+
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         return ASPresentationAnchor()
     }
-    
+
     @Published var isLoginSuccess = false
-    
+
     func login() {
-        let authSession = ASWebAuthenticationSession(url: URL(string: "\(ANILIST_AUTH_URL)?client_id=\(clientId)&response_type=token")!, callbackURLScheme: ANIHYOU_SCHEME) { [weak self] (url, error) in
+        let authSession = ASWebAuthenticationSession(
+            url: URL(string: "\(ANILIST_AUTH_URL)?client_id=\(clientId)&response_type=token")!,
+            callbackURLScheme: ANIHYOU_SCHEME
+        ) { [weak self] (url, error) in
             if let error = error {
                 print(error)
                 return
@@ -28,12 +31,12 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
                 self?.processResponseUrl(url: url)
             }
         }
-        
+
         authSession.presentationContextProvider = self
         authSession.prefersEphemeralWebBrowserSession = true
         authSession.start()
     }
-    
+
     /// Thanks to https://github.com/andyibanez
     private func processResponseUrl(url: URL) {
         let anilistComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
@@ -42,13 +45,13 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
         // So I can't just access the query property of these components to get all the data I need.
         // To work around this and save myself the headache of possible encoding issues, I will create
         // a new URL using the fragment of the old components and some dummy domain.
-        
+
         if let anilistFragment = anilistComponents?.fragment,
            let dummyURL = URL(string: "http://dummyurl.com?\(anilistFragment)"),
            let components = URLComponents(url: dummyURL, resolvingAgainstBaseURL: true),
            let queryItems = components.queryItems,
-           let token = queryItems.filter ({ $0.name == "access_token" }).first?.value,
-           let expirationDate = queryItems.filter ({ $0.name == "expires_in" }).first?.value {
+           let token = queryItems.filter({ $0.name == "access_token" }).first?.value,
+           let expirationDate = queryItems.filter({ $0.name == "expires_in" }).first?.value {
             //save token in the keychain
             TokenAddingInterceptor.token = token
             KeychainUtils.keychain.set(token, forKey: USER_TOKEN_KEY)
@@ -57,10 +60,9 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
             //save other data to userdefaults
             UserDefaults.standard.set(expirationDate, forKey: "token_expiration")
             UserDefaults.standard.set(true, forKey: "is_logged_in")
-            
+
             refreshUserIdAndOptions()
             self.isLoginSuccess = true
         }
     }
-    
 }

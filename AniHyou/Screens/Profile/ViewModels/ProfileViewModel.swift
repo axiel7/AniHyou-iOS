@@ -11,9 +11,9 @@ import KeychainSwift
 import AniListAPI
 
 class ProfileViewModel: ObservableObject {
-    
+
     @Published var userInfo: UserInfo?
-    
+
     func getMyUserInfo() {
         Network.shared.apollo.fetch(query: ViewerQuery()) { [weak self] result in
             switch result {
@@ -21,17 +21,29 @@ class ProfileViewModel: ObservableObject {
                 if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
                     self?.userInfo = viewer
                     //update preferences
-                    UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
-                    UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
-                    UserDefaults.standard.set(viewer.options?.titleLanguage?.value?.rawValue, forKey: USER_TITLE_LANG_KEY)
-                    UserDefaults.standard.set(viewer.mediaListOptions?.scoreFormat?.value?.rawValue, forKey: USER_SCORE_KEY)
+                    UserDefaults.standard.set(
+                        viewer.options?.profileColor?.profileHexColor,
+                        forKey: USER_COLOR_KEY
+                    )
+                    UserDefaults.standard.set(
+                        viewer.options?.staffNameLanguage?.value?.rawValue,
+                        forKey: USER_NAMES_LANG_KEY
+                    )
+                    UserDefaults.standard.set(
+                        viewer.options?.titleLanguage?.value?.rawValue,
+                        forKey: USER_TITLE_LANG_KEY
+                    )
+                    UserDefaults.standard.set(
+                        viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
+                        forKey: USER_SCORE_KEY
+                    )
                 }
             case .failure(let error):
                 print(error)
             }
         }
     }
-    
+
     func getUserInfo(userId: Int) {
         Network.shared.apollo.fetch(query: UserBasicInfoQuery(userId: .some(userId))) { [weak self] result in
             switch result {
@@ -44,7 +56,7 @@ class ProfileViewModel: ObservableObject {
             }
         }
     }
-    
+
     func toggleFollow(userId: Int) {
         Network.shared.apollo.perform(mutation: ToggleFollowMutation(userId: .some(userId))) { [weak self] result in
             switch result {
@@ -57,11 +69,14 @@ class ProfileViewModel: ObservableObject {
             }
         }
     }
-    
+
     private func onToggleFollow(userId: Int, followed: Bool?) {
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
-                try transaction.updateObject(ofType: UserInfo.self, withKey: "User:\(userId)") { (cachedData: inout UserInfo) in
+                try transaction.updateObject(
+                    ofType: UserInfo.self,
+                    withKey: "User:\(userId)"
+                ) { (cachedData: inout UserInfo) in
                     cachedData.isFollowing = followed
                 }
                 let newObject = try transaction.readObject(ofType: UserInfo.self, withKey: "User:\(userId)")
@@ -73,9 +88,9 @@ class ProfileViewModel: ObservableObject {
             }
         })
     }
-    
+
     @Published var isLoggedOut = false
-    
+
     func logOut() {
         KeychainUtils.keychain.delete(USER_TOKEN_KEY)
         UserDefaults.standard.removeObject(forKey: USER_ID_KEY)
@@ -87,5 +102,4 @@ class ProfileViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: USER_SCORE_KEY)
         isLoggedOut = true
     }
-    
 }

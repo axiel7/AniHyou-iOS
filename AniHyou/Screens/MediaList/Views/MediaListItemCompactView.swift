@@ -12,29 +12,34 @@ private let coverWidth: CGFloat = 70
 private let coverHeight: CGFloat = 70
 
 struct MediaListItemCompactView: View {
-    
+
     var item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
     }
-    
+
     var body: some View {
         HStack {
-            MediaCoverView(imageUrl: item?.media?.coverImage?.large, width: coverWidth, height: coverHeight, cancelOnDisappear: false)
-            
+            MediaCoverView(
+                imageUrl: item?.media?.coverImage?.large,
+                width: coverWidth,
+                height: coverHeight,
+                cancelOnDisappear: false
+            )
+
             VStack(alignment: .leading) {
-                
+
                 Text(item?.media?.title?.userPreferred ?? "Error loading item")
                     .lineLimit(2)
-                
+
                 if item?.media?.nextAiringEpisode != nil {
                     AiringScheduleItemText(item: item)
                         .padding(.top, 1)
                 } else {
                     Spacer()
                 }
-                
+
                 HStack {
                     Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
                     Spacer()
@@ -50,9 +55,9 @@ struct MediaListItemCompactView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List(0...4, id: \.self) { _ in
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: {}, label: {
                     MediaListItemCompactView()
-                }
+                })
             }
         }
     }

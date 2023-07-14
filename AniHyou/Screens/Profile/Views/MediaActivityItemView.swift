@@ -9,20 +9,25 @@ import SwiftUI
 import AniListAPI
 
 struct MediaActivityItemView: View {
-    
+
     var activity: UserActivityQuery.Data.Page.Activity.AsListActivity?
-    
+
     var body: some View {
         HStack(alignment: .center) {
-            MediaCoverView(imageUrl: activity?.media?.coverImage?.medium ?? "", width: 53, height: 80, cancelOnDisappear: false)
-            
+            MediaCoverView(
+                imageUrl: activity?.media?.coverImage?.medium ?? "",
+                width: 53,
+                height: 80,
+                cancelOnDisappear: false
+            )
+
             VStack(alignment: .leading) {
                 Text(activityText)
                     .font(.subheadline)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
-                
+
                 Text((activity?.createdAt.timestampIntervalSinceNow().secondsToLegibleText() ?? "") + " ago")
                     .font(.subheadline)
                     .lineLimit(1)
@@ -32,10 +37,15 @@ struct MediaActivityItemView: View {
             }
         }
     }
-    
+
     private var activityText: String {
         if activity?.progress != nil {
-            return "\(activity?.status?.firstCapitalized ?? "") \(activity?.progress! ?? "") of \(activity?.media?.title?.userPreferred ?? "")"
+            return String(swiftLintMultiline:
+                activity?.status?.firstCapitalized ?? "",
+                activity?.progress! ?? "",
+                " of ",
+                activity?.media?.title?.userPreferred ?? ""
+            )
         } else {
             return "\(activity?.status?.firstCapitalized ?? "") \(activity?.media?.title?.userPreferred ?? "")"
         }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct MediaStatView: View {
-    
+
     var name: String
     var value: String
     var showDivider = true
-    
+
     var body: some View {
         VStack {
             Text(name)

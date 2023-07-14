@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct AiringMediaHorizontalItemView: View {
-    
+
     static let coverWidth: CGFloat = 94
     static let coverHeight: CGFloat = 130
-    
+
     var title: String?
     var imageUrl: String?
     var meanScore: Int?
     var nextEpisode: Int?
     var airingAt: Int?
-    
+
     var body: some View {
         HStack {
-            MediaCoverView(imageUrl: imageUrl, width: HListItemWithSubtitleView.coverWidth, height: HListItemWithSubtitleView.coverHeight, cancelOnDisappear: true)
-                .padding(.trailing, 8)
-            
+            MediaCoverView(
+                imageUrl: imageUrl,
+                width: HListItemWithSubtitleView.coverWidth,
+                height: HListItemWithSubtitleView.coverHeight,
+                cancelOnDisappear: true
+            )
+            .padding(.trailing, 8)
+
             VStack(alignment: .leading) {
                 Text(title ?? "")
                     .font(.system(size: 16))
@@ -30,11 +35,11 @@ struct AiringMediaHorizontalItemView: View {
                     .padding(.bottom, 1)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                
+
                 if nextEpisode != nil && airingAt != nil {
                     VStack(alignment: .leading) {
                         Text("Ep \(nextEpisode!) airing in ")
-                        
+
                         Text(Date(timeIntervalSince1970: Double(airingAt!)), style: .relative)
                     }
                     .font(.subheadline)
@@ -42,7 +47,7 @@ struct AiringMediaHorizontalItemView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 }
-                
+
                 if meanScore != nil {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
@@ -61,9 +66,15 @@ struct AiringMediaHorizontalItemView: View {
 
 struct AiringMediaHorizontalItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AiringMediaHorizontalItemView(title: "Cowboy Bebop: Tengoku no Tobira and a large title", imageUrl: "https://picsum.photos/300/200", meanScore: 78, nextEpisode: 2, airingAt: 102839281)
-            .frame(width: 280, alignment: .leading)
-            .padding(.leading, 8)
-            .previewLayout(.sizeThatFits)
+        AiringMediaHorizontalItemView(
+            title: "Cowboy Bebop: Tengoku no Tobira and a large title",
+            imageUrl: "https://picsum.photos/300/200",
+            meanScore: 78,
+            nextEpisode: 2,
+            airingAt: 102839281
+        )
+        .frame(width: 280, alignment: .leading)
+        .padding(.leading, 8)
+        .previewLayout(.sizeThatFits)
     }
 }

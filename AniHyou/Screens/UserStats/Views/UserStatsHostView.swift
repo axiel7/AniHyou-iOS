@@ -9,11 +9,11 @@ import SwiftUI
 import AniListAPI
 
 struct UserStatsHostView: View {
-    
+
     var userId: Int
     @State private var mediaType: MediaType = .anime
     @State private var statType: UserStatType = .overview
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Picker("", selection: $mediaType) {
@@ -22,7 +22,7 @@ struct UserStatsHostView: View {
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
-            
+
             Picker("Stats", selection: $statType) {
                 ForEach(UserStatType.allCases, id: \.self) { type in
                     if type == .voiceActors || type == .studios {
@@ -35,7 +35,7 @@ struct UserStatsHostView: View {
                 }
             }
             .padding()
-            
+
             switch statType {
             case .overview:
                 OverviewStatsView(userId: userId, mediaType: mediaType)

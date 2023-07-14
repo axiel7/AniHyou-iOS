@@ -33,7 +33,7 @@ extension SearchType {
             return "Users"
         }
     }
-    
+
     var systemImage: String {
         switch self {
         case .anime:

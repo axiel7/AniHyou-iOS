@@ -9,7 +9,7 @@ import SwiftUI
 import AniListAPI
 
 struct AnimeSeasonListView: View {
-    
+
     var season: MediaSeason
     private let currentYear = Date.now.year
     @State var selectedYear = Date.now.year
@@ -17,19 +17,23 @@ struct AnimeSeasonListView: View {
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
-    
+
     var body: some View {
         ScrollView {
             LazyVGrid(columns: gridColumns) {
                 ForEach(viewModel.animeSeasonal, id: \.?.id) {
                     if let media = $0 {
                         NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                            VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
-                                .mediaContextMenu(mediaId: media.id, mediaType: .anime)
+                            VListItemView(
+                                title: media.title?.userPreferred ?? "",
+                                imageUrl: media.coverImage?.large,
+                                meanScore: media.meanScore
+                            )
+                            .mediaContextMenu(mediaId: media.id, mediaType: .anime)
                         }
                     }
                 }
-                
+
                 if viewModel.hasNextPageSeason {
                     ProgressView()
                         .onAppear {

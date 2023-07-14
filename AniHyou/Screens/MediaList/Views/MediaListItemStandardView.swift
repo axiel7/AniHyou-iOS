@@ -12,33 +12,38 @@ private let coverWidth: CGFloat = 77
 private let coverHeight: CGFloat = 115
 
 struct MediaListItemStandardView: View {
-    
+
     var item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
     }
-    
+
     var body: some View {
         HStack {
-            MediaCoverView(imageUrl: item?.media?.coverImage?.large, width: coverWidth, height: coverHeight, cancelOnDisappear: false)
-            
+            MediaCoverView(
+                imageUrl: item?.media?.coverImage?.large,
+                width: coverWidth,
+                height: coverHeight,
+                cancelOnDisappear: false
+            )
+
             VStack(alignment: .leading) {
                 Text(item?.media?.title?.userPreferred ?? "Error loading item")
                     .lineLimit(2)
-                
+
                 Spacer()
-                
+
                 if item?.media?.nextAiringEpisode != nil {
                     AiringScheduleItemText(item: item)
                 }
-                
+
                 HStack {
                     Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
                     Spacer()
                     MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
                 }
-                
+
                 ProgressView(value: Float(item?.progress ?? 0), total: Float(item?.totalProgress ?? Int.max))
             }
         }
@@ -47,18 +52,20 @@ struct MediaListItemStandardView: View {
 }
 
 struct AiringScheduleItemText: View {
-    
+
     var item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
-    
+
     var body: some View {
         let airing = item!.media!.nextAiringEpisode!
         let isBehind = item?.progress ?? 0 < airing.episode - 1
         HStack(spacing: 1) {
-            Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episodes](inflect: true) behind" : "Ep \(airing.episode) airing in ")
-                .font(.subheadline)
-                .lineLimit(1)
-                
+            Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episodes](inflect: true) behind"
+                 : "Ep \(airing.episode) airing in "
+            )
+            .font(.subheadline)
+            .lineLimit(1)
+
             if !isBehind {
                 Text(Date(timeIntervalSince1970: Double(airing.airingAt)), style: .relative)
                     .font(.subheadline)
@@ -71,13 +78,13 @@ struct AiringScheduleItemText: View {
 }
 
 struct MediaListItemStandardView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         NavigationView {
             List(0...5, id: \.self) { _ in
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: {}, label: {
                     MediaListItemStandardView(item: nil)
-                }
+                })
             }
         }
     }

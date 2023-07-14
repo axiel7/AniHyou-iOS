@@ -10,9 +10,9 @@ import KeychainSwift
 import AniListAPI
 
 class MainViewModel: ObservableObject {
-    
+
     @Published var justLoggedIn = false
-    
+
     func saveUserData(key: String, value: String) async {
         switch key {
         case USER_TOKEN_KEY:
@@ -23,7 +23,7 @@ class MainViewModel: ObservableObject {
             return
         }
     }
-    
+
     func getUserId() {
         Network.shared.apollo.fetch(query: ViewerIdQuery()) { [weak self] result in
             switch result {

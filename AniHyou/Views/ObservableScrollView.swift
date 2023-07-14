@@ -17,8 +17,8 @@ struct ScrollViewOffsetPreferenceKey: PreferenceKey {
 }
 
 // A ScrollView wrapper that tracks scroll offset changes.
-struct ObservableVScrollView<Content>: View where Content : View {
-    
+struct ObservableVScrollView<Content>: View where Content: View {
+
     @Namespace var scrollSpace
 
     @Binding var scrollOffset: CGFloat

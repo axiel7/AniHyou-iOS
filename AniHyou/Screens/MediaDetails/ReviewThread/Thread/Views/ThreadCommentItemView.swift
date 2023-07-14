@@ -9,16 +9,16 @@ import SwiftUI
 import AniListAPI
 
 struct ThreadCommentItemView: View {
-    
+
     var comment: ThreadCommentsQuery.Data.Page.ThreadComment
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 NavigationLink(destination: ProfileView(userId: comment.user!.id)) {
                     HStack(alignment: .center) {
                         CircleImageView(imageUrl: comment.user?.avatar?.medium, size: 24)
-                        
+
                         Text(comment.user?.name ?? "Loading")
                             .bold()
                             .font(.subheadline)
@@ -32,11 +32,11 @@ struct ThreadCommentItemView: View {
                     .foregroundColor(.gray)
                     .padding(.bottom, 1)
             }
-            
+
             Text(.init(comment.comment ?? "Loading"))
                 .font(.subheadline)
                 .padding(.bottom, 4)
-            
+
             HStack {
                 Spacer()
                 Label("\(comment.likeCount)", systemImage: "heart")

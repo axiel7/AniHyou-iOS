@@ -11,15 +11,18 @@ import WidgetKit
 struct NotLoggedView: View {
     @StateObject private var viewModel = LoginViewModel()
     var onSuccessLogin: () -> Void
-    
+
     var body: some View {
         VStack {
             Text("Please login to use this feature")
-            Button(action: {
-                viewModel.login()
-            }) {
-                Text("Login")
-            }
+            Button(
+                action: {
+                    viewModel.login()
+                },
+                label: {
+                    Text("Login")
+                }
+            )
             .buttonStyle(.borderedProminent)
         }
         .onReceive(viewModel.$isLoginSuccess) { isSuccess in

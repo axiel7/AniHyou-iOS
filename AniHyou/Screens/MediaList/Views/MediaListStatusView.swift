@@ -9,11 +9,11 @@ import SwiftUI
 import AniListAPI
 
 struct MediaListStatusView: View {
-    
+
     var mediaType: MediaType
-    var userId: Int? = nil
+    var userId: Int?
     @State private var selection: MediaListStatus? = .current
-    
+
     var body: some View {
         NavigationView {
             List(MediaListStatus.allCases, id: \.self) { status in

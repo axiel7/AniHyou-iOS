@@ -28,7 +28,10 @@ func refreshUserIdAndOptions() {
                 saveUserId(id: viewer.id)
                 WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(viewer.id))
                 UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
-                UserDefaults.standard.set(viewer.options?.staffNameLanguage?.value?.rawValue, forKey: USER_NAMES_LANG_KEY)
+                UserDefaults.standard.set(
+                    viewer.options?.staffNameLanguage?.value?.rawValue,
+                    forKey: USER_NAMES_LANG_KEY
+                )
                 UserDefaults.standard.set(viewer.options?.titleLanguage?.value?.rawValue, forKey: USER_TITLE_LANG_KEY)
                 UserDefaults.standard.set(viewer.mediaListOptions?.scoreFormat?.value?.rawValue, forKey: USER_SCORE_KEY)
             }
@@ -44,4 +47,3 @@ extension Collection {
         return indices.contains(index) ? self[index] : nil
     }
 }
-

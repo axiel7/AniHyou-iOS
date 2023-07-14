@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct MediaReviewsAndThreadsView: View {
-    
+
     var mediaId: Int
     @StateObject private var viewModel = ReviewThreadViewModel()
     private let gridRows = [
         GridItem(.flexible(), spacing: 0, alignment: .leading),
         GridItem(.flexible(), spacing: 0, alignment: .leading)
     ]
-    
+
     var body: some View {
         VStack(alignment: .leading) {
-            
+
             if viewModel.mediaThreads.count > 0 {
                 Text("Threads")
                     .font(.title3)
@@ -38,7 +38,7 @@ struct MediaReviewsAndThreadsView: View {
                     .frame(height: 160)
                 }//:HScrollView
             }
-            
+
             Text("Reviews")
                 .font(.title3)
                 .bold()
@@ -54,16 +54,14 @@ struct MediaReviewsAndThreadsView: View {
                             }
                         Spacer()
                     }
-                }
-                else if viewModel.mediaReviews?.nodes?.count == 0 {
+                } else if viewModel.mediaReviews?.nodes?.count == 0 {
                     HStack {
                         Spacer()
                         Text("No reviews")
                             .padding()
                         Spacer()
                     }
-                }
-                else {
+                } else {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: gridRows, spacing: 8) {
                             ForEach(viewModel.mediaReviews!.nodes ?? [], id: \.?.id) {

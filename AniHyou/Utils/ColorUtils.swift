@@ -8,11 +8,11 @@
 import SwiftUI
 
 extension Color {
-    
+
     init?(hex: String?) {
         guard var str = hex
         else { return nil }
-        
+
         if str.hasPrefix("#") {
             str.removeFirst()
         }
@@ -23,10 +23,10 @@ extension Color {
         } else if !str.count.isMultiple(of: 2) || str.count > 8 {
             return nil
         }
-        
+
         guard let color = UInt64(str, radix: 16)
         else { return nil }
-        
+
         if str.count == 2 {
             let gray = Double(Int(color) & 0xFF) / 255
             self.init(.sRGB, red: gray, green: gray, blue: gray, opacity: 1)
@@ -49,25 +49,26 @@ extension Color {
             return nil
         }
     }
-    
+
     func toHex() -> String? {
         let uic = UIColor(self)
         guard let components = uic.cgColor.components, components.count >= 3 else {
             return nil
         }
-        let r = Float(components[0])
-        let g = Float(components[1])
-        let b = Float(components[2])
-        var a = Float(1.0)
+        let red = Float(components[0])
+        let green = Float(components[1])
+        let blue = Float(components[2])
+        var alpha = Float(1.0)
 
         if components.count >= 4 {
-            a = Float(components[3])
+            alpha = Float(components[3])
         }
 
-        if a != Float(1.0) {
-            return String(format: "%02lX%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255), lroundf(a * 255))
+        if alpha != Float(1.0) {
+            return String(format: "%02lX%02lX%02lX%02lX",
+                          lroundf(red * 255), lroundf(green * 255), lroundf(blue * 255), lroundf(alpha * 255))
         } else {
-            return String(format: "%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
+            return String(format: "%02lX%02lX%02lX", lroundf(red * 255), lroundf(green * 255), lroundf(blue * 255))
         }
     }
 }

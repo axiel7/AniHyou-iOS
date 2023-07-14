@@ -9,11 +9,11 @@ import Foundation
 import AniListAPI
 
 class SearchViewModel: ObservableObject {
-    
+
     //var currentPage = 1
     //var hasNextPage = true
     private let perPage = 25
-    
+
     var search: String = ""
     @Published var type: SearchType = .anime
     @Published var sortMedia: MediaSort = .searchMatch
@@ -25,9 +25,9 @@ class SearchViewModel: ObservableObject {
     @Published var selectedMediaFormatJoined = ""
     @Published var selectedMediaStatus = Set<MediaStatus>()
     @Published var selectedMediaStatusJoined = ""
-    @Published var selectedYear: Int? = nil
+    @Published var selectedYear: Int?
     @Published var mediaOnMyList = false
-    
+
     func runSearch() {
         switch type {
         case .anime:
@@ -44,7 +44,8 @@ class SearchViewModel: ObservableObject {
             searchUsers()
         }
     }
-    
+
+    // swiftlint:disable cyclomatic_complexity
     func onChangeSortOrder() {
         switch sortMedia {
         case .popularity:
@@ -72,23 +73,35 @@ class SearchViewModel: ObservableObject {
         }
         runSearch()
     }
-    
+    // swiftlint:enable cyclomatic_complexity
+
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
-    
+
     private func searchMedia(type: MediaType) {
-        
+
         selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
         selectedMediaFormatJoined = selectedMediaFormat.map { $0.localizedName }.joined(separator: ", ")
         selectedMediaStatusJoined = selectedMediaStatus.map { $0.localizedName }.joined(separator: ", ")
-        
+
         //if no query provided but other filters applied and sort is set to default, set sort to popularity
-        if search.isEmpty && sortMedia == .searchMatch && (!selectedGenres.isEmpty || !selectedTags.isEmpty || !selectedMediaFormat.isEmpty || !selectedMediaStatus.isEmpty || selectedYear != nil || mediaOnMyList) {
+        if
+            search.isEmpty
+            && sortMedia == .searchMatch
+            && (
+                !selectedGenres.isEmpty
+                || !selectedTags.isEmpty
+                || !selectedMediaFormat.isEmpty
+                || !selectedMediaStatus.isEmpty
+                || selectedYear != nil
+                || mediaOnMyList
+            )
+        {
             sortMedia = .popularityDesc
         }
-        
+
         var mediaOnListValue = GraphQLNullable<Bool>.none
         if mediaOnMyList { mediaOnListValue = .some(true) }
-        
+
         Network.shared.apollo.fetch(query: SearchMediaQuery(
             page: .some(1),
             perPage: .some(perPage),
@@ -116,11 +129,15 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
+
     @Published var searchedCharacters = [SearchCharacterQuery.Data.Page.Character?]()
-    
+
     private func searchCharacters() {
-        Network.shared.apollo.fetch(query: SearchCharacterQuery(page: .some(1), perPage: .some(perPage), search: .some(search))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SearchCharacterQuery(
+            page: .some(1),
+            perPage: .some(perPage),
+            search: .some(search)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -133,11 +150,15 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
+
     @Published var searchedStaff = [SearchStaffQuery.Data.Page.Staff?]()
-    
+
     private func searchStaff() {
-        Network.shared.apollo.fetch(query: SearchStaffQuery(page: .some(1), perPage: .some(perPage), search: .some(search))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SearchStaffQuery(
+            page: .some(1),
+            perPage: .some(perPage),
+            search: .some(search)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -150,11 +171,15 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
+
     @Published var searchedStudios = [SearchStudioQuery.Data.Page.Studio?]()
-    
+
     private func searchStudios() {
-        Network.shared.apollo.fetch(query: SearchStudioQuery(page: .some(1), perPage: .some(perPage), search: .some(search))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SearchStudioQuery(
+            page: .some(1),
+            perPage: .some(perPage),
+            search: .some(search)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -167,11 +192,15 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
+
     @Published var searchedUsers = [SearchUserQuery.Data.Page.User?]()
-    
+
     private func searchUsers() {
-        Network.shared.apollo.fetch(query: SearchUserQuery(page: .some(1), perPage: .some(perPage), search: .some(search))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SearchUserQuery(
+            page: .some(1),
+            perPage: .some(perPage),
+            search: .some(search)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
@@ -184,48 +213,44 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
+
     @Published var filterGenreTagText = ""
     var filteredGenres: [Genre] {
         guard genreCollection != nil else { return [] }
-        if filterGenreTagText.isEmpty { return genreCollection! }
-        else {
+        if filterGenreTagText.isEmpty {
+            return genreCollection!
+        } else {
             return genreCollection!.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
         }
     }
     var filteredTags: [Genre] {
         guard tagCollection != nil else { return [] }
-        if filterGenreTagText.isEmpty { return tagCollection! }
-        else {
+        if filterGenreTagText.isEmpty {
+            return tagCollection!
+        } else {
             return tagCollection!.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
         }
     }
-    
+
     @Published var genreCollection: [Genre]?
     @Published var tagCollection: [Genre]?
-    
+
     func getGenreTagCollection() {
         Network.shared.apollo.fetch(query: GenreTagCollectionQuery()) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data {
-                    
-                    //Workaround: SwiftUI List item selection only works on Identifiable objects
-
+                    // Workaround: SwiftUI List item selection only works on Identifiable objects
                     if let genres = data.genreCollection {
-                        var tempGenres = [Genre]()
-                        for genre in genres {
-                            if genre != nil { tempGenres.append(Genre(id: genre!)) }
-                        }
-                        self?.genreCollection = tempGenres
+                        self?.genreCollection = genres
+                            .compactMap { $0 }
+                            .compactMap { Genre(id: $0) }
                     }
-                    
+
                     if let tags = data.mediaTagCollection {
-                        var tempTags = [Genre]()
-                        for tag in tags {
-                            if tag != nil { tempTags.append(Genre(id: tag!.name)) }
-                        }
-                        self?.tagCollection = tempTags
+                        self?.tagCollection = tags
+                            .compactMap { $0 }
+                            .compactMap { Genre(id: $0.name) }
                     }
                 }
             case .failure(let error):
@@ -233,5 +258,4 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
 }

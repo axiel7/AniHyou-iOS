@@ -10,9 +10,9 @@
 import SwiftUI
 
 struct RootExploreView: View {
-    
+
     @StateObject private var viewModel = SearchViewModel()
-    
+
     var body: some View {
         NavigationView {
             ExploreView(viewModel: viewModel)

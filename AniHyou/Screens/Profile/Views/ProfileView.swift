@@ -14,8 +14,8 @@ private let avatarSize: CGFloat = 110
 private let bannerHeight: CGFloat = 10
 
 struct ProfileView: View {
-    
-    var userId: Int? = nil
+
+    var userId: Int?
     var isMyProfile: Bool {
         return userId == nil
     }
@@ -28,7 +28,7 @@ struct ProfileView: View {
             scrollOffset > 0
         }
     }
-    
+
     var body: some View {
         if isMyProfile {
             NavigationView {
@@ -48,7 +48,7 @@ struct ProfileView: View {
                 .tint(Color(hex: viewModel.userInfo?.options?.profileColor?.profileHexColor) ?? .accentColor)
         }
     }//:body
-    
+
     var content: some View {
         ObservableVScrollView(scrollOffset: $scrollOffset) { _ in
             LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
@@ -56,7 +56,7 @@ struct ProfileView: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
                     .ignoresSafeArea(edges: .top)
-                
+
                 ScrollView(.vertical) {
                     VStack {
                         if viewModel.userInfo != nil {
@@ -67,7 +67,7 @@ struct ProfileView: View {
                     }
                 }
                 .padding(16)
-                
+
                 if viewModel.userInfo != nil {
                     Section {
                         switch infoType {
@@ -106,17 +106,21 @@ struct ProfileView: View {
             }
         }
     }
-    
+
     var profileHeader: some View {
         ZStack {
-            TopBannerView(imageUrl: viewModel.userInfo?.bannerImage, placeholderHexColor: viewModel.userInfo?.options?.profileColor?.profileHexColor, height: bannerHeight)
-                .frame(height: bannerHeight)
-            
+            TopBannerView(
+                imageUrl: viewModel.userInfo?.bannerImage,
+                placeholderHexColor: viewModel.userInfo?.options?.profileColor?.profileHexColor,
+                height: bannerHeight
+            )
+            .frame(height: bannerHeight)
+
             HStack {
                 VStack {
                     CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
                         .shadow(radius: 7)
-                    
+
                     Text(viewModel.userInfo?.name ?? "Name")
                         .font(.title2)
                         .bold()
@@ -124,7 +128,7 @@ struct ProfileView: View {
                 }
                 .padding(.leading, 16)
                 Spacer()
-                
+
                 if isMyProfile {
                     NavigationLink(destination: SettingsView()) {
                         Label("Settings", systemImage: "gearshape")
@@ -135,8 +139,7 @@ struct ProfileView: View {
                         if viewModel.userInfo?.isFollowing == true {
                             Button("Unfollow", action: { viewModel.toggleFollow(userId: userId!) })
                                 .buttonStyle(.bordered)
-                        }
-                        else if viewModel.userInfo?.isFollowing == false {
+                        } else if viewModel.userInfo?.isFollowing == false {
                             Button("Follow", action: { viewModel.toggleFollow(userId: userId!) })
                                 .buttonStyle(.borderedProminent)
                         }
