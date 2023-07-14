@@ -29,8 +29,10 @@ struct AniHyouApp: App {
                             }
                         }
                 } else {
-                    MediaDetailsView(mediaId: mediaId)
-                        .id(mediaId)
+                    NavigationView {
+                        MediaDetailsView(mediaId: mediaId)
+                            .id(mediaId)
+                    }
                 }
             }
             .onOpenURL { url in
