@@ -22,11 +22,7 @@ extension View {
                             .labelStyle(.iconOnly)
                         }
                     } preview: {
-                        VStack(alignment: .leading) {
-                            MediaContextMenuView(mediaId: mediaId)
-                        }
-                        .padding(.vertical)
-                        .padding(.horizontal, 4)
+                        MediaContextMenuView(mediaId: mediaId)
                     }
             } else {
                 self
@@ -51,61 +47,66 @@ struct MediaContextMenuView: View {
     @StateObject private var viewModel = MediaContextMenuViewModel()
     
     var body: some View {
-        if viewModel.details == nil {
-            VStack(alignment: .center) {
-                ProgressView()
-                    .onAppear {
-                        viewModel.getDetails(mediaId: mediaId)
-                    }
-            }
-            .frame(width: 300, height: 200)
-        } else {
-            HStack(alignment: .center) {
-                MediaCoverView(imageUrl: viewModel.details!.coverImage?.large, width: 90, height: 130)
-                
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(viewModel.details!.title?.userPreferred ?? "")
-                        .font(.title3)
-                        .bold()
-                        .lineLimit(3)
-                        .padding(.bottom, 1)
-                    
-                    Label("\(viewModel.details!.meanScore ?? 0)%", systemImage: "star.fill")
-                        .foregroundColor(ScoreFormat.point100.scoreColor(score: Double(viewModel.details?.meanScore ?? 0)))
-                        .font(.subheadline)
-                    
-                    Text(viewModel.details!.format?.value?.localizedName ?? "Unknown")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                    if let episodes = viewModel.details!.episodes {
-                        Text("\(episodes) episodes")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                    
-                    if let chapters = viewModel.details!.chapters {
-                        Text("\(chapters) chapters")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                    
-                    if let volumes = viewModel.details!.volumes {
-                        Text("\(volumes) volumes")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                    
-                    if let schedule = viewModel.details!.nextAiringEpisode {
-                        HStack(spacing: 1) {
-                            Text("Ep \(schedule.episode) in ")
-                            Text(Date(timeIntervalSince1970: Double(schedule.airingAt)), style: .relative)
+        ZStack {
+            if viewModel.details == nil {
+                VStack(alignment: .center) {
+                    ProgressView()
+                        .onAppear {
+                            viewModel.getDetails(mediaId: mediaId)
                         }
-                        .font(.subheadline)
-                    }
                 }
-            }//:HStack
-        }
+            } else {
+                HStack(alignment: .center) {
+                    MediaCoverView(imageUrl: viewModel.details!.coverImage?.large, width: 90, height: 130)
+                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(viewModel.details!.title?.userPreferred ?? "")
+                            .font(.system(size: 17))
+                            .bold()
+                            .lineLimit(3)
+                            .padding(.bottom, 1)
+                        
+                        Label("\(viewModel.details!.meanScore ?? 0)%", systemImage: "star.fill")
+                            .foregroundColor(ScoreFormat.point100.scoreColor(score: Double(viewModel.details?.meanScore ?? 0)))
+                            .font(.subheadline)
+                        
+                        Text(viewModel.details!.format?.value?.localizedName ?? "Unknown")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        
+                        if let episodes = viewModel.details!.episodes {
+                            Text("\(episodes) episodes")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        if let chapters = viewModel.details!.chapters {
+                            Text("\(chapters) chapters")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        if let volumes = viewModel.details!.volumes {
+                            Text("\(volumes) volumes")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        if let schedule = viewModel.details!.nextAiringEpisode {
+                            HStack(spacing: 1) {
+                                Text("Ep \(schedule.episode) in ")
+                                Text(Date(timeIntervalSince1970: Double(schedule.airingAt)), style: .relative)
+                            }
+                            .font(.subheadline)
+                        }
+                    }
+                }//:HStack
+            }
+        }//:ZStack
+        .transition(.opacity)
+        .frame(width: 300, height: 150)
+        .padding(.vertical)
+        .padding(.horizontal, 4)
     }
 }
 
