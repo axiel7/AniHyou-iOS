@@ -9,10 +9,10 @@ import SwiftUI
 import AniListAPI
 
 struct MediaStatsView: View {
-    
+
     @StateObject private var viewModel = MediaStatsViewModel()
     var mediaId: Int
-    
+
     var body: some View {
         LazyVStack(alignment: .leading) {
             if viewModel.isLoading {
@@ -22,7 +22,7 @@ struct MediaStatsView: View {
                     Spacer()
                 }
             }
-            //MARK: - Rankings
+            // MARK: - Rankings
             if !viewModel.rankings.isEmpty {
                 Group {
                     Text("Rankings")
@@ -32,8 +32,7 @@ struct MediaStatsView: View {
                     rankingList
                 }
             }
-            
-            //MARK: - Stats
+            // MARK: - Stats
             Group {
                 Text("Status distribution")
                     .font(.title3)
@@ -41,7 +40,7 @@ struct MediaStatsView: View {
                     .padding(.horizontal)
                     .padding(.top)
                 HorizontalBarStatsView(stats: viewModel.statusDistribution)
-                
+
                 Text("Score distribution")
                     .font(.title3)
                     .bold()
@@ -55,7 +54,7 @@ struct MediaStatsView: View {
             viewModel.getMediaStats(mediaId: mediaId)
         }
     }
-    
+
     var rankingList: some View {
         VStack(alignment: .center) {
             ForEach(viewModel.rankings, id: \.?.id) {

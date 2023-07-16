@@ -5,7 +5,7 @@
 
 public class AiringAnimesQuery: GraphQLQuery {
   public static let operationName: String = "AiringAnimes"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {

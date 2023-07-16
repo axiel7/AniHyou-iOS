@@ -12,23 +12,23 @@ extension Date {
     var tomorrow: Date? {
         return Calendar.current.date(byAdding: .day, value: 1, to: self)
     }
-    
+
     var year: Int {
         return Calendar(identifier: .gregorian).component(.year, from: self)
     }
-    
+
     var month: Int {
         return Calendar(identifier: .gregorian).component(.month, from: self)
     }
-    
+
     var day: Int {
         return Calendar(identifier: .gregorian).component(.day, from: self)
     }
-    
+
     var weekday: Int {
         return Calendar(identifier: .gregorian).component(.weekday, from: self)
     }
-    
+
     var season: MediaSeason {
         switch self.month {
         case 1, 2, 12:
@@ -43,17 +43,17 @@ extension Date {
             return .spring
         }
     }
-    
+
     func getCurrentAnimeSeason() -> AnimeSeason {
         var animeSeason = AnimeSeason(year: self.year, season: self.season)
         //if december, the winter season is next year
         if self.month == 12 {
             animeSeason.year += 1
         }
-        
+
         return animeSeason
     }
-    
+
     func getNextAnimeSeason() -> AnimeSeason {
         var current = getCurrentAnimeSeason()
         switch current.season {
@@ -69,27 +69,33 @@ extension Date {
         }
         return current
     }
-    
+
     /// returns the requesed weekday timestamp (start or end of the day)
     func getThisWeekdayTimestamp(weekday: Int, isEndOfDay: Bool) -> Int {
         let diff = weekday - self.weekday
         if let weekdayDate = Calendar.current.date(byAdding: .day, value: diff, to: self) {
             if isEndOfDay {
-                return Int(Calendar.current.date(byAdding: DateComponents(day: 1, second: -1), to: weekdayDate)!.timeIntervalSince1970)
+                return Int(Calendar.current.date(
+                    byAdding: DateComponents(day: 1, second: -1),
+                    to: weekdayDate)!.timeIntervalSince1970
+                )
             } else {
                 return Int(Calendar.current.startOfDay(for: weekdayDate).timeIntervalSince1970)
             }
-        }
-        else { return 0 }
+        } else { return 0 }
     }
-    
+
     func toFuzzyDate() -> FuzzyDateInput {
-        return FuzzyDateInput(year: GraphQLNullable<Int>(integerLiteral: self.year), month: GraphQLNullable<Int>(integerLiteral:  self.month), day: GraphQLNullable<Int>(integerLiteral: self.day))
+        return FuzzyDateInput(
+            year: GraphQLNullable<Int>(integerLiteral: self.year),
+            month: GraphQLNullable<Int>(integerLiteral: self.month),
+            day: GraphQLNullable<Int>(integerLiteral: self.day)
+        )
     }
 }
 
 extension Int {
-    
+
     /// Converts seconds to years, months, weeks, days, hours or minutes.
     /// Depending if there is enough time.
     /// Eg. If days greater than 1 and less than 6, returns "x days"
@@ -102,73 +108,70 @@ extension Int {
                 if months > 12 {
                     let years = self / 31556952
                     return "\(years) years"
-                }
-                else { return "\(months) months" }
-            }
-            else { return "\(weeks) weeks" }
-        }
-        else if days >= 1 { return "\(days) days" }
-        else {
+                } else { return "\(months) months" }
+            } else { return "\(weeks) weeks" }
+        } else if days >= 1 {
+            return "\(days) days"
+        } else {
             let hours = self / 3600
-            if hours >= 1 { return "\(hours) h" }
-            else {
+            if hours >= 1 {
+                return "\(hours) h"
+            } else {
                 let minutes = (self % 3600) / 60
                 return "\(minutes) min"
             }
         }
     }
-    
+
     func minutesToLegibleText() -> String {
         let hours = self / 60
         if hours >= 1 {
             let minutes = self % 60
             return "\(hours) hours, \(minutes) min"
-        }
-        else { return "\(self) min" }
+        } else { return "\(self) min" }
     }
-    
+
     func minutesToDays() -> Double {
         return Double(self) / 1440
     }
-    
+
     func timestampToDateString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         return dateFormatter.string(from: self.timestampToDate())
     }
-    
+
     func timestampToDate() -> Date {
         return Date(timeIntervalSince1970: Double(self))
     }
-    
+
     func timestampIntervalSinceNow() -> Int {
         return Int(abs(self.timestampToDate().timeIntervalSinceNow))
     }
 }
 
 extension FuzzyDateFragment {
-    
+
     func formatted() -> String {
         let year = self.year ?? 1970
-        guard (self.month != nil) else { return "Unknown" }
-        guard (self.day != nil) else { return "Unknown" }
-        if let date = date(year: year, month: self.month!, day: self.day!) {
+        guard let month = self.month else { return "Unknown" }
+        guard let day = self.day else { return "Unknown" }
+        if let date = date(year: year, month: month, day: day) {
             if year == 1970 {
                 let dateFormatter = DateFormatter()
                 dateFormatter.setLocalizedDateFormatFromTemplate("MMMM dd")
                 return dateFormatter.string(from: date)
             }
             return date.formatted(date: .abbreviated, time: .omitted)
-        }
-        else { return "Unknown" }
+        } else { return "Unknown" }
     }
-    
+
     func isEqual(_ fuzzyDate: FuzzyDateInput?) -> Bool {
-        if self.day != fuzzyDate?.day.unwrapped { return false }
-        else if self.month != fuzzyDate?.month.unwrapped { return false }
-        else if self.year != fuzzyDate?.year.unwrapped { return false }
-        else { return true }
+        guard self.day != fuzzyDate?.day.unwrapped else { return false }
+        guard self.month != fuzzyDate?.month.unwrapped else { return false }
+        guard self.year != fuzzyDate?.year.unwrapped else { return false }
+        return true
     }
 }
 
@@ -177,6 +180,5 @@ func date(year: Int, month: Int, day: Int) -> Date? {
     dateComponents.year = year
     dateComponents.day = day
     dateComponents.month = month
-    
     return Calendar(identifier: .gregorian).date(from: dateComponents)
 }

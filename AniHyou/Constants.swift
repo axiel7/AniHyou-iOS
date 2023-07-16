@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable identifier_name
 // AniList urls
 let ANILIST_URL = "https://anilist.co"
 let ANILIST_API_URL = "\(ANILIST_URL)/api/v2"
@@ -44,3 +45,4 @@ let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"
+// swiftlint:enable identifier_name

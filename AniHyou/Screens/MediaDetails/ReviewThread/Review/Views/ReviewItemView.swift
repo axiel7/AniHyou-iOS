@@ -9,9 +9,9 @@ import SwiftUI
 import AniListAPI
 
 struct ReviewItemView: View {
-    
+
     var review: MediaReviewsQuery.Data.Media.Reviews.Node
-    
+
     var body: some View {
         VStack {
             Text(review.summary ?? "")

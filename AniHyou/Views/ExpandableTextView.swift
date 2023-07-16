@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ExpandableTextView: View {
-    
+
     @State private var isExpanded = false
     var lineLimit: Int? = 3
     var fontSize: CGFloat = 16
-    
+
     @Binding var text: NSAttributedString
     var styledText: AttributedString {
         var result = AttributedString(text)
@@ -20,21 +20,24 @@ struct ExpandableTextView: View {
         result.foregroundColor = .primary
         return result
     }
-    
+
     var body: some View {
         VStack(alignment: .trailing, spacing: 10) {
             Text(styledText)
                 .lineLimit(isExpanded ? nil : lineLimit)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(action: {
-                withAnimation {
-                    isExpanded.toggle()
+            Button(
+                action: {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
+                },
+                label: {
+                    Text(isExpanded ? "Show less" : "Show more")
+                        .font(.footnote)
                 }
-            }) {
-                Text(isExpanded ? "Show less" : "Show more")
-                    .font(.footnote)
-            }
+            )
         }
     }
 }

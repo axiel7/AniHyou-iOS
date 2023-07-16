@@ -5,7 +5,7 @@
 
 public class FollowingsQuery: GraphQLQuery {
   public static let operationName: String = "Followings"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query Followings($userId: Int!, $page: Int, $perPage: Int) {

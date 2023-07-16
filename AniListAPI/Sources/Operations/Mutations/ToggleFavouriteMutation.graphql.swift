@@ -5,7 +5,7 @@
 
 public class ToggleFavouriteMutation: GraphQLMutation {
   public static let operationName: String = "ToggleFavourite"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       mutation ToggleFavourite($animeId: Int, $mangaId: Int, $characterId: Int, $staffId: Int, $studioId: Int) {

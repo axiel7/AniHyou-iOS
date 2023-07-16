@@ -5,7 +5,7 @@
 
 public class ThreadCommentsQuery: GraphQLQuery {
   public static let operationName: String = "ThreadComments"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {

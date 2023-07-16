@@ -8,9 +8,11 @@
 import WidgetKit
 import SwiftUI
 
+// swiftlint:disable type_name
 @main
 struct AniHyou_WidgetBundle: WidgetBundle {
     var body: some Widget {
         AniHyou_Widget()
     }
 }
+// swiftlint:enable type_name

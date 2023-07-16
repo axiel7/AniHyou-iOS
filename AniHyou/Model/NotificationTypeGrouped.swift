@@ -15,7 +15,7 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
     case forum
     case follows
     case media
-    
+
     var value: [NotificationType] {
         switch self {
         case .all:
@@ -23,7 +23,8 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
         case .airing:
             return [.airing]
         case .activity:
-            return [.activityLike, .activityReply, .activityReplyLike, .activityMention, .activityMessage, .activityReplySubscribed]
+            return [.activityLike, .activityReply, .activityReplyLike, .activityMention, .activityMessage,
+                    .activityReplySubscribed]
         case .forum:
             return [.threadLike, .threadCommentReply, .threadCommentLike, .threadCommentMention, .threadSubscribed]
         case .follows:
@@ -32,7 +33,7 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
             return [.relatedMediaAddition, .mediaDataChange, .mediaMerge, .mediaDeletion]
         }
     }
-    
+
     var localizedName: String {
         switch self {
         case .all:

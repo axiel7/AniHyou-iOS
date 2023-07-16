@@ -5,7 +5,7 @@
 
 public class NotificationCountQuery: GraphQLQuery {
   public static let operationName: String = "NotificationCount"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query NotificationCount {

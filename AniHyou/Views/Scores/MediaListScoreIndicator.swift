@@ -9,13 +9,13 @@ import SwiftUI
 import AniListAPI
 
 struct MediaListScoreIndicator: View {
-    
+
     var score: Double
     var format: ScoreFormat
     var color: Color {
         if score == 0 { return .gray } else { return format.scoreColor(score: score) }
     }
-    
+
     var body: some View {
         switch format {
         case .point100, .point10, .point5:

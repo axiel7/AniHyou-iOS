@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    
+
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = NotificationsViewModel()
-    
+
     var body: some View {
         NavigationView {
             Group {
@@ -23,11 +23,11 @@ struct NotificationsView: View {
                             }
                         }
                         .pickerStyle(.menu)
-                        
+
                         ForEach(viewModel.notifications) { notification in
                             NotificationItemView(notification: notification)
                         }
-                        
+
                         if viewModel.hasNextPage {
                             ProgressView()
                                 .onAppear {

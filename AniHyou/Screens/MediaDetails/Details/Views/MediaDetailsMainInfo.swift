@@ -11,7 +11,7 @@ private let coverWidth: CGFloat = 110
 private let coverHeight: CGFloat = 153
 
 struct MediaDetailsMainInfo: View {
-    
+
     var mediaId: Int
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showingEditSheet = false
@@ -21,10 +21,10 @@ struct MediaDetailsMainInfo: View {
     var isNewEntry: Bool {
         viewModel.mediaDetails?.mediaListEntry == nil
     }
-    
+
     var body: some View {
         HStack(alignment: .top) {
-            
+
             MediaCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.large, width: coverWidth, height: coverHeight)
                 .sheet(isPresented: $showingCoverSheet) {
                     FullCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.extraLarge)
@@ -32,24 +32,24 @@ struct MediaDetailsMainInfo: View {
                 .onTapGesture {
                     showingCoverSheet = true
                 }
-            
+
             VStack(alignment: .leading) {
-                
+
                 Text(viewModel.mediaDetails?.title?.userPreferred ?? "")
                     .font(.title3)
                     .bold()
                     .lineLimit(3)
                     .padding(.bottom, 1)
                     .textSelection(.enabled)
-                
+
                 Text(viewModel.mediaDetails?.format?.value?.localizedName ?? "Unknown")
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                
+
                 Spacer()
-                
+
                 HStack {
-                    //MARK: Status button
+                    // MARK: Status button
                     Button {
                         if isLoggedIn() {
                             showingEditSheet = true
@@ -62,20 +62,26 @@ struct MediaDetailsMainInfo: View {
                                 .font(.system(size: 17, weight: .bold))
                                 .textCase(.uppercase)
                         } else {
-                            Label(viewModel.mediaDetails?.mediaListEntry?.status?.value?.localizedName ?? "", systemImage: "square.and.pencil")
-                                .font(.system(size: 17, weight: .bold))
-                                .textCase(.uppercase)
+                            Label(viewModel.mediaDetails?.mediaListEntry?.status?.value?.localizedName ?? "",
+                                  systemImage: "square.and.pencil"
+                            )
+                            .font(.system(size: 17, weight: .bold))
+                            .textCase(.uppercase)
                         }
                     }//:Button
                     .buttonStyle(.borderedProminent)
                     .sheet(isPresented: $showingEditSheet) {
-                        MediaListEditView(mediaId: mediaId, mediaType: viewModel.mediaDetails!.type!.value!, mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
-                        onSave: { updatedEntry in
-                            viewModel.onEntryUpdated(updatedEntry: updatedEntry)
-                        },
-                        onDelete: {
-                            viewModel.onEntryDeleted()
-                        })
+                        MediaListEditView(
+                            mediaId: mediaId,
+                            mediaType: viewModel.mediaDetails!.type!.value!,
+                            mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
+                            onSave: { updatedEntry in
+                                viewModel.onEntryUpdated(updatedEntry: updatedEntry)
+                            },
+                            onDelete: {
+                                viewModel.onEntryDeleted()
+                            }
+                        )
                     }
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }

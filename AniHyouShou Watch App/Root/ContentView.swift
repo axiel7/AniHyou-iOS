@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
     @ObservedObject private var viewModel = MainViewModel()
     @AppStorage("selected_tab_index") private var selectedTabIndex: Int = 0
-    
+
     var body: some View {
         Group {
             if isLoggedIn() || viewModel.justLoggedIn {
@@ -34,9 +34,11 @@ struct ContentView: View {
                     Image(systemName: "iphone.and.arrow.forward")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
+                    // swiftlint:disable line_length
                     Text("Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch")
                         .multilineTextAlignment(.center)
                         .font(.system(size: 15))
+                    // swiftlint:enable line_length
                 }
                 .padding()
             }

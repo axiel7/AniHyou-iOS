@@ -10,7 +10,8 @@ import Apollo
 import ApolloAPI
 
 class NetworkInterceptorProvider: DefaultInterceptorProvider {
-    override func interceptors<Operation>(for operation: Operation) -> [ApolloInterceptor] where Operation : GraphQLOperation {
+    override func interceptors<Operation>(for operation: Operation) -> [ApolloInterceptor]
+    where Operation: GraphQLOperation {
         var interceptors = super.interceptors(for: operation)
         interceptors.insert(TokenAddingInterceptor(), at: 0)
         return interceptors

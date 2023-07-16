@@ -9,9 +9,10 @@ import WidgetKit
 import SwiftUI
 import AniListAPI
 
+// swiftlint:disable void_return
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        
+
         SimpleEntry(
             date: Date(),
             animeList: [],
@@ -35,29 +36,37 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let date = Date()
         let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
-        
+
         if userId == 0 {
-            let entry = SimpleEntry(date: date, animeList: [], placeholderText: "Login to use this widget", widgetSize: context.displaySize, widgetFamily: context.family)
+            let entry = SimpleEntry(
+                date: date,
+                animeList: [],
+                placeholderText: "Login to use this widget",
+                widgetSize: context.displaySize,
+                widgetFamily: context.family
+            )
             completion(Timeline(entries: [entry], policy: .never))
         }
-        
+
         //update interval
         var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: date)!
-        
+
         Network.shared.apollo.fetch(query: UserCurrentAnimeListQuery(userId: .some(userId))) { result in
             switch result {
             case .success(let graphQLResult):
                 if let mediaList = graphQLResult.data?.page?.mediaList {
-                    var tempList = mediaList.sorted(by: { item1, item2 in item1?.media?.nextAiringEpisode?.timeUntilAiring ?? 0 < item2?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
+                    var tempList = mediaList.sorted(by: { item1, item2 in
+                        item1?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
+                        < item2?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
                     })
                     tempList.removeAll(where: { item in item?.media?.status != .releasing })
                     
-                    var maxItems = 7
+                    var maxItems = 6
                     if context.family == .systemMedium {
                         maxItems = 3
                     }
                     tempList = Array(tempList.prefix(maxItems))
-                    
+
                     let entry = SimpleEntry(
                         date: nextUpdateDate,
                         animeList: tempList,
@@ -71,12 +80,19 @@ struct Provider: TimelineProvider {
             case .failure(let error):
                 print(error)
                 nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
-                let entry = SimpleEntry(date: nextUpdateDate, animeList: [], placeholderText: "Error updating", widgetSize: context.displaySize, widgetFamily: context.family)
+                let entry = SimpleEntry(
+                    date: nextUpdateDate,
+                    animeList: [],
+                    placeholderText: "Error updating",
+                    widgetSize: context.displaySize,
+                    widgetFamily: context.family
+                )
                 completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             }
         }
     }
 }
+// swiftlint:enable void_return
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
@@ -86,9 +102,10 @@ struct SimpleEntry: TimelineEntry {
     let widgetFamily: WidgetFamily
 }
 
-struct AniHyou_WidgetEntryView : View {
+// swiftlint:disable type_name
+struct AniHyou_WidgetEntryView: View {
     var entry: Provider.Entry
-    
+
     var aligment: Alignment {
         if entry.placeholderText != nil || entry.animeList.isEmpty {
             return .center
@@ -146,14 +163,21 @@ struct AniHyou_WidgetEntryView : View {
                                 .frame(width: entry.widgetSize.width, alignment: .leading)
                             
                             HStack(spacing: 1) {
-                                Text("Ep \(nextAiringEpisode.episode) airing in ")
-                                    .font(.system(size: 12))
-                                    .lineLimit(1)
+                                let airingDate = Date(
+                                    timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
+                                )
+                                if airingDate > Date.now {
+                                    Text("Ep \(nextAiringEpisode.episode) airing in ")
                                     
-                                Text(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)), style: .relative)
-                                    .font(.system(size: 12))
-                                    .lineLimit(1)
+                                    Text(airingDate, style: .relative)
+                                } else {
+                                    Text("Ep \(nextAiringEpisode.episode) aired at ")
+
+                                    Text(airingDate, style: .time)
+                                }
                             }
+                            .font(.system(size: 12))
+                            .lineLimit(1)
                             .foregroundColor(.accentColor)
                             .padding(.horizontal)
                             .frame(width: entry.widgetSize.width, alignment: .leading)
@@ -174,7 +198,7 @@ struct AniHyou_Widget: Widget {
     let kind: String = "AniHyou_Widget"
 
     var body: some WidgetConfiguration {
-        
+
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             AniHyou_WidgetEntryView(entry: entry)
         }
@@ -197,3 +221,4 @@ struct AniHyou_Widget_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
+// swiftlint:enable type_name

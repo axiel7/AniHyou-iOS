@@ -10,19 +10,19 @@ import Apollo
 import AniListAPI
 
 class MediaListViewModel: ObservableObject {
-    
+
     var userId: Int = authUserId()
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
-    var selectedItem: UserMediaListQuery.Data.Page.MediaList? = nil
-    
+    var selectedItem: UserMediaListQuery.Data.Page.MediaList?
+
     var currentPage = 1
     var hasNextPage = true
     var forceReload = false
-    
+
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
-    
+
     func getUserMediaList(otherUserId: Int?) {
         if otherUserId != nil { userId = otherUserId! }
         Network.shared.apollo.fetch(
@@ -40,15 +40,13 @@ class MediaListViewModel: ObservableObject {
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList {
                         self?.mediaList.append(contentsOf: list)
-                        
+
                         if (page.pageInfo?.hasNextPage)! {
                             self?.currentPage += 1
                             self?.hasNextPage = true
                         } else {
                             self?.hasNextPage = false
                         }
-                        
-                        
                     }
                 }
             case .failure(let error):
@@ -57,17 +55,16 @@ class MediaListViewModel: ObservableObject {
         }
         forceReload = false
     }
-    
+
     @Published var searchText = ""
-    
+
     var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
         if searchText.isEmpty {
             return mediaList
         } else {
             let filtered = mediaList.filter {
-                if (($0?.media?.title?.userPreferred) != nil) {
-                    let lowerStr = $0?.media?.title?.userPreferred!.lowercased()
-                    return lowerStr != nil && lowerStr!.contains(searchText.lowercased())
+                if let title = $0?.media?.title?.userPreferred {
+                    return title.lowercased().contains(searchText.lowercased())
                 }
                 return true
             }
@@ -79,23 +76,32 @@ class MediaListViewModel: ObservableObject {
             return filtered
         }
     }
-    
+
     func refreshList() {
         currentPage = 1
         hasNextPage = true
         mediaList = []
         forceReload = true
     }
-    
+
     @Published var isLoading = false
-    
+
     func updateEntryProgress(entryId: Int, progress: Int, status: MediaListStatus?) {
         isLoading = true
-        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(saveMediaListEntryId: .some(entryId), progress: .some(progress), status: someIfNotNil(status))) { [weak self] result in
+        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(
+            saveMediaListEntryId: .some(entryId),
+            progress: .some(progress),
+            status: someIfNotNil(status)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.saveMediaListEntry {
-                    self?.onEntryUpdated(mediaId: data.mediaId, entryId: entryId, updatedEntry: nil, progress: data.progress)
+                    self?.onEntryUpdated(
+                        mediaId: data.mediaId,
+                        entryId: entryId,
+                        updatedEntry: nil,
+                        progress: data.progress
+                    )
                 }
             case .failure(let error):
                 print(error)
@@ -103,7 +109,7 @@ class MediaListViewModel: ObservableObject {
             self?.isLoading = false
         }
     }
-    
+
     func onEntryUpdated(mediaId: Int, entryId: Int, updatedEntry: BasicMediaListEntry?, progress: Int?) {
         //Update the local cache
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
@@ -115,12 +121,18 @@ class MediaListViewModel: ObservableObject {
                     return
                 }
                 //else update the new entry data
-                try transaction.updateObject(ofType: BasicMediaListEntry.self, withKey: "MediaList:\(entryId).\(mediaId)") { (cachedData: inout BasicMediaListEntry) in
+                try transaction.updateObject(
+                    ofType: BasicMediaListEntry.self,
+                    withKey: "MediaList:\(entryId).\(mediaId)"
+                ) { (cachedData: inout BasicMediaListEntry) in
                     if updatedEntry != nil { cachedData = updatedEntry! }
                     if progress != nil { cachedData.progress = progress }
                 }
-                
-                let newObject = try transaction.readObject(ofType: UserMediaListQuery.Data.Page.MediaList.self, withKey: "MediaList:\(entryId).\(mediaId)")
+
+                let newObject = try transaction.readObject(
+                    ofType: UserMediaListQuery.Data.Page.MediaList.self,
+                    withKey: "MediaList:\(entryId).\(mediaId)"
+                )
                 DispatchQueue.main.async {
                     self?.mediaList[foundIndex] = newObject
                 }
@@ -129,11 +141,11 @@ class MediaListViewModel: ObservableObject {
             }
         })
     }
-    
+
     func onEntryDeleted(entryId: Int) {
         DispatchQueue.main.async {
             self.mediaList.removeAll(where: { $0?.id == entryId })
         }
     }
-    
+
 }

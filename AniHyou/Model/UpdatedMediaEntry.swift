@@ -8,6 +8,6 @@
 import Foundation
 
 struct UpdatedMediaEntry: Equatable {
-    var mediaId: Int? = nil
-    var progress: Int? = nil
+    var mediaId: Int?
+    var progress: Int?
 }

@@ -19,12 +19,12 @@ extension KFImage {
 }
 
 struct MediaCoverView: View {
-    
+
     var imageUrl: String?
     var width: CGFloat
     var height: CGFloat
     var cancelOnDisappear = false
-    
+
     var body: some View {
         KFImage(URL(string: imageUrl ?? ""))
             .placeholder {

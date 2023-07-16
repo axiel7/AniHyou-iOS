@@ -9,24 +9,30 @@ import Foundation
 import AniListAPI
 
 class ExploreViewModel: ObservableObject {
-    
+
     private let perPage = 25
-    
-    //MARK: - Charts
+
+    // MARK: - Charts
     @Published var mediaChart = [MediaChartQuery.Data.Page.Medium?]()
-    
+
     var currentPageChart = 1
     var hasNextPageChart = true
-    
+
     func getMediaChart(type: MediaType, sort: MediaSort, status: MediaStatus?) {
-        Network.shared.apollo.fetch(query: MediaChartQuery(page: .some(currentPageChart), perPage: .some(perPage), sort: .some([.case(sort)]), type: .some(.case(type)), status: someIfNotNil(status))) { [weak self] result in
+        Network.shared.apollo.fetch(query: MediaChartQuery(
+            page: .some(currentPageChart),
+            perPage: .some(perPage),
+            sort: .some([.case(sort)]),
+            type: .some(.case(type)),
+            status: someIfNotNil(status)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
                     if let media = page.media {
                         self?.mediaChart.append(contentsOf: media)
                         self?.currentPageChart += 1
-                        
+
                         // limit top 100 results
                         if (self?.currentPageChart) ?? 1 > 100 / (self?.perPage ?? 25) {
                             self?.hasNextPageChart = false
@@ -40,16 +46,22 @@ class ExploreViewModel: ObservableObject {
             }
         }
     }
-    
-    //MARK: - Anime Season
+
+    // MARK: - Anime Season
     @Published var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium?]()
-    
+
     var currentPageSeason = 1
     var hasNextPageSeason = true
-    
+
     func getAnimeSeasonal(season: MediaSeason, year: Int, resetPage: Bool = false) {
         if resetPage { currentPageSeason = 1 }
-        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(page: .some(currentPageSeason), perPage: .some(perPage), season: .some(.case(season)), seasonYear: .some(year), sort: .some([.case(.popularityDesc)]))) { [weak self] result in
+        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(
+            page: .some(currentPageSeason),
+            perPage: .some(perPage),
+            season: .some(.case(season)),
+            seasonYear: .some(year),
+            sort: .some([.case(.popularityDesc)])
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {

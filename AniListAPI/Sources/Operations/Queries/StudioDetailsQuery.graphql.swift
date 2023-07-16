@@ -5,7 +5,7 @@
 
 public class StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {

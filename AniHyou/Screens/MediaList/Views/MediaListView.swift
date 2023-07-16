@@ -9,10 +9,10 @@ import SwiftUI
 import AniListAPI
 
 struct MediaListView: View {
-    
+
     let type: MediaType
     var status: MediaListStatus
-    var userId: Int? = nil
+    var userId: Int?
     var isEditable: Bool {
         return userId == nil
     }
@@ -20,7 +20,7 @@ struct MediaListView: View {
     @State private var showingEditSheet = false
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
-    
+
     var body: some View {
         List {
             ForEach(viewModel.filteredMediaList, id: \.?.id) {
@@ -28,7 +28,7 @@ struct MediaListView: View {
                     buildListItem(item: item)
                 }
             }
-                
+
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {
@@ -49,13 +49,22 @@ struct MediaListView: View {
         }
         .sheet(isPresented: $showingEditSheet) {
             if viewModel.selectedItem != nil {
-                MediaListEditView(mediaId: viewModel.selectedItem!.mediaId, mediaType: type, mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry,
-                onSave: { updatedEntry in
-                    viewModel.onEntryUpdated(mediaId: updatedEntry.mediaId, entryId: updatedEntry.id, updatedEntry: updatedEntry, progress: nil)
-                },
-                onDelete: {
-                    viewModel.onEntryDeleted(entryId: viewModel.selectedItem!.id)
-                })
+                MediaListEditView(
+                    mediaId: viewModel.selectedItem!.mediaId,
+                    mediaType: type,
+                    mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry,
+                    onSave: { updatedEntry in
+                        viewModel.onEntryUpdated(
+                            mediaId: updatedEntry.mediaId,
+                            entryId: updatedEntry.id,
+                            updatedEntry: updatedEntry,
+                            progress: nil
+                        )
+                    },
+                    onDelete: {
+                        viewModel.onEntryDeleted(entryId: viewModel.selectedItem!.id)
+                    }
+                )
             }
         }
         .toolbar {
@@ -73,7 +82,8 @@ struct MediaListView: View {
         }
         .navigationTitle(viewModel.mediaListStatus.localizedName)
     }
-    
+
+    // swiftlint:disable cyclomatic_complexity function_body_length
     func buildListItem(item: UserMediaListQuery.Data.Page.MediaList!) -> some View {
         NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
             switch listStyle {
@@ -89,16 +99,19 @@ struct MediaListView: View {
             if isEditable {
                 if incrementLongSwipeDirection == .right {
                     if shouldShowIncrementButton {
-                        Button(action: {
-                            updateEntryProgress(item: item)
-                        }) {
-                            if type == .anime {
-                                Label("Ep", systemImage: "plus")
-                                // should show a sheet to add a rating
-                            } else if type == .manga {
-                                Label("Ch", systemImage: "plus")
+                        Button(
+                            action: {
+                                updateEntryProgress(item: item)
+                            },
+                            label: {
+                                if type == .anime {
+                                    Label("Ep", systemImage: "plus")
+                                    // should show a sheet to add a rating
+                                } else if type == .manga {
+                                    Label("Ch", systemImage: "plus")
+                                }
                             }
-                        }
+                        )
                         .tint(.green)
                     }
                 }
@@ -108,39 +121,46 @@ struct MediaListView: View {
             if isEditable {
                 if incrementLongSwipeDirection == .left {
                     if shouldShowIncrementButton {
-                        Button(action: {
-                            updateEntryProgress(item: item)
-                        }) {
-                            if type == .anime {
-                                Label("Ep", systemImage: "plus")
-                                // should show a sheet to add a rating
-                            } else if type == .manga {
-                                Label("Ch", systemImage: "plus")
+                        Button(
+                            action: {
+                                updateEntryProgress(item: item)
+                            },
+                            label: {
+                                if type == .anime {
+                                    Label("Ep", systemImage: "plus")
+                                    // should show a sheet to add a rating
+                                } else if type == .manga {
+                                    Label("Ch", systemImage: "plus")
+                                }
                             }
-                        }
+                        )
                         .tint(.green)
                     }
                 }
-                Button(action: {
-                    viewModel.selectedItem = item
-                    showingEditSheet = true
-                }) {
-                    Label("Edit", systemImage: "square.and.pencil")
-                }
+                Button(
+                    action: {
+                        viewModel.selectedItem = item
+                        showingEditSheet = true
+                    },
+                    label: {
+                        Label("Edit", systemImage: "square.and.pencil")
+                    }
+                )
                 .tint(.blue)
             }
         }
         .mediaContextMenu(mediaId: item.mediaId, mediaType: type)
     }
-    
+    // swiftlint:enable cyclomatic_complexity function_body_length
+
     func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList!) {
-        var status: MediaListStatus? = nil
+        var status: MediaListStatus?
         if item.status == .planning {
             status = .current
         }
         viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1, status: status)
     }
-    
+
     private var shouldShowIncrementButton: Bool {
         if viewModel.mediaListStatus == .repeating ||
             viewModel.mediaListStatus == .current ||

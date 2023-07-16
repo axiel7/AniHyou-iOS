@@ -5,7 +5,7 @@
 
 public class ReviewDetailsQuery: GraphQLQuery {
   public static let operationName: String = "ReviewDetails"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query ReviewDetails($reviewId: Int) {

@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct MediaCharactersAndStaffView: View {
-    
+
     var mediaId: Int
     @StateObject private var viewModel = CharacterStaffViewModel()
     private let gridRows = [
         GridItem(.fixed(StaffView.imageSize), alignment: .leading),
         GridItem(.fixed(StaffView.imageSize), alignment: .leading)
     ]
-    
+
     var body: some View {
         if viewModel.mediaCharactersAndStaff != nil {
             VStack(alignment: .leading) {
-                
+
                 Text("Staff")
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                
+
                 staffHScrollView
-                
+
                 Text("Characters")
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                
+
                 charactersVScrollView
-                
+
             }//:VStack
         } else {
             HStack {
@@ -47,7 +47,7 @@ struct MediaCharactersAndStaffView: View {
             }
         }
     }
-    
+
     var staffHScrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: gridRows, spacing: 16) {
@@ -62,7 +62,7 @@ struct MediaCharactersAndStaffView: View {
         }//:HScrollView
         .padding(.bottom)
     }
-    
+
     var charactersVScrollView: some View {
         LazyVStack {
             ForEach(viewModel.mediaCharactersAndStaff?.characters?.edges ?? [], id: \.?.node?.id) {

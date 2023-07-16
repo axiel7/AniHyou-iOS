@@ -12,21 +12,26 @@ private let coverWidth: CGFloat = 73
 private let coverHeight: CGFloat = 110
 
 struct ChartListItemView: View {
-    
+
     var item: MediaChartQuery.Data.Page.Medium
     var position: Int
-    
+
     var body: some View {
         HStack(alignment: .center) {
-            MediaCoverView(imageUrl: item.coverImage?.large, width: coverWidth, height: coverHeight, cancelOnDisappear: true)
-            
+            MediaCoverView(
+                imageUrl: item.coverImage?.large,
+                width: coverWidth,
+                height: coverHeight,
+                cancelOnDisappear: true
+            )
+
             Text(position.stringValue)
                 .font(.title3)
                 .bold()
                 .foregroundColor(.gray)
                 .padding(.leading, 8)
                 .padding(.trailing, 8)
-            
+
             VStack(alignment: .leading) {
                 Text(item.title?.userPreferred ?? "")
                     .font(.body)

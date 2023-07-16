@@ -9,16 +9,16 @@ import SwiftUI
 import AniListAPI
 
 struct StaffView: View {
-    
+
     static let imageSize: CGFloat = 70
-    
+
     var staff: MediaStaff
-    
+
     var body: some View {
         NavigationLink(destination: StaffDetailsView(staffId: staff.node!.id)) {
             HStack {
                 CircleImageView(imageUrl: staff.node?.image?.medium, size: StaffView.imageSize)
-                
+
                 VStack(alignment: .leading) {
                     Text(staff.node?.name?.userPreferred ?? "")
                         .lineLimit(1)

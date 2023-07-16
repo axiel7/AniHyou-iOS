@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RectangleTextView: View {
-    
+
     var text: String
     var color: Color = .accentColor
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)

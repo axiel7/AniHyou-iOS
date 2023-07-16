@@ -9,15 +9,19 @@ import Foundation
 import AniListAPI
 
 class UserFavoritesViewModel: ObservableObject {
-    
-    //MARK: anime
+
+    // MARK: anime
     @Published var favoritesAnime = [UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node?]()
-    
+
     var currentPageAnime = 1
     var hasNextPageAnime = true
-    
+
     func getFavoritesAnime(userId: Int) {
-        Network.shared.apollo.fetch(query: UserFavoritesAnimeQuery(userId: .some(userId), page: .some(currentPageAnime), perPage: .some(20))) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserFavoritesAnimeQuery(
+            userId: .some(userId),
+            page: .some(currentPageAnime),
+            perPage: .some(20)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.user?.favourites?.anime {
@@ -32,15 +36,19 @@ class UserFavoritesViewModel: ObservableObject {
             }
         }
     }
-    
-    //MARK: manga
+
+    // MARK: manga
     @Published var favoritesManga = [UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node?]()
-    
+
     var currentPageManga = 1
     var hasNextPageManga = true
-    
+
     func getFavoritesManga(userId: Int) {
-        Network.shared.apollo.fetch(query: UserFavoritesMangaQuery(userId: .some(userId), page: .some(currentPageManga), perPage: .some(20))) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserFavoritesMangaQuery(
+            userId: .some(userId),
+            page: .some(currentPageManga),
+            perPage: .some(20)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.user?.favourites?.manga {
@@ -55,15 +63,19 @@ class UserFavoritesViewModel: ObservableObject {
             }
         }
     }
-    
-    //MARK: characters
+
+    // MARK: characters
     @Published var favoritesCharacters = [UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node?]()
-    
+
     var currentPageCharacter = 1
     var hasNextPageCharacter = true
-    
+
     func getFavoritesCharacter(userId: Int) {
-        Network.shared.apollo.fetch(query: UserFavoritesCharacterQuery(userId: .some(userId), page: .some(currentPageCharacter), perPage: .some(20))) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserFavoritesCharacterQuery(
+            userId: .some(userId),
+            page: .some(currentPageCharacter),
+            perPage: .some(20)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.user?.favourites?.characters {
@@ -78,15 +90,19 @@ class UserFavoritesViewModel: ObservableObject {
             }
         }
     }
-    
-    //MARK: staff
+
+    // MARK: staff
     @Published var favoritesStaff = [UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node?]()
-    
+
     var currentPageStaff = 1
     var hasNextPageStaff = true
-    
+
     func getFavoritesStaff(userId: Int) {
-        Network.shared.apollo.fetch(query: UserFavoritesStaffQuery(userId: .some(userId), page: .some(currentPageStaff), perPage: .some(20))) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserFavoritesStaffQuery(
+            userId: .some(userId),
+            page: .some(currentPageStaff),
+            perPage: .some(20)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.user?.favourites?.staff {
@@ -101,15 +117,19 @@ class UserFavoritesViewModel: ObservableObject {
             }
         }
     }
-    
-    //MARK: studios
+
+    // MARK: studios
     @Published var favoritesStudio = [UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node?]()
-    
+
     var currentPageStudio = 1
     var hasNextPageStudio = true
-    
+
     func getFavoritesStudio(userId: Int) {
-        Network.shared.apollo.fetch(query: UserFavoritesStudioQuery(userId: .some(userId), page: .some(currentPageStudio), perPage: .some(20))) { [weak self] result in
+        Network.shared.apollo.fetch(query: UserFavoritesStudioQuery(
+            userId: .some(userId),
+            page: .some(currentPageStudio),
+            perPage: .some(20)
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.user?.favourites?.studios {

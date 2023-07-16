@@ -30,7 +30,7 @@ extension MediaInfoType {
             return "Review and Threads"
         }
     }
-    
+
     var systemImage: String {
         switch self {
         case .general:

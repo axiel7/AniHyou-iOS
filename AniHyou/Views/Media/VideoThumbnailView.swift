@@ -11,9 +11,9 @@ let videoWidth: CGFloat = 192
 let videoHeight: CGFloat = 108
 
 struct VideoThumbnailView: View {
-    
+
     var imageUrl: String?
-    
+
     var body: some View {
         ZStack {
             MediaCoverView(imageUrl: imageUrl, width: videoWidth, height: videoHeight)

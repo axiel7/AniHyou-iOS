@@ -10,12 +10,15 @@ import Apollo
 
 class Network {
     static let shared = Network()
-    
+
     private(set) lazy var apollo: ApolloClient = {
         let client = URLSessionClient()
         let store = ApolloStore(cache: InMemoryNormalizedCache())
         let provider = NetworkInterceptorProvider(client: client, store: store)
-        let transport = RequestChainNetworkTransport(interceptorProvider: provider, endpointURL: URL(string: ANILIST_GRAPHQL)!)
+        let transport = RequestChainNetworkTransport(
+            interceptorProvider: provider,
+            endpointURL: URL(string: ANILIST_GRAPHQL)!
+        )
         let apolloClient = ApolloClient(networkTransport: transport, store: store)
         return apolloClient
     }()

@@ -9,10 +9,10 @@ import SwiftUI
 import RichText
 
 struct ReviewDetailsView: View {
-    
+
     var reviewId: Int
     @StateObject private var viewModel = ReviewDetailsViewModel()
-    
+
     var body: some View {
         ScrollView(.vertical) {
             if viewModel.review != nil {
@@ -29,7 +29,14 @@ struct ReviewDetailsView: View {
                     Spacer()
                     MediaStatView(name: "Score", value: "\(viewModel.review!.score ?? 0)/100", showDivider: false)
                     Spacer()
-                    MediaStatView(name: "Users likes", value: "\(viewModel.userAcceptance)% (\(viewModel.review!.rating ?? 0)/\(viewModel.review!.ratingAmount ?? 0))", showDivider: false)
+                    MediaStatView(
+                        name: "Users likes",
+                        value: String(swiftLintMultiline:
+                            "\(viewModel.userAcceptance)% ",
+                            "(\(viewModel.review!.rating ?? 0)/\(viewModel.review!.ratingAmount ?? 0))"
+                        ),
+                        showDivider: false
+                    )
                     Spacer()
                 }
                 .padding()

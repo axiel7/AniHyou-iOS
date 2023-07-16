@@ -9,11 +9,11 @@ import SwiftUI
 import AniListAPI
 
 struct MediaListView: View {
-    
+
     var type: MediaType
     @State var status: MediaListStatus = .current
     @StateObject private var viewModel = MediaListViewModel()
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -25,7 +25,7 @@ struct MediaListView: View {
                         .listItemTint(entry.coverColorWithAlpha)
                     }
                 }
-                
+
                 if viewModel.hasNextPage {
                     ProgressView()
                         .onAppear {
@@ -43,9 +43,9 @@ struct MediaListView: View {
 }
 
 struct MediaListItemStandardView: View {
-    
+
     var item: UserMediaListQuery.Data.Page.MediaList
-    
+
     var body: some View {
         HStack {
             Text(item.media?.title?.userPreferred ?? "")

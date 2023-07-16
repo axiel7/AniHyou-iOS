@@ -32,10 +32,10 @@ extension View {
 }
 
 struct ContentView: View {
-    
+
     @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
-    
+
     var body: some View {
         TabView(selection: $selectedTabIndex) {
             HomeView()
@@ -43,7 +43,7 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
                 .tag(0)
-            
+
             if isLoggedIn() || justLogged {
                 MediaListStatusView(mediaType: .anime)
                     .tabItemAnime()
@@ -51,7 +51,7 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemAnime()
             }
-            
+
             if isLoggedIn() || justLogged {
                 MediaListStatusView(mediaType: .manga)
                     .tabItemManga()
@@ -59,7 +59,7 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemManga()
             }
-            
+
             if isLoggedIn() || justLogged {
                 ProfileView()
                     .tabItemProfile()
@@ -67,7 +67,7 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemProfile()
             }
-            
+
             RootExploreView()
                 .tabItem {
                     Label("Explore", systemImage: "magnifyingglass")

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ToolbarIconButton: View {
-    
+
     var symbolSystemName: String
     var action: () -> Void
-    
+
     var body: some View {
-        
+
         Button(action: action) {
             Image(systemName: symbolSystemName)
                 .foregroundColor(.black)
@@ -30,7 +30,7 @@ struct ToolbarIconButton: View {
 struct ToolbarIconButton_Previews: PreviewProvider {
     static var previews: some View {
         ToolbarIconButton(symbolSystemName: "chevron.left") {
-            
+
         }
     }
 }

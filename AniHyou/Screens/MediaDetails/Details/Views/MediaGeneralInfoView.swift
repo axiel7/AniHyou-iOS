@@ -10,11 +10,11 @@ import SwiftUIFlow
 import AniListAPI
 
 struct MediaGeneralInfoView: View {
-    
+
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showSpoilerTags = false
     private let linksColumns = [GridItem(.flexible()), GridItem(.flexible())]
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Group {
@@ -33,8 +33,14 @@ struct MediaGeneralInfoView: View {
                     if let duration = viewModel.mediaDetails?.duration {
                         HInfoView(name: "Duration", value: duration.minutesToLegibleText())
                     }
-                    HInfoView(name: "Start date", value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDateFragment.formatted())
-                    HInfoView(name: "End date", value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDateFragment.formatted())
+                    HInfoView(
+                        name: "Start date",
+                        value: viewModel.mediaDetails?.startDate?.fragments.fuzzyDateFragment.formatted()
+                    )
+                    HInfoView(
+                        name: "End date",
+                        value: viewModel.mediaDetails?.endDate?.fragments.fuzzyDateFragment.formatted()
+                    )
                 }
                 Group {
                     if viewModel.isAnime {
@@ -49,13 +55,13 @@ struct MediaGeneralInfoView: View {
                     HInfoView(name: "Synonyms", value: viewModel.synonymsFormatted, isExpandable: true)
                 }
             }
-            
+
             tags
-            
+
             multimediaContent
         }
     }
-    
+
     @ViewBuilder
     var tags: some View {
         if let mediaTags = viewModel.mediaDetails?.tags {
@@ -65,18 +71,21 @@ struct MediaGeneralInfoView: View {
                     .bold()
                     .padding(.horizontal)
                 Spacer()
-                Button(action: {
-                    withAnimation {
-                        showSpoilerTags.toggle()
+                Button(
+                    action: {
+                        withAnimation {
+                            showSpoilerTags.toggle()
+                        }
+                    },
+                    label: {
+                        Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
+                            .font(.footnote)
                     }
-                }) {
-                    Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
-                        .font(.footnote)
-                }
+                )
                 .padding(.horizontal)
             }
             .padding(.top)
-            
+
             VFlow(alignment: .leading) {
                 ForEach(mediaTags, id: \.?.id) {
                     if let tag = $0 {
@@ -88,17 +97,17 @@ struct MediaGeneralInfoView: View {
             .padding(.bottom)
         }
     }
-    
+
     @ViewBuilder
     var multimediaContent: some View {
-        //MARK: - Trailer
+        // MARK: - Trailer
         if let trailer = viewModel.mediaDetails?.trailer {
             if viewModel.trailerLink != nil {
                 Text("Trailer")
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
-                
+
                 Link(destination: URL(string: viewModel.trailerLink!)!) {
                     VideoThumbnailView(imageUrl: trailer.thumbnail)
                 }
@@ -106,15 +115,15 @@ struct MediaGeneralInfoView: View {
                 .padding(.bottom)
             }
         }
-        
-        //MARK: - Streaming episodes
+
+        // MARK: - Streaming episodes
         if let episodes = viewModel.mediaDetails?.streamingEpisodes {
             if !episodes.isEmpty {
                 Text("Episodes")
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
-                
+
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         ForEach(episodes, id: \.?.url) {
@@ -135,8 +144,8 @@ struct MediaGeneralInfoView: View {
                 }
             }
         }
-        
-        //MARK: - Streaming links
+
+        // MARK: - Streaming links
         if !viewModel.streamingLinks.isEmpty {
             Text("Streaming sites")
                 .font(.title3)
@@ -151,8 +160,8 @@ struct MediaGeneralInfoView: View {
                 }
             }
         }
-        
-        //MARK: - External links
+
+        // MARK: - External links
         if !viewModel.externalLinks.isEmpty {
             Text("External links")
                 .font(.title3)

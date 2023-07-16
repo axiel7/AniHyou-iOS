@@ -9,10 +9,10 @@ import SwiftUI
 import AniListAPI
 
 struct TrendingListView: View {
-    
+
     @ObservedObject var viewModel: HomeViewModel
     var mediaType: MediaType
-    
+
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
@@ -40,15 +40,19 @@ struct TrendingListView: View {
             return viewModel.hasNextPageTrendingManga
         }
     }
-    
+
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: gridColumns) {
                 ForEach(trendingMedia, id: \.?.id) {
                     if let media = $0 {
                         NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                            VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
-                                .mediaContextMenu(mediaId: media.id, mediaType: mediaType)
+                            VListItemView(
+                                title: media.title?.userPreferred ?? "",
+                                imageUrl: media.coverImage?.large,
+                                meanScore: media.meanScore
+                            )
+                            .mediaContextMenu(mediaId: media.id, mediaType: mediaType)
                         }
                     }
                 }

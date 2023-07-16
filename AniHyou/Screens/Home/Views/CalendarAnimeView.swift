@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CalendarAnimeView: View {
-    
+
     @State private var weekday = Date.now.weekday
     @State private var onMylist = false
-    
+
     var body: some View {
         VStack {
             Picker("Weekday", selection: $weekday) {
@@ -25,7 +25,7 @@ struct CalendarAnimeView: View {
             }
             .pickerStyle(.segmented)
             .padding()
-            
+
             Spacer()
             ScrollView(.vertical) {
                 WeekAnimeListView(weekday: weekday, onMyList: onMylist)
@@ -35,33 +35,33 @@ struct CalendarAnimeView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Menu(content: {
-                    Button(action: { onMylist.toggle() }) {
-                        if onMylist {
-                            Label("On my list", systemImage: "checkmark")
-                        } else {
-                            Text("On my list")
-                        }
-                    }
-                }) {
-                    Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
-                }
+                Menu(
+                    content: {
+                        Button(action: { onMylist.toggle() }, label: {
+                            if onMylist {
+                                Label("On my list", systemImage: "checkmark")
+                            } else {
+                                Text("On my list")
+                            }
+                        })
+                    },
+                    label: { Label("Filter", systemImage: "line.3.horizontal.decrease.circle") }
+                )
             }
         }
     }
 }
 
 struct WeekAnimeListView: View {
-    
+
     var weekday: Int
     var onMyList: Bool
     @StateObject private var viewModel = CalendarViewModel()
-    
-    
+
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
     ]
-    
+
     var body: some View {
         LazyVGrid(columns: gridColumns) {
             ForEach(viewModel.weeklyAnimes, id: \.?.mediaId) {
@@ -72,7 +72,7 @@ struct WeekAnimeListView: View {
                     }
                 }
             }
-            
+
             if viewModel.hasNextPage {
                 ProgressView()
                     .onAppear {

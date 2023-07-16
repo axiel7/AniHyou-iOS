@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct AniHyouApp: App {
-    
+
     @StateObject private var globalAppState = GlobalAppState.shared
     @State private var openMediaDetails = false
     @State private var mediaId = 0
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
-    
+
     var body: some Scene {
         WindowGroup {
             Group {
@@ -29,8 +29,10 @@ struct AniHyouApp: App {
                             }
                         }
                 } else {
-                    MediaDetailsView(mediaId: mediaId)
-                        .id(mediaId)
+                    NavigationView {
+                        MediaDetailsView(mediaId: mediaId)
+                            .id(mediaId)
+                    }
                 }
             }
             .onOpenURL { url in

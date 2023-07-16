@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct StudioDetailsView: View {
-    
+
     var studioId: Int
     @StateObject private var viewModel = StudioDetailsViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 20))
     ]
-    
+
     var body: some View {
         if viewModel.studio != nil {
             ScrollView(.vertical) {
@@ -23,20 +23,26 @@ struct StudioDetailsView: View {
                         Text(viewModel.studio!.name)
                             .font(.title)
                         Spacer()
-                        Button(action: { viewModel.toggleFavorite() }) {
-                            Label((viewModel.studio!.favourites ?? 0).formatted(), systemImage: viewModel.studio!.isFavourite ? "heart.fill" : "heart")
-                        }
+                        Button(action: { viewModel.toggleFavorite() }, label: {
+                            Label(
+                                (viewModel.studio!.favourites ?? 0).formatted(),
+                                systemImage: viewModel.studio!.isFavourite ? "heart.fill" : "heart"
+                            )
+                        })
                     }
                     .padding(.horizontal)
-                    
+
                     LazyVGrid(columns: gridColumns) {
                         ForEach(viewModel.studioMedia, id: \.?.id) { item in
                             NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
-                                VListItemView(title: item?.title?.userPreferred ?? "", imageUrl: item?.coverImage?.large)
-                                    .mediaContextMenu(mediaId: item!.id, mediaType: item?.type?.value)
+                                VListItemView(
+                                    title: item?.title?.userPreferred ?? "",
+                                    imageUrl: item?.coverImage?.large
+                                )
+                                .mediaContextMenu(mediaId: item!.id, mediaType: item?.type?.value)
                             }
                         }
-                        
+
                         if viewModel.hasNextPage {
                             ProgressView()
                                 .onAppear {

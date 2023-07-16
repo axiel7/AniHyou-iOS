@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct StarRatingView: View {
-    
+
     @Binding var rating: Double
-    
+
     var offImage = Image(systemName: "star")
     var onImage = Image(systemName: "star.fill")
     var offColor = Color.gray
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
-    
+
     var body: some View {
         HStack {
             ForEach(1...5, id: \.self) {
@@ -23,13 +23,14 @@ struct StarRatingView: View {
                 image(for: number)
                     .foregroundColor(number > rating ? offColor : Color(hex: accentColor))
                     .onTapGesture {
-                        if rating == number { rating = 0 }
-                        else { rating = number }
+                        if rating == number {
+                            rating = 0
+                        } else { rating = number }
                     }
             }
         }
     }
-    
+
     func image(for number: Double) -> Image {
         if number > rating {
             return offImage

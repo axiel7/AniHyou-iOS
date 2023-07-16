@@ -5,7 +5,7 @@
 
 public class MediaStatsQuery: GraphQLQuery {
   public static let operationName: String = "MediaStats"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query MediaStats($mediaId: Int) {

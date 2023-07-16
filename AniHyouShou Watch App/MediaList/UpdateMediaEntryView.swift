@@ -9,10 +9,10 @@ import SwiftUI
 import AniListAPI
 
 struct UpdateMediaEntryView: View {
-    
+
     var entry: UserMediaListQuery.Data.Page.MediaList?
     @ObservedObject var viewModel: MediaListViewModel
-    
+
     var body: some View {
         Group {
             if entry != nil {
@@ -20,19 +20,26 @@ struct UpdateMediaEntryView: View {
                     Text(entry!.media?.title?.userPreferred ?? "")
                         .font(.title3)
                     Spacer()
-                    
+
                     Text("\(entry!.progress ?? 0)/\(entry!.totalProgress ?? 0)")
 
-                    Button(action: {
-                        viewModel.updateEntryProgress(entryId: entry!.id, progress: (entry!.progress ?? 0) + 1, status: nil)
-                    }) {
-                        if viewModel.isLoading {
-                            ProgressView()
-                            .frame(height: 13)
-                        } else {
-                            Text("+1")
+                    Button(
+                        action: {
+                            viewModel.updateEntryProgress(
+                                entryId: entry!.id,
+                                progress: (entry!.progress ?? 0) + 1,
+                                status: nil
+                            )
+                        },
+                        label: {
+                            if viewModel.isLoading {
+                                ProgressView()
+                                .frame(height: 13)
+                            } else {
+                                Text("+1")
+                            }
                         }
-                    }
+                    )
                     .tint(Color(hex: entry!.media?.coverImage?.color))
                 }
             } else {

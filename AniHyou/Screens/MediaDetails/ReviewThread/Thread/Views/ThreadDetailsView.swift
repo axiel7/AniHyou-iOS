@@ -10,31 +10,31 @@ import RichText
 import AniListAPI
 
 struct ThreadDetailsView: View {
-    
+
     var thread: MediaThreadsQuery.Data.Page.Thread
     @StateObject private var viewModel = ThreadDetailsViewModel()
-    
+
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack {
-                //MARK: thread info
+                // MARK: thread info
                 VStack(alignment: .leading) {
                     Text(thread.title ?? "")
                         .bold()
                         .font(.title3)
                         .padding(.leading)
                         .padding(.bottom, 1)
-                    
+
                     Text(thread.createdAt.timestampToDateString())
                         .font(.footnote)
                         .foregroundColor(.gray)
                         .padding(.leading)
-                    
+
                     RichText(html: thread.body ?? "")
                         .defaultStyle()
                         .customCSS(spoilerCss)
                         .padding(.horizontal)
-                    
+
                     HStack {
                         NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
                             HStack(alignment: .center) {
@@ -51,8 +51,8 @@ struct ThreadDetailsView: View {
                     .padding(.horizontal)
                 }//:VStack
                 .padding(.bottom)
-                
-                //MARK: thread comments
+
+                // MARK: thread comments
                 ForEach(viewModel.threadComments, id: \.?.id) {
                     if let comment = $0 {
                         VStack {
@@ -63,7 +63,7 @@ struct ThreadDetailsView: View {
                     }
                 }
                 .padding(.bottom)
-                
+
                 if viewModel.hasNextPage {
                     ProgressView()
                         .onAppear {

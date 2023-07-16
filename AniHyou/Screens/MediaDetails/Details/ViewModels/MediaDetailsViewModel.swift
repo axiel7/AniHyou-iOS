@@ -9,9 +9,9 @@ import Foundation
 import AniListAPI
 
 class MediaDetailsViewModel: ObservableObject {
-    
+
     @Published var mediaDetails: MediaDetailsQuery.Data.Media?
-    
+
     func getMediaDetails(mediaId: Int) {
         Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: .some(mediaId))) { [weak self] result in
             switch result {
@@ -24,7 +24,7 @@ class MediaDetailsViewModel: ObservableObject {
             }
         }
     }
-    
+
     func toggleFavorite() {
         guard mediaDetails != nil else { return }
         var animeId: GraphQLNullable<Int> {
@@ -41,7 +41,13 @@ class MediaDetailsViewModel: ObservableObject {
                 return .none
             }
         }
-        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(animeId: animeId, mangaId: mangaId, characterId: .none, staffId: .none, studioId: .none)) { [weak self] result in
+        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
+            animeId: animeId,
+            mangaId: mangaId,
+            characterId: .none,
+            staffId: .none,
+            studioId: .none
+        )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if graphQLResult.data != nil {
@@ -52,15 +58,21 @@ class MediaDetailsViewModel: ObservableObject {
             }
         }
     }
-    
+
     func onFavoriteToggled() {
         guard let mediaId = mediaDetails?.id else { return }
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
-                try transaction.updateObject(ofType: IsFavouriteMedia.self, withKey: "Media:\(mediaId)") { (cachedData: inout IsFavouriteMedia) in
+                try transaction.updateObject(
+                    ofType: IsFavouriteMedia.self,
+                    withKey: "Media:\(mediaId)"
+                ) { (cachedData: inout IsFavouriteMedia) in
                     cachedData.isFavourite = !cachedData.isFavourite
                 }
-                let newObject = try transaction.readObject(ofType: MediaDetailsQuery.Data.Media.self, withKey: "Media:\(mediaId)")
+                let newObject = try transaction.readObject(
+                    ofType: MediaDetailsQuery.Data.Media.self,
+                    withKey: "Media:\(mediaId)"
+                )
                 DispatchQueue.main.async {
                     self?.mediaDetails = newObject
                 }
@@ -69,18 +81,24 @@ class MediaDetailsViewModel: ObservableObject {
             }
         })
     }
-    
+
     func onEntryUpdated(updatedEntry: BasicMediaListEntry?) {
         //Update the local cache
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
                 if updatedEntry != nil {
-                    try transaction.updateObject(ofType: BasicMediaListEntry.self, withKey: "MediaList:\(updatedEntry!.id).\(updatedEntry!.mediaId)") { (cachedData: inout BasicMediaListEntry) in
+                    try transaction.updateObject(
+                        ofType: BasicMediaListEntry.self,
+                        withKey: "MediaList:\(updatedEntry!.id).\(updatedEntry!.mediaId)"
+                    ) { (cachedData: inout BasicMediaListEntry) in
                         cachedData = updatedEntry!
                     }
                 }
-                
-                let newObject = try transaction.readObject(ofType: MediaDetailsQuery.Data.Media.self, withKey: "Media:\(updatedEntry?.mediaId ?? (self?.mediaDetails?.id ?? 0))")
+
+                let newObject = try transaction.readObject(
+                    ofType: MediaDetailsQuery.Data.Media.self,
+                    withKey: "Media:\(updatedEntry?.mediaId ?? (self?.mediaDetails?.id ?? 0))"
+                )
                 DispatchQueue.main.async {
                     self?.mediaDetails = newObject
                 }
@@ -89,89 +107,78 @@ class MediaDetailsViewModel: ObservableObject {
             }
         })
     }
-    
+
     func onEntryDeleted() {
         onEntryUpdated(updatedEntry: nil)
     }
-    
-    //MARK: calculated variables
-    
+
+    // MARK: calculated variables
+
     var isAnime: Bool {
         return mediaDetails?.type?.value == .anime
     }
-    
+
     var genresFormatted: String? {
-        guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.genres != nil else { return nil }
-        return mediaDetails!.genres!.compactMap { $0 }.joined(separator: ", ")
+        guard let genres = mediaDetails?.genres else { return nil }
+        return genres.compactMap { $0 }.joined(separator: ", ")
     }
-    
+
     /// Returns a string with the season and year if has it
     var seasonFormatted: String? {
-        guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.season?.value != nil else { return nil }
+        guard let season = mediaDetails?.season?.value else { return nil }
         if mediaDetails?.seasonYear != nil {
-            return "\(mediaDetails!.season!.value!.localizedName) \(mediaDetails!.seasonYear!)"
+            return "\(season.localizedName) \(mediaDetails!.seasonYear!)"
         } else {
-            return mediaDetails?.season?.value?.localizedName
+            return season.localizedName
         }
     }
-    
+
     /// Returns a string with the studios comma separated
     var studiosFormatted: String? {
-        guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.studios?.nodes != nil else { return nil }
-        var strStudios = ""
-        for studio in mediaDetails!.studios!.nodes! {
-            if studio?.isAnimationStudio == true {
-                if let name = studio?.name {
-                    strStudios += "\(name), "
-                }
-            }
-        }
-        if strStudios.isEmpty { return nil }
-        else { return String(strStudios.dropLast(2)) }
+        guard let studios = mediaDetails?.studios?.nodes else { return nil }
+        let strStudios = studios
+            .compactMap { $0 }
+            .filter { $0.isAnimationStudio }
+            .compactMap { $0.name }
+            .joined(separator: ", ")
+        if strStudios.isEmpty {
+            return nil
+        } else { return strStudios }
     }
-    
+
     /// Returns a string with the producers comma separated
     var producersFormatted: String? {
         guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.studios?.nodes != nil else { return nil }
-        var strProducers = ""
-        for producer in mediaDetails!.studios!.nodes! {
-            if producer?.isAnimationStudio == false {
-                if let name = producer?.name {
-                    strProducers += "\(name), "
-                }
-            }
-        }
-        if strProducers.isEmpty { return nil }
-        else { return String(strProducers.dropLast(2)) }
+        guard let studios = mediaDetails?.studios?.nodes else { return nil }
+        let strProducers = studios
+            .compactMap { $0 }
+            .filter { !$0.isAnimationStudio }
+            .compactMap { $0.name }
+            .joined(separator: ", ")
+        if strProducers.isEmpty {
+            return nil
+        } else { return strProducers }
     }
-    
+
     /// Returns a string with the synonyms \n separated
     var synonymsFormatted: String? {
-        guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.synonyms != nil else { return nil }
-        return mediaDetails!.synonyms!.compactMap { $0 }.joined(separator: "\n")
+        guard let synonyms = mediaDetails?.synonyms else { return nil }
+        return synonyms.compactMap { $0 }.joined(separator: "\n")
     }
-    
+
     var streamingLinks: [MediaDetailsQuery.Data.Media.ExternalLink?] {
-        guard mediaDetails != nil else { return [] }
-        guard mediaDetails?.externalLinks != nil else { return [] }
-        return mediaDetails!.externalLinks!.filter { $0?.type?.value == .streaming }
+        guard let externalLinks = mediaDetails?.externalLinks else { return [] }
+        return externalLinks.filter { $0?.type?.value == .streaming }
     }
-    
+
     var externalLinks: [MediaDetailsQuery.Data.Media.ExternalLink?] {
-        guard mediaDetails != nil else { return [] }
-        guard mediaDetails?.externalLinks != nil else { return [] }
-        return mediaDetails!.externalLinks!.filter { $0?.type?.value != .streaming }
+        guard let externalLinks = mediaDetails?.externalLinks else { return [] }
+        return externalLinks.filter { $0?.type?.value != .streaming }
     }
-    
+
     var trailerLink: String? {
-        guard mediaDetails != nil else { return nil }
-        guard mediaDetails?.trailer != nil else { return nil }
-        switch mediaDetails?.trailer?.site {
+        guard let site = mediaDetails?.trailer?.site else { return nil }
+        switch site {
         case "youtube":
             return YOUTUBE_VIDEO_URL + (mediaDetails?.trailer?.id ?? "")
         case "dailymotion":
@@ -180,7 +187,7 @@ class MediaDetailsViewModel: ObservableObject {
             return nil
         }
     }
-    
+
     var mediaShareLink: String? {
         guard let mediaType = mediaDetails?.type?.value else { return nil }
         return "\(mediaType.mediaUrl)\(mediaDetails!.id)"

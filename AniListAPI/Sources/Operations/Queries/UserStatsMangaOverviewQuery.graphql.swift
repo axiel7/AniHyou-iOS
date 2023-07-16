@@ -5,7 +5,7 @@
 
 public class UserStatsMangaOverviewQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsMangaOverview"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query UserStatsMangaOverview($userId: Int) {

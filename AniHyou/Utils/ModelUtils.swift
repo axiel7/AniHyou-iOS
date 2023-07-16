@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+// swiftlint:disable file_length
 
 func someIfNotNil<T>(_ value: T?) -> GraphQLNullable<T> {
     guard value != nil else { return .none }
@@ -21,13 +22,13 @@ func someIfNotNil<T>(_ value: (any EnumType)?) -> GraphQLNullable<GraphQLEnum<T>
     return .some(.case(value))
 }
 
-func someIfNotEmpty<T>(_ value: [T]?) -> GraphQLNullable<Array<T>> {
+func someIfNotEmpty<T>(_ value: [T]?) -> GraphQLNullable<[T]> {
     guard value != nil else { return .none }
     if value!.isEmpty { return .none }
     return .some(value!)
 }
 
-func someIfNotEmpty<T>(_ value: [T?]?) -> GraphQLNullable<Array<T?>> {
+func someIfNotEmpty<T>(_ value: [T?]?) -> GraphQLNullable<[T?]> {
     guard value != nil else { return .none }
     if value!.isEmpty { return .none }
     return .some(value!)
@@ -36,7 +37,7 @@ func someIfNotEmpty<T>(_ value: [T?]?) -> GraphQLNullable<Array<T?>> {
 func someEnumArrayIfNotEmpty<T>(_ value: [any EnumType]?) -> GraphQLNullable<[GraphQLEnum<T>?]> {
     guard value != nil else { return .none }
     if value!.isEmpty { return .none }
-    guard let value = value as? Array<T> else { return .none }
+    guard let value = value as? [T] else { return .none }
     return .some(value.map { .case($0) })
 }
 
@@ -55,7 +56,7 @@ extension MediaType {
             return "Manga"
         }
     }
-    
+
     var mediaUrl: String {
         switch self {
         case .anime:
@@ -74,7 +75,7 @@ extension UserMediaListQuery.Data.Page.MediaList {
             return self.media?.chapters
         }
     }
-    
+
     var coverColorWithAlpha: Color? {
         if let color = self.media?.coverImage?.color {
             return Color(color + "88")
@@ -83,7 +84,8 @@ extension UserMediaListQuery.Data.Page.MediaList {
 }
 
 extension ScoreFormat {
-    
+
+    // swiftlint:disable cyclomatic_complexity
     func scoreColor(score: Double?) -> Color {
         guard score != 0 else { return .gray }
         switch self {
@@ -121,7 +123,8 @@ extension ScoreFormat {
             }
         }
     }
-    
+    // swiftlint:enable cyclomatic_complexity
+
     func smileyIcon(score: Int) -> String {
         switch score {
         case 1:
@@ -137,7 +140,7 @@ extension ScoreFormat {
 }
 
 extension MediaListStatus {
-    
+
     var localizedName: String {
         switch self {
         case .current:
@@ -154,7 +157,7 @@ extension MediaListStatus {
             return "Repeating"
         }
     }
-    
+
     /// System symbol name representing this status
     var systemImage: String {
         switch self {
@@ -172,7 +175,7 @@ extension MediaListStatus {
             return "repeat"
         }
     }
-    
+
     var color: Color {
         switch self {
         case .current:
@@ -192,7 +195,7 @@ extension MediaListStatus {
 }
 
 extension MediaSeason {
-    
+
     var localizedName: String {
         switch self {
         case .winter:
@@ -208,7 +211,7 @@ extension MediaSeason {
 }
 
 extension MediaFormat {
-    
+
     var localizedName: String {
         switch self {
         case .tv:
@@ -233,7 +236,7 @@ extension MediaFormat {
             return "OneShot"
         }
     }
-    
+
     var color: Color {
         switch self {
         case .tv:
@@ -261,7 +264,7 @@ extension MediaFormat {
 }
 
 extension MediaStatus {
-    
+
     var localizedName: String {
         switch self {
         case .finished:
@@ -279,7 +282,7 @@ extension MediaStatus {
 }
 
 extension MediaSource {
-    
+
     var localizedName: String {
         switch self {
         case .original:
@@ -317,7 +320,7 @@ extension MediaSource {
 }
 
 extension CharacterRole {
-    
+
     var localizedName: String {
         switch self {
         case .main:
@@ -331,7 +334,7 @@ extension CharacterRole {
 }
 
 extension MediaRelation {
-    
+
     var localizedName: String {
         switch self {
         case .adaptation:
@@ -365,7 +368,7 @@ extension MediaRelation {
 }
 
 extension MediaListSort {
-    
+
     var localizedName: String {
         switch self {
         case .mediaId:
@@ -433,7 +436,7 @@ extension MediaListSort {
 }
 
 extension MediaRankType {
-    
+
     var systemImage: String {
         switch self {
         case .rated:
@@ -442,7 +445,7 @@ extension MediaRankType {
             return "heart"
         }
     }
-    
+
     var color: Color {
         switch self {
         case .rated:
@@ -466,7 +469,7 @@ extension MediaDetailsQuery.Data.Media.ExternalLink {
 extension String {
     var profileHexColor: String {
         if self.hasPrefix("#") { return self }
-        
+
         switch self {
         case "blue":
             return "#3DB4F2"
@@ -487,3 +490,4 @@ extension String {
         }
     }
 }
+// swiftlint:enable file_length
