@@ -5,7 +5,7 @@
 
 public class PreviewMediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "PreviewMediaDetails"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query PreviewMediaDetails($mediaId: Int) {

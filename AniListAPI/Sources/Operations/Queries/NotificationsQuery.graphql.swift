@@ -5,7 +5,7 @@
 
 public class NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) {

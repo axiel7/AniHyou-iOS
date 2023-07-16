@@ -5,7 +5,7 @@
 
 public class MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) {

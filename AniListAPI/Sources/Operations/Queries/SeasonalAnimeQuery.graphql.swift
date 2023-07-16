@@ -5,7 +5,7 @@
 
 public class SeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "SeasonalAnime"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {

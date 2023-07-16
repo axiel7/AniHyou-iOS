@@ -5,7 +5,7 @@
 
 public class MediaChartQuery: GraphQLQuery {
   public static let operationName: String = "MediaChart"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus) {

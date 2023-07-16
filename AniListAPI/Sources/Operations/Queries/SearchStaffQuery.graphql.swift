@@ -5,7 +5,7 @@
 
 public class SearchStaffQuery: GraphQLQuery {
   public static let operationName: String = "SearchStaff"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query SearchStaff($page: Int, $perPage: Int, $search: String) {

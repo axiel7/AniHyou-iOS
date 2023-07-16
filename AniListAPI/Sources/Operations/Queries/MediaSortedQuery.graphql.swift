@@ -5,7 +5,7 @@
 
 public class MediaSortedQuery: GraphQLQuery {
   public static let operationName: String = "MediaSorted"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) {

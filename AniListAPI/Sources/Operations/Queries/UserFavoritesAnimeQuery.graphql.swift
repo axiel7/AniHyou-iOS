@@ -5,7 +5,7 @@
 
 public class UserFavoritesAnimeQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesAnime"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query UserFavoritesAnime($userId: Int, $page: Int, $perPage: Int) {

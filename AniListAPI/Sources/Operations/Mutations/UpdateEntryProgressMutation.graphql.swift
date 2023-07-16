@@ -5,7 +5,7 @@
 
 public class UpdateEntryProgressMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntryProgress"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $status: MediaListStatus) {

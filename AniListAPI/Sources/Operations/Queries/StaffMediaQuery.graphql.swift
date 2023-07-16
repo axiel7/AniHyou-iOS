@@ -5,7 +5,7 @@
 
 public class StaffMediaQuery: GraphQLQuery {
   public static let operationName: String = "StaffMedia"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) {

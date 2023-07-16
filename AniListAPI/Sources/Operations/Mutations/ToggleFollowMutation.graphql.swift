@@ -5,7 +5,7 @@
 
 public class ToggleFollowMutation: GraphQLMutation {
   public static let operationName: String = "ToggleFollow"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       mutation ToggleFollow($userId: Int) {

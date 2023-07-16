@@ -5,7 +5,7 @@
 
 public class UserCurrentAnimeListQuery: GraphQLQuery {
   public static let operationName: String = "UserCurrentAnimeList"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"""
       query UserCurrentAnimeList($userId: Int) {
