@@ -139,16 +139,21 @@ struct AniHyou_WidgetEntryView: View {
                                         .frame(width: entry.widgetSize.width, alignment: .leading)
 
                                     HStack(spacing: 1) {
-                                        Text("Ep \(nextAiringEpisode.episode) airing in ")
-                                            .font(.system(size: 12))
-                                            .lineLimit(1)
-
-                                        Text(Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt)),
-                                             style: .relative
+                                        let airingDate = Date(
+                                            timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
                                         )
-                                        .font(.system(size: 12))
-                                        .lineLimit(1)
+                                        if airingDate > Date.now {
+                                            Text("Ep \(nextAiringEpisode.episode) airing in ")
+
+                                            Text(airingDate, style: .relative)
+                                        } else {
+                                            Text("Ep \(nextAiringEpisode.episode) aired at ")
+
+                                            Text(airingDate, style: .time)
+                                        }
                                     }
+                                    .font(.system(size: 12))
+                                    .lineLimit(1)
                                     .foregroundColor(.accentColor)
                                     .padding(.horizontal)
                                     .frame(width: entry.widgetSize.width, alignment: .leading)
