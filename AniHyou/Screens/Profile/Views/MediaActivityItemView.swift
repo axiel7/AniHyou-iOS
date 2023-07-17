@@ -42,6 +42,7 @@ struct MediaActivityItemView: View {
         if activity?.progress != nil {
             return String(swiftLintMultiline:
                 activity?.status?.firstCapitalized ?? "",
+                " ",
                 activity?.progress! ?? "",
                 " of ",
                 activity?.media?.title?.userPreferred ?? ""
