@@ -42,3 +42,6 @@ Follow the development on the official Discord server:
 - Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
 ```
 ANILIST_CLIENT_ID = XXXX
+```
+
+To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
