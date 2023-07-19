@@ -38,6 +38,9 @@ struct SettingsView: View {
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
     @AppStorage(CUSTOM_ACCENT_COLOR_KEY) private var customAccentColor = "#4D908E"
     @State private var selectedColor = Color(hex: "#4D908E")!
+    @AppStorage(HAS_DONATED_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var hasDonated = false
+    @State private var showDonationAlert = false
+    @State private var navigateToDonations = false
 
     var body: some View {
         Form {
@@ -59,9 +62,27 @@ struct SettingsView: View {
                     case .profile:
                         accentColor = profileColor ?? ANIHYOU_COLOR
                     case .custom:
-                        accentColor = customAccentColor
+                        if hasDonated {
+                            accentColor = customAccentColor
+                        } else {
+                            accentColorMode = .anihyou
+                            showDonationAlert = true
+                        }
                     }
                 }
+                .alert(
+                    "Donate!",
+                    isPresented: $showDonationAlert,
+                    actions: {
+                        Button("Close", role: .cancel) {}
+                        Button("Donate") {
+                            navigateToDonations = true
+                        }
+                    },
+                    message: {
+                        Text("This feature will be unlocked when you make a donation, even the smallest count!")
+                    }
+                )
 
                 if accentColorMode == .custom {
                     ColorPicker("Custom color", selection: $selectedColor, supportsOpacity: false)
@@ -117,6 +138,17 @@ struct SettingsView: View {
             }
 
             Section {
+                AppIconSelector(onNotDonated: {
+                    showDonationAlert = true
+                })
+            } header: {
+                Text("App Icon")
+            }
+
+            Section {
+                NavigationLink("Donate!", isActive: $navigateToDonations) {
+                    DonationsView()
+                }
                 Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou")!)
             } header: {
                 Text("Information")
