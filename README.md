@@ -14,7 +14,7 @@ Follow the development on the official Discord server:
 
 [![Discord Banner 3](https://discordapp.com/api/guilds/741059285122940928/widget.png?style=banner2)](https://discord.gg/CTv3WdfxHh)
 
-![screenshots](https://axiel7.github.io/assets/anihyou.58717379ec9cfda91ca1c970f44d2ce6.png)
+![screenshots](https://axiel7.github.io/anihyou.39100785.png)
 
 ## Current features
 - **There's a watchOS version!⌚️**
@@ -42,3 +42,6 @@ Follow the development on the official Discord server:
 - Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
 ```
 ANILIST_CLIENT_ID = XXXX
+```
+
+To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`

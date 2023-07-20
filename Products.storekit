@@ -1,0 +1,110 @@
+{
+  "identifier" : "AA49B8EA",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "81A9E85C",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "First Tier Donation",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "first_tier_donation",
+      "referenceName" : "First Tier Donation",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "FE146F36",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Second Tier Donation",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "second_tier_donation",
+      "referenceName" : "Second Tier Donation",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "202FDA59",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Third Tier Donation",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "third_tier_donation",
+      "referenceName" : "Third Tier Donation",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

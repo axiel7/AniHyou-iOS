@@ -29,19 +29,17 @@ let USER_COLOR_KEY = "user_color"
 let USER_SCORE_KEY = "user_score"
 let USER_TITLE_LANG_KEY = "user_title_lang"
 let USER_NAMES_LANG_KEY = "user_names_lang"
-
 let SELECTED_TAB_KEY = "selected_tab_index"
 let LIST_STYLE_KEY = "list_style"
 let ACCENT_COLOR_KEY = "accent_color"
 let ACCENT_COLOR_MODE_KEY = "accent_color_mode"
 let CUSTOM_ACCENT_COLOR_KEY = "custom_accent_color"
+let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
+let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
+let HAS_DONATED_KEY = "has_donated"
+let APP_ICON_KEY = "app_icon"
 
 let ANIHYOU_COLOR = "#526CFD"
-
-let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
-
-let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
-
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"
