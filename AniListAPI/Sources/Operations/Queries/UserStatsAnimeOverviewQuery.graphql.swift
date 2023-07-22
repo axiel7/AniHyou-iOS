@@ -7,65 +7,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsAnimeOverview"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query UserStatsAnimeOverview($userId: Int) {
-        User(id: $userId) {
-          __typename
-          statistics {
-            __typename
-            anime {
-              __typename
-              count
-              episodesWatched
-              minutesWatched
-              meanScore
-              standardDeviation
-              scores(sort: MEAN_SCORE) {
-                __typename
-                count
-                minutesWatched
-                meanScore
-              }
-              formats {
-                __typename
-                count
-                minutesWatched
-                meanScore
-                format
-              }
-              statuses {
-                __typename
-                count
-                minutesWatched
-                meanScore
-                status
-              }
-              countries {
-                __typename
-                count
-                minutesWatched
-                meanScore
-                country
-              }
-              releaseYears {
-                __typename
-                count
-                minutesWatched
-                meanScore
-                releaseYear
-              }
-              startYears {
-                __typename
-                count
-                minutesWatched
-                meanScore
-                startYear
-              }
-            }
-          }
-        }
-      }
-      """#
+      #"query UserStatsAnimeOverview($userId: Int) { User(id: $userId) { __typename statistics { __typename anime { __typename count episodesWatched minutesWatched meanScore standardDeviation scores(sort: MEAN_SCORE) { __typename count minutesWatched meanScore } formats { __typename count minutesWatched meanScore format } statuses { __typename count minutesWatched meanScore status } countries { __typename count minutesWatched meanScore country } releaseYears { __typename count minutesWatched meanScore releaseYear } startYears { __typename count minutesWatched meanScore startYear } } } } }"#
     ))
 
   public var userId: GraphQLNullable<Int>

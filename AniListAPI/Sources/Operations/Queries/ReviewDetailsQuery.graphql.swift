@@ -7,28 +7,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
   public static let operationName: String = "ReviewDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query ReviewDetails($reviewId: Int) {
-        Review(id: $reviewId) {
-          __typename
-          id
-          summary
-          body(asHtml: true)
-          score
-          rating
-          ratingAmount
-          user {
-            __typename
-            id
-            name
-            avatar {
-              __typename
-              medium
-            }
-          }
-        }
-      }
-      """#
+      #"query ReviewDetails($reviewId: Int) { Review(id: $reviewId) { __typename id summary body(asHtml: true) score rating ratingAmount user { __typename id name avatar { __typename medium } } } }"#
     ))
 
   public var reviewId: GraphQLNullable<Int>

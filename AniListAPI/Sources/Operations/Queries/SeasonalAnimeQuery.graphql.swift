@@ -7,30 +7,7 @@ public class SeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "SeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          media(season: $season, seasonYear: $seasonYear, sort: $sort) {
-            __typename
-            id
-            title {
-              __typename
-              userPreferred
-            }
-            coverImage {
-              __typename
-              large
-            }
-            meanScore
-          }
-          pageInfo {
-            __typename
-            hasNextPage
-          }
-        }
-      }
-      """#
+      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore } pageInfo { __typename hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

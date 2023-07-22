@@ -7,35 +7,7 @@ public class MediaStatsQuery: GraphQLQuery {
   public static let operationName: String = "MediaStats"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query MediaStats($mediaId: Int) {
-        Media(id: $mediaId) {
-          __typename
-          stats {
-            __typename
-            statusDistribution {
-              __typename
-              status
-              amount
-            }
-            scoreDistribution {
-              __typename
-              score
-              amount
-            }
-          }
-          rankings {
-            __typename
-            id
-            rank
-            context
-            type
-            season
-            year
-          }
-        }
-      }
-      """#
+      #"query MediaStats($mediaId: Int) { Media(id: $mediaId) { __typename stats { __typename statusDistribution { __typename status amount } scoreDistribution { __typename score amount } } rankings { __typename id rank context type season year } } }"#
     ))
 
   public var mediaId: GraphQLNullable<Int>

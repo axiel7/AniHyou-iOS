@@ -7,36 +7,7 @@ public class UserFavoritesMangaQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesManga"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query UserFavoritesManga($userId: Int, $page: Int, $perPage: Int) {
-        User(id: $userId) {
-          __typename
-          favourites {
-            __typename
-            manga(page: $page, perPage: $perPage) {
-              __typename
-              nodes {
-                __typename
-                id
-                title {
-                  __typename
-                  userPreferred
-                }
-                coverImage {
-                  __typename
-                  large
-                }
-              }
-              pageInfo {
-                __typename
-                currentPage
-                hasNextPage
-              }
-            }
-          }
-        }
-      }
-      """#
+      #"query UserFavoritesManga($userId: Int, $page: Int, $perPage: Int) { User(id: $userId) { __typename favourites { __typename manga(page: $page, perPage: $perPage) { __typename nodes { __typename id title { __typename userPreferred } coverImage { __typename large } } pageInfo { __typename currentPage hasNextPage } } } } }"#
     ))
 
   public var userId: GraphQLNullable<Int>

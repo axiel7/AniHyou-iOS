@@ -7,14 +7,7 @@ public class NotificationCountQuery: GraphQLQuery {
   public static let operationName: String = "NotificationCount"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query NotificationCount {
-        Viewer {
-          __typename
-          unreadNotificationCount
-        }
-      }
-      """#
+      #"query NotificationCount { Viewer { __typename unreadNotificationCount } }"#
     ))
 
   public init() {}

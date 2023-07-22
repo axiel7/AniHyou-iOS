@@ -4,25 +4,9 @@
 @_exported import ApolloAPI
 
 public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
-  public static var fragmentDefinition: StaticString { """
-    fragment MediaRecommended on Recommendation {
-      __typename
-      mediaRecommendation {
-        __typename
-        id
-        title {
-          __typename
-          userPreferred
-        }
-        type
-        format
-        coverImage {
-          __typename
-          large
-        }
-      }
-    }
-    """ }
+  public static var fragmentDefinition: StaticString {
+    "fragment MediaRecommended on Recommendation { __typename mediaRecommendation { __typename id title { __typename userPreferred } type format coverImage { __typename large } } }"
+  }
 
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }

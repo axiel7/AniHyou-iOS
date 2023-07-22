@@ -7,47 +7,7 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $seasonYear: Int, $onList: Boolean) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          media(
-            search: $search
-            type: $type
-            sort: $sort
-            genre_in: $genre_in
-            tag_in: $tag_in
-            format_in: $format_in
-            status_in: $status_in
-            seasonYear: $seasonYear
-            onList: $onList
-          ) {
-            __typename
-            id
-            title {
-              __typename
-              userPreferred
-            }
-            type
-            meanScore
-            format
-            coverImage {
-              __typename
-              large
-            }
-            startDate {
-              __typename
-              year
-            }
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $seasonYear: Int, $onList: Boolean) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in tag_in: $tag_in format_in: $format_in status_in: $status_in seasonYear: $seasonYear onList: $onList ) { __typename id title { __typename userPreferred } type meanScore format coverImage { __typename large } startDate { __typename year } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

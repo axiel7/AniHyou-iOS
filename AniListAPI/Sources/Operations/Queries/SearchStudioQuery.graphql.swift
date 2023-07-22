@@ -7,18 +7,7 @@ public class SearchStudioQuery: GraphQLQuery {
   public static let operationName: String = "SearchStudio"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query SearchStudio($page: Int, $perPage: Int, $search: String) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          studios(search: $search, sort: SEARCH_MATCH) {
-            __typename
-            id
-            name
-          }
-        }
-      }
-      """#
+      #"query SearchStudio($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename studios(search: $search, sort: SEARCH_MATCH) { __typename id name } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

@@ -7,22 +7,7 @@ public class FollowingsQuery: GraphQLQuery {
   public static let operationName: String = "Followings"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query Followings($userId: Int!, $page: Int, $perPage: Int) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          following(userId: $userId) {
-            __typename
-            ...UserFollow
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#,
+      #"query Followings($userId: Int!, $page: Int, $perPage: Int) { Page(page: $page, perPage: $perPage) { __typename following(userId: $userId) { __typename ...UserFollow } pageInfo { __typename currentPage hasNextPage } } }"#,
       fragments: [UserFollow.self]
     ))
 

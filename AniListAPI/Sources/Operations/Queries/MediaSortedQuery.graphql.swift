@@ -7,31 +7,7 @@ public class MediaSortedQuery: GraphQLQuery {
   public static let operationName: String = "MediaSorted"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          media(type: $type, sort: $sort) {
-            __typename
-            id
-            title {
-              __typename
-              userPreferred
-            }
-            coverImage {
-              __typename
-              large
-            }
-            meanScore
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#
+      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

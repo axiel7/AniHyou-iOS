@@ -7,46 +7,7 @@ public class UserActivityQuery: GraphQLQuery {
   public static let operationName: String = "UserActivity"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          activities(userId: $userId, sort: $sort) {
-            __typename
-            ... on TextActivity {
-              id
-              type
-              text
-              createdAt
-            }
-            ... on ListActivity {
-              id
-              type
-              status
-              progress
-              createdAt
-              media {
-                __typename
-                id
-                title {
-                  __typename
-                  userPreferred
-                }
-                coverImage {
-                  __typename
-                  medium
-                }
-              }
-            }
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#
+      #"query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) { Page(page: $page, perPage: $perPage) { __typename activities(userId: $userId, sort: $sort) { __typename ... on TextActivity { id type text createdAt } ... on ListActivity { id type status progress createdAt media { __typename id title { __typename userPreferred } coverImage { __typename medium } } } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

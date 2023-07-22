@@ -7,24 +7,7 @@ public class ViewerIdQuery: GraphQLQuery {
   public static let operationName: String = "ViewerId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query ViewerId {
-        Viewer {
-          __typename
-          id
-          options {
-            __typename
-            profileColor
-            staffNameLanguage
-            titleLanguage
-          }
-          mediaListOptions {
-            __typename
-            scoreFormat
-          }
-        }
-      }
-      """#
+      #"query ViewerId { Viewer { __typename id options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat } } }"#
     ))
 
   public init() {}

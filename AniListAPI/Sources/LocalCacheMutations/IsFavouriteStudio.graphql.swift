@@ -4,13 +4,9 @@
 @_exported import ApolloAPI
 
 public struct IsFavouriteStudio: AniListAPI.MutableSelectionSet, Fragment {
-  public static var fragmentDefinition: StaticString { """
-    fragment IsFavouriteStudio on Studio {
-      __typename
-      id
-      isFavourite
-    }
-    """ }
+  public static var fragmentDefinition: StaticString {
+    "fragment IsFavouriteStudio on Studio { __typename id isFavourite }"
+  }
 
   public var __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }

@@ -7,22 +7,7 @@ public class SearchUserQuery: GraphQLQuery {
   public static let operationName: String = "SearchUser"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query SearchUser($page: Int, $perPage: Int, $search: String) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          users(search: $search, sort: SEARCH_MATCH) {
-            __typename
-            id
-            name
-            avatar {
-              __typename
-              medium
-            }
-          }
-        }
-      }
-      """#
+      #"query SearchUser($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename users(search: $search, sort: SEARCH_MATCH) { __typename id name avatar { __typename medium } } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

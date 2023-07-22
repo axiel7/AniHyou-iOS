@@ -7,35 +7,7 @@ public class MediaChartQuery: GraphQLQuery {
   public static let operationName: String = "MediaChart"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          media(sort: $sort, type: $type, status: $status) {
-            __typename
-            id
-            title {
-              __typename
-              userPreferred
-            }
-            format
-            startDate {
-              __typename
-              year
-            }
-            coverImage {
-              __typename
-              large
-            }
-          }
-          pageInfo {
-            __typename
-            hasNextPage
-            currentPage
-          }
-        }
-      }
-      """#
+      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus) { Page(page: $page, perPage: $perPage) { __typename media(sort: $sort, type: $type, status: $status) { __typename id title { __typename userPreferred } format startDate { __typename year } coverImage { __typename large } } pageInfo { __typename hasNextPage currentPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

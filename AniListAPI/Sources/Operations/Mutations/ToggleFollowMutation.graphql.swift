@@ -7,14 +7,7 @@ public class ToggleFollowMutation: GraphQLMutation {
   public static let operationName: String = "ToggleFollow"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      mutation ToggleFollow($userId: Int) {
-        ToggleFollow(userId: $userId) {
-          __typename
-          isFollowing
-        }
-      }
-      """#
+      #"mutation ToggleFollow($userId: Int) { ToggleFollow(userId: $userId) { __typename isFollowing } }"#
     ))
 
   public var userId: GraphQLNullable<Int>

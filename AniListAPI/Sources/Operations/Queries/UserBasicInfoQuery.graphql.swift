@@ -7,14 +7,7 @@ public class UserBasicInfoQuery: GraphQLQuery {
   public static let operationName: String = "UserBasicInfo"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query UserBasicInfo($userId: Int) {
-        User(id: $userId) {
-          __typename
-          ...UserInfo
-        }
-      }
-      """#,
+      #"query UserBasicInfo($userId: Int) { User(id: $userId) { __typename ...UserInfo } }"#,
       fragments: [UserInfo.self]
     ))
 
