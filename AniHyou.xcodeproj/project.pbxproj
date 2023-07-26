@@ -389,6 +389,7 @@
 		48CA07B628707DF80048854E /* StaffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffView.swift; sourceTree = "<group>"; };
 		48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaRelationsAndRecommendations.graphql; sourceTree = "<group>"; };
 		48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRelationsAndRecommendationsView.swift; sourceTree = "<group>"; };
+		48CDB1662A70D5B000102E03 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		48D044E02A57AC9600ED3623 /* MultiSelectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionSheet.swift; sourceTree = "<group>"; };
 		48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemCompactView.swift; sourceTree = "<group>"; };
 		48D774EF2A2ECF3C00370921 /* AniListAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AniListAPI; sourceTree = "<group>"; };
@@ -549,6 +550,7 @@
 		481AD4D12851CE73001779EE = {
 			isa = PBXGroup;
 			children = (
+				48CDB1652A70D57300102E03 /* ci_scripts */,
 				48DF50F92A669F3F00DF1C87 /* Products.storekit */,
 				48EFCDFE29FFED0D0096BF6E /* AniHyou WidgetExtension.entitlements */,
 				480F88262942695D004773CC /* Packages */,
@@ -957,6 +959,14 @@
 				489BA4142A52740500B2445E /* AiringMediaHorizontalItemView.swift */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		48CDB1652A70D57300102E03 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				48CDB1662A70D5B000102E03 /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
 			sourceTree = "<group>";
 		};
 		48DBAF7B29B0780A00A75167 /* UserStats */ = {
