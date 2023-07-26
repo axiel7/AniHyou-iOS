@@ -77,14 +77,5 @@
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
-      <PreActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# create Config.xcconfig file with the client id for Xcode Cloud builds&#10;if [[ ! -z &quot;${ANILIST_CLIENT_ID}&quot; ]]; then&#10;    cd AniHyou&#10;    touch Config.xcconfig&#10;    echo &quot;ANILIST_CLIENT_ID=${ANILIST_CLIENT_ID}&quot; &gt; Config.xcconfig&#10;fi&#10;">
-            </ActionContent>
-         </ExecutionAction>
-      </PreActions>
    </ArchiveAction>
 </Scheme>
