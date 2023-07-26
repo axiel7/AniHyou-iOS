@@ -1,46 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1340"
-   version = "1.7">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <PreActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# create Config.xcconfig file with the client id for Xcode Cloud builds&#10;if [[ ! -z &quot;${ANILIST_CLIENT_ID}&quot; ]]; then&#10;    cd AniHyou&#10;    touch Config.xcconfig&#10;    echo &quot;ANILIST_CLIENT_ID=${ANILIST_CLIENT_ID}&quot; &gt; Config.xcconfig&#10;fi&#10;">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "481AD4D92851CE73001779EE"
-                     BuildableName = "AniHyou.app"
-                     BlueprintName = "AniHyou"
-                     ReferencedContainer = "container:AniHyou.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-      </PreActions>
-      <PostActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# remove the created Config.xcconfig file&#10;if [[ ! -z &quot;${ANILIST_CLIENT_ID}&quot; ]]; then&#10;    rm AniHyou/Config.xcconfig&#10;fi&#10;">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "481AD4D92851CE73001779EE"
-                     BuildableName = "AniHyou.app"
-                     BlueprintName = "AniHyou"
-                     ReferencedContainer = "container:AniHyou.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-      </PostActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -113,5 +77,14 @@
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# create Config.xcconfig file with the client id for Xcode Cloud builds&#10;if [[ ! -z &quot;${ANILIST_CLIENT_ID}&quot; ]]; then&#10;    cd AniHyou&#10;    touch Config.xcconfig&#10;    echo &quot;ANILIST_CLIENT_ID=${ANILIST_CLIENT_ID}&quot; &gt; Config.xcconfig&#10;fi&#10;">
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
    </ArchiveAction>
 </Scheme>
