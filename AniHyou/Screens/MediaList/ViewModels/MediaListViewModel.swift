@@ -63,14 +63,14 @@ class MediaListViewModel: ObservableObject {
             return mediaList
         } else {
             let filtered = mediaList.filter {
-                if let title = $0?.media?.title?.userPreferred {
-                    return title.lowercased().contains(searchText.lowercased())
+                let title = $0?.media?.title?.userPreferred
+                if title == nil || title?.isEmpty == true {
+                    return false
                 }
-                return true
+                return title!.lowercased().contains(searchText.lowercased())
             }
-            if hasNextPage {
+            if hasNextPage && filtered.count < 25 {
                 getUserMediaList(otherUserId: userId)
-                return filtered
             }
 
             return filtered
