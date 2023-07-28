@@ -7,22 +7,7 @@ public class FollowersQuery: GraphQLQuery {
   public static let operationName: String = "Followers"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query Followers($userId: Int!, $page: Int, $perPage: Int) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          followers(userId: $userId) {
-            __typename
-            ...UserFollow
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#,
+      #"query Followers($userId: Int!, $page: Int, $perPage: Int) { Page(page: $page, perPage: $perPage) { __typename followers(userId: $userId) { __typename ...UserFollow } pageInfo { __typename currentPage hasNextPage } } }"#,
       fragments: [UserFollow.self]
     ))
 

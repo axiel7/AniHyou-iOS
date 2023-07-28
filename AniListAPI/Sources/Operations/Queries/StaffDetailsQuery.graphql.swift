@@ -7,41 +7,7 @@ public class StaffDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StaffDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query StaffDetails($staffId: Int) {
-        Staff(id: $staffId) {
-          __typename
-          id
-          name {
-            __typename
-            userPreferred
-            native
-            alternative
-          }
-          image {
-            __typename
-            large
-          }
-          description(asHtml: true)
-          primaryOccupations
-          gender
-          dateOfBirth {
-            __typename
-            ...FuzzyDateFragment
-          }
-          dateOfDeath {
-            __typename
-            ...FuzzyDateFragment
-          }
-          age
-          yearsActive
-          homeTown
-          bloodType
-          ...IsFavouriteStaff
-          favourites
-        }
-      }
-      """#,
+      #"query StaffDetails($staffId: Int) { Staff(id: $staffId) { __typename id name { __typename userPreferred native alternative } image { __typename large } description(asHtml: true) primaryOccupations gender dateOfBirth { __typename ...FuzzyDateFragment } dateOfDeath { __typename ...FuzzyDateFragment } age yearsActive homeTown bloodType ...IsFavouriteStaff favourites } }"#,
       fragments: [FuzzyDateFragment.self, IsFavouriteStaff.self]
     ))
 

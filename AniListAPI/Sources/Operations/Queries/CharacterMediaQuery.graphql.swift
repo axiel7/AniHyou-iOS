@@ -7,49 +7,7 @@ public class CharacterMediaQuery: GraphQLQuery {
   public static let operationName: String = "CharacterMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) {
-        Character(id: $characterId) {
-          __typename
-          media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) {
-            __typename
-            edges {
-              __typename
-              id
-              node {
-                __typename
-                id
-                title {
-                  __typename
-                  userPreferred
-                }
-                type
-                coverImage {
-                  __typename
-                  large
-                }
-              }
-              characterName
-              characterRole
-              voiceActors(sort: [RELEVANCE, LANGUAGE]) {
-                __typename
-                id
-                name {
-                  __typename
-                  userPreferred
-                }
-                languageV2
-              }
-            }
-            pageInfo {
-              __typename
-              currentPage
-              hasNextPage
-            }
-          }
-        }
-      }
-      """#
+      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename currentPage hasNextPage } } } }"#
     ))
 
   public var characterId: GraphQLNullable<Int>

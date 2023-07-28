@@ -7,21 +7,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntryProgress"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $status: MediaListStatus) {
-        SaveMediaListEntry(
-          id: $saveMediaListEntryId
-          progress: $progress
-          status: $status
-        ) {
-          __typename
-          id
-          mediaId
-          progress
-          status
-        }
-      }
-      """#
+      #"mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $status: MediaListStatus) { SaveMediaListEntry( id: $saveMediaListEntryId progress: $progress status: $status ) { __typename id mediaId progress status } }"#
     ))
 
   public var saveMediaListEntryId: GraphQLNullable<Int>

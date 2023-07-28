@@ -7,37 +7,7 @@ public class PreviewMediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "PreviewMediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query PreviewMediaDetails($mediaId: Int) {
-        Media(id: $mediaId) {
-          __typename
-          title {
-            __typename
-            userPreferred
-          }
-          coverImage {
-            __typename
-            large
-          }
-          meanScore
-          format
-          episodes
-          chapters
-          volumes
-          genres
-          nextAiringEpisode {
-            __typename
-            airingAt
-            episode
-          }
-          mediaListEntry {
-            __typename
-            status
-            progress
-          }
-        }
-      }
-      """#
+      #"query PreviewMediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename title { __typename userPreferred } coverImage { __typename large } meanScore format episodes chapters volumes genres nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename status progress } } }"#
     ))
 
   public var mediaId: GraphQLNullable<Int>

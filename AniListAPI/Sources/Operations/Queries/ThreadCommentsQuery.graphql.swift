@@ -7,34 +7,7 @@ public class ThreadCommentsQuery: GraphQLQuery {
   public static let operationName: String = "ThreadComments"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query ThreadComments($page: Int, $perPage: Int, $threadId: Int) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          threadComments(threadId: $threadId) {
-            __typename
-            id
-            comment(asHtml: false)
-            likeCount
-            createdAt
-            user {
-              __typename
-              id
-              name
-              avatar {
-                __typename
-                medium
-              }
-            }
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#
+      #"query ThreadComments($page: Int, $perPage: Int, $threadId: Int) { Page(page: $page, perPage: $perPage) { __typename threadComments(threadId: $threadId) { __typename id comment(asHtml: false) likeCount createdAt user { __typename id name avatar { __typename medium } } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

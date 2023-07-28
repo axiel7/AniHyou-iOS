@@ -4,14 +4,9 @@
 @_exported import ApolloAPI
 
 public struct FuzzyDateFragment: AniListAPI.SelectionSet, Fragment {
-  public static var fragmentDefinition: StaticString { """
-    fragment FuzzyDateFragment on FuzzyDate {
-      __typename
-      day
-      month
-      year
-    }
-    """ }
+  public static var fragmentDefinition: StaticString {
+    "fragment FuzzyDateFragment on FuzzyDate { __typename day month year }"
+  }
 
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }

@@ -7,26 +7,7 @@ public class MediaReviewsQuery: GraphQLQuery {
   public static let operationName: String = "MediaReviews"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) {
-        Media(id: $mediaId) {
-          __typename
-          reviews(page: $page, perPage: $perPage, sort: RATING_DESC) {
-            __typename
-            nodes {
-              __typename
-              id
-              summary
-              score
-              user {
-                __typename
-                name
-              }
-            }
-          }
-        }
-      }
-      """#
+      #"query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) { Media(id: $mediaId) { __typename reviews(page: $page, perPage: $perPage, sort: RATING_DESC) { __typename nodes { __typename id summary score user { __typename name } } } } }"#
     ))
 
   public var mediaId: GraphQLNullable<Int>

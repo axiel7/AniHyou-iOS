@@ -4,26 +4,9 @@
 @_exported import ApolloAPI
 
 public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
-  public static var fragmentDefinition: StaticString { """
-    fragment MediaRelated on MediaEdge {
-      __typename
-      relationType
-      node {
-        __typename
-        id
-        title {
-          __typename
-          userPreferred
-        }
-        type
-        format
-        coverImage {
-          __typename
-          large
-        }
-      }
-    }
-    """ }
+  public static var fragmentDefinition: StaticString {
+    "fragment MediaRelated on MediaEdge { __typename relationType node { __typename id title { __typename userPreferred } type format coverImage { __typename large } } }"
+  }
 
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }

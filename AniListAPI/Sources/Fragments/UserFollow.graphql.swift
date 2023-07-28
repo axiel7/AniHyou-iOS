@@ -4,17 +4,9 @@
 @_exported import ApolloAPI
 
 public struct UserFollow: AniListAPI.SelectionSet, Fragment {
-  public static var fragmentDefinition: StaticString { """
-    fragment UserFollow on User {
-      __typename
-      id
-      name
-      avatar {
-        __typename
-        large
-      }
-    }
-    """ }
+  public static var fragmentDefinition: StaticString {
+    "fragment UserFollow on User { __typename id name avatar { __typename large } }"
+  }
 
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }

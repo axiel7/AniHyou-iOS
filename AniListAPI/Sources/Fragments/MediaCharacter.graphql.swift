@@ -4,36 +4,9 @@
 @_exported import ApolloAPI
 
 public struct MediaCharacter: AniListAPI.SelectionSet, Fragment {
-  public static var fragmentDefinition: StaticString { """
-    fragment MediaCharacter on CharacterEdge {
-      __typename
-      role
-      node {
-        __typename
-        id
-        name {
-          __typename
-          userPreferred
-        }
-        image {
-          __typename
-          medium
-        }
-      }
-      voiceActors(language: JAPANESE) {
-        __typename
-        id
-        name {
-          __typename
-          userPreferred
-        }
-        image {
-          __typename
-          medium
-        }
-      }
-    }
-    """ }
+  public static var fragmentDefinition: StaticString {
+    "fragment MediaCharacter on CharacterEdge { __typename role node { __typename id name { __typename userPreferred } image { __typename medium } } voiceActors(language: JAPANESE) { __typename id name { __typename userPreferred } image { __typename medium } } }"
+  }
 
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }

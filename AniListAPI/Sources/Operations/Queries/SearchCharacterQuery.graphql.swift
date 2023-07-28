@@ -7,25 +7,7 @@ public class SearchCharacterQuery: GraphQLQuery {
   public static let operationName: String = "SearchCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query SearchCharacter($page: Int, $perPage: Int, $search: String) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          characters(search: $search, sort: SEARCH_MATCH) {
-            __typename
-            id
-            name {
-              __typename
-              userPreferred
-            }
-            image {
-              __typename
-              medium
-            }
-          }
-        }
-      }
-      """#
+      #"query SearchCharacter($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename characters(search: $search, sort: SEARCH_MATCH) { __typename id name { __typename userPreferred } image { __typename medium } } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

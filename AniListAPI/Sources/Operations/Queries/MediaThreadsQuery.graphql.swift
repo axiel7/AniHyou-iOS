@@ -7,32 +7,7 @@ public class MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          threads(mediaCategoryId: $mediaCategoryId, sort: $sort) {
-            __typename
-            id
-            title
-            body(asHtml: true)
-            viewCount
-            replyCount
-            likeCount
-            createdAt
-            user {
-              __typename
-              id
-              name
-              avatar {
-                __typename
-                medium
-              }
-            }
-          }
-        }
-      }
-      """#
+      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename id title body(asHtml: true) viewCount replyCount likeCount createdAt user { __typename id name avatar { __typename medium } } } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

@@ -78,7 +78,7 @@ extension UserMediaListQuery.Data.Page.MediaList {
 
     var coverColorWithAlpha: Color? {
         if let color = self.media?.coverImage?.color {
-            return Color(color + "88")
+            return Color(hex: color + "88")
         } else { return nil }
     }
 }

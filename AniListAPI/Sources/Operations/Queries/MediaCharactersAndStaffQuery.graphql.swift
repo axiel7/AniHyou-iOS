@@ -7,27 +7,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
   public static let operationName: String = "MediaCharactersAndStaff"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query MediaCharactersAndStaff($mediaId: Int) {
-        Media(id: $mediaId) {
-          __typename
-          characters(page: 1, perPage: 25) {
-            __typename
-            edges {
-              __typename
-              ...MediaCharacter
-            }
-          }
-          staff(page: 1, perPage: 25) {
-            __typename
-            edges {
-              __typename
-              ...MediaStaff
-            }
-          }
-        }
-      }
-      """#,
+      #"query MediaCharactersAndStaff($mediaId: Int) { Media(id: $mediaId) { __typename characters(page: 1, perPage: 25) { __typename edges { __typename ...MediaCharacter } } staff(page: 1, perPage: 25) { __typename edges { __typename ...MediaStaff } } } }"#,
       fragments: [MediaCharacter.self, MediaStaff.self]
     ))
 

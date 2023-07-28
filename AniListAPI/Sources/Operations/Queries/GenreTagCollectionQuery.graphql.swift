@@ -7,16 +7,7 @@ public class GenreTagCollectionQuery: GraphQLQuery {
   public static let operationName: String = "GenreTagCollectionQuery"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query GenreTagCollectionQuery {
-        GenreCollection
-        MediaTagCollection {
-          __typename
-          id
-          name
-        }
-      }
-      """#
+      #"query GenreTagCollectionQuery { GenreCollection MediaTagCollection { __typename id name } }"#
     ))
 
   public init() {}

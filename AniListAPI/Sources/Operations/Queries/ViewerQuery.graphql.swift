@@ -7,14 +7,7 @@ public class ViewerQuery: GraphQLQuery {
   public static let operationName: String = "Viewer"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query Viewer {
-        Viewer {
-          __typename
-          ...UserInfo
-        }
-      }
-      """#,
+      #"query Viewer { Viewer { __typename ...UserInfo } }"#,
       fragments: [UserInfo.self]
     ))
 

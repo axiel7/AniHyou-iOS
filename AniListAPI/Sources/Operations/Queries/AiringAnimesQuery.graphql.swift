@@ -7,45 +7,7 @@ public class AiringAnimesQuery: GraphQLQuery {
   public static let operationName: String = "AiringAnimes"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          airingSchedules(
-            sort: $sort
-            airingAt_greater: $airingAtGreater
-            airingAt_lesser: $airingAtLesser
-          ) {
-            __typename
-            id
-            mediaId
-            media {
-              __typename
-              title {
-                __typename
-                userPreferred
-              }
-              coverImage {
-                __typename
-                large
-              }
-              meanScore
-              mediaListEntry {
-                __typename
-                status
-              }
-            }
-            episode
-            airingAt
-          }
-          pageInfo {
-            __typename
-            currentPage
-            hasNextPage
-          }
-        }
-      }
-      """#
+      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } episode airingAt } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>

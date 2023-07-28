@@ -7,37 +7,7 @@ public class StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {
-        Studio(id: $studioId) {
-          __typename
-          id
-          name
-          favourites
-          ...IsFavouriteStudio
-          media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) {
-            __typename
-            nodes {
-              __typename
-              id
-              coverImage {
-                __typename
-                large
-              }
-              title {
-                __typename
-                userPreferred
-              }
-              type
-            }
-            pageInfo {
-              __typename
-              hasNextPage
-            }
-          }
-        }
-      }
-      """#,
+      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename id coverImage { __typename large } title { __typename userPreferred } type } pageInfo { __typename hasNextPage } } } }"#,
       fragments: [IsFavouriteStudio.self]
     ))
 

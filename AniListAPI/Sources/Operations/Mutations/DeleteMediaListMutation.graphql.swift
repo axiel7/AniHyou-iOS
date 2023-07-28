@@ -7,14 +7,7 @@ public class DeleteMediaListMutation: GraphQLMutation {
   public static let operationName: String = "DeleteMediaList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      mutation DeleteMediaList($mediaListEntryId: Int) {
-        DeleteMediaListEntry(id: $mediaListEntryId) {
-          __typename
-          deleted
-        }
-      }
-      """#
+      #"mutation DeleteMediaList($mediaListEntryId: Int) { DeleteMediaListEntry(id: $mediaListEntryId) { __typename deleted } }"#
     ))
 
   public var mediaListEntryId: GraphQLNullable<Int>

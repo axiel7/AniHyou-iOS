@@ -7,35 +7,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
   public static let operationName: String = "CharacterDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query CharacterDetails($characterId: Int) {
-        Character(id: $characterId) {
-          __typename
-          id
-          name {
-            __typename
-            userPreferred
-            native
-            alternative
-            alternativeSpoiler
-          }
-          image {
-            __typename
-            large
-          }
-          description(asHtml: true)
-          gender
-          dateOfBirth {
-            __typename
-            ...FuzzyDateFragment
-          }
-          age
-          bloodType
-          ...IsFavouriteCharacter
-          favourites
-        }
-      }
-      """#,
+      #"query CharacterDetails($characterId: Int) { Character(id: $characterId) { __typename id name { __typename userPreferred native alternative alternativeSpoiler } image { __typename large } description(asHtml: true) gender dateOfBirth { __typename ...FuzzyDateFragment } age bloodType ...IsFavouriteCharacter favourites } }"#,
       fragments: [FuzzyDateFragment.self, IsFavouriteCharacter.self]
     ))
 

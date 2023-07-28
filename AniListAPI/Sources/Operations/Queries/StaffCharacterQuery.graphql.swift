@@ -7,45 +7,7 @@ public class StaffCharacterQuery: GraphQLQuery {
   public static let operationName: String = "StaffCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query StaffCharacter($staffId: Int, $page: Int, $perPage: Int) {
-        Staff(id: $staffId) {
-          __typename
-          characterMedia(page: $page, perPage: $perPage, sort: [START_DATE_DESC]) {
-            __typename
-            edges {
-              __typename
-              id
-              node {
-                __typename
-                id
-                title {
-                  __typename
-                  userPreferred
-                }
-              }
-              characters {
-                __typename
-                id
-                image {
-                  __typename
-                  large
-                }
-                name {
-                  __typename
-                  userPreferred
-                }
-              }
-            }
-            pageInfo {
-              __typename
-              currentPage
-              hasNextPage
-            }
-          }
-        }
-      }
-      """#
+      #"query StaffCharacter($staffId: Int, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename characterMedia(page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } } characters { __typename id image { __typename large } name { __typename userPreferred } } } pageInfo { __typename currentPage hasNextPage } } } }"#
     ))
 
   public var staffId: GraphQLNullable<Int>

@@ -7,65 +7,7 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsMangaOverview"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query UserStatsMangaOverview($userId: Int) {
-        User(id: $userId) {
-          __typename
-          statistics {
-            __typename
-            manga {
-              __typename
-              count
-              chaptersRead
-              volumesRead
-              meanScore
-              standardDeviation
-              scores(sort: MEAN_SCORE) {
-                __typename
-                count
-                chaptersRead
-                meanScore
-              }
-              formats {
-                __typename
-                count
-                chaptersRead
-                meanScore
-                format
-              }
-              statuses {
-                __typename
-                count
-                chaptersRead
-                meanScore
-                status
-              }
-              countries {
-                __typename
-                count
-                chaptersRead
-                meanScore
-                country
-              }
-              releaseYears {
-                __typename
-                count
-                chaptersRead
-                meanScore
-                releaseYear
-              }
-              startYears {
-                __typename
-                count
-                chaptersRead
-                meanScore
-                startYear
-              }
-            }
-          }
-        }
-      }
-      """#
+      #"query UserStatsMangaOverview($userId: Int) { User(id: $userId) { __typename statistics { __typename manga { __typename count chaptersRead volumesRead meanScore standardDeviation scores(sort: MEAN_SCORE) { __typename count chaptersRead meanScore } formats { __typename count chaptersRead meanScore format } statuses { __typename count chaptersRead meanScore status } countries { __typename count chaptersRead meanScore country } releaseYears { __typename count chaptersRead meanScore releaseYear } startYears { __typename count chaptersRead meanScore startYear } } } } }"#
     ))
 
   public var userId: GraphQLNullable<Int>

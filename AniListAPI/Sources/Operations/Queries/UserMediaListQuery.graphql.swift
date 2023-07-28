@@ -7,44 +7,7 @@ public class UserMediaListQuery: GraphQLQuery {
   public static let operationName: String = "UserMediaList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {
-        Page(page: $page, perPage: $perPage) {
-          __typename
-          mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
-            __typename
-            ...BasicMediaListEntry
-            mediaId
-            media {
-              __typename
-              title {
-                __typename
-                userPreferred
-              }
-              episodes
-              chapters
-              volumes
-              coverImage {
-                __typename
-                large
-                color
-              }
-              nextAiringEpisode {
-                __typename
-                episode
-                airingAt
-              }
-              status
-              type
-            }
-          }
-          pageInfo {
-            __typename
-            hasNextPage
-          }
-        }
-      }
-      """#,
+      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename title { __typename userPreferred } episodes chapters volumes coverImage { __typename large color } nextAiringEpisode { __typename episode airingAt } status type } } pageInfo { __typename hasNextPage } } }"#,
       fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
