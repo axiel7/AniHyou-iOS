@@ -64,7 +64,7 @@ class MediaListViewModel: ObservableObject {
         } else {
             let filtered = mediaList.filter {
                 let title = $0?.media?.title?.userPreferred
-                if title?.isEmpty != nil && title!.isEmpty {
+                if title == nil || title?.isEmpty == true {
                     return false
                 }
                 return title!.lowercased().contains(searchText.lowercased())
