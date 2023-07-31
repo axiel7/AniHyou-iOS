@@ -15,6 +15,7 @@ class SearchViewModel: ObservableObject {
     private let perPage = 25
 
     var search: String = ""
+    @Published var isLoading = false
     @Published var type: SearchType = .anime
     @Published var sortMedia: MediaSort = .searchMatch
     @Published var isAscending = false
@@ -78,6 +79,7 @@ class SearchViewModel: ObservableObject {
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
 
     private func searchMedia(type: MediaType) {
+        isLoading = true
 
         selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
         selectedMediaFormatJoined = selectedMediaFormat.map { $0.localizedName }.joined(separator: ", ")
@@ -127,12 +129,14 @@ class SearchViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            self?.isLoading = false
         }
     }
 
     @Published var searchedCharacters = [SearchCharacterQuery.Data.Page.Character?]()
 
     private func searchCharacters() {
+        isLoading = true
         Network.shared.apollo.fetch(query: SearchCharacterQuery(
             page: .some(1),
             perPage: .some(perPage),
@@ -148,12 +152,14 @@ class SearchViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            self?.isLoading = false
         }
     }
 
     @Published var searchedStaff = [SearchStaffQuery.Data.Page.Staff?]()
 
     private func searchStaff() {
+        isLoading = true
         Network.shared.apollo.fetch(query: SearchStaffQuery(
             page: .some(1),
             perPage: .some(perPage),
@@ -169,12 +175,14 @@ class SearchViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            self?.isLoading = false
         }
     }
 
     @Published var searchedStudios = [SearchStudioQuery.Data.Page.Studio?]()
 
     private func searchStudios() {
+        isLoading = true
         Network.shared.apollo.fetch(query: SearchStudioQuery(
             page: .some(1),
             perPage: .some(perPage),
@@ -190,12 +198,14 @@ class SearchViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            self?.isLoading = false
         }
     }
 
     @Published var searchedUsers = [SearchUserQuery.Data.Page.User?]()
 
     private func searchUsers() {
+        isLoading = true
         Network.shared.apollo.fetch(query: SearchUserQuery(
             page: .some(1),
             perPage: .some(perPage),
@@ -211,6 +221,7 @@ class SearchViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            self?.isLoading = false
         }
     }
 
