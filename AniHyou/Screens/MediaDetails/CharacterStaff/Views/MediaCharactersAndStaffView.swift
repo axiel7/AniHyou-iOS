@@ -36,15 +36,11 @@ struct MediaCharactersAndStaffView: View {
 
             }//:VStack
         } else {
-            HStack {
-                Spacer()
-                ProgressView()
-                    .padding()
-                    .onAppear {
-                        viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
-                    }
-                Spacer()
-            }
+            HorizontalProgressView()
+                .padding()
+                .onAppear {
+                    viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
+                }
         }
     }
 

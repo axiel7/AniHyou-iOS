@@ -18,7 +18,7 @@ struct OverviewStatsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if viewModel.isLoading {
-                ProgressView()
+                HorizontalProgressView()
                 Spacer()
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {

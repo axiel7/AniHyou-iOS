@@ -62,7 +62,7 @@ struct ProfileView: View {
                         if viewModel.userInfo != nil {
                             ExpandableRichText(viewModel.userInfo?.about)
                         } else {
-                            ProgressView()
+                            HorizontalProgressView()
                         }
                     }
                 }
@@ -165,7 +165,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            ProfileView()
+            ProfileView(userId: 208863)
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")

@@ -121,7 +121,7 @@ struct CharacterDetailsView: View {
                 }
             }
             if viewModel.hasNextPageMedia {
-                ProgressView()
+                HorizontalProgressView()
                     .onAppear {
                         viewModel.getCharacterMedia(characterId: characterId)
                     }
