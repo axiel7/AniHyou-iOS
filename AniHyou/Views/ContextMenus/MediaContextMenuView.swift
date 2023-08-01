@@ -8,22 +8,31 @@
 import SwiftUI
 import AniListAPI
 
-var contextActions: some View {
-    Button {
-        // add to planning
-    } label: {
-        Label("Add to Planning", systemImage: "text.badge.plus")
-    }
-}
-
 extension View {
+
+    func contextActions(mediaId: Int) -> some View {
+        Group {
+            Button {
+                // call a model or service to run
+                addToPlanning(mediaId: mediaId)
+            } label: {
+                Label("Add to Planning", systemImage: "text.badge.plus")
+            }
+        }
+    }
+    
+    func addToPlanning(mediaId: Int) {
+        let model = MediaContextMenuViewModel()
+        model.updateList(mediaId: mediaId, status: MediaListStatus.planning)
+    }
+
     func mediaContextMenu(mediaId: Int, mediaType: MediaType?) -> some View {
         Group {
             if #available(iOS 16.0, *) {
                 self
                     .contextMenu {
                         if mediaType != nil {
-//                            contextActions
+                            contextActions(mediaId: mediaId)
                             ShareLink(item: "\(mediaType!.mediaUrl)\(mediaId)") {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
@@ -37,7 +46,7 @@ extension View {
                 self
                     .contextMenu {
                         if mediaType != nil {
-                            //                            contextActions
+                            contextActions(mediaId: mediaId)
                             Button {
                                 shareSheet(url: "\(mediaType!.mediaUrl)\(mediaId)")
                             } label: {
