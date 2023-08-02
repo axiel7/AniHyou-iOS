@@ -118,7 +118,7 @@ struct StaffDetailsView: View {
                 }
             }
             if viewModel.hasNextPageMedia {
-                ProgressView()
+                HorizontalProgressView()
                     .onAppear {
                         viewModel.getStaffMedia(staffId: staffId)
                     }
@@ -148,7 +148,7 @@ struct StaffDetailsView: View {
                 }
             }
             if viewModel.hasNextPageCharacters {
-                ProgressView()
+                HorizontalProgressView()
                     .onAppear {
                         viewModel.getStaffCharacters(staffId: staffId)
                     }

@@ -13,6 +13,7 @@ struct CharacterDetailsView: View {
     var characterId: Int
     @StateObject private var viewModel = CharacterDetailsViewModel()
     @State private var infoType: CharacterInfoType = .overview
+    @State private var showNameSpoiler = false
 
     var body: some View {
         ScrollView(.vertical) {
@@ -55,15 +56,28 @@ struct CharacterDetailsView: View {
                     .font(.title3.weight(.bold))
                     .multilineTextAlignment(.center)
 
-                Text(viewModel.character!.name?.native ?? "")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.gray)
-
-                Text(viewModel.alternativeNamesFormatted ?? "")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.gray)
+                Group {
+                    Text(viewModel.character!.name?.native ?? "")
+                    
+                    Text(viewModel.alternativeNamesFormatted ?? "")
+                    
+                    if viewModel.alternativeNamesSpoilerFormatted?.isEmpty == false {
+                        Group {
+                            if showNameSpoiler {
+                                Text(viewModel.alternativeNamesSpoilerFormatted!)
+                            } else {
+                                Text(viewModel.alternativeNamesSpoilerFormatted!)
+                                    .redacted(reason: .placeholder)
+                            }
+                        }
+                        .onTapGesture {
+                            showNameSpoiler.toggle()
+                        }
+                    }
+                }
+                .font(.subheadline)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.gray)
 
                 HStack {
                     VStack(alignment: .leading) {
@@ -107,7 +121,7 @@ struct CharacterDetailsView: View {
                 }
             }
             if viewModel.hasNextPageMedia {
-                ProgressView()
+                HorizontalProgressView()
                     .onAppear {
                         viewModel.getCharacterMedia(characterId: characterId)
                     }

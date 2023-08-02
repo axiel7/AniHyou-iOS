@@ -16,11 +16,7 @@ struct MediaStatsView: View {
     var body: some View {
         LazyVStack(alignment: .leading) {
             if viewModel.isLoading {
-                HStack {
-                    Spacer()
-                    ProgressView()
-                    Spacer()
-                }
+                HorizontalProgressView()
             }
             // MARK: - Rankings
             if !viewModel.rankings.isEmpty {

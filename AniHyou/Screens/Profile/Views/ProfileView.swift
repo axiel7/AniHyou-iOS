@@ -62,7 +62,7 @@ struct ProfileView: View {
                         if viewModel.userInfo != nil {
                             ExpandableRichText(viewModel.userInfo?.about)
                         } else {
-                            ProgressView()
+                            HorizontalProgressView()
                         }
                     }
                 }
@@ -121,10 +121,16 @@ struct ProfileView: View {
                     CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
                         .shadow(radius: 7)
 
-                    Text(viewModel.userInfo?.name ?? "Name")
-                        .font(.title2)
-                        .bold()
-                        .transition(.move(edge: .top))
+                    Group {
+                        if let username = viewModel.userInfo?.name {
+                            Text(username)
+                        } else {
+                            Text("Loading")
+                                .redacted(reason: .placeholder)
+                        }
+                    }
+                    .font(.title2.weight(.bold))
+                    .transition(.move(edge: .top))
                 }
                 .padding(.leading, 16)
                 Spacer()
@@ -159,7 +165,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            ProfileView()
+            ProfileView(userId: 208863)
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")

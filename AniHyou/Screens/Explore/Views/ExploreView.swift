@@ -131,6 +131,10 @@ struct ExploreView: View {
                     }
                 }
             }//:switch
+            
+            if viewModel.isLoading {
+                HorizontalProgressView()
+            }
         }//:List
         .listStyle(.insetGrouped)
     }

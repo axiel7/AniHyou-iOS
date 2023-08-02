@@ -94,15 +94,11 @@ struct MediaRelationsAndRecommendationsView: View {
                 .padding(.bottom)
             }//:VStack
         } else {
-            HStack {
-                Spacer()
-                ProgressView()
-                    .padding()
-                    .onAppear {
-                        viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
-                    }
-                Spacer()
-            }
+            HorizontalProgressView()
+                .padding()
+                .onAppear {
+                    viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
+                }
         }
     }
 }

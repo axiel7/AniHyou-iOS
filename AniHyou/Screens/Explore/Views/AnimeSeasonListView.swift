@@ -35,7 +35,7 @@ struct AnimeSeasonListView: View {
                 }
 
                 if viewModel.hasNextPageSeason {
-                    ProgressView()
+                    HorizontalProgressView()
                         .onAppear {
                             viewModel.getAnimeSeasonal(season: season, year: selectedYear)
                         }
