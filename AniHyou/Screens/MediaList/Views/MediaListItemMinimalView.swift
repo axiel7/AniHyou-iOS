@@ -31,6 +31,14 @@ struct MediaListItemMinimalView: View {
             HStack {
                 Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
                 Spacer()
+                if item?.repeat != nil && item!.repeat! > 0 {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(.gray)
+                }
+                if item?.notes?.isEmpty == false {
+                    Image(systemName: "note.text")
+                        .foregroundColor(.gray)
+                }
                 MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
             }
         }
