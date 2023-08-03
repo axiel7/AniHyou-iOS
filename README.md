@@ -31,6 +31,26 @@ Follow the development on the official Discord server:
 ## Coming features
 - [See project](https://github.com/users/axiel7/projects/2/views/1)
 
+# Donate 💸
+Support the development of AniHyou by making a donation via:
+
+[Ko-Fi](https://ko-fi.com/axiel7)
+
+Bitcoin
+```
+3KKjJuorh9se2jUo1Hr6MFgXhnBWbj5fTP
+```
+
+Ethereum
+```
+0xBd20dD0e036B246F879EeFde52601f0fBbeC69c0
+```
+
+Litecoin
+```
+MRw5XPLsM9SVf48tv4nwQoY12nMXaiVzmD
+```
+
 ## Technologies used
 - [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
 - [Apollo iOS Client](https://github.com/apollographql/apollo-ios)
