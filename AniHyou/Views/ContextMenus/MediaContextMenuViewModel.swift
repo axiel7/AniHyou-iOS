@@ -24,26 +24,4 @@ class MediaContextMenuViewModel: ObservableObject {
             }
         }
     }
-    
-    func updateList(mediaId: Int, status: MediaListStatus) {
-        Network.shared.apollo.perform(mutation: UpdateEntryMutation(
-            mediaId: .some(mediaId),
-            status: someIfNotNil(status),
-            score: nil,
-            progress: nil,
-            progressVolumes: nil,
-            startedAt: nil,
-            completedAt: nil,
-            repeat: nil,
-            private: nil,
-            notes: nil
-        )) { [weak self] result in
-            switch result {
-            case .success(_):
-                print("success")
-            case .failure(let err):
-                print(err)
-            }
-        }
-    }
 }

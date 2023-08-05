@@ -22,8 +22,8 @@ extension View {
     }
     
     func addToPlanning(mediaId: Int) {
-        let model = MediaContextMenuViewModel()
-        model.updateList(mediaId: mediaId, status: MediaListStatus.planning)
+        let repo = MediaRepository()
+        repo.updateList(mediaId: mediaId, status: MediaListStatus.planning)
     }
 
     func mediaContextMenu(mediaId: Int, mediaType: MediaType?) -> some View {
