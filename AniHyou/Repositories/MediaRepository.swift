@@ -24,7 +24,7 @@ class MediaRepository {
             notes: nil
         )) { result in
             switch result {
-            case .success(_):
+            case .success:
                 print("success")
             case .failure(let err):
                 print(err)
