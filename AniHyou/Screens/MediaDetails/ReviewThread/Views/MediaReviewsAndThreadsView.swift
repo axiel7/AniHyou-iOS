@@ -45,15 +45,11 @@ struct MediaReviewsAndThreadsView: View {
                 .padding(.leading)
             ZStack {
                 if viewModel.mediaReviews == nil {
-                    HStack {
-                        Spacer()
-                        ProgressView()
-                            .padding()
-                            .onAppear {
-                                viewModel.getMediaReviews(mediaId: mediaId)
-                            }
-                        Spacer()
-                    }
+                    HorizontalProgressView()
+                        .padding()
+                        .onAppear {
+                            viewModel.getMediaReviews(mediaId: mediaId)
+                        }
                 } else if viewModel.mediaReviews?.nodes?.count == 0 {
                     HStack {
                         Spacer()

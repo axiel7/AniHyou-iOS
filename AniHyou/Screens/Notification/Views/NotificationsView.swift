@@ -29,7 +29,7 @@ struct NotificationsView: View {
                         }
 
                         if viewModel.hasNextPage {
-                            ProgressView()
+                            HorizontalProgressView()
                                 .onAppear {
                                     viewModel.getNotifications()
                                 }

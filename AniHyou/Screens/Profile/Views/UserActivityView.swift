@@ -40,7 +40,7 @@ struct UserActivityView: View {
             }
         }
         if viewModel.hasNextPage {
-            ProgressView()
+            HorizontalProgressView()
                 .onAppear {
                     viewModel.getUserActivity(userId: userId)
                 }
