@@ -55,8 +55,7 @@ extension View {
     }
     
     func setStatus(mediaId: Int, status: MediaListStatus) {
-        let repo = MediaRepository()
-        repo.updateList(mediaId: mediaId, status: status)
+        MediaRepository.updateList(mediaId: mediaId, status: status)
     }
 
     func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus? = nil) -> some View {

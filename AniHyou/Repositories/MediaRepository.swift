@@ -10,7 +10,7 @@ import AniListAPI
 
 class MediaRepository {
     
-    func updateList(mediaId: Int, status: MediaListStatus) {
+    static func updateList(mediaId: Int, status: MediaListStatus) {
         Network.shared.apollo.perform(mutation: UpdateEntryMutation(
             mediaId: .some(mediaId),
             status: someIfNotNil(status),
