@@ -73,7 +73,7 @@ class MediaListViewModel: ObservableObject {
                 getUserMediaList(otherUserId: userId)
             }
 
-            return filtered
+            return Array(Set(filtered))
         }
     }
 
