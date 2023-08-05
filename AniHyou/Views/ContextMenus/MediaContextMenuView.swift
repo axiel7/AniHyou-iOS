@@ -10,29 +10,62 @@ import AniListAPI
 
 extension View {
 
-    func contextActions(mediaId: Int) -> some View {
+    func contextActions(mediaId: Int, mediaListStatus: MediaListStatus?) -> some View {
         Group {
-            Button {
-                // call a model or service to run
-                addToPlanning(mediaId: mediaId)
-            } label: {
-                Label("Add to Planning", systemImage: "text.badge.plus")
+            if mediaListStatus == nil || mediaListStatus == .none {
+                Button {
+                    // call a model or service to run
+                    setStatus(mediaId: mediaId, status: .planning)
+                } label: {
+                    Label("Add to Planning", systemImage: "text.badge.plus")
+                }
+            }
+            if mediaListStatus == .current || mediaListStatus == .repeating {
+                Button {
+                    setStatus(mediaId: mediaId, status: .completed)
+                } label: {
+                    Label("Complete", systemImage: "text.badge.checkmark")
+                }
+                Button {
+                    setStatus(mediaId: mediaId, status: .dropped)
+                } label: {
+                    Label("Drop", systemImage: "text.badge.xmark")
+                }
+                Button {
+                    setStatus(mediaId: mediaId, status: .paused)
+                } label: {
+                    Label("Pause", systemImage: "pause.fill")
+                }
+            }
+            if mediaListStatus == .completed {
+                Button {
+                    setStatus(mediaId: mediaId, status: .repeating)
+                } label: {
+                    Label("Repeat", systemImage: "repeat")
+                }
+            }
+            if mediaListStatus == .paused || mediaListStatus == .dropped || mediaListStatus == .planning {
+                Button {
+                    setStatus(mediaId: mediaId, status: .current)
+                } label: {
+                    Label("Watching", systemImage: "play")
+                }
             }
         }
     }
     
-    func addToPlanning(mediaId: Int) {
+    func setStatus(mediaId: Int, status: MediaListStatus) {
         let repo = MediaRepository()
-        repo.updateList(mediaId: mediaId, status: MediaListStatus.planning)
+        repo.updateList(mediaId: mediaId, status: status)
     }
 
-    func mediaContextMenu(mediaId: Int, mediaType: MediaType?) -> some View {
+    func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus? = nil) -> some View {
         Group {
             if #available(iOS 16.0, *) {
                 self
                     .contextMenu {
                         if mediaType != nil {
-                            contextActions(mediaId: mediaId)
+                            contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
                             ShareLink(item: "\(mediaType!.mediaUrl)\(mediaId)") {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
@@ -46,7 +79,7 @@ extension View {
                 self
                     .contextMenu {
                         if mediaType != nil {
-                            contextActions(mediaId: mediaId)
+                            contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
                             Button {
                                 shareSheet(url: "\(mediaType!.mediaUrl)\(mediaId)")
                             } label: {
