@@ -579,11 +579,11 @@
 		481AD4DC2851CE73001779EE /* AniHyou */ = {
 			isa = PBXGroup;
 			children = (
-				84734AE42A7DF601000BD9E6 /* Repositories */,
 				48EFCDFF29FFED440096BF6E /* AniHyou.entitlements */,
 				48F27926296F0CDC000827F7 /* WatchConnectivity */,
 				488C2681285386600005EE15 /* Info.plist */,
 				48AB01F2286B6A2F004DC7FF /* Model */,
+				84734AE42A7DF601000BD9E6 /* Repositories */,
 				488C268D28539EFE0005EE15 /* Network */,
 				481AD5032852211C001779EE /* Queries */,
 				481AD4F32851D87E001779EE /* Views */,
