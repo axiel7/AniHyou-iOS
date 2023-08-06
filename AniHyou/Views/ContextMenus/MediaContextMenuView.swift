@@ -11,46 +11,25 @@ import AniListAPI
 extension View {
 
     func contextActions(mediaId: Int, mediaListStatus: MediaListStatus?) -> some View {
-        Group {
-            if mediaListStatus == nil || mediaListStatus == .none {
-                Button {
-                    // call a model or service to run
-                    setStatus(mediaId: mediaId, status: .planning)
-                } label: {
-                    Label("Add to Planning", systemImage: "text.badge.plus")
-                }
+        ForEach(statusesCanChangeTo(mediaListStatus), id: \.rawValue) { status in
+            Button {
+                setStatus(mediaId: mediaId, status: status)
+            } label: {
+                Label("Set as \(status.localizedName)", systemImage: status.systemImage)
             }
-            if mediaListStatus == .current || mediaListStatus == .repeating {
-                Button {
-                    setStatus(mediaId: mediaId, status: .completed)
-                } label: {
-                    Label("Complete", systemImage: "text.badge.checkmark")
-                }
-                Button {
-                    setStatus(mediaId: mediaId, status: .dropped)
-                } label: {
-                    Label("Drop", systemImage: "text.badge.xmark")
-                }
-                Button {
-                    setStatus(mediaId: mediaId, status: .paused)
-                } label: {
-                    Label("Pause", systemImage: "pause.fill")
-                }
-            }
-            if mediaListStatus == .completed {
-                Button {
-                    setStatus(mediaId: mediaId, status: .repeating)
-                } label: {
-                    Label("Repeat", systemImage: "repeat")
-                }
-            }
-            if mediaListStatus == .paused || mediaListStatus == .dropped || mediaListStatus == .planning {
-                Button {
-                    setStatus(mediaId: mediaId, status: .current)
-                } label: {
-                    Label("Watching", systemImage: "play")
-                }
-            }
+        }
+    }
+    
+    func statusesCanChangeTo(_ status: MediaListStatus?) -> [MediaListStatus] {
+        switch status {
+        case nil:
+            return [.planning]
+        case .current, .repeating:
+            return [.completed, .dropped, .paused]
+        case .completed:
+            return [.repeating]
+        case .paused, .dropped, .planning:
+            return [.current]
         }
     }
     
