@@ -22,6 +22,27 @@ class MediaListViewModel: ObservableObject {
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
+    @Published var searchText = ""
+    @Published var isLoading = false
+    
+    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
+        if searchText.isEmpty {
+            return mediaList
+        } else {
+            let filtered = mediaList.filter {
+                let title = $0?.media?.title?.userPreferred
+                if title == nil || title?.isEmpty == true {
+                    return false
+                }
+                return title!.lowercased().contains(searchText.lowercased())
+            }
+            if hasNextPage && filtered.count < 25 {
+                getUserMediaList(otherUserId: userId)
+            }
+
+            return Array(Set(filtered))
+        }
+    }
 
     func getUserMediaList(otherUserId: Int?) {
         if otherUserId != nil { userId = otherUserId! }
@@ -56,35 +77,12 @@ class MediaListViewModel: ObservableObject {
         forceReload = false
     }
 
-    @Published var searchText = ""
-
-    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
-        if searchText.isEmpty {
-            return mediaList
-        } else {
-            let filtered = mediaList.filter {
-                let title = $0?.media?.title?.userPreferred
-                if title == nil || title?.isEmpty == true {
-                    return false
-                }
-                return title!.lowercased().contains(searchText.lowercased())
-            }
-            if hasNextPage && filtered.count < 25 {
-                getUserMediaList(otherUserId: userId)
-            }
-
-            return Array(Set(filtered))
-        }
-    }
-
     func refreshList() {
         currentPage = 1
         hasNextPage = true
         mediaList = []
         forceReload = true
     }
-
-    @Published var isLoading = false
 
     func updateEntryProgress(entryId: Int, progress: Int, status: MediaListStatus?) {
         isLoading = true
