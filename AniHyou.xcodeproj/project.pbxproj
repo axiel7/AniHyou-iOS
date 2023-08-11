@@ -94,7 +94,7 @@
 		488C267E285380D90005EE15 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267D285380D90005EE15 /* ProfileView.swift */; };
 		488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26822853881F0005EE15 /* LoginViewModel.swift */; };
 		488C268828539CC30005EE15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 488C268728539CC30005EE15 /* KeychainSwift */; };
-		488C268A28539D5C0005EE15 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* Utils.swift */; };
+		488C268A28539D5C0005EE15 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */; };
 		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
@@ -190,7 +190,7 @@
 		48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F27927296F0CFC000827F7 /* WatchConnectivityManager.swift */; };
 		48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2792A29700DFA000827F7 /* MainViewModel.swift */; };
 		48F2792C29700F33000827F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267A2853801A0005EE15 /* Constants.swift */; };
-		48F2792D29701C9B000827F7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* Utils.swift */; };
+		48F2792D29701C9B000827F7 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */; };
 		48F2793129702894000827F7 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2793029702894000827F7 /* MediaListView.swift */; };
 		48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
 		48F279332970299D000827F7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F92851DA02001779EE /* Network.swift */; };
@@ -361,7 +361,7 @@
 		488C26802853837B0005EE15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		488C2681285386600005EE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		488C26822853881F0005EE15 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		488C268928539D5C0005EE15 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
@@ -760,7 +760,7 @@
 		4832B02A285F35CE00E79D27 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				488C268928539D5C0005EE15 /* Utils.swift */,
+				488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */,
 				481AD501285207B1001779EE /* DateUtils.swift */,
 				488C267828537B5F0005EE15 /* StringUtils.swift */,
 				4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */,
@@ -1693,7 +1693,7 @@
 				488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */,
 				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
 				48AAEEA22A29E08800FC0887 /* StaffInfoType.swift in Sources */,
-				488C268A28539D5C0005EE15 /* Utils.swift in Sources */,
+				488C268A28539D5C0005EE15 /* UserDefaultsUtils.swift in Sources */,
 				480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */,
 				4832B034285F953100E79D27 /* MediaStatView.swift in Sources */,
 				48E58E382A85B5E000EF0CA2 /* MediaStatus.swift in Sources */,
@@ -1787,7 +1787,7 @@
 				48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */,
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,
-				48F2792D29701C9B000827F7 /* Utils.swift in Sources */,
+				48F2792D29701C9B000827F7 /* UserDefaultsUtils.swift in Sources */,
 				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,
