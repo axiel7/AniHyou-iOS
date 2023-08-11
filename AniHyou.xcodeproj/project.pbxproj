@@ -500,6 +500,7 @@
 		480300CD291BC50B00E3047B /* StaffDetails */ = {
 			isa = PBXGroup;
 			children = (
+				48AAEEA12A29E08800FC0887 /* StaffInfoType.swift */,
 				480300CE291BC53800E3047B /* Views */,
 				480300CF291BC54300E3047B /* ViewModels */,
 			);
@@ -854,6 +855,7 @@
 		488B7ABB291A6C3A00156D80 /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
+				48AAEEA52A29FCB800FC0887 /* CharacterInfoType.swift */,
 				488B7ABC291A6C5C00156D80 /* Views */,
 				488B7ABD291A6C6300156D80 /* ViewModels */,
 			);
@@ -879,6 +881,8 @@
 		488C267C285380CB0005EE15 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */,
+				48DBAF8229B07AB000A75167 /* UserStatType.swift */,
 				48F763F328ACE4B500C82D75 /* Views */,
 				48F763F428ACE4BA00C82D75 /* ViewModels */,
 			);
@@ -898,11 +902,6 @@
 		48AB01F2286B6A2F004DC7FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				48AB01F3286B6A4B004DC7FF /* SearchType.swift */,
-				48CA07A8287035530048854E /* MediaInfoType.swift */,
-				4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */,
-				48AAEEA52A29FCB800FC0887 /* CharacterInfoType.swift */,
-				48AAEEA12A29E08800FC0887 /* StaffInfoType.swift */,
 				48AAEEA32A29E5AE00FC0887 /* StaffMediaGrouped.swift */,
 				48FBC66128CE3E88009AAF4A /* UpdatedMediaEntry.swift */,
 				480F8824294262F3004773CC /* AnimeSeason.swift */,
@@ -910,7 +909,6 @@
 				488763D72977F8FF00402934 /* Stat.swift */,
 				48DD40482994EA9200FED7BF /* GenericNotification.swift */,
 				48575D862A3EACEE00F8AD22 /* NotificationTypeGrouped.swift */,
-				48DBAF8229B07AB000A75167 /* UserStatType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1161,6 +1159,7 @@
 		48F763F728ACE52600C82D75 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				48CA07A8287035530048854E /* MediaInfoType.swift */,
 				48F763F928ACE53100C82D75 /* Views */,
 				48F763F828ACE52C00C82D75 /* ViewModels */,
 			);
@@ -1360,6 +1359,7 @@
 		48FC94772868528900C87F56 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				48AB01F3286B6A4B004DC7FF /* SearchType.swift */,
 				48F7640328ACE64500C82D75 /* Views */,
 				48F7640228ACE63F00C82D75 /* ViewModels */,
 			);

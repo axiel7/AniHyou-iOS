@@ -7,7 +7,7 @@
 
 import Foundation
 
-//Workaround: SwiftUI List item selection only works on Identifiable objects
+// Workaround: SwiftUI List item selection only works on Identifiable objects
 struct Genre: Identifiable {
     let id: String
 }
