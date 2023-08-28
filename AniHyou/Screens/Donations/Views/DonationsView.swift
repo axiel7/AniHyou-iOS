@@ -50,6 +50,12 @@ struct DonationsView: View {
 
                 Text("With any purchase you will gain access to exclusive app icons and custom accent colors!")
                 Text("Thank you :)")
+                
+                Button("Restore purchases") {
+                    Task {
+                       try? await AppStore.sync()
+                    }
+                }
             }//:VStack
             .padding()
             .navigationTitle("Donation")
