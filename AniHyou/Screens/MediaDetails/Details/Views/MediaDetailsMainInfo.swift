@@ -26,9 +26,6 @@ struct MediaDetailsMainInfo: View {
         HStack(alignment: .top) {
 
             MediaCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.large, width: coverWidth, height: coverHeight)
-                .sheet(isPresented: $showingCoverSheet) {
-                    FullCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.extraLarge)
-                }
                 .onTapGesture {
                     showingCoverSheet = true
                 }
@@ -70,19 +67,6 @@ struct MediaDetailsMainInfo: View {
                         }
                     }//:Button
                     .buttonStyle(.borderedProminent)
-                    .sheet(isPresented: $showingEditSheet) {
-                        MediaListEditView(
-                            mediaId: mediaId,
-                            mediaType: viewModel.mediaDetails!.type!.value!,
-                            mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
-                            onSave: { updatedEntry in
-                                viewModel.onEntryUpdated(updatedEntry: updatedEntry)
-                            },
-                            onDelete: {
-                                viewModel.onEntryDeleted()
-                            }
-                        )
-                    }
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
                     }
@@ -108,6 +92,22 @@ struct MediaDetailsMainInfo: View {
         }//:HStack
         .padding(.top)
         .padding(.leading)
+        .sheet(isPresented: $showingCoverSheet) {
+            FullCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.extraLarge)
+        }
+        .sheet(isPresented: $showingEditSheet) {
+            MediaListEditView(
+                mediaId: mediaId,
+                mediaType: viewModel.mediaDetails!.type!.value!,
+                mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
+                onSave: { updatedEntry in
+                    viewModel.onEntryUpdated(updatedEntry: updatedEntry)
+                },
+                onDelete: {
+                    viewModel.onEntryDeleted()
+                }
+            )
+        }
     }
 }
 
