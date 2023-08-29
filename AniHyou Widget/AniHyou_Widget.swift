@@ -118,8 +118,11 @@ struct AniHyou_WidgetEntryView: View {
         }
     }
     var paddingLenght: CGFloat? {
-        if aligment == .top { return nil }
-        else { return 0 }
+        if aligment == .top {
+            return nil
+        } else {
+            return 0
+        }
     }
 
     var body: some View {
@@ -147,11 +150,9 @@ struct AniHyou_WidgetEntryView: View {
     var content: some View {
         if entry.placeholderText != nil {
             Text(entry.placeholderText!)
-        }
-        else if entry.animeList.isEmpty {
+        } else if entry.animeList.isEmpty {
             Text("No airing anime")
-        }
-        else {
+        } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
                 if item != nil {
                     if let nextAiringEpisode = item!.media?.nextAiringEpisode {
