@@ -9,6 +9,9 @@ query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort
         large
       }
       meanScore
+      mediaListEntry {
+        status
+      }
     }
     pageInfo {
       currentPage

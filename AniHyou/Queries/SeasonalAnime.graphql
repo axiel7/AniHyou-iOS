@@ -9,6 +9,9 @@ query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear
         large
       }
       meanScore
+      mediaListEntry {
+        status
+      }
     }
     pageInfo {
       hasNextPage

@@ -7,7 +7,7 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $seasonYear: Int, $onList: Boolean) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in tag_in: $tag_in format_in: $format_in status_in: $status_in seasonYear: $seasonYear onList: $onList ) { __typename id title { __typename userPreferred } type meanScore format coverImage { __typename large } startDate { __typename year } } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $seasonYear: Int, $onList: Boolean) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in tag_in: $tag_in format_in: $format_in status_in: $status_in seasonYear: $seasonYear onList: $onList ) { __typename id title { __typename userPreferred } type meanScore format coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename year } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -120,6 +120,7 @@ public class SearchMediaQuery: GraphQLQuery {
           .field("meanScore", Int?.self),
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
           .field("coverImage", CoverImage?.self),
+          .field("mediaListEntry", MediaListEntry?.self),
           .field("startDate", StartDate?.self),
         ] }
 
@@ -135,6 +136,8 @@ public class SearchMediaQuery: GraphQLQuery {
         public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
         /// The cover images of the media
         public var coverImage: CoverImage? { __data["coverImage"] }
+        /// The authenticated user's media list entry for the media
+        public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
         /// The first official release date of the media
         public var startDate: StartDate? { __data["startDate"] }
 
@@ -170,6 +173,23 @@ public class SearchMediaQuery: GraphQLQuery {
 
           /// The cover image url of the media at a large size
           public var large: String? { __data["large"] }
+        }
+
+        /// Page.Medium.MediaListEntry
+        ///
+        /// Parent Type: `MediaList`
+        public struct MediaListEntry: AniListAPI.SelectionSet {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
+            .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+          ] }
+
+          /// The watching/reading status
+          public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
         }
 
         /// Page.Medium.StartDate

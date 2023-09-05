@@ -23,7 +23,11 @@ struct UserFavoritesView: View {
                 if let media = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
                         VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
-                            .mediaContextMenu(mediaId: media.id, mediaType: .anime)
+                            .mediaContextMenu(
+                                mediaId: media.id,
+                                mediaType: .anime,
+                                mediaListStatus: media.mediaListEntry?.status?.value
+                            )
                     }
                 }
             }
@@ -49,7 +53,11 @@ struct UserFavoritesView: View {
                             title: media.title?.userPreferred ?? "",
                             imageUrl: media.coverImage?.large
                         )
-                        .mediaContextMenu(mediaId: media.id, mediaType: .manga)
+                        .mediaContextMenu(
+                            mediaId: media.id,
+                            mediaType: .manga,
+                            mediaListStatus: media.mediaListEntry?.status?.value
+                        )
                     }
                 }
             }

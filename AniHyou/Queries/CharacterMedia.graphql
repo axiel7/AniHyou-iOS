@@ -12,6 +12,9 @@ query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) {
                     coverImage {
                         large
                     }
+                    mediaListEntry {
+                        status
+                    }
                 }
                 characterName
                 characterRole

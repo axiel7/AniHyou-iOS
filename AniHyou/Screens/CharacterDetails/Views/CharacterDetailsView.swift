@@ -116,7 +116,11 @@ struct CharacterDetailsView: View {
                             subtitle: item.characterRole?.value?.localizedName,
                             imageUrl: item.node?.coverImage?.large
                         )
-                        .mediaContextMenu(mediaId: item.node!.id, mediaType: item.node!.type?.value)
+                        .mediaContextMenu(
+                            mediaId: item.node!.id,
+                            mediaType: item.node!.type?.value,
+                            mediaListStatus: item.node?.mediaListEntry?.status?.value
+                        )
                     }
                 }
             }

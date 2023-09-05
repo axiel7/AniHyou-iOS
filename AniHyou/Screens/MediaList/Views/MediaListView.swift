@@ -149,7 +149,7 @@ struct MediaListView: View {
                 .tint(.blue)
             }
         }
-        .mediaContextMenu(mediaId: item.mediaId, mediaType: type)
+        .mediaContextMenu(mediaId: item.mediaId, mediaType: type, mediaListStatus: item.status?.value)
     }
     // swiftlint:enable cyclomatic_complexity function_body_length
 

@@ -7,7 +7,7 @@ public class SeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "SeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore } pageInfo { __typename hasNextPage } } }"#
+      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } pageInfo { __typename hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -88,6 +88,7 @@ public class SeasonalAnimeQuery: GraphQLQuery {
           .field("title", Title?.self),
           .field("coverImage", CoverImage?.self),
           .field("meanScore", Int?.self),
+          .field("mediaListEntry", MediaListEntry?.self),
         ] }
 
         /// The id of the media
@@ -98,6 +99,8 @@ public class SeasonalAnimeQuery: GraphQLQuery {
         public var coverImage: CoverImage? { __data["coverImage"] }
         /// Mean score of all the user's scores of the media
         public var meanScore: Int? { __data["meanScore"] }
+        /// The authenticated user's media list entry for the media
+        public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
         /// Page.Medium.Title
         ///
@@ -131,6 +134,23 @@ public class SeasonalAnimeQuery: GraphQLQuery {
 
           /// The cover image url of the media at a large size
           public var large: String? { __data["large"] }
+        }
+
+        /// Page.Medium.MediaListEntry
+        ///
+        /// Parent Type: `MediaList`
+        public struct MediaListEntry: AniListAPI.SelectionSet {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
+            .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+          ] }
+
+          /// The watching/reading status
+          public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
         }
       }
 

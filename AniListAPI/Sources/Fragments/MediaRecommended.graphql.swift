@@ -5,7 +5,7 @@
 
 public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment MediaRecommended on Recommendation { __typename mediaRecommendation { __typename id title { __typename userPreferred } type format coverImage { __typename large } } }"
+    #"fragment MediaRecommended on Recommendation { __typename mediaRecommendation { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } } }"#
   }
 
   public let __data: DataDict
@@ -35,6 +35,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
       .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
       .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
       .field("coverImage", CoverImage?.self),
+      .field("mediaListEntry", MediaListEntry?.self),
     ] }
 
     /// The id of the media
@@ -47,6 +48,8 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
     public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
     /// The cover images of the media
     public var coverImage: CoverImage? { __data["coverImage"] }
+    /// The authenticated user's media list entry for the media
+    public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
     /// MediaRecommendation.Title
     ///
@@ -80,6 +83,23 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
 
       /// The cover image url of the media at a large size
       public var large: String? { __data["large"] }
+    }
+
+    /// MediaRecommendation.MediaListEntry
+    ///
+    /// Parent Type: `MediaList`
+    public struct MediaListEntry: AniListAPI.SelectionSet {
+      public let __data: DataDict
+      public init(_dataDict: DataDict) { __data = _dataDict }
+
+      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+      public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
+        .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+      ] }
+
+      /// The watching/reading status
+      public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
     }
   }
 }

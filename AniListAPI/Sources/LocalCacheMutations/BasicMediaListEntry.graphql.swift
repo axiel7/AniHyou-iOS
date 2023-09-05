@@ -5,7 +5,7 @@
 
 public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment BasicMediaListEntry on MediaList { __typename id mediaId status score progress progressVolumes repeat private startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"
+    #"fragment BasicMediaListEntry on MediaList { __typename id mediaId status score progress progressVolumes repeat private startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
   }
 
   public var __data: DataDict

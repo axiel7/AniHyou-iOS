@@ -16,6 +16,9 @@ query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, 
             coverImage {
                 large
             }
+            mediaListEntry {
+                status
+            }
             startDate {
                 year
             }

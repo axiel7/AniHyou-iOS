@@ -5,7 +5,7 @@
 
 public struct IsFavouriteStudio: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment IsFavouriteStudio on Studio { __typename id isFavourite }"
+    #"fragment IsFavouriteStudio on Studio { __typename id isFavourite }"#
   }
 
   public var __data: DataDict

@@ -43,7 +43,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                         .frame(width: 280, alignment: .leading)
                                         .mediaContextMenu(
                                             mediaId: relation.node!.id,
-                                            mediaType: relation.node?.type?.value
+                                            mediaType: relation.node?.type?.value,
+                                            mediaListStatus: relation.node?.mediaListEntry?.status?.value
                                         )
                                     }
                                 }
@@ -82,7 +83,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                         .padding(.trailing, 2)
                                         .mediaContextMenu(
                                             mediaId: recommendation.id,
-                                            mediaType: recommendation.type?.value
+                                            mediaType: recommendation.type?.value,
+                                            mediaListStatus: recommendation.mediaListEntry?.status?.value
                                         )
                                     }
                                 }
