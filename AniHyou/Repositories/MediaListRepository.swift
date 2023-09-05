@@ -24,12 +24,35 @@ class MediaListRepository {
             notes: nil
         )) { result in
             switch result {
-            case .success:
-                print("success")
-            case .failure(let err):
-                print(err)
+            case .success(let graphQLResult):
+                if let entryId = graphQLResult.data?.saveMediaListEntry?.id {
+                    onStatusUpdated(mediaId: mediaId, entryId: entryId, status: status)
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }
     
+    static func onStatusUpdated(mediaId: Int, entryId: Int, status: MediaListStatus) {
+        // Update the local cache
+        Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+            do {
+                try transaction.updateObject(
+                    ofType: BasicMediaListEntry.self,
+                    withKey: "MediaList:\(entryId).\(mediaId)"
+                ) { (cachedData: inout BasicMediaListEntry) in
+                    cachedData.status = .case(status)
+                }
+
+                // TODO: refresh the source by sending the new object or using ApolloClient.watch ?
+                /*let newObject = try transaction.readObject(
+                    ofType: UserMediaListQuery.Data.Page.MediaList.self,
+                    withKey: "MediaList:\(entryId).\(mediaId)"
+                )*/
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
