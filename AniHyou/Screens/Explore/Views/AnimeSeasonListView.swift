@@ -29,7 +29,11 @@ struct AnimeSeasonListView: View {
                                 imageUrl: media.coverImage?.large,
                                 meanScore: media.meanScore
                             )
-                            .mediaContextMenu(mediaId: media.id, mediaType: .anime)
+                            .mediaContextMenu(
+                                mediaId: media.id,
+                                mediaType: .anime,
+                                mediaListStatus: media.mediaListEntry?.status?.value
+                            )
                         }
                     }
                 }

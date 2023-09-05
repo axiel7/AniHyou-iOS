@@ -68,7 +68,11 @@ struct WeekAnimeListView: View {
                 if let media = $0?.media, let mediaId = $0?.mediaId {
                     NavigationLink(destination: MediaDetailsView(mediaId: mediaId)) {
                         VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
-                            .mediaContextMenu(mediaId: mediaId, mediaType: .anime)
+                            .mediaContextMenu(
+                                mediaId: mediaId,
+                                mediaType: .anime,
+                                mediaListStatus: media.mediaListEntry?.status?.value
+                            )
                     }
                 }
             }

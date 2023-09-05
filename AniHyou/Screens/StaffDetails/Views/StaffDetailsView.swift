@@ -113,7 +113,11 @@ struct StaffDetailsView: View {
                             subtitle: item.staffRoles.joined(separator: ", "),
                             imageUrl: media.coverImage?.large
                         )
-                        .mediaContextMenu(mediaId: media.id, mediaType: media.type?.value)
+                        .mediaContextMenu(
+                            mediaId: media.id,
+                            mediaType: media.type?.value,
+                            mediaListStatus: media.mediaListEntry?.status?.value
+                        )
                     }
                 }
             }

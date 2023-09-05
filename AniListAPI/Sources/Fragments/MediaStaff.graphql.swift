@@ -5,7 +5,7 @@
 
 public struct MediaStaff: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment MediaStaff on StaffEdge { __typename role node { __typename id name { __typename userPreferred } image { __typename medium } } }"
+    #"fragment MediaStaff on StaffEdge { __typename role node { __typename id name { __typename userPreferred } image { __typename medium } } }"#
   }
 
   public let __data: DataDict

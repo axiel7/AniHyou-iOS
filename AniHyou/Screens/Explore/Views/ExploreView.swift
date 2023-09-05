@@ -94,7 +94,11 @@ struct ExploreView: View {
                                 ),
                                 imageUrl: item!.coverImage?.large
                             )
-                            .mediaContextMenu(mediaId: item!.id, mediaType: item!.type?.value)
+                            .mediaContextMenu(
+                                mediaId: item!.id,
+                                mediaType: item!.type?.value,
+                                mediaListStatus: item!.mediaListEntry?.status?.value
+                            )
                         }
                     }
                 }

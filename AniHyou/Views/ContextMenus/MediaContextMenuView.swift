@@ -33,7 +33,7 @@ extension View {
         }
     }
 
-    func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus? = nil) -> some View {
+    func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus?) -> some View {
         Group {
             if #available(iOS 16.0, *) {
                 self

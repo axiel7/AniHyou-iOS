@@ -25,6 +25,9 @@ fragment MediaRelated on MediaEdge {
     coverImage {
       large
     }
+    mediaListEntry {
+      status
+    }
   }
 }
 
@@ -38,6 +41,9 @@ fragment MediaRecommended on Recommendation {
     format
     coverImage {
       large
+    }
+    mediaListEntry {
+      status
     }
   }
 }

@@ -52,7 +52,11 @@ struct TrendingListView: View {
                                 imageUrl: media.coverImage?.large,
                                 meanScore: media.meanScore
                             )
-                            .mediaContextMenu(mediaId: media.id, mediaType: mediaType)
+                            .mediaContextMenu(
+                                mediaId: media.id,
+                                mediaType: mediaType,
+                                mediaListStatus: media.mediaListEntry?.status?.value
+                            )
                         }
                     }
                 }
