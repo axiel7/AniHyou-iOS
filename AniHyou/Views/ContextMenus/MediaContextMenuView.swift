@@ -13,7 +13,7 @@ extension View {
     func contextActions(mediaId: Int, mediaListStatus: MediaListStatus?) -> some View {
         ForEach(statusesCanChangeTo(mediaListStatus), id: \.rawValue) { status in
             Button {
-                setStatus(mediaId: mediaId, status: status)
+                MediaListRepository.updateListStatus(mediaId: mediaId, status: status)
             } label: {
                 Label("Set as \(status.localizedName)", systemImage: status.systemImage)
             }
@@ -31,10 +31,6 @@ extension View {
         case .paused, .dropped, .planning:
             return [.current]
         }
-    }
-    
-    func setStatus(mediaId: Int, status: MediaListStatus) {
-        MediaRepository.updateListStatus(mediaId: mediaId, status: status)
     }
 
     func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus? = nil) -> some View {
