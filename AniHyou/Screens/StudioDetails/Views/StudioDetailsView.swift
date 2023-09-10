@@ -19,28 +19,33 @@ struct StudioDetailsView: View {
         if let studio = viewModel.studio {
             ScrollView(.vertical) {
                 VStack {
-                    LazyVGrid(columns: gridColumns) {
-                        ForEach(viewModel.studioMedia, id: \.?.id) { item in
-                            NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
-                                VListItemView(
-                                    title: item?.title?.userPreferred ?? "",
-                                    imageUrl: item?.coverImage?.large
-                                )
-                                .mediaContextMenu(
-                                    mediaId: item!.id,
-                                    mediaType: item?.type?.value,
-                                    mediaListStatus: item?.mediaListEntry?.status?.value
-                                )
-                            }
-                        }
-
-                        if viewModel.hasNextPage {
-                            ProgressView()
-                                .onAppear {
-                                    viewModel.getStudioDetails(studioId: studioId)
+                    if viewModel.studioMedia.isEmpty {
+                        Text("No media")
+                            .padding()
+                    } else {
+                        LazyVGrid(columns: gridColumns) {
+                            ForEach(viewModel.studioMedia, id: \.?.id) { item in
+                                NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
+                                    VListItemView(
+                                        title: item?.title?.userPreferred ?? "",
+                                        imageUrl: item?.coverImage?.large
+                                    )
+                                    .mediaContextMenu(
+                                        mediaId: item!.id,
+                                        mediaType: item?.type?.value,
+                                        mediaListStatus: item?.mediaListEntry?.status?.value
+                                    )
                                 }
-                        }
-                    }//:VGrid
+                            }
+                            
+                            if viewModel.hasNextPage {
+                                ProgressView()
+                                    .onAppear {
+                                        viewModel.getStudioDetails(studioId: studioId)
+                                    }
+                            }
+                        }//:VGrid
+                    }
                 }//:VStack
             }//:VScrollView
             .navigationTitle(studio.name)
