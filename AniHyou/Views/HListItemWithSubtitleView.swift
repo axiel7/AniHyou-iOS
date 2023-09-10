@@ -39,12 +39,12 @@ struct HListItemWithSubtitleView: View {
                     .foregroundColor(.gray)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                if meanScore != nil {
+                if let meanScore {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
                             .font(.footnote)
                             .foregroundColor(.gray)
-                        Text("\(meanScore!)%")
+                        Text("\(meanScore)%")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }

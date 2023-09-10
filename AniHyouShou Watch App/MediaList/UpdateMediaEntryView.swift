@@ -15,19 +15,19 @@ struct UpdateMediaEntryView: View {
 
     var body: some View {
         Group {
-            if entry != nil {
+            if let entry {
                 VStack(alignment: .leading) {
-                    Text(entry!.media?.title?.userPreferred ?? "")
+                    Text(entry.media?.title?.userPreferred ?? "")
                         .font(.title3)
                     Spacer()
 
-                    Text("\(entry!.progress ?? 0)/\(entry!.totalProgress ?? 0)")
+                    Text("\(entry.progress ?? 0)/\(entry.totalProgress ?? 0)")
 
                     Button(
                         action: {
                             viewModel.updateEntryProgress(
-                                entryId: entry!.id,
-                                progress: (entry!.progress ?? 0) + 1,
+                                entryId: entry.id,
+                                progress: (entry.progress ?? 0) + 1,
                                 status: nil
                             )
                         },
@@ -40,7 +40,7 @@ struct UpdateMediaEntryView: View {
                             }
                         }
                     )
-                    .tint(Color(hex: entry!.media?.coverImage?.color))
+                    .tint(Color(hex: entry.media?.coverImage?.color))
                 }
             } else {
                 Text("Error no entry")

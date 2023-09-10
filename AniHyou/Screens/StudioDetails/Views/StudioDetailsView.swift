@@ -16,19 +16,19 @@ struct StudioDetailsView: View {
     ]
 
     var body: some View {
-        if viewModel.studio != nil {
+        if let studio = viewModel.studio {
             ScrollView(.vertical) {
                 VStack {
                     HStack {
-                        Text(viewModel.studio!.name)
+                        Text(studio.name)
                             .font(.title)
                         Spacer()
-                        Button(action: { viewModel.toggleFavorite() }, label: {
+                        Button(action: { viewModel.toggleFavorite() }) {
                             Label(
-                                (viewModel.studio!.favourites ?? 0).formatted(),
-                                systemImage: viewModel.studio!.isFavourite ? "heart.fill" : "heart"
+                                (studio.favourites ?? 0).formatted(),
+                                systemImage: studio.isFavourite ? "heart.fill" : "heart"
                             )
-                        })
+                        }
                     }
                     .padding(.horizontal)
 

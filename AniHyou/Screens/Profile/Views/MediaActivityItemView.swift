@@ -39,11 +39,11 @@ struct MediaActivityItemView: View {
     }
 
     private var activityText: String {
-        if activity?.progress != nil {
+        if let progress = activity?.progress {
             return String(swiftLintMultiline:
                 activity?.status?.firstCapitalized ?? "",
                 " ",
-                activity?.progress! ?? "",
+                progress,
                 " of ",
                 activity?.media?.title?.userPreferred ?? ""
             )

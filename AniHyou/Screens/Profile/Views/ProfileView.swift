@@ -59,8 +59,8 @@ struct ProfileView: View {
 
                 ScrollView(.vertical) {
                     VStack {
-                        if viewModel.userInfo != nil {
-                            ExpandableRichText(viewModel.userInfo?.about)
+                        if let about = viewModel.userInfo?.about {
+                            ExpandableRichText(about)
                         } else {
                             HorizontalProgressView()
                         }
@@ -68,17 +68,17 @@ struct ProfileView: View {
                 }
                 .padding(16)
 
-                if viewModel.userInfo != nil {
+                if let userInfo = viewModel.userInfo {
                     Section {
                         switch infoType {
                         case .activity:
-                            UserActivityView(userId: viewModel.userInfo!.id, isMyProfile: isMyProfile)
+                            UserActivityView(userId: userInfo.id, isMyProfile: isMyProfile)
                         case .stats:
-                            UserStatsHostView(userId: viewModel.userInfo!.id)
+                            UserStatsHostView(userId: userInfo.id)
                         case .favorites:
-                            UserFavoritesView(userId: viewModel.userInfo!.id)
+                            UserFavoritesView(userId: userInfo.id)
                         case .social:
-                            UserSocialView(userId: viewModel.userInfo!.id)
+                            UserSocialView(userId: userInfo.id)
                         }
                     } header: {
                         VStack(spacing: 0) {

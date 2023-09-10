@@ -36,10 +36,10 @@ struct AiringMediaHorizontalItemView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
 
-                if nextEpisode != nil && airingAt != nil {
+                if let nextEpisode, let airingAt {
                     Group {
-                        Text("Ep \(nextEpisode!) airing in ") +
-                        Text(Date(timeIntervalSince1970: Double(airingAt!)), style: .relative)
+                        Text("Ep \(nextEpisode) airing in ") +
+                        Text(Date(timeIntervalSince1970: Double(airingAt)), style: .relative)
                     }
                     .font(.subheadline)
                     .foregroundColor(.gray)
@@ -47,12 +47,12 @@ struct AiringMediaHorizontalItemView: View {
                     .multilineTextAlignment(.leading)
                 }
 
-                if meanScore != nil {
+                if let meanScore {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
                             .font(.footnote)
                             .foregroundColor(.gray)
-                        Text("\(meanScore!)%")
+                        Text("\(meanScore)%")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }

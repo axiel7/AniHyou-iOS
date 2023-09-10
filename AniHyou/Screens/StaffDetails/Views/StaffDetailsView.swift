@@ -39,10 +39,10 @@ struct StaffDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                if viewModel.staff != nil {
-                    Button(action: { viewModel.toggleFavorite() }, label: {
-                        Image(systemName: viewModel.staff!.isFavourite ? "heart.fill" : "heart")
-                    })
+                if let staff = viewModel.staff {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Image(systemName: staff.isFavourite ? "heart.fill" : "heart")
+                    }
                 }
             }
         }
@@ -50,40 +50,40 @@ struct StaffDetailsView: View {
 
     @ViewBuilder
     var staffOverview: some View {
-        if viewModel.staff != nil {
+        if let staff = viewModel.staff {
             VStack(alignment: .center) {
-                CircleImageView(imageUrl: viewModel.staff!.image?.large, size: 150)
+                CircleImageView(imageUrl: staff.image?.large, size: 150)
 
-                Text(viewModel.staff!.name?.userPreferred ?? "")
+                Text(staff.name?.userPreferred ?? "")
                     .font(.title3.weight(.bold))
                     .multilineTextAlignment(.center)
 
-                Text(viewModel.staff!.name?.native ?? "")
+                Text(staff.name?.native ?? "")
                     .font(.subheadline)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
 
                 HStack {
                     VStack(alignment: .leading) {
-                        HInfoView(name: "Favorites", value: (viewModel.staff!.favourites ?? 0).formatted())
+                        HInfoView(name: "Favorites", value: (staff.favourites ?? 0).formatted())
                         HInfoView(
                             name: "Birth",
-                            value: viewModel.staff!.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
+                            value: staff.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
                         )
-                        if viewModel.staff!.dateOfDeath?.year != nil {
+                        if staff.dateOfDeath?.year != nil {
                             HInfoView(
                                 name: "Death",
                                 value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDateFragment.formatted()
                             )
                         }
-                        HInfoView(name: "Age", value: viewModel.staff!.age?.stringValue)
-                        HInfoView(name: "Gender", value: viewModel.staff!.gender)
-                        HInfoView(name: "Blood Type", value: viewModel.staff?.bloodType)
+                        HInfoView(name: "Age", value: staff.age?.stringValue)
+                        HInfoView(name: "Gender", value: staff.gender)
+                        HInfoView(name: "Blood Type", value: staff.bloodType)
                         HInfoView(name: "Years active", value: viewModel.yearsActiveFormatted)
-                        HInfoView(name: "Hometown", value: viewModel.staff!.homeTown, isExpandable: true)
+                        HInfoView(name: "Hometown", value: staff.homeTown, isExpandable: true)
                         HInfoView(name: "Occupations", value: viewModel.occupationsFormatted)
 
-                        RichText(html: viewModel.staff!.description ?? "")
+                        RichText(html: staff.description ?? "")
                             .defaultStyle()
                             .padding()
                     }

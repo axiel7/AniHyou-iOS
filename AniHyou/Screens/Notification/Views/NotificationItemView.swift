@@ -31,12 +31,12 @@ struct NotificationItemView: View {
 
     @ViewBuilder
     var destination: some View {
-        if notification.contentId != nil {
+        if let contentId = notification.contentId {
             switch notification.type {
             case .airing, .relatedMediaAddition, .mediaDataChange, .mediaMerge:
-                MediaDetailsView(mediaId: notification.contentId!)
+                MediaDetailsView(mediaId: contentId)
             case .following:
-                ProfileView(userId: notification.contentId!)
+                ProfileView(userId: contentId)
             case .activityMessage, .activityMention, .activityReply, .activityReplySubscribed, .activityLike,
                     .activityReplyLike:
                 Text("Coming Soon")

@@ -38,9 +38,9 @@ extension View {
             if #available(iOS 16.0, *) {
                 self
                     .contextMenu {
-                        if mediaType != nil {
+                        if let mediaType {
                             contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
-                            ShareLink(item: "\(mediaType!.mediaUrl)\(mediaId)") {
+                            ShareLink(item: "\(mediaType.mediaUrl)\(mediaId)") {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
                             .padding(.trailing)
@@ -52,10 +52,10 @@ extension View {
             } else {
                 self
                     .contextMenu {
-                        if mediaType != nil {
+                        if let mediaType {
                             contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
                             Button {
-                                shareSheet(url: "\(mediaType!.mediaUrl)\(mediaId)")
+                                shareSheet(url: "\(mediaType.mediaUrl)\(mediaId)")
                             } label: {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }

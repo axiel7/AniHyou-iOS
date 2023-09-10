@@ -123,16 +123,16 @@ struct AniHyou_WidgetEntryView: View {
             Color("WidgetBackground")
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 0) {
-                if entry.placeholderText != nil {
-                    Text(entry.placeholderText!)
+                if let placeholder = entry.placeholderText {
+                    Text(placeholder)
                 } else if entry.animeList.isEmpty {
                     Text("No airing animes")
                 } else {
                     ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
-                        if item != nil {
-                            if let nextAiringEpisode = item!.media?.nextAiringEpisode {
-                                Link(destination: URL(string: "anihyou://media/\(item!.mediaId)")!) {
-                                    Text(item!.media?.title?.userPreferred ?? "")
+                        if let item {
+                            if let nextAiringEpisode = item.media?.nextAiringEpisode {
+                                Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
+                                    Text(item.media?.title?.userPreferred ?? "")
                                         .font(.system(size: 14))
                                         .lineLimit(1)
                                         .padding(.horizontal)

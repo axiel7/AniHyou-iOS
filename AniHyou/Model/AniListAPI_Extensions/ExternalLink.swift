@@ -9,8 +9,8 @@ import AniListAPI
 
 extension MediaDetailsQuery.Data.Media.ExternalLink {
     var displayName: String {
-        if language != nil {
-            return "\(site) (\(language!))"
+        if let language {
+            return "\(site) (\(language))"
         } else {
             return site
         }

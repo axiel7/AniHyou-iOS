@@ -38,13 +38,13 @@ class StudioDetailsViewModel: ObservableObject {
     }
 
     func toggleFavorite() {
-        guard studio != nil else { return }
+        guard let studio else { return }
         Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
             animeId: .none,
             mangaId: .none,
             characterId: .none,
             staffId: .none,
-            studioId: .some(studio!.id)
+            studioId: .some(studio.id)
         )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):

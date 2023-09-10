@@ -101,19 +101,20 @@ struct MediaGeneralInfoView: View {
     @ViewBuilder
     var multimediaContent: some View {
         // MARK: - Trailer
-        if let trailer = viewModel.mediaDetails?.trailer {
-            if viewModel.trailerLink != nil {
-                Text("Trailer")
-                    .font(.title3)
-                    .bold()
-                    .padding(.horizontal)
-
-                Link(destination: URL(string: viewModel.trailerLink!)!) {
-                    VideoThumbnailView(imageUrl: trailer.thumbnail)
-                }
+        if 
+            let trailer = viewModel.mediaDetails?.trailer,
+            let trailerLink = viewModel.trailerLink
+        {
+            Text("Trailer")
+                .font(.title3)
+                .bold()
                 .padding(.horizontal)
-                .padding(.bottom)
+
+            Link(destination: URL(string: trailerLink)!) {
+                VideoThumbnailView(imageUrl: trailer.thumbnail)
             }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
 
         // MARK: - Streaming episodes

@@ -26,12 +26,12 @@ class StaffDetailsViewModel: ObservableObject {
     }
 
     func toggleFavorite() {
-        guard staff != nil else { return }
+        guard let staff else { return }
         Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
             animeId: .none,
             mangaId: .none,
             characterId: .none,
-            staffId: .some(staff!.id),
+            staffId: .some(staff.id),
             studioId: .none
         )) { [weak self] result in
             switch result {
