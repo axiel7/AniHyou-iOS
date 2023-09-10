@@ -133,12 +133,13 @@ class MediaDetailsViewModel: ObservableObject {
         }
     }
 
+    var studios: [MediaDetailsQuery.Data.Media.Studios.Node]? {
+        mediaDetails?.studios?.nodes?.compactMap { $0 }.filter { $0.isAnimationStudio }
+    }
     /// Returns a string with the studios comma separated
     var studiosFormatted: String? {
-        guard let studios = mediaDetails?.studios?.nodes else { return nil }
+        guard let studios else { return nil }
         let strStudios = studios
-            .compactMap { $0 }
-            .filter { $0.isAnimationStudio }
             .compactMap { $0.name }
             .joined(separator: ", ")
         if strStudios.isEmpty {
@@ -146,13 +147,13 @@ class MediaDetailsViewModel: ObservableObject {
         } else { return strStudios }
     }
 
+    var producers: [MediaDetailsQuery.Data.Media.Studios.Node]? {
+        mediaDetails?.studios?.nodes?.compactMap { $0 }.filter { !$0.isAnimationStudio }
+    }
     /// Returns a string with the producers comma separated
     var producersFormatted: String? {
-        guard let mediaDetails else { return nil }
-        guard let studios = mediaDetails.studios?.nodes else { return nil }
-        let strProducers = studios
-            .compactMap { $0 }
-            .filter { !$0.isAnimationStudio }
+        guard let producers else { return nil }
+        let strProducers = producers
             .compactMap { $0.name }
             .joined(separator: ", ")
         if strProducers.isEmpty {

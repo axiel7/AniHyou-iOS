@@ -7,7 +7,7 @@ public class MediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "MediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename id title { __typename userPreferred romaji english native } synonyms format status description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear episodes duration chapters volumes coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename name isAnimationStudio } } favourites ...IsFavouriteMedia type nextAiringEpisode { __typename timeUntilAiring episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
+      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename id title { __typename userPreferred romaji english native } synonyms format status description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear episodes duration chapters volumes coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia type nextAiringEpisode { __typename timeUntilAiring episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
       fragments: [FuzzyDateFragment.self, IsFavouriteMedia.self, BasicMediaListEntry.self]
     ))
 
@@ -274,10 +274,13 @@ public class MediaDetailsQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Studio }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
+            .field("id", Int.self),
             .field("name", String.self),
             .field("isAnimationStudio", Bool.self),
           ] }
 
+          /// The id of the studio
+          public var id: Int { __data["id"] }
           /// The name of the studio
           public var name: String { __data["name"] }
           /// If the studio is an animation studio or a different kind of company
