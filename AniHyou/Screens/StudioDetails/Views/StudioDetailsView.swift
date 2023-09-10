@@ -19,19 +19,6 @@ struct StudioDetailsView: View {
         if let studio = viewModel.studio {
             ScrollView(.vertical) {
                 VStack {
-                    HStack {
-                        Text(studio.name)
-                            .font(.title)
-                        Spacer()
-                        Button(action: { viewModel.toggleFavorite() }) {
-                            Label(
-                                (studio.favourites ?? 0).formatted(),
-                                systemImage: studio.isFavourite ? "heart.fill" : "heart"
-                            )
-                        }
-                    }
-                    .padding(.horizontal)
-
                     LazyVGrid(columns: gridColumns) {
                         ForEach(viewModel.studioMedia, id: \.?.id) { item in
                             NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
@@ -56,6 +43,15 @@ struct StudioDetailsView: View {
                     }//:VGrid
                 }//:VStack
             }//:VScrollView
+            .navigationTitle(studio.name)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Text((studio.favourites ?? 0).formatted())
+                        Image(systemName: studio.isFavourite ? "heart.fill" : "heart")
+                    }
+                }
+            }
         } else {
             ProgressView()
                 .onAppear {
