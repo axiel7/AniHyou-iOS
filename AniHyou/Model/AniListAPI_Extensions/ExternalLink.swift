@@ -9,10 +9,21 @@ import AniListAPI
 
 extension MediaDetailsQuery.Data.Media.ExternalLink {
     var displayName: String {
-        if let language {
-            return "\(site) (\(language))"
+        if let languageShort {
+            return "\(site) (\(languageShort))"
         } else {
             return site
+        }
+    }
+    
+    var languageShort: String? {
+        switch language {
+        case "Japanese":
+            return "JP"
+        case "English":
+            return "EN"
+        default:
+            return language
         }
     }
 }
