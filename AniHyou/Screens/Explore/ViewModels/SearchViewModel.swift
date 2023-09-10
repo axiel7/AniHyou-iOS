@@ -227,19 +227,19 @@ class SearchViewModel: ObservableObject {
 
     @Published var filterGenreTagText = ""
     var filteredGenres: [Genre] {
-        guard genreCollection != nil else { return [] }
+        guard let genreCollection else { return [] }
         if filterGenreTagText.isEmpty {
-            return genreCollection!
+            return genreCollection
         } else {
-            return genreCollection!.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
+            return genreCollection.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
         }
     }
     var filteredTags: [Genre] {
-        guard tagCollection != nil else { return [] }
+        guard let tagCollection else { return [] }
         if filterGenreTagText.isEmpty {
-            return tagCollection!
+            return tagCollection
         } else {
-            return tagCollection!.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
+            return tagCollection.filter { $0.id.lowercased().contains(filterGenreTagText.lowercased()) }
         }
     }
 

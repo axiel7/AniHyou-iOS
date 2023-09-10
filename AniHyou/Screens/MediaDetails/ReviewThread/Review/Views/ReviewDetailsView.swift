@@ -15,25 +15,25 @@ struct ReviewDetailsView: View {
 
     var body: some View {
         ScrollView(.vertical) {
-            if viewModel.review != nil {
-                Text(viewModel.review!.summary!)
+            if let review = viewModel.review {
+                Text(review.summary!)
                     .font(.title2)
                     .bold()
                     .multilineTextAlignment(.center)
                     .padding()
-                RichText(html: viewModel.review!.body!)
+                RichText(html: review.body!)
                     .defaultStyle()
                     .customCSS(spoilerCss)
                     .padding()
                 HStack {
                     Spacer()
-                    MediaStatView(name: "Score", value: "\(viewModel.review!.score ?? 0)/100", showDivider: false)
+                    MediaStatView(name: "Score", value: "\(review.score ?? 0)/100", showDivider: false)
                     Spacer()
                     MediaStatView(
                         name: "Users likes",
                         value: String(swiftLintMultiline:
                             "\(viewModel.userAcceptance)% ",
-                            "(\(viewModel.review!.rating ?? 0)/\(viewModel.review!.ratingAmount ?? 0))"
+                            "(\(review.rating ?? 0)/\(review.ratingAmount ?? 0))"
                         ),
                         showDivider: false
                     )

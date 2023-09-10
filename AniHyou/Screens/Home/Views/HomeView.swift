@@ -82,7 +82,11 @@ struct HomeView: View {
                                     )
                                     .padding(.leading, 8)
                                     .frame(width: 280, alignment: .leading)
-                                    .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                    .mediaContextMenu(
+                                        mediaId: item.id,
+                                        mediaType: .anime,
+                                        mediaListStatus: item.mediaListEntry?.status?.value
+                                    )
                                 }
                             }
                         }
@@ -99,7 +103,11 @@ struct HomeView: View {
                                     )
                                     .padding(.leading, 8)
                                     .frame(width: 280, alignment: .leading)
-                                    .mediaContextMenu(mediaId: item.mediaId, mediaType: .anime)
+                                    .mediaContextMenu(
+                                        mediaId: item.mediaId,
+                                        mediaType: .anime,
+                                        mediaListStatus: item.media?.mediaListEntry?.status?.value
+                                    )
                                 }
                             }
                         }
@@ -145,7 +153,11 @@ struct HomeView: View {
                                     meanScore: item.meanScore
                                 )
                                 .padding(.trailing, 4)
-                                .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                .mediaContextMenu(
+                                    mediaId: item.id,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.mediaListEntry?.status?.value
+                                )
                             }
                         }
                     }
@@ -186,7 +198,11 @@ struct HomeView: View {
                                     meanScore: item.meanScore
                                 )
                                 .padding(.trailing, 4)
-                                .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                .mediaContextMenu(
+                                    mediaId: item.id,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.mediaListEntry?.status?.value
+                                )
                             }
                         }
                     }
@@ -230,7 +246,11 @@ struct HomeView: View {
                                     meanScore: item.meanScore
                                 )
                                 .padding(.trailing, 4)
-                                .mediaContextMenu(mediaId: item.id, mediaType: .anime)
+                                .mediaContextMenu(
+                                    mediaId: item.id,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.mediaListEntry?.status?.value
+                                )
                             }
                         }
                     }
@@ -271,7 +291,11 @@ struct HomeView: View {
                                     meanScore: item.meanScore
                                 )
                                 .padding(.trailing, 4)
-                                .mediaContextMenu(mediaId: item.id, mediaType: .manga)
+                                .mediaContextMenu(
+                                    mediaId: item.id,
+                                    mediaType: .manga,
+                                    mediaListStatus: item.mediaListEntry?.status?.value
+                                )
                             }
                         }
                     }

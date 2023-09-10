@@ -7,7 +7,7 @@ public class StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename id coverImage { __typename large } title { __typename userPreferred } type } pageInfo { __typename hasNextPage } } } }"#,
+      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename id coverImage { __typename large } title { __typename userPreferred } type mediaListEntry { __typename status } } pageInfo { __typename hasNextPage } } } }"#,
       fragments: [IsFavouriteStudio.self]
     ))
 
@@ -115,6 +115,7 @@ public class StudioDetailsQuery: GraphQLQuery {
             .field("coverImage", CoverImage?.self),
             .field("title", Title?.self),
             .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
+            .field("mediaListEntry", MediaListEntry?.self),
           ] }
 
           /// The id of the media
@@ -125,6 +126,8 @@ public class StudioDetailsQuery: GraphQLQuery {
           public var title: Title? { __data["title"] }
           /// The type of the media; anime or manga
           public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
+          /// The authenticated user's media list entry for the media
+          public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
           /// Studio.Media.Node.CoverImage
           ///
@@ -158,6 +161,23 @@ public class StudioDetailsQuery: GraphQLQuery {
 
             /// The currently authenticated users preferred title language. Default romaji for non-authenticated
             public var userPreferred: String? { __data["userPreferred"] }
+          }
+
+          /// Studio.Media.Node.MediaListEntry
+          ///
+          /// Parent Type: `MediaList`
+          public struct MediaListEntry: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+            ] }
+
+            /// The watching/reading status
+            public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
           }
         }
 

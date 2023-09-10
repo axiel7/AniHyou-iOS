@@ -22,9 +22,30 @@ class MediaListViewModel: ObservableObject {
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
+    @Published var searchText = ""
+    @Published var isLoading = false
+    
+    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
+        if searchText.isEmpty {
+            return mediaList
+        } else {
+            let filtered = mediaList.filter {
+                let title = $0?.media?.title?.userPreferred
+                if title == nil || title?.isEmpty == true {
+                    return false
+                }
+                return title!.lowercased().contains(searchText.lowercased())
+            }
+            if hasNextPage && filtered.count < 25 {
+                getUserMediaList(otherUserId: userId)
+            }
+
+            return Array(Set(filtered))
+        }
+    }
 
     func getUserMediaList(otherUserId: Int?) {
-        if otherUserId != nil { userId = otherUserId! }
+        if let otherUserId { userId = otherUserId }
         Network.shared.apollo.fetch(
             query: UserMediaListQuery(
                 page: .some(currentPage),
@@ -56,35 +77,12 @@ class MediaListViewModel: ObservableObject {
         forceReload = false
     }
 
-    @Published var searchText = ""
-
-    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
-        if searchText.isEmpty {
-            return mediaList
-        } else {
-            let filtered = mediaList.filter {
-                let title = $0?.media?.title?.userPreferred
-                if title == nil || title?.isEmpty == true {
-                    return false
-                }
-                return title!.lowercased().contains(searchText.lowercased())
-            }
-            if hasNextPage && filtered.count < 25 {
-                getUserMediaList(otherUserId: userId)
-            }
-
-            return Array(Set(filtered))
-        }
-    }
-
     func refreshList() {
         currentPage = 1
         hasNextPage = true
         mediaList = []
         forceReload = true
     }
-
-    @Published var isLoading = false
 
     func updateEntryProgress(entryId: Int, progress: Int, status: MediaListStatus?) {
         isLoading = true
@@ -116,8 +114,8 @@ class MediaListViewModel: ObservableObject {
             do {
                 guard let foundIndex = self?.mediaList.firstIndex(where: { $0?.id == entryId }) else { return }
                 //if the status changed, remove from this list
-                if updatedEntry != nil && self?.mediaList[foundIndex]?.status != updatedEntry?.status {
-                    self?.onEntryDeleted(entryId: updatedEntry!.id)
+                if let updatedEntry, self?.mediaList[foundIndex]?.status != updatedEntry.status {
+                    self?.onEntryDeleted(entryId: updatedEntry.id)
                     return
                 }
                 //else update the new entry data
@@ -125,8 +123,8 @@ class MediaListViewModel: ObservableObject {
                     ofType: BasicMediaListEntry.self,
                     withKey: "MediaList:\(entryId).\(mediaId)"
                 ) { (cachedData: inout BasicMediaListEntry) in
-                    if updatedEntry != nil { cachedData = updatedEntry! }
-                    if progress != nil { cachedData.progress = progress }
+                    if let updatedEntry { cachedData = updatedEntry }
+                    if let progress { cachedData.progress = progress }
                 }
 
                 let newObject = try transaction.readObject(

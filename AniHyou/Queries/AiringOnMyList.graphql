@@ -13,6 +13,9 @@ query AiringOnMyList($page: Int, $perPage: Int) {
                 episode
                 airingAt
             }
+            mediaListEntry {
+                status
+            }
         }
         pageInfo {
             currentPage

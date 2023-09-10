@@ -175,8 +175,8 @@ struct MediaListEditView: View {
             setValues()
         }
         .onChange(of: viewModel.isUpdateSuccess) { isUpdateSuccess in
-            if isUpdateSuccess && viewModel.updatedEntry != nil {
-                onSave(viewModel.updatedEntry!)
+            if isUpdateSuccess, let entry = viewModel.updatedEntry {
+                onSave(entry)
                 dismiss()
             }
         }

@@ -13,10 +13,10 @@ struct MediaRelationsAndRecommendationsView: View {
     @StateObject private var viewModel = RelationRecommendationViewModel()
 
     var body: some View {
-        if viewModel.mediaRelationsAndRecommendations != nil {
+        if let relationsAndRecommendations = viewModel.mediaRelationsAndRecommendations {
             VStack(alignment: .leading) {
 
-                if viewModel.mediaRelationsAndRecommendations?.relations?.edges?.count ?? 0 > 0 {
+                if relationsAndRecommendations.relations?.edges?.count ?? 0 > 0 {
                     // MARK: Relations
                     Text("Relations")
                         .font(.title3)
@@ -25,7 +25,7 @@ struct MediaRelationsAndRecommendationsView: View {
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
-                            ForEach(viewModel.mediaRelationsAndRecommendations?.relations?.edges ?? [],
+                            ForEach(relationsAndRecommendations.relations?.edges ?? [],
                                     id: \.?.node?.id
                             ) {
                                 if let relation = $0 {
@@ -43,7 +43,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                         .frame(width: 280, alignment: .leading)
                                         .mediaContextMenu(
                                             mediaId: relation.node!.id,
-                                            mediaType: relation.node?.type?.value
+                                            mediaType: relation.node?.type?.value,
+                                            mediaListStatus: relation.node?.mediaListEntry?.status?.value
                                         )
                                     }
                                 }
@@ -60,15 +61,12 @@ struct MediaRelationsAndRecommendationsView: View {
                     .bold()
                     .padding(.leading)
                 ZStack {
-                    if viewModel.mediaRelationsAndRecommendations == nil {
-                        ProgressView()
-                            .padding(.top)
-                    } else if viewModel.mediaRelationsAndRecommendations?.recommendations?.nodes?.count == 0 {
+                    if relationsAndRecommendations.recommendations?.nodes?.count == 0 {
                         Text("No recommendations")
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
-                            ForEach(viewModel.mediaRelationsAndRecommendations?.recommendations?.nodes ?? [],
+                            ForEach(relationsAndRecommendations.recommendations?.nodes ?? [],
                                     id: \.?.mediaRecommendation?.id
                             ) {
                                 if let recommendation = $0?.mediaRecommendation {
@@ -82,7 +80,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                         .padding(.trailing, 2)
                                         .mediaContextMenu(
                                             mediaId: recommendation.id,
-                                            mediaType: recommendation.type?.value
+                                            mediaType: recommendation.type?.value,
+                                            mediaListStatus: recommendation.mediaListEntry?.status?.value
                                         )
                                     }
                                 }

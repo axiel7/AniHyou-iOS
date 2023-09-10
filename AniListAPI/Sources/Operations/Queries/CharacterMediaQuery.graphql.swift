@@ -7,7 +7,7 @@ public class CharacterMediaQuery: GraphQLQuery {
   public static let operationName: String = "CharacterMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename currentPage hasNextPage } } } }"#
+      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename currentPage hasNextPage } } } }"#
     ))
 
   public var characterId: GraphQLNullable<Int>
@@ -121,6 +121,7 @@ public class CharacterMediaQuery: GraphQLQuery {
               .field("title", Title?.self),
               .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
               .field("coverImage", CoverImage?.self),
+              .field("mediaListEntry", MediaListEntry?.self),
             ] }
 
             /// The id of the media
@@ -131,6 +132,8 @@ public class CharacterMediaQuery: GraphQLQuery {
             public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
+            /// The authenticated user's media list entry for the media
+            public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
             /// Character.Media.Edge.Node.Title
             ///
@@ -164,6 +167,23 @@ public class CharacterMediaQuery: GraphQLQuery {
 
               /// The cover image url of the media at a large size
               public var large: String? { __data["large"] }
+            }
+
+            /// Character.Media.Edge.Node.MediaListEntry
+            ///
+            /// Parent Type: `MediaList`
+            public struct MediaListEntry: AniListAPI.SelectionSet {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+              public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+              ] }
+
+              /// The watching/reading status
+              public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
             }
           }
 

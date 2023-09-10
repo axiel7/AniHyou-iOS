@@ -83,50 +83,54 @@ struct ExploreView: View {
                 }
 
                 ForEach(viewModel.searchedMedia, id: \.?.id) { item in
-                    if item != nil {
-                        NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
+                    if let item {
+                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                             HListItemWithSubtitleView(
-                                title: item!.title?.userPreferred,
+                                title: item.title?.userPreferred,
                                 subtitle: String(swiftLintMultiline:
-                                    item!.format?.value?.localizedName ?? "",
+                                    item.format?.value?.localizedName ?? "",
                                     " · ",
-                                    item!.startDate?.year?.stringValue ?? ""
+                                    item.startDate?.year?.stringValue ?? ""
                                 ),
-                                imageUrl: item!.coverImage?.large
+                                imageUrl: item.coverImage?.large
                             )
-                            .mediaContextMenu(mediaId: item!.id, mediaType: item!.type?.value)
+                            .mediaContextMenu(
+                                mediaId: item.id,
+                                mediaType: item.type?.value,
+                                mediaListStatus: item.mediaListEntry?.status?.value
+                            )
                         }
                     }
                 }
             case .characters:
                 ForEach(viewModel.searchedCharacters, id: \.?.id) { item in
-                    if item != nil {
-                        NavigationLink(destination: CharacterDetailsView(characterId: item!.id)) {
-                            HListItemWithSubtitleView(title: item!.name?.userPreferred, imageUrl: item!.image?.medium)
+                    if let item {
+                        NavigationLink(destination: CharacterDetailsView(characterId: item.id)) {
+                            HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
                         }
                     }
                 }
             case .staff:
                 ForEach(viewModel.searchedStaff, id: \.?.id) { item in
-                    if item != nil {
-                        NavigationLink(destination: StaffDetailsView(staffId: item!.id)) {
-                            HListItemWithSubtitleView(title: item!.name?.userPreferred, imageUrl: item!.image?.medium)
+                    if let item {
+                        NavigationLink(destination: StaffDetailsView(staffId: item.id)) {
+                            HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
                         }
                     }
                 }
             case .studios:
                 ForEach(viewModel.searchedStudios, id: \.?.id) { item in
-                    if item != nil {
-                        NavigationLink(destination: StudioDetailsView(studioId: item!.id)) {
-                            HListItemWithSubtitleView(title: item!.name)
+                    if let item {
+                        NavigationLink(destination: StudioDetailsView(studioId: item.id)) {
+                            HListItemWithSubtitleView(title: item.name)
                         }
                     }
                 }
             case .users:
                 ForEach(viewModel.searchedUsers, id: \.?.id) { item in
-                    if item != nil {
-                        NavigationLink(destination: ProfileView(userId: item!.id)) {
-                            HListItemWithSubtitleView(title: item!.name, imageUrl: item!.avatar?.medium)
+                    if let item {
+                        NavigationLink(destination: ProfileView(userId: item.id)) {
+                            HListItemWithSubtitleView(title: item.name, imageUrl: item.avatar?.medium)
                         }
                     }
                 }

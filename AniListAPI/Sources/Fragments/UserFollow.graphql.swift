@@ -5,7 +5,7 @@
 
 public struct UserFollow: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment UserFollow on User { __typename id name avatar { __typename large } }"
+    #"fragment UserFollow on User { __typename id name avatar { __typename large } }"#
   }
 
   public let __data: DataDict

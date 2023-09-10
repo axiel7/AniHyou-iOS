@@ -148,16 +148,16 @@ struct AniHyou_WidgetEntryView: View {
     
     @ViewBuilder
     var content: some View {
-        if entry.placeholderText != nil {
-            Text(entry.placeholderText!)
+        if let placeholder = entry.placeholderText {
+            Text(placeholder)
         } else if entry.animeList.isEmpty {
             Text("No airing anime")
         } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
-                if item != nil {
-                    if let nextAiringEpisode = item!.media?.nextAiringEpisode {
-                        Link(destination: URL(string: "anihyou://media/\(item!.mediaId)")!) {
-                            Text(item!.media?.title?.userPreferred ?? "")
+                if let item {
+                    if let nextAiringEpisode = item.media?.nextAiringEpisode {
+                        Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
+                            Text(item.media?.title?.userPreferred ?? "")
                                 .font(.system(size: 14))
                                 .lineLimit(1)
                                 .padding(.horizontal)
@@ -168,12 +168,10 @@ struct AniHyou_WidgetEntryView: View {
                                     timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
                                 )
                                 if airingDate > Date.now {
-                                    Text("Ep \(nextAiringEpisode.episode) airing in ")
-                                    
+                                    Text("Ep \(nextAiringEpisode.episode) airing in ") +
                                     Text(airingDate, style: .relative)
                                 } else {
-                                    Text("Ep \(nextAiringEpisode.episode) aired at ")
-
+                                    Text("Ep \(nextAiringEpisode.episode) aired at ") +
                                     Text(airingDate, style: .time)
                                 }
                             }

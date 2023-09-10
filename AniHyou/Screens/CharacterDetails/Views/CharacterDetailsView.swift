@@ -37,10 +37,10 @@ struct CharacterDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                if viewModel.character != nil {
-                    Button(action: { viewModel.toggleFavorite() }, label: {
-                        Image(systemName: viewModel.character!.isFavourite ? "heart.fill" : "heart")
-                    })
+                if let character = viewModel.character {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Image(systemName: character.isFavourite ? "heart.fill" : "heart")
+                    }
                 }
             }
         }
@@ -48,16 +48,16 @@ struct CharacterDetailsView: View {
 
     @ViewBuilder
     var characterOverview: some View {
-        if viewModel.character != nil {
+        if let character = viewModel.character {
             VStack(alignment: .center) {
-                CircleImageView(imageUrl: viewModel.character!.image?.large, size: 150)
+                CircleImageView(imageUrl: character.image?.large, size: 150)
 
-                Text(viewModel.character!.name?.userPreferred ?? "")
+                Text(character.name?.userPreferred ?? "")
                     .font(.title3.weight(.bold))
                     .multilineTextAlignment(.center)
 
                 Group {
-                    Text(viewModel.character!.name?.native ?? "")
+                    Text(character.name?.native ?? "")
                     
                     Text(viewModel.alternativeNamesFormatted ?? "")
                     
@@ -81,16 +81,16 @@ struct CharacterDetailsView: View {
 
                 HStack {
                     VStack(alignment: .leading) {
-                        HInfoView(name: "Favorites", value: (viewModel.character!.favourites ?? 0).formatted())
+                        HInfoView(name: "Favorites", value: (character.favourites ?? 0).formatted())
                         HInfoView(
                             name: "Birthday",
-                            value: viewModel.character!.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
+                            value: character.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
                         )
-                        HInfoView(name: "Age", value: viewModel.character!.age)
-                        HInfoView(name: "Gender", value: viewModel.character!.gender)
-                        HInfoView(name: "Blood type", value: viewModel.character!.bloodType)
+                        HInfoView(name: "Age", value: character.age)
+                        HInfoView(name: "Gender", value: character.gender)
+                        HInfoView(name: "Blood type", value: character.bloodType)
 
-                        RichText(html: viewModel.character!.description ?? "")
+                        RichText(html: character.description ?? "")
                             .defaultStyle()
                             .customCSS(spoilerCss)
                             .padding()
@@ -116,7 +116,11 @@ struct CharacterDetailsView: View {
                             subtitle: item.characterRole?.value?.localizedName,
                             imageUrl: item.node?.coverImage?.large
                         )
-                        .mediaContextMenu(mediaId: item.node!.id, mediaType: item.node!.type?.value)
+                        .mediaContextMenu(
+                            mediaId: item.node!.id,
+                            mediaType: item.node!.type?.value,
+                            mediaListStatus: item.node?.mediaListEntry?.status?.value
+                        )
                     }
                 }
             }

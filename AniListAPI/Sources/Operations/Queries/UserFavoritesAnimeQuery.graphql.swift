@@ -7,7 +7,7 @@ public class UserFavoritesAnimeQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserFavoritesAnime($userId: Int, $page: Int, $perPage: Int) { User(id: $userId) { __typename favourites { __typename anime(page: $page, perPage: $perPage) { __typename nodes { __typename id title { __typename userPreferred } coverImage { __typename large } } pageInfo { __typename currentPage hasNextPage } } } } }"#
+      #"query UserFavoritesAnime($userId: Int, $page: Int, $perPage: Int) { User(id: $userId) { __typename favourites { __typename anime(page: $page, perPage: $perPage) { __typename nodes { __typename id title { __typename userPreferred } coverImage { __typename large } mediaListEntry { __typename status } } pageInfo { __typename currentPage hasNextPage } } } } }"#
     ))
 
   public var userId: GraphQLNullable<Int>
@@ -108,6 +108,7 @@ public class UserFavoritesAnimeQuery: GraphQLQuery {
               .field("id", Int.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+              .field("mediaListEntry", MediaListEntry?.self),
             ] }
 
             /// The id of the media
@@ -116,6 +117,8 @@ public class UserFavoritesAnimeQuery: GraphQLQuery {
             public var title: Title? { __data["title"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
+            /// The authenticated user's media list entry for the media
+            public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
             /// User.Favourites.Anime.Node.Title
             ///
@@ -149,6 +152,23 @@ public class UserFavoritesAnimeQuery: GraphQLQuery {
 
               /// The cover image url of the media at a large size
               public var large: String? { __data["large"] }
+            }
+
+            /// User.Favourites.Anime.Node.MediaListEntry
+            ///
+            /// Parent Type: `MediaList`
+            public struct MediaListEntry: AniListAPI.SelectionSet {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+              public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+              ] }
+
+              /// The watching/reading status
+              public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
             }
           }
 

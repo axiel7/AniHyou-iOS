@@ -5,7 +5,7 @@
 
 public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat } isFollowing isFollower }"
+    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat } isFollowing isFollower }"#
   }
 
   public var __data: DataDict

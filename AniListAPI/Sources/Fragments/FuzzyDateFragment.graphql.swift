@@ -5,7 +5,7 @@
 
 public struct FuzzyDateFragment: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    "fragment FuzzyDateFragment on FuzzyDate { __typename day month year }"
+    #"fragment FuzzyDateFragment on FuzzyDate { __typename day month year }"#
   }
 
   public let __data: DataDict

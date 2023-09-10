@@ -48,11 +48,11 @@ struct MediaListView: View {
             viewModel.mediaListStatus = status
         }
         .sheet(isPresented: $showingEditSheet) {
-            if viewModel.selectedItem != nil {
+            if let item = viewModel.selectedItem {
                 MediaListEditView(
-                    mediaId: viewModel.selectedItem!.mediaId,
+                    mediaId: item.mediaId,
                     mediaType: type,
-                    mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry,
+                    mediaList: item.fragments.basicMediaListEntry,
                     onSave: { updatedEntry in
                         viewModel.onEntryUpdated(
                             mediaId: updatedEntry.mediaId,
@@ -62,7 +62,7 @@ struct MediaListView: View {
                         )
                     },
                     onDelete: {
-                        viewModel.onEntryDeleted(entryId: viewModel.selectedItem!.id)
+                        viewModel.onEntryDeleted(entryId: item.id)
                     }
                 )
             }
@@ -149,7 +149,7 @@ struct MediaListView: View {
                 .tint(.blue)
             }
         }
-        .mediaContextMenu(mediaId: item.mediaId, mediaType: type)
+        .mediaContextMenu(mediaId: item.mediaId, mediaType: type, mediaListStatus: item.status?.value)
     }
     // swiftlint:enable cyclomatic_complexity function_body_length
 

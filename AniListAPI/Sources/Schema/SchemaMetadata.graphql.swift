@@ -27,10 +27,10 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Media": return AniListAPI.Objects.Media
     case "MediaTitle": return AniListAPI.Objects.MediaTitle
     case "MediaCoverImage": return AniListAPI.Objects.MediaCoverImage
+    case "MediaList": return AniListAPI.Objects.MediaList
     case "PageInfo": return AniListAPI.Objects.PageInfo
     case "MediaTag": return AniListAPI.Objects.MediaTag
     case "Mutation": return AniListAPI.Objects.Mutation
-    case "MediaList": return AniListAPI.Objects.MediaList
     case "FuzzyDate": return AniListAPI.Objects.FuzzyDate
     case "Staff": return AniListAPI.Objects.Staff
     case "MediaConnection": return AniListAPI.Objects.MediaConnection
