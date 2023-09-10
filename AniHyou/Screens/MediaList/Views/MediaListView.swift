@@ -68,7 +68,7 @@ struct MediaListView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
+            ToolbarItem {
                 Menu {
                     Picker("Sort", selection: $viewModel.sort) {
                         Text("Score").tag(MediaListSort.scoreDesc)
@@ -77,6 +77,18 @@ struct MediaListView: View {
                     }
                 } label: {
                     Image(systemName: "arrow.up.arrow.down")
+                }
+            }
+            ToolbarItem {
+                Menu {
+                    Picker("Status", selection: $viewModel.statusFilter) {
+                        ForEach(MediaStatus.allCases, id: \.rawValue) { releaseStatus in
+                            Text(releaseStatus.localizedName).tag(releaseStatus)
+                        }
+                    }
+                
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
                 }
             }
         }

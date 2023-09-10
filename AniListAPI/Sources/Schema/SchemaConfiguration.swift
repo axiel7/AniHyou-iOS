@@ -10,6 +10,8 @@ import ApolloAPI
 public enum SchemaConfiguration: ApolloAPI.SchemaConfiguration {
   public static func cacheKeyInfo(for type: Object, object: ObjectData) -> CacheKeyInfo? {
       switch type {
+      case Objects.Page:
+          return try? CacheKeyInfo(jsonValue: object["id"])
       case Objects.MediaList:
           guard let id = object["id"] as? Int else {
               return nil

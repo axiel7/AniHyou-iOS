@@ -22,6 +22,7 @@ class MediaListViewModel: ObservableObject {
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
+    @Published var statusFilter: MediaStatus = .notYetReleased
     @Published var searchText = ""
     @Published var isLoading = false
     
