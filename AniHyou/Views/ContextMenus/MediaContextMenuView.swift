@@ -121,8 +121,8 @@ struct MediaContextMenuView: View {
                         }
                         
                         if let schedule = viewModel.details!.nextAiringEpisode {
-                            HStack(spacing: 1) {
-                                Text("Ep \(schedule.episode) in ")
+                            Group {
+                                Text("Ep \(schedule.episode) in ") +
                                 Text(Date(timeIntervalSince1970: Double(schedule.airingAt)), style: .relative)
                             }
                             .font(.subheadline)

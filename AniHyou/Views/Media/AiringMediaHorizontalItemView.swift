@@ -37,9 +37,8 @@ struct AiringMediaHorizontalItemView: View {
                     .multilineTextAlignment(.leading)
 
                 if nextEpisode != nil && airingAt != nil {
-                    VStack(alignment: .leading) {
-                        Text("Ep \(nextEpisode!) airing in ")
-
+                    Group {
+                        Text("Ep \(nextEpisode!) airing in ") +
                         Text(Date(timeIntervalSince1970: Double(airingAt!)), style: .relative)
                     }
                     .font(.subheadline)

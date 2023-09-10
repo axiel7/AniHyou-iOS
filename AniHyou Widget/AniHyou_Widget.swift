@@ -143,12 +143,10 @@ struct AniHyou_WidgetEntryView: View {
                                             timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
                                         )
                                         if airingDate > Date.now {
-                                            Text("Ep \(nextAiringEpisode.episode) airing in ")
-
+                                            Text("Ep \(nextAiringEpisode.episode) airing in ") +
                                             Text(airingDate, style: .relative)
                                         } else {
-                                            Text("Ep \(nextAiringEpisode.episode) aired at ")
-
+                                            Text("Ep \(nextAiringEpisode.episode) aired at ") +
                                             Text(airingDate, style: .time)
                                         }
                                     }
