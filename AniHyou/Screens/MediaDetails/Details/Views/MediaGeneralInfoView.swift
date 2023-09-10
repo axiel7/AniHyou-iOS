@@ -101,10 +101,8 @@ struct MediaGeneralInfoView: View {
     @ViewBuilder
     var multimediaContent: some View {
         // MARK: - Trailer
-        if 
-            let trailer = viewModel.mediaDetails?.trailer,
-            let trailerLink = viewModel.trailerLink
-        {
+        if let trailer = viewModel.mediaDetails?.trailer,
+            let trailerLink = viewModel.trailerLink {
             Text("Trailer")
                 .font(.title3)
                 .bold()
