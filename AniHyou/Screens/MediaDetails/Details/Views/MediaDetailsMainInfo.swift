@@ -25,10 +25,13 @@ struct MediaDetailsMainInfo: View {
     var body: some View {
         HStack(alignment: .top) {
 
-            MediaCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.large, width: coverWidth, height: coverHeight)
-                .onTapGesture {
-                    showingCoverSheet = true
-                }
+            Button(action: { showingCoverSheet.toggle() }) {
+                MediaCoverView(
+                    imageUrl: viewModel.mediaDetails?.coverImage?.large,
+                    width: coverWidth,
+                    height: coverHeight
+                )
+            }
 
             VStack(alignment: .leading) {
 
