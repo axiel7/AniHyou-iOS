@@ -13,7 +13,7 @@ struct NotificationsView: View {
     @StateObject private var viewModel = NotificationsViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if isLoggedIn() {
                     List {
@@ -52,7 +52,7 @@ struct NotificationsView: View {
                     .font(.bold(.body)())
                 }
             }
-        }
+        }//:NavigationStack
     }
 }
 

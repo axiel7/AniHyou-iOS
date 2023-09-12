@@ -18,7 +18,7 @@ struct FullCoverView: View {
     @State private var screenHeight = UIScreen.main.bounds.height - 180
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 KFImage(URL(string: imageUrl ?? ""))
                     .placeholder {
@@ -47,9 +47,8 @@ struct FullCoverView: View {
                     })
                 }
             }
-            .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
-        }//:NavigationView
+        }//:NavigationStack
     }
 }
 

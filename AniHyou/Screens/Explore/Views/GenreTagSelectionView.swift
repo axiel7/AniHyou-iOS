@@ -15,7 +15,7 @@ struct GenreTagSelectionView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Picker("Selection type", selection: $selectionType) {
                     Text("Genres").tag(0)
@@ -71,7 +71,7 @@ struct GenreTagSelectionView: View {
                     )
                 }
             }
-        }//:NavigationView
+        }//:NavigationStack
         .searchable(text: $viewModel.filterGenreTagText)
     }
 }

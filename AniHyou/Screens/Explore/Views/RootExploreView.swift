@@ -14,11 +14,10 @@ struct RootExploreView: View {
     @StateObject private var viewModel = SearchViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ExploreView(viewModel: viewModel)
                 .navigationTitle("Explore")
         }
-        .navigationViewStyle(.stack)
         .searchable(text: $viewModel.search, placement: .navigationBarDrawer, prompt: "Anime, Manga, and More")
         .onSubmit(of: .search) {
             viewModel.runSearch()

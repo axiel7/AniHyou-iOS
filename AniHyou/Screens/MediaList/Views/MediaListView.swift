@@ -173,7 +173,7 @@ struct MediaListView: View {
 
 struct MediaListView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             MediaListView(type: .anime, status: .current)
             MediaListView(type: .anime, status: .repeating)
         }

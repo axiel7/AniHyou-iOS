@@ -14,7 +14,7 @@ struct HomeView: View {
     @State private var showNotificationsSheet = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(alignment: .leading) {
 
@@ -43,8 +43,7 @@ struct HomeView: View {
             .sheet(isPresented: $showNotificationsSheet) {
                 NotificationsView()
             }
-        }//:NavigationView
-        .navigationViewStyle(.stack)
+        }//:NavigationStack
     }
 
     @ViewBuilder

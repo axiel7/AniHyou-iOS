@@ -29,7 +29,7 @@ struct AniHyouApp: App {
                             }
                         }
                 } else {
-                    NavigationView {
+                    NavigationStack {
                         MediaDetailsView(mediaId: mediaId)
                             .id(mediaId)
                     }

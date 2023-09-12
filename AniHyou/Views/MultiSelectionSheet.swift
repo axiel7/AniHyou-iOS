@@ -19,7 +19,7 @@ struct MultiSelectionSheet<Data: Hashable, RowContent: View>: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(values, id: \.self, selection: selectedValues, rowContent: rowContent)
                 .environment(\.editMode, .constant(.active))
                 .toolbar {

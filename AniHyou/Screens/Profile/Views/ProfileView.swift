@@ -31,7 +31,7 @@ struct ProfileView: View {
 
     var body: some View {
         if isMyProfile {
-            NavigationView {
+            NavigationStack {
                 content
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
@@ -41,8 +41,7 @@ struct ProfileView: View {
                                 .opacity(hasScrolled ? 1 : 0)
                         }
                     }
-            }//:NavigationView
-            .navigationViewStyle(.stack)
+            }//:NavigationStack
         } else {
             content
                 .tint(Color(hex: viewModel.userInfo?.options?.profileColor?.profileHexColor) ?? .accentColor)

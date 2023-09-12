@@ -146,9 +146,10 @@ struct SettingsView: View {
             }
 
             Section {
-                NavigationLink("Donate!", isActive: $navigateToDonations) {
-                    DonationsView()
-                }
+                Text("Donate!")
+                    .navigationDestination(isPresented: $navigateToDonations) {
+                        DonationsView()
+                    }
                 Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou")!)
             } header: {
                 Text("Information")

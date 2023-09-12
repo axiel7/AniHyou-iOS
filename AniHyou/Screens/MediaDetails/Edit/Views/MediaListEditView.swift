@@ -41,7 +41,7 @@ struct MediaListEditView: View {
     }()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form(content: {
                 Picker("Status", selection: $status) {
                     ForEach(MediaListStatus.allCases, id: \.self) { status in
@@ -170,7 +170,7 @@ struct MediaListEditView: View {
                     }
                 }
             }//:Toolbar
-        }//:NavigationView
+        }//:NavigationStack
         .onAppear {
             setValues()
         }

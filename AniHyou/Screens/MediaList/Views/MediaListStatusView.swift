@@ -15,16 +15,19 @@ struct MediaListStatusView: View {
     @State private var selection: MediaListStatus? = .current
 
     var body: some View {
-        NavigationView {
-            List(MediaListStatus.allCases, id: \.self) { status in
-                NavigationLink(tag: status, selection: $selection) {
-                    MediaListView(type: mediaType, status: status, userId: userId)
-                } label: {
-                    Label(status.localizedName, systemImage: status.systemImage)
-                }
+        NavigationSplitView {
+            List(MediaListStatus.allCases, id: \.self, selection: $selection) { status in
+                Label(status.localizedName, systemImage: status.systemImage)
             }//:List
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")
-        }//:NavigationView
+        } detail: {
+            NavigationStack {
+                if let selection {
+                    MediaListView(type: mediaType, status: selection, userId: userId)
+                        .id(selection)
+                }
+            }
+        }//:NavigationSplitView
     }
 }
 

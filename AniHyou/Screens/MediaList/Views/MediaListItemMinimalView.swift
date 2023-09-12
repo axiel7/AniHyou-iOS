@@ -48,7 +48,7 @@ struct MediaListItemMinimalView: View {
 
 struct MediaListItemMinimalView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             List(0...4, id: \.self) { _ in
                 NavigationLink(destination: {}, label: {
                     MediaListItemMinimalView()
