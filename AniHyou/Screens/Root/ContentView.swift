@@ -49,39 +49,53 @@ struct ContentView: View {
 
     @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
-        TabView(selection: $selectedTabIndex) {
-            HomeView()
-                .tabItemHome()
-
-            if isLoggedIn() || justLogged {
-                MediaListStatusView(mediaType: .anime)
-                    .tabItemAnime()
-            } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
-                    .tabItemAnime()
+        NavigationStack {
+            TabView(selection: $selectedTabIndex) {
+                HomeView()
+                    .tabItemHome()
+                
+                if isLoggedIn() || justLogged {
+                    MediaListStatusView(mediaType: .anime)
+                        .tabItemAnime()
+                } else {
+                    NotLoggedView(onSuccessLogin: { justLogged = true })
+                        .tabItemAnime()
+                }
+                
+                if isLoggedIn() || justLogged {
+                    MediaListStatusView(mediaType: .manga)
+                        .tabItemManga()
+                } else {
+                    NotLoggedView(onSuccessLogin: { justLogged = true })
+                        .tabItemManga()
+                }
+                
+                if isLoggedIn() || justLogged {
+                    ProfileView()
+                        .tabItemProfile()
+                } else {
+                    NotLoggedView(onSuccessLogin: { justLogged = true })
+                        .tabItemProfile()
+                }
+                
+                RootExploreView()
+                    .tabItemExplore()
+            }//:TabView
+            .navigationDestination(isPresented: $showingMediaDetails) {
+                MediaDetailsView(mediaId: mediaId)
+                    .id(mediaId)
             }
-
-            if isLoggedIn() || justLogged {
-                MediaListStatusView(mediaType: .manga)
-                    .tabItemManga()
-            } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
-                    .tabItemManga()
+        }
+        .onOpenURL { url in
+            if url.scheme == "anihyou" {
+                mediaId = Int(url.lastPathComponent) ?? 0
+                showingMediaDetails = mediaId != 0
             }
-
-            if isLoggedIn() || justLogged {
-                ProfileView()
-                    .tabItemProfile()
-            } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
-                    .tabItemProfile()
-            }
-
-            RootExploreView()
-                .tabItemExplore()
-        }//:TabView
+        }
     }
 }
 

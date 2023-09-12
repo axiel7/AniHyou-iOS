@@ -11,37 +11,20 @@ import SwiftUI
 struct AniHyouApp: App {
 
     @StateObject private var globalAppState = GlobalAppState.shared
-    @State private var openMediaDetails = false
-    @State private var mediaId = 0
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
 
     var body: some Scene {
         WindowGroup {
-            Group {
-                if openMediaDetails == false {
-                    ContentView()
-                        .id(globalAppState.globalId)
-                        .onAppear {
-                            KeychainUtils.keychain.synchronizable = true
-                            //transfer use id from old app versions
-                            if authUserId() == 0 {
-                                saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
-                            }
-                        }
-                } else {
-                    NavigationStack {
-                        MediaDetailsView(mediaId: mediaId)
-                            .id(mediaId)
+            ContentView()
+                .id(globalAppState.globalId)
+                .tint(Color(hex: accentColor) ?? .accentColor)
+                .onAppear {
+                    KeychainUtils.keychain.synchronizable = true
+                    //transfer user id from old app versions
+                    if authUserId() == 0 {
+                        saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
                     }
                 }
-            }
-            .onOpenURL { url in
-                if url.scheme == "anihyou" {
-                    openMediaDetails = true
-                    mediaId = Int(url.lastPathComponent) ?? 0
-                }
-            }
-            .tint(Color(hex: accentColor) ?? .accentColor)
         }
     }
 }
