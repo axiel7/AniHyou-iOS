@@ -7,7 +7,14 @@
 
 import SwiftUI
 
-extension View {
+fileprivate extension View {
+    func tabItemHome() -> some View {
+        self
+            .tabItem {
+                Label("Home", systemImage: "house")
+            }
+            .tag(0)
+    }
     func tabItemAnime() -> some View {
         self
             .tabItem {
@@ -29,6 +36,13 @@ extension View {
             }
             .tag(3)
     }
+    func tabItemExplore() -> some View {
+        self
+            .tabItem {
+                Label("Explore", systemImage: "magnifyingglass")
+            }
+            .tag(4)
+    }
 }
 
 struct ContentView: View {
@@ -39,10 +53,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTabIndex) {
             HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                .tag(0)
+                .tabItemHome()
 
             if isLoggedIn() || justLogged {
                 MediaListStatusView(mediaType: .anime)
@@ -69,11 +80,8 @@ struct ContentView: View {
             }
 
             RootExploreView()
-                .tabItem {
-                    Label("Explore", systemImage: "magnifyingglass")
-                }
-                .tag(4)
-        }
+                .tabItemExplore()
+        }//:TabView
     }
 }
 
