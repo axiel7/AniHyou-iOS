@@ -3,7 +3,7 @@ query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [Thr
     threads(mediaCategoryId: $mediaCategoryId, sort: $sort) {
       id
       title
-      body(asHtml: true)
+      body(asHtml: false)
       viewCount
       replyCount
       likeCount

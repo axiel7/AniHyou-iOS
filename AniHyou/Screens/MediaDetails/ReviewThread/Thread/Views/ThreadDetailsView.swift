@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import RichText
+import MarkdownUI
 import AniListAPI
 
 struct ThreadDetailsView: View {
@@ -30,10 +30,9 @@ struct ThreadDetailsView: View {
                         .foregroundColor(.gray)
                         .padding(.leading)
 
-                    RichText(html: thread.body ?? "")
+                    Markdown(thread.body?.formatMarkdown() ?? "")
                         .defaultStyle()
-                        .customCSS(spoilerCss)
-                        .padding(.horizontal)
+                        .padding()
 
                     HStack {
                         NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
