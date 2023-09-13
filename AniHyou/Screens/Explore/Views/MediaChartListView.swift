@@ -10,9 +10,9 @@ import AniListAPI
 
 struct MediaChartListView: View {
 
-    var title: String
-    var type: MediaType
-    var sort: MediaSort
+    let title: String
+    let type: MediaType
+    let sort: MediaSort
     var status: MediaStatus?
     @StateObject private var viewModel = ExploreViewModel()
 

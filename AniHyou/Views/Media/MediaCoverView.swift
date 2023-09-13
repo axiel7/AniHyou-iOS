@@ -21,8 +21,8 @@ extension KFImage {
 struct MediaCoverView: View {
 
     var imageUrl: String?
-    var width: CGFloat
-    var height: CGFloat
+    let width: CGFloat
+    let height: CGFloat
     var cancelOnDisappear = false
 
     var body: some View {

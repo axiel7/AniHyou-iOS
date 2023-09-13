@@ -11,8 +11,8 @@ import AniListAPI
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss
 
-    var mediaId: Int
-    var mediaType: MediaType
+    let mediaId: Int
+    let mediaType: MediaType
     var mediaList: BasicMediaListEntry?
     var onSave: (_ updatedEntry: BasicMediaListEntry) -> Void = { _ in }
     var onDelete: () -> Void = {}

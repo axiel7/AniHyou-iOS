@@ -13,7 +13,7 @@ private let coverHeight: CGFloat = 115
 
 struct MediaListItemStandardView: View {
 
-    var item: UserMediaListQuery.Data.Page.MediaList?
+    let item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
@@ -61,7 +61,7 @@ struct MediaListItemStandardView: View {
 
 struct AiringScheduleItemText: View {
 
-    var item: UserMediaListQuery.Data.Page.MediaList?
+    let item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
 
     var body: some View {

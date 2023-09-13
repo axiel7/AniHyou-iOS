@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaActivityItemView: View {
 
-    var activity: UserActivityQuery.Data.Page.Activity.AsListActivity?
+    let activity: UserActivityQuery.Data.Page.Activity.AsListActivity?
 
     var body: some View {
         HStack(alignment: .center) {

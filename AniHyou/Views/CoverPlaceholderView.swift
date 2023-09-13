@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CoverPlaceholderView: View {
-    var systemName: String
-    var width: CGFloat
-    var height: CGFloat
+    let systemName: String
+    let width: CGFloat
+    let height: CGFloat
 
     var body: some View {
         ZStack {

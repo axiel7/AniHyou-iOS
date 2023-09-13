@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MediaStatView: View {
 
-    var name: String
-    var value: String
+    let name: String
+    let value: String
     var showDivider = true
 
     var body: some View {

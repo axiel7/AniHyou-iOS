@@ -12,7 +12,7 @@ struct ExpandableRichText: View {
 
     @State private var isTruncated = false
     @State private var isExpanded = false
-    var fontSize: CGFloat = 16
+    let fontSize: CGFloat = 16
 
     private var html: String
 

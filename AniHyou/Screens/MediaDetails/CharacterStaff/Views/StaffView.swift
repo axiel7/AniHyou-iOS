@@ -12,7 +12,7 @@ struct StaffView: View {
 
     static let imageSize: CGFloat = 70
 
-    var staff: MediaStaff
+    let staff: MediaStaff
 
     var body: some View {
         NavigationLink(destination: StaffDetailsView(staffId: staff.node!.id)) {

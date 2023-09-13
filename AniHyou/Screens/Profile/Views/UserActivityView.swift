@@ -9,8 +9,8 @@ import SwiftUI
 
 struct UserActivityView: View {
 
-    var userId: Int
-    var isMyProfile: Bool
+    let userId: Int
+    let isMyProfile: Bool
     @StateObject private var viewModel = UserActivityViewModel()
 
     var body: some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HInfoView: View {
 
-    var name: String
+    let name: String
     var value: String?
     var isExpandable: Bool = false
     var expandedContent: (() -> any View)?

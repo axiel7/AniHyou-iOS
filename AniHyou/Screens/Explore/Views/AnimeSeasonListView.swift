@@ -10,7 +10,7 @@ import AniListAPI
 
 struct AnimeSeasonListView: View {
 
-    var season: MediaSeason
+    let season: MediaSeason
     private let currentYear = Date.now.year
     @State var selectedYear = Date.now.year
     @StateObject private var viewModel = ExploreViewModel()

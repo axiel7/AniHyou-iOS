@@ -10,8 +10,8 @@ import AniListAPI
 
 struct MediaListScoreIndicator: View {
 
-    var score: Double
-    var format: ScoreFormat
+    let score: Double
+    let format: ScoreFormat
     var color: Color {
         if score == 0 { return .gray } else { return format.scoreColor(score: score) }
     }

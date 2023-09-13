@@ -10,7 +10,7 @@ import AniListAPI
 
 struct UpdateMediaEntryView: View {
 
-    var entry: UserMediaListQuery.Data.Page.MediaList?
+    let entry: UserMediaListQuery.Data.Page.MediaList?
     @ObservedObject var viewModel: MediaListViewModel
 
     var body: some View {

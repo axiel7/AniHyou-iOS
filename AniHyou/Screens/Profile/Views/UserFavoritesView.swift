@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserFavoritesView: View {
 
-    var userId: Int
+    let userId: Int
     @StateObject private var viewModel = UserFavoritesViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))

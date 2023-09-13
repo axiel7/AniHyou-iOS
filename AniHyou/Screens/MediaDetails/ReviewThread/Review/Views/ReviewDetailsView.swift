@@ -10,7 +10,7 @@ import RichText
 
 struct ReviewDetailsView: View {
 
-    var reviewId: Int
+    let reviewId: Int
     @StateObject private var viewModel = ReviewDetailsViewModel()
 
     var body: some View {

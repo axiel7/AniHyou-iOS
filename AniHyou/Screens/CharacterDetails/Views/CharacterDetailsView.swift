@@ -10,7 +10,7 @@ import RichText
 
 struct CharacterDetailsView: View {
 
-    var characterId: Int
+    let characterId: Int
     @StateObject private var viewModel = CharacterDetailsViewModel()
     @State private var infoType: CharacterInfoType = .overview
     @State private var showNameSpoiler = false

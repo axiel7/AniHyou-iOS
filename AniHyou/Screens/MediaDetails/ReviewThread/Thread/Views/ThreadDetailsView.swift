@@ -11,7 +11,7 @@ import AniListAPI
 
 struct ThreadDetailsView: View {
 
-    var thread: MediaThreadsQuery.Data.Page.Thread
+    let thread: MediaThreadsQuery.Data.Page.Thread
     @StateObject private var viewModel = ThreadDetailsViewModel()
 
     var body: some View {

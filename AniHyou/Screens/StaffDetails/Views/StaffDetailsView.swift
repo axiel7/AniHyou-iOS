@@ -11,7 +11,7 @@ import AniListAPI
 
 struct StaffDetailsView: View {
 
-    var staffId: Int
+    let staffId: Int
     @StateObject private var viewModel = StaffDetailsViewModel()
     @State private var infoType: StaffInfoType = .overview
 

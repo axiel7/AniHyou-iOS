@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ToolbarIconButton: View {
 
-    var symbolSystemName: String
-    var action: () -> Void
+    let symbolSystemName: String
+    let action: () -> Void
 
     var body: some View {
 

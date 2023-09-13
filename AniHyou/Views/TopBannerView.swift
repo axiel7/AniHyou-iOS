@@ -12,7 +12,7 @@ struct TopBannerView: View {
 
     var imageUrl: String?
     var placeholderHexColor: String?
-    var height: CGFloat
+    let height: CGFloat
 
     var body: some View {
         GeometryReader { geo in

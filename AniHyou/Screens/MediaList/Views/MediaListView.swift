@@ -11,7 +11,7 @@ import AniListAPI
 struct MediaListView: View {
 
     let type: MediaType
-    var status: MediaListStatus
+    let status: MediaListStatus
     var userId: Int?
     var isEditable: Bool {
         return userId == nil

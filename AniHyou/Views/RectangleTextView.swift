@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RectangleTextView: View {
 
-    var text: String
+    let text: String
     var color: Color = .accentColor
 
     var body: some View {

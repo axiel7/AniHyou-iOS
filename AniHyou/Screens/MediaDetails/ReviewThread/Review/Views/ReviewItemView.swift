@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ReviewItemView: View {
 
-    var review: MediaReviewsQuery.Data.Media.Reviews.Node
+    let review: MediaReviewsQuery.Data.Media.Reviews.Node
 
     var body: some View {
         VStack {

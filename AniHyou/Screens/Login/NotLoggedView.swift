@@ -10,7 +10,7 @@ import WidgetKit
 
 struct NotLoggedView: View {
     @StateObject private var viewModel = LoginViewModel()
-    var onSuccessLogin: () -> Void
+    let onSuccessLogin: () -> Void
 
     var body: some View {
         VStack {

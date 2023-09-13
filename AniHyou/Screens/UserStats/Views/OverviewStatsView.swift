@@ -10,8 +10,8 @@ import AniListAPI
 
 struct OverviewStatsView: View {
 
-    var userId: Int
-    var mediaType: MediaType
+    let userId: Int
+    let mediaType: MediaType
     @StateObject private var viewModel = OverviewStatsViewModel()
     @State private var scoreStatType = 0
 

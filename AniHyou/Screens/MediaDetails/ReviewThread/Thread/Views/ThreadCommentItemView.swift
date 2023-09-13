@@ -11,7 +11,7 @@ import MarkdownUI
 
 struct ThreadCommentItemView: View {
 
-    var comment: ThreadCommentsQuery.Data.Page.ThreadComment
+    let comment: ThreadCommentsQuery.Data.Page.ThreadComment
 
     var body: some View {
         VStack(alignment: .leading) {

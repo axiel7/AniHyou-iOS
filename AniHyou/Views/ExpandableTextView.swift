@@ -10,8 +10,8 @@ import SwiftUI
 struct ExpandableTextView: View {
 
     @State private var isExpanded = false
-    var lineLimit: Int? = 3
-    var fontSize: CGFloat = 16
+    let lineLimit = 3
+    let fontSize: CGFloat = 16
 
     @Binding var text: NSAttributedString
     var styledText: AttributedString {

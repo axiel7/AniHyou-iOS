@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaRelationsAndRecommendationsView: View {
 
-    var mediaId: Int
+    let mediaId: Int
     @StateObject private var viewModel = RelationRecommendationViewModel()
 
     var body: some View {

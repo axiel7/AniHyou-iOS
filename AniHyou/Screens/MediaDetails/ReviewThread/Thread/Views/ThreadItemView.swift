@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ThreadItemView: View {
 
-    var thread: MediaThreadsQuery.Data.Page.Thread
+    let thread: MediaThreadsQuery.Data.Page.Thread
 
     var body: some View {
         VStack {

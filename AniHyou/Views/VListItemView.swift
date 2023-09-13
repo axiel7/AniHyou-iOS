@@ -11,7 +11,7 @@ struct VListItemView: View {
     static let coverWidth: CGFloat = 90
     static let coverHeight: CGFloat = 130
 
-    var title: String
+    let title: String
     var imageUrl: String?
     var meanScore: Int?
     var nextEpisode: Int?

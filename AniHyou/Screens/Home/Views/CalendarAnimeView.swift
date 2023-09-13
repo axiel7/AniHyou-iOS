@@ -54,8 +54,8 @@ struct CalendarAnimeView: View {
 
 struct WeekAnimeListView: View {
 
-    var weekday: Int
-    var onMyList: Bool
+    let weekday: Int
+    let onMyList: Bool
     @StateObject private var viewModel = CalendarViewModel()
 
     private let gridColumns = [

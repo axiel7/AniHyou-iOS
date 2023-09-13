@@ -11,8 +11,8 @@ struct StarRatingView: View {
 
     @Binding var rating: Double
 
-    var offImage = Image(systemName: "star")
-    var onImage = Image(systemName: "star.fill")
+    private let offImage = Image(systemName: "star")
+    private let onImage = Image(systemName: "star.fill")
     var offColor = Color.gray
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
 

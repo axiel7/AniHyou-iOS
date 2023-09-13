@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaListStatusView: View {
 
-    var mediaType: MediaType
+    let mediaType: MediaType
     var userId: Int?
     @State private var selection: MediaListStatus? = .current
     @State private var showingMediaDetails = false

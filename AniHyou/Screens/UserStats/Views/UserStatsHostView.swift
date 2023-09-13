@@ -10,7 +10,7 @@ import AniListAPI
 
 struct UserStatsHostView: View {
 
-    var userId: Int
+    let userId: Int
     @State private var mediaType: MediaType = .anime
     @State private var statType: UserStatType = .overview
 

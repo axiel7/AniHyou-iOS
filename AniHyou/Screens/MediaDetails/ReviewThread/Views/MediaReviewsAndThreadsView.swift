@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaReviewsAndThreadsView: View {
 
-    var mediaId: Int
+    let mediaId: Int
     @StateObject private var viewModel = ReviewThreadViewModel()
     private let gridRows = [
         GridItem(.flexible(), spacing: 0, alignment: .leading),

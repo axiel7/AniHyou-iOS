@@ -10,7 +10,7 @@ import Kingfisher
 
 struct NotificationItemView: View {
 
-    var notification: GenericNotification
+    let notification: GenericNotification
     private let imageWidth: CGFloat = 50
     private let imageHeight: CGFloat = 50
 

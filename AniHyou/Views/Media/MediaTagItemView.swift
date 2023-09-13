@@ -29,7 +29,7 @@ private extension MediaTagItemView {
 
 struct MediaTagItemView: View {
 
-    var tag: MediaDetailsQuery.Data.Media.Tag?
+    let tag: MediaDetailsQuery.Data.Media.Tag?
     var showSpoiler: Binding<Bool>
     @State private var showTagDescription = false
     @Environment(\.colorScheme) private var colorScheme

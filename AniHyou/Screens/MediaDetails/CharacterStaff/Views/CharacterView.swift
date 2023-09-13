@@ -12,7 +12,7 @@ private let imageSize: CGFloat = 70
 
 struct CharacterView: View {
 
-    var character: MediaCharacter
+    let character: MediaCharacter
 
     var body: some View {
         HStack {

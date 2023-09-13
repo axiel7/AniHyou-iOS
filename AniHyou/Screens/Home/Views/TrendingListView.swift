@@ -11,7 +11,7 @@ import AniListAPI
 struct TrendingListView: View {
 
     @ObservedObject var viewModel: HomeViewModel
-    var mediaType: MediaType
+    let mediaType: MediaType
 
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
