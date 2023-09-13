@@ -49,8 +49,6 @@ struct ContentView: View {
 
     @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
-    @State private var showingMediaDetails = false
-    @State private var mediaId = 0
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {
