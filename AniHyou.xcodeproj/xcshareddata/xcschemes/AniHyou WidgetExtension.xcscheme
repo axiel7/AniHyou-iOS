@@ -56,8 +56,18 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "48EFCDD429FFAD200096BF6E"
+            BuildableName = "AniHyou WidgetExtension.appex"
+            BlueprintName = "AniHyou WidgetExtension"
+            ReferencedContainer = "container:AniHyou.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "481AD4D92851CE73001779EE"
@@ -65,7 +75,7 @@
             BlueprintName = "AniHyou"
             ReferencedContainer = "container:AniHyou.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
@@ -79,8 +89,8 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "_XCWidgetFamily"
-            value = "medium"
-            isEnabled = "NO">
+            value = "systemLarge"
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

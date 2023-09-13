@@ -151,6 +151,7 @@ struct SettingsView: View {
                         DonationsView()
                     }
                 Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou")!)
+                Link("Discord server", destination: URL(string: "https://discord.gg/CTv3WdfxHh")!)
             } header: {
                 Text("Information")
             } footer: {
