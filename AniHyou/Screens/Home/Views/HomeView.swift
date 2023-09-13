@@ -12,6 +12,8 @@ struct HomeView: View {
 
     @StateObject private var viewModel = HomeViewModel()
     @State private var showNotificationsSheet = false
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
         NavigationStack {
@@ -43,6 +45,7 @@ struct HomeView: View {
             .sheet(isPresented: $showNotificationsSheet) {
                 NotificationsView()
             }
+            .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
         }//:NavigationStack
     }
 

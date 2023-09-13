@@ -13,6 +13,8 @@ struct MediaListStatusView: View {
     var mediaType: MediaType
     var userId: Int?
     @State private var selection: MediaListStatus? = .current
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
         NavigationSplitView {
@@ -25,6 +27,7 @@ struct MediaListStatusView: View {
                 if let selection {
                     MediaListView(type: mediaType, status: selection, userId: userId)
                         .id(selection)
+                        .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
                 }
             }
         }//:NavigationSplitView

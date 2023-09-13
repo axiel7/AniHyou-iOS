@@ -28,6 +28,8 @@ struct ProfileView: View {
             scrollOffset > 0
         }
     }
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
         if isMyProfile {
@@ -41,6 +43,7 @@ struct ProfileView: View {
                                 .opacity(hasScrolled ? 1 : 0)
                         }
                     }
+                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             }//:NavigationStack
         } else {
             content

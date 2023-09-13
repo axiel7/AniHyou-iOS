@@ -28,3 +28,19 @@ struct AniHyouApp: App {
         }
     }
 }
+
+extension View {
+    func addOnOpenMediaUrl(_ showingMediaDetails: Binding<Bool>, _ mediaId: Binding<Int>) -> some View {
+        self
+            .navigationDestination(isPresented: showingMediaDetails) {
+                MediaDetailsView(mediaId: mediaId.wrappedValue)
+                    .id(mediaId.wrappedValue)
+            }
+            .onOpenURL { url in
+                if url.scheme == "anihyou" {
+                    mediaId.wrappedValue = Int(url.lastPathComponent) ?? 0
+                    showingMediaDetails.wrappedValue = mediaId.wrappedValue != 0
+                }
+            }
+    }
+}
