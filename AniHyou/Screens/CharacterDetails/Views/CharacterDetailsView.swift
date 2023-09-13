@@ -135,8 +135,6 @@ struct CharacterDetailsView: View {
     }
 }
 
-struct CharacterDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterDetailsView(characterId: 21044)
-    }
+#Preview {
+    CharacterDetailsView(characterId: 21044)
 }

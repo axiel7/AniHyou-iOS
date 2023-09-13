@@ -55,8 +55,6 @@ struct UserStatsHostView: View {
     }
 }
 
-struct UserStatsHostView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserStatsHostView(userId: 208863)
-    }
+#Preview {
+    UserStatsHostView(userId: 208863)
 }

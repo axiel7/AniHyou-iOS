@@ -207,17 +207,15 @@ struct AniHyou_Widget: Widget {
     }
 }
 
-struct AniHyou_Widget_Previews: PreviewProvider {
-    static var previews: some View {
-        let entry = SimpleEntry(
-            date: Date(),
-            animeList: [],
-            placeholderText: "This is a preview",
-            widgetSize: CGSize(width: 291, height: 141),
-            widgetFamily: .systemLarge
-        )
-        AniHyou_WidgetEntryView(entry: entry)
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
-    }
+#Preview {
+    let entry = SimpleEntry(
+        date: Date(),
+        animeList: [],
+        placeholderText: "This is a preview",
+        widgetSize: CGSize(width: 291, height: 141),
+        widgetFamily: .systemLarge
+    )
+    return AniHyou_WidgetEntryView(entry: entry)
+        .previewContext(WidgetPreviewContext(family: .systemLarge))
 }
 // swiftlint:enable type_name

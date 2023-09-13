@@ -72,8 +72,6 @@ struct ExpandableRichText: View {
     }
 }
 
-struct ExpandableRichText_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpandableRichText("")
-    }
+#Preview {
+    ExpandableRichText("")
 }

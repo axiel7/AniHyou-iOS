@@ -180,12 +180,10 @@ struct UserFavoritesView: View {
     }
 }
 
-struct UserFavoritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView(.vertical) {
-            LazyVStack {
-                UserFavoritesView(userId: 208863)
-            }
+#Preview {
+    ScrollView(.vertical) {
+        LazyVStack {
+            UserFavoritesView(userId: 208863)
         }
     }
 }

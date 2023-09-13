@@ -52,8 +52,6 @@ struct FullCoverView: View {
     }
 }
 
-struct FullImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        FullCoverView(imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-CXtrrkMpJ8Zq.png")
-    }
+#Preview {
+    FullCoverView(imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-CXtrrkMpJ8Zq.png")
 }

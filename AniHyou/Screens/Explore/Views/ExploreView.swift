@@ -412,9 +412,7 @@ struct ExploreView: View {
     }
 }
 
-struct ExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExploreView(viewModel: SearchViewModel())
-    }
+#Preview {
+    ExploreView(viewModel: SearchViewModel())
 }
 // swiftlint:enable syntactic_sugar type_body_length file_length

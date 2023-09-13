@@ -60,15 +60,13 @@ struct VListItemView: View {
     }
 }
 
-struct VListItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        LazyHStack(alignment: .top) {
-            VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
-                .previewLayout(.sizeThatFits)
-            VListItemView(title: "One Piece", imageUrl: "")
-                .previewLayout(.sizeThatFits)
-            VListItemView(title: "One Piece", imageUrl: "", nextEpisode: 123, airingAt: 1228328)
-                .previewLayout(.sizeThatFits)
-        }
+#Preview {
+    LazyHStack(alignment: .top) {
+        VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
+            .previewLayout(.sizeThatFits)
+        VListItemView(title: "One Piece", imageUrl: "")
+            .previewLayout(.sizeThatFits)
+        VListItemView(title: "One Piece", imageUrl: "", nextEpisode: 123, airingAt: 1228328)
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -42,8 +42,6 @@ struct ThreadItemView: View {
     }
 }
 
-struct ThreadItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadItemView(thread: .init(_fieldData: nil))
-    }
+#Preview {
+    ThreadItemView(thread: .init(_fieldData: nil))
 }

@@ -51,8 +51,6 @@ struct ChartListItemView: View {
     }
 }
 
-struct ChartListItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChartListItemView(item: .init(_fieldData: nil), position: 100)
-    }
+#Preview {
+    ChartListItemView(item: .init(_fieldData: nil), position: 100)
 }

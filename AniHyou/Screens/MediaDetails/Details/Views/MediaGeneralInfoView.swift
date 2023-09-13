@@ -193,8 +193,6 @@ struct MediaGeneralInfoView: View {
     }
 }
 
-struct MediaGeneralInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaGeneralInfoView(viewModel: MediaDetailsViewModel())
-    }
+#Preview {
+    MediaGeneralInfoView(viewModel: MediaDetailsViewModel())
 }

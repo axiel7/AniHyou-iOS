@@ -108,8 +108,6 @@ struct OverviewStatsView: View {
     }
 }
 
-struct OverviewStatsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OverviewStatsView(userId: 208863, mediaType: .anime)
-    }
+#Preview {
+    OverviewStatsView(userId: 208863, mediaType: .anime)
 }

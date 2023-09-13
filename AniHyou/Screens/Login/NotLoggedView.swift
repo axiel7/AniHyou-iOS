@@ -34,8 +34,6 @@ struct NotLoggedView: View {
     }
 }
 
-struct NotLoggedView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotLoggedView(onSuccessLogin: {})
-    }
+#Preview {
+    NotLoggedView(onSuccessLogin: {})
 }

@@ -27,10 +27,8 @@ struct ToolbarIconButton: View {
     }
 }
 
-struct ToolbarIconButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ToolbarIconButton(symbolSystemName: "chevron.left") {
+#Preview {
+    ToolbarIconButton(symbolSystemName: "chevron.left") {
 
-        }
     }
 }

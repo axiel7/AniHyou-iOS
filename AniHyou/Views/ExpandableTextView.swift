@@ -42,8 +42,6 @@ struct ExpandableTextView: View {
     }
 }
 
-struct ExpandableTextView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpandableTextView(text: .constant(NSAttributedString(string: "This is a preview")))
-    }
+#Preview {
+    ExpandableTextView(text: .constant(NSAttributedString(string: "This is a preview")))
 }

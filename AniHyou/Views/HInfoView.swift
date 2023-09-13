@@ -58,11 +58,9 @@ struct HInfoView: View {
     }
 }
 
-struct MediaInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            HInfoView(name: "Start date", value: "12-12-2012")
-            HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
-        }
+#Preview {
+    VStack {
+        HInfoView(name: "Start date", value: "12-12-2012")
+        HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
     }
 }

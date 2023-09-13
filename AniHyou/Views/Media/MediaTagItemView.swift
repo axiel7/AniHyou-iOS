@@ -68,12 +68,10 @@ struct MediaTagItemView: View {
     }
 }
 
-struct MediaTagItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        VFlow(alignment: .leading) {
-            ForEach((1...10), id: \.self) { _ in
-                MediaTagItemView(tag: nil, showSpoiler: .constant(false))
-            }
+#Preview {
+    VFlow(alignment: .leading) {
+        ForEach((1...10), id: \.self) { _ in
+            MediaTagItemView(tag: nil, showSpoiler: .constant(false))
         }
     }
 }

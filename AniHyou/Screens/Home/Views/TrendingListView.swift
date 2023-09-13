@@ -77,8 +77,6 @@ struct TrendingListView: View {
     }
 }
 
-struct TrendingListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrendingListView(viewModel: HomeViewModel(), mediaType: .anime)
-    }
+#Preview {
+    TrendingListView(viewModel: HomeViewModel(), mediaType: .anime)
 }

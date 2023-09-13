@@ -85,15 +85,12 @@ struct AiringScheduleItemText: View {
     }
 }
 
-struct MediaListItemStandardView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        NavigationStack {
-            List(0...5, id: \.self) { _ in
-                NavigationLink(destination: {}, label: {
-                    MediaListItemStandardView(item: nil)
-                })
-            }
+#Preview {
+    NavigationStack {
+        List(0...5, id: \.self) { _ in
+            NavigationLink(destination: {}, label: {
+                MediaListItemStandardView(item: nil)
+            })
         }
     }
 }

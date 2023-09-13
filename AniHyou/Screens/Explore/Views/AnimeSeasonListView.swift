@@ -66,10 +66,8 @@ struct AnimeSeasonListView: View {
     }
 }
 
-struct AnimeSeasonListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            AnimeSeasonListView(season: .spring)
-        }
+#Preview {
+    NavigationStack {
+        AnimeSeasonListView(season: .spring)
     }
 }

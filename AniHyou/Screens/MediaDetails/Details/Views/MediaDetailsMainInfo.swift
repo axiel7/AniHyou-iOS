@@ -114,8 +114,6 @@ struct MediaDetailsMainInfo: View {
     }
 }
 
-struct MediaDetailsMainInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaDetailsMainInfo(mediaId: 1, viewModel: MediaDetailsViewModel())
-    }
+#Preview {
+    MediaDetailsMainInfo(mediaId: 1, viewModel: MediaDetailsViewModel())
 }

@@ -80,8 +80,6 @@ struct MediaReviewsAndThreadsView: View {
     }
 }
 
-struct MediaReviewsAndThreadsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaReviewsAndThreadsView(mediaId: 1)
-    }
+#Preview {
+    MediaReviewsAndThreadsView(mediaId: 1)
 }

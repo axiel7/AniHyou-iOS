@@ -63,17 +63,15 @@ struct AiringMediaHorizontalItemView: View {
     }
 }
 
-struct AiringMediaHorizontalItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        AiringMediaHorizontalItemView(
-            title: "Cowboy Bebop: Tengoku no Tobira and a large title",
-            imageUrl: "https://picsum.photos/300/200",
-            meanScore: 78,
-            nextEpisode: 2,
-            airingAt: 102839281
-        )
-        .frame(width: 280, alignment: .leading)
-        .padding(.leading, 8)
-        .previewLayout(.sizeThatFits)
-    }
+#Preview {
+    AiringMediaHorizontalItemView(
+        title: "Cowboy Bebop: Tengoku no Tobira and a large title",
+        imageUrl: "https://picsum.photos/300/200",
+        meanScore: 78,
+        nextEpisode: 2,
+        airingAt: 102839281
+    )
+    .frame(width: 280, alignment: .leading)
+    .padding(.leading, 8)
+    .previewLayout(.sizeThatFits)
 }

@@ -35,9 +35,7 @@ struct MediaCoverView: View {
     }
 }
 
-struct MediaCoverView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaCoverView(width: 73, height: 110)
-            .previewLayout(.sizeThatFits)
-    }
+#Preview {
+    MediaCoverView(width: 73, height: 110)
+        .previewLayout(.sizeThatFits)
 }

@@ -75,8 +75,6 @@ struct ThreadDetailsView: View {
     }
 }
 
-struct ThreadDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadDetailsView(thread: .init(_fieldData: nil))
-    }
+#Preview {
+    ThreadDetailsView(thread: .init(_fieldData: nil))
 }

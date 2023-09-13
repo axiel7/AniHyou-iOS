@@ -98,8 +98,6 @@ struct WeekAnimeListView: View {
     }
 }
 
-struct CalendarAnimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarAnimeView()
-    }
+#Preview {
+    CalendarAnimeView()
 }

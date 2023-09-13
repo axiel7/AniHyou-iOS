@@ -52,8 +52,6 @@ struct ReviewDetailsView: View {
     }
 }
 
-struct ReviewDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReviewDetailsView(reviewId: 10734)
-    }
+#Preview {
+    ReviewDetailsView(reviewId: 10734)
 }

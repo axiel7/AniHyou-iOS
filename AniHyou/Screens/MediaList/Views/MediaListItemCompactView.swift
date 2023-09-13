@@ -59,14 +59,12 @@ struct MediaListItemCompactView: View {
     }
 }
 
-struct MediaListItemCompactView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            List(0...4, id: \.self) { _ in
-                NavigationLink(destination: {}, label: {
-                    MediaListItemCompactView()
-                })
-            }
+#Preview {
+    NavigationStack {
+        List(0...4, id: \.self) { _ in
+            NavigationLink(destination: {}, label: {
+                MediaListItemCompactView(item: nil)
+            })
         }
     }
 }

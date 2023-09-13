@@ -138,8 +138,6 @@ struct MediaContextMenuView: View {
     }
 }
 
-struct MediaContextMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaContextMenuView(mediaId: 1)
-    }
+#Preview {
+    MediaContextMenuView(mediaId: 1)
 }

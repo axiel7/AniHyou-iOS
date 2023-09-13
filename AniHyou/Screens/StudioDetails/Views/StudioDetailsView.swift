@@ -66,8 +66,6 @@ struct StudioDetailsView: View {
     }
 }
 
-struct StudioDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        StudioDetailsView(studioId: 1)
-    }
+#Preview {
+    StudioDetailsView(studioId: 1)
 }

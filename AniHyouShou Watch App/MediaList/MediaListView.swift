@@ -56,8 +56,6 @@ struct MediaListItemStandardView: View {
     }
 }
 
-struct MediaListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaListView(type: .anime)
-    }
+#Preview {
+    MediaListView(type: .anime)
 }

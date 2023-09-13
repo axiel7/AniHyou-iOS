@@ -38,20 +38,18 @@ struct VerticalBarsStatsView: View {
     }
 }
 
-struct VerticalBarsStatsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let stats = [
-            Stat(id: "10", value: 52, color: Color("Score10")),
-            Stat(id: "20", value: 25, color: Color("Score20")),
-            Stat(id: "30", value: 78, color: Color("Score30")),
-            Stat(id: "40", value: 143, color: Color("Score40")),
-            Stat(id: "50", value: 249, color: Color("Score50")),
-            Stat(id: "60", value: 420, color: Color("Score60")),
-            Stat(id: "70", value: 874, color: Color("Score70")),
-            Stat(id: "80", value: 922, color: Color("Score80")),
-            Stat(id: "90", value: 605, color: Color("Score90")),
-            Stat(id: "100", value: 312, color: Color("Score100"))
-        ]
-        VerticalBarsStatsView(stats: stats)
-    }
+#Preview {
+    let stats = [
+        Stat(id: "10", value: 52, color: Color("Score10")),
+        Stat(id: "20", value: 25, color: Color("Score20")),
+        Stat(id: "30", value: 78, color: Color("Score30")),
+        Stat(id: "40", value: 143, color: Color("Score40")),
+        Stat(id: "50", value: 249, color: Color("Score50")),
+        Stat(id: "60", value: 420, color: Color("Score60")),
+        Stat(id: "70", value: 874, color: Color("Score70")),
+        Stat(id: "80", value: 922, color: Color("Score80")),
+        Stat(id: "90", value: 605, color: Color("Score90")),
+        Stat(id: "100", value: 312, color: Color("Score100"))
+    ]
+    return VerticalBarsStatsView(stats: stats)
 }

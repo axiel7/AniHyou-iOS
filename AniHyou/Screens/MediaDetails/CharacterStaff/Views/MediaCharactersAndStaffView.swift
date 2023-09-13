@@ -72,8 +72,6 @@ struct MediaCharactersAndStaffView: View {
     }
 }
 
-struct MediaCharactersAndStaffView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaCharactersAndStaffView(mediaId: 1)
-    }
+#Preview {
+    MediaCharactersAndStaffView(mediaId: 1)
 }

@@ -49,16 +49,14 @@ struct NotificationItemView: View {
     }
 }
 
-struct NotificationItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        let notification = GenericNotification(
-            id: 1,
-            text: "Episode 7 of Shingeki no Kyojin: The Final Season Part 2 aired.",
-            imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-ODIRpBIbR5Eu.jpg",
-            contentId: 1,
-            type: .airing,
-            createdAt: 109120128
-        )
-        NotificationItemView(notification: notification)
-    }
+#Preview {
+    let notification = GenericNotification(
+        id: 1,
+        text: "Episode 7 of Shingeki no Kyojin: The Final Season Part 2 aired.",
+        imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-ODIRpBIbR5Eu.jpg",
+        contentId: 1,
+        type: .airing,
+        createdAt: 109120128
+    )
+    return NotificationItemView(notification: notification)
 }

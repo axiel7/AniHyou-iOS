@@ -59,14 +59,12 @@ struct HorizontalBarStatsView: View {
     }
 }
 
-struct HorizontalBarStatsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let stats = [
-            Stat(id: "Planning", value: 6555, color: .green),
-            Stat(id: "Current", value: 4991, color: .blue),
-            Stat(id: "Paused", value: 522, color: .yellow),
-            Stat(id: "Dropped", value: 146, color: .red)
-        ]
-        HorizontalBarStatsView(stats: stats)
-    }
+#Preview {
+    let stats = [
+        Stat(id: "Planning", value: 6555, color: .green),
+        Stat(id: "Current", value: 4991, color: .blue),
+        Stat(id: "Paused", value: 522, color: .yellow),
+        Stat(id: "Dropped", value: 146, color: .red)
+    ]
+    return HorizontalBarStatsView(stats: stats)
 }

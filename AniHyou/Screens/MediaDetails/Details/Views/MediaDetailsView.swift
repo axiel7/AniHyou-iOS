@@ -161,8 +161,6 @@ struct MediaDetailsView: View {
     }
 }
 
-struct MediaDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaDetailsView(mediaId: 140960)
-    }
+#Preview {
+    MediaDetailsView(mediaId: 140960)
 }

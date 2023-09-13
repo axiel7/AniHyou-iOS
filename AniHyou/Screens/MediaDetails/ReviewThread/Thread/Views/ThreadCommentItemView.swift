@@ -48,8 +48,6 @@ struct ThreadCommentItemView: View {
     }
 }
 
-struct ThreadCommentItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadCommentItemView(comment: .init(_fieldData: nil))
-    }
+#Preview {
+    ThreadCommentItemView(comment: .init(_fieldData: nil))
 }

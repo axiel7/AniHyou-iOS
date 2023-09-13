@@ -43,8 +43,6 @@ struct DatePickerToggleView: View {
     }
 }
 
-struct DatePickerToggleView_Previews: PreviewProvider {
-    static var previews: some View {
-        DatePickerToggleView(text: "Start Date", selection: .constant(Date()), isDateSet: .constant(true))
-    }
+#Preview {
+    DatePickerToggleView(text: "Start Date", selection: .constant(Date()), isDateSet: .constant(true))
 }

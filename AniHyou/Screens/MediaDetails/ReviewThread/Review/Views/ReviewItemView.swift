@@ -40,8 +40,6 @@ struct ReviewItemView: View {
     }
 }
 
-struct ReviewItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReviewItemView(review: .init(_fieldData: nil))
-    }
+#Preview {
+    ReviewItemView(review: .init(_fieldData: nil))
 }

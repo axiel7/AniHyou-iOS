@@ -32,8 +32,6 @@ struct MediaStatView: View {
     }
 }
 
-struct MediaStatView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaStatView(name: "Average Score", value: "88%")
-    }
+#Preview {
+    MediaStatView(name: "Average Score", value: "88%")
 }

@@ -64,8 +64,6 @@ struct DonationsView: View {
     }
 }
 
-struct DonationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        DonationsView()
-    }
+#Preview {
+    DonationsView()
 }

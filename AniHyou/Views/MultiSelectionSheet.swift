@@ -45,15 +45,13 @@ struct MultiSelectionSheet<Data: Hashable, RowContent: View>: View {
     }
 }
 
-struct MultiSelectionSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        MultiSelectionSheet(
-            values: MediaFormat.allCases,
-            selectedValues: .constant(Set()),
-            onDone: {},
-            rowContent: { value in
-                Text(value.localizedName)
-            }
-        )
-    }
+#Preview {
+    MultiSelectionSheet(
+        values: MediaFormat.allCases,
+        selectedValues: .constant(Set()),
+        onDone: {},
+        rowContent: { value in
+            Text(value.localizedName)
+        }
+    )
 }

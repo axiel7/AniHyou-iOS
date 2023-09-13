@@ -102,8 +102,6 @@ struct MediaRelationsAndRecommendationsView: View {
     }
 }
 
-struct MediaRelationsAndRecommendationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaRelationsAndRecommendationsView(mediaId: 1)
-    }
+#Preview {
+    MediaRelationsAndRecommendationsView(mediaId: 1)
 }

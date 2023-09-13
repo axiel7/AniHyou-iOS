@@ -28,8 +28,6 @@ struct CircleImageView: View {
     }
 }
 
-struct CircleImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        CircleImageView(size: 110)
-    }
+#Preview {
+    CircleImageView(size: 110)
 }

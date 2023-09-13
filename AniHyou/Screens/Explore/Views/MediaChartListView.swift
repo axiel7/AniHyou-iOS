@@ -37,8 +37,6 @@ struct MediaChartListView: View {
     }
 }
 
-struct MediaChartListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)
-    }
+#Preview {
+    MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)
 }

@@ -48,12 +48,10 @@ struct UserActivityView: View {
     }
 }
 
-struct UserActivityView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView(.vertical) {
-            LazyVStack(alignment: .leading) {
-                UserActivityView(userId: 208863, isMyProfile: false)
-            }
+#Preview {
+    ScrollView(.vertical) {
+        LazyVStack(alignment: .leading) {
+            UserActivityView(userId: 208863, isMyProfile: false)
         }
     }
 }

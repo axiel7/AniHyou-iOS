@@ -50,8 +50,6 @@ struct UpdateMediaEntryView: View {
     }
 }
 
-struct UpdateMediaEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        UpdateMediaEntryView(entry: nil, viewModel: MediaListViewModel())
-    }
+#Preview {
+    UpdateMediaEntryView(entry: nil, viewModel: MediaListViewModel())
 }

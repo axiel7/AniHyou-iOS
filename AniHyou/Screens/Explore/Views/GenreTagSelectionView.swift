@@ -76,8 +76,6 @@ struct GenreTagSelectionView: View {
     }
 }
 
-struct GenreTagSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        GenreTagSelectionView(viewModel: SearchViewModel()) {}
-    }
+#Preview {
+    GenreTagSelectionView(viewModel: SearchViewModel()) {}
 }

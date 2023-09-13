@@ -53,8 +53,6 @@ struct MediaActivityItemView: View {
     }
 }
 
-struct MediaActivityItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaActivityItemView(activity: nil)
-    }
+#Preview {
+    MediaActivityItemView(activity: nil)
 }

@@ -222,8 +222,6 @@ struct MediaListEditView: View {
     }
 }
 
-struct MediaListEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaListEditView(mediaId: 1, mediaType: .anime)
-    }
+#Preview {
+    MediaListEditView(mediaId: 1, mediaType: .anime)
 }

@@ -29,8 +29,6 @@ struct RootExploreView: View {
     }
 }
 
-struct RootExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootExploreView()
-    }
+#Preview {
+    RootExploreView()
 }

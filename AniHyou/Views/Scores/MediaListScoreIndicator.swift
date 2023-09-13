@@ -55,12 +55,10 @@ struct MediaListScoreIndicator: View {
     }
 }
 
-struct MediaListScoreIndicator_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            MediaListScoreIndicator(score: 0, format: .point100)
-            MediaListScoreIndicator(score: 2.8, format: .point10Decimal)
-            MediaListScoreIndicator(score: 3, format: .point3)
-        }
+#Preview {
+    VStack {
+        MediaListScoreIndicator(score: 0, format: .point100)
+        MediaListScoreIndicator(score: 2.8, format: .point10Decimal)
+        MediaListScoreIndicator(score: 3, format: .point3)
     }
 }

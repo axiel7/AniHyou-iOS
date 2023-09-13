@@ -162,8 +162,6 @@ struct StaffDetailsView: View {
     }
 }
 
-struct StaffDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        StaffDetailsView(staffId: 97836)
-    }
+#Preview {
+    StaffDetailsView(staffId: 97836)
 }

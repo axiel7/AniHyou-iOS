@@ -34,8 +34,6 @@ struct MediaListStatusView: View {
     }
 }
 
-struct MediaListStatusView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaListStatusView(mediaType: .anime)
-    }
+#Preview {
+    MediaListStatusView(mediaType: .anime)
 }
