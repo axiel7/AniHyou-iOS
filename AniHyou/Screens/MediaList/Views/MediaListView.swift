@@ -43,6 +43,12 @@ struct MediaListView: View {
         .onChange(of: viewModel.sort) { _ in
             viewModel.refreshList()
         }
+        .onChange(of: viewModel.formatFilter) { _ in
+            viewModel.refreshList()
+        }
+        .onChange(of: viewModel.statusFilter) { _ in
+            viewModel.refreshList()
+        }
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = status
@@ -81,9 +87,22 @@ struct MediaListView: View {
             }
             ToolbarItem {
                 Menu {
-                    Picker("Status", selection: $viewModel.statusFilter) {
-                        ForEach(MediaStatus.allCases, id: \.rawValue) { releaseStatus in
-                            Text(releaseStatus.localizedName).tag(releaseStatus)
+                    Menu("Release Status") {
+                        Picker("Status", selection: $viewModel.statusFilter) {
+                            Text("All").tag("ALL")
+                            ForEach(MediaStatus.allCases, id: \.rawValue) { releaseStatus in
+                                Text(releaseStatus.localizedName).tag(releaseStatus)
+                            }
+                        }
+                    
+                    }
+                    
+                    Menu("Format") {
+                        Picker("Format", selection: $viewModel.formatFilter) {
+                            Text("All").tag("ALL")
+                            ForEach(MediaFormat.allCases, id: \.rawValue) { format in
+                                Text(format.localizedName).tag(format)
+                            }
                         }
                     }
                 

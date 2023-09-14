@@ -22,7 +22,8 @@ class MediaListViewModel: ObservableObject {
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
-    @Published var statusFilter: MediaStatus = .notYetReleased
+    @Published var statusFilter: String = "ALL"
+    @Published var formatFilter: String = "ALL"
     @Published var searchText = ""
     @Published var isLoading = false
     
@@ -30,7 +31,7 @@ class MediaListViewModel: ObservableObject {
         if searchText.isEmpty {
             return mediaList
         } else {
-            let filtered = mediaList.filter {
+            var filtered = mediaList.filter {
                 let title = $0?.media?.title?.userPreferred
                 if title == nil || title?.isEmpty == true {
                     return false
@@ -43,6 +44,15 @@ class MediaListViewModel: ObservableObject {
 
             return Array(Set(filtered))
         }
+        
+    }
+    
+    func filterMediaList(filters: (_ media: [UserMediaListQuery.Data.Page.MediaList?]) -> Void...) -> [UserMediaListQuery.Data.Page.MediaList?] {
+        var filtered = mediaList
+        filters.forEach { filter in
+            filter(filtered)
+        }
+        return filtered
     }
 
     func getUserMediaList(otherUserId: Int?) {
