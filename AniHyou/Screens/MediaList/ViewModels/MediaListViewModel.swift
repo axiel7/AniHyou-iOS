@@ -28,29 +28,45 @@ class MediaListViewModel: ObservableObject {
     @Published var isLoading = false
     
     var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
-        if searchText.isEmpty {
-            return mediaList
-        } else {
-            var filtered = mediaList.filter {
-                let title = $0?.media?.title?.userPreferred
-                if title == nil || title?.isEmpty == true {
-                    return false
-                }
-                return title!.lowercased().contains(searchText.lowercased())
-            }
-            if hasNextPage && filtered.count < 25 {
-                getUserMediaList(otherUserId: userId)
-            }
+        return self.filterMediaList(mediaList: mediaList, filters: [ { mList in
+                if !mList.isEmpty {
+                    if !self.searchText.isEmpty {
+                        let filtered = mList.filter {
+                            let title = $0?.media?.title?.userPreferred
+                            if title == nil || title?.isEmpty == true {
+                                return false
+                            }
+                            return title!.lowercased().contains(self.searchText.lowercased())
+                        }
+                        if self.hasNextPage && filtered.count < 25 {
+                            self.getUserMediaList(otherUserId: self.userId)
+                        }
 
-            return Array(Set(filtered))
-        }
+                        return Array(Set(filtered))
+                    }
+                }
+                return mList
+            }, { mList in
+                if !mList.isEmpty && self.statusFilter != "ALL" {
+                    return Array(Set(mList.filter { media in
+                        return media?.media?.status?.rawValue == self.statusFilter
+                    }))
+                }
+                return mList
+            }
+        ])
         
     }
     
-    func filterMediaList(filters: (_ media: [UserMediaListQuery.Data.Page.MediaList?]) -> Void...) -> [UserMediaListQuery.Data.Page.MediaList?] {
+    func filterMediaList(
+        mediaList: [UserMediaListQuery.Data.Page.MediaList?],
+        filters: [(_ media: [UserMediaListQuery.Data.Page.MediaList?]) -> [UserMediaListQuery.Data.Page.MediaList?]]
+    ) -> [UserMediaListQuery.Data.Page.MediaList?] {
         var filtered = mediaList
-        filters.forEach { filter in
-            filter(filtered)
+        if !filters.isEmpty {
+            filters.forEach { filter in
+                filtered = filter(filtered)
+            }
         }
         return filtered
     }
