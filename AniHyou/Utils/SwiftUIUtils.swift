@@ -58,3 +58,12 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         return viewControllers.count > 1
     }
 }
+
+// Binding extension to use with a Picker so it can be deselected when picking the same value again
+public extension Binding where Value: Equatable {
+    init(_ source: Binding<Value>, deselectTo value: Value) {
+        self.init(get: { source.wrappedValue },
+                  set: { source.wrappedValue = $0 == source.wrappedValue ? value : $0 }
+        )
+    }
+}

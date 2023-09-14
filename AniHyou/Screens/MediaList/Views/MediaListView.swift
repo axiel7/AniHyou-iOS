@@ -88,20 +88,17 @@ struct MediaListView: View {
             ToolbarItem {
                 Menu {
                     Menu("Release Status") {
-                        Picker("Status", selection: $viewModel.statusFilter) {
-                            Text("All").tag("ALL")
-                            ForEach(MediaStatus.allCases, id: \.rawValue) { releaseStatus in
-                                Text(releaseStatus.localizedName).tag(releaseStatus)
+                        Picker("Status", selection: Binding($viewModel.statusFilter, deselectTo: nil)) {
+                            ForEach(MediaStatus.allCases, id: \.self) { releaseStatus in
+                                Text(releaseStatus.localizedName).tag(Optional(releaseStatus))
                             }
                         }
-                    
                     }
                     
                     Menu("Format") {
-                        Picker("Format", selection: $viewModel.formatFilter) {
-                            Text("All").tag("ALL")
-                            ForEach(MediaFormat.allCases, id: \.rawValue) { format in
-                                Text(format.localizedName).tag(format)
+                        Picker("Format", selection: Binding($viewModel.formatFilter, deselectTo: nil)) {
+                            ForEach(MediaFormat.allCases, id: \.self) { format in
+                                Text(format.localizedName).tag(Optional(format))
                             }
                         }
                     }

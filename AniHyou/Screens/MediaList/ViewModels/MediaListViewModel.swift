@@ -22,8 +22,8 @@ class MediaListViewModel: ObservableObject {
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
     @Published var sort: MediaListSort = .updatedTimeDesc
-    @Published var statusFilter: String = "ALL"
-    @Published var formatFilter: String = "ALL"
+    @Published var statusFilter: MediaStatus?
+    @Published var formatFilter: MediaFormat?
     @Published var searchText = ""
     @Published var isLoading = false
     
@@ -47,9 +47,9 @@ class MediaListViewModel: ObservableObject {
                 }
                 return mList
             }, { mList in
-                if !mList.isEmpty && self.statusFilter != "ALL" {
+                if !mList.isEmpty, let statusFilter = self.statusFilter {
                     return Array(Set(mList.filter { media in
-                        return media?.media?.status?.rawValue == self.statusFilter
+                        return media?.media?.status == statusFilter
                     }))
                 }
                 return mList
