@@ -10,12 +10,12 @@ import SwiftUI
 struct GenreTagSelectionView: View {
 
     @ObservedObject var viewModel: SearchViewModel
-    var onDone: () -> Void
+    let onDone: () -> Void
     @State private var selectionType: Int = 0
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Picker("Selection type", selection: $selectionType) {
                     Text("Genres").tag(0)
@@ -71,13 +71,11 @@ struct GenreTagSelectionView: View {
                     )
                 }
             }
-        }//:NavigationView
+        }//:NavigationStack
         .searchable(text: $viewModel.filterGenreTagText)
     }
 }
 
-struct GenreTagSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        GenreTagSelectionView(viewModel: SearchViewModel()) {}
-    }
+#Preview {
+    GenreTagSelectionView(viewModel: SearchViewModel()) {}
 }

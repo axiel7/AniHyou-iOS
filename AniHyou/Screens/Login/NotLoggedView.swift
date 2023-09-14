@@ -10,7 +10,7 @@ import WidgetKit
 
 struct NotLoggedView: View {
     @StateObject private var viewModel = LoginViewModel()
-    var onSuccessLogin: () -> Void
+    let onSuccessLogin: () -> Void
 
     var body: some View {
         VStack {
@@ -34,8 +34,6 @@ struct NotLoggedView: View {
     }
 }
 
-struct NotLoggedView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotLoggedView(onSuccessLogin: {})
-    }
+#Preview {
+    NotLoggedView(onSuccessLogin: {})
 }

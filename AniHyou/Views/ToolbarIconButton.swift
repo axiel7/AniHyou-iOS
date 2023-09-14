@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ToolbarIconButton: View {
 
-    var symbolSystemName: String
-    var action: () -> Void
+    let symbolSystemName: String
+    let action: () -> Void
 
     var body: some View {
 
@@ -27,10 +27,8 @@ struct ToolbarIconButton: View {
     }
 }
 
-struct ToolbarIconButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ToolbarIconButton(symbolSystemName: "chevron.left") {
+#Preview {
+    ToolbarIconButton(symbolSystemName: "chevron.left") {
 
-        }
     }
 }

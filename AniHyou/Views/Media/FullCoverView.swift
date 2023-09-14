@@ -18,7 +18,7 @@ struct FullCoverView: View {
     @State private var screenHeight = UIScreen.main.bounds.height - 180
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 KFImage(URL(string: imageUrl ?? ""))
                     .placeholder {
@@ -47,14 +47,11 @@ struct FullCoverView: View {
                     })
                 }
             }
-            .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
-        }//:NavigationView
+        }//:NavigationStack
     }
 }
 
-struct FullImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        FullCoverView(imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-CXtrrkMpJ8Zq.png")
-    }
+#Preview {
+    FullCoverView(imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-CXtrrkMpJ8Zq.png")
 }

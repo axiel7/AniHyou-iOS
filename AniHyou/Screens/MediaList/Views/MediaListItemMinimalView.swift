@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaListItemMinimalView: View {
 
-    var item: UserMediaListQuery.Data.Page.MediaList?
+    let item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
@@ -46,14 +46,12 @@ struct MediaListItemMinimalView: View {
     }
 }
 
-struct MediaListItemMinimalView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            List(0...4, id: \.self) { _ in
-                NavigationLink(destination: {}, label: {
-                    MediaListItemMinimalView()
-                })
-            }
+#Preview {
+    NavigationStack {
+        List(0...4, id: \.self) { _ in
+            NavigationLink(destination: {}, label: {
+                MediaListItemMinimalView(item: nil)
+            })
         }
     }
 }

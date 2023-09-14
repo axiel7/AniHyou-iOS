@@ -36,11 +36,10 @@ struct AiringMediaHorizontalItemView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
 
-                if nextEpisode != nil && airingAt != nil {
-                    VStack(alignment: .leading) {
-                        Text("Ep \(nextEpisode!) airing in ")
-
-                        Text(Date(timeIntervalSince1970: Double(airingAt!)), style: .relative)
+                if let nextEpisode, let airingAt {
+                    Group {
+                        Text("Ep \(nextEpisode) airing in ") +
+                        Text(Date(timeIntervalSince1970: Double(airingAt)), style: .relative)
                     }
                     .font(.subheadline)
                     .foregroundColor(.gray)
@@ -48,12 +47,12 @@ struct AiringMediaHorizontalItemView: View {
                     .multilineTextAlignment(.leading)
                 }
 
-                if meanScore != nil {
+                if let meanScore {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
                             .font(.footnote)
                             .foregroundColor(.gray)
-                        Text("\(meanScore!)%")
+                        Text("\(meanScore)%")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
@@ -64,17 +63,15 @@ struct AiringMediaHorizontalItemView: View {
     }
 }
 
-struct AiringMediaHorizontalItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        AiringMediaHorizontalItemView(
-            title: "Cowboy Bebop: Tengoku no Tobira and a large title",
-            imageUrl: "https://picsum.photos/300/200",
-            meanScore: 78,
-            nextEpisode: 2,
-            airingAt: 102839281
-        )
-        .frame(width: 280, alignment: .leading)
-        .padding(.leading, 8)
-        .previewLayout(.sizeThatFits)
-    }
+#Preview {
+    AiringMediaHorizontalItemView(
+        title: "Cowboy Bebop: Tengoku no Tobira and a large title",
+        imageUrl: "https://picsum.photos/300/200",
+        meanScore: 78,
+        nextEpisode: 2,
+        airingAt: 102839281
+    )
+    .frame(width: 280, alignment: .leading)
+    .padding(.leading, 8)
+    .previewLayout(.sizeThatFits)
 }

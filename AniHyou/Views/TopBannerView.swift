@@ -12,7 +12,7 @@ struct TopBannerView: View {
 
     var imageUrl: String?
     var placeholderHexColor: String?
-    var height: CGFloat
+    let height: CGFloat
 
     var body: some View {
         GeometryReader { geo in
@@ -57,13 +57,11 @@ struct TopBannerView: View {
     }
 }
 
-struct TopBannerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView {
-            VStack {
-                TopBannerView(height: 120)
-                Spacer()
-            }
+#Preview {
+    ScrollView {
+        VStack {
+            TopBannerView(height: 120)
+            Spacer()
         }
     }
 }

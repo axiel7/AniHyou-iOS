@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ThreadItemView: View {
 
-    var thread: MediaThreadsQuery.Data.Page.Thread
+    let thread: MediaThreadsQuery.Data.Page.Thread
 
     var body: some View {
         VStack {
@@ -42,8 +42,6 @@ struct ThreadItemView: View {
     }
 }
 
-struct ThreadItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadItemView(thread: .init(_fieldData: nil))
-    }
+#Preview {
+    ThreadItemView(thread: .init(_fieldData: nil))
 }

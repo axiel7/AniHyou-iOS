@@ -12,7 +12,7 @@ struct StaffView: View {
 
     static let imageSize: CGFloat = 70
 
-    var staff: MediaStaff
+    let staff: MediaStaff
 
     var body: some View {
         NavigationLink(destination: StaffDetailsView(staffId: staff.node!.id)) {
@@ -37,8 +37,6 @@ struct StaffView: View {
     }
 }
 
-struct StaffView_Previews: PreviewProvider {
-    static var previews: some View {
-        StaffView(staff: .init(_fieldData: nil))
-    }
+#Preview {
+    StaffView(staff: .init(_fieldData: nil))
 }

@@ -11,8 +11,8 @@ import AniListAPI
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss
 
-    var mediaId: Int
-    var mediaType: MediaType
+    let mediaId: Int
+    let mediaType: MediaType
     var mediaList: BasicMediaListEntry?
     var onSave: (_ updatedEntry: BasicMediaListEntry) -> Void = { _ in }
     var onDelete: () -> Void = {}
@@ -41,7 +41,7 @@ struct MediaListEditView: View {
     }()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form(content: {
                 Picker("Status", selection: $status) {
                     ForEach(MediaListStatus.allCases, id: \.self) { status in
@@ -170,13 +170,13 @@ struct MediaListEditView: View {
                     }
                 }
             }//:Toolbar
-        }//:NavigationView
+        }//:NavigationStack
         .onAppear {
             setValues()
         }
         .onChange(of: viewModel.isUpdateSuccess) { isUpdateSuccess in
-            if isUpdateSuccess && viewModel.updatedEntry != nil {
-                onSave(viewModel.updatedEntry!)
+            if isUpdateSuccess, let entry = viewModel.updatedEntry {
+                onSave(entry)
                 dismiss()
             }
         }
@@ -222,8 +222,6 @@ struct MediaListEditView: View {
     }
 }
 
-struct MediaListEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaListEditView(mediaId: 1, mediaType: .anime)
-    }
+#Preview {
+    MediaListEditView(mediaId: 1, mediaType: .anime)
 }

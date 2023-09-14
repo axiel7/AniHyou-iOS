@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MediaStatView: View {
 
-    var name: String
-    var value: String
+    let name: String
+    let value: String
     var showDivider = true
 
     var body: some View {
@@ -32,8 +32,6 @@ struct MediaStatView: View {
     }
 }
 
-struct MediaStatView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaStatView(name: "Average Score", value: "88%")
-    }
+#Preview {
+    MediaStatView(name: "Average Score", value: "88%")
 }

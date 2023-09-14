@@ -9,9 +9,10 @@ import SwiftUI
 
 struct HInfoView: View {
 
-    var name: String
+    let name: String
     var value: String?
     var isExpandable: Bool = false
+    var expandedContent: (() -> any View)?
     @State private var isExpanded: Bool = false
 
     var body: some View {
@@ -34,10 +35,14 @@ struct HInfoView: View {
                 }
             }
             if isExpanded {
-                Text(value ?? "Unknown")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.leading)
-                    .padding(.top, 1)
+                if let expandedContent {
+                    AnyView(expandedContent())
+                } else {
+                    Text(value ?? "Unknown")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.leading)
+                        .padding(.top, 1)
+                }
             }
             Divider()
         }
@@ -53,11 +58,9 @@ struct HInfoView: View {
     }
 }
 
-struct MediaInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            HInfoView(name: "Start date", value: "12-12-2012")
-            HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
-        }
+#Preview {
+    VStack {
+        HInfoView(name: "Start date", value: "12-12-2012")
+        HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
     }
 }

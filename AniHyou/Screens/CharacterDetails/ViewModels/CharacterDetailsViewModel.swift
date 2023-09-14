@@ -28,11 +28,11 @@ class CharacterDetailsViewModel: ObservableObject {
     }
 
     func toggleFavorite() {
-        guard character != nil else { return }
+        guard let character else { return }
         Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
             animeId: .none,
             mangaId: .none,
-            characterId: .some(character!.id),
+            characterId: .some(character.id),
             staffId: .none,
             studioId: .none
         )) { [weak self] result in
@@ -96,12 +96,12 @@ class CharacterDetailsViewModel: ObservableObject {
     // MARK: calculated variables
 
     var alternativeNamesFormatted: String? {
-        guard character?.name?.alternative != nil else { return nil }
-        return character!.name!.alternative!.compactMap { $0 }.joined(separator: ", ")
+        guard let alternative = character?.name?.alternative else { return nil }
+        return alternative.compactMap { $0 }.joined(separator: ", ")
     }
 
     var alternativeNamesSpoilerFormatted: String? {
-        guard character?.name?.alternativeSpoiler != nil else { return nil }
-        return character!.name!.alternativeSpoiler!.compactMap { $0 }.joined(separator: ", ")
+        guard let alternativeSpoiler = character?.name?.alternativeSpoiler else { return nil }
+        return alternativeSpoiler.compactMap { $0 }.joined(separator: ", ")
     }
 }

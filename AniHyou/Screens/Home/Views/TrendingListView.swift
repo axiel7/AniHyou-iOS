@@ -11,7 +11,7 @@ import AniListAPI
 struct TrendingListView: View {
 
     @ObservedObject var viewModel: HomeViewModel
-    var mediaType: MediaType
+    let mediaType: MediaType
 
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
@@ -77,8 +77,6 @@ struct TrendingListView: View {
     }
 }
 
-struct TrendingListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrendingListView(viewModel: HomeViewModel(), mediaType: .anime)
-    }
+#Preview {
+    TrendingListView(viewModel: HomeViewModel(), mediaType: .anime)
 }

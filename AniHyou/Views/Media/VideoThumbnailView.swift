@@ -29,10 +29,8 @@ struct VideoThumbnailView: View {
     }
 }
 
-struct VideoThumbnailView_Previews: PreviewProvider {
-    static var previews: some View {
-        Link(destination: URL(string: "https://i.ytimg.com/vi/OhNwckCLzis/hqdefault.jpg")!) {
-            VideoThumbnailView(imageUrl: "https://i.ytimg.com/vi/OhNwckCLzis/hqdefault.jpg")
-        }
+#Preview {
+    Link(destination: URL(string: "https://i.ytimg.com/vi/OhNwckCLzis/hqdefault.jpg")!) {
+        VideoThumbnailView(imageUrl: "https://i.ytimg.com/vi/OhNwckCLzis/hqdefault.jpg")
     }
 }

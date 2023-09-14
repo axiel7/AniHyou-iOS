@@ -17,8 +17,6 @@ struct HorizontalProgressView: View {
     }
 }
 
-struct HorizontalProgressView_Previews: PreviewProvider {
-    static var previews: some View {
-        HorizontalProgressView()
-    }
+#Preview {
+    HorizontalProgressView()
 }

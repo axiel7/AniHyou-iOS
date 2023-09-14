@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RectangleTextView: View {
 
-    var text: String
+    let text: String
     var color: Color = .accentColor
 
     var body: some View {
@@ -26,15 +26,13 @@ struct RectangleTextView: View {
     }
 }
 
-struct RectangleTextView_Previews: PreviewProvider {
-    static var previews: some View {
-        HStack {
-            RectangleTextView(text: "Top 100 Anime")
-                .padding(.leading)
-                .frame(maxWidth: .infinity, maxHeight: 90)
-            RectangleTextView(text: "Top 100 Manga", color: Color("AniListGreen"))
-                .frame(maxWidth: .infinity, maxHeight: 90)
-                .padding(.trailing)
-        }
+#Preview {
+    HStack {
+        RectangleTextView(text: "Top 100 Anime")
+            .padding(.leading)
+            .frame(maxWidth: .infinity, maxHeight: 90)
+        RectangleTextView(text: "Top 100 Manga", color: Color("AniListGreen"))
+            .frame(maxWidth: .infinity, maxHeight: 90)
+            .padding(.trailing)
     }
 }

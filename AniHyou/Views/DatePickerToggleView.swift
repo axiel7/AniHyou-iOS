@@ -9,9 +9,9 @@ import SwiftUI
 
 struct DatePickerToggleView: View {
 
-    var text: String
-    var selection: Binding<Date>
-    var isDateSet: Binding<Bool>
+    let text: String
+    let selection: Binding<Date>
+    let isDateSet: Binding<Bool>
     @State private var showDatePicker = false
     @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
 
@@ -43,8 +43,6 @@ struct DatePickerToggleView: View {
     }
 }
 
-struct DatePickerToggleView_Previews: PreviewProvider {
-    static var previews: some View {
-        DatePickerToggleView(text: "Start Date", selection: .constant(Date()), isDateSet: .constant(true))
-    }
+#Preview {
+    DatePickerToggleView(text: "Start Date", selection: .constant(Date()), isDateSet: .constant(true))
 }

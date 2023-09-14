@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-import RichText
+import MarkdownUI
 import AniListAPI
 
 struct ThreadDetailsView: View {
 
-    var thread: MediaThreadsQuery.Data.Page.Thread
+    let thread: MediaThreadsQuery.Data.Page.Thread
     @StateObject private var viewModel = ThreadDetailsViewModel()
 
     var body: some View {
@@ -30,10 +30,9 @@ struct ThreadDetailsView: View {
                         .foregroundColor(.gray)
                         .padding(.leading)
 
-                    RichText(html: thread.body ?? "")
+                    Markdown(thread.body?.formatMarkdown() ?? "")
                         .defaultStyle()
-                        .customCSS(spoilerCss)
-                        .padding(.horizontal)
+                        .padding()
 
                     HStack {
                         NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
@@ -76,8 +75,6 @@ struct ThreadDetailsView: View {
     }
 }
 
-struct ThreadDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadDetailsView(thread: .init(_fieldData: nil))
-    }
+#Preview {
+    ThreadDetailsView(thread: .init(_fieldData: nil))
 }

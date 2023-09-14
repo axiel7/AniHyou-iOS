@@ -11,7 +11,7 @@ import AniListAPI
 struct MediaStatsView: View {
 
     @StateObject private var viewModel = MediaStatsViewModel()
-    var mediaId: Int
+    let mediaId: Int
 
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -79,8 +79,6 @@ struct MediaStatsView: View {
     }
 }
 
-struct MediaStatsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaStatsView(mediaId: 98478)
-    }
+#Preview {
+    MediaStatsView(mediaId: 98478)
 }

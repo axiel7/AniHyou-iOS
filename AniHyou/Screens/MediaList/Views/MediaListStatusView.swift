@@ -10,26 +10,30 @@ import AniListAPI
 
 struct MediaListStatusView: View {
 
-    var mediaType: MediaType
+    let mediaType: MediaType
     var userId: Int?
     @State private var selection: MediaListStatus? = .current
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
-        NavigationView {
-            List(MediaListStatus.allCases, id: \.self) { status in
-                NavigationLink(tag: status, selection: $selection) {
-                    MediaListView(type: mediaType, status: status, userId: userId)
-                } label: {
-                    Label(status.localizedName, systemImage: status.systemImage)
-                }
+        NavigationSplitView {
+            List(MediaListStatus.allCases, id: \.self, selection: $selection) { status in
+                Label(status.localizedName, systemImage: status.systemImage)
             }//:List
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")
-        }//:NavigationView
+        } detail: {
+            NavigationStack {
+                if let selection {
+                    MediaListView(type: mediaType, status: selection, userId: userId)
+                        .id(selection)
+                        .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
+                }
+            }
+        }//:NavigationSplitView
     }
 }
 
-struct MediaListStatusView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaListStatusView(mediaType: .anime)
-    }
+#Preview {
+    MediaListStatusView(mediaType: .anime)
 }

@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaActivityItemView: View {
 
-    var activity: UserActivityQuery.Data.Page.Activity.AsListActivity?
+    let activity: UserActivityQuery.Data.Page.Activity.AsListActivity?
 
     var body: some View {
         HStack(alignment: .center) {
@@ -39,11 +39,11 @@ struct MediaActivityItemView: View {
     }
 
     private var activityText: String {
-        if activity?.progress != nil {
+        if let progress = activity?.progress {
             return String(swiftLintMultiline:
                 activity?.status?.firstCapitalized ?? "",
                 " ",
-                activity?.progress! ?? "",
+                progress,
                 " of ",
                 activity?.media?.title?.userPreferred ?? ""
             )
@@ -53,8 +53,6 @@ struct MediaActivityItemView: View {
     }
 }
 
-struct MediaActivityItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaActivityItemView(activity: nil)
-    }
+#Preview {
+    MediaActivityItemView(activity: nil)
 }

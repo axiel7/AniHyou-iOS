@@ -11,7 +11,7 @@ import AniListAPI
 struct MediaListView: View {
 
     let type: MediaType
-    var status: MediaListStatus
+    let status: MediaListStatus
     var userId: Int?
     var isEditable: Bool {
         return userId == nil
@@ -54,11 +54,11 @@ struct MediaListView: View {
             viewModel.mediaListStatus = status
         }
         .sheet(isPresented: $showingEditSheet) {
-            if viewModel.selectedItem != nil {
+            if let item = viewModel.selectedItem {
                 MediaListEditView(
-                    mediaId: viewModel.selectedItem!.mediaId,
+                    mediaId: item.mediaId,
                     mediaType: type,
-                    mediaList: viewModel.selectedItem!.fragments.basicMediaListEntry,
+                    mediaList: item.fragments.basicMediaListEntry,
                     onSave: { updatedEntry in
                         viewModel.onEntryUpdated(
                             mediaId: updatedEntry.mediaId,
@@ -68,7 +68,7 @@ struct MediaListView: View {
                         )
                     },
                     onDelete: {
-                        viewModel.onEntryDeleted(entryId: viewModel.selectedItem!.id)
+                        viewModel.onEntryDeleted(entryId: item.id)
                     }
                 )
             }
@@ -202,11 +202,9 @@ struct MediaListView: View {
     }
 }
 
-struct MediaListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            MediaListView(type: .anime, status: .current)
-            MediaListView(type: .anime, status: .repeating)
-        }
+#Preview {
+    NavigationStack {
+        MediaListView(type: .anime, status: .current)
+        MediaListView(type: .anime, status: .repeating)
     }
 }

@@ -10,18 +10,18 @@ import AniListAPI
 
 struct MediaChartListView: View {
 
-    var title: String
-    var type: MediaType
-    var sort: MediaSort
+    let title: String
+    let type: MediaType
+    let sort: MediaSort
     var status: MediaStatus?
     @StateObject private var viewModel = ExploreViewModel()
 
     var body: some View {
         List {
             ForEach(Array(viewModel.mediaChart.enumerated()), id: \.element?.id) { pos, item in
-                if item != nil {
-                    NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
-                        ChartListItemView(item: item!, position: pos+1)
+                if let item {
+                    NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                        ChartListItemView(item: item, position: pos+1)
                     }
                 }
             }
@@ -37,8 +37,6 @@ struct MediaChartListView: View {
     }
 }
 
-struct MediaChartListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)
-    }
+#Preview {
+    MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)
 }

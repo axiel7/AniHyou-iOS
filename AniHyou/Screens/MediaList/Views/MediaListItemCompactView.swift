@@ -13,7 +13,7 @@ private let coverHeight: CGFloat = 70
 
 struct MediaListItemCompactView: View {
 
-    var item: UserMediaListQuery.Data.Page.MediaList?
+    let item: UserMediaListQuery.Data.Page.MediaList?
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
@@ -59,14 +59,12 @@ struct MediaListItemCompactView: View {
     }
 }
 
-struct MediaListItemCompactView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            List(0...4, id: \.self) { _ in
-                NavigationLink(destination: {}, label: {
-                    MediaListItemCompactView()
-                })
-            }
+#Preview {
+    NavigationStack {
+        List(0...4, id: \.self) { _ in
+            NavigationLink(destination: {}, label: {
+                MediaListItemCompactView(item: nil)
+            })
         }
     }
 }

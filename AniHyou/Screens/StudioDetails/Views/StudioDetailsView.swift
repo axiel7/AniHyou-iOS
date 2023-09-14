@@ -9,53 +9,54 @@ import SwiftUI
 
 struct StudioDetailsView: View {
 
-    var studioId: Int
+    let studioId: Int
     @StateObject private var viewModel = StudioDetailsViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 20))
     ]
 
     var body: some View {
-        if viewModel.studio != nil {
+        if let studio = viewModel.studio {
             ScrollView(.vertical) {
                 VStack {
-                    HStack {
-                        Text(viewModel.studio!.name)
-                            .font(.title)
-                        Spacer()
-                        Button(action: { viewModel.toggleFavorite() }, label: {
-                            Label(
-                                (viewModel.studio!.favourites ?? 0).formatted(),
-                                systemImage: viewModel.studio!.isFavourite ? "heart.fill" : "heart"
-                            )
-                        })
-                    }
-                    .padding(.horizontal)
-
-                    LazyVGrid(columns: gridColumns) {
-                        ForEach(viewModel.studioMedia, id: \.?.id) { item in
-                            NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
-                                VListItemView(
-                                    title: item?.title?.userPreferred ?? "",
-                                    imageUrl: item?.coverImage?.large
-                                )
-                                .mediaContextMenu(
-                                    mediaId: item!.id,
-                                    mediaType: item?.type?.value,
-                                    mediaListStatus: item?.mediaListEntry?.status?.value
-                                )
-                            }
-                        }
-
-                        if viewModel.hasNextPage {
-                            ProgressView()
-                                .onAppear {
-                                    viewModel.getStudioDetails(studioId: studioId)
+                    if viewModel.studioMedia.isEmpty {
+                        Text("No media")
+                            .padding()
+                    } else {
+                        LazyVGrid(columns: gridColumns) {
+                            ForEach(viewModel.studioMedia, id: \.?.id) { item in
+                                NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
+                                    VListItemView(
+                                        title: item?.title?.userPreferred ?? "",
+                                        imageUrl: item?.coverImage?.large
+                                    )
+                                    .mediaContextMenu(
+                                        mediaId: item!.id,
+                                        mediaType: item?.type?.value,
+                                        mediaListStatus: item?.mediaListEntry?.status?.value
+                                    )
                                 }
-                        }
-                    }//:VGrid
+                            }
+                            
+                            if viewModel.hasNextPage {
+                                ProgressView()
+                                    .onAppear {
+                                        viewModel.getStudioDetails(studioId: studioId)
+                                    }
+                            }
+                        }//:VGrid
+                    }
                 }//:VStack
             }//:VScrollView
+            .navigationTitle(studio.name)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: { viewModel.toggleFavorite() }) {
+                        Text((studio.favourites ?? 0).formatted())
+                        Image(systemName: studio.isFavourite ? "heart.fill" : "heart")
+                    }
+                }
+            }
         } else {
             ProgressView()
                 .onAppear {
@@ -65,8 +66,6 @@ struct StudioDetailsView: View {
     }
 }
 
-struct StudioDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        StudioDetailsView(studioId: 1)
-    }
+#Preview {
+    StudioDetailsView(studioId: 1)
 }

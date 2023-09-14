@@ -13,8 +13,8 @@ private let coverHeight: CGFloat = 110
 
 struct ChartListItemView: View {
 
-    var item: MediaChartQuery.Data.Page.Medium
-    var position: Int
+    let item: MediaChartQuery.Data.Page.Medium
+    let position: Int
 
     var body: some View {
         HStack(alignment: .center) {
@@ -51,8 +51,6 @@ struct ChartListItemView: View {
     }
 }
 
-struct ChartListItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChartListItemView(item: .init(_fieldData: nil), position: 100)
-    }
+#Preview {
+    ChartListItemView(item: .init(_fieldData: nil), position: 100)
 }

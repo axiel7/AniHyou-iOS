@@ -38,9 +38,9 @@ extension View {
             if #available(iOS 16.0, *) {
                 self
                     .contextMenu {
-                        if mediaType != nil {
+                        if let mediaType {
                             contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
-                            ShareLink(item: "\(mediaType!.mediaUrl)\(mediaId)") {
+                            ShareLink(item: "\(mediaType.mediaUrl)\(mediaId)") {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
                             .padding(.trailing)
@@ -52,10 +52,10 @@ extension View {
             } else {
                 self
                     .contextMenu {
-                        if mediaType != nil {
+                        if let mediaType {
                             contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
                             Button {
-                                shareSheet(url: "\(mediaType!.mediaUrl)\(mediaId)")
+                                shareSheet(url: "\(mediaType.mediaUrl)\(mediaId)")
                             } label: {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
@@ -121,8 +121,8 @@ struct MediaContextMenuView: View {
                         }
                         
                         if let schedule = viewModel.details!.nextAiringEpisode {
-                            HStack(spacing: 1) {
-                                Text("Ep \(schedule.episode) in ")
+                            Group {
+                                Text("Ep \(schedule.episode) in ") +
                                 Text(Date(timeIntervalSince1970: Double(schedule.airingAt)), style: .relative)
                             }
                             .font(.subheadline)
@@ -138,8 +138,6 @@ struct MediaContextMenuView: View {
     }
 }
 
-struct MediaContextMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaContextMenuView(mediaId: 1)
-    }
+#Preview {
+    MediaContextMenuView(mediaId: 1)
 }

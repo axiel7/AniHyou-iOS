@@ -11,7 +11,7 @@ import AniListAPI
 
 struct UserSocialView: View {
 
-    var userId: Int
+    let userId: Int
     @State private var socialType = 0
     @StateObject private var viewModel = UserSocialViewModel()
     private let gridColumns = [
@@ -66,7 +66,7 @@ struct UserSocialView: View {
 
 struct UserLargeItemView: View {
 
-    var user: UserFollow
+    let user: UserFollow
     private let imageWidth: CGFloat = 80
     private let imageHeight: CGFloat = 80
 
@@ -84,8 +84,6 @@ struct UserLargeItemView: View {
     }
 }
 
-struct UserSocialView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserSocialView(userId: 208863)
-    }
+#Preview {
+    UserSocialView(userId: 208863)
 }

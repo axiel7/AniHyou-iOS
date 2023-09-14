@@ -67,8 +67,6 @@ struct AppIconSelector: View {
     }
 }
 
-struct AppIconSelector_Previews: PreviewProvider {
-    static var previews: some View {
-        AppIconSelector {}
-    }
+#Preview {
+    AppIconSelector {}
 }

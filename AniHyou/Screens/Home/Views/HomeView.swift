@@ -12,9 +12,11 @@ struct HomeView: View {
 
     @StateObject private var viewModel = HomeViewModel()
     @State private var showNotificationsSheet = false
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(alignment: .leading) {
 
@@ -43,8 +45,8 @@ struct HomeView: View {
             .sheet(isPresented: $showNotificationsSheet) {
                 NotificationsView()
             }
-        }//:NavigationView
-        .navigationViewStyle(.stack)
+            .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
+        }//:NavigationStack
     }
 
     @ViewBuilder
@@ -311,9 +313,7 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+#Preview {
+    HomeView()
 }
 // swiftlint:enable type_body_length

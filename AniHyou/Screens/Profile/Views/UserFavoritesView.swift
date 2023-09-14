@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserFavoritesView: View {
 
-    var userId: Int
+    let userId: Int
     @StateObject private var viewModel = UserFavoritesViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
@@ -180,12 +180,10 @@ struct UserFavoritesView: View {
     }
 }
 
-struct UserFavoritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView(.vertical) {
-            LazyVStack {
-                UserFavoritesView(userId: 208863)
-            }
+#Preview {
+    ScrollView(.vertical) {
+        LazyVStack {
+            UserFavoritesView(userId: 208863)
         }
     }
 }

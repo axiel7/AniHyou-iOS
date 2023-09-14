@@ -26,17 +26,17 @@ class MediaDetailsViewModel: ObservableObject {
     }
 
     func toggleFavorite() {
-        guard mediaDetails != nil else { return }
+        guard let mediaDetails else { return }
         var animeId: GraphQLNullable<Int> {
-            if mediaDetails!.type == .anime {
-                return .some(mediaDetails!.id)
+            if mediaDetails.type == .anime {
+                return .some(mediaDetails.id)
             } else {
                 return .none
             }
         }
         var mangaId: GraphQLNullable<Int> {
-            if mediaDetails!.type == .manga {
-                return .some(mediaDetails!.id)
+            if mediaDetails.type == .manga {
+                return .some(mediaDetails.id)
             } else {
                 return .none
             }
@@ -86,12 +86,12 @@ class MediaDetailsViewModel: ObservableObject {
         //Update the local cache
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
-                if updatedEntry != nil {
+                if let updatedEntry {
                     try transaction.updateObject(
                         ofType: BasicMediaListEntry.self,
-                        withKey: "MediaList:\(updatedEntry!.id).\(updatedEntry!.mediaId)"
+                        withKey: "MediaList:\(updatedEntry.id).\(updatedEntry.mediaId)"
                     ) { (cachedData: inout BasicMediaListEntry) in
-                        cachedData = updatedEntry!
+                        cachedData = updatedEntry
                     }
                 }
 
@@ -126,19 +126,20 @@ class MediaDetailsViewModel: ObservableObject {
     /// Returns a string with the season and year if has it
     var seasonFormatted: String? {
         guard let season = mediaDetails?.season?.value else { return nil }
-        if mediaDetails?.seasonYear != nil {
-            return "\(season.localizedName) \(mediaDetails!.seasonYear!)"
+        if let year = mediaDetails?.seasonYear {
+            return "\(season.localizedName) \(year)"
         } else {
             return season.localizedName
         }
     }
 
+    var studios: [MediaDetailsQuery.Data.Media.Studios.Node]? {
+        mediaDetails?.studios?.nodes?.compactMap { $0 }.filter { $0.isAnimationStudio }
+    }
     /// Returns a string with the studios comma separated
     var studiosFormatted: String? {
-        guard let studios = mediaDetails?.studios?.nodes else { return nil }
+        guard let studios else { return nil }
         let strStudios = studios
-            .compactMap { $0 }
-            .filter { $0.isAnimationStudio }
             .compactMap { $0.name }
             .joined(separator: ", ")
         if strStudios.isEmpty {
@@ -146,13 +147,13 @@ class MediaDetailsViewModel: ObservableObject {
         } else { return strStudios }
     }
 
+    var producers: [MediaDetailsQuery.Data.Media.Studios.Node]? {
+        mediaDetails?.studios?.nodes?.compactMap { $0 }.filter { !$0.isAnimationStudio }
+    }
     /// Returns a string with the producers comma separated
     var producersFormatted: String? {
-        guard mediaDetails != nil else { return nil }
-        guard let studios = mediaDetails?.studios?.nodes else { return nil }
-        let strProducers = studios
-            .compactMap { $0 }
-            .filter { !$0.isAnimationStudio }
+        guard let producers else { return nil }
+        let strProducers = producers
             .compactMap { $0.name }
             .joined(separator: ", ")
         if strProducers.isEmpty {

@@ -10,7 +10,7 @@ import Kingfisher
 
 struct NotificationItemView: View {
 
-    var notification: GenericNotification
+    let notification: GenericNotification
     private let imageWidth: CGFloat = 50
     private let imageHeight: CGFloat = 50
 
@@ -31,12 +31,12 @@ struct NotificationItemView: View {
 
     @ViewBuilder
     var destination: some View {
-        if notification.contentId != nil {
+        if let contentId = notification.contentId {
             switch notification.type {
             case .airing, .relatedMediaAddition, .mediaDataChange, .mediaMerge:
-                MediaDetailsView(mediaId: notification.contentId!)
+                MediaDetailsView(mediaId: contentId)
             case .following:
-                ProfileView(userId: notification.contentId!)
+                ProfileView(userId: contentId)
             case .activityMessage, .activityMention, .activityReply, .activityReplySubscribed, .activityLike,
                     .activityReplyLike:
                 Text("Coming Soon")
@@ -49,16 +49,14 @@ struct NotificationItemView: View {
     }
 }
 
-struct NotificationItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        let notification = GenericNotification(
-            id: 1,
-            text: "Episode 7 of Shingeki no Kyojin: The Final Season Part 2 aired.",
-            imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-ODIRpBIbR5Eu.jpg",
-            contentId: 1,
-            type: .airing,
-            createdAt: 109120128
-        )
-        NotificationItemView(notification: notification)
-    }
+#Preview {
+    let notification = GenericNotification(
+        id: 1,
+        text: "Episode 7 of Shingeki no Kyojin: The Final Season Part 2 aired.",
+        imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-ODIRpBIbR5Eu.jpg",
+        contentId: 1,
+        type: .airing,
+        createdAt: 109120128
+    )
+    return NotificationItemView(notification: notification)
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaReviewsAndThreadsView: View {
 
-    var mediaId: Int
+    let mediaId: Int
     @StateObject private var viewModel = ReviewThreadViewModel()
     private let gridRows = [
         GridItem(.flexible(), spacing: 0, alignment: .leading),
@@ -80,8 +80,6 @@ struct MediaReviewsAndThreadsView: View {
     }
 }
 
-struct MediaReviewsAndThreadsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaReviewsAndThreadsView(mediaId: 1)
-    }
+#Preview {
+    MediaReviewsAndThreadsView(mediaId: 1)
 }

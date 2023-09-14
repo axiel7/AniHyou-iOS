@@ -49,8 +49,6 @@ struct SmileyRatingView: View {
     }
 }
 
-struct SmileyRatingView_Previews: PreviewProvider {
-    static var previews: some View {
-        SmileyRatingView(rating: .constant(3))
-    }
+#Preview {
+    SmileyRatingView(rating: .constant(3))
 }

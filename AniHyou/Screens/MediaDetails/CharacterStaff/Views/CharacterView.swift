@@ -12,7 +12,7 @@ private let imageSize: CGFloat = 70
 
 struct CharacterView: View {
 
-    var character: MediaCharacter
+    let character: MediaCharacter
 
     var body: some View {
         HStack {
@@ -56,9 +56,7 @@ struct CharacterView: View {
     }
 }
 
-struct CharacterView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterView(character: .init(_fieldData: nil))
-            .padding()
-    }
+#Preview {
+    CharacterView(character: .init(_fieldData: nil))
+        .padding()
 }

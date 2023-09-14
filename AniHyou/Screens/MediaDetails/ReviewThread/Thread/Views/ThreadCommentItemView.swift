@@ -7,10 +7,11 @@
 
 import SwiftUI
 import AniListAPI
+import MarkdownUI
 
 struct ThreadCommentItemView: View {
 
-    var comment: ThreadCommentsQuery.Data.Page.ThreadComment
+    let comment: ThreadCommentsQuery.Data.Page.ThreadComment
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,22 +34,20 @@ struct ThreadCommentItemView: View {
                     .padding(.bottom, 1)
             }
 
-            Text(.init(comment.comment ?? "Loading"))
-                .font(.subheadline)
-                .padding(.bottom, 4)
+            Markdown(comment.comment?.formatMarkdown() ?? "Loading")
+                .defaultStyle()
 
             HStack {
                 Spacer()
                 Label("\(comment.likeCount)", systemImage: "heart")
             }
+            .padding(.top, 4)
         }
         .padding(.leading)
         .padding(.trailing)
     }
 }
 
-struct ThreadCommentItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadCommentItemView(comment: .init(_fieldData: nil))
-    }
+#Preview {
+    ThreadCommentItemView(comment: .init(_fieldData: nil))
 }

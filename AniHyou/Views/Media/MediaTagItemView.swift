@@ -29,7 +29,7 @@ private extension MediaTagItemView {
 
 struct MediaTagItemView: View {
 
-    var tag: MediaDetailsQuery.Data.Media.Tag?
+    let tag: MediaDetailsQuery.Data.Media.Tag?
     var showSpoiler: Binding<Bool>
     @State private var showTagDescription = false
     @Environment(\.colorScheme) private var colorScheme
@@ -68,12 +68,10 @@ struct MediaTagItemView: View {
     }
 }
 
-struct MediaTagItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        VFlow(alignment: .leading) {
-            ForEach((1...10), id: \.self) { _ in
-                MediaTagItemView(tag: nil, showSpoiler: .constant(false))
-            }
+#Preview {
+    VFlow(alignment: .leading) {
+        ForEach((1...10), id: \.self) { _ in
+            MediaTagItemView(tag: nil, showSpoiler: .constant(false))
         }
     }
 }

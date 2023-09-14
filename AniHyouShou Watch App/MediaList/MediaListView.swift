@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaListView: View {
 
-    var type: MediaType
+    let type: MediaType
     @State var status: MediaListStatus = .current
     @StateObject private var viewModel = MediaListViewModel()
 
@@ -44,7 +44,7 @@ struct MediaListView: View {
 
 struct MediaListItemStandardView: View {
 
-    var item: UserMediaListQuery.Data.Page.MediaList
+    let item: UserMediaListQuery.Data.Page.MediaList
 
     var body: some View {
         HStack {
@@ -56,8 +56,6 @@ struct MediaListItemStandardView: View {
     }
 }
 
-struct MediaListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaListView(type: .anime)
-    }
+#Preview {
+    MediaListView(type: .anime)
 }

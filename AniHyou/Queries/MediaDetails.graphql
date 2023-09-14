@@ -35,6 +35,7 @@ query MediaDetails($mediaId: Int) {
     genres
     studios {
       nodes {
+        id
         name
         isAnimationStudio
       }

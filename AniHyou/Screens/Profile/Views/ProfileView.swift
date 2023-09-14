@@ -28,10 +28,12 @@ struct ProfileView: View {
             scrollOffset > 0
         }
     }
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
         if isMyProfile {
-            NavigationView {
+            NavigationStack {
                 content
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
@@ -41,8 +43,8 @@ struct ProfileView: View {
                                 .opacity(hasScrolled ? 1 : 0)
                         }
                     }
-            }//:NavigationView
-            .navigationViewStyle(.stack)
+                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
+            }//:NavigationStack
         } else {
             content
                 .tint(Color(hex: viewModel.userInfo?.options?.profileColor?.profileHexColor) ?? .accentColor)
@@ -59,8 +61,8 @@ struct ProfileView: View {
 
                 ScrollView(.vertical) {
                     VStack {
-                        if viewModel.userInfo != nil {
-                            ExpandableRichText(viewModel.userInfo?.about)
+                        if let about = viewModel.userInfo?.about {
+                            ExpandableRichText(about)
                         } else {
                             HorizontalProgressView()
                         }
@@ -68,17 +70,17 @@ struct ProfileView: View {
                 }
                 .padding(16)
 
-                if viewModel.userInfo != nil {
+                if let userInfo = viewModel.userInfo {
                     Section {
                         switch infoType {
                         case .activity:
-                            UserActivityView(userId: viewModel.userInfo!.id, isMyProfile: isMyProfile)
+                            UserActivityView(userId: userInfo.id, isMyProfile: isMyProfile)
                         case .stats:
-                            UserStatsHostView(userId: viewModel.userInfo!.id)
+                            UserStatsHostView(userId: userInfo.id)
                         case .favorites:
-                            UserFavoritesView(userId: viewModel.userInfo!.id)
+                            UserFavoritesView(userId: userInfo.id)
                         case .social:
-                            UserSocialView(userId: viewModel.userInfo!.id)
+                            UserSocialView(userId: userInfo.id)
                         }
                     } header: {
                         VStack(spacing: 0) {
@@ -162,14 +164,12 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabView {
-            ProfileView(userId: 208863)
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Profile")
-                }
-        }
+#Preview {
+    TabView {
+        ProfileView(userId: 208863)
+            .tabItem {
+                Image(systemName: "person.circle")
+                Text("Profile")
+            }
     }
 }

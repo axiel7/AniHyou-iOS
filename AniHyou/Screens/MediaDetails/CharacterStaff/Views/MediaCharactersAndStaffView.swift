@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaCharactersAndStaffView: View {
 
-    var mediaId: Int
+    let mediaId: Int
     @StateObject private var viewModel = CharacterStaffViewModel()
     private let gridRows = [
         GridItem(.fixed(StaffView.imageSize), alignment: .leading),
@@ -72,8 +72,6 @@ struct MediaCharactersAndStaffView: View {
     }
 }
 
-struct MediaCharactersAndStaffView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaCharactersAndStaffView(mediaId: 1)
-    }
+#Preview {
+    MediaCharactersAndStaffView(mediaId: 1)
 }

@@ -11,7 +11,7 @@ private let bannerHeight: CGFloat = 180
 
 struct MediaDetailsView: View {
 
-    var mediaId: Int
+    let mediaId: Int
     @StateObject private var viewModel = MediaDetailsViewModel()
     @State private var infoType: MediaInfoType = .general
     @State private var attributedSynopsis = NSAttributedString(string: "Loading")
@@ -26,13 +26,13 @@ struct MediaDetailsView: View {
 
     var body: some View {
         Group {
-            if viewModel.mediaDetails != nil {
+            if let details = viewModel.mediaDetails {
                 ObservableVScrollView(scrollOffset: $scrollOffset) { _ in
                     LazyVStack(alignment: .leading) {
                         // MARK: - Header
                         TopBannerView(
-                            imageUrl: viewModel.mediaDetails!.bannerImage,
-                            placeholderHexColor: viewModel.mediaDetails!.coverImage?.color,
+                            imageUrl: details.bannerImage,
+                            placeholderHexColor: details.coverImage?.color,
                             height: bannerHeight
                         )
 
@@ -44,7 +44,7 @@ struct MediaDetailsView: View {
                             VStack {
                                 Divider()
                                 HStack {
-                                    if let schedule = viewModel.mediaDetails?.nextAiringEpisode {
+                                    if let schedule = details.nextAiringEpisode {
                                         MediaStatView(
                                             name: "Airing",
                                             value: String(swiftLintMultiline:
@@ -57,23 +57,23 @@ struct MediaDetailsView: View {
                                     }
                                     MediaStatView(
                                         name: "Average Score",
-                                        value: "\(viewModel.mediaDetails?.averageScore ?? 0)%"
+                                        value: "\(details.averageScore ?? 0)%"
                                     )
                                     MediaStatView(
                                         name: "Mean Score",
-                                        value: "\(viewModel.mediaDetails?.meanScore ?? 0)%"
+                                        value: "\(details.meanScore ?? 0)%"
                                     )
                                     MediaStatView(
                                         name: "Status",
-                                        value: viewModel.mediaDetails?.status?.value?.localizedName ?? "Unknown"
+                                        value: details.status?.value?.localizedName ?? "Unknown"
                                     )
                                     MediaStatView(
                                         name: "Popularity",
-                                        value: (viewModel.mediaDetails?.popularity ?? 0).formatted()
+                                        value: (details.popularity ?? 0).formatted()
                                     )
                                     MediaStatView(
                                         name: "Favorites",
-                                        value: (viewModel.mediaDetails?.favourites ?? 0).formatted(),
+                                        value: (details.favourites ?? 0).formatted(),
                                         showDivider: false
                                     )
                                 }
@@ -137,16 +137,16 @@ struct MediaDetailsView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                if viewModel.mediaDetails != nil {
+                if let details = viewModel.mediaDetails {
                     if !hasScrolled {
                         ToolbarIconButton(
-                            symbolSystemName: viewModel.mediaDetails!.isFavourite ? "heart.fill" : "heart"
+                            symbolSystemName: details.isFavourite ? "heart.fill" : "heart"
                         ) {
                             viewModel.toggleFavorite()
                         }
                     } else {
                         Button(action: { viewModel.toggleFavorite() }, label: {
-                            Image(systemName: viewModel.mediaDetails!.isFavourite ? "heart.fill" : "heart")
+                            Image(systemName: details.isFavourite ? "heart.fill" : "heart")
                         })
                     }
                 }
@@ -161,8 +161,6 @@ struct MediaDetailsView: View {
     }
 }
 
-struct MediaDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaDetailsView(mediaId: 140960)
-    }
+#Preview {
+    MediaDetailsView(mediaId: 140960)
 }

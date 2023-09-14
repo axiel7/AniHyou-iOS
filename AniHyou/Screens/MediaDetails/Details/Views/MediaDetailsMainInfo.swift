@@ -12,7 +12,7 @@ private let coverHeight: CGFloat = 153
 
 struct MediaDetailsMainInfo: View {
 
-    var mediaId: Int
+    let mediaId: Int
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showingEditSheet = false
     @State private var showingCoverSheet = false
@@ -25,10 +25,13 @@ struct MediaDetailsMainInfo: View {
     var body: some View {
         HStack(alignment: .top) {
 
-            MediaCoverView(imageUrl: viewModel.mediaDetails?.coverImage?.large, width: coverWidth, height: coverHeight)
-                .onTapGesture {
-                    showingCoverSheet = true
-                }
+            Button(action: { showingCoverSheet.toggle() }) {
+                MediaCoverView(
+                    imageUrl: viewModel.mediaDetails?.coverImage?.large,
+                    width: coverWidth,
+                    height: coverHeight
+                )
+            }
 
             VStack(alignment: .leading) {
 
@@ -111,8 +114,6 @@ struct MediaDetailsMainInfo: View {
     }
 }
 
-struct MediaDetailsMainInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaDetailsMainInfo(mediaId: 1, viewModel: MediaDetailsViewModel())
-    }
+#Preview {
+    MediaDetailsMainInfo(mediaId: 1, viewModel: MediaDetailsViewModel())
 }

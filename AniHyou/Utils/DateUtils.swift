@@ -59,13 +59,13 @@ extension Date {
         switch current.season {
         case .winter:
             current.season = .spring
-            current.year += 1
         case .spring:
             current.season = .summer
         case .summer:
             current.season = .fall
         case .fall:
             current.season = .winter
+            current.year += 1
         }
         return current
     }

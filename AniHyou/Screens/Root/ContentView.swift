@@ -7,7 +7,14 @@
 
 import SwiftUI
 
-extension View {
+fileprivate extension View {
+    func tabItemHome() -> some View {
+        self
+            .tabItem {
+                Label("Home", systemImage: "house")
+            }
+            .tag(0)
+    }
     func tabItemAnime() -> some View {
         self
             .tabItem {
@@ -29,6 +36,13 @@ extension View {
             }
             .tag(3)
     }
+    func tabItemExplore() -> some View {
+        self
+            .tabItem {
+                Label("Explore", systemImage: "magnifyingglass")
+            }
+            .tag(4)
+    }
 }
 
 struct ContentView: View {
@@ -39,11 +53,8 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTabIndex) {
             HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                .tag(0)
-
+                .tabItemHome()
+            
             if isLoggedIn() || justLogged {
                 MediaListStatusView(mediaType: .anime)
                     .tabItemAnime()
@@ -51,7 +62,7 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemAnime()
             }
-
+            
             if isLoggedIn() || justLogged {
                 MediaListStatusView(mediaType: .manga)
                     .tabItemManga()
@@ -59,7 +70,7 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemManga()
             }
-
+            
             if isLoggedIn() || justLogged {
                 ProfileView()
                     .tabItemProfile()
@@ -67,19 +78,14 @@ struct ContentView: View {
                 NotLoggedView(onSuccessLogin: { justLogged = true })
                     .tabItemProfile()
             }
-
+            
             RootExploreView()
-                .tabItem {
-                    Label("Explore", systemImage: "magnifyingglass")
-                }
-                .tag(4)
-        }
+                .tabItemExplore()
+        }//:TabView
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.light)
-    }
+#Preview {
+    ContentView()
+        .preferredColorScheme(.light)
 }

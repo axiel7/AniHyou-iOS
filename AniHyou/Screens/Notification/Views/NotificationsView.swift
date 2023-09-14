@@ -13,7 +13,7 @@ struct NotificationsView: View {
     @StateObject private var viewModel = NotificationsViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if isLoggedIn() {
                     List {
@@ -52,12 +52,10 @@ struct NotificationsView: View {
                     .font(.bold(.body)())
                 }
             }
-        }
+        }//:NavigationStack
     }
 }
 
-struct NotificationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationsView()
-    }
+#Preview {
+    NotificationsView()
 }

@@ -56,7 +56,7 @@ class MediaListViewModel: ObservableObject {
     }
 
     func getUserMediaList(otherUserId: Int?) {
-        if otherUserId != nil { userId = otherUserId! }
+        if let otherUserId { userId = otherUserId }
         Network.shared.apollo.fetch(
             query: UserMediaListQuery(
                 page: .some(currentPage),
@@ -125,8 +125,8 @@ class MediaListViewModel: ObservableObject {
             do {
                 guard let foundIndex = self?.mediaList.firstIndex(where: { $0?.id == entryId }) else { return }
                 //if the status changed, remove from this list
-                if updatedEntry != nil && self?.mediaList[foundIndex]?.status != updatedEntry?.status {
-                    self?.onEntryDeleted(entryId: updatedEntry!.id)
+                if let updatedEntry, self?.mediaList[foundIndex]?.status != updatedEntry.status {
+                    self?.onEntryDeleted(entryId: updatedEntry.id)
                     return
                 }
                 //else update the new entry data
@@ -134,8 +134,8 @@ class MediaListViewModel: ObservableObject {
                     ofType: BasicMediaListEntry.self,
                     withKey: "MediaList:\(entryId).\(mediaId)"
                 ) { (cachedData: inout BasicMediaListEntry) in
-                    if updatedEntry != nil { cachedData = updatedEntry! }
-                    if progress != nil { cachedData.progress = progress }
+                    if let updatedEntry { cachedData = updatedEntry }
+                    if let progress { cachedData.progress = progress }
                 }
 
                 let newObject = try transaction.readObject(

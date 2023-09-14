@@ -10,8 +10,8 @@ import SwiftUI
 struct ExpandableTextView: View {
 
     @State private var isExpanded = false
-    var lineLimit: Int? = 3
-    var fontSize: CGFloat = 16
+    let lineLimit = 3
+    let fontSize: CGFloat = 16
 
     @Binding var text: NSAttributedString
     var styledText: AttributedString {
@@ -42,8 +42,6 @@ struct ExpandableTextView: View {
     }
 }
 
-struct ExpandableTextView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpandableTextView(text: .constant(NSAttributedString(string: "This is a preview")))
-    }
+#Preview {
+    ExpandableTextView(text: .constant(NSAttributedString(string: "This is a preview")))
 }

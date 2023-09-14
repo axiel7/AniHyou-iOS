@@ -54,8 +54,8 @@ struct CalendarAnimeView: View {
 
 struct WeekAnimeListView: View {
 
-    var weekday: Int
-    var onMyList: Bool
+    let weekday: Int
+    let onMyList: Bool
     @StateObject private var viewModel = CalendarViewModel()
 
     private let gridColumns = [
@@ -65,14 +65,19 @@ struct WeekAnimeListView: View {
     var body: some View {
         LazyVGrid(columns: gridColumns) {
             ForEach(viewModel.weeklyAnimes, id: \.?.mediaId) {
-                if let media = $0?.media, let mediaId = $0?.mediaId {
-                    NavigationLink(destination: MediaDetailsView(mediaId: mediaId)) {
-                        VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
-                            .mediaContextMenu(
-                                mediaId: mediaId,
-                                mediaType: .anime,
-                                mediaListStatus: media.mediaListEntry?.status?.value
-                            )
+                if let item = $0, let media = item.media {
+                    NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
+                        VListItemView(
+                            title: media.title?.userPreferred ?? "",
+                            imageUrl: media.coverImage?.large,
+                            nextEpisode: item.episode,
+                            airingAt: item.airingAt
+                        )
+                        .mediaContextMenu(
+                            mediaId: item.mediaId,
+                            mediaType: .anime,
+                            mediaListStatus: media.mediaListEntry?.status?.value
+                        )
                     }
                 }
             }
@@ -93,8 +98,6 @@ struct WeekAnimeListView: View {
     }
 }
 
-struct CalendarAnimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarAnimeView()
-    }
+#Preview {
+    CalendarAnimeView()
 }

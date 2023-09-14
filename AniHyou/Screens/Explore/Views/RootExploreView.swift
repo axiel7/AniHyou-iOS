@@ -12,13 +12,15 @@ import SwiftUI
 struct RootExploreView: View {
 
     @StateObject private var viewModel = SearchViewModel()
+    @State private var showingMediaDetails = false
+    @State private var mediaId = 0
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ExploreView(viewModel: viewModel)
                 .navigationTitle("Explore")
+                .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
         }
-        .navigationViewStyle(.stack)
         .searchable(text: $viewModel.search, placement: .navigationBarDrawer, prompt: "Anime, Manga, and More")
         .onSubmit(of: .search) {
             viewModel.runSearch()
@@ -27,8 +29,6 @@ struct RootExploreView: View {
     }
 }
 
-struct RootExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootExploreView()
-    }
+#Preview {
+    RootExploreView()
 }
