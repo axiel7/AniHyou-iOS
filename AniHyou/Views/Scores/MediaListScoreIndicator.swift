@@ -41,15 +41,16 @@ struct MediaListScoreIndicator: View {
             .foregroundColor(color)
             .font(.footnote)
         case .point3:
-            if score == 0 {
-                Text(UNKNOWN_CHAR)
-                    .foregroundColor(.gray)
-                    .font(.footnote)
-            } else {
-                Image(format.smileyIcon(score: Int(score)))
+            if let icon = format.smileyIcon(score: Int(score)) {
+                Image(icon)
                     .resizable()
                     .frame(width: 18, height: 18)
                     .foregroundColor(color)
+            }
+            else {
+                Text(UNKNOWN_CHAR)
+                    .foregroundColor(.gray)
+                    .font(.footnote)
             }
         }
     }
