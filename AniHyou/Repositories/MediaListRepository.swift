@@ -135,12 +135,20 @@ class MediaListRepository {
         await withCheckedContinuation { continuation in
             Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 do {
-                    try transaction.updateObject(
-                        ofType: BasicMediaListEntry.self,
-                        withKey: "MediaList:\(entryId).\(mediaId)"
-                    ) { (cachedData: inout BasicMediaListEntry) in
-                        if let updatedEntry { cachedData = updatedEntry }
-                        if let progress { cachedData.progress = progress }
+                    if let updatedEntry {
+                        try transaction.updateObject(
+                            ofType: BasicMediaListEntry.self,
+                            withKey: "MediaList:\(entryId).\(mediaId)"
+                        ) { (cachedData: inout BasicMediaListEntry) in
+                            cachedData = updatedEntry
+                        }
+                    } else if let progress {
+                        try transaction.updateObject(
+                            ofType: ProgressMediaListEntry.self,
+                            withKey: "MediaList:\(entryId).\(mediaId)"
+                        ) { (cachedData: inout ProgressMediaListEntry) in
+                            cachedData.progress = progress
+                        }
                     }
 
                     let newObject = try transaction.readObject(

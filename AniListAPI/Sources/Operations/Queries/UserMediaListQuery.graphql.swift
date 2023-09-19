@@ -8,7 +8,7 @@ public class UserMediaListQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename title { __typename userPreferred } episodes chapters volumes coverImage { __typename large color } nextAiringEpisode { __typename episode airingAt } status type } } pageInfo { __typename hasNextPage } } }"#,
-      fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self]
+      fragments: [BasicMediaListEntry.self, ProgressMediaListEntry.self, IdsMediaList.self, FuzzyDateFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -100,14 +100,14 @@ public class UserMediaListQuery: GraphQLQuery {
         public var media: Media? { __data["media"] }
         /// The id of the list entry
         public var id: Int { __data["id"] }
-        /// The watching/reading status
-        public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
-        /// The score of the entry
-        public var score: Double? { __data["score"] }
         /// The amount of episodes/chapters consumed by the user
         public var progress: Int? { __data["progress"] }
         /// The amount of volumes read by the user
         public var progressVolumes: Int? { __data["progressVolumes"] }
+        /// The watching/reading status
+        public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+        /// The score of the entry
+        public var score: Double? { __data["score"] }
         /// The amount of times the user has rewatched/read the media
         public var `repeat`: Int? { __data["repeat"] }
         /// If the entry should only be visible to authenticated user
@@ -124,6 +124,8 @@ public class UserMediaListQuery: GraphQLQuery {
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
+          public var idsMediaList: IdsMediaList { _toFragment() }
+          public var progressMediaListEntry: ProgressMediaListEntry { _toFragment() }
         }
 
         /// Page.MediaList.Media

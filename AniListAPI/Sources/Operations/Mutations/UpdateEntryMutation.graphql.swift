@@ -8,7 +8,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $notes: String) { SaveMediaListEntry( mediaId: $mediaId status: $status score: $score progress: $progress progressVolumes: $progressVolumes startedAt: $startedAt completedAt: $completedAt repeat: $repeat private: $private notes: $notes ) { __typename ...BasicMediaListEntry mediaId } }"#,
-      fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self]
+      fragments: [BasicMediaListEntry.self, ProgressMediaListEntry.self, IdsMediaList.self, FuzzyDateFragment.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>
@@ -100,14 +100,14 @@ public class UpdateEntryMutation: GraphQLMutation {
       public var mediaId: Int { __data["mediaId"] }
       /// The id of the list entry
       public var id: Int { __data["id"] }
-      /// The watching/reading status
-      public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
-      /// The score of the entry
-      public var score: Double? { __data["score"] }
       /// The amount of episodes/chapters consumed by the user
       public var progress: Int? { __data["progress"] }
       /// The amount of volumes read by the user
       public var progressVolumes: Int? { __data["progressVolumes"] }
+      /// The watching/reading status
+      public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+      /// The score of the entry
+      public var score: Double? { __data["score"] }
       /// The amount of times the user has rewatched/read the media
       public var `repeat`: Int? { __data["repeat"] }
       /// If the entry should only be visible to authenticated user
@@ -124,6 +124,8 @@ public class UpdateEntryMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
+        public var idsMediaList: IdsMediaList { _toFragment() }
+        public var progressMediaListEntry: ProgressMediaListEntry { _toFragment() }
       }
 
       /// SaveMediaListEntry.StartedAt
