@@ -14,37 +14,41 @@ struct AiringProvider: TimelineProvider {
         AiringEntry(
             animeList: [],
             date: Date(),
-            placeholderText: "Your anime list here",
+            placeholderText: "Your airing anime list should appear here",
             widgetSize: context.displaySize
         )
     }
 
     func getSnapshot(in context: Context, completion: @escaping (AiringEntry) -> Void) {
-        let entry = AiringEntry(
-            animeList: [],
-            date: Date(),
-            placeholderText: "Your anime list here",
-            widgetSize: context.displaySize
-        )
-        completion(entry)
+        getAnimeTimeline(context: context, completion: {
+            if let entry = $0.entries.first {
+                completion(entry)
+            } else {
+                completion(placeholder(in: context))
+            }
+        })
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<AiringEntry>) -> Void) {
-        let date = Date()
+        getAnimeTimeline(context: context, completion: completion)
+    }
+    
+    func getAnimeTimeline(context: Context, completion: @escaping (Timeline<AiringEntry>) -> Void) {
+        let now = Date.now
         let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
 
         if userId == 0 {
             let entry = AiringEntry(
                 animeList: [],
-                date: date,
+                date: now,
                 placeholderText: "Login to use this widget",
                 widgetSize: context.displaySize
             )
             completion(Timeline(entries: [entry], policy: .never))
         }
 
-        //update interval
-        var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: date)!
+        // update every 12h
+        var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: now)!
 
         Network.shared.apollo.fetch(query: UserCurrentAnimeListQuery(
             userId: .some(userId),
@@ -72,7 +76,7 @@ struct AiringProvider: TimelineProvider {
                 }
             case .failure(let error):
                 print(error)
-                nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
+                nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
                 let entry = AiringEntry(
                     animeList: [],
                     date: nextUpdateDate,
