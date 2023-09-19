@@ -13,18 +13,18 @@ struct AiringProvider: TimelineProvider {
     func placeholder(in context: Context) -> AiringEntry {
         AiringEntry(
             animeList: [],
+            date: Date(),
             placeholderText: "Your anime list here",
-            widgetSize: context.displaySize,
-            widgetFamily: context.family
+            widgetSize: context.displaySize
         )
     }
 
     func getSnapshot(in context: Context, completion: @escaping (AiringEntry) -> Void) {
         let entry = AiringEntry(
             animeList: [],
+            date: Date(),
             placeholderText: "Your anime list here",
-            widgetSize: context.displaySize,
-            widgetFamily: context.family
+            widgetSize: context.displaySize
         )
         completion(entry)
     }
@@ -36,9 +36,9 @@ struct AiringProvider: TimelineProvider {
         if userId == 0 {
             let entry = AiringEntry(
                 animeList: [],
+                date: date,
                 placeholderText: "Login to use this widget",
-                widgetSize: context.displaySize,
-                widgetFamily: context.family
+                widgetSize: context.displaySize
             )
             completion(Timeline(entries: [entry], policy: .never))
         }
@@ -64,9 +64,9 @@ struct AiringProvider: TimelineProvider {
 
                     let entry = AiringEntry(
                         animeList: tempList,
+                        date: nextUpdateDate,
                         placeholderText: nil,
-                        widgetSize: context.displaySize,
-                        widgetFamily: context.family
+                        widgetSize: context.displaySize
                     )
                     let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                     completion(timeline)
@@ -76,9 +76,9 @@ struct AiringProvider: TimelineProvider {
                 nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
                 let entry = AiringEntry(
                     animeList: [],
+                    date: nextUpdateDate,
                     placeholderText: "Error updating",
-                    widgetSize: context.displaySize,
-                    widgetFamily: context.family
+                    widgetSize: context.displaySize
                 )
                 completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             }
@@ -88,19 +88,21 @@ struct AiringProvider: TimelineProvider {
 
 struct AiringEntry: BaseEntry {
     let animeList: [UserCurrentAnimeListQuery.Data.Page.MediaList?]
-    let placeholderText: String?
-    let widgetSize: CGSize
-    let widgetFamily: WidgetFamily
+    var date: Date
+    var placeholderText: String?
+    var widgetSize: CGSize
 }
 
 struct AiringWidgetEntryView: View {
-    var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family: WidgetFamily
+    
+    var entry: AiringProvider.Entry
 
     var aligment: Alignment {
         if entry.placeholderText != nil || entry.animeList.isEmpty {
             return .center
         } else {
-            if entry.widgetFamily == .systemMedium && entry.animeList.count >= 3 {
+            if family == .systemMedium && entry.animeList.count >= 3 {
                 return .center
             } else {
                 return .top
@@ -200,9 +202,9 @@ struct AiringWidget: Widget {
 #Preview {
     let entry = AiringEntry(
         animeList: [],
+        date: Date(),
         placeholderText: "This is a preview",
-        widgetSize: CGSize(width: 291, height: 141),
-        widgetFamily: .systemLarge
+        widgetSize: CGSize(width: 291, height: 141)
     )
     return AiringWidgetEntryView(entry: entry)
         .previewContext(WidgetPreviewContext(family: .systemLarge))
