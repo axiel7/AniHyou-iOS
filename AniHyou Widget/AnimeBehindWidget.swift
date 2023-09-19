@@ -117,6 +117,10 @@ struct AnimeBehindEntry: BaseEntry {
 @available(iOS 17.0, *)
 struct AnimeBehindWidgetEntryView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
+    @AppStorage(ACCENT_COLOR_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var accentColor = ANIHYOU_COLOR
+    var tintColor: Color {
+        Color(hex: accentColor) ?? .accentColor
+    }
     
     let entry: AnimeBehindProvider.Entry
     
@@ -150,6 +154,7 @@ struct AnimeBehindWidgetEntryView: View {
             height: entry.widgetSize.height,
             alignment: aligment
         )
+        .tint(tintColor)
     }
     
     @ViewBuilder
@@ -175,7 +180,7 @@ struct AnimeBehindWidgetEntryView: View {
                                 Text("^[\(episodesBehind) episodes](inflect: true) behind")
                                     .font(.system(size: 12))
                                     .lineLimit(1)
-                                    .foregroundColor(.accentColor)
+                                    .foregroundColor(tintColor)
                                     .padding(.horizontal)
                                     .invalidatableContent()
                             }

@@ -108,6 +108,10 @@ struct AiringEntry: BaseEntry {
 
 struct AiringWidgetEntryView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
+    @AppStorage(ACCENT_COLOR_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var accentColor = ANIHYOU_COLOR
+    var tintColor: Color {
+        Color(hex: accentColor) ?? .accentColor
+    }
     
     var entry: AiringProvider.Entry
 
@@ -138,6 +142,7 @@ struct AiringWidgetEntryView: View {
             .containerBackground(.background, for: .widget)
             .padding(.vertical, paddingLenght)
             .frame(height: entry.widgetSize.height, alignment: aligment)
+            .tint(tintColor)
         } else {
             ZStack {
                 Color(.widgetBackground)
@@ -147,6 +152,7 @@ struct AiringWidgetEntryView: View {
                 }//:VStack
                 .padding(.vertical, paddingLenght)
                 .frame(height: entry.widgetSize.height, alignment: aligment)
+                .tint(tintColor)
             }//:ZStack
         }
     }
@@ -183,7 +189,7 @@ struct AiringWidgetEntryView: View {
                         }
                         .font(.system(size: 12))
                         .lineLimit(1)
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(tintColor)
                         .padding(.horizontal)
                         .frame(width: entry.widgetSize.width, alignment: .leading)
                         
