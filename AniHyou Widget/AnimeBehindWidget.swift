@@ -218,18 +218,13 @@ struct AnimeBehindWidget: Widget {
     }
 }
 
+@available(iOS 17.0, *)
 #Preview {
-    Group {
-        if #available(iOS 17.0, *) {
-            AnimeBehindWidgetEntryView(entry: AnimeBehindEntry(
-                animeList: [],
-                date: Date(),
-                placeholderText: "Anime with unwatched episodes appear here",
-                widgetSize: CGSize(width: 291, height: 141)
-            ))
-        } else {
-            EmptyView()
-        }
-    }
+    AnimeBehindWidgetEntryView(entry: AnimeBehindEntry(
+        animeList: [],
+        date: Date(),
+        placeholderText: "Anime with unwatched episodes appear here",
+        widgetSize: CGSize(width: 291, height: 141)
+    ))
     .previewContext(WidgetPreviewContext(family: .systemMedium))
 }
