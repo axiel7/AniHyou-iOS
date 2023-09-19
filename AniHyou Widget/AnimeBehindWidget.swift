@@ -10,6 +10,7 @@ import SwiftUI
 import AniListAPI
 
 struct AnimeBehindProvider: TimelineProvider {
+    
     func placeholder(in context: Context) -> AnimeBehindEntry {
         AnimeBehindEntry(
             animeList: [],
@@ -20,15 +21,20 @@ struct AnimeBehindProvider: TimelineProvider {
     }
     
     func getSnapshot(in context: Context, completion: @escaping (AnimeBehindEntry) -> Void) {
-        completion(AnimeBehindEntry(
-            animeList: [],
-            date: Date(),
-            placeholderText: "Anime with unwatched episodes appear here",
-            widgetSize: context.displaySize
-        ))
+        getAnimeTimeline(context: context, completion: {
+            if let entry = $0.entries.first {
+                completion(entry)
+            } else {
+                completion(placeholder(in: context))
+            }
+        })
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<AnimeBehindEntry>) -> Void) {
+        getAnimeTimeline(context: context, completion: completion)
+    }
+    
+    func getAnimeTimeline(context: Context, completion: @escaping (Timeline<AnimeBehindEntry>) -> Void) {
         let now = Date.now
         
         let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
