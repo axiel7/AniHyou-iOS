@@ -26,6 +26,7 @@ struct UpdateMediaEntryView: View {
                     Button(
                         action: {
                             viewModel.updateEntryProgress(
+                                mediaId: entry.mediaId,
                                 entryId: entry.id,
                                 progress: (entry.progress ?? 0) + 1,
                                 status: nil

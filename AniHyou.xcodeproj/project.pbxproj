@@ -40,6 +40,16 @@
 		481E2D6B288C168100D91A54 /* MediaDetailsMainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E2D6A288C168100D91A54 /* MediaDetailsMainInfo.swift */; };
 		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
+		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
+		48294CDB2AB92067005E7CD2 /* BaseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CDA2AB92067005E7CD2 /* BaseEntry.swift */; };
+		48294CDE2AB936D9005E7CD2 /* SetProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CDD2AB936D9005E7CD2 /* SetProgress.swift */; };
+		48294CDF2AB936D9005E7CD2 /* SetProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CDD2AB936D9005E7CD2 /* SetProgress.swift */; };
+		48294CE12AB95020005E7CD2 /* MediaListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E312A85B58700EF0CA2 /* MediaListStatus.swift */; };
+		48294CE22AB95290005E7CD2 /* SetProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CDD2AB936D9005E7CD2 /* SetProgress.swift */; };
+		48294CE32AB95332005E7CD2 /* MediaListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E312A85B58700EF0CA2 /* MediaListStatus.swift */; };
+		48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A41A428ECA1A30066288D /* ModelUtils.swift */; };
+		48294CE52AB96163005E7CD2 /* MediaListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */; };
+		48294CE62AB96164005E7CD2 /* MediaListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */; };
 		482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */; };
 		4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */; };
 		4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
@@ -296,6 +306,9 @@
 		481E2D68288C00B900D91A54 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		481E2D6A288C168100D91A54 /* MediaDetailsMainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsMainInfo.swift; sourceTree = "<group>"; };
 		482801772AB031DC004E11D6 /* MarkdownUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownUtils.swift; sourceTree = "<group>"; };
+		48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeBehindWidget.swift; sourceTree = "<group>"; };
+		48294CDA2AB92067005E7CD2 /* BaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntry.swift; sourceTree = "<group>"; };
+		48294CDD2AB936D9005E7CD2 /* SetProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProgress.swift; sourceTree = "<group>"; };
 		482CE57C2A30841200DAE045 /* ToggleFavourite.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToggleFavourite.graphql; sourceTree = "<group>"; };
 		482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListScoreIndicator.swift; sourceTree = "<group>"; };
 		482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaOverview.graphql; sourceTree = "<group>"; };
@@ -598,6 +611,7 @@
 				481AD4DC2851CE73001779EE /* AniHyou */,
 				48F2790B296EFE77000827F7 /* AniHyouShou Watch App */,
 				48EFCDDA29FFAD200096BF6E /* AniHyou Widget */,
+				48294CDC2AB936B0005E7CD2 /* Intents */,
 				481AD4DB2851CE73001779EE /* Products */,
 				486F240228EC7C96006CD0CB /* Frameworks */,
 			);
@@ -753,6 +767,14 @@
 				486ED20E285DDE03002D29E1 /* ViewerId.graphql */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		48294CDC2AB936B0005E7CD2 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				48294CDD2AB936D9005E7CD2 /* SetProgress.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 		482DC3582A1F4856009D96F4 /* Scores */ = {
@@ -1122,8 +1144,10 @@
 		48EFCDDA29FFAD200096BF6E /* AniHyou Widget */ = {
 			isa = PBXGroup;
 			children = (
+				48294CDA2AB92067005E7CD2 /* BaseEntry.swift */,
 				48EFCDDB29FFAD200096BF6E /* AniHyouWidgets.swift */,
 				48EFCDDD29FFAD200096BF6E /* AiringWidget.swift */,
+				48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */,
 				48EFCDE029FFAD210096BF6E /* Assets.xcassets */,
 				48EFCDE229FFAD210096BF6E /* Info.plist */,
 			);
@@ -1639,6 +1663,7 @@
 				48DF50FD2A66A08F00DF1C87 /* DonationsViewModel.swift in Sources */,
 				4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */,
 				48A1A8F32A39861C00ACC6FF /* KeychainUtils.swift in Sources */,
+				48294CDE2AB936D9005E7CD2 /* SetProgress.swift in Sources */,
 				48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */,
 				48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */,
 				4851578B28A4060C007923A6 /* ThreadCommentItemView.swift in Sources */,
@@ -1783,16 +1808,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48294CE62AB96164005E7CD2 /* MediaListRepository.swift in Sources */,
+				48294CE12AB95020005E7CD2 /* MediaListStatus.swift in Sources */,
+				48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */,
 				48EFCDEE29FFB0A30096BF6E /* NetworkInterceptorProvider.swift in Sources */,
 				48EFCDED29FFB0A00096BF6E /* TokenAddingInterceptor.swift in Sources */,
 				48EFCE0429FFF50C0096BF6E /* AnimeSeason.swift in Sources */,
 				48EFCDDC29FFAD200096BF6E /* AniHyouWidgets.swift in Sources */,
 				48EFCDEC29FFB09D0096BF6E /* Network.swift in Sources */,
+				48294CDF2AB936D9005E7CD2 /* SetProgress.swift in Sources */,
 				48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */,
 				48EFCDDE29FFAD200096BF6E /* AiringWidget.swift in Sources */,
 				4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,
 				48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */,
 				48EFCDF529FFE70A0096BF6E /* Constants.swift in Sources */,
+				48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */,
+				48294CDB2AB92067005E7CD2 /* BaseEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1800,6 +1831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48294CE32AB95332005E7CD2 /* MediaListStatus.swift in Sources */,
 				48F279332970299D000827F7 /* Network.swift in Sources */,
 				48E58E472A85BA7B00EF0CA2 /* ModelUtils.swift in Sources */,
 				48F27934297029A0000827F7 /* TokenAddingInterceptor.swift in Sources */,
@@ -1809,6 +1841,7 @@
 				48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */,
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,
+				48294CE22AB95290005E7CD2 /* SetProgress.swift in Sources */,
 				48F2792D29701C9B000827F7 /* UserDefaultsUtils.swift in Sources */,
 				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,
@@ -1816,6 +1849,7 @@
 				48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */,
 				48A1A8F42A39861C00ACC6FF /* KeychainUtils.swift in Sources */,
 				48F27935297029A3000827F7 /* NetworkInterceptorProvider.swift in Sources */,
+				48294CE52AB96163005E7CD2 /* MediaListRepository.swift in Sources */,
 				48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */,
 				48E58E482A85BA9C00EF0CA2 /* UserOptions.swift in Sources */,
 				48F2792C29700F33000827F7 /* Constants.swift in Sources */,

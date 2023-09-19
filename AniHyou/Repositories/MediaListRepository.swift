@@ -55,4 +55,56 @@ class MediaListRepository {
             }
         }
     }
+    
+    static func updateProgress(
+        entryId: Int,
+        progress: Int,
+        status: MediaListStatus? = nil
+    ) async -> Bool {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(
+                saveMediaListEntryId: .some(entryId),
+                progress: .some(progress),
+                status: someIfNotNil(status)
+            )) { result in
+                switch result {
+                case .success:
+                    continuation.resume(returning: true)
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: false)
+                }
+            }
+        }
+    }
+    
+    static func updateCachedEntry(
+        mediaId: Int,
+        entryId: Int,
+        updatedEntry: BasicMediaListEntry? = nil,
+        progress: Int? = nil
+    ) async -> UserMediaListQuery.Data.Page.MediaList? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+                do {
+                    try transaction.updateObject(
+                        ofType: BasicMediaListEntry.self,
+                        withKey: "MediaList:\(entryId).\(mediaId)"
+                    ) { (cachedData: inout BasicMediaListEntry) in
+                        if let updatedEntry { cachedData = updatedEntry }
+                        if let progress { cachedData.progress = progress }
+                    }
+
+                    let newObject = try transaction.readObject(
+                        ofType: UserMediaListQuery.Data.Page.MediaList.self,
+                        withKey: "MediaList:\(entryId).\(mediaId)"
+                    )
+                    continuation.resume(returning: newObject)
+                } catch {
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
 }

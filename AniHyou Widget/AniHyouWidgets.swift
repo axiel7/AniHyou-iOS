@@ -12,5 +12,8 @@ import SwiftUI
 struct AniHyouWidgets: WidgetBundle {
     var body: some Widget {
         AiringWidget()
+        if #available(iOS 17.0, *) {
+            AnimeBehindWidget()
+        }
     }
 }
