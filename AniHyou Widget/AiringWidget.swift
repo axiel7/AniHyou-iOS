@@ -46,15 +46,14 @@ struct AiringProvider: TimelineProvider {
         //update interval
         var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: date)!
 
-        Network.shared.apollo.fetch(query: UserCurrentAnimeListQuery(userId: .some(userId))) { result in
+        Network.shared.apollo.fetch(query: UserCurrentAnimeListQuery(
+            userId: .some(userId),
+            sort: .some([.case(.updatedTimeDesc)])
+        )) { result in
             switch result {
             case .success(let graphQLResult):
                 if let mediaList = graphQLResult.data?.page?.mediaList {
-                    var tempList = mediaList.sorted(by: { item1, item2 in
-                        item1?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
-                        < item2?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
-                    })
-                    tempList.removeAll(where: { item in item?.media?.status != .releasing })
+                    var tempList = transformToAiringAnimeList(mediaList)
                     
                     var maxItems = 6
                     if context.family == .systemMedium {
@@ -83,6 +82,16 @@ struct AiringProvider: TimelineProvider {
                 completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             }
         }
+    }
+    
+    func transformToAiringAnimeList(_ list: [UserCurrentAnimeListQuery.Data.Page.MediaList?]
+    ) -> [UserCurrentAnimeListQuery.Data.Page.MediaList?] {
+        list
+            .filter { $0?.media?.status == .releasing }
+            .sorted {
+                $0?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
+                < $1?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
+            }
     }
 }
 
@@ -127,7 +136,7 @@ struct AiringWidgetEntryView: View {
             .frame(height: entry.widgetSize.height, alignment: aligment)
         } else {
             ZStack {
-                Color("WidgetBackground")
+                Color(.widgetBackground)
                     .ignoresSafeArea()
                 VStack(alignment: .leading) {
                     content
@@ -142,45 +151,44 @@ struct AiringWidgetEntryView: View {
     var content: some View {
         if let placeholder = entry.placeholderText {
             Text(placeholder)
+                .multilineTextAlignment(.center)
         } else if entry.animeList.isEmpty {
             Text("No airing anime")
         } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
-                if let item {
-                    if let nextAiringEpisode = item.media?.nextAiringEpisode {
-                        Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
-                            Text(item.media?.title?.userPreferred ?? "")
-                                .font(.system(size: 14))
-                                .lineLimit(1)
-                                .padding(.horizontal)
-                                .frame(width: entry.widgetSize.width, alignment: .leading)
-                            
-                            HStack(spacing: 1) {
-                                let airingDate = Date(
-                                    timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
-                                )
-                                if airingDate > Date.now {
-                                    Text("Ep \(nextAiringEpisode.episode) airing in ") +
-                                    Text(airingDate, style: .relative)
-                                } else {
-                                    Text("Ep \(nextAiringEpisode.episode) aired at ") +
-                                    Text(airingDate, style: .time)
-                                }
-                            }
-                            .font(.system(size: 12))
+                if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {
+                    Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
+                        Text(item.media?.title?.userPreferred ?? "")
+                            .font(.system(size: 14))
                             .lineLimit(1)
-                            .foregroundColor(.accentColor)
                             .padding(.horizontal)
                             .frame(width: entry.widgetSize.width, alignment: .leading)
-                            
-                            if (index + 1) < entry.animeList.count {
-                                Divider()
-                                    .padding(.leading)
+                        
+                        HStack(spacing: 1) {
+                            let airingDate = Date(
+                                timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
+                            )
+                            if airingDate > Date.now {
+                                Text("Ep \(nextAiringEpisode.episode) airing in ") +
+                                Text(airingDate, style: .relative)
+                            } else {
+                                Text("Ep \(nextAiringEpisode.episode) aired at ") +
+                                Text(airingDate, style: .time)
                             }
-                        }//:Link
-                    }
+                        }
+                        .font(.system(size: 12))
+                        .lineLimit(1)
+                        .foregroundColor(.accentColor)
+                        .padding(.horizontal)
+                        .frame(width: entry.widgetSize.width, alignment: .leading)
+                        
+                        if (index + 1) < entry.animeList.count {
+                            Divider()
+                                .padding(.leading)
+                        }
+                    }//:Link
                 }
-            }
+            }//:ForEach
         }
     }
 }
