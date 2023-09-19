@@ -7,6 +7,7 @@
 
 import Foundation
 import AniListAPI
+import WidgetKit
 
 class MediaListRepository {
     
@@ -56,6 +57,53 @@ class MediaListRepository {
         }
     }
     
+    static func updateEntry(
+        mediaId: Int,
+        status: MediaListStatus? = nil,
+        score: Double? = nil,
+        progress: Int? = nil,
+        progressVolumes: Int? = nil,
+        startedAt: GraphQLNullable<FuzzyDateInput> = .none,
+        completedAt: GraphQLNullable<FuzzyDateInput> = .none,
+        repeatCount: Int? = nil,
+        isPrivate: Bool? = nil,
+        notes: String? = nil
+    ) async -> BasicMediaListEntry? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.perform(mutation: UpdateEntryMutation(
+                mediaId: .some(mediaId),
+                status: someIfNotNil(status),
+                score: someIfNotNil(score),
+                progress: someIfNotNil(progress),
+                progressVolumes: someIfNotNil(progressVolumes),
+                startedAt: startedAt,
+                completedAt: completedAt,
+                repeat: someIfNotNil(repeatCount),
+                private: someIfNotNil(isPrivate),
+                notes: someIfNotNil(notes)
+            )) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let data = graphQLResult.data?.saveMediaListEntry {
+                        if let errors = graphQLResult.errors {
+                            for error in errors {
+                                print(error)
+                            }
+                        } else {
+                            if #available(iOS 17.0, *), progress != nil {
+                                WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
+                            }
+                            continuation.resume(returning: data.fragments.basicMediaListEntry)
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
     static func updateProgress(
         entryId: Int,
         progress: Int,
@@ -99,6 +147,9 @@ class MediaListRepository {
                         ofType: UserMediaListQuery.Data.Page.MediaList.self,
                         withKey: "MediaList:\(entryId).\(mediaId)"
                     )
+                    if #available(iOS 17.0, *), progress != nil {
+                        WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
+                    }
                     continuation.resume(returning: newObject)
                 } catch {
                     print(error)

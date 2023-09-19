@@ -193,7 +193,7 @@ struct AnimeBehindWidgetEntryView: View {
 
 @available(iOS 17.0, *)
 struct AnimeBehindWidget: Widget {
-    let kind: String = "AniHyou_Anime_Behind_Widget"
+    let kind: String = ANIME_BEHIND_WIDGET_KIND
 
     var body: some WidgetConfiguration {
 

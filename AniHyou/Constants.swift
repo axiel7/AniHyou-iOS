@@ -43,4 +43,6 @@ let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"
+
+let ANIME_BEHIND_WIDGET_KIND = "AniHyou_Anime_Behind_Widget"
 // swiftlint:enable identifier_name
