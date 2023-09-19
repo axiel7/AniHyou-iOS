@@ -1,6 +1,6 @@
 //
-//  AniHyou_Widget.swift
-//  AniHyou Widget
+//  AniHyou_Airing_Widget.swift
+//  AniHyou Airing Widget
 //
 //  Created by Axel Lopez on 01/05/2023.
 //
@@ -102,8 +102,7 @@ struct SimpleEntry: TimelineEntry {
     let widgetFamily: WidgetFamily
 }
 
-// swiftlint:disable type_name
-struct AniHyou_WidgetEntryView: View {
+struct AiringWidgetEntryView: View {
     var entry: Provider.Entry
 
     var aligment: Alignment {
@@ -193,13 +192,13 @@ struct AniHyou_WidgetEntryView: View {
     }
 }
 
-struct AniHyou_Widget: Widget {
+struct AiringWidget: Widget {
     let kind: String = "AniHyou_Widget"
 
     var body: some WidgetConfiguration {
 
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            AniHyou_WidgetEntryView(entry: entry)
+            AiringWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Airing Anime")
         .description("Shows the next airing animes in your list.")
@@ -215,7 +214,6 @@ struct AniHyou_Widget: Widget {
         widgetSize: CGSize(width: 291, height: 141),
         widgetFamily: .systemLarge
     )
-    return AniHyou_WidgetEntryView(entry: entry)
+    return AiringWidgetEntryView(entry: entry)
         .previewContext(WidgetPreviewContext(family: .systemLarge))
 }
-// swiftlint:enable type_name
