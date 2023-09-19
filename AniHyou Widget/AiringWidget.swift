@@ -157,7 +157,8 @@ struct AiringWidgetEntryView: View {
             Text(placeholder)
                 .multilineTextAlignment(.center)
         } else if entry.animeList.isEmpty {
-            Text("No airing anime")
+            Text("No airing anime in your list\n(*´-`)")
+                .multilineTextAlignment(.center)
         } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
                 if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {

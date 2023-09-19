@@ -158,7 +158,8 @@ struct AnimeBehindWidgetEntryView: View {
             Text(placeholder)
                 .multilineTextAlignment(.center)
         } else if entry.animeList.isEmpty {
-            Text("No anime behind")
+            Text("Congratulations, you are up to date!\n(๑>◡<๑)")
+                .multilineTextAlignment(.center)
         } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.id) { index, item in
                 if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {
@@ -213,14 +214,17 @@ struct AnimeBehindWidget: Widget {
 }
 
 #Preview {
-    if #available(iOS 17.0, *) {
-        return AnimeBehindWidgetEntryView(entry: AnimeBehindEntry(
-            animeList: [],
-            date: Date(),
-            placeholderText: "Anime with unwatched episodes appear here",
-            widgetSize: CGSize(width: 291, height: 141)
-        ))
-    } else {
-        return EmptyView()
+    Group {
+        if #available(iOS 17.0, *) {
+            AnimeBehindWidgetEntryView(entry: AnimeBehindEntry(
+                animeList: [],
+                date: Date(),
+                placeholderText: "Anime with unwatched episodes appear here",
+                widgetSize: CGSize(width: 291, height: 141)
+            ))
+        } else {
+            EmptyView()
+        }
     }
+    .previewContext(WidgetPreviewContext(family: .systemMedium))
 }
