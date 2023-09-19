@@ -1,6 +1,6 @@
 //
-//  AniHyou_Airing_Widget.swift
-//  AniHyou Airing Widget
+//  AiringWidget.swift
+//  Airing Widget
 //
 //  Created by Axel Lopez on 01/05/2023.
 //
@@ -9,12 +9,9 @@ import WidgetKit
 import SwiftUI
 import AniListAPI
 
-// swiftlint:disable void_return
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-
-        SimpleEntry(
-            date: Date(),
+struct AiringProvider: TimelineProvider {
+    func placeholder(in context: Context) -> AiringEntry {
+        AiringEntry(
             animeList: [],
             placeholderText: "Your anime list here",
             widgetSize: context.displaySize,
@@ -22,9 +19,8 @@ struct Provider: TimelineProvider {
         )
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(
-            date: Date(),
+    func getSnapshot(in context: Context, completion: @escaping (AiringEntry) -> Void) {
+        let entry = AiringEntry(
             animeList: [],
             placeholderText: "Your anime list here",
             widgetSize: context.displaySize,
@@ -33,13 +29,12 @@ struct Provider: TimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<AiringEntry>) -> Void) {
         let date = Date()
         let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
 
         if userId == 0 {
-            let entry = SimpleEntry(
-                date: date,
+            let entry = AiringEntry(
                 animeList: [],
                 placeholderText: "Login to use this widget",
                 widgetSize: context.displaySize,
@@ -67,8 +62,7 @@ struct Provider: TimelineProvider {
                     }
                     tempList = Array(tempList.prefix(maxItems))
 
-                    let entry = SimpleEntry(
-                        date: nextUpdateDate,
+                    let entry = AiringEntry(
                         animeList: tempList,
                         placeholderText: nil,
                         widgetSize: context.displaySize,
@@ -80,8 +74,7 @@ struct Provider: TimelineProvider {
             case .failure(let error):
                 print(error)
                 nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
-                let entry = SimpleEntry(
-                    date: nextUpdateDate,
+                let entry = AiringEntry(
                     animeList: [],
                     placeholderText: "Error updating",
                     widgetSize: context.displaySize,
@@ -92,10 +85,8 @@ struct Provider: TimelineProvider {
         }
     }
 }
-// swiftlint:enable void_return
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
+struct AiringEntry: BaseEntry {
     let animeList: [UserCurrentAnimeListQuery.Data.Page.MediaList?]
     let placeholderText: String?
     let widgetSize: CGSize
@@ -197,7 +188,7 @@ struct AiringWidget: Widget {
 
     var body: some WidgetConfiguration {
 
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: AiringProvider()) { entry in
             AiringWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Airing Anime")
@@ -207,8 +198,7 @@ struct AiringWidget: Widget {
 }
 
 #Preview {
-    let entry = SimpleEntry(
-        date: Date(),
+    let entry = AiringEntry(
         animeList: [],
         placeholderText: "This is a preview",
         widgetSize: CGSize(width: 291, height: 141),
