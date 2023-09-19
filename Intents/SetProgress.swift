@@ -24,16 +24,16 @@ struct SetProgress: AppIntent {
     static var title: LocalizedStringResource = "Set progress"
     static var description = IntentDescription("Sets a list entry progress to the specified number.")
 
-    @Parameter(title: "The id of the media the entry is of")
+    @Parameter(title: "Media ID", description: "The id of the media the entry is of")
     var mediaId: Int
     
-    @Parameter(title: "List entry id")
+    @Parameter(title: "List entry ID")
     var entryId: Int
     
-    @Parameter(title: "Progress", description: "The episode/chapter to update to")
+    @Parameter(title: "Progress", description: "The amount of episodes/chapters consumed by the user")
     var progress: Int
     
-    @Parameter(title: "Status", description: "Optional status to update the list entry to")
+    @Parameter(title: "Status", description: "Optional status to update the list entry to (e.g. COMPLETED)")
     var status: String?
 
     init() {}
