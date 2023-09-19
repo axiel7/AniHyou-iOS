@@ -17,7 +17,7 @@ class MainViewModel: ObservableObject {
         switch key {
         case USER_TOKEN_KEY:
             TokenAddingInterceptor.token = value
-            KeychainUtils.keychain.set(value, forKey: USER_TOKEN_KEY)
+            KeychainUtils.shared.keychain.set(value, forKey: USER_TOKEN_KEY)
             getUserId()
         default:
             return

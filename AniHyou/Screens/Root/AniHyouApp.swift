@@ -19,7 +19,6 @@ struct AniHyouApp: App {
                 .id(globalAppState.globalId)
                 .tint(Color(hex: accentColor) ?? .accentColor)
                 .onAppear {
-                    KeychainUtils.keychain.synchronizable = true
                     //transfer user id from old app versions
                     if authUserId() == 0 {
                         saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))

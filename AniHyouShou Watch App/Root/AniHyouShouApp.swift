@@ -14,7 +14,6 @@ struct AniHyouShou_Watch_AppApp: App {
         WindowGroup {
             ContentView()
                 .onAppear {
-                    KeychainUtils.keychain.synchronizable = true
                     //transfer use id from old app versions
                     if authUserId() == 0 {
                         saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))

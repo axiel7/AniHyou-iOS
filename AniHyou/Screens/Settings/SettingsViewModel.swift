@@ -14,7 +14,7 @@ class SettingsViewModel: ObservableObject {
     @Published var isLoggedOut = false
 
     func logOut() {
-        KeychainUtils.keychain.delete(USER_TOKEN_KEY)
+        KeychainUtils.shared.keychain.delete(USER_TOKEN_KEY)
         UserDefaults.standard.removeObject(forKey: "user_id")
         UserDefaults.standard.removeObject(forKey: "token_expiration")
         UserDefaults.standard.removeObject(forKey: "is_logged_in")
@@ -24,7 +24,7 @@ class SettingsViewModel: ObservableObject {
     }
 
     func syncAccountWithAppleWatch() {
-        if let token = KeychainUtils.keychain.get(USER_TOKEN_KEY) {
+        if let token = KeychainUtils.shared.keychain.get(USER_TOKEN_KEY) {
             WatchConnectivityManager.shared.send(key: USER_TOKEN_KEY, data: token)
         }
     }
