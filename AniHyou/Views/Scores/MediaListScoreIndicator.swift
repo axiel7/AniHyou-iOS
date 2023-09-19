@@ -46,8 +46,7 @@ struct MediaListScoreIndicator: View {
                     .resizable()
                     .frame(width: 18, height: 18)
                     .foregroundColor(color)
-            }
-            else {
+            } else {
                 Text(UNKNOWN_CHAR)
                     .foregroundColor(.gray)
                     .font(.footnote)
