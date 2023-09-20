@@ -21,6 +21,7 @@ struct MediaDetailsMainInfo: View {
     var isNewEntry: Bool {
         viewModel.mediaDetails?.mediaListEntry == nil
     }
+    @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {
         HStack(alignment: .top) {
@@ -51,7 +52,7 @@ struct MediaDetailsMainInfo: View {
                 HStack {
                     // MARK: Status button
                     Button {
-                        if LoginRepository.isLoggedIn() {
+                        if isLoggedIn {
                             showingEditSheet = true
                         } else {
                             showingNotLoggedAlert = true

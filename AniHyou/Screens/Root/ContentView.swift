@@ -47,7 +47,6 @@ fileprivate extension View {
 
 struct ContentView: View {
 
-    @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
@@ -56,27 +55,27 @@ struct ContentView: View {
             HomeView()
                 .tabItemHome()
             
-            if isLoggedIn || justLogged {
+            if isLoggedIn {
                 MediaListStatusView(mediaType: .anime)
                     .tabItemAnime()
             } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
+                NotLoggedView()
                     .tabItemAnime()
             }
             
-            if isLoggedIn || justLogged {
+            if isLoggedIn {
                 MediaListStatusView(mediaType: .manga)
                     .tabItemManga()
             } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
+                NotLoggedView()
                     .tabItemManga()
             }
             
-            if isLoggedIn || justLogged {
+            if isLoggedIn {
                 ProfileView()
                     .tabItemProfile()
             } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
+                NotLoggedView()
                     .tabItemProfile()
             }
             

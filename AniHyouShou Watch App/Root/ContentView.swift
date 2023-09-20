@@ -12,10 +12,11 @@ struct ContentView: View {
     @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
     @ObservedObject private var viewModel = MainViewModel()
     @AppStorage("selected_tab_index") private var selectedTabIndex: Int = 0
+    @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {
         Group {
-            if LoginRepository.isLoggedIn() || viewModel.justLoggedIn {
+            if isLoggedIn {
                 TabView(selection: $selectedTabIndex) {
                     MediaListView(type: .anime)
                         .tabItem {
@@ -52,7 +53,6 @@ struct ContentView: View {
         }
         .onAppear {
             if LoginRepository.authUserId() == 0 {
-                viewModel.justLoggedIn = false
                 if let token = KeychainUtils.shared.keychain.get(USER_TOKEN_KEY) {
                     if !token.isEmpty {
                         viewModel.getUserId()

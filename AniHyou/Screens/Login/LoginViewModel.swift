@@ -17,8 +17,6 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
         return ASPresentationAnchor()
     }
 
-    @Published var isLoginSuccess = false
-
     func login() {
         let authSession = ASWebAuthenticationSession(
             url: URL(string: "\(ANILIST_AUTH_URL)?client_id=\(clientId)&response_type=token")!,
@@ -53,7 +51,6 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
            let token = queryItems.filter({ $0.name == "access_token" }).first?.value,
            let expirationDate = queryItems.filter({ $0.name == "expires_in" }).first?.value {
             LoginRepository.onNewToken(token, expiresIn: expirationDate)
-            self.isLoginSuccess = true
         }
     }
 }
