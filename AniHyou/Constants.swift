@@ -44,6 +44,7 @@ let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"
 
+let AIRING_WIDGET_KIND = "AniHyou_Widget"
 let ANIME_BEHIND_WIDGET_KIND = "AniHyou_Anime_Behind_Widget"
 let MEDIA_LIST_WIDGET_KIND = "AniHyou_MediaList_Widget"
 // swiftlint:enable identifier_name

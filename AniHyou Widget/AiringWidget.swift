@@ -242,7 +242,7 @@ struct AiringWidgetEntryView: View {
 }
 
 struct AiringWidget: Widget {
-    let kind: String = "AniHyou_Widget"
+    let kind: String = AIRING_WIDGET_KIND
 
     var body: some WidgetConfiguration {
 
