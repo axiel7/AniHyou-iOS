@@ -49,7 +49,7 @@ struct ContentView: View {
 
     @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
-    @AppStorage("is_logged_in") private var isLoggedIn: Bool = false
+    @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {

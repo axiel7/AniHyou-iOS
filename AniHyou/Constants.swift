@@ -23,6 +23,7 @@ let YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v="
 let DAILYMOTION_VIDEO_URL = "https://www.dailymotion.com/video/"
 
 // Preferences keys
+let LOGGED_IN_KEY = "is_logged_in"
 let USER_TOKEN_KEY = "user_token"
 let USER_ID_KEY = "user_id"
 let USER_COLOR_KEY = "user_color"

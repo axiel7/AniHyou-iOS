@@ -11,7 +11,7 @@ import WidgetKit
 
 class LoginRepository {
     static func isLoggedIn() -> Bool {
-        return UserDefaults.standard.bool(forKey: "is_logged_in")
+        return UserDefaults.standard.bool(forKey: LOGGED_IN_KEY)
     }
     
     static func authUserId() -> Int {
@@ -32,7 +32,7 @@ class LoginRepository {
         #endif
         //save other data to userdefaults
         UserDefaults.standard.set(expiresIn, forKey: "token_expiration")
-        UserDefaults.standard.set(true, forKey: "is_logged_in")
+        UserDefaults.standard.set(true, forKey: LOGGED_IN_KEY)
 
         refreshUserIdAndOptions()
     }

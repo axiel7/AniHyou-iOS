@@ -31,7 +31,7 @@ class MainViewModel: ObservableObject {
                 if let viewer = graphQLResult.data?.viewer {
                     LoginRepository.saveUserId(id: viewer.id)
                     self?.justLoggedIn = true
-                    UserDefaults.standard.set(true, forKey: "is_logged_in")
+                    UserDefaults.standard.set(true, forKey: LOGGED_IN_KEY)
                 }
             case .failure(let error):
                 print(error)
