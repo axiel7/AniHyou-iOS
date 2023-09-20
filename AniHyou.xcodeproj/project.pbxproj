@@ -54,6 +54,7 @@
 		48294CE92ABA9893005E7CD2 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E292A85B49E00EF0CA2 /* MediaType.swift */; };
 		48294CEB2ABA9B95005E7CD2 /* MediaListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CEA2ABA9B95005E7CD2 /* MediaListWidget.swift */; };
 		48294CEC2ABA9E9B005E7CD2 /* MediaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E2C2A85B4D700EF0CA2 /* MediaList.swift */; };
+		48294CEE2ABAA4BB005E7CD2 /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */; };
 		482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */; };
 		4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */; };
 		4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
@@ -315,6 +316,7 @@
 		48294CDD2AB936D9005E7CD2 /* SetProgressIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProgressIntent.swift; sourceTree = "<group>"; };
 		48294CE72ABA93F9005E7CD2 /* SelectMediaTypeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMediaTypeIntent.swift; sourceTree = "<group>"; };
 		48294CEA2ABA9B95005E7CD2 /* MediaListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListWidget.swift; sourceTree = "<group>"; };
+		48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUtils.swift; sourceTree = "<group>"; };
 		482CE57C2A30841200DAE045 /* ToggleFavourite.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToggleFavourite.graphql; sourceTree = "<group>"; };
 		482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListScoreIndicator.swift; sourceTree = "<group>"; };
 		482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaOverview.graphql; sourceTree = "<group>"; };
@@ -1156,6 +1158,7 @@
 				48EFCDDD29FFAD200096BF6E /* AiringWidget.swift */,
 				48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */,
 				48294CEA2ABA9B95005E7CD2 /* MediaListWidget.swift */,
+				48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */,
 				48EFCDE029FFAD210096BF6E /* Assets.xcassets */,
 				48EFCDE229FFAD210096BF6E /* Info.plist */,
 			);
@@ -1828,6 +1831,7 @@
 				48EFCDDC29FFAD200096BF6E /* AniHyouWidgets.swift in Sources */,
 				48EFCDEC29FFB09D0096BF6E /* Network.swift in Sources */,
 				48294CDF2AB936D9005E7CD2 /* SetProgressIntent.swift in Sources */,
+				48294CEE2ABAA4BB005E7CD2 /* WidgetUtils.swift in Sources */,
 				48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */,
 				48EFCDDE29FFAD200096BF6E /* AiringWidget.swift in Sources */,
 				4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,

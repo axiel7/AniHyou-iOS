@@ -60,10 +60,7 @@ struct AnimeBehindProvider: TimelineProvider {
                 if let mediaList = graphQLResult.data?.page?.mediaList {
                     var tempList = transformToAnimeBehindList(mediaList)
                     
-                    var maxItems = 6
-                    if context.family == .systemMedium {
-                        maxItems = 3
-                    }
+                    let maxItems = context.family.maxMediaListItems
                     tempList = Array(tempList.prefix(maxItems))
                     
                     let entry = AnimeBehindEntry(

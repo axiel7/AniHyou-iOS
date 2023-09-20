@@ -62,10 +62,7 @@ struct MediaListProvider: AppIntentTimelineProvider {
                 switch result {
                 case .success(let graphQLResult):
                     if let mediaList = graphQLResult.data?.page?.mediaList {
-                        var maxItems = 7
-                        if context.family == .systemMedium {
-                            maxItems = 3
-                        }
+                        let maxItems = context.family.maxMediaListItems
                         let tempList = Array(mediaList.prefix(maxItems))
                         
                         let entry = MediaListEntry(
