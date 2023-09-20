@@ -109,7 +109,7 @@ struct MediaListWidgetEntryView: View {
         if entry.placeholderText != nil || entry.animeList.isEmpty {
             return .center
         } else {
-            if family == .systemMedium && entry.animeList.count >= 3 {
+            if entry.animeList.count >= family.maxMediaListItems {
                 return .center
             } else {
                 return .top
