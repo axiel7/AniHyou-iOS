@@ -14,6 +14,7 @@ struct AniHyouWidgets: WidgetBundle {
         AiringWidget()
         if #available(iOS 17.0, *) {
             AnimeBehindWidget()
+            MediaListWidget()
         }
     }
 }
