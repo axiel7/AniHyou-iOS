@@ -207,7 +207,7 @@ struct MediaListWidget: Widget {
         }
         .configurationDisplayName("Media List")
         .description("Quick access to your anime or manga list.")
-        .supportedFamilies([.systemMedium, .systemLarge, .systemExtraLarge])
+        .supportedFamilies([.systemMedium, .systemLarge])
     }
 }
 
