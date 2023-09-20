@@ -165,7 +165,7 @@ struct MediaListWidgetEntryView: View {
                                     if let nextAiringEpisode = item.media?.nextAiringEpisode {
                                         let episodesBehind = (nextAiringEpisode.episode - 1) - (item.progress ?? 0)
                                         if episodesBehind > 0 {
-                                            Text("^[\(episodesBehind) episodes](inflect: true) behind")
+                                            Text("^[\(episodesBehind) \("episode")](inflect: true) behind")
                                                 .foregroundColor(tintColor)
                                         }
                                     }

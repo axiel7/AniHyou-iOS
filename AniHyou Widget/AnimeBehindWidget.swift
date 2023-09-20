@@ -178,7 +178,7 @@ struct AnimeBehindWidgetEntryView: View {
                                         .lineLimit(1)
                                         .padding(.horizontal)
                                     
-                                    Text("^[\(episodesBehind) episodes](inflect: true) behind")
+                                    Text("^[\(episodesBehind) \("episode")](inflect: true) behind")
                                         .font(.system(size: 12))
                                         .lineLimit(1)
                                         .foregroundColor(tintColor)
