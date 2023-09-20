@@ -20,8 +20,8 @@ struct AniHyouApp: App {
                 .tint(Color(hex: accentColor) ?? .accentColor)
                 .onAppear {
                     //transfer user id from old app versions
-                    if authUserId() == 0 {
-                        saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
+                    if LoginRepository.authUserId() == 0 {
+                        LoginRepository.saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
                     }
                 }
         }

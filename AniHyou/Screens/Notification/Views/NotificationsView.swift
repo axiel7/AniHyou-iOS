@@ -15,7 +15,7 @@ struct NotificationsView: View {
     var body: some View {
         NavigationStack {
             Group {
-                if isLoggedIn() {
+                if LoginRepository.isLoggedIn() {
                     List {
                         Picker("Filter", selection: $viewModel.type) {
                             ForEach(NotificationTypeGrouped.allCases, id: \.self) { type in

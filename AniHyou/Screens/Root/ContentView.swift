@@ -49,13 +49,14 @@ struct ContentView: View {
 
     @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
+    @AppStorage("is_logged_in") private var isLoggedIn: Bool = false
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {
             HomeView()
                 .tabItemHome()
             
-            if isLoggedIn() || justLogged {
+            if isLoggedIn || justLogged {
                 MediaListStatusView(mediaType: .anime)
                     .tabItemAnime()
             } else {
@@ -63,7 +64,7 @@ struct ContentView: View {
                     .tabItemAnime()
             }
             
-            if isLoggedIn() || justLogged {
+            if isLoggedIn || justLogged {
                 MediaListStatusView(mediaType: .manga)
                     .tabItemManga()
             } else {
@@ -71,7 +72,7 @@ struct ContentView: View {
                     .tabItemManga()
             }
             
-            if isLoggedIn() || justLogged {
+            if isLoggedIn || justLogged {
                 ProfileView()
                     .tabItemProfile()
             } else {

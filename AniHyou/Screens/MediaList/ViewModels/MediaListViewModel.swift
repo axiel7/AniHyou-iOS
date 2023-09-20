@@ -11,7 +11,7 @@ import AniListAPI
 
 class MediaListViewModel: ObservableObject {
 
-    var userId: Int = authUserId()
+    var userId: Int = LoginRepository.authUserId()
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList?
 

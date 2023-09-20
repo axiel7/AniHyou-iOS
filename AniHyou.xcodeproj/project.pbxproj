@@ -111,7 +111,7 @@
 		488C267E285380D90005EE15 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267D285380D90005EE15 /* ProfileView.swift */; };
 		488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26822853881F0005EE15 /* LoginViewModel.swift */; };
 		488C268828539CC30005EE15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 488C268728539CC30005EE15 /* KeychainSwift */; };
-		488C268A28539D5C0005EE15 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */; };
+		488C268A28539D5C0005EE15 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* LoginRepository.swift */; };
 		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
@@ -147,6 +147,9 @@
 		48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */; };
 		48D044E12A57AC9600ED3623 /* MultiSelectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D044E02A57AC9600ED3623 /* MultiSelectionSheet.swift */; };
 		48D3B966297AC55F0064E829 /* MediaListItemCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */; };
+		48D929E32ABABDF500330C71 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* LoginRepository.swift */; };
+		48D929E52ABAC00600330C71 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F27927296F0CFC000827F7 /* WatchConnectivityManager.swift */; };
+		48D929E62ABAC06900330C71 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E452A85BA2600EF0CA2 /* UserOptions.swift */; };
 		48D9B6342A2B07FB00299DD8 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9B6332A2B07FB00299DD8 /* Apollo */; };
 		48D9B6362A2B085700299DD8 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9B6352A2B085700299DD8 /* Apollo */; };
 		48D9B6382A2B085D00299DD8 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9B6372A2B085D00299DD8 /* Apollo */; };
@@ -207,7 +210,7 @@
 		48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F27927296F0CFC000827F7 /* WatchConnectivityManager.swift */; };
 		48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2792A29700DFA000827F7 /* MainViewModel.swift */; };
 		48F2792C29700F33000827F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267A2853801A0005EE15 /* Constants.swift */; };
-		48F2792D29701C9B000827F7 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */; };
+		48F2792D29701C9B000827F7 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* LoginRepository.swift */; };
 		48F2793129702894000827F7 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2793029702894000827F7 /* MediaListView.swift */; };
 		48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
 		48F279332970299D000827F7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4F92851DA02001779EE /* Network.swift */; };
@@ -386,7 +389,7 @@
 		488C26802853837B0005EE15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		488C2681285386600005EE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		488C26822853881F0005EE15 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
+		488C268928539D5C0005EE15 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
@@ -799,7 +802,6 @@
 		4832B02A285F35CE00E79D27 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				488C268928539D5C0005EE15 /* UserDefaultsUtils.swift */,
 				481AD501285207B1001779EE /* DateUtils.swift */,
 				488C267828537B5F0005EE15 /* StringUtils.swift */,
 				4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */,
@@ -1468,6 +1470,7 @@
 			isa = PBXGroup;
 			children = (
 				84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */,
+				488C268928539D5C0005EE15 /* LoginRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1751,7 +1754,7 @@
 				488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */,
 				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
 				48AAEEA22A29E08800FC0887 /* StaffInfoType.swift in Sources */,
-				488C268A28539D5C0005EE15 /* UserDefaultsUtils.swift in Sources */,
+				488C268A28539D5C0005EE15 /* LoginRepository.swift in Sources */,
 				480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */,
 				4832B034285F953100E79D27 /* MediaStatView.swift in Sources */,
 				48E58E382A85B5E000EF0CA2 /* MediaStatus.swift in Sources */,
@@ -1826,6 +1829,7 @@
 				48294CE12AB95020005E7CD2 /* MediaListStatus.swift in Sources */,
 				48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */,
 				48EFCDEE29FFB0A30096BF6E /* NetworkInterceptorProvider.swift in Sources */,
+				48D929E32ABABDF500330C71 /* LoginRepository.swift in Sources */,
 				48EFCDED29FFB0A00096BF6E /* TokenAddingInterceptor.swift in Sources */,
 				48EFCE0429FFF50C0096BF6E /* AnimeSeason.swift in Sources */,
 				48EFCDDC29FFAD200096BF6E /* AniHyouWidgets.swift in Sources */,
@@ -1839,7 +1843,9 @@
 				48EFCDF529FFE70A0096BF6E /* Constants.swift in Sources */,
 				48294CEB2ABA9B95005E7CD2 /* MediaListWidget.swift in Sources */,
 				48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */,
+				48D929E52ABAC00600330C71 /* WatchConnectivityManager.swift in Sources */,
 				48294CDB2AB92067005E7CD2 /* BaseEntry.swift in Sources */,
+				48D929E62ABAC06900330C71 /* UserOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1858,7 +1864,7 @@
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,
 				48294CE22AB95290005E7CD2 /* SetProgressIntent.swift in Sources */,
-				48F2792D29701C9B000827F7 /* UserDefaultsUtils.swift in Sources */,
+				48F2792D29701C9B000827F7 /* LoginRepository.swift in Sources */,
 				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,

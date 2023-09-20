@@ -29,7 +29,7 @@ class MainViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let viewer = graphQLResult.data?.viewer {
-                    saveUserId(id: viewer.id)
+                    LoginRepository.saveUserId(id: viewer.id)
                     self?.justLoggedIn = true
                     UserDefaults.standard.set(true, forKey: "is_logged_in")
                 }

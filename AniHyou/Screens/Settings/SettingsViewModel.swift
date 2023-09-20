@@ -14,12 +14,8 @@ class SettingsViewModel: ObservableObject {
     @Published var isLoggedOut = false
 
     func logOut() {
-        KeychainUtils.shared.keychain.delete(USER_TOKEN_KEY)
-        UserDefaults.standard.removeObject(forKey: "user_id")
-        UserDefaults.standard.removeObject(forKey: "token_expiration")
-        UserDefaults.standard.removeObject(forKey: "is_logged_in")
+        LoginRepository.logOut()
         isLoggedOut = true
-        WidgetCenter.shared.reloadAllTimelines()
         GlobalAppState.shared.globalId = UUID()
     }
 

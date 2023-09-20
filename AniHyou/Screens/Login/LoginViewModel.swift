@@ -52,16 +52,7 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
            let queryItems = components.queryItems,
            let token = queryItems.filter({ $0.name == "access_token" }).first?.value,
            let expirationDate = queryItems.filter({ $0.name == "expires_in" }).first?.value {
-            //save token in the keychain
-            TokenAddingInterceptor.token = token
-            KeychainUtils.shared.keychain.set(token, forKey: USER_TOKEN_KEY)
-            //send token to apple watch
-            WatchConnectivityManager.shared.send(key: USER_TOKEN_KEY, data: token)
-            //save other data to userdefaults
-            UserDefaults.standard.set(expirationDate, forKey: "token_expiration")
-            UserDefaults.standard.set(true, forKey: "is_logged_in")
-
-            refreshUserIdAndOptions()
+            LoginRepository.onNewToken(token, expiresIn: expirationDate)
             self.isLoginSuccess = true
         }
     }

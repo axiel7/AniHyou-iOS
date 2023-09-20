@@ -15,7 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         Group {
-            if isLoggedIn() || viewModel.justLoggedIn {
+            if LoginRepository.isLoggedIn() || viewModel.justLoggedIn {
                 TabView(selection: $selectedTabIndex) {
                     MediaListView(type: .anime)
                         .tabItem {
@@ -51,7 +51,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            if authUserId() == 0 {
+            if LoginRepository.authUserId() == 0 {
                 viewModel.justLoggedIn = false
                 if let token = KeychainUtils.shared.keychain.get(USER_TOKEN_KEY) {
                     if !token.isEmpty {

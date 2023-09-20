@@ -51,7 +51,7 @@ struct MediaDetailsMainInfo: View {
                 HStack {
                     // MARK: Status button
                     Button {
-                        if isLoggedIn() {
+                        if LoginRepository.isLoggedIn() {
                             showingEditSheet = true
                         } else {
                             showingNotLoggedAlert = true
