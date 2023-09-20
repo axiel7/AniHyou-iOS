@@ -90,10 +90,6 @@ class MediaListRepository {
                                 print(error)
                             }
                         } else {
-                            if #available(iOS 17.0, *), progress != nil {
-                                WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
-                                WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
-                            }
                             continuation.resume(returning: data.fragments.basicMediaListEntry)
                         }
                     }
