@@ -61,7 +61,7 @@ class MediaListEditViewModel: ObservableObject {
     @Published var isUpdateSuccess = false
     var updatedEntry: BasicMediaListEntry?
 
-    // swiftlint:disable function_parameter_count cyclomatic_complexity
+    // swiftlint:disable function_parameter_count cyclomatic_complexity function_body_length
     func updateEntry(
         mediaId: Int,
         status: MediaListStatus?,
@@ -74,8 +74,8 @@ class MediaListEditViewModel: ObservableObject {
         isPrivate: Bool?,
         notes: String?
     ) {
+        isLoading = true
         Task {
-            isLoading = true
             var setStatus = status
             if status == oldEntry?.status?.value { setStatus = nil }
             
@@ -123,13 +123,19 @@ class MediaListEditViewModel: ObservableObject {
                 isPrivate: setIsPrivate,
                 notes: setNotes
             ) {
-                self.updatedEntry = updatedEntry
-                self.isUpdateSuccess = true
+                DispatchQueue.main.async { [weak self] in
+                    self?.updatedEntry = updatedEntry
+                    self?.isUpdateSuccess = true
+                    self?.isLoading = false
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
+                }
             }
-            isLoading = false
         }
     }
-    // swiftlint:enable function_parameter_count cyclomatic_complexity
+    // swiftlint:enable function_parameter_count cyclomatic_complexity function_body_length
 
     @Published var isDeleteSuccess = false
 

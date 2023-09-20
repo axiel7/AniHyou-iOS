@@ -85,13 +85,15 @@ class MediaListViewModel: ObservableObject {
     }
 
     func updateEntryProgress(mediaId: Int, entryId: Int, progress: Int, status: MediaListStatus?) {
+        isLoading = true
         Task {
-            isLoading = true
             let updated = await MediaListRepository.updateProgress(entryId: entryId, progress: progress, status: status)
             if updated {
                 onEntryUpdated(mediaId: mediaId, entryId: entryId, updatedEntry: nil, progress: progress)
             }
-            isLoading = false
+            DispatchQueue.main.async { [weak self] in
+                self?.isLoading = false
+            }
         }
     }
 
@@ -112,8 +114,8 @@ class MediaListViewModel: ObservableObject {
     }
 
     func onEntryDeleted(entryId: Int) {
-        DispatchQueue.main.async {
-            self.mediaList.removeAll(where: { $0?.id == entryId })
+        DispatchQueue.main.async { [weak self] in
+            self?.mediaList.removeAll(where: { $0?.id == entryId })
         }
     }
 
