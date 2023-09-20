@@ -163,40 +163,80 @@ struct AiringWidgetEntryView: View {
             Text("No airing anime in your list\n(*´-`)")
                 .multilineTextAlignment(.center)
         } else {
-            ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
-                if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {
-                    Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
-                        Text(item.media?.title?.userPreferred ?? "")
-                            .font(.system(size: 14))
-                            .lineLimit(1)
-                            .padding(.horizontal)
-                            .frame(width: entry.widgetSize.width, alignment: .leading)
-                        
-                        HStack(spacing: 1) {
-                            let airingDate = Date(
-                                timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
-                            )
-                            if airingDate > Date.now {
-                                Text("Ep \(nextAiringEpisode.episode) airing in ") +
-                                Text(airingDate, style: .relative)
-                            } else {
-                                Text("Ep \(nextAiringEpisode.episode) aired at ") +
-                                Text(airingDate, style: .time)
-                            }
-                        }
-                        .font(.system(size: 12))
+            if family == .systemSmall {
+                smallContent
+            } else {
+                mediumLargeContent
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var mediumLargeContent: some View {
+        ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
+            if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {
+                Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
+                    Text(item.media?.title?.userPreferred ?? "")
+                        .font(.system(size: 14))
                         .lineLimit(1)
-                        .foregroundColor(tintColor)
                         .padding(.horizontal)
                         .frame(width: entry.widgetSize.width, alignment: .leading)
-                        
-                        if (index + 1) < entry.animeList.count {
-                            Divider()
-                                .padding(.leading)
+                    
+                    HStack(spacing: 1) {
+                        let airingDate = Date(
+                            timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
+                        )
+                        if airingDate > Date.now {
+                            Text("Ep \(nextAiringEpisode.episode) airing in ") +
+                            Text(airingDate, style: .relative)
+                        } else {
+                            Text("Ep \(nextAiringEpisode.episode) aired at ") +
+                            Text(airingDate, style: .time)
                         }
-                    }//:Link
+                    }
+                    .font(.system(size: 12))
+                    .lineLimit(1)
+                    .foregroundColor(tintColor)
+                    .padding(.horizontal)
+                    .frame(width: entry.widgetSize.width, alignment: .leading)
+                    
+                    if (index + 1) < entry.animeList.count {
+                        Divider()
+                            .padding(.leading)
+                    }
+                }//:Link
+            }
+        }//:ForEach
+    }
+    
+    @ViewBuilder
+    var smallContent: some View {
+        if 
+            let item = entry.animeList.first,
+            let item, // swift wtf ↑
+            let nextAiringEpisode = item.media?.nextAiringEpisode
+        {
+            VStack(spacing: 8) {
+                Group {
+                    let airingDate = Date(
+                        timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
+                    )
+                    if airingDate > Date.now {
+                        Text("Ep \(nextAiringEpisode.episode) airing in ") +
+                        Text(airingDate, style: .relative)
+                    } else {
+                        Text("Ep \(nextAiringEpisode.episode) aired at ") +
+                        Text(airingDate, style: .time)
+                    }
                 }
-            }//:ForEach
+                .font(.headline)
+                .foregroundColor(tintColor)
+                
+                Text(item.media?.title?.userPreferred ?? "")
+                    .font(.subheadline)
+                    
+            }//:VStack
+            .allowsTightening(true)
         }
     }
 }
@@ -211,7 +251,7 @@ struct AiringWidget: Widget {
         }
         .configurationDisplayName("Airing Anime")
         .description("Shows the next airing animes in your list.")
-        .supportedFamilies([.systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
