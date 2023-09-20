@@ -150,6 +150,7 @@
 		48D929E32ABABDF500330C71 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268928539D5C0005EE15 /* LoginRepository.swift */; };
 		48D929E52ABAC00600330C71 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F27927296F0CFC000827F7 /* WatchConnectivityManager.swift */; };
 		48D929E62ABAC06900330C71 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E452A85BA2600EF0CA2 /* UserOptions.swift */; };
+		48D929E82ABAC76900330C71 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D929E72ABAC76900330C71 /* MainTab.swift */; };
 		48D9B6342A2B07FB00299DD8 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9B6332A2B07FB00299DD8 /* Apollo */; };
 		48D9B6362A2B085700299DD8 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9B6352A2B085700299DD8 /* Apollo */; };
 		48D9B6382A2B085D00299DD8 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9B6372A2B085D00299DD8 /* Apollo */; };
@@ -441,6 +442,7 @@
 		48D044E02A57AC9600ED3623 /* MultiSelectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionSheet.swift; sourceTree = "<group>"; };
 		48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemCompactView.swift; sourceTree = "<group>"; };
 		48D774EF2A2ECF3C00370921 /* AniListAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AniListAPI; sourceTree = "<group>"; };
+		48D929E72ABAC76900330C71 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		48DBAF7729B0776A00A75167 /* UserStatsAnimeOverview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsAnimeOverview.graphql; sourceTree = "<group>"; };
 		48DBAF7E29B0786400A75167 /* OverviewStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewStatsView.swift; sourceTree = "<group>"; };
 		48DBAF8029B0796F00A75167 /* UserStatsHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsHostView.swift; sourceTree = "<group>"; };
@@ -1146,6 +1148,7 @@
 			isa = PBXGroup;
 			children = (
 				481AD4DD2851CE73001779EE /* AniHyouApp.swift */,
+				48D929E72ABAC76900330C71 /* MainTab.swift */,
 				481AD4DF2851CE73001779EE /* ContentView.swift */,
 				48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */,
 			);
@@ -1696,6 +1699,7 @@
 				48E58E342A85B5AA00EF0CA2 /* MediaSeason.swift in Sources */,
 				484A6D6B287484C40044C34A /* MediaReviewsAndThreadsView.swift in Sources */,
 				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
+				48D929E82ABAC76900330C71 /* MainTab.swift in Sources */,
 				48F7640828ACE70800C82D75 /* CharacterStaffViewModel.swift in Sources */,
 				481AD4FA2851DA02001779EE /* Network.swift in Sources */,
 				48E58E2A2A85B49E00EF0CA2 /* MediaType.swift in Sources */,
