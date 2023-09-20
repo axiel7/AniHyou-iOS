@@ -164,36 +164,41 @@ struct AnimeBehindWidgetEntryView: View {
                 .multilineTextAlignment(.center)
         } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.id) { index, item in
-                if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {
-                    Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
-                        HStack(spacing: 0) {
-                            VStack(alignment: .leading, spacing: 0) {
-                                Text(item.media?.title?.userPreferred ?? "")
-                                    .font(.system(size: 14))
-                                    .lineLimit(1)
-                                    .padding(.horizontal)
-                                
-                                let episodesBehind = (nextAiringEpisode.episode - 1) - (item.progress ?? 0)
-                                Text("^[\(episodesBehind) episodes](inflect: true) behind")
-                                    .font(.system(size: 12))
-                                    .lineLimit(1)
-                                    .foregroundColor(tintColor)
-                                    .padding(.horizontal)
-                                    .invalidatableContent()
+                if 
+                    let item,
+                    let nextAiringEpisode = item.media?.nextAiringEpisode
+                {
+                    let episodesBehind = (nextAiringEpisode.episode - 1) - (item.progress ?? 0)
+                    if episodesBehind > 0 {
+                        Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
+                            HStack(spacing: 0) {
+                                VStack(alignment: .leading, spacing: 0) {
+                                    Text(item.media?.title?.userPreferred ?? "")
+                                        .font(.system(size: 14))
+                                        .lineLimit(1)
+                                        .padding(.horizontal)
+                                    
+                                    Text("^[\(episodesBehind) episodes](inflect: true) behind")
+                                        .font(.system(size: 12))
+                                        .lineLimit(1)
+                                        .foregroundColor(tintColor)
+                                        .padding(.horizontal)
+                                        .invalidatableContent()
+                                }
+                                Spacer()
+                                Button("+1", intent: SetProgressIntent(
+                                    mediaId: item.mediaId,
+                                    entryId: item.id,
+                                    progress: (item.progress ?? 0) + 1
+                                ))
+                                .padding(.horizontal)
                             }
-                            Spacer()
-                            Button("+1", intent: SetProgressIntent(
-                                mediaId: item.mediaId,
-                                entryId: item.id,
-                                progress: (item.progress ?? 0) + 1
-                            ))
-                            .padding(.horizontal)
-                        }
-                        if (index + 1) < entry.animeList.count {
-                            Divider()
-                                .padding(.leading)
-                        }
-                    }//:Link
+                            if (index + 1) < entry.animeList.count {
+                                Divider()
+                                    .padding(.leading)
+                            }
+                        }//:Link
+                    }
                 }
             }//:ForEach
         }
