@@ -88,18 +88,4 @@ class ProfileViewModel: ObservableObject {
             }
         })
     }
-
-    @Published var isLoggedOut = false
-
-    func logOut() {
-        KeychainUtils.shared.keychain.delete(USER_TOKEN_KEY)
-        UserDefaults.standard.removeObject(forKey: USER_ID_KEY)
-        UserDefaults.standard.removeObject(forKey: "token_expiration")
-        UserDefaults.standard.removeObject(forKey: "is_logged_in")
-        UserDefaults.standard.removeObject(forKey: USER_COLOR_KEY)
-        UserDefaults.standard.removeObject(forKey: USER_NAMES_LANG_KEY)
-        UserDefaults.standard.removeObject(forKey: USER_TITLE_LANG_KEY)
-        UserDefaults.standard.removeObject(forKey: USER_SCORE_KEY)
-        isLoggedOut = true
-    }
 }
