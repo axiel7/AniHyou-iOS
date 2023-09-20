@@ -19,7 +19,7 @@ import AniListAPI
     
 }*/
 
-struct SetProgress: AppIntent {
+struct SetProgressIntent: AppIntent {
     
     static var title: LocalizedStringResource = "Set progress"
     static var description = IntentDescription("Sets a list entry progress to the specified number.")

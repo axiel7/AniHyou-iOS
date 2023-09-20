@@ -185,7 +185,7 @@ struct AnimeBehindWidgetEntryView: View {
                                     .invalidatableContent()
                             }
                             Spacer()
-                            Button("+1", intent: SetProgress(
+                            Button("+1", intent: SetProgressIntent(
                                 mediaId: item.mediaId,
                                 entryId: item.id,
                                 progress: (item.progress ?? 0) + 1
