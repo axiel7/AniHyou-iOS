@@ -17,17 +17,12 @@ struct MediaDetailsView: View {
     @State private var attributedSynopsis = NSAttributedString(string: "Loading")
 
     @Environment(\.dismiss) private var dismiss
-    @State var scrollOffset = CGFloat.zero
-    private var hasScrolled: Bool {
-        withAnimation {
-            scrollOffset > 0
-        }
-    }
+    @State private var hasScrolled = false
 
     var body: some View {
         Group {
             if let details = viewModel.mediaDetails {
-                ObservableVScrollView(scrollOffset: $scrollOffset) { _ in
+                ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
                     LazyVStack(alignment: .leading) {
                         // MARK: - Header
                         TopBannerView(

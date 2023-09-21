@@ -45,13 +45,16 @@ struct ExpandableRichText: View {
                 .customCSS(spoilerCss)
                 .frame(
                     maxWidth: .infinity,
-                    maxHeight: isExpanded ? .greatestFiniteMagnitude : 32.0, alignment: .topLeading
+                    maxHeight: isExpanded ? .greatestFiniteMagnitude : 32.0,
+                    alignment: .topLeading
                 )
-                .background(GeometryReader { geo in
-                    Color.clear.onAppear {
-                        determineTruncation(geo)
+                .background(alignment: .top) {
+                    GeometryReader { geo in
+                        Color.clear.onAppear {
+                            determineTruncation(geo)
+                        }
                     }
-                })
+                }
 
             if isTruncated {
                 Button(
