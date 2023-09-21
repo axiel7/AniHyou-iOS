@@ -211,7 +211,14 @@ struct AiringWidgetEntryView: View {
     
     @ViewBuilder
     var smallContent: some View {
-        if 
+        var smallPadding: CGFloat? {
+            if #available(iOS 17.0, *) {
+                return 0
+            } else {
+                return nil
+            }
+        }
+        if
             let item = entry.animeList.first,
             let item, // swift wtf ↑
             let nextAiringEpisode = item.media?.nextAiringEpisode
@@ -237,6 +244,7 @@ struct AiringWidgetEntryView: View {
                     
             }//:VStack
             .allowsTightening(true)
+            .padding(.all, smallPadding)
         }
     }
 }
