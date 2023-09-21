@@ -9,12 +9,27 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct AniHyouWidgets: WidgetBundle {
+struct AniHyouWidgets {
+    static func main() {
+        if #available(iOSApplicationExtension 17.0, *) {
+            AniHyouWidgets17.main()
+        } else {
+            AniHyouWidgets16.main()
+        }
+    }
+}
+
+struct AniHyouWidgets16: WidgetBundle {
     var body: some Widget {
         AiringWidget()
-        if #available(iOS 17.0, *) {
-            AnimeBehindWidget()
-            MediaListWidget()
-        }
+    }
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct AniHyouWidgets17: WidgetBundle {
+    var body: some Widget {
+        AiringWidget()
+        AnimeBehindWidget()
+        MediaListWidget()
     }
 }
