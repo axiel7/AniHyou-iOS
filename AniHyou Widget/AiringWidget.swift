@@ -182,17 +182,12 @@ struct AiringWidgetEntryView: View {
                         .padding(.horizontal)
                         .frame(width: entry.widgetSize.width, alignment: .leading)
                     
-                    HStack(spacing: 1) {
+                    Group {
                         let airingDate = Date(
                             timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
                         )
-                        if airingDate > Date.now {
-                            Text("Ep \(nextAiringEpisode.episode) airing in ") +
-                            Text(airingDate, style: .relative)
-                        } else {
-                            Text("Ep \(nextAiringEpisode.episode) aired at ") +
-                            Text(airingDate, style: .time)
-                        }
+                        Text("Ep \(nextAiringEpisode.episode) airing in ") +
+                        Text(airingDate, style: .relative)
                     }
                     .font(.system(size: 12))
                     .lineLimit(1)
@@ -228,13 +223,8 @@ struct AiringWidgetEntryView: View {
                     let airingDate = Date(
                         timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
                     )
-                    if airingDate > Date.now {
-                        Text("Ep \(nextAiringEpisode.episode) airing in ") +
-                        Text(airingDate, style: .relative)
-                    } else {
-                        Text("Ep \(nextAiringEpisode.episode) aired at ") +
-                        Text(airingDate, style: .time)
-                    }
+                    Text("Ep \(nextAiringEpisode.episode) airing in ") +
+                    Text(airingDate, style: .relative)
                 }
                 .font(.headline)
                 .foregroundColor(tintColor)
