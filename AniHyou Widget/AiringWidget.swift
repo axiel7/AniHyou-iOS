@@ -223,7 +223,7 @@ struct AiringWidgetEntryView: View {
             let item, // swift wtf ↑
             let nextAiringEpisode = item.media?.nextAiringEpisode
         {
-            VStack(spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) {
                 Group {
                     let airingDate = Date(
                         timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
@@ -244,6 +244,7 @@ struct AiringWidgetEntryView: View {
                     
             }//:VStack
             .allowsTightening(true)
+            .multilineTextAlignment(.leading)
             .padding(.all, smallPadding)
         }
     }
