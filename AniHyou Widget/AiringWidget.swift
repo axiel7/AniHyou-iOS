@@ -88,7 +88,7 @@ struct AiringProvider: TimelineProvider {
     func transformToAiringAnimeList(_ list: [UserCurrentAnimeListQuery.Data.Page.MediaList?]
     ) -> [UserCurrentAnimeListQuery.Data.Page.MediaList?] {
         list
-            .filter { $0?.media?.status == .releasing }
+            .filter { $0?.media?.status == .releasing && $0?.media?.nextAiringEpisode != nil }
             .sorted {
                 $0?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
                 < $1?.media?.nextAiringEpisode?.timeUntilAiring ?? 0
