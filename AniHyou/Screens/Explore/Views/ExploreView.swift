@@ -87,11 +87,11 @@ struct ExploreView: View {
                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                             HListItemWithSubtitleView(
                                 title: item.title?.userPreferred,
-                                subtitle: String(swiftLintMultiline:
-                                    item.format?.value?.localizedName ?? "",
-                                    " · ",
-                                    item.startDate?.year?.stringValue ?? ""
-                                ),
+                                subtitle: 
+                                """
+                                \(Text(item.format?.value?.localizedName ?? "")) ·
+                                    \(item.startDate?.year?.stringValue ?? "")
+                                """,
                                 imageUrl: item.coverImage?.large
                             )
                             .mediaContextMenu(
@@ -365,8 +365,9 @@ struct ExploreView: View {
                 Text("Format")
                     .foregroundColor(.primary)
                 Spacer()
-                Text(viewModel.selectedMediaFormatJoined)
-                    .foregroundColor(.gray)
+                ForEach(Array(viewModel.selectedMediaFormat.prefix(3)), id: \.self) { status in
+                    Text(status.localizedName)
+                }
                 Image(systemName: "chevron.right")
                     .foregroundColor(.gray)
             }//:HStack
@@ -389,8 +390,10 @@ struct ExploreView: View {
                 Text("Status")
                     .foregroundColor(.primary)
                 Spacer()
-                Text(viewModel.selectedMediaStatusJoined)
-                    .foregroundColor(.gray)
+                ForEach(Array(viewModel.selectedMediaStatus.prefix(3)), id: \.self) { status in
+                    Text(status.localizedName)
+                }
+                .foregroundColor(.gray)
                 Image(systemName: "chevron.right")
                     .foregroundColor(.gray)
             }//:HStack

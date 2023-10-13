@@ -23,9 +23,7 @@ class SearchViewModel: ObservableObject {
     @Published var selectedTags = Set<String>()
     @Published var selectedGenresTagsJoined = ""
     @Published var selectedMediaFormat = Set<MediaFormat>()
-    @Published var selectedMediaFormatJoined = ""
     @Published var selectedMediaStatus = Set<MediaStatus>()
-    @Published var selectedMediaStatusJoined = ""
     @Published var selectedYear: Int?
     @Published var mediaOnMyList = false
 
@@ -82,8 +80,6 @@ class SearchViewModel: ObservableObject {
         isLoading = true
 
         selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
-        selectedMediaFormatJoined = selectedMediaFormat.map { $0.localizedName }.joined(separator: ", ")
-        selectedMediaStatusJoined = selectedMediaStatus.map { $0.localizedName }.joined(separator: ", ")
 
         //if no query provided but other filters applied and sort is set to default, set sort to popularity
         if

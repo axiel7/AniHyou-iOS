@@ -132,9 +132,12 @@ struct HomeView: View {
     @ViewBuilder
     var thisSeason: some View {
         HStack(alignment: .center) {
-            Text("\(viewModel.nowAnimeSeason.season.localizedName) \(String(viewModel.nowAnimeSeason.year))")
-                .font(.title2)
-                .bold()
+            Group {
+                Text(viewModel.nowAnimeSeason.season.localizedName) +
+                Text(" \(viewModel.nowAnimeSeason.year)")
+            }
+            .font(.title2)
+            .bold()
             Spacer()
             NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nowAnimeSeason.season))
         }

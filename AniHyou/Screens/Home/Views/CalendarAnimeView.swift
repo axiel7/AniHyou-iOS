@@ -15,13 +15,13 @@ struct CalendarAnimeView: View {
     var body: some View {
         VStack {
             Picker("Weekday", selection: $weekday) {
-                Text("M").tag(2)
-                Text("T").tag(3)
-                Text("W").tag(4)
-                Text("T").tag(5)
-                Text("F").tag(6)
-                Text("S").tag(7)
-                Text("S").tag(1)
+                Text("monday_short").tag(2)
+                Text("tuesday_short").tag(3)
+                Text("wednesday_short").tag(4)
+                Text("thursday_short").tag(5)
+                Text("friday_short").tag(6)
+                Text("saturday_short").tag(7)
+                Text("sunday_short").tag(1)
             }
             .pickerStyle(.segmented)
             .padding()

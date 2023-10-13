@@ -39,7 +39,10 @@ struct ChartListItemView: View {
                     .padding(.bottom, 2)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
-                Text("\(item.format?.value?.localizedName ?? "Unknown") · \(item.startDate?.year?.stringValue ?? "")")
+                Text("""
+                     \(Text(item.format?.value?.localizedName ?? "Unknown")) · 
+                     \(item.startDate?.year?.stringValue ?? "")
+                     """)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(1)

@@ -60,7 +60,7 @@ struct MediaDetailsView: View {
                                     )
                                     MediaStatView(
                                         name: "Status",
-                                        value: details.status?.value?.localizedName ?? "Unknown"
+                                        value: "\(Text(details.status?.value?.localizedName ?? "Unknown"))"
                                     )
                                     MediaStatView(
                                         name: "Popularity",

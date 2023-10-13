@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum MainTab: Int {
     case home = 0
@@ -14,7 +15,7 @@ enum MainTab: Int {
     case profile = 3
     case explore = 4
     
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .home:
             return "Home"

@@ -5,3 +5,13 @@
   Created by Axel Lopez on 13/10/2023.
   
 */
+
+"monday_short" = "M";
+"tuesday_short" = "T";
+"wednesday_short" = "W";
+"thursday_short" = "T";
+"friday_short" = "F";
+"saturday_short" = "S";
+"sunday_short" = "S";
+
+"Unknown" = "Unknown";

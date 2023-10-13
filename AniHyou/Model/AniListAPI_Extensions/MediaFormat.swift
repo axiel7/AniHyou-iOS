@@ -10,7 +10,7 @@ import AniListAPI
 
 extension MediaFormat {
 
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .tv:
             return "TV"

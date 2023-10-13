@@ -5,11 +5,12 @@
 //  Created by Axel Lopez on 11/08/2023.
 //
 
+import SwiftUI
 import AniListAPI
 
 extension MediaStatus {
 
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .finished:
             return "Finished"

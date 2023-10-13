@@ -10,7 +10,7 @@ import AniListAPI
 
 extension MediaListStatus {
 
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .current:
             return "Current"
