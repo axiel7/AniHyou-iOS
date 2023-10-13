@@ -134,7 +134,7 @@ struct HomeView: View {
         HStack(alignment: .center) {
             Group {
                 Text(viewModel.nowAnimeSeason.season.localizedName) +
-                Text(" \(viewModel.nowAnimeSeason.year)")
+                Text(" \(viewModel.nowAnimeSeason.year.stringValue)")
             }
             .font(.title2)
             .bold()

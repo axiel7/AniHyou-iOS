@@ -12,7 +12,14 @@ public enum LongSwipeDirection: String, Equatable, CaseIterable {
     case left = "Left"
     case right = "Right"
 
-    var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
+    var localizedName: LocalizedStringKey {
+        switch self {
+        case .left:
+            return "Left"
+        case .right:
+            return "Right"
+        }
+    }
 }
 
 public enum AccentColorMode: String, Equatable, CaseIterable {
@@ -20,7 +27,16 @@ public enum AccentColorMode: String, Equatable, CaseIterable {
     case profile = "Profile"
     case custom = "Custom"
 
-    var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
+    var localizedName: LocalizedStringKey {
+        switch self {
+        case .anihyou:
+            "AniHyou"
+        case .profile:
+            "Profile"
+        case .custom:
+            "Custom"
+        }
+    }
 }
 
 struct SettingsView: View {

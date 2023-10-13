@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DatePickerToggleView: View {
 
-    let text: String
+    let text: LocalizedStringKey
     let selection: Binding<Date>
     let isDateSet: Binding<Bool>
     @State private var showDatePicker = false
