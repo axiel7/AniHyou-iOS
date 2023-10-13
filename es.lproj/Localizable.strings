@@ -1,8 +1,11 @@
 /* No comment provided by engineer. */
+" ," = " ,";
+
+/* No comment provided by engineer. */
 " · " = " · ";
 
 /* No comment provided by engineer. */
-" %lld" = " %lld";
+" %@" = " %@";
 
 /* No comment provided by engineer. */
 " ago" = "Hace ";
@@ -68,6 +71,9 @@
 "Accent color" = "Color de acento";
 
 /* No comment provided by engineer. */
+"Action" = "Acción";
+
+/* No comment provided by engineer. */
 "Activity" = "Actividad";
 
 /* No comment provided by engineer. */
@@ -78,6 +84,9 @@
 
 /* No comment provided by engineer. */
 "Added" = "Añadido";
+
+/* No comment provided by engineer. */
+"Adventure" = "Aventura";
 
 /* No comment provided by engineer. */
 "Age" = "Edad";
@@ -99,6 +108,9 @@
 
 /* No comment provided by engineer. */
 "Alternative" = "Alternativo";
+
+/* No comment provided by engineer. */
+"AniHyou" = "AniHyou";
 
 /* No comment provided by engineer. */
 "AniList account settings" = "Ajustes de la cuenta de AniList";
@@ -188,6 +200,9 @@
 "Close" = "Cerrar";
 
 /* No comment provided by engineer. */
+"Comedy" = "Comedia";
+
+/* No comment provided by engineer. */
 "Comic" = "Cómic";
 
 /* No comment provided by engineer. */
@@ -212,7 +227,10 @@
 "Contains" = "Contiene";
 
 /* No comment provided by engineer. */
-"Current" = "Actualmente";
+"Current" = "Actual";
+
+/* No comment provided by engineer. */
+"Custom" = "Personalizado";
 
 /* No comment provided by engineer. */
 "Custom color" = "Color personalizado";
@@ -263,10 +281,16 @@
 "Doujinshi" = "Doujinshi";
 
 /* No comment provided by engineer. */
+"Drama" = "Drama";
+
+/* No comment provided by engineer. */
 "Dropped" = "Descartado";
 
 /* No comment provided by engineer. */
 "Duration" = "Duración";
+
+/* No comment provided by engineer. */
+"Ecchi" = "Ecchi";
 
 /* No comment provided by engineer. */
 "Edit" = "Editar";
@@ -308,10 +332,16 @@
 "Fall" = "Otoño";
 
 /* No comment provided by engineer. */
+"Fantasy" = "Fantasía";
+
+/* No comment provided by engineer. */
 "Favorites" = "Favoritos";
 
 /* No comment provided by engineer. */
 "Filter" = "Filtrar";
+
+/* No comment provided by engineer. */
+"Finish Date" = "Fecha de finalización";
 
 /* No comment provided by engineer. */
 "Finished" = "Finalizado";
@@ -359,6 +389,9 @@
 "GitHub repository" = "Repositorio de GitHub";
 
 /* No comment provided by engineer. */
+"Hentai" = "Hentai";
+
+/* No comment provided by engineer. */
 "Hiatus" = "Hiatus";
 
 /* No comment provided by engineer. */
@@ -368,13 +401,22 @@
 "Hide spoiler" = "Ocultar spoilers";
 
 /* No comment provided by engineer. */
+"Highest rated" = "El mejor valorado";
+
+/* No comment provided by engineer. */
 "Home" = "Inicio";
 
 /* No comment provided by engineer. */
 "Hometown" = "Ciudad natal";
 
 /* No comment provided by engineer. */
+"Horror" = "Horror";
+
+/* No comment provided by engineer. */
 "Hours Watched" = "Horas de Visualización";
+
+/* No comment provided by engineer. */
+"Id" = "Id";
 
 /* No comment provided by engineer. */
 "Increment Episode / Chapter" = "Incrementar Episodio / Capítulo";
@@ -393,6 +435,9 @@
 
 /* No comment provided by engineer. */
 "Last Updated" = "Actualizado por última vez";
+
+/* No comment provided by engineer. */
+"Left" = "Izquierda";
 
 /* No comment provided by engineer. */
 "Light novel" = "Novela ligera";
@@ -419,6 +464,9 @@
 "Long Swipe Direction" = "Dirección al deslizar";
 
 /* No comment provided by engineer. */
+"Mahou Shoujo" = "Mahou Shoujo";
+
+/* No comment provided by engineer. */
 "Main" = "Principal";
 
 /* No comment provided by engineer. */
@@ -429,6 +477,9 @@
 
 /* No comment provided by engineer. */
 "Mean Score" = "Puntuación";
+
+/* No comment provided by engineer. */
+"Mecha" = "Mecha";
 
 /* No comment provided by engineer. */
 "Media" = "Medios";
@@ -455,6 +506,9 @@
 "More filters" = "Más filtros";
 
 /* No comment provided by engineer. */
+"Most popular" = "Más popular";
+
+/* No comment provided by engineer. */
 "Movie" = "Película";
 
 /* No comment provided by engineer. */
@@ -462,6 +516,9 @@
 
 /* No comment provided by engineer. */
 "Music" = "Música";
+
+/* No comment provided by engineer. */
+"Mystery" = "Misterio";
 
 /* No comment provided by engineer. */
 "Native" = "Nativo";
@@ -572,6 +629,9 @@
 "Progress" = "Progreso";
 
 /* No comment provided by engineer. */
+"Psychological" = "Psicológico";
+
+/* No comment provided by engineer. */
 "Publishing" = "Publicándose";
 
 /* No comment provided by engineer. */
@@ -614,13 +674,22 @@
 "Reviews" = "Reseñas";
 
 /* No comment provided by engineer. */
+"Right" = "Derecha";
+
+/* No comment provided by engineer. */
 "Romaji" = "Romaji";
+
+/* No comment provided by engineer. */
+"Romance" = "Romance";
 
 /* (No Comment) */
 "saturday_short" = "S";
 
 /* No comment provided by engineer. */
 "Save" = "Guardar";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "Ciencia ficción";
 
 /* No comment provided by engineer. */
 "Score" = "Puntuación";
@@ -683,6 +752,9 @@
 "Side Story" = "Historia Paralela";
 
 /* No comment provided by engineer. */
+"Slice of Life" = "Recuentos de la vida";
+
+/* No comment provided by engineer. */
 "Social" = "Social";
 
 /* No comment provided by engineer. */
@@ -696,6 +768,9 @@
 
 /* No comment provided by engineer. */
 "Spin Off" = "Spin Off";
+
+/* No comment provided by engineer. */
+"Sports" = "Deportes";
 
 /* No comment provided by engineer. */
 "Spring" = "Primavera";
@@ -740,7 +815,10 @@
 "Summer" = "Verano";
 
 /* (No Comment) */
-"sunday_short" = "S";
+"sunday_short" = "D";
+
+/* No comment provided by engineer. */
+"Supernatural" = "Sobrenatural";
 
 /* No comment provided by engineer. */
 "Support the development of AniHyou!" = "¡Apoya el desarrollo de AniHyou!";
@@ -771,6 +849,9 @@
 
 /* No comment provided by engineer. */
 "Threads" = "Discusiones";
+
+/* No comment provided by engineer. */
+"Thriller" = "Thriller";
 
 /* (No Comment) */
 "thursday_short" = "J";
@@ -806,7 +887,7 @@
 "Trending Manga" = "Manga en Tendencia";
 
 /* (No Comment) */
-"tuesday_short" = "J";
+"tuesday_short" = "M";
 
 /* No comment provided by engineer. */
 "TV" = "TV";
