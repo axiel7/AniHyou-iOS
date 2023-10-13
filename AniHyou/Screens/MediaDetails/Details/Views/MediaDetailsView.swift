@@ -57,12 +57,12 @@ struct MediaDetailsView: View {
                                             .padding(8)
                                     }
                                     MediaStatView(
-                                        name: "Average Score",
-                                        value: "\(details.averageScore ?? 0)%"
-                                    )
-                                    MediaStatView(
                                         name: "Mean Score",
                                         value: "\(details.meanScore ?? 0)%"
+                                    )
+                                    MediaStatView(
+                                        name: "Average Score",
+                                        value: "\(details.averageScore ?? 0)%"
                                     )
                                     MediaStatView(
                                         name: "Status",
