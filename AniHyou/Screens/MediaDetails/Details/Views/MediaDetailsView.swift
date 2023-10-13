@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 private let bannerHeight: CGFloat = 180
 
@@ -22,104 +23,7 @@ struct MediaDetailsView: View {
     var body: some View {
         Group {
             if let details = viewModel.mediaDetails {
-                ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
-                    LazyVStack(alignment: .leading) {
-                        // MARK: - Header
-                        TopBannerView(
-                            imageUrl: details.bannerImage,
-                            placeholderHexColor: details.coverImage?.color,
-                            height: bannerHeight
-                        )
-
-                        // MARK: - Main info
-                        MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
-
-                        // MARK: - Main stats
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            VStack {
-                                Divider()
-                                HStack {
-                                    if let schedule = details.nextAiringEpisode {
-                                        VStack {
-                                            Text("Airing")
-                                                .font(.caption2)
-                                                .textCase(.uppercase)
-                                                .foregroundColor(.gray)
-                                                .padding(.bottom, 1)
-                                            Group {
-                                                Text("Ep \(schedule.episode) in ") +
-                                                Text(schedule.timeUntilAiring.secondsToLegibleText())
-                                            }
-                                            .bold()
-                                            .foregroundColor(.gray)
-                                        }
-                                        Divider()
-                                            .padding(8)
-                                    }
-                                    MediaStatView(
-                                        name: "Mean Score",
-                                        value: "\(details.meanScore ?? 0)%"
-                                    )
-                                    MediaStatView(
-                                        name: "Average Score",
-                                        value: "\(details.averageScore ?? 0)%"
-                                    )
-                                    MediaStatView(
-                                        name: "Status",
-                                        value: details.status?.value?.localizedName
-                                    )
-                                    MediaStatView(
-                                        name: "Popularity",
-                                        value: (details.popularity ?? 0).formatted()
-                                    )
-                                    MediaStatView(
-                                        name: "Favorites",
-                                        value: (details.favourites ?? 0).formatted(),
-                                        showDivider: false
-                                    )
-                                }
-                                .padding(.vertical, 4)
-                                Divider()
-                            }//:VStack
-                            .padding(.leading)
-                        }//:HScrollView
-                        .padding(.top)
-
-                        // MARK: - Synopsis
-                        ExpandableTextView(text: $attributedSynopsis)
-                            .padding(.top)
-                            .padding(.leading)
-                            .padding(.trailing)
-
-                        // MARK: - More info
-                        Picker("Info type", selection: $infoType) {
-                            ForEach(MediaInfoType.allCases, id: \.self) { type in
-                                Label(type.localizedName, systemImage: type.systemImage)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                        .labelStyle(.iconOnly)
-                        .padding()
-
-                        ZStack {
-                            switch infoType {
-                            case .general:
-                                MediaGeneralInfoView(viewModel: viewModel)
-                            case .charactersAndStaff:
-                                MediaCharactersAndStaffView(mediaId: mediaId)
-                            case .relationsAndRecommendations:
-                                MediaRelationsAndRecommendationsView(mediaId: mediaId)
-                            case .stats:
-                                MediaStatsView(mediaId: mediaId)
-                            case .reviewsAndThreads:
-                                MediaReviewsAndThreadsView(mediaId: mediaId)
-                            }
-                        }//:ZStack
-                        .frame(minHeight: 200)
-                    }//:VStack
-                    .padding(.bottom)
-                }//:VScrollView
-                .edgesIgnoringSafeArea(.top)
+                detailsView(details)
             } else {
                 ProgressView()
                     .onAppear {
@@ -160,6 +64,117 @@ struct MediaDetailsView: View {
             }
         }
     }
+    
+    @ViewBuilder
+    func detailsView(_ details: MediaDetailsQuery.Data.Media) -> some View {
+        ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
+            LazyVStack(alignment: .leading) {
+                // MARK: - Header
+                TopBannerView(
+                    imageUrl: details.bannerImage,
+                    placeholderHexColor: details.coverImage?.color,
+                    height: bannerHeight
+                )
+
+                // MARK: - Main info
+                MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
+
+                // MARK: - Main stats
+                mainStats(details)
+
+                // MARK: - Synopsis
+                ExpandableTextView(text: $attributedSynopsis, showCopy: true)
+                    .padding(.top)
+                    .padding(.horizontal)
+
+                // MARK: - More info
+                moreInfo
+            }//:VStack
+            .padding(.bottom)
+        }//:VScrollView
+        .edgesIgnoringSafeArea(.top)
+    }//:detailsView
+    
+    @ViewBuilder
+    func mainStats(_ details: MediaDetailsQuery.Data.Media) -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            VStack {
+                Divider()
+                HStack {
+                    if let schedule = details.nextAiringEpisode {
+                        VStack {
+                            Text("Airing")
+                                .font(.caption2)
+                                .textCase(.uppercase)
+                                .foregroundColor(.gray)
+                                .padding(.bottom, 1)
+                            Group {
+                                Text("Ep \(schedule.episode) in ") +
+                                Text(schedule.timeUntilAiring.secondsToLegibleText())
+                            }
+                            .bold()
+                            .foregroundColor(.gray)
+                        }
+                        Divider()
+                            .padding(8)
+                    }
+                    MediaStatView(
+                        name: "Mean Score",
+                        value: "\(details.meanScore ?? 0)%"
+                    )
+                    MediaStatView(
+                        name: "Average Score",
+                        value: "\(details.averageScore ?? 0)%"
+                    )
+                    MediaStatView(
+                        name: "Status",
+                        value: details.status?.value?.localizedName
+                    )
+                    MediaStatView(
+                        name: "Popularity",
+                        value: (details.popularity ?? 0).formatted()
+                    )
+                    MediaStatView(
+                        name: "Favorites",
+                        value: (details.favourites ?? 0).formatted(),
+                        showDivider: false
+                    )
+                }
+                .padding(.vertical, 4)
+                Divider()
+            }//:VStack
+            .padding(.leading)
+        }//:HScrollView
+        .padding(.top)
+    }//:mainStats
+    
+    @ViewBuilder
+    var moreInfo: some View {
+        Picker("Info type", selection: $infoType) {
+            ForEach(MediaInfoType.allCases, id: \.self) { type in
+                Label(type.localizedName, systemImage: type.systemImage)
+            }
+        }
+        .pickerStyle(.segmented)
+        .labelStyle(.iconOnly)
+        .padding()
+
+        ZStack {
+            switch infoType {
+            case .general:
+                MediaGeneralInfoView(viewModel: viewModel)
+            case .charactersAndStaff:
+                MediaCharactersAndStaffView(mediaId: mediaId)
+            case .relationsAndRecommendations:
+                MediaRelationsAndRecommendationsView(mediaId: mediaId)
+            case .stats:
+                MediaStatsView(mediaId: mediaId)
+            case .reviewsAndThreads:
+                MediaReviewsAndThreadsView(mediaId: mediaId)
+            }
+        }//:ZStack
+        .frame(minHeight: 200)
+    }//:moreInfo
 }
 
 #Preview {
