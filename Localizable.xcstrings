@@ -1,0 +1,595 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "/%@" : {
+
+    },
+    "#%lld" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "%lld chapters" : {
+
+    },
+    "%lld episodes" : {
+
+    },
+    "%lld volumes" : {
+
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "%lld/100" : {
+
+    },
+    "%lld%%" : {
+
+    },
+    "^[%lld %@](inflect: true) behind" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "^[%1$lld %2$@](inflect: true) behind"
+          }
+        }
+      }
+    },
+    "+1" : {
+
+    },
+    "Accent color" : {
+
+    },
+    "Add to List" : {
+
+    },
+    "Airing" : {
+
+    },
+    "Airing Anime" : {
+
+    },
+    "Airing Next" : {
+
+    },
+    "Airing on my list" : {
+
+    },
+    "AniList account settings" : {
+
+    },
+    "Anime" : {
+
+    },
+    "Anime Behind" : {
+
+    },
+    "Anime List" : {
+
+    },
+    "Anime, Manga, and More" : {
+
+    },
+    "App Icon" : {
+
+    },
+    "Are you sure you want to log out?" : {
+
+    },
+    "Ascending" : {
+
+    },
+    "axiel7" : {
+
+    },
+    "BitForger" : {
+
+    },
+    "Calendar" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Ch" : {
+
+    },
+    "Chapters" : {
+
+    },
+    "Chapters Read" : {
+
+    },
+    "Characters" : {
+
+    },
+    "Choose between Anime or Manga." : {
+
+    },
+    "Clear" : {
+
+    },
+    "Close" : {
+
+    },
+    "Coming soon" : {
+
+    },
+    "Coming Soon" : {
+
+    },
+    "Compact" : {
+
+    },
+    "Congratulations, you are up to date!\n(๑>◡<๑)" : {
+
+    },
+    "Custom color" : {
+
+    },
+    "Dates" : {
+
+    },
+    "Default" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete this entry?" : {
+
+    },
+    "Descending" : {
+
+    },
+    "Developers" : {
+
+    },
+    "Discord server" : {
+
+    },
+    "Display" : {
+
+    },
+    "Donate" : {
+
+    },
+    "Donate!" : {
+
+    },
+    "Donation" : {
+
+    },
+    "Done" : {
+
+    },
+    "Edit" : {
+
+    },
+    "Ep" : {
+
+    },
+    "Ep %lld airing at " : {
+
+    },
+    "Ep %lld airing in " : {
+
+    },
+    "Ep %lld in " : {
+
+    },
+    "Episodes" : {
+
+    },
+    "Error no entry" : {
+
+    },
+    "Explore" : {
+
+    },
+    "External links" : {
+
+    },
+    "F" : {
+
+    },
+    "Fall" : {
+
+    },
+    "Favorites" : {
+
+    },
+    "Filter" : {
+
+    },
+    "Follow" : {
+
+    },
+    "Followers" : {
+
+    },
+    "Following" : {
+
+    },
+    "Follows you" : {
+
+    },
+    "Format" : {
+
+    },
+    "Format distribution" : {
+
+    },
+    "Genres" : {
+
+    },
+    "GitHub repository" : {
+
+    },
+    "Hide filters" : {
+
+    },
+    "Hide spoiler" : {
+
+    },
+    "Home" : {
+
+    },
+    "Hours Watched" : {
+
+    },
+    "Increment Episode / Chapter" : {
+
+    },
+    "Info type" : {
+
+    },
+    "Information" : {
+
+    },
+    "Japanese" : {
+
+    },
+    "Last Added" : {
+
+    },
+    "Last Updated" : {
+
+    },
+    "List entry ID" : {
+
+    },
+    "List style" : {
+
+    },
+    "Loading" : {
+
+    },
+    "Log out" : {
+
+    },
+    "Login" : {
+
+    },
+    "Long Swipe Direction" : {
+
+    },
+    "M" : {
+
+    },
+    "Manga" : {
+
+    },
+    "Manga List" : {
+
+    },
+    "Media ID" : {
+
+    },
+    "Media List" : {
+
+    },
+    "Media Type" : {
+
+    },
+    "Minimal" : {
+
+    },
+    "More filters" : {
+
+    },
+    "Next Season" : {
+
+    },
+    "No airing anime in your list\n(*´-`)" : {
+
+    },
+    "No anime for today\n(*´-`)" : {
+
+    },
+    "No media" : {
+
+    },
+    "No recommendations" : {
+
+    },
+    "No reviews" : {
+
+    },
+    "None" : {
+
+    },
+    "Notes" : {
+
+    },
+    "Nothing in your list" : {
+
+    },
+    "Notifications" : {
+
+    },
+    "OK" : {
+
+    },
+    "On my list" : {
+
+    },
+    "Optional status to update the list entry to (e.g. COMPLETED)" : {
+
+    },
+    "Order" : {
+
+    },
+    "Please login to use this feature" : {
+
+    },
+    "Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" : {
+
+    },
+    "Popularity" : {
+
+    },
+    "Private" : {
+
+    },
+    "Progress" : {
+
+    },
+    "Publishing" : {
+
+    },
+    "Quick access to your anime or manga list." : {
+
+    },
+    "Rankings" : {
+
+    },
+    "Recommendations" : {
+
+    },
+    "Relations" : {
+
+    },
+    "Release Date" : {
+
+    },
+    "Repeat Count" : {
+
+    },
+    "Restore purchases" : {
+
+    },
+    "Reviews" : {
+
+    },
+    "S" : {
+
+    },
+    "Save" : {
+
+    },
+    "Score" : {
+
+    },
+    "Score distribution" : {
+
+    },
+    "Search type" : {
+
+    },
+    "See All" : {
+
+    },
+    "Select Media Type" : {
+
+    },
+    "Selection type" : {
+
+    },
+    "Set as %@" : {
+
+    },
+    "Set progress" : {
+
+    },
+    "Sets a list entry progress to the specified number." : {
+
+    },
+    "Settings" : {
+
+    },
+    "Share" : {
+
+    },
+    "Show less" : {
+
+    },
+    "Show more" : {
+
+    },
+    "Show only airing soon anime that are in your list" : {
+
+    },
+    "Show spoiler" : {
+
+    },
+    "Shows the animes with behind episodes in your list." : {
+
+    },
+    "Shows the next airing animes in your list." : {
+
+    },
+    "Sort" : {
+
+    },
+    "Spring" : {
+
+    },
+    "SquishyLeaf" : {
+
+    },
+    "Staff" : {
+
+    },
+    "Standard" : {
+
+    },
+    "Start Date" : {
+
+    },
+    "Stats" : {
+
+    },
+    "Status" : {
+
+    },
+    "Status distribution" : {
+
+    },
+    "Streaming sites" : {
+
+    },
+    "Summer" : {
+
+    },
+    "Support the development of AniHyou!" : {
+
+    },
+    "Sync account with Apple Watch" : {
+
+    },
+    "T" : {
+
+    },
+    "Tags" : {
+
+    },
+    "Thank you :)" : {
+
+    },
+    "The amount of episodes/chapters consumed by the user" : {
+
+    },
+    "The id of the media the entry is of" : {
+
+    },
+    "This feature will be unlocked when you make a donation, even the smallest count!" : {
+
+    },
+    "Threads" : {
+
+    },
+    "Titles Count" : {
+
+    },
+    "Top 100" : {
+
+    },
+    "Top Popular" : {
+
+    },
+    "Trailer" : {
+
+    },
+    "Trending" : {
+
+    },
+    "Trending %@" : {
+
+    },
+    "Trending Anime" : {
+
+    },
+    "Trending Manga" : {
+
+    },
+    "Unfollow" : {
+
+    },
+    "Upcoming" : {
+
+    },
+    "Version %@" : {
+
+    },
+    "Volumes" : {
+
+    },
+    "W" : {
+
+    },
+    "Weekday" : {
+
+    },
+    "Winter" : {
+
+    },
+    "With any purchase you will gain access to exclusive app icons and custom accent colors!" : {
+
+    },
+    "Year" : {
+
+    },
+    "You may need to login again in your browser" : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -137,6 +137,9 @@
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
 		48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */; };
 		48BCA59929672334005D3405 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCA59829672334005D3405 /* Genre.swift */; };
+		48C501432AD8FB9D00E4243D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 48C501422AD8FB9D00E4243D /* Localizable.xcstrings */; };
+		48C501442AD8FB9D00E4243D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 48C501422AD8FB9D00E4243D /* Localizable.xcstrings */; };
+		48C501452AD8FB9D00E4243D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 48C501422AD8FB9D00E4243D /* Localizable.xcstrings */; };
 		48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */; };
 		48CA07A9287035530048854E /* MediaInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07A8287035530048854E /* MediaInfoType.swift */; };
 		48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */; };
@@ -424,6 +427,7 @@
 		48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
 		48BC72BB2A9D854A00992F14 /* AniHyouShou Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AniHyouShou Watch App.entitlements"; sourceTree = "<group>"; };
 		48BCA59829672334005D3405 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		48C501422AD8FB9D00E4243D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		48C608EA290D1526004781C2 /* SearchStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStaff.graphql; sourceTree = "<group>"; };
 		48C608EC290D15DF004781C2 /* SearchCharacter.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCharacter.graphql; sourceTree = "<group>"; };
 		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
@@ -617,6 +621,7 @@
 		481AD4D12851CE73001779EE = {
 			isa = PBXGroup;
 			children = (
+				48C501422AD8FB9D00E4243D /* Localizable.xcstrings */,
 				48CDB1652A70D57300102E03 /* ci_scripts */,
 				48DF50F92A669F3F00DF1C87 /* Products.storekit */,
 				48EFCDFE29FFED0D0096BF6E /* AniHyou WidgetExtension.entitlements */,
@@ -1611,6 +1616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48438E2B2A67DA810042BCD9 /* AniHyou-Pink@2x.png in Resources */,
+				48C501432AD8FB9D00E4243D /* Localizable.xcstrings in Resources */,
 				48438E222A67DA810042BCD9 /* AniHyou-Gray@3x.png in Resources */,
 				48438E262A67DA810042BCD9 /* AniHyou-Orange@2x.png in Resources */,
 				48438E312A67DBAE0042BCD9 /* AniHyou-Default@3x.png in Resources */,
@@ -1633,6 +1639,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C501452AD8FB9D00E4243D /* Localizable.xcstrings in Resources */,
 				48EFCDE129FFAD210096BF6E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1643,6 +1650,7 @@
 			files = (
 				48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */,
 				48F27911296EFE78000827F7 /* Assets.xcassets in Resources */,
+				48C501442AD8FB9D00E4243D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
