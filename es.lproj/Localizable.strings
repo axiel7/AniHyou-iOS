@@ -1,4 +1,13 @@
 /* No comment provided by engineer. */
+" · " = " · ";
+
+/* No comment provided by engineer. */
+" %lld" = " %lld";
+
+/* No comment provided by engineer. */
+" ago" = "Hace ";
+
+/* No comment provided by engineer. */
 "/%@" = "/%@";
 
 /* No comment provided by engineer. */
@@ -8,22 +17,37 @@
 "%@" = "%@";
 
 /* No comment provided by engineer. */
-"%@ · %@" = "%@ · %@";
-
-/* No comment provided by engineer. */
-"%@ %@" = "%@ %@";
-
-/* No comment provided by engineer. */
 "%lld" = "%lld";
 
 /* No comment provided by engineer. */
 "%lld chapters" = "%lld capítulos";
 
 /* No comment provided by engineer. */
+"%lld days" = "%lld días";
+
+/* No comment provided by engineer. */
 "%lld episodes" = "%lld episodios";
 
 /* No comment provided by engineer. */
+"%lld h" = "%lld h";
+
+/* No comment provided by engineer. */
+"%lld hours, %lld min" = "%lld horas, %lld min";
+
+/* No comment provided by engineer. */
+"%lld min" = "%lld min";
+
+/* No comment provided by engineer. */
+"%lld months" = "%lld meses";
+
+/* No comment provided by engineer. */
 "%lld volumes" = "%lld volúmenes";
+
+/* No comment provided by engineer. */
+"%lld weeks" = "%lld semanas";
+
+/* No comment provided by engineer. */
+"%lld years" = "%lld años";
 
 /* No comment provided by engineer. */
 "%lld/%lld" = "%lld/%lld";
@@ -44,7 +68,19 @@
 "Accent color" = "Color de acento";
 
 /* No comment provided by engineer. */
+"Activity" = "Actividad";
+
+/* No comment provided by engineer. */
+"Adaptation" = "Adaptación";
+
+/* No comment provided by engineer. */
 "Add to List" = "Añadir a la lista";
+
+/* No comment provided by engineer. */
+"Added" = "Añadido";
+
+/* No comment provided by engineer. */
+"Age" = "Edad";
 
 /* No comment provided by engineer. */
 "Airing" = "En emisión";
@@ -57,6 +93,12 @@
 
 /* No comment provided by engineer. */
 "Airing on my list" = "Emitiéndose en mi lista";
+
+/* No comment provided by engineer. */
+"All" = "Todas";
+
+/* No comment provided by engineer. */
+"Alternative" = "Alternativo";
 
 /* No comment provided by engineer. */
 "AniList account settings" = "Ajustes de la cuenta de AniList";
@@ -80,19 +122,43 @@
 "Are you sure you want to log out?" = "¿Seguro que quieres cerrar sesión?";
 
 /* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Como sabrás esta aplicación es completamente gratuita y de Código Abierto,\npero crear una aplicación requiere mucho tiempo y esfuerzo.\nRealizando una donación, me ayudarás a cubrir los gastos de\ndesarrollo, mantenimiento, y nuevas características.";
+
+/* No comment provided by engineer. */
 "Ascending" = "Ascendente";
+
+/* No comment provided by engineer. */
+"Average Score" = "Puntuación Ponderada";
 
 /* No comment provided by engineer. */
 "axiel7" = "axiel7";
 
 /* No comment provided by engineer. */
+"Background" = "De fondo";
+
+/* No comment provided by engineer. */
+"Birth" = "Nacimiento";
+
+/* No comment provided by engineer. */
+"Birthday" = "Cumpleaños";
+
+/* No comment provided by engineer. */
 "BitForger" = "BitForger";
+
+/* No comment provided by engineer. */
+"Blood type" = "Grupo sanguíneo";
+
+/* No comment provided by engineer. */
+"Blood Type" = "Grupo Sanguíneo";
 
 /* No comment provided by engineer. */
 "Calendar" = "Calendario";
 
 /* No comment provided by engineer. */
 "Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"Cancelled" = "Cancelado";
 
 /* No comment provided by engineer. */
 "Ch" = "Cap";
@@ -104,7 +170,13 @@
 "Chapters Read" = "Capítulos Leídos";
 
 /* No comment provided by engineer. */
+"Character" = "Personaje";
+
+/* No comment provided by engineer. */
 "Characters" = "Personajes";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "Personajes y Staff";
 
 /* No comment provided by engineer. */
 "Choose between Anime or Manga." = "Elige entre Anime o Manga.";
@@ -116,6 +188,9 @@
 "Close" = "Cerrar";
 
 /* No comment provided by engineer. */
+"Comic" = "Cómic";
+
+/* No comment provided by engineer. */
 "Coming soon" = "Próximamente";
 
 /* No comment provided by engineer. */
@@ -125,13 +200,31 @@
 "Compact" = "Compacto";
 
 /* No comment provided by engineer. */
+"Compilation" = "Compilación";
+
+/* No comment provided by engineer. */
+"Completed" = "Completado";
+
+/* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "¡Enhorabuena, estás al día!\n(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "Contiene";
+
+/* No comment provided by engineer. */
+"Current" = "Actualmente";
 
 /* No comment provided by engineer. */
 "Custom color" = "Color personalizado";
 
 /* No comment provided by engineer. */
 "Dates" = "Fechas";
+
+/* No comment provided by engineer. */
+"Days Watched" = "Días Vistos";
+
+/* No comment provided by engineer. */
+"Death" = "Fallecimiento";
 
 /* No comment provided by engineer. */
 "Default" = "Por defecto";
@@ -167,7 +260,22 @@
 "Done" = "Hecho";
 
 /* No comment provided by engineer. */
+"Doujinshi" = "Doujinshi";
+
+/* No comment provided by engineer. */
+"Dropped" = "Descartado";
+
+/* No comment provided by engineer. */
+"Duration" = "Duración";
+
+/* No comment provided by engineer. */
 "Edit" = "Editar";
+
+/* No comment provided by engineer. */
+"End date" = "Fecha de finalización";
+
+/* No comment provided by engineer. */
+"English" = "Inglés";
 
 /* No comment provided by engineer. */
 "Ep" = "Ep";
@@ -185,6 +293,9 @@
 "Episodes" = "Episodios";
 
 /* No comment provided by engineer. */
+"Episodes Watched" = "Episodios Vistos";
+
+/* No comment provided by engineer. */
 "Error no entry" = "Error sin entrada";
 
 /* No comment provided by engineer. */
@@ -192,9 +303,6 @@
 
 /* No comment provided by engineer. */
 "External links" = "Enlaces externos";
-
-/* No comment provided by engineer. */
-"F" = "V";
 
 /* No comment provided by engineer. */
 "Fall" = "Otoño";
@@ -206,6 +314,9 @@
 "Filter" = "Filtrar";
 
 /* No comment provided by engineer. */
+"Finished" = "Finalizado";
+
+/* No comment provided by engineer. */
 "Follow" = "Seguir";
 
 /* No comment provided by engineer. */
@@ -213,6 +324,9 @@
 
 /* No comment provided by engineer. */
 "Following" = "Siguiendo";
+
+/* No comment provided by engineer. */
+"Follows" = "Siguiendo";
 
 /* No comment provided by engineer. */
 "Follows you" = "Te sigue";
@@ -224,10 +338,28 @@
 "Format distribution" = "Distribución de formatos";
 
 /* No comment provided by engineer. */
+"Forum" = "Foro";
+
+/* (No Comment) */
+"friday_short" = "V";
+
+/* No comment provided by engineer. */
+"Game" = "Videojuego";
+
+/* No comment provided by engineer. */
+"Gender" = "Género";
+
+/* No comment provided by engineer. */
+"General" = "General";
+
+/* No comment provided by engineer. */
 "Genres" = "Géneros";
 
 /* No comment provided by engineer. */
 "GitHub repository" = "Repositorio de GitHub";
+
+/* No comment provided by engineer. */
+"Hiatus" = "Hiatus";
 
 /* No comment provided by engineer. */
 "Hide filters" = "Ocultar filtros";
@@ -237,6 +369,9 @@
 
 /* No comment provided by engineer. */
 "Home" = "Inicio";
+
+/* No comment provided by engineer. */
+"Hometown" = "Ciudad natal";
 
 /* No comment provided by engineer. */
 "Hours Watched" = "Horas de Visualización";
@@ -260,10 +395,16 @@
 "Last Updated" = "Actualizado por última vez";
 
 /* No comment provided by engineer. */
+"Light novel" = "Novela ligera";
+
+/* No comment provided by engineer. */
 "List entry ID" = "ID de entrada de lista";
 
 /* No comment provided by engineer. */
 "List style" = "Estilo de lista";
+
+/* No comment provided by engineer. */
+"Live action" = "Live action";
 
 /* No comment provided by engineer. */
 "Loading" = "Cargando";
@@ -278,13 +419,19 @@
 "Long Swipe Direction" = "Dirección al deslizar";
 
 /* No comment provided by engineer. */
-"M" = "L";
+"Main" = "Principal";
 
 /* No comment provided by engineer. */
 "Manga" = "Manga";
 
 /* No comment provided by engineer. */
 "Manga List" = "Lista de Manga";
+
+/* No comment provided by engineer. */
+"Mean Score" = "Puntuación";
+
+/* No comment provided by engineer. */
+"Media" = "Medios";
 
 /* No comment provided by engineer. */
 "Media ID" = "ID de Multimedia";
@@ -298,8 +445,26 @@
 /* No comment provided by engineer. */
 "Minimal" = "Minimalista";
 
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"monday_short" = "L";
+
 /* No comment provided by engineer. */
 "More filters" = "Más filtros";
+
+/* No comment provided by engineer. */
+"Movie" = "Película";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "Proyecto multimedia";
+
+/* No comment provided by engineer. */
+"Music" = "Música";
+
+/* No comment provided by engineer. */
+"Native" = "Nativo";
 
 /* No comment provided by engineer. */
 "Next Season" = "Próxima Temporada";
@@ -332,16 +497,52 @@
 "Notifications" = "Notificaciones";
 
 /* No comment provided by engineer. */
+"Novel" = "Novela";
+
+/* No comment provided by engineer. */
+"Occupations" = "Ocupaciones";
+
+/* No comment provided by engineer. */
 "OK" = "OK";
 
 /* No comment provided by engineer. */
 "On my list" = "En mi lista";
 
 /* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "OneShot";
+
+/* No comment provided by engineer. */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Estado opcional para actualizar la entrada de la lista (por ejemplo, COMPLETED)";
 
 /* No comment provided by engineer. */
 "Order" = "Orden";
+
+/* No comment provided by engineer. */
+"Original" = "Original";
+
+/* No comment provided by engineer. */
+"Other" = "Otros";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overview" = "Visión general";
+
+/* No comment provided by engineer. */
+"Parent" = "Padre";
+
+/* No comment provided by engineer. */
+"Paused" = "Pausado";
+
+/* No comment provided by engineer. */
+"Picture book" = "Libro ilustrado";
+
+/* No comment provided by engineer. */
+"Planning" = "Planeado";
 
 /* No comment provided by engineer. */
 "Please login to use this feature" = "Por favor, inicie sesión para utilizar esta función";
@@ -353,7 +554,19 @@
 "Popularity" = "Popularidad";
 
 /* No comment provided by engineer. */
+"Prequel" = "Precuela";
+
+/* No comment provided by engineer. */
+"Priority" = "Prioridad";
+
+/* No comment provided by engineer. */
 "Private" = "Privado";
+
+/* No comment provided by engineer. */
+"Producers" = "Productores";
+
+/* No comment provided by engineer. */
+"Profile" = "Perfil";
 
 /* No comment provided by engineer. */
 "Progress" = "Progreso";
@@ -374,19 +587,37 @@
 "Relations" = "Relacionados";
 
 /* No comment provided by engineer. */
+"Relations and Recommendations" = "Relaciones y Recomendaciones";
+
+/* No comment provided by engineer. */
 "Release Date" = "Fecha de Publicación";
+
+/* No comment provided by engineer. */
+"Releasing" = "Publicándose";
+
+/* No comment provided by engineer. */
+"Repeat" = "Repeticiones";
 
 /* No comment provided by engineer. */
 "Repeat Count" = "Número de repeticiones";
 
 /* No comment provided by engineer. */
+"Repeating" = "Repitiendo";
+
+/* No comment provided by engineer. */
 "Restore purchases" = "Restaurar compras";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "Reseñas y Discusiones";
 
 /* No comment provided by engineer. */
 "Reviews" = "Reseñas";
 
 /* No comment provided by engineer. */
-"S" = "S";
+"Romaji" = "Romaji";
+
+/* (No Comment) */
+"saturday_short" = "S";
 
 /* No comment provided by engineer. */
 "Save" = "Guardar";
@@ -401,6 +632,9 @@
 "Search type" = "Tipo de búsqueda";
 
 /* No comment provided by engineer. */
+"Season" = "Temporada";
+
+/* No comment provided by engineer. */
 "See All" = "Ver Todo";
 
 /* No comment provided by engineer. */
@@ -410,7 +644,10 @@
 "Selection type" = "Tipo de selección";
 
 /* No comment provided by engineer. */
-"Set as %@" = "Establecer como %@";
+"Sequel" = "Secuela";
+
+/* No comment provided by engineer. */
+"Set as " = "Establecer como ";
 
 /* No comment provided by engineer. */
 "Set progress" = "Establecer progreso";
@@ -443,7 +680,22 @@
 "Shows the next airing animes in your list." = "Muestra los animes que se emiten próximamente de tu lista.";
 
 /* No comment provided by engineer. */
+"Side Story" = "Historia Paralela";
+
+/* No comment provided by engineer. */
+"Social" = "Social";
+
+/* No comment provided by engineer. */
 "Sort" = "Orden";
+
+/* No comment provided by engineer. */
+"Source" = "Fuente";
+
+/* No comment provided by engineer. */
+"Special" = "Especial";
+
+/* No comment provided by engineer. */
+"Spin Off" = "Spin Off";
 
 /* No comment provided by engineer. */
 "Spring" = "Primavera";
@@ -458,7 +710,13 @@
 "Standard" = "Estándar";
 
 /* No comment provided by engineer. */
+"Start date" = "Fecha de inicio";
+
+/* No comment provided by engineer. */
 "Start Date" = "Fecha de Inicio";
+
+/* No comment provided by engineer. */
+"Started" = "Empezado";
 
 /* No comment provided by engineer. */
 "Stats" = "Estadísticas";
@@ -473,16 +731,28 @@
 "Streaming sites" = "Sitios de streaming";
 
 /* No comment provided by engineer. */
+"Studios" = "Estudios";
+
+/* No comment provided by engineer. */
+"Summary" = "Resumen";
+
+/* No comment provided by engineer. */
 "Summer" = "Verano";
+
+/* (No Comment) */
+"sunday_short" = "S";
 
 /* No comment provided by engineer. */
 "Support the development of AniHyou!" = "¡Apoya el desarrollo de AniHyou!";
 
 /* No comment provided by engineer. */
+"Supporting" = "Secundario";
+
+/* No comment provided by engineer. */
 "Sync account with Apple Watch" = "Sincronizar cuenta con Apple Watch";
 
 /* No comment provided by engineer. */
-"T" = "M";
+"Synonyms" = "Sinónimos";
 
 /* No comment provided by engineer. */
 "Tags" = "Etiquetas";
@@ -502,6 +772,12 @@
 /* No comment provided by engineer. */
 "Threads" = "Discusiones";
 
+/* (No Comment) */
+"thursday_short" = "J";
+
+/* No comment provided by engineer. */
+"Title" = "Título";
+
 /* No comment provided by engineer. */
 "Titles Count" = "Número de títulos";
 
@@ -512,13 +788,16 @@
 "Top Popular" = "Top Popular";
 
 /* No comment provided by engineer. */
+"Total Anime" = "Anime Total";
+
+/* No comment provided by engineer. */
+"Total Manga" = "Manga Total";
+
+/* No comment provided by engineer. */
 "Trailer" = "Tráiler";
 
 /* No comment provided by engineer. */
 "Trending" = "En tendencia";
-
-/* No comment provided by engineer. */
-"Trending %@" = "%@ en Tendencia";
 
 /* No comment provided by engineer. */
 "Trending Anime" = "Anime en Tendencia";
@@ -526,20 +805,59 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "Manga en Tendencia";
 
+/* (No Comment) */
+"tuesday_short" = "J";
+
+/* No comment provided by engineer. */
+"TV" = "TV";
+
+/* No comment provided by engineer. */
+"TV Short" = "Corto de TV";
+
 /* No comment provided by engineer. */
 "Unfollow" = "Dejar de seguir";
+
+/* (No Comment) */
+"Unknown" = "Desconocido";
+
+/* No comment provided by engineer. */
+"Unreleased" = "Sin estrenar";
 
 /* No comment provided by engineer. */
 "Upcoming" = "Próximamente";
 
 /* No comment provided by engineer. */
+"Updated" = "Actualizado";
+
+/* No comment provided by engineer. */
+"Users" = "Usuarios";
+
+/* No comment provided by engineer. */
+"Users likes" = "A los usuarios les gusta";
+
+/* No comment provided by engineer. */
 "Version %@" = "Versión %@";
+
+/* No comment provided by engineer. */
+"VideoGame" = "Videojuego";
+
+/* No comment provided by engineer. */
+"Visual novel" = "Novela visual";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "Actores de Voz";
 
 /* No comment provided by engineer. */
 "Volumes" = "Volúmenes";
 
 /* No comment provided by engineer. */
-"W" = "X";
+"Volumes Read" = "Volúmenes Leídos";
+
+/* No comment provided by engineer. */
+"Web novel" = "Novela web";
+
+/* (No Comment) */
+"wednesday_short" = "X";
 
 /* No comment provided by engineer. */
 "Weekday" = "Día de la semana";
@@ -552,6 +870,9 @@
 
 /* No comment provided by engineer. */
 "Year" = "Año";
+
+/* No comment provided by engineer. */
+"Years active" = "Años activos";
 
 /* No comment provided by engineer. */
 "You may need to login again in your browser" = "Es posible que tengas que volver a iniciar sesión en tu navegador";
