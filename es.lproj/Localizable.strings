@@ -1,7 +1,558 @@
-/* 
-  Localizable.strings
-  AniHyou
+/* No comment provided by engineer. */
+"/%@" = "/%@";
 
-  Created by Axel Lopez on 13/10/2023.
-  
-*/
+/* No comment provided by engineer. */
+"#%lld" = "#%lld";
+
+/* No comment provided by engineer. */
+"%@" = "%@";
+
+/* No comment provided by engineer. */
+"%@ · %@" = "%@ · %@";
+
+/* No comment provided by engineer. */
+"%@ %@" = "%@ %@";
+
+/* No comment provided by engineer. */
+"%lld" = "%lld";
+
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld capítulos";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld episodios";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld volúmenes";
+
+/* No comment provided by engineer. */
+"%lld/%lld" = "%lld/%lld";
+
+/* No comment provided by engineer. */
+"%lld/100" = "%lld/100";
+
+/* No comment provided by engineer. */
+"%lld%%" = "%lld%%";
+
+/* No comment provided by engineer. */
+"^[%lld %@](inflect: true) behind" = "^[%lld %@](inflect: true) atrasados";
+
+/* No comment provided by engineer. */
+"+1" = "+1";
+
+/* No comment provided by engineer. */
+"Accent color" = "Color de acento";
+
+/* No comment provided by engineer. */
+"Add to List" = "Añadir a la lista";
+
+/* No comment provided by engineer. */
+"Airing" = "En emisión";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "Anime en Emisión";
+
+/* No comment provided by engineer. */
+"Airing Next" = "En emisión";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "Emitiéndose en mi lista";
+
+/* No comment provided by engineer. */
+"AniList account settings" = "Ajustes de la cuenta de AniList";
+
+/* No comment provided by engineer. */
+"Anime" = "Anime";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "Anime Atrasado";
+
+/* No comment provided by engineer. */
+"Anime List" = "Lista de Anime";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "Anime, Manga, y Más";
+
+/* No comment provided by engineer. */
+"App Icon" = "Icono de la App";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "¿Seguro que quieres cerrar sesión?";
+
+/* No comment provided by engineer. */
+"Ascending" = "Ascendente";
+
+/* No comment provided by engineer. */
+"axiel7" = "axiel7";
+
+/* No comment provided by engineer. */
+"BitForger" = "BitForger";
+
+/* No comment provided by engineer. */
+"Calendar" = "Calendario";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"Ch" = "Cap";
+
+/* No comment provided by engineer. */
+"Chapters" = "Capítulos";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "Capítulos Leídos";
+
+/* No comment provided by engineer. */
+"Characters" = "Personajes";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "Elige entre Anime o Manga.";
+
+/* No comment provided by engineer. */
+"Clear" = "Restablecer";
+
+/* No comment provided by engineer. */
+"Close" = "Cerrar";
+
+/* No comment provided by engineer. */
+"Coming soon" = "Próximamente";
+
+/* No comment provided by engineer. */
+"Coming Soon" = "Próximamente";
+
+/* No comment provided by engineer. */
+"Compact" = "Compacto";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "¡Enhorabuena, estás al día!\n(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Custom color" = "Color personalizado";
+
+/* No comment provided by engineer. */
+"Dates" = "Fechas";
+
+/* No comment provided by engineer. */
+"Default" = "Por defecto";
+
+/* No comment provided by engineer. */
+"Delete" = "Eliminar";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "¿Eliminar esta entrada?";
+
+/* No comment provided by engineer. */
+"Descending" = "Descendente";
+
+/* No comment provided by engineer. */
+"Developers" = "Desarrolladores";
+
+/* No comment provided by engineer. */
+"Discord server" = "Servidor de Discord";
+
+/* No comment provided by engineer. */
+"Display" = "Visualización";
+
+/* No comment provided by engineer. */
+"Donate" = "Donaciones";
+
+/* No comment provided by engineer. */
+"Donate!" = "¡Haz una donación!";
+
+/* No comment provided by engineer. */
+"Donation" = "Donación";
+
+/* No comment provided by engineer. */
+"Done" = "Hecho";
+
+/* No comment provided by engineer. */
+"Edit" = "Editar";
+
+/* No comment provided by engineer. */
+"Ep" = "Ep";
+
+/* No comment provided by engineer. */
+"Ep %lld airing at " = "Ep %lld se emite a las ";
+
+/* No comment provided by engineer. */
+"Ep %lld airing in " = "Ep %lld se emite en ";
+
+/* No comment provided by engineer. */
+"Ep %lld in " = "Ep %lld en ";
+
+/* No comment provided by engineer. */
+"Episodes" = "Episodios";
+
+/* No comment provided by engineer. */
+"Error no entry" = "Error sin entrada";
+
+/* No comment provided by engineer. */
+"Explore" = "Explorar";
+
+/* No comment provided by engineer. */
+"External links" = "Enlaces externos";
+
+/* No comment provided by engineer. */
+"F" = "V";
+
+/* No comment provided by engineer. */
+"Fall" = "Otoño";
+
+/* No comment provided by engineer. */
+"Favorites" = "Favoritos";
+
+/* No comment provided by engineer. */
+"Filter" = "Filtrar";
+
+/* No comment provided by engineer. */
+"Follow" = "Seguir";
+
+/* No comment provided by engineer. */
+"Followers" = "Seguidores";
+
+/* No comment provided by engineer. */
+"Following" = "Siguiendo";
+
+/* No comment provided by engineer. */
+"Follows you" = "Te sigue";
+
+/* No comment provided by engineer. */
+"Format" = "Formato";
+
+/* No comment provided by engineer. */
+"Format distribution" = "Distribución de formatos";
+
+/* No comment provided by engineer. */
+"Genres" = "Géneros";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "Repositorio de GitHub";
+
+/* No comment provided by engineer. */
+"Hide filters" = "Ocultar filtros";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "Ocultar spoilers";
+
+/* No comment provided by engineer. */
+"Home" = "Inicio";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "Horas de Visualización";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "Incrementar Episodio / Capítulo";
+
+/* No comment provided by engineer. */
+"Info type" = "Tipo de información";
+
+/* No comment provided by engineer. */
+"Information" = "Información";
+
+/* No comment provided by engineer. */
+"Japanese" = "Japonés";
+
+/* No comment provided by engineer. */
+"Last Added" = "Último añadido";
+
+/* No comment provided by engineer. */
+"Last Updated" = "Actualizado por última vez";
+
+/* No comment provided by engineer. */
+"List entry ID" = "ID de entrada de lista";
+
+/* No comment provided by engineer. */
+"List style" = "Estilo de lista";
+
+/* No comment provided by engineer. */
+"Loading" = "Cargando";
+
+/* No comment provided by engineer. */
+"Log out" = "Cerrar sesión";
+
+/* No comment provided by engineer. */
+"Login" = "Iniciar sesión";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "Dirección al deslizar";
+
+/* No comment provided by engineer. */
+"M" = "L";
+
+/* No comment provided by engineer. */
+"Manga" = "Manga";
+
+/* No comment provided by engineer. */
+"Manga List" = "Lista de Manga";
+
+/* No comment provided by engineer. */
+"Media ID" = "ID de Multimedia";
+
+/* No comment provided by engineer. */
+"Media List" = "Lista de Anime/Manga";
+
+/* No comment provided by engineer. */
+"Media Type" = "Tipo de multimedia";
+
+/* No comment provided by engineer. */
+"Minimal" = "Minimalista";
+
+/* No comment provided by engineer. */
+"More filters" = "Más filtros";
+
+/* No comment provided by engineer. */
+"Next Season" = "Próxima Temporada";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "No hay anime en emisión en tu lista\n(* ́-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "Sin anime para hoy\n(* ́-`)";
+
+/* No comment provided by engineer. */
+"No media" = "Sin contenido";
+
+/* No comment provided by engineer. */
+"No recommendations" = "No hay recomendaciones";
+
+/* No comment provided by engineer. */
+"No reviews" = "Sin reseñas";
+
+/* No comment provided by engineer. */
+"None" = "Ninguno";
+
+/* No comment provided by engineer. */
+"Notes" = "Notas";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "Nada en tu lista";
+
+/* No comment provided by engineer. */
+"Notifications" = "Notificaciones";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"On my list" = "En mi lista";
+
+/* No comment provided by engineer. */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Estado opcional para actualizar la entrada de la lista (por ejemplo, COMPLETED)";
+
+/* No comment provided by engineer. */
+"Order" = "Orden";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "Por favor, inicie sesión para utilizar esta función";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Por favor, abre la aplicación de AniHyou en tu iPhone y ve a Perfil -> Configuración -> Sincronizar cuenta con Apple Watch";
+
+/* No comment provided by engineer. */
+"Popularity" = "Popularidad";
+
+/* No comment provided by engineer. */
+"Private" = "Privado";
+
+/* No comment provided by engineer. */
+"Progress" = "Progreso";
+
+/* No comment provided by engineer. */
+"Publishing" = "Publicándose";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "Acceso rápido a tu lista de anime o manga.";
+
+/* No comment provided by engineer. */
+"Rankings" = "Clasificaciones";
+
+/* No comment provided by engineer. */
+"Recommendations" = "Recomendaciones";
+
+/* No comment provided by engineer. */
+"Relations" = "Relacionados";
+
+/* No comment provided by engineer. */
+"Release Date" = "Fecha de Publicación";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "Número de repeticiones";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "Restaurar compras";
+
+/* No comment provided by engineer. */
+"Reviews" = "Reseñas";
+
+/* No comment provided by engineer. */
+"S" = "S";
+
+/* No comment provided by engineer. */
+"Save" = "Guardar";
+
+/* No comment provided by engineer. */
+"Score" = "Puntuación";
+
+/* No comment provided by engineer. */
+"Score distribution" = "Distribución de puntuación";
+
+/* No comment provided by engineer. */
+"Search type" = "Tipo de búsqueda";
+
+/* No comment provided by engineer. */
+"See All" = "Ver Todo";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "Seleccionar tipo de multimedia";
+
+/* No comment provided by engineer. */
+"Selection type" = "Tipo de selección";
+
+/* No comment provided by engineer. */
+"Set as %@" = "Establecer como %@";
+
+/* No comment provided by engineer. */
+"Set progress" = "Establecer progreso";
+
+/* No comment provided by engineer. */
+"Sets a list entry progress to the specified number." = "Establece el progreso de la lista al número especificado.";
+
+/* No comment provided by engineer. */
+"Settings" = "Ajustes";
+
+/* No comment provided by engineer. */
+"Share" = "Compartir";
+
+/* No comment provided by engineer. */
+"Show less" = "Mostrar menos";
+
+/* No comment provided by engineer. */
+"Show more" = "Mostrar más";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "Muestra solamente animes en emisión que están en tu lista";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "Mostrar spoiler";
+
+/* No comment provided by engineer. */
+"Shows the animes with behind episodes in your list." = "Muestra los animes con episodios atrasados de tu lista.";
+
+/* No comment provided by engineer. */
+"Shows the next airing animes in your list." = "Muestra los animes que se emiten próximamente de tu lista.";
+
+/* No comment provided by engineer. */
+"Sort" = "Orden";
+
+/* No comment provided by engineer. */
+"Spring" = "Primavera";
+
+/* No comment provided by engineer. */
+"SquishyLeaf" = "SquishyLeaf";
+
+/* No comment provided by engineer. */
+"Staff" = "Staff";
+
+/* No comment provided by engineer. */
+"Standard" = "Estándar";
+
+/* No comment provided by engineer. */
+"Start Date" = "Fecha de Inicio";
+
+/* No comment provided by engineer. */
+"Stats" = "Estadísticas";
+
+/* No comment provided by engineer. */
+"Status" = "Estado";
+
+/* No comment provided by engineer. */
+"Status distribution" = "Distribución de estado";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "Sitios de streaming";
+
+/* No comment provided by engineer. */
+"Summer" = "Verano";
+
+/* No comment provided by engineer. */
+"Support the development of AniHyou!" = "¡Apoya el desarrollo de AniHyou!";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "Sincronizar cuenta con Apple Watch";
+
+/* No comment provided by engineer. */
+"T" = "M";
+
+/* No comment provided by engineer. */
+"Tags" = "Etiquetas";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "Gracias :)";
+
+/* No comment provided by engineer. */
+"The amount of episodes/chapters consumed by the user" = "La cantidad de episodios/capítulos consumidos por el usuario";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "El id del anime/manga de la entrada";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Esta característica se desbloqueará cuando hagas una donación, ¡Incluso la menor aportación se agradece!";
+
+/* No comment provided by engineer. */
+"Threads" = "Discusiones";
+
+/* No comment provided by engineer. */
+"Titles Count" = "Número de títulos";
+
+/* No comment provided by engineer. */
+"Top 100" = "Top 100";
+
+/* No comment provided by engineer. */
+"Top Popular" = "Top Popular";
+
+/* No comment provided by engineer. */
+"Trailer" = "Tráiler";
+
+/* No comment provided by engineer. */
+"Trending" = "En tendencia";
+
+/* No comment provided by engineer. */
+"Trending %@" = "%@ en Tendencia";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "Anime en Tendencia";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "Manga en Tendencia";
+
+/* No comment provided by engineer. */
+"Unfollow" = "Dejar de seguir";
+
+/* No comment provided by engineer. */
+"Upcoming" = "Próximamente";
+
+/* No comment provided by engineer. */
+"Version %@" = "Versión %@";
+
+/* No comment provided by engineer. */
+"Volumes" = "Volúmenes";
+
+/* No comment provided by engineer. */
+"W" = "X";
+
+/* No comment provided by engineer. */
+"Weekday" = "Día de la semana";
+
+/* No comment provided by engineer. */
+"Winter" = "Invierno";
+
+/* No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "¡Con cualquier compra ganarás acceso a iconos de aplicaciones exclusivos y colores de acento personalizados!";
+
+/* No comment provided by engineer. */
+"Year" = "Año";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "Es posible que tengas que volver a iniciar sesión en tu navegador";
+
