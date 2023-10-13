@@ -68,7 +68,7 @@ struct AiringScheduleItemText: View {
         let airing = item!.media!.nextAiringEpisode!
         let isBehind = item?.progress ?? 0 < airing.episode - 1
         HStack(spacing: 1) {
-            Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) \("episode")](inflect: true) behind"
+            Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episode behind](inflect: true)"
                  : "Ep \(airing.episode) airing in "
             )
             .font(.subheadline)

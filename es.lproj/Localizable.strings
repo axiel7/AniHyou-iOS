@@ -59,7 +59,7 @@
 "%lld%%" = "%lld%%";
 
 /* No comment provided by engineer. */
-"^[%lld %@](inflect: true) behind" = "^[%lld %@](inflect: true) atrasados";
+"^[%lld episode behind](inflect: true)" = "^[%lld episodio atrasado](inflect: true)";
 
 /* No comment provided by engineer. */
 "+1" = "+1";
