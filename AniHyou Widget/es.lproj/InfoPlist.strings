@@ -1,9 +1,0 @@
-/* Bundle display name */
-"CFBundleDisplayName" = "AniHyou Widget";
-
-/* Bundle name */
-"CFBundleName" = "AniHyou WidgetExtension";
-
-/* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "";
-
