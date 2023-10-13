@@ -40,15 +40,21 @@ struct MediaDetailsView: View {
                                 Divider()
                                 HStack {
                                     if let schedule = details.nextAiringEpisode {
-                                        MediaStatView(
-                                            name: "Airing",
-                                            value: String(swiftLintMultiline:
-                                                "Ep ",
-                                                String(schedule.episode),
-                                                " in ",
-                                                schedule.timeUntilAiring.secondsToLegibleText()
-                                            )
-                                        )
+                                        VStack {
+                                            Text("Airing")
+                                                .font(.caption2)
+                                                .textCase(.uppercase)
+                                                .foregroundColor(.gray)
+                                                .padding(.bottom, 1)
+                                            Group {
+                                                Text("Ep \(schedule.episode) in ") +
+                                                Text(schedule.timeUntilAiring.secondsToLegibleText())
+                                            }
+                                            .bold()
+                                            .foregroundColor(.gray)
+                                        }
+                                        Divider()
+                                            .padding(8)
                                     }
                                     MediaStatView(
                                         name: "Average Score",
@@ -60,7 +66,7 @@ struct MediaDetailsView: View {
                                     )
                                     MediaStatView(
                                         name: "Status",
-                                        value: "\(Text(details.status?.value?.localizedName ?? "Unknown"))"
+                                        value: details.status?.value?.localizedName
                                     )
                                     MediaStatView(
                                         name: "Popularity",

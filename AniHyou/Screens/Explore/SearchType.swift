@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum SearchType: Equatable, Hashable, CaseIterable {
     case anime
@@ -17,7 +18,7 @@ public enum SearchType: Equatable, Hashable, CaseIterable {
 }
 
 extension SearchType {
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .anime:
             return "Anime"

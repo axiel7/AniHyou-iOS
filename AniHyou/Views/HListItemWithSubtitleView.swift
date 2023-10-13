@@ -14,6 +14,8 @@ struct HListItemWithSubtitleView: View {
 
     var title: String?
     var subtitle: String?
+    var subtitleLocalized: LocalizedStringKey?
+    var twoSubtitleTexts: (LocalizedStringKey?, LocalizedStringKey?)?
     var imageUrl: String?
     var meanScore: Int?
 
@@ -34,11 +36,23 @@ struct HListItemWithSubtitleView: View {
                     .padding(.bottom, 1)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                Text(subtitle ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
+                Group {
+                    if let subtitle {
+                        Text(subtitle)
+                    } else if let subtitleLocalized {
+                        Text(subtitleLocalized)
+                    } else if let twoSubtitleTexts {
+                        Text(twoSubtitleTexts.0 ?? "Unknown") +
+                        Text(" · ") +
+                        Text(twoSubtitleTexts.1 ?? "Unknown")
+                    } else {
+                        Text("")
+                    }
+                }
+                .font(.subheadline)
+                .foregroundColor(.gray)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
                 if let meanScore {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
@@ -59,6 +73,7 @@ struct HListItemWithSubtitleView: View {
     HListItemWithSubtitleView(
         title: "Cowboy Bebop: Tengoku no Tobira and a large title",
         subtitle: "Airing in 59 min",
+        twoSubtitleTexts: ("Winter", "\(2020)"),
         imageUrl: "https://picsum.photos/300/200",
         meanScore: 78
     )

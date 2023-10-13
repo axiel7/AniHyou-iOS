@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AniListAPI
 
 extension Date {
@@ -99,7 +100,7 @@ extension Int {
     /// Converts seconds to years, months, weeks, days, hours or minutes.
     /// Depending if there is enough time.
     /// Eg. If days greater than 1 and less than 6, returns "x days"
-    func secondsToLegibleText() -> String {
+    func secondsToLegibleText() -> LocalizedStringKey {
         let days = self / 86400
         if days > 6 {
             let weeks = self / 604800
@@ -123,7 +124,7 @@ extension Int {
         }
     }
 
-    func minutesToLegibleText() -> String {
+    func minutesToLegibleText() -> LocalizedStringKey {
         let hours = self / 60
         if hours >= 1 {
             let minutes = self % 60
@@ -153,10 +154,10 @@ extension Int {
 
 extension FuzzyDateFragment {
 
-    func formatted() -> String {
+    func formatted() -> String? {
         let year = self.year ?? 1970
-        guard let month = self.month else { return "Unknown" }
-        guard let day = self.day else { return "Unknown" }
+        guard let month = self.month else { return nil }
+        guard let day = self.day else { return nil }
         if let date = date(year: year, month: month, day: day) {
             if year == 1970 {
                 let dateFormatter = DateFormatter()
@@ -164,7 +165,7 @@ extension FuzzyDateFragment {
                 return dateFormatter.string(from: date)
             }
             return date.formatted(date: .abbreviated, time: .omitted)
-        } else { return "Unknown" }
+        } else { return nil }
     }
 
     func isEqual(_ fuzzyDate: FuzzyDateInput?) -> Bool {

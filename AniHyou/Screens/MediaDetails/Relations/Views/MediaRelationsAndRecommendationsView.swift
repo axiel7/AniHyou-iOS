@@ -32,10 +32,10 @@ struct MediaRelationsAndRecommendationsView: View {
                                     NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
                                         HListItemWithSubtitleView(
                                             title: relation.node?.title?.userPreferred,
-                                            subtitle: """
-                                            \(Text(relation.relationType?.value?.localizedName ?? "")) ·
-                                             \(Text(relation.node?.format?.value?.localizedName ?? ""))
-                                            """,
+                                            twoSubtitleTexts: (
+                                                relation.relationType?.value?.localizedName,
+                                                relation.node?.format?.value?.localizedName
+                                            ),
                                             imageUrl: relation.node?.coverImage?.large
                                         )
                                         .padding(.leading)

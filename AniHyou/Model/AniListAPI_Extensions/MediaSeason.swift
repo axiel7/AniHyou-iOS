@@ -9,8 +9,8 @@ import SwiftUI
 import AniListAPI
 
 extension MediaSeason {
-
-    var localizedName: LocalizedStringKey {
+    
+    var localizedStringKey: String {
         switch self {
         case .winter:
             return "Winter"
@@ -21,5 +21,9 @@ extension MediaSeason {
         case .fall:
             return "Fall"
         }
+    }
+
+    var localizedName: LocalizedStringKey {
+        return LocalizedStringKey(stringLiteral: localizedStringKey)
     }
 }

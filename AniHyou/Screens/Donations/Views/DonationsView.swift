@@ -25,12 +25,12 @@ struct DonationsView: View {
                     .bold()
                     .multilineTextAlignment(.center)
 
-                Text(String(swiftLintMultiline:
-                    "As you may known this app is completely free and Open Source, ",
-                    "but creating an app requires a lot of time and effort. ",
-                    "By making a donation you will help cover the costs of ",
-                    "development, maintenance, and new features."
-                    )
+                Text("""
+                    As you may known this app is completely free and Open Source,
+                    but creating an app requires a lot of time and effort.
+                    By making a donation you will help cover the costs of
+                    development, maintenance, and new features.
+                    """
                 )
 
                 ForEach(viewModel.products) { product in

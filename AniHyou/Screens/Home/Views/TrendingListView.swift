@@ -73,7 +73,7 @@ struct TrendingListView: View {
                 }
             }//:LazyVGrid
         }//:VScrollView
-        .navigationTitle("Trending \(Text(mediaType.localizedName))")
+        .navigationTitle(mediaType == .anime ? "Trending Anime" : "Trending Manga")
     }
 }
 

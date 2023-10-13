@@ -84,14 +84,18 @@ struct ExploreView: View {
 
                 ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                     if let item {
+                        let startYear = if item.startDate?.year != nil {
+                            "\(item.startDate!.year!)"
+                        } else {
+                            "Unknown"
+                        }
                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                             HListItemWithSubtitleView(
                                 title: item.title?.userPreferred,
-                                subtitle: 
-                                """
-                                \(Text(item.format?.value?.localizedName ?? "")) ·
-                                    \(item.startDate?.year?.stringValue ?? "")
-                                """,
+                                twoSubtitleTexts: (
+                                    item.format?.value?.localizedName,
+                                    "\(startYear)"
+                                ),
                                 imageUrl: item.coverImage?.large
                             )
                             .mediaContextMenu(

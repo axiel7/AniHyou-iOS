@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HInfoView: View {
 
-    let name: String
+    let name: LocalizedStringKey
     var value: String?
+    var valueLocalized: LocalizedStringKey?
     var isExpandable: Bool = false
     var expandedContent: (() -> any View)?
     @State private var isExpanded: Bool = false
@@ -24,7 +25,7 @@ struct HInfoView: View {
                     .padding(.trailing)
                 Spacer()
                 if !isExpanded {
-                    Text(value ?? "Unknown")
+                    valueText
                         .font(.subheadline)
                         .lineLimit(1)
                         .frame(alignment: .trailing)
@@ -38,7 +39,7 @@ struct HInfoView: View {
                 if let expandedContent {
                     AnyView(expandedContent())
                 } else {
-                    Text(value ?? "Unknown")
+                    valueText
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                         .padding(.top, 1)
@@ -55,6 +56,17 @@ struct HInfoView: View {
         }
         .padding(.horizontal)
         .padding(.top, 7)
+    }
+    
+    @ViewBuilder
+    var valueText: some View {
+        if let value {
+            Text(value)
+        } else if let valueLocalized {
+            Text(valueLocalized)
+        } else {
+            Text("Unknown")
+        }
     }
 }
 

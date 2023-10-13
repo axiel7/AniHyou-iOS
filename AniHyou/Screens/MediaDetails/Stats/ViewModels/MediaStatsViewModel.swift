@@ -26,7 +26,8 @@ class MediaStatsViewModel: ObservableObject {
                         if let stat = $0 {
                             self?.statusDistribution.append(
                                 Stat(
-                                    id: "\(Text(stat.status!.value!.localizedName))",
+                                    id: stat.status!.rawValue,
+                                    idLocalized: stat.status!.value!.localizedName,
                                     value: CGFloat(stat.amount ?? 0),
                                     color: stat.status!.value!.color
                                 )

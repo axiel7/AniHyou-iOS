@@ -113,7 +113,7 @@ struct CharacterDetailsView: View {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.node!.id)) {
                         HListItemWithSubtitleView(
                             title: item.node?.title?.userPreferred,
-                            subtitle: "\(Text(item.characterRole?.value?.localizedName ?? "Unknown"))",
+                            subtitleLocalized: item.characterRole?.value?.localizedName,
                             imageUrl: item.node?.coverImage?.large
                         )
                         .mediaContextMenu(

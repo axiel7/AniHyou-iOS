@@ -28,12 +28,15 @@ struct MediaActivityItemView: View {
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
 
-                Text((activity?.createdAt.timestampIntervalSinceNow().secondsToLegibleText() ?? "") + " ago")
-                    .font(.subheadline)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(.gray)
-                    .padding(.top)
+                Group {
+                    Text(activity?.createdAt.timestampIntervalSinceNow().secondsToLegibleText() ?? "") +
+                    Text(" ago")
+                }
+                .font(.subheadline)
+                .lineLimit(1)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.gray)
+                .padding(.top)
             }
         }
     }

@@ -15,7 +15,11 @@ extension View {
             Button {
                 MediaListRepository.updateListStatus(mediaId: mediaId, status: status)
             } label: {
-                Label("Set as \(Text(status.localizedName))", systemImage: status.systemImage)
+                Label {
+                    Text("Set as ") + Text(status.localizedName)
+                } icon: {
+                    Image(systemName: status.systemImage)
+                }
             }
         }
     }

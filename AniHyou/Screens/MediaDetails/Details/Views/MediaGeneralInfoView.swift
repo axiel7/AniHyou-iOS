@@ -26,11 +26,17 @@ struct MediaGeneralInfoView: View {
     }
     
     var seasonFormatted: String? {
-        guard let season = viewModel.mediaDetails?.season?.value else { return nil }
-        if let year = viewModel.mediaDetails?.seasonYear {
-            return "\(Text(season.localizedName) + Text(" \(year)"))"
+        if let season = viewModel.mediaDetails?.season?.value {
+            let localizedKey = String.LocalizationValue(
+                stringLiteral: season.localizedStringKey
+            )
+            if let year = viewModel.mediaDetails?.seasonYear {
+                return String(localized: localizedKey) + " \(year)"
+            } else {
+                return String(localized: localizedKey)
+            }
         } else {
-            return "\(Text(season.localizedName))"
+            return nil
         }
     }
     
@@ -49,7 +55,7 @@ struct MediaGeneralInfoView: View {
             HInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
         }
         if let duration = viewModel.mediaDetails?.duration {
-            HInfoView(name: "Duration", value: duration.minutesToLegibleText())
+            HInfoView(name: "Duration", valueLocalized: duration.minutesToLegibleText())
         }
         HInfoView(
             name: "Start date",
@@ -81,7 +87,7 @@ struct MediaGeneralInfoView: View {
         }
         HInfoView(
             name: "Source",
-            value: "\(Text(viewModel.mediaDetails?.source?.value?.localizedName ?? "Unknown"))"
+            valueLocalized: viewModel.mediaDetails?.source?.value?.localizedName
         )
         HInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
         HInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
