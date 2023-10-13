@@ -47,7 +47,7 @@ struct MediaGeneralInfoView: View {
             .bold()
             .padding(.horizontal)
         
-        HInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
+        HInfoView(name: "Genres", values: viewModel.genresFormatted, isExpandable: true)
         if viewModel.isAnime {
             HInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
         } else {

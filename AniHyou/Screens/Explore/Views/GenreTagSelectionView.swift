@@ -45,7 +45,11 @@ struct GenreTagSelectionView: View {
                         Spacer()
                     } else {
                         List(viewModel.filteredGenres, selection: $viewModel.selectedGenres) { genre in
-                            Text(genre.id)
+                            if let localized = genre.id.genreLocalized {
+                                Text(localized)
+                            } else {
+                                Text(genre.id)
+                            }
                         }
                     }
                 }

@@ -119,9 +119,9 @@ class MediaDetailsViewModel: ObservableObject {
         return mediaDetails?.type?.value == .anime
     }
 
-    var genresFormatted: String? {
+    var genresFormatted: [String]? {
         guard let genres = mediaDetails?.genres else { return nil }
-        return genres.compactMap { $0 }.joined(separator: ", ")
+        return genres.compactMap { $0 }
     }
 
     var studios: [MediaDetailsQuery.Data.Media.Studios.Node]? {
