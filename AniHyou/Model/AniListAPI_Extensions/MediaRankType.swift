@@ -27,4 +27,13 @@ extension MediaRankType {
             return .pink
         }
     }
+    
+    var localizedContext: LocalizedStringKey {
+        switch self {
+        case .rated:
+            "Highest rated"
+        case .popular:
+            "Most popular"
+        }
+    }
 }
