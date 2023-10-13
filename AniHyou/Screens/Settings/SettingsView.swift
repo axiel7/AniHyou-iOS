@@ -162,10 +162,9 @@ struct SettingsView: View {
             }
 
             Section {
-                Text("Donate!")
-                    .navigationDestination(isPresented: $navigateToDonations) {
-                        DonationsView()
-                    }
+                Button("Donate!") {
+                    navigateToDonations.toggle()
+                }
                 Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou")!)
                 Link("Discord server", destination: URL(string: "https://discord.gg/CTv3WdfxHh")!)
             } header: {
@@ -182,6 +181,9 @@ struct SettingsView: View {
 
         }
         .navigationTitle("Settings")
+        .navigationDestination(isPresented: $navigateToDonations) {
+            DonationsView()
+        }
         .onAppear {
             selectedColor = Color(hex: customAccentColor)!
         }
