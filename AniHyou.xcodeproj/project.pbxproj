@@ -434,6 +434,7 @@
 		48C501592ADA340F00E4243D /* TranslationCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCredits.swift; sourceTree = "<group>"; };
 		48C501682ADAB53A00E4243D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C5016A2ADAD00400E4243D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48C5016C2ADAD03600E4243D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		48C608EA290D1526004781C2 /* SearchStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStaff.graphql; sourceTree = "<group>"; };
 		48C608EC290D15DF004781C2 /* SearchCharacter.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCharacter.graphql; sourceTree = "<group>"; };
 		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
@@ -1931,6 +1932,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				48C5016A2ADAD00400E4243D /* es */,
+				48C5016C2ADAD03600E4243D /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

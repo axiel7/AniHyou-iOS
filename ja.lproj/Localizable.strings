@@ -1,35 +1,14 @@
 /* No comment provided by engineer. */
-" ago" = "前";
+", " = "、";
 
 /* No comment provided by engineer. */
 "%lld chapters" = "%lld章";
 
 /* No comment provided by engineer. */
-"%lld days" = "%lld日";
-
-/* No comment provided by engineer. */
 "%lld episodes" = "第%lld話";
 
 /* No comment provided by engineer. */
-"%lld h" = "%lld時間";
-
-/* No comment provided by engineer. */
-"%lld hours, %lld min" = "%lld時間%lld分";
-
-/* No comment provided by engineer. */
-"%lld min" = "%lld分";
-
-/* No comment provided by engineer. */
-"%lld months" = "%lldヵ月";
-
-/* No comment provided by engineer. */
 "%lld volumes" = "%lld巻";
-
-/* No comment provided by engineer. */
-"%lld weeks" = "%lld週間";
-
-/* No comment provided by engineer. */
-"%lld years" = "%lld年";
 
 /* No comment provided by engineer. */
 "^[%lld episode behind](inflect: true)" = "^[第%lld話遅い](inflect: true)";
@@ -257,7 +236,10 @@
 "Ep" = "話";
 
 /* No comment provided by engineer. */
-"Ep %lld airing in %@" = "第%lld話は%@で配信中";
+"Ep %lld %@" = "第%lld話 %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "第%lld話 %@に";
 
 /* No comment provided by engineer. */
 "Episodes" = "話";
@@ -785,7 +767,7 @@
 "Trending Anime" = "人気のアニメ";
 
 /* No comment provided by engineer. */
-"Trending Manga" = " トレンド漫画";
+"Trending Manga" = "人気のマンガ";
 
 /* (No Comment) */
 "tuesday_short" = "火";
