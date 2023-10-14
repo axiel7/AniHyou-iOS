@@ -1,26 +1,5 @@
 /* No comment provided by engineer. */
-" ," = " ,";
-
-/* No comment provided by engineer. */
-" · " = " · ";
-
-/* No comment provided by engineer. */
-" %@" = " %@";
-
-/* No comment provided by engineer. */
 " ago" = "Hace ";
-
-/* No comment provided by engineer. */
-"/%@" = "/%@";
-
-/* No comment provided by engineer. */
-"#%lld" = "#%lld";
-
-/* No comment provided by engineer. */
-"%@" = "%@";
-
-/* No comment provided by engineer. */
-"%lld" = "%lld";
 
 /* No comment provided by engineer. */
 "%lld chapters" = "%lld capítulos";
@@ -51,15 +30,6 @@
 
 /* No comment provided by engineer. */
 "%lld years" = "%lld años";
-
-/* No comment provided by engineer. */
-"%lld/%lld" = "%lld/%lld";
-
-/* No comment provided by engineer. */
-"%lld/100" = "%lld/100";
-
-/* No comment provided by engineer. */
-"%lld%%" = "%lld%%";
 
 /* No comment provided by engineer. */
 "^[%lld episode behind](inflect: true)" = "^[%lld episodio atrasado](inflect: true)";
@@ -110,9 +80,6 @@
 "Alternative" = "Alternativo";
 
 /* No comment provided by engineer. */
-"AniHyou" = "AniHyou";
-
-/* No comment provided by engineer. */
 "AniList account settings" = "Ajustes de la cuenta de AniList";
 
 /* No comment provided by engineer. */
@@ -141,9 +108,6 @@
 
 /* No comment provided by engineer. */
 "Average Score" = "Puntuación Ponderada";
-
-/* No comment provided by engineer. */
-"axiel7" = "axiel7";
 
 /* No comment provided by engineer. */
 "Background" = "De fondo";
@@ -209,9 +173,6 @@
 "Coming soon" = "Próximamente";
 
 /* No comment provided by engineer. */
-"Coming Soon" = "Próximamente";
-
-/* No comment provided by engineer. */
 "Compact" = "Compacto";
 
 /* No comment provided by engineer. */
@@ -225,6 +186,12 @@
 
 /* No comment provided by engineer. */
 "Contains" = "Contiene";
+
+/* No comment provided by engineer. */
+"Copied!" = "¡Copiado!";
+
+/* No comment provided by engineer. */
+"Copy" = "Copiar";
 
 /* No comment provided by engineer. */
 "Current" = "Actual";
@@ -308,7 +275,7 @@
 "Ep %lld airing at " = "Ep %lld se emite a las ";
 
 /* No comment provided by engineer. */
-"Ep %lld airing in " = "Ep %lld se emite en ";
+"Ep %lld airing in %@" = "Ep %lld se emite en %@";
 
 /* No comment provided by engineer. */
 "Ep %lld in " = "Ep %lld en ";
@@ -398,7 +365,7 @@
 "Hide filters" = "Ocultar filtros";
 
 /* No comment provided by engineer. */
-"Hide spoiler" = "Ocultar spoilers";
+"Hide spoiler" = "Ocultar spoiler";
 
 /* No comment provided by engineer. */
 "Highest rated" = "El mejor valorado";
@@ -414,9 +381,6 @@
 
 /* No comment provided by engineer. */
 "Hours Watched" = "Horas de Visualización";
-
-/* No comment provided by engineer. */
-"Id" = "Id";
 
 /* No comment provided by engineer. */
 "Increment Episode / Chapter" = "Incrementar Episodio / Capítulo";
@@ -545,6 +509,9 @@
 "None" = "Ninguno";
 
 /* No comment provided by engineer. */
+"Not yet released" = "Sin publicarse";
+
+/* No comment provided by engineer. */
 "Notes" = "Notas";
 
 /* No comment provided by engineer. */
@@ -608,6 +575,12 @@
 "Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Por favor, abre la aplicación de AniHyou en tu iPhone y ve a Perfil -> Configuración -> Sincronizar cuenta con Apple Watch";
 
 /* No comment provided by engineer. */
+"Popular Anime" = "Anime Popular";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "Manga Popular";
+
+/* No comment provided by engineer. */
 "Popularity" = "Popularidad";
 
 /* No comment provided by engineer. */
@@ -633,6 +606,9 @@
 
 /* No comment provided by engineer. */
 "Publishing" = "Publicándose";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "Manga Publicándose";
 
 /* No comment provided by engineer. */
 "Quick access to your anime or manga list." = "Acceso rápido a tu lista de anime o manga.";
@@ -682,6 +658,9 @@
 /* No comment provided by engineer. */
 "Romance" = "Romance";
 
+/* No comment provided by engineer. */
+"Russian" = "Ruso";
+
 /* (No Comment) */
 "saturday_short" = "S";
 
@@ -714,9 +693,6 @@
 
 /* No comment provided by engineer. */
 "Sequel" = "Secuela";
-
-/* No comment provided by engineer. */
-"Set as " = "Establecer como ";
 
 /* No comment provided by engineer. */
 "Set progress" = "Establecer progreso";
@@ -764,6 +740,9 @@
 "Source" = "Fuente";
 
 /* No comment provided by engineer. */
+"Spanish" = "Español";
+
+/* No comment provided by engineer. */
 "Special" = "Especial";
 
 /* No comment provided by engineer. */
@@ -774,9 +753,6 @@
 
 /* No comment provided by engineer. */
 "Spring" = "Primavera";
-
-/* No comment provided by engineer. */
-"SquishyLeaf" = "SquishyLeaf";
 
 /* No comment provided by engineer. */
 "Staff" = "Staff";
@@ -866,6 +842,12 @@
 "Top 100" = "Top 100";
 
 /* No comment provided by engineer. */
+"Top 100 Anime" = "Top 100 Anime";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "Top 100 Manga";
+
+/* No comment provided by engineer. */
 "Top Popular" = "Top Popular";
 
 /* No comment provided by engineer. */
@@ -876,6 +858,9 @@
 
 /* No comment provided by engineer. */
 "Trailer" = "Tráiler";
+
+/* No comment provided by engineer. */
+"Translations" = "Traducciones";
 
 /* No comment provided by engineer. */
 "Trending" = "En tendencia";
@@ -890,6 +875,9 @@
 "tuesday_short" = "M";
 
 /* No comment provided by engineer. */
+"Turkish" = "Turco";
+
+/* No comment provided by engineer. */
 "TV" = "TV";
 
 /* No comment provided by engineer. */
@@ -902,10 +890,13 @@
 "Unknown" = "Desconocido";
 
 /* No comment provided by engineer. */
-"Unreleased" = "Sin estrenar";
+"Upcoming" = "Próximos";
 
 /* No comment provided by engineer. */
-"Upcoming" = "Próximamente";
+"Upcoming Anime" = "Próximos Anime";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "Próximos Manga";
 
 /* No comment provided by engineer. */
 "Updated" = "Actualizado";
