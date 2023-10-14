@@ -431,6 +431,7 @@
 		48C5014D2AD9091600E4243D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C5014F2AD9092600E4243D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C501592ADA340F00E4243D /* TranslationCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCredits.swift; sourceTree = "<group>"; };
+		48C501682ADAB53A00E4243D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C608EA290D1526004781C2 /* SearchStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStaff.graphql; sourceTree = "<group>"; };
 		48C608EC290D15DF004781C2 /* SearchCharacter.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCharacter.graphql; sourceTree = "<group>"; };
 		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
@@ -1593,6 +1594,7 @@
 			knownRegions = (
 				en,
 				es,
+				ja,
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
@@ -1916,6 +1918,7 @@
 			children = (
 				48C5014D2AD9091600E4243D /* en */,
 				48C5014F2AD9092600E4243D /* es */,
+				48C501682ADAB53A00E4243D /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

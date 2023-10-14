@@ -1,0 +1,864 @@
+/* No comment provided by engineer. */
+" ago" = "前";
+
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld章";
+
+/* No comment provided by engineer. */
+"%lld days" = "%lld日";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "第%lld話";
+
+/* No comment provided by engineer. */
+"%lld h" = "%lld時間";
+
+/* No comment provided by engineer. */
+"%lld hours, %lld min" = "%lld時間%lld分";
+
+/* No comment provided by engineer. */
+"%lld min" = "%lld分";
+
+/* No comment provided by engineer. */
+"%lld months" = "%lldヵ月";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld巻";
+
+/* No comment provided by engineer. */
+"%lld weeks" = "%lld週間";
+
+/* No comment provided by engineer. */
+"%lld years" = "%lld年";
+
+/* No comment provided by engineer. */
+"^[%lld episode behind](inflect: true)" = "^[第%lld話遅い](inflect: true)";
+
+/* No comment provided by engineer. */
+"+1" = "+1";
+
+/* No comment provided by engineer. */
+"Accent color" = "アクセントカラー";
+
+/* No comment provided by engineer. */
+"Action" = "アクション";
+
+/* No comment provided by engineer. */
+"Activity" = "アクティビティ";
+
+/* No comment provided by engineer. */
+"Adaptation" = "適応";
+
+/* No comment provided by engineer. */
+"Add to List" = "リストに追加";
+
+/* No comment provided by engineer. */
+"Added" = "追加完了";
+
+/* No comment provided by engineer. */
+"Adventure" = "冒険";
+
+/* No comment provided by engineer. */
+"Age" = "年齢";
+
+/* No comment provided by engineer. */
+"Airing" = "配信中";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "配信中のアニメ";
+
+/* No comment provided by engineer. */
+"Airing Next" = "配信中";
+
+/* No comment provided by engineer. */
+"All" = "すべて";
+
+/* No comment provided by engineer. */
+"Alternative" = "オルタナティブ";
+
+/* No comment provided by engineer. */
+"AniList account settings" = "AniListアカウントの設定";
+
+/* No comment provided by engineer. */
+"Anime" = "アニメ";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "遅いなアニメ";
+
+/* No comment provided by engineer. */
+"Anime List" = "アニメリスト";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "アニメ、マンガ、その他";
+
+/* No comment provided by engineer. */
+"App Icon" = "アプリアイコン";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "ログアウトしてもよろしいですか?";
+
+/* No comment provided by engineer. */
+"Ascending" = "昇順";
+
+/* No comment provided by engineer. */
+"Average Score" = "平均スコア";
+
+/* No comment provided by engineer. */
+"Background" = "背景";
+
+/* No comment provided by engineer. */
+"Birth" = "誕生日";
+
+/* No comment provided by engineer. */
+"Birthday" = "誕生日";
+
+/* No comment provided by engineer. */
+"Blood type" = "血液型";
+
+/* No comment provided by engineer. */
+"Blood Type" = "血液型";
+
+/* No comment provided by engineer. */
+"Calendar" = "カレンダー";
+
+/* No comment provided by engineer. */
+"Cancel" = "キャンセル";
+
+/* No comment provided by engineer. */
+"Cancelled" = "中止";
+
+/* No comment provided by engineer. */
+"Ch" = "章";
+
+/* No comment provided by engineer. */
+"Chapters" = "章";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "読んだ章";
+
+/* No comment provided by engineer. */
+"Character" = "キャラクター";
+
+/* No comment provided by engineer. */
+"Characters" = "キャラクター";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "キャラクターとスタッフ";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "アニメかマンガのどちらかを選択します。";
+
+/* No comment provided by engineer. */
+"Clear" = "削除する";
+
+/* No comment provided by engineer. */
+"Close" = "閉じる";
+
+/* No comment provided by engineer. */
+"Comedy" = "コメディ";
+
+/* No comment provided by engineer. */
+"Comic" = "コミック";
+
+/* No comment provided by engineer. */
+"Coming soon" = "近日公開";
+
+/* No comment provided by engineer. */
+"Compact" = "コンパクト";
+
+/* No comment provided by engineer. */
+"Compilation" = "コンパイル";
+
+/* No comment provided by engineer. */
+"Completed" = "完了";
+
+/* No comment provided by engineer. */
+"Copied!" = "コピーしました！";
+
+/* No comment provided by engineer. */
+"Copy" = "コピー";
+
+/* No comment provided by engineer. */
+"Current" = "今時";
+
+/* No comment provided by engineer. */
+"Custom" = "カスタム";
+
+/* No comment provided by engineer. */
+"Custom color" = "カスタムカラー";
+
+/* No comment provided by engineer. */
+"Dates" = "日付";
+
+/* No comment provided by engineer. */
+"Days Watched" = "見た日";
+
+/* No comment provided by engineer. */
+"Death" = "死亡";
+
+/* No comment provided by engineer. */
+"Default" = "デフォルト";
+
+/* No comment provided by engineer. */
+"Delete" = "削除する";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "このエントリを削除しますか？";
+
+/* No comment provided by engineer. */
+"Descending" = "降順";
+
+/* No comment provided by engineer. */
+"Developers" = "プログラマー";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discordサーバー";
+
+/* No comment provided by engineer. */
+"Display" = "ディスプレー";
+
+/* No comment provided by engineer. */
+"Donate" = "寄付する";
+
+/* No comment provided by engineer. */
+"Donate!" = "寄付する！";
+
+/* No comment provided by engineer. */
+"Donation" = "寄付";
+
+/* No comment provided by engineer. */
+"Done" = "完了";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "同人誌";
+
+/* No comment provided by engineer. */
+"Drama" = "ドラマ";
+
+/* No comment provided by engineer. */
+"Dropped" = "視聴を中断";
+
+/* No comment provided by engineer. */
+"Duration" = "放送時間";
+
+/* No comment provided by engineer. */
+"Ecchi" = "エッチ";
+
+/* No comment provided by engineer. */
+"Edit" = "編集";
+
+/* No comment provided by engineer. */
+"End date" = "終了日";
+
+/* No comment provided by engineer. */
+"English" = "英語";
+
+/* No comment provided by engineer. */
+"Ep" = "話";
+
+/* No comment provided by engineer. */
+"Ep %lld airing in %@" = "第%lld話は%@で配信中";
+
+/* No comment provided by engineer. */
+"Episodes" = "話";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "見た第";
+
+/* No comment provided by engineer. */
+"Error no entry" = "エントリがありません";
+
+/* No comment provided by engineer. */
+"Explore" = "検索";
+
+/* No comment provided by engineer. */
+"External links" = "外部リンク";
+
+/* No comment provided by engineer. */
+"Fall" = "秋";
+
+/* No comment provided by engineer. */
+"Fantasy" = "ファンタジー";
+
+/* No comment provided by engineer. */
+"Favorites" = "お気に入り";
+
+/* No comment provided by engineer. */
+"Filter" = "検索";
+
+/* No comment provided by engineer. */
+"Finish Date" = "終了日";
+
+/* No comment provided by engineer. */
+"Finished" = "終了";
+
+/* No comment provided by engineer. */
+"Follow" = "フォロー";
+
+/* No comment provided by engineer. */
+"Followers" = "フォロワー";
+
+/* No comment provided by engineer. */
+"Following" = "フォロー中";
+
+/* No comment provided by engineer. */
+"Follows" = "フォロー";
+
+/* No comment provided by engineer. */
+"Follows you" = "フォローされています";
+
+/* No comment provided by engineer. */
+"Format" = "形式";
+
+/* No comment provided by engineer. */
+"Forum" = "フォーラム";
+
+/* (No Comment) */
+"friday_short" = "金";
+
+/* No comment provided by engineer. */
+"Game" = "ゲーム";
+
+/* No comment provided by engineer. */
+"Gender" = "性別";
+
+/* No comment provided by engineer. */
+"General" = "一般";
+
+/* No comment provided by engineer. */
+"Genres" = "ジャンル";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "GitHubリポジトリ";
+
+/* No comment provided by engineer. */
+"Hentai" = "変態";
+
+/* No comment provided by engineer. */
+"Hiatus" = "中断";
+
+/* No comment provided by engineer. */
+"Hide filters" = "フィルターを非表示";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "ネタバレを隠す";
+
+/* No comment provided by engineer. */
+"Highest rated" = "評価の高い";
+
+/* No comment provided by engineer. */
+"Home" = "ホーム";
+
+/* No comment provided by engineer. */
+"Hometown" = "故郷";
+
+/* No comment provided by engineer. */
+"Horror" = "ホラー";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "見た時間";
+
+/* No comment provided by engineer. */
+"Information" = "情報";
+
+/* No comment provided by engineer. */
+"Japanese" = "日本語";
+
+/* No comment provided by engineer. */
+"Last Added" = "追加日";
+
+/* No comment provided by engineer. */
+"Last Updated" = "更新日時";
+
+/* No comment provided by engineer. */
+"Left" = "左";
+
+/* No comment provided by engineer. */
+"Light novel" = "ライトノベル";
+
+/* No comment provided by engineer. */
+"List entry ID" = "リストエントリID";
+
+/* No comment provided by engineer. */
+"List style" = "リストスタイル";
+
+/* No comment provided by engineer. */
+"Live action" = "実写版";
+
+/* No comment provided by engineer. */
+"Loading" = "読み込み中";
+
+/* No comment provided by engineer. */
+"Log out" = "ログアウト";
+
+/* No comment provided by engineer. */
+"Login" = "ログイン";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "魔法少女";
+
+/* No comment provided by engineer. */
+"Main" = "主人公";
+
+/* No comment provided by engineer. */
+"Manga" = "マンガ";
+
+/* No comment provided by engineer. */
+"Manga List" = "マンガリスト";
+
+/* No comment provided by engineer. */
+"Mean Score" = "スコア";
+
+/* No comment provided by engineer. */
+"Mecha" = "メカ";
+
+/* No comment provided by engineer. */
+"Media" = "メディア";
+
+/* No comment provided by engineer. */
+"Media ID" = "メディア ID";
+
+/* No comment provided by engineer. */
+"Media List" = "メディアリスト";
+
+/* No comment provided by engineer. */
+"Media Type" = "メディアタイプ";
+
+/* No comment provided by engineer. */
+"Minimal" = "ミニマル";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"monday_short" = "月";
+
+/* No comment provided by engineer. */
+"More filters" = "その他のフィルター";
+
+/* No comment provided by engineer. */
+"Most popular" = "一番人気";
+
+/* No comment provided by engineer. */
+"Movie" = "動画";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "マルチメディアプロジェクト";
+
+/* No comment provided by engineer. */
+"Music" = "音楽";
+
+/* No comment provided by engineer. */
+"Mystery" = "ミステリー";
+
+/* No comment provided by engineer. */
+"Native" = "ネイティブ";
+
+/* No comment provided by engineer. */
+"Next Season" = "次のシーズン";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "今日のアニメはありません\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "メディアなし";
+
+/* No comment provided by engineer. */
+"No recommendations" = "おすすめはありません";
+
+/* No comment provided by engineer. */
+"No reviews" = "レビューなし";
+
+/* No comment provided by engineer. */
+"None" = "なし";
+
+/* No comment provided by engineer. */
+"Not yet released" = "未発表";
+
+/* No comment provided by engineer. */
+"Notes" = "メモ";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "リストには何もありません";
+
+/* No comment provided by engineer. */
+"Notifications" = "通知";
+
+/* No comment provided by engineer. */
+"Novel" = "小説";
+
+/* No comment provided by engineer. */
+"Occupations" = "職業";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"On my list" = "自分のリストに";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "ワンショット";
+
+/* No comment provided by engineer. */
+"Order" = "順序";
+
+/* No comment provided by engineer. */
+"Original" = "オリジナル";
+
+/* No comment provided by engineer. */
+"Other" = "他";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Parent" = "親の話";
+
+/* No comment provided by engineer. */
+"Paused" = "保留";
+
+/* No comment provided by engineer. */
+"Picture book" = "絵本";
+
+/* No comment provided by engineer. */
+"Planning" = "視聴予定";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "この機能を使用するには、ログインしてください。";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "人気のアニメ";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "人気のマンガ";
+
+/* No comment provided by engineer. */
+"Popularity" = "人気";
+
+/* No comment provided by engineer. */
+"Prequel" = "前篇";
+
+/* No comment provided by engineer. */
+"Priority" = "優先";
+
+/* No comment provided by engineer. */
+"Private" = "非公開";
+
+/* No comment provided by engineer. */
+"Producers" = "プロデューサー";
+
+/* No comment provided by engineer. */
+"Profile" = "プロファイル";
+
+/* No comment provided by engineer. */
+"Progress" = "進歩";
+
+/* No comment provided by engineer. */
+"Psychological" = "心理的";
+
+/* No comment provided by engineer. */
+"Publishing" = "公開中";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "公開中";
+
+/* No comment provided by engineer. */
+"Rankings" = "ランキング";
+
+/* No comment provided by engineer. */
+"Recommendations" = "おすすめ";
+
+/* No comment provided by engineer. */
+"Relations" = "関連";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "関連とおすすめ";
+
+/* No comment provided by engineer. */
+"Release Date" = "公開日時";
+
+/* No comment provided by engineer. */
+"Releasing" = "公開中";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "繰り返し回数";
+
+/* No comment provided by engineer. */
+"Repeating" = "繰り返し";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "レビューとスレッド";
+
+/* No comment provided by engineer. */
+"Reviews" = "レビュー";
+
+/* No comment provided by engineer. */
+"Right" = "右";
+
+/* No comment provided by engineer. */
+"Romaji" = "ローマ字";
+
+/* No comment provided by engineer. */
+"Romance" = "ロマンス";
+
+/* No comment provided by engineer. */
+"Russian" = "ロシア語";
+
+/* (No Comment) */
+"saturday_short" = "土";
+
+/* No comment provided by engineer. */
+"Save" = "保存";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "SF";
+
+/* No comment provided by engineer. */
+"Score" = "スコア";
+
+/* No comment provided by engineer. */
+"Search type" = "検索タイプ";
+
+/* No comment provided by engineer. */
+"Season" = "季節";
+
+/* No comment provided by engineer. */
+"See All" = "すべてを表示";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "メディアタイプを選択";
+
+/* No comment provided by engineer. */
+"Selection type" = "選択タイプ";
+
+/* No comment provided by engineer. */
+"Sequel" = "続";
+
+/* No comment provided by engineer. */
+"Set progress" = "進捗を設定";
+
+/* No comment provided by engineer. */
+"Settings" = "設定";
+
+/* No comment provided by engineer. */
+"Share" = "分け合う";
+
+/* No comment provided by engineer. */
+"Show less" = "表示を減らす";
+
+/* No comment provided by engineer. */
+"Show more" = "さらに表示";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "ネタバレを表示";
+
+/* No comment provided by engineer. */
+"Side Story" = "サイドストーリー";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "日常";
+
+/* No comment provided by engineer. */
+"Social" = "ソーシャル";
+
+/* No comment provided by engineer. */
+"Sort" = "並び替え";
+
+/* No comment provided by engineer. */
+"Source" = "原作";
+
+/* No comment provided by engineer. */
+"Spanish" = "スペイン語";
+
+/* No comment provided by engineer. */
+"Special" = "スペシャル";
+
+/* No comment provided by engineer. */
+"Spin Off" = "スピンオフ";
+
+/* No comment provided by engineer. */
+"Sports" = "スポーツ";
+
+/* No comment provided by engineer. */
+"Spring" = "春";
+
+/* No comment provided by engineer. */
+"Staff" = "スタッフ";
+
+/* No comment provided by engineer. */
+"Standard" = "スタンダード";
+
+/* No comment provided by engineer. */
+"Start date" = "公開日";
+
+/* No comment provided by engineer. */
+"Start Date" = "公開日";
+
+/* No comment provided by engineer. */
+"Started" = "開始";
+
+/* No comment provided by engineer. */
+"Stats" = "統計";
+
+/* No comment provided by engineer. */
+"Status" = "ステータス";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "配信サイト";
+
+/* No comment provided by engineer. */
+"Studios" = "スタジオ";
+
+/* No comment provided by engineer. */
+"Summary" = "摘要";
+
+/* No comment provided by engineer. */
+"Summer" = "夏";
+
+/* (No Comment) */
+"sunday_short" = "日";
+
+/* No comment provided by engineer. */
+"Supernatural" = "神秘的な";
+
+/* No comment provided by engineer. */
+"Supporting" = "助演";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "Apple Watch とアカウントを同期する";
+
+/* No comment provided by engineer. */
+"Synonyms" = "同義語";
+
+/* No comment provided by engineer. */
+"Tags" = "タグ";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "ありがとうございます！(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "エントリのメディアID";
+
+/* No comment provided by engineer. */
+"Threads" = "スレッド";
+
+/* No comment provided by engineer. */
+"Thriller" = "スリラー";
+
+/* (No Comment) */
+"thursday_short" = "木";
+
+/* No comment provided by engineer. */
+"Title" = "作品名";
+
+/* No comment provided by engineer. */
+"Top 100" = "トップ１００";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "トップ１００アニメ";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "トップ１００マンガ";
+
+/* No comment provided by engineer. */
+"Top Popular" = "人気のトップ";
+
+/* No comment provided by engineer. */
+"Total Anime" = "アニメ合計";
+
+/* No comment provided by engineer. */
+"Total Manga" = "マンガ合計";
+
+/* No comment provided by engineer. */
+"Trailer" = "PV";
+
+/* No comment provided by engineer. */
+"Translations" = "翻訳";
+
+/* No comment provided by engineer. */
+"Trending" = "トレンド";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "人気のアニメ";
+
+/* No comment provided by engineer. */
+"Trending Manga" = " トレンド漫画";
+
+/* (No Comment) */
+"tuesday_short" = "火";
+
+/* No comment provided by engineer. */
+"Turkish" = "トルコ語";
+
+/* No comment provided by engineer. */
+"TV" = "テレビ";
+
+/* No comment provided by engineer. */
+"TV Short" = "テレビショート";
+
+/* No comment provided by engineer. */
+"Unfollow" = "フォロー解除";
+
+/* (No Comment) */
+"Unknown" = "不明";
+
+/* No comment provided by engineer. */
+"Upcoming" = "近日公開";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "近日公開のアニメ";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "近日公開のマンガ";
+
+/* No comment provided by engineer. */
+"Updated" = "更新";
+
+/* No comment provided by engineer. */
+"Users" = "ユーザー";
+
+/* No comment provided by engineer. */
+"Users likes" = "ユーザーのいいね！";
+
+/* No comment provided by engineer. */
+"Version %@" = "バージョン %@";
+
+/* No comment provided by engineer. */
+"VideoGame" = "ゲーム";
+
+/* No comment provided by engineer. */
+"Visual novel" = "ビジュアルノベル";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "声優";
+
+/* No comment provided by engineer. */
+"Volumes" = "単行本";
+
+/* No comment provided by engineer. */
+"Volumes Read" = "読んだ巻";
+
+/* No comment provided by engineer. */
+"Web novel" = "WEBノベル";
+
+/* (No Comment) */
+"wednesday_short" = "水";
+
+/* No comment provided by engineer. */
+"Weekday" = "平日";
+
+/* No comment provided by engineer. */
+"Winter" = "冬";
+
+/* No comment provided by engineer. */
+"Year" = "年";
+
+/* No comment provided by engineer. */
+"Years active" = "生産年数";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "ブラウザで再度ログインする必要があります。";
+
