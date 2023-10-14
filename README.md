@@ -32,6 +32,21 @@ Follow the development on the official Discord server:
 ## Coming features
 - [See project](https://github.com/users/axiel7/projects/2/views/1)
 
+## Building
+- Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
+```
+ANILIST_CLIENT_ID = XXXX
+```
+
+To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
+
+## Technologies used
+- [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
+- [Apollo iOS Client](https://github.com/apollographql/apollo-ios)
+- [Kingfisher](https://github.com/onevcat/Kingfisher)
+- [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
+- [RichText](https://github.com/NuPlay/RichText)
+
 # Donate 💸
 Support the development of AniHyou by making a donation via:
 
@@ -52,17 +67,3 @@ LTC
 MRw5XPLsM9SVf48tv4nwQoY12nMXaiVzmD
 ```
 
-## Technologies used
-- [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
-- [Apollo iOS Client](https://github.com/apollographql/apollo-ios)
-- [Kingfisher](https://github.com/onevcat/Kingfisher)
-- [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
-- [RichText](https://github.com/NuPlay/RichText)
-
-## Building
-- Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
-```
-ANILIST_CLIENT_ID = XXXX
-```
-
-To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
