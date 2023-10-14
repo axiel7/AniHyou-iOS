@@ -45,7 +45,7 @@ struct VListItemView: View {
                 }
                 if let nextEpisode, let airingAt {
                     let time = Date(timeIntervalSince1970: Double(airingAt))
-                    Text("Ep \(nextEpisode) airing at \(time, format: .dateTime.hour().minute())")
+                    Text("Ep \(nextEpisode) at \(time, format: .dateTime.hour().minute())")
                         .multilineTextAlignment(.leading)
                         .padding(.bottom, 1)
                         .frame(width: VListItemView.coverWidth, alignment: .leading)
