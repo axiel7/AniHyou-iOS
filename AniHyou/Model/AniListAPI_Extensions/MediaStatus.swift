@@ -17,7 +17,7 @@ extension MediaStatus {
         case .releasing:
             return "Releasing"
         case .notYetReleased:
-            return "Unreleased"
+            return "Not yet released"
         case .cancelled:
             return "Cancelled"
         case .hiatus:
