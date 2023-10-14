@@ -55,7 +55,8 @@ struct MediaGeneralInfoView: View {
             HInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
         }
         if let duration = viewModel.mediaDetails?.duration {
-            HInfoView(name: "Duration", valueLocalized: duration.minutesToLegibleText())
+            let seconds = TimeInterval(duration * 60)
+            HInfoView(name: "Duration", value: seconds.formatted(units: [.hour, .minute], unitsStyle: .abbreviated))
         }
         HInfoView(
             name: "Start date",

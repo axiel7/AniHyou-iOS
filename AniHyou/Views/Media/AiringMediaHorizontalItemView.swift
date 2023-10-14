@@ -38,7 +38,7 @@ struct AiringMediaHorizontalItemView: View {
 
                 if let nextEpisode, let airingAt {
                     let relativeDate = Date(timeIntervalSince1970: Double(airingAt))
-                    Text("Ep \(nextEpisode) airing in \(relativeDate, style: .relative)")
+                    Text("Ep \(nextEpisode) airing \(relativeDate, format: .relative(presentation: .numeric))")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                         .lineLimit(2)

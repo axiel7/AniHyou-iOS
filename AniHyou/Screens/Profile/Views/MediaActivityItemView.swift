@@ -28,15 +28,15 @@ struct MediaActivityItemView: View {
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
 
-                Group {
-                    Text(activity?.createdAt.timestampIntervalSinceNow().secondsToLegibleText() ?? "") +
-                    Text(" ago")
+                if let createdAt = activity?.createdAt {
+                    let relativeDate = Date(timeIntervalSince1970: Double(createdAt))
+                    Text(relativeDate, format: .relative(presentation: .named))
+                        .font(.subheadline)
+                        .lineLimit(1)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.gray)
+                        .padding(.top)
                 }
-                .font(.subheadline)
-                .lineLimit(1)
-                .multilineTextAlignment(.leading)
-                .foregroundColor(.gray)
-                .padding(.top)
             }
         }
     }

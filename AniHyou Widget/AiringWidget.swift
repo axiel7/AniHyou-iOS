@@ -183,12 +183,14 @@ struct AiringWidgetEntryView: View {
                         .frame(width: entry.widgetSize.width, alignment: .leading)
                     
                     let relativeDate = Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt))
-                    Text("Ep \(nextAiringEpisode.episode) airing in \(relativeDate, style: .relative)")
-                        .font(.system(size: 12))
-                        .lineLimit(1)
-                        .foregroundColor(tintColor)
-                        .padding(.horizontal)
-                        .frame(width: entry.widgetSize.width, alignment: .leading)
+                    Text(
+                        "Ep \(nextAiringEpisode.episode) \(relativeDate, format: .relative(presentation: .numeric))"
+                    )
+                    .font(.system(size: 12))
+                    .lineLimit(1)
+                    .foregroundColor(tintColor)
+                    .padding(.horizontal)
+                    .frame(width: entry.widgetSize.width, alignment: .leading)
                     
                     if (index + 1) < entry.animeList.count {
                         Divider()
@@ -215,7 +217,7 @@ struct AiringWidgetEntryView: View {
         {
             VStack(alignment: .leading, spacing: 8) {
                 let relativeDate = Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt))
-                Text("Ep \(nextAiringEpisode.episode) airing in \(relativeDate, style: .relative)")
+                Text("Ep \(nextAiringEpisode.episode) \(relativeDate, format: .relative(presentation: .numeric))")
                     .font(.headline)
                     .foregroundColor(tintColor)
                 

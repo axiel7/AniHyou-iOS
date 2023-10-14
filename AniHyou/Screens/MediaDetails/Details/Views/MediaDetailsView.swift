@@ -102,21 +102,13 @@ struct MediaDetailsView: View {
                 Divider()
                 HStack {
                     if let schedule = details.nextAiringEpisode {
-                        VStack {
-                            Text("Airing")
-                                .font(.caption2)
-                                .textCase(.uppercase)
-                                .foregroundColor(.gray)
-                                .padding(.bottom, 1)
-                            Group {
-                                Text("Ep \(schedule.episode) in ") +
-                                Text(schedule.timeUntilAiring.secondsToLegibleText())
-                            }
-                            .bold()
-                            .foregroundColor(.gray)
-                        }
-                        Divider()
-                            .padding(8)
+                        let relativeDate = Date(timeIntervalSince1970: Double(schedule.airingAt))
+                        MediaStatView(
+                            name: "Airing",
+                            value: LocalizedStringKey(
+                                "Ep \(schedule.episode) \(relativeDate, format: .relative(presentation: .numeric))"
+                            )
+                        )
                     }
                     MediaStatView(
                         name: "Mean Score",

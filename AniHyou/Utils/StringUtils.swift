@@ -35,16 +35,6 @@ extension String {
     }
 }
 
-extension String.StringInterpolation {
-    mutating func appendInterpolation(_ value: Date, style: DateFormatter.Style) {
-        let formatter = DateFormatter()
-        formatter.dateStyle = style
-
-        let dateString = formatter.string(from: value)
-        appendLiteral(dateString)
-    }
-}
-
 extension Int {
 
     var stringValue: String {

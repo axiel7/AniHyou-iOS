@@ -25,7 +25,8 @@ struct ThreadDetailsView: View {
                         .padding(.leading)
                         .padding(.bottom, 1)
 
-                    Text(thread.createdAt.timestampToDateString())
+                    let createdAt = Date(timeIntervalSince1970: Double(thread.createdAt))
+                    Text(createdAt, style: .relative)
                         .font(.footnote)
                         .foregroundColor(.gray)
                         .padding(.leading)

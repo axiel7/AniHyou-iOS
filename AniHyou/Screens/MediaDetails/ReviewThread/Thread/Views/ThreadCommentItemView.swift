@@ -28,7 +28,8 @@ struct ThreadCommentItemView: View {
                 }
                 .buttonStyle(.plain)
                 Spacer()
-                Text(comment.createdAt.timestampToDateString())
+                let createdAt = Date(timeIntervalSince1970: Double(comment.createdAt))
+                Text("\(createdAt, format: .relative(presentation: .numeric))")
                     .font(.footnote)
                     .foregroundColor(.gray)
                     .padding(.bottom, 1)

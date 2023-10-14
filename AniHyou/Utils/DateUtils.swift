@@ -96,59 +96,18 @@ extension Date {
 }
 
 extension Int {
-
-    /// Converts seconds to years, months, weeks, days, hours or minutes.
-    /// Depending if there is enough time.
-    /// Eg. If days greater than 1 and less than 6, returns "x days"
-    func secondsToLegibleText() -> LocalizedStringKey {
-        let days = self / 86400
-        if days > 6 {
-            let weeks = self / 604800
-            if weeks > 4 {
-                let months = self / 2629746
-                if months > 12 {
-                    let years = self / 31556952
-                    return "\(years) years"
-                } else { return "\(months) months" }
-            } else { return "\(weeks) weeks" }
-        } else if days >= 1 {
-            return "\(days) days"
-        } else {
-            let hours = self / 3600
-            if hours >= 1 {
-                return "\(hours) h"
-            } else {
-                let minutes = (self % 3600) / 60
-                return "\(minutes) min"
-            }
-        }
-    }
-
-    func minutesToLegibleText() -> LocalizedStringKey {
-        let hours = self / 60
-        if hours >= 1 {
-            let minutes = self % 60
-            return "\(hours) hours, \(minutes) min"
-        } else { return "\(self) min" }
-    }
-
     func minutesToDays() -> Double {
         return Double(self) / 1440
     }
+}
 
-    func timestampToDateString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        return dateFormatter.string(from: self.timestampToDate())
-    }
-
-    func timestampToDate() -> Date {
-        return Date(timeIntervalSince1970: Double(self))
-    }
-
-    func timestampIntervalSinceNow() -> Int {
-        return Int(abs(self.timestampToDate().timeIntervalSinceNow))
+extension TimeInterval {
+    // still thinking why Apple doesn't support this by default :/
+    func formatted(units: NSCalendar.Unit, unitsStyle: DateComponentsFormatter.UnitsStyle) -> String? {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = units
+        formatter.unitsStyle = unitsStyle
+        return formatter.string(from: self)
     }
 }
 

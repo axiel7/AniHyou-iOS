@@ -72,7 +72,7 @@ struct AiringScheduleItemText: View {
                 Text("^[\((airing.episode - 1) - (item?.progress ?? 0)) episode behind](inflect: true)")
             } else {
                 let relativeDate = Date(timeIntervalSince1970: Double(airing.airingAt))
-                Text("Ep \(airing.episode) airing in \(relativeDate, style: .relative)")
+                Text("Ep \(airing.episode) airing \(relativeDate, format: .relative(presentation: .numeric))")
             }
         }
         .font(.subheadline)
