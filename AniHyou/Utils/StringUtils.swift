@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AniListAPI
 
 extension String {
@@ -31,6 +32,16 @@ extension String {
 
     init(swiftLintMultiline strings: String...) {
         self = strings.reduce("", +)
+    }
+}
+
+extension String.StringInterpolation {
+    mutating func appendInterpolation(_ value: Date, style: DateFormatter.Style) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = style
+
+        let dateString = formatter.string(from: value)
+        appendLiteral(dateString)
     }
 }
 

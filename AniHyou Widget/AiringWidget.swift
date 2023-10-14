@@ -182,18 +182,13 @@ struct AiringWidgetEntryView: View {
                         .padding(.horizontal)
                         .frame(width: entry.widgetSize.width, alignment: .leading)
                     
-                    Group {
-                        let airingDate = Date(
-                            timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
-                        )
-                        Text("Ep \(nextAiringEpisode.episode) airing in ") +
-                        Text(airingDate, style: .relative)
-                    }
-                    .font(.system(size: 12))
-                    .lineLimit(1)
-                    .foregroundColor(tintColor)
-                    .padding(.horizontal)
-                    .frame(width: entry.widgetSize.width, alignment: .leading)
+                    let relativeDate = Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt))
+                    Text("Ep \(nextAiringEpisode.episode) airing in \(relativeDate, style: .relative)")
+                        .font(.system(size: 12))
+                        .lineLimit(1)
+                        .foregroundColor(tintColor)
+                        .padding(.horizontal)
+                        .frame(width: entry.widgetSize.width, alignment: .leading)
                     
                     if (index + 1) < entry.animeList.count {
                         Divider()
@@ -219,19 +214,13 @@ struct AiringWidgetEntryView: View {
             let nextAiringEpisode = item.media?.nextAiringEpisode
         {
             VStack(alignment: .leading, spacing: 8) {
-                Group {
-                    let airingDate = Date(
-                        timeIntervalSince1970: Double(nextAiringEpisode.airingAt)
-                    )
-                    Text("Ep \(nextAiringEpisode.episode) airing in ") +
-                    Text(airingDate, style: .relative)
-                }
-                .font(.headline)
-                .foregroundColor(tintColor)
+                let relativeDate = Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt))
+                Text("Ep \(nextAiringEpisode.episode) airing in \(relativeDate, style: .relative)")
+                    .font(.headline)
+                    .foregroundColor(tintColor)
                 
                 Text(item.media?.title?.userPreferred ?? "")
                     .font(.subheadline)
-                    
             }//:VStack
             .allowsTightening(true)
             .multilineTextAlignment(.leading)
