@@ -68,11 +68,13 @@ struct HInfoView: View {
         } else if let valueLocalized {
             Text(valueLocalized)
         } else if let values {
-            ForEach(values, id: \.self) {
-                if !isExpanded && $0 != values[0] {
-                    Text(", ") + Text(LocalizedStringKey(stringLiteral: $0))
-                } else {
-                    Text(LocalizedStringKey(stringLiteral: $0))
+            if !isExpanded {
+                values
+                    .map { LocalizedStringKey($0) }
+                    .joined(separator: ", ")
+            } else {
+                ForEach(values, id: \.self) {
+                    Text(LocalizedStringKey($0))
                 }
             }
         } else {
@@ -84,6 +86,11 @@ struct HInfoView: View {
 #Preview {
     VStack {
         HInfoView(name: "Start date", value: "12-12-2012")
-        HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
+        HInfoView(
+            name: "Genres",
+            values: ["Action", "Comedy", "Slice of Life", "Supernatural", "Fantasy"],
+            isExpandable: true
+        )
+        .environment(\.locale, .init(identifier: "ja"))
     }
 }
