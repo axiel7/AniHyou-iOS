@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaChartListView: View {
 
-    let title: String
+    let title: LocalizedStringKey
     let type: MediaType
     let sort: MediaSort
     var status: MediaStatus?
