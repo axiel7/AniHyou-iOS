@@ -1,35 +1,11 @@
 /* No comment provided by engineer. */
-" ago" = "Hace ";
-
-/* No comment provided by engineer. */
 "%lld chapters" = "%lld capítulos";
-
-/* No comment provided by engineer. */
-"%lld days" = "%lld días";
 
 /* No comment provided by engineer. */
 "%lld episodes" = "%lld episodios";
 
 /* No comment provided by engineer. */
-"%lld h" = "%lld h";
-
-/* No comment provided by engineer. */
-"%lld hours, %lld min" = "%lld horas, %lld min";
-
-/* No comment provided by engineer. */
-"%lld min" = "%lld min";
-
-/* No comment provided by engineer. */
-"%lld months" = "%lld meses";
-
-/* No comment provided by engineer. */
 "%lld volumes" = "%lld volúmenes";
-
-/* No comment provided by engineer. */
-"%lld weeks" = "%lld semanas";
-
-/* No comment provided by engineer. */
-"%lld years" = "%lld años";
 
 /* No comment provided by engineer. */
 "^[%lld episode behind](inflect: true)" = "^[%lld episodio atrasado](inflect: true)";
@@ -272,13 +248,10 @@
 "Ep" = "Ep";
 
 /* No comment provided by engineer. */
-"Ep %lld airing at " = "Ep %lld se emite a las ";
+"Ep %lld %@" = "Ep %lld %@";
 
 /* No comment provided by engineer. */
-"Ep %lld airing in %@" = "Ep %lld se emite en %@";
-
-/* No comment provided by engineer. */
-"Ep %lld in " = "Ep %lld en ";
+"Ep %lld at %@" = "Ep %lld a las %@";
 
 /* No comment provided by engineer. */
 "Episodes" = "Episodios";
