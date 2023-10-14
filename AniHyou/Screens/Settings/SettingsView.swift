@@ -178,7 +178,10 @@ struct SettingsView: View {
                 Link("BitForger", destination: URL(string: "https://github.com/BitForger")!)
                 Link("SquishyLeaf", destination: URL(string: "https://github.com/SquishyLeaf")!)
             }
-
+            
+            Section {
+                NavigationLink("Translations", destination: TranslationCredits())
+            }
         }
         .navigationTitle("Settings")
         .navigationDestination(isPresented: $navigateToDonations) {

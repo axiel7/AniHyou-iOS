@@ -140,6 +140,7 @@
 		48C5014A2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
 		48C5014B2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
 		48C5014C2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
+		48C5015A2ADA340F00E4243D /* TranslationCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C501592ADA340F00E4243D /* TranslationCredits.swift */; };
 		48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */; };
 		48CA07A9287035530048854E /* MediaInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07A8287035530048854E /* MediaInfoType.swift */; };
 		48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */; };
@@ -429,6 +430,7 @@
 		48BCA59829672334005D3405 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		48C5014D2AD9091600E4243D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C5014F2AD9092600E4243D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48C501592ADA340F00E4243D /* TranslationCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCredits.swift; sourceTree = "<group>"; };
 		48C608EA290D1526004781C2 /* SearchStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStaff.graphql; sourceTree = "<group>"; };
 		48C608EC290D15DF004781C2 /* SearchCharacter.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCharacter.graphql; sourceTree = "<group>"; };
 		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 				4809995D288B2977005AE427 /* SettingsView.swift */,
 				4809995F288B29A9005AE427 /* SettingsViewModel.swift */,
 				48438E072A67AB2D0042BCD9 /* AppIconSelector.swift */,
+				48C501592ADA340F00E4243D /* TranslationCredits.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1755,6 +1758,7 @@
 				48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */,
 				48F7641228ACE94E00C82D75 /* ReviewThreadViewModel.swift in Sources */,
 				48CA07B328706BD70048854E /* CharacterView.swift in Sources */,
+				48C5015A2ADA340F00E4243D /* TranslationCredits.swift in Sources */,
 				486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */,
 				48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */,
 				480F8825294262F3004773CC /* AnimeSeason.swift in Sources */,
