@@ -136,6 +136,7 @@
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
 		48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */; };
+		48BB9E232ADBC08D00970D01 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E222ADBC08D00970D01 /* AccountSettingsView.swift */; };
 		48BCA59929672334005D3405 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCA59829672334005D3405 /* Genre.swift */; };
 		48C5014A2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
 		48C5014B2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
@@ -427,6 +428,7 @@
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
 		48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
+		48BB9E222ADBC08D00970D01 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		48BC72BB2A9D854A00992F14 /* AniHyouShou Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AniHyouShou Watch App.entitlements"; sourceTree = "<group>"; };
 		48BCA59829672334005D3405 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		48C5014D2AD9091600E4243D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -435,6 +437,8 @@
 		48C501682ADAB53A00E4243D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C5016A2ADAD00400E4243D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		48C5016C2ADAD03600E4243D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48C5016D2ADBAE1800E4243D /* UpdateUser.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateUser.graphql; sourceTree = "<group>"; };
+		48C5016E2ADBAE7E00E4243D /* UserOptions.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserOptions.graphql; sourceTree = "<group>"; };
 		48C608EA290D1526004781C2 /* SearchStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStaff.graphql; sourceTree = "<group>"; };
 		48C608EC290D15DF004781C2 /* SearchCharacter.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCharacter.graphql; sourceTree = "<group>"; };
 		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
@@ -605,6 +609,7 @@
 				4809995F288B29A9005AE427 /* SettingsViewModel.swift */,
 				48438E072A67AB2D0042BCD9 /* AppIconSelector.swift */,
 				48C501592ADA340F00E4243D /* TranslationCredits.swift */,
+				48BB9E222ADBC08D00970D01 /* AccountSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -778,6 +783,8 @@
 				48575D852A3EA6F500F8AD22 /* ToggleFollow.graphql */,
 				481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */,
 				481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */,
+				48C5016D2ADBAE1800E4243D /* UpdateUser.graphql */,
+				48C5016E2ADBAE7E00E4243D /* UserOptions.graphql */,
 				48E7CAF228AA512D00F9CE24 /* UserActivity.graphql */,
 				489C7E91291900C7004B0B39 /* UserBasicInfo.graphql */,
 				48EFCDEF29FFB3320096BF6E /* UserCurrentAnimeList.graphql */,
@@ -1695,6 +1702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48DBAF8129B0796F00A75167 /* UserStatsHostView.swift in Sources */,
+				48BB9E232ADBC08D00970D01 /* AccountSettingsView.swift in Sources */,
 				481AD4E02851CE73001779EE /* ContentView.swift in Sources */,
 				48DF50FD2A66A08F00DF1C87 /* DonationsViewModel.swift in Sources */,
 				4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */,

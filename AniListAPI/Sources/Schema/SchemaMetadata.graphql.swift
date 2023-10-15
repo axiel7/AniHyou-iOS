@@ -38,6 +38,9 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "User": return AniListAPI.Objects.User
     case "Favourites": return AniListAPI.Objects.Favourites
     case "AiringSchedule": return AniListAPI.Objects.AiringSchedule
+    case "UserOptions": return AniListAPI.Objects.UserOptions
+    case "MediaListOptions": return AniListAPI.Objects.MediaListOptions
+    case "MediaListTypeOptions": return AniListAPI.Objects.MediaListTypeOptions
     case "UserAvatar": return AniListAPI.Objects.UserAvatar
     case "StudioConnection": return AniListAPI.Objects.StudioConnection
     case "Studio": return AniListAPI.Objects.Studio
@@ -50,8 +53,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "StatusDistribution": return AniListAPI.Objects.StatusDistribution
     case "ScoreDistribution": return AniListAPI.Objects.ScoreDistribution
     case "MediaRank": return AniListAPI.Objects.MediaRank
-    case "UserOptions": return AniListAPI.Objects.UserOptions
-    case "MediaListOptions": return AniListAPI.Objects.MediaListOptions
     case "RecommendationConnection": return AniListAPI.Objects.RecommendationConnection
     case "Recommendation": return AniListAPI.Objects.Recommendation
     case "MediaExternalLink": return AniListAPI.Objects.MediaExternalLink
