@@ -7,23 +7,22 @@
 
 import SwiftUI
 
+private let translations = [
+    "Japanese": "axiel7",
+    "Russian": "Ronner231, grin3671",
+    "Spanish": "axiel7",
+    "Turkish": "hsinankirdar"
+]
+
 struct TranslationCredits: View {
     var body: some View {
         Form {
-            Section {
-                Text(verbatim: "Ronner231")
-            } header: {
-                Text("Russian")
-            }
-            Section {
-                Text(verbatim: "axiel7")
-            } header: {
-                Text("Spanish")
-            }
-            Section {
-                Text(verbatim: "hsinankirdar")
-            } header: {
-                Text("Turkish")
+            ForEach(translations.sorted(by: <), id: \.key) { lang, users in
+                Section {
+                    Text(users)
+                } header: {
+                    Text(LocalizedStringKey(lang))
+                }
             }
         }
     }
