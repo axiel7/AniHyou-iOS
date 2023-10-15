@@ -76,6 +76,7 @@ struct AccountSettingsView: View {
             }
         }//:Group
         .navigationTitle("Account settings")
+        .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $showWebView) {
             SafariWebView(url: URL(string: "https://anilist.co/settings/account")!)
                 .ignoresSafeArea()
