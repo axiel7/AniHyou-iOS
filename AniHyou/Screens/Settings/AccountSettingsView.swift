@@ -12,6 +12,7 @@ struct AccountSettingsView: View {
     
     @ObservedObject var viewModel: SettingsViewModel
     @State private var showChangesAlert = false
+    @State private var showWebView = false
     
     var body: some View {
         Group {
@@ -60,7 +61,9 @@ struct AccountSettingsView: View {
                     )
                     
                     Section {
-                        Link("Other account settings", destination: URL(string: "https://anilist.co/settings/account")!)
+                        Button("Other account settings") {
+                            showWebView = true
+                        }
                     } footer: {
                         Text("You may need to login again in your browser")
                     }
@@ -73,6 +76,10 @@ struct AccountSettingsView: View {
             }
         }//:Group
         .navigationTitle("Account settings")
+        .fullScreenCover(isPresented: $showWebView) {
+            SafariWebView(url: URL(string: "https://anilist.co/settings/account")!)
+                .ignoresSafeArea()
+        }
     }
 }
 

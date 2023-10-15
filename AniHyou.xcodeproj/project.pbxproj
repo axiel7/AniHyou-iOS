@@ -137,6 +137,7 @@
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
 		48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */; };
 		48BB9E232ADBC08D00970D01 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E222ADBC08D00970D01 /* AccountSettingsView.swift */; };
+		48BB9E252ADBC43F00970D01 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E242ADBC43F00970D01 /* SafariWebView.swift */; };
 		48BCA59929672334005D3405 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCA59829672334005D3405 /* Genre.swift */; };
 		48C5014A2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
 		48C5014B2AD9091600E4243D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C5014E2AD9091600E4243D /* Localizable.strings */; };
@@ -429,6 +430,7 @@
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
 		48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
 		48BB9E222ADBC08D00970D01 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		48BB9E242ADBC43F00970D01 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		48BC72BB2A9D854A00992F14 /* AniHyouShou Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AniHyouShou Watch App.entitlements"; sourceTree = "<group>"; };
 		48BCA59829672334005D3405 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		48C5014D2AD9091600E4243D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -732,6 +734,7 @@
 				48575D882A3EBD2200F8AD22 /* ToolbarIconButton.swift */,
 				48D044E02A57AC9600ED3623 /* MultiSelectionSheet.swift */,
 				484E883F2A77E88B007E59E1 /* HorizontalProgressView.swift */,
+				48BB9E242ADBC43F00970D01 /* SafariWebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1847,6 +1850,7 @@
 				488B7ABF291A6C7E00156D80 /* CharacterDetailsView.swift in Sources */,
 				48D044E12A57AC9600ED3623 /* MultiSelectionSheet.swift in Sources */,
 				488763E129781AD200402934 /* MediaStatsView.swift in Sources */,
+				48BB9E252ADBC43F00970D01 /* SafariWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
