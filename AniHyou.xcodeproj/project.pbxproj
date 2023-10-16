@@ -704,6 +704,7 @@
 				48099961288B2BE7005AE427 /* Login */,
 				4809995C288B295F005AE427 /* Settings */,
 				48FC94772868528900C87F56 /* Explore */,
+				48691FFA2ADD24D2009DCDFE /* Calendar */,
 				486ED210285E3215002D29E1 /* MediaDetails */,
 				486ED201285DD344002D29E1 /* MediaList */,
 				488C267C285380CB0005EE15 /* Profile */,
@@ -890,6 +891,24 @@
 				48438E202A67DA810042BCD9 /* AniHyou-Red@3x.png */,
 			);
 			path = AppIcons;
+			sourceTree = "<group>";
+		};
+		48691FF92ADD2496009DCDFE /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				48FC94802868C0F400C87F56 /* MediaChartListView.swift */,
+				48FC94822868C6DB00C87F56 /* ChartListItemView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		48691FFA2ADD24D2009DCDFE /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				48EE81332969DDC00074482F /* CalendarAnimeView.swift */,
+				48EE81352969DE1C0074482F /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		486ED201285DD344002D29E1 /* MediaList */ = {
@@ -1276,7 +1295,6 @@
 			isa = PBXGroup;
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
-				48EE81332969DDC00074482F /* CalendarAnimeView.swift */,
 				4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */,
 			);
 			path = Views;
@@ -1286,7 +1304,6 @@
 			isa = PBXGroup;
 			children = (
 				481AD4F72851D927001779EE /* HomeViewModel.swift */,
-				48EE81352969DE1C0074482F /* CalendarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1403,10 +1420,9 @@
 		48F7640328ACE64500C82D75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				48FC94802868C0F400C87F56 /* MediaChartListView.swift */,
+				48691FF92ADD2496009DCDFE /* Chart */,
 				48FC9478286852A300C87F56 /* ExploreView.swift */,
 				4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */,
-				48FC94822868C6DB00C87F56 /* ChartListItemView.swift */,
 				4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */,
 				48AC01882968624C00525B69 /* AnimeSeasonListView.swift */,
 			);
