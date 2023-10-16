@@ -63,6 +63,11 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Review": return AniListAPI.Objects.Review
     case "StaffName": return AniListAPI.Objects.StaffName
     case "StaffImage": return AniListAPI.Objects.StaffImage
+    case "ListActivity": return AniListAPI.Objects.ListActivity
+    case "TextActivity": return AniListAPI.Objects.TextActivity
+    case "MessageActivity": return AniListAPI.Objects.MessageActivity
+    case "ActivityReply": return AniListAPI.Objects.ActivityReply
+    case "ThreadComment": return AniListAPI.Objects.ThreadComment
     case "StaffConnection": return AniListAPI.Objects.StaffConnection
     case "AiringNotification": return AniListAPI.Objects.AiringNotification
     case "FollowingNotification": return AniListAPI.Objects.FollowingNotification
@@ -91,10 +96,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "UserStartYearStatistic": return AniListAPI.Objects.UserStartYearStatistic
     case "CharacterEdge": return AniListAPI.Objects.CharacterEdge
     case "StaffEdge": return AniListAPI.Objects.StaffEdge
-    case "ThreadComment": return AniListAPI.Objects.ThreadComment
-    case "TextActivity": return AniListAPI.Objects.TextActivity
-    case "ListActivity": return AniListAPI.Objects.ListActivity
-    case "MessageActivity": return AniListAPI.Objects.MessageActivity
     default: return nil
     }
   }

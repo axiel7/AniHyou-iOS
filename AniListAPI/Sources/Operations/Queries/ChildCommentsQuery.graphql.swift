@@ -3,11 +3,11 @@
 
 @_exported import ApolloAPI
 
-public class ThreadCommentsQuery: GraphQLQuery {
-  public static let operationName: String = "ThreadComments"
+public class ChildCommentsQuery: GraphQLQuery {
+  public static let operationName: String = "ChildComments"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query ThreadComments($page: Int, $perPage: Int, $threadId: Int) { Page(page: $page, perPage: $perPage) { __typename threadComments(threadId: $threadId) { __typename id comment(asHtml: false) likeCount createdAt user { __typename id name avatar { __typename medium } } } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query ChildComments($page: Int, $perPage: Int, $threadId: Int) { Page(page: $page, perPage: $perPage) { __typename threadComments(threadId: $threadId) { __typename id comment likeCount isLiked createdAt isLocked user { __typename id name avatar { __typename medium } } childComments } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -73,10 +73,13 @@ public class ThreadCommentsQuery: GraphQLQuery {
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),
-          .field("comment", String?.self, arguments: ["asHtml": false]),
+          .field("comment", String?.self),
           .field("likeCount", Int.self),
+          .field("isLiked", Bool?.self),
           .field("createdAt", Int.self),
+          .field("isLocked", Bool?.self),
           .field("user", User?.self),
+          .field("childComments", AniListAPI.Json?.self),
         ] }
 
         /// The id of the comment
@@ -85,10 +88,16 @@ public class ThreadCommentsQuery: GraphQLQuery {
         public var comment: String? { __data["comment"] }
         /// The amount of likes the comment has
         public var likeCount: Int { __data["likeCount"] }
+        /// If the currently authenticated user liked the comment
+        public var isLiked: Bool? { __data["isLiked"] }
         /// The time of the comments creation
         public var createdAt: Int { __data["createdAt"] }
+        /// If the comment tree is locked and may not receive replies or edits
+        public var isLocked: Bool? { __data["isLocked"] }
         /// The user who created the comment
         public var user: User? { __data["user"] }
+        /// The comment's child reply comments
+        public var childComments: AniListAPI.Json? { __data["childComments"] }
 
         /// Page.ThreadComment.User
         ///

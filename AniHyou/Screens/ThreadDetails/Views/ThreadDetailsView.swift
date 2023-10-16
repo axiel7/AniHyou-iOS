@@ -46,7 +46,11 @@ struct ThreadDetailsView: View {
                         }
                         .buttonStyle(.plain)
                         Spacer()
-                        Label("\(thread.likeCount)", systemImage: "heart")
+                        Button(
+                            action: { viewModel.toggleLikeThread(threadId: thread.id) }
+                        ) {
+                            Label("\(thread.likeCount)", systemImage: "heart")
+                        }
                     }
                     .padding(.horizontal)
                 }//:VStack
@@ -58,7 +62,7 @@ struct ThreadDetailsView: View {
                         VStack {
                             Divider()
                                 .padding(.vertical, 4)
-                            ThreadCommentItemView(comment: comment)
+                            ThreadCommentItemView(viewModel: viewModel, comment: comment)
                         }
                     }
                 }

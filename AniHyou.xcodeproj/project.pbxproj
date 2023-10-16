@@ -94,6 +94,7 @@
 		48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48643F442853C54800D7C328 /* ProfileViewModel.swift */; };
 		48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0B2860CBF40064C70A /* MediaListEditView.swift */; };
 		48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */; };
+		48691FF72ADD119D009DCDFE /* ThreadCommentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48691FF62ADD119D009DCDFE /* ThreadCommentDetailsView.swift */; };
 		486ED205285DD484002D29E1 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED204285DD484002D29E1 /* MediaListView.swift */; };
 		486ED207285DD4D8002D29E1 /* MediaListItemStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */; };
 		486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED208285DD649002D29E1 /* MediaListStatusView.swift */; };
@@ -377,6 +378,9 @@
 		48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListEditViewModel.swift; sourceTree = "<group>"; };
 		48691FEE2ADD03C2009DCDFE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		48691FEF2ADD03C2009DCDFE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48691FF22ADD06A9009DCDFE /* ChildComments.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChildComments.graphql; sourceTree = "<group>"; };
+		48691FF62ADD119D009DCDFE /* ThreadCommentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCommentDetailsView.swift; sourceTree = "<group>"; };
+		48691FF82ADD1DA6009DCDFE /* ToggleLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToggleLike.graphql; sourceTree = "<group>"; };
 		486ED1FF285DD329002D29E1 /* UserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserMediaList.graphql; sourceTree = "<group>"; };
 		486ED204285DD484002D29E1 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
 		486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemStandardView.swift; sourceTree = "<group>"; };
@@ -425,7 +429,6 @@
 		48AB01F7286B724A004DC7FF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		48AC01882968624C00525B69 /* AnimeSeasonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSeasonListView.swift; sourceTree = "<group>"; };
 		48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsView.swift; sourceTree = "<group>"; };
-		48AF5395289E7701006D40B6 /* ThreadComments.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThreadComments.graphql; sourceTree = "<group>"; };
 		48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsViewModel.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
@@ -710,6 +713,8 @@
 				48374559296418D600E81CA3 /* StudioDetails */,
 				48DD404A2994FF2000FED7BF /* Notification */,
 				48DBAF7B29B0780A00A75167 /* UserStats */,
+				48AF5390289E730A006D40B6 /* ReviewDetails */,
+				48AF5392289E734B006D40B6 /* ThreadDetails */,
 				48DF50F62A669BF200DF1C87 /* Donations */,
 			);
 			path = Screens;
@@ -783,9 +788,9 @@
 				489C7E8D2918FF02004B0B39 /* StaffDetails.graphql */,
 				48AAEE952A29DE6800FC0887 /* StaffMedia.graphql */,
 				489C7E8F2918FF98004B0B39 /* StudioDetails.graphql */,
-				48AF5395289E7701006D40B6 /* ThreadComments.graphql */,
 				482CE57C2A30841200DAE045 /* ToggleFavourite.graphql */,
 				48575D852A3EA6F500F8AD22 /* ToggleFollow.graphql */,
+				48691FF82ADD1DA6009DCDFE /* ToggleLike.graphql */,
 				481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */,
 				481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */,
 				48C5016D2ADBAE1800E4243D /* UpdateUser.graphql */,
@@ -803,6 +808,7 @@
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
 				48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */,
 				486ED20E285DDE03002D29E1 /* ViewerId.graphql */,
+				48691FF22ADD06A9009DCDFE /* ChildComments.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -1014,13 +1020,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		48AF5390289E730A006D40B6 /* Review */ = {
+		48AF5390289E730A006D40B6 /* ReviewDetails */ = {
 			isa = PBXGroup;
 			children = (
 				48F763FD28ACE5D400C82D75 /* Views */,
 				48F763FC28ACE5CF00C82D75 /* ViewModels */,
 			);
-			path = Review;
+			path = ReviewDetails;
 			sourceTree = "<group>";
 		};
 		48AF5391289E7338006D40B6 /* Edit */ = {
@@ -1032,13 +1038,13 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
-		48AF5392289E734B006D40B6 /* Thread */ = {
+		48AF5392289E734B006D40B6 /* ThreadDetails */ = {
 			isa = PBXGroup;
 			children = (
 				48F763FF28ACE60D00C82D75 /* Views */,
 				48F763FE28ACE60700C82D75 /* ViewModels */,
 			);
-			path = Thread;
+			path = ThreadDetails;
 			sourceTree = "<group>";
 		};
 		48BB54F52A5E8ECA0061D4C7 /* ContextMenus */ = {
@@ -1360,6 +1366,7 @@
 				48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */,
 				483CEABD289E688400D30266 /* ThreadItemView.swift */,
 				4851578A28A4060C007923A6 /* ThreadCommentItemView.swift */,
+				48691FF62ADD119D009DCDFE /* ThreadCommentDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1463,8 +1470,6 @@
 			children = (
 				48F7641028ACE93400C82D75 /* Views */,
 				48F7640F28ACE92E00C82D75 /* ViewModels */,
-				48AF5390289E730A006D40B6 /* Review */,
-				48AF5392289E734B006D40B6 /* Thread */,
 			);
 			path = ReviewThread;
 			sourceTree = "<group>";
@@ -1783,6 +1788,7 @@
 				486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */,
 				48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */,
 				480F8825294262F3004773CC /* AnimeSeason.swift in Sources */,
+				48691FF72ADD119D009DCDFE /* ThreadCommentDetailsView.swift in Sources */,
 				48AAEEA42A29E5AE00FC0887 /* StaffMediaGrouped.swift in Sources */,
 				489BA4152A52740500B2445E /* AiringMediaHorizontalItemView.swift in Sources */,
 				48CA07B1287064B30048854E /* MediaCharactersAndStaffView.swift in Sources */,
