@@ -1,0 +1,948 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld главы";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld эпизодов";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld томов";
+
+/* No comment provided by engineer. */
+"^[%lld episode behind](inflect: true)" = "^[%lld эпизод позади](inflect: true)";
+
+/* No comment provided by engineer. */
+"+1" = "+1";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "3 Очка Смайл :)";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 Звезд (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 Очков (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10-балльная десятичная система (5,5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 Очков (55/100)";
+
+/* No comment provided by engineer. */
+"Accent color" = "Цвет акцента";
+
+/* No comment provided by engineer. */
+"Account settings" = "Настройки аккаунта";
+
+/* No comment provided by engineer. */
+"Action" = "Экшен";
+
+/* No comment provided by engineer. */
+"Activity" = "Активность";
+
+/* No comment provided by engineer. */
+"Adaptation" = "Адаптация";
+
+/* No comment provided by engineer. */
+"Add to List" = "Добавить в список";
+
+/* No comment provided by engineer. */
+"Added" = "Добавлено";
+
+/* No comment provided by engineer. */
+"Adventure" = "Приключения";
+
+/* No comment provided by engineer. */
+"Age" = "Возраст";
+
+/* No comment provided by engineer. */
+"Airing" = "Выходит";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "Выпускающийся аниме";
+
+/* No comment provided by engineer. */
+"Airing Next" = "Далее выпуститься";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "Выходят в моем списке";
+
+/* No comment provided by engineer. */
+"All" = "Все";
+
+/* No comment provided by engineer. */
+"Alternative" = "Альтернативная";
+
+/* No comment provided by engineer. */
+"Anime" = "Аниме";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "Аниме позади";
+
+/* No comment provided by engineer. */
+"Anime List" = "Список аниме";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "Аниме, Манга, и Много чего еще";
+
+/* No comment provided by engineer. */
+"App Icon" = "Значок приложения";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "Вы уверены, что хотите выйти?";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Как вы знаете это приложение полностью бесплатное и с открытым исходным кодом\nно создание приложения требует много времени и усилии\nСделав пожертвование вы поможете нам покрыть расходы на\nразработку, обслуживание, и новые возможности.";
+
+/* No comment provided by engineer. */
+"Ascending" = "По возрастанию";
+
+/* No comment provided by engineer. */
+"Average Score" = "Средний счет";
+
+/* No comment provided by engineer. */
+"Background" = "Фон";
+
+/* No comment provided by engineer. */
+"Birth" = "День рождения";
+
+/* No comment provided by engineer. */
+"Birthday" = "День рождения";
+
+/* No comment provided by engineer. */
+"Blood type" = "Группа крови";
+
+/* No comment provided by engineer. */
+"Blood Type" = "Группа крови";
+
+/* No comment provided by engineer. */
+"Calendar" = "Календарь";
+
+/* No comment provided by engineer. */
+"Cancel" = "Закрыть";
+
+/* No comment provided by engineer. */
+"Cancelled" = "Отменено";
+
+/* No comment provided by engineer. */
+"Ch" = "Гл";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "Изменения вступят в силу после перезапуска приложения";
+
+/* No comment provided by engineer. */
+"Chapters" = "Главы";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "Прочитано глав";
+
+/* No comment provided by engineer. */
+"Character" = "Персонаж";
+
+/* No comment provided by engineer. */
+"Characters" = "Персонажи";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "Персонажи и Персонал";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "Выберите между Аниме или Манга.";
+
+/* No comment provided by engineer. */
+"Clear" = "Очистить";
+
+/* No comment provided by engineer. */
+"Close" = "Закрыть";
+
+/* No comment provided by engineer. */
+"Comedy" = "Комедия";
+
+/* No comment provided by engineer. */
+"Comic" = "Комикс";
+
+/* No comment provided by engineer. */
+"Coming soon" = "Скоро";
+
+/* No comment provided by engineer. */
+"Compact" = "Компактный";
+
+/* No comment provided by engineer. */
+"Compilation" = "Подборка";
+
+/* No comment provided by engineer. */
+"Completed" = "Заверешено";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "Поздравляем, вы в курсе событий!\n(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "Содержит";
+
+/* No comment provided by engineer. */
+"Content" = "Контент";
+
+/* No comment provided by engineer. */
+"Copied!" = "Скопировано!";
+
+/* No comment provided by engineer. */
+"Copy" = "Скопировать";
+
+/* No comment provided by engineer. */
+"Current" = "Текущее";
+
+/* No comment provided by engineer. */
+"Custom" = "Пользовательское";
+
+/* No comment provided by engineer. */
+"Custom color" = "Пользовательский цвет";
+
+/* No comment provided by engineer. */
+"Dates" = "Даты";
+
+/* No comment provided by engineer. */
+"Days Watched" = "Дней просмотров";
+
+/* No comment provided by engineer. */
+"Death" = "Смерть";
+
+/* No comment provided by engineer. */
+"Default" = "По умолчанию";
+
+/* No comment provided by engineer. */
+"Delete" = "Удалить";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "Удалить эту запись?";
+
+/* No comment provided by engineer. */
+"Descending" = "По убыванию";
+
+/* No comment provided by engineer. */
+"Developers" = "Разработчики";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discord сервер";
+
+/* No comment provided by engineer. */
+"Display" = "Отображение";
+
+/* No comment provided by engineer. */
+"Donate" = "Пожертвование";
+
+/* No comment provided by engineer. */
+"Donate!" = "Пожертвовать!";
+
+/* No comment provided by engineer. */
+"Donation" = "Пожертвование";
+
+/* No comment provided by engineer. */
+"Done" = "Готово";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "Додзинси";
+
+/* No comment provided by engineer. */
+"Drama" = "Драма";
+
+/* No comment provided by engineer. */
+"Dropped" = "Брошено";
+
+/* No comment provided by engineer. */
+"Duration" = "Длительность";
+
+/* No comment provided by engineer. */
+"Ecchi" = "Этти";
+
+/* No comment provided by engineer. */
+"Edit" = "Изменить";
+
+/* No comment provided by engineer. */
+"End date" = "Дата завершения";
+
+/* No comment provided by engineer. */
+"English" = "Английский";
+
+/* No comment provided by engineer. */
+"Ep" = "Эп";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "Эп %lld %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "Эп %lld в %@";
+
+/* No comment provided by engineer. */
+"Episodes" = "Эпизоды";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "Эпизодов просмотрено";
+
+/* No comment provided by engineer. */
+"Error no entry" = "Ошибка нет записи";
+
+/* No comment provided by engineer. */
+"Explore" = "Исследовать";
+
+/* No comment provided by engineer. */
+"External links" = "Внешние ссылки";
+
+/* No comment provided by engineer. */
+"Fall" = "Осень";
+
+/* No comment provided by engineer. */
+"Fantasy" = "Фэнтези";
+
+/* No comment provided by engineer. */
+"Favorites" = "Избранное";
+
+/* No comment provided by engineer. */
+"Filter" = "Фильтр";
+
+/* No comment provided by engineer. */
+"Finish Date" = "Дата завершения";
+
+/* No comment provided by engineer. */
+"Finished" = "Завершено";
+
+/* No comment provided by engineer. */
+"Follow" = "Следить";
+
+/* No comment provided by engineer. */
+"Followers" = "Подписчиков";
+
+/* No comment provided by engineer. */
+"Following" = "Подписки";
+
+/* No comment provided by engineer. */
+"Follows" = "Подписки";
+
+/* No comment provided by engineer. */
+"Follows you" = "Следит за вами";
+
+/* No comment provided by engineer. */
+"Format" = "Формат";
+
+/* No comment provided by engineer. */
+"Format distribution" = "Распределение форматов";
+
+/* No comment provided by engineer. */
+"Forum" = "Форум";
+
+/* (No Comment) */
+"friday_short" = "Пт";
+
+/* No comment provided by engineer. */
+"Game" = "Игра";
+
+/* No comment provided by engineer. */
+"Gender" = "Гендер";
+
+/* No comment provided by engineer. */
+"General" = "Основное";
+
+/* No comment provided by engineer. */
+"Genres" = "Жанры";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "Репозиторий на GitHub";
+
+/* No comment provided by engineer. */
+"Hentai" = "Хэнтай";
+
+/* No comment provided by engineer. */
+"Hiatus" = "Пауза на неопределенный срок";
+
+/* No comment provided by engineer. */
+"Hide filters" = "Скрыть фильтры";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "Скрыть спойлер";
+
+/* No comment provided by engineer. */
+"Highest rated" = "С наивысшим рейтингом";
+
+/* No comment provided by engineer. */
+"Home" = "Главная";
+
+/* No comment provided by engineer. */
+"Hometown" = "Родной город";
+
+/* No comment provided by engineer. */
+"Horror" = "Ужасы";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "Часов просмотрено";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "Увеличить эпизод / Главу";
+
+/* No comment provided by engineer. */
+"Info type" = "Тип информации";
+
+/* No comment provided by engineer. */
+"Information" = "Информация";
+
+/* No comment provided by engineer. */
+"Japanese" = "Японский";
+
+/* No comment provided by engineer. */
+"Last Added" = "Недавно добавлено";
+
+/* No comment provided by engineer. */
+"Last Updated" = "Последнее обновление";
+
+/* No comment provided by engineer. */
+"Left" = "Влево";
+
+/* No comment provided by engineer. */
+"Light novel" = "Легкая новелла";
+
+/* No comment provided by engineer. */
+"List entry ID" = "ID записи в списке";
+
+/* No comment provided by engineer. */
+"List style" = "Стиль списка";
+
+/* No comment provided by engineer. */
+"Live action" = "Живое действие";
+
+/* No comment provided by engineer. */
+"Loading" = "Загрузка";
+
+/* No comment provided by engineer. */
+"Log out" = "Выйти";
+
+/* No comment provided by engineer. */
+"Login" = "Вход";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "Длинное направление свайпа";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "Махо-седзе";
+
+/* No comment provided by engineer. */
+"Main" = "Главная";
+
+/* No comment provided by engineer. */
+"Manga" = "Манга";
+
+/* No comment provided by engineer. */
+"Manga List" = "Список манг";
+
+/* No comment provided by engineer. */
+"Mean Score" = "Счет";
+
+/* No comment provided by engineer. */
+"Mecha" = "Меха";
+
+/* No comment provided by engineer. */
+"Media" = "Медиа";
+
+/* No comment provided by engineer. */
+"Media ID" = "ID Медиа";
+
+/* No comment provided by engineer. */
+"Media List" = "Список медиа";
+
+/* No comment provided by engineer. */
+"Media Type" = "Тип медиа";
+
+/* No comment provided by engineer. */
+"Minimal" = "Минимализм";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"monday_short" = "Пн";
+
+/* No comment provided by engineer. */
+"More filters" = "Больше фильтров";
+
+/* No comment provided by engineer. */
+"Most popular" = "Самое популярное";
+
+/* No comment provided by engineer. */
+"Movie" = "Фильм";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "Мультимедийный проект";
+
+/* No comment provided by engineer. */
+"Music" = "Музыка";
+
+/* No comment provided by engineer. */
+"Mystery" = "Таинственное";
+
+/* No comment provided by engineer. */
+"Native" = "Родное";
+
+/* No comment provided by engineer. */
+"Next Season" = "Следующий сезон";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "Нет выходящих аниме в вашем списке\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "Аниме на сегодня нет\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "Нет медиа";
+
+/* No comment provided by engineer. */
+"No recommendations" = "Нет рекомендаций";
+
+/* No comment provided by engineer. */
+"No reviews" = "Нет отзывов";
+
+/* No comment provided by engineer. */
+"None" = "Ничего";
+
+/* No comment provided by engineer. */
+"Not yet released" = "Еще не выпущено";
+
+/* No comment provided by engineer. */
+"Notes" = "Примечания";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "В вашем списке ничего нет";
+
+/* No comment provided by engineer. */
+"Notifications" = "Уведомления";
+
+/* No comment provided by engineer. */
+"Novel" = "Новелла";
+
+/* No comment provided by engineer. */
+"Occupations" = "Профессии";
+
+/* No comment provided by engineer. */
+"OK" = "Применить";
+
+/* No comment provided by engineer. */
+"On my list" = "В моем списке";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "OneShot";
+
+/* No comment provided by engineer. */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Необязательный статус для обновления записи списка (например, ЗАВЕРШЕНО)";
+
+/* No comment provided by engineer. */
+"Order" = "Порядок";
+
+/* No comment provided by engineer. */
+"Original" = "Первоисточник";
+
+/* No comment provided by engineer. */
+"Other" = "Прочее";
+
+/* No comment provided by engineer. */
+"Other account settings" = "Другие настройки аккаунта";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overview" = "Общие сведения";
+
+/* No comment provided by engineer. */
+"Parent" = "Родитель";
+
+/* No comment provided by engineer. */
+"Paused" = "Пауза";
+
+/* No comment provided by engineer. */
+"Picture book" = "Книга с картинками";
+
+/* No comment provided by engineer. */
+"Planning" = "Планируется";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "Чтобы воспользоваться этой функцией, войдите в систему";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Пожалуйста, откройте приложение AniHyou на вашем iPhone и перейдите в Профиль -> Настройки -> Синхронизируйте аккаунт с Apple Watch";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "Популярное аниме";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "Популярная манга";
+
+/* No comment provided by engineer. */
+"Popularity" = "Популярность";
+
+/* No comment provided by engineer. */
+"Prequel" = "Предыстория";
+
+/* No comment provided by engineer. */
+"Priority" = "Приоритет";
+
+/* No comment provided by engineer. */
+"Private" = "Приватное";
+
+/* No comment provided by engineer. */
+"Producers" = "Продюсеры";
+
+/* No comment provided by engineer. */
+"Profile" = "Профиль";
+
+/* No comment provided by engineer. */
+"Progress" = "Прогресс";
+
+/* No comment provided by engineer. */
+"Psychological" = "Психологическое";
+
+/* No comment provided by engineer. */
+"Publishing" = "Издается";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "Выходящая манга";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "Быстрый доступ к вашим аниме или списку манг.";
+
+/* No comment provided by engineer. */
+"Rankings" = "Рейтинги";
+
+/* No comment provided by engineer. */
+"Recommendations" = "Рекомендации";
+
+/* No comment provided by engineer. */
+"Relations" = "Связи";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "Связи и Рекомендации";
+
+/* No comment provided by engineer. */
+"Release Date" = "Дата выхода";
+
+/* No comment provided by engineer. */
+"Releasing" = "Выпускается";
+
+/* No comment provided by engineer. */
+"Repeat" = "Повторить";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "Количество повторов";
+
+/* No comment provided by engineer. */
+"Repeating" = "Повторяется";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "Восстановить покупки";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "Обзор и Темы";
+
+/* No comment provided by engineer. */
+"Reviews" = "Отзывы";
+
+/* No comment provided by engineer. */
+"Right" = "Вправо";
+
+/* No comment provided by engineer. */
+"Romaji" = "Ромадзи";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "Ромадзи (Западный Порядок)";
+
+/* No comment provided by engineer. */
+"Romance" = "Романтика";
+
+/* (No Comment) */
+"saturday_short" = "Сб";
+
+/* No comment provided by engineer. */
+"Save" = "Сохранить";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "Фантастика";
+
+/* No comment provided by engineer. */
+"Score" = "Оценка";
+
+/* No comment provided by engineer. */
+"Score distribution" = "Очки распределение";
+
+/* No comment provided by engineer. */
+"Score format" = "Формат счета";
+
+/* No comment provided by engineer. */
+"Search type" = "Тип поиска";
+
+/* No comment provided by engineer. */
+"Season" = "Сезон";
+
+/* No comment provided by engineer. */
+"See All" = "Показать все";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "Выберите тип медиа";
+
+/* No comment provided by engineer. */
+"Selection type" = "Тип выбора";
+
+/* No comment provided by engineer. */
+"Sequel" = "Продолжение";
+
+/* No comment provided by engineer. */
+"Set progress" = "Установить прогресс";
+
+/* No comment provided by engineer. */
+"Sets a list entry progress to the specified number." = "Устанавливает прогресс записи в списке на указанный номер.";
+
+/* No comment provided by engineer. */
+"Settings" = "Настройки";
+
+/* No comment provided by engineer. */
+"Share" = "Поделиться";
+
+/* No comment provided by engineer. */
+"Show less" = "Показать меньше";
+
+/* No comment provided by engineer. */
+"Show more" = "Показать больше";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "Показать только которые скоро выходят, находящиеся в вашем списке";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "Показать спойлер";
+
+/* No comment provided by engineer. */
+"Shows the animes with behind episodes in your list." = "Показывает аниме с эпизодами позади в вашем списке.";
+
+/* No comment provided by engineer. */
+"Shows the next airing animes in your list." = "Показывает выходящие аниме в вашем списке.";
+
+/* No comment provided by engineer. */
+"Side Story" = "Боковая история";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "Повседневность";
+
+/* No comment provided by engineer. */
+"Social" = "Соцсети";
+
+/* No comment provided by engineer. */
+"Sort" = "Сортировка";
+
+/* No comment provided by engineer. */
+"Source" = "Источник";
+
+/* No comment provided by engineer. */
+"Special" = "Спешл";
+
+/* No comment provided by engineer. */
+"Spin Off" = "Спин-офф";
+
+/* No comment provided by engineer. */
+"Sports" = "Спорт";
+
+/* No comment provided by engineer. */
+"Spring" = "Весна";
+
+/* No comment provided by engineer. */
+"Staff" = "Персонал";
+
+/* No comment provided by engineer. */
+"Staff & Character name language" = "Персонал & Язык имен персонажей";
+
+/* No comment provided by engineer. */
+"Standard" = "Стандарт";
+
+/* No comment provided by engineer. */
+"Start date" = "Дата начала";
+
+/* No comment provided by engineer. */
+"Start Date" = "Дата начала";
+
+/* No comment provided by engineer. */
+"Started" = "Началось";
+
+/* No comment provided by engineer. */
+"Stats" = "Статистика";
+
+/* No comment provided by engineer. */
+"Status" = "Статус";
+
+/* No comment provided by engineer. */
+"Status distribution" = "Статус распределение";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "Стриминг сайты";
+
+/* No comment provided by engineer. */
+"Studios" = "Студии";
+
+/* No comment provided by engineer. */
+"Summary" = "Обобщение";
+
+/* No comment provided by engineer. */
+"Summer" = "Лето";
+
+/* (No Comment) */
+"sunday_short" = "Вс";
+
+/* No comment provided by engineer. */
+"Supernatural" = "Сверхъестественное";
+
+/* No comment provided by engineer. */
+"Support the development of AniHyou!" = "Поддержите разработку AniHyou!";
+
+/* No comment provided by engineer. */
+"Supporting" = "Поддержка";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "Синхронизируйте аккаунт с Apple Watch";
+
+/* No comment provided by engineer. */
+"Synonyms" = "Синонимы";
+
+/* No comment provided by engineer. */
+"Tags" = "Теги";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "Спасибо вам :)";
+
+/* No comment provided by engineer. */
+"The amount of episodes/chapters consumed by the user" = "Количество эпизодов/глав, используемых пользователем";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "Id медиа записи";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Эта функция будет разблокирована, когда вы сделаете пожертвование, даже слишком маленькое!";
+
+/* No comment provided by engineer. */
+"Threads" = "Темы";
+
+/* No comment provided by engineer. */
+"Thriller" = "Триллер";
+
+/* (No Comment) */
+"thursday_short" = "Чт";
+
+/* No comment provided by engineer. */
+"Title" = "Название";
+
+/* No comment provided by engineer. */
+"Title language" = "Язык названия";
+
+/* No comment provided by engineer. */
+"Titles Count" = "Количество названий";
+
+/* No comment provided by engineer. */
+"Top 100" = "Топ 100";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "Топ 100 Аниме";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "Топ 100 Манг";
+
+/* No comment provided by engineer. */
+"Top Popular" = "Топ Популярных";
+
+/* No comment provided by engineer. */
+"Total Anime" = "Всего аниме";
+
+/* No comment provided by engineer. */
+"Total Manga" = "Всего манг";
+
+/* No comment provided by engineer. */
+"Trailer" = "Трейлер";
+
+/* No comment provided by engineer. */
+"Translations" = "Переводы";
+
+/* No comment provided by engineer. */
+"Trending" = "В тренде";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "Аниме в тренде";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "Манга в тренде";
+
+/* (No Comment) */
+"tuesday_short" = "Вт";
+
+/* No comment provided by engineer. */
+"TV" = "TV";
+
+/* No comment provided by engineer. */
+"TV Short" = "ТВ Короткометражка";
+
+/* No comment provided by engineer. */
+"Unfollow" = "Перестать следить";
+
+/* (No Comment) */
+"Unknown" = "Неизвестно";
+
+/* No comment provided by engineer. */
+"Upcoming" = "Предстоящие";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "Предстоящее аниме";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "Предстоящая манга";
+
+/* No comment provided by engineer. */
+"Updated" = "Обновлено";
+
+/* No comment provided by engineer. */
+"Users" = "Пользователи";
+
+/* No comment provided by engineer. */
+"Users likes" = "Пользователям понравилось";
+
+/* No comment provided by engineer. */
+"Version %@" = "Версия %@";
+
+/* No comment provided by engineer. */
+"VideoGame" = "ВидеоИгра";
+
+/* No comment provided by engineer. */
+"Visual novel" = "Визуальная новелла";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "Актеры озвучивания";
+
+/* No comment provided by engineer. */
+"Volumes" = "Тома";
+
+/* No comment provided by engineer. */
+"Volumes Read" = "Прочитано томов";
+
+/* No comment provided by engineer. */
+"Web novel" = "Веб новелла";
+
+/* (No Comment) */
+"wednesday_short" = "Ср";
+
+/* No comment provided by engineer. */
+"Weekday" = "День недели";
+
+/* No comment provided by engineer. */
+"Winter" = "Зима";
+
+/* No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "С любой покупкой вы получите доступ к эксклюзивным значкам приложений и пользовательские акцентовые цвета!";
+
+/* No comment provided by engineer. */
+"Year" = "Год";
+
+/* No comment provided by engineer. */
+"Years active" = "Годы активности";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "Возможно, вам придется снова войти в свой браузер";
+
