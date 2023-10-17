@@ -11,10 +11,9 @@ import RichText
 
 extension RichText {
     func defaultStyle() -> RichText {
-        @AppStorage(ACCENT_COLOR_KEY) var accentColor = ANIHYOU_COLOR
         return self
             .imageRadius(8)
-            .linkColor(light: Color(hex: accentColor) ?? .accentColor, dark: Color(hex: accentColor) ?? .accentColor)
+            .linkColor(light: .accentColor, dark: .accentColor)
             .placeholder {
                 ProgressView()
             }

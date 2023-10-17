@@ -62,7 +62,6 @@ struct MediaListItemStandardView: View {
 struct AiringScheduleItemText: View {
 
     let item: UserMediaListQuery.Data.Page.MediaList?
-    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
 
     var body: some View {
         let airing = item!.media!.nextAiringEpisode!
@@ -77,7 +76,7 @@ struct AiringScheduleItemText: View {
         }
         .font(.subheadline)
         .lineLimit(1)
-        .foregroundColor(isBehind ? Color(hex: accentColor) : .gray)
+        .foregroundColor(isBehind ? .accentColor : .gray)
         .padding(.bottom, 1)
     }
 }
