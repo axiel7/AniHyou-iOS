@@ -39,6 +39,7 @@ let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
 let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
 let HAS_DONATED_KEY = "has_donated"
 let APP_ICON_KEY = "app_icon"
+let HOME_TAB_KEY = "home_tab"
 
 let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"

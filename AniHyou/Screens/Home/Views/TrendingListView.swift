@@ -10,7 +10,7 @@ import AniListAPI
 
 struct TrendingListView: View {
 
-    @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var viewModel: DiscoverViewModel
     let mediaType: MediaType
 
     private let gridColumns = [
@@ -78,5 +78,5 @@ struct TrendingListView: View {
 }
 
 #Preview {
-    TrendingListView(viewModel: HomeViewModel(), mediaType: .anime)
+    TrendingListView(viewModel: DiscoverViewModel(), mediaType: .anime)
 }

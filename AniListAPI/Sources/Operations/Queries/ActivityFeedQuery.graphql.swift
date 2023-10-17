@@ -3,36 +3,36 @@
 
 @_exported import ApolloAPI
 
-public class UserActivityQuery: GraphQLQuery {
-  public static let operationName: String = "UserActivity"
+public class ActivityFeedQuery: GraphQLQuery {
+  public static let operationName: String = "ActivityFeed"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) { Page(page: $page, perPage: $perPage) { __typename activities(userId: $userId, sort: $sort) { __typename ... on TextActivity { ...TextActivityFragment } ... on ListActivity { ...ListActivityFragment } } pageInfo { __typename currentPage hasNextPage } } }"#,
+      #"query ActivityFeed($page: Int, $perPage: Int, $isFollowing: Boolean, $typeIn: [ActivityType]) { Page(page: $page, perPage: $perPage) { __typename activities(isFollowing: $isFollowing, sort: [ID_DESC], type_in: $typeIn) { __typename ... on TextActivity { ...TextActivityFragment } ... on ListActivity { ...ListActivityFragment user { __typename name avatar { __typename medium } } } } pageInfo { __typename currentPage hasNextPage } } }"#,
       fragments: [TextActivityFragment.self, ListActivityFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>
   public var perPage: GraphQLNullable<Int>
-  public var userId: GraphQLNullable<Int>
-  public var sort: GraphQLNullable<[GraphQLEnum<ActivitySort>?]>
+  public var isFollowing: GraphQLNullable<Bool>
+  public var typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
-    userId: GraphQLNullable<Int>,
-    sort: GraphQLNullable<[GraphQLEnum<ActivitySort>?]>
+    isFollowing: GraphQLNullable<Bool>,
+    typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]>
   ) {
     self.page = page
     self.perPage = perPage
-    self.userId = userId
-    self.sort = sort
+    self.isFollowing = isFollowing
+    self.typeIn = typeIn
   }
 
   public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
-    "userId": userId,
-    "sort": sort
+    "isFollowing": isFollowing,
+    "typeIn": typeIn
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -60,8 +60,9 @@ public class UserActivityQuery: GraphQLQuery {
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("activities", [Activity?]?.self, arguments: [
-          "userId": .variable("userId"),
-          "sort": .variable("sort")
+          "isFollowing": .variable("isFollowing"),
+          "sort": ["ID_DESC"],
+          "type_in": .variable("typeIn")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }
@@ -94,7 +95,7 @@ public class UserActivityQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
+          public typealias RootEntityType = ActivityFeedQuery.Data.Page.Activity
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .fragment(TextActivityFragment.self),
@@ -134,12 +135,15 @@ public class UserActivityQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
+          public typealias RootEntityType = ActivityFeedQuery.Data.Page.Activity
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
           public static var __selections: [ApolloAPI.Selection] { [
+            .field("user", User?.self),
             .fragment(ListActivityFragment.self),
           ] }
 
+          /// The owner of the activity
+          public var user: User? { __data["user"] }
           /// The id of the activity
           public var id: Int { __data["id"] }
           /// The time the activity was created at
@@ -160,8 +164,6 @@ public class UserActivityQuery: GraphQLQuery {
           public var status: String? { __data["status"] }
           /// The user id of the activity's creator
           public var userId: Int? { __data["userId"] }
-          /// The owner of the activity
-          public var user: ListActivityFragment.User? { __data["user"] }
           /// The associated media to the activity update
           public var media: ListActivityFragment.Media? { __data["media"] }
 
@@ -170,6 +172,43 @@ public class UserActivityQuery: GraphQLQuery {
             public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var listActivityFragment: ListActivityFragment { _toFragment() }
+          }
+
+          /// Page.Activity.AsListActivity.User
+          ///
+          /// Parent Type: `User`
+          public struct User: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("name", String.self),
+              .field("avatar", Avatar?.self),
+            ] }
+
+            /// The name of the user
+            public var name: String { __data["name"] }
+            /// The user's avatar images
+            public var avatar: Avatar? { __data["avatar"] }
+
+            /// Page.Activity.AsListActivity.User.Avatar
+            ///
+            /// Parent Type: `UserAvatar`
+            public struct Avatar: AniListAPI.SelectionSet {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .field("medium", String?.self),
+              ] }
+
+              /// The avatar of user at medium size
+              public var medium: String? { __data["medium"] }
+            }
           }
         }
       }

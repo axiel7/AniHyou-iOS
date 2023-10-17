@@ -31,11 +31,8 @@ struct UserActivityView: View {
             .padding()
         }
         ForEach(viewModel.activities, id: \.?.id) { item in
-            if let list = item?.asListActivity {
-                NavigationLink(destination: MediaDetailsView(mediaId: list.media?.id ?? 0)) {
-                    MediaActivityItemView(activity: list)
-                        .padding(.horizontal)
-                }
+            if let listActivity = item?.asListActivity?.fragments.listActivityFragment {
+                ListActivityItemView(activity: listActivity)
                 Divider()
             }
         }
