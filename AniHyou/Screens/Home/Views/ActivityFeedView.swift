@@ -61,6 +61,9 @@ struct ActivityFeedView: View {
                 }
             }
         }
+        .refreshable {
+            viewModel.refresh()
+        }
     }
 }
 
