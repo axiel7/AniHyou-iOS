@@ -7,7 +7,7 @@ public class NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: true, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: true, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -715,6 +715,7 @@ public class NotificationsQuery: GraphQLQuery {
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
+            .field("thread", Thread?.self),
             .field("userId", Int.self),
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
@@ -727,6 +728,8 @@ public class NotificationsQuery: GraphQLQuery {
           public var context: String? { __data["context"] }
           /// The id of the comment where mentioned
           public var commentId: Int { __data["commentId"] }
+          /// The thread that the relevant comment belongs to
+          public var thread: Thread? { __data["thread"] }
           /// The id of the user who mentioned the authenticated user
           public var userId: Int { __data["userId"] }
           /// The user who mentioned the authenticated user
@@ -735,6 +738,23 @@ public class NotificationsQuery: GraphQLQuery {
           public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
           /// The time the notification was created at
           public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsThreadCommentMentionNotification.Thread
+          ///
+          /// Parent Type: `Thread`
+          public struct Thread: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+            ] }
+
+            /// The id of the thread
+            public var id: Int { __data["id"] }
+          }
 
           /// Page.Notification.AsThreadCommentMentionNotification.User
           ///
@@ -787,6 +807,7 @@ public class NotificationsQuery: GraphQLQuery {
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
+            .field("thread", Thread?.self),
             .field("userId", Int.self),
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
@@ -799,6 +820,8 @@ public class NotificationsQuery: GraphQLQuery {
           public var context: String? { __data["context"] }
           /// The id of the reply comment
           public var commentId: Int { __data["commentId"] }
+          /// The thread that the relevant comment belongs to
+          public var thread: Thread? { __data["thread"] }
           /// The id of the user who create the comment reply
           public var userId: Int { __data["userId"] }
           /// The user who replied to the activity
@@ -807,6 +830,23 @@ public class NotificationsQuery: GraphQLQuery {
           public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
           /// The time the notification was created at
           public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsThreadCommentReplyNotification.Thread
+          ///
+          /// Parent Type: `Thread`
+          public struct Thread: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+            ] }
+
+            /// The id of the thread
+            public var id: Int { __data["id"] }
+          }
 
           /// Page.Notification.AsThreadCommentReplyNotification.User
           ///
@@ -859,6 +899,7 @@ public class NotificationsQuery: GraphQLQuery {
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
+            .field("thread", Thread?.self),
             .field("userId", Int.self),
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
@@ -871,6 +912,8 @@ public class NotificationsQuery: GraphQLQuery {
           public var context: String? { __data["context"] }
           /// The id of the new comment in the subscribed thread
           public var commentId: Int { __data["commentId"] }
+          /// The thread that the relevant comment belongs to
+          public var thread: Thread? { __data["thread"] }
           /// The id of the user who commented on the thread
           public var userId: Int { __data["userId"] }
           /// The user who replied to the subscribed thread
@@ -879,6 +922,23 @@ public class NotificationsQuery: GraphQLQuery {
           public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
           /// The time the notification was created at
           public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsThreadCommentSubscribedNotification.Thread
+          ///
+          /// Parent Type: `Thread`
+          public struct Thread: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+            ] }
+
+            /// The id of the thread
+            public var id: Int { __data["id"] }
+          }
 
           /// Page.Notification.AsThreadCommentSubscribedNotification.User
           ///
@@ -931,6 +991,7 @@ public class NotificationsQuery: GraphQLQuery {
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
+            .field("thread", Thread?.self),
             .field("userId", Int.self),
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
@@ -943,6 +1004,8 @@ public class NotificationsQuery: GraphQLQuery {
           public var context: String? { __data["context"] }
           /// The id of the activity which was liked
           public var commentId: Int { __data["commentId"] }
+          /// The thread that the relevant comment belongs to
+          public var thread: Thread? { __data["thread"] }
           /// The id of the user who liked to the activity
           public var userId: Int { __data["userId"] }
           /// The user who liked the activity
@@ -951,6 +1014,23 @@ public class NotificationsQuery: GraphQLQuery {
           public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
           /// The time the notification was created at
           public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsThreadCommentLikeNotification.Thread
+          ///
+          /// Parent Type: `Thread`
+          public struct Thread: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+            ] }
+
+            /// The id of the thread
+            public var id: Int { __data["id"] }
+          }
 
           /// Page.Notification.AsThreadCommentLikeNotification.User
           ///

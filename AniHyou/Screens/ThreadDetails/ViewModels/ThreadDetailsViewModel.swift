@@ -11,10 +11,25 @@ import AniListAPI
 
 class ThreadDetailsViewModel: ObservableObject {
 
+    @Published var details: BasicThreadDetails?
     @Published var threadComments = [ChildCommentsQuery.Data.Page.ThreadComment?]()
 
     var currentPage = 1
-    var hasNextPage = true
+    var hasNextPage = false
+    
+    func getThreadDetails(threadId: Int) {
+        Network.shared.apollo.fetch(query: ThreadDetailsQuery(threadId: .some(threadId))) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let details = graphQLResult.data?.thread?.fragments.basicThreadDetails {
+                    self?.details = details
+                    self?.hasNextPage = true
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
     func getThreadComments(threadId: Int) {
         Network.shared.apollo.fetch(query: ChildCommentsQuery(

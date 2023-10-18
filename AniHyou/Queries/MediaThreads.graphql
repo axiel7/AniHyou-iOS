@@ -1,20 +1,7 @@
 query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) {
   Page(page: $page, perPage: $perPage) {
     threads(mediaCategoryId: $mediaCategoryId, sort: $sort) {
-      id
-      title
-      body(asHtml: false)
-      viewCount
-      replyCount
-      likeCount
-      createdAt
-      user {
-        id
-        name
-        avatar {
-          medium
-        }
-      }
+      ...BasicThreadDetails
     }
   }
 }

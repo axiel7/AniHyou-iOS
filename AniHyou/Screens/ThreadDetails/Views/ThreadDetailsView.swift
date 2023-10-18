@@ -11,50 +11,72 @@ import AniListAPI
 
 struct ThreadDetailsView: View {
 
-    let thread: MediaThreadsQuery.Data.Page.Thread
     @StateObject private var viewModel = ThreadDetailsViewModel()
+    
+    let threadId: Int
+    var initThread: BasicThreadDetails?
+    
+    init(thread: BasicThreadDetails) {
+        self.initThread = thread
+        self.threadId = thread.id
+    }
+    
+    init(threadId: Int) {
+        self.threadId = threadId
+    }
 
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack {
-                // MARK: thread info
-                VStack(alignment: .leading) {
-                    Text(thread.title ?? "")
-                        .bold()
-                        .font(.title3)
-                        .padding(.leading)
-                        .padding(.bottom, 1)
-
-                    let createdAt = Date(timeIntervalSince1970: Double(thread.createdAt))
-                    Text(createdAt, style: .relative)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                        .padding(.leading)
-
-                    Markdown(thread.body?.formatMarkdown() ?? "")
-                        .defaultStyle()
-                        .padding()
-
-                    HStack {
-                        NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
-                            HStack(alignment: .center) {
-                                CircleImageView(imageUrl: thread.user?.avatar?.medium, size: 24)
-                                Text(thread.user?.name ?? "")
-                                    .lineLimit(1)
-                                    .foregroundColor(.primary)
+                if let thread = viewModel.details ?? initThread {
+                    // MARK: thread info
+                    VStack(alignment: .leading) {
+                        Text(thread.title ?? "")
+                            .bold()
+                            .font(.title3)
+                            .padding(.leading)
+                            .padding(.bottom, 1)
+                        
+                        let createdAt = Date(timeIntervalSince1970: Double(thread.createdAt))
+                        Text(createdAt, style: .relative)
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .padding(.leading)
+                        
+                        Markdown(thread.body?.formatMarkdown() ?? "")
+                            .defaultStyle()
+                            .padding()
+                        
+                        HStack {
+                            NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
+                                HStack(alignment: .center) {
+                                    CircleImageView(
+                                        imageUrl: thread.user?.avatar?.medium,
+                                        size: 24
+                                    )
+                                    Text(thread.user?.name ?? "")
+                                        .lineLimit(1)
+                                        .foregroundColor(.primary)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            Spacer()
+                            Button(
+                                action: { viewModel.toggleLikeThread(threadId: threadId) }
+                            ) {
+                                Label("\(thread.likeCount)", systemImage: "heart")
                             }
                         }
-                        .buttonStyle(.plain)
-                        Spacer()
-                        Button(
-                            action: { viewModel.toggleLikeThread(threadId: thread.id) }
-                        ) {
-                            Label("\(thread.likeCount)", systemImage: "heart")
+                        .padding(.horizontal)
+                    }//:VStack
+                    .padding(.bottom)
+                } else {
+                    HorizontalProgressView()
+                        .padding()
+                        .onAppear {
+                            viewModel.getThreadDetails(threadId: threadId)
                         }
-                    }
-                    .padding(.horizontal)
-                }//:VStack
-                .padding(.bottom)
+                }
 
                 // MARK: thread comments
                 ForEach(viewModel.threadComments, id: \.?.id) {
@@ -68,10 +90,10 @@ struct ThreadDetailsView: View {
                 }
                 .padding(.bottom)
 
-                if viewModel.hasNextPage {
+                if viewModel.hasNextPage || initThread != nil {
                     ProgressView()
                         .onAppear {
-                            viewModel.getThreadComments(threadId: thread.id)
+                            viewModel.getThreadComments(threadId: threadId)
                         }
                 }
             }//:LazyVStack
@@ -81,5 +103,5 @@ struct ThreadDetailsView: View {
 }
 
 #Preview {
-    ThreadDetailsView(thread: .init(_fieldData: nil))
+    ThreadDetailsView(threadId: 1)
 }

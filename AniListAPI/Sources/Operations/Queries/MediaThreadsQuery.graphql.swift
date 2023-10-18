@@ -7,7 +7,8 @@ public class MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename id title body(asHtml: false) viewCount replyCount likeCount createdAt user { __typename id name avatar { __typename medium } } } } }"#
+      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename ...BasicThreadDetails } } }"#,
+      fragments: [BasicThreadDetails.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -76,14 +77,7 @@ public class MediaThreadsQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", Int.self),
-          .field("title", String?.self),
-          .field("body", String?.self, arguments: ["asHtml": false]),
-          .field("viewCount", Int?.self),
-          .field("replyCount", Int?.self),
-          .field("likeCount", Int.self),
-          .field("createdAt", Int.self),
-          .field("user", User?.self),
+          .fragment(BasicThreadDetails.self),
         ] }
 
         /// The id of the thread
@@ -94,53 +88,24 @@ public class MediaThreadsQuery: GraphQLQuery {
         public var body: String? { __data["body"] }
         /// The number of times users have viewed the thread
         public var viewCount: Int? { __data["viewCount"] }
-        /// The number of comments on the thread
-        public var replyCount: Int? { __data["replyCount"] }
         /// The amount of likes the thread has
         public var likeCount: Int { __data["likeCount"] }
+        /// If the currently authenticated user liked the thread
+        public var isLiked: Bool? { __data["isLiked"] }
+        /// The number of comments on the thread
+        public var replyCount: Int? { __data["replyCount"] }
+        /// If the thread is locked and can receive comments
+        public var isLocked: Bool? { __data["isLocked"] }
+        /// The owner of the thread
+        public var user: BasicThreadDetails.User? { __data["user"] }
         /// The time of the thread creation
         public var createdAt: Int { __data["createdAt"] }
-        /// The owner of the thread
-        public var user: User? { __data["user"] }
 
-        /// Page.Thread.User
-        ///
-        /// Parent Type: `User`
-        public struct User: AniListAPI.SelectionSet {
+        public struct Fragments: FragmentContainer {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
-          public static var __selections: [ApolloAPI.Selection] { [
-            .field("__typename", String.self),
-            .field("id", Int.self),
-            .field("name", String.self),
-            .field("avatar", Avatar?.self),
-          ] }
-
-          /// The id of the user
-          public var id: Int { __data["id"] }
-          /// The name of the user
-          public var name: String { __data["name"] }
-          /// The user's avatar images
-          public var avatar: Avatar? { __data["avatar"] }
-
-          /// Page.Thread.User.Avatar
-          ///
-          /// Parent Type: `UserAvatar`
-          public struct Avatar: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
-
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-            public static var __selections: [ApolloAPI.Selection] { [
-              .field("__typename", String.self),
-              .field("medium", String?.self),
-            ] }
-
-            /// The avatar of user at medium size
-            public var medium: String? { __data["medium"] }
-          }
+          public var basicThreadDetails: BasicThreadDetails { _toFragment() }
         }
       }
     }

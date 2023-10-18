@@ -446,6 +446,7 @@
 		48AAE40A2ADFA44B003413B0 /* ActivityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewModel.swift; sourceTree = "<group>"; };
 		48AAE40C2ADFA4BE003413B0 /* ActivityDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityDetails.graphql; sourceTree = "<group>"; };
 		48AAE40D2ADFA6D5003413B0 /* ActivityReplyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReplyItemView.swift; sourceTree = "<group>"; };
+		48AAE4112AE003D2003413B0 /* ThreadDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThreadDetails.graphql; sourceTree = "<group>"; };
 		48AAEE952A29DE6800FC0887 /* StaffMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaffMedia.graphql; sourceTree = "<group>"; };
 		48AAEE972A29DE7600FC0887 /* StaffCharacter.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaffCharacter.graphql; sourceTree = "<group>"; };
 		48AAEE992A29DE8800FC0887 /* CharacterMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CharacterMedia.graphql; sourceTree = "<group>"; };
@@ -842,6 +843,7 @@
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
 				48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */,
 				486ED20E285DDE03002D29E1 /* ViewerId.graphql */,
+				48AAE4112AE003D2003413B0 /* ThreadDetails.graphql */,
 				48691FF22ADD06A9009DCDFE /* ChildComments.graphql */,
 				4820F6B12ADE97FF00A4F465 /* ActivityFeed.graphql */,
 				48AAE40C2ADFA4BE003413B0 /* ActivityDetails.graphql */,

@@ -118,6 +118,9 @@ query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) {
         id
         context
         commentId
+        thread {
+          id
+        }
         userId
         user {
           name
@@ -132,6 +135,9 @@ query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) {
         id
         context
         commentId
+        thread {
+          id
+        }
         userId
         user {
           name
@@ -146,6 +152,9 @@ query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) {
         id
         context
         commentId
+        thread {
+          id
+        }
         userId
         user {
           name
@@ -160,6 +169,9 @@ query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) {
         id
         context
         commentId
+        thread {
+          id
+        }
         userId
         user {
           name

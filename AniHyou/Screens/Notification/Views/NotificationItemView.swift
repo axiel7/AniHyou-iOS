@@ -41,7 +41,7 @@ struct NotificationItemView: View {
                     .activityReplyLike:
                 ActivityDetailsView(activityId: contentId)
             case .threadCommentMention, .threadCommentReply, .threadSubscribed, .threadCommentLike, .threadLike:
-                Text("Coming soon")
+                ThreadDetailsView(threadId: contentId)
             default:
                 Text(notification.text)
             }
