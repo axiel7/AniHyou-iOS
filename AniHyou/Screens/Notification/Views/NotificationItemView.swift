@@ -39,7 +39,7 @@ struct NotificationItemView: View {
                 ProfileView(userId: contentId)
             case .activityMessage, .activityMention, .activityReply, .activityReplySubscribed, .activityLike,
                     .activityReplyLike:
-                Text("Coming soon")
+                ActivityDetailsView(activityId: contentId)
             case .threadCommentMention, .threadCommentReply, .threadSubscribed, .threadCommentLike, .threadLike:
                 Text("Coming soon")
             default:

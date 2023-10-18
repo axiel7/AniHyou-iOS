@@ -10,23 +10,36 @@ import AniListAPI
 
 class ActivityDetailsViewModel: ObservableObject {
     
-    var hasNextPage = true
+    @Published var isLoading = true
+    
+    @Published var listActivity: ListActivityFragment?
+    @Published var textActivity: TextActivityFragment?
+    @Published var messageActivity: MessageActivityFragment?
     
     @Published var replies = [ActivityReplyFragment]()
     
-    func getReplies(activityId: Int) {
-        Network.shared.apollo.fetch(query: ActivityRepliesQuery(activityId: .some(activityId))) { [weak self] result in
+    func getDetails(activityId: Int) {
+        Network.shared.apollo.fetch(query: ActivityDetailsQuery(activityId: .some(activityId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let activity = graphQLResult.data?.activity {
-                    if let replies = activity.asListActivity?.replies {
-                        self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
-                    } else if let replies = activity.asTextActivity?.replies {
-                        self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
-                    } else if let replies = activity.asMessageActivity?.replies {
-                        self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
+                    if let details = activity.asListActivity {
+                        self?.listActivity = details.fragments.listActivityFragment
+                        if let replies = details.replies {
+                            self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
+                        }
+                    } else if let details = activity.asTextActivity {
+                        self?.textActivity = details.fragments.textActivityFragment
+                        if let replies = details.replies {
+                            self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
+                        }
+                    } else if let details = activity.asMessageActivity {
+                        self?.messageActivity = details.fragments.messageActivityFragment
+                        if let replies = details.replies {
+                            self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
+                        }
                     }
-                    self?.hasNextPage = false
+                    self?.isLoading = false
                 }
             case .failure(let error):
                 print(error)

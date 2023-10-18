@@ -12,19 +12,17 @@ struct ActivityDetailsView: View {
     
     @StateObject private var viewModel = ActivityDetailsViewModel()
     
-    var listActivity: ListActivityFragment?
-    var textActivity: TextActivityFragment?
-    var messageActivity: MessageActivityFragment?
+    let activityId: Int
     
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack {
                 Group {
-                    if let listActivity {
+                    if let listActivity = viewModel.listActivity {
                         ListActivityItemView(activity: listActivity)
-                    } else if let textActivity {
+                    } else if let textActivity = viewModel.textActivity {
                         TextActivityItemView(activity: textActivity)
-                    } else if let messageActivity {
+                    } else if let messageActivity = viewModel.messageActivity {
                         MessageActivityItemView(activity: messageActivity)
                     }
                 }
@@ -33,32 +31,20 @@ struct ActivityDetailsView: View {
                 ForEach(viewModel.replies, id: \.id) {
                     ActivityReplyItemView(reply: $0)
                 }
-                if viewModel.hasNextPage {
+                if viewModel.isLoading {
                     HorizontalProgressView()
                         .padding()
-                        .onAppear {
-                            viewModel.getReplies(activityId: id)
-                        }
                 }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Activity")
-    }
-    
-    var id: Int {
-        if let id = listActivity?.id {
-            return id
-        } else if let id = textActivity?.id {
-            return id
-        } else if let id = messageActivity?.id {
-            return id
-        } else {
-            return 0
+        .onAppear {
+            viewModel.getDetails(activityId: activityId)
         }
     }
 }
 
-/*#Preview {
-    ActivityDetailsView()
-}*/
+#Preview {
+    ActivityDetailsView(activityId: 1)
+}

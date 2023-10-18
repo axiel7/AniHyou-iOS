@@ -1,16 +1,19 @@
-query ActivityReplies($activityId: Int) {
+query ActivityDetails($activityId: Int) {
     Activity(id: $activityId) {
         ... on TextActivity {
+            ...TextActivityFragment
             replies {
                 ...ActivityReplyFragment
             }
         }
         ... on ListActivity {
+            ...ListActivityFragment
             replies {
                 ...ActivityReplyFragment
             }
         }
         ... on MessageActivity {
+            ...MessageActivityFragment
             replies {
                 ...ActivityReplyFragment
             }
