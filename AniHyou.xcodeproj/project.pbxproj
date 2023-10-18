@@ -45,6 +45,7 @@
 		4820F6AD2ADE977F00A4F465 /* TextActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6AC2ADE977F00A4F465 /* TextActivityItemView.swift */; };
 		4820F6AF2ADE97A200A4F465 /* ActivityFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6AE2ADE97A200A4F465 /* ActivityFeedViewModel.swift */; };
 		4820F6B42ADEA52000A4F465 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B32ADEA52000A4F465 /* ActivityType.swift */; };
+		4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B52ADEAF1100A4F465 /* ListActivity.swift */; };
 		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
 		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
@@ -337,6 +338,7 @@
 		4820F6AE2ADE97A200A4F465 /* ActivityFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedViewModel.swift; sourceTree = "<group>"; };
 		4820F6B12ADE97FF00A4F465 /* ActivityFeed.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityFeed.graphql; sourceTree = "<group>"; };
 		4820F6B32ADEA52000A4F465 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		4820F6B52ADEAF1100A4F465 /* ListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListActivity.swift; sourceTree = "<group>"; };
 		482801772AB031DC004E11D6 /* MarkdownUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownUtils.swift; sourceTree = "<group>"; };
 		48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeBehindWidget.swift; sourceTree = "<group>"; };
 		48294CDA2AB92067005E7CD2 /* BaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntry.swift; sourceTree = "<group>"; };
@@ -1220,6 +1222,7 @@
 				48E58E432A85B99100EF0CA2 /* MediaRankType.swift */,
 				48E58E452A85BA2600EF0CA2 /* UserOptions.swift */,
 				4820F6B32ADEA52000A4F465 /* ActivityType.swift */,
+				4820F6B52ADEAF1100A4F465 /* ListActivity.swift */,
 			);
 			path = AniListAPI_Extensions;
 			sourceTree = "<group>";
@@ -1884,6 +1887,7 @@
 				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
 				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
+				4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				48E58E2D2A85B4D700EF0CA2 /* MediaList.swift in Sources */,
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,

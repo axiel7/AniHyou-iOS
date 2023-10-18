@@ -55,7 +55,7 @@ struct ListActivityItemView: View {
                         .padding(.bottom, 1)
                 }//:HStack
                 
-                Text(activityText)
+                Text(activity.text)
                     .font(.subheadline)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
@@ -91,20 +91,6 @@ struct ListActivityItemView: View {
         }//:HStack
         .padding(.horizontal)
         .padding(.vertical, 1)
-    }
-
-    private var activityText: String {
-        if let progress = activity.progress {
-            return String(swiftLintMultiline:
-                activity.status?.firstCapitalized ?? "",
-                " ",
-                progress,
-                " of ",
-                activity.media?.title?.userPreferred ?? ""
-            )
-        } else {
-            return "\(activity.status?.firstCapitalized ?? "") \(activity.media?.title?.userPreferred ?? "")"
-        }
     }
 }
 
