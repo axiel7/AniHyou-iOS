@@ -71,12 +71,18 @@ struct ListActivityItemView: View {
                     .frame(width: 62, alignment: .leading)
                     Button(
                         action: {
-                            //viewModel.toggleLikeComment(commentId: comment.id)
-                            isLiked.toggle()
-                            if isLiked {
-                                likeCount += 1
-                            } else {
-                                likeCount -= 1
+                            Task {
+                                if let likeResult = await LikeRepository.toggleLike(
+                                    likeableId: activity.id,
+                                    likeableType: .activity
+                                ) {
+                                    isLiked = likeResult
+                                    if likeResult {
+                                        likeCount += 1
+                                    } else {
+                                        likeCount -= 1
+                                    }
+                                }
                             }
                         }
                     ) {
