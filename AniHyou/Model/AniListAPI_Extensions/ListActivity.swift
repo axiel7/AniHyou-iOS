@@ -20,29 +20,29 @@ extension ListActivityFragment {
     static let droppedStatus = "dropped"
     static let pausedStatus = "paused"
     
-    var text: LocalizedStringKey {
+    var text: String {
         let mediaTitle = media?.title?.userPreferred ?? ""
         if let progress {
             switch status {
             case ListActivityFragment.watchedStatus:
-                return "Watched episode \(progress) of \(mediaTitle)"
+                return "Watched episode %1$@ of %2$@".localized(with: [progress, mediaTitle])
             case ListActivityFragment.readStatus:
-                return "Read chapter \(progress) of \(mediaTitle)"
+                return "Read chapter %1$@ of %2$@".localized(with: [progress, mediaTitle])
             default:
                 return "\(status?.firstCapitalized ?? "") of \(mediaTitle)"
             }
         } else {
             switch status {
             case ListActivityFragment.plansToWatchStatus:
-                return "Plans to watch \(mediaTitle)"
+                return String(localized: "Plans to watch \(mediaTitle)")
             case ListActivityFragment.plansToReadStatus:
-                return "Plans to read \(mediaTitle)"
+                return String(localized: "Plans to read \(mediaTitle)")
             case ListActivityFragment.completedStatus:
-                return "Completed \(mediaTitle)"
+                return String(localized: "Completed \(mediaTitle)")
             case ListActivityFragment.droppedStatus:
-                return "Dropped \(mediaTitle)"
+                return String(localized: "Dropped \(mediaTitle)")
             case ListActivityFragment.pausedStatus:
-                return "Paused \(mediaTitle)"
+                return String(localized: "Paused \(mediaTitle)")
             default:
                 return "\(status?.firstCapitalized ?? "") \(mediaTitle)"
             }

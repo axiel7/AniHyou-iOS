@@ -33,6 +33,10 @@ extension String {
     init(swiftLintMultiline strings: String...) {
         self = strings.reduce("", +)
     }
+    
+    public func localized(with arguments: [CVarArg]) -> String {
+        return String(format: NSLocalizedString(self, comment: ""), locale: nil, arguments: arguments)
+    }
 }
 
 extension [LocalizedStringKey] {
