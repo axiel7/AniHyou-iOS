@@ -38,32 +38,14 @@ class ThreadDetailsViewModel: ObservableObject {
     }
     
     func toggleLikeThread(threadId: Int) {
-        Network.shared.apollo.perform(
-            mutation: ToggleLikeMutation(likeableId: .some(threadId), type: .some(.case(.thread)))
-        ) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data?.toggleLikeV2?.asThread {
-                    //TODO update cache
-                }
-            case .failure(let error):
-                print(error)
-            }
+        Task {
+            await LikeRepository.toggleLike(likeableId: threadId, likeableType: .thread)
         }
     }
     
     func toggleLikeComment(commentId: Int) {
-        Network.shared.apollo.perform(
-            mutation: ToggleLikeMutation(likeableId: .some(commentId), type: .some(.case(.threadComment)))
-        ) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data?.toggleLikeV2?.asThreadComment {
-                    //TODO update cache
-                }
-            case .failure(let error):
-                print(error)
-            }
+        Task {
+            await LikeRepository.toggleLike(likeableId: commentId, likeableType: .threadComment)
         }
     }
 }
