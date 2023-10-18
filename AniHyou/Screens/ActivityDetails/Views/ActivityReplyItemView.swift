@@ -1,5 +1,5 @@
 //
-//  MessageActivityItemView.swift
+//  ActivityReplyItemView.swift
 //  AniHyou
 //
 //  Created by Axel Lopez on 18/10/2023.
@@ -9,26 +9,26 @@ import SwiftUI
 import MarkdownUI
 import AniListAPI
 
-struct MessageActivityItemView: View {
+struct ActivityReplyItemView: View {
     
-    let activity: MessageActivityFragment
+    let reply: ActivityReplyFragment
     @State var isLiked: Bool
     @State var likeCount: Int
     
-    init(activity: MessageActivityFragment) {
-        self.activity = activity
-        self.isLiked = activity.isLiked == true
-        self.likeCount = activity.likeCount
+    init(reply: ActivityReplyFragment) {
+        self.reply = reply
+        self.isLiked = reply.isLiked == true
+        self.likeCount = reply.likeCount
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                NavigationLink(destination: ProfileView(userId: activity.messengerId ?? 0)) {
+                NavigationLink(destination: ProfileView(userId: reply.userId ?? 0)) {
                     HStack(alignment: .center) {
-                        CircleImageView(imageUrl: activity.messenger?.avatar?.medium, size: 24)
+                        CircleImageView(imageUrl: reply.user?.avatar?.medium, size: 24)
                         
-                        Text(activity.messenger?.name ?? "Loading")
+                        Text(reply.user?.name ?? "Loading")
                             .bold()
                             .font(.subheadline)
                             .padding(.bottom, 1)
@@ -36,30 +36,24 @@ struct MessageActivityItemView: View {
                 }
                 .foregroundStyle(.primary)
                 Spacer()
-                let createdAt = Date(timeIntervalSince1970: Double(activity.createdAt))
+                let createdAt = Date(timeIntervalSince1970: Double(reply.createdAt))
                 Text("\(createdAt, format: .relative(presentation: .numeric))")
                     .font(.footnote)
                     .foregroundColor(.gray)
                     .padding(.bottom, 1)
             }//:HStack
             
-            Markdown(activity.message?.formatMarkdown() ?? "Loading")
+            Markdown(reply.text?.formatMarkdown() ?? "Loading")
                 .defaultStyle()
             
             HStack {
                 Spacer()
-                NavigationLink(
-                    destination: ActivityDetailsView(messageActivity: activity)
-                ) {
-                    Label("\(activity.replyCount)", systemImage: "bubble")
-                }
-                .frame(width: 62, alignment: .leading)
                 Button(
                     action: {
                         Task {
                             if let likeResult = await LikeRepository.toggleLike(
-                                likeableId: activity.id,
-                                likeableType: .activity
+                                likeableId: reply.id,
+                                likeableType: .activityReply
                             ) {
                                 isLiked = likeResult
                                 if likeResult {
@@ -85,5 +79,5 @@ struct MessageActivityItemView: View {
 }
 
 /*#Preview {
-    MessageActivityItemView()
+    ActivityReplyItemView()
 }*/

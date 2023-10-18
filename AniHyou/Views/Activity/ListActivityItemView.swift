@@ -64,7 +64,7 @@ struct ListActivityItemView: View {
                 HStack {
                     Spacer()
                     NavigationLink(
-                        destination: Text("WIP")
+                        destination: ActivityDetailsView(listActivity: activity)
                     ) {
                         Label("\(activity.replyCount)", systemImage: "bubble")
                     }

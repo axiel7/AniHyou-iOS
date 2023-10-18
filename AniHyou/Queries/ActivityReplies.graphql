@@ -1,0 +1,34 @@
+query ActivityReplies($activityId: Int) {
+    Activity(id: $activityId) {
+        ... on TextActivity {
+            replies {
+                ...ActivityReplyFragment
+            }
+        }
+        ... on ListActivity {
+            replies {
+                ...ActivityReplyFragment
+            }
+        }
+        ... on MessageActivity {
+            replies {
+                ...ActivityReplyFragment
+            }
+        }
+    }
+}
+
+fragment ActivityReplyFragment on ActivityReply {
+    id
+    createdAt
+    isLiked
+    likeCount
+    text
+    userId
+    user {
+        name
+        avatar {
+            medium
+        }
+    }
+}
