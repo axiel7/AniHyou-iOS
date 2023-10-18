@@ -7,8 +7,8 @@ public class UserActivityQuery: GraphQLQuery {
   public static let operationName: String = "UserActivity"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) { Page(page: $page, perPage: $perPage) { __typename activities(userId: $userId, sort: $sort) { __typename ... on TextActivity { ...TextActivityFragment } ... on ListActivity { ...ListActivityFragment } } pageInfo { __typename currentPage hasNextPage } } }"#,
-      fragments: [TextActivityFragment.self, ListActivityFragment.self]
+      #"query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) { Page(page: $page, perPage: $perPage) { __typename activities(userId: $userId, sort: $sort) { __typename ... on TextActivity { ...TextActivityFragment } ... on ListActivity { ...ListActivityFragment } ... on MessageActivity { ...MessageActivityFragment } } pageInfo { __typename currentPage hasNextPage } } }"#,
+      fragments: [TextActivityFragment.self, ListActivityFragment.self, MessageActivityFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -82,10 +82,12 @@ public class UserActivityQuery: GraphQLQuery {
           .field("__typename", String.self),
           .inlineFragment(AsTextActivity.self),
           .inlineFragment(AsListActivity.self),
+          .inlineFragment(AsMessageActivity.self),
         ] }
 
         public var asTextActivity: AsTextActivity? { _asInlineFragment() }
         public var asListActivity: AsListActivity? { _asInlineFragment() }
+        public var asMessageActivity: AsMessageActivity? { _asInlineFragment() }
 
         /// Page.Activity.AsTextActivity
         ///
@@ -170,6 +172,48 @@ public class UserActivityQuery: GraphQLQuery {
             public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var listActivityFragment: ListActivityFragment { _toFragment() }
+          }
+        }
+
+        /// Page.Activity.AsMessageActivity
+        ///
+        /// Parent Type: `MessageActivity`
+        public struct AsMessageActivity: AniListAPI.InlineFragment {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
+          public static var __selections: [ApolloAPI.Selection] { [
+            .fragment(MessageActivityFragment.self),
+          ] }
+
+          /// The id of the activity
+          public var id: Int { __data["id"] }
+          /// The time the activity was created at
+          public var createdAt: Int { __data["createdAt"] }
+          /// If the currently authenticated user liked the activity
+          public var isLiked: Bool? { __data["isLiked"] }
+          /// The amount of likes the activity has
+          public var likeCount: Int { __data["likeCount"] }
+          /// The number of activity replies
+          public var replyCount: Int { __data["replyCount"] }
+          /// If the message is private and only viewable to the sender and recipients
+          public var isPrivate: Bool? { __data["isPrivate"] }
+          /// If the activity is locked and can receive replies
+          public var isLocked: Bool? { __data["isLocked"] }
+          /// The message text (Markdown)
+          public var message: String? { __data["message"] }
+          /// The user id of the activity's sender
+          public var messengerId: Int? { __data["messengerId"] }
+          /// The user who sent the activity message
+          public var messenger: MessageActivityFragment.Messenger? { __data["messenger"] }
+
+          public struct Fragments: FragmentContainer {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var messageActivityFragment: MessageActivityFragment { _toFragment() }
           }
         }
       }

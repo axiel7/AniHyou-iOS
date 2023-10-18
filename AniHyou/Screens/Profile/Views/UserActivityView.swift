@@ -34,6 +34,12 @@ struct UserActivityView: View {
             if let listActivity = item?.asListActivity?.fragments.listActivityFragment {
                 ListActivityItemView(activity: listActivity)
                 Divider()
+            } else if let textActivity = item?.asTextActivity?.fragments.textActivityFragment {
+                TextActivityItemView(activity: textActivity)
+                Divider()
+            } else if let messageActivity = item?.asMessageActivity?.fragments.messageActivityFragment {
+                MessageActivityItemView(activity: messageActivity)
+                Divider()
             }
         }
         if viewModel.hasNextPage {
