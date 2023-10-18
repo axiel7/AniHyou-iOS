@@ -14,7 +14,25 @@
 "+1" = "+1";
 
 /* No comment provided by engineer. */
+"3 Point Smiley :)" = "Caritas de 3 Puntos :)";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 Estrellas (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 Puntos (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10 Puntos Decimales (5.5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 Puntos (55/100)";
+
+/* No comment provided by engineer. */
 "Accent color" = "Color de acento";
+
+/* No comment provided by engineer. */
+"Account settings" = "Ajustes de la cuenta";
 
 /* No comment provided by engineer. */
 "Action" = "Acción";
@@ -23,10 +41,13 @@
 "Activity" = "Actividad";
 
 /* No comment provided by engineer. */
+"Activity type" = "Tipo de actividad";
+
+/* No comment provided by engineer. */
 "Adaptation" = "Adaptación";
 
 /* No comment provided by engineer. */
-"Add to List" = "Añadir a la lista";
+"Add to List" = "Añadir";
 
 /* No comment provided by engineer. */
 "Added" = "Añadido";
@@ -54,9 +75,6 @@
 
 /* No comment provided by engineer. */
 "Alternative" = "Alternativo";
-
-/* No comment provided by engineer. */
-"AniList account settings" = "Ajustes de la cuenta de AniList";
 
 /* No comment provided by engineer. */
 "Anime" = "Anime";
@@ -116,6 +134,9 @@
 "Ch" = "Cap";
 
 /* No comment provided by engineer. */
+"Changes will take effect on app restart" = "Los cambios surtirán efecto al reiniciar la app";
+
+/* No comment provided by engineer. */
 "Chapters" = "Capítulos";
 
 /* No comment provided by engineer. */
@@ -158,10 +179,16 @@
 "Completed" = "Completado";
 
 /* No comment provided by engineer. */
+"Completed %@" = "Ha terminado %@";
+
+/* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "¡Enhorabuena, estás al día!\n(๑>◡<๑)";
 
 /* No comment provided by engineer. */
 "Contains" = "Contiene";
+
+/* No comment provided by engineer. */
+"Content" = "Contenido";
 
 /* No comment provided by engineer. */
 "Copied!" = "¡Copiado!";
@@ -206,6 +233,9 @@
 "Discord server" = "Servidor de Discord";
 
 /* No comment provided by engineer. */
+"Discover" = "Descubre";
+
+/* No comment provided by engineer. */
 "Display" = "Visualización";
 
 /* No comment provided by engineer. */
@@ -228,6 +258,9 @@
 
 /* No comment provided by engineer. */
 "Dropped" = "Descartado";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "Ha dropeado %@";
 
 /* No comment provided by engineer. */
 "Duration" = "Duración";
@@ -276,6 +309,9 @@
 
 /* No comment provided by engineer. */
 "Favorites" = "Favoritos";
+
+/* No comment provided by engineer. */
+"Feed type" = "Tipo de feed";
 
 /* No comment provided by engineer. */
 "Filter" = "Filtrar";
@@ -327,6 +363,9 @@
 
 /* No comment provided by engineer. */
 "GitHub repository" = "Repositorio de GitHub";
+
+/* No comment provided by engineer. */
+"Global" = "Global";
 
 /* No comment provided by engineer. */
 "Hentai" = "Hentai";
@@ -381,6 +420,9 @@
 
 /* No comment provided by engineer. */
 "List entry ID" = "ID de entrada de lista";
+
+/* No comment provided by engineer. */
+"List Progress" = "Progreso de lista";
 
 /* No comment provided by engineer. */
 "List style" = "Estilo de lista";
@@ -524,6 +566,9 @@
 "Other" = "Otros";
 
 /* No comment provided by engineer. */
+"Other account settings" = "Otros ajustes de la cuenta";
+
+/* No comment provided by engineer. */
 "OVA" = "OVA";
 
 /* No comment provided by engineer. */
@@ -536,10 +581,19 @@
 "Paused" = "Pausado";
 
 /* No comment provided by engineer. */
+"Paused %@" = "Ha pausado %@";
+
+/* No comment provided by engineer. */
 "Picture book" = "Libro ilustrado";
 
 /* No comment provided by engineer. */
 "Planning" = "Planeado";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "Planea leer %@";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "Planea ver %@";
 
 /* No comment provided by engineer. */
 "Please login to use this feature" = "Por favor, inicie sesión para utilizar esta función";
@@ -589,6 +643,9 @@
 /* No comment provided by engineer. */
 "Rankings" = "Clasificaciones";
 
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "Leyó el capítulo %1$@ de %2$@";
+
 /* No comment provided by engineer. */
 "Recommendations" = "Recomendaciones";
 
@@ -629,10 +686,10 @@
 "Romaji" = "Romaji";
 
 /* No comment provided by engineer. */
-"Romance" = "Romance";
+"Romaji (Western Order)" = "Romaji (Orden Occidental)";
 
 /* No comment provided by engineer. */
-"Russian" = "Ruso";
+"Romance" = "Romance";
 
 /* (No Comment) */
 "saturday_short" = "S";
@@ -648,6 +705,9 @@
 
 /* No comment provided by engineer. */
 "Score distribution" = "Distribución de puntuación";
+
+/* No comment provided by engineer. */
+"Score format" = "Formato de puntuación";
 
 /* No comment provided by engineer. */
 "Search type" = "Tipo de búsqueda";
@@ -713,9 +773,6 @@
 "Source" = "Fuente";
 
 /* No comment provided by engineer. */
-"Spanish" = "Español";
-
-/* No comment provided by engineer. */
 "Special" = "Especial";
 
 /* No comment provided by engineer. */
@@ -729,6 +786,9 @@
 
 /* No comment provided by engineer. */
 "Staff" = "Staff";
+
+/* No comment provided by engineer. */
+"Staff & Character name language" = "Idioma de los nombres de Staff y Personajes";
 
 /* No comment provided by engineer. */
 "Standard" = "Estándar";
@@ -785,6 +845,9 @@
 "Tags" = "Etiquetas";
 
 /* No comment provided by engineer. */
+"Text Status" = "Texto";
+
+/* No comment provided by engineer. */
 "Thank you :)" = "Gracias :)";
 
 /* No comment provided by engineer. */
@@ -807,6 +870,9 @@
 
 /* No comment provided by engineer. */
 "Title" = "Título";
+
+/* No comment provided by engineer. */
+"Title language" = "Idioma del título";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Número de títulos";
@@ -846,9 +912,6 @@
 
 /* (No Comment) */
 "tuesday_short" = "M";
-
-/* No comment provided by engineer. */
-"Turkish" = "Turco";
 
 /* No comment provided by engineer. */
 "TV" = "TV";
@@ -897,6 +960,9 @@
 
 /* No comment provided by engineer. */
 "Volumes Read" = "Volúmenes Leídos";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "Vio el episodio %1$@ de %2$@";
 
 /* No comment provided by engineer. */
 "Web novel" = "Novela web";
