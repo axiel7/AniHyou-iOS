@@ -14,7 +14,7 @@ extension ListActivityFragment {
     // these ugly switches are required because otherwise Xcode won't localize the status strings
     static let watchedStatus = "watched episode"
     static let plansToWatchStatus = "plans to watch"
-    static let readStatus = "read"
+    static let readStatus = "read chapter"
     static let plansToReadStatus = "plans to read"
     static let completedStatus = "completed"
     static let droppedStatus = "dropped"
