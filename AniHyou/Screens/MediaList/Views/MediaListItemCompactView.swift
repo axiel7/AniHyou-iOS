@@ -20,7 +20,7 @@ struct MediaListItemCompactView: View {
     }
 
     var body: some View {
-        HStack {
+        HStack(spacing: 10) {
             MediaCoverView(
                 imageUrl: item?.media?.coverImage?.large,
                 width: coverWidth,
