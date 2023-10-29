@@ -36,6 +36,7 @@ struct MediaListView: View {
                     }
             }
         }//:List
+        .listStyle(.inset)
         .searchable(text: $viewModel.searchText)
         .refreshable {
             viewModel.refreshList()
