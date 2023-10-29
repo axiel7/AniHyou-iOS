@@ -44,3 +44,10 @@ extension Collection {
         return indices.contains(index) ? self[index] : nil
     }
 }
+
+extension Bool {
+    // so we can negate nullable booleans. Idea stolen from kotlin :)
+    func not() -> Bool {
+        return !self
+    }
+}

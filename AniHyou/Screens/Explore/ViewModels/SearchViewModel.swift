@@ -24,8 +24,37 @@ class SearchViewModel: ObservableObject {
     @Published var selectedGenresTagsJoined = ""
     @Published var selectedMediaFormat = Set<MediaFormat>()
     @Published var selectedMediaStatus = Set<MediaStatus>()
-    @Published var selectedYear: Int?
-    @Published var mediaOnMyList = false
+    @Published var yearFrom: Int?
+    @Published var yearTo: Int?
+    @Published var mediaOnMyList: Bool?
+    @Published var isDoujinshi: Bool?
+    @Published var isAdult: Bool?
+    @Published var country: CountryOfOrigin?
+    
+    private var hasFilters: Bool {
+        return !selectedGenres.isEmpty
+        || !selectedTags.isEmpty
+        || !selectedMediaFormat.isEmpty
+        || !selectedMediaStatus.isEmpty
+        || yearFrom != nil || yearTo != nil
+        || mediaOnMyList != nil
+        || isDoujinshi != nil
+        || isAdult != nil
+    }
+    
+    func clearFilters() {
+        selectedGenres.removeAll()
+        selectedTags.removeAll()
+        selectedGenresTagsJoined = ""
+        selectedMediaFormat.removeAll()
+        selectedMediaStatus.removeAll()
+        yearFrom = nil
+        yearTo = nil
+        mediaOnMyList = nil
+        isDoujinshi = nil
+        isAdult = nil
+        country = nil
+    }
 
     func runSearch() {
         switch type {
@@ -85,20 +114,10 @@ class SearchViewModel: ObservableObject {
         if
             search.isEmpty
             && sortMedia == .searchMatch
-            && (
-                !selectedGenres.isEmpty
-                || !selectedTags.isEmpty
-                || !selectedMediaFormat.isEmpty
-                || !selectedMediaStatus.isEmpty
-                || selectedYear != nil
-                || mediaOnMyList
-            )
+            && hasFilters
         {
             sortMedia = .popularityDesc
         }
-
-        var mediaOnListValue = GraphQLNullable<Bool>.none
-        if mediaOnMyList { mediaOnListValue = .some(true) }
 
         Network.shared.apollo.fetch(query: SearchMediaQuery(
             page: .some(1),
@@ -107,11 +126,17 @@ class SearchViewModel: ObservableObject {
             type: .some(.case(type)),
             sort: .some([.case(sortMedia)]),
             genre_in: someIfNotEmpty(Array(selectedGenres)),
+            genre_not_in: .none,
             tag_in: someIfNotEmpty(Array(selectedTags)),
+            tag_not_in: .none,
             format_in: someEnumArrayIfNotEmpty(Array(selectedMediaFormat)),
             status_in: someEnumArrayIfNotEmpty(Array(selectedMediaStatus)),
-            seasonYear: someIfNotNil(selectedYear),
-            onList: mediaOnListValue
+            startDateGreater: someIfNotNil(yearFrom?.toFuzzyDateInt()),
+            startDateLesser: someIfNotNil(yearTo?.toFuzzyDateInt()),
+            onList: someIfNotNil(mediaOnMyList),
+            isLicensed: someIfNotNil(isDoujinshi?.not()),
+            isAdult: someIfNotNil(isAdult),
+            country: someIfNotNil(country?.rawValue)
         )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):

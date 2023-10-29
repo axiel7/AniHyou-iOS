@@ -99,6 +99,18 @@ extension Int {
     func minutesToDays() -> Double {
         return Double(self) / 1440
     }
+    
+    func toFuzzyDateInt() -> FuzzyDateInt? {
+        if self <= 9999 {
+            return self * 10000
+        } else if self <= 999999 {
+            return self * 100
+        } else if self <= 99999999 {
+            return self
+        } else {
+            return nil
+        }
+    }
 }
 
 extension TimeInterval {

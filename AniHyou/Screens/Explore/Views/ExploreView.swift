@@ -54,20 +54,55 @@ struct ExploreView: View {
 
                     mediaStatusSelector
 
-                    Picker("Year", selection: $viewModel.selectedYear) {
+                    Picker("From year", selection: $viewModel.yearFrom) {
                         Text("None").tag(Optional<Int>(nil))
                         ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
                             Text(String($0)).tag(Optional($0))
                         }
                     }
-                    .onChange(of: viewModel.selectedYear) { _ in
+                    .onChange(of: viewModel.yearFrom) { _ in
                         viewModel.runSearch()
                     }
-
-                    Toggle("On my list", isOn: $viewModel.mediaOnMyList)
+                    
+                    Picker("To year", selection: $viewModel.yearTo) {
+                        Text("None").tag(Optional<Int>(nil))
+                        let startYear = (viewModel.yearFrom ?? 1940) + 1
+                        ForEach((startYear...(currentYear+1)).reversed(), id: \.self) {
+                            Text(String($0)).tag(Optional($0))
+                        }
+                    }
+                    .onChange(of: viewModel.yearTo) { _ in
+                        viewModel.runSearch()
+                    }
+                    
+                    Picker("Country", selection: $viewModel.country) {
+                        Text("None").tag(Optional<CountryOfOrigin>(nil))
+                        ForEach(CountryOfOrigin.allCases, id: \.self) {
+                            Text($0.localized).tag(Optional($0))
+                        }
+                    }
+                    .onChange(of: viewModel.country) { _ in
+                        viewModel.runSearch()
+                    }
+                    
+                    TriPicker("On my list", selection: $viewModel.mediaOnMyList)
                         .onChange(of: viewModel.mediaOnMyList) { _ in
                             viewModel.runSearch()
                         }
+                    
+                    TriPicker("Doujinshi", selection: $viewModel.isDoujinshi)
+                        .onChange(of: viewModel.isDoujinshi) { _ in
+                            viewModel.runSearch()
+                        }
+                    
+                    TriPicker("Adult", selection: $viewModel.isAdult)
+                        .onChange(of: viewModel.isAdult) { _ in
+                            viewModel.runSearch()
+                        }
+                    
+                    Button("Clear", role: .destructive) {
+                        viewModel.clearFilters()
+                    }
 
                     Button("Hide filters") {
                         withAnimation {
