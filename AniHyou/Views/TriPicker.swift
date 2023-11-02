@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// swiftlint:disable syntactic_sugar
 struct TriPicker: View {
     
     let label: LocalizedStringKey
@@ -25,6 +26,7 @@ struct TriPicker: View {
         }
     }
 }
+// swiftlint:enable syntactic_sugar
 
 #Preview {
     TriPicker("On my list", selection: .constant(true))
