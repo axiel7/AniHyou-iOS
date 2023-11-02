@@ -56,6 +56,10 @@ public class ViewerQuery: GraphQLQuery {
       public var isFollowing: Bool? { __data["isFollowing"] }
       /// If this user if following the authenticated user
       public var isFollower: Bool? { __data["isFollower"] }
+      /// Custom donation badge text
+      public var donatorBadge: String? { __data["donatorBadge"] }
+      /// The donation tier of the user
+      public var donatorTier: Int? { __data["donatorTier"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict

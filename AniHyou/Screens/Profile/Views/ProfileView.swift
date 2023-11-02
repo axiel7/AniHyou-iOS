@@ -128,6 +128,20 @@ struct ProfileView: View {
                     }
                     .font(.title2.weight(.bold))
                     .transition(.move(edge: .top))
+                    
+                    if
+                        let donatorTier = viewModel.userInfo?.donatorTier,
+                        donatorTier > 1
+                    {
+                        Group {
+                            if let donatorText = viewModel.userInfo?.donatorBadge {
+                                Text(donatorText)
+                            } else {
+                                Text("Donator")
+                            }
+                        }
+                        .foregroundStyle(.accent)
+                    }
                 }
                 .padding(.leading, 16)
                 Spacer()

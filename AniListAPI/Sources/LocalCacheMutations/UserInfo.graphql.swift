@@ -5,7 +5,7 @@
 
 public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat } isFollowing isFollower }"#
+    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat } isFollowing isFollower donatorBadge donatorTier }"#
   }
 
   public var __data: DataDict
@@ -23,6 +23,8 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     .field("mediaListOptions", MediaListOptions?.self),
     .field("isFollowing", Bool?.self),
     .field("isFollower", Bool?.self),
+    .field("donatorBadge", String?.self),
+    .field("donatorTier", Int?.self),
   ] }
 
   /// The id of the user
@@ -70,6 +72,16 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     get { __data["isFollower"] }
     set { __data["isFollower"] = newValue }
   }
+  /// Custom donation badge text
+  public var donatorBadge: String? {
+    get { __data["donatorBadge"] }
+    set { __data["donatorBadge"] = newValue }
+  }
+  /// The donation tier of the user
+  public var donatorTier: Int? {
+    get { __data["donatorTier"] }
+    set { __data["donatorTier"] = newValue }
+  }
 
   public init(
     id: Int,
@@ -80,7 +92,9 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     options: Options? = nil,
     mediaListOptions: MediaListOptions? = nil,
     isFollowing: Bool? = nil,
-    isFollower: Bool? = nil
+    isFollower: Bool? = nil,
+    donatorBadge: String? = nil,
+    donatorTier: Int? = nil
   ) {
     self.init(_dataDict: DataDict(
       data: [
@@ -94,6 +108,8 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
         "mediaListOptions": mediaListOptions._fieldData,
         "isFollowing": isFollowing,
         "isFollower": isFollower,
+        "donatorBadge": donatorBadge,
+        "donatorTier": donatorTier,
       ],
       fulfilledFragments: [
         ObjectIdentifier(UserInfo.self)
