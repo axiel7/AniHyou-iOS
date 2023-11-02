@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A user's list options
-  static let MediaListOptions = Object(
+  static let MediaListOptions = ApolloAPI.Object(
     typename: "MediaListOptions",
     implementedInterfaces: []
   )

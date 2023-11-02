@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when a user replies to a subscribed forum thread
-  static let ThreadCommentSubscribedNotification = Object(
+  static let ThreadCommentSubscribedNotification = ApolloAPI.Object(
     typename: "ThreadCommentSubscribedNotification",
     implementedInterfaces: []
   )

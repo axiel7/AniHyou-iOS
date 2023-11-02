@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when a activity is liked
-  static let ActivityLikeNotification = Object(
+  static let ActivityLikeNotification = ApolloAPI.Object(
     typename: "ActivityLikeNotification",
     implementedInterfaces: []
   )

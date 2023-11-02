@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A user's list score distribution.
-  static let ScoreDistribution = Object(
+  static let ScoreDistribution = ApolloAPI.Object(
     typename: "ScoreDistribution",
     implementedInterfaces: []
   )

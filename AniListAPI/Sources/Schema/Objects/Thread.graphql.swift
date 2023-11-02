@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Forum Thread
-  static let Thread = Object(
+  static let Thread = ApolloAPI.Object(
     typename: "Thread",
     implementedInterfaces: []
   )

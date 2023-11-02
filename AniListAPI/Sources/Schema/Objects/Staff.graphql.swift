@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Voice actors or production staff
-  static let Staff = Object(
+  static let Staff = ApolloAPI.Object(
     typename: "Staff",
     implementedInterfaces: []
   )

@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let StudioConnection = Object(
+  static let StudioConnection = ApolloAPI.Object(
     typename: "StudioConnection",
     implementedInterfaces: []
   )

@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// User message activity
-  static let MessageActivity = Object(
+  static let MessageActivity = ApolloAPI.Object(
     typename: "MessageActivity",
     implementedInterfaces: []
   )

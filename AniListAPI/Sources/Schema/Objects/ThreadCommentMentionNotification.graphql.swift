@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when authenticated user is @ mentioned in a forum thread comment
-  static let ThreadCommentMentionNotification = Object(
+  static let ThreadCommentMentionNotification = ApolloAPI.Object(
     typename: "ThreadCommentMentionNotification",
     implementedInterfaces: []
   )

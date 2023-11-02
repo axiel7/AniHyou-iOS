@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A media's statistics
-  static let MediaStats = Object(
+  static let MediaStats = ApolloAPI.Object(
     typename: "MediaStats",
     implementedInterfaces: []
   )
