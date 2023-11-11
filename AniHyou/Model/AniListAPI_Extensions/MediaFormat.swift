@@ -9,6 +9,18 @@ import SwiftUI
 import AniListAPI
 
 extension MediaFormat {
+    
+    static let animeCases: [MediaFormat] = [.tv, .tvShort, .movie, .special, .ova, .ona, .music]
+    static let mangaCases: [MediaFormat] = [.manga, .novel, .oneShot]
+    
+    static func allCases(mediaType: MediaType) -> [MediaFormat] {
+        switch mediaType {
+        case .anime:
+            return animeCases
+        case .manga:
+            return mangaCases
+        }
+    }
 
     var localizedName: LocalizedStringKey {
         switch self {

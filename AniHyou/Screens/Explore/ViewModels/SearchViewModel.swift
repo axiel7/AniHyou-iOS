@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+// swiftlint:disable type_body_length
 class SearchViewModel: ObservableObject {
 
     //var currentPage = 1
@@ -54,6 +55,14 @@ class SearchViewModel: ObservableObject {
         isDoujinshi = nil
         isAdult = nil
         country = nil
+    }
+    
+    var mediaType: MediaType {
+        if type == .manga {
+            return .manga
+        } else {
+            return .anime
+        }
     }
 
     func runSearch() {
@@ -291,3 +300,4 @@ class SearchViewModel: ObservableObject {
         }
     }
 }
+// swiftlint:enable type_body_length

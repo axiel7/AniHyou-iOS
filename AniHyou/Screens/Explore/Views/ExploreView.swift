@@ -413,7 +413,7 @@ struct ExploreView: View {
         })//:Button
         .sheet(isPresented: $isMediaFormatSheetPresented) {
             MultiSelectionSheet(
-                values: MediaFormat.allCases,
+                values: MediaFormat.allCases(mediaType: viewModel.mediaType),
                 selectedValues: $viewModel.selectedMediaFormat,
                 onDone: { viewModel.runSearch() },
                 rowContent: { format in
