@@ -293,12 +293,23 @@ struct ExploreView: View {
         .padding(.horizontal)
         .padding(.vertical, 8)
 
-        // MARK: Calendar
+        // MARK: Top Movies, Calendar
         HStack {
+            NavigationLink(destination: MediaChartListView(
+                title: "Top Movies",
+                type: .anime,
+                sort: .scoreDesc,
+                format: .movie
+            )) {
+                Label("Top Movies", systemImage: "film")
+                    .foregroundColor(.teal)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(destination: CalendarAnimeView()) {
                 Label("Calendar", systemImage: "calendar")
                     .foregroundColor(.orange)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.horizontal)
         .padding(.vertical, 8)

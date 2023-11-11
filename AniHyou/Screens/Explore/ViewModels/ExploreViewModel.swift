@@ -18,13 +18,14 @@ class ExploreViewModel: ObservableObject {
     var currentPageChart = 1
     var hasNextPageChart = true
 
-    func getMediaChart(type: MediaType, sort: MediaSort, status: MediaStatus?) {
+    func getMediaChart(type: MediaType, sort: MediaSort, status: MediaStatus?, format: MediaFormat? = nil) {
         Network.shared.apollo.fetch(query: MediaChartQuery(
             page: .some(currentPageChart),
             perPage: .some(perPage),
             sort: .some([.case(sort)]),
             type: .some(.case(type)),
-            status: someIfNotNil(status)
+            status: someIfNotNil(status),
+            format: someIfNotNil(format)
         )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
