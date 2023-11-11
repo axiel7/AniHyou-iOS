@@ -1,13 +1,11 @@
-query UserCurrentAnimeList($userId: Int) {
+query UserCurrentAnimeList($userId: Int, $sort: [MediaListSort]) {
   Page(page: 1, perPage: 50) {
-    mediaList(userId: $userId, type: ANIME, status: CURRENT, sort: UPDATED_TIME_DESC) {
-      mediaId
-      progress
+    mediaList(userId: $userId, type: ANIME, status: CURRENT, sort: $sort) {
+      ...ProgressMediaListEntry
       media {
         title {
           userPreferred
         }
-        episodes
         nextAiringEpisode {
           episode
           timeUntilAiring
@@ -18,4 +16,3 @@ query UserCurrentAnimeList($userId: Int) {
     }
   }
 }
-

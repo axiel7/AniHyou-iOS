@@ -22,12 +22,7 @@ struct ProfileView: View {
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
     @State private var infoType: ProfileInfoType = .activity
-    @State private var scrollOffset = CGFloat.zero
-    private var hasScrolled: Bool {
-        withAnimation {
-            scrollOffset > 0
-        }
-    }
+    @State private var hasScrolled = false
     @State private var showingMediaDetails = false
     @State private var mediaId = 0
 
@@ -52,7 +47,7 @@ struct ProfileView: View {
     }//:body
 
     var content: some View {
-        ObservableVScrollView(scrollOffset: $scrollOffset) { _ in
+        ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
             LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
                 profileHeader
                     .listRowSeparator(.hidden)
@@ -133,6 +128,20 @@ struct ProfileView: View {
                     }
                     .font(.title2.weight(.bold))
                     .transition(.move(edge: .top))
+                    
+                    if
+                        let donatorTier = viewModel.userInfo?.donatorTier,
+                        donatorTier > 1
+                    {
+                        Group {
+                            if let donatorText = viewModel.userInfo?.donatorBadge {
+                                Text(donatorText)
+                            } else {
+                                Text("Donator")
+                            }
+                        }
+                        .foregroundStyle(.accent)
+                    }
                 }
                 .padding(.leading, 16)
                 Spacer()

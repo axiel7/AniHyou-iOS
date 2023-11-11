@@ -1,0 +1,27 @@
+query UserOptions {
+    Viewer {
+        ...UserOptionsFragment
+    }
+}
+
+fragment UserOptionsFragment on User {
+    id
+    options {
+        displayAdultContent
+        profileColor
+        staffNameLanguage
+        titleLanguage
+        airingNotifications
+    }
+    mediaListOptions {
+        scoreFormat
+        animeList {
+            advancedScoringEnabled
+            advancedScoring
+        }
+        mangaList {
+            advancedScoringEnabled
+            advancedScoring
+        }
+    }
+}

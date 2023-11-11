@@ -29,7 +29,7 @@ class ReviewThreadViewModel: ObservableObject {
         }
     }
 
-    @Published var mediaThreads = [MediaThreadsQuery.Data.Page.Thread?]()
+    @Published var mediaThreads = [BasicThreadDetails]()
 
     func getMediaThreads(mediaId: Int) {
         Network.shared.apollo.fetch(query: MediaThreadsQuery(
@@ -41,7 +41,7 @@ class ReviewThreadViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let threads = graphQLResult.data?.page?.threads {
-                    self?.mediaThreads = threads
+                    self?.mediaThreads = threads.compactMap { $0?.fragments.basicThreadDetails }
                 }
             case .failure(let error):
                 print(error)

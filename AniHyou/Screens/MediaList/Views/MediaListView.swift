@@ -36,6 +36,7 @@ struct MediaListView: View {
                     }
             }
         }//:List
+        .listStyle(.inset)
         .searchable(text: $viewModel.searchText)
         .refreshable {
             viewModel.refreshList()
@@ -186,7 +187,12 @@ struct MediaListView: View {
         if item.status == .planning {
             status = .current
         }
-        viewModel.updateEntryProgress(entryId: item.id, progress: item.progress! + 1, status: status)
+        viewModel.updateEntryProgress(
+            mediaId: item.mediaId,
+            entryId: item.id,
+            progress: item.progress! + 1,
+            status: status
+        )
     }
 
     private var shouldShowIncrementButton: Bool {

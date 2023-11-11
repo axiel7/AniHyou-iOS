@@ -9,5 +9,11 @@ import Foundation
 import KeychainSwift
 
 class KeychainUtils {
-    static let keychain = KeychainSwift()
+    static let shared = KeychainUtils()
+    
+    private(set) lazy var keychain: KeychainSwift = {
+        let newKeychain = KeychainSwift()
+        newKeychain.synchronizable = true
+        return newKeychain
+    }()
 }

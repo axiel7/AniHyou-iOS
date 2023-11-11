@@ -8,79 +8,51 @@
 import SwiftUI
 
 fileprivate extension View {
-    func tabItemHome() -> some View {
+    func tabItem(_ tab: MainTab) -> some View {
         self
             .tabItem {
-                Label("Home", systemImage: "house")
+                Label(tab.localizedName, systemImage: tab.systemImage)
             }
-            .tag(0)
-    }
-    func tabItemAnime() -> some View {
-        self
-            .tabItem {
-                Label("Anime", systemImage: "play.tv")
-            }
-            .tag(1)
-    }
-    func tabItemManga() -> some View {
-        self
-            .tabItem {
-                Label("Manga", systemImage: "book")
-            }
-            .tag(2)
-    }
-    func tabItemProfile() -> some View {
-        self
-            .tabItem {
-                Label("Profile", systemImage: "person")
-            }
-            .tag(3)
-    }
-    func tabItemExplore() -> some View {
-        self
-            .tabItem {
-                Label("Explore", systemImage: "magnifyingglass")
-            }
-            .tag(4)
+            .tag(tab.rawValue)
     }
 }
 
 struct ContentView: View {
 
-    @State private var justLogged: Bool = false
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
+    @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {
             HomeView()
-                .tabItemHome()
+                .tabItem(.home)
             
-            if isLoggedIn() || justLogged {
+            if isLoggedIn {
                 MediaListStatusView(mediaType: .anime)
-                    .tabItemAnime()
+                    .tabItem(.anime)
             } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
-                    .tabItemAnime()
+                NotLoggedView()
+                    .tabItem(.anime)
             }
             
-            if isLoggedIn() || justLogged {
+            if isLoggedIn {
                 MediaListStatusView(mediaType: .manga)
-                    .tabItemManga()
+                    .tabItem(.manga)
             } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
-                    .tabItemManga()
+                NotLoggedView()
+                    .tabItem(.manga)
             }
             
-            if isLoggedIn() || justLogged {
+            if isLoggedIn {
                 ProfileView()
-                    .tabItemProfile()
+                    .tabItem(.profile)
             } else {
-                NotLoggedView(onSuccessLogin: { justLogged = true })
-                    .tabItemProfile()
+                NotLoggedView()
+                    .tabItem(.profile)
             }
             
             RootExploreView()
-                .tabItemExplore()
+                .tabItem(.explore)
         }//:TabView
     }
 }

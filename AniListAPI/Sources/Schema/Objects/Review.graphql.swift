@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A Review that features in an anime or manga
-  static let Review = Object(
+  static let Review = ApolloAPI.Object(
     typename: "Review",
     implementedInterfaces: []
   )

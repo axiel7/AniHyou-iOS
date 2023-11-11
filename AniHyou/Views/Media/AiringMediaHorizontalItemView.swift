@@ -37,14 +37,12 @@ struct AiringMediaHorizontalItemView: View {
                     .multilineTextAlignment(.leading)
 
                 if let nextEpisode, let airingAt {
-                    Group {
-                        Text("Ep \(nextEpisode) airing in ") +
-                        Text(Date(timeIntervalSince1970: Double(airingAt)), style: .relative)
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
+                    let relativeDate = Date(timeIntervalSince1970: Double(airingAt))
+                    Text("Ep \(nextEpisode) \(relativeDate, format: .relative(presentation: .numeric))")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
                 }
 
                 if let meanScore {

@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Media Airing Schedule. NOTE: We only aim to guarantee that FUTURE airing data is present and accurate.
-  static let AiringSchedule = Object(
+  static let AiringSchedule = ApolloAPI.Object(
     typename: "AiringSchedule",
     implementedInterfaces: []
   )

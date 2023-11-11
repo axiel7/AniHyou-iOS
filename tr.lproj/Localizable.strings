@@ -1,0 +1,948 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld bölüm";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld bölüm";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld cilt";
+
+/* No comment provided by engineer. */
+"^[%lld episode behind](inflect: true)" = "^[%lld bölüm izlenecek](inflect: true)";
+
+/* No comment provided by engineer. */
+"+1" = "+1";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "3 Puan Gülücük :)";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 Yıldız (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 Puan (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10 puan ondalık (5.5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 Puan (55/100)";
+
+/* No comment provided by engineer. */
+"Accent color" = "Vurgu Rengi";
+
+/* No comment provided by engineer. */
+"Account settings" = "Hesap ayarları";
+
+/* No comment provided by engineer. */
+"Action" = "Aksiyon";
+
+/* No comment provided by engineer. */
+"Activity" = "Aktivite";
+
+/* No comment provided by engineer. */
+"Adaptation" = "Uyarlama";
+
+/* No comment provided by engineer. */
+"Add to List" = "Listeye Ekle";
+
+/* No comment provided by engineer. */
+"Added" = "Eklendi";
+
+/* No comment provided by engineer. */
+"Adventure" = "Macera";
+
+/* No comment provided by engineer. */
+"Age" = "Yaş";
+
+/* No comment provided by engineer. */
+"Airing" = "Yayınlanıyor";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "Yayınlanan Anime";
+
+/* No comment provided by engineer. */
+"Airing Next" = "Yakında Yayında";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "Listemde, yayınlananları göster";
+
+/* No comment provided by engineer. */
+"All" = "Tümü";
+
+/* No comment provided by engineer. */
+"Alternative" = "Alternatif";
+
+/* No comment provided by engineer. */
+"Anime" = "Anime";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "Bekleyen Anime";
+
+/* No comment provided by engineer. */
+"Anime List" = "Anime Listesi";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "Anime, Manga ve Fazlası";
+
+/* No comment provided by engineer. */
+"App Icon" = "Uygulama Simgesi";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "Çıkış yapmak istediğinizden emin misiniz?";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Bildiğiniz gibi bu uygulama tamamen ücretsiz ve Açık Kaynaktır, ama bir uygulama geliştirmek çok fazla zaman ve çabaya ihtiyaç duyar.\nBağışta bulunarak masrafların karşılanmasına, uygulamanın geliştirilmesine, bakım yapılmasına ve yeni özellikler getirilmesine yardımcı olursunuz.";
+
+/* No comment provided by engineer. */
+"Ascending" = "Artan";
+
+/* No comment provided by engineer. */
+"Average Score" = "Ortalama Puan";
+
+/* No comment provided by engineer. */
+"Background" = "Arka Plan";
+
+/* No comment provided by engineer. */
+"Birth" = "Doğum Günü";
+
+/* No comment provided by engineer. */
+"Birthday" = "Doğum günü";
+
+/* No comment provided by engineer. */
+"Blood type" = "Kan grubu";
+
+/* No comment provided by engineer. */
+"Blood Type" = "Kan grubu";
+
+/* No comment provided by engineer. */
+"Calendar" = "Yayım Takvimi";
+
+/* No comment provided by engineer. */
+"Cancel" = "İptal";
+
+/* No comment provided by engineer. */
+"Cancelled" = "İptal edildi";
+
+/* No comment provided by engineer. */
+"Ch" = "Blm";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "Değişiklikler, yeniden başlatma sonrası etkin olacak";
+
+/* No comment provided by engineer. */
+"Chapters" = "Bölümler";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "Okunan Bölüm";
+
+/* No comment provided by engineer. */
+"Character" = "Karakter";
+
+/* No comment provided by engineer. */
+"Characters" = "Karakterler";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "Karakterler ve Ekip";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "Anime veya Manga arasında seçim yapın.";
+
+/* No comment provided by engineer. */
+"Clear" = "Temizle";
+
+/* No comment provided by engineer. */
+"Close" = "Kapat";
+
+/* No comment provided by engineer. */
+"Comedy" = "Komedi";
+
+/* No comment provided by engineer. */
+"Comic" = "Çizgi Roman";
+
+/* No comment provided by engineer. */
+"Coming soon" = "Çok yakında";
+
+/* No comment provided by engineer. */
+"Compact" = "Sıkışık";
+
+/* No comment provided by engineer. */
+"Compilation" = "Derleme";
+
+/* No comment provided by engineer. */
+"Completed" = "Tamamlandı";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "Tebrikler, her şey güncel!\n(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "İçerik";
+
+/* No comment provided by engineer. */
+"Content" = "İçerik";
+
+/* No comment provided by engineer. */
+"Copied!" = "Kopyalandı!";
+
+/* No comment provided by engineer. */
+"Copy" = "Kopyala";
+
+/* No comment provided by engineer. */
+"Current" = "Şimdiki";
+
+/* No comment provided by engineer. */
+"Custom" = "İsteğe göre";
+
+/* No comment provided by engineer. */
+"Custom color" = "Özel renk";
+
+/* No comment provided by engineer. */
+"Dates" = "Tarihler";
+
+/* No comment provided by engineer. */
+"Days Watched" = "İzlenen gün";
+
+/* No comment provided by engineer. */
+"Death" = "Ölüm zamanı";
+
+/* No comment provided by engineer. */
+"Default" = "Varsayılan";
+
+/* No comment provided by engineer. */
+"Delete" = "Sil";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "Bu girdi silinsin mi?";
+
+/* No comment provided by engineer. */
+"Descending" = "Azalan";
+
+/* No comment provided by engineer. */
+"Developers" = "Geliştiriciler";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discord sunucusu";
+
+/* No comment provided by engineer. */
+"Display" = "Görüntüle";
+
+/* No comment provided by engineer. */
+"Donate" = "Bağış";
+
+/* No comment provided by engineer. */
+"Donate!" = "Bağış!";
+
+/* No comment provided by engineer. */
+"Donation" = "Bağış yap";
+
+/* No comment provided by engineer. */
+"Done" = "Tamam";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "Fan yapımı";
+
+/* No comment provided by engineer. */
+"Drama" = "Drama";
+
+/* No comment provided by engineer. */
+"Dropped" = "Bırakıldı";
+
+/* No comment provided by engineer. */
+"Duration" = "Süre uzunluğu";
+
+/* No comment provided by engineer. */
+"Ecchi" = "Ecchi";
+
+/* No comment provided by engineer. */
+"Edit" = "Düzenle";
+
+/* No comment provided by engineer. */
+"End date" = "Bitiş tarihi";
+
+/* No comment provided by engineer. */
+"English" = "İngilizce";
+
+/* No comment provided by engineer. */
+"Ep" = "Blm";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "Blm %lld, %@ sonra yayında";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "Blm %lld için yayın saati %@";
+
+/* No comment provided by engineer. */
+"Episodes" = "Bölümler";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "İzlenen Bölümler";
+
+/* No comment provided by engineer. */
+"Error no entry" = "Girdi yok. Hata";
+
+/* No comment provided by engineer. */
+"Explore" = "Keşfet";
+
+/* No comment provided by engineer. */
+"External links" = "Harici bağlantılar";
+
+/* No comment provided by engineer. */
+"Fall" = "Sonbahar";
+
+/* No comment provided by engineer. */
+"Fantasy" = "Fantastik";
+
+/* No comment provided by engineer. */
+"Favorites" = "Favoriler";
+
+/* No comment provided by engineer. */
+"Filter" = "Filtrele";
+
+/* No comment provided by engineer. */
+"Finish Date" = "Bitiş Tarihi";
+
+/* No comment provided by engineer. */
+"Finished" = "Tamamlandı";
+
+/* No comment provided by engineer. */
+"Follow" = "Takip";
+
+/* No comment provided by engineer. */
+"Followers" = "Takipçiler";
+
+/* No comment provided by engineer. */
+"Following" = "Takip Edilen";
+
+/* No comment provided by engineer. */
+"Follows" = "Takip edilenler";
+
+/* No comment provided by engineer. */
+"Follows you" = "Takip edenler";
+
+/* No comment provided by engineer. */
+"Format" = "Medya Türü";
+
+/* No comment provided by engineer. */
+"Format distribution" = "Tür dağılımı";
+
+/* No comment provided by engineer. */
+"Forum" = "Forum";
+
+/* (No Comment) */
+"friday_short" = "Cum";
+
+/* No comment provided by engineer. */
+"Game" = "Oyun";
+
+/* No comment provided by engineer. */
+"Gender" = "Cinsiyet";
+
+/* No comment provided by engineer. */
+"General" = "Genel";
+
+/* No comment provided by engineer. */
+"Genres" = "Türler";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "GitHub Reposu";
+
+/* No comment provided by engineer. */
+"Hentai" = "Hentai";
+
+/* No comment provided by engineer. */
+"Hiatus" = "Süresiz arada";
+
+/* No comment provided by engineer. */
+"Hide filters" = "Filtreleri gizle";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "Spoiler'ı Gizle";
+
+/* No comment provided by engineer. */
+"Highest rated" = "En yüksek puanlı";
+
+/* No comment provided by engineer. */
+"Home" = "Ana Sayfa";
+
+/* No comment provided by engineer. */
+"Hometown" = "Memleketi";
+
+/* No comment provided by engineer. */
+"Horror" = "Korku";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "İzlenen Saat";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "Bölüm Artışı";
+
+/* No comment provided by engineer. */
+"Info type" = "Bilgi tipi";
+
+/* No comment provided by engineer. */
+"Information" = "Bilgilendirme";
+
+/* No comment provided by engineer. */
+"Japanese" = "Japonca";
+
+/* No comment provided by engineer. */
+"Last Added" = "Son Eklenen";
+
+/* No comment provided by engineer. */
+"Last Updated" = "Son Güncelleme";
+
+/* No comment provided by engineer. */
+"Left" = "Sol";
+
+/* No comment provided by engineer. */
+"Light novel" = "Hafif Roman";
+
+/* No comment provided by engineer. */
+"List entry ID" = "Liste girdi ID";
+
+/* No comment provided by engineer. */
+"List style" = "Liste stili";
+
+/* No comment provided by engineer. */
+"Live action" = "Canlandırma";
+
+/* No comment provided by engineer. */
+"Loading" = "Yükleniyor";
+
+/* No comment provided by engineer. */
+"Log out" = "Oturumu kapat";
+
+/* No comment provided by engineer. */
+"Login" = "Oturum aç";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "Uzun Kaydırma Yönü";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "Sihirli Kız";
+
+/* No comment provided by engineer. */
+"Main" = "Ana Karakter";
+
+/* No comment provided by engineer. */
+"Manga" = "Manga";
+
+/* No comment provided by engineer. */
+"Manga List" = "Manga Listesi";
+
+/* No comment provided by engineer. */
+"Mean Score" = "Puan";
+
+/* No comment provided by engineer. */
+"Mecha" = "Mecha";
+
+/* No comment provided by engineer. */
+"Media" = "Medya";
+
+/* No comment provided by engineer. */
+"Media ID" = "Medya ID";
+
+/* No comment provided by engineer. */
+"Media List" = "Medya listesi";
+
+/* No comment provided by engineer. */
+"Media Type" = "Medya Türü";
+
+/* No comment provided by engineer. */
+"Minimal" = "Basit";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"monday_short" = "Pzt";
+
+/* No comment provided by engineer. */
+"More filters" = "Detaylı filtre";
+
+/* No comment provided by engineer. */
+"Most popular" = "En popüler";
+
+/* No comment provided by engineer. */
+"Movie" = "Film";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "Multimedya Projesi";
+
+/* No comment provided by engineer. */
+"Music" = "Müzik";
+
+/* No comment provided by engineer. */
+"Mystery" = "Gizem";
+
+/* No comment provided by engineer. */
+"Native" = "Ana Dilde";
+
+/* No comment provided by engineer. */
+"Next Season" = "Sonraki Sezon";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "Listenizde yayınlanan anime yok\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "Bugün için anime yok\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "İçerik yok";
+
+/* No comment provided by engineer. */
+"No recommendations" = "Tavsiye bulunamadı";
+
+/* No comment provided by engineer. */
+"No reviews" = "Değerlendirme yok";
+
+/* No comment provided by engineer. */
+"None" = "Hiçbiri";
+
+/* No comment provided by engineer. */
+"Not yet released" = "Henüz yayımlanmadı";
+
+/* No comment provided by engineer. */
+"Notes" = "Notlar";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "Listenizde bir şey yok";
+
+/* No comment provided by engineer. */
+"Notifications" = "Bildirimler";
+
+/* No comment provided by engineer. */
+"Novel" = "Roman";
+
+/* No comment provided by engineer. */
+"Occupations" = "Faaliyet türü";
+
+/* No comment provided by engineer. */
+"OK" = "TAMAM";
+
+/* No comment provided by engineer. */
+"On my list" = "Listemde";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "TekBaskı";
+
+/* No comment provided by engineer. */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Liste girdisini güncellemek için isteğe bağlı durum (e.g. TAMAMLANDI)";
+
+/* No comment provided by engineer. */
+"Order" = "Sıralama";
+
+/* No comment provided by engineer. */
+"Original" = "Orijinal";
+
+/* No comment provided by engineer. */
+"Other" = "Diğer";
+
+/* No comment provided by engineer. */
+"Other account settings" = "Diğer hesap ayarları";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overview" = "Genel Bakış";
+
+/* No comment provided by engineer. */
+"Parent" = "Kaynak";
+
+/* No comment provided by engineer. */
+"Paused" = "Bekletilen";
+
+/* No comment provided by engineer. */
+"Picture book" = "Fotoğraf albümü";
+
+/* No comment provided by engineer. */
+"Planning" = "Planlanan";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "Bu özelliği kullanmak için lütfen oturum açın";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Lütfen iPhone'unuzda AniHyou uygulamasını açın ve Profil -> Ayarlar -> Hesabı Apple Watch ile senkronize et seçeneğine gidin";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "Popüler Anime";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "Popüler Manga";
+
+/* No comment provided by engineer. */
+"Popularity" = "Popülerlik";
+
+/* No comment provided by engineer. */
+"Prequel" = "Öncesi";
+
+/* No comment provided by engineer. */
+"Priority" = "Öncelik";
+
+/* No comment provided by engineer. */
+"Private" = "Gizli";
+
+/* No comment provided by engineer. */
+"Producers" = "Yapımcılar";
+
+/* No comment provided by engineer. */
+"Profile" = "Profil";
+
+/* No comment provided by engineer. */
+"Progress" = "İlerleme";
+
+/* No comment provided by engineer. */
+"Psychological" = "Psikolojik";
+
+/* No comment provided by engineer. */
+"Publishing" = "Yayınlanıyor";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "Yayınlanan Manga";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "Anime ve manga listeniz için hızlı erişim.";
+
+/* No comment provided by engineer. */
+"Rankings" = "Sıralama";
+
+/* No comment provided by engineer. */
+"Recommendations" = "Tavsiyeler";
+
+/* No comment provided by engineer. */
+"Relations" = "İlişkililer";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "İlişkililer ve Önerilenler";
+
+/* No comment provided by engineer. */
+"Release Date" = "Yayın tarihi";
+
+/* No comment provided by engineer. */
+"Releasing" = "Yayımlanıyor";
+
+/* No comment provided by engineer. */
+"Repeat" = "Tekrar";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "Tekrar Sayısı";
+
+/* No comment provided by engineer. */
+"Repeating" = "Tekrarlanan";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "Satın alımları geri yükle";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "İncelemeler ve Konular";
+
+/* No comment provided by engineer. */
+"Reviews" = "Değerlendirmeler";
+
+/* No comment provided by engineer. */
+"Right" = "Sağ";
+
+/* No comment provided by engineer. */
+"Romaji" = "Japonca Okunuşu";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "Romaji (Japonca Okunuş)";
+
+/* No comment provided by engineer. */
+"Romance" = "Romantizm";
+
+/* (No Comment) */
+"saturday_short" = "Cmt";
+
+/* No comment provided by engineer. */
+"Save" = "Kaydet";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "Bilim Kurgu";
+
+/* No comment provided by engineer. */
+"Score" = "Puan";
+
+/* No comment provided by engineer. */
+"Score distribution" = "Puan dağılımı";
+
+/* No comment provided by engineer. */
+"Score format" = "Puanlama türü";
+
+/* No comment provided by engineer. */
+"Search type" = "Arama tipi";
+
+/* No comment provided by engineer. */
+"Season" = "Sezon";
+
+/* No comment provided by engineer. */
+"See All" = "Tümünü Gör";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "Medya Türünü Seçin";
+
+/* No comment provided by engineer. */
+"Selection type" = "Seçim tipi";
+
+/* No comment provided by engineer. */
+"Sequel" = "Devam Serisi";
+
+/* No comment provided by engineer. */
+"Set progress" = "İlerleme ayarla";
+
+/* No comment provided by engineer. */
+"Sets a list entry progress to the specified number." = "Belirli bir numarada liste girdi işlemi ayarlar.";
+
+/* No comment provided by engineer. */
+"Settings" = "Ayarlar";
+
+/* No comment provided by engineer. */
+"Share" = "Paylaş";
+
+/* No comment provided by engineer. */
+"Show less" = "Daha az göster";
+
+/* No comment provided by engineer. */
+"Show more" = "Daha fazlası";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "Listemde, sadece yakında yayınlanacak animeleri göster";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "Spoiler'ı Göster";
+
+/* No comment provided by engineer. */
+"Shows the animes with behind episodes in your list." = "Listenizdeki animelerin izlenmeyen bölümlerini gösterir.";
+
+/* No comment provided by engineer. */
+"Shows the next airing animes in your list." = "Listenizde yayınlanacak anime bölümlerini gösterir.";
+
+/* No comment provided by engineer. */
+"Side Story" = "Yan Hikaye";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "Gündelik Hayat";
+
+/* No comment provided by engineer. */
+"Social" = "Sosyal";
+
+/* No comment provided by engineer. */
+"Sort" = "Sırala";
+
+/* No comment provided by engineer. */
+"Source" = "Kaynak";
+
+/* No comment provided by engineer. */
+"Special" = "Özel";
+
+/* No comment provided by engineer. */
+"Spin Off" = "Uyarlama";
+
+/* No comment provided by engineer. */
+"Sports" = "Spor";
+
+/* No comment provided by engineer. */
+"Spring" = "Bahar";
+
+/* No comment provided by engineer. */
+"Staff" = "Ekip";
+
+/* No comment provided by engineer. */
+"Staff & Character name language" = "Ekip & Karakter adı dili";
+
+/* No comment provided by engineer. */
+"Standard" = "Standart";
+
+/* No comment provided by engineer. */
+"Start date" = "Başlangıç tarihi";
+
+/* No comment provided by engineer. */
+"Start Date" = "Başlangıç Tarihi";
+
+/* No comment provided by engineer. */
+"Started" = "Başladı";
+
+/* No comment provided by engineer. */
+"Stats" = "İstatistikler";
+
+/* No comment provided by engineer. */
+"Status" = "Durum";
+
+/* No comment provided by engineer. */
+"Status distribution" = "Durum dağılımı";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "Yayınlayan platformlar";
+
+/* No comment provided by engineer. */
+"Studios" = "Stüdyolar";
+
+/* No comment provided by engineer. */
+"Summary" = "Özet";
+
+/* No comment provided by engineer. */
+"Summer" = "Yaz";
+
+/* (No Comment) */
+"sunday_short" = "Paz";
+
+/* No comment provided by engineer. */
+"Supernatural" = "Doğaüstü";
+
+/* No comment provided by engineer. */
+"Support the development of AniHyou!" = "AniHyou uygulamasının geliştirilmesine destek olun!";
+
+/* No comment provided by engineer. */
+"Supporting" = "Destekleyici";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "Hesabı Apple Watch ile senkronize et";
+
+/* No comment provided by engineer. */
+"Synonyms" = "Eş anlamlılar";
+
+/* No comment provided by engineer. */
+"Tags" = "Etiketler";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "Teşekkürler :)";
+
+/* No comment provided by engineer. */
+"The amount of episodes/chapters consumed by the user" = "Kullanıcı tarafından tüketilen bölüm miktarı";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "Medya girdi id'sinin";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Miktar farketmeksizin bağış yaparak bu özelliğin kilidini açabilirsiniz!";
+
+/* No comment provided by engineer. */
+"Threads" = "Konular";
+
+/* No comment provided by engineer. */
+"Thriller" = "Gerilim";
+
+/* (No Comment) */
+"thursday_short" = "Per";
+
+/* No comment provided by engineer. */
+"Title" = "Başlık";
+
+/* No comment provided by engineer. */
+"Title language" = "Başlık dili";
+
+/* No comment provided by engineer. */
+"Titles Count" = "Başlık Sayısı";
+
+/* No comment provided by engineer. */
+"Top 100" = "En İyi 100";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "En Popüler 100 Anime";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "En Popüler 100 Manga";
+
+/* No comment provided by engineer. */
+"Top Popular" = "En Popüler";
+
+/* No comment provided by engineer. */
+"Total Anime" = "Toplam Anime";
+
+/* No comment provided by engineer. */
+"Total Manga" = "Toplam Manga";
+
+/* No comment provided by engineer. */
+"Trailer" = "Ön izleme";
+
+/* No comment provided by engineer. */
+"Translations" = "Çeviriler";
+
+/* No comment provided by engineer. */
+"Trending" = "Popüler";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "Popüler Animeler";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "Popüler Manga";
+
+/* (No Comment) */
+"tuesday_short" = "Sal";
+
+/* No comment provided by engineer. */
+"TV" = "TV";
+
+/* No comment provided by engineer. */
+"TV Short" = "TV - Kısa";
+
+/* No comment provided by engineer. */
+"Unfollow" = "Takibi Bırak";
+
+/* (No Comment) */
+"Unknown" = "Bilinmiyor";
+
+/* No comment provided by engineer. */
+"Upcoming" = "Yakında";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "Yaklaşan Animeler";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "Yaklaşan Mangalar";
+
+/* No comment provided by engineer. */
+"Updated" = "Güncellendi";
+
+/* No comment provided by engineer. */
+"Users" = "Kullanıcılar";
+
+/* No comment provided by engineer. */
+"Users likes" = "Kullanıcıların beğendikleri";
+
+/* No comment provided by engineer. */
+"Version %@" = "Sürüm %@";
+
+/* No comment provided by engineer. */
+"VideoGame" = "VideoOyun";
+
+/* No comment provided by engineer. */
+"Visual novel" = "Görsel Roman";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "Seslendirenler";
+
+/* No comment provided by engineer. */
+"Volumes" = "Cilt";
+
+/* No comment provided by engineer. */
+"Volumes Read" = "Okunan Cilt";
+
+/* No comment provided by engineer. */
+"Web novel" = "Web romanı";
+
+/* (No Comment) */
+"wednesday_short" = "Çar";
+
+/* No comment provided by engineer. */
+"Weekday" = "Hafta içi";
+
+/* No comment provided by engineer. */
+"Winter" = "Kış";
+
+/* No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Herhangi bir satın alım işlemiyle, özel uygulama simgelerine ve vurgu renklerine erişim kazanacaksınız!";
+
+/* No comment provided by engineer. */
+"Year" = "Yıl";
+
+/* No comment provided by engineer. */
+"Years active" = "Aktif olduğu yıl";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "Tarayıcınızdan tekrar oturum açmanız gerekebilir";
+

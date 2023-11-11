@@ -23,15 +23,15 @@ extension ScoreFormat {
         case .point5:
             switch Int(score!) {
             case 1:
-                return Color("Score10")
+                return .score10
             case 2:
-                return Color("Score30")
+                return .score30
             case 3:
-                return Color("Score50")
+                return .score50
             case 4:
-                return Color("Score80")
+                return .score80
             case 5:
-                return Color("Score100")
+                return .score100
             default:
                 return .gray
             }
@@ -50,16 +50,31 @@ extension ScoreFormat {
     }
     // swiftlint:enable cyclomatic_complexity
 
-    func smileyIcon(score: Int) -> String {
+    func smileyIcon(score: Int) -> ImageResource? {
         switch score {
         case 1:
-            return "sentiment.dissatisfied"
+            return .sentimentDissatisfied
         case 2:
-            return "sentiment.neutral"
+            return .sentimentNeutral
         case 3:
-            return "sentiment.satisfied"
+            return .sentimentSatisfied
         default:
-            return ""
+            return nil
+        }
+    }
+    
+    var localizedName: LocalizedStringKey {
+        switch self {
+        case .point100:
+            return "100 Point (55/100)"
+        case .point10Decimal:
+            return "10 Point Decimal (5.5/10)"
+        case .point10:
+            return "10 Point (5/10)"
+        case .point5:
+            return "5 Star (3/5)"
+        case .point3:
+            return "3 Point Smiley :)"
         }
     }
 }

@@ -10,7 +10,7 @@ import AniListAPI
 
 struct TrendingListView: View {
 
-    @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var viewModel: DiscoverViewModel
     let mediaType: MediaType
 
     private let gridColumns = [
@@ -73,10 +73,10 @@ struct TrendingListView: View {
                 }
             }//:LazyVGrid
         }//:VScrollView
-        .navigationTitle("Trending \(mediaType.localizedName)")
+        .navigationTitle(mediaType == .anime ? "Trending Anime" : "Trending Manga")
     }
 }
 
 #Preview {
-    TrendingListView(viewModel: HomeViewModel(), mediaType: .anime)
+    TrendingListView(viewModel: DiscoverViewModel(), mediaType: .anime)
 }

@@ -25,6 +25,21 @@ struct MediaGeneralInfoView: View {
         }
     }
     
+    var seasonFormatted: String? {
+        if let season = viewModel.mediaDetails?.season?.value {
+            let localizedKey = String.LocalizationValue(
+                stringLiteral: season.localizedStringKey
+            )
+            if let year = viewModel.mediaDetails?.seasonYear {
+                return String(localized: localizedKey) + " \(year)"
+            } else {
+                return String(localized: localizedKey)
+            }
+        } else {
+            return nil
+        }
+    }
+    
     @ViewBuilder
     var generalInfo: some View {
         Text("Information")
@@ -32,7 +47,7 @@ struct MediaGeneralInfoView: View {
             .bold()
             .padding(.horizontal)
         
-        HInfoView(name: "Genres", value: viewModel.genresFormatted, isExpandable: true)
+        HInfoView(name: "Genres", values: viewModel.genresFormatted, isExpandable: true)
         if viewModel.isAnime {
             HInfoView(name: "Episodes", value: viewModel.mediaDetails?.episodes?.formatted())
         } else {
@@ -40,7 +55,8 @@ struct MediaGeneralInfoView: View {
             HInfoView(name: "Volumes", value: viewModel.mediaDetails?.volumes?.formatted())
         }
         if let duration = viewModel.mediaDetails?.duration {
-            HInfoView(name: "Duration", value: duration.minutesToLegibleText())
+            let seconds = TimeInterval(duration * 60)
+            HInfoView(name: "Duration", value: seconds.formatted(units: [.hour, .minute], unitsStyle: .abbreviated))
         }
         HInfoView(
             name: "Start date",
@@ -52,7 +68,7 @@ struct MediaGeneralInfoView: View {
         )
         
         if viewModel.isAnime {
-            HInfoView(name: "Season", value: viewModel.seasonFormatted)
+            HInfoView(name: "Season", value: seasonFormatted)
             HInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true) {
                 ForEach(viewModel.studios ?? [], id: \.id) { studio in
                     NavigationLink(studio.name) {
@@ -70,7 +86,10 @@ struct MediaGeneralInfoView: View {
                 }
             }
         }
-        HInfoView(name: "Source", value: viewModel.mediaDetails?.source?.value?.localizedName)
+        HInfoView(
+            name: "Source",
+            valueLocalized: viewModel.mediaDetails?.source?.value?.localizedName
+        )
         HInfoView(name: "Romaji", value: viewModel.mediaDetails?.title?.romaji, isExpandable: true)
         HInfoView(name: "English", value: viewModel.mediaDetails?.title?.english, isExpandable: true)
         HInfoView(name: "Native", value: viewModel.mediaDetails?.title?.native, isExpandable: true)

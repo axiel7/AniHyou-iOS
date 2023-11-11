@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import AniListAPI
 
 extension String {
     var profileHexColor: String {
@@ -28,6 +30,40 @@ extension String {
             return "#677B94"
         default:
             return ANIHYOU_COLOR
+        }
+    }
+}
+
+extension UserTitleLanguage {
+    var localizedName: LocalizedStringKey {
+        switch self {
+        case .romaji:
+            return "Romaji"
+        case .english:
+            return "English"
+        case .native:
+            return "Native"
+        case .romajiStylised:
+            return "Romaji"
+        case .englishStylised:
+            return "English"
+        case .nativeStylised:
+            return "Native"
+        }
+    }
+    
+    static public var allCasesNormal: [UserTitleLanguage] = [.romaji, .english, .native]
+}
+
+extension UserStaffNameLanguage {
+    var localizedName: LocalizedStringKey {
+        switch self {
+        case .romajiWestern:
+            return "Romaji (Western Order)"
+        case .romaji:
+            return "Romaji"
+        case .native:
+            return "Native"
         }
     }
 }

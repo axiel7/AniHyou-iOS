@@ -48,7 +48,8 @@ class OverviewStatsViewModel: ObservableObject {
                     data.formats?.forEach {
                         if let format = $0 {
                             self?.formatsDistribution.append(Stat(
-                                id: format.format?.value?.localizedName ?? "",
+                                id: format.format?.rawValue ?? "",
+                                idLocalized: format.format?.value?.localizedName,
                                 value: CGFloat(format.count),
                                 color: format.format?.value?.color ?? .accentColor
                             ))
@@ -57,7 +58,8 @@ class OverviewStatsViewModel: ObservableObject {
                     data.statuses?.forEach {
                         if let status = $0 {
                             self?.statusDistribution.append(Stat(
-                                id: status.status?.value?.localizedName ?? "",
+                                id: status.status?.rawValue ?? "",
+                                idLocalized: status.status?.value?.localizedName,
                                 value: CGFloat(status.count),
                                 color: status.status?.value?.color ?? .accentColor
                             ))
@@ -101,7 +103,8 @@ class OverviewStatsViewModel: ObservableObject {
                     data.formats?.forEach {
                         if let format = $0 {
                             self?.formatsDistribution.append(Stat(
-                                id: format.format?.value?.localizedName ?? "",
+                                id: format.format?.rawValue ?? "",
+                                idLocalized: format.format?.value?.localizedName,
                                 value: CGFloat(format.count),
                                 color: format.format?.value?.color ?? .accentColor
                             ))
@@ -110,7 +113,8 @@ class OverviewStatsViewModel: ObservableObject {
                     data.statuses?.forEach {
                         if let status = $0 {
                             self?.statusDistribution.append(Stat(
-                                id: status.status?.value?.localizedName ?? "",
+                                id: status.status?.rawValue ?? "",
+                                idLocalized: status.status?.value?.localizedName,
                                 value: CGFloat(status.count),
                                 color: status.status?.value?.color ?? .accentColor
                             ))

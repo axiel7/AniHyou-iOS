@@ -7,7 +7,7 @@ public class MediaChartQuery: GraphQLQuery {
   public static let operationName: String = "MediaChart"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus) { Page(page: $page, perPage: $perPage) { __typename media(sort: $sort, type: $type, status: $status) { __typename id title { __typename userPreferred } format startDate { __typename year } coverImage { __typename large } } pageInfo { __typename hasNextPage currentPage } } }"#
+      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus, $format: MediaFormat) { Page(page: $page, perPage: $perPage) { __typename media(sort: $sort, type: $type, status: $status, format: $format) { __typename id title { __typename userPreferred } format startDate { __typename year } coverImage { __typename large } } pageInfo { __typename hasNextPage currentPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -15,19 +15,22 @@ public class MediaChartQuery: GraphQLQuery {
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
   public var status: GraphQLNullable<GraphQLEnum<MediaStatus>>
+  public var format: GraphQLNullable<GraphQLEnum<MediaFormat>>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
-    status: GraphQLNullable<GraphQLEnum<MediaStatus>>
+    status: GraphQLNullable<GraphQLEnum<MediaStatus>>,
+    format: GraphQLNullable<GraphQLEnum<MediaFormat>>
   ) {
     self.page = page
     self.perPage = perPage
     self.sort = sort
     self.type = type
     self.status = status
+    self.format = format
   }
 
   public var __variables: Variables? { [
@@ -35,7 +38,8 @@ public class MediaChartQuery: GraphQLQuery {
     "perPage": perPage,
     "sort": sort,
     "type": type,
-    "status": status
+    "status": status,
+    "format": format
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -65,7 +69,8 @@ public class MediaChartQuery: GraphQLQuery {
         .field("media", [Medium?]?.self, arguments: [
           "sort": .variable("sort"),
           "type": .variable("type"),
-          "status": .variable("status")
+          "status": .variable("status"),
+          "format": .variable("format")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }

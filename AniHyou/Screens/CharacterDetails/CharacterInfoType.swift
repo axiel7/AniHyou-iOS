@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum CharacterInfoType: Equatable, Hashable, CaseIterable {
     case overview
@@ -13,7 +14,7 @@ public enum CharacterInfoType: Equatable, Hashable, CaseIterable {
 }
 
 extension CharacterInfoType {
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .overview:
             return "Overview"

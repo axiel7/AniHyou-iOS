@@ -23,6 +23,7 @@ let YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v="
 let DAILYMOTION_VIDEO_URL = "https://www.dailymotion.com/video/"
 
 // Preferences keys
+let LOGGED_IN_KEY = "is_logged_in"
 let USER_TOKEN_KEY = "user_token"
 let USER_ID_KEY = "user_id"
 let USER_COLOR_KEY = "user_color"
@@ -38,9 +39,14 @@ let AIRING_ON_MY_LIST_KEY = "airing_on_my_list"
 let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
 let HAS_DONATED_KEY = "has_donated"
 let APP_ICON_KEY = "app_icon"
+let HOME_TAB_KEY = "home_tab"
 
 let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
 
 let UNKNOWN_CHAR = "─"
+
+let AIRING_WIDGET_KIND = "AniHyou_Widget"
+let ANIME_BEHIND_WIDGET_KIND = "AniHyou_Anime_Behind_Widget"
+let MEDIA_LIST_WIDGET_KIND = "AniHyou_MediaList_Widget"
 // swiftlint:enable identifier_name

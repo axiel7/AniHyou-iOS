@@ -27,9 +27,15 @@ struct VerticalBarsStatsView: View {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 25, height: stat.value / maxStatValue * maxBarHeight)
                             .foregroundColor(stat.color)
-                        Text(stat.id)
-                            .font(.footnote)
-                            .foregroundColor(.gray)
+                        Group {
+                            if let idLocalized = stat.idLocalized {
+                                Text(idLocalized)
+                            } else {
+                                Text(stat.id)
+                            }
+                        }
+                        .font(.footnote)
+                        .foregroundColor(.gray)
                     }
                 }
             }

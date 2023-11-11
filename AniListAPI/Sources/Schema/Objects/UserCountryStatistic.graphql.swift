@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let UserCountryStatistic = Object(
+  static let UserCountryStatistic = ApolloAPI.Object(
     typename: "UserCountryStatistic",
     implementedInterfaces: []
   )

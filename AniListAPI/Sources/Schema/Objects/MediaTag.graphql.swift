@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A tag that describes a theme or element of the media
-  static let MediaTag = Object(
+  static let MediaTag = ApolloAPI.Object(
     typename: "MediaTag",
     implementedInterfaces: []
   )

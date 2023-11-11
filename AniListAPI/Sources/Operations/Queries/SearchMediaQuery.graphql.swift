@@ -7,7 +7,7 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $tag_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $seasonYear: Int, $onList: Boolean) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in tag_in: $tag_in format_in: $format_in status_in: $status_in seasonYear: $seasonYear onList: $onList ) { __typename id title { __typename userPreferred } type meanScore format coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename year } } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country ) { __typename id title { __typename userPreferred } type meanScore format coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename year } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -16,11 +16,17 @@ public class SearchMediaQuery: GraphQLQuery {
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
   public var genre_in: GraphQLNullable<[String?]>
+  public var genre_not_in: GraphQLNullable<[String?]>
   public var tag_in: GraphQLNullable<[String?]>
+  public var tag_not_in: GraphQLNullable<[String?]>
   public var format_in: GraphQLNullable<[GraphQLEnum<MediaFormat>?]>
   public var status_in: GraphQLNullable<[GraphQLEnum<MediaStatus>?]>
-  public var seasonYear: GraphQLNullable<Int>
+  public var startDateGreater: GraphQLNullable<FuzzyDateInt>
+  public var startDateLesser: GraphQLNullable<FuzzyDateInt>
   public var onList: GraphQLNullable<Bool>
+  public var isLicensed: GraphQLNullable<Bool>
+  public var isAdult: GraphQLNullable<Bool>
+  public var country: GraphQLNullable<CountryCode>
 
   public init(
     page: GraphQLNullable<Int>,
@@ -29,11 +35,17 @@ public class SearchMediaQuery: GraphQLQuery {
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
     genre_in: GraphQLNullable<[String?]>,
+    genre_not_in: GraphQLNullable<[String?]>,
     tag_in: GraphQLNullable<[String?]>,
+    tag_not_in: GraphQLNullable<[String?]>,
     format_in: GraphQLNullable<[GraphQLEnum<MediaFormat>?]>,
     status_in: GraphQLNullable<[GraphQLEnum<MediaStatus>?]>,
-    seasonYear: GraphQLNullable<Int>,
-    onList: GraphQLNullable<Bool>
+    startDateGreater: GraphQLNullable<FuzzyDateInt>,
+    startDateLesser: GraphQLNullable<FuzzyDateInt>,
+    onList: GraphQLNullable<Bool>,
+    isLicensed: GraphQLNullable<Bool>,
+    isAdult: GraphQLNullable<Bool>,
+    country: GraphQLNullable<CountryCode>
   ) {
     self.page = page
     self.perPage = perPage
@@ -41,11 +53,17 @@ public class SearchMediaQuery: GraphQLQuery {
     self.type = type
     self.sort = sort
     self.genre_in = genre_in
+    self.genre_not_in = genre_not_in
     self.tag_in = tag_in
+    self.tag_not_in = tag_not_in
     self.format_in = format_in
     self.status_in = status_in
-    self.seasonYear = seasonYear
+    self.startDateGreater = startDateGreater
+    self.startDateLesser = startDateLesser
     self.onList = onList
+    self.isLicensed = isLicensed
+    self.isAdult = isAdult
+    self.country = country
   }
 
   public var __variables: Variables? { [
@@ -55,11 +73,17 @@ public class SearchMediaQuery: GraphQLQuery {
     "type": type,
     "sort": sort,
     "genre_in": genre_in,
+    "genre_not_in": genre_not_in,
     "tag_in": tag_in,
+    "tag_not_in": tag_not_in,
     "format_in": format_in,
     "status_in": status_in,
-    "seasonYear": seasonYear,
-    "onList": onList
+    "startDateGreater": startDateGreater,
+    "startDateLesser": startDateLesser,
+    "onList": onList,
+    "isLicensed": isLicensed,
+    "isAdult": isAdult,
+    "country": country
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -91,11 +115,17 @@ public class SearchMediaQuery: GraphQLQuery {
           "type": .variable("type"),
           "sort": .variable("sort"),
           "genre_in": .variable("genre_in"),
+          "genre_not_in": .variable("genre_not_in"),
           "tag_in": .variable("tag_in"),
+          "tag_not_in": .variable("tag_not_in"),
           "format_in": .variable("format_in"),
           "status_in": .variable("status_in"),
-          "seasonYear": .variable("seasonYear"),
-          "onList": .variable("onList")
+          "startDate_greater": .variable("startDateGreater"),
+          "startDate_lesser": .variable("startDateLesser"),
+          "onList": .variable("onList"),
+          "isLicensed": .variable("isLicensed"),
+          "isAdult": .variable("isAdult"),
+          "countryOfOrigin": .variable("country")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }

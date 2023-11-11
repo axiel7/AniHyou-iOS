@@ -5,7 +5,7 @@
 //  Created by Axel Lopez on 18/06/2023.
 //
 
-import Foundation
+import SwiftUI
 import AniListAPI
 
 public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
@@ -34,7 +34,7 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
         }
     }
 
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .all:
             return "All"

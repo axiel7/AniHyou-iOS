@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when a media tracked in a user's list is deleted from the site
-  static let MediaDeletionNotification = Object(
+  static let MediaDeletionNotification = ApolloAPI.Object(
     typename: "MediaDeletionNotification",
     implementedInterfaces: []
   )

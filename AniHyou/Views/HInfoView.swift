@@ -9,25 +9,28 @@ import SwiftUI
 
 struct HInfoView: View {
 
-    let name: String
+    let name: LocalizedStringKey
     var value: String?
+    var valueLocalized: LocalizedStringKey?
+    var values: [String]?
     var isExpandable: Bool = false
     var expandedContent: (() -> any View)?
     @State private var isExpanded: Bool = false
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(spacing: 0) {
                 Text(name)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .padding(.trailing)
                 Spacer()
                 if !isExpanded {
-                    Text(value ?? "Unknown")
+                    valueText
                         .font(.subheadline)
                         .lineLimit(1)
                         .frame(alignment: .trailing)
+                        .padding(.horizontal, 4)
                 }
                 if isExpandable {
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
@@ -38,10 +41,11 @@ struct HInfoView: View {
                 if let expandedContent {
                     AnyView(expandedContent())
                 } else {
-                    Text(value ?? "Unknown")
+                    valueText
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                         .padding(.top, 1)
+                        .textSelection(.enabled)
                 }
             }
             Divider()
@@ -56,11 +60,37 @@ struct HInfoView: View {
         .padding(.horizontal)
         .padding(.top, 7)
     }
+    
+    @ViewBuilder
+    var valueText: some View {
+        if let value {
+            Text(value)
+        } else if let valueLocalized {
+            Text(valueLocalized)
+        } else if let values {
+            if !isExpanded {
+                values
+                    .map { LocalizedStringKey($0) }
+                    .joined(separator: ", ")
+            } else {
+                ForEach(values, id: \.self) {
+                    Text(LocalizedStringKey($0))
+                }
+            }
+        } else {
+            Text("Unknown")
+        }
+    }
 }
 
 #Preview {
     VStack {
         HInfoView(name: "Start date", value: "12-12-2012")
-        HInfoView(name: "Genres", value: "Action, Comedy, Slice of Life, Supernatural", isExpandable: true)
+        HInfoView(
+            name: "Genres",
+            values: ["Action", "Comedy", "Slice of Life", "Supernatural", "Fantasy"],
+            isExpandable: true
+        )
+        .environment(\.locale, .init(identifier: "ja"))
     }
 }

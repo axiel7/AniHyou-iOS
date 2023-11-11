@@ -11,7 +11,7 @@ import SwiftUI
 struct AniHyouApp: App {
 
     @StateObject private var globalAppState = GlobalAppState.shared
-    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
+    @AppStorage(ACCENT_COLOR_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var accentColor = ANIHYOU_COLOR
 
     var body: some Scene {
         WindowGroup {
@@ -19,10 +19,9 @@ struct AniHyouApp: App {
                 .id(globalAppState.globalId)
                 .tint(Color(hex: accentColor) ?? .accentColor)
                 .onAppear {
-                    KeychainUtils.keychain.synchronizable = true
                     //transfer user id from old app versions
-                    if authUserId() == 0 {
-                        saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
+                    if LoginRepository.authUserId() == 0 {
+                        LoginRepository.saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
                     }
                 }
         }

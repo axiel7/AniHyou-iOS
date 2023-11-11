@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let MediaCoverImage = Object(
+  static let MediaCoverImage = ApolloAPI.Object(
     typename: "MediaCoverImage",
     implementedInterfaces: []
   )

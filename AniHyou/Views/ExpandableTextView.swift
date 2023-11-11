@@ -10,6 +10,7 @@ import SwiftUI
 struct ExpandableTextView: View {
 
     @State private var isExpanded = false
+    @State private var wasCopied = false
     let lineLimit = 3
     let fontSize: CGFloat = 16
 
@@ -20,28 +21,36 @@ struct ExpandableTextView: View {
         result.foregroundColor = .primary
         return result
     }
+    var showCopy = false
 
     var body: some View {
-        VStack(alignment: .trailing, spacing: 10) {
+        VStack(spacing: 10) {
             Text(styledText)
                 .lineLimit(isExpanded ? nil : lineLimit)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(
-                action: {
+            HStack {
+                if showCopy {
+                    Button(wasCopied ? "Copied!" : "Copy") {
+                        UIPasteboard.general.string = text.string
+                        wasCopied = true
+                        withAnimation(Animation.linear.delay(2)) {
+                            wasCopied = false
+                        }
+                    }
+                }
+                Spacer()
+                Button(isExpanded ? "Show less" : "Show more") {
                     withAnimation {
                         isExpanded.toggle()
                     }
-                },
-                label: {
-                    Text(isExpanded ? "Show less" : "Show more")
-                        .font(.footnote)
                 }
-            )
+            }//:HStack
+            .font(.footnote)
         }
     }
 }
 
 #Preview {
-    ExpandableTextView(text: .constant(NSAttributedString(string: "This is a preview")))
+    ExpandableTextView(text: .constant(NSAttributedString(string: "This is a preview")), showCopy: true)
 }

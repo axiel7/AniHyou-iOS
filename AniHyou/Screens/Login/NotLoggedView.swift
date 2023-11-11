@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import WidgetKit
 
 struct NotLoggedView: View {
     @StateObject private var viewModel = LoginViewModel()
-    let onSuccessLogin: () -> Void
 
     var body: some View {
         VStack {
@@ -25,15 +23,9 @@ struct NotLoggedView: View {
             )
             .buttonStyle(.borderedProminent)
         }
-        .onReceive(viewModel.$isLoginSuccess) { isSuccess in
-            if isSuccess {
-                WidgetCenter.shared.reloadAllTimelines()
-                onSuccessLogin()
-            }
-        }
     }
 }
 
 #Preview {
-    NotLoggedView(onSuccessLogin: {})
+    NotLoggedView()
 }

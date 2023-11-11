@@ -32,10 +32,9 @@ struct MediaRelationsAndRecommendationsView: View {
                                     NavigationLink(destination: MediaDetailsView(mediaId: relation.node!.id)) {
                                         HListItemWithSubtitleView(
                                             title: relation.node?.title?.userPreferred,
-                                            subtitle: String(swiftLintMultiline:
-                                                relation.relationType?.value?.localizedName ?? "",
-                                                " · ",
-                                                relation.node?.format?.value?.localizedName ?? ""
+                                            twoSubtitleTexts: (
+                                                relation.relationType?.value?.localizedName,
+                                                relation.node?.format?.value?.localizedName
                                             ),
                                             imageUrl: relation.node?.coverImage?.large
                                         )

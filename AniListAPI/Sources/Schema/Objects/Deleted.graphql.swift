@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Deleted data type
-  static let Deleted = Object(
+  static let Deleted = ApolloAPI.Object(
     typename: "Deleted",
     implementedInterfaces: []
   )

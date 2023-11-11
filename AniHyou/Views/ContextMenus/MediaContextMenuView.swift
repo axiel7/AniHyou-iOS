@@ -15,7 +15,7 @@ extension View {
             Button {
                 MediaListRepository.updateListStatus(mediaId: mediaId, status: status)
             } label: {
-                Label("Set as \(status.localizedName)", systemImage: status.systemImage)
+                Label(status.localizedName, systemImage: status.systemImage)
             }
         }
     }
@@ -121,11 +121,9 @@ struct MediaContextMenuView: View {
                         }
                         
                         if let schedule = viewModel.details!.nextAiringEpisode {
-                            Group {
-                                Text("Ep \(schedule.episode) in ") +
-                                Text(Date(timeIntervalSince1970: Double(schedule.airingAt)), style: .relative)
-                            }
-                            .font(.subheadline)
+                            let relativeDate = Date(timeIntervalSince1970: Double(schedule.airingAt))
+                            Text("Ep \(schedule.episode) \(relativeDate, format: .relative(presentation: .numeric))")
+                                .font(.subheadline)
                         }
                     }
                 }//:HStack

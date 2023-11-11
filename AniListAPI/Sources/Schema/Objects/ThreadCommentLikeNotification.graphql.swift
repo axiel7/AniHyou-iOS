@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when a thread comment is liked
-  static let ThreadCommentLikeNotification = Object(
+  static let ThreadCommentLikeNotification = ApolloAPI.Object(
     typename: "ThreadCommentLikeNotification",
     implementedInterfaces: []
   )

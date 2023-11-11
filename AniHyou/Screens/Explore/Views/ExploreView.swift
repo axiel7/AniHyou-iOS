@@ -54,20 +54,55 @@ struct ExploreView: View {
 
                     mediaStatusSelector
 
-                    Picker("Year", selection: $viewModel.selectedYear) {
+                    Picker("From year", selection: $viewModel.yearFrom) {
                         Text("None").tag(Optional<Int>(nil))
                         ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
                             Text(String($0)).tag(Optional($0))
                         }
                     }
-                    .onChange(of: viewModel.selectedYear) { _ in
+                    .onChange(of: viewModel.yearFrom) { _ in
                         viewModel.runSearch()
                     }
-
-                    Toggle("On my list", isOn: $viewModel.mediaOnMyList)
+                    
+                    Picker("To year", selection: $viewModel.yearTo) {
+                        Text("None").tag(Optional<Int>(nil))
+                        let startYear = (viewModel.yearFrom ?? 1940) + 1
+                        ForEach((startYear...(currentYear+1)).reversed(), id: \.self) {
+                            Text(String($0)).tag(Optional($0))
+                        }
+                    }
+                    .onChange(of: viewModel.yearTo) { _ in
+                        viewModel.runSearch()
+                    }
+                    
+                    Picker("Country", selection: $viewModel.country) {
+                        Text("None").tag(Optional<CountryOfOrigin>(nil))
+                        ForEach(CountryOfOrigin.allCases, id: \.self) {
+                            Text($0.localized).tag(Optional($0))
+                        }
+                    }
+                    .onChange(of: viewModel.country) { _ in
+                        viewModel.runSearch()
+                    }
+                    
+                    TriPicker("On my list", selection: $viewModel.mediaOnMyList)
                         .onChange(of: viewModel.mediaOnMyList) { _ in
                             viewModel.runSearch()
                         }
+                    
+                    TriPicker("Doujinshi", selection: $viewModel.isDoujinshi)
+                        .onChange(of: viewModel.isDoujinshi) { _ in
+                            viewModel.runSearch()
+                        }
+                    
+                    TriPicker("Adult", selection: $viewModel.isAdult)
+                        .onChange(of: viewModel.isAdult) { _ in
+                            viewModel.runSearch()
+                        }
+                    
+                    Button("Clear", role: .destructive) {
+                        viewModel.clearFilters()
+                    }
 
                     Button("Hide filters") {
                         withAnimation {
@@ -84,13 +119,17 @@ struct ExploreView: View {
 
                 ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                     if let item {
+                        let startYear = if item.startDate?.year != nil {
+                            "\(item.startDate!.year!)"
+                        } else {
+                            "Unknown"
+                        }
                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                             HListItemWithSubtitleView(
                                 title: item.title?.userPreferred,
-                                subtitle: String(swiftLintMultiline:
-                                    item.format?.value?.localizedName ?? "",
-                                    " · ",
-                                    item.startDate?.year?.stringValue ?? ""
+                                twoSubtitleTexts: (
+                                    item.format?.value?.localizedName,
+                                    "\(startYear)"
                                 ),
                                 imageUrl: item.coverImage?.large
                             )
@@ -145,55 +184,59 @@ struct ExploreView: View {
 
     private var preSearchView: some View {
         ScrollView(.vertical) {
-            VStack(alignment: .leading) {
-
+            Grid(
+                alignment: .leading,
+                verticalSpacing: 24
+            ) {
                 // MARK: - Anime
-                Text("Anime")
-                    .font(.title2)
-                    .bold()
-                    .padding(.top, 8)
-                    .padding(.leading, 15)
-                Divider()
-                    .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Anime")
+                        .font(.title2)
+                        .bold()
+                        .padding(.top, 8)
+                    Divider()
+                }
 
                 animeCharts
 
                 // MARK: - Manga
-                Text("Manga")
-                    .font(.title2)
-                    .bold()
-                    .padding(.top, 8)
-                    .padding(.leading, 15)
-                Divider()
-                    .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Manga")
+                        .font(.title2)
+                        .bold()
+                        .padding(.top, 8)
+                    Divider()
+                }
 
                 mangaCharts
-            }//:VStack
+            }//:Grid
+            .padding(.horizontal)
         }//:VScrollView
     }
 
     @ViewBuilder
     private var animeCharts: some View {
-        // MARK: top
-        HStack(alignment: .center) {
-            NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
+        // MARK: Top 100, Top Popular
+        GridRow {
+            NavigationLink(
+                destination: MediaChartListView(
+                    title: "Top 100 Anime",
+                    type: .anime,
+                    sort: .scoreDesc
+                )
+            ) {
                 Label("Top 100", systemImage: "crown.fill")
                     .foregroundColor(.purple)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)
             ) {
                 Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
                     .foregroundColor(.red)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
-        // MARK: upcoming, airing
-        HStack(alignment: .center) {
+        }
+        // MARK: Upcoming, Airing
+        GridRow {
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Upcoming Anime",
@@ -205,7 +248,6 @@ struct ExploreView: View {
                 Label("Upcoming", systemImage: "clock.fill")
                     .foregroundColor(.pink)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Airing Anime",
@@ -217,76 +259,65 @@ struct ExploreView: View {
                 Label("Airing", systemImage: "antenna.radiowaves.left.and.right")
                     .foregroundColor(.indigo)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
+        }
         // MARK: Spring, Summer
-        HStack(alignment: .center) {
+        GridRow {
             NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
                 Label("Spring", systemImage: "leaf.fill")
                     .foregroundColor(.green)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
                 Label("Summer", systemImage: "sun.max.fill")
                     .foregroundColor(.yellow)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
+        }
         // MARK: Fall, Winter
-        HStack(alignment: .center) {
+        GridRow {
+            
             NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
                 Label("Fall", systemImage: "cloud.rain.fill")
                     .foregroundColor(.brown)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
                 Label("Winter", systemImage: "snowflake")
                     .foregroundColor(.blue)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
-        // MARK: Calendar
-        HStack {
+        }
+        // MARK: Top Movies, Calendar
+        GridRow {
+            NavigationLink(destination: MediaChartListView(
+                title: "Top Movies",
+                type: .anime,
+                sort: .scoreDesc,
+                format: .movie
+            )) {
+                Label("Top Movies", systemImage: "film")
+                    .foregroundColor(.teal)
+            }
             NavigationLink(destination: CalendarAnimeView()) {
                 Label("Calendar", systemImage: "calendar")
                     .foregroundColor(.orange)
             }
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
     }
 
     @ViewBuilder
     private var mangaCharts: some View {
-        // MARK: top
-        HStack(alignment: .center) {
+        // MARK: Top 100, Top Popular
+        GridRow {
             NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
                 Label("Top 100", systemImage: "crown.fill")
                     .foregroundColor(.purple)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)
             ) {
                 Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
                     .foregroundColor(.red)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
-        // MARK: upcoming, publishing
-        HStack(alignment: .center) {
+        // MARK: Upcoming, Publishing
+        GridRow {
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Upcoming Manga",
@@ -298,7 +329,6 @@ struct ExploreView: View {
                 Label("Upcoming", systemImage: "clock.fill")
                     .foregroundColor(.pink)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Publishing Manga",
@@ -310,10 +340,7 @@ struct ExploreView: View {
                 Label("Publishing", systemImage: "pencil.line")
                     .foregroundColor(.indigo)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
+        }
     }
 
     @ViewBuilder
@@ -365,15 +392,16 @@ struct ExploreView: View {
                 Text("Format")
                     .foregroundColor(.primary)
                 Spacer()
-                Text(viewModel.selectedMediaFormatJoined)
-                    .foregroundColor(.gray)
+                ForEach(Array(viewModel.selectedMediaFormat.prefix(3)), id: \.self) { status in
+                    Text(status.localizedName)
+                }
                 Image(systemName: "chevron.right")
                     .foregroundColor(.gray)
             }//:HStack
         })//:Button
         .sheet(isPresented: $isMediaFormatSheetPresented) {
             MultiSelectionSheet(
-                values: MediaFormat.allCases,
+                values: MediaFormat.allCases(mediaType: viewModel.mediaType),
                 selectedValues: $viewModel.selectedMediaFormat,
                 onDone: { viewModel.runSearch() },
                 rowContent: { format in
@@ -389,8 +417,10 @@ struct ExploreView: View {
                 Text("Status")
                     .foregroundColor(.primary)
                 Spacer()
-                Text(viewModel.selectedMediaStatusJoined)
-                    .foregroundColor(.gray)
+                ForEach(Array(viewModel.selectedMediaStatus.prefix(3)), id: \.self) { status in
+                    Text(status.localizedName)
+                }
+                .foregroundColor(.gray)
                 Image(systemName: "chevron.right")
                     .foregroundColor(.gray)
             }//:HStack

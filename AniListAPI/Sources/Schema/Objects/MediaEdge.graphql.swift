@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Media connection edge
-  static let MediaEdge = Object(
+  static let MediaEdge = ApolloAPI.Object(
     typename: "MediaEdge",
     implementedInterfaces: []
   )

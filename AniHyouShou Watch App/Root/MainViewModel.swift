@@ -11,13 +11,11 @@ import AniListAPI
 
 class MainViewModel: ObservableObject {
 
-    @Published var justLoggedIn = false
-
     func saveUserData(key: String, value: String) async {
         switch key {
         case USER_TOKEN_KEY:
             TokenAddingInterceptor.token = value
-            KeychainUtils.keychain.set(value, forKey: USER_TOKEN_KEY)
+            KeychainUtils.shared.keychain.set(value, forKey: USER_TOKEN_KEY)
             getUserId()
         default:
             return
@@ -25,13 +23,12 @@ class MainViewModel: ObservableObject {
     }
 
     func getUserId() {
-        Network.shared.apollo.fetch(query: ViewerIdQuery()) { [weak self] result in
+        Network.shared.apollo.fetch(query: ViewerIdQuery()) { result in
             switch result {
             case .success(let graphQLResult):
                 if let viewer = graphQLResult.data?.viewer {
-                    saveUserId(id: viewer.id)
-                    self?.justLoggedIn = true
-                    UserDefaults.standard.set(true, forKey: "is_logged_in")
+                    LoginRepository.saveUserId(id: viewer.id)
+                    UserDefaults.standard.set(true, forKey: LOGGED_IN_KEY)
                 }
             case .failure(let error):
                 print(error)

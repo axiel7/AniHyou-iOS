@@ -23,4 +23,6 @@ fragment UserInfo on User
   }
   isFollowing
   isFollower
+  donatorBadge
+  donatorTier
 }

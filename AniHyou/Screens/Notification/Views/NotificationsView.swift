@@ -11,11 +11,12 @@ struct NotificationsView: View {
 
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = NotificationsViewModel()
+    @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {
         NavigationStack {
             Group {
-                if isLoggedIn() {
+                if isLoggedIn {
                     List {
                         Picker("Filter", selection: $viewModel.type) {
                             ForEach(NotificationTypeGrouped.allCases, id: \.self) { type in
@@ -39,7 +40,7 @@ struct NotificationsView: View {
                         viewModel.resetPage()
                     }
                 } else {
-                    NotLoggedView(onSuccessLogin: { dismiss() })
+                    NotLoggedView()
                 }
             }
             .navigationTitle("Notifications")

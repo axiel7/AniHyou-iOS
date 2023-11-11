@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AniListAPI
 
 extension String {
@@ -31,6 +32,23 @@ extension String {
 
     init(swiftLintMultiline strings: String...) {
         self = strings.reduce("", +)
+    }
+    
+    public func localized(with arguments: [CVarArg]) -> String {
+        return String(format: NSLocalizedString(self, comment: ""), locale: nil, arguments: arguments)
+    }
+}
+
+extension [LocalizedStringKey] {
+    // thanks Apple, spent 2 days trying to join localized strings
+    func joined(separator: LocalizedStringKey = "") -> Text {
+        return self.reduce(Text("")) {
+            if $1 == self.first {
+                $0 + Text($1)
+            } else {
+                $0 + Text(separator) + Text($1)
+            }
+        }
     }
 }
 

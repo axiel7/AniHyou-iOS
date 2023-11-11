@@ -20,7 +20,7 @@ struct MediaListItemStandardView: View {
     }
 
     var body: some View {
-        HStack {
+        HStack(spacing: 10) {
             MediaCoverView(
                 imageUrl: item?.media?.coverImage?.large,
                 width: coverWidth,
@@ -62,25 +62,21 @@ struct MediaListItemStandardView: View {
 struct AiringScheduleItemText: View {
 
     let item: UserMediaListQuery.Data.Page.MediaList?
-    @AppStorage(ACCENT_COLOR_KEY) private var accentColor = ANIHYOU_COLOR
 
     var body: some View {
         let airing = item!.media!.nextAiringEpisode!
         let isBehind = item?.progress ?? 0 < airing.episode - 1
-        HStack(spacing: 1) {
-            Text(isBehind ? "^[\((airing.episode - 1) - (item?.progress ?? 0)) episodes](inflect: true) behind"
-                 : "Ep \(airing.episode) airing in "
-            )
-            .font(.subheadline)
-            .lineLimit(1)
-
-            if !isBehind {
-                Text(Date(timeIntervalSince1970: Double(airing.airingAt)), style: .relative)
-                    .font(.subheadline)
-                    .lineLimit(1)
+        HStack {
+            if isBehind {
+                Text("^[\((airing.episode - 1) - (item?.progress ?? 0)) episode behind](inflect: true)")
+            } else {
+                let relativeDate = Date(timeIntervalSince1970: Double(airing.airingAt))
+                Text("Ep \(airing.episode) \(relativeDate, format: .relative(presentation: .numeric))")
             }
         }
-        .foregroundColor(isBehind ? Color(hex: accentColor) : .gray)
+        .font(.subheadline)
+        .lineLimit(1)
+        .foregroundColor(isBehind ? .accentColor : .gray)
         .padding(.bottom, 1)
     }
 }

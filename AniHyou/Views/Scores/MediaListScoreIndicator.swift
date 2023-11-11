@@ -20,43 +20,43 @@ struct MediaListScoreIndicator: View {
         switch format {
         case .point100, .point10, .point5:
             HStack(alignment: .center) {
-                Image(systemName: "star.fill")
                 if score == 0 {
                     Text(UNKNOWN_CHAR)
                 } else {
                     Text(String(Int(score)))
                 }
+                Image(systemName: "star.fill")
             }
             .foregroundColor(color)
             .font(.footnote)
         case .point10Decimal:
             HStack(alignment: .center) {
-                Image(systemName: "star.fill")
                 if score == 0 {
                     Text(UNKNOWN_CHAR)
                 } else {
                     Text(score.formatted())
                 }
+                Image(systemName: "star.fill")
             }
             .foregroundColor(color)
             .font(.footnote)
         case .point3:
-            if score == 0 {
-                Text(UNKNOWN_CHAR)
-                    .foregroundColor(.gray)
-                    .font(.footnote)
-            } else {
-                Image(format.smileyIcon(score: Int(score)))
+            if let icon = format.smileyIcon(score: Int(score)) {
+                Image(icon)
                     .resizable()
                     .frame(width: 18, height: 18)
                     .foregroundColor(color)
+            } else {
+                Text(UNKNOWN_CHAR)
+                    .foregroundColor(.gray)
+                    .font(.footnote)
             }
         }
     }
 }
 
 #Preview {
-    VStack {
+    VStack(alignment: .trailing) {
         MediaListScoreIndicator(score: 0, format: .point100)
         MediaListScoreIndicator(score: 2.8, format: .point10Decimal)
         MediaListScoreIndicator(score: 3, format: .point3)

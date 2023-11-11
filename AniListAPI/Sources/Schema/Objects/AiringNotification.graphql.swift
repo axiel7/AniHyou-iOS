@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when an episode of anime airs
-  static let AiringNotification = Object(
+  static let AiringNotification = ApolloAPI.Object(
     typename: "AiringNotification",
     implementedInterfaces: []
   )

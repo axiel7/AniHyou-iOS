@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum UserStatType: Equatable, Hashable, CaseIterable {
     case overview
@@ -18,7 +19,7 @@ public enum UserStatType: Equatable, Hashable, CaseIterable {
 }
 
 extension UserStatType {
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .overview:
             return "Overview"

@@ -14,7 +14,7 @@ class TokenAddingInterceptor: ApolloInterceptor {
 
     public var id: String = UUID().uuidString
 
-    static var token = KeychainUtils.keychain.get(USER_TOKEN_KEY)
+    static var token = KeychainUtils.shared.keychain.get(USER_TOKEN_KEY)
 
     func interceptAsync<Operation: GraphQLOperation>(
         chain: RequestChain,
@@ -23,7 +23,7 @@ class TokenAddingInterceptor: ApolloInterceptor {
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
             // for some reason on Apple Watch the static variable is always null
             // so we need to get it directly from the Keychain
-            if let token = TokenAddingInterceptor.token ?? KeychainUtils.keychain.get(USER_TOKEN_KEY) {
+            if let token = TokenAddingInterceptor.token ?? KeychainUtils.shared.keychain.get(USER_TOKEN_KEY) {
                 request.addHeader(name: "Authorization", value: "Bearer \(token)")
             }
 

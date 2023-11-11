@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A user's avatars
-  static let UserAvatar = Object(
+  static let UserAvatar = ApolloAPI.Object(
     typename: "UserAvatar",
     implementedInterfaces: []
   )

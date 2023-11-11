@@ -44,6 +44,8 @@ extension UserActivityQuery.Data.Page.Activity {
             return list.id
         } else if let text = asTextActivity {
             return text.id
+        } else if let message = asMessageActivity {
+            return message.id
         } else {
             return 0
         }

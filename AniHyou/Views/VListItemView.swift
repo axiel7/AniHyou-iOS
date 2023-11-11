@@ -44,13 +44,11 @@ struct VListItemView: View {
                     .padding(.bottom, 1)
                 }
                 if let nextEpisode, let airingAt {
-                    Group {
-                        Text("Ep \(nextEpisode) airing at ") +
-                        Text(Date(timeIntervalSince1970: Double(airingAt)), style: .time)
-                    }
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 1)
-                    .frame(width: VListItemView.coverWidth, alignment: .leading)
+                    let time = Date(timeIntervalSince1970: Double(airingAt))
+                    Text("Ep \(nextEpisode) at \(time, format: .dateTime.hour().minute())")
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 1)
+                        .frame(width: VListItemView.coverWidth, alignment: .leading)
                 }
             }
             .font(.footnote)

@@ -5,7 +5,7 @@
 
 public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment MediaRelated on MediaEdge { __typename relationType node { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } } }"#
+    #"fragment MediaRelated on MediaEdge { __typename relationType(version: 2) node { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } } }"#
   }
 
   public let __data: DataDict
@@ -14,7 +14,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
   public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaEdge }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
-    .field("relationType", GraphQLEnum<AniListAPI.MediaRelation>?.self),
+    .field("relationType", GraphQLEnum<AniListAPI.MediaRelation>?.self, arguments: ["version": 2]),
     .field("node", Node?.self),
   ] }
 

@@ -60,7 +60,11 @@ struct MediaStatsView: View {
                             .foregroundColor(ranking.type.value?.color ?? nil)
                         Spacer()
                         Text("#\(ranking.rank)")
-                        Text(ranking.context.firstCapitalized)
+                        if let type = ranking.type.value {
+                            Text(type.localizedContext)
+                        } else {
+                            Text(ranking.context.firstCapitalized)
+                        }
                         if let season = ranking.season?.value {
                             Text(season.localizedName)
                         }

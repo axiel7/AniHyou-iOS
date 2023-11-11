@@ -11,7 +11,7 @@ import AniListAPI
 
 class MediaListViewModel: ObservableObject {
 
-    var userId: Int = authUserId()
+    var userId: Int = LoginRepository.authUserId()
     @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList?
 
@@ -111,65 +111,38 @@ class MediaListViewModel: ObservableObject {
         forceReload = true
     }
 
-    func updateEntryProgress(entryId: Int, progress: Int, status: MediaListStatus?) {
+    func updateEntryProgress(mediaId: Int, entryId: Int, progress: Int, status: MediaListStatus?) {
         isLoading = true
-        Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(
-            saveMediaListEntryId: .some(entryId),
-            progress: .some(progress),
-            status: someIfNotNil(status)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data?.saveMediaListEntry {
-                    self?.onEntryUpdated(
-                        mediaId: data.mediaId,
-                        entryId: entryId,
-                        updatedEntry: nil,
-                        progress: data.progress
-                    )
-                }
-            case .failure(let error):
-                print(error)
+        Task {
+            let updated = await MediaListRepository.updateProgress(entryId: entryId, progress: progress, status: status)
+            if updated {
+                onEntryUpdated(mediaId: mediaId, entryId: entryId, updatedEntry: nil, progress: progress)
             }
-            self?.isLoading = false
+            DispatchQueue.main.async { [weak self] in
+                self?.isLoading = false
+            }
         }
     }
 
     func onEntryUpdated(mediaId: Int, entryId: Int, updatedEntry: BasicMediaListEntry?, progress: Int?) {
-        //Update the local cache
-        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
-            do {
-                guard let foundIndex = self?.mediaList.firstIndex(where: { $0?.id == entryId }) else { return }
-                //if the status changed, remove from this list
-                if let updatedEntry, self?.mediaList[foundIndex]?.status != updatedEntry.status {
-                    self?.onEntryDeleted(entryId: updatedEntry.id)
-                    return
-                }
-                //else update the new entry data
-                try transaction.updateObject(
-                    ofType: BasicMediaListEntry.self,
-                    withKey: "MediaList:\(entryId).\(mediaId)"
-                ) { (cachedData: inout BasicMediaListEntry) in
-                    if let updatedEntry { cachedData = updatedEntry }
-                    if let progress { cachedData.progress = progress }
-                }
-
-                let newObject = try transaction.readObject(
-                    ofType: UserMediaListQuery.Data.Page.MediaList.self,
-                    withKey: "MediaList:\(entryId).\(mediaId)"
-                )
-                DispatchQueue.main.async {
-                    self?.mediaList[foundIndex] = newObject
-                }
-            } catch {
-                print(error)
+        guard let foundIndex = mediaList.firstIndex(where: { $0?.id == entryId }) else { return }
+        //if the status changed, remove from this list
+        if let updatedEntry, mediaList[foundIndex]?.status != updatedEntry.status {
+            onEntryDeleted(entryId: updatedEntry.id)
+            return
+        }
+        //else update the local cache
+        Task {
+            let updatedItem = await MediaListRepository.updateCachedEntry(mediaId: mediaId, entryId: entryId)
+            DispatchQueue.main.async { [weak self] in
+                self?.mediaList[foundIndex] = updatedItem
             }
-        })
+        }
     }
 
     func onEntryDeleted(entryId: Int) {
-        DispatchQueue.main.async {
-            self.mediaList.removeAll(where: { $0?.id == entryId })
+        DispatchQueue.main.async { [weak self] in
+            self?.mediaList.removeAll(where: { $0?.id == entryId })
         }
     }
 

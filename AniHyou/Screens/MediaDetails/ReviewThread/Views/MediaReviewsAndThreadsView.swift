@@ -26,11 +26,9 @@ struct MediaReviewsAndThreadsView: View {
                     .padding(.leading)
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 8) {
-                        ForEach(viewModel.mediaThreads, id: \.?.id) {
-                            if let thread = $0 {
-                                NavigationLink(destination: ThreadDetailsView(thread: thread)) {
-                                    ThreadItemView(thread: thread)
-                                }
+                        ForEach(viewModel.mediaThreads, id: \.id) { thread in
+                            NavigationLink(destination: ThreadDetailsView(thread: thread)) {
+                                ThreadItemView(thread: thread)
                             }
                         }
                     }//:HStack

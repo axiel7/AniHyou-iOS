@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AniListAPI
 
 class MediaDetailsViewModel: ObservableObject {
@@ -118,19 +119,9 @@ class MediaDetailsViewModel: ObservableObject {
         return mediaDetails?.type?.value == .anime
     }
 
-    var genresFormatted: String? {
+    var genresFormatted: [String]? {
         guard let genres = mediaDetails?.genres else { return nil }
-        return genres.compactMap { $0 }.joined(separator: ", ")
-    }
-
-    /// Returns a string with the season and year if has it
-    var seasonFormatted: String? {
-        guard let season = mediaDetails?.season?.value else { return nil }
-        if let year = mediaDetails?.seasonYear {
-            return "\(season.localizedName) \(year)"
-        } else {
-            return season.localizedName
-        }
+        return genres.compactMap { $0 }
     }
 
     var studios: [MediaDetailsQuery.Data.Media.Studios.Node]? {

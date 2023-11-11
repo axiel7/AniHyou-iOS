@@ -29,13 +29,19 @@ struct HorizontalBarStatsView: View {
                 HStack {
                     ForEach(stats) { stat in
                         VStack {
-                            Text(stat.id)
-                                .foregroundColor(.white)
-                                .padding(4)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .foregroundColor(stat.color)
+                            Group {
+                                if let idLocalized = stat.idLocalized {
+                                    Text(idLocalized)
+                                } else {
+                                    Text(stat.id)
                                 }
+                            }
+                            .foregroundColor(.white)
+                            .padding(4)
+                            .background {
+                                RoundedRectangle(cornerRadius: 4)
+                                    .foregroundColor(stat.color)
+                            }
                             Text(stat.value.formatted())
                                 .foregroundColor(stat.color)
                         }

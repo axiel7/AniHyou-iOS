@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum ProfileInfoType: Equatable, Hashable, CaseIterable {
     case activity
@@ -15,7 +16,7 @@ public enum ProfileInfoType: Equatable, Hashable, CaseIterable {
 }
 
 extension ProfileInfoType {
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .activity:
             return "Activity"

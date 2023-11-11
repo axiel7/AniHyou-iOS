@@ -20,7 +20,7 @@ where Schema == AniListAPI.SchemaMetadata {}
 public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
   public static let configuration: ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
 
-  public static func objectType(forTypename typename: String) -> Object? {
+  public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
     switch typename {
     case "Query": return AniListAPI.Objects.Query
     case "Page": return AniListAPI.Objects.Page
@@ -38,6 +38,9 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "User": return AniListAPI.Objects.User
     case "Favourites": return AniListAPI.Objects.Favourites
     case "AiringSchedule": return AniListAPI.Objects.AiringSchedule
+    case "UserOptions": return AniListAPI.Objects.UserOptions
+    case "MediaListOptions": return AniListAPI.Objects.MediaListOptions
+    case "MediaListTypeOptions": return AniListAPI.Objects.MediaListTypeOptions
     case "UserAvatar": return AniListAPI.Objects.UserAvatar
     case "StudioConnection": return AniListAPI.Objects.StudioConnection
     case "Studio": return AniListAPI.Objects.Studio
@@ -50,8 +53,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "StatusDistribution": return AniListAPI.Objects.StatusDistribution
     case "ScoreDistribution": return AniListAPI.Objects.ScoreDistribution
     case "MediaRank": return AniListAPI.Objects.MediaRank
-    case "UserOptions": return AniListAPI.Objects.UserOptions
-    case "MediaListOptions": return AniListAPI.Objects.MediaListOptions
     case "RecommendationConnection": return AniListAPI.Objects.RecommendationConnection
     case "Recommendation": return AniListAPI.Objects.Recommendation
     case "MediaExternalLink": return AniListAPI.Objects.MediaExternalLink
@@ -62,6 +63,11 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Review": return AniListAPI.Objects.Review
     case "StaffName": return AniListAPI.Objects.StaffName
     case "StaffImage": return AniListAPI.Objects.StaffImage
+    case "ListActivity": return AniListAPI.Objects.ListActivity
+    case "TextActivity": return AniListAPI.Objects.TextActivity
+    case "MessageActivity": return AniListAPI.Objects.MessageActivity
+    case "ActivityReply": return AniListAPI.Objects.ActivityReply
+    case "ThreadComment": return AniListAPI.Objects.ThreadComment
     case "StaffConnection": return AniListAPI.Objects.StaffConnection
     case "AiringNotification": return AniListAPI.Objects.AiringNotification
     case "FollowingNotification": return AniListAPI.Objects.FollowingNotification
@@ -90,10 +96,6 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "UserStartYearStatistic": return AniListAPI.Objects.UserStartYearStatistic
     case "CharacterEdge": return AniListAPI.Objects.CharacterEdge
     case "StaffEdge": return AniListAPI.Objects.StaffEdge
-    case "ThreadComment": return AniListAPI.Objects.ThreadComment
-    case "TextActivity": return AniListAPI.Objects.TextActivity
-    case "ListActivity": return AniListAPI.Objects.ListActivity
-    case "MessageActivity": return AniListAPI.Objects.MessageActivity
     default: return nil
     }
   }

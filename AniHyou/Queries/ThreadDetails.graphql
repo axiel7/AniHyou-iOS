@@ -1,0 +1,24 @@
+query ThreadDetails($threadId: Int) {
+    Thread(id: $threadId) {
+        ...BasicThreadDetails
+    }
+}
+
+fragment BasicThreadDetails on Thread {
+    id
+    title
+    body
+    viewCount
+    likeCount
+    isLiked
+    replyCount
+    isLocked
+    user {
+        id
+        name
+        avatar {
+            medium
+        }
+    }
+    createdAt
+}

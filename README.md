@@ -1,5 +1,6 @@
 # <img alt="app-icon" height="50" src="https://github.com/axiel7/AniHyou-android/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"/>AniHyou
 
+[![Crowdin](https://badges.crowdin.net/anihyou/localized.svg)](https://crowdin.com/project/anihyou)
 [![Donate](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/axiel7)
 
 Another unofficial iOS AniList client
@@ -31,25 +32,13 @@ Follow the development on the official Discord server:
 ## Coming features
 - [See project](https://github.com/users/axiel7/projects/2/views/1)
 
-# Donate 💸
-Support the development of AniHyou by making a donation via:
-
-[Ko-Fi](https://ko-fi.com/axiel7)
-
-Bitcoin
+## Building
+- Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
 ```
-3KKjJuorh9se2jUo1Hr6MFgXhnBWbj5fTP
+ANILIST_CLIENT_ID = XXXX
 ```
 
-Ethereum
-```
-0xBd20dD0e036B246F879EeFde52601f0fBbeC69c0
-```
-
-Litecoin
-```
-MRw5XPLsM9SVf48tv4nwQoY12nMXaiVzmD
-```
+To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
 
 ## Technologies used
 - [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
@@ -58,10 +47,23 @@ MRw5XPLsM9SVf48tv4nwQoY12nMXaiVzmD
 - [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
 - [RichText](https://github.com/NuPlay/RichText)
 
-## Building
-- Create a file `AniHyou/Config.xcconfig` and put your AniList client ID:
+# Donate 💸
+Support the development of AniHyou by making a donation via:
+
+[Ko-Fi](https://ko-fi.com/axiel7)
+
+BTC
 ```
-ANILIST_CLIENT_ID = XXXX
+3KKjJuorh9se2jUo1Hr6MFgXhnBWbj5fTP
 ```
 
-To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
+ETH
+```
+0xBd20dD0e036B246F879EeFde52601f0fBbeC69c0
+```
+
+LTC
+```
+MRw5XPLsM9SVf48tv4nwQoY12nMXaiVzmD
+```
+

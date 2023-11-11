@@ -15,7 +15,7 @@ struct SmileyRatingView: View {
 
     var body: some View {
         HStack {
-            image("sentiment.dissatisfied")
+            image(.sentimentDissatisfied)
                 .foregroundColor(rating == 1 ? .red : offColor)
                 .onTapGesture {
                     if rating == 1 {
@@ -23,7 +23,7 @@ struct SmileyRatingView: View {
                     } else { rating = 1 }
                 }
 
-            image("sentiment.neutral")
+            image(.sentimentNeutral)
                 .foregroundColor(rating == 2 ? .yellow : offColor)
                 .onTapGesture {
                     if rating == 2 {
@@ -31,7 +31,7 @@ struct SmileyRatingView: View {
                     } else { rating = 2 }
                 }
 
-            image("sentiment.satisfied")
+            image(.sentimentSatisfied)
                 .foregroundColor(rating == 3 ? .green : offColor)
                 .onTapGesture {
                     if rating == 3 {
@@ -41,7 +41,7 @@ struct SmileyRatingView: View {
         }
     }
 
-    func image(_ name: String) -> some View {
+    func image(_ name: ImageResource) -> some View {
         return Image(name)
             .resizable()
             .frame(width: size, height: size)

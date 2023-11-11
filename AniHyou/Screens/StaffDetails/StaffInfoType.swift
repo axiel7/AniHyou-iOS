@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum StaffInfoType: Equatable, Hashable, CaseIterable {
     case overview
@@ -14,7 +15,7 @@ public enum StaffInfoType: Equatable, Hashable, CaseIterable {
 }
 
 extension StaffInfoType {
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .overview:
             return "Overview"

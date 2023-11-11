@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum MediaInfoType: Equatable, Hashable, CaseIterable {
     case general
@@ -16,7 +17,7 @@ public enum MediaInfoType: Equatable, Hashable, CaseIterable {
 }
 
 extension MediaInfoType {
-    var localizedName: String {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .general:
             return "General"

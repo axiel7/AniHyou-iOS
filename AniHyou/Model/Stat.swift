@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Stat: Identifiable {
     let id: String
+    var idLocalized: LocalizedStringKey?
     var value: CGFloat
     var color: Color
 }

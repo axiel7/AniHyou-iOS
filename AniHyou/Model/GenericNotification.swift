@@ -110,7 +110,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 id: noti.id,
                 text: text,
                 imageUrl: noti.user?.avatar?.medium,
-                contentId: noti.commentId,
+                //contentId: noti.commentId, TODO: link to the comment directly
+                contentId: noti.thread?.id,
                 type: noti.type!.value!,
                 createdAt: noti.createdAt ?? 0
             )
@@ -120,7 +121,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 id: noti.id,
                 text: text,
                 imageUrl: noti.user?.avatar?.medium,
-                contentId: noti.commentId,
+                //contentId: noti.commentId,
+                contentId: noti.thread?.id,
                 type: noti.type!.value!,
                 createdAt: noti.createdAt ?? 0
             )
@@ -130,7 +132,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 id: noti.id,
                 text: text,
                 imageUrl: noti.user?.avatar?.medium,
-                contentId: noti.commentId,
+                //contentId: noti.commentId,
+                contentId: noti.thread?.id,
                 type: noti.type!.value!,
                 createdAt: noti.createdAt ?? 0
             )
@@ -140,7 +143,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 id: noti.id,
                 text: text,
                 imageUrl: noti.user?.avatar?.medium,
-                contentId: noti.commentId,
+                //contentId: noti.commentId,
+                contentId: noti.thread?.id,
                 type: noti.type!.value!,
                 createdAt: noti.createdAt ?? 0
             )
