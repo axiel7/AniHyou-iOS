@@ -184,55 +184,59 @@ struct ExploreView: View {
 
     private var preSearchView: some View {
         ScrollView(.vertical) {
-            VStack(alignment: .leading) {
-
+            Grid(
+                alignment: .leading,
+                verticalSpacing: 24
+            ) {
                 // MARK: - Anime
-                Text("Anime")
-                    .font(.title2)
-                    .bold()
-                    .padding(.top, 8)
-                    .padding(.leading, 15)
-                Divider()
-                    .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Anime")
+                        .font(.title2)
+                        .bold()
+                        .padding(.top, 8)
+                    Divider()
+                }
 
                 animeCharts
 
                 // MARK: - Manga
-                Text("Manga")
-                    .font(.title2)
-                    .bold()
-                    .padding(.top, 8)
-                    .padding(.leading, 15)
-                Divider()
-                    .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Manga")
+                        .font(.title2)
+                        .bold()
+                        .padding(.top, 8)
+                    Divider()
+                }
 
                 mangaCharts
-            }//:VStack
+            }//:Grid
+            .padding(.horizontal)
         }//:VScrollView
     }
 
     @ViewBuilder
     private var animeCharts: some View {
-        // MARK: top
-        HStack(alignment: .center) {
-            NavigationLink(destination: MediaChartListView(title: "Top 100 Anime", type: .anime, sort: .scoreDesc)) {
+        // MARK: Top 100, Top Popular
+        GridRow {
+            NavigationLink(
+                destination: MediaChartListView(
+                    title: "Top 100 Anime",
+                    type: .anime,
+                    sort: .scoreDesc
+                )
+            ) {
                 Label("Top 100", systemImage: "crown.fill")
                     .foregroundColor(.purple)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)
             ) {
                 Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
                     .foregroundColor(.red)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
-        // MARK: upcoming, airing
-        HStack(alignment: .center) {
+        }
+        // MARK: Upcoming, Airing
+        GridRow {
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Upcoming Anime",
@@ -244,7 +248,6 @@ struct ExploreView: View {
                 Label("Upcoming", systemImage: "clock.fill")
                     .foregroundColor(.pink)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Airing Anime",
@@ -256,45 +259,32 @@ struct ExploreView: View {
                 Label("Airing", systemImage: "antenna.radiowaves.left.and.right")
                     .foregroundColor(.indigo)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
+        }
         // MARK: Spring, Summer
-        HStack(alignment: .center) {
+        GridRow {
             NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
                 Label("Spring", systemImage: "leaf.fill")
                     .foregroundColor(.green)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
                 Label("Summer", systemImage: "sun.max.fill")
                     .foregroundColor(.yellow)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
+        }
         // MARK: Fall, Winter
-        HStack(alignment: .center) {
+        GridRow {
+            
             NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
                 Label("Fall", systemImage: "cloud.rain.fill")
                     .foregroundColor(.brown)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
                 Label("Winter", systemImage: "snowflake")
                     .foregroundColor(.blue)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
+        }
         // MARK: Top Movies, Calendar
-        HStack {
+        GridRow {
             NavigationLink(destination: MediaChartListView(
                 title: "Top Movies",
                 type: .anime,
@@ -304,39 +294,30 @@ struct ExploreView: View {
                 Label("Top Movies", systemImage: "film")
                     .foregroundColor(.teal)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(destination: CalendarAnimeView()) {
                 Label("Calendar", systemImage: "calendar")
                     .foregroundColor(.orange)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
     }
 
     @ViewBuilder
     private var mangaCharts: some View {
-        // MARK: top
-        HStack(alignment: .center) {
+        // MARK: Top 100, Top Popular
+        GridRow {
             NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
                 Label("Top 100", systemImage: "crown.fill")
                     .foregroundColor(.purple)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)
             ) {
                 Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
                     .foregroundColor(.red)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-
-        // MARK: upcoming, publishing
-        HStack(alignment: .center) {
+        // MARK: Upcoming, Publishing
+        GridRow {
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Upcoming Manga",
@@ -348,7 +329,6 @@ struct ExploreView: View {
                 Label("Upcoming", systemImage: "clock.fill")
                     .foregroundColor(.pink)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             NavigationLink(
                 destination: MediaChartListView(
                     title: "Publishing Manga",
@@ -360,10 +340,7 @@ struct ExploreView: View {
                 Label("Publishing", systemImage: "pencil.line")
                     .foregroundColor(.indigo)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }//:HStack
-        .padding(.horizontal)
-        .padding(.vertical, 8)
+        }
     }
 
     @ViewBuilder
