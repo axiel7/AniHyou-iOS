@@ -446,6 +446,8 @@
 		489C7E91291900C7004B0B39 /* UserBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserBasicInfo.graphql; sourceTree = "<group>"; };
 		48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
 		48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemMinimalView.swift; sourceTree = "<group>"; };
+		48A835D02B12D919008641FC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48A835D12B12D919008641FC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48AAE4082ADFA344003413B0 /* ActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
 		48AAE40A2ADFA44B003413B0 /* ActivityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewModel.swift; sourceTree = "<group>"; };
 		48AAE40C2ADFA4BE003413B0 /* ActivityDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityDetails.graphql; sourceTree = "<group>"; };
@@ -1722,6 +1724,7 @@
 				ru,
 				tr,
 				id,
+				uk,
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
@@ -2068,6 +2071,7 @@
 				48691FEF2ADD03C2009DCDFE /* ru */,
 				48FC074A2ADE707F00067E76 /* tr */,
 				48DCF2362AF4C9D6008E9B99 /* id */,
+				48A835D12B12D919008641FC /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2080,6 +2084,7 @@
 				48691FEE2ADD03C2009DCDFE /* ru */,
 				48FC07492ADE707F00067E76 /* tr */,
 				48DCF2352AF4C9D6008E9B99 /* id */,
+				48A835D02B12D919008641FC /* uk */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

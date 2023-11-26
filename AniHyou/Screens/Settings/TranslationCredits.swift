@@ -12,7 +12,8 @@ private let translations = [
     "ja_JP": "axiel7",
     "ru_RU": "Ronner231, grin3671",
     "es_ES": "axiel7",
-    "tr_TR": "hsinankirdar"
+    "tr_TR": "hsinankirdar",
+    "uk_UA": "Syly_vibes, Sensetivity"
 ]
 
 struct TranslationCredits: View {
