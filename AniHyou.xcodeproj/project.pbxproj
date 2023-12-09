@@ -148,6 +148,7 @@
 		48AC01892968624C00525B69 /* AnimeSeasonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC01882968624C00525B69 /* AnimeSeasonListView.swift */; };
 		48AF5394289E7371006D40B6 /* ThreadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */; };
 		48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */; };
+		48B635CB2B24885100ED73E7 /* MediaListSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E3F2A85B64B00EF0CA2 /* MediaListSort.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -2028,6 +2029,7 @@
 				48E58E2E2A85B4DE00EF0CA2 /* MediaList.swift in Sources */,
 				4892AB7F2A52E718004F07C9 /* ColorUtils.swift in Sources */,
 				48F2790F296EFE77000827F7 /* ContentView.swift in Sources */,
+				48B635CB2B24885100ED73E7 /* MediaListSort.swift in Sources */,
 				48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */,
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,

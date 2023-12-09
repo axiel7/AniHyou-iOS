@@ -16,12 +16,13 @@ class MediaListViewModel: ObservableObject {
     var selectedItem: UserMediaListQuery.Data.Page.MediaList?
 
     var currentPage = 1
-    var hasNextPage = true
+    var hasNextPage = false
     var forceReload = false
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
-    @Published var sort: MediaListSort = .updatedTimeDesc
+    private var sort: MediaListSort = .updatedTimeDesc
+    
     @Published var searchText = ""
     @Published var isLoading = false
     
@@ -119,4 +120,17 @@ class MediaListViewModel: ObservableObject {
         }
     }
 
+    func onSortChanged(_ newValue: MediaListSort, isAscending: Bool) {
+        sort = newValue
+        if newValue == .mediaTitleRomajiDesc {
+            if
+                let preferredLang = UserDefaults.standard.string(forKey: USER_TITLE_LANG_KEY),
+                let titleLanguage = UserTitleLanguage(rawValue: preferredLang)
+            {
+                sort = MediaListSort.titleSortForLanguage(titleLanguage)
+            }
+        }
+        sort = isAscending ? sort.toAscending() : sort
+        refreshList()
+    }
 }
