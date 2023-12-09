@@ -1726,6 +1726,7 @@
 				tr,
 				id,
 				uk,
+				Base,
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
