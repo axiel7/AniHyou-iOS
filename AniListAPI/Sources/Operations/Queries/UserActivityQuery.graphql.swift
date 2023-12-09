@@ -8,7 +8,7 @@ public class UserActivityQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query UserActivity($page: Int, $perPage: Int, $userId: Int, $sort: [ActivitySort]) { Page(page: $page, perPage: $perPage) { __typename activities(userId: $userId, sort: $sort) { __typename ... on TextActivity { ...TextActivityFragment } ... on ListActivity { ...ListActivityFragment } ... on MessageActivity { ...MessageActivityFragment } } pageInfo { __typename currentPage hasNextPage } } }"#,
-      fragments: [TextActivityFragment.self, ListActivityFragment.self, MessageActivityFragment.self]
+      fragments: [ListActivityFragment.self, MessageActivityFragment.self, TextActivityFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>

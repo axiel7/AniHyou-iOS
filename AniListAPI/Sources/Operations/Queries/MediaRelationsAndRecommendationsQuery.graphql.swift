@@ -8,7 +8,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query MediaRelationsAndRecommendations($mediaId: Int) { Media(id: $mediaId) { __typename relations { __typename edges { __typename ...MediaRelated } } recommendations(page: 1, sort: RATING_DESC) { __typename nodes { __typename ...MediaRecommended } } } }"#,
-      fragments: [MediaRelated.self, MediaRecommended.self]
+      fragments: [MediaRecommended.self, MediaRelated.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>

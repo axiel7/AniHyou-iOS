@@ -8,7 +8,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $notes: String) { SaveMediaListEntry( mediaId: $mediaId status: $status score: $score progress: $progress progressVolumes: $progressVolumes startedAt: $startedAt completedAt: $completedAt repeat: $repeat private: $private notes: $notes ) { __typename ...BasicMediaListEntry mediaId } }"#,
-      fragments: [BasicMediaListEntry.self, ProgressMediaListEntry.self, IdsMediaList.self, FuzzyDateFragment.self]
+      fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, ProgressMediaListEntry.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>

@@ -3,6 +3,17 @@ A directive used by the Apollo iOS client to annotate operations or fragments th
 """
 directive @apollo_client_ios_localCacheMutation on QUERY | MUTATION | SUBSCRIPTION | FRAGMENT_DEFINITION
 
+"""
+Directs the executor to defer this fragment when the `if` argument is true or undefined.
+"""
+directive @defer(
+  """Deferred when true or undefined."""
+  if: Boolean
+
+  """Unique name"""
+  label: String
+) on FRAGMENT_SPREAD | INLINE_FRAGMENT
+
 type Query {
   Page(
     """The page number"""
@@ -3670,6 +3681,12 @@ enum ModRole {
 
   """A retired moderator"""
   RETIRED
+
+  """A character data moderator"""
+  CHARACTER_DATA
+
+  """A staff data moderator"""
+  STAFF_DATA
 }
 
 """A user's statistics"""

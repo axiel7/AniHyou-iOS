@@ -8,7 +8,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query ActivityDetails($activityId: Int) { Activity(id: $activityId) { __typename ... on TextActivity { ...TextActivityFragment replies { __typename ...ActivityReplyFragment } } ... on ListActivity { ...ListActivityFragment replies { __typename ...ActivityReplyFragment } } ... on MessageActivity { ...MessageActivityFragment replies { __typename ...ActivityReplyFragment } } } }"#,
-      fragments: [TextActivityFragment.self, ActivityReplyFragment.self, ListActivityFragment.self, MessageActivityFragment.self]
+      fragments: [ActivityReplyFragment.self, ListActivityFragment.self, MessageActivityFragment.self, TextActivityFragment.self]
     ))
 
   public var activityId: GraphQLNullable<Int>
