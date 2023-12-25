@@ -41,7 +41,7 @@ struct ReviewDetailsView: View {
                 }
                 .padding()
             } else {
-                ProgressView()
+                HorizontalProgressView()
             }
         }
         .navigationTitle(viewModel.review?.user?.name ?? "")

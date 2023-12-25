@@ -98,7 +98,7 @@ struct CharacterDetailsView: View {
                 }
             }//:VStack
         } else {
-            ProgressView()
+            HorizontalProgressView()
                 .onAppear {
                     viewModel.getCharacterDetails(characterId: characterId)
                 }

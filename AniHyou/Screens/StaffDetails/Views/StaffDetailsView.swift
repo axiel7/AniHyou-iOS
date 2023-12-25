@@ -90,7 +90,7 @@ struct StaffDetailsView: View {
                 }
             }//:VStack
         } else {
-            ProgressView()
+            HorizontalProgressView()
                 .onAppear {
                     viewModel.getStaffDetails(staffId: staffId)
                 }
