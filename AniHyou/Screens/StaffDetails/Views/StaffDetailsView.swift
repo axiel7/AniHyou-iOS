@@ -111,6 +111,7 @@ struct StaffDetailsView: View {
                         HListItemWithSubtitleView(
                             title: media.title?.userPreferred,
                             subtitle: item.staffRoles.joined(separator: ", "),
+                            subtitle2: media.startDate?.year?.stringValue,
                             imageUrl: media.coverImage?.large
                         )
                         .mediaContextMenu(

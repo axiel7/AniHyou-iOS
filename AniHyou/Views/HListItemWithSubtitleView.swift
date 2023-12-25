@@ -15,6 +15,7 @@ struct HListItemWithSubtitleView: View {
     var title: String?
     var subtitle: String?
     var subtitleLocalized: LocalizedStringKey?
+    var subtitle2: String?
     var twoSubtitleTexts: (LocalizedStringKey?, LocalizedStringKey?)?
     var imageUrl: String?
     var meanScore: Int?
@@ -63,6 +64,10 @@ struct HListItemWithSubtitleView: View {
                             .foregroundColor(.gray)
                     }
                     .padding(.vertical, 1)
+                } else if let subtitle2 {
+                    Text(subtitle2)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
                 }
             }
         }//:HStack

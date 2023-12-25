@@ -93,7 +93,11 @@ class StaffDetailsViewModel: ObservableObject {
                                 staffRoles: value.map { $0?.staffRole ?? "" }
                             )
                         }
-                        self?.staffMedia.append(contentsOf: mediaGroupDict.values)
+                        let sortedDict = mediaGroupDict.values.sorted(by: { first, second in
+                            return first.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231" >
+                            second.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231"
+                        })
+                        self?.staffMedia.append(contentsOf: sortedDict)
                     }
 
                     self?.pageMedia = (media.pageInfo?.currentPage ?? self?.pageMedia ?? 1) + 1
