@@ -114,6 +114,7 @@ struct CharacterDetailsView: View {
                         HListItemWithSubtitleView(
                             title: item.node?.title?.userPreferred,
                             subtitleLocalized: item.characterRole?.value?.localizedName,
+                            subtitle2: item.node?.startDate?.year?.stringValue,
                             imageUrl: item.node?.coverImage?.large
                         )
                         .mediaContextMenu(
