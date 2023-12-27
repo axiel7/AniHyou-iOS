@@ -52,9 +52,6 @@ struct MediaListView: View {
         .onChange(of: viewModel.formatFilter) { _ in
             viewModel.refreshList()
         }
-        .onChange(of: viewModel.statusFilter) { _ in
-            viewModel.refreshList()
-        }
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = status
@@ -94,28 +91,6 @@ struct MediaListView: View {
                     }
                 } label: {
                     Image(systemName: "arrow.up.arrow.down")
-                }
-            }
-            ToolbarItem {
-                Menu {
-                    Menu("Release Status") {
-                        Picker("Status", selection: Binding($viewModel.statusFilter, deselectTo: nil)) {
-                            ForEach(MediaStatus.allCases, id: \.self) { releaseStatus in
-                                Text(releaseStatus.localizedName).tag(Optional(releaseStatus))
-                            }
-                        }
-                    }
-                    
-                    Menu("Format") {
-                        Picker("Format", selection: Binding($viewModel.formatFilter, deselectTo: nil)) {
-                            ForEach(MediaFormat.allCases, id: \.self) { format in
-                                Text(format.localizedName).tag(Optional(format))
-                            }
-                        }
-                    }
-                
-                } label: {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
                 }
             }
         }

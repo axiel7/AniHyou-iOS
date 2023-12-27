@@ -46,13 +46,6 @@ class MediaListViewModel: ObservableObject {
                     }
                 }
                 return mList
-            }, { mList in
-                if !mList.isEmpty, let statusFilter = self.statusFilter {
-                    return Array(Set(mList.filter { media in
-                        return media?.media?.status == statusFilter
-                    }))
-                }
-                return mList
             }
         ])
         
