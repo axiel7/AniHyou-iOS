@@ -111,45 +111,41 @@ struct MediaListView: View {
         }
         .swipeActions(edge: .leading) {
             if isEditable {
-                if incrementLongSwipeDirection == .right {
-                    if shouldShowIncrementButton {
-                        Button(
-                            action: {
-                                updateEntryProgress(item: item)
-                            },
-                            label: {
-                                if type == .anime {
-                                    Label("Ep", systemImage: "plus")
-                                    // should show a sheet to add a rating
-                                } else if type == .manga {
-                                    Label("Ch", systemImage: "plus")
-                                }
+                if incrementLongSwipeDirection == .right && shouldShowIncrementButton {
+                    Button(
+                        action: {
+                            updateEntryProgress(item: item)
+                        },
+                        label: {
+                            if type == .anime {
+                                Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
+                            } else if type == .manga {
+                                Label("Ch", systemImage: "plus")
                             }
-                        )
-                        .tint(.green)
-                    }
+                        }
+                    )
+                    .tint(.green)
                 }
             }
         }
         .swipeActions(edge: .trailing) {
             if isEditable {
-                if incrementLongSwipeDirection == .left {
-                    if shouldShowIncrementButton {
-                        Button(
-                            action: {
-                                updateEntryProgress(item: item)
-                            },
-                            label: {
-                                if type == .anime {
-                                    Label("Ep", systemImage: "plus")
-                                    // should show a sheet to add a rating
-                                } else if type == .manga {
-                                    Label("Ch", systemImage: "plus")
-                                }
+                if incrementLongSwipeDirection == .left && shouldShowIncrementButton {
+                    Button(
+                        action: {
+                            updateEntryProgress(item: item)
+                        },
+                        label: {
+                            if type == .anime {
+                                Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
+                            } else if type == .manga {
+                                Label("Ch", systemImage: "plus")
                             }
-                        )
-                        .tint(.green)
-                    }
+                        }
+                    )
+                    .tint(.green)
                 }
                 Button(
                     action: {
