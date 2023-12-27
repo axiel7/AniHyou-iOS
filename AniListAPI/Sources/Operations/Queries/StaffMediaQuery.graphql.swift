@@ -7,7 +7,8 @@ public class StaffMediaQuery: GraphQLQuery {
   public static let operationName: String = "StaffMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } } staffRole } pageInfo { __typename currentPage hasNextPage } } } }"#
+      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } staffRole } pageInfo { __typename currentPage hasNextPage } } } }"#,
+      fragments: [FuzzyDateFragment.self]
     ))
 
   public var staffId: GraphQLNullable<Int>
@@ -121,6 +122,7 @@ public class StaffMediaQuery: GraphQLQuery {
               .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
               .field("coverImage", CoverImage?.self),
               .field("mediaListEntry", MediaListEntry?.self),
+              .field("startDate", StartDate?.self),
             ] }
 
             /// The id of the media
@@ -133,6 +135,8 @@ public class StaffMediaQuery: GraphQLQuery {
             public var coverImage: CoverImage? { __data["coverImage"] }
             /// The authenticated user's media list entry for the media
             public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+            /// The first official release date of the media
+            public var startDate: StartDate? { __data["startDate"] }
 
             /// Staff.StaffMedia.Edge.Node.Title
             ///
@@ -183,6 +187,34 @@ public class StaffMediaQuery: GraphQLQuery {
 
               /// The watching/reading status
               public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+            }
+
+            /// Staff.StaffMedia.Edge.Node.StartDate
+            ///
+            /// Parent Type: `FuzzyDate`
+            public struct StartDate: AniListAPI.SelectionSet {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+              public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .fragment(FuzzyDateFragment.self),
+              ] }
+
+              /// Numeric Day (24)
+              public var day: Int? { __data["day"] }
+              /// Numeric Month (3)
+              public var month: Int? { __data["month"] }
+              /// Numeric Year (2017)
+              public var year: Int? { __data["year"] }
+
+              public struct Fragments: FragmentContainer {
+                public let __data: DataDict
+                public init(_dataDict: DataDict) { __data = _dataDict }
+
+                public var fuzzyDateFragment: FuzzyDateFragment { _toFragment() }
+              }
             }
           }
         }

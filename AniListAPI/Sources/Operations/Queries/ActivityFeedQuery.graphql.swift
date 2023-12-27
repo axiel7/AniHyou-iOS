@@ -8,7 +8,7 @@ public class ActivityFeedQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query ActivityFeed($page: Int, $perPage: Int, $isFollowing: Boolean, $typeIn: [ActivityType]) { Page(page: $page, perPage: $perPage) { __typename activities(isFollowing: $isFollowing, sort: [ID_DESC], type_in: $typeIn) { __typename ... on TextActivity { ...TextActivityFragment } ... on ListActivity { ...ListActivityFragment user { __typename name avatar { __typename medium } } } } pageInfo { __typename currentPage hasNextPage } } }"#,
-      fragments: [TextActivityFragment.self, ListActivityFragment.self]
+      fragments: [ListActivityFragment.self, TextActivityFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>

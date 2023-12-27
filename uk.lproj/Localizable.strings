@@ -1,0 +1,1017 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld розділів";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld серій";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld томів";
+
+/* No comment provided by engineer. */
+"^[%lld episode behind](inflect: true)" = "^[%lld серія позаду](inflect: true)";
+
+/* No comment provided by engineer. */
+"+1" = "+1";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "Смайлик 3 бали :)";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 Зірок (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 балів (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10-значний десятковий (5.5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 балів (55/100)";
+
+/* No comment provided by engineer. */
+"Accent color" = "Основний колір";
+
+/* No comment provided by engineer. */
+"Account settings" = "Параметри облікового запису";
+
+/* No comment provided by engineer. */
+"Action" = "Екшн";
+
+/* No comment provided by engineer. */
+"Activity" = "Діяльність";
+
+/* No comment provided by engineer. */
+"Activity type" = "Тип діяльності";
+
+/* No comment provided by engineer. */
+"Adaptation" = "Адаптація";
+
+/* No comment provided by engineer. */
+"Add to List" = "До списку";
+
+/* No comment provided by engineer. */
+"Added" = "Додано";
+
+/* No comment provided by engineer. */
+"Adult" = "Для дорослих";
+
+/* No comment provided by engineer. */
+"Adventure" = "Пригоди";
+
+/* No comment provided by engineer. */
+"Age" = "Вік";
+
+/* No comment provided by engineer. */
+"Airing" = "Виходить";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "Аніме які виходять";
+
+/* No comment provided by engineer. */
+"Airing Next" = "Продовжує виходити";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "Виходять у моїй бібліотеці";
+
+/* No comment provided by engineer. */
+"All" = "Усі";
+
+/* No comment provided by engineer. */
+"Alternative" = "Альтернатива";
+
+/* No comment provided by engineer. */
+"Anime" = "Аніме";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "Аніме позаду";
+
+/* No comment provided by engineer. */
+"Anime List" = "Каталог анiме";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "Аніме, манґа, та інше";
+
+/* No comment provided by engineer. */
+"App Icon" = "Іконка застосунку";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "Ви впевнені, що хочете вийти з системи?";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Як ви знаєте, цей додаток є повністю безкоштовним і з відкритим вихідним кодом,\nале створення програми вимагає багато часу і зусиль.\nЗробивши пожертву, ви допоможете покрити витрати на\nрозробку, технічне обслуговування та нові функції.";
+
+/* No comment provided by engineer. */
+"Ascending" = "За зростанням";
+
+/* No comment provided by engineer. */
+"Average Score" = "Середній бал";
+
+/* No comment provided by engineer. */
+"Background" = "Контекст";
+
+/* No comment provided by engineer. */
+"Birth" = "Дата народження";
+
+/* No comment provided by engineer. */
+"Birthday" = "День народження";
+
+/* No comment provided by engineer. */
+"Blood type" = "Група крові";
+
+/* No comment provided by engineer. */
+"Blood Type" = "Група крові";
+
+/* No comment provided by engineer. */
+"Calendar" = "Календар";
+
+/* No comment provided by engineer. */
+"Cancel" = "Скасувати";
+
+/* No comment provided by engineer. */
+"Cancelled" = "Скасовано";
+
+/* No comment provided by engineer. */
+"Ch" = "Р";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "Зміни набудуть чинності після перезавантаження";
+
+/* No comment provided by engineer. */
+"Chapters" = "Розділи";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "Прочитані розділи";
+
+/* No comment provided by engineer. */
+"Character" = "Персонаж";
+
+/* No comment provided by engineer. */
+"Characters" = "Персонажі";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "Персонажі та персонал";
+
+/* No comment provided by engineer. */
+"China" = "Китай";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "Виберіть між Аніме та Манґою.";
+
+/* No comment provided by engineer. */
+"Clear" = "Очистити";
+
+/* No comment provided by engineer. */
+"Close" = "Закрити";
+
+/* No comment provided by engineer. */
+"Comedy" = "Комедія";
+
+/* No comment provided by engineer. */
+"Comic" = "Комікс";
+
+/* No comment provided by engineer. */
+"Coming soon" = "Незабаром";
+
+/* No comment provided by engineer. */
+"Compact" = "Компактний";
+
+/* No comment provided by engineer. */
+"Compilation" = "Збірка";
+
+/* No comment provided by engineer. */
+"Completed" = "Завершено";
+
+/* No comment provided by engineer. */
+"Completed %@" = "Завершено %@";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "Вітаємо, ви в курсі подій!\n(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "Вміст";
+
+/* No comment provided by engineer. */
+"Content" = "Вміст";
+
+/* No comment provided by engineer. */
+"Copied!" = "Скопійовано!";
+
+/* No comment provided by engineer. */
+"Copy" = "Копіювати";
+
+/* No comment provided by engineer. */
+"Country" = "Країна";
+
+/* No comment provided by engineer. */
+"Current" = "Поточні";
+
+/* No comment provided by engineer. */
+"Custom" = "Користувацький";
+
+/* No comment provided by engineer. */
+"Custom color" = "Користувацький колір";
+
+/* No comment provided by engineer. */
+"Dates" = "Дати";
+
+/* No comment provided by engineer. */
+"Days Watched" = "Дні перегляду";
+
+/* No comment provided by engineer. */
+"Death" = "Смерть";
+
+/* No comment provided by engineer. */
+"Default" = "Типово";
+
+/* No comment provided by engineer. */
+"Delete" = "Видалити";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "Вилучити цей запис?";
+
+/* No comment provided by engineer. */
+"Descending" = "За спаданням";
+
+/* No comment provided by engineer. */
+"Developers" = "Розробники";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discord сервер";
+
+/* No comment provided by engineer. */
+"Discover" = "Огляд";
+
+/* No comment provided by engineer. */
+"Display" = "Дисплей";
+
+/* No comment provided by engineer. */
+"Donate" = "Пожертвувати";
+
+/* No comment provided by engineer. */
+"Donate!" = "Пожертвувати!";
+
+/* No comment provided by engineer. */
+"Donation" = "Донат";
+
+/* No comment provided by engineer. */
+"Done" = "Готово";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "Доджінші";
+
+/* No comment provided by engineer. */
+"Drama" = "Драма";
+
+/* No comment provided by engineer. */
+"Dropped" = "Кинуто";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "Випущено %@";
+
+/* No comment provided by engineer. */
+"Duration" = "Тривалість";
+
+/* No comment provided by engineer. */
+"Ecchi" = "Еччі";
+
+/* No comment provided by engineer. */
+"Edit" = "Змінити";
+
+/* No comment provided by engineer. */
+"End date" = "Дата закінчення";
+
+/* No comment provided by engineer. */
+"English" = "Англійська";
+
+/* No comment provided by engineer. */
+"Ep" = "Сер";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "Сер %lld %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "Сер %lld о %@";
+
+/* No comment provided by engineer. */
+"Episodes" = "епізод(-ів)";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "Переглянуті серії";
+
+/* No comment provided by engineer. */
+"Error no entry" = "Помилка відсутній запис";
+
+/* No comment provided by engineer. */
+"Explore" = "Огляд";
+
+/* No comment provided by engineer. */
+"External links" = "Зовнішні посилання";
+
+/* No comment provided by engineer. */
+"Fall" = "Осінь";
+
+/* No comment provided by engineer. */
+"Fantasy" = "Фентезі";
+
+/* No comment provided by engineer. */
+"Favorites" = "Обране";
+
+/* No comment provided by engineer. */
+"Feed type" = "Тип стрічки";
+
+/* No comment provided by engineer. */
+"Filter" = "Фільтри";
+
+/* No comment provided by engineer. */
+"Finish Date" = "Дата закінчення";
+
+/* No comment provided by engineer. */
+"Finished" = "Завершено";
+
+/* No comment provided by engineer. */
+"Follow" = "Підписатися";
+
+/* No comment provided by engineer. */
+"Followers" = "Підписники";
+
+/* No comment provided by engineer. */
+"Following" = "Підписаний";
+
+/* No comment provided by engineer. */
+"Follows" = "Підписатися";
+
+/* No comment provided by engineer. */
+"Follows you" = "Підписаний(-а) на вас";
+
+/* No comment provided by engineer. */
+"Format" = "Формат";
+
+/* No comment provided by engineer. */
+"Format distribution" = "Розподіл форматування";
+
+/* No comment provided by engineer. */
+"Forum" = "Форум";
+
+/* (No Comment) */
+"friday_short" = "Пт";
+
+/* No comment provided by engineer. */
+"From year" = "Від року";
+
+/* No comment provided by engineer. */
+"Game" = "Гра";
+
+/* No comment provided by engineer. */
+"Gender" = "Ґендер";
+
+/* No comment provided by engineer. */
+"General" = "Загальне";
+
+/* No comment provided by engineer. */
+"Genres" = "Жанри";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "Репозиторій GitHub";
+
+/* No comment provided by engineer. */
+"Global" = "Загально";
+
+/* No comment provided by engineer. */
+"Hentai" = "Хентай";
+
+/* No comment provided by engineer. */
+"Hiatus" = "Перерва";
+
+/* No comment provided by engineer. */
+"Hide filters" = "Приховати фільтри";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "Приховати спойлер";
+
+/* No comment provided by engineer. */
+"Highest rated" = "Рейтингові";
+
+/* No comment provided by engineer. */
+"Home" = "Головна";
+
+/* No comment provided by engineer. */
+"Hometown" = "Рідне місто";
+
+/* No comment provided by engineer. */
+"Horror" = "Жахи";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "Переглянуто годин";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "Збільшення Серії / Розділу";
+
+/* No comment provided by engineer. */
+"Info type" = "Тип інформації";
+
+/* No comment provided by engineer. */
+"Information" = "Відомості";
+
+/* No comment provided by engineer. */
+"Japan" = "Японія";
+
+/* No comment provided by engineer. */
+"Japanese" = "Японська";
+
+/* No comment provided by engineer. */
+"Last Added" = "Нещодавно додано";
+
+/* No comment provided by engineer. */
+"Last Updated" = "Останнє оновлення";
+
+/* No comment provided by engineer. */
+"Left" = "Зліва";
+
+/* No comment provided by engineer. */
+"Light novel" = "Ранобе";
+
+/* No comment provided by engineer. */
+"List entry ID" = "ID запису в списку";
+
+/* No comment provided by engineer. */
+"List Progress" = "Список прогресу";
+
+/* No comment provided by engineer. */
+"List style" = "Стиль списку";
+
+/* No comment provided by engineer. */
+"Live action" = "Лайв-екшн";
+
+/* No comment provided by engineer. */
+"Loading" = "Завантаження";
+
+/* No comment provided by engineer. */
+"Log out" = "Вийти з облікового запису";
+
+/* No comment provided by engineer. */
+"Login" = "Увійти";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "Напрямок довгого свайпу";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "Махо-шьоджьо (дівчина-чарівниця)";
+
+/* No comment provided by engineer. */
+"Main" = "Головний";
+
+/* No comment provided by engineer. */
+"Manga" = "Манґа";
+
+/* No comment provided by engineer. */
+"Manga List" = "Каталог манґи";
+
+/* No comment provided by engineer. */
+"Mean Score" = "Середній бал";
+
+/* No comment provided by engineer. */
+"Mecha" = "Меха";
+
+/* No comment provided by engineer. */
+"Media" = "Медіа";
+
+/* No comment provided by engineer. */
+"Media ID" = "ID медіа";
+
+/* No comment provided by engineer. */
+"Media List" = "Список медіа";
+
+/* No comment provided by engineer. */
+"Media Type" = "Тип медіа";
+
+/* No comment provided by engineer. */
+"Minimal" = "Мінімальний";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"monday_short" = "Пн";
+
+/* No comment provided by engineer. */
+"More filters" = "Більше фільтрів";
+
+/* No comment provided by engineer. */
+"Most popular" = "Найбільш популярні";
+
+/* No comment provided by engineer. */
+"Movie" = "Фільм";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "Мультимедійний проєкт";
+
+/* No comment provided by engineer. */
+"Music" = "Музика";
+
+/* No comment provided by engineer. */
+"Mystery" = "Детектив";
+
+/* No comment provided by engineer. */
+"Native" = "Оригінальний";
+
+/* No comment provided by engineer. */
+"Next Season" = "Наступний сезон";
+
+/* No comment provided by engineer. */
+"No" = "Ні";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "Немає аніме у вашому списку\n(*'-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "На сьогодні аніме немає\n(*'-`)";
+
+/* No comment provided by engineer. */
+"No media" = "Немає медіа";
+
+/* No comment provided by engineer. */
+"No recommendations" = "Немає рекомендацій";
+
+/* No comment provided by engineer. */
+"No reviews" = "Немає відгуків";
+
+/* No comment provided by engineer. */
+"None" = "Немає";
+
+/* No comment provided by engineer. */
+"Not yet released" = "Ще не випущено";
+
+/* No comment provided by engineer. */
+"Notes" = "Примітки";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "Нічого у вашому списку";
+
+/* No comment provided by engineer. */
+"Notifications" = "Сповіщення";
+
+/* No comment provided by engineer. */
+"Novel" = "Новела";
+
+/* No comment provided by engineer. */
+"Occupations" = "Професії";
+
+/* No comment provided by engineer. */
+"OK" = "ОК";
+
+/* No comment provided by engineer. */
+"On my list" = "У моїй бібліотеці";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "Ваншот";
+
+/* No comment provided by engineer. */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Необов'язковий статус для оновлення запису в списку (наприклад, ЗАВЕРШЕНО)";
+
+/* No comment provided by engineer. */
+"Order" = "Порядок";
+
+/* No comment provided by engineer. */
+"Original" = "Оригінальне";
+
+/* No comment provided by engineer. */
+"Other" = "Інше";
+
+/* No comment provided by engineer. */
+"Other account settings" = "Інші налаштування облікового запису";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overview" = "Огляд";
+
+/* No comment provided by engineer. */
+"Parent" = "Джерело";
+
+/* No comment provided by engineer. */
+"Paused" = "Призупинено";
+
+/* No comment provided by engineer. */
+"Paused %@" = "Зупинено %@";
+
+/* No comment provided by engineer. */
+"Picture book" = "Книжка з малюнками";
+
+/* No comment provided by engineer. */
+"Planning" = "Планується";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "У планах прочитати %@";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "Плани на перегляд %@";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "Будь ласка, увійдіть, щоб скористатися цією функцією";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Будь ласка, відкрийте застосунок AniHyou на вашому iPhone та перейдіть до профілю -> Налаштування -> Синхронізуйте обліковий запис з Apple Watch";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "Популярні аніме";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "Популярна манґа";
+
+/* No comment provided by engineer. */
+"Popularity" = "За популярністю";
+
+/* No comment provided by engineer. */
+"Prequel" = "Передісторія";
+
+/* No comment provided by engineer. */
+"Priority" = "Пріоритет";
+
+/* No comment provided by engineer. */
+"Private" = "Приватне";
+
+/* No comment provided by engineer. */
+"Producers" = "Продюсери";
+
+/* No comment provided by engineer. */
+"Profile" = "Профіль";
+
+/* No comment provided by engineer. */
+"Progress" = "Прогрес";
+
+/* No comment provided by engineer. */
+"Psychological" = "Психологічне";
+
+/* No comment provided by engineer. */
+"Publishing" = "Публікується";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "Манґа, що публікується";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "Швидкий доступ до вашого каталогу аніме або манґи.";
+
+/* No comment provided by engineer. */
+"Rankings" = "Рейтинги";
+
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "Прочитати розділ %1$@ в %2$@";
+
+/* No comment provided by engineer. */
+"Recommendations" = "Рекомендації";
+
+/* No comment provided by engineer. */
+"Relations" = "Зв'язки";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "Зв'язки та рекомендації";
+
+/* No comment provided by engineer. */
+"Release Date" = "Дата випуску";
+
+/* No comment provided by engineer. */
+"Releasing" = "Реліз";
+
+/* No comment provided by engineer. */
+"Repeat" = "Повторити";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "Кількість повторів";
+
+/* No comment provided by engineer. */
+"Repeating" = "Повторювані";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "Відновити покупки";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "Огляд та теми";
+
+/* No comment provided by engineer. */
+"Reviews" = "Відгуки";
+
+/* No comment provided by engineer. */
+"Right" = "Праворуч";
+
+/* No comment provided by engineer. */
+"Romaji" = "Романджі";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "Ромаджі (Західний порядок)";
+
+/* No comment provided by engineer. */
+"Romance" = "Романтика";
+
+/* (No Comment) */
+"saturday_short" = "Сб";
+
+/* No comment provided by engineer. */
+"Save" = "Зберегти";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "Наукова фантастика";
+
+/* No comment provided by engineer. */
+"Score" = "За оцінкою";
+
+/* No comment provided by engineer. */
+"Score distribution" = "Розподіл балів";
+
+/* No comment provided by engineer. */
+"Score format" = "Формат оцінки";
+
+/* No comment provided by engineer. */
+"Search type" = "Тип пошуку";
+
+/* No comment provided by engineer. */
+"Season" = "Сезон";
+
+/* No comment provided by engineer. */
+"See All" = "Переглянути всі";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "Виберіть тип медіа";
+
+/* No comment provided by engineer. */
+"Selection type" = "Тип відбору";
+
+/* No comment provided by engineer. */
+"Sequel" = "Продовження";
+
+/* No comment provided by engineer. */
+"Set progress" = "Встановити прогрес";
+
+/* No comment provided by engineer. */
+"Sets a list entry progress to the specified number." = "Встановлює прогрес введення списку до вказаного числа.";
+
+/* No comment provided by engineer. */
+"Settings" = "Налаштування";
+
+/* No comment provided by engineer. */
+"Share" = "Поділитися";
+
+/* No comment provided by engineer. */
+"Show less" = "Показати менше";
+
+/* No comment provided by engineer. */
+"Show more" = "Показати більше";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "Показувати тільки ті аніме, які найближчим часом вийдуть і які є у вашій бібліотеці";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "Показати спойлер";
+
+/* No comment provided by engineer. */
+"Shows the animes with behind episodes in your list." = "Показує аніме з простроченими серіями зі свого списку.";
+
+/* No comment provided by engineer. */
+"Shows the next airing animes in your list." = "Показує аніме з вашого списку, які вийдуть найближчим часом.";
+
+/* No comment provided by engineer. */
+"Side Story" = "Побічна історія";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "Буденність";
+
+/* No comment provided by engineer. */
+"Social" = "Соціальні мережі";
+
+/* No comment provided by engineer. */
+"Sort" = "Сортування";
+
+/* No comment provided by engineer. */
+"Source" = "Першоджерело";
+
+/* No comment provided by engineer. */
+"South Korea" = "Південна Корея";
+
+/* No comment provided by engineer. */
+"Special" = "Спешл";
+
+/* No comment provided by engineer. */
+"Spin Off" = "Спін-офф";
+
+/* No comment provided by engineer. */
+"Sports" = "Спорт";
+
+/* No comment provided by engineer. */
+"Spring" = "Весна";
+
+/* No comment provided by engineer. */
+"Staff" = "Персонал";
+
+/* No comment provided by engineer. */
+"Staff & Character name language" = "Персонал & Мова імен персонажів";
+
+/* No comment provided by engineer. */
+"Standard" = "Стандартний";
+
+/* No comment provided by engineer. */
+"Start date" = "Дата початку";
+
+/* No comment provided by engineer. */
+"Start Date" = "Дата початку";
+
+/* No comment provided by engineer. */
+"Started" = "Почато";
+
+/* No comment provided by engineer. */
+"Stats" = "Статистика";
+
+/* No comment provided by engineer. */
+"Status" = "Статус";
+
+/* No comment provided by engineer. */
+"Status distribution" = "Розподіл статусу";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "Сторінки трансляцій";
+
+/* No comment provided by engineer. */
+"Studios" = "Студії";
+
+/* No comment provided by engineer. */
+"Summary" = "Зведення";
+
+/* No comment provided by engineer. */
+"Summer" = "Літо";
+
+/* (No Comment) */
+"sunday_short" = "Нд";
+
+/* No comment provided by engineer. */
+"Supernatural" = "Надприродне";
+
+/* No comment provided by engineer. */
+"Support the development of AniHyou!" = "Підтримати розробку AniHyou!";
+
+/* No comment provided by engineer. */
+"Supporting" = "Другорядний";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "Синхронізація облікового запису з Apple Watch";
+
+/* No comment provided by engineer. */
+"Synonyms" = "Інші назви";
+
+/* No comment provided by engineer. */
+"Tags" = "Мітки";
+
+/* No comment provided by engineer. */
+"Taiwan" = "Тайвань";
+
+/* No comment provided by engineer. */
+"Text Status" = "Статус тексту";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "Дякую :)";
+
+/* No comment provided by engineer. */
+"The amount of episodes/chapters consumed by the user" = "Кількість серій/розділів, які  переглянув користувач";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "Id носія, до якого належить запис";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Ця функція буде розблокована, коли ви зробите пожертву, навіть найменшу!";
+
+/* No comment provided by engineer. */
+"Threads" = "Теми";
+
+/* No comment provided by engineer. */
+"Thriller" = "Трилер";
+
+/* (No Comment) */
+"thursday_short" = "Чт";
+
+/* No comment provided by engineer. */
+"Title" = "Назва";
+
+/* No comment provided by engineer. */
+"Title language" = "Мова назви";
+
+/* No comment provided by engineer. */
+"Titles Count" = "Кількість назв";
+
+/* No comment provided by engineer. */
+"To year" = "До року";
+
+/* No comment provided by engineer. */
+"Top 100" = "Топ 100";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "Топ 100 аніме";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "Топ 100 манґ";
+
+/* No comment provided by engineer. */
+"Top Popular" = "Найпопулярніші";
+
+/* No comment provided by engineer. */
+"Total Anime" = "Всього аніме";
+
+/* No comment provided by engineer. */
+"Total Manga" = "Всього манґ";
+
+/* No comment provided by engineer. */
+"Trailer" = "Трейлер";
+
+/* No comment provided by engineer. */
+"Translations" = "Перекладачі";
+
+/* No comment provided by engineer. */
+"Trending" = "Популярне";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "Популярні аніме";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "Популярна манґа";
+
+/* (No Comment) */
+"tuesday_short" = "Вт";
+
+/* No comment provided by engineer. */
+"TV" = "TV";
+
+/* No comment provided by engineer. */
+"TV Short" = "Короткометражний фільм";
+
+/* No comment provided by engineer. */
+"Unfollow" = "Відписатися";
+
+/* (No Comment) */
+"Unknown" = "Невідомо";
+
+/* No comment provided by engineer. */
+"Upcoming" = "Незабаром";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "Майбутні Аніме";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "Майбутня Манґа";
+
+/* No comment provided by engineer. */
+"Updated" = "Оновлено";
+
+/* No comment provided by engineer. */
+"Users" = "Користувачі";
+
+/* No comment provided by engineer. */
+"Users likes" = "Вподобання користувачів";
+
+/* No comment provided by engineer. */
+"Version %@" = "Версія %@";
+
+/* No comment provided by engineer. */
+"VideoGame" = "Відеоігри";
+
+/* No comment provided by engineer. */
+"Visual novel" = "Візуальна новела";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "Актори озвучування";
+
+/* No comment provided by engineer. */
+"Volumes" = "Томи";
+
+/* No comment provided by engineer. */
+"Volumes Read" = "Прочитано розділів";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "Переглянута серія %1$@ з %2$@";
+
+/* No comment provided by engineer. */
+"Web novel" = "Веб-роман";
+
+/* (No Comment) */
+"wednesday_short" = "Ср";
+
+/* No comment provided by engineer. */
+"Weekday" = "Будні дні";
+
+/* No comment provided by engineer. */
+"Winter" = "Зима";
+
+/* No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Маючи будь яку покупку, ви отримаєте доступ до ексклюзивних значків додатків і користувацьких кольорів!";
+
+/* No comment provided by engineer. */
+"Year" = "Рік";
+
+/* No comment provided by engineer. */
+"Years active" = "Роки активності";
+
+/* No comment provided by engineer. */
+"Yes" = "Так";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "Можливо, вам потрібно буде знову увійти у ваш браузер";
+

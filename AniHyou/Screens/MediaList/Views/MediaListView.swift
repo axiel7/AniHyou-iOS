@@ -18,6 +18,8 @@ struct MediaListView: View {
     }
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
+    @AppStorage(LIST_SORT) private var sort = MediaListSort.updatedTimeDesc
+    @AppStorage(LIST_SORT_ORDER) private var sortAscending = false
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
 
@@ -41,8 +43,11 @@ struct MediaListView: View {
         .refreshable {
             viewModel.refreshList()
         }
-        .onChange(of: viewModel.sort) { _ in
-            viewModel.refreshList()
+        .onChange(of: sort) { newValue in
+            viewModel.onSortChanged(newValue, isAscending: sortAscending)
+        }
+        .onChange(of: sortAscending) { newValue in
+            viewModel.onSortChanged(sort, isAscending: newValue)
         }
         .onChange(of: viewModel.formatFilter) { _ in
             viewModel.refreshList()
@@ -53,6 +58,7 @@ struct MediaListView: View {
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = status
+            viewModel.onSortChanged(sort, isAscending: sortAscending)
         }
         .sheet(isPresented: $showingEditSheet) {
             if let item = viewModel.selectedItem {
@@ -77,10 +83,14 @@ struct MediaListView: View {
         .toolbar {
             ToolbarItem {
                 Menu {
-                    Picker("Sort", selection: $viewModel.sort) {
-                        Text("Score").tag(MediaListSort.scoreDesc)
-                        Text("Last Updated").tag(MediaListSort.updatedTimeDesc)
-                        Text("Last Added").tag(MediaListSort.addedTimeDesc)
+                    Picker("Sort", selection: $sort) {
+                        ForEach(MediaListSort.allCasesForUi, id: \.self) {
+                            Text($0.localizedName).tag($0)
+                        }
+                    }
+                    Picker("Order", selection: $sortAscending) {
+                        Text("Ascending").tag(true)
+                        Text("Descending").tag(false)
                     }
                 } label: {
                     Image(systemName: "arrow.up.arrow.down")

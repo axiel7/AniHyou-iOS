@@ -145,6 +145,10 @@ extension FuzzyDateFragment {
         guard self.year != fuzzyDate?.year.unwrapped else { return false }
         return true
     }
+    
+    func isoString() -> String {
+        return "\(year ?? 3000)\(month ?? 12)\(day ?? 31)"
+    }
 }
 
 func date(year: Int, month: Int, day: Int) -> Date? {

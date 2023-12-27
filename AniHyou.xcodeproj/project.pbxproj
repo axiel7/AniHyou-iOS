@@ -148,6 +148,7 @@
 		48AC01892968624C00525B69 /* AnimeSeasonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC01882968624C00525B69 /* AnimeSeasonListView.swift */; };
 		48AF5394289E7371006D40B6 /* ThreadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */; };
 		48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */; };
+		48B635CB2B24885100ED73E7 /* MediaListSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E3F2A85B64B00EF0CA2 /* MediaListSort.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -416,6 +417,8 @@
 		486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewModel.swift; sourceTree = "<group>"; };
 		486ED20E285DDE03002D29E1 /* ViewerId.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerId.graphql; sourceTree = "<group>"; };
 		486ED213285E3261002D29E1 /* MediaDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsView.swift; sourceTree = "<group>"; };
+		487F4BE22B282ED90002237C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		487F4BE32B282ED90002237C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTagSelectionView.swift; sourceTree = "<group>"; };
 		488763D52977F83F00402934 /* HorizontalBarStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarStatsView.swift; sourceTree = "<group>"; };
 		488763D72977F8FF00402934 /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 		489C7E91291900C7004B0B39 /* UserBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserBasicInfo.graphql; sourceTree = "<group>"; };
 		48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
 		48A29C592972B9EB00BF53B8 /* MediaListItemMinimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemMinimalView.swift; sourceTree = "<group>"; };
+		48A835D02B12D919008641FC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48A835D12B12D919008641FC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48AAE4082ADFA344003413B0 /* ActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
 		48AAE40A2ADFA44B003413B0 /* ActivityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewModel.swift; sourceTree = "<group>"; };
 		48AAE40C2ADFA4BE003413B0 /* ActivityDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityDetails.graphql; sourceTree = "<group>"; };
@@ -1722,6 +1727,9 @@
 				ru,
 				tr,
 				id,
+				uk,
+				Base,
+				"pt-BR",
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
@@ -2025,6 +2033,7 @@
 				48E58E2E2A85B4DE00EF0CA2 /* MediaList.swift in Sources */,
 				4892AB7F2A52E718004F07C9 /* ColorUtils.swift in Sources */,
 				48F2790F296EFE77000827F7 /* ContentView.swift in Sources */,
+				48B635CB2B24885100ED73E7 /* MediaListSort.swift in Sources */,
 				48F2793929703748000827F7 /* UpdateMediaEntryView.swift in Sources */,
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,
@@ -2068,6 +2077,8 @@
 				48691FEF2ADD03C2009DCDFE /* ru */,
 				48FC074A2ADE707F00067E76 /* tr */,
 				48DCF2362AF4C9D6008E9B99 /* id */,
+				48A835D12B12D919008641FC /* uk */,
+				487F4BE32B282ED90002237C /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2080,6 +2091,8 @@
 				48691FEE2ADD03C2009DCDFE /* ru */,
 				48FC07492ADE707F00067E76 /* tr */,
 				48DCF2352AF4C9D6008E9B99 /* id */,
+				48A835D02B12D919008641FC /* uk */,
+				487F4BE22B282ED90002237C /* pt-BR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

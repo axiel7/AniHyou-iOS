@@ -49,6 +49,11 @@ extension MediaListSort {
         }
     }
     
+    static var allCasesForUi: [MediaListSort] {
+        return [.mediaTitleRomajiDesc, .scoreDesc, .progressDesc, .updatedTimeDesc, .addedTimeDesc, .startedOnDesc,
+            .finishedOnDesc, .repeatDesc, .mediaPopularityDesc]
+    }
+    
     var isDesc: Bool {
         switch self {
         case .mediaIdDesc, .scoreDesc, .statusDesc, .progressDesc, .progressVolumesDesc, .repeatDesc, 
@@ -57,6 +62,54 @@ extension MediaListSort {
             return true
         default:
             return false
+        }
+    }
+    // swiftlint:disable:next cyclomatic_complexity
+    func toAscending() -> MediaListSort {
+        switch self {
+        case .mediaIdDesc:
+            return .mediaId
+        case .scoreDesc:
+            return .score
+        case .statusDesc:
+            return .status
+        case .progressDesc:
+            return .progress
+        case .progressVolumesDesc:
+            return .progressVolumes
+        case .repeatDesc:
+            return .repeat
+        case .priorityDesc:
+            return .priority
+        case .startedOnDesc:
+            return .startedOn
+        case .finishedOnDesc:
+            return .finishedOn
+        case .addedTimeDesc:
+            return .addedTime
+        case .updatedTimeDesc:
+            return .updatedTime
+        case .mediaTitleRomajiDesc:
+            return .mediaTitleRomaji
+        case .mediaTitleEnglishDesc:
+            return .mediaTitleEnglish
+        case .mediaTitleNativeDesc:
+            return .mediaTitleNative
+        case .mediaPopularityDesc:
+            return .mediaPopularity
+        default:
+            return self
+        }
+    }
+    
+    static func titleSortForLanguage(_ lang: UserTitleLanguage) -> MediaListSort {
+        switch lang {
+        case .romaji, .romajiStylised:
+            return .mediaTitleRomajiDesc
+        case .english, .englishStylised:
+            return .mediaTitleEnglishDesc
+        case .native, .nativeStylised:
+            return .mediaTitleNativeDesc
         }
     }
 }

@@ -8,7 +8,7 @@ public class UserCurrentAnimeListQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query UserCurrentAnimeList($userId: Int, $sort: [MediaListSort]) { Page(page: 1, perPage: 50) { __typename mediaList(userId: $userId, type: ANIME, status: CURRENT, sort: $sort) { __typename ...ProgressMediaListEntry media { __typename title { __typename userPreferred } nextAiringEpisode { __typename episode timeUntilAiring airingAt } status } } } }"#,
-      fragments: [ProgressMediaListEntry.self, IdsMediaList.self]
+      fragments: [IdsMediaList.self, ProgressMediaListEntry.self]
     ))
 
   public var userId: GraphQLNullable<Int>

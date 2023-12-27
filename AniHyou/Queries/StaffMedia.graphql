@@ -15,6 +15,9 @@ query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) {
                     mediaListEntry {
                         status
                     }
+                    startDate {
+                        ...FuzzyDateFragment
+                    }
                 }
                 staffRole
             }
