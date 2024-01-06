@@ -21,7 +21,7 @@ class MediaListViewModel: ObservableObject {
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
-    private var sort: MediaListSort = .updatedTimeDesc
+    private var sort: MediaListSort?
     
     @Published var searchText = ""
     @Published var isLoading = false
@@ -54,7 +54,7 @@ class MediaListViewModel: ObservableObject {
                 userId: .some(userId),
                 type: .some(.case(mediaType)),
                 status: .some(.case(mediaListStatus)),
-                sort: .some([.case(sort), .case(.mediaIdDesc)])
+                sort: .some([.case(sort ?? .addedTimeDesc), .case(.mediaIdDesc)])
             ),
             cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
             switch result {
@@ -121,16 +121,19 @@ class MediaListViewModel: ObservableObject {
     }
 
     func onSortChanged(_ newValue: MediaListSort, isAscending: Bool) {
-        sort = newValue
+        var newValueOrdered = newValue
         if newValue == .mediaTitleRomajiDesc {
             if
                 let preferredLang = UserDefaults.standard.string(forKey: USER_TITLE_LANG_KEY),
                 let titleLanguage = UserTitleLanguage(rawValue: preferredLang)
             {
-                sort = MediaListSort.titleSortForLanguage(titleLanguage)
+                newValueOrdered = MediaListSort.titleSortForLanguage(titleLanguage)
             }
         }
-        sort = isAscending ? sort.toAscending() : sort
-        refreshList()
+        newValueOrdered = isAscending ? newValueOrdered.toAscending() : newValueOrdered
+        if newValueOrdered != sort {
+            sort = newValueOrdered
+            refreshList()
+        }
     }
 }
