@@ -7,8 +7,8 @@ public class MediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "MediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename id title { __typename userPreferred romaji english native } synonyms format status description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear episodes duration chapters volumes coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia type nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
-      fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, IsFavouriteMedia.self, ProgressMediaListEntry.self]
+      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails title { __typename userPreferred romaji english native } synonyms format status description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
+      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, IsFavouriteMedia.self, ProgressMediaListEntry.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>
@@ -41,7 +41,6 @@ public class MediaDetailsQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", Int.self),
         .field("title", Title?.self),
         .field("synonyms", [String?]?.self),
         .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
@@ -51,10 +50,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("endDate", EndDate?.self),
         .field("season", GraphQLEnum<AniListAPI.MediaSeason>?.self),
         .field("seasonYear", Int?.self),
-        .field("episodes", Int?.self),
         .field("duration", Int?.self),
-        .field("chapters", Int?.self),
-        .field("volumes", Int?.self),
         .field("coverImage", CoverImage?.self),
         .field("bannerImage", String?.self),
         .field("averageScore", Int?.self),
@@ -63,7 +59,6 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("genres", [String?]?.self),
         .field("studios", Studios?.self),
         .field("favourites", Int?.self),
-        .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
         .field("nextAiringEpisode", NextAiringEpisode?.self),
         .field("mediaListEntry", MediaListEntry?.self),
         .field("source", GraphQLEnum<AniListAPI.MediaSource>?.self),
@@ -71,11 +66,10 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("trailer", Trailer?.self),
         .field("streamingEpisodes", [StreamingEpisode?]?.self),
         .field("tags", [Tag?]?.self),
+        .fragment(BasicMediaDetails.self),
         .fragment(IsFavouriteMedia.self),
       ] }
 
-      /// The id of the media
-      public var id: Int { __data["id"] }
       /// The official titles of the media in various languages
       public var title: Title? { __data["title"] }
       /// Alternative titles of the media
@@ -94,14 +88,8 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var season: GraphQLEnum<AniListAPI.MediaSeason>? { __data["season"] }
       /// The season year the media was initially released in
       public var seasonYear: Int? { __data["seasonYear"] }
-      /// The amount of episodes the anime has when complete
-      public var episodes: Int? { __data["episodes"] }
       /// The general length of each anime episode in minutes
       public var duration: Int? { __data["duration"] }
-      /// The amount of chapters the manga has when complete
-      public var chapters: Int? { __data["chapters"] }
-      /// The amount of volumes the manga has when complete
-      public var volumes: Int? { __data["volumes"] }
       /// The cover images of the media
       public var coverImage: CoverImage? { __data["coverImage"] }
       /// The banner image of the media
@@ -118,8 +106,6 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var studios: Studios? { __data["studios"] }
       /// The amount of user's who have favourited the media
       public var favourites: Int? { __data["favourites"] }
-      /// The type of the media; anime or manga
-      public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
       /// The media's next episode airing schedule
       public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
       /// The authenticated user's media list entry for the media
@@ -134,6 +120,16 @@ public class MediaDetailsQuery: GraphQLQuery {
       public var streamingEpisodes: [StreamingEpisode?]? { __data["streamingEpisodes"] }
       /// List of tags that describes elements and themes of the media
       public var tags: [Tag?]? { __data["tags"] }
+      /// The id of the media
+      public var id: Int { __data["id"] }
+      /// The amount of episodes the anime has when complete
+      public var episodes: Int? { __data["episodes"] }
+      /// The amount of chapters the manga has when complete
+      public var chapters: Int? { __data["chapters"] }
+      /// The amount of volumes the manga has when complete
+      public var volumes: Int? { __data["volumes"] }
+      /// The type of the media; anime or manga
+      public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
       /// If the media is marked as favourite by the current authenticated user
       public var isFavourite: Bool { __data["isFavourite"] }
 
@@ -141,6 +137,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
+        public var basicMediaDetails: BasicMediaDetails { _toFragment() }
         public var isFavouriteMedia: IsFavouriteMedia { _toFragment() }
       }
 

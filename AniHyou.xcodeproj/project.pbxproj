@@ -91,6 +91,7 @@
 		48438E2D2A67DA810042BCD9 /* AniHyou-Green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48438E212A67DA810042BCD9 /* AniHyou-Green@2x.png */; };
 		48438E302A67DBAE0042BCD9 /* AniHyou-Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48438E2E2A67DBAE0042BCD9 /* AniHyou-Default@2x.png */; };
 		48438E312A67DBAE0042BCD9 /* AniHyou-Default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48438E2F2A67DBAE0042BCD9 /* AniHyou-Default@3x.png */; };
+		4847E11E2B48EE770032521A /* MediaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847E11D2B48EE770032521A /* MediaDetails.swift */; };
 		484A6D64287480FB0044C34A /* ReviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A6D63287480FB0044C34A /* ReviewItemView.swift */; };
 		484A6D69287481500044C34A /* ReviewDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A6D68287481500044C34A /* ReviewDetailsView.swift */; };
 		484A6D6B287484C40044C34A /* MediaReviewsAndThreadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A6D6A287484C40044C34A /* MediaReviewsAndThreadsView.swift */; };
@@ -387,6 +388,7 @@
 		48438E2E2A67DBAE0042BCD9 /* AniHyou-Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AniHyou-Default@2x.png"; sourceTree = "<group>"; };
 		48438E2F2A67DBAE0042BCD9 /* AniHyou-Default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AniHyou-Default@3x.png"; sourceTree = "<group>"; };
 		4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoType.swift; sourceTree = "<group>"; };
+		4847E11D2B48EE770032521A /* MediaDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetails.swift; sourceTree = "<group>"; };
 		484A6D5F28747FD50044C34A /* MediaReviews.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaReviews.graphql; sourceTree = "<group>"; };
 		484A6D61287480CC0044C34A /* ReviewDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReviewDetails.graphql; sourceTree = "<group>"; };
 		484A6D63287480FB0044C34A /* ReviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewItemView.swift; sourceTree = "<group>"; };
@@ -1264,6 +1266,7 @@
 			children = (
 				48E58E292A85B49E00EF0CA2 /* MediaType.swift */,
 				48E58E2C2A85B4D700EF0CA2 /* MediaList.swift */,
+				4847E11D2B48EE770032521A /* MediaDetails.swift */,
 				48E58E2F2A85B55900EF0CA2 /* ScoreFormat.swift */,
 				48E58E312A85B58700EF0CA2 /* MediaListStatus.swift */,
 				48E58E332A85B5AA00EF0CA2 /* MediaSeason.swift */,
@@ -1949,6 +1952,7 @@
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,
 				481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */,
 				48DBAF7F29B0786400A75167 /* OverviewStatsView.swift in Sources */,
+				4847E11E2B48EE770032521A /* MediaDetails.swift in Sources */,
 				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
 				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,

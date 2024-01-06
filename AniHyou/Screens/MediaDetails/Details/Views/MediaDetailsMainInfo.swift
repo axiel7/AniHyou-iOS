@@ -92,8 +92,7 @@ struct MediaDetailsMainInfo: View {
         }
         .sheet(isPresented: $showingEditSheet) {
             MediaListEditView(
-                mediaId: mediaId,
-                mediaType: viewModel.mediaDetails!.type!.value!,
+                mediaDetails: viewModel.mediaDetails!.fragments.basicMediaDetails,
                 mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
                 onSave: { updatedEntry in
                     viewModel.onEntryUpdated(updatedEntry: updatedEntry)

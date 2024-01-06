@@ -7,8 +7,8 @@ public class UserMediaListQuery: GraphQLQuery {
   public static let operationName: String = "UserMediaList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename title { __typename userPreferred } episodes chapters volumes coverImage { __typename large color } nextAiringEpisode { __typename episode airingAt } status type } } pageInfo { __typename hasNextPage } } }"#,
-      fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, ProgressMediaListEntry.self]
+      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename ...BasicMediaDetails coverImage { __typename large color } nextAiringEpisode { __typename episode airingAt } status } } pageInfo { __typename hasNextPage } } }"#,
+      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, ProgressMediaListEntry.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -138,48 +138,36 @@ public class UserMediaListQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("title", Title?.self),
-            .field("episodes", Int?.self),
-            .field("chapters", Int?.self),
-            .field("volumes", Int?.self),
             .field("coverImage", CoverImage?.self),
             .field("nextAiringEpisode", NextAiringEpisode?.self),
             .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self),
-            .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
+            .fragment(BasicMediaDetails.self),
           ] }
 
-          /// The official titles of the media in various languages
-          public var title: Title? { __data["title"] }
-          /// The amount of episodes the anime has when complete
-          public var episodes: Int? { __data["episodes"] }
-          /// The amount of chapters the manga has when complete
-          public var chapters: Int? { __data["chapters"] }
-          /// The amount of volumes the manga has when complete
-          public var volumes: Int? { __data["volumes"] }
           /// The cover images of the media
           public var coverImage: CoverImage? { __data["coverImage"] }
           /// The media's next episode airing schedule
           public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
           /// The current releasing status of the media
           public var status: GraphQLEnum<AniListAPI.MediaStatus>? { __data["status"] }
+          /// The id of the media
+          public var id: Int { __data["id"] }
+          /// The official titles of the media in various languages
+          public var title: BasicMediaDetails.Title? { __data["title"] }
+          /// The amount of episodes the anime has when complete
+          public var episodes: Int? { __data["episodes"] }
+          /// The amount of chapters the manga has when complete
+          public var chapters: Int? { __data["chapters"] }
+          /// The amount of volumes the manga has when complete
+          public var volumes: Int? { __data["volumes"] }
           /// The type of the media; anime or manga
           public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
 
-          /// Page.MediaList.Media.Title
-          ///
-          /// Parent Type: `MediaTitle`
-          public struct Title: AniListAPI.SelectionSet {
+          public struct Fragments: FragmentContainer {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-            public static var __selections: [ApolloAPI.Selection] { [
-              .field("__typename", String.self),
-              .field("userPreferred", String?.self),
-            ] }
-
-            /// The currently authenticated users preferred title language. Default romaji for non-authenticated
-            public var userPreferred: String? { __data["userPreferred"] }
+            public var basicMediaDetails: BasicMediaDetails { _toFragment() }
           }
 
           /// Page.MediaList.Media.CoverImage

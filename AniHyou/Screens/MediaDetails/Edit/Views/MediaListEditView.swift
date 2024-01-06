@@ -11,8 +11,7 @@ import AniListAPI
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss
 
-    let mediaId: Int
-    let mediaType: MediaType
+    let mediaDetails: BasicMediaDetails
     var mediaList: BasicMediaListEntry?
     var onSave: (_ updatedEntry: BasicMediaListEntry) -> Void = { _ in }
     var onDelete: () -> Void = {}
@@ -85,15 +84,28 @@ struct MediaListEditView: View {
                             .keyboardType(.numberPad)
                             .textFieldStyle(.roundedBorder)
                             .frame(width: textFieldWidth)
-                        Stepper(mediaType == .anime ? "Episodes" : "Chapters", value: $progress, in: 0...Int.max)
+                            .onChange(of: progress) { value in
+                                if let max = mediaDetails.maxProgress, value > max {
+                                    progress = max
+                                }
+                            }
+                        Stepper(
+                            mediaDetails.type == .anime ? "Episodes" : "Chapters",
+                            value: $progress, in: 0...(mediaDetails.maxProgress ?? Int.max)
+                        )
                     }
-                    if mediaType == .manga {
+                    if mediaDetails.type == .manga {
                         HStack {
                             TextField("", value: $progressVolumes, formatter: NumberFormatter())
                                 .keyboardType(.numberPad)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: textFieldWidth)
-                            Stepper("Volumes", value: $progressVolumes, in: 0...Int.max)
+                                .onChange(of: progressVolumes) { value in
+                                    if let max = mediaDetails.volumes, value > max {
+                                        progressVolumes = max
+                                    }
+                                }
+                            Stepper("Volumes", value: $progressVolumes, in: 0...(mediaDetails.volumes ?? Int.max))
                         }
                     }
                 }
@@ -149,7 +161,7 @@ struct MediaListEditView: View {
                     } else {
                         Button("Save") {
                             viewModel.updateEntry(
-                                mediaId: mediaId,
+                                mediaId: mediaDetails.id,
                                 status: status,
                                 score: viewModel.score,
                                 progress: progress,
@@ -218,5 +230,5 @@ struct MediaListEditView: View {
 }
 
 #Preview {
-    MediaListEditView(mediaId: 1, mediaType: .anime)
+    MediaListEditView(mediaDetails: BasicMediaDetails(_fieldData: nil))
 }

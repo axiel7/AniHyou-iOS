@@ -55,10 +55,11 @@ struct MediaListView: View {
             viewModel.onSortChanged(sort, isAscending: sortAscending)
         }
         .sheet(isPresented: $showingEditSheet) {
-            if let item = viewModel.selectedItem {
+            if let item = viewModel.selectedItem,
+               let media = item.media
+            {
                 MediaListEditView(
-                    mediaId: item.mediaId,
-                    mediaType: type,
+                    mediaDetails: media.fragments.basicMediaDetails,
                     mediaList: item.fragments.basicMediaListEntry,
                     onSave: { updatedEntry in
                         viewModel.onEntryUpdated(
