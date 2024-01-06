@@ -118,13 +118,8 @@ struct MediaListEditView: View {
                 }
 
                 Section {
-                    if #available(iOS 16.0, *) {
-                        TextField("Notes", text: $notes, axis: .vertical)
-                            .lineLimit(5)
-                    } else {
-                        TextField("Notes", text: $notes)
-                            .lineLimit(5)
-                    }
+                    TextField("Notes", text: $notes, axis: .vertical)
+                        .lineLimit(5)
                 }
 
                 Button("Delete", role: .destructive) {

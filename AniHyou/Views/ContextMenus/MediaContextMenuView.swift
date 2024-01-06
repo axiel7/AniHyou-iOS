@@ -35,34 +35,19 @@ extension View {
 
     func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus?) -> some View {
         Group {
-            if #available(iOS 16.0, *) {
-                self
-                    .contextMenu {
-                        if let mediaType {
-                            contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
-                            ShareLink(item: "\(mediaType.mediaUrl)\(mediaId)") {
-                                Label("Share", systemImage: "square.and.arrow.up")
-                            }
-                            .padding(.trailing)
-                            .labelStyle(.iconOnly)
+            self
+                .contextMenu {
+                    if let mediaType {
+                        contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
+                        ShareLink(item: "\(mediaType.mediaUrl)\(mediaId)") {
+                            Label("Share", systemImage: "square.and.arrow.up")
                         }
-                    } preview: {
-                        MediaContextMenuView(mediaId: mediaId)
+                        .padding(.trailing)
+                        .labelStyle(.iconOnly)
                     }
-            } else {
-                self
-                    .contextMenu {
-                        if let mediaType {
-                            contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
-                            Button {
-                                shareSheet(url: "\(mediaType.mediaUrl)\(mediaId)")
-                            } label: {
-                                Label("Share", systemImage: "square.and.arrow.up")
-                            }
-                            .labelStyle(.iconOnly)
-                        }
-                    }
-            }
+                } preview: {
+                    MediaContextMenuView(mediaId: mediaId)
+                }
         }
     }
 }
