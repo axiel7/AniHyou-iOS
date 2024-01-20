@@ -190,7 +190,7 @@ struct SettingsView: View {
             Button("Donate!") {
                 navigateToDonations.toggle()
             }
-            Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou")!)
+            Link("GitHub repository", destination: URL(string: "https://github.com/axiel7/AniHyou-iOS")!)
             Link("Discord server", destination: URL(string: "https://discord.gg/CTv3WdfxHh")!)
         } header: {
             Text("Information")
