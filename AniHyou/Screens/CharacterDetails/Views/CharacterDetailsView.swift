@@ -14,6 +14,7 @@ struct CharacterDetailsView: View {
     @StateObject private var viewModel = CharacterDetailsViewModel()
     @State private var infoType: CharacterInfoType = .overview
     @State private var showNameSpoiler = false
+    @State private var showImageSheet = false
 
     var body: some View {
         ScrollView(.vertical) {
@@ -50,7 +51,9 @@ struct CharacterDetailsView: View {
     var characterOverview: some View {
         if let character = viewModel.character {
             VStack(alignment: .center) {
-                CircleImageView(imageUrl: character.image?.large, size: 150)
+                Button(action: { showImageSheet.toggle() }) {
+                    CircleImageView(imageUrl: character.image?.large, size: 150)
+                }
 
                 Text(character.name?.userPreferred ?? "")
                     .font(.title3.weight(.bold))
@@ -97,6 +100,9 @@ struct CharacterDetailsView: View {
                     }
                 }
             }//:VStack
+            .sheet(isPresented: $showImageSheet) {
+                FullCoverView(imageUrl: character.image?.large)
+            }
         } else {
             HorizontalProgressView()
                 .onAppear {

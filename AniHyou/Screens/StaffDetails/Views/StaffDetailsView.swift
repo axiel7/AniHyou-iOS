@@ -14,6 +14,7 @@ struct StaffDetailsView: View {
     let staffId: Int
     @StateObject private var viewModel = StaffDetailsViewModel()
     @State private var infoType: StaffInfoType = .overview
+    @State private var showImageSheet = false
 
     var body: some View {
         ScrollView(.vertical) {
@@ -52,7 +53,9 @@ struct StaffDetailsView: View {
     var staffOverview: some View {
         if let staff = viewModel.staff {
             VStack(alignment: .center) {
-                CircleImageView(imageUrl: staff.image?.large, size: 150)
+                Button(action: { showImageSheet.toggle() }) {
+                    CircleImageView(imageUrl: staff.image?.large, size: 150)
+                }
 
                 Text(staff.name?.userPreferred ?? "")
                     .font(.title3.weight(.bold))
@@ -89,6 +92,9 @@ struct StaffDetailsView: View {
                     }
                 }
             }//:VStack
+            .sheet(isPresented: $showImageSheet) {
+                FullCoverView(imageUrl: staff.image?.large)
+            }
         } else {
             HorizontalProgressView()
                 .onAppear {

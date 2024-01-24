@@ -25,6 +25,7 @@ struct ProfileView: View {
     @State private var hasScrolled = false
     @State private var showingMediaDetails = false
     @State private var mediaId = 0
+    @State private var showingImageSheet = false
 
     var body: some View {
         if isMyProfile {
@@ -115,8 +116,10 @@ struct ProfileView: View {
 
             HStack {
                 VStack {
-                    CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
-                        .shadow(radius: 7)
+                    Button(action: { showingImageSheet.toggle() }) {
+                        CircleImageView(imageUrl: viewModel.userInfo?.avatar?.large, size: avatarSize)
+                            .shadow(radius: 7)
+                    }
 
                     Group {
                         if let username = viewModel.userInfo?.name {
@@ -142,7 +145,7 @@ struct ProfileView: View {
                         }
                         .foregroundStyle(.accent)
                     }
-                }
+                }//:VStack
                 .padding(.leading, 16)
                 Spacer()
 
@@ -167,8 +170,11 @@ struct ProfileView: View {
                     }
                     .padding(.horizontal)
                 }
-            }
+            }//:HStack
             .padding(.top, 85)
+        }//:ZStack
+        .sheet(isPresented: $showingImageSheet) {
+            FullCoverView(imageUrl: viewModel.userInfo?.avatar?.large)
         }
     }
 }
