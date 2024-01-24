@@ -118,7 +118,7 @@ public class ActivityFeedQuery: GraphQLQuery {
           /// The user id of the activity's creator
           public var userId: Int? { __data["userId"] }
           /// The user who created the activity
-          public var user: TextActivityFragment.User? { __data["user"] }
+          public var user: User? { __data["user"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -126,6 +126,8 @@ public class ActivityFeedQuery: GraphQLQuery {
 
             public var textActivityFragment: TextActivityFragment { _toFragment() }
           }
+
+          public typealias User = TextActivityFragment.User
         }
 
         /// Page.Activity.AsListActivity
@@ -165,7 +167,7 @@ public class ActivityFeedQuery: GraphQLQuery {
           /// The user id of the activity's creator
           public var userId: Int? { __data["userId"] }
           /// The associated media to the activity update
-          public var media: ListActivityFragment.Media? { __data["media"] }
+          public var media: Media? { __data["media"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -210,6 +212,8 @@ public class ActivityFeedQuery: GraphQLQuery {
               public var medium: String? { __data["medium"] }
             }
           }
+
+          public typealias Media = ListActivityFragment.Media
         }
       }
 

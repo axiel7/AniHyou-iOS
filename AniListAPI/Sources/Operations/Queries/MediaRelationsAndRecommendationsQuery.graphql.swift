@@ -83,7 +83,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
           /// The type of relation to the parent model
           public var relationType: GraphQLEnum<AniListAPI.MediaRelation>? { __data["relationType"] }
-          public var node: MediaRelated.Node? { __data["node"] }
+          public var node: Node? { __data["node"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -91,6 +91,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
             public var mediaRelated: MediaRelated { _toFragment() }
           }
+
+          public typealias Node = MediaRelated.Node
         }
       }
 
@@ -123,7 +125,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
           ] }
 
           /// The recommended media
-          public var mediaRecommendation: MediaRecommended.MediaRecommendation? { __data["mediaRecommendation"] }
+          public var mediaRecommendation: MediaRecommendation? { __data["mediaRecommendation"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -131,6 +133,8 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
             public var mediaRecommended: MediaRecommended { _toFragment() }
           }
+
+          public typealias MediaRecommendation = MediaRecommended.MediaRecommendation
         }
       }
     }

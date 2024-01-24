@@ -59,16 +59,6 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     get { __data["notes"] }
     set { __data["notes"] = newValue }
   }
-  /// The id of the list entry
-  public var id: Int {
-    get { __data["id"] }
-    set { __data["id"] = newValue }
-  }
-  /// The id of the media
-  public var mediaId: Int {
-    get { __data["mediaId"] }
-    set { __data["mediaId"] = newValue }
-  }
   /// The amount of episodes/chapters consumed by the user
   public var progress: Int? {
     get { __data["progress"] }
@@ -78,6 +68,16 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public var progressVolumes: Int? {
     get { __data["progressVolumes"] }
     set { __data["progressVolumes"] = newValue }
+  }
+  /// The id of the list entry
+  public var id: Int {
+    get { __data["id"] }
+    set { __data["id"] = newValue }
+  }
+  /// The id of the media
+  public var mediaId: Int {
+    get { __data["mediaId"] }
+    set { __data["mediaId"] = newValue }
   }
 
   public struct Fragments: FragmentContainer {
@@ -106,10 +106,10 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     startedAt: StartedAt? = nil,
     completedAt: CompletedAt? = nil,
     notes: String? = nil,
-    id: Int,
-    mediaId: Int,
     progress: Int? = nil,
-    progressVolumes: Int? = nil
+    progressVolumes: Int? = nil,
+    id: Int,
+    mediaId: Int
   ) {
     self.init(_dataDict: DataDict(
       data: [
@@ -121,15 +121,15 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "startedAt": startedAt._fieldData,
         "completedAt": completedAt._fieldData,
         "notes": notes,
-        "id": id,
-        "mediaId": mediaId,
         "progress": progress,
         "progressVolumes": progressVolumes,
+        "id": id,
+        "mediaId": mediaId,
       ],
       fulfilledFragments: [
         ObjectIdentifier(BasicMediaListEntry.self),
-        ObjectIdentifier(IdsMediaList.self),
-        ObjectIdentifier(ProgressMediaListEntry.self)
+        ObjectIdentifier(ProgressMediaListEntry.self),
+        ObjectIdentifier(IdsMediaList.self)
       ]
     ))
   }

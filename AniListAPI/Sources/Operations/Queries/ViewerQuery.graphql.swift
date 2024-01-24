@@ -43,15 +43,15 @@ public class ViewerQuery: GraphQLQuery {
       /// The name of the user
       public var name: String { __data["name"] }
       /// The user's avatar images
-      public var avatar: UserInfo.Avatar? { __data["avatar"] }
+      public var avatar: Avatar? { __data["avatar"] }
       /// The user's banner images
       public var bannerImage: String? { __data["bannerImage"] }
       /// The bio written by user (Markdown)
       public var about: String? { __data["about"] }
       /// The user's general options
-      public var options: UserInfo.Options? { __data["options"] }
+      public var options: Options? { __data["options"] }
       /// The user's media list options
-      public var mediaListOptions: UserInfo.MediaListOptions? { __data["mediaListOptions"] }
+      public var mediaListOptions: MediaListOptions? { __data["mediaListOptions"] }
       /// If the authenticated user if following this user
       public var isFollowing: Bool? { __data["isFollowing"] }
       /// If this user if following the authenticated user
@@ -67,6 +67,12 @@ public class ViewerQuery: GraphQLQuery {
 
         public var userInfo: UserInfo { _toFragment() }
       }
+
+      public typealias Avatar = UserInfo.Avatar
+
+      public typealias Options = UserInfo.Options
+
+      public typealias MediaListOptions = UserInfo.MediaListOptions
     }
   }
 }

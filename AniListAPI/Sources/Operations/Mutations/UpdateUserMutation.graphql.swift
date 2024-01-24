@@ -82,9 +82,9 @@ public class UpdateUserMutation: GraphQLMutation {
       /// The id of the user
       public var id: Int { __data["id"] }
       /// The user's general options
-      public var options: UserOptionsFragment.Options? { __data["options"] }
+      public var options: Options? { __data["options"] }
       /// The user's media list options
-      public var mediaListOptions: UserOptionsFragment.MediaListOptions? { __data["mediaListOptions"] }
+      public var mediaListOptions: MediaListOptions? { __data["mediaListOptions"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict
@@ -92,6 +92,10 @@ public class UpdateUserMutation: GraphQLMutation {
 
         public var userOptionsFragment: UserOptionsFragment { _toFragment() }
       }
+
+      public typealias Options = UserOptionsFragment.Options
+
+      public typealias MediaListOptions = UserOptionsFragment.MediaListOptions
     }
   }
 }

@@ -324,14 +324,6 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var startedAt: StartedAt? { __data["startedAt"] }
         /// When the entry was completed by the user
         public var completedAt: CompletedAt? { __data["completedAt"] }
-        /// The id of the list entry
-        public var id: Int { __data["id"] }
-        /// The id of the media
-        public var mediaId: Int { __data["mediaId"] }
-        /// The amount of episodes/chapters consumed by the user
-        public var progress: Int? { __data["progress"] }
-        /// The amount of volumes read by the user
-        public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The watching/reading status
         public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
         /// The score of the entry
@@ -342,14 +334,22 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var `private`: Bool? { __data["private"] }
         /// Text notes
         public var notes: String? { __data["notes"] }
+        /// The amount of episodes/chapters consumed by the user
+        public var progress: Int? { __data["progress"] }
+        /// The amount of volumes read by the user
+        public var progressVolumes: Int? { __data["progressVolumes"] }
+        /// The id of the list entry
+        public var id: Int { __data["id"] }
+        /// The id of the media
+        public var mediaId: Int { __data["mediaId"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
-          public var idsMediaList: IdsMediaList { _toFragment() }
           public var progressMediaListEntry: ProgressMediaListEntry { _toFragment() }
+          public var idsMediaList: IdsMediaList { _toFragment() }
         }
 
         /// Media.MediaListEntry.StartedAt

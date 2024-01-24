@@ -88,9 +88,9 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
           /// The characters role in the media
           public var role: GraphQLEnum<AniListAPI.CharacterRole>? { __data["role"] }
-          public var node: MediaCharacter.Node? { __data["node"] }
+          public var node: Node? { __data["node"] }
           /// The voice actors of the character
-          public var voiceActors: [MediaCharacter.VoiceActor?]? { __data["voiceActors"] }
+          public var voiceActors: [VoiceActor?]? { __data["voiceActors"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -98,6 +98,10 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
             public var mediaCharacter: MediaCharacter { _toFragment() }
           }
+
+          public typealias Node = MediaCharacter.Node
+
+          public typealias VoiceActor = MediaCharacter.VoiceActor
         }
       }
 
@@ -131,7 +135,7 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
           /// The role of the staff member in the production of the media
           public var role: String? { __data["role"] }
-          public var node: MediaStaff.Node? { __data["node"] }
+          public var node: Node? { __data["node"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -139,6 +143,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
 
             public var mediaStaff: MediaStaff { _toFragment() }
           }
+
+          public typealias Node = MediaStaff.Node
         }
       }
     }

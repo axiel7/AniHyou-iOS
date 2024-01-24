@@ -83,7 +83,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
         /// The user id of the activity's creator
         public var userId: Int? { __data["userId"] }
         /// The user who created the activity
-        public var user: TextActivityFragment.User? { __data["user"] }
+        public var user: User? { __data["user"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
@@ -118,7 +118,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
           /// The id of the replies creator
           public var userId: Int? { __data["userId"] }
           /// The user who created reply
-          public var user: ActivityReplyFragment.User? { __data["user"] }
+          public var user: User? { __data["user"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -126,7 +126,11 @@ public class ActivityDetailsQuery: GraphQLQuery {
 
             public var activityReplyFragment: ActivityReplyFragment { _toFragment() }
           }
+
+          public typealias User = ActivityReplyFragment.User
         }
+
+        public typealias User = TextActivityFragment.User
       }
 
       /// Activity.AsListActivity
@@ -166,9 +170,9 @@ public class ActivityDetailsQuery: GraphQLQuery {
         /// The user id of the activity's creator
         public var userId: Int? { __data["userId"] }
         /// The owner of the activity
-        public var user: ListActivityFragment.User? { __data["user"] }
+        public var user: User? { __data["user"] }
         /// The associated media to the activity update
-        public var media: ListActivityFragment.Media? { __data["media"] }
+        public var media: Media? { __data["media"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
@@ -203,7 +207,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
           /// The id of the replies creator
           public var userId: Int? { __data["userId"] }
           /// The user who created reply
-          public var user: ActivityReplyFragment.User? { __data["user"] }
+          public var user: User? { __data["user"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -211,7 +215,13 @@ public class ActivityDetailsQuery: GraphQLQuery {
 
             public var activityReplyFragment: ActivityReplyFragment { _toFragment() }
           }
+
+          public typealias User = ActivityReplyFragment.User
         }
+
+        public typealias User = ListActivityFragment.User
+
+        public typealias Media = ListActivityFragment.Media
       }
 
       /// Activity.AsMessageActivity
@@ -249,7 +259,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
         /// The user id of the activity's sender
         public var messengerId: Int? { __data["messengerId"] }
         /// The user who sent the activity message
-        public var messenger: MessageActivityFragment.Messenger? { __data["messenger"] }
+        public var messenger: Messenger? { __data["messenger"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
@@ -284,7 +294,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
           /// The id of the replies creator
           public var userId: Int? { __data["userId"] }
           /// The user who created reply
-          public var user: ActivityReplyFragment.User? { __data["user"] }
+          public var user: User? { __data["user"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict
@@ -292,7 +302,11 @@ public class ActivityDetailsQuery: GraphQLQuery {
 
             public var activityReplyFragment: ActivityReplyFragment { _toFragment() }
           }
+
+          public typealias User = ActivityReplyFragment.User
         }
+
+        public typealias Messenger = MessageActivityFragment.Messenger
       }
     }
   }

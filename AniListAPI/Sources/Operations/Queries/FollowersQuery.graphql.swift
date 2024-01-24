@@ -81,7 +81,7 @@ public class FollowersQuery: GraphQLQuery {
         /// The name of the user
         public var name: String { __data["name"] }
         /// The user's avatar images
-        public var avatar: UserFollow.Avatar? { __data["avatar"] }
+        public var avatar: Avatar? { __data["avatar"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
@@ -89,6 +89,8 @@ public class FollowersQuery: GraphQLQuery {
 
           public var userFollow: UserFollow { _toFragment() }
         }
+
+        public typealias Avatar = UserFollow.Avatar
       }
 
       /// Page.PageInfo

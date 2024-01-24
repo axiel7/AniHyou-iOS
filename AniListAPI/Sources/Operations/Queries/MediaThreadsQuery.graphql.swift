@@ -97,7 +97,7 @@ public class MediaThreadsQuery: GraphQLQuery {
         /// If the thread is locked and can receive comments
         public var isLocked: Bool? { __data["isLocked"] }
         /// The owner of the thread
-        public var user: BasicThreadDetails.User? { __data["user"] }
+        public var user: User? { __data["user"] }
         /// The time of the thread creation
         public var createdAt: Int { __data["createdAt"] }
 
@@ -107,6 +107,8 @@ public class MediaThreadsQuery: GraphQLQuery {
 
           public var basicThreadDetails: BasicThreadDetails { _toFragment() }
         }
+
+        public typealias User = BasicThreadDetails.User
       }
     }
   }
