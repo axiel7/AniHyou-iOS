@@ -120,10 +120,13 @@ struct MediaGeneralInfoView: View {
             }
             .padding(.top)
 
+            let tagsFiltered = mediaTags.filter {
+                $0?.isMediaSpoiler == false || $0?.isMediaSpoiler == showSpoilerTags
+            }
             VFlow(alignment: .leading) {
-                ForEach(mediaTags, id: \.?.id) {
+                ForEach(tagsFiltered, id: \.?.id) {
                     if let tag = $0 {
-                        MediaTagItemView(tag: tag, showSpoiler: $showSpoilerTags)
+                        MediaTagItemView(tag: tag)
                     }
                 }
             }

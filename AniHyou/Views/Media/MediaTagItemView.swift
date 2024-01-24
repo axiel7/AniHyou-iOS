@@ -13,14 +13,9 @@ private extension MediaTagItemView {
     @ViewBuilder
     func spoilerOverlay(_ tint: Color) -> some View {
         if tag?.isMediaSpoiler == true {
-            if showSpoiler.wrappedValue {
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke()
-                    .foregroundColor(tint)
-            } else {
-                RoundedRectangle(cornerRadius: 8)
-                    .foregroundColor(tint)
-            }
+            RoundedRectangle(cornerRadius: 8)
+                .stroke()
+                .foregroundColor(tint)
         } else {
             EmptyView()
         }
@@ -30,7 +25,6 @@ private extension MediaTagItemView {
 struct MediaTagItemView: View {
 
     let tag: MediaDetailsQuery.Data.Media.Tag?
-    var showSpoiler: Binding<Bool>
     @State private var showTagDescription = false
     @Environment(\.colorScheme) private var colorScheme
     //for some reason on macOS Color.primary doesn't use the same color for text and shapes
@@ -53,13 +47,7 @@ struct MediaTagItemView: View {
         }
         .foregroundColor(tint)
         .onTapGesture {
-            if tag?.isMediaSpoiler == true {
-                if showSpoiler.wrappedValue {
-                    showTagDescription = true
-                }
-            } else {
-                showTagDescription = true
-            }
+            showTagDescription = true
         }
         .popover(isPresented: $showTagDescription) {
             Text(tag?.description ?? "No description")
@@ -71,7 +59,7 @@ struct MediaTagItemView: View {
 #Preview {
     VFlow(alignment: .leading) {
         ForEach((1...10), id: \.self) { _ in
-            MediaTagItemView(tag: nil, showSpoiler: .constant(false))
+            MediaTagItemView(tag: nil)
         }
     }
 }
