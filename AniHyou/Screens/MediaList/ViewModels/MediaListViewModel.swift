@@ -18,6 +18,8 @@ class MediaListViewModel: ObservableObject {
     var currentPage = 1
     var hasNextPage = false
     var forceReload = false
+    
+    var activeRequest: Cancellable?
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
@@ -27,9 +29,9 @@ class MediaListViewModel: ObservableObject {
     @Published var isLoading = false
     
     var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
-        if searchText.isEmpty {
-            return mediaList
-        } else {
+        if searchText.count > 0 && searchText.count < 3 {
+            return Array()
+        } else if searchText.count >= 3 {
             let filtered = mediaList.filter {
                 let title = $0?.media?.title?.userPreferred
                 if title == nil || title?.isEmpty == true {
@@ -37,17 +39,22 @@ class MediaListViewModel: ObservableObject {
                 }
                 return title!.lowercased().contains(searchText.lowercased())
             }
-            if hasNextPage && filtered.count < 25 {
+            if filtered.count < 25 {
                 getUserMediaList(otherUserId: userId)
             }
 
-            return Array(Set(filtered))
+            return Array(filtered)
         }
+        return mediaList
     }
 
     func getUserMediaList(otherUserId: Int?) {
         if let otherUserId { userId = otherUserId }
-        Network.shared.apollo.fetch(
+        if self.activeRequest != nil {
+            self.activeRequest?.cancel()
+            self.activeRequest = nil
+        }
+        self.activeRequest = Network.shared.apollo.fetch(
             query: UserMediaListQuery(
                 page: .some(currentPage),
                 perPage: .some(25),
@@ -59,6 +66,7 @@ class MediaListViewModel: ObservableObject {
             cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
+                self?.activeRequest = nil
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList {
                         self?.mediaList.append(contentsOf: list)
@@ -72,6 +80,7 @@ class MediaListViewModel: ObservableObject {
                     }
                 }
             case .failure(let error):
+                self?.activeRequest = nil
                 print(error)
             }
         }

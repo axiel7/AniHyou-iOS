@@ -25,7 +25,7 @@ struct MediaListView: View {
 
     var body: some View {
         List {
-            ForEach(viewModel.filteredMediaList, id: \.?.id) {
+            ForEach(viewModel.filteredMediaList, id: \.?.uniqueListId) {
                 if let item = $0 {
                     buildListItem(item: item)
                 }
