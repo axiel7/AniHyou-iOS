@@ -12,23 +12,21 @@ struct MediaListStatusView: View {
 
     let mediaType: MediaType
     var userId: Int?
-    @State private var selection: MediaListStatus? = .current
+    @AppStorage(LIST_STATUS_KEY) private var selection: MediaListStatus = .current
     @State private var showingMediaDetails = false
     @State private var mediaId = 0
 
     var body: some View {
         NavigationSplitView {
-            List(MediaListStatus.allCases, id: \.self, selection: $selection) { status in
+            List(MediaListStatus.allCases, id: \.self, selection: Binding($selection)) { status in
                 Label(status.localizedName, systemImage: status.systemImage)
             }//:List
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")
         } detail: {
             NavigationStack {
-                if let selection {
-                    MediaListView(type: mediaType, status: selection, userId: userId)
-                        .id(selection)
-                        .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
-                }
+                MediaListView(type: mediaType, status: selection, userId: userId)
+                    .id(selection)
+                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             }
         }//:NavigationSplitView
     }
