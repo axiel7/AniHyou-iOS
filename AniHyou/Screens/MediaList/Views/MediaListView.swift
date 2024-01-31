@@ -31,7 +31,7 @@ struct MediaListView: View {
                 }
             }
 
-            if viewModel.hasNextPage {
+            if viewModel.hasNextPage && viewModel.searchText.isEmpty {
                 HorizontalProgressView()
                     .onAppear {
                         viewModel.getUserMediaList(otherUserId: userId)
