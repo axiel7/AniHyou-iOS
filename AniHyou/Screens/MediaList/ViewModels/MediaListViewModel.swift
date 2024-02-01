@@ -18,6 +18,8 @@ class MediaListViewModel: ObservableObject {
     var currentPage = 1
     var hasNextPage = false
     var forceReload = false
+    
+    var activeRequest: Cancellable?
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus = .current
@@ -27,9 +29,9 @@ class MediaListViewModel: ObservableObject {
     @Published var isLoading = false
     
     var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
-        if searchText.isEmpty {
-            return mediaList
-        } else {
+        if searchText.count > 0 && searchText.count < 3 {
+            return Array()
+        } else if searchText.count >= 3 {
             let filtered = mediaList.filter {
                 let title = $0?.media?.title?.userPreferred
                 if title == nil || title?.isEmpty == true {
@@ -41,13 +43,15 @@ class MediaListViewModel: ObservableObject {
                 getUserMediaList(otherUserId: userId)
             }
 
-            return Array(Set(filtered))
+            return Array(filtered)
         }
+        return mediaList
     }
 
     func getUserMediaList(otherUserId: Int?) {
         if let otherUserId { userId = otherUserId }
-        Network.shared.apollo.fetch(
+        self.activeRequest?.cancel()
+        self.activeRequest = Network.shared.apollo.fetch(
             query: UserMediaListQuery(
                 page: .some(currentPage),
                 perPage: .some(25),

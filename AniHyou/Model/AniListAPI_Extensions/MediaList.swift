@@ -22,4 +22,8 @@ extension UserMediaListQuery.Data.Page.MediaList {
             return Color(hex: color + "88")
         } else { return nil }
     }
+    
+    var uniqueListId: String? {
+        return "\(self.mediaId)-\(self.id)"
+    }
 }
