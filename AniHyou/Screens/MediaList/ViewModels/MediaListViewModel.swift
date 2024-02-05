@@ -50,8 +50,8 @@ class MediaListViewModel: ObservableObject {
 
     func getUserMediaList(otherUserId: Int?) {
         if let otherUserId { userId = otherUserId }
-        self.activeRequest?.cancel()
-        self.activeRequest = Network.shared.apollo.fetch(
+        activeRequest?.cancel()
+        activeRequest = Network.shared.apollo.fetch(
             query: UserMediaListQuery(
                 page: .some(currentPage),
                 perPage: .some(25),
@@ -60,7 +60,8 @@ class MediaListViewModel: ObservableObject {
                 status: .some(.case(mediaListStatus)),
                 sort: .some([.case(sort ?? .addedTimeDesc), .case(.mediaIdDesc)])
             ),
-            cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch) { [weak self] result in
+            cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+        ) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
