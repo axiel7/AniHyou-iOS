@@ -370,6 +370,8 @@
 		4832B035285F9E1900E79D27 /* ExpandableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTextView.swift; sourceTree = "<group>"; };
 		4837455C2964192000E81CA3 /* StudioDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioDetailsView.swift; sourceTree = "<group>"; };
 		4837455E2964192E00E81CA3 /* StudioDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioDetailsViewModel.swift; sourceTree = "<group>"; };
+		483867632B70991900DA9A47 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		483867642B70991900DA9A47 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		483CEABA289E67A000D30266 /* MediaThreads.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaThreads.graphql; sourceTree = "<group>"; };
 		483CEABD289E688400D30266 /* ThreadItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadItemView.swift; sourceTree = "<group>"; };
 		48438E072A67AB2D0042BCD9 /* AppIconSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSelector.swift; sourceTree = "<group>"; };
@@ -1733,6 +1735,7 @@
 				uk,
 				Base,
 				"pt-BR",
+				az,
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
@@ -2083,6 +2086,7 @@
 				48DCF2362AF4C9D6008E9B99 /* id */,
 				48A835D12B12D919008641FC /* uk */,
 				487F4BE32B282ED90002237C /* pt-BR */,
+				483867642B70991900DA9A47 /* az */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2097,6 +2101,7 @@
 				48DCF2352AF4C9D6008E9B99 /* id */,
 				48A835D02B12D919008641FC /* uk */,
 				487F4BE22B282ED90002237C /* pt-BR */,
+				483867632B70991900DA9A47 /* az */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
