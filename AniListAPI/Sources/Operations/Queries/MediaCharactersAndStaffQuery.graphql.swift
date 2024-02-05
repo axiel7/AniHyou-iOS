@@ -86,6 +86,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
             .fragment(MediaCharacter.self),
           ] }
 
+          /// The id of the connection
+          public var id: Int? { __data["id"] }
           /// The characters role in the media
           public var role: GraphQLEnum<AniListAPI.CharacterRole>? { __data["role"] }
           public var node: Node? { __data["node"] }
@@ -133,6 +135,8 @@ public class MediaCharactersAndStaffQuery: GraphQLQuery {
             .fragment(MediaStaff.self),
           ] }
 
+          /// The id of the connection
+          public var id: Int? { __data["id"] }
           /// The role of the staff member in the production of the media
           public var role: String? { __data["role"] }
           public var node: Node? { __data["node"] }

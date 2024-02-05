@@ -5,7 +5,7 @@
 
 public struct MediaCharacter: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment MediaCharacter on CharacterEdge { __typename role node { __typename id name { __typename userPreferred } image { __typename medium } } voiceActors(language: JAPANESE) { __typename id name { __typename userPreferred } image { __typename medium } } }"#
+    #"fragment MediaCharacter on CharacterEdge { __typename id role node { __typename id name { __typename userPreferred } image { __typename medium } } voiceActors(language: JAPANESE) { __typename id name { __typename userPreferred } image { __typename medium } } }"#
   }
 
   public let __data: DataDict
@@ -14,11 +14,14 @@ public struct MediaCharacter: AniListAPI.SelectionSet, Fragment {
   public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.CharacterEdge }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
+    .field("id", Int?.self),
     .field("role", GraphQLEnum<AniListAPI.CharacterRole>?.self),
     .field("node", Node?.self),
     .field("voiceActors", [VoiceActor?]?.self, arguments: ["language": "JAPANESE"]),
   ] }
 
+  /// The id of the connection
+  public var id: Int? { __data["id"] }
   /// The characters role in the media
   public var role: GraphQLEnum<AniListAPI.CharacterRole>? { __data["role"] }
   public var node: Node? { __data["node"] }

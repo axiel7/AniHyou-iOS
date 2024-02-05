@@ -5,7 +5,7 @@
 
 public struct MediaStaff: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment MediaStaff on StaffEdge { __typename role node { __typename id name { __typename userPreferred } image { __typename medium } } }"#
+    #"fragment MediaStaff on StaffEdge { __typename id role node { __typename id name { __typename userPreferred } image { __typename medium } } }"#
   }
 
   public let __data: DataDict
@@ -14,10 +14,13 @@ public struct MediaStaff: AniListAPI.SelectionSet, Fragment {
   public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffEdge }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
+    .field("id", Int?.self),
     .field("role", String?.self),
     .field("node", Node?.self),
   ] }
 
+  /// The id of the connection
+  public var id: Int? { __data["id"] }
   /// The role of the staff member in the production of the media
   public var role: String? { __data["role"] }
   public var node: Node? { __data["node"] }

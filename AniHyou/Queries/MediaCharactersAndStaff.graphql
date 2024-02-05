@@ -14,6 +14,7 @@ query MediaCharactersAndStaff($mediaId: Int) {
 }
 
 fragment MediaCharacter on CharacterEdge {
+  id
   role
   node {
     id
@@ -36,6 +37,7 @@ fragment MediaCharacter on CharacterEdge {
 }
 
 fragment MediaStaff on StaffEdge {
+  id
   role
   node {
     id

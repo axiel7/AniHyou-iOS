@@ -12,7 +12,7 @@ struct MediaCharactersAndStaffView: View {
     let mediaId: Int
     @StateObject private var viewModel = CharacterStaffViewModel()
     private let gridRows = [
-        GridItem(.fixed(StaffView.imageSize), alignment: .leading),
+        GridItem(.fixed(StaffView.imageSize), spacing: 16, alignment: .leading),
         GridItem(.fixed(StaffView.imageSize), alignment: .leading)
     ]
 
@@ -47,7 +47,7 @@ struct MediaCharactersAndStaffView: View {
     var staffHScrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: gridRows, spacing: 16) {
-                ForEach(viewModel.mediaCharactersAndStaff?.staff?.edges ?? [], id: \.?.node?.id) {
+                ForEach(viewModel.mediaCharactersAndStaff?.staff?.edges ?? [], id: \.?.id) {
                     if let staff = $0 {
                         StaffView(staff: staff.fragments.mediaStaff)
                     }
