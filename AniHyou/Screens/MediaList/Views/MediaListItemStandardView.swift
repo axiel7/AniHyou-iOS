@@ -34,8 +34,15 @@ struct MediaListItemStandardView: View {
 
                 Spacer()
 
-                if item?.media?.nextAiringEpisode != nil {
-                    AiringScheduleItemText(item: item)
+                if let schedule = item?.media?.nextAiringEpisode {
+                    AiringText(
+                        episode: schedule.episode,
+                        airingAt: schedule.airingAt,
+                        episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0)
+                    )
+                    .font(.subheadline)
+                    .lineLimit(1)
+                    .padding(.bottom, 1)
                 }
 
                 HStack {
@@ -56,28 +63,6 @@ struct MediaListItemStandardView: View {
             }
         }
         .frame(height: coverHeight)
-    }
-}
-
-struct AiringScheduleItemText: View {
-
-    let item: UserMediaListQuery.Data.Page.MediaList?
-
-    var body: some View {
-        let airing = item!.media!.nextAiringEpisode!
-        let isBehind = item?.progress ?? 0 < airing.episode - 1
-        HStack {
-            if isBehind {
-                Text("^[\((airing.episode - 1) - (item?.progress ?? 0)) episode behind](inflect: true)")
-            } else {
-                let relativeDate = Date(timeIntervalSince1970: Double(airing.airingAt))
-                Text("Ep \(airing.episode) \(relativeDate, format: .relative(presentation: .numeric))")
-            }
-        }
-        .font(.subheadline)
-        .lineLimit(1)
-        .foregroundColor(isBehind ? .accentColor : .gray)
-        .padding(.bottom, 1)
     }
 }
 

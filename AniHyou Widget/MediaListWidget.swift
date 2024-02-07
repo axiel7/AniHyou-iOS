@@ -149,47 +149,60 @@ struct MediaListWidgetEntryView: View {
         } else {
             ForEach(Array(entry.animeList.enumerated()), id: \.element?.id) { index, item in
                 if let item {
-                    Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
-                        HStack(spacing: 0) {
-                            VStack(alignment: .leading, spacing: 0) {
-                                Text(item.media?.title?.userPreferred ?? "")
-                                    .font(.system(size: 14))
-                                    .lineLimit(1)
-                                    .padding(.horizontal)
-                                
-                                HStack {
-                                    Text("\(item.progress ?? 0)/\(item.totalProgress ?? 0)")
-                                        .foregroundColor(.secondary)
-                                        .invalidatableContent()
-                                    
-                                    if let nextAiringEpisode = item.media?.nextAiringEpisode {
-                                        let episodesBehind = (nextAiringEpisode.episode - 1) - (item.progress ?? 0)
-                                        if episodesBehind > 0 {
-                                            Text("^[\(episodesBehind) episode behind](inflect: true)")
-                                                .foregroundColor(tintColor)
-                                        }
-                                    }
-                                }
-                                .font(.system(size: 12))
-                                .lineLimit(1)
-                                .padding(.horizontal)
-                            }
-                            Spacer()
-                            Button("+1", intent: SetProgressIntent(
-                                mediaId: item.mediaId,
-                                entryId: item.id,
-                                progress: (item.progress ?? 0) + 1
-                            ))
-                            .padding(.horizontal)
-                        }
-                        if (index + 1) < entry.animeList.count {
-                            Divider()
-                                .padding(.leading)
-                        }
-                    }//:Link
+                    MediaListItemView(item: item, tintColor: tintColor)
+                    if (index + 1) < entry.animeList.count {
+                        Divider()
+                            .padding(.leading)
+                    }
                 }
             }//:ForEach
         }
+    }
+}
+
+@available(iOSApplicationExtension 17.0, *)
+private struct MediaListItemView: View {
+    
+    let item: UserMediaListQuery.Data.Page.MediaList
+    let tintColor: Color
+    
+    var body: some View {
+        Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
+            HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(item.media?.title?.userPreferred ?? "")
+                        .font(.system(size: 14))
+                        .lineLimit(1)
+                        .padding(.horizontal)
+                    
+                    HStack {
+                        Text("\(item.progress ?? 0)/\(item.totalProgress ?? 0)")
+                            .foregroundColor(.secondary)
+                            .frame(width: 40, alignment: .leading)
+                        
+                        if let schedule = item.media?.nextAiringEpisode {
+                            AiringText(
+                                episode: schedule.episode,
+                                airingAt: schedule.airingAt,
+                                episodesBehind: (schedule.episode - 1) - (item.progress ?? 0),
+                                accentColor: tintColor
+                            )
+                        }
+                    }
+                    .font(.system(size: 12))
+                    .lineLimit(1)
+                    .padding(.horizontal)
+                    .invalidatableContent()
+                }//:VStack
+                Spacer()
+                Button("+1", intent: SetProgressIntent(
+                    mediaId: item.mediaId,
+                    entryId: item.id,
+                    progress: (item.progress ?? 0) + 1
+                ))
+                .padding(.horizontal)
+            }//:HStack
+        }//:Link
     }
 }
 

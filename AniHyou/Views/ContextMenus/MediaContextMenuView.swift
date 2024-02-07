@@ -59,59 +59,58 @@ struct MediaContextMenuView: View {
     
     var body: some View {
         ZStack {
-            if viewModel.details == nil {
+            if let details = viewModel.details {
+                HStack(alignment: .center) {
+                    MediaCoverView(imageUrl: details.coverImage?.large, width: 90, height: 130)
+                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(details.title?.userPreferred ?? "")
+                            .font(.system(size: 17))
+                            .bold()
+                            .lineLimit(3)
+                            .padding(.bottom, 1)
+                        
+                        Label("\(details.meanScore ?? 0)%", systemImage: "star.fill")
+                            .foregroundColor(ScoreFormat.point100.scoreColor(
+                                score: Double(details.meanScore ?? 0)
+                            ))
+                            .font(.subheadline)
+                        
+                        Text(details.format?.value?.localizedName ?? "Unknown")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        
+                        if let episodes = details.episodes {
+                            Text("\(episodes) episodes")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        if let chapters = details.chapters {
+                            Text("\(chapters) chapters")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        if let volumes = details.volumes {
+                            Text("\(volumes) volumes")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        if let schedule = details.nextAiringEpisode {
+                            AiringText(episode: schedule.episode, airingAt: schedule.airingAt)
+                                .font(.subheadline)
+                        }
+                    }
+                }//:HStack
+            } else {
                 VStack(alignment: .center) {
                     ProgressView()
                         .onAppear {
                             viewModel.getDetails(mediaId: mediaId)
                         }
                 }
-            } else {
-                HStack(alignment: .center) {
-                    MediaCoverView(imageUrl: viewModel.details!.coverImage?.large, width: 90, height: 130)
-                    
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(viewModel.details!.title?.userPreferred ?? "")
-                            .font(.system(size: 17))
-                            .bold()
-                            .lineLimit(3)
-                            .padding(.bottom, 1)
-                        
-                        Label("\(viewModel.details!.meanScore ?? 0)%", systemImage: "star.fill")
-                            .foregroundColor(ScoreFormat.point100.scoreColor(
-                                score: Double(viewModel.details?.meanScore ?? 0)
-                            ))
-                            .font(.subheadline)
-                        
-                        Text(viewModel.details!.format?.value?.localizedName ?? "Unknown")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        
-                        if let episodes = viewModel.details!.episodes {
-                            Text("\(episodes) episodes")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        
-                        if let chapters = viewModel.details!.chapters {
-                            Text("\(chapters) chapters")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        
-                        if let volumes = viewModel.details!.volumes {
-                            Text("\(volumes) volumes")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        
-                        if let schedule = viewModel.details!.nextAiringEpisode {
-                            let relativeDate = Date(timeIntervalSince1970: Double(schedule.airingAt))
-                            Text("Ep \(schedule.episode) \(relativeDate, format: .relative(presentation: .numeric))")
-                                .font(.subheadline)
-                        }
-                    }
-                }//:HStack
             }
         }//:ZStack
         .transition(.opacity)

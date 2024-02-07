@@ -33,9 +33,14 @@ struct MediaListItemCompactView: View {
                 Text(item?.media?.title?.userPreferred ?? "Error loading item")
                     .lineLimit(2)
 
-                if item?.media?.nextAiringEpisode != nil {
-                    AiringScheduleItemText(item: item)
-                        .padding(.top, 1)
+                if let schedule = item?.media?.nextAiringEpisode {
+                    AiringText(
+                        episode: schedule.episode,
+                        airingAt: schedule.airingAt,
+                        episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0)
+                    )
+                    .font(.subheadline)
+                    .padding(.top, 1)
                 } else {
                     Spacer()
                 }

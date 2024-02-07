@@ -174,7 +174,7 @@ struct AiringWidgetEntryView: View {
     @ViewBuilder
     var mediumLargeContent: some View {
         ForEach(Array(entry.animeList.enumerated()), id: \.element?.mediaId) { index, item in
-            if let item, let nextAiringEpisode = item.media?.nextAiringEpisode {
+            if let item, let schedule = item.media?.nextAiringEpisode {
                 Link(destination: URL(string: "anihyou://media/\(item.mediaId)")!) {
                     Text(item.media?.title?.userPreferred ?? "")
                         .font(.system(size: 14))
@@ -182,13 +182,13 @@ struct AiringWidgetEntryView: View {
                         .padding(.horizontal)
                         .frame(width: entry.widgetSize.width, alignment: .leading)
                     
-                    let relativeDate = Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt))
-                    Text(
-                        "Ep \(nextAiringEpisode.episode) \(relativeDate, format: .relative(presentation: .numeric))"
+                    AiringText(
+                        episode: schedule.episode,
+                        airingAt: schedule.airingAt,
+                        accentColor: tintColor
                     )
                     .font(.system(size: 12))
                     .lineLimit(1)
-                    .foregroundColor(tintColor)
                     .padding(.horizontal)
                     .frame(width: entry.widgetSize.width, alignment: .leading)
                     
@@ -213,13 +213,15 @@ struct AiringWidgetEntryView: View {
         if
             let item = entry.animeList.first,
             let item, // swift wtf ↑
-            let nextAiringEpisode = item.media?.nextAiringEpisode
+            let schedule = item.media?.nextAiringEpisode
         {
             VStack(alignment: .leading, spacing: 8) {
-                let relativeDate = Date(timeIntervalSince1970: Double(nextAiringEpisode.airingAt))
-                Text("Ep \(nextAiringEpisode.episode) \(relativeDate, format: .relative(presentation: .numeric))")
-                    .font(.headline)
-                    .foregroundColor(tintColor)
+                AiringText(
+                    episode: schedule.episode,
+                    airingAt: schedule.airingAt,
+                    accentColor: tintColor
+                )
+                .font(.headline)
                 
                 Text(item.media?.title?.userPreferred ?? "")
                     .font(.subheadline)
