@@ -36,7 +36,7 @@ struct MediaListItemMinimalView: View {
             HStack {
                 Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
                 Spacer()
-                if item?.repeat != nil && item!.repeat! > 0 {
+                if let repeatCount = item?.repeat, repeatCount > 0 {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.gray)
                 }

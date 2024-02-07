@@ -119,8 +119,8 @@ struct ExploreView: View {
 
                 ForEach(viewModel.searchedMedia, id: \.?.id) { item in
                     if let item {
-                        let startYear = if item.startDate?.year != nil {
-                            "\(item.startDate!.year!)"
+                        let startYear = if let year = item.startDate?.year {
+                            String(year)
                         } else {
                             "Unknown"
                         }

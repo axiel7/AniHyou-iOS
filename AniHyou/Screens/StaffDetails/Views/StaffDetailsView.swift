@@ -73,10 +73,10 @@ struct StaffDetailsView: View {
                             name: "Birth",
                             value: staff.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
                         )
-                        if staff.dateOfDeath?.year != nil {
+                        if let dateOfDeath = staff.dateOfDeath {
                             HInfoView(
                                 name: "Death",
-                                value: viewModel.staff!.dateOfDeath?.fragments.fuzzyDateFragment.formatted()
+                                value: dateOfDeath.fragments.fuzzyDateFragment.formatted()
                             )
                         }
                         HInfoView(name: "Age", value: staff.age?.stringValue)
