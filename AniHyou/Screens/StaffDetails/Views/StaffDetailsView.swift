@@ -110,7 +110,15 @@ struct StaffDetailsView: View {
     @ViewBuilder
     var staffMedia: some View {
         LazyVStack(alignment: .leading) {
-            Toggle("On my list", isOn: $viewModel.mediaOnMyList)
+            HStack {
+                Text("On my list")
+                Spacer()
+                TriPicker("On my list", selection: $viewModel.mediaOnMyList)
+                    .onChange(of: viewModel.mediaOnMyList) { _ in
+                        viewModel.resetStaffMedia()
+                    }
+            }
+
             ForEach(viewModel.staffMedia, id: \.value.id) { item in
                 if let media = item.value.node {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
@@ -136,9 +144,6 @@ struct StaffDetailsView: View {
             }
         }//:LazyVStack
         .padding(.horizontal)
-        .onChange(of: viewModel.mediaOnMyList) { _ in
-            viewModel.resetStaffMedia()
-        }
     }
 
     @ViewBuilder

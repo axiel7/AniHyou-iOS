@@ -68,17 +68,15 @@ class StaffDetailsViewModel: ObservableObject {
         })
     }
 
-    @Published var mediaOnMyList = false
+    @Published var mediaOnMyList: Bool?
     @Published var staffMedia = [StaffMediaGrouped]()
     var pageMedia = 1
     var hasNextPageMedia = true
 
     func getStaffMedia(staffId: Int) {
-        var mediaOnListValue = GraphQLNullable<Bool>.none
-        if mediaOnMyList { mediaOnListValue = .some(true) }
         Network.shared.apollo.fetch(query: StaffMediaQuery(
             staffId: .some(staffId),
-            onList: mediaOnListValue,
+            onList: someIfNotNil(mediaOnMyList),
             page: .some(pageMedia),
             perPage: .some(25)
         )) { [weak self] result in
