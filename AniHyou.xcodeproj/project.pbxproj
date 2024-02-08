@@ -258,7 +258,6 @@
 		48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */; };
 		48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94802868C0F400C87F56 /* MediaChartListView.swift */; };
 		48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94822868C6DB00C87F56 /* ChartListItemView.swift */; };
-		842A0ECD2B71BC0F00FC635D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A0ECC2B71BC0F00FC635D /* Enums.swift */; };
 		84734AE62A7DF658000BD9E6 /* MediaListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -586,7 +585,6 @@
 		48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		48FC94802868C0F400C87F56 /* MediaChartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaChartListView.swift; sourceTree = "<group>"; };
 		48FC94822868C6DB00C87F56 /* ChartListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListItemView.swift; sourceTree = "<group>"; };
-		842A0ECC2B71BC0F00FC635D /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -653,7 +651,6 @@
 			isa = PBXGroup;
 			children = (
 				480300D2291BC56E00E3047B /* StaffDetailsViewModel.swift */,
-				842A0ECC2B71BC0F00FC635D /* Enums.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1985,7 +1982,6 @@
 				48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */,
 				484E88402A77E88B007E59E1 /* HorizontalProgressView.swift in Sources */,
 				484A6D64287480FB0044C34A /* ReviewItemView.swift in Sources */,
-				842A0ECD2B71BC0F00FC635D /* Enums.swift in Sources */,
 				4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */,
 				481AD4F82851D927001779EE /* DiscoverViewModel.swift in Sources */,
 				48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */,

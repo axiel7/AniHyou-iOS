@@ -113,11 +113,10 @@ struct StaffDetailsView: View {
             HStack {
                 Text("On my list")
                 Spacer()
-                Picker("", selection: $viewModel.mediaOnMyList) {
-                    ForEach(StaffOnList.allCases, id: \.self) { onListSelection in
-                        Text(onListSelection.localizedName).tag(onListSelection)
+                TriPicker("On my list", selection: $viewModel.mediaOnMyList)
+                    .onChange(of: viewModel.mediaOnMyList) { _ in
+                        viewModel.resetStaffMedia()
                     }
-                }
             }
 
             ForEach(viewModel.staffMedia, id: \.value.id) { item in
@@ -145,9 +144,6 @@ struct StaffDetailsView: View {
             }
         }//:LazyVStack
         .padding(.horizontal)
-        .onChange(of: viewModel.mediaOnMyList) { _ in
-            viewModel.resetStaffMedia()
-        }
     }
 
     @ViewBuilder
