@@ -112,7 +112,8 @@ struct StaffDetailsView: View {
         LazyVStack(alignment: .leading) {
             HStack {
                 Text("On my list")
-                Picker("On my list", selection: $viewModel.mediaOnMyList) {
+                Spacer()
+                Picker("", selection: $viewModel.mediaOnMyList) {
                     ForEach(StaffOnList.allCases, id: \.self) { onListSelection in
                         Text(onListSelection.localizedName).tag(onListSelection)
                     }

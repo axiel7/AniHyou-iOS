@@ -701,6 +701,7 @@
 				48294CDC2AB936B0005E7CD2 /* Intents */,
 				481AD4DB2851CE73001779EE /* Products */,
 				486F240228EC7C96006CD0CB /* Frameworks */,
+				58603FC37EA4993817420FBC /* xcschemes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1613,6 +1614,14 @@
 				48F7640228ACE63F00C82D75 /* ViewModels */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		58603FC37EA4993817420FBC /* xcschemes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = xcschemes;
+			path = AniHyou.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/xcschemes;
 			sourceTree = "<group>";
 		};
 		84734AE42A7DF601000BD9E6 /* Repositories */ = {
