@@ -185,7 +185,7 @@ private struct MediaListItemView: View {
                                 episode: schedule.episode,
                                 airingAt: schedule.airingAt,
                                 episodesBehind: (schedule.episode - 1) - (item.progress ?? 0),
-                                accentColor: tintColor
+                                airingColor: tintColor
                             )
                         }
                     }

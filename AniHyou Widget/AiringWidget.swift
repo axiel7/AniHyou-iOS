@@ -185,7 +185,7 @@ struct AiringWidgetEntryView: View {
                     AiringText(
                         episode: schedule.episode,
                         airingAt: schedule.airingAt,
-                        accentColor: tintColor
+                        airingColor: tintColor
                     )
                     .font(.system(size: 12))
                     .lineLimit(1)
@@ -219,7 +219,7 @@ struct AiringWidgetEntryView: View {
                 AiringText(
                     episode: schedule.episode,
                     airingAt: schedule.airingAt,
-                    accentColor: tintColor
+                    airingColor: tintColor
                 )
                 .font(.headline)
                 

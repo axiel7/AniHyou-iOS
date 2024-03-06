@@ -40,7 +40,8 @@ struct AiringMediaHorizontalItemView: View {
                     AiringText(
                         episode: nextEpisode,
                         airingAt: airingAt,
-                        accentColor: .gray
+                        behindColor: .gray,
+                        airingColor: .gray
                     )
                     .font(.subheadline)
                     .lineLimit(2)

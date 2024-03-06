@@ -37,7 +37,9 @@ struct MediaListItemCompactView: View {
                     AiringText(
                         episode: schedule.episode,
                         airingAt: schedule.airingAt,
-                        episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0)
+                        episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0),
+                        behindColor: .accentColor,
+                        airingColor: .gray
                     )
                     .font(.subheadline)
                     .padding(.top, 1)
