@@ -10,7 +10,7 @@ import AniListAPI
 
 extension ScoreFormat {
 
-    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable:next cyclomatic_complexity
     func scoreColor(score: Double?) -> Color {
         guard score != 0 else { return .gray }
         switch self {
@@ -48,7 +48,6 @@ extension ScoreFormat {
             }
         }
     }
-    // swiftlint:enable cyclomatic_complexity
 
     func smileyIcon(score: Int) -> ImageResource? {
         switch score {

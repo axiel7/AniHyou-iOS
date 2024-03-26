@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// swiftlint:disable type_body_length
+// swiftlint:disable:next type_body_length
 struct DiscoverView: View {
     
     @StateObject private var viewModel = DiscoverViewModel()
@@ -297,7 +297,6 @@ struct DiscoverView: View {
         .padding(.bottom)
     }
 }
-// swiftlint:enable type_body_length
 
 #Preview {
     DiscoverView()

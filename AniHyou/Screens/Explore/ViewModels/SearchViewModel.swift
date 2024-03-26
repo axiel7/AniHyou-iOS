@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-// swiftlint:disable type_body_length
+// swiftlint:disable:next type_body_length
 class SearchViewModel: ObservableObject {
 
     //var currentPage = 1
@@ -82,7 +82,7 @@ class SearchViewModel: ObservableObject {
         }
     }
 
-    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable:next cyclomatic_complexity
     func onChangeSortOrder() {
         switch sortMedia {
         case .popularity:
@@ -110,7 +110,6 @@ class SearchViewModel: ObservableObject {
         }
         runSearch()
     }
-    // swiftlint:enable cyclomatic_complexity
 
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
 
@@ -300,4 +299,3 @@ class SearchViewModel: ObservableObject {
         }
     }
 }
-// swiftlint:enable type_body_length

@@ -61,7 +61,7 @@ class MediaListEditViewModel: ObservableObject {
     @Published var isUpdateSuccess = false
     var updatedEntry: BasicMediaListEntry?
 
-    // swiftlint:disable function_parameter_count cyclomatic_complexity function_body_length
+    // swiftlint:disable:next function_parameter_count cyclomatic_complexity function_body_length
     func updateEntry(
         mediaId: Int,
         status: MediaListStatus?,
@@ -135,7 +135,6 @@ class MediaListEditViewModel: ObservableObject {
             }
         }
     }
-    // swiftlint:enable function_parameter_count cyclomatic_complexity function_body_length
 
     @Published var isDeleteSuccess = false
 

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-// swiftlint:disable type_name
 @main
+// swiftlint:disable:next type_name
 struct AniHyouShou_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
@@ -22,4 +22,3 @@ struct AniHyouShou_Watch_AppApp: App {
         }
     }
 }
-// swiftlint:enable type_name

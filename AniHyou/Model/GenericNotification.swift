@@ -19,7 +19,7 @@ struct GenericNotification: Identifiable {
 
 extension NotificationsQuery.Data.Page.Notification {
 
-    // swiftlint:disable cyclomatic_complexity function_body_length
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
     func toGenericNotification() -> GenericNotification? {
         if let noti = self.asAiringNotification {
             let episodeString = noti.contexts.flatMap { $0[0] } ?? ""
@@ -201,5 +201,4 @@ extension NotificationsQuery.Data.Page.Notification {
         }
         return nil
     }
-    // swiftlint:enable cyclomatic_complexity function_body_length
 }
