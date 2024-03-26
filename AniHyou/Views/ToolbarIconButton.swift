@@ -13,17 +13,13 @@ struct ToolbarIconButton: View {
     let action: () -> Void
 
     var body: some View {
-
         Button(action: action) {
             Image(systemName: symbolSystemName)
-                .foregroundStyle(.black)
-                .foregroundStyle(.thickMaterial)
-                .font(.system(size: 15, weight: .semibold))
+                .font(.system(size: 13, weight: .semibold))
                 .padding(8)
+                .background(.ultraThinMaterial, in: .circle)
         }
         .buttonStyle(.plain)
-        .background(.regularMaterial, in: Circle())
-        .environment(\.colorScheme, .light)
     }
 }
 
