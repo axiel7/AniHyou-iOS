@@ -14,6 +14,7 @@ private let coverHeight: CGFloat = 115
 struct MediaListItemStandardView: View {
 
     let item: UserMediaListQuery.Data.Page.MediaList?
+    var showStatus: Bool = false
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
@@ -21,12 +22,20 @@ struct MediaListItemStandardView: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            MediaCoverView(
-                imageUrl: item?.media?.coverImage?.large,
-                width: coverWidth,
-                height: coverHeight,
-                cancelOnDisappear: false
-            )
+            ZStack(alignment: .bottomTrailing) {
+                MediaCoverView(
+                    imageUrl: item?.media?.coverImage?.large,
+                    width: coverWidth,
+                    height: coverHeight,
+                    cancelOnDisappear: false
+                )
+                if showStatus, let status = item?.status?.value {
+                    Image(systemName: status.systemImage)
+                        .padding(4)
+                        .background(.thinMaterial, in: .circle)
+                        .padding(4)
+                }
+            }
 
             VStack(alignment: .leading) {
                 Text(item?.media?.title?.userPreferred ?? "Error loading item")

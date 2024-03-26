@@ -11,6 +11,7 @@ import AniListAPI
 struct MediaListItemMinimalView: View {
 
     let item: UserMediaListQuery.Data.Page.MediaList?
+    var showStatus: Bool = false
     @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
     var scoreFormatEnum: ScoreFormat {
         return ScoreFormat(rawValue: scoreFormat) ?? .point100
@@ -36,6 +37,10 @@ struct MediaListItemMinimalView: View {
             }
 
             HStack {
+                if showStatus, let status = item?.status?.value {
+                    Image(systemName: status.systemImage)
+                        .foregroundStyle(.gray)
+                }
                 Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
                 Spacer()
                 if let repeatCount = item?.repeat, repeatCount > 0 {

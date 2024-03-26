@@ -95,16 +95,18 @@ struct MediaListView: View {
         .navigationTitle(statusSelected.localizedName)
     }
 
+    @ViewBuilder
     // swiftlint:disable:next function_body_length
     func buildListItem(item: UserMediaListQuery.Data.Page.MediaList!) -> some View {
+        let showStatus = statusSelected == .all
         NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
             switch listStyle {
             case 1:
-                MediaListItemMinimalView(item: item)
+                MediaListItemMinimalView(item: item, showStatus: showStatus)
             case 2:
-                MediaListItemCompactView(item: item)
+                MediaListItemCompactView(item: item, showStatus: showStatus)
             default:
-                MediaListItemStandardView(item: item)
+                MediaListItemStandardView(item: item, showStatus: showStatus)
             }
         }
         .swipeActions(edge: .leading) {
@@ -175,7 +177,6 @@ struct MediaListView: View {
 
 #Preview {
     NavigationStack {
-        MediaListView(type: .anime, statusSelected: .current)
-        MediaListView(type: .anime, statusSelected: .repeating)
+        MediaListView(type: .anime, statusSelected: .current, userId: 208863)
     }
 }
