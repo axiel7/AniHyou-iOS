@@ -16,6 +16,16 @@ extension UserMediaListQuery.Data.Page.MediaList {
             return self.media?.chapters
         }
     }
+    
+    var shouldShowIncrementButton: Bool {
+        if status?.value == .repeating
+            || status?.value == .current
+            || status?.value == .planning
+        {
+            return true
+        }
+        return false
+    }
 
     var coverColorWithAlpha: Color? {
         if let color = self.media?.coverImage?.color {

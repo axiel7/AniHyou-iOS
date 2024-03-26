@@ -62,3 +62,48 @@ extension MediaListStatus {
         }
     }
 }
+
+enum MediaListStatusSelect: String, CaseIterable, Hashable {
+    case all
+    case current
+    case planning
+    case completed
+    case dropped
+    case paused
+    case repeating
+    
+    var value: MediaListStatus? {
+        switch self {
+        case .all:
+            return nil
+        case .current:
+            return .current
+        case .planning:
+            return .planning
+        case .completed:
+            return .completed
+        case .dropped:
+            return .dropped
+        case .paused:
+            return .paused
+        case .repeating:
+            return .repeating
+        }
+    }
+    
+    var localizedName: LocalizedStringKey {
+        if self == .all {
+            return "All"
+        } else {
+            return value?.localizedName ?? "None"
+        }
+    }
+    
+    var systemImage: String {
+        if self == .all {
+            return "list.bullet.circle"
+        } else {
+            return value?.systemImage ?? "list.bullet.circle"
+        }
+    }
+}

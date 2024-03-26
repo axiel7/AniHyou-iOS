@@ -11,7 +11,7 @@ import AniListAPI
 struct MediaListView: View {
 
     let type: MediaType
-    let status: MediaListStatus
+    let statusSelected: MediaListStatusSelect
     var userId: Int?
     var isEditable: Bool {
         return userId == nil
@@ -51,7 +51,7 @@ struct MediaListView: View {
         }
         .onAppear {
             viewModel.mediaType = type
-            viewModel.mediaListStatus = status
+            viewModel.mediaListStatus = statusSelected.value
             viewModel.onSortChanged(sort, isAscending: sortAscending)
         }
         .sheet(isPresented: $showingEditSheet) {
@@ -92,10 +92,10 @@ struct MediaListView: View {
                 }
             }
         }
-        .navigationTitle(viewModel.mediaListStatus.localizedName)
+        .navigationTitle(statusSelected.localizedName)
     }
 
-    // swiftlint:disable cyclomatic_complexity function_body_length
+    // swiftlint:disable:next function_body_length
     func buildListItem(item: UserMediaListQuery.Data.Page.MediaList!) -> some View {
         NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
             switch listStyle {
@@ -108,46 +108,41 @@ struct MediaListView: View {
             }
         }
         .swipeActions(edge: .leading) {
-            if isEditable {
-                if incrementLongSwipeDirection == .right {
-                    if shouldShowIncrementButton {
-                        Button(
-                            action: {
-                                updateEntryProgress(item: item)
-                            },
-                            label: {
-                                if type == .anime {
-                                    Label("Ep", systemImage: "plus")
-                                    // should show a sheet to add a rating
-                                } else if type == .manga {
-                                    Label("Ch", systemImage: "plus")
-                                }
-                            }
-                        )
-                        .tint(.green)
+            if isEditable
+                && incrementLongSwipeDirection == .right
+                && item.shouldShowIncrementButton
+            {
+                Button(
+                    action: { updateEntryProgress(item: item) },
+                    label: {
+                        if type == .anime {
+                            Label("Ep", systemImage: "plus")
+                            // should show a sheet to add a rating
+                        } else if type == .manga {
+                            Label("Ch", systemImage: "plus")
+                        }
                     }
-                }
+                )
+                .tint(.green)
             }
         }
         .swipeActions(edge: .trailing) {
             if isEditable {
-                if incrementLongSwipeDirection == .left {
-                    if shouldShowIncrementButton {
-                        Button(
-                            action: {
-                                updateEntryProgress(item: item)
-                            },
-                            label: {
-                                if type == .anime {
-                                    Label("Ep", systemImage: "plus")
-                                    // should show a sheet to add a rating
-                                } else if type == .manga {
-                                    Label("Ch", systemImage: "plus")
-                                }
+                if incrementLongSwipeDirection == .left
+                    && item.shouldShowIncrementButton
+                {
+                    Button(
+                        action: { updateEntryProgress(item: item) },
+                        label: {
+                            if type == .anime {
+                                Label("Ep", systemImage: "plus")
+                                // should show a sheet to add a rating
+                            } else if type == .manga {
+                                Label("Ch", systemImage: "plus")
                             }
-                        )
-                        .tint(.green)
-                    }
+                        }
+                    )
+                    .tint(.green)
                 }
                 Button(
                     action: {
@@ -163,7 +158,6 @@ struct MediaListView: View {
         }
         .mediaContextMenu(mediaId: item.mediaId, mediaType: type, mediaListStatus: item.status?.value)
     }
-    // swiftlint:enable cyclomatic_complexity function_body_length
 
     func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList!) {
         var status: MediaListStatus?
@@ -177,20 +171,11 @@ struct MediaListView: View {
             status: status
         )
     }
-
-    private var shouldShowIncrementButton: Bool {
-        if viewModel.mediaListStatus == .repeating ||
-            viewModel.mediaListStatus == .current ||
-            viewModel.mediaListStatus == .planning {
-            return true
-        }
-        return false
-    }
 }
 
 #Preview {
     NavigationStack {
-        MediaListView(type: .anime, status: .current)
-        MediaListView(type: .anime, status: .repeating)
+        MediaListView(type: .anime, statusSelected: .current)
+        MediaListView(type: .anime, statusSelected: .repeating)
     }
 }

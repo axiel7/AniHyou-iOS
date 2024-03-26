@@ -22,7 +22,7 @@ class MediaListViewModel: ObservableObject {
     var activeRequest: Cancellable?
 
     var mediaType: MediaType = .anime
-    var mediaListStatus: MediaListStatus = .current
+    var mediaListStatus: MediaListStatus?
     private var sort: MediaListSort?
     
     @Published var searchText = ""
@@ -57,7 +57,7 @@ class MediaListViewModel: ObservableObject {
                 perPage: .some(25),
                 userId: .some(userId),
                 type: .some(.case(mediaType)),
-                status: .some(.case(mediaListStatus)),
+                status: someIfNotNil(mediaListStatus),
                 sort: .some([.case(sort ?? .addedTimeDesc), .case(.mediaIdDesc)])
             ),
             cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
