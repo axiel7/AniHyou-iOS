@@ -36,6 +36,7 @@ struct StudioDetailsView: View {
                                         mediaListStatus: item?.mediaListEntry?.status?.value
                                     )
                                 }
+                                .buttonStyle(.plain)
                             }
                             
                             if viewModel.hasNextPage {

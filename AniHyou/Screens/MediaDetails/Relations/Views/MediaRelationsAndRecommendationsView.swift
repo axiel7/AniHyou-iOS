@@ -46,6 +46,7 @@ struct MediaRelationsAndRecommendationsView: View {
                                             mediaListStatus: relation.node?.mediaListEntry?.status?.value
                                         )
                                     }
+                                    .buttonStyle(.plain)
                                 }
                             }
                         }//HStack
@@ -83,6 +84,7 @@ struct MediaRelationsAndRecommendationsView: View {
                                             mediaListStatus: recommendation.mediaListEntry?.status?.value
                                         )
                                     }
+                                    .buttonStyle(.plain)
                                 }
                             }
                         }//:HStack

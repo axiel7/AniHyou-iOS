@@ -35,6 +35,7 @@ struct AnimeSeasonListView: View {
                                 mediaListStatus: media.mediaListEntry?.status?.value
                             )
                         }
+                        .buttonStyle(.plain)
                     }
                 }
 

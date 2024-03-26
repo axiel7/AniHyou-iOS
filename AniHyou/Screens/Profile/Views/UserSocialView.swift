@@ -32,6 +32,7 @@ struct UserSocialView: View {
                             NavigationLink(destination: ProfileView(userId: user.id)) {
                                 UserLargeItemView(user: user.fragments.userFollow)
                             }
+                            .buttonStyle(.plain)
                         }
                     }
 
@@ -47,6 +48,7 @@ struct UserSocialView: View {
                             NavigationLink(destination: ProfileView(userId: user.id)) {
                                 UserLargeItemView(user: user.fragments.userFollow)
                             }
+                            .buttonStyle(.plain)
                         }
                     }
 

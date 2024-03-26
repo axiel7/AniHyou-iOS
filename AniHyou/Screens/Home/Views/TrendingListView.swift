@@ -58,6 +58,7 @@ struct TrendingListView: View {
                                 mediaListStatus: media.mediaListEntry?.status?.value
                             )
                         }
+                        .buttonStyle(.plain)
                     }
                 }
                 if hasNextPage {

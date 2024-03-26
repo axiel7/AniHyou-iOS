@@ -134,6 +134,7 @@ struct StaffDetailsView: View {
                             mediaListStatus: media.mediaListEntry?.status?.value
                         )
                     }
+                    .buttonStyle(.plain)
                 }
             }
             if viewModel.hasNextPageMedia {
@@ -159,6 +160,7 @@ struct StaffDetailsView: View {
                                     imageUrl: character.image?.large
                                 )
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }

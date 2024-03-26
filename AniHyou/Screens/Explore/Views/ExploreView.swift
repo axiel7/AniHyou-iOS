@@ -139,6 +139,7 @@ struct ExploreView: View {
                                 mediaListStatus: item.mediaListEntry?.status?.value
                             )
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             case .characters:
@@ -147,6 +148,7 @@ struct ExploreView: View {
                         NavigationLink(destination: CharacterDetailsView(characterId: item.id)) {
                             HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             case .staff:
@@ -155,6 +157,7 @@ struct ExploreView: View {
                         NavigationLink(destination: StaffDetailsView(staffId: item.id)) {
                             HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             case .studios:
@@ -163,6 +166,7 @@ struct ExploreView: View {
                         NavigationLink(destination: StudioDetailsView(studioId: item.id)) {
                             HListItemWithSubtitleView(title: item.name)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             case .users:
@@ -171,6 +175,7 @@ struct ExploreView: View {
                         NavigationLink(destination: ProfileView(userId: item.id)) {
                             HListItemWithSubtitleView(title: item.name, imageUrl: item.avatar?.medium)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             }//:switch

@@ -30,6 +30,7 @@ struct MediaReviewsAndThreadsView: View {
                             NavigationLink(destination: ThreadDetailsView(thread: thread)) {
                                 ThreadItemView(thread: thread)
                             }
+                            .buttonStyle(.plain)
                         }
                     }//:HStack
                     .padding(.leading)
@@ -63,6 +64,7 @@ struct MediaReviewsAndThreadsView: View {
                                     NavigationLink(destination: ReviewDetailsView(reviewId: review.id)) {
                                         ReviewItemView(review: review)
                                     }
+                                    .buttonStyle(.plain)
                                 }
                             }
                         }//:HGrid

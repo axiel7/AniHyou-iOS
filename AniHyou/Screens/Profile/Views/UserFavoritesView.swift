@@ -29,6 +29,7 @@ struct UserFavoritesView: View {
                                 mediaListStatus: media.mediaListEntry?.status?.value
                             )
                     }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -59,6 +60,7 @@ struct UserFavoritesView: View {
                             mediaListStatus: media.mediaListEntry?.status?.value
                         )
                     }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -81,6 +83,7 @@ struct UserFavoritesView: View {
                     NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
                         VListItemView(title: character.name?.userPreferred ?? "", imageUrl: character.image?.large)
                     }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -103,6 +106,7 @@ struct UserFavoritesView: View {
                     NavigationLink(destination: StaffDetailsView(staffId: staff.id)) {
                         VListItemView(title: staff.name?.userPreferred ?? "", imageUrl: staff.image?.large)
                     }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -131,6 +135,7 @@ struct UserFavoritesView: View {
                             .foregroundStyle(.primary)
                             .cornerRadius(8)
                     }
+                    .buttonStyle(.plain)
                 }
             }
 

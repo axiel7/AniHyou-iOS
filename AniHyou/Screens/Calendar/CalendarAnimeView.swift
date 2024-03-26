@@ -79,6 +79,7 @@ struct WeekAnimeListView: View {
                             mediaListStatus: media.mediaListEntry?.status?.value
                         )
                     }
+                    .buttonStyle(.plain)
                 }
             }
 

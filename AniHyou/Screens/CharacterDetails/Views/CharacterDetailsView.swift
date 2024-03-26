@@ -129,6 +129,7 @@ struct CharacterDetailsView: View {
                             mediaListStatus: item.node?.mediaListEntry?.status?.value
                         )
                     }
+                    .buttonStyle(.plain)
                 }
             }
             if viewModel.hasNextPageMedia {

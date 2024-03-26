@@ -72,6 +72,7 @@ struct DiscoverView: View {
                                         mediaListStatus: item.mediaListEntry?.status?.value
                                     )
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                     } else {
@@ -93,6 +94,7 @@ struct DiscoverView: View {
                                         mediaListStatus: item.media?.mediaListEntry?.status?.value
                                     )
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                     }
@@ -146,6 +148,7 @@ struct DiscoverView: View {
                                     mediaListStatus: item.mediaListEntry?.status?.value
                                 )
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }//:HStack
@@ -191,6 +194,7 @@ struct DiscoverView: View {
                                     mediaListStatus: item.mediaListEntry?.status?.value
                                 )
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }//:HStack
@@ -239,6 +243,7 @@ struct DiscoverView: View {
                                     mediaListStatus: item.mediaListEntry?.status?.value
                                 )
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }//:HStack
@@ -284,6 +289,7 @@ struct DiscoverView: View {
                                     mediaListStatus: item.mediaListEntry?.status?.value
                                 )
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }//:HStack

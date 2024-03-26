@@ -33,6 +33,7 @@ struct StaffView: View {
                 Spacer()
             }
         }
+        .buttonStyle(.plain)
         .frame(width: 240, height: StaffView.imageSize)
     }
 }

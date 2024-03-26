@@ -31,6 +31,7 @@ struct CharacterView: View {
                     }
                 }//:HStack
             }
+            .buttonStyle(.plain)
 
             Spacer()
 
@@ -50,6 +51,7 @@ struct CharacterView: View {
                         CircleImageView(imageUrl: character.voiceActors![0]!.image?.medium, size: imageSize)
                     }//:HStack
                 }
+                .buttonStyle(.plain)
             }
         }
         .frame(height: imageSize)
