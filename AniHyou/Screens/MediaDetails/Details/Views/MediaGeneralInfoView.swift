@@ -105,18 +105,20 @@ struct MediaGeneralInfoView: View {
                     .bold()
                     .padding(.horizontal)
                 Spacer()
-                Button(
-                    action: {
-                        withAnimation {
-                            showSpoilerTags.toggle()
+                if mediaTags.contains(where: { $0?.isMediaSpoiler == true }) {
+                    Button(
+                        action: {
+                            withAnimation {
+                                showSpoilerTags.toggle()
+                            }
+                        },
+                        label: {
+                            Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
+                                .font(.footnote)
                         }
-                    },
-                    label: {
-                        Text(showSpoilerTags ? "Hide spoiler" : "Show spoiler")
-                            .font(.footnote)
-                    }
-                )
-                .padding(.horizontal)
+                    )
+                    .padding(.horizontal)
+                }
             }
             .padding(.top)
 
