@@ -23,6 +23,7 @@ struct AppIconSelector: View {
             HStack(spacing: 16) {
                 ForEach(appIcons, id: \.self) { icon in
                     let isSelected = selectedAppIcon == icon
+                    let colorName = icon.replacingOccurrences(of: "AniHyou-", with: "")
                     VStack {
                         ZStack {
                             if isSelected {
@@ -36,20 +37,19 @@ struct AppIconSelector: View {
                                 .frame(width: iconSize, height: iconSize)
                         }
 
-                        let iconName = icon.replacingOccurrences(of: "AniHyou-", with: "")
                         if isSelected {
-                            Text(iconName)
+                            Text(colorName)
                                 .fontWeight(.medium)
                                 .foregroundStyle(.tint)
                         } else {
-                            Text(iconName)
+                            Text(colorName)
                         }
                     }//:VStack
                     .onTapGesture {
                         if hasDonated {
                             selectedAppIcon = icon
-                            var iconName: String? = icon
-                            if iconName == "AniHyou-Default" {
+                            var iconName: String? = "AppIcon-\(colorName)"
+                            if icon == "AniHyou-Default" {
                                 iconName = nil
                             }
                             UIApplication.shared.setAlternateIconName(iconName) { error in
