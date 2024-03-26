@@ -155,6 +155,9 @@
 		48B7ABE42BB322450047998F /* ThreadComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABE32BB322450047998F /* ThreadComment.swift */; };
 		48B7ABE62BB328A50047998F /* ThreadComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABE32BB322450047998F /* ThreadComment.swift */; };
 		48B7ABE72BB328AB0047998F /* ThreadComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABE32BB322450047998F /* ThreadComment.swift */; };
+		48B7ABE92BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
+		48B7ABEA2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
+		48B7ABEB2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -479,6 +482,7 @@
 		48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsView.swift; sourceTree = "<group>"; };
 		48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsViewModel.swift; sourceTree = "<group>"; };
 		48B7ABE32BB322450047998F /* ThreadComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadComment.swift; sourceTree = "<group>"; };
+		48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -737,6 +741,7 @@
 				488C267A2853801A0005EE15 /* Constants.swift */,
 				488C267F2853822E0005EE15 /* Config.xcconfig */,
 				488C26802853837B0005EE15 /* .gitignore */,
+				48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */,
 			);
 			path = AniHyou;
 			sourceTree = "<group>";
@@ -1783,6 +1788,7 @@
 				48438E2D2A67DA810042BCD9 /* AniHyou-Green@2x.png in Resources */,
 				48438E242A67DA810042BCD9 /* AniHyou-Orange@3x.png in Resources */,
 				48438E252A67DA810042BCD9 /* AniHyou-Pink@3x.png in Resources */,
+				48B7ABE92BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				48438E272A67DA810042BCD9 /* AniHyou-Gray@2x.png in Resources */,
 				48438E2C2A67DA810042BCD9 /* AniHyou-Red@3x.png in Resources */,
 				48438E282A67DA810042BCD9 /* AniHyou-Purple@2x.png in Resources */,
@@ -1797,6 +1803,7 @@
 			files = (
 				48EFCDE129FFAD210096BF6E /* Assets.xcassets in Resources */,
 				48C5016B2ADAD00400E4243D /* InfoPlist.strings in Resources */,
+				48B7ABEB2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				48C5014C2AD9091600E4243D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1807,6 +1814,7 @@
 			files = (
 				48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */,
 				48C5014B2AD9091600E4243D /* Localizable.strings in Resources */,
+				48B7ABEA2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				48F27911296EFE78000827F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
