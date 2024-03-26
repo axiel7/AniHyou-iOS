@@ -50,6 +50,11 @@ class MediaListViewModel: ObservableObject {
 
     func getUserMediaList(otherUserId: Int?) {
         if let otherUserId { userId = otherUserId }
+        let sortArray: [GraphQLEnum<MediaListSort>] = if mediaListStatus == nil {
+            [.case(.status), .case(sort ?? .addedTimeDesc)]
+        } else {
+            [.case(sort ?? .addedTimeDesc), .case(.mediaIdDesc)]
+        }
         activeRequest?.cancel()
         activeRequest = Network.shared.apollo.fetch(
             query: UserMediaListQuery(
@@ -58,7 +63,7 @@ class MediaListViewModel: ObservableObject {
                 userId: .some(userId),
                 type: .some(.case(mediaType)),
                 status: someIfNotNil(mediaListStatus),
-                sort: .some([.case(sort ?? .addedTimeDesc), .case(.mediaIdDesc)])
+                sort: .some(sortArray)
             ),
             cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
         ) { [weak self] result in
