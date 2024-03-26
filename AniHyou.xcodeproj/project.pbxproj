@@ -697,19 +697,19 @@
 		481AD4DC2851CE73001779EE /* AniHyou */ = {
 			isa = PBXGroup;
 			children = (
-				48EFCDFF29FFED440096BF6E /* AniHyou.entitlements */,
 				48F27926296F0CDC000827F7 /* WatchConnectivity */,
-				488C2681285386600005EE15 /* Info.plist */,
 				48AB01F2286B6A2F004DC7FF /* Model */,
 				84734AE42A7DF601000BD9E6 /* Repositories */,
 				488C268D28539EFE0005EE15 /* Network */,
 				481AD5032852211C001779EE /* Queries */,
 				481AD4F32851D87E001779EE /* Views */,
 				481AD4F22851D878001779EE /* Screens */,
-				481AD4E12851CE74001779EE /* Assets.xcassets */,
-				481AD4E32851CE74001779EE /* Preview Content */,
 				4832B02A285F35CE00E79D27 /* Utils */,
 				488C267A2853801A0005EE15 /* Constants.swift */,
+				481AD4E32851CE74001779EE /* Preview Content */,
+				481AD4E12851CE74001779EE /* Assets.xcassets */,
+				48EFCDFF29FFED440096BF6E /* AniHyou.entitlements */,
+				488C2681285386600005EE15 /* Info.plist */,
 				488C267F2853822E0005EE15 /* Config.xcconfig */,
 				488C26802853837B0005EE15 /* .gitignore */,
 				48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */,
@@ -1281,10 +1281,10 @@
 		48F2790B296EFE77000827F7 /* AniHyouShou Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				48BC72BB2A9D854A00992F14 /* AniHyouShou Watch App.entitlements */,
 				48F2792E29702835000827F7 /* Root */,
 				48F2792F29702842000827F7 /* MediaList */,
 				48F27910296EFE78000827F7 /* Assets.xcassets */,
+				48BC72BB2A9D854A00992F14 /* AniHyouShou Watch App.entitlements */,
 				48F27912296EFE78000827F7 /* Preview Content */,
 			);
 			path = "AniHyouShou Watch App";
