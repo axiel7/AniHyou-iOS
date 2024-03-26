@@ -5,7 +5,7 @@
 
 public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat } isFollowing isFollower donatorBadge donatorTier }"#
+    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled } } isFollowing isFollower donatorBadge donatorTier }"#
   }
 
   public var __data: DataDict
@@ -212,6 +212,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
+      .field("animeList", AnimeList?.self),
     ] }
 
     /// The score format the user is using for media lists
@@ -219,19 +220,68 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
       get { __data["scoreFormat"] }
       set { __data["scoreFormat"] = newValue }
     }
+    /// The user's anime list options
+    public var animeList: AnimeList? {
+      get { __data["animeList"] }
+      set { __data["animeList"] = newValue }
+    }
 
     public init(
-      scoreFormat: GraphQLEnum<AniListAPI.ScoreFormat>? = nil
+      scoreFormat: GraphQLEnum<AniListAPI.ScoreFormat>? = nil,
+      animeList: AnimeList? = nil
     ) {
       self.init(_dataDict: DataDict(
         data: [
           "__typename": AniListAPI.Objects.MediaListOptions.typename,
           "scoreFormat": scoreFormat,
+          "animeList": animeList._fieldData,
         ],
         fulfilledFragments: [
           ObjectIdentifier(UserInfo.MediaListOptions.self)
         ]
       ))
+    }
+
+    /// MediaListOptions.AnimeList
+    ///
+    /// Parent Type: `MediaListTypeOptions`
+    public struct AnimeList: AniListAPI.MutableSelectionSet {
+      public var __data: DataDict
+      public init(_dataDict: DataDict) { __data = _dataDict }
+
+      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+      public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
+        .field("advancedScoring", [String?]?.self),
+        .field("advancedScoringEnabled", Bool?.self),
+      ] }
+
+      /// The names of the user's advanced scoring sections
+      public var advancedScoring: [String?]? {
+        get { __data["advancedScoring"] }
+        set { __data["advancedScoring"] = newValue }
+      }
+      /// If advanced scoring is enabled
+      public var advancedScoringEnabled: Bool? {
+        get { __data["advancedScoringEnabled"] }
+        set { __data["advancedScoringEnabled"] = newValue }
+      }
+
+      public init(
+        advancedScoring: [String?]? = nil,
+        advancedScoringEnabled: Bool? = nil
+      ) {
+        self.init(_dataDict: DataDict(
+          data: [
+            "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
+            "advancedScoring": advancedScoring,
+            "advancedScoringEnabled": advancedScoringEnabled,
+          ],
+          fulfilledFragments: [
+            ObjectIdentifier(UserInfo.MediaListOptions.AnimeList.self)
+          ]
+        ))
+      }
     }
   }
 }

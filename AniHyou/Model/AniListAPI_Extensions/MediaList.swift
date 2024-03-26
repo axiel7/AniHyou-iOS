@@ -37,3 +37,20 @@ extension UserMediaListQuery.Data.Page.MediaList {
         return "\(self.mediaId)-\(self.id)"
     }
 }
+
+extension BasicMediaListEntry {
+    var advancedScoresDict: [String: Double]? {
+        self.advancedScores?.toAdvancedScores()
+    }
+}
+
+extension CustomJSON {
+    func toAdvancedScores() -> [String: Double] {
+        switch self {
+        case .dictionary(let dictionary):
+            return dictionary.compactMapValues { $0 as? Double }
+        case .array:
+            return [:]
+        }
+    }
+}

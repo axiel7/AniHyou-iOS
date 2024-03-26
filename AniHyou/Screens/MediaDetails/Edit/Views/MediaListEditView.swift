@@ -18,6 +18,8 @@ struct MediaListEditView: View {
 
     @StateObject private var viewModel = MediaListEditViewModel()
     @State private var showDeleteDialog = false
+    
+    @AppStorage(ADVANCED_SCORING_ENABLED_KEY) private var advancedScoringEnabled: Bool?
 
     @State private var status: MediaListStatus = .planning
     @State private var progress = 0
@@ -31,6 +33,7 @@ struct MediaListEditView: View {
     @State private var showFinishDate = false
     @State private var isPrivate = false
     @State private var notes = ""
+    @State private var advancedScores: [String: Double] = [:]
 
     private let textFieldWidth: CGFloat = 65
     private let decimalFormatter: NumberFormatter = {
@@ -133,6 +136,10 @@ struct MediaListEditView: View {
                     TextField("Notes", text: $notes, axis: .vertical)
                         .lineLimit(5)
                 }
+                
+                if advancedScoringEnabled == true {
+                    advancedScoresView
+                }
 
                 Button("Delete", role: .destructive) {
                     showDeleteDialog = true
@@ -164,6 +171,7 @@ struct MediaListEditView: View {
                                 mediaId: mediaDetails.id,
                                 status: status,
                                 score: viewModel.score,
+                                advancedScoresDict: advancedScores,
                                 progress: progress,
                                 progressVolumes: progressVolumes,
                                 startedAt: isStartDateSet ? startDate : nil,
@@ -191,6 +199,33 @@ struct MediaListEditView: View {
             if isDeleteSuccess {
                 onDelete()
                 dismiss()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var advancedScoresView: some View {
+        ForEach(advancedScores.keys.sorted(), id: \.self) { name in
+            Section {
+                let value = Binding(
+                    get: { advancedScores[name] ?? 0 },
+                    set: { advancedScores[name] = $0 }
+                )
+                
+                HStack {
+                    TextField("", value: value, formatter: decimalFormatter)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: textFieldWidth)
+                    
+                    Stepper("/\(viewModel.scoreHint)",
+                            value: value,
+                            in: viewModel.scoreRange,
+                            step: viewModel.scoreStep
+                    )
+                }
+            } header: {
+                Text(name)
             }
         }
     }
@@ -226,6 +261,7 @@ struct MediaListEditView: View {
 
         self.isPrivate = self.mediaList?.private ?? false
         self.notes = self.mediaList?.notes ?? ""
+        self.advancedScores = self.mediaList?.advancedScoresDict ?? [:]
     }
 }
 

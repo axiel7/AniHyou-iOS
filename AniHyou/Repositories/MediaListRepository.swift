@@ -22,7 +22,8 @@ class MediaListRepository {
             completedAt: nil,
             repeat: nil,
             private: nil,
-            notes: nil
+            notes: nil,
+            advancedScores: nil
         )) { result in
             switch result {
             case .success(let graphQLResult):
@@ -61,6 +62,7 @@ class MediaListRepository {
         mediaId: Int,
         status: MediaListStatus? = nil,
         score: Double? = nil,
+        advancedScores: [Double]? = nil,
         progress: Int? = nil,
         progressVolumes: Int? = nil,
         startedAt: GraphQLNullable<FuzzyDateInput> = .none,
@@ -80,7 +82,8 @@ class MediaListRepository {
                 completedAt: completedAt,
                 repeat: someIfNotNil(repeatCount),
                 private: someIfNotNil(isPrivate),
-                notes: someIfNotNil(notes)
+                notes: someIfNotNil(notes),
+                advancedScores: someIfNotNil(advancedScores)
             )) { result in
                 switch result {
                 case .success(let graphQLResult):

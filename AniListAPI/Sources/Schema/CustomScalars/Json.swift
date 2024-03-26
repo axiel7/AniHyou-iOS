@@ -7,6 +7,35 @@
 
 import ApolloAPI
 
-// So far this custom type is only used for ThreadComments (I think),
-// but we're fucked if in the future AniList decides to use it for more things (pls don't)
-public typealias Json = [ChildCommentsQuery.Data.Page.ThreadComment]
+public typealias Json = CustomJSON
+
+public enum CustomJSON: CustomScalarType, Hashable {
+    case dictionary([String: AnyHashable])
+    case array([[String: AnyHashable]])
+
+    public init(_jsonValue value: JSONValue) throws {
+        if let dict = value as? [String: AnyHashable] {
+            self = .dictionary(dict)
+        } else if let array = value as? [[String: AnyHashable]] {
+            self = .array(array)
+        } else {
+            throw JSONDecodingError.couldNotConvert(value: value, to: CustomJSON.self)
+        }
+    }
+
+    public var _jsonValue: JSONValue {
+        switch self {
+        case let .dictionary(json as AnyHashable),
+             let .array(json as AnyHashable):
+            return json
+        }
+    }
+
+    public static func == (lhs: CustomJSON, rhs: CustomJSON) -> Bool {
+        lhs._jsonValue == rhs._jsonValue
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(_jsonValue)
+    }
+}

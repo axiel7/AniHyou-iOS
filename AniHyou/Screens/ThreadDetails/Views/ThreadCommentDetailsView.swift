@@ -36,7 +36,7 @@ struct ThreadCommentDetailsView: View {
                 )
                 Divider()
                     .padding(.vertical)
-                if let childComments = comment.childComments {
+                if let childComments = comment.childCommentsParsed {
                     ForEach(childComments, id: \.id) {
                         ThreadCommentItemView(viewModel: viewModel, comment: $0)
                         Divider()

@@ -45,6 +45,8 @@ class LoginRepository {
         UserDefaults.standard.removeObject(forKey: USER_NAMES_LANG_KEY)
         UserDefaults.standard.removeObject(forKey: USER_TITLE_LANG_KEY)
         UserDefaults.standard.removeObject(forKey: USER_SCORE_KEY)
+        UserDefaults.standard.removeObject(forKey: ADVANCED_SCORING_ENABLED_KEY)
+        UserDefaults.standard.removeObject(forKey: ADVANCED_SCORES_KEY)
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -69,6 +71,14 @@ class LoginRepository {
                     UserDefaults.standard.set(
                         viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
                         forKey: USER_SCORE_KEY
+                    )
+                    UserDefaults.standard.setValue(
+                        viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
+                        forKey: ADVANCED_SCORING_ENABLED_KEY
+                    )
+                    UserDefaults.standard.setValue(
+                        viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
+                        forKey: ADVANCED_SCORES_KEY
                     )
                 }
             case .failure(let error):

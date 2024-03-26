@@ -8,6 +8,10 @@ query ViewerId {
     }
     mediaListOptions {
       scoreFormat
+      animeList {
+        advancedScoring
+        advancedScoringEnabled # shared between animeList and mangaList
+      }
     }
   }
 }

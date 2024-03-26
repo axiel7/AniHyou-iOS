@@ -66,6 +66,7 @@ class MediaListEditViewModel: ObservableObject {
         mediaId: Int,
         status: MediaListStatus?,
         score: Double?,
+        advancedScoresDict: [String: Double]?,
         progress: Int?,
         progressVolumes: Int?,
         startedAt: Date?,
@@ -111,10 +112,24 @@ class MediaListEditViewModel: ObservableObject {
             var setNotes = notes
             if notes == oldEntry?.notes { setNotes = nil }
             
+            var setAdvancedScores: [Double]?
+            // this is required because in Swift there's no equivalent to LinkedHashMap...
+            // and AniList API expects a float array ordered
+            if let advancedScoresDict,
+                let advancedScoresOrdered = UserDefaults.standard.stringArray(forKey: ADVANCED_SCORES_KEY) {
+                setAdvancedScores = []
+                for name in advancedScoresOrdered {
+                    if let score = advancedScoresDict[name] {
+                        setAdvancedScores?.append(score)
+                    }
+                }
+            }
+            
             if let updatedEntry = await MediaListRepository.updateEntry(
                 mediaId: mediaId,
                 status: setStatus,
                 score: setScore,
+                advancedScores: setAdvancedScores,
                 progress: setProgress,
                 progressVolumes: setProgressVolumes,
                 startedAt: startedAtQL,

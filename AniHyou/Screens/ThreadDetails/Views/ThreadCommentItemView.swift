@@ -28,7 +28,7 @@ struct ThreadCommentItemView: View {
         self.isLiked = comment.isLiked == true
         self.likeCount = comment.likeCount
         self.commentButtonDisabled = commentButtonDisabled
-        && comment.childComments?.isEmpty == false
+        && comment.childCommentsParsed?.isEmpty == false
     }
 
     var body: some View {
@@ -61,7 +61,7 @@ struct ThreadCommentItemView: View {
                 NavigationLink(
                     destination: ThreadCommentDetailsView(viewModel: viewModel, comment: comment)
                 ) {
-                    Label("\(comment.childComments?.count ?? 0)", systemImage: "bubble")
+                    Label("\(comment.childCommentsParsed?.count ?? 0)", systemImage: "bubble")
                 }
                 .disabled(commentButtonDisabled)
                 .frame(width: 60, alignment: .leading)

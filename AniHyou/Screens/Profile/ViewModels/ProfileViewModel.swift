@@ -37,6 +37,14 @@ class ProfileViewModel: ObservableObject {
                         viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
                         forKey: USER_SCORE_KEY
                     )
+                    UserDefaults.standard.setValue(
+                        viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
+                        forKey: ADVANCED_SCORING_ENABLED_KEY
+                    )
+                    UserDefaults.standard.setValue(
+                        viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
+                        forKey: ADVANCED_SCORES_KEY
+                    )
                 }
             case .failure(let error):
                 print(error)

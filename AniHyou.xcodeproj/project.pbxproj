@@ -152,6 +152,9 @@
 		48AF5394289E7371006D40B6 /* ThreadDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */; };
 		48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */; };
 		48B635CB2B24885100ED73E7 /* MediaListSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E3F2A85B64B00EF0CA2 /* MediaListSort.swift */; };
+		48B7ABE42BB322450047998F /* ThreadComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABE32BB322450047998F /* ThreadComment.swift */; };
+		48B7ABE62BB328A50047998F /* ThreadComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABE32BB322450047998F /* ThreadComment.swift */; };
+		48B7ABE72BB328AB0047998F /* ThreadComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABE32BB322450047998F /* ThreadComment.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -475,6 +478,7 @@
 		48AC01882968624C00525B69 /* AnimeSeasonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSeasonListView.swift; sourceTree = "<group>"; };
 		48AF5393289E7371006D40B6 /* ThreadDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsView.swift; sourceTree = "<group>"; };
 		48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsViewModel.swift; sourceTree = "<group>"; };
+		48B7ABE32BB322450047998F /* ThreadComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadComment.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -1287,6 +1291,7 @@
 				48E58E452A85BA2600EF0CA2 /* UserOptions.swift */,
 				4820F6B32ADEA52000A4F465 /* ActivityType.swift */,
 				4820F6B52ADEAF1100A4F465 /* ListActivity.swift */,
+				48B7ABE32BB322450047998F /* ThreadComment.swift */,
 			);
 			path = AniListAPI_Extensions;
 			sourceTree = "<group>";
@@ -1971,6 +1976,7 @@
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
 				48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */,
 				48E58E3C2A85B61600EF0CA2 /* CharacterRole.swift in Sources */,
+				48B7ABE42BB322450047998F /* ThreadComment.swift in Sources */,
 				48E58E462A85BA2600EF0CA2 /* UserOptions.swift in Sources */,
 				4820F6A42ADE8BB600A4F465 /* DiscoverView.swift in Sources */,
 				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,
@@ -2012,6 +2018,7 @@
 				48294CEC2ABA9E9B005E7CD2 /* MediaList.swift in Sources */,
 				48294CE82ABA93F9005E7CD2 /* SelectMediaTypeIntent.swift in Sources */,
 				48294CE12AB95020005E7CD2 /* MediaListStatus.swift in Sources */,
+				48B7ABE72BB328AB0047998F /* ThreadComment.swift in Sources */,
 				48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */,
 				48EFCDEE29FFB0A30096BF6E /* NetworkInterceptorProvider.swift in Sources */,
 				486354EC2B73446A00A5DBB7 /* AiringText.swift in Sources */,
@@ -2056,6 +2063,7 @@
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,
 				48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */,
+				48B7ABE62BB328A50047998F /* ThreadComment.swift in Sources */,
 				48A1A8F42A39861C00ACC6FF /* KeychainUtils.swift in Sources */,
 				48F27935297029A3000827F7 /* NetworkInterceptorProvider.swift in Sources */,
 				48294CE52AB96163005E7CD2 /* MediaListRepository.swift in Sources */,

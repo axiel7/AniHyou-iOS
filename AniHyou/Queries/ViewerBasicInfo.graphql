@@ -20,6 +20,10 @@ fragment UserInfo on User
   }
   mediaListOptions {
     scoreFormat
+    animeList {
+      advancedScoring
+      advancedScoringEnabled # shared between animeList and mangaList
+    }
   }
   isFollowing
   isFollower

@@ -5,7 +5,7 @@
 
 public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment BasicMediaListEntry on MediaList { __typename ...ProgressMediaListEntry status score repeat private startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
+    #"fragment BasicMediaListEntry on MediaList { __typename ...ProgressMediaListEntry status score advancedScores repeat private startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
   }
 
   public var __data: DataDict
@@ -16,6 +16,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     .field("__typename", String.self),
     .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
     .field("score", Double?.self),
+    .field("advancedScores", AniListAPI.Json?.self),
     .field("repeat", Int?.self),
     .field("private", Bool?.self),
     .field("startedAt", StartedAt?.self),
@@ -33,6 +34,11 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public var score: Double? {
     get { __data["score"] }
     set { __data["score"] = newValue }
+  }
+  /// Map of advanced scores with name keys
+  public var advancedScores: AniListAPI.Json? {
+    get { __data["advancedScores"] }
+    set { __data["advancedScores"] = newValue }
   }
   /// The amount of times the user has rewatched/read the media
   public var `repeat`: Int? {
@@ -101,6 +107,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public init(
     status: GraphQLEnum<AniListAPI.MediaListStatus>? = nil,
     score: Double? = nil,
+    advancedScores: AniListAPI.Json? = nil,
     `repeat` _repeat: Int? = nil,
     `private` _private: Bool? = nil,
     startedAt: StartedAt? = nil,
@@ -116,6 +123,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "__typename": AniListAPI.Objects.MediaList.typename,
         "status": status,
         "score": score,
+        "advancedScores": advancedScores,
         "repeat": _repeat,
         "private": _private,
         "startedAt": startedAt._fieldData,

@@ -102,6 +102,8 @@ public class UserMediaListQuery: GraphQLQuery {
         public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
         /// The score of the entry
         public var score: Double? { __data["score"] }
+        /// Map of advanced scores with name keys
+        public var advancedScores: AniListAPI.Json? { __data["advancedScores"] }
         /// The amount of times the user has rewatched/read the media
         public var `repeat`: Int? { __data["repeat"] }
         /// If the entry should only be visible to authenticated user

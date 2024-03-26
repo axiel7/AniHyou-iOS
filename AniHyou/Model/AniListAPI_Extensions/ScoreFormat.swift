@@ -76,4 +76,8 @@ extension ScoreFormat {
             return "3 Point Smiley :)"
         }
     }
+    
+    var canUseAdvancedScoring: Bool {
+        return self == .point100 || self == .point10Decimal
+    }
 }

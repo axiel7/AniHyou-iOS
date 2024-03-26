@@ -39,6 +39,7 @@ fragment BasicMediaListEntry on MediaList
   ...ProgressMediaListEntry
   status
   score
+  advancedScores
   repeat
   private
   startedAt {
