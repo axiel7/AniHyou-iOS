@@ -45,7 +45,7 @@ struct MediaDetailsMainInfo: View {
 
                 Text(viewModel.mediaDetails?.format?.value?.localizedName ?? "Unknown")
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
 
                 Spacer()
 

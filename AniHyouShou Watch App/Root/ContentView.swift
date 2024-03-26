@@ -34,7 +34,7 @@ struct ContentView: View {
                 VStack {
                     Image(systemName: "iphone.and.arrow.forward")
                         .imageScale(.large)
-                        .foregroundColor(.accentColor)
+                        .foregroundStyle(.tint)
                     // swiftlint:disable:next line_length
                     Text("Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch")
                         .multilineTextAlignment(.center)

@@ -20,15 +20,15 @@ struct ReviewItemView: View {
                 .lineLimit(3)
                 .multilineTextAlignment(.center)
                 .padding()
-                .foregroundColor(.primary)
+                .foregroundStyle(.primary)
             Spacer()
             HStack {
                 Text("\(review.score ?? 0)/100")
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
                 Spacer()
                 Text(review.user?.name ?? "")
                     .lineLimit(1)
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)

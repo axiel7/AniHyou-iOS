@@ -28,14 +28,14 @@ struct ChartListItemView: View {
             Text(position.stringValue)
                 .font(.title3)
                 .bold()
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
                 .padding(.leading, 8)
                 .padding(.trailing, 8)
 
             VStack(alignment: .leading) {
                 Text(item.title?.userPreferred ?? "")
                     .font(.body)
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
                     .padding(.bottom, 2)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
@@ -45,7 +45,7 @@ struct ChartListItemView: View {
                     Text(item.startDate?.year?.stringValue ?? "")
                 }
                 .font(.subheadline)
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
                 .lineLimit(1)
                 .multilineTextAlignment(.leading)
             }

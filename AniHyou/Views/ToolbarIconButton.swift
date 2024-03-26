@@ -16,7 +16,7 @@ struct ToolbarIconButton: View {
 
         Button(action: action) {
             Image(systemName: symbolSystemName)
-                .foregroundColor(.black)
+                .foregroundStyle(.black)
                 .foregroundStyle(.thickMaterial)
                 .font(.system(size: 15, weight: .semibold))
                 .padding(8)

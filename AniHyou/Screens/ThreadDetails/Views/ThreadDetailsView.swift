@@ -40,7 +40,7 @@ struct ThreadDetailsView: View {
                         let createdAt = Date(timeIntervalSince1970: Double(thread.createdAt))
                         Text(createdAt, style: .relative)
                             .font(.footnote)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                             .padding(.leading)
                         
                         Markdown(thread.body?.formatMarkdown() ?? "")
@@ -56,7 +56,7 @@ struct ThreadDetailsView: View {
                                     )
                                     Text(thread.user?.name ?? "")
                                         .lineLimit(1)
-                                        .foregroundColor(.primary)
+                                        .foregroundStyle(.primary)
                                 }
                             }
                             .buttonStyle(.plain)

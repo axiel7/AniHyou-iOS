@@ -31,7 +31,7 @@ struct VListItemView: View {
                 .font(.system(size: 15))
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
-                .foregroundColor(.primary)
+                .foregroundStyle(.primary)
                 .padding(.bottom, 1)
                 .frame(width: VListItemView.coverWidth, alignment: .leading)
 
@@ -52,7 +52,7 @@ struct VListItemView: View {
                 }
             }
             .font(.footnote)
-            .foregroundColor(.gray)
+            .foregroundStyle(.gray)
         }
         .frame(minHeight: VListItemView.coverHeight + 54, alignment: .top)
     }

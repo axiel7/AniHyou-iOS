@@ -20,7 +20,7 @@ struct TopBannerView: View {
                 KFImage(URL(string: imageUrl ?? ""))
                     .placeholder {
                         Rectangle()
-                            .foregroundColor(Color(hex: placeholderHexColor) ?? .gray)
+                            .foregroundStyle(Color(hex: placeholderHexColor) ?? .gray)
                             .scaledToFill()
                     }
                     .resizable()
@@ -34,7 +34,7 @@ struct TopBannerView: View {
                     )
                     .clipped()
                 Rectangle()
-                    .foregroundColor(.clear)
+                    .foregroundStyle(.clear)
                     .background {
                         LinearGradient(
                             gradient: Gradient(colors: [.clear, .black.opacity(0.6)]),

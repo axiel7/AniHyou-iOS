@@ -22,7 +22,7 @@ struct DatePickerToggleView: View {
                     if isDateSet.wrappedValue {
                         Text("\(selection.wrappedValue.formatted(date: .abbreviated, time: .omitted))")
                             .font(.footnote)
-                            .foregroundColor(.accentColor)
+                            .foregroundStyle(.tint)
                     }
                 }
                 .onTapGesture {

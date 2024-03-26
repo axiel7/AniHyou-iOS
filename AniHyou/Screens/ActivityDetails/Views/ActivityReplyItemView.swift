@@ -39,7 +39,7 @@ struct ActivityReplyItemView: View {
                 let createdAt = Date(timeIntervalSince1970: Double(reply.createdAt))
                 Text("\(createdAt, format: .relative(presentation: .numeric))")
                     .font(.footnote)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                     .padding(.bottom, 1)
             }//:HStack
             

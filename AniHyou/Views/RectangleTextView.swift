@@ -21,7 +21,7 @@ struct RectangleTextView: View {
                 )
             Text(text)
                 .bold()
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
         }
     }
 }

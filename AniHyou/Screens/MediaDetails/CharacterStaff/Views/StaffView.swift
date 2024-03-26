@@ -23,11 +23,11 @@ struct StaffView: View {
                     Text(staff.node?.name?.userPreferred ?? "")
                         .lineLimit(1)
                         .multilineTextAlignment(.leading)
-                        .foregroundColor(.primary)
+                        .foregroundStyle(.primary)
                     Text(staff.role ?? "")
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                         .font(.footnote)
                 }
                 Spacer()

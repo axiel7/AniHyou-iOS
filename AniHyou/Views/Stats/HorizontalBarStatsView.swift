@@ -36,14 +36,14 @@ struct HorizontalBarStatsView: View {
                                     Text(stat.id)
                                 }
                             }
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                             .padding(4)
                             .background {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .foregroundColor(stat.color)
+                                    .foregroundStyle(stat.color)
                             }
                             Text(stat.value.formatted())
-                                .foregroundColor(stat.color)
+                                .foregroundStyle(stat.color)
                         }
                     }
                 }
@@ -53,7 +53,7 @@ struct HorizontalBarStatsView: View {
                 ForEach(stats) { stat in
                     Rectangle()
                         .frame(width: calculateProportionalWidth(stat.value), height: 12)
-                        .foregroundColor(stat.color)
+                        .foregroundStyle(stat.color)
                 }
             }
         }

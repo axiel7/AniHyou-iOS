@@ -79,7 +79,7 @@ struct UserLargeItemView: View {
                 .imageCover(width: imageWidth, height: imageHeight)
 
             Text(user.name)
-                .foregroundColor(.primary)
+                .foregroundStyle(.primary)
         }
     }
 }

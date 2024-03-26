@@ -20,7 +20,7 @@ struct StarRatingView: View {
             ForEach(1...5, id: \.self) {
                 let number = Double($0)
                 image(for: number)
-                    .foregroundColor(number > rating ? offColor : .accentColor)
+                    .foregroundStyle(number > rating ? offColor : .accentColor)
                     .onTapGesture {
                         if rating == number {
                             rating = 0

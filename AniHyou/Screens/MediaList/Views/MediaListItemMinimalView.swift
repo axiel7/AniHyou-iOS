@@ -40,11 +40,11 @@ struct MediaListItemMinimalView: View {
                 Spacer()
                 if let repeatCount = item?.repeat, repeatCount > 0 {
                     Image(systemName: "arrow.clockwise")
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                 }
                 if item?.notes?.isEmpty == false {
                     Image(systemName: "note.text")
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                 }
                 MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
             }

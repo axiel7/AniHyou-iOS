@@ -24,10 +24,10 @@ struct CharacterView: View {
                             .font(.system(size: 13))
                             .multilineTextAlignment(.leading)
                             .lineLimit(3)
-                            .foregroundColor(.primary)
+                            .foregroundStyle(.primary)
                         Text(character.role?.value?.localizedName ?? "")
                             .font(.footnote)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                     }
                 }//:HStack
             }
@@ -42,10 +42,10 @@ struct CharacterView: View {
                                 .font(.footnote)
                                 .multilineTextAlignment(.trailing)
                                 .lineLimit(3)
-                                .foregroundColor(.primary)
+                                .foregroundStyle(.primary)
                             Text("Japanese")
                                 .font(.footnote)
-                                .foregroundColor(.gray)
+                                .foregroundStyle(.gray)
                         }
                         CircleImageView(imageUrl: character.voiceActors![0]!.image?.medium, size: imageSize)
                     }//:HStack

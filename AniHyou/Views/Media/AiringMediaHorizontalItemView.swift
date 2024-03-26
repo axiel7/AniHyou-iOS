@@ -31,7 +31,7 @@ struct AiringMediaHorizontalItemView: View {
             VStack(alignment: .leading) {
                 Text(title ?? "")
                     .font(.system(size: 16))
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
                     .padding(.bottom, 1)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
@@ -52,10 +52,10 @@ struct AiringMediaHorizontalItemView: View {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
                             .font(.footnote)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                         Text("\(meanScore)%")
                             .font(.footnote)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                     }
                     .padding(.vertical, 1)
                 }

@@ -15,7 +15,7 @@ private extension MediaTagItemView {
         if tag?.isMediaSpoiler == true {
             RoundedRectangle(cornerRadius: 8)
                 .stroke()
-                .foregroundColor(tint)
+                .foregroundStyle(tint)
         } else {
             EmptyView()
         }
@@ -45,7 +45,7 @@ struct MediaTagItemView: View {
         .overlay {
             spoilerOverlay(tint)
         }
-        .foregroundColor(tint)
+        .foregroundStyle(tint)
         .onTapGesture {
             showTagDescription = true
         }

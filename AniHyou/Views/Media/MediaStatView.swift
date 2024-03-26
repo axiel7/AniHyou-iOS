@@ -33,7 +33,7 @@ struct MediaStatView: View {
             Text(name)
                 .font(.caption2)
                 .textCase(.uppercase)
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
                 .padding(.bottom, 1)
             Group {
                 if let value {
@@ -45,7 +45,7 @@ struct MediaStatView: View {
                 }
             }
             .bold()
-            .foregroundColor(.gray)
+            .foregroundStyle(.gray)
         }
         .padding(.trailing, showDivider ? 0 : 8)
         if showDivider {

@@ -226,13 +226,13 @@ struct ExploreView: View {
                 )
             ) {
                 Label("Top 100", systemImage: "crown.fill")
-                    .foregroundColor(.purple)
+                    .foregroundStyle(.purple)
             }
             NavigationLink(
                 destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)
             ) {
                 Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
-                    .foregroundColor(.red)
+                    .foregroundStyle(.red)
             }
         }
         // MARK: Upcoming, Airing
@@ -246,7 +246,7 @@ struct ExploreView: View {
                 )
             ) {
                 Label("Upcoming", systemImage: "clock.fill")
-                    .foregroundColor(.pink)
+                    .foregroundStyle(.pink)
             }
             NavigationLink(
                 destination: MediaChartListView(
@@ -257,18 +257,18 @@ struct ExploreView: View {
                 )
             ) {
                 Label("Airing", systemImage: "antenna.radiowaves.left.and.right")
-                    .foregroundColor(.indigo)
+                    .foregroundStyle(.indigo)
             }
         }
         // MARK: Spring, Summer
         GridRow {
             NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
                 Label("Spring", systemImage: "leaf.fill")
-                    .foregroundColor(.green)
+                    .foregroundStyle(.green)
             }
             NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
                 Label("Summer", systemImage: "sun.max.fill")
-                    .foregroundColor(.yellow)
+                    .foregroundStyle(.yellow)
             }
         }
         // MARK: Fall, Winter
@@ -276,11 +276,11 @@ struct ExploreView: View {
             
             NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
                 Label("Fall", systemImage: "cloud.rain.fill")
-                    .foregroundColor(.brown)
+                    .foregroundStyle(.brown)
             }
             NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
                 Label("Winter", systemImage: "snowflake")
-                    .foregroundColor(.blue)
+                    .foregroundStyle(.blue)
             }
         }
         // MARK: Top Movies, Calendar
@@ -292,11 +292,11 @@ struct ExploreView: View {
                 format: .movie
             )) {
                 Label("Top Movies", systemImage: "film")
-                    .foregroundColor(.teal)
+                    .foregroundStyle(.teal)
             }
             NavigationLink(destination: CalendarAnimeView()) {
                 Label("Calendar", systemImage: "calendar")
-                    .foregroundColor(.orange)
+                    .foregroundStyle(.orange)
             }
         }
     }
@@ -307,13 +307,13 @@ struct ExploreView: View {
         GridRow {
             NavigationLink(destination: MediaChartListView(title: "Top 100 Manga", type: .manga, sort: .scoreDesc)) {
                 Label("Top 100", systemImage: "crown.fill")
-                    .foregroundColor(.purple)
+                    .foregroundStyle(.purple)
             }
             NavigationLink(
                 destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)
             ) {
                 Label("Top Popular", systemImage: "chart.line.uptrend.xyaxis")
-                    .foregroundColor(.red)
+                    .foregroundStyle(.red)
             }
         }
         // MARK: Upcoming, Publishing
@@ -327,7 +327,7 @@ struct ExploreView: View {
                 )
             ) {
                 Label("Upcoming", systemImage: "clock.fill")
-                    .foregroundColor(.pink)
+                    .foregroundStyle(.pink)
             }
             NavigationLink(
                 destination: MediaChartListView(
@@ -338,7 +338,7 @@ struct ExploreView: View {
                 )
             ) {
                 Label("Publishing", systemImage: "pencil.line")
-                    .foregroundColor(.indigo)
+                    .foregroundStyle(.indigo)
             }
         }
     }
@@ -371,12 +371,12 @@ struct ExploreView: View {
         Button(action: { isGenreSheetPresented.toggle() }, label: {
             HStack {
                 Text("Genres")
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
                 Spacer()
                 Text(viewModel.selectedGenresTagsJoined)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                 Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
             }//:HStack
         })//:Button
         .sheet(isPresented: $isGenreSheetPresented) {
@@ -390,13 +390,13 @@ struct ExploreView: View {
         Button(action: { isMediaFormatSheetPresented.toggle() }, label: {
             HStack {
                 Text("Format")
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
                 Spacer()
                 ForEach(Array(viewModel.selectedMediaFormat.prefix(3)), id: \.self) { status in
                     Text(status.localizedName)
                 }
                 Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
             }//:HStack
         })//:Button
         .sheet(isPresented: $isMediaFormatSheetPresented) {
@@ -415,14 +415,14 @@ struct ExploreView: View {
         Button(action: { isMediaStatusPresented.toggle() }, label: {
             HStack {
                 Text("Status")
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
                 Spacer()
                 ForEach(Array(viewModel.selectedMediaStatus.prefix(3)), id: \.self) { status in
                     Text(status.localizedName)
                 }
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
                 Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
             }//:HStack
         })//:Button
         .sheet(

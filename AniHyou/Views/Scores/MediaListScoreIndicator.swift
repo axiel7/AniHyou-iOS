@@ -27,7 +27,7 @@ struct MediaListScoreIndicator: View {
                 }
                 Image(systemName: "star.fill")
             }
-            .foregroundColor(color)
+            .foregroundStyle(color)
             .font(.footnote)
         case .point10Decimal:
             HStack(alignment: .center) {
@@ -38,17 +38,17 @@ struct MediaListScoreIndicator: View {
                 }
                 Image(systemName: "star.fill")
             }
-            .foregroundColor(color)
+            .foregroundStyle(color)
             .font(.footnote)
         case .point3:
             if let icon = format.smileyIcon(score: Int(score)) {
                 Image(icon)
                     .resizable()
                     .frame(width: 18, height: 18)
-                    .foregroundColor(color)
+                    .foregroundStyle(color)
             } else {
                 Text(UNKNOWN_CHAR)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                     .font(.footnote)
             }
         }

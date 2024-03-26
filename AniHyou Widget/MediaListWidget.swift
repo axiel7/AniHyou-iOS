@@ -177,7 +177,7 @@ private struct MediaListItemView: View {
                     
                     HStack {
                         Text("\(item.progress ?? 0)/\(item.totalProgress ?? 0)")
-                            .foregroundColor(.secondary)
+                            .foregroundStyle(.secondary)
                             .frame(width: 40, alignment: .leading)
                         
                         if let schedule = item.media?.nextAiringEpisode {

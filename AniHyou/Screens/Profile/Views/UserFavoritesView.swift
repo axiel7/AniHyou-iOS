@@ -128,7 +128,7 @@ struct UserFavoritesView: View {
                             .lineLimit(1)
                             .padding()
                             .background(.regularMaterial)
-                            .foregroundColor(.primary)
+                            .foregroundStyle(.primary)
                             .cornerRadius(8)
                     }
                 }

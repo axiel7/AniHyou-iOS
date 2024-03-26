@@ -15,10 +15,10 @@ struct CoverPlaceholderView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
                 .frame(width: width, height: height)
             Image(systemName: systemName)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
         }
     }
 }

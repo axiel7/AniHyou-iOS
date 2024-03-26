@@ -57,7 +57,7 @@ struct MediaStatsView: View {
                 if let ranking = $0 {
                     HStack {
                         Image(systemName: ranking.type.value?.systemImage ?? "star")
-                            .foregroundColor(ranking.type.value?.color ?? nil)
+                            .foregroundStyle(ranking.type.value?.color ?? .primary)
                         Spacer()
                         Text("#\(ranking.rank)")
                         if let type = ranking.type.value {

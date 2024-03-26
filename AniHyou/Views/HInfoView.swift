@@ -22,7 +22,7 @@ struct HInfoView: View {
             HStack(spacing: 0) {
                 Text(name)
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                     .padding(.trailing)
                 Spacer()
                 if !isExpanded {
@@ -34,7 +34,7 @@ struct HInfoView: View {
                 }
                 if isExpandable {
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                 }
             }
             if isExpanded {

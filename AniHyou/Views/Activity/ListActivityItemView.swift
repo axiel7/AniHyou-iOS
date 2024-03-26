@@ -51,7 +51,7 @@ struct ListActivityItemView: View {
                     let createdAt = Date(timeIntervalSince1970: Double(activity.createdAt))
                     Text("\(createdAt, format: .relative(presentation: .numeric))")
                         .font(.footnote)
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                         .padding(.bottom, 1)
                 }//:HStack
                 
@@ -59,7 +59,7 @@ struct ListActivityItemView: View {
                     .font(.subheadline)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
-                    .foregroundColor(.primary)
+                    .foregroundStyle(.primary)
 
                 HStack {
                     Spacer()

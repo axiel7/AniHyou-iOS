@@ -71,31 +71,31 @@ struct MediaContextMenuView: View {
                             .padding(.bottom, 1)
                         
                         Label("\(details.meanScore ?? 0)%", systemImage: "star.fill")
-                            .foregroundColor(ScoreFormat.point100.scoreColor(
+                            .foregroundStyle(ScoreFormat.point100.scoreColor(
                                 score: Double(details.meanScore ?? 0)
                             ))
                             .font(.subheadline)
                         
                         Text(details.format?.value?.localizedName ?? "Unknown")
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                         
                         if let episodes = details.episodes {
                             Text("\(episodes) episodes")
                                 .font(.subheadline)
-                                .foregroundColor(.gray)
+                                .foregroundStyle(.gray)
                         }
                         
                         if let chapters = details.chapters {
                             Text("\(chapters) chapters")
                                 .font(.subheadline)
-                                .foregroundColor(.gray)
+                                .foregroundStyle(.gray)
                         }
                         
                         if let volumes = details.volumes {
                             Text("\(volumes) volumes")
                                 .font(.subheadline)
-                                .foregroundColor(.gray)
+                                .foregroundStyle(.gray)
                         }
                         
                         if let schedule = details.nextAiringEpisode {
