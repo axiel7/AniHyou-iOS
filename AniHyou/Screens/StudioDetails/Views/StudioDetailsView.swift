@@ -28,7 +28,8 @@ struct StudioDetailsView: View {
                                 NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
                                     VListItemView(
                                         title: item?.title?.userPreferred ?? "",
-                                        imageUrl: item?.coverImage?.large
+                                        imageUrl: item?.coverImage?.large,
+                                        status: item?.mediaListEntry?.status?.value
                                     )
                                     .mediaContextMenu(
                                         mediaId: item!.id,

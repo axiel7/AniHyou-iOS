@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 struct AiringMediaHorizontalItemView: View {
 
@@ -17,15 +18,24 @@ struct AiringMediaHorizontalItemView: View {
     var meanScore: Int?
     var nextEpisode: Int?
     var airingAt: Int?
+    var status: MediaListStatus?
 
     var body: some View {
         HStack {
-            MediaCoverView(
-                imageUrl: imageUrl,
-                width: HListItemWithSubtitleView.coverWidth,
-                height: HListItemWithSubtitleView.coverHeight,
-                cancelOnDisappear: true
-            )
+            ZStack(alignment: .bottomTrailing) {
+                MediaCoverView(
+                    imageUrl: imageUrl,
+                    width: HListItemWithSubtitleView.coverWidth,
+                    height: HListItemWithSubtitleView.coverHeight,
+                    cancelOnDisappear: true
+                )
+                if let status {
+                    Image(systemName: status.systemImage)
+                        .padding(4)
+                        .background(.thinMaterial, in: .circle)
+                        .padding(4)
+                }
+            }
             .padding(.trailing, 8)
 
             VStack(alignment: .leading) {

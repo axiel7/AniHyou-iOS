@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 struct HListItemWithSubtitleView: View {
 
@@ -19,15 +20,24 @@ struct HListItemWithSubtitleView: View {
     var twoSubtitleTexts: (LocalizedStringKey?, LocalizedStringKey?)?
     var imageUrl: String?
     var meanScore: Int?
+    var status: MediaListStatus?
 
     var body: some View {
         HStack {
-            MediaCoverView(
-                imageUrl: imageUrl,
-                width: HListItemWithSubtitleView.coverWidth,
-                height: HListItemWithSubtitleView.coverHeight,
-                cancelOnDisappear: true
-            )
+            ZStack(alignment: .bottomTrailing) {
+                MediaCoverView(
+                    imageUrl: imageUrl,
+                    width: HListItemWithSubtitleView.coverWidth,
+                    height: HListItemWithSubtitleView.coverHeight,
+                    cancelOnDisappear: true
+                )
+                if let status {
+                    Image(systemName: status.systemImage)
+                        .padding(4)
+                        .background(.thinMaterial, in: .circle)
+                        .padding(4)
+                }
+            }
             .padding(.trailing, 8)
 
             VStack(alignment: .leading) {

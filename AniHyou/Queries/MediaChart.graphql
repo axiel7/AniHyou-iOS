@@ -12,6 +12,9 @@ query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType
       coverImage {
         large
       }
+      mediaListEntry {
+        status
+      }
     }
     pageInfo {
       hasNextPage

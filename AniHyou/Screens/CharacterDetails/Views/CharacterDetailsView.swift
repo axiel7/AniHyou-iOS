@@ -121,7 +121,8 @@ struct CharacterDetailsView: View {
                             title: item.node?.title?.userPreferred,
                             subtitleLocalized: item.characterRole?.value?.localizedName,
                             subtitle2: item.node?.startDate?.year?.stringValue,
-                            imageUrl: item.node?.coverImage?.large
+                            imageUrl: item.node?.coverImage?.large,
+                            status: item.node?.mediaListEntry?.status?.value
                         )
                         .mediaContextMenu(
                             mediaId: item.node!.id,

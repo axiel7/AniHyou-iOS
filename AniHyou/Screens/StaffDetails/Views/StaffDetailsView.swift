@@ -126,7 +126,8 @@ struct StaffDetailsView: View {
                             title: media.title?.userPreferred,
                             subtitle: item.staffRoles.joined(separator: ", "),
                             subtitle2: media.startDate?.year?.stringValue,
-                            imageUrl: media.coverImage?.large
+                            imageUrl: media.coverImage?.large,
+                            status: media.mediaListEntry?.status?.value
                         )
                         .mediaContextMenu(
                             mediaId: media.id,

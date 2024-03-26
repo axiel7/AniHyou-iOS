@@ -62,7 +62,8 @@ struct DiscoverView: View {
                                         imageUrl: item.coverImage?.large,
                                         meanScore: item.meanScore,
                                         nextEpisode: item.nextAiringEpisode?.episode,
-                                        airingAt: item.nextAiringEpisode?.airingAt
+                                        airingAt: item.nextAiringEpisode?.airingAt,
+                                        status: item.mediaListEntry?.status?.value
                                     )
                                     .padding(.leading, 8)
                                     .frame(width: 280, alignment: .leading)
@@ -84,7 +85,8 @@ struct DiscoverView: View {
                                         imageUrl: item.media?.coverImage?.large,
                                         meanScore: item.media?.meanScore,
                                         nextEpisode: item.episode,
-                                        airingAt: item.airingAt
+                                        airingAt: item.airingAt,
+                                        status: item.media?.mediaListEntry?.status?.value
                                     )
                                     .padding(.leading, 8)
                                     .frame(width: 280, alignment: .leading)
@@ -139,7 +141,8 @@ struct DiscoverView: View {
                                 VListItemView(
                                     title: item.title?.userPreferred ?? "",
                                     imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore
+                                    meanScore: item.meanScore,
+                                    status: item.mediaListEntry?.status?.value
                                 )
                                 .padding(.trailing, 4)
                                 .mediaContextMenu(
@@ -185,7 +188,8 @@ struct DiscoverView: View {
                                 VListItemView(
                                     title: item.title?.userPreferred ?? "",
                                     imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore
+                                    meanScore: item.meanScore,
+                                    status: item.mediaListEntry?.status?.value
                                 )
                                 .padding(.trailing, 4)
                                 .mediaContextMenu(
@@ -234,7 +238,8 @@ struct DiscoverView: View {
                                 VListItemView(
                                     title: item.title?.userPreferred ?? "",
                                     imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore
+                                    meanScore: item.meanScore,
+                                    status: item.mediaListEntry?.status?.value
                                 )
                                 .padding(.trailing, 4)
                                 .mediaContextMenu(
@@ -280,7 +285,8 @@ struct DiscoverView: View {
                                 VListItemView(
                                     title: item.title?.userPreferred ?? "",
                                     imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore
+                                    meanScore: item.meanScore,
+                                    status: item.mediaListEntry?.status?.value
                                 )
                                 .padding(.trailing, 4)
                                 .mediaContextMenu(

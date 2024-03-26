@@ -22,12 +22,16 @@ struct UserFavoritesView: View {
             ForEach(viewModel.favoritesAnime, id: \.?.id) {
                 if let media = $0 {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                        VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large)
-                            .mediaContextMenu(
-                                mediaId: media.id,
-                                mediaType: .anime,
-                                mediaListStatus: media.mediaListEntry?.status?.value
-                            )
+                        VListItemView(
+                            title: media.title?.userPreferred ?? "",
+                            imageUrl: media.coverImage?.large,
+                            status: media.mediaListEntry?.status?.value
+                        )
+                        .mediaContextMenu(
+                            mediaId: media.id,
+                            mediaType: .anime,
+                            mediaListStatus: media.mediaListEntry?.status?.value
+                        )
                     }
                     .buttonStyle(.plain)
                 }
@@ -52,7 +56,8 @@ struct UserFavoritesView: View {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
                         VListItemView(
                             title: media.title?.userPreferred ?? "",
-                            imageUrl: media.coverImage?.large
+                            imageUrl: media.coverImage?.large,
+                            status: media.mediaListEntry?.status?.value
                         )
                         .mediaContextMenu(
                             mediaId: media.id,

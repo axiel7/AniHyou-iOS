@@ -36,7 +36,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                                 relation.relationType?.value?.localizedName,
                                                 relation.node?.format?.value?.localizedName
                                             ),
-                                            imageUrl: relation.node?.coverImage?.large
+                                            imageUrl: relation.node?.coverImage?.large,
+                                            status: relation.node?.mediaListEntry?.status?.value
                                         )
                                         .padding(.leading)
                                         .frame(width: 280, alignment: .leading)
@@ -75,7 +76,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                     ) {
                                         VListItemView(
                                             title: recommendation.title?.userPreferred ?? "",
-                                            imageUrl: recommendation.coverImage?.large
+                                            imageUrl: recommendation.coverImage?.large,
+                                            status: recommendation.mediaListEntry?.status?.value
                                         )
                                         .padding(.trailing, 2)
                                         .mediaContextMenu(

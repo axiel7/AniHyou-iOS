@@ -18,12 +18,20 @@ struct ChartListItemView: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            MediaCoverView(
-                imageUrl: item.coverImage?.large,
-                width: coverWidth,
-                height: coverHeight,
-                cancelOnDisappear: true
-            )
+            ZStack(alignment: .bottomTrailing) {
+                MediaCoverView(
+                    imageUrl: item.coverImage?.large,
+                    width: coverWidth,
+                    height: coverHeight,
+                    cancelOnDisappear: true
+                )
+                if let status = item.mediaListEntry?.status?.value {
+                    Image(systemName: status.systemImage)
+                        .padding(4)
+                        .background(.thinMaterial, in: .circle)
+                        .padding(4)
+                }
+            }
 
             Text(position.stringValue)
                 .font(.title3)

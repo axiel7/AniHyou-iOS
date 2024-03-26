@@ -71,7 +71,8 @@ struct WeekAnimeListView: View {
                             title: media.title?.userPreferred ?? "",
                             imageUrl: media.coverImage?.large,
                             nextEpisode: item.episode,
-                            airingAt: item.airingAt
+                            airingAt: item.airingAt,
+                            status: media.mediaListEntry?.status?.value
                         )
                         .mediaContextMenu(
                             mediaId: item.mediaId,

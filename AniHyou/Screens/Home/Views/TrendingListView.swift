@@ -50,7 +50,8 @@ struct TrendingListView: View {
                             VListItemView(
                                 title: media.title?.userPreferred ?? "",
                                 imageUrl: media.coverImage?.large,
-                                meanScore: media.meanScore
+                                meanScore: media.meanScore,
+                                status: media.mediaListEntry?.status?.value
                             )
                             .mediaContextMenu(
                                 mediaId: media.id,

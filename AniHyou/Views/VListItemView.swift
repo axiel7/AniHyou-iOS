@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 struct VListItemView: View {
     static let coverWidth: CGFloat = 90
@@ -16,15 +17,24 @@ struct VListItemView: View {
     var meanScore: Int?
     var nextEpisode: Int?
     var airingAt: Int?
+    var status: MediaListStatus?
 
     var body: some View {
         VStack(alignment: .leading) {
-            MediaCoverView(
-                imageUrl: imageUrl,
-                width: VListItemView.coverWidth,
-                height: VListItemView.coverHeight,
-                cancelOnDisappear: true
-            )
+            ZStack(alignment: .bottomTrailing) {
+                MediaCoverView(
+                    imageUrl: imageUrl,
+                    width: VListItemView.coverWidth,
+                    height: VListItemView.coverHeight,
+                    cancelOnDisappear: true
+                )
+                if let status {
+                    Image(systemName: status.systemImage)
+                        .padding(4)
+                        .background(.thinMaterial, in: .circle)
+                        .padding(4)
+                }
+            }
             .padding(.top, 4)
 
             Text(title)

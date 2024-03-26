@@ -131,7 +131,8 @@ struct ExploreView: View {
                                     item.format?.value?.localizedName,
                                     "\(startYear)"
                                 ),
-                                imageUrl: item.coverImage?.large
+                                imageUrl: item.coverImage?.large,
+                                status: item.mediaListEntry?.status?.value
                             )
                             .mediaContextMenu(
                                 mediaId: item.id,
