@@ -137,9 +137,11 @@ struct UserFavoritesView: View {
                             .lineLimit(1)
                             .frame(minWidth: VListItemView.coverWidth - 15)
                             .padding()
-                            .background(.regularMaterial)
                             .foregroundStyle(.primary)
-                            .cornerRadius(8)
+                            .background {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(.regularMaterial)
+                            }
                     }
                     .buttonStyle(.plain)
                 }
