@@ -90,7 +90,7 @@ struct ThreadDetailsView: View {
                 }
                 .padding(.bottom)
 
-                if viewModel.hasNextPage || initThread != nil {
+                if viewModel.hasNextPage {
                     ProgressView()
                         .onAppear {
                             viewModel.getThreadComments(threadId: threadId)
