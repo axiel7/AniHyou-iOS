@@ -2,7 +2,8 @@
   "schemaNamespace" : "AniListAPI",
   "input" : {
     "operationSearchPaths" : [
-      "AniHyou/Queries/*.graphql"
+      "AniHyou/Queries/*.graphql",
+      "AniHyou/Queries/**/*.graphql"
     ],
     "schemaSearchPaths" : [
       "schema.graphqls"
