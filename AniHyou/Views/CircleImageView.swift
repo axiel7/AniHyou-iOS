@@ -10,7 +10,7 @@ import Kingfisher
 
 struct CircleImageView: View {
 
-    var imageUrl: String?
+    let imageUrl: String?
     let size: CGFloat
     var systemPlaceHolder: String = "person.circle.fill"
 
@@ -29,5 +29,5 @@ struct CircleImageView: View {
 }
 
 #Preview {
-    CircleImageView(size: 110)
+    CircleImageView(imageUrl: "", size: 110)
 }
