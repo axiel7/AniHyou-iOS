@@ -146,6 +146,7 @@
 		48B7ABEB2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
 		48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
 		48B7ABF32BB445080047998F /* StretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABF22BB445080047998F /* StretchyHeader.swift */; };
+		48B7ABF52BB4749F0047998F /* ToolbarBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABF42BB4749F0047998F /* ToolbarBackButton.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -460,6 +461,7 @@
 		48B7ABEC2BB4159A0047998F /* RateReview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RateReview.graphql; sourceTree = "<group>"; };
 		48B7ABEE2BB4214A0047998F /* NumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
 		48B7ABF22BB445080047998F /* StretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeader.swift; sourceTree = "<group>"; };
+		48B7ABF42BB4749F0047998F /* ToolbarBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarBackButton.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 				48CA07B428706D8F0048854E /* CircleImageView.swift */,
 				48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */,
 				48575D882A3EBD2200F8AD22 /* ToolbarIconButton.swift */,
+				48B7ABF42BB4749F0047998F /* ToolbarBackButton.swift */,
 				48D044E02A57AC9600ED3623 /* MultiSelectionSheet.swift */,
 				484E883F2A77E88B007E59E1 /* HorizontalProgressView.swift */,
 				48BB9E242ADBC43F00970D01 /* SafariWebView.swift */,
@@ -1842,6 +1845,7 @@
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
 				4820F6AB2ADE96FF00A4F465 /* ActivityFeedView.swift in Sources */,
 				480D76A529AB6A9800B56DE1 /* UserSocialViewModel.swift in Sources */,
+				48B7ABF52BB4749F0047998F /* ToolbarBackButton.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
 				484D22832AEE5B9100A20FE6 /* TriPicker.swift in Sources */,
 				4892AB7D2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,

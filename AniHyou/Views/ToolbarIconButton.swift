@@ -7,24 +7,45 @@
 
 import SwiftUI
 
+fileprivate extension View {
+    @ViewBuilder
+    func toolbarIconButtonForegroundStyle(scrolled: Bool, inverted: Bool) -> some View {
+        if scrolled {
+            if inverted {
+                self.foregroundStyle(.white, .tint)
+            } else {
+                self.foregroundStyle(.tint, .ultraThinMaterial)
+            }
+        } else {
+            if inverted {
+                self.foregroundStyle(.regularMaterial, .primary)
+            } else {
+                self.foregroundStyle(.white, .ultraThinMaterial)
+            }
+        }
+    }
+}
+
 struct ToolbarIconButton: View {
 
-    let symbolSystemName: String
+    let systemImage: String
+    var inverted: Bool = false
+    var scrolled: Bool = false
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
-            Image(systemName: symbolSystemName)
-                .font(.system(size: 13, weight: .semibold))
-                .padding(8)
-                .background(.ultraThinMaterial, in: .circle)
+            Image(systemName: systemImage)
         }
-        .buttonStyle(.plain)
+        .symbolVariant(.circle.fill)
+        .symbolRenderingMode(.palette)
+        .toolbarIconButtonForegroundStyle(scrolled: scrolled, inverted: inverted)
+        .environment(\.colorScheme, .dark)
     }
 }
 
 #Preview {
-    ToolbarIconButton(symbolSystemName: "chevron.left") {
-
+    ToolbarIconButton(systemImage: "heart", inverted: true, scrolled: false) {
+        
     }
 }

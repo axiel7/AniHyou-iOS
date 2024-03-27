@@ -35,26 +35,20 @@ struct MediaDetailsView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                if !hasScrolled {
-                    ToolbarIconButton(symbolSystemName: "chevron.left") {
-                        dismiss()
-                    }
-                    .transition(.slide)
+                ToolbarBackButton(scrolled: hasScrolled) {
+                    dismiss()
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 if let details = viewModel.mediaDetails {
-                    if !hasScrolled {
-                        ToolbarIconButton(
-                            symbolSystemName: details.isFavourite ? "heart.fill" : "heart"
-                        ) {
-                            viewModel.toggleFavorite()
-                        }
-                    } else {
-                        Button(action: { viewModel.toggleFavorite() }, label: {
-                            Image(systemName: details.isFavourite ? "heart.fill" : "heart")
-                        })
+                    ToolbarIconButton(
+                        systemImage: "heart",
+                        inverted: details.isFavourite,
+                        scrolled: hasScrolled
+                    ) {
+                        viewModel.toggleFavorite()
                     }
+                    .font(.system(size: 24))
                 }
             }
         }
@@ -173,5 +167,7 @@ struct MediaDetailsView: View {
 }
 
 #Preview {
-    MediaDetailsView(mediaId: 140960)
+    NavigationStack {
+        MediaDetailsView(mediaId: 140960)
+    }
 }
