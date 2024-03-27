@@ -7,7 +7,8 @@ public class ReviewDetailsQuery: GraphQLQuery {
   public static let operationName: String = "ReviewDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query ReviewDetails($reviewId: Int) { Review(id: $reviewId) { __typename id summary body(asHtml: true) score rating ratingAmount user { __typename id name avatar { __typename medium } } } }"#
+      #"query ReviewDetails($reviewId: Int) { Review(id: $reviewId) { __typename ...CommonReviewDetails } }"#,
+      fragments: [CommonReviewDetails.self]
     ))
 
   public var reviewId: GraphQLNullable<Int>
@@ -40,13 +41,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Review }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", Int.self),
-        .field("summary", String?.self),
-        .field("body", String?.self, arguments: ["asHtml": true]),
-        .field("score", Int?.self),
-        .field("rating", Int?.self),
-        .field("ratingAmount", Int?.self),
-        .field("user", User?.self),
+        .fragment(CommonReviewDetails.self),
       ] }
 
       /// The id of the review
@@ -61,48 +56,19 @@ public class ReviewDetailsQuery: GraphQLQuery {
       public var rating: Int? { __data["rating"] }
       /// The amount of user ratings of the review
       public var ratingAmount: Int? { __data["ratingAmount"] }
+      /// The rating of the review by currently authenticated user
+      public var userRating: GraphQLEnum<AniListAPI.ReviewRating>? { __data["userRating"] }
       /// The creator of the review
       public var user: User? { __data["user"] }
 
-      /// Review.User
-      ///
-      /// Parent Type: `User`
-      public struct User: AniListAPI.SelectionSet {
+      public struct Fragments: FragmentContainer {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
-        public static var __selections: [ApolloAPI.Selection] { [
-          .field("__typename", String.self),
-          .field("id", Int.self),
-          .field("name", String.self),
-          .field("avatar", Avatar?.self),
-        ] }
-
-        /// The id of the user
-        public var id: Int { __data["id"] }
-        /// The name of the user
-        public var name: String { __data["name"] }
-        /// The user's avatar images
-        public var avatar: Avatar? { __data["avatar"] }
-
-        /// Review.User.Avatar
-        ///
-        /// Parent Type: `UserAvatar`
-        public struct Avatar: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
-
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-          public static var __selections: [ApolloAPI.Selection] { [
-            .field("__typename", String.self),
-            .field("medium", String?.self),
-          ] }
-
-          /// The avatar of user at medium size
-          public var medium: String? { __data["medium"] }
-        }
+        public var commonReviewDetails: CommonReviewDetails { _toFragment() }
       }
+
+      public typealias User = CommonReviewDetails.User
     }
   }
 }

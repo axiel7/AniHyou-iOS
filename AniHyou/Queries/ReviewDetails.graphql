@@ -1,17 +1,23 @@
 query ReviewDetails($reviewId: Int) {
   Review(id: $reviewId) {
+    ...CommonReviewDetails
+  }
+}
+
+fragment CommonReviewDetails on Review
+@apollo_client_ios_localCacheMutation {
+  id
+  summary
+  body(asHtml: true)
+  score
+  rating
+  ratingAmount
+  userRating
+  user {
     id
-    summary
-    body(asHtml: true)
-    score
-    rating
-    ratingAmount
-    user {
-      id
-      name
-      avatar {
-        medium
-      }
+    name
+    avatar {
+      medium
     }
   }
 }

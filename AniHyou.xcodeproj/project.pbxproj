@@ -144,6 +144,7 @@
 		48B7ABE92BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
 		48B7ABEA2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
 		48B7ABEB2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
+		48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -455,6 +456,8 @@
 		48AF5397289E7743006D40B6 /* ThreadDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailsViewModel.swift; sourceTree = "<group>"; };
 		48B7ABE32BB322450047998F /* ThreadComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadComment.swift; sourceTree = "<group>"; };
 		48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		48B7ABEC2BB4159A0047998F /* RateReview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RateReview.graphql; sourceTree = "<group>"; };
+		48B7ABEE2BB4214A0047998F /* NumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -846,6 +849,7 @@
 				48691FF22ADD06A9009DCDFE /* ChildComments.graphql */,
 				4820F6B12ADE97FF00A4F465 /* ActivityFeed.graphql */,
 				48AAE40C2ADFA4BE003413B0 /* ActivityDetails.graphql */,
+				48B7ABEC2BB4159A0047998F /* RateReview.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -889,6 +893,7 @@
 				480A41A428ECA1A30066288D /* ModelUtils.swift */,
 				48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */,
 				482801772AB031DC004E11D6 /* MarkdownUtils.swift */,
+				48B7ABEE2BB4214A0047998F /* NumberUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1912,6 +1917,7 @@
 				4847E11E2B48EE770032521A /* MediaDetails.swift in Sources */,
 				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
 				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
+				48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
 				4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */,
 				4820F6BA2ADF9B3800A4F465 /* LikeRepository.swift in Sources */,

@@ -51,10 +51,3 @@ extension [LocalizedStringKey] {
         }
     }
 }
-
-extension Int {
-
-    var stringValue: String {
-        return "\(self)"
-    }
-}

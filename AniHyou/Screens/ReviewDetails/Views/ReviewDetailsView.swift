@@ -29,17 +29,41 @@ struct ReviewDetailsView: View {
                     Spacer()
                     MediaStatView(name: "Score", value: "\(review.score ?? 0)/100", showDivider: false)
                     Spacer()
-                    MediaStatView(
-                        name: "Users likes",
-                        value: String(swiftLintMultiline:
-                            "\(viewModel.userAcceptance)% ",
-                            "(\(review.rating ?? 0)/\(review.ratingAmount ?? 0))"
-                        ),
-                        showDivider: false
-                    )
-                    Spacer()
                 }
                 .padding()
+                HStack {
+                    MediaStatView(
+                        name: "Users likes",
+                        value: "\(viewModel.userAcceptance)%",
+                        showDivider: false
+                    )
+
+                    let userRating = viewModel.review?.userRating?.value
+                    let isUpvote = userRating == .upVote
+                    Button(
+                        review.rating?.stringValue ?? "",
+                        systemImage: isUpvote ? "hand.thumbsup.fill" : "hand.thumbsup"
+                    ) {
+                        viewModel.rateReview(
+                            reviewId: reviewId,
+                            rating: isUpvote ? .noVote : .upVote
+                        )
+                    }
+                    .padding(.horizontal)
+
+                    let isDownVote = userRating == .downVote
+                    Button(
+                        review.ratingAmount?.minus(review.rating)?.stringValue ?? "",
+                        systemImage: isDownVote ? "hand.thumbsdown.fill" : "hand.thumbsdown"
+                    ) {
+                        viewModel.rateReview(
+                            reviewId: reviewId,
+                            rating: isDownVote ? .noVote : .downVote
+                        )
+                    }
+                }
+                .padding(.top, 4)
+                .padding([.horizontal, .bottom])
             } else {
                 HorizontalProgressView()
             }

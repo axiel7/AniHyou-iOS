@@ -22,7 +22,7 @@ public enum SchemaConfiguration: ApolloAPI.SchemaConfiguration {
           guard let id = object["id"] as? Int else {
               return nil
           }
-          return CacheKeyInfo(id: String(id), uniqueKeyGroup: type.__typename)
+          return CacheKeyInfo(id: String(id), uniqueKeyGroup: type.typename)
       }
   }
 }
