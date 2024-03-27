@@ -69,7 +69,7 @@ struct UserFavoritesView: View {
                 }
             }
 
-            if viewModel.hasNextPageAnime {
+            if viewModel.hasNextPageManga {
                 ProgressView()
                     .onAppear {
                         viewModel.getFavoritesManga(userId: userId)
