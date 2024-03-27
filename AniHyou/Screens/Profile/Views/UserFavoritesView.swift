@@ -135,6 +135,7 @@ struct UserFavoritesView: View {
                         Text(studio.name)
                             .multilineTextAlignment(.center)
                             .lineLimit(1)
+                            .frame(minWidth: VListItemView.coverWidth - 15)
                             .padding()
                             .background(.regularMaterial)
                             .foregroundStyle(.primary)
@@ -163,7 +164,7 @@ struct UserFavoritesView: View {
         @ViewBuilder let content: Content
 
         var body: some View {
-            Group {
+            VStack(alignment: .leading) {
                 Text(title)
                     .font(.title3)
                     .bold()
