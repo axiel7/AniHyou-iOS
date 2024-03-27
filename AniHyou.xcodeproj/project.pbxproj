@@ -145,6 +145,7 @@
 		48B7ABEA2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
 		48B7ABEB2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */; };
 		48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
+		48B7ABF32BB445080047998F /* StretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABF22BB445080047998F /* StretchyHeader.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -458,6 +459,7 @@
 		48B7ABE82BB346BA0047998F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		48B7ABEC2BB4159A0047998F /* RateReview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RateReview.graphql; sourceTree = "<group>"; };
 		48B7ABEE2BB4214A0047998F /* NumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
+		48B7ABF22BB445080047998F /* StretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeader.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -766,6 +768,7 @@
 				481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */,
 				481AD50628522D74001779EE /* VListItemView.swift */,
 				4832B02D285F38DC00E79D27 /* TopBannerView.swift */,
+				48B7ABF22BB445080047998F /* StretchyHeader.swift */,
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
 				4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */,
 				481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */,
@@ -1833,6 +1836,7 @@
 				48F7641628ACECA900C82D75 /* UserActivityView.swift in Sources */,
 				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
 				480300D3291BC56F00E3047B /* StaffDetailsViewModel.swift in Sources */,
+				48B7ABF32BB445080047998F /* StretchyHeader.swift in Sources */,
 				48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,

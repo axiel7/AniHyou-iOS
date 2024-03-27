@@ -15,45 +15,20 @@ struct TopBannerView: View {
     let height: CGFloat
 
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                KFImage(URL(string: imageUrl ?? ""))
-                    .placeholder {
-                        Rectangle()
-                            .foregroundStyle(Color(hex: placeholderHexColor) ?? .gray)
-                            .scaledToFill()
-                    }
-                    .resizable()
-                    .scaledToFill()
-                    .frame(
-                        width: geo.size.width,
-                        height: geo
-                            .frame(in: .global)
-                            .minY <= 0 ? geo.size.height : geo.size.height + geo
-                            .frame(in: .global).minY
-                    )
-                    .clipped()
-                Rectangle()
-                    .foregroundStyle(.clear)
-                    .background {
-                        LinearGradient(
-                            gradient: Gradient(colors: [.clear, .black.opacity(0.6)]),
-                            startPoint: .bottom,
-                            endPoint: .top
-                        )
-                        .padding(.bottom, 20)
-                    }
-            }
-            .offset(y: geo.frame(in: .global).minY <= 0 ? 0 : -geo.frame(in: .global).minY)
-            .frame(
-                width: geo.size.width,
-                height: geo
-                    .frame(in: .global)
-                    .minY <= 0 ? geo.size.height : geo.size.height + geo
-                    .frame(in: .global).minY
-            )
+        StretchyHeader(height: height) {
+            image
         }
-        .frame(minHeight: height)
+    }
+    
+    var image: some View {
+        KFImage(URL(string: imageUrl ?? ""))
+            .placeholder {
+                Rectangle()
+                    .foregroundStyle(Color(hex: placeholderHexColor) ?? .gray)
+                    .scaledToFill()
+            }
+            .resizable()
+            .scaledToFill()
     }
 }
 

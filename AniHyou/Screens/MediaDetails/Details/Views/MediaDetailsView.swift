@@ -22,8 +22,8 @@ struct MediaDetailsView: View {
 
     var body: some View {
         Group {
-            if let details = viewModel.mediaDetails {
-                detailsView(details)
+            if viewModel.mediaDetails != nil {
+                detailsView
             } else {
                 ProgressView()
                     .onAppear {
@@ -31,7 +31,8 @@ struct MediaDetailsView: View {
                     }
             }
         }//:Group
-        .navigationBarBackButtonHidden(!hasScrolled)
+        .navigationBarTitleDisplayMode(.inline) // fixes banner shuttering
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 if !hasScrolled {
@@ -66,42 +67,44 @@ struct MediaDetailsView: View {
     }
     
     @ViewBuilder
-    func detailsView(_ details: MediaDetailsQuery.Data.Media) -> some View {
-        ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
-            LazyVStack(alignment: .leading) {
-                // MARK: - Header
-                TopBannerView(
-                    imageUrl: details.bannerImage,
-                    placeholderHexColor: details.coverImage?.color,
-                    height: bannerHeight
-                )
-
-                // MARK: - Main info
-                MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
-
-                // MARK: - Main stats
-                mainStats(details)
-
-                // MARK: - Synopsis
-                ExpandableTextView(text: $attributedSynopsis, showCopy: true)
-                    .padding(.top)
-                    .padding(.horizontal)
-
-                // MARK: - More info
-                moreInfo
-            }//:VStack
-            .padding(.bottom)
-        }//:VScrollView
-        .edgesIgnoringSafeArea(.top)
+    var detailsView: some View {
+        if let details = viewModel.mediaDetails {
+            ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
+                LazyVStack(alignment: .leading) {
+                    // MARK: - Header
+                    TopBannerView(
+                        imageUrl: details.bannerImage,
+                        placeholderHexColor: details.coverImage?.color,
+                        height: bannerHeight
+                    )
+                    
+                    // MARK: - Main info
+                    MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
+                    
+                    // MARK: - Main stats
+                    mainStats
+                    
+                    // MARK: - Synopsis
+                    ExpandableTextView(text: $attributedSynopsis, showCopy: true)
+                     .padding(.top)
+                     .padding(.horizontal)
+                    
+                    // MARK: - More info
+                    moreInfo
+                }//:VStack
+                .padding(.bottom)
+            }//:VScrollView
+            .ignoresSafeArea(edges: .top)
+        }
     }//:detailsView
     
     @ViewBuilder
-    func mainStats(_ details: MediaDetailsQuery.Data.Media) -> some View {
+    var mainStats: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             VStack {
                 Divider()
                 HStack {
-                    if let schedule = details.nextAiringEpisode {
+                    if let schedule = viewModel.mediaDetails?.nextAiringEpisode {
                         let relativeDate = Date(timeIntervalSince1970: Double(schedule.airingAt))
                         MediaStatView(
                             name: "Airing",
@@ -112,23 +115,23 @@ struct MediaDetailsView: View {
                     }
                     MediaStatView(
                         name: "Mean Score",
-                        value: "\(details.meanScore ?? 0)%"
+                        value: "\(viewModel.mediaDetails?.meanScore ?? 0)%"
                     )
                     MediaStatView(
                         name: "Average Score",
-                        value: "\(details.averageScore ?? 0)%"
+                        value: "\(viewModel.mediaDetails?.averageScore ?? 0)%"
                     )
                     MediaStatView(
                         name: "Status",
-                        value: details.status?.value?.localizedName
+                        value: viewModel.mediaDetails?.status?.value?.localizedName
                     )
                     MediaStatView(
                         name: "Popularity",
-                        value: (details.popularity ?? 0).formatted()
+                        value: (viewModel.mediaDetails?.popularity ?? 0).formatted()
                     )
                     MediaStatView(
                         name: "Favorites",
-                        value: (details.favourites ?? 0).formatted(),
+                        value: (viewModel.mediaDetails?.favourites ?? 0).formatted(),
                         showDivider: false
                     )
                 }
