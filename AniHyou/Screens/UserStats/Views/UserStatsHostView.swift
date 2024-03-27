@@ -16,13 +16,6 @@ struct UserStatsHostView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Picker("", selection: $mediaType) {
-                Text("Anime").tag(MediaType.anime)
-                Text("Manga").tag(MediaType.manga)
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-
             Picker("Stats", selection: $statType) {
                 ForEach(UserStatType.allCases, id: \.self) { type in
                     if type == .voiceActors || type == .studios {
@@ -34,14 +27,23 @@ struct UserStatsHostView: View {
                     }
                 }
             }
-            .padding()
+            .padding(.horizontal, 4)
+            
+            Picker("", selection: $mediaType) {
+                Text("Anime").tag(MediaType.anime)
+                Text("Manga").tag(MediaType.manga)
+            }
+            .pickerStyle(.segmented)
+            .padding(.vertical)
+            .padding(.horizontal)
 
             switch statType {
             case .overview:
                 OverviewStatsView(userId: userId, mediaType: mediaType)
                     .id(mediaType)
             case .genres:
-                Text("Coming soon")
+                GenresStatsView(userId: userId, mediaType: mediaType)
+                    .id(mediaType)
             case .tags:
                 Text("Coming soon")
             case .staff:

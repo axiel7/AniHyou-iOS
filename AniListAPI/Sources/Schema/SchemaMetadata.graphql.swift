@@ -90,6 +90,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "StaffEdge": return AniListAPI.Objects.StaffEdge
     case "UserStatisticTypes": return AniListAPI.Objects.UserStatisticTypes
     case "UserStatistics": return AniListAPI.Objects.UserStatistics
+    case "UserGenreStatistic": return AniListAPI.Objects.UserGenreStatistic
     case "UserScoreStatistic": return AniListAPI.Objects.UserScoreStatistic
     case "UserFormatStatistic": return AniListAPI.Objects.UserFormatStatistic
     case "UserStatusStatistic": return AniListAPI.Objects.UserStatusStatistic
