@@ -98,6 +98,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "UserCountryStatistic": return AniListAPI.Objects.UserCountryStatistic
     case "UserReleaseYearStatistic": return AniListAPI.Objects.UserReleaseYearStatistic
     case "UserStartYearStatistic": return AniListAPI.Objects.UserStartYearStatistic
+    case "UserStaffStatistic": return AniListAPI.Objects.UserStaffStatistic
     default: return nil
     }
   }

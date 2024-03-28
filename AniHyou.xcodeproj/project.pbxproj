@@ -154,6 +154,8 @@
 		48B7AC152BB569C40047998F /* NotificationCenterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC142BB569C40047998F /* NotificationCenterUtils.swift */; };
 		48B7AC172BB56DEF0047998F /* TagsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC162BB56DEF0047998F /* TagsStatsView.swift */; };
 		48B7AC192BB56E2E0047998F /* TagsStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */; };
+		48B7AC1B2BB57C7D0047998F /* StaffStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */; };
+		48B7AC1D2BB57C970047998F /* StaffStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1C2BB57C970047998F /* StaffStatsView.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -470,8 +472,10 @@
 		48B7ABF22BB445080047998F /* StretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeader.swift; sourceTree = "<group>"; };
 		48B7ABF42BB4749F0047998F /* ToolbarBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarBackButton.swift; sourceTree = "<group>"; };
 		48B7AC042BB49C870047998F /* UserStatsAnimeGenres.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsAnimeGenres.graphql; sourceTree = "<group>"; };
+		48B7AC052BB49C910047998F /* UserStatsAnimeStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsAnimeStaff.graphql; sourceTree = "<group>"; };
 		48B7AC062BB49C9A0047998F /* UserStatsAnimeTags.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsAnimeTags.graphql; sourceTree = "<group>"; };
 		48B7AC072BB49CA30047998F /* UserStatsMangaGenres.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaGenres.graphql; sourceTree = "<group>"; };
+		48B7AC082BB49CAA0047998F /* UserStatsMangaStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaStaff.graphql; sourceTree = "<group>"; };
 		48B7AC092BB49CB00047998F /* UserStatsMangaTags.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaTags.graphql; sourceTree = "<group>"; };
 		48B7AC0C2BB49DBA0047998F /* GenresStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC0E2BB49F120047998F /* StatDistributionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDistributionType.swift; sourceTree = "<group>"; };
@@ -480,6 +484,8 @@
 		48B7AC142BB569C40047998F /* NotificationCenterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterUtils.swift; sourceTree = "<group>"; };
 		48B7AC162BB56DEF0047998F /* TagsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsStatsView.swift; sourceTree = "<group>"; };
 		48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsStatsViewModel.swift; sourceTree = "<group>"; };
+		48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffStatsViewModel.swift; sourceTree = "<group>"; };
+		48B7AC1C2BB57C970047998F /* StaffStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffStatsView.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -1212,9 +1218,11 @@
 			children = (
 				48B7AC042BB49C870047998F /* UserStatsAnimeGenres.graphql */,
 				48DBAF7729B0776A00A75167 /* UserStatsAnimeOverview.graphql */,
+				48B7AC052BB49C910047998F /* UserStatsAnimeStaff.graphql */,
 				48B7AC062BB49C9A0047998F /* UserStatsAnimeTags.graphql */,
 				48B7AC072BB49CA30047998F /* UserStatsMangaGenres.graphql */,
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
+				48B7AC082BB49CAA0047998F /* UserStatsMangaStaff.graphql */,
 				48B7AC092BB49CB00047998F /* UserStatsMangaTags.graphql */,
 			);
 			path = Stats;
@@ -1311,6 +1319,7 @@
 				48DBAF8429B082EA00A75167 /* OverviewStatsViewModel.swift */,
 				48B7AC0C2BB49DBA0047998F /* GenresStatsViewModel.swift */,
 				48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */,
+				48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1323,6 +1332,7 @@
 				48B7AC102BB4A1EA0047998F /* GenresStatsView.swift */,
 				48B7AC122BB4A43E0047998F /* PositionalStatItemView.swift */,
 				48B7AC162BB56DEF0047998F /* TagsStatsView.swift */,
+				48B7AC1C2BB57C970047998F /* StaffStatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2031,6 +2041,7 @@
 				48F763E828ACDE0200C82D75 /* UserFavoritesView.swift in Sources */,
 				4832B030285F3CDD00E79D27 /* MediaCoverView.swift in Sources */,
 				48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */,
+				48B7AC1D2BB57C970047998F /* StaffStatsView.swift in Sources */,
 				48AAE40B2ADFA44B003413B0 /* ActivityDetailsViewModel.swift in Sources */,
 				488C26832853881F0005EE15 /* LoginViewModel.swift in Sources */,
 				488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */,
@@ -2080,6 +2091,7 @@
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				48E58E2D2A85B4D700EF0CA2 /* MediaList.swift in Sources */,
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
+				48B7AC1B2BB57C7D0047998F /* StaffStatsViewModel.swift in Sources */,
 				48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */,
 				48E58E3C2A85B61600EF0CA2 /* CharacterRole.swift in Sources */,
 				48B7ABE42BB322450047998F /* ThreadComment.swift in Sources */,
