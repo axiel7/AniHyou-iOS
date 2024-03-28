@@ -40,6 +40,9 @@ struct HomeView: View {
         .onAppear {
             viewModel.getNotificationCount()
         }
+        .onReceive(NotificationCenter.default.publisher(for: "readNotifications")) { _ in
+            viewModel.notificationCount = 0
+        }
         .sheet(isPresented: $showNotificationsSheet) {
             NotificationsView()
         }

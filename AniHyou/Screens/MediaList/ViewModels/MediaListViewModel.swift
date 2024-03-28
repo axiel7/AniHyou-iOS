@@ -100,7 +100,7 @@ class MediaListViewModel: ObservableObject {
         Task {
             let updated = await MediaListRepository.updateProgress(entryId: entryId, progress: progress, status: status)
             if updated {
-                onEntryUpdated(mediaId: mediaId, entryId: entryId, updatedEntry: nil, progress: progress)
+                onEntryUpdated(BasicMediaListEntry(progress: progress, id: entryId, mediaId: mediaId))
             }
             DispatchQueue.main.async { [weak self] in
                 self?.isLoading = false
@@ -108,16 +108,16 @@ class MediaListViewModel: ObservableObject {
         }
     }
 
-    func onEntryUpdated(mediaId: Int, entryId: Int, updatedEntry: BasicMediaListEntry?, progress: Int?) {
-        guard let foundIndex = mediaList.firstIndex(where: { $0?.id == entryId }) else { return }
+    func onEntryUpdated(_ entry: BasicMediaListEntry) {
+        guard let foundIndex = mediaList.firstIndex(where: { $0?.id == entry.id }) else { return }
         //if the status changed, remove from this list
-        if let updatedEntry, mediaList[foundIndex]?.status != updatedEntry.status {
-            onEntryDeleted(entryId: updatedEntry.id)
+        if mediaList[foundIndex]?.status != entry.status {
+            onEntryDeleted(entryId: entry.id)
             return
         }
         //else update the local cache
         Task {
-            let updatedItem = await MediaListRepository.updateCachedEntry(mediaId: mediaId, entryId: entryId)
+            let updatedItem = await MediaListRepository.updateCachedEntry(mediaId: entry.mediaId, entryId: entry.id)
             DispatchQueue.main.async { [weak self] in
                 self?.mediaList[foundIndex] = updatedItem
             }

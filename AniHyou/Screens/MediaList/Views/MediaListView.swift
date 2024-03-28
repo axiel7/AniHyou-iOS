@@ -49,6 +49,13 @@ struct MediaListView: View {
         .onChange(of: sortAscending) { newValue in
             viewModel.onSortChanged(sort, isAscending: newValue)
         }
+        .onReceive(
+            NotificationCenter.default.publisher(for: "updatedMediaListEntry")
+        ) { notification in
+            if let entry = notification.object as? BasicMediaListEntry {
+                viewModel.onEntryUpdated(entry)
+            }
+        }
         .onAppear {
             viewModel.mediaType = type
             viewModel.mediaListStatus = statusSelected.value
@@ -61,13 +68,8 @@ struct MediaListView: View {
                 MediaListEditView(
                     mediaDetails: media.fragments.basicMediaDetails,
                     mediaList: item.fragments.basicMediaListEntry,
-                    onSave: { updatedEntry in
-                        viewModel.onEntryUpdated(
-                            mediaId: updatedEntry.mediaId,
-                            entryId: updatedEntry.id,
-                            updatedEntry: updatedEntry,
-                            progress: nil
-                        )
+                    onSave: { entry in
+                        viewModel.onEntryUpdated(entry)
                     },
                     onDelete: {
                         viewModel.onEntryDeleted(entryId: item.id)
@@ -161,7 +163,7 @@ struct MediaListView: View {
         .mediaContextMenu(mediaId: item.mediaId, mediaType: type, mediaListStatus: item.status?.value)
     }
 
-    func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList!) {
+    func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList) {
         var status: MediaListStatus?
         if item.status == .planning {
             status = .current

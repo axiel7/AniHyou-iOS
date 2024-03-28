@@ -39,6 +39,9 @@ class NotificationsViewModel: ObservableObject {
 
                         self?.notifications.append(contentsOf: tempList)
                     }
+                    if self?.currentPage == 1 {
+                        NotificationCenter.default.post(name: "readNotifications", object: nil)
+                    }
                     self?.currentPage += 1
                     self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
                 }

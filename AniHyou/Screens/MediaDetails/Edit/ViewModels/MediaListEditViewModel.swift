@@ -140,6 +140,7 @@ class MediaListEditViewModel: ObservableObject {
             ) {
                 DispatchQueue.main.async { [weak self] in
                     self?.updatedEntry = updatedEntry
+                    NotificationCenter.default.post(name: "updatedMediaListEntry", object: updatedEntry)
                     self?.isUpdateSuccess = true
                     self?.isLoading = false
                 }
