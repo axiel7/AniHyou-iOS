@@ -158,6 +158,8 @@
 		48B7AC1D2BB57C970047998F /* StaffStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1C2BB57C970047998F /* StaffStatsView.swift */; };
 		48B7AC1F2BB59D2F0047998F /* VoiceActorsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1E2BB59D2F0047998F /* VoiceActorsStatsView.swift */; };
 		48B7AC212BB59D4E0047998F /* VoiceActorsStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */; };
+		48B7AC232BB59F610047998F /* StudiosStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC222BB59F610047998F /* StudiosStatsViewModel.swift */; };
+		48B7AC272BB59FB70047998F /* StudiosStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC262BB59FB70047998F /* StudiosStatsView.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -479,6 +481,7 @@
 		48B7AC072BB49CA30047998F /* UserStatsMangaGenres.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaGenres.graphql; sourceTree = "<group>"; };
 		48B7AC082BB49CAA0047998F /* UserStatsMangaStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaStaff.graphql; sourceTree = "<group>"; };
 		48B7AC092BB49CB00047998F /* UserStatsMangaTags.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaTags.graphql; sourceTree = "<group>"; };
+		48B7AC0A2BB49CB70047998F /* UserStatsStudios.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsStudios.graphql; sourceTree = "<group>"; };
 		48B7AC0B2BB49CBD0047998F /* UserStatsVoiceActors.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsVoiceActors.graphql; sourceTree = "<group>"; };
 		48B7AC0C2BB49DBA0047998F /* GenresStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC0E2BB49F120047998F /* StatDistributionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDistributionType.swift; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 		48B7AC1C2BB57C970047998F /* StaffStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffStatsView.swift; sourceTree = "<group>"; };
 		48B7AC1E2BB59D2F0047998F /* VoiceActorsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActorsStatsView.swift; sourceTree = "<group>"; };
 		48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActorsStatsViewModel.swift; sourceTree = "<group>"; };
+		48B7AC222BB59F610047998F /* StudiosStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiosStatsViewModel.swift; sourceTree = "<group>"; };
+		48B7AC262BB59FB70047998F /* StudiosStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiosStatsView.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -1229,6 +1234,7 @@
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
 				48B7AC082BB49CAA0047998F /* UserStatsMangaStaff.graphql */,
 				48B7AC092BB49CB00047998F /* UserStatsMangaTags.graphql */,
+				48B7AC0A2BB49CB70047998F /* UserStatsStudios.graphql */,
 				48B7AC0B2BB49CBD0047998F /* UserStatsVoiceActors.graphql */,
 			);
 			path = Stats;
@@ -1327,6 +1333,7 @@
 				48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */,
 				48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */,
 				48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */,
+				48B7AC222BB59F610047998F /* StudiosStatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1341,6 +1348,7 @@
 				48B7AC162BB56DEF0047998F /* TagsStatsView.swift */,
 				48B7AC1C2BB57C970047998F /* StaffStatsView.swift */,
 				48B7AC1E2BB59D2F0047998F /* VoiceActorsStatsView.swift */,
+				48B7AC262BB59FB70047998F /* StudiosStatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1981,6 +1989,7 @@
 				488763D62977F83F00402934 /* HorizontalBarStatsView.swift in Sources */,
 				48E58E342A85B5AA00EF0CA2 /* MediaSeason.swift in Sources */,
 				484A6D6B287484C40044C34A /* MediaReviewsAndThreadsView.swift in Sources */,
+				48B7AC232BB59F610047998F /* StudiosStatsViewModel.swift in Sources */,
 				48B7AC152BB569C40047998F /* NotificationCenterUtils.swift in Sources */,
 				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
 				48D929E82ABAC76900330C71 /* MainTab.swift in Sources */,
@@ -2097,6 +2106,7 @@
 				48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
 				4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */,
+				48B7AC272BB59FB70047998F /* StudiosStatsView.swift in Sources */,
 				4820F6BA2ADF9B3800A4F465 /* LikeRepository.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				48E58E2D2A85B4D700EF0CA2 /* MediaList.swift in Sources */,

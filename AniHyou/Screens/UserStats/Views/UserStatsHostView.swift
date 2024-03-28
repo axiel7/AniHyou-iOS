@@ -57,7 +57,7 @@ struct UserStatsHostView: View {
             case .voiceActors:
                 VoiceActorsStatsView(userId: userId)
             case .studios:
-                Text("Coming soon")
+                StudiosStatsView(userId: userId)
             }
         }
     }
