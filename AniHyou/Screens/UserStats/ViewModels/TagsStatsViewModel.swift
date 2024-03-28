@@ -26,8 +26,8 @@ class TagsStatsViewModel: ObservableObject {
             ) { [weak self] result in
                 switch result {
                 case .success(let graphQLResult):
-                    if let genres = graphQLResult.data?.user?.statistics?.anime?.tags {
-                        self?.tags = genres.compactMap { $0?.fragments.tagStat }
+                    if let tags = graphQLResult.data?.user?.statistics?.anime?.tags {
+                        self?.tags = tags.compactMap { $0?.fragments.tagStat }
                     }
                 case .failure(let error):
                     print(error)
@@ -43,8 +43,8 @@ class TagsStatsViewModel: ObservableObject {
             ) { [weak self] result in
                 switch result {
                 case .success(let graphQLResult):
-                    if let genres = graphQLResult.data?.user?.statistics?.manga?.tags {
-                        self?.tags = genres.compactMap { $0?.fragments.tagStat }
+                    if let tags = graphQLResult.data?.user?.statistics?.manga?.tags {
+                        self?.tags = tags.compactMap { $0?.fragments.tagStat }
                     }
                 case .failure(let error):
                     print(error)

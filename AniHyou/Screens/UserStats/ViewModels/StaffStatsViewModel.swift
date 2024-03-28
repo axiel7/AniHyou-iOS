@@ -43,8 +43,8 @@ class StaffStatsViewModel: ObservableObject {
             ) { [weak self] result in
                 switch result {
                 case .success(let graphQLResult):
-                    if let genres = graphQLResult.data?.user?.statistics?.manga?.staff {
-                        self?.staff = genres.compactMap { $0?.fragments.staffStat }
+                    if let staff = graphQLResult.data?.user?.statistics?.manga?.staff {
+                        self?.staff = staff.compactMap { $0?.fragments.staffStat }
                     }
                 case .failure(let error):
                     print(error)
