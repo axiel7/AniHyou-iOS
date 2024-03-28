@@ -31,6 +31,14 @@ extension Int {
         }
     }
     
+    func div(_ number: Int?) -> Int? {
+        if let number {
+            self / number
+        } else {
+            nil
+        }
+    }
+    
     func toDouble() -> Double {
         Double(self)
     }

@@ -13,11 +13,12 @@ struct MediaListView: View {
     let type: MediaType
     let statusSelected: MediaListStatusSelect
     var userId: Int?
-    var isEditable: Bool {
+    var isMyList: Bool {
         return userId == nil
     }
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false
+
     @AppStorage(LIST_SORT) private var sort = MediaListSort.updatedTimeDesc
     @AppStorage(LIST_SORT_ORDER) private var sortAscending = false
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
@@ -112,7 +113,7 @@ struct MediaListView: View {
             }
         }
         .swipeActions(edge: .leading) {
-            if isEditable
+            if isMyList
                 && incrementLongSwipeDirection == .right
                 && item.shouldShowIncrementButton
             {
@@ -131,7 +132,7 @@ struct MediaListView: View {
             }
         }
         .swipeActions(edge: .trailing) {
-            if isEditable {
+            if isMyList {
                 if incrementLongSwipeDirection == .left
                     && item.shouldShowIncrementButton
                 {

@@ -40,10 +40,20 @@ struct ProfileView: View {
                         }
                     }
                     .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
+                    .onAppear {
+                        viewModel.getMyUserInfo()
+                    }
             }//:NavigationStack
         } else {
             content
+                .onAppear {
+                    viewModel.getUserInfo(userId: userId!)
+                }
                 .tint(Color(hex: viewModel.userInfo?.options?.profileColor?.profileHexColor) ?? .accentColor)
+                .environment(
+                    \.scoreFormat,
+                     viewModel.userInfo?.mediaListOptions?.scoreFormat?.value ?? .point100
+                )
         }
     }//:body
 
@@ -66,13 +76,6 @@ struct ProfileView: View {
                 otherProfileInfo
             }//:LazyVStack
         }//:VScrollView
-        .onAppear {
-            if isMyProfile {
-                viewModel.getMyUserInfo()
-            } else {
-                viewModel.getUserInfo(userId: userId!)
-            }
-        }
     }
 
     @ViewBuilder

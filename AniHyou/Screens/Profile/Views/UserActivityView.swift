@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 struct UserActivityView: View {
 
     let userId: Int
     let isMyProfile: Bool
     @StateObject private var viewModel = UserActivityViewModel()
+    @Environment(\.scoreFormat) private var scoreFormat: ScoreFormat
 
     var body: some View {
         if !isMyProfile {
@@ -19,16 +21,19 @@ struct UserActivityView: View {
                 Spacer()
                 NavigationLink("Anime List") {
                     MediaListStatusView(mediaType: .anime, userId: userId)
+                        .environment(\.scoreFormat, scoreFormat) // for some reason this is required
                         .id(userId)
                 }
                 Spacer()
                 NavigationLink("Manga List") {
                     MediaListStatusView(mediaType: .manga, userId: userId)
+                        .environment(\.scoreFormat, scoreFormat)
                         .id(userId)
                 }
                 Spacer()
             }
             .padding()
+            .navigationBarTitleDisplayMode(.inline)
         }
         ForEach(viewModel.activities, id: \.?.id) { item in
             if let listActivity = item?.asListActivity?.fragments.listActivityFragment {

@@ -12,10 +12,6 @@ struct MediaListItemMinimalView: View {
 
     let item: UserMediaListQuery.Data.Page.MediaList?
     var showStatus: Bool = false
-    @AppStorage(USER_SCORE_KEY) var scoreFormat: String = ScoreFormat.point100.rawValue
-    var scoreFormatEnum: ScoreFormat {
-        return ScoreFormat(rawValue: scoreFormat) ?? .point100
-    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -51,7 +47,7 @@ struct MediaListItemMinimalView: View {
                     Image(systemName: "note.text")
                         .foregroundStyle(.gray)
                 }
-                MediaListScoreIndicator(score: item?.score ?? 0, format: scoreFormatEnum)
+                MediaListScoreIndicator(score: item?.score ?? 0)
             }
         }
         .padding(.vertical, 4)

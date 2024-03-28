@@ -71,9 +71,7 @@ struct MediaContextMenuView: View {
                             .padding(.bottom, 1)
                         
                         Label("\(details.meanScore ?? 0)%", systemImage: "star.fill")
-                            .foregroundStyle(ScoreFormat.point100.scoreColor(
-                                score: Double(details.meanScore ?? 0)
-                            ))
+                            .foregroundStyle(ScoreFormat.point100.color(score: details.meanScore))
                             .font(.subheadline)
                         
                         Text(details.format?.value?.localizedName ?? "Unknown")

@@ -11,9 +11,9 @@ import AniListAPI
 struct MediaListScoreIndicator: View {
 
     let score: Double
-    let format: ScoreFormat
+    @Environment(\.scoreFormat) private var format: ScoreFormat
     var color: Color {
-        if score == 0 { return .gray } else { return format.scoreColor(score: score) }
+        format.color(score: Int(round(score)))
     }
 
     var body: some View {
@@ -57,8 +57,11 @@ struct MediaListScoreIndicator: View {
 
 #Preview {
     VStack(alignment: .trailing) {
-        MediaListScoreIndicator(score: 0, format: .point100)
-        MediaListScoreIndicator(score: 2.8, format: .point10Decimal)
-        MediaListScoreIndicator(score: 3, format: .point3)
+        MediaListScoreIndicator(score: 0)
+            .environment(\.scoreFormat, .point100)
+        MediaListScoreIndicator(score: 2.8)
+            .environment(\.scoreFormat, .point10Decimal)
+        MediaListScoreIndicator(score: 3)
+            .environment(\.scoreFormat, .point3)
     }
 }

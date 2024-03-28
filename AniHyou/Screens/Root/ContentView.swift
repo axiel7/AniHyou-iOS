@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 fileprivate extension View {
     func tabItem(_ tab: MainTab) -> some View {
@@ -21,6 +22,10 @@ struct ContentView: View {
 
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
+    @AppStorage(USER_SCORE_KEY) private var myScoreFormatRawValue = ScoreFormat.point100.rawValue
+    var myScoreFormat: ScoreFormat {
+        return ScoreFormat(rawValue: myScoreFormatRawValue) ?? .point100
+    }
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {
@@ -30,6 +35,7 @@ struct ContentView: View {
             if isLoggedIn {
                 MediaListStatusView(mediaType: .anime)
                     .tabItem(.anime)
+                    .environment(\.scoreFormat, myScoreFormat)
             } else {
                 NotLoggedView()
                     .tabItem(.anime)
@@ -38,6 +44,7 @@ struct ContentView: View {
             if isLoggedIn {
                 MediaListStatusView(mediaType: .manga)
                     .tabItem(.manga)
+                    .environment(\.scoreFormat, myScoreFormat)
             } else {
                 NotLoggedView()
                     .tabItem(.manga)

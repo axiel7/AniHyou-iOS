@@ -20,6 +20,7 @@ class OverviewStatsViewModel: ObservableObject {
 
     @Published var animeStats: UserStatsAnimeOverviewQuery.Data.User.Statistics.Anime?
 
+    // swiftlint:disable:next function_body_length
     func getAnimeOverview(userId: Int) {
         isLoading = true
         Network.shared.apollo.fetch(query: UserStatsAnimeOverviewQuery(userId: .some(userId))) { [weak self] result in
@@ -34,15 +35,20 @@ class OverviewStatsViewModel: ObservableObject {
                     self?.scoreStatsTime.removeAll()
                     data.scores?.forEach {
                         if let score = $0 {
+                            let scoreInt = if scoreFormat == .point10Decimal {
+                                score.score?.div(10)
+                            } else {
+                                score.score
+                            }
                             self?.scoreStatsCount.append(Stat(
                                 id: String(score.score ?? 0),
                                 value: CGFloat(score.count),
-                                color: scoreFormat.scoreColor(score: score.score?.toDouble())
+                                color: scoreFormat.color(score: scoreInt)
                             ))
                             self?.scoreStatsTime.append(Stat(
                                 id: String(score.score ?? 0),
                                 value: CGFloat(score.minutesWatched / 60),
-                                color: scoreFormat.scoreColor(score: score.score?.toDouble())
+                                color: scoreFormat.color(score: scoreInt)
                             ))
                         }
                     }
@@ -76,28 +82,35 @@ class OverviewStatsViewModel: ObservableObject {
 
     @Published var mangaStats: UserStatsMangaOverviewQuery.Data.User.Statistics.Manga?
 
+    // swiftlint:disable:next function_body_length
     func getMangaOverview(userId: Int) {
         isLoading = true
         Network.shared.apollo.fetch(query: UserStatsMangaOverviewQuery(userId: .some(userId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
-                if let data = graphQLResult.data?.user?.statistics?.manga {
+                if let data = graphQLResult.data?.user?.statistics?.manga,
+                   let scoreFormat = graphQLResult.data?.user?.mediaListOptions?.scoreFormat?.value
+                {
                     self?.mangaStats = data
 
                     self?.scoreStatsCount.removeAll()
                     self?.scoreStatsTime.removeAll()
                     data.scores?.forEach {
                         if let score = $0 {
-                            let scoreRounded = Int(round(score.meanScore))
+                            let scoreInt = if scoreFormat == .point10Decimal {
+                                score.score?.div(10)
+                            } else {
+                                score.score
+                            }
                             self?.scoreStatsCount.append(Stat(
-                                id: String(scoreRounded),
+                                id: String(score.score ?? 0),
                                 value: CGFloat(score.count),
-                                color: ScoreFormat.point100.scoreColor(score: score.meanScore)
+                                color: scoreFormat.color(score: scoreInt)
                             ))
                             self?.scoreStatsTime.append(Stat(
-                                id: String(scoreRounded),
+                                id: String(score.score ?? 0),
                                 value: CGFloat(score.chaptersRead),
-                                color: ScoreFormat.point100.scoreColor(score: score.meanScore)
+                                color: scoreFormat.color(score: scoreInt)
                             ))
                         }
                     }

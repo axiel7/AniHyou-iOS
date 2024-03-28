@@ -9,19 +9,17 @@ import SwiftUI
 import AniListAPI
 
 extension ScoreFormat {
-
+    
     // swiftlint:disable:next cyclomatic_complexity
-    func scoreColor(score: Double?) -> Color {
-        guard score != 0 else { return .gray }
+    func color(score: Int?) -> Color {
+        guard let score, score > 0 else { return .gray }
         switch self {
         case .point100:
-            return Color("Score\(Int(round(score! / 10) * 10))")
-        case .point10Decimal:
-            return Color("Score\(Int(round(score!)) * 10)")
-        case .point10:
-            return Color("Score\(Int(score!) * 10)")
+            return Color("Score\((score / 10) * 10)")
+        case .point10, .point10Decimal:
+            return Color("Score\(score * 10)")
         case .point5:
-            switch Int(score!) {
+            switch score {
             case 1:
                 return .score10
             case 2:
@@ -36,7 +34,7 @@ extension ScoreFormat {
                 return .gray
             }
         case .point3:
-            switch Int(score!) {
+            switch score {
             case 1:
                 return .red
             case 2:
@@ -79,5 +77,16 @@ extension ScoreFormat {
     
     var canUseAdvancedScoring: Bool {
         return self == .point100 || self == .point10Decimal
+    }
+}
+
+private struct ScoreFormatKey: EnvironmentKey {
+    static let defaultValue: ScoreFormat = .point100
+}
+
+extension EnvironmentValues {
+    var scoreFormat: ScoreFormat {
+        get { self[ScoreFormatKey.self] }
+        set { self[ScoreFormatKey.self] = newValue }
     }
 }
