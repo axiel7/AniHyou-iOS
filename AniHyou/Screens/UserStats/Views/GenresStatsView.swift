@@ -27,13 +27,8 @@ struct GenresStatsView: View {
                 }
                 .padding(.horizontal, 4)
                 
-                let genres = if mediaType == .anime {
-                    viewModel.animeGenres
-                } else {
-                    viewModel.mangaGenres
-                }
                 LazyVStack {
-                    ForEach(Array(genres.enumerated()), id: \.element.genre) { index, stat in
+                    ForEach(Array(viewModel.genres.enumerated()), id: \.element.genre) { index, stat in
                         PositionalStatItemView(
                             name: stat.genre ?? "",
                             position: index + 1,

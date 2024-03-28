@@ -12,8 +12,7 @@ class GenresStatsViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var distribution: StatDistributionType = .titles
-    @Published var animeGenres = [GenreStat]()
-    @Published var mangaGenres = [GenreStat]()
+    @Published var genres = [GenreStat]()
     
     func getGenresStats(userId: Int, mediaType: MediaType) {
         isLoading = true
@@ -28,7 +27,7 @@ class GenresStatsViewModel: ObservableObject {
                 switch result {
                 case .success(let graphQLResult):
                     if let genres = graphQLResult.data?.user?.statistics?.anime?.genres {
-                        self?.animeGenres = genres.compactMap { $0?.fragments.genreStat }
+                        self?.genres = genres.compactMap { $0?.fragments.genreStat }
                     }
                 case .failure(let error):
                     print(error)
@@ -45,7 +44,7 @@ class GenresStatsViewModel: ObservableObject {
                 switch result {
                 case .success(let graphQLResult):
                     if let genres = graphQLResult.data?.user?.statistics?.manga?.genres {
-                        self?.mangaGenres = genres.compactMap { $0?.fragments.genreStat }
+                        self?.genres = genres.compactMap { $0?.fragments.genreStat }
                     }
                 case .failure(let error):
                     print(error)
