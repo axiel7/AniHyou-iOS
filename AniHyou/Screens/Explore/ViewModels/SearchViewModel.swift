@@ -33,7 +33,8 @@ class SearchViewModel: ObservableObject {
     @Published var country: CountryOfOrigin?
     
     private var hasFilters: Bool {
-        return !selectedGenres.isEmpty
+        return sortMedia != .searchMatch
+        || !selectedGenres.isEmpty
         || !selectedTags.isEmpty
         || !selectedMediaFormat.isEmpty
         || !selectedMediaStatus.isEmpty
@@ -114,6 +115,8 @@ class SearchViewModel: ObservableObject {
     @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
 
     private func searchMedia(type: MediaType) {
+        if search.isEmpty && !hasFilters { return }
+        
         isLoading = true
 
         selectedGenresTagsJoined = (Array(selectedGenres) + selectedTags).joined(separator: ", ")
@@ -165,6 +168,7 @@ class SearchViewModel: ObservableObject {
     @Published var searchedCharacters = [SearchCharacterQuery.Data.Page.Character?]()
 
     private func searchCharacters() {
+        if search.isEmpty { return }
         isLoading = true
         Network.shared.apollo.fetch(query: SearchCharacterQuery(
             page: .some(1),
@@ -188,6 +192,7 @@ class SearchViewModel: ObservableObject {
     @Published var searchedStaff = [SearchStaffQuery.Data.Page.Staff?]()
 
     private func searchStaff() {
+        if search.isEmpty { return }
         isLoading = true
         Network.shared.apollo.fetch(query: SearchStaffQuery(
             page: .some(1),
@@ -211,6 +216,7 @@ class SearchViewModel: ObservableObject {
     @Published var searchedStudios = [SearchStudioQuery.Data.Page.Studio?]()
 
     private func searchStudios() {
+        if search.isEmpty { return }
         isLoading = true
         Network.shared.apollo.fetch(query: SearchStudioQuery(
             page: .some(1),
@@ -234,6 +240,7 @@ class SearchViewModel: ObservableObject {
     @Published var searchedUsers = [SearchUserQuery.Data.Page.User?]()
 
     private func searchUsers() {
+        if search.isEmpty { return }
         isLoading = true
         Network.shared.apollo.fetch(query: SearchUserQuery(
             page: .some(1),

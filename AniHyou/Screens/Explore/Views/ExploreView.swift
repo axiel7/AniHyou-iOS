@@ -431,20 +431,16 @@ struct ExploreView: View {
                     .foregroundStyle(.gray)
             }//:HStack
         })//:Button
-        .sheet(
-            isPresented: $isMediaStatusPresented,
-            onDismiss: { viewModel.runSearch() },
-            content: {
-                MultiSelectionSheet(
-                    values: MediaStatus.allCases,
-                    selectedValues: $viewModel.selectedMediaStatus,
-                    onDone: { viewModel.runSearch() },
-                    rowContent: { status in
-                        Text(status.localizedName)
-                    }
-                )
-            }
-        )//:Sheet
+        .sheet(isPresented: $isMediaStatusPresented) {
+            MultiSelectionSheet(
+                values: MediaStatus.allCases,
+                selectedValues: $viewModel.selectedMediaStatus,
+                onDone: { viewModel.runSearch() },
+                rowContent: { status in
+                    Text(status.localizedName)
+                }
+            )
+        }//:Sheet
     }
 }
 
