@@ -19,6 +19,10 @@ struct VerticalBarsStatsView: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
+            if #available(iOS 17.0, *) {
+                Spacer()
+                    .containerRelativeFrame([.horizontal])
+            }
             HStack(alignment: .bottom) {
                 ForEach(stats) { stat in
                     VStack {
@@ -40,7 +44,12 @@ struct VerticalBarsStatsView: View {
                 }
             }
             .padding(.horizontal)
+            if #available(iOS 17.0, *) {
+                Spacer()
+                    .containerRelativeFrame([.horizontal])
+            }
         }
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 
