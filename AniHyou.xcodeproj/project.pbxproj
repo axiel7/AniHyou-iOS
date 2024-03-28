@@ -156,6 +156,8 @@
 		48B7AC192BB56E2E0047998F /* TagsStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */; };
 		48B7AC1B2BB57C7D0047998F /* StaffStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */; };
 		48B7AC1D2BB57C970047998F /* StaffStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1C2BB57C970047998F /* StaffStatsView.swift */; };
+		48B7AC1F2BB59D2F0047998F /* VoiceActorsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC1E2BB59D2F0047998F /* VoiceActorsStatsView.swift */; };
+		48B7AC212BB59D4E0047998F /* VoiceActorsStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -477,6 +479,7 @@
 		48B7AC072BB49CA30047998F /* UserStatsMangaGenres.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaGenres.graphql; sourceTree = "<group>"; };
 		48B7AC082BB49CAA0047998F /* UserStatsMangaStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaStaff.graphql; sourceTree = "<group>"; };
 		48B7AC092BB49CB00047998F /* UserStatsMangaTags.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaTags.graphql; sourceTree = "<group>"; };
+		48B7AC0B2BB49CBD0047998F /* UserStatsVoiceActors.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsVoiceActors.graphql; sourceTree = "<group>"; };
 		48B7AC0C2BB49DBA0047998F /* GenresStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC0E2BB49F120047998F /* StatDistributionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDistributionType.swift; sourceTree = "<group>"; };
 		48B7AC102BB4A1EA0047998F /* GenresStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresStatsView.swift; sourceTree = "<group>"; };
@@ -486,6 +489,8 @@
 		48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC1C2BB57C970047998F /* StaffStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffStatsView.swift; sourceTree = "<group>"; };
+		48B7AC1E2BB59D2F0047998F /* VoiceActorsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActorsStatsView.swift; sourceTree = "<group>"; };
+		48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActorsStatsViewModel.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -1224,6 +1229,7 @@
 				482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */,
 				48B7AC082BB49CAA0047998F /* UserStatsMangaStaff.graphql */,
 				48B7AC092BB49CB00047998F /* UserStatsMangaTags.graphql */,
+				48B7AC0B2BB49CBD0047998F /* UserStatsVoiceActors.graphql */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -1320,6 +1326,7 @@
 				48B7AC0C2BB49DBA0047998F /* GenresStatsViewModel.swift */,
 				48B7AC182BB56E2E0047998F /* TagsStatsViewModel.swift */,
 				48B7AC1A2BB57C7D0047998F /* StaffStatsViewModel.swift */,
+				48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1333,6 +1340,7 @@
 				48B7AC122BB4A43E0047998F /* PositionalStatItemView.swift */,
 				48B7AC162BB56DEF0047998F /* TagsStatsView.swift */,
 				48B7AC1C2BB57C970047998F /* StaffStatsView.swift */,
+				48B7AC1E2BB59D2F0047998F /* VoiceActorsStatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1999,6 +2007,7 @@
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
 				4820F6AB2ADE96FF00A4F465 /* ActivityFeedView.swift in Sources */,
 				480D76A529AB6A9800B56DE1 /* UserSocialViewModel.swift in Sources */,
+				48B7AC1F2BB59D2F0047998F /* VoiceActorsStatsView.swift in Sources */,
 				48B7ABF52BB4749F0047998F /* ToolbarBackButton.swift in Sources */,
 				48F7640D28ACE81000C82D75 /* RelationRecommendationViewModel.swift in Sources */,
 				484D22832AEE5B9100A20FE6 /* TriPicker.swift in Sources */,
@@ -2084,6 +2093,7 @@
 				4847E11E2B48EE770032521A /* MediaDetails.swift in Sources */,
 				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
 				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
+				48B7AC212BB59D4E0047998F /* VoiceActorsStatsViewModel.swift in Sources */,
 				48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
 				4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */,

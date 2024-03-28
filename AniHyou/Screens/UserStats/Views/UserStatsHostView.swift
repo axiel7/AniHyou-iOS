@@ -55,7 +55,7 @@ struct UserStatsHostView: View {
                 StaffStatsView(userId: userId, mediaType: mediaType)
                     .id(mediaType)
             case .voiceActors:
-                Text("Coming soon")
+                VoiceActorsStatsView(userId: userId)
             case .studios:
                 Text("Coming soon")
             }
