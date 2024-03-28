@@ -13,6 +13,8 @@ extension Int {
         return "\(self)"
     }
     
+    // MARK: - helper extension functions to use with nullable receiver
+    
     func minus(_ number: Int?) -> Int? {
         if let number {
             self - number
@@ -27,5 +29,9 @@ extension Int {
         } else {
             nil
         }
+    }
+    
+    func toDouble() -> Double {
+        Double(self)
     }
 }

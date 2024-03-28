@@ -25,23 +25,24 @@ class OverviewStatsViewModel: ObservableObject {
         Network.shared.apollo.fetch(query: UserStatsAnimeOverviewQuery(userId: .some(userId))) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
-                if let data = graphQLResult.data?.user?.statistics?.anime {
+                if let data = graphQLResult.data?.user?.statistics?.anime,
+                   let scoreFormat = graphQLResult.data?.user?.mediaListOptions?.scoreFormat?.value
+                {
                     self?.animeStats = data
 
                     self?.scoreStatsCount.removeAll()
                     self?.scoreStatsTime.removeAll()
                     data.scores?.forEach {
                         if let score = $0 {
-                            let scoreRounded = Int(round(score.meanScore))
                             self?.scoreStatsCount.append(Stat(
-                                id: String(scoreRounded),
+                                id: String(score.score ?? 0),
                                 value: CGFloat(score.count),
-                                color: ScoreFormat.point100.scoreColor(score: score.meanScore)
+                                color: scoreFormat.scoreColor(score: score.score?.toDouble())
                             ))
                             self?.scoreStatsTime.append(Stat(
-                                id: String(scoreRounded),
+                                id: String(score.score ?? 0),
                                 value: CGFloat(score.minutesWatched / 60),
-                                color: ScoreFormat.point100.scoreColor(score: score.meanScore)
+                                color: scoreFormat.scoreColor(score: score.score?.toDouble())
                             ))
                         }
                     }

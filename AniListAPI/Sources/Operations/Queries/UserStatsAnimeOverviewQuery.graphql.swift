@@ -7,7 +7,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsAnimeOverview"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserStatsAnimeOverview($userId: Int) { User(id: $userId) { __typename statistics { __typename anime { __typename count episodesWatched minutesWatched meanScore standardDeviation scores(sort: MEAN_SCORE) { __typename count minutesWatched meanScore } formats { __typename count minutesWatched meanScore format } statuses { __typename count minutesWatched meanScore status } countries { __typename count minutesWatched meanScore country } releaseYears { __typename count minutesWatched meanScore releaseYear } startYears { __typename count minutesWatched meanScore startYear } } } } }"#
+      #"query UserStatsAnimeOverview($userId: Int) { User(id: $userId) { __typename mediaListOptions { __typename scoreFormat } statistics { __typename anime { __typename count episodesWatched minutesWatched meanScore standardDeviation scores(sort: MEAN_SCORE) { __typename count minutesWatched meanScore score } lengths { __typename length count minutesWatched meanScore } formats { __typename count minutesWatched meanScore format } statuses { __typename count minutesWatched meanScore status } countries { __typename count minutesWatched meanScore country } releaseYears { __typename count minutesWatched meanScore releaseYear } startYears { __typename count minutesWatched meanScore startYear } } } } }"#
     ))
 
   public var userId: GraphQLNullable<Int>
@@ -40,11 +40,31 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
+        .field("mediaListOptions", MediaListOptions?.self),
         .field("statistics", Statistics?.self),
       ] }
 
+      /// The user's media list options
+      public var mediaListOptions: MediaListOptions? { __data["mediaListOptions"] }
       /// The users anime & manga list statistics
       public var statistics: Statistics? { __data["statistics"] }
+
+      /// User.MediaListOptions
+      ///
+      /// Parent Type: `MediaListOptions`
+      public struct MediaListOptions: AniListAPI.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
+        ] }
+
+        /// The score format the user is using for media lists
+        public var scoreFormat: GraphQLEnum<AniListAPI.ScoreFormat>? { __data["scoreFormat"] }
+      }
 
       /// User.Statistics
       ///
@@ -77,6 +97,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             .field("meanScore", Double.self),
             .field("standardDeviation", Double.self),
             .field("scores", [Score?]?.self, arguments: ["sort": "MEAN_SCORE"]),
+            .field("lengths", [Length?]?.self),
             .field("formats", [Format?]?.self),
             .field("statuses", [Status?]?.self),
             .field("countries", [Country?]?.self),
@@ -90,6 +111,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           public var meanScore: Double { __data["meanScore"] }
           public var standardDeviation: Double { __data["standardDeviation"] }
           public var scores: [Score?]? { __data["scores"] }
+          public var lengths: [Length?]? { __data["lengths"] }
           public var formats: [Format?]? { __data["formats"] }
           public var statuses: [Status?]? { __data["statuses"] }
           public var countries: [Country?]? { __data["countries"] }
@@ -109,8 +131,32 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
               .field("count", Int.self),
               .field("minutesWatched", Int.self),
               .field("meanScore", Double.self),
+              .field("score", Int?.self),
             ] }
 
+            public var count: Int { __data["count"] }
+            public var minutesWatched: Int { __data["minutesWatched"] }
+            public var meanScore: Double { __data["meanScore"] }
+            public var score: Int? { __data["score"] }
+          }
+
+          /// User.Statistics.Anime.Length
+          ///
+          /// Parent Type: `UserLengthStatistic`
+          public struct Length: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserLengthStatistic }
+            public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("length", String?.self),
+              .field("count", Int.self),
+              .field("minutesWatched", Int.self),
+              .field("meanScore", Double.self),
+            ] }
+
+            public var length: String? { __data["length"] }
             public var count: Int { __data["count"] }
             public var minutesWatched: Int { __data["minutesWatched"] }
             public var meanScore: Double { __data["meanScore"] }

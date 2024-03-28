@@ -1,48 +1,58 @@
 query UserStatsAnimeOverview($userId: Int) {
-  User(id: $userId) {
-    statistics {
-      anime {
-        count
-        episodesWatched
-        minutesWatched
-        meanScore
-        standardDeviation
-        scores(sort: MEAN_SCORE) {
-          count
-          minutesWatched
-          meanScore
+    User(id: $userId) {
+        mediaListOptions {
+            scoreFormat
         }
-        formats {
-          count
-          minutesWatched
-          meanScore
-          format
+        statistics {
+            anime {
+                count
+                episodesWatched
+                minutesWatched
+                meanScore
+                standardDeviation
+                scores(sort: MEAN_SCORE) {
+                    count
+                    minutesWatched
+                    meanScore
+                    score
+                }
+                lengths {
+                    length
+                    count
+                    minutesWatched
+                    meanScore
+                }
+                formats {
+                    count
+                    minutesWatched
+                    meanScore
+                    format
+                }
+                statuses {
+                    count
+                    minutesWatched
+                    meanScore
+                    status
+                }
+                countries {
+                    count
+                    minutesWatched
+                    meanScore
+                    country
+                }
+                releaseYears {
+                    count
+                    minutesWatched
+                    meanScore
+                    releaseYear
+                }
+                startYears {
+                    count
+                    minutesWatched
+                    meanScore
+                    startYear
+                }
+            }
         }
-        statuses {
-          count
-          minutesWatched
-          meanScore
-          status
-        }
-        countries {
-          count
-          minutesWatched
-          meanScore
-          country
-        }
-        releaseYears {
-          count
-          minutesWatched
-          meanScore
-          releaseYear
-        }
-        startYears {
-          count
-          minutesWatched
-          meanScore
-          startYear
-        }
-      }
     }
-  }
 }
