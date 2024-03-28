@@ -13,12 +13,15 @@ public enum UserStatType: Equatable, Hashable, CaseIterable {
     case genres
     case tags
     case staff
-    //anime only
     case voiceActors
     case studios
 }
 
 extension UserStatType {
+    var isAnime: Bool {
+        return self == .voiceActors || self == .studios
+    }
+    
     var localizedName: LocalizedStringKey {
         switch self {
         case .overview:
