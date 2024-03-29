@@ -42,7 +42,7 @@ struct OverviewStatsView: View {
                     .font(.title3)
                     .padding(.horizontal)
                     .padding(.top)
-                Picker("Score", selection: $scoreStatType) {
+                Picker("Distribution type", selection: $scoreStatType) {
                     Text("Titles Count").tag(StatDistributionType.titles)
                     if mediaType == .anime {
                         Text("Hours Watched").tag(StatDistributionType.time)
@@ -67,7 +67,7 @@ struct OverviewStatsView: View {
                 .font(.title3)
                 .padding(.horizontal)
                 .padding(.top)
-                Picker("Length type", selection: $lengthStatType) {
+                Picker("Distribution type", selection: $lengthStatType) {
                     ForEach(StatDistributionType.allCases, id: \.self) {
                         Text($0.localizedName)
                     }
@@ -107,7 +107,7 @@ struct OverviewStatsView: View {
                     .font(.title3)
                     .padding(.horizontal)
                     .padding(.top)
-                Picker("Release Year type", selection: $releaseYearStatType) {
+                Picker("Distribution type", selection: $releaseYearStatType) {
                     ForEach(StatDistributionType.allCases, id: \.self) {
                         Text($0.localizedName)
                     }
@@ -135,7 +135,7 @@ struct OverviewStatsView: View {
                 .font(.title3)
                 .padding(.horizontal)
                 .padding(.top)
-                Picker("Start Year type", selection: $releaseYearStatType) {
+                Picker("Distribution type", selection: $releaseYearStatType) {
                     ForEach(StatDistributionType.allCases, id: \.self) {
                         Text($0.localizedName)
                     }

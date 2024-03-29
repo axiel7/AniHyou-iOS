@@ -19,5 +19,12 @@
 "Watched episode %1$@ of %2$@" = "Watched episode %1$@ of %2$@";
 "Read chapter %1$@ of %2$@" = "Read chapter %1$@ of %2$@";
 
+"Current" = "Current";
+"Completed" = "Completed";
+"Paused" = "Paused";
+"Planning" = "Planning";
+"Dropped" = "Dropped";
+"Repeating" = "Repeating";
+
 // Set to Status
-"Set as $@" = "Set as $@";
+"Set as %@" = "Set as %@";
