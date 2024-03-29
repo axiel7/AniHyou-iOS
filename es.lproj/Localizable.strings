@@ -53,6 +53,9 @@
 "Added" = "Añadido";
 
 /* No comment provided by engineer. */
+"Adult" = "Adulto";
+
+/* No comment provided by engineer. */
 "Adventure" = "Aventura";
 
 /* No comment provided by engineer. */
@@ -71,7 +74,7 @@
 "Airing on my list" = "Emitiéndose en mi lista";
 
 /* No comment provided by engineer. */
-"All" = "Todas";
+"All" = "Todo";
 
 /* No comment provided by engineer. */
 "Alternative" = "Alternativo";
@@ -137,7 +140,13 @@
 "Changes will take effect on app restart" = "Los cambios surtirán efecto al reiniciar la app";
 
 /* No comment provided by engineer. */
+"Chapter Count" = "Recuento de Capítulos";
+
+/* No comment provided by engineer. */
 "Chapters" = "Capítulos";
+
+/* No comment provided by engineer. */
+"Chapters read" = "Capítulos leídos";
 
 /* No comment provided by engineer. */
 "Chapters Read" = "Capítulos Leídos";
@@ -150,6 +159,9 @@
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Personajes y Staff";
+
+/* No comment provided by engineer. */
+"China" = "China";
 
 /* No comment provided by engineer. */
 "Choose between Anime or Manga." = "Elige entre Anime o Manga.";
@@ -167,15 +179,12 @@
 "Comic" = "Cómic";
 
 /* No comment provided by engineer. */
-"Coming soon" = "Próximamente";
-
-/* No comment provided by engineer. */
 "Compact" = "Compacto";
 
 /* No comment provided by engineer. */
 "Compilation" = "Compilación";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Completed" = "Completado";
 
 /* No comment provided by engineer. */
@@ -197,6 +206,12 @@
 "Copy" = "Copiar";
 
 /* No comment provided by engineer. */
+"Country" = "País";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "Distribución por Países";
+
+/* (No Comment) */
 "Current" = "Actual";
 
 /* No comment provided by engineer. */
@@ -239,6 +254,9 @@
 "Display" = "Visualización";
 
 /* No comment provided by engineer. */
+"Distribution type" = "Tipo de distribución";
+
+/* No comment provided by engineer. */
 "Donate" = "Donaciones";
 
 /* No comment provided by engineer. */
@@ -246,6 +264,9 @@
 
 /* No comment provided by engineer. */
 "Donation" = "Donación";
+
+/* No comment provided by engineer. */
+"Donator" = "Donador";
 
 /* No comment provided by engineer. */
 "Done" = "Hecho";
@@ -256,7 +277,7 @@
 /* No comment provided by engineer. */
 "Drama" = "Drama";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Dropped" = "Descartado";
 
 /* No comment provided by engineer. */
@@ -285,6 +306,9 @@
 
 /* No comment provided by engineer. */
 "Ep %lld at %@" = "Ep %lld a las %@";
+
+/* No comment provided by engineer. */
+"Episode Count" = "Recuento de Episodios";
 
 /* No comment provided by engineer. */
 "Episodes" = "Episodios";
@@ -341,13 +365,16 @@
 "Format" = "Formato";
 
 /* No comment provided by engineer. */
-"Format distribution" = "Distribución de formatos";
+"Format Distribution" = "Distribución de Formatos";
 
 /* No comment provided by engineer. */
 "Forum" = "Foro";
 
 /* (No Comment) */
 "friday_short" = "V";
+
+/* No comment provided by engineer. */
+"From year" = "Desde el año";
 
 /* No comment provided by engineer. */
 "Game" = "Videojuego";
@@ -377,6 +404,9 @@
 "Hide filters" = "Ocultar filtros";
 
 /* No comment provided by engineer. */
+"Hide from status lists" = "Ocultar de las listas de estado";
+
+/* No comment provided by engineer. */
 "Hide spoiler" = "Ocultar spoiler";
 
 /* No comment provided by engineer. */
@@ -402,6 +432,9 @@
 
 /* No comment provided by engineer. */
 "Information" = "Información";
+
+/* No comment provided by engineer. */
+"Japan" = "Japón";
 
 /* No comment provided by engineer. */
 "Japanese" = "Japonés";
@@ -455,6 +488,9 @@
 "Manga List" = "Lista de Manga";
 
 /* No comment provided by engineer. */
+"Mean score" = "Puntuación";
+
+/* No comment provided by engineer. */
 "Mean Score" = "Puntuación";
 
 /* No comment provided by engineer. */
@@ -504,6 +540,9 @@
 
 /* No comment provided by engineer. */
 "Next Season" = "Próxima Temporada";
+
+/* No comment provided by engineer. */
+"No" = "No";
 
 /* No comment provided by engineer. */
 "No airing anime in your list\n(*´-`)" = "No hay anime en emisión en tu lista\n(* ́-`)";
@@ -572,12 +611,12 @@
 "OVA" = "OVA";
 
 /* No comment provided by engineer. */
-"Overview" = "Visión general";
+"Overview" = "Resumen";
 
 /* No comment provided by engineer. */
 "Parent" = "Padre";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Paused" = "Pausado";
 
 /* No comment provided by engineer. */
@@ -586,7 +625,7 @@
 /* No comment provided by engineer. */
 "Picture book" = "Libro ilustrado";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Planning" = "Planeado";
 
 /* No comment provided by engineer. */
@@ -647,6 +686,9 @@
 "Read chapter %1$@ of %2$@" = "Leyó el capítulo %1$@ de %2$@";
 
 /* No comment provided by engineer. */
+"Read Year" = "Año de Lectura";
+
+/* No comment provided by engineer. */
 "Recommendations" = "Recomendaciones";
 
 /* No comment provided by engineer. */
@@ -659,6 +701,9 @@
 "Release Date" = "Fecha de Publicación";
 
 /* No comment provided by engineer. */
+"Release Year" = "Año de Lanzamiento";
+
+/* No comment provided by engineer. */
 "Releasing" = "Publicándose";
 
 /* No comment provided by engineer. */
@@ -667,7 +712,7 @@
 /* No comment provided by engineer. */
 "Repeat Count" = "Número de repeticiones";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Repeating" = "Repitiendo";
 
 /* No comment provided by engineer. */
@@ -727,6 +772,9 @@
 /* No comment provided by engineer. */
 "Sequel" = "Secuela";
 
+/* Set to Status */
+"Set as %@" = "Marcar como %@";
+
 /* No comment provided by engineer. */
 "Set progress" = "Establecer progreso";
 
@@ -773,6 +821,9 @@
 "Source" = "Fuente";
 
 /* No comment provided by engineer. */
+"South Korea" = "Corea del Sur";
+
+/* No comment provided by engineer. */
 "Special" = "Especial";
 
 /* No comment provided by engineer. */
@@ -812,6 +863,9 @@
 "Status distribution" = "Distribución de estado";
 
 /* No comment provided by engineer. */
+"Status Distribution" = "Distribución de Estado";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Sitios de streaming";
 
 /* No comment provided by engineer. */
@@ -845,6 +899,9 @@
 "Tags" = "Etiquetas";
 
 /* No comment provided by engineer. */
+"Taiwan" = "Taiwán";
+
+/* No comment provided by engineer. */
 "Text Status" = "Texto";
 
 /* No comment provided by engineer. */
@@ -869,13 +926,22 @@
 "thursday_short" = "J";
 
 /* No comment provided by engineer. */
+"Time spent" = "Tiempo dedicado";
+
+/* No comment provided by engineer. */
 "Title" = "Título";
+
+/* No comment provided by engineer. */
+"Title count" = "Número de títulos";
 
 /* No comment provided by engineer. */
 "Title language" = "Idioma del título";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Número de títulos";
+
+/* No comment provided by engineer. */
+"To year" = "Hasta el año";
 
 /* No comment provided by engineer. */
 "Top 100" = "Top 100";
@@ -885,6 +951,9 @@
 
 /* No comment provided by engineer. */
 "Top 100 Manga" = "Top 100 Manga";
+
+/* No comment provided by engineer. */
+"Top Movies" = "Top Películas";
 
 /* No comment provided by engineer. */
 "Top Popular" = "Top Popular";
@@ -961,6 +1030,9 @@
 /* No comment provided by engineer. */
 "Volumes Read" = "Volúmenes Leídos";
 
+/* No comment provided by engineer. */
+"Watch Year" = "Año de Visualización";
+
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Vio el episodio %1$@ de %2$@";
 
@@ -984,6 +1056,9 @@
 
 /* No comment provided by engineer. */
 "Years active" = "Años activos";
+
+/* No comment provided by engineer. */
+"Yes" = "Sí";
 
 /* No comment provided by engineer. */
 "You may need to login again in your browser" = "Es posible que tengas que volver a iniciar sesión en tu navegador";
