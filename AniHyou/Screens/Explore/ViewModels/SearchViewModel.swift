@@ -147,7 +147,7 @@ class SearchViewModel: ObservableObject {
             onList: someIfNotNil(mediaOnMyList),
             isLicensed: someIfNotNil(isDoujinshi?.not()),
             isAdult: someIfNotNil(isAdult),
-            country: someIfNotNil(country?.rawValue)
+            country: someIfNotNil(country)
         )) { [weak self] result in
             switch result {
             case .success(let graphQLResult):

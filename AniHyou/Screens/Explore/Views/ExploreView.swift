@@ -78,7 +78,7 @@ struct ExploreView: View {
                     Picker("Country", selection: $viewModel.country) {
                         Text("None").tag(Optional<CountryOfOrigin>(nil))
                         ForEach(CountryOfOrigin.allCases, id: \.self) {
-                            Text($0.localized).tag(Optional($0))
+                            Text($0.localizedName).tag(Optional($0))
                         }
                     }
                     .onChange(of: viewModel.country) { _ in

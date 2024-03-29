@@ -1093,7 +1093,6 @@
 				48B7AC0E2BB49F120047998F /* StatDistributionType.swift */,
 				48DD40482994EA9200FED7BF /* GenericNotification.swift */,
 				48575D862A3EACEE00F8AD22 /* NotificationTypeGrouped.swift */,
-				484D22842AEE5F4000A20FE6 /* CountryOfOrigin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1425,6 +1424,7 @@
 				4820F6B32ADEA52000A4F465 /* ActivityType.swift */,
 				4820F6B52ADEAF1100A4F465 /* ListActivity.swift */,
 				48B7ABE32BB322450047998F /* ThreadComment.swift */,
+				484D22842AEE5F4000A20FE6 /* CountryOfOrigin.swift */,
 			);
 			path = AniListAPI_Extensions;
 			sourceTree = "<group>";

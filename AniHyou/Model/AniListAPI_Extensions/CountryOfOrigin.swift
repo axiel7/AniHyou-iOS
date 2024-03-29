@@ -7,14 +7,10 @@
 
 import Foundation
 import SwiftUI
+import AniListAPI
 
-enum CountryOfOrigin: String, CaseIterable, Hashable {
-    case japan = "JP"
-    case southKorea = "KR"
-    case china = "CN"
-    case taiwan = "TW"
-    
-    var localized: LocalizedStringKey {
+extension CountryOfOrigin {
+    var localizedName: LocalizedStringKey {
         switch self {
         case .japan:
             return "Japan"
@@ -24,6 +20,19 @@ enum CountryOfOrigin: String, CaseIterable, Hashable {
             return "China"
         case .taiwan:
             return "Taiwan"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .japan:
+            Color.accentColor
+        case .southKorea:
+            Color("Score60")
+        case .china:
+            Color("Score40")
+        case .taiwan:
+            Color("Score50")
         }
     }
 }
