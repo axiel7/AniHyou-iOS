@@ -69,9 +69,9 @@ struct ProfileView: View {
             mainProfileInfo
                 .padding(.top, -50)
             
+            profileBio
+            
             LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
-                    
-                profileBio
                     
                 otherProfileInfo
             }//:LazyVStack
