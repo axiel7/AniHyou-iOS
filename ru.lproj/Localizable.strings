@@ -41,6 +41,9 @@
 "Activity" = "Активность";
 
 /* No comment provided by engineer. */
+"Activity type" = "Тип активности";
+
+/* No comment provided by engineer. */
 "Adaptation" = "Адаптация";
 
 /* No comment provided by engineer. */
@@ -48,6 +51,9 @@
 
 /* No comment provided by engineer. */
 "Added" = "Добавлено";
+
+/* No comment provided by engineer. */
+"Adult" = "Взрослый";
 
 /* No comment provided by engineer. */
 "Adventure" = "Приключения";
@@ -131,7 +137,13 @@
 "Changes will take effect on app restart" = "Изменения вступят в силу после перезапуска приложения";
 
 /* No comment provided by engineer. */
+"Chapter Count" = "Число глав";
+
+/* No comment provided by engineer. */
 "Chapters" = "Главы";
+
+/* No comment provided by engineer. */
+"Chapters read" = "Прочитано глав";
 
 /* No comment provided by engineer. */
 "Chapters Read" = "Прочитано глав";
@@ -144,6 +156,9 @@
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Персонажи и Персонал";
+
+/* No comment provided by engineer. */
+"China" = "Китай";
 
 /* No comment provided by engineer. */
 "Choose between Anime or Manga." = "Выберите между Аниме или Манга.";
@@ -161,16 +176,16 @@
 "Comic" = "Комикс";
 
 /* No comment provided by engineer. */
-"Coming soon" = "Скоро";
-
-/* No comment provided by engineer. */
 "Compact" = "Компактный";
 
 /* No comment provided by engineer. */
 "Compilation" = "Подборка";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Completed" = "Заверешено";
+
+/* No comment provided by engineer. */
+"Completed %@" = "Завершен %@";
 
 /* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "Поздравляем, вы в курсе событий!\n(๑>◡<๑)";
@@ -188,6 +203,12 @@
 "Copy" = "Скопировать";
 
 /* No comment provided by engineer. */
+"Country" = "Страна";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "Распределение по странам";
+
+/* (No Comment) */
 "Current" = "Текущее";
 
 /* No comment provided by engineer. */
@@ -224,7 +245,13 @@
 "Discord server" = "Discord сервер";
 
 /* No comment provided by engineer. */
+"Discover" = "Узнать";
+
+/* No comment provided by engineer. */
 "Display" = "Отображение";
+
+/* No comment provided by engineer. */
+"Distribution type" = "Тип распределения";
 
 /* No comment provided by engineer. */
 "Donate" = "Пожертвование";
@@ -236,6 +263,9 @@
 "Donation" = "Пожертвование";
 
 /* No comment provided by engineer. */
+"Donator" = "Пожертвователь";
+
+/* No comment provided by engineer. */
 "Done" = "Готово";
 
 /* No comment provided by engineer. */
@@ -244,8 +274,11 @@
 /* No comment provided by engineer. */
 "Drama" = "Драма";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Dropped" = "Брошено";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "Выпущен %@";
 
 /* No comment provided by engineer. */
 "Duration" = "Длительность";
@@ -272,6 +305,9 @@
 "Ep %lld at %@" = "Эп %lld в %@";
 
 /* No comment provided by engineer. */
+"Episode Count" = "Число эпизодов";
+
+/* No comment provided by engineer. */
 "Episodes" = "Эпизоды";
 
 /* No comment provided by engineer. */
@@ -294,6 +330,9 @@
 
 /* No comment provided by engineer. */
 "Favorites" = "Избранное";
+
+/* No comment provided by engineer. */
+"Feed type" = "Тип ленты";
 
 /* No comment provided by engineer. */
 "Filter" = "Фильтр";
@@ -323,13 +362,16 @@
 "Format" = "Формат";
 
 /* No comment provided by engineer. */
-"Format distribution" = "Распределение форматов";
+"Format Distribution" = "Распределение форматов";
 
 /* No comment provided by engineer. */
 "Forum" = "Форум";
 
 /* (No Comment) */
 "friday_short" = "Пт";
+
+/* No comment provided by engineer. */
+"From year" = "За год";
 
 /* No comment provided by engineer. */
 "Game" = "Игра";
@@ -347,6 +389,9 @@
 "GitHub repository" = "Репозиторий на GitHub";
 
 /* No comment provided by engineer. */
+"Global" = "Глобальное";
+
+/* No comment provided by engineer. */
 "Hentai" = "Хэнтай";
 
 /* No comment provided by engineer. */
@@ -354,6 +399,9 @@
 
 /* No comment provided by engineer. */
 "Hide filters" = "Скрыть фильтры";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "Скрыть из списка статусов";
 
 /* No comment provided by engineer. */
 "Hide spoiler" = "Скрыть спойлер";
@@ -383,6 +431,9 @@
 "Information" = "Информация";
 
 /* No comment provided by engineer. */
+"Japan" = "Япония";
+
+/* No comment provided by engineer. */
 "Japanese" = "Японский";
 
 /* No comment provided by engineer. */
@@ -399,6 +450,9 @@
 
 /* No comment provided by engineer. */
 "List entry ID" = "ID записи в списке";
+
+/* No comment provided by engineer. */
+"List Progress" = "Прогресс списка";
 
 /* No comment provided by engineer. */
 "List style" = "Стиль списка";
@@ -429,6 +483,9 @@
 
 /* No comment provided by engineer. */
 "Manga List" = "Список манг";
+
+/* No comment provided by engineer. */
+"Mean score" = "Средний счет";
 
 /* No comment provided by engineer. */
 "Mean Score" = "Счет";
@@ -480,6 +537,9 @@
 
 /* No comment provided by engineer. */
 "Next Season" = "Следующий сезон";
+
+/* No comment provided by engineer. */
+"No" = "Нет";
 
 /* No comment provided by engineer. */
 "No airing anime in your list\n(*´-`)" = "Нет выходящих аниме в вашем списке\n(*´-`)";
@@ -553,14 +613,23 @@
 /* No comment provided by engineer. */
 "Parent" = "Родитель";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Paused" = "Пауза";
+
+/* No comment provided by engineer. */
+"Paused %@" = "На паузе %@";
 
 /* No comment provided by engineer. */
 "Picture book" = "Книга с картинками";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Planning" = "Планируется";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "Планы для чтения %@";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "Планы для просмотра %@";
 
 /* No comment provided by engineer. */
 "Please login to use this feature" = "Чтобы воспользоваться этой функцией, войдите в систему";
@@ -610,6 +679,12 @@
 /* No comment provided by engineer. */
 "Rankings" = "Рейтинги";
 
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "Читает главу %1$@ из %2$@";
+
+/* No comment provided by engineer. */
+"Read Year" = "Год чтения";
+
 /* No comment provided by engineer. */
 "Recommendations" = "Рекомендации";
 
@@ -623,6 +698,9 @@
 "Release Date" = "Дата выхода";
 
 /* No comment provided by engineer. */
+"Release Year" = "Год выпуска";
+
+/* No comment provided by engineer. */
 "Releasing" = "Выпускается";
 
 /* No comment provided by engineer. */
@@ -631,7 +709,7 @@
 /* No comment provided by engineer. */
 "Repeat Count" = "Количество повторов";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Repeating" = "Повторяется";
 
 /* No comment provided by engineer. */
@@ -691,6 +769,9 @@
 /* No comment provided by engineer. */
 "Sequel" = "Продолжение";
 
+/* Set to Status */
+"Set as %@" = "Установить как %@";
+
 /* No comment provided by engineer. */
 "Set progress" = "Установить прогресс";
 
@@ -737,6 +818,9 @@
 "Source" = "Источник";
 
 /* No comment provided by engineer. */
+"South Korea" = "Южная Корея";
+
+/* No comment provided by engineer. */
 "Special" = "Спешл";
 
 /* No comment provided by engineer. */
@@ -776,6 +860,9 @@
 "Status distribution" = "Статус распределение";
 
 /* No comment provided by engineer. */
+"Status Distribution" = "Статус распределение";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Стриминг сайты";
 
 /* No comment provided by engineer. */
@@ -809,6 +896,12 @@
 "Tags" = "Теги";
 
 /* No comment provided by engineer. */
+"Taiwan" = "Тайвань";
+
+/* No comment provided by engineer. */
+"Text Status" = "Статус текста";
+
+/* No comment provided by engineer. */
 "Thank you :)" = "Спасибо вам :)";
 
 /* No comment provided by engineer. */
@@ -830,13 +923,22 @@
 "thursday_short" = "Чт";
 
 /* No comment provided by engineer. */
+"Time spent" = "Потрачено времени";
+
+/* No comment provided by engineer. */
 "Title" = "Название";
+
+/* No comment provided by engineer. */
+"Title count" = "Количество названий";
 
 /* No comment provided by engineer. */
 "Title language" = "Язык названия";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Количество названий";
+
+/* No comment provided by engineer. */
+"To year" = "В год";
 
 /* No comment provided by engineer. */
 "Top 100" = "Топ 100";
@@ -846,6 +948,9 @@
 
 /* No comment provided by engineer. */
 "Top 100 Manga" = "Топ 100 Манг";
+
+/* No comment provided by engineer. */
+"Top Movies" = "Топ фильмы";
 
 /* No comment provided by engineer. */
 "Top Popular" = "Топ Популярных";
@@ -923,6 +1028,12 @@
 "Volumes Read" = "Прочитано томов";
 
 /* No comment provided by engineer. */
+"Watch Year" = "Год просмотра";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "Просмотрен эпизод %1$@ из %2$@";
+
+/* No comment provided by engineer. */
 "Web novel" = "Веб новелла";
 
 /* (No Comment) */
@@ -942,6 +1053,9 @@
 
 /* No comment provided by engineer. */
 "Years active" = "Годы активности";
+
+/* No comment provided by engineer. */
+"Yes" = "Да";
 
 /* No comment provided by engineer. */
 "You may need to login again in your browser" = "Возможно, вам придется снова войти в свой браузер";
