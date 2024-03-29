@@ -334,6 +334,8 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var `repeat`: Int? { __data["repeat"] }
         /// If the entry should only be visible to authenticated user
         public var `private`: Bool? { __data["private"] }
+        /// If the entry shown be hidden from non-custom lists
+        public var hiddenFromStatusLists: Bool? { __data["hiddenFromStatusLists"] }
         /// Text notes
         public var notes: String? { __data["notes"] }
         /// The amount of episodes/chapters consumed by the user

@@ -42,6 +42,7 @@ fragment BasicMediaListEntry on MediaList
   advancedScores
   repeat
   private
+  hiddenFromStatusLists
   startedAt {
     ...FuzzyDateFragment
   }

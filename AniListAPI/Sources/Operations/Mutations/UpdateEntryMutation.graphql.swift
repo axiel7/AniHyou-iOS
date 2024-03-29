@@ -7,7 +7,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntry"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $notes: String, $advancedScores: [Float]) { SaveMediaListEntry( mediaId: $mediaId status: $status score: $score progress: $progress progressVolumes: $progressVolumes startedAt: $startedAt completedAt: $completedAt repeat: $repeat private: $private notes: $notes advancedScores: $advancedScores ) { __typename ...BasicMediaListEntry mediaId } }"#,
+      #"mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $hiddenFromStatusLists: Boolean, $notes: String, $advancedScores: [Float]) { SaveMediaListEntry( mediaId: $mediaId status: $status score: $score progress: $progress progressVolumes: $progressVolumes startedAt: $startedAt completedAt: $completedAt repeat: $repeat private: $private hiddenFromStatusLists: $hiddenFromStatusLists notes: $notes advancedScores: $advancedScores ) { __typename ...BasicMediaListEntry mediaId } }"#,
       fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, ProgressMediaListEntry.self]
     ))
 
@@ -20,6 +20,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public var completedAt: GraphQLNullable<FuzzyDateInput>
   public var `repeat`: GraphQLNullable<Int>
   public var `private`: GraphQLNullable<Bool>
+  public var hiddenFromStatusLists: GraphQLNullable<Bool>
   public var notes: GraphQLNullable<String>
   public var advancedScores: GraphQLNullable<[Double?]>
 
@@ -33,6 +34,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     completedAt: GraphQLNullable<FuzzyDateInput>,
     `repeat`: GraphQLNullable<Int>,
     `private`: GraphQLNullable<Bool>,
+    hiddenFromStatusLists: GraphQLNullable<Bool>,
     notes: GraphQLNullable<String>,
     advancedScores: GraphQLNullable<[Double?]>
   ) {
@@ -45,6 +47,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     self.completedAt = completedAt
     self.`repeat` = `repeat`
     self.`private` = `private`
+    self.hiddenFromStatusLists = hiddenFromStatusLists
     self.notes = notes
     self.advancedScores = advancedScores
   }
@@ -59,6 +62,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     "completedAt": completedAt,
     "repeat": `repeat`,
     "private": `private`,
+    "hiddenFromStatusLists": hiddenFromStatusLists,
     "notes": notes,
     "advancedScores": advancedScores
   ] }
@@ -79,6 +83,7 @@ public class UpdateEntryMutation: GraphQLMutation {
         "completedAt": .variable("completedAt"),
         "repeat": .variable("repeat"),
         "private": .variable("private"),
+        "hiddenFromStatusLists": .variable("hiddenFromStatusLists"),
         "notes": .variable("notes"),
         "advancedScores": .variable("advancedScores")
       ]),
@@ -113,6 +118,8 @@ public class UpdateEntryMutation: GraphQLMutation {
       public var `repeat`: Int? { __data["repeat"] }
       /// If the entry should only be visible to authenticated user
       public var `private`: Bool? { __data["private"] }
+      /// If the entry shown be hidden from non-custom lists
+      public var hiddenFromStatusLists: Bool? { __data["hiddenFromStatusLists"] }
       /// When the entry was started by the user
       public var startedAt: StartedAt? { __data["startedAt"] }
       /// When the entry was completed by the user

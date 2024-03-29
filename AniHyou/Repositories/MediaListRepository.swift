@@ -22,6 +22,7 @@ class MediaListRepository {
             completedAt: nil,
             repeat: nil,
             private: nil,
+            hiddenFromStatusLists: nil,
             notes: nil,
             advancedScores: nil
         )) { result in
@@ -69,6 +70,7 @@ class MediaListRepository {
         completedAt: GraphQLNullable<FuzzyDateInput> = .none,
         repeatCount: Int? = nil,
         isPrivate: Bool? = nil,
+        isHiddenFromStatusLists: Bool? = nil,
         notes: String? = nil
     ) async -> BasicMediaListEntry? {
         await withCheckedContinuation { continuation in
@@ -82,6 +84,7 @@ class MediaListRepository {
                 completedAt: completedAt,
                 repeat: someIfNotNil(repeatCount),
                 private: someIfNotNil(isPrivate),
+                hiddenFromStatusLists: someIfNotNil(isHiddenFromStatusLists),
                 notes: someIfNotNil(notes),
                 advancedScores: someIfNotNil(advancedScores)
             )) { result in

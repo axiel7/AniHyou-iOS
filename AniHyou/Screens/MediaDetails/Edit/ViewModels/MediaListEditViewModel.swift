@@ -73,6 +73,7 @@ class MediaListEditViewModel: ObservableObject {
         completedAt: Date?,
         repeatCount: Int?,
         isPrivate: Bool?,
+        isHiddenFromStatusLists: Bool?,
         notes: String?
     ) {
         isLoading = true
@@ -109,6 +110,9 @@ class MediaListEditViewModel: ObservableObject {
             var setIsPrivate = isPrivate
             if isPrivate == oldEntry?.private { setIsPrivate = nil }
             
+            var setIsHiddenFromStatusLists = isHiddenFromStatusLists
+            if isHiddenFromStatusLists == oldEntry?.hiddenFromStatusLists { setIsHiddenFromStatusLists = nil }
+            
             var setNotes = notes
             if notes == oldEntry?.notes { setNotes = nil }
             
@@ -136,6 +140,7 @@ class MediaListEditViewModel: ObservableObject {
                 completedAt: completedAtQL,
                 repeatCount: setRepeat,
                 isPrivate: setIsPrivate,
+                isHiddenFromStatusLists: setIsHiddenFromStatusLists,
                 notes: setNotes
             ) {
                 DispatchQueue.main.async { [weak self] in

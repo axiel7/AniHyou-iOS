@@ -5,7 +5,7 @@
 
 public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment BasicMediaListEntry on MediaList { __typename ...ProgressMediaListEntry status score advancedScores repeat private startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
+    #"fragment BasicMediaListEntry on MediaList { __typename ...ProgressMediaListEntry status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
   }
 
   public var __data: DataDict
@@ -19,6 +19,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     .field("advancedScores", AniListAPI.Json?.self),
     .field("repeat", Int?.self),
     .field("private", Bool?.self),
+    .field("hiddenFromStatusLists", Bool?.self),
     .field("startedAt", StartedAt?.self),
     .field("completedAt", CompletedAt?.self),
     .field("notes", String?.self),
@@ -49,6 +50,11 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public var `private`: Bool? {
     get { __data["private"] }
     set { __data["private"] = newValue }
+  }
+  /// If the entry shown be hidden from non-custom lists
+  public var hiddenFromStatusLists: Bool? {
+    get { __data["hiddenFromStatusLists"] }
+    set { __data["hiddenFromStatusLists"] = newValue }
   }
   /// When the entry was started by the user
   public var startedAt: StartedAt? {
@@ -110,6 +116,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     advancedScores: AniListAPI.Json? = nil,
     `repeat` _repeat: Int? = nil,
     `private` _private: Bool? = nil,
+    hiddenFromStatusLists: Bool? = nil,
     startedAt: StartedAt? = nil,
     completedAt: CompletedAt? = nil,
     notes: String? = nil,
@@ -126,6 +133,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "advancedScores": advancedScores,
         "repeat": _repeat,
         "private": _private,
+        "hiddenFromStatusLists": hiddenFromStatusLists,
         "startedAt": startedAt._fieldData,
         "completedAt": completedAt._fieldData,
         "notes": notes,

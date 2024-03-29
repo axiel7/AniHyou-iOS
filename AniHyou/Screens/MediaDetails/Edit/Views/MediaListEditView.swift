@@ -32,6 +32,7 @@ struct MediaListEditView: View {
     @State private var showStartDate = false
     @State private var showFinishDate = false
     @State private var isPrivate = false
+    @State private var isHiddenFromStatusLists = false
     @State private var notes = ""
     @State private var advancedScores: [String: Double] = [:]
 
@@ -129,6 +130,7 @@ struct MediaListEditView: View {
                 }
 
                 Section {
+                    Toggle("Hide from status lists", isOn: $isHiddenFromStatusLists)
                     Toggle("Private", isOn: $isPrivate)
                 }
 
@@ -178,6 +180,7 @@ struct MediaListEditView: View {
                                 completedAt: isFinishDateSet ? finishDate : nil,
                                 repeatCount: repeatCount,
                                 isPrivate: isPrivate,
+                                isHiddenFromStatusLists: isHiddenFromStatusLists,
                                 notes: notes
                             )
                         }
@@ -260,6 +263,7 @@ struct MediaListEditView: View {
         self.isFinishDateSet = self.mediaList?.completedAt?.year != nil
 
         self.isPrivate = self.mediaList?.private ?? false
+        self.isHiddenFromStatusLists = self.mediaList?.hiddenFromStatusLists ?? false
         self.notes = self.mediaList?.notes ?? ""
         self.advancedScores = self.mediaList?.advancedScoresDict ?? [:]
     }
