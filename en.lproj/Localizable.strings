@@ -18,3 +18,6 @@
 
 "Watched episode %1$@ of %2$@" = "Watched episode %1$@ of %2$@";
 "Read chapter %1$@ of %2$@" = "Read chapter %1$@ of %2$@";
+
+// Set to Status
+"Set as $@" = "Set as $@";

@@ -10,44 +10,38 @@ import AniListAPI
 
 extension View {
 
-    func contextActions(mediaId: Int, mediaListStatus: MediaListStatus?) -> some View {
-        ForEach(statusesCanChangeTo(mediaListStatus), id: \.rawValue) { status in
+    private func statusSetActions(
+        mediaId: Int,
+        mediaListStatus: MediaListStatus?
+    ) -> some View {
+        ForEach(mediaListStatus.statusesCanChangeTo, id: \.rawValue) { status in
             Button {
                 MediaListRepository.updateListStatus(mediaId: mediaId, status: status)
             } label: {
-                Label(status.localizedName, systemImage: status.systemImage)
+                let localizedKey = String.LocalizationValue(
+                    stringLiteral: status.localizedStringKey
+                )
+                Label("Set as \(String(localized: localizedKey))", systemImage: status.systemImage)
             }
         }
     }
-    
-    func statusesCanChangeTo(_ status: MediaListStatus?) -> [MediaListStatus] {
-        switch status {
-        case nil:
-            return [.planning]
-        case .current, .repeating:
-            return [.completed, .dropped, .paused]
-        case .completed:
-            return [.repeating]
-        case .paused, .dropped, .planning:
-            return [.current]
-        }
-    }
 
-    func mediaContextMenu(mediaId: Int, mediaType: MediaType?, mediaListStatus: MediaListStatus?) -> some View {
-        Group {
-            self
-                .contextMenu {
-                    if let mediaType {
-                        contextActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
-                        ShareLink(item: "\(mediaType.mediaUrl)\(mediaId)") {
-                            Label("Share", systemImage: "square.and.arrow.up")
-                        }
-                        .padding(.trailing)
-                        .labelStyle(.iconOnly)
-                    }
-                } preview: {
-                    MediaContextMenuView(mediaId: mediaId)
+    func mediaContextMenu(
+        mediaId: Int,
+        mediaType: MediaType?,
+        mediaListStatus: MediaListStatus?
+    ) -> some View {
+        self.contextMenu {
+            if let mediaType {
+                statusSetActions(mediaId: mediaId, mediaListStatus: mediaListStatus)
+                ShareLink(item: "\(mediaType.mediaUrl)\(mediaId)") {
+                    Label("Share", systemImage: "square.and.arrow.up")
                 }
+                .padding(.trailing)
+                .labelStyle(.iconOnly)
+            }
+        } preview: {
+            MediaContextMenuView(mediaId: mediaId)
         }
     }
 }

@@ -9,8 +9,8 @@ import SwiftUI
 import AniListAPI
 
 extension MediaListStatus {
-
-    var localizedName: LocalizedStringKey {
+    
+    var localizedStringKey: String {
         switch self {
         case .current:
             return "Current"
@@ -25,6 +25,10 @@ extension MediaListStatus {
         case .repeating:
             return "Repeating"
         }
+    }
+
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(stringLiteral: localizedStringKey)
     }
 
     /// System symbol name representing this status
@@ -59,6 +63,21 @@ extension MediaListStatus {
             return .yellow
         case .repeating:
             return .blue
+        }
+    }
+}
+
+extension MediaListStatus? {
+    var statusesCanChangeTo: [MediaListStatus] {
+        switch self {
+        case nil:
+            return [.planning]
+        case .current, .repeating:
+            return [.completed, .dropped, .paused]
+        case .completed:
+            return [.repeating]
+        case .paused, .dropped, .planning:
+            return [.current]
         }
     }
 }
