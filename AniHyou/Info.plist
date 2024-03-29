@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSMinimumSystemVersion</key>
-	<string>13.0.0</string>
 	<key>ANILIST_CLIENT_ID</key>
 	<string>$(ANILIST_CLIENT_ID)</string>
 	<key>CFBundleURLTypes</key>
@@ -21,5 +19,7 @@
 	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.3</string>
 </dict>
 </plist>
