@@ -160,6 +160,7 @@
 		48B7AC212BB59D4E0047998F /* VoiceActorsStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */; };
 		48B7AC232BB59F610047998F /* StudiosStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC222BB59F610047998F /* StudiosStatsViewModel.swift */; };
 		48B7AC272BB59FB70047998F /* StudiosStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC262BB59FB70047998F /* StudiosStatsView.swift */; };
+		48B7AC2B2BB71C870047998F /* FavoriteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC2A2BB71C870047998F /* FavoriteType.swift */; };
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
@@ -496,6 +497,7 @@
 		48B7AC202BB59D4E0047998F /* VoiceActorsStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActorsStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC222BB59F610047998F /* StudiosStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiosStatsViewModel.swift; sourceTree = "<group>"; };
 		48B7AC262BB59FB70047998F /* StudiosStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiosStatsView.swift; sourceTree = "<group>"; };
+		48B7AC2A2BB71C870047998F /* FavoriteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteType.swift; sourceTree = "<group>"; };
 		48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuView.swift; sourceTree = "<group>"; };
 		48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PreviewMediaDetails.graphql; sourceTree = "<group>"; };
 		48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContextMenuViewModel.swift; sourceTree = "<group>"; };
@@ -1039,6 +1041,7 @@
 			isa = PBXGroup;
 			children = (
 				4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */,
+				48B7AC2A2BB71C870047998F /* FavoriteType.swift */,
 				48F763F328ACE4B500C82D75 /* Views */,
 				48F763F428ACE4BA00C82D75 /* ViewModels */,
 			);
@@ -2067,6 +2070,7 @@
 				488C268A28539D5C0005EE15 /* LoginRepository.swift in Sources */,
 				480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */,
 				4832B034285F953100E79D27 /* MediaStatView.swift in Sources */,
+				48B7AC2B2BB71C870047998F /* FavoriteType.swift in Sources */,
 				48E58E382A85B5E000EF0CA2 /* MediaStatus.swift in Sources */,
 				488763E329781ADC00402934 /* MediaStatsViewModel.swift in Sources */,
 				48FC947B2868653E00C87F56 /* RectangleTextView.swift in Sources */,
