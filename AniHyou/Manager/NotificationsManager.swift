@@ -45,7 +45,6 @@ class NotificationsManager {
         
         do {
             try BGTaskScheduler.shared.submit(request)
-            print("task submit!")
         } catch {
             print("Could not schedule app refresh: \(error)")
         }
