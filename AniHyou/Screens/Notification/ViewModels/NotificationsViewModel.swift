@@ -15,38 +15,18 @@ class NotificationsViewModel: ObservableObject {
     var currentPage = 1
     var hasNextPage = true
 
-    func getNotifications() {
-        var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> = .some(type.value.compactMap { GraphQLEnum($0) })
-        if type == .all {
-            typeIn = .none
-        }
-        Network.shared.apollo.fetch(query: NotificationsQuery(
-            page: .some(currentPage),
-            perPage: .some(20),
-            typeIn: typeIn
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let notifications = page.notifications {
-                        var tempList = [GenericNotification]()
-                        notifications.forEach {
-                            if let noti = $0?.toGenericNotification() {
-                                tempList.append(noti)
-                            }
-                        }
-                        tempList.sort(by: { first, second in first.createdAt > second.createdAt })
-
-                        self?.notifications.append(contentsOf: tempList)
-                    }
-                    if self?.currentPage == 1 {
-                        NotificationCenter.default.post(name: "readNotifications", object: nil)
-                    }
-                    self?.currentPage += 1
-                    self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
+    func getNotifications() async {
+        if let result = await UserRepository.getNotifications(
+            page: currentPage,
+            type: type,
+            resetCount: currentPage == 1
+        ),
+           let data = result.data
+        {
+            DispatchQueue.main.async {
+                self.notifications.append(contentsOf: data)
+                self.currentPage = result.page
+                self.hasNextPage = result.hasNextPage
             }
         }
     }

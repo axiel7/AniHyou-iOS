@@ -31,8 +31,8 @@ struct NotificationsView: View {
 
                         if viewModel.hasNextPage {
                             HorizontalProgressView()
-                                .onAppear {
-                                    viewModel.getNotifications()
+                                .task {
+                                    await viewModel.getNotifications()
                                 }
                         }
                     }

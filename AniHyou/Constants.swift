@@ -45,6 +45,8 @@ let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
 let HAS_DONATED_KEY = "has_donated"
 let APP_ICON_KEY = "app_icon"
 let HOME_TAB_KEY = "home_tab"
+let LAST_NOTIFICATION_CREATED_AT_KEY = "last_notification_created_at"
+let NOTIFICATIONS_ENABLED_KEY = "notifications_enabled"
 
 let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"
@@ -54,4 +56,6 @@ let UNKNOWN_CHAR = "─"
 let AIRING_WIDGET_KIND = "AniHyou_Widget"
 let ANIME_BEHIND_WIDGET_KIND = "AniHyou_Anime_Behind_Widget"
 let MEDIA_LIST_WIDGET_KIND = "AniHyou_MediaList_Widget"
+
+let FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER = "com.axiel7.AniHyou.fetch_notifications"
 // swiftlint:enable identifier_name

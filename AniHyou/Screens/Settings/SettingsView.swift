@@ -62,6 +62,7 @@ struct SettingsView: View {
     @State private var selectedColor = Color(hex: "#4D908E")!
     
     @AppStorage(HAS_DONATED_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var hasDonated = false
+    @AppStorage(NOTIFICATIONS_ENABLED_KEY) private var notificationsEnabled = false
     @State private var showDonationAlert = false
     @State private var navigateToDonations = false
 
@@ -87,6 +88,7 @@ struct SettingsView: View {
             }
             
             Section {
+                Toggle("Push notifications", isOn: $notificationsEnabled)
                 NavigationLink("Account settings", destination: AccountSettingsView(viewModel: viewModel))
             }
 
@@ -125,6 +127,13 @@ struct SettingsView: View {
         }
         .onAppear {
             selectedColor = Color(hex: customAccentColor)!
+        }
+        .onChange(of: notificationsEnabled) { enabled in
+            if enabled {
+                requestNotificationPermission()
+            } else {
+                NotificationsManager.cancelSchedule()
+            }
         }
     }
     
@@ -206,6 +215,21 @@ struct SettingsView: View {
         
         Section {
             NavigationLink("Translations", destination: TranslationCredits())
+        }
+    }
+    
+    private func requestNotificationPermission() {
+        Task {
+            do {
+                try await UNUserNotificationCenter.current().requestAuthorization(
+                    options: [.alert, .sound, .badge]
+                )
+                NotificationsManager.scheduleFetch()
+            } catch {
+                DispatchQueue.main.async {
+                    notificationsEnabled = false
+                }
+            }
         }
     }
 }

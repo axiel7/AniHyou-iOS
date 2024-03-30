@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = HomeViewModel()
     @AppStorage(HOME_TAB_KEY) private var currentTab: HomeTab?
+    @State private var unreadNotificationsCount = 0
     @State private var showNotificationsSheet = false
     @State private var mediaId = 0
     @State private var showingMediaDetails = false
@@ -37,11 +37,11 @@ struct HomeView: View {
                     }
             }
         }
-        .onAppear {
-            viewModel.getNotificationCount()
+        .task {
+            unreadNotificationsCount = await UserRepository.getUnreadNotificationsCount() ?? 0
         }
         .onReceive(NotificationCenter.default.publisher(for: "readNotifications")) { _ in
-            viewModel.notificationCount = 0
+            unreadNotificationsCount = 0
         }
         .sheet(isPresented: $showNotificationsSheet) {
             NotificationsView()
@@ -53,7 +53,7 @@ struct HomeView: View {
     var toolbarContent: some ToolbarContent {
         ToolbarItem {
             Button(action: { showNotificationsSheet = true }) {
-                Label("Notifications", systemImage: viewModel.notificationCount > 0 ? "bell.badge" : "bell")
+                Label("Notifications", systemImage: unreadNotificationsCount > 0 ? "bell.badge" : "bell")
             }
         }
     }

@@ -4,6 +4,10 @@
 <dict>
 	<key>ANILIST_CLIENT_ID</key>
 	<string>$(ANILIST_CLIENT_ID)</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.axiel7.AniHyou.fetch_notifications</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -21,5 +25,9 @@
 	<false/>
 	<key>LSMinimumSystemVersion</key>
 	<string>13.3</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 </dict>
 </plist>

@@ -7,27 +7,31 @@ public class NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType]) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: true, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType], $resetNotificationCount: Boolean) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: $resetNotificationCount, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
   public var perPage: GraphQLNullable<Int>
   public var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>
+  public var resetNotificationCount: GraphQLNullable<Bool>
 
   public init(
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>,
-    typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>
+    typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>,
+    resetNotificationCount: GraphQLNullable<Bool>
   ) {
     self.page = page
     self.perPage = perPage
     self.typeIn = typeIn
+    self.resetNotificationCount = resetNotificationCount
   }
 
   public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
-    "typeIn": typeIn
+    "typeIn": typeIn,
+    "resetNotificationCount": resetNotificationCount
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -55,7 +59,7 @@ public class NotificationsQuery: GraphQLQuery {
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("notifications", [Notification?]?.self, arguments: [
-          "resetNotificationCount": true,
+          "resetNotificationCount": .variable("resetNotificationCount"),
           "type_in": .variable("typeIn")
         ]),
         .field("pageInfo", PageInfo?.self),
