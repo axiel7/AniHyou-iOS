@@ -41,6 +41,9 @@
 "Activity" = "Aktivite";
 
 /* No comment provided by engineer. */
+"Activity type" = "Etkinlik türü";
+
+/* No comment provided by engineer. */
 "Adaptation" = "Uyarlama";
 
 /* No comment provided by engineer. */
@@ -48,6 +51,9 @@
 
 /* No comment provided by engineer. */
 "Added" = "Eklendi";
+
+/* No comment provided by engineer. */
+"Adult" = "Yetişkin";
 
 /* No comment provided by engineer. */
 "Adventure" = "Macera";
@@ -116,7 +122,7 @@
 "Blood Type" = "Kan grubu";
 
 /* No comment provided by engineer. */
-"Calendar" = "Yayım Takvimi";
+"Calendar" = "Yayın Takvimi";
 
 /* No comment provided by engineer. */
 "Cancel" = "İptal";
@@ -131,7 +137,13 @@
 "Changes will take effect on app restart" = "Değişiklikler, yeniden başlatma sonrası etkin olacak";
 
 /* No comment provided by engineer. */
+"Chapter Count" = "Bölüm Sayısı";
+
+/* No comment provided by engineer. */
 "Chapters" = "Bölümler";
+
+/* No comment provided by engineer. */
+"Chapters read" = "Okunan bölüm";
 
 /* No comment provided by engineer. */
 "Chapters Read" = "Okunan Bölüm";
@@ -144,6 +156,9 @@
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Karakterler ve Ekip";
+
+/* No comment provided by engineer. */
+"China" = "Çin";
 
 /* No comment provided by engineer. */
 "Choose between Anime or Manga." = "Anime veya Manga arasında seçim yapın.";
@@ -161,16 +176,16 @@
 "Comic" = "Çizgi Roman";
 
 /* No comment provided by engineer. */
-"Coming soon" = "Çok yakında";
-
-/* No comment provided by engineer. */
 "Compact" = "Sıkışık";
 
 /* No comment provided by engineer. */
 "Compilation" = "Derleme";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Completed" = "Tamamlandı";
+
+/* No comment provided by engineer. */
+"Completed %@" = "Tamamlandı %@";
 
 /* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "Tebrikler, her şey güncel!\n(๑>◡<๑)";
@@ -188,6 +203,12 @@
 "Copy" = "Kopyala";
 
 /* No comment provided by engineer. */
+"Country" = "Ülke";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "Ülke Dağılımı";
+
+/* (No Comment) */
 "Current" = "Şimdiki";
 
 /* No comment provided by engineer. */
@@ -224,7 +245,13 @@
 "Discord server" = "Discord sunucusu";
 
 /* No comment provided by engineer. */
+"Discover" = "Keşfet";
+
+/* No comment provided by engineer. */
 "Display" = "Görüntüle";
+
+/* No comment provided by engineer. */
+"Distribution type" = "Dağıtım tipi";
 
 /* No comment provided by engineer. */
 "Donate" = "Bağış";
@@ -236,6 +263,9 @@
 "Donation" = "Bağış yap";
 
 /* No comment provided by engineer. */
+"Donator" = "Bağışcı";
+
+/* No comment provided by engineer. */
 "Done" = "Tamam";
 
 /* No comment provided by engineer. */
@@ -244,8 +274,11 @@
 /* No comment provided by engineer. */
 "Drama" = "Drama";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Dropped" = "Bırakıldı";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "Bırakıldı %@";
 
 /* No comment provided by engineer. */
 "Duration" = "Süre uzunluğu";
@@ -266,10 +299,13 @@
 "Ep" = "Blm";
 
 /* No comment provided by engineer. */
-"Ep %lld %@" = "Blm %lld, %@ sonra yayında";
+"Ep %lld %@" = "Blm %lld, %@ sonra";
 
 /* No comment provided by engineer. */
-"Ep %lld at %@" = "Blm %lld için yayın saati %@";
+"Ep %lld at %@" = "Blm %lld, saati %@";
+
+/* No comment provided by engineer. */
+"Episode Count" = "Bölüm Sayısı";
 
 /* No comment provided by engineer. */
 "Episodes" = "Bölümler";
@@ -294,6 +330,9 @@
 
 /* No comment provided by engineer. */
 "Favorites" = "Favoriler";
+
+/* No comment provided by engineer. */
+"Feed type" = "Besleme tipi";
 
 /* No comment provided by engineer. */
 "Filter" = "Filtrele";
@@ -323,13 +362,16 @@
 "Format" = "Medya Türü";
 
 /* No comment provided by engineer. */
-"Format distribution" = "Tür dağılımı";
+"Format Distribution" = "Tür Dağılımı";
 
 /* No comment provided by engineer. */
 "Forum" = "Forum";
 
 /* (No Comment) */
 "friday_short" = "Cum";
+
+/* No comment provided by engineer. */
+"From year" = "Şu yıldan";
 
 /* No comment provided by engineer. */
 "Game" = "Oyun";
@@ -347,6 +389,9 @@
 "GitHub repository" = "GitHub Reposu";
 
 /* No comment provided by engineer. */
+"Global" = "Evrensel";
+
+/* No comment provided by engineer. */
 "Hentai" = "Hentai";
 
 /* No comment provided by engineer. */
@@ -354,6 +399,9 @@
 
 /* No comment provided by engineer. */
 "Hide filters" = "Filtreleri gizle";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "Durum listelerinden gizle";
 
 /* No comment provided by engineer. */
 "Hide spoiler" = "Spoiler'ı Gizle";
@@ -383,6 +431,9 @@
 "Information" = "Bilgilendirme";
 
 /* No comment provided by engineer. */
+"Japan" = "Japonya";
+
+/* No comment provided by engineer. */
 "Japanese" = "Japonca";
 
 /* No comment provided by engineer. */
@@ -399,6 +450,9 @@
 
 /* No comment provided by engineer. */
 "List entry ID" = "Liste girdi ID";
+
+/* No comment provided by engineer. */
+"List Progress" = "Listele";
 
 /* No comment provided by engineer. */
 "List style" = "Liste stili";
@@ -429,6 +483,9 @@
 
 /* No comment provided by engineer. */
 "Manga List" = "Manga Listesi";
+
+/* No comment provided by engineer. */
+"Mean score" = "Ortalama Puan";
 
 /* No comment provided by engineer. */
 "Mean Score" = "Puan";
@@ -479,7 +536,10 @@
 "Native" = "Ana Dilde";
 
 /* No comment provided by engineer. */
-"Next Season" = "Sonraki Sezon";
+"Next Season" = "Gelecek Sezon";
+
+/* No comment provided by engineer. */
+"No" = "Hayır";
 
 /* No comment provided by engineer. */
 "No airing anime in your list\n(*´-`)" = "Listenizde yayınlanan anime yok\n(*´-`)";
@@ -553,14 +613,23 @@
 /* No comment provided by engineer. */
 "Parent" = "Kaynak";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Paused" = "Bekletilen";
+
+/* No comment provided by engineer. */
+"Paused %@" = "Duraklatıldı %@";
 
 /* No comment provided by engineer. */
 "Picture book" = "Fotoğraf albümü";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Planning" = "Planlanan";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "Okunacak %@";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "İzlenecek %@";
 
 /* No comment provided by engineer. */
 "Please login to use this feature" = "Bu özelliği kullanmak için lütfen oturum açın";
@@ -610,6 +679,12 @@
 /* No comment provided by engineer. */
 "Rankings" = "Sıralama";
 
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "%2$@ için Okunan kısım %1$@";
+
+/* No comment provided by engineer. */
+"Read Year" = "Okuma Yılı";
+
 /* No comment provided by engineer. */
 "Recommendations" = "Tavsiyeler";
 
@@ -623,6 +698,9 @@
 "Release Date" = "Yayın tarihi";
 
 /* No comment provided by engineer. */
+"Release Year" = "Yayın Yılı";
+
+/* No comment provided by engineer. */
 "Releasing" = "Yayımlanıyor";
 
 /* No comment provided by engineer. */
@@ -631,7 +709,7 @@
 /* No comment provided by engineer. */
 "Repeat Count" = "Tekrar Sayısı";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Repeating" = "Tekrarlanan";
 
 /* No comment provided by engineer. */
@@ -691,6 +769,9 @@
 /* No comment provided by engineer. */
 "Sequel" = "Devam Serisi";
 
+/* Set to Status */
+"Set as %@" = "%@ olarak ayarla";
+
 /* No comment provided by engineer. */
 "Set progress" = "İlerleme ayarla";
 
@@ -737,6 +818,9 @@
 "Source" = "Kaynak";
 
 /* No comment provided by engineer. */
+"South Korea" = "Güney Kore";
+
+/* No comment provided by engineer. */
 "Special" = "Özel";
 
 /* No comment provided by engineer. */
@@ -776,6 +860,9 @@
 "Status distribution" = "Durum dağılımı";
 
 /* No comment provided by engineer. */
+"Status Distribution" = "Durum Dağılımı";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Yayınlayan platformlar";
 
 /* No comment provided by engineer. */
@@ -809,6 +896,12 @@
 "Tags" = "Etiketler";
 
 /* No comment provided by engineer. */
+"Taiwan" = "Tayvan";
+
+/* No comment provided by engineer. */
+"Text Status" = "Metin Durumu";
+
+/* No comment provided by engineer. */
 "Thank you :)" = "Teşekkürler :)";
 
 /* No comment provided by engineer. */
@@ -830,13 +923,22 @@
 "thursday_short" = "Per";
 
 /* No comment provided by engineer. */
+"Time spent" = "Harcanan süre";
+
+/* No comment provided by engineer. */
 "Title" = "Başlık";
+
+/* No comment provided by engineer. */
+"Title count" = "Başlık sayısı";
 
 /* No comment provided by engineer. */
 "Title language" = "Başlık dili";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Başlık Sayısı";
+
+/* No comment provided by engineer. */
+"To year" = "Şu yıla";
 
 /* No comment provided by engineer. */
 "Top 100" = "En İyi 100";
@@ -846,6 +948,9 @@
 
 /* No comment provided by engineer. */
 "Top 100 Manga" = "En Popüler 100 Manga";
+
+/* No comment provided by engineer. */
+"Top Movies" = "En İyi Filmler";
 
 /* No comment provided by engineer. */
 "Top Popular" = "En Popüler";
@@ -923,6 +1028,12 @@
 "Volumes Read" = "Okunan Cilt";
 
 /* No comment provided by engineer. */
+"Watch Year" = "İzleme Yılı";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "%2$@ için İzlenen bölüm %1$@";
+
+/* No comment provided by engineer. */
 "Web novel" = "Web romanı";
 
 /* (No Comment) */
@@ -942,6 +1053,9 @@
 
 /* No comment provided by engineer. */
 "Years active" = "Aktif olduğu yıl";
+
+/* No comment provided by engineer. */
+"Yes" = "Evet";
 
 /* No comment provided by engineer. */
 "You may need to login again in your browser" = "Tarayıcınızdan tekrar oturum açmanız gerekebilir";
