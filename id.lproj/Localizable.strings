@@ -137,7 +137,13 @@
 "Changes will take effect on app restart" = "Perubahan dilakukan saat app dimulai ulang";
 
 /* No comment provided by engineer. */
+"Chapter Count" = "Jumlah Chapter";
+
+/* No comment provided by engineer. */
 "Chapters" = "Chapter";
+
+/* No comment provided by engineer. */
+"Chapters read" = "Chapter dibaca";
 
 /* No comment provided by engineer. */
 "Chapters Read" = "Chapter Dibaca";
@@ -170,15 +176,12 @@
 "Comic" = "Komik";
 
 /* No comment provided by engineer. */
-"Coming soon" = "Segera hadir";
-
-/* No comment provided by engineer. */
 "Compact" = "Sederhana";
 
 /* No comment provided by engineer. */
 "Compilation" = "Kompilasi";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Completed" = "Selesai";
 
 /* No comment provided by engineer. */
@@ -203,6 +206,9 @@
 "Country" = "Negara";
 
 /* No comment provided by engineer. */
+"Country Distribution" = "Negara Distribusi";
+
+/* (No Comment) */
 "Current" = "Saat ini";
 
 /* No comment provided by engineer. */
@@ -245,6 +251,9 @@
 "Display" = "Tampilan";
 
 /* No comment provided by engineer. */
+"Distribution type" = "Tipe distribusi";
+
+/* No comment provided by engineer. */
 "Donate" = "Donasi";
 
 /* No comment provided by engineer. */
@@ -252,6 +261,9 @@
 
 /* No comment provided by engineer. */
 "Donation" = "Donatur";
+
+/* No comment provided by engineer. */
+"Donator" = "Donatur";
 
 /* No comment provided by engineer. */
 "Done" = "Selesai";
@@ -262,7 +274,7 @@
 /* No comment provided by engineer. */
 "Drama" = "Drama";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Dropped" = "Dihapus";
 
 /* No comment provided by engineer. */
@@ -291,6 +303,9 @@
 
 /* No comment provided by engineer. */
 "Ep %lld at %@" = "Ep %lld pada %@";
+
+/* No comment provided by engineer. */
+"Episode Count" = "Jumlah Episode";
 
 /* No comment provided by engineer. */
 "Episodes" = "Episode";
@@ -347,7 +362,7 @@
 "Format" = "Format";
 
 /* No comment provided by engineer. */
-"Format distribution" = "Distribusi format";
+"Format Distribution" = "Distribusi Format";
 
 /* No comment provided by engineer. */
 "Forum" = "Forum";
@@ -384,6 +399,9 @@
 
 /* No comment provided by engineer. */
 "Hide filters" = "Sembunyikan filter";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "Sembunyikan dari daftar status";
 
 /* No comment provided by engineer. */
 "Hide spoiler" = "Sembunyikan Spoiler";
@@ -465,6 +483,9 @@
 
 /* No comment provided by engineer. */
 "Manga List" = "Daftar Manga";
+
+/* No comment provided by engineer. */
+"Mean score" = "Nilai Rata-rata";
 
 /* No comment provided by engineer. */
 "Mean Score" = "Skor";
@@ -592,7 +613,7 @@
 /* No comment provided by engineer. */
 "Parent" = "Orang tua";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Paused" = "Ditunda";
 
 /* No comment provided by engineer. */
@@ -601,7 +622,7 @@
 /* No comment provided by engineer. */
 "Picture book" = "Buku bergambar";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Planning" = "Rencana";
 
 /* No comment provided by engineer. */
@@ -662,6 +683,9 @@
 "Read chapter %1$@ of %2$@" = "Baca chapter %1$@ dari %2$@";
 
 /* No comment provided by engineer. */
+"Read Year" = "Tahun Membaca";
+
+/* No comment provided by engineer. */
 "Recommendations" = "Rekomendasi";
 
 /* No comment provided by engineer. */
@@ -674,6 +698,9 @@
 "Release Date" = "Tanggal Rilis";
 
 /* No comment provided by engineer. */
+"Release Year" = "Tahun Rilis";
+
+/* No comment provided by engineer. */
 "Releasing" = "Dirilis";
 
 /* No comment provided by engineer. */
@@ -682,7 +709,7 @@
 /* No comment provided by engineer. */
 "Repeat Count" = "Jumlah Diulangi";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Repeating" = "Diulangi";
 
 /* No comment provided by engineer. */
@@ -741,6 +768,9 @@
 
 /* No comment provided by engineer. */
 "Sequel" = "Sekuel";
+
+/* Set to Status */
+"Set as %@" = "Setel sebagai %@";
 
 /* No comment provided by engineer. */
 "Set progress" = "Menetapkan progres";
@@ -830,6 +860,9 @@
 "Status distribution" = "Status distribusi";
 
 /* No comment provided by engineer. */
+"Status Distribution" = "Status Distribusi";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Situs streaming";
 
 /* No comment provided by engineer. */
@@ -890,7 +923,13 @@
 "thursday_short" = "Kms";
 
 /* No comment provided by engineer. */
+"Time spent" = "Waktu dihabiskan";
+
+/* No comment provided by engineer. */
 "Title" = "Judul";
+
+/* No comment provided by engineer. */
+"Title count" = "Jumlah judul";
 
 /* No comment provided by engineer. */
 "Title language" = "Judul bahasa";
@@ -909,6 +948,9 @@
 
 /* No comment provided by engineer. */
 "Top 100 Manga" = "Top 100 Manga";
+
+/* No comment provided by engineer. */
+"Top Movies" = "Top Film";
 
 /* No comment provided by engineer. */
 "Top Popular" = "Top Populer";
@@ -984,6 +1026,9 @@
 
 /* No comment provided by engineer. */
 "Volumes Read" = "Volume Dibaca";
+
+/* No comment provided by engineer. */
+"Watch Year" = "Tahun Menonton";
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Menonton episode %1$@ dari %2$@";
