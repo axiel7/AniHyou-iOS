@@ -15,7 +15,7 @@ class ThreadDetailsViewModel: ObservableObject {
     @Published var threadComments = [ChildCommentsQuery.Data.Page.ThreadComment?]()
 
     var currentPage = 1
-    var hasNextPage = false
+    var hasNextPage = true
     
     func getThreadDetails(threadId: Int) {
         Network.shared.apollo.fetch(query: ThreadDetailsQuery(threadId: .some(threadId))) { [weak self] result in
