@@ -45,7 +45,6 @@ let INCREMENT_LONG_SWIPE_DIRECTION_KEY = "increment_long_swipe_direction"
 let HAS_DONATED_KEY = "has_donated"
 let APP_ICON_KEY = "app_icon"
 let HOME_TAB_KEY = "home_tab"
-let LAST_NOTIFICATION_CREATED_AT_KEY = "last_notification_created_at"
 let NOTIFICATIONS_ENABLED_KEY = "notifications_enabled"
 
 let ANIHYOU_COLOR = "#526CFD"

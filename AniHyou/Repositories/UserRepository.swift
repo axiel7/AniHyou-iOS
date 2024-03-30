@@ -79,21 +79,12 @@ class UserRepository {
     static func fetchNewNotifications() async -> [GenericNotification]? {
         let unreadCount = await getUnreadNotificationsCount()
         if let unreadCount, unreadCount > 0 {
-            if let notifications = await getNotifications(page: 1, type: .all, resetCount: false)?.data {
-                // since AniList API does not have a filter for createdAt we need to filter
-                // locally the new notifications by saving the latest createdAt to preferences
-                let lastCreatedAt = UserDefaults.standard.integer(forKey: LAST_NOTIFICATION_CREATED_AT_KEY)
-                let newNotifications = notifications.filter {
-                    $0.createdAt > lastCreatedAt
-                }
-                if !newNotifications.isEmpty {
-                    UserDefaults.standard.setValue(
-                        newNotifications.first?.createdAt,
-                        forKey: LAST_NOTIFICATION_CREATED_AT_KEY
-                    )
-                }
-                return newNotifications
-            }
+            return await getNotifications(
+                page: 1,
+                perPage: unreadCount,
+                type: .all,
+                resetCount: false
+            )?.data
         }
         return unreadCount != nil ? [] : nil
     }
