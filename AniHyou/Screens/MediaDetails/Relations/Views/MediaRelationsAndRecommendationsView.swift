@@ -61,7 +61,7 @@ struct MediaRelationsAndRecommendationsView: View {
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                ZStack {
+                Group {
                     if relationsAndRecommendations.recommendations?.nodes?.count == 0 {
                         Text("No recommendations")
                     }
@@ -79,7 +79,7 @@ struct MediaRelationsAndRecommendationsView: View {
                                             imageUrl: recommendation.coverImage?.large,
                                             status: recommendation.mediaListEntry?.status?.value
                                         )
-                                        .padding(.trailing, 2)
+                                        .padding(.trailing, 4)
                                         .mediaContextMenu(
                                             mediaId: recommendation.id,
                                             mediaType: recommendation.type?.value,
@@ -90,9 +90,9 @@ struct MediaRelationsAndRecommendationsView: View {
                                 }
                             }
                         }//:HStack
-                        .padding(.leading, 12)
+                        .padding(.leading)
                     }//:HScrollView
-                }//:ZStack
+                }//:Group
                 .padding(.bottom)
             }//:VStack
         } else {
@@ -106,5 +106,7 @@ struct MediaRelationsAndRecommendationsView: View {
 }
 
 #Preview {
-    MediaRelationsAndRecommendationsView(mediaId: 1)
+    NavigationStack {
+        MediaRelationsAndRecommendationsView(mediaId: 1)
+    }
 }
