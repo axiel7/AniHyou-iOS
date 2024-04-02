@@ -8,7 +8,7 @@ public class MediaDetailsQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails title { __typename userPreferred romaji english native } synonyms format status description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
-      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, IsFavouriteMedia.self, ProgressMediaListEntry.self]
+      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IsFavouriteMedia.self]
     ))
 
   public var mediaId: GraphQLNullable<Int>
@@ -324,6 +324,14 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var startedAt: StartedAt? { __data["startedAt"] }
         /// When the entry was completed by the user
         public var completedAt: CompletedAt? { __data["completedAt"] }
+        /// The id of the list entry
+        public var id: Int { __data["id"] }
+        /// The id of the media
+        public var mediaId: Int { __data["mediaId"] }
+        /// The amount of episodes/chapters consumed by the user
+        public var progress: Int? { __data["progress"] }
+        /// The amount of volumes read by the user
+        public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The watching/reading status
         public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
         /// The score of the entry
@@ -338,22 +346,12 @@ public class MediaDetailsQuery: GraphQLQuery {
         public var hiddenFromStatusLists: Bool? { __data["hiddenFromStatusLists"] }
         /// Text notes
         public var notes: String? { __data["notes"] }
-        /// The amount of episodes/chapters consumed by the user
-        public var progress: Int? { __data["progress"] }
-        /// The amount of volumes read by the user
-        public var progressVolumes: Int? { __data["progressVolumes"] }
-        /// The id of the list entry
-        public var id: Int { __data["id"] }
-        /// The id of the media
-        public var mediaId: Int { __data["mediaId"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
-          public var progressMediaListEntry: ProgressMediaListEntry { _toFragment() }
-          public var idsMediaList: IdsMediaList { _toFragment() }
         }
 
         /// Media.MediaListEntry.StartedAt

@@ -1,7 +1,10 @@
 query UserCurrentAnimeList($userId: Int, $sort: [MediaListSort]) {
   Page(page: 1, perPage: 50) {
     mediaList(userId: $userId, type: ANIME, status: CURRENT, sort: $sort) {
-      ...ProgressMediaListEntry
+      id
+      mediaId
+      progress
+      progressVolumes
       media {
         title {
           userPreferred

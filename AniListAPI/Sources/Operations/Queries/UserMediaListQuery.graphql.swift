@@ -8,7 +8,7 @@ public class UserMediaListQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename ...BasicMediaDetails coverImage { __typename large color } nextAiringEpisode { __typename episode airingAt } status } } pageInfo { __typename hasNextPage } } }"#,
-      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IdsMediaList.self, ProgressMediaListEntry.self]
+      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -98,6 +98,12 @@ public class UserMediaListQuery: GraphQLQuery {
         /// The id of the media
         public var mediaId: Int { __data["mediaId"] }
         public var media: Media? { __data["media"] }
+        /// The id of the list entry
+        public var id: Int { __data["id"] }
+        /// The amount of episodes/chapters consumed by the user
+        public var progress: Int? { __data["progress"] }
+        /// The amount of volumes read by the user
+        public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The watching/reading status
         public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
         /// The score of the entry
@@ -116,20 +122,12 @@ public class UserMediaListQuery: GraphQLQuery {
         public var completedAt: CompletedAt? { __data["completedAt"] }
         /// Text notes
         public var notes: String? { __data["notes"] }
-        /// The amount of episodes/chapters consumed by the user
-        public var progress: Int? { __data["progress"] }
-        /// The amount of volumes read by the user
-        public var progressVolumes: Int? { __data["progressVolumes"] }
-        /// The id of the list entry
-        public var id: Int { __data["id"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
-          public var progressMediaListEntry: ProgressMediaListEntry { _toFragment() }
-          public var idsMediaList: IdsMediaList { _toFragment() }
         }
 
         /// Page.MediaList.Media

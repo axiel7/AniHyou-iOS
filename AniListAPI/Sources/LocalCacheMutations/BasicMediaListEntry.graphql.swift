@@ -5,7 +5,7 @@
 
 public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment BasicMediaListEntry on MediaList { __typename ...ProgressMediaListEntry status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
+    #"fragment BasicMediaListEntry on MediaList { __typename id mediaId progress progressVolumes status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
   }
 
   public var __data: DataDict
@@ -14,6 +14,10 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
+    .field("id", Int.self),
+    .field("mediaId", Int.self),
+    .field("progress", Int?.self),
+    .field("progressVolumes", Int?.self),
     .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
     .field("score", Double?.self),
     .field("advancedScores", AniListAPI.Json?.self),
@@ -23,9 +27,28 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     .field("startedAt", StartedAt?.self),
     .field("completedAt", CompletedAt?.self),
     .field("notes", String?.self),
-    .fragment(ProgressMediaListEntry.self),
   ] }
 
+  /// The id of the list entry
+  public var id: Int {
+    get { __data["id"] }
+    set { __data["id"] = newValue }
+  }
+  /// The id of the media
+  public var mediaId: Int {
+    get { __data["mediaId"] }
+    set { __data["mediaId"] = newValue }
+  }
+  /// The amount of episodes/chapters consumed by the user
+  public var progress: Int? {
+    get { __data["progress"] }
+    set { __data["progress"] = newValue }
+  }
+  /// The amount of volumes read by the user
+  public var progressVolumes: Int? {
+    get { __data["progressVolumes"] }
+    set { __data["progressVolumes"] = newValue }
+  }
   /// The watching/reading status
   public var status: GraphQLEnum<AniListAPI.MediaListStatus>? {
     get { __data["status"] }
@@ -71,46 +94,12 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     get { __data["notes"] }
     set { __data["notes"] = newValue }
   }
-  /// The amount of episodes/chapters consumed by the user
-  public var progress: Int? {
-    get { __data["progress"] }
-    set { __data["progress"] = newValue }
-  }
-  /// The amount of volumes read by the user
-  public var progressVolumes: Int? {
-    get { __data["progressVolumes"] }
-    set { __data["progressVolumes"] = newValue }
-  }
-  /// The id of the list entry
-  public var id: Int {
-    get { __data["id"] }
-    set { __data["id"] = newValue }
-  }
-  /// The id of the media
-  public var mediaId: Int {
-    get { __data["mediaId"] }
-    set { __data["mediaId"] = newValue }
-  }
-
-  public struct Fragments: FragmentContainer {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
-
-    public var progressMediaListEntry: ProgressMediaListEntry {
-      get { _toFragment() }
-      _modify { var f = progressMediaListEntry; yield &f; __data = f.__data }
-      @available(*, unavailable, message: "mutate properties of the fragment instead.")
-      set { preconditionFailure() }
-    }
-    public var idsMediaList: IdsMediaList {
-      get { _toFragment() }
-      _modify { var f = idsMediaList; yield &f; __data = f.__data }
-      @available(*, unavailable, message: "mutate properties of the fragment instead.")
-      set { preconditionFailure() }
-    }
-  }
 
   public init(
+    id: Int,
+    mediaId: Int,
+    progress: Int? = nil,
+    progressVolumes: Int? = nil,
     status: GraphQLEnum<AniListAPI.MediaListStatus>? = nil,
     score: Double? = nil,
     advancedScores: AniListAPI.Json? = nil,
@@ -119,15 +108,15 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     hiddenFromStatusLists: Bool? = nil,
     startedAt: StartedAt? = nil,
     completedAt: CompletedAt? = nil,
-    notes: String? = nil,
-    progress: Int? = nil,
-    progressVolumes: Int? = nil,
-    id: Int,
-    mediaId: Int
+    notes: String? = nil
   ) {
     self.init(_dataDict: DataDict(
       data: [
         "__typename": AniListAPI.Objects.MediaList.typename,
+        "id": id,
+        "mediaId": mediaId,
+        "progress": progress,
+        "progressVolumes": progressVolumes,
         "status": status,
         "score": score,
         "advancedScores": advancedScores,
@@ -137,15 +126,9 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "startedAt": startedAt._fieldData,
         "completedAt": completedAt._fieldData,
         "notes": notes,
-        "progress": progress,
-        "progressVolumes": progressVolumes,
-        "id": id,
-        "mediaId": mediaId,
       ],
       fulfilledFragments: [
-        ObjectIdentifier(BasicMediaListEntry.self),
-        ObjectIdentifier(ProgressMediaListEntry.self),
-        ObjectIdentifier(IdsMediaList.self)
+        ObjectIdentifier(BasicMediaListEntry.self)
       ]
     ))
   }

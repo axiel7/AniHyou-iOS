@@ -54,7 +54,9 @@ struct MediaListView: View {
             NotificationCenter.default.publisher(for: "updatedMediaListEntry")
         ) { notification in
             if let entry = notification.object as? BasicMediaListEntry {
-                viewModel.onEntryUpdated(entry)
+                Task {
+                    await viewModel.onEntryUpdated(entry)
+                }
             }
         }
         .onAppear {
@@ -70,7 +72,9 @@ struct MediaListView: View {
                     mediaDetails: media.fragments.basicMediaDetails,
                     mediaList: item.fragments.basicMediaListEntry,
                     onSave: { entry in
-                        viewModel.onEntryUpdated(entry)
+                        Task {
+                            await viewModel.onEntryUpdated(entry)
+                        }
                     },
                     onDelete: {
                         viewModel.onEntryDeleted(entryId: item.id)
@@ -118,7 +122,9 @@ struct MediaListView: View {
                 && item.shouldShowIncrementButton
             {
                 Button(
-                    action: { updateEntryProgress(item: item) },
+                    action: {
+                        viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                    },
                     label: {
                         if type == .anime {
                             Label("Ep", systemImage: "plus")
@@ -137,7 +143,9 @@ struct MediaListView: View {
                     && item.shouldShowIncrementButton
                 {
                     Button(
-                        action: { updateEntryProgress(item: item) },
+                        action: {
+                            viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                        },
                         label: {
                             if type == .anime {
                                 Label("Ep", systemImage: "plus")
@@ -162,19 +170,6 @@ struct MediaListView: View {
             }
         }
         .mediaContextMenu(mediaId: item.mediaId, mediaType: type, mediaListStatus: item.status?.value)
-    }
-
-    func updateEntryProgress(item: UserMediaListQuery.Data.Page.MediaList) {
-        var status: MediaListStatus?
-        if item.status == .planning {
-            status = .current
-        }
-        viewModel.updateEntryProgress(
-            mediaId: item.mediaId,
-            entryId: item.id,
-            progress: item.progress! + 1,
-            status: status
-        )
     }
 }
 

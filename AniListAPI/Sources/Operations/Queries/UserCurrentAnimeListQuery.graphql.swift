@@ -7,8 +7,7 @@ public class UserCurrentAnimeListQuery: GraphQLQuery {
   public static let operationName: String = "UserCurrentAnimeList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserCurrentAnimeList($userId: Int, $sort: [MediaListSort]) { Page(page: 1, perPage: 50) { __typename mediaList(userId: $userId, type: ANIME, status: CURRENT, sort: $sort) { __typename ...ProgressMediaListEntry media { __typename title { __typename userPreferred } nextAiringEpisode { __typename episode timeUntilAiring airingAt } status } } } }"#,
-      fragments: [IdsMediaList.self, ProgressMediaListEntry.self]
+      #"query UserCurrentAnimeList($userId: Int, $sort: [MediaListSort]) { Page(page: 1, perPage: 50) { __typename mediaList(userId: $userId, type: ANIME, status: CURRENT, sort: $sort) { __typename id mediaId progress progressVolumes media { __typename title { __typename userPreferred } nextAiringEpisode { __typename episode timeUntilAiring airingAt } status } } } }"#
     ))
 
   public var userId: GraphQLNullable<Int>
@@ -71,27 +70,22 @@ public class UserCurrentAnimeListQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
+          .field("id", Int.self),
+          .field("mediaId", Int.self),
+          .field("progress", Int?.self),
+          .field("progressVolumes", Int?.self),
           .field("media", Media?.self),
-          .fragment(ProgressMediaListEntry.self),
         ] }
 
-        public var media: Media? { __data["media"] }
-        /// The amount of episodes/chapters consumed by the user
-        public var progress: Int? { __data["progress"] }
-        /// The amount of volumes read by the user
-        public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The id of the list entry
         public var id: Int { __data["id"] }
         /// The id of the media
         public var mediaId: Int { __data["mediaId"] }
-
-        public struct Fragments: FragmentContainer {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
-
-          public var progressMediaListEntry: ProgressMediaListEntry { _toFragment() }
-          public var idsMediaList: IdsMediaList { _toFragment() }
-        }
+        /// The amount of episodes/chapters consumed by the user
+        public var progress: Int? { __data["progress"] }
+        /// The amount of volumes read by the user
+        public var progressVolumes: Int? { __data["progressVolumes"] }
+        public var media: Media? { __data["media"] }
 
         /// Page.MediaList.Media
         ///

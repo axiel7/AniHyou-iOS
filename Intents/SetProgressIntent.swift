@@ -46,14 +46,15 @@ struct SetProgressIntent: AppIntent {
     }
     
     func perform() async throws -> some IntentResult & ReturnsValue<Bool> {
-        let updated = await MediaListRepository.updateProgress(
+        if let entry = await MediaListRepository.updateProgress(
             entryId: entryId,
             progress: progress,
             status: MediaListStatus(rawValue: status ?? "")
-        )
-        if updated {
-            _ = await MediaListRepository.updateCachedEntry(mediaId: mediaId, entryId: entryId)
+        ) {
+            _ = await MediaListRepository.updateCachedEntry(entry)
+            return .result(value: true)
+        } else {
+            return .result(value: false)
         }
-        return .result(value: updated)
     }
 }

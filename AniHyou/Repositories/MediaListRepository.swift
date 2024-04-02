@@ -111,54 +111,43 @@ class MediaListRepository {
         entryId: Int,
         progress: Int,
         status: MediaListStatus? = nil
-    ) async -> Bool {
+    ) async -> BasicMediaListEntry? {
         await withCheckedContinuation { continuation in
-            Network.shared.apollo.perform(mutation: UpdateEntryProgressMutation(
-                saveMediaListEntryId: .some(entryId),
-                progress: .some(progress),
-                status: someIfNotNil(status)
-            )) { result in
+            Network.shared.apollo.perform(
+                mutation: UpdateEntryProgressMutation(
+                    saveMediaListEntryId: .some(entryId),
+                    progress: .some(progress),
+                    status: someIfNotNil(status)
+                )
+            ) { result in
                 switch result {
-                case .success:
-                    continuation.resume(returning: true)
+                case .success(let graphQLResult):
+                    let newEntry = graphQLResult.data?.saveMediaListEntry?.fragments.basicMediaListEntry
+                    continuation.resume(returning: newEntry)
                 case .failure(let error):
                     print(error)
-                    continuation.resume(returning: false)
+                    continuation.resume(returning: nil)
                 }
             }
         }
     }
     
-    static func updateCachedEntry(
-        mediaId: Int,
-        entryId: Int,
-        updatedEntry: BasicMediaListEntry? = nil,
-        progress: Int? = nil
-    ) async -> UserMediaListQuery.Data.Page.MediaList? {
+    static func updateCachedEntry(_ entry: BasicMediaListEntry) async -> UserMediaListQuery.Data.Page.MediaList? {
         await withCheckedContinuation { continuation in
             Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 do {
-                    if let updatedEntry {
-                        try transaction.updateObject(
-                            ofType: BasicMediaListEntry.self,
-                            withKey: "MediaList:\(entryId).\(mediaId)"
-                        ) { (cachedData: inout BasicMediaListEntry) in
-                            cachedData = updatedEntry
-                        }
-                    } else if let progress {
-                        try transaction.updateObject(
-                            ofType: ProgressMediaListEntry.self,
-                            withKey: "MediaList:\(entryId).\(mediaId)"
-                        ) { (cachedData: inout ProgressMediaListEntry) in
-                            cachedData.progress = progress
-                        }
+                    try transaction.updateObject(
+                        ofType: BasicMediaListEntry.self,
+                        withKey: "MediaList:\(entry.id).\(entry.mediaId)"
+                    ) { (cachedData: inout BasicMediaListEntry) in
+                        cachedData = entry
                     }
 
                     let newObject = try transaction.readObject(
                         ofType: UserMediaListQuery.Data.Page.MediaList.self,
-                        withKey: "MediaList:\(entryId).\(mediaId)"
+                        withKey: "MediaList:\(entry.id).\(entry.mediaId)"
                     )
-                    if #available(iOS 17.0, *), progress != nil {
+                    if #available(iOS 17.0, *) {
                         WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
                         WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
                     }
