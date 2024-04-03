@@ -65,7 +65,7 @@ struct DiscoverView: View {
                                         airingAt: item.nextAiringEpisode?.airingAt,
                                         status: item.mediaListEntry?.status?.value
                                     )
-                                    .padding(.leading, 8)
+                                    .padding(.leading, 4)
                                     .frame(width: 280, alignment: .leading)
                                     .mediaContextMenu(
                                         mediaId: item.id,
@@ -88,7 +88,7 @@ struct DiscoverView: View {
                                         airingAt: item.airingAt,
                                         status: item.media?.mediaListEntry?.status?.value
                                     )
-                                    .padding(.leading, 8)
+                                    .padding(.leading, 4)
                                     .frame(width: 280, alignment: .leading)
                                     .mediaContextMenu(
                                         mediaId: item.mediaId,
