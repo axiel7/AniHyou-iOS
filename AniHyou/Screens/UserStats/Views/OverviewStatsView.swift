@@ -135,7 +135,7 @@ struct OverviewStatsView: View {
                 .font(.title3)
                 .padding(.horizontal)
                 .padding(.top)
-                Picker("Distribution type", selection: $releaseYearStatType) {
+                Picker("Distribution type", selection: $startYearStatType) {
                     ForEach(StatDistributionType.allCases, id: \.self) {
                         Text($0.localizedName)
                     }
