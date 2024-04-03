@@ -7,6 +7,7 @@
 
 import Foundation
 import AniListAPI
+import UserNotifications
 
 class NotificationsViewModel: ObservableObject {
 
@@ -27,6 +28,7 @@ class NotificationsViewModel: ObservableObject {
                 self.notifications.append(contentsOf: data)
                 self.currentPage = result.page
                 self.hasNextPage = result.hasNextPage
+                UNUserNotificationCenter.current().removeAllDeliveredNotifications()
             }
         }
     }
