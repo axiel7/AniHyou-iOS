@@ -26,7 +26,7 @@ struct TranslationCredits: View {
                 Section {
                     Text(users)
                 } header: {
-                    Text(locale.localizedString(forLanguageCode: lang) ?? lang)
+                    Text(locale.localizedString(forIdentifier: lang) ?? lang)
                 }
             }
         }
