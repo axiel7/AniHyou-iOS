@@ -61,9 +61,10 @@ struct MediaRelationsAndRecommendationsView: View {
                     .font(.title3)
                     .bold()
                     .padding(.leading)
-                Group {
+                ZStack(alignment: .center) {
                     if relationsAndRecommendations.recommendations?.nodes?.count == 0 {
                         Text("No recommendations")
+                            .padding(.vertical)
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
