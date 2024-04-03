@@ -32,6 +32,10 @@ extension String {
         str.replace(/(img\d*%*)(\(.*\))/) { matches in
             "\n![\(matches.1)]\(matches.2)"
         }
+        // TODO: better format spoiler ~!!~
+        str.replace(/~!(.*)!~/) { matches in
+            "**SPOILER:** ~\(matches.1)~"
+        }
         return str
     }
 }
