@@ -40,8 +40,8 @@ class NotificationsManager {
     
     static func scheduleFetch() {
         let request = BGAppRefreshTaskRequest(identifier: FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER)
-        // Fetch no earlier than 12 hours from now.
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 12 * 3600)
+        // Fetch no earlier than 6 hours from now.
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 6 * 3600)
         
         do {
             try BGTaskScheduler.shared.submit(request)
