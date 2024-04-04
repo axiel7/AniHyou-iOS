@@ -30,7 +30,7 @@ class MediaListViewModel: ObservableObject {
     
     var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList] {
         if searchText.count > 0 && searchText.count < 3 {
-            return Array()
+            return []
         } else if searchText.count >= 3 {
             let filtered = mediaList.filter {
                 let title = $0.media?.title?.userPreferred
@@ -43,7 +43,7 @@ class MediaListViewModel: ObservableObject {
                 getUserMediaList(otherUserId: userId)
             }
 
-            return Array(filtered)
+            return filtered
         }
         return mediaList
     }
