@@ -26,10 +26,8 @@ struct MediaListView: View {
 
     var body: some View {
         List {
-            ForEach(viewModel.filteredMediaList, id: \.?.uniqueListId) {
-                if let item = $0 {
-                    buildListItem(item: item)
-                }
+            ForEach(viewModel.filteredMediaList, id: \.uniqueListId) { item in
+                buildListItem(item: item)
             }
 
             if viewModel.hasNextPage && viewModel.searchText.isEmpty {

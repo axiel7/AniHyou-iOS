@@ -12,7 +12,7 @@ import AniListAPI
 class MediaListViewModel: ObservableObject {
 
     var userId: Int = LoginRepository.authUserId()
-    @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList?]()
+    @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList?
 
     var currentPage = 1
@@ -28,12 +28,12 @@ class MediaListViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var isLoading = false
     
-    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList?] {
+    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList] {
         if searchText.count > 0 && searchText.count < 3 {
             return Array()
         } else if searchText.count >= 3 {
             let filtered = mediaList.filter {
-                let title = $0?.media?.title?.userPreferred
+                let title = $0.media?.title?.userPreferred
                 if title == nil || title?.isEmpty == true {
                     return false
                 }
@@ -71,7 +71,7 @@ class MediaListViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
-                    if let list = page.mediaList {
+                    if let list = page.mediaList?.compactMap({ $0 }) {
                         self?.mediaList.append(contentsOf: list)
 
                         if (page.pageInfo?.hasNextPage)! {
@@ -118,21 +118,22 @@ class MediaListViewModel: ObservableObject {
     }
 
     func onEntryUpdated(_ entry: BasicMediaListEntry) async {
-        guard let foundIndex = mediaList.firstIndex(where: { $0?.id == entry.id }) else { return }
+        guard let foundIndex = mediaList.firstIndex(where: { $0.id == entry.id }) else { return }
         //if the status changed, remove from this list
-        if mediaList[foundIndex]?.status != entry.status {
+        if mediaList[safe: foundIndex]?.status != entry.status {
             onEntryDeleted(entryId: entry.id)
         } else { // update the local cache
-            let updatedItem = await MediaListRepository.updateCachedEntry(entry)
-            DispatchQueue.main.async { [weak self] in
-                self?.mediaList[foundIndex] = updatedItem
+            if let updatedItem = await MediaListRepository.updateCachedEntry(entry) {
+                DispatchQueue.main.async { [weak self] in
+                    self?.mediaList[foundIndex] = updatedItem
+                }
             }
         }
     }
 
     func onEntryDeleted(entryId: Int) {
         DispatchQueue.main.async { [weak self] in
-            self?.mediaList.removeAll(where: { $0?.id == entryId })
+            self?.mediaList.removeAll(where: { $0.id == entryId })
         }
     }
 

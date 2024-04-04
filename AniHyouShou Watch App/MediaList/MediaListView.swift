@@ -16,13 +16,11 @@ struct MediaListView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.mediaList, id: \.?.id) {
-                    if let entry = $0 {
-                        NavigationLink(destination: UpdateMediaEntryView(entry: entry, viewModel: viewModel)) {
-                            MediaListItemStandardView(item: entry)
-                        }
-                        .listItemTint(entry.coverColorWithAlpha)
+                ForEach(viewModel.mediaList, id: \.uniqueListId) { entry in
+                    NavigationLink(destination: UpdateMediaEntryView(entry: entry, viewModel: viewModel)) {
+                        MediaListItemStandardView(item: entry)
                     }
+                    .listItemTint(entry.coverColorWithAlpha)
                 }
 
                 if viewModel.isLoading || viewModel.hasNextPage {
