@@ -49,6 +49,7 @@ class MediaListViewModel: ObservableObject {
     }
 
     func getUserMediaList(otherUserId: Int?) {
+        isLoading = true
         if let otherUserId { userId = otherUserId }
         let sortArray: [GraphQLEnum<MediaListSort>] = if mediaListStatus == nil {
             [.case(.status), .case(sort ?? .addedTimeDesc)]
@@ -84,6 +85,7 @@ class MediaListViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            self?.isLoading = false
         }
         forceReload = false
     }

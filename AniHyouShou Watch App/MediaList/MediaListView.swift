@@ -11,7 +11,6 @@ import AniListAPI
 struct MediaListView: View {
 
     let type: MediaType
-    @State var status: MediaListStatus = .current
     @StateObject private var viewModel = MediaListViewModel()
 
     var body: some View {
@@ -26,10 +25,12 @@ struct MediaListView: View {
                     }
                 }
 
-                if viewModel.hasNextPage {
+                if viewModel.isLoading || viewModel.hasNextPage {
                     ProgressView()
                         .onAppear {
-                            viewModel.getUserMediaList(otherUserId: nil)
+                            if viewModel.hasNextPage {
+                                viewModel.getUserMediaList(otherUserId: nil)
+                            }
                         }
                 }
             }
@@ -37,7 +38,8 @@ struct MediaListView: View {
         }
         .onAppear {
             viewModel.mediaType = type
-            viewModel.mediaListStatus = status
+            viewModel.mediaListStatus = .current
+            viewModel.getUserMediaList(otherUserId: nil)
         }
     }
 }
