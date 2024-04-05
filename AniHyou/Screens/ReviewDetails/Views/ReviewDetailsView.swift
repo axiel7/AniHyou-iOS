@@ -23,7 +23,7 @@ struct ReviewDetailsView: View {
                     .padding()
                 RichText(html: review.body!)
                     .defaultStyle()
-                    .customCSS(spoilerCss)
+                    .customCSS(RichText.spoilerCss)
                     .padding()
                 HStack {
                     Spacer()

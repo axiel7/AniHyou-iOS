@@ -47,6 +47,7 @@
 		4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B52ADEAF1100A4F465 /* ListActivity.swift */; };
 		4820F6B82ADF98C300A4F465 /* MessageActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B72ADF98C300A4F465 /* MessageActivityItemView.swift */; };
 		4820F6BA2ADF9B3800A4F465 /* LikeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B92ADF9B3800A4F465 /* LikeRepository.swift */; };
+		48218AEA2BBFFB2200A03421 /* RichTextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AE92BBFFB2200A03421 /* RichTextUtils.swift */; };
 		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
 		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
@@ -363,6 +364,7 @@
 		4820F6B52ADEAF1100A4F465 /* ListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListActivity.swift; sourceTree = "<group>"; };
 		4820F6B72ADF98C300A4F465 /* MessageActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageActivityItemView.swift; sourceTree = "<group>"; };
 		4820F6B92ADF9B3800A4F465 /* LikeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRepository.swift; sourceTree = "<group>"; };
+		48218AE92BBFFB2200A03421 /* RichTextUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextUtils.swift; sourceTree = "<group>"; };
 		482801772AB031DC004E11D6 /* MarkdownUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownUtils.swift; sourceTree = "<group>"; };
 		48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeBehindWidget.swift; sourceTree = "<group>"; };
 		48294CDA2AB92067005E7CD2 /* BaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntry.swift; sourceTree = "<group>"; };
@@ -898,6 +900,7 @@
 				481AD501285207B1001779EE /* DateUtils.swift */,
 				488C267828537B5F0005EE15 /* StringUtils.swift */,
 				4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */,
+				48218AE92BBFFB2200A03421 /* RichTextUtils.swift */,
 				4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */,
 				480A41A428ECA1A30066288D /* ModelUtils.swift */,
 				48A1A8F22A39861C00ACC6FF /* KeychainUtils.swift */,
@@ -2125,6 +2128,7 @@
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,
 				48E58E2D2A85B4D700EF0CA2 /* MediaList.swift in Sources */,
 				486ED205285DD484002D29E1 /* MediaListView.swift in Sources */,
+				48218AEA2BBFFB2200A03421 /* RichTextUtils.swift in Sources */,
 				48B7AC1B2BB57C7D0047998F /* StaffStatsViewModel.swift in Sources */,
 				48EE81342969DDC00074482F /* CalendarAnimeView.swift in Sources */,
 				48E58E3C2A85B61600EF0CA2 /* CharacterRole.swift in Sources */,

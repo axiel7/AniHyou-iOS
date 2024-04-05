@@ -95,7 +95,7 @@ struct CharacterDetailsView: View {
 
                         RichText(html: character.description ?? "")
                             .defaultStyle()
-                            .customCSS(spoilerCss)
+                            .customCSS(RichText.spoilerCss)
                             .padding()
                     }
                 }
