@@ -53,7 +53,7 @@ struct AnimeSeasonListView: View {
             }
             .animation(.default, value: listStyle)
         }
-        .navigationTitle(viewModel.season.localizedName + " \(viewModel.year)")
+        .navigationTitle(viewModel.season.localizedName + " \(String(viewModel.year))")
         .toolbar {
             ToolbarItemGroup {
                 toolbarContent
