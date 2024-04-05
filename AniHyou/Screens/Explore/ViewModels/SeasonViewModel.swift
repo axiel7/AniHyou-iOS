@@ -11,9 +11,11 @@ import AniListAPI
 class SeasonViewModel: ObservableObject {
     
     private let perPage = 25
+    static let seasonSorts: [MediaSort] = [.popularityDesc, .scoreDesc, .startDateDesc, .endDateDesc]
     
     @Published var season: MediaSeason = Date.now.season
     @Published var year: Int = Date.now.year
+    @Published var sort: MediaSort = .popularityDesc
     @Published var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium]()
 
     var currentPage = 1
@@ -27,7 +29,7 @@ class SeasonViewModel: ObservableObject {
                 perPage: .some(perPage),
                 season: .some(.case(season)),
                 seasonYear: .some(year),
-                sort: .some([.case(.popularityDesc)])
+                sort: .some([.case(sort)])
             )
         ) { [weak self] result in
             switch result {

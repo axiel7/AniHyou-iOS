@@ -144,6 +144,16 @@ struct AnimeSeasonListView: View {
             Image(systemName: listStyle == .grid ? "list.bullet" : "square.grid.2x2")
         }
         Menu {
+            Menu("Sort") {
+                Picker("Sort", selection: $viewModel.sort) {
+                    ForEach(SeasonViewModel.seasonSorts, id: \.self) {
+                        Text($0.localizedName)
+                    }
+                }
+                .onChange(of: viewModel.sort) { _ in
+                    viewModel.getAnimeSeasonal(resetPage: true)
+                }
+            }
             Menu("Season") {
                 Picker("Season", selection: $viewModel.season) {
                     ForEach(MediaSeason.allCases, id: \.self) {
