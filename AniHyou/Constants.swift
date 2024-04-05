@@ -47,6 +47,7 @@ let APP_ICON_KEY = "app_icon"
 let HOME_TAB_KEY = "home_tab"
 let NOTIFICATIONS_ENABLED_KEY = "notifications_enabled"
 let LAST_NOTIFICATION_CREATED_AT_KEY = "last_notification_created_at"
+let SEASON_LIST_STYLE_KEY = "season_list_style"
 
 let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"

@@ -49,24 +49,26 @@ class ExploreViewModel: ObservableObject {
     }
 
     // MARK: - Anime Season
-    @Published var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium?]()
+    @Published var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium]()
 
     var currentPageSeason = 1
     var hasNextPageSeason = true
 
     func getAnimeSeasonal(season: MediaSeason, year: Int, resetPage: Bool = false) {
         if resetPage { currentPageSeason = 1 }
-        Network.shared.apollo.fetch(query: SeasonalAnimeQuery(
-            page: .some(currentPageSeason),
-            perPage: .some(perPage),
-            season: .some(.case(season)),
-            seasonYear: .some(year),
-            sort: .some([.case(.popularityDesc)])
-        )) { [weak self] result in
+        Network.shared.apollo.fetch(
+            query: SeasonalAnimeQuery(
+                page: .some(currentPageSeason),
+                perPage: .some(perPage),
+                season: .some(.case(season)),
+                seasonYear: .some(year),
+                sort: .some([.case(.popularityDesc)])
+            )
+        ) { [weak self] result in
             switch result {
             case .success(let graphQLResult):
                 if let page = graphQLResult.data?.page {
-                    if let media = page.media {
+                    if let media = page.media?.compactMap({ $0 }) {
                         if resetPage {
                             self?.animeSeasonal = media
                         } else {

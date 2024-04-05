@@ -7,7 +7,7 @@ public class SeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "SeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } pageInfo { __typename hasNextPage } } }"#
+      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } nextAiringEpisode { __typename episode airingAt } genres } pageInfo { __typename hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -89,6 +89,8 @@ public class SeasonalAnimeQuery: GraphQLQuery {
           .field("coverImage", CoverImage?.self),
           .field("meanScore", Int?.self),
           .field("mediaListEntry", MediaListEntry?.self),
+          .field("nextAiringEpisode", NextAiringEpisode?.self),
+          .field("genres", [String?]?.self),
         ] }
 
         /// The id of the media
@@ -101,6 +103,10 @@ public class SeasonalAnimeQuery: GraphQLQuery {
         public var meanScore: Int? { __data["meanScore"] }
         /// The authenticated user's media list entry for the media
         public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+        /// The media's next episode airing schedule
+        public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
+        /// The genres of the media
+        public var genres: [String?]? { __data["genres"] }
 
         /// Page.Medium.Title
         ///
@@ -151,6 +157,26 @@ public class SeasonalAnimeQuery: GraphQLQuery {
 
           /// The watching/reading status
           public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+        }
+
+        /// Page.Medium.NextAiringEpisode
+        ///
+        /// Parent Type: `AiringSchedule`
+        public struct NextAiringEpisode: AniListAPI.SelectionSet {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+          public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
+            .field("episode", Int.self),
+            .field("airingAt", Int.self),
+          ] }
+
+          /// The airing episode number
+          public var episode: Int { __data["episode"] }
+          /// The time the episode airs at
+          public var airingAt: Int { __data["airingAt"] }
         }
       }
 
