@@ -51,3 +51,13 @@ extension [LocalizedStringKey] {
         }
     }
 }
+
+extension LocalizedStringKey {
+    static func + (lhs: LocalizedStringKey, rhs: LocalizedStringKey) -> Text {
+        Text(lhs) + Text(rhs)
+    }
+    
+    static func + (lhs: LocalizedStringKey, rhs: any StringProtocol) -> Text {
+        Text(lhs) + Text(rhs)
+    }
+}

@@ -10,7 +10,7 @@ import AniListAPI
 
 struct AnimeSeasonListView: View {
 
-    let season: MediaSeason
+    @State var season: MediaSeason
     private let currentYear = Date.now.year
     @State var selectedYear = Date.now.year
     @StateObject private var viewModel = ExploreViewModel()
@@ -49,21 +49,32 @@ struct AnimeSeasonListView: View {
             }
             .padding(.horizontal)
         }
-        .navigationTitle(season.localizedName)
+        .navigationTitle(season.localizedName + " \(selectedYear)")
         .toolbar {
             Menu {
-                Picker("Year", selection: $selectedYear) {
-                    ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
-                        Text(String($0))
+                Menu("Season") {
+                    Picker("Season", selection: $season) {
+                        ForEach(MediaSeason.allCases, id: \.self) {
+                            Text($0.localizedName)
+                        }
+                    }
+                    .onChange(of: season) { season in
+                        viewModel.getAnimeSeasonal(season: season, year: selectedYear, resetPage: true)
                     }
                 }
-                .onChange(of: selectedYear) { year in
-                    viewModel.getAnimeSeasonal(season: season, year: year, resetPage: true)
+                Menu("Year") {
+                    Picker("Year", selection: $selectedYear) {
+                        ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
+                            Text(String($0))
+                        }
+                    }
+                    .onChange(of: selectedYear) { year in
+                        viewModel.getAnimeSeasonal(season: season, year: year, resetPage: true)
+                    }
                 }
             } label: {
-                Label(String(selectedYear), systemImage: "calendar")
+                Image(systemName: "line.3.horizontal.decrease.circle")
             }
-            .labelStyle(.titleAndIcon)
         }
     }
 }
