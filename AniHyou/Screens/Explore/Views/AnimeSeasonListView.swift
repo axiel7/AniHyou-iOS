@@ -32,11 +32,11 @@ struct AnimeSeasonListView: View {
         case list
     }
 
-    @State var season: MediaSeason
+    var initSeason: MediaSeason?
+    var initYear: Int?
     private let currentYear = Date.now.year
-    @State var selectedYear = Date.now.year
     @AppStorage(SEASON_LIST_STYLE_KEY) private var listStyle: ListStyle = .grid
-    @StateObject private var viewModel = ExploreViewModel()
+    @StateObject private var viewModel = SeasonViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
@@ -53,11 +53,20 @@ struct AnimeSeasonListView: View {
             }
             .animation(.default, value: listStyle)
         }
-        .navigationTitle(season.localizedName + " \(selectedYear)")
+        .navigationTitle(viewModel.season.localizedName + " \(viewModel.year)")
         .toolbar {
             ToolbarItemGroup {
                 toolbarContent
             }
+        }
+        .onAppear {
+            if let initSeason {
+                viewModel.season = initSeason
+            }
+            if let initYear {
+                viewModel.year = initYear
+            }
+            viewModel.getAnimeSeasonal()
         }
     }
     
@@ -80,10 +89,10 @@ struct AnimeSeasonListView: View {
                 .buttonStyle(.plain)
             }
 
-            if viewModel.hasNextPageSeason {
+            if viewModel.hasNextPage {
                 HorizontalProgressView()
                     .onAppear {
-                        viewModel.getAnimeSeasonal(season: season, year: selectedYear)
+                        viewModel.getAnimeSeasonal()
                     }
             }
         }
@@ -110,10 +119,10 @@ struct AnimeSeasonListView: View {
                 .padding(.vertical, 4)
             }
             
-            if viewModel.hasNextPageSeason {
+            if viewModel.hasNextPage {
                 HorizontalProgressView()
                     .onAppear {
-                        viewModel.getAnimeSeasonal(season: season, year: selectedYear)
+                        viewModel.getAnimeSeasonal()
                     }
             }
         }
@@ -136,23 +145,23 @@ struct AnimeSeasonListView: View {
         }
         Menu {
             Menu("Season") {
-                Picker("Season", selection: $season) {
+                Picker("Season", selection: $viewModel.season) {
                     ForEach(MediaSeason.allCases, id: \.self) {
                         Text($0.localizedName)
                     }
                 }
-                .onChange(of: season) { season in
-                    viewModel.getAnimeSeasonal(season: season, year: selectedYear, resetPage: true)
+                .onChange(of: viewModel.season) { _ in
+                    viewModel.getAnimeSeasonal(resetPage: true)
                 }
             }
             Menu("Year") {
-                Picker("Year", selection: $selectedYear) {
+                Picker("Year", selection: $viewModel.year) {
                     ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
                         Text(String($0))
                     }
                 }
-                .onChange(of: selectedYear) { year in
-                    viewModel.getAnimeSeasonal(season: season, year: year, resetPage: true)
+                .onChange(of: viewModel.year) { _ in
+                    viewModel.getAnimeSeasonal(resetPage: true)
                 }
             }
         } label: {
@@ -163,6 +172,6 @@ struct AnimeSeasonListView: View {
 
 #Preview {
     NavigationStack {
-        AnimeSeasonListView(season: .spring)
+        AnimeSeasonListView()
     }
 }

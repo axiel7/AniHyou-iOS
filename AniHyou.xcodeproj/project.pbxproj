@@ -48,6 +48,7 @@
 		4820F6B82ADF98C300A4F465 /* MessageActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B72ADF98C300A4F465 /* MessageActivityItemView.swift */; };
 		4820F6BA2ADF9B3800A4F465 /* LikeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820F6B92ADF9B3800A4F465 /* LikeRepository.swift */; };
 		48218AEA2BBFFB2200A03421 /* RichTextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AE92BBFFB2200A03421 /* RichTextUtils.swift */; };
+		48218AEC2BC0829200A03421 /* SeasonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AEB2BC0829200A03421 /* SeasonViewModel.swift */; };
 		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
 		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
@@ -270,7 +271,7 @@
 		48FC9474286656F600C87F56 /* HInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9473286656F600C87F56 /* HInfoView.swift */; };
 		48FC9479286852A300C87F56 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9478286852A300C87F56 /* ExploreView.swift */; };
 		48FC947B2868653E00C87F56 /* RectangleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947A2868653E00C87F56 /* RectangleTextView.swift */; };
-		48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */; };
+		48FC947F2868C0BD00C87F56 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947E2868C0BD00C87F56 /* ChartViewModel.swift */; };
 		48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94802868C0F400C87F56 /* MediaChartListView.swift */; };
 		48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94822868C6DB00C87F56 /* ChartListItemView.swift */; };
 		84734AE62A7DF658000BD9E6 /* MediaListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */; };
@@ -365,6 +366,7 @@
 		4820F6B72ADF98C300A4F465 /* MessageActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageActivityItemView.swift; sourceTree = "<group>"; };
 		4820F6B92ADF9B3800A4F465 /* LikeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRepository.swift; sourceTree = "<group>"; };
 		48218AE92BBFFB2200A03421 /* RichTextUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextUtils.swift; sourceTree = "<group>"; };
+		48218AEB2BC0829200A03421 /* SeasonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewModel.swift; sourceTree = "<group>"; };
 		482801772AB031DC004E11D6 /* MarkdownUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownUtils.swift; sourceTree = "<group>"; };
 		48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeBehindWidget.swift; sourceTree = "<group>"; };
 		48294CDA2AB92067005E7CD2 /* BaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntry.swift; sourceTree = "<group>"; };
@@ -616,7 +618,7 @@
 		48FC9478286852A300C87F56 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		48FC947A2868653E00C87F56 /* RectangleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleTextView.swift; sourceTree = "<group>"; };
 		48FC947C2868C09400C87F56 /* MediaChart.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaChart.graphql; sourceTree = "<group>"; };
-		48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		48FC947E2868C0BD00C87F56 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		48FC94802868C0F400C87F56 /* MediaChartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaChartListView.swift; sourceTree = "<group>"; };
 		48FC94822868C6DB00C87F56 /* ChartListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListItemView.swift; sourceTree = "<group>"; };
 		84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListRepository.swift; sourceTree = "<group>"; };
@@ -1663,7 +1665,8 @@
 		48F7640228ACE63F00C82D75 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				48FC947E2868C0BD00C87F56 /* ExploreViewModel.swift */,
+				48FC947E2868C0BD00C87F56 /* ChartViewModel.swift */,
+				48218AEB2BC0829200A03421 /* SeasonViewModel.swift */,
 				48AB01F7286B724A004DC7FF /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
@@ -2026,6 +2029,7 @@
 				4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */,
 				480300D3291BC56F00E3047B /* StaffDetailsViewModel.swift in Sources */,
 				48B7ABF32BB445080047998F /* StretchyHeader.swift in Sources */,
+				48218AEC2BC0829200A03421 /* SeasonViewModel.swift in Sources */,
 				48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */,
 				481AD50728522D74001779EE /* VListItemView.swift in Sources */,
 				48AF5398289E7743006D40B6 /* ThreadDetailsViewModel.swift in Sources */,
@@ -2149,7 +2153,7 @@
 				4884AAB02965AC94009A3B8C /* GenreTagSelectionView.swift in Sources */,
 				48F278E4296ECED8000827F7 /* MediaTagItemView.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
-				48FC947F2868C0BD00C87F56 /* ExploreViewModel.swift in Sources */,
+				48FC947F2868C0BD00C87F56 /* ChartViewModel.swift in Sources */,
 				482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */,
 				488763D82977F8FF00402934 /* Stat.swift in Sources */,
 				4806BBB12963398C00CB07A6 /* SmileyRatingView.swift in Sources */,

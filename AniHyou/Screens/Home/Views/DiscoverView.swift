@@ -125,7 +125,7 @@ struct DiscoverView: View {
             .font(.title2)
             .bold()
             Spacer()
-            NavigationLink("See All", destination: AnimeSeasonListView(season: viewModel.nowAnimeSeason.season))
+            NavigationLink("See All", destination: AnimeSeasonListView(initSeason: viewModel.nowAnimeSeason.season))
         }
         .padding(.horizontal)
         .padding(.top, 8)
@@ -220,8 +220,8 @@ struct DiscoverView: View {
                 .bold()
             Spacer()
             NavigationLink("See All", destination: AnimeSeasonListView(
-                season: viewModel.nextAnimeSeason.season,
-                selectedYear: viewModel.nextAnimeSeason.year)
+                initSeason: viewModel.nextAnimeSeason.season,
+                initYear: viewModel.nextAnimeSeason.year)
             )
         }
         .padding(.horizontal)

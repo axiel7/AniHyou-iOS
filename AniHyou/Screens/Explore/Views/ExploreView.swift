@@ -268,11 +268,11 @@ struct ExploreView: View {
         }
         // MARK: Spring, Summer
         GridRow {
-            NavigationLink(destination: AnimeSeasonListView(season: .spring)) {
+            NavigationLink(destination: AnimeSeasonListView(initSeason: .spring)) {
                 Label("Spring", systemImage: "leaf.fill")
                     .foregroundStyle(.green)
             }
-            NavigationLink(destination: AnimeSeasonListView(season: .summer)) {
+            NavigationLink(destination: AnimeSeasonListView(initSeason: .summer)) {
                 Label("Summer", systemImage: "sun.max.fill")
                     .foregroundStyle(.yellow)
             }
@@ -280,11 +280,11 @@ struct ExploreView: View {
         // MARK: Fall, Winter
         GridRow {
             
-            NavigationLink(destination: AnimeSeasonListView(season: .fall)) {
+            NavigationLink(destination: AnimeSeasonListView(initSeason: .fall)) {
                 Label("Fall", systemImage: "cloud.rain.fill")
                     .foregroundStyle(.brown)
             }
-            NavigationLink(destination: AnimeSeasonListView(season: .winter)) {
+            NavigationLink(destination: AnimeSeasonListView(initSeason: .winter)) {
                 Label("Winter", systemImage: "snowflake")
                     .foregroundStyle(.blue)
             }

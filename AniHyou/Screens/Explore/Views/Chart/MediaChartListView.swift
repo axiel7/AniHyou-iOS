@@ -15,19 +15,17 @@ struct MediaChartListView: View {
     let sort: MediaSort
     var status: MediaStatus?
     var format: MediaFormat?
-    @StateObject private var viewModel = ExploreViewModel()
+    @StateObject private var viewModel = ChartViewModel()
 
     var body: some View {
         List {
-            ForEach(Array(viewModel.mediaChart.enumerated()), id: \.element?.id) { pos, item in
-                if let item {
-                    NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                        ChartListItemView(item: item, position: pos+1)
-                    }
+            ForEach(Array(viewModel.mediaChart.enumerated()), id: \.element.id) { pos, item in
+                NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                    ChartListItemView(item: item, position: pos+1)
                 }
             }
 
-            if viewModel.hasNextPageChart {
+            if viewModel.hasNextPage {
                 HorizontalProgressView()
                     .onAppear {
                         viewModel.getMediaChart(
