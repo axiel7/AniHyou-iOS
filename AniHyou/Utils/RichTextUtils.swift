@@ -17,6 +17,7 @@ extension RichText {
             .placeholder {
                 ProgressView()
             }
+            .customCSS(RichText.spoilerCss)
     }
     
     static let spoilerCss =

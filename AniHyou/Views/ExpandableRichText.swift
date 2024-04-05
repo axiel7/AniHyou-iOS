@@ -42,7 +42,6 @@ struct ExpandableRichText: View {
         VStack(alignment: .trailing, spacing: 0) {
             RichText(html: html)
                 .defaultStyle()
-                .customCSS(RichText.spoilerCss)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: isExpanded ? .greatestFiniteMagnitude : 32.0,
