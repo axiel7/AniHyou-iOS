@@ -29,7 +29,7 @@ extension String {
     func formatMarkdown() -> String {
         var str = self
         // formats the weird AniList markdown syntax img(url) to the standard ![img](url)
-        str.replace(/(img\d*%*)(\(.*\))/) { matches in
+        str.replace(/img(\d*%*)(\(.*?\))/) { matches in
             "\n![\(matches.1)]\(matches.2)"
         }
         // TODO: better format spoiler ~!!~
