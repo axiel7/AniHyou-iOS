@@ -21,11 +21,9 @@ class NotificationsViewModel: ObservableObject {
             page: currentPage,
             type: type,
             resetCount: currentPage == 1
-        ),
-           let data = result.data
-        {
+        ) {
             DispatchQueue.main.async {
-                self.notifications.append(contentsOf: data)
+                self.notifications.append(contentsOf: result.data)
                 self.currentPage = result.page
                 self.hasNextPage = result.hasNextPage
                 UNUserNotificationCenter.current().removeAllDeliveredNotifications()

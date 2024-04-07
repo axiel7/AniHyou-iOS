@@ -34,7 +34,7 @@ class UserRepository {
         type: NotificationTypeGrouped,
         resetCount: Bool,
         cachePolicy: CachePolicy = .default
-    ) async -> PagedResult<[GenericNotification]>? {
+    ) async -> PagedResult<GenericNotification>? {
         await withCheckedContinuation { continuation in
             var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> =
                 .some(type.value.compactMap { GraphQLEnum($0) })

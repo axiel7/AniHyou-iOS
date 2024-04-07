@@ -20,7 +20,7 @@ class MediaListViewModel: ObservableObject {
     var hasNextPage = false
     var forceReload = false
     
-    private var activeRequest: Cancellable?
+    private var loadingTask: Task<(), Never>?
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus?
@@ -29,47 +29,44 @@ class MediaListViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var isLoading = false
 
-    func getUserMediaList(otherUserId: Int?) {
-        isLoading = true
+    func getUserMediaList(otherUserId: Int?) async {
         if let otherUserId { userId = otherUserId }
-        let sortArray: [GraphQLEnum<MediaListSort>] = if mediaListStatus == nil {
-            [.case(.status), .case(sort ?? .addedTimeDesc)]
+        if loadingTask != nil {
+            _ = await loadingTask?.value
+        }
+        
+        loadingTask = Task {
+            await fetchList()
+        }
+    }
+    
+    private func fetchList() async {
+        await MainActor.run {
+            isLoading = true
+        }
+        let sortArray: [MediaListSort] = if mediaListStatus == nil {
+            [.status, sort ?? .addedTimeDesc]
         } else {
-            [.case(sort ?? .addedTimeDesc), .case(.mediaIdDesc)]
+            [sort ?? .addedTimeDesc, .mediaIdDesc]
         }
-        activeRequest?.cancel()
-        activeRequest = Network.shared.apollo.fetch(
-            query: UserMediaListQuery(
-                page: .some(currentPage),
-                perPage: .some(25),
-                userId: .some(userId),
-                type: .some(.case(mediaType)),
-                status: someIfNotNil(mediaListStatus),
-                sort: .some(sortArray)
-            ),
-            cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
-        ) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let list = page.mediaList?.compactMap({ $0 }) {
-                        self?.mediaList.append(contentsOf: list)
-                        self?.filterList()
-
-                        if page.pageInfo?.hasNextPage == true {
-                            self?.currentPage += 1
-                            self?.hasNextPage = true
-                        } else {
-                            self?.hasNextPage = false
-                        }
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        
+        if let result = await MediaListRepository.getUserMediaList(
+            userId: userId,
+            mediaType: mediaType,
+            status: mediaListStatus,
+            sort: sortArray,
+            page: currentPage,
+            forceReload: forceReload
+        ) {
+            currentPage = result.page
+            hasNextPage = result.hasNextPage
+            mediaList.append(contentsOf: result.data)
+            await filterList()
         }
-        forceReload = false
+        await MainActor.run {
+            isLoading = false
+            forceReload = false
+        }
     }
 
     func refreshList() {
@@ -80,46 +77,46 @@ class MediaListViewModel: ObservableObject {
         filteredMediaList = []
     }
     
-    func filterList() {
+    @MainActor
+    func filterList() async {
         if searchText.count > 0 && searchText.count < 3 {
             filteredMediaList = []
         } else if searchText.count >= 3 {
             filteredMediaList = mediaList.filter {
                 if let title = $0.media?.title?.userPreferred, !title.isEmpty {
                     return title.lowercased().contains(searchText.lowercased())
-                }
-                else {
+                } else {
                     return false
                 }
             }
             if hasNextPage && filteredMediaList.count < 25 {
-                getUserMediaList(otherUserId: userId)
+                try? await Task.sleep(for: .seconds(0.5))
+                await fetchList()
             }
         } else {
             filteredMediaList = mediaList
         }
     }
 
-    func updateEntryProgress(of entry: BasicMediaListEntry) {
+    @MainActor
+    func updateEntryProgress(of entry: BasicMediaListEntry) async {
         isLoading = true
-        Task {
-            var status: MediaListStatus?
-            if entry.status == .planning {
-                status = .current
-            }
-            if let newEntry = await MediaListRepository.updateProgress(
-                entryId: entry.id,
-                progress: (entry.progress ?? 0) + 1,
-                status: status
-            ) {
-                await onEntryUpdated(newEntry)
-            }
-            DispatchQueue.main.async { [weak self] in
-                self?.isLoading = false
-            }
+        var status: MediaListStatus?
+        if entry.status == .planning {
+            status = .current
         }
+        if let newEntry = await MediaListRepository.updateProgress(
+            entryId: entry.id,
+            progress: (entry.progress ?? 0) + 1,
+            status: status
+        ) {
+            await onEntryUpdated(newEntry)
+        }
+        
+        isLoading = false
     }
 
+    @MainActor
     func onEntryUpdated(_ entry: BasicMediaListEntry) async {
         guard let foundIndex = mediaList.firstIndex(where: { $0.id == entry.id }) else { return }
         //if the status changed, remove from this list
@@ -127,17 +124,13 @@ class MediaListViewModel: ObservableObject {
             onEntryDeleted(entryId: entry.id)
         } else { // update the local cache
             if let updatedItem = await MediaListRepository.updateCachedEntry(entry) {
-                DispatchQueue.main.async { [weak self] in
-                    self?.mediaList[foundIndex] = updatedItem
-                }
+                mediaList[foundIndex] = updatedItem
             }
         }
     }
 
     func onEntryDeleted(entryId: Int) {
-        DispatchQueue.main.async { [weak self] in
-            self?.mediaList.removeAll(where: { $0.id == entryId })
-        }
+        mediaList.removeAll(where: { $0.id == entryId })
     }
 
     func onSortChanged(_ newValue: MediaListSort, isAscending: Bool) {

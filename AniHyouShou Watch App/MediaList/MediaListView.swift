@@ -25,19 +25,19 @@ struct MediaListView: View {
 
                 if viewModel.isLoading || viewModel.hasNextPage {
                     ProgressView()
-                        .onAppear {
+                        .task {
                             if viewModel.hasNextPage {
-                                viewModel.getUserMediaList(otherUserId: nil)
+                                await viewModel.getUserMediaList(otherUserId: nil)
                             }
                         }
                 }
             }
             .navigationTitle(type == .anime ? "Anime" : "Manga")
         }
-        .onAppear {
+        .task {
             viewModel.mediaType = type
             viewModel.mediaListStatus = .current
-            viewModel.getUserMediaList(otherUserId: nil)
+            await viewModel.getUserMediaList(otherUserId: nil)
         }
     }
 }

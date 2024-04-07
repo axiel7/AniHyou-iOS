@@ -25,7 +25,9 @@ struct UpdateMediaEntryView: View {
 
                     Button(
                         action: {
-                            viewModel.updateEntryProgress(of: entry.fragments.basicMediaListEntry)
+                            Task {
+                                await viewModel.updateEntryProgress(of: entry.fragments.basicMediaListEntry)
+                            }
                         },
                         label: {
                             if viewModel.isLoading {

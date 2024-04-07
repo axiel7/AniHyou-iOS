@@ -32,8 +32,8 @@ struct MediaListView: View {
 
             if viewModel.hasNextPage && viewModel.searchText.isEmpty {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getUserMediaList(otherUserId: userId)
+                    .task {
+                        await viewModel.getUserMediaList(otherUserId: userId)
                     }
             }
         }//:List
@@ -51,7 +51,9 @@ struct MediaListView: View {
         .onReceive(
             viewModel.$searchText.debounce(for: 1.5, scheduler: RunLoop.main)
         ) { _ in
-            viewModel.filterList()
+            Task {
+                await viewModel.filterList()
+            }
         }
         .onReceive(
             NotificationCenter.default.publisher(for: "updatedMediaListEntry")
@@ -126,7 +128,9 @@ struct MediaListView: View {
             {
                 Button(
                     action: {
-                        viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                        Task {
+                            await viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                        }
                     },
                     label: {
                         if type == .anime {
@@ -147,7 +151,9 @@ struct MediaListView: View {
                 {
                     Button(
                         action: {
-                            viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                            Task {
+                                await viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                            }
                         },
                         label: {
                             if type == .anime {

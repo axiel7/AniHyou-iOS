@@ -50,6 +50,8 @@
 		48218AEA2BBFFB2200A03421 /* RichTextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AE92BBFFB2200A03421 /* RichTextUtils.swift */; };
 		48218AEC2BC0829200A03421 /* SeasonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AEB2BC0829200A03421 /* SeasonViewModel.swift */; };
 		48218AEE2BC0878D00A03421 /* MediaSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AED2BC0878D00A03421 /* MediaSort.swift */; };
+		48218AEF2BC310B600A03421 /* PagedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC302BB758510047998F /* PagedResult.swift */; };
+		48218AF02BC310C200A03421 /* PagedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7AC302BB758510047998F /* PagedResult.swift */; };
 		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
 		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
@@ -2205,6 +2207,7 @@
 				48D929E52ABAC00600330C71 /* WatchConnectivityManager.swift in Sources */,
 				48294CDB2AB92067005E7CD2 /* BaseEntry.swift in Sources */,
 				48D929E62ABAC06900330C71 /* UserOptions.swift in Sources */,
+				48218AF02BC310C200A03421 /* PagedResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2224,6 +2227,7 @@
 				48F2790D296EFE77000827F7 /* AniHyouShouApp.swift in Sources */,
 				48F2793129702894000827F7 /* MediaListView.swift in Sources */,
 				48294CE22AB95290005E7CD2 /* SetProgressIntent.swift in Sources */,
+				48218AEF2BC310B600A03421 /* PagedResult.swift in Sources */,
 				48F2792D29701C9B000827F7 /* LoginRepository.swift in Sources */,
 				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,

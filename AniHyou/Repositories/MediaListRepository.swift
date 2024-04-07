@@ -11,6 +11,48 @@ import WidgetKit
 
 class MediaListRepository {
     
+    static func getUserMediaList(
+        userId: Int,
+        mediaType: MediaType,
+        status: MediaListStatus?,
+        sort: [MediaListSort],
+        page: Int,
+        perPage: Int = 25,
+        forceReload: Bool = false
+    ) async -> PagedResult<UserMediaListQuery.Data.Page.MediaList>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: UserMediaListQuery(
+                    page: .some(page),
+                    perPage: .some(perPage),
+                    userId: .some(userId),
+                    type: .some(.case(mediaType)),
+                    status: someIfNotNil(status),
+                    sort: .some(sort.map({ .case($0) }))
+                ),
+                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.page {
+                        if let list = pageData.mediaList?.compactMap({ $0 }) {
+                            continuation.resume(
+                                returning: PagedResult(
+                                    data: list,
+                                    page: page + 1,
+                                    hasNextPage: pageData.pageInfo?.hasNextPage == true
+                                )
+                            )
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
     static func updateListStatus(mediaId: Int, status: MediaListStatus) {
         Network.shared.apollo.perform(mutation: UpdateEntryMutation(
             mediaId: .some(mediaId),
