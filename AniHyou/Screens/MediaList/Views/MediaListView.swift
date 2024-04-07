@@ -49,6 +49,11 @@ struct MediaListView: View {
             viewModel.onSortChanged(sort, isAscending: newValue)
         }
         .onReceive(
+            viewModel.$searchText.debounce(for: 1.5, scheduler: RunLoop.main)
+        ) { _ in
+            viewModel.filterList()
+        }
+        .onReceive(
             NotificationCenter.default.publisher(for: "updatedMediaListEntry")
         ) { notification in
             if let entry = notification.object as? BasicMediaListEntry {

@@ -16,7 +16,7 @@ struct MediaListView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.mediaList, id: \.uniqueListId) { entry in
+                ForEach(viewModel.filteredMediaList, id: \.uniqueListId) { entry in
                     NavigationLink(destination: UpdateMediaEntryView(entry: entry, viewModel: viewModel)) {
                         MediaListItemStandardView(item: entry)
                     }

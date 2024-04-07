@@ -12,14 +12,15 @@ import AniListAPI
 class MediaListViewModel: ObservableObject {
 
     var userId: Int = LoginRepository.authUserId()
-    @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList]()
+    private var mediaList = [UserMediaListQuery.Data.Page.MediaList]()
+    @Published var filteredMediaList = [UserMediaListQuery.Data.Page.MediaList]()
     var selectedItem: UserMediaListQuery.Data.Page.MediaList?
 
     var currentPage = 1
     var hasNextPage = false
     var forceReload = false
     
-    var activeRequest: Cancellable?
+    private var activeRequest: Cancellable?
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus?
@@ -27,26 +28,6 @@ class MediaListViewModel: ObservableObject {
     
     @Published var searchText = ""
     @Published var isLoading = false
-    
-    var filteredMediaList: [UserMediaListQuery.Data.Page.MediaList] {
-        if searchText.count > 0 && searchText.count < 3 {
-            return []
-        } else if searchText.count >= 3 {
-            let filtered = mediaList.filter {
-                let title = $0.media?.title?.userPreferred
-                if title == nil || title?.isEmpty == true {
-                    return false
-                }
-                return title!.lowercased().contains(searchText.lowercased())
-            }
-            if hasNextPage && filtered.count < 25 {
-                getUserMediaList(otherUserId: userId)
-            }
-
-            return filtered
-        }
-        return mediaList
-    }
 
     func getUserMediaList(otherUserId: Int?) {
         isLoading = true
@@ -73,8 +54,9 @@ class MediaListViewModel: ObservableObject {
                 if let page = graphQLResult.data?.page {
                     if let list = page.mediaList?.compactMap({ $0 }) {
                         self?.mediaList.append(contentsOf: list)
+                        self?.filterList()
 
-                        if (page.pageInfo?.hasNextPage)! {
+                        if page.pageInfo?.hasNextPage == true {
                             self?.currentPage += 1
                             self?.hasNextPage = true
                         } else {
@@ -93,8 +75,29 @@ class MediaListViewModel: ObservableObject {
     func refreshList() {
         currentPage = 1
         hasNextPage = true
-        mediaList = []
         forceReload = true
+        mediaList = []
+        filteredMediaList = []
+    }
+    
+    func filterList() {
+        if searchText.count > 0 && searchText.count < 3 {
+            filteredMediaList = []
+        } else if searchText.count >= 3 {
+            filteredMediaList = mediaList.filter {
+                if let title = $0.media?.title?.userPreferred, !title.isEmpty {
+                    return title.lowercased().contains(searchText.lowercased())
+                }
+                else {
+                    return false
+                }
+            }
+            if hasNextPage && filteredMediaList.count < 25 {
+                getUserMediaList(otherUserId: userId)
+            }
+        } else {
+            filteredMediaList = mediaList
+        }
     }
 
     func updateEntryProgress(of entry: BasicMediaListEntry) {
