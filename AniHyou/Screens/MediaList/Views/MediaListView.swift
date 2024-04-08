@@ -48,9 +48,7 @@ struct MediaListView: View {
         .onChange(of: sortAscending) { newValue in
             viewModel.onSortChanged(sort, isAscending: newValue)
         }
-        .onReceive(
-            viewModel.$searchText.debounce(for: 1.5, scheduler: RunLoop.main)
-        ) { _ in
+        .onSubmit(of: .search) {
             Task {
                 await viewModel.filterList()
             }
