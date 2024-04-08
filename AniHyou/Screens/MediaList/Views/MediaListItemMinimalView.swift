@@ -20,14 +20,14 @@ struct MediaListItemMinimalView: View {
 
             if let schedule = item?.media?.nextAiringEpisode {
                 AiringText(
-                    episode: schedule.airingAt,
+                    episode: schedule.episode,
                     airingAt: schedule.airingAt,
                     episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0),
                     behindColor: .accentColor,
                     airingColor: .gray
                 )
                 .font(.subheadline)
-                .padding(.top, 1)
+                .padding(.vertical, 1)
             } else {
                 Spacer()
             }
