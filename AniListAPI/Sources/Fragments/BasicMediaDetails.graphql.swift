@@ -5,7 +5,7 @@
 
 public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment BasicMediaDetails on Media { __typename id title { __typename userPreferred } episodes chapters volumes type }"#
+    #"fragment BasicMediaDetails on Media { __typename id title { __typename userPreferred } episodes chapters volumes type coverImage { __typename large } }"#
   }
 
   public let __data: DataDict
@@ -20,6 +20,7 @@ public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment {
     .field("chapters", Int?.self),
     .field("volumes", Int?.self),
     .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
+    .field("coverImage", CoverImage?.self),
   ] }
 
   /// The id of the media
@@ -34,6 +35,8 @@ public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment {
   public var volumes: Int? { __data["volumes"] }
   /// The type of the media; anime or manga
   public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
+  /// The cover images of the media
+  public var coverImage: CoverImage? { __data["coverImage"] }
 
   /// Title
   ///
@@ -50,5 +53,22 @@ public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment {
 
     /// The currently authenticated users preferred title language. Default romaji for non-authenticated
     public var userPreferred: String? { __data["userPreferred"] }
+  }
+
+  /// CoverImage
+  ///
+  /// Parent Type: `MediaCoverImage`
+  public struct CoverImage: AniListAPI.SelectionSet {
+    public let __data: DataDict
+    public init(_dataDict: DataDict) { __data = _dataDict }
+
+    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+    public static var __selections: [ApolloAPI.Selection] { [
+      .field("__typename", String.self),
+      .field("large", String?.self),
+    ] }
+
+    /// The cover image url of the media at a large size
+    public var large: String? { __data["large"] }
   }
 }

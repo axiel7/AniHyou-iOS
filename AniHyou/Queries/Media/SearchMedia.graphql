@@ -11,21 +11,17 @@ query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, 
             startDate_lesser: $startDateLesser, onList: $onList, isLicensed: $isLicensed, isAdult: $isAdult,
             countryOfOrigin: $country
         ) {
-            id
-            title {
-                userPreferred
-            }
-            type
+            ...BasicMediaDetails
             meanScore
             format
-            coverImage {
-                large
-            }
             mediaListEntry {
-                status
+                ...BasicMediaListEntry
             }
             startDate {
                 year
+            }
+            nextAiringEpisode {
+                ...AiringEpisode
             }
         }
         pageInfo {

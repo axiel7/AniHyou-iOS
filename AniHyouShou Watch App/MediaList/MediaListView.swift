@@ -16,7 +16,7 @@ struct MediaListView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.filteredMediaList, id: \.uniqueListId) { entry in
+                ForEach(viewModel.mediaList, id: \.uniqueListId) { entry in
                     NavigationLink(destination: UpdateMediaEntryView(entry: entry, viewModel: viewModel)) {
                         MediaListItemStandardView(item: entry)
                     }
@@ -51,7 +51,8 @@ struct MediaListItemStandardView: View {
             Text(item.media?.title?.userPreferred ?? "")
                 .lineLimit(2)
             Spacer()
-            Text("\(item.progress ?? 0)/\(item.totalProgress ?? 0)")
+            let maxProgress = item.media?.fragments.basicMediaDetails.maxProgress
+            Text("\(item.progress ?? 0)/\(maxProgress ?? 0)")
         }
     }
 }

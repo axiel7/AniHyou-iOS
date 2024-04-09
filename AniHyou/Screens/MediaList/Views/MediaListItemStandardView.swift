@@ -13,19 +13,21 @@ private let coverHeight: CGFloat = 115
 
 struct MediaListItemStandardView: View {
 
-    let item: UserMediaListQuery.Data.Page.MediaList?
+    let details: BasicMediaDetails?
+    let entry: BasicMediaListEntry?
+    let schedule: AiringEpisode?
     var showStatus: Bool = false
 
     var body: some View {
         HStack(spacing: 10) {
             ZStack(alignment: .bottomTrailing) {
                 MediaCoverView(
-                    imageUrl: item?.media?.coverImage?.large,
+                    imageUrl: details?.coverImage?.large,
                     width: coverWidth,
                     height: coverHeight,
                     cancelOnDisappear: false
                 )
-                if showStatus, let status = item?.status?.value {
+                if showStatus, let status = entry?.status?.value {
                     Image(systemName: status.systemImage)
                         .padding(4)
                         .background(.thinMaterial, in: .circle)
@@ -34,16 +36,16 @@ struct MediaListItemStandardView: View {
             }
 
             VStack(alignment: .leading) {
-                Text(item?.media?.title?.userPreferred ?? "Error loading item")
+                Text(details?.title?.userPreferred ?? "Error loading item")
                     .lineLimit(2)
 
                 Spacer()
 
-                if let schedule = item?.media?.nextAiringEpisode {
+                if let schedule {
                     AiringText(
                         episode: schedule.episode,
                         airingAt: schedule.airingAt,
-                        episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0),
+                        episodesBehind: (schedule.episode - 1) - (entry?.progress ?? 0),
                         behindColor: .accentColor,
                         airingColor: .gray
                     )
@@ -53,20 +55,23 @@ struct MediaListItemStandardView: View {
                 }
 
                 HStack {
-                    Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                    Text("\(entry?.progress ?? 0)/\(details?.maxProgress ?? 0)")
                     Spacer()
-                    if let repeatCount = item?.repeat, repeatCount > 0 {
+                    if let repeatCount = entry?.repeat, repeatCount > 0 {
                         Image(systemName: "arrow.clockwise")
                             .foregroundStyle(.gray)
                     }
-                    if item?.notes?.isEmpty == false {
+                    if entry?.notes?.isEmpty == false {
                         Image(systemName: "note.text")
                             .foregroundStyle(.gray)
                     }
-                    MediaListScoreIndicator(score: item?.score ?? 0)
+                    MediaListScoreIndicator(score: entry?.score ?? 0)
                 }
 
-                ProgressView(value: Float(item?.progress ?? 0), total: Float(item?.totalProgress ?? Int.max))
+                ProgressView(
+                    value: Float(entry?.progress ?? 0),
+                    total: Float(details?.maxProgress ?? Int.max)
+                )
             }
         }
         .frame(height: coverHeight)
@@ -77,7 +82,7 @@ struct MediaListItemStandardView: View {
     NavigationStack {
         List(0...5, id: \.self) { _ in
             NavigationLink(destination: {}, label: {
-                MediaListItemStandardView(item: nil)
+                MediaListItemStandardView(details: nil, entry: nil, schedule: nil)
             })
         }
     }

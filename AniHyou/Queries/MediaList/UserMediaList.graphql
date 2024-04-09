@@ -10,8 +10,7 @@ query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $
           color
         }
         nextAiringEpisode {
-          episode
-          airingAt
+          ...AiringEpisode
         }
         status
       }
@@ -41,4 +40,9 @@ fragment BasicMediaListEntry on MediaList
     ...FuzzyDateFragment
   }
   notes
+}
+
+fragment AiringEpisode on AiringSchedule {
+  episode
+  airingAt
 }

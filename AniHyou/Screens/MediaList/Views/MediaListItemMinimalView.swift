@@ -10,19 +10,21 @@ import AniListAPI
 
 struct MediaListItemMinimalView: View {
 
-    let item: UserMediaListQuery.Data.Page.MediaList?
+    let details: BasicMediaDetails?
+    let entry: BasicMediaListEntry?
+    let schedule: AiringEpisode?
     var showStatus: Bool = false
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(item?.media?.title?.userPreferred ?? "Error loading item")
+            Text(details?.title?.userPreferred ?? "Error loading item")
                 .lineLimit(2)
 
-            if let schedule = item?.media?.nextAiringEpisode {
+            if let schedule {
                 AiringText(
                     episode: schedule.episode,
                     airingAt: schedule.airingAt,
-                    episodesBehind: (schedule.episode - 1) - (item?.progress ?? 0),
+                    episodesBehind: (schedule.episode - 1) - (entry?.progress ?? 0),
                     behindColor: .accentColor,
                     airingColor: .gray
                 )
@@ -33,21 +35,21 @@ struct MediaListItemMinimalView: View {
             }
 
             HStack {
-                if showStatus, let status = item?.status?.value {
+                if showStatus, let status = entry?.status?.value {
                     Image(systemName: status.systemImage)
                         .foregroundStyle(.gray)
                 }
-                Text("\(item?.progress ?? 0)/\(item?.totalProgress ?? 0)")
+                Text("\(entry?.progress ?? 0)/\(details?.maxProgress ?? 0)")
                 Spacer()
-                if let repeatCount = item?.repeat, repeatCount > 0 {
+                if let repeatCount = entry?.repeat, repeatCount > 0 {
                     Image(systemName: "arrow.clockwise")
                         .foregroundStyle(.gray)
                 }
-                if item?.notes?.isEmpty == false {
+                if entry?.notes?.isEmpty == false {
                     Image(systemName: "note.text")
                         .foregroundStyle(.gray)
                 }
-                MediaListScoreIndicator(score: item?.score ?? 0)
+                MediaListScoreIndicator(score: entry?.score ?? 0)
             }
         }
         .padding(.vertical, 4)
@@ -58,7 +60,7 @@ struct MediaListItemMinimalView: View {
     NavigationStack {
         List(0...4, id: \.self) { _ in
             NavigationLink(destination: {}, label: {
-                MediaListItemMinimalView(item: nil)
+                MediaListItemMinimalView(details: nil, entry: nil, schedule: nil)
             })
         }
     }

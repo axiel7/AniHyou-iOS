@@ -64,6 +64,9 @@
 		48218B042BC5842C00A03421 /* ThreadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218B032BC5842C00A03421 /* ThreadRepository.swift */; };
 		48218B052BC5881000A03421 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD501285207B1001779EE /* DateUtils.swift */; };
 		48218B062BC5884700A03421 /* AnimeSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F8824294262F3004773CC /* AnimeSeason.swift */; };
+		48218B072BC592A500A03421 /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218AF12BC487CF00A03421 /* MediaRepository.swift */; };
+		48218B082BC592F300A03421 /* MediaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847E11D2B48EE770032521A /* MediaDetails.swift */; };
+		48218B092BC5934900A03421 /* MediaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847E11D2B48EE770032521A /* MediaDetails.swift */; };
 		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
 		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
@@ -2234,6 +2237,7 @@
 				486354EC2B73446A00A5DBB7 /* AiringText.swift in Sources */,
 				48D929E32ABABDF500330C71 /* LoginRepository.swift in Sources */,
 				48EFCDED29FFB0A00096BF6E /* TokenAddingInterceptor.swift in Sources */,
+				48218B092BC5934900A03421 /* MediaDetails.swift in Sources */,
 				48EFCE0429FFF50C0096BF6E /* AnimeSeason.swift in Sources */,
 				48EFCDDC29FFAD200096BF6E /* AniHyouWidgets.swift in Sources */,
 				48EFCDEC29FFB09D0096BF6E /* Network.swift in Sources */,
@@ -2273,6 +2277,8 @@
 				48218AEF2BC310B600A03421 /* PagedResult.swift in Sources */,
 				48F2792D29701C9B000827F7 /* LoginRepository.swift in Sources */,
 				48F27932297028EE000827F7 /* MediaListViewModel.swift in Sources */,
+				48218B082BC592F300A03421 /* MediaDetails.swift in Sources */,
+				48218B072BC592A500A03421 /* MediaRepository.swift in Sources */,
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,
 				48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */,

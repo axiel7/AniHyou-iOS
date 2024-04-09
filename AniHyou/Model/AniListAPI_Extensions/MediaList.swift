@@ -9,23 +9,6 @@ import SwiftUI
 import AniListAPI
 
 extension UserMediaListQuery.Data.Page.MediaList {
-    var totalProgress: Int? {
-        if self.media?.type?.value == .anime {
-            return self.media?.episodes
-        } else {
-            return self.media?.chapters
-        }
-    }
-    
-    var shouldShowIncrementButton: Bool {
-        if status?.value == .repeating
-            || status?.value == .current
-            || status?.value == .planning
-        {
-            return true
-        }
-        return false
-    }
 
     var coverColorWithAlpha: Color? {
         if let color = self.media?.coverImage?.color {
@@ -41,6 +24,16 @@ extension UserMediaListQuery.Data.Page.MediaList {
 extension BasicMediaListEntry {
     var advancedScoresDict: [String: Double]? {
         self.advancedScores?.toAdvancedScores()
+    }
+    
+    var shouldShowIncrementButton: Bool {
+        if status?.value == .repeating
+            || status?.value == .current
+            || status?.value == .planning
+        {
+            return true
+        }
+        return false
     }
 }
 

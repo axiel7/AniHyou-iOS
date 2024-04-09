@@ -102,4 +102,7 @@ fragment BasicMediaDetails on Media {
   chapters
   volumes
   type
+  coverImage {
+    large
+  }
 }

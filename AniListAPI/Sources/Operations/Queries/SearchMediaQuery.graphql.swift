@@ -7,7 +7,8 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country ) { __typename id title { __typename userPreferred } type meanScore format coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename year } } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country ) { __typename ...BasicMediaDetails meanScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename currentPage hasNextPage } } }"#,
+      fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -144,65 +145,44 @@ public class SearchMediaQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", Int.self),
-          .field("title", Title?.self),
-          .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
           .field("meanScore", Int?.self),
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
-          .field("coverImage", CoverImage?.self),
           .field("mediaListEntry", MediaListEntry?.self),
           .field("startDate", StartDate?.self),
+          .field("nextAiringEpisode", NextAiringEpisode?.self),
+          .fragment(BasicMediaDetails.self),
         ] }
 
-        /// The id of the media
-        public var id: Int { __data["id"] }
-        /// The official titles of the media in various languages
-        public var title: Title? { __data["title"] }
-        /// The type of the media; anime or manga
-        public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
         /// Mean score of all the user's scores of the media
         public var meanScore: Int? { __data["meanScore"] }
         /// The format the media was released in
         public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
-        /// The cover images of the media
-        public var coverImage: CoverImage? { __data["coverImage"] }
         /// The authenticated user's media list entry for the media
         public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
         /// The first official release date of the media
         public var startDate: StartDate? { __data["startDate"] }
+        /// The media's next episode airing schedule
+        public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
+        /// The id of the media
+        public var id: Int { __data["id"] }
+        /// The official titles of the media in various languages
+        public var title: Title? { __data["title"] }
+        /// The amount of episodes the anime has when complete
+        public var episodes: Int? { __data["episodes"] }
+        /// The amount of chapters the manga has when complete
+        public var chapters: Int? { __data["chapters"] }
+        /// The amount of volumes the manga has when complete
+        public var volumes: Int? { __data["volumes"] }
+        /// The type of the media; anime or manga
+        public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
+        /// The cover images of the media
+        public var coverImage: CoverImage? { __data["coverImage"] }
 
-        /// Page.Medium.Title
-        ///
-        /// Parent Type: `MediaTitle`
-        public struct Title: AniListAPI.SelectionSet {
+        public struct Fragments: FragmentContainer {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-          public static var __selections: [ApolloAPI.Selection] { [
-            .field("__typename", String.self),
-            .field("userPreferred", String?.self),
-          ] }
-
-          /// The currently authenticated users preferred title language. Default romaji for non-authenticated
-          public var userPreferred: String? { __data["userPreferred"] }
-        }
-
-        /// Page.Medium.CoverImage
-        ///
-        /// Parent Type: `MediaCoverImage`
-        public struct CoverImage: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
-
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-          public static var __selections: [ApolloAPI.Selection] { [
-            .field("__typename", String.self),
-            .field("large", String?.self),
-          ] }
-
-          /// The cover image url of the media at a large size
-          public var large: String? { __data["large"] }
+          public var basicMediaDetails: BasicMediaDetails { _toFragment() }
         }
 
         /// Page.Medium.MediaListEntry
@@ -215,11 +195,90 @@ public class SearchMediaQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+            .fragment(BasicMediaListEntry.self),
           ] }
 
+          /// The id of the list entry
+          public var id: Int { __data["id"] }
+          /// The id of the media
+          public var mediaId: Int { __data["mediaId"] }
+          /// The amount of episodes/chapters consumed by the user
+          public var progress: Int? { __data["progress"] }
+          /// The amount of volumes read by the user
+          public var progressVolumes: Int? { __data["progressVolumes"] }
           /// The watching/reading status
           public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+          /// The score of the entry
+          public var score: Double? { __data["score"] }
+          /// Map of advanced scores with name keys
+          public var advancedScores: AniListAPI.Json? { __data["advancedScores"] }
+          /// The amount of times the user has rewatched/read the media
+          public var `repeat`: Int? { __data["repeat"] }
+          /// If the entry should only be visible to authenticated user
+          public var `private`: Bool? { __data["private"] }
+          /// If the entry shown be hidden from non-custom lists
+          public var hiddenFromStatusLists: Bool? { __data["hiddenFromStatusLists"] }
+          /// When the entry was started by the user
+          public var startedAt: StartedAt? { __data["startedAt"] }
+          /// When the entry was completed by the user
+          public var completedAt: CompletedAt? { __data["completedAt"] }
+          /// Text notes
+          public var notes: String? { __data["notes"] }
+
+          public struct Fragments: FragmentContainer {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
+          }
+
+          /// Page.Medium.MediaListEntry.StartedAt
+          ///
+          /// Parent Type: `FuzzyDate`
+          public struct StartedAt: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+
+            /// Numeric Day (24)
+            public var day: Int? { __data["day"] }
+            /// Numeric Month (3)
+            public var month: Int? { __data["month"] }
+            /// Numeric Year (2017)
+            public var year: Int? { __data["year"] }
+
+            public struct Fragments: FragmentContainer {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public var fuzzyDateFragment: FuzzyDateFragment { _toFragment() }
+            }
+          }
+
+          /// Page.Medium.MediaListEntry.CompletedAt
+          ///
+          /// Parent Type: `FuzzyDate`
+          public struct CompletedAt: AniListAPI.SelectionSet {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+
+            /// Numeric Day (24)
+            public var day: Int? { __data["day"] }
+            /// Numeric Month (3)
+            public var month: Int? { __data["month"] }
+            /// Numeric Year (2017)
+            public var year: Int? { __data["year"] }
+
+            public struct Fragments: FragmentContainer {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public var fuzzyDateFragment: FuzzyDateFragment { _toFragment() }
+            }
+          }
         }
 
         /// Page.Medium.StartDate
@@ -238,6 +297,36 @@ public class SearchMediaQuery: GraphQLQuery {
           /// Numeric Year (2017)
           public var year: Int? { __data["year"] }
         }
+
+        /// Page.Medium.NextAiringEpisode
+        ///
+        /// Parent Type: `AiringSchedule`
+        public struct NextAiringEpisode: AniListAPI.SelectionSet {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+          public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
+            .fragment(AiringEpisode.self),
+          ] }
+
+          /// The airing episode number
+          public var episode: Int { __data["episode"] }
+          /// The time the episode airs at
+          public var airingAt: Int { __data["airingAt"] }
+
+          public struct Fragments: FragmentContainer {
+            public let __data: DataDict
+            public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var airingEpisode: AiringEpisode { _toFragment() }
+          }
+        }
+
+        public typealias Title = BasicMediaDetails.Title
+
+        public typealias CoverImage = BasicMediaDetails.CoverImage
       }
 
       /// Page.PageInfo

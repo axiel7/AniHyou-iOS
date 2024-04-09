@@ -21,7 +21,8 @@ struct UpdateMediaEntryView: View {
                         .font(.title3)
                     Spacer()
 
-                    Text("\(entry.progress ?? 0)/\(entry.totalProgress ?? 0)")
+                    let maxProgress = entry.media?.fragments.basicMediaDetails.maxProgress
+                    Text("\(entry.progress ?? 0)/\(maxProgress ?? 0)")
 
                     Button(
                         action: {

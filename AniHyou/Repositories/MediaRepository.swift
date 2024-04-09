@@ -238,23 +238,22 @@ class MediaRepository {
         }
     }
     
-    // swiftlint:disable:next function_parameter_count
     static func searchMedia(
         search: String,
         type: MediaType,
         sort: [MediaSort],
-        genreIn: [String],
-        genreNotIn: [String],
-        tagIn: [String],
-        tagNotIn: [String],
-        formatIn: [MediaFormat],
-        statusIn: [MediaStatus],
-        startDateGreater: Int?,
-        startDateLesser: Int?,
-        onList: Bool?,
-        isLicensed: Bool?,
-        isAdult: Bool?,
-        country: CountryOfOrigin?,
+        genreIn: [String] = [],
+        genreNotIn: [String] = [],
+        tagIn: [String] = [],
+        tagNotIn: [String] = [],
+        formatIn: [MediaFormat] = [],
+        statusIn: [MediaStatus] = [],
+        startDateGreater: Int? = nil,
+        startDateLesser: Int? = nil,
+        onList: Bool? = nil,
+        isLicensed: Bool? = nil,
+        isAdult: Bool? = nil,
+        country: CountryOfOrigin? = nil,
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<SearchMediaQuery.Data.Page.Medium>? {

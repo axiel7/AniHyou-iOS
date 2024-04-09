@@ -176,7 +176,8 @@ private struct MediaListItemView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        Text("\(item.progress ?? 0)/\(item.totalProgress ?? 0)")
+                        let maxProgress = item.media?.fragments.basicMediaDetails.maxProgress
+                        Text("\(item.progress ?? 0)/\(maxProgress ?? 0)")
                             .foregroundStyle(.secondary)
                             .frame(width: 40, alignment: .leading)
                         

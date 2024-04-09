@@ -13,15 +13,13 @@ import AniListAPI
 class MediaListViewModel: ObservableObject {
 
     var userId: Int = LoginRepository.authUserId()
-    private var mediaList = [UserMediaListQuery.Data.Page.MediaList]()
-    @Published var filteredMediaList = [UserMediaListQuery.Data.Page.MediaList]()
-    var selectedItem: UserMediaListQuery.Data.Page.MediaList?
+    @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList]()
+    var selectedDetails: BasicMediaDetails?
+    var selectedEntry: BasicMediaListEntry?
 
     var currentPage = 1
     var hasNextPage = false
     var forceReload = false
-    
-    private var loadingTask: Task<(), Never>?
 
     var mediaType: MediaType = .anime
     var mediaListStatus: MediaListStatus?
@@ -32,16 +30,6 @@ class MediaListViewModel: ObservableObject {
 
     func getUserMediaList(otherUserId: Int?) async {
         if let otherUserId { userId = otherUserId }
-        if loadingTask != nil {
-            _ = await loadingTask?.value
-        }
-        
-        loadingTask = Task {
-            await fetchList()
-        }
-    }
-    
-    private func fetchList() async {
         isLoading = true
         let sortArray: [MediaListSort] = if mediaListStatus == nil {
             [.status, sort ?? .addedTimeDesc]
@@ -71,26 +59,20 @@ class MediaListViewModel: ObservableObject {
         hasNextPage = true
         forceReload = true
         mediaList = []
-        filteredMediaList = []
     }
     
+    @Published var filteredMedia = [SearchMediaQuery.Data.Page.Medium]()
+    
     func filterList() async {
-        if searchText.count > 0 && searchText.count < 3 {
-            filteredMediaList = []
-        } else if searchText.count >= 3 {
-            filteredMediaList = mediaList.filter {
-                if let title = $0.media?.title?.userPreferred, !title.isEmpty {
-                    return title.lowercased().contains(searchText.lowercased())
-                } else {
-                    return false
-                }
-            }
-            if hasNextPage && filteredMediaList.count < 25 {
-                try? await Task.sleep(for: .seconds(0.5))
-                await fetchList()
-            }
-        } else {
-            filteredMediaList = mediaList
+        if searchText.isEmpty || searchText.count < 3 { return }
+        if let result = await MediaRepository.searchMedia(
+            search: searchText,
+            type: mediaType,
+            sort: [.searchMatch],
+            onList: true,
+            page: 1
+        ) {
+            filteredMedia = result.data
         }
     }
 

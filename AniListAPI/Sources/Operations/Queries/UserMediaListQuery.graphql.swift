@@ -7,8 +7,8 @@ public class UserMediaListQuery: GraphQLQuery {
   public static let operationName: String = "UserMediaList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename ...BasicMediaDetails coverImage { __typename large color } nextAiringEpisode { __typename episode airingAt } status } } pageInfo { __typename hasNextPage } } }"#,
-      fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self]
+      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...BasicMediaListEntry mediaId media { __typename ...BasicMediaDetails coverImage { __typename large color } nextAiringEpisode { __typename ...AiringEpisode } status } } pageInfo { __typename hasNextPage } } }"#,
+      fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
   public var page: GraphQLNullable<Int>
@@ -202,14 +202,20 @@ public class UserMediaListQuery: GraphQLQuery {
             public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
-              .field("episode", Int.self),
-              .field("airingAt", Int.self),
+              .fragment(AiringEpisode.self),
             ] }
 
             /// The airing episode number
             public var episode: Int { __data["episode"] }
             /// The time the episode airs at
             public var airingAt: Int { __data["airingAt"] }
+
+            public struct Fragments: FragmentContainer {
+              public let __data: DataDict
+              public init(_dataDict: DataDict) { __data = _dataDict }
+
+              public var airingEpisode: AiringEpisode { _toFragment() }
+            }
           }
 
           public typealias Title = BasicMediaDetails.Title

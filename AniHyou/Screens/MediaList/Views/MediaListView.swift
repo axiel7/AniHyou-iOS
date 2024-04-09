@@ -26,21 +26,43 @@ struct MediaListView: View {
 
     var body: some View {
         List {
-            ForEach(viewModel.filteredMediaList, id: \.uniqueListId) { item in
-                buildListItem(item: item)
-            }
-
-            if viewModel.hasNextPage && viewModel.searchText.isEmpty {
-                HorizontalProgressView()
-                    .task {
-                        await viewModel.getUserMediaList(otherUserId: userId)
+            if viewModel.searchText.isEmpty {
+                ForEach(viewModel.mediaList, id: \.uniqueListId) { item in
+                    if let details = item.media?.fragments.basicMediaDetails {
+                        buildListItem(
+                            details: details,
+                            entry: item.fragments.basicMediaListEntry,
+                            schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
+                            showStatus: statusSelected == .all
+                        )
                     }
+                }
+                
+                if viewModel.hasNextPage {
+                    HorizontalProgressView()
+                        .task {
+                            await viewModel.getUserMediaList(otherUserId: userId)
+                        }
+                }
+            } else {
+                ForEach(viewModel.filteredMedia, id: \.id) { media in
+                    if let entry = media.mediaListEntry?.fragments.basicMediaListEntry {
+                        buildListItem(
+                            details: media.fragments.basicMediaDetails,
+                            entry: entry,
+                            schedule: media.nextAiringEpisode?.fragments.airingEpisode,
+                            showStatus: true
+                        )
+                    }
+                }
             }
         }//:List
         .listStyle(.inset)
         .searchable(text: $viewModel.searchText)
         .refreshable {
-            viewModel.refreshList()
+            if viewModel.searchText.isEmpty {
+                viewModel.refreshList()
+            }
         }
         .onChange(of: sort) { newValue in
             viewModel.onSortChanged(newValue, isAscending: sortAscending)
@@ -49,6 +71,13 @@ struct MediaListView: View {
             viewModel.onSortChanged(sort, isAscending: newValue)
         }
         .onSubmit(of: .search) {
+            Task {
+                await viewModel.filterList()
+            }
+        }
+        .onReceive(
+            viewModel.$searchText.debounce(for: .seconds(2), scheduler: RunLoop.main)
+        ) { _ in
             Task {
                 await viewModel.filterList()
             }
@@ -68,19 +97,19 @@ struct MediaListView: View {
             viewModel.onSortChanged(sort, isAscending: sortAscending)
         }
         .sheet(isPresented: $showingEditSheet) {
-            if let item = viewModel.selectedItem,
-               let media = item.media
+            if let details = viewModel.selectedDetails,
+               let entry = viewModel.selectedEntry
             {
                 MediaListEditView(
-                    mediaDetails: media.fragments.basicMediaDetails,
-                    mediaList: item.fragments.basicMediaListEntry,
+                    mediaDetails: details,
+                    mediaList: entry,
                     onSave: { entry in
                         Task {
                             await viewModel.onEntryUpdated(entry)
                         }
                     },
                     onDelete: {
-                        viewModel.onEntryDeleted(entryId: item.id)
+                        viewModel.onEntryDeleted(entryId: entry.id)
                     }
                 )
             }
@@ -107,27 +136,46 @@ struct MediaListView: View {
 
     @ViewBuilder
     // swiftlint:disable:next function_body_length
-    func buildListItem(item: UserMediaListQuery.Data.Page.MediaList!) -> some View {
-        let showStatus = statusSelected == .all
-        NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
+    func buildListItem(
+        details: BasicMediaDetails,
+        entry: BasicMediaListEntry,
+        schedule: AiringEpisode?,
+        showStatus: Bool
+    ) -> some View {
+        NavigationLink(destination: MediaDetailsView(mediaId: details.id)) {
             switch listStyle {
             case 1:
-                MediaListItemMinimalView(item: item, showStatus: showStatus)
+                MediaListItemMinimalView(
+                    details: details,
+                    entry: entry,
+                    schedule: schedule,
+                    showStatus: showStatus
+                )
             case 2:
-                MediaListItemCompactView(item: item, showStatus: showStatus)
+                MediaListItemCompactView(
+                    details: details,
+                    entry: entry,
+                    schedule: schedule,
+                    showStatus: showStatus
+                )
             default:
-                MediaListItemStandardView(item: item, showStatus: showStatus)
+                MediaListItemStandardView(
+                    details: details,
+                    entry: entry,
+                    schedule: schedule,
+                    showStatus: showStatus
+                )
             }
         }
         .swipeActions(edge: .leading) {
             if isMyList
                 && incrementLongSwipeDirection == .right
-                && item.shouldShowIncrementButton
+                && entry.shouldShowIncrementButton
             {
                 Button(
                     action: {
                         Task {
-                            await viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                            await viewModel.updateEntryProgress(of: entry)
                         }
                     },
                     label: {
@@ -145,12 +193,12 @@ struct MediaListView: View {
         .swipeActions(edge: .trailing) {
             if isMyList {
                 if incrementLongSwipeDirection == .left
-                    && item.shouldShowIncrementButton
+                    && entry.shouldShowIncrementButton
                 {
                     Button(
                         action: {
                             Task {
-                                await viewModel.updateEntryProgress(of: item.fragments.basicMediaListEntry)
+                                await viewModel.updateEntryProgress(of: entry)
                             }
                         },
                         label: {
@@ -166,7 +214,8 @@ struct MediaListView: View {
                 }
                 Button(
                     action: {
-                        viewModel.selectedItem = item
+                        viewModel.selectedDetails = details
+                        viewModel.selectedEntry = entry
                         showingEditSheet = true
                     },
                     label: {
@@ -176,7 +225,7 @@ struct MediaListView: View {
                 .tint(.blue)
             }
         }
-        .mediaContextMenu(mediaId: item.mediaId, mediaType: type, mediaListStatus: item.status?.value)
+        .mediaContextMenu(mediaId: details.id, mediaType: type, mediaListStatus: entry.status?.value)
     }
 }
 
