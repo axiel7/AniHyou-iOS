@@ -43,10 +43,12 @@ struct ReviewDetailsView: View {
                         review.rating?.stringValue ?? "",
                         systemImage: isUpvote ? "hand.thumbsup.fill" : "hand.thumbsup"
                     ) {
-                        viewModel.rateReview(
-                            reviewId: reviewId,
-                            rating: isUpvote ? .noVote : .upVote
-                        )
+                        Task {
+                            await viewModel.rateReview(
+                                reviewId: reviewId,
+                                rating: isUpvote ? .noVote : .upVote
+                            )
+                        }
                     }
                     .padding(.horizontal)
 
@@ -55,10 +57,12 @@ struct ReviewDetailsView: View {
                         review.ratingAmount?.minus(review.rating)?.stringValue ?? "",
                         systemImage: isDownVote ? "hand.thumbsdown.fill" : "hand.thumbsdown"
                     ) {
-                        viewModel.rateReview(
-                            reviewId: reviewId,
-                            rating: isDownVote ? .noVote : .downVote
-                        )
+                        Task {
+                            await viewModel.rateReview(
+                                reviewId: reviewId,
+                                rating: isDownVote ? .noVote : .downVote
+                            )
+                        }
                     }
                 }
                 .padding(.top, 4)
@@ -69,8 +73,8 @@ struct ReviewDetailsView: View {
         }
         .navigationTitle(viewModel.review?.user?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            viewModel.getReviewDetails(reviewId: reviewId)
+        .task {
+            await viewModel.getReviewDetails(reviewId: reviewId)
         }
     }
 }

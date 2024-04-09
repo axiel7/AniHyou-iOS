@@ -154,15 +154,11 @@ struct OverviewStatsView: View {
                 VerticalBarsStatsView(stats: startYearStats)
             }
         }
-        .onAppear {
-            if mediaType == .anime {
-                if viewModel.animeStats == nil {
-                    viewModel.getAnimeOverview(userId: userId)
-                }
-            } else if mediaType == .manga {
-                if viewModel.mangaStats == nil {
-                    viewModel.getMangaOverview(userId: userId)
-                }
+        .task {
+            if mediaType == .anime && viewModel.animeStats == nil {
+                await viewModel.getAnimeOverview(userId: userId)
+            } else if mediaType == .manga && viewModel.mangaStats == nil {
+                await viewModel.getMangaOverview(userId: userId)
             }
         }
     }

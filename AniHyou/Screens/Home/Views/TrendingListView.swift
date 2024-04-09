@@ -12,64 +12,65 @@ struct TrendingListView: View {
 
     @ObservedObject var viewModel: DiscoverViewModel
     let mediaType: MediaType
-
+    
+    let trendingMedia: [MediaSortedQuery.Data.Page.Medium]
+    let page: Int
+    let hasNextPage: Bool
+    
+    init(viewModel: DiscoverViewModel, mediaType: MediaType) {
+        self.viewModel = viewModel
+        self.mediaType = mediaType
+        self.trendingMedia = switch mediaType {
+        case .anime:
+            viewModel.trendingAnimes
+        case .manga:
+            viewModel.trendingManga
+        }
+        self.page = switch mediaType {
+        case .anime:
+            viewModel.pageTrendingAnime
+        case .manga:
+            viewModel.pageTrendingManga
+        }
+        self.hasNextPage = switch mediaType {
+        case .anime:
+            viewModel.hasNextPageTrendingAnime
+        case .manga:
+            viewModel.hasNextPageTrendingManga
+        }
+    }
+    
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
-    var trendingMedia: [MediaSortedQuery.Data.Page.Medium?] {
-        switch mediaType {
-        case .anime:
-            return viewModel.trendingAnimes
-        case .manga:
-            return viewModel.trendingManga
-        }
-    }
-    var page: Int {
-        switch mediaType {
-        case .anime:
-            return viewModel.pageTrendingAnime
-        case .manga:
-            return viewModel.pageTrendingManga
-        }
-    }
-    var hasNextPage: Bool {
-        switch mediaType {
-        case .anime:
-            return viewModel.hasNextPageTrendingAnime
-        case .manga:
-            return viewModel.hasNextPageTrendingManga
-        }
-    }
 
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: gridColumns) {
-                ForEach(trendingMedia, id: \.?.id) {
-                    if let media = $0 {
-                        NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                            VListItemView(
-                                title: media.title?.userPreferred ?? "",
-                                imageUrl: media.coverImage?.large,
-                                meanScore: media.meanScore,
-                                status: media.mediaListEntry?.status?.value
-                            )
-                            .mediaContextMenu(
-                                mediaId: media.id,
-                                mediaType: mediaType,
-                                mediaListStatus: media.mediaListEntry?.status?.value
-                            )
-                        }
-                        .buttonStyle(.plain)
+                ForEach(trendingMedia, id: \.id) { media in
+                    NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
+                        VListItemView(
+                            title: media.title?.userPreferred ?? "",
+                            imageUrl: media.coverImage?.large,
+                            meanScore: media.meanScore,
+                            status: media.mediaListEntry?.status?.value
+                        )
+                        .mediaContextMenu(
+                            mediaId: media.id,
+                            mediaType: mediaType,
+                            mediaListStatus: media.mediaListEntry?.status?.value
+                        )
                     }
+                    .buttonStyle(.plain)
                 }
                 if hasNextPage {
                     ProgressView()
-                        .onAppear {
+                        .task {
                             switch mediaType {
                             case .anime:
-                                viewModel.getTrendingAnimes(page: page)
+                                await viewModel.getTrendingAnimes(page: page)
                             case .manga:
-                                viewModel.getTrendingManga(page: page)
+                                await viewModel.getTrendingManga(page: page)
                             }
                         }
                 }

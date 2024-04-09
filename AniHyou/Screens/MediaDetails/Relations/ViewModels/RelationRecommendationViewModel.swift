@@ -8,22 +8,14 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class RelationRecommendationViewModel: ObservableObject {
 
     @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Media?
 
-    func getMediaRelationsAndRecommendations(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaRelationsAndRecommendationsQuery(
-            mediaId: .some(mediaId)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.media {
-                    self?.mediaRelationsAndRecommendations = media
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getMediaRelationsAndRecommendations(mediaId: Int) async {
+        if let result = await MediaRepository.getMediaRelationsAndRecommendations(mediaId: mediaId) {
+            mediaRelationsAndRecommendations = result
         }
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 // swiftlint:disable:next type_body_length
 class OverviewStatsViewModel: ObservableObject {
 
@@ -47,207 +48,195 @@ class OverviewStatsViewModel: ObservableObject {
     }
 
     // swiftlint:disable:next function_body_length
-    func getAnimeOverview(userId: Int) {
+    func getAnimeOverview(userId: Int) async {
         isLoading = true
-        Network.shared.apollo.fetch(query: UserStatsAnimeOverviewQuery(userId: .some(userId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data?.user?.statistics?.anime,
-                   let scoreFormat = graphQLResult.data?.user?.mediaListOptions?.scoreFormat?.value
-                {
-                    self?.animeStats = data
-                    self?.scoreFormat = scoreFormat
+        if let result = await UserStatsRepository.getAnimeOverview(userId: userId),
+           let scoreFormat = result.mediaListOptions?.scoreFormat?.value,
+           let stats = result.statistics?.anime
+        {
+            animeStats = stats
+            self.scoreFormat = scoreFormat
 
-                    self?.scoreStatsCount.removeAll()
-                    self?.scoreStatsTime.removeAll()
-                    data.scores?.forEach {
-                        if let score = $0 {
-                            self?.addScoreStat(
-                                score: score.score,
-                                count: score.count,
-                                time: score.minutesWatched / 60
-                            )
-                        }
+            scoreStatsCount.removeAll()
+            scoreStatsTime.removeAll()
+            stats.scores?.forEach {
+                if let score = $0 {
+                    addScoreStat(
+                        score: score.score,
+                        count: score.count,
+                        time: score.minutesWatched / 60
+                    )
+                }
+            }
+            stats.lengths?
+                .sorted(
+                    by: {
+                        OverviewStatsViewModel.lengthStatComparator($0?.length)
+                        < OverviewStatsViewModel.lengthStatComparator($1?.length)
                     }
-                    data.lengths?
-                        .sorted(
-                            by: {
-                                OverviewStatsViewModel.lengthStatComparator($0?.length) 
-                                < OverviewStatsViewModel.lengthStatComparator($1?.length)
-                            }
+                )
+                .forEach {
+                    if let length = $0 {
+                        addLengthStat(
+                            length: length.length,
+                            count: length.count,
+                            time: length.minutesWatched / 60,
+                            meanScore: length.meanScore
                         )
-                        .forEach {
-                            if let length = $0 {
-                                self?.addLengthStat(
-                                    length: length.length,
-                                    count: length.count,
-                                    time: length.minutesWatched / 60,
-                                    meanScore: length.meanScore
-                                )
-                            }
-                        }
-                    data.releaseYears?.forEach {
-                        if let year = $0 {
-                            self?.addReleaseYearStat(
-                                releaseYear: year.releaseYear,
-                                count: year.count,
-                                time: year.minutesWatched / 60,
-                                meanScore: year.meanScore
-                            )
-                        }
-                    }
-                    data.startYears?.forEach {
-                        if let year = $0 {
-                            self?.addStartYearStat(
-                                startYear: year.startYear,
-                                count: year.count,
-                                time: year.minutesWatched / 60,
-                                meanScore: year.meanScore
-                            )
-                        }
-                    }
-                    data.formats?.forEach {
-                        if let format = $0 {
-                            self?.formatsDistribution.append(
-                                Stat(
-                                    id: format.format?.rawValue ?? "",
-                                    idLocalized: format.format?.value?.localizedName,
-                                    value: CGFloat(format.count),
-                                    color: format.format?.value?.color ?? .accentColor
-                                )
-                            )
-                        }
-                    }
-                    data.statuses?.forEach {
-                        if let status = $0 {
-                            self?.statusDistribution.append(
-                                Stat(
-                                    id: status.status?.rawValue ?? "",
-                                    idLocalized: status.status?.value?.localizedName,
-                                    value: CGFloat(status.count),
-                                    color: status.status?.value?.color ?? .accentColor
-                                )
-                            )
-                        }
-                    }
-                    data.countries?.forEach {
-                        if let country = $0 {
-                            self?.countryDistribution.append(
-                                Stat(
-                                    id: country.country?.rawValue ?? "",
-                                    idLocalized: country.country?.localizedName,
-                                    value: CGFloat(country.count),
-                                    color: country.country?.color ?? .accentColor
-                                )
-                            )
-                        }
                     }
                 }
-            case .failure(let error):
-                print(error)
+            stats.releaseYears?.forEach {
+                if let year = $0 {
+                    addReleaseYearStat(
+                        releaseYear: year.releaseYear,
+                        count: year.count,
+                        time: year.minutesWatched / 60,
+                        meanScore: year.meanScore
+                    )
+                }
             }
-            self?.isLoading = false
+            stats.startYears?.forEach {
+                if let year = $0 {
+                    addStartYearStat(
+                        startYear: year.startYear,
+                        count: year.count,
+                        time: year.minutesWatched / 60,
+                        meanScore: year.meanScore
+                    )
+                }
+            }
+            stats.formats?.forEach {
+                if let format = $0 {
+                    formatsDistribution.append(
+                        Stat(
+                            id: format.format?.rawValue ?? "",
+                            idLocalized: format.format?.value?.localizedName,
+                            value: CGFloat(format.count),
+                            color: format.format?.value?.color ?? .accentColor
+                        )
+                    )
+                }
+            }
+            stats.statuses?.forEach {
+                if let status = $0 {
+                    statusDistribution.append(
+                        Stat(
+                            id: status.status?.rawValue ?? "",
+                            idLocalized: status.status?.value?.localizedName,
+                            value: CGFloat(status.count),
+                            color: status.status?.value?.color ?? .accentColor
+                        )
+                    )
+                }
+            }
+            stats.countries?.forEach {
+                if let country = $0 {
+                    countryDistribution.append(
+                        Stat(
+                            id: country.country?.rawValue ?? "",
+                            idLocalized: country.country?.localizedName,
+                            value: CGFloat(country.count),
+                            color: country.country?.color ?? .accentColor
+                        )
+                    )
+                }
+            }
         }
+        isLoading = false
     }
 
     // swiftlint:disable:next function_body_length
-    func getMangaOverview(userId: Int) {
+    func getMangaOverview(userId: Int) async {
         isLoading = true
-        Network.shared.apollo.fetch(query: UserStatsMangaOverviewQuery(userId: .some(userId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data?.user?.statistics?.manga,
-                   let scoreFormat = graphQLResult.data?.user?.mediaListOptions?.scoreFormat?.value
-                {
-                    self?.mangaStats = data
-                    self?.scoreFormat = scoreFormat
+        if let result = await UserStatsRepository.getMangaOverview(userId: userId),
+           let scoreFormat = result.mediaListOptions?.scoreFormat?.value,
+           let stats = result.statistics?.manga
+        {
+            mangaStats = stats
+            self.scoreFormat = scoreFormat
 
-                    self?.scoreStatsCount.removeAll()
-                    self?.scoreStatsTime.removeAll()
-                    data.scores?.forEach {
-                        if let score = $0 {
-                            self?.addScoreStat(
-                                score: score.score,
-                                count: score.count,
-                                time: score.chaptersRead
-                            )
-                        }
+            scoreStatsCount.removeAll()
+            scoreStatsTime.removeAll()
+            stats.scores?.forEach {
+                if let score = $0 {
+                    addScoreStat(
+                        score: score.score,
+                        count: score.count,
+                        time: score.chaptersRead
+                    )
+                }
+            }
+            stats.lengths?
+                .sorted(
+                    by: {
+                        OverviewStatsViewModel.lengthStatComparator($0?.length)
+                        < OverviewStatsViewModel.lengthStatComparator($1?.length)
                     }
-                    data.lengths?
-                        .sorted(
-                            by: {
-                                OverviewStatsViewModel.lengthStatComparator($0?.length) 
-                                < OverviewStatsViewModel.lengthStatComparator($1?.length)
-                            }
+                )
+                .forEach {
+                    if let length = $0 {
+                        addLengthStat(
+                            length: length.length,
+                            count: length.count,
+                            time: length.chaptersRead,
+                            meanScore: length.meanScore
                         )
-                        .forEach {
-                            if let length = $0 {
-                                self?.addLengthStat(
-                                    length: length.length,
-                                    count: length.count,
-                                    time: length.chaptersRead,
-                                    meanScore: length.meanScore
-                                )
-                            }
-                        }
-                    data.releaseYears?.forEach {
-                        if let year = $0 {
-                            self?.addReleaseYearStat(
-                                releaseYear: year.releaseYear,
-                                count: year.count,
-                                time: year.chaptersRead,
-                                meanScore: year.meanScore
-                            )
-                        }
-                    }
-                    data.startYears?.forEach {
-                        if let year = $0 {
-                            self?.addStartYearStat(
-                                startYear: year.startYear,
-                                count: year.count,
-                                time: year.chaptersRead,
-                                meanScore: year.meanScore
-                            )
-                        }
-                    }
-                    data.formats?.forEach {
-                        if let format = $0 {
-                            self?.formatsDistribution.append(Stat(
-                                id: format.format?.rawValue ?? "",
-                                idLocalized: format.format?.value?.localizedName,
-                                value: CGFloat(format.count),
-                                color: format.format?.value?.color ?? .accentColor
-                            ))
-                        }
-                    }
-                    data.statuses?.forEach {
-                        if let status = $0 {
-                            self?.statusDistribution.append(Stat(
-                                id: status.status?.rawValue ?? "",
-                                idLocalized: status.status?.value?.localizedName,
-                                value: CGFloat(status.count),
-                                color: status.status?.value?.color ?? .accentColor
-                            ))
-                        }
-                    }
-                    data.countries?.forEach {
-                        if let country = $0 {
-                            self?.countryDistribution.append(
-                                Stat(
-                                    id: country.country?.rawValue ?? "",
-                                    idLocalized: country.country?.localizedName,
-                                    value: CGFloat(country.count),
-                                    color: country.country?.color ?? .accentColor
-                                )
-                            )
-                        }
                     }
                 }
-            case .failure(let error):
-                print(error)
+            stats.releaseYears?.forEach {
+                if let year = $0 {
+                    addReleaseYearStat(
+                        releaseYear: year.releaseYear,
+                        count: year.count,
+                        time: year.chaptersRead,
+                        meanScore: year.meanScore
+                    )
+                }
             }
-            self?.isLoading = false
+            stats.startYears?.forEach {
+                if let year = $0 {
+                    addStartYearStat(
+                        startYear: year.startYear,
+                        count: year.count,
+                        time: year.chaptersRead,
+                        meanScore: year.meanScore
+                    )
+                }
+            }
+            stats.formats?.forEach {
+                if let format = $0 {
+                    formatsDistribution.append(Stat(
+                        id: format.format?.rawValue ?? "",
+                        idLocalized: format.format?.value?.localizedName,
+                        value: CGFloat(format.count),
+                        color: format.format?.value?.color ?? .accentColor
+                    ))
+                }
+            }
+            stats.statuses?.forEach {
+                if let status = $0 {
+                    statusDistribution.append(Stat(
+                        id: status.status?.rawValue ?? "",
+                        idLocalized: status.status?.value?.localizedName,
+                        value: CGFloat(status.count),
+                        color: status.status?.value?.color ?? .accentColor
+                    ))
+                }
+            }
+            stats.countries?.forEach {
+                if let country = $0 {
+                    countryDistribution.append(
+                        Stat(
+                            id: country.country?.rawValue ?? "",
+                            idLocalized: country.country?.localizedName,
+                            value: CGFloat(country.count),
+                            color: country.country?.color ?? .accentColor
+                        )
+                    )
+                }
+            }
         }
+        isLoading = false
     }
     
     private func addScoreStat(score: Int?, count: Int, time: Int) {

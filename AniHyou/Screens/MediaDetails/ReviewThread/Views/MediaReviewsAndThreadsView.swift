@@ -19,14 +19,14 @@ struct MediaReviewsAndThreadsView: View {
     var body: some View {
         VStack(alignment: .leading) {
 
-            if viewModel.mediaThreads.count > 0 {
+            if viewModel.threads.count > 0 {
                 Text("Threads")
                     .font(.title3)
                     .bold()
                     .padding(.leading)
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 8) {
-                        ForEach(viewModel.mediaThreads, id: \.id) { thread in
+                        ForEach(viewModel.threads, id: \.id) { thread in
                             NavigationLink(destination: ThreadDetailsView(thread: thread)) {
                                 ThreadItemView(thread: thread)
                             }
@@ -43,13 +43,10 @@ struct MediaReviewsAndThreadsView: View {
                 .bold()
                 .padding(.leading)
             ZStack {
-                if viewModel.mediaReviews == nil {
+                if !viewModel.dataFetched {
                     HorizontalProgressView()
                         .padding()
-                        .onAppear {
-                            viewModel.getMediaReviews(mediaId: mediaId)
-                        }
-                } else if viewModel.mediaReviews?.nodes?.count == 0 {
+                } else if viewModel.reviews.count == 0 {
                     HStack {
                         Spacer()
                         Text("No reviews")
@@ -59,13 +56,11 @@ struct MediaReviewsAndThreadsView: View {
                 } else {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: gridRows, spacing: 8) {
-                            ForEach(viewModel.mediaReviews!.nodes ?? [], id: \.?.id) {
-                                if let review = $0 {
-                                    NavigationLink(destination: ReviewDetailsView(reviewId: review.id)) {
-                                        ReviewItemView(review: review)
-                                    }
-                                    .buttonStyle(.plain)
+                            ForEach(viewModel.reviews, id: \.id) { review in
+                                NavigationLink(destination: ReviewDetailsView(reviewId: review.id)) {
+                                    ReviewItemView(review: review)
                                 }
+                                .buttonStyle(.plain)
                             }
                         }//:HGrid
                         .padding(.leading)
@@ -74,8 +69,11 @@ struct MediaReviewsAndThreadsView: View {
                 }
             }//:ZStack
         }//:VStack
-        .onAppear {
-            viewModel.getMediaThreads(mediaId: mediaId)
+        .task {
+            if !viewModel.dataFetched {
+                await viewModel.getMediaThreads(mediaId: mediaId)
+                await viewModel.getMediaReviews(mediaId: mediaId)
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ public class SearchStudioQuery: GraphQLQuery {
   public static let operationName: String = "SearchStudio"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchStudio($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename studios(search: $search, sort: SEARCH_MATCH) { __typename id name } } }"#
+      #"query SearchStudio($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename studios(search: $search, sort: SEARCH_MATCH) { __typename id name } pageInfo { __typename hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -58,9 +58,12 @@ public class SearchStudioQuery: GraphQLQuery {
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
       public var studios: [Studio?]? { __data["studios"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
 
       /// Page.Studio
       ///
@@ -80,6 +83,23 @@ public class SearchStudioQuery: GraphQLQuery {
         public var id: Int { __data["id"] }
         /// The name of the studio
         public var name: String { __data["name"] }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: AniListAPI.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }

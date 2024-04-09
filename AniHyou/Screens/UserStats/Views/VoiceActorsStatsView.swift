@@ -48,11 +48,13 @@ struct VoiceActorsStatsView: View {
             }
         }//:VStack
         .frame(minHeight: 500)
-        .onAppear {
-            viewModel.getVoiceActorsStats(userId: userId)
+        .task {
+            await viewModel.getVoiceActorsStats(userId: userId)
         }
         .onChange(of: viewModel.distribution) { _ in
-            viewModel.getVoiceActorsStats(userId: userId)
+            Task {
+                await viewModel.getVoiceActorsStats(userId: userId)
+            }
         }
     }
 }

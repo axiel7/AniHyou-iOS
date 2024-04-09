@@ -8,55 +8,30 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class UserSocialViewModel: ObservableObject {
 
-    @Published var followers = [FollowersQuery.Data.Page.Follower?]()
+    @Published var followers = [FollowersQuery.Data.Page.Follower]()
     private var currentPageFollowers = 1
     var hasNextPageFollowers = true
 
-    func getFollowers(userId: Int) {
-        Network.shared.apollo.fetch(query: FollowersQuery(
-            userId: userId,
-            page: .some(currentPageFollowers),
-            perPage: .some(25)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let followers = page.followers {
-                        self?.followers.append(contentsOf: followers)
-                    }
-                    self?.currentPageFollowers += 1
-                    self?.hasNextPageFollowers = page.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getFollowers(userId: Int) async {
+        if let result = await UserRepository.getFollowers(userId: userId, page: currentPageFollowers) {
+            followers.append(contentsOf: result.data)
+            currentPageFollowers = result.page
+            hasNextPageFollowers = result.hasNextPage
         }
     }
 
-    @Published var followings = [FollowingsQuery.Data.Page.Following?]()
+    @Published var followings = [FollowingsQuery.Data.Page.Following]()
     private var currentPageFollowings = 1
     var hasNextPageFollowings = true
 
-    func getFollowings(userId: Int) {
-        Network.shared.apollo.fetch(query: FollowingsQuery(
-            userId: userId,
-            page: .some(currentPageFollowings),
-            perPage: .some(25)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let followings = page.following {
-                        self?.followings.append(contentsOf: followings)
-                    }
-                    self?.currentPageFollowings += 1
-                    self?.hasNextPageFollowings = page.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getFollowings(userId: Int) async {
+        if let result = await UserRepository.getFollowings(userId: userId, page: currentPageFollowings) {
+            followings.append(contentsOf: result.data)
+            currentPageFollowings = result.page
+            hasNextPageFollowings = result.hasNextPage
         }
     }
 }

@@ -7,7 +7,7 @@ public class SearchCharacterQuery: GraphQLQuery {
   public static let operationName: String = "SearchCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchCharacter($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename characters(search: $search, sort: SEARCH_MATCH) { __typename id name { __typename userPreferred } image { __typename medium } } } }"#
+      #"query SearchCharacter($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename characters(search: $search, sort: SEARCH_MATCH) { __typename id name { __typename userPreferred } image { __typename medium } } pageInfo { __typename hasNextPage } } }"#
     ))
 
   public var page: GraphQLNullable<Int>
@@ -58,9 +58,12 @@ public class SearchCharacterQuery: GraphQLQuery {
           "search": .variable("search"),
           "sort": "SEARCH_MATCH"
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
       public var characters: [Character?]? { __data["characters"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
 
       /// Page.Character
       ///
@@ -117,6 +120,23 @@ public class SearchCharacterQuery: GraphQLQuery {
           /// The character's image of media at medium size
           public var medium: String? { __data["medium"] }
         }
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: AniListAPI.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }

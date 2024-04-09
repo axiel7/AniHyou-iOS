@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 class MediaStatsViewModel: ObservableObject {
 
     @Published var isLoading = true
@@ -16,41 +17,34 @@ class MediaStatsViewModel: ObservableObject {
     @Published var scoreDistribution = [Stat]()
     @Published var rankings = [MediaStatsQuery.Data.Media.Ranking?]()
 
-    func getMediaStats(mediaId: Int) {
+    func getMediaStats(mediaId: Int) async {
         isLoading = true
-        Network.shared.apollo.fetch(query: MediaStatsQuery(mediaId: .some(mediaId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.media {
-                    media.stats?.statusDistribution?.forEach {
-                        if let stat = $0 {
-                            self?.statusDistribution.append(
-                                Stat(
-                                    id: stat.status!.rawValue,
-                                    idLocalized: stat.status!.value!.localizedName,
-                                    value: CGFloat(stat.amount ?? 0),
-                                    color: stat.status!.value!.color
-                                )
-                            )
-                        }
-                    }
-                    media.stats?.scoreDistribution?.forEach {
-                        if let stat = $0 {
-                            self?.scoreDistribution.append(
-                                Stat(
-                                    id: String(stat.score ?? 0),
-                                    value: CGFloat(stat.amount ?? 0),
-                                    color: Color("Score\(String(stat.score ?? 10))")
-                                )
-                            )
-                        }
-                    }
-                    self?.rankings = media.rankings ?? []
+        if let result = await MediaRepository.getMediaStats(mediaId: mediaId) {
+            result.stats?.statusDistribution?.forEach {
+                if let stat = $0 {
+                    statusDistribution.append(
+                        Stat(
+                            id: stat.status!.rawValue,
+                            idLocalized: stat.status!.value!.localizedName,
+                            value: CGFloat(stat.amount ?? 0),
+                            color: stat.status!.value!.color
+                        )
+                    )
                 }
-            case .failure(let error):
-                print(error)
             }
-            self?.isLoading = false
+            result.stats?.scoreDistribution?.forEach {
+                if let stat = $0 {
+                    scoreDistribution.append(
+                        Stat(
+                            id: String(stat.score ?? 0),
+                            value: CGFloat(stat.amount ?? 0),
+                            color: Color("Score\(String(stat.score ?? 10))")
+                        )
+                    )
+                }
+            }
+            rankings = result.rankings?.compactMap({ $0 }) ?? []
         }
+        isLoading = false
     }
 }

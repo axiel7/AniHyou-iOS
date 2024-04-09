@@ -50,11 +50,13 @@ struct StaffStatsView: View {
             }
         }//:VStack
         .frame(minHeight: 500)
-        .onAppear {
-            viewModel.getStaffStats(userId: userId, mediaType: mediaType)
+        .task {
+            await viewModel.getStaffStats(userId: userId, mediaType: mediaType)
         }
         .onChange(of: viewModel.distribution) { _ in
-            viewModel.getStaffStats(userId: userId, mediaType: mediaType)
+            Task {
+                await viewModel.getStaffStats(userId: userId, mediaType: mediaType)
+            }
         }
     }
 }

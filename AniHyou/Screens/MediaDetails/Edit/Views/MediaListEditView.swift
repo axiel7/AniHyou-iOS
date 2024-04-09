@@ -148,7 +148,9 @@ struct MediaListEditView: View {
                 }
                 .confirmationDialog("Delete this entry?", isPresented: $showDeleteDialog) {
                     Button("Delete", role: .destructive) {
-                        viewModel.deleteEntry(entryId: mediaList!.id)
+                        Task {
+                            await viewModel.deleteEntry(entryId: mediaList!.id)
+                        }
                     }
                 } message: {
                     Text("Delete this entry?")
@@ -169,20 +171,22 @@ struct MediaListEditView: View {
                         ProgressView()
                     } else {
                         Button("Save") {
-                            viewModel.updateEntry(
-                                mediaId: mediaDetails.id,
-                                status: status,
-                                score: viewModel.score,
-                                advancedScoresDict: advancedScores,
-                                progress: progress,
-                                progressVolumes: progressVolumes,
-                                startedAt: isStartDateSet ? startDate : nil,
-                                completedAt: isFinishDateSet ? finishDate : nil,
-                                repeatCount: repeatCount,
-                                isPrivate: isPrivate,
-                                isHiddenFromStatusLists: isHiddenFromStatusLists,
-                                notes: notes
-                            )
+                            Task {
+                                await viewModel.updateEntry(
+                                    mediaId: mediaDetails.id,
+                                    status: status,
+                                    score: viewModel.score,
+                                    advancedScoresDict: advancedScores,
+                                    progress: progress,
+                                    progressVolumes: progressVolumes,
+                                    startedAt: isStartDateSet ? startDate : nil,
+                                    completedAt: isFinishDateSet ? finishDate : nil,
+                                    repeatCount: repeatCount,
+                                    isPrivate: isPrivate,
+                                    isHiddenFromStatusLists: isHiddenFromStatusLists,
+                                    notes: notes
+                                )
+                            }
                         }
                         .font(.bold(.body)())
                     }

@@ -46,8 +46,8 @@ struct MediaStatsView: View {
             }
         }
         .padding(.bottom)
-        .onAppear {
-            viewModel.getMediaStats(mediaId: mediaId)
+        .task {
+            await viewModel.getMediaStats(mediaId: mediaId)
         }
     }
 

@@ -38,8 +38,8 @@ struct MediaCharactersAndStaffView: View {
         } else {
             HorizontalProgressView()
                 .padding()
-                .onAppear {
-                    viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
+                .task {
+                    await viewModel.getMediaCharactersAndStaff(mediaId: mediaId)
                 }
         }
     }

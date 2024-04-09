@@ -54,61 +54,57 @@ struct DiscoverView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
                     if airingOnMyList {
-                        ForEach(viewModel.airingOnMyList, id: \.?.id) {
-                            if let item = $0 {
-                                NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                    AiringMediaHorizontalItemView(
-                                        title: item.title?.userPreferred,
-                                        imageUrl: item.coverImage?.large,
-                                        meanScore: item.meanScore,
-                                        nextEpisode: item.nextAiringEpisode?.episode,
-                                        airingAt: item.nextAiringEpisode?.airingAt,
-                                        status: item.mediaListEntry?.status?.value
-                                    )
-                                    .padding(.leading, 4)
-                                    .frame(width: 280, alignment: .leading)
-                                    .mediaContextMenu(
-                                        mediaId: item.id,
-                                        mediaType: .anime,
-                                        mediaListStatus: item.mediaListEntry?.status?.value
-                                    )
-                                }
-                                .buttonStyle(.plain)
+                        ForEach(viewModel.airingOnMyList, id: \.id) { item in
+                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                AiringMediaHorizontalItemView(
+                                    title: item.title?.userPreferred,
+                                    imageUrl: item.coverImage?.large,
+                                    meanScore: item.meanScore,
+                                    nextEpisode: item.nextAiringEpisode?.episode,
+                                    airingAt: item.nextAiringEpisode?.airingAt,
+                                    status: item.mediaListEntry?.status?.value
+                                )
+                                .padding(.leading, 4)
+                                .frame(width: 280, alignment: .leading)
+                                .mediaContextMenu(
+                                    mediaId: item.id,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.mediaListEntry?.status?.value
+                                )
                             }
+                            .buttonStyle(.plain)
                         }
                     } else {
-                        ForEach(viewModel.airingAnimes, id: \.?.mediaId) {
-                            if let item = $0 {
-                                NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
-                                    AiringMediaHorizontalItemView(
-                                        title: item.media?.title?.userPreferred,
-                                        imageUrl: item.media?.coverImage?.large,
-                                        meanScore: item.media?.meanScore,
-                                        nextEpisode: item.episode,
-                                        airingAt: item.airingAt,
-                                        status: item.media?.mediaListEntry?.status?.value
-                                    )
-                                    .padding(.leading, 4)
-                                    .frame(width: 280, alignment: .leading)
-                                    .mediaContextMenu(
-                                        mediaId: item.mediaId,
-                                        mediaType: .anime,
-                                        mediaListStatus: item.media?.mediaListEntry?.status?.value
-                                    )
-                                }
-                                .buttonStyle(.plain)
+                        ForEach(viewModel.airingAnimes, id: \.mediaId) { item in
+                            NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
+                                AiringMediaHorizontalItemView(
+                                    title: item.media?.title?.userPreferred,
+                                    imageUrl: item.media?.coverImage?.large,
+                                    meanScore: item.media?.meanScore,
+                                    nextEpisode: item.episode,
+                                    airingAt: item.airingAt,
+                                    status: item.media?.mediaListEntry?.status?.value
+                                )
+                                .padding(.leading, 4)
+                                .frame(width: 280, alignment: .leading)
+                                .mediaContextMenu(
+                                    mediaId: item.mediaId,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.media?.mediaListEntry?.status?.value
+                                )
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }//:HStack
                 .padding(.leading, 8)
             }//:HScrollView
             .frame(height: 145)
-            .onAppear {
+            .task {
                 if airingOnMyList {
-                    viewModel.getAiringOnMyList()
+                    await viewModel.getAiringOnMyList()
                 } else {
-                    viewModel.getAiringAnimes()
+                    await viewModel.getAiringAnimes()
                 }
             }
         }//:ZStack
@@ -135,31 +131,29 @@ struct DiscoverView: View {
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top) {
-                    ForEach(viewModel.seasonAnimes, id: \.?.id) {
-                        if let item = $0 {
-                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(
-                                    title: item.title?.userPreferred ?? "",
-                                    imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore,
-                                    status: item.mediaListEntry?.status?.value
-                                )
-                                .padding(.trailing, 4)
-                                .mediaContextMenu(
-                                    mediaId: item.id,
-                                    mediaType: .anime,
-                                    mediaListStatus: item.mediaListEntry?.status?.value
-                                )
-                            }
-                            .buttonStyle(.plain)
+                    ForEach(viewModel.seasonAnimes, id: \.id) { item in
+                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                            VListItemView(
+                                title: item.title?.userPreferred ?? "",
+                                imageUrl: item.coverImage?.large,
+                                meanScore: item.meanScore,
+                                status: item.mediaListEntry?.status?.value
+                            )
+                            .padding(.trailing, 4)
+                            .mediaContextMenu(
+                                mediaId: item.id,
+                                mediaType: .anime,
+                                mediaListStatus: item.mediaListEntry?.status?.value
+                            )
                         }
+                        .buttonStyle(.plain)
                     }
                 }//:HStack
                 .padding(.leading, 14)
             }//:HScrollView
             .frame(minHeight: 180)
-            .onAppear {
-                viewModel.getSeasonAnimes()
+            .task {
+                await viewModel.getSeasonAnimes()
             }
         }//:ZStack
         Divider()
@@ -182,31 +176,29 @@ struct DiscoverView: View {
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top) {
-                    ForEach(viewModel.trendingAnimes, id: \.?.id) {
-                        if let item = $0 {
-                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(
-                                    title: item.title?.userPreferred ?? "",
-                                    imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore,
-                                    status: item.mediaListEntry?.status?.value
-                                )
-                                .padding(.trailing, 4)
-                                .mediaContextMenu(
-                                    mediaId: item.id,
-                                    mediaType: .anime,
-                                    mediaListStatus: item.mediaListEntry?.status?.value
-                                )
-                            }
-                            .buttonStyle(.plain)
+                    ForEach(viewModel.trendingAnimes, id: \.id) { item in
+                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                            VListItemView(
+                                title: item.title?.userPreferred ?? "",
+                                imageUrl: item.coverImage?.large,
+                                meanScore: item.meanScore,
+                                status: item.mediaListEntry?.status?.value
+                            )
+                            .padding(.trailing, 4)
+                            .mediaContextMenu(
+                                mediaId: item.id,
+                                mediaType: .anime,
+                                mediaListStatus: item.mediaListEntry?.status?.value
+                            )
                         }
+                        .buttonStyle(.plain)
                     }
                 }//:HStack
                 .padding(.leading, 14)
             }//:HScrollView
             .frame(minHeight: 180)
-            .onAppear {
-                viewModel.getTrendingAnimes()
+            .task {
+                await viewModel.getTrendingAnimes()
             }
         }//:ZStack
         Divider()
@@ -232,31 +224,29 @@ struct DiscoverView: View {
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top) {
-                    ForEach(viewModel.nextSeasonAnimes, id: \.?.id) {
-                        if let item = $0 {
-                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(
-                                    title: item.title?.userPreferred ?? "",
-                                    imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore,
-                                    status: item.mediaListEntry?.status?.value
-                                )
-                                .padding(.trailing, 4)
-                                .mediaContextMenu(
-                                    mediaId: item.id,
-                                    mediaType: .anime,
-                                    mediaListStatus: item.mediaListEntry?.status?.value
-                                )
-                            }
-                            .buttonStyle(.plain)
+                    ForEach(viewModel.nextSeasonAnimes, id: \.id) { item in
+                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                            VListItemView(
+                                title: item.title?.userPreferred ?? "",
+                                imageUrl: item.coverImage?.large,
+                                meanScore: item.meanScore,
+                                status: item.mediaListEntry?.status?.value
+                            )
+                            .padding(.trailing, 4)
+                            .mediaContextMenu(
+                                mediaId: item.id,
+                                mediaType: .anime,
+                                mediaListStatus: item.mediaListEntry?.status?.value
+                            )
                         }
+                        .buttonStyle(.plain)
                     }
                 }//:HStack
                 .padding(.leading, 14)
             }//:HScrollView
             .frame(minHeight: 180)
-            .onAppear {
-                viewModel.getNextSeasonAnimes()
+            .task {
+                await viewModel.getNextSeasonAnimes()
             }
         }//:ZStack
         Divider()
@@ -279,31 +269,29 @@ struct DiscoverView: View {
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top) {
-                    ForEach(viewModel.trendingManga, id: \.?.id) {
-                        if let item = $0 {
-                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                                VListItemView(
-                                    title: item.title?.userPreferred ?? "",
-                                    imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore,
-                                    status: item.mediaListEntry?.status?.value
-                                )
-                                .padding(.trailing, 4)
-                                .mediaContextMenu(
-                                    mediaId: item.id,
-                                    mediaType: .manga,
-                                    mediaListStatus: item.mediaListEntry?.status?.value
-                                )
-                            }
-                            .buttonStyle(.plain)
+                    ForEach(viewModel.trendingManga, id: \.id) { item in
+                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                            VListItemView(
+                                title: item.title?.userPreferred ?? "",
+                                imageUrl: item.coverImage?.large,
+                                meanScore: item.meanScore,
+                                status: item.mediaListEntry?.status?.value
+                            )
+                            .padding(.trailing, 4)
+                            .mediaContextMenu(
+                                mediaId: item.id,
+                                mediaType: .manga,
+                                mediaListStatus: item.mediaListEntry?.status?.value
+                            )
                         }
+                        .buttonStyle(.plain)
                     }
                 }//:HStack
                 .padding(.leading, 14)
             }//:HScrollView
             .frame(minHeight: 180)
-            .onAppear {
-                viewModel.getTrendingManga()
+            .task {
+                await viewModel.getTrendingManga()
             }
         }//:ZStack
         .padding(.bottom)

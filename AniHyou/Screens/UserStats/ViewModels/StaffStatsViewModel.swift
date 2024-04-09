@@ -8,49 +8,22 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class StaffStatsViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var distribution: StatDistributionType = .titles
     @Published var staff = [StaffStat]()
     
-    func getStaffStats(userId: Int, mediaType: MediaType) {
+    func getStaffStats(userId: Int, mediaType: MediaType) async {
         isLoading = true
-        let sort = distribution.userStatisticsSort(ascencing: false)
-        if mediaType == .anime {
-            Network.shared.apollo.fetch(
-                query: UserStatsAnimeStaffQuery(
-                    userId: .some(userId),
-                    sort: .some([.case(sort)])
-                )
-            ) { [weak self] result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let genres = graphQLResult.data?.user?.statistics?.anime?.staff {
-                        self?.staff = genres.compactMap { $0?.fragments.staffStat }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-                self?.isLoading = false
-            }
-        } else if mediaType == .manga {
-            Network.shared.apollo.fetch(
-                query: UserStatsMangaStaffQuery(
-                    userId: .some(userId),
-                    sort: .some([.case(sort)])
-                )
-            ) { [weak self] result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let staff = graphQLResult.data?.user?.statistics?.manga?.staff {
-                        self?.staff = staff.compactMap { $0?.fragments.staffStat }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-                self?.isLoading = false
-            }
+        if let result = await UserStatsRepository.getStaffStats(
+            userId: userId,
+            mediaType: mediaType,
+            distribution: distribution
+        ) {
+            staff = result
         }
+        isLoading = false
     }
 }

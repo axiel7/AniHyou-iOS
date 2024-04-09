@@ -99,8 +99,8 @@ struct MediaRelationsAndRecommendationsView: View {
         } else {
             HorizontalProgressView()
                 .padding()
-                .onAppear {
-                    viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
+                .task {
+                    await viewModel.getMediaRelationsAndRecommendations(mediaId: mediaId)
                 }
         }
     }

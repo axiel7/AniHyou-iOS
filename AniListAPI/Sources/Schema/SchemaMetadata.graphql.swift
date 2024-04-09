@@ -33,12 +33,12 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "ThreadComment": return AniListAPI.Objects.ThreadComment
     case "Page": return AniListAPI.Objects.Page
     case "Studio": return AniListAPI.Objects.Studio
+    case "PageInfo": return AniListAPI.Objects.PageInfo
     case "MediaConnection": return AniListAPI.Objects.MediaConnection
     case "Media": return AniListAPI.Objects.Media
     case "MediaCoverImage": return AniListAPI.Objects.MediaCoverImage
     case "MediaTitle": return AniListAPI.Objects.MediaTitle
     case "MediaList": return AniListAPI.Objects.MediaList
-    case "PageInfo": return AniListAPI.Objects.PageInfo
     case "FuzzyDate": return AniListAPI.Objects.FuzzyDate
     case "Deleted": return AniListAPI.Objects.Deleted
     case "AiringSchedule": return AniListAPI.Objects.AiringSchedule

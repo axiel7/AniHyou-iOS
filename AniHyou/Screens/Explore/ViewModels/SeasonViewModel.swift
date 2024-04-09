@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class SeasonViewModel: ObservableObject {
     
     private let perPage = 25
@@ -21,33 +22,27 @@ class SeasonViewModel: ObservableObject {
     var currentPage = 1
     var hasNextPage = false
 
-    func getAnimeSeasonal(resetPage: Bool = false) {
-        if resetPage { currentPage = 1 }
-        Network.shared.apollo.fetch(
-            query: SeasonalAnimeQuery(
-                page: .some(currentPage),
-                perPage: .some(perPage),
-                season: .some(.case(season)),
-                seasonYear: .some(year),
-                sort: .some([.case(sort)])
-            )
-        ) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let media = page.media?.compactMap({ $0 }) {
-                        if resetPage {
-                            self?.animeSeasonal = media
-                        } else {
-                            self?.animeSeasonal.append(contentsOf: media)
-                        }
-                    }
-                    self?.currentPage += 1
-                    self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
+    func getAnimeSeasonal(resetPage: Bool = false) async {
+        if let result = await MediaRepository.getAnimeSeasonal(
+            season: season,
+            year: year,
+            sort: [sort],
+            page: currentPage
+        ) {
+            if resetPage {
+                animeSeasonal = result.data
+            } else {
+                animeSeasonal.append(contentsOf: result.data)
             }
+            currentPage = result.page
+            hasNextPage = result.hasNextPage
+        }
+    }
+    
+    func resetPage() {
+        Task {
+            currentPage = 1
+            await getAnimeSeasonal(resetPage: true)
         }
     }
 }

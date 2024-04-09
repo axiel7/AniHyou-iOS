@@ -9,6 +9,7 @@ import Foundation
 import Apollo
 import AniListAPI
 
+@MainActor
 class MediaListViewModel: ObservableObject {
 
     var userId: Int = LoginRepository.authUserId()
@@ -41,9 +42,7 @@ class MediaListViewModel: ObservableObject {
     }
     
     private func fetchList() async {
-        await MainActor.run {
-            isLoading = true
-        }
+        isLoading = true
         let sortArray: [MediaListSort] = if mediaListStatus == nil {
             [.status, sort ?? .addedTimeDesc]
         } else {
@@ -63,10 +62,8 @@ class MediaListViewModel: ObservableObject {
             mediaList.append(contentsOf: result.data)
             await filterList()
         }
-        await MainActor.run {
-            isLoading = false
-            forceReload = false
-        }
+        isLoading = false
+        forceReload = false
     }
 
     func refreshList() {
@@ -77,7 +74,6 @@ class MediaListViewModel: ObservableObject {
         filteredMediaList = []
     }
     
-    @MainActor
     func filterList() async {
         if searchText.count > 0 && searchText.count < 3 {
             filteredMediaList = []
@@ -98,7 +94,6 @@ class MediaListViewModel: ObservableObject {
         }
     }
 
-    @MainActor
     func updateEntryProgress(of entry: BasicMediaListEntry) async {
         isLoading = true
         var status: MediaListStatus?
@@ -116,7 +111,6 @@ class MediaListViewModel: ObservableObject {
         isLoading = false
     }
 
-    @MainActor
     func onEntryUpdated(_ entry: BasicMediaListEntry) async {
         guard let foundIndex = mediaList.firstIndex(where: { $0.id == entry.id }) else { return }
         //if the status changed, remove from this list

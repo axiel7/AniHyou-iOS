@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class MediaListEditViewModel: ObservableObject {
 
     var oldEntry: BasicMediaListEntry?
@@ -61,7 +62,7 @@ class MediaListEditViewModel: ObservableObject {
     @Published var isUpdateSuccess = false
     var updatedEntry: BasicMediaListEntry?
 
-    // swiftlint:disable:next function_parameter_count cyclomatic_complexity function_body_length
+    // swiftlint:disable:next function_parameter_count
     func updateEntry(
         mediaId: Int,
         status: MediaListStatus?,
@@ -75,104 +76,38 @@ class MediaListEditViewModel: ObservableObject {
         isPrivate: Bool?,
         isHiddenFromStatusLists: Bool?,
         notes: String?
-    ) {
+    ) async {
         isLoading = true
-        Task {
-            var setStatus = status
-            if status == oldEntry?.status?.value { setStatus = nil }
-            
-            var setScore = score
-            if score == oldEntry?.score { setScore = nil }
-            
-            var setProgress = progress
-            if progress == oldEntry?.progress { setProgress = nil }
-            
-            var setProgressVolumes = progressVolumes
-            if progressVolumes == oldEntry?.progressVolumes { setProgressVolumes = nil }
-            
-            var setStartedAt = startedAt?.toFuzzyDate()
-            if oldEntry?.startedAt?.fragments.fuzzyDateFragment.isEqual(setStartedAt) == true {
-                setStartedAt = nil
-            }
-            var startedAtQL = someIfNotNil(setStartedAt)
-            if startedAt == nil { startedAtQL = .null } //remove date
-            
-            var setCompletedAt = completedAt?.toFuzzyDate()
-            if oldEntry?.completedAt?.fragments.fuzzyDateFragment.isEqual(setCompletedAt) == true {
-                setCompletedAt = nil
-            }
-            var completedAtQL = someIfNotNil(setCompletedAt)
-            if completedAt == nil { completedAtQL = .null } //remove date
-            
-            var setRepeat = repeatCount
-            if repeatCount == oldEntry?.repeat { setRepeat = nil }
-            
-            var setIsPrivate = isPrivate
-            if isPrivate == oldEntry?.private { setIsPrivate = nil }
-            
-            var setIsHiddenFromStatusLists = isHiddenFromStatusLists
-            if isHiddenFromStatusLists == oldEntry?.hiddenFromStatusLists { setIsHiddenFromStatusLists = nil }
-            
-            var setNotes = notes
-            if notes == oldEntry?.notes { setNotes = nil }
-            
-            var setAdvancedScores: [Double]?
-            // this is required because in Swift there's no equivalent to LinkedHashMap...
-            // and AniList API expects a float array ordered
-            if let advancedScoresDict,
-                let advancedScoresOrdered = UserDefaults.standard.stringArray(forKey: ADVANCED_SCORES_KEY) {
-                setAdvancedScores = []
-                for name in advancedScoresOrdered {
-                    if let score = advancedScoresDict[name] {
-                        setAdvancedScores?.append(score)
-                    }
-                }
-            }
-            
-            if let updatedEntry = await MediaListRepository.updateEntry(
-                mediaId: mediaId,
-                status: setStatus,
-                score: setScore,
-                advancedScores: setAdvancedScores,
-                progress: setProgress,
-                progressVolumes: setProgressVolumes,
-                startedAt: startedAtQL,
-                completedAt: completedAtQL,
-                repeatCount: setRepeat,
-                isPrivate: setIsPrivate,
-                isHiddenFromStatusLists: setIsHiddenFromStatusLists,
-                notes: setNotes
-            ) {
-                DispatchQueue.main.async { [weak self] in
-                    self?.updatedEntry = updatedEntry
-                    NotificationCenter.default.post(name: "updatedMediaListEntry", object: updatedEntry)
-                    self?.isUpdateSuccess = true
-                    self?.isLoading = false
-                }
-            } else {
-                DispatchQueue.main.async { [weak self] in
-                    self?.isLoading = false
-                }
-            }
+        
+        if let updatedEntry = await MediaListRepository.updateEntry(
+            oldEntry: oldEntry,
+            mediaId: mediaId,
+            status: status,
+            score: score,
+            advancedScores: advancedScoresDict,
+            progress: progress,
+            progressVolumes: progressVolumes,
+            startedAt: startedAt,
+            completedAt: completedAt,
+            repeatCount: repeatCount,
+            isPrivate: isPrivate,
+            isHiddenFromStatusLists: isHiddenFromStatusLists,
+            notes: notes
+        ) {
+            self.updatedEntry = updatedEntry
+            NotificationCenter.default.post(name: "updatedMediaListEntry", object: updatedEntry)
+            isUpdateSuccess = true
+            isLoading = false
+        } else {
+            isLoading = false
         }
     }
 
     @Published var isDeleteSuccess = false
 
-    func deleteEntry(entryId: Int) {
+    func deleteEntry(entryId: Int) async {
         isLoading = true
-        Network.shared.apollo.perform(mutation: DeleteMediaListMutation(
-            mediaListEntryId: .some(entryId)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let deleted = graphQLResult.data?.deleteMediaListEntry?.deleted {
-                    self?.isDeleteSuccess = deleted
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
-        }
+        isDeleteSuccess = await MediaListRepository.deleteEntry(entryId: entryId) == true
+        isLoading = false
     }
 }

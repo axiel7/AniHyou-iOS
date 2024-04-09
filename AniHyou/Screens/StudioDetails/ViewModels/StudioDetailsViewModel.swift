@@ -8,52 +8,29 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class StudioDetailsViewModel: ObservableObject {
 
     @Published var studio: StudioDetailsQuery.Data.Studio?
-    @Published var studioMedia = [StudioDetailsQuery.Data.Studio.Media.Node?]()
+    @Published var studioMedia = [StudioMedia]()
     var currentPage = 1
-    var hasNextPage = true
+    var hasNextPage = false
 
-    func getStudioDetails(studioId: Int) {
-        Network.shared.apollo.fetch(query: StudioDetailsQuery(
-            studioId: .some(studioId),
-            page: .some(currentPage),
-            perPage: .some(25)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let studio = graphQLResult.data?.studio {
-                    self?.studio = studio
-                    if let mediaItems = studio.media?.nodes {
-                        self?.studioMedia.append(contentsOf: mediaItems)
-                        self?.currentPage += 1
-                        self?.hasNextPage = studio.media?.pageInfo?.hasNextPage ?? false
-                    }
-                }
-            case.failure(let error):
-                print(error)
+    func getStudioDetails(studioId: Int) async {
+        if let result = await StudioRepository.getStudioDetails(studioId: studioId) {
+            studio = result
+            if let mediaItems = result.media?.nodes?.compactMap({ $0?.fragments.studioMedia }) {
+                studioMedia.append(contentsOf: mediaItems)
+                currentPage += 1
+                hasNextPage = result.media?.pageInfo?.hasNextPage == true
             }
         }
     }
 
-    func toggleFavorite() {
+    func toggleFavorite() async {
         guard let studio else { return }
-        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
-            animeId: .none,
-            mangaId: .none,
-            characterId: .none,
-            staffId: .none,
-            studioId: .some(studio.id)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if graphQLResult.data != nil {
-                    self?.onFavoriteToggled()
-                }
-            case .failure(let error):
-                print(error)
-            }
+        if await FavoritesRepository.toggleFavorite(studioId: studio.id) != nil {
+            onFavoriteToggled()
         }
     }
 
@@ -71,12 +48,18 @@ class StudioDetailsViewModel: ObservableObject {
                     ofType: StudioDetailsQuery.Data.Studio.self,
                     withKey: "Studio:\(studioId)"
                 )
-                DispatchQueue.main.async {
-                    self?.studio = newObject
-                }
+                self?.studio = newObject
             } catch {
                 print(error)
             }
         })
+    }
+    
+    func getStudioMedia(studioId: Int) async {
+        if let result = await StudioRepository.getStudioMedia(studioId: studioId, page: currentPage) {
+            studioMedia.append(contentsOf: result.data)
+            currentPage = result.page
+            hasNextPage = result.hasNextPage
+        }
     }
 }

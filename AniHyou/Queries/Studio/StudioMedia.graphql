@@ -1,0 +1,26 @@
+query StudioMedia($studioId: Int, $page: Int, $perPage: Int) {
+  Studio(id: $studioId) {
+    media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) {
+      nodes {
+        ...StudioMedia
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}
+
+fragment StudioMedia on Media {
+    id
+    coverImage {
+      large
+    }
+    title {
+      userPreferred
+    }
+    type
+    mediaListEntry {
+        status
+    }
+}

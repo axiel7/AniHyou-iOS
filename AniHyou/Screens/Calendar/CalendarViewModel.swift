@@ -8,47 +8,24 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class CalendarViewModel: ObservableObject {
 
-    private var now = Date.now
-
-    @Published var weeklyAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule?]()
+    @Published var weeklyAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule]()
     var currentPage = 1
     var hasNextPage = true
 
-    func getAiringAnimes(weekday: Int, onMyList: Bool, resetPage: Bool = false) {
+    func getAiringAnimes(weekday: Int, onMyList: Bool, resetPage: Bool = false) async {
         if resetPage { currentPage = 1 }
-
-        let weekdayStartTimestamp = now.getThisWeekdayTimestamp(weekday: weekday, isEndOfDay: false)
-        let weekDayEndTimestamp = now.getThisWeekdayTimestamp(weekday: weekday, isEndOfDay: true)
-
-        Network.shared.apollo.fetch(query: AiringAnimesQuery(
-            page: .some(currentPage),
-            perPage: .some(25),
-            sort: .some([.case(.time)]),
-            airingAtGreater: .some(weekdayStartTimestamp),
-            airingAtLesser: .some(weekDayEndTimestamp))
-        ) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let schedules = page.airingSchedules {
-                        var animes = schedules
-                        if onMyList {
-                            animes = schedules.filter({ $0?.media?.mediaListEntry != nil })
-                        }
-                        if resetPage {
-                            self?.weeklyAnimes = animes
-                        } else {
-                            self?.weeklyAnimes.append(contentsOf: animes)
-                        }
-                        self?.currentPage += 1
-                        self?.hasNextPage = page.pageInfo?.hasNextPage ?? false
-                    }
-                }
-            case .failure(let error):
-                print(error)
+        
+        if let result = await MediaRepository.getAiringAnimes(weekday: weekday, onMyList: onMyList, page: currentPage) {
+            if resetPage {
+                weeklyAnimes = result.data
+            } else {
+                weeklyAnimes.append(contentsOf: result.data)
             }
+            currentPage = result.page
+            hasNextPage = result.hasNextPage
         }
     }
 }

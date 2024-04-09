@@ -8,42 +8,19 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class CharacterDetailsViewModel: ObservableObject {
 
     @Published var character: CharacterDetailsQuery.Data.Character?
 
-    func getCharacterDetails(characterId: Int) {
-        Network.shared.apollo.fetch(query: CharacterDetailsQuery(
-            characterId: .some(characterId)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let character = graphQLResult.data?.character {
-                    self?.character = character
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+    func getCharacterDetails(characterId: Int) async {
+        character = await CharacterRepository.getCharacterDetails(characterId: characterId)
     }
 
-    func toggleFavorite() {
+    func toggleFavorite() async {
         guard let character else { return }
-        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
-            animeId: .none,
-            mangaId: .none,
-            characterId: .some(character.id),
-            staffId: .none,
-            studioId: .none
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if graphQLResult.data != nil {
-                    self?.onFavoriteToggled()
-                }
-            case .failure(let error):
-                print(error)
-            }
+        if await FavoritesRepository.toggleFavorite(characterId: character.id) != nil {
+            onFavoriteToggled()
         }
     }
 
@@ -61,39 +38,29 @@ class CharacterDetailsViewModel: ObservableObject {
                     ofType: CharacterDetailsQuery.Data.Character.self,
                     withKey: "Character:\(characterId)"
                 )
-                DispatchQueue.main.async {
-                    self?.character = newObject
-                }
+                self?.character = newObject
             } catch {
                 print(error)
             }
         })
     }
 
-    @Published var characterMedia = [CharacterMediaQuery.Data.Character.Media.Edge?]()
+    @Published var characterMedia = [CharacterMediaQuery.Data.Character.Media.Edge]()
     var pageMedia = 1
     var hasNextPageMedia = true
 
-    func getCharacterMedia(characterId: Int) {
-        Network.shared.apollo.fetch(query: CharacterMediaQuery(
-            characterId: .some(characterId),
-            page: .some(pageMedia),
-            perPage: .some(25)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.character?.media {
-                    self?.characterMedia.append(contentsOf: media.edges ?? [])
-                    self?.pageMedia = (media.pageInfo?.currentPage ?? self?.pageMedia ?? 1) + 1
-                    self?.hasNextPageMedia = media.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getCharacterMedia(characterId: Int) async {
+        if let result = await CharacterRepository.getCharacterMedia(
+            characterId: characterId,
+            page: pageMedia
+        ) {
+            characterMedia.append(contentsOf: result.data)
+            pageMedia = result.page
+            hasNextPageMedia = result.hasNextPage
         }
     }
 
-    // MARK: calculated variables
+    // MARK: - calculated variables
 
     var alternativeNamesFormatted: String? {
         guard let alternative = character?.name?.alternative else { return nil }

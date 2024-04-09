@@ -9,6 +9,9 @@ query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) {
           name
         }
       }
+      pageInfo {
+        hasNextPage
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ public class MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename ...BasicThreadDetails } } }"#,
+      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename ...BasicThreadDetails } pageInfo { __typename hasNextPage } } }"#,
       fragments: [BasicThreadDetails.self]
     ))
 
@@ -63,9 +63,12 @@ public class MediaThreadsQuery: GraphQLQuery {
           "mediaCategoryId": .variable("mediaCategoryId"),
           "sort": .variable("sort")
         ]),
+        .field("pageInfo", PageInfo?.self),
       ] }
 
       public var threads: [Thread?]? { __data["threads"] }
+      /// The pagination information
+      public var pageInfo: PageInfo? { __data["pageInfo"] }
 
       /// Page.Thread
       ///
@@ -109,6 +112,23 @@ public class MediaThreadsQuery: GraphQLQuery {
         }
 
         public typealias User = BasicThreadDetails.User
+      }
+
+      /// Page.PageInfo
+      ///
+      /// Parent Type: `PageInfo`
+      public struct PageInfo: AniListAPI.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("hasNextPage", Bool?.self),
+        ] }
+
+        /// If there is another page
+        public var hasNextPage: Bool? { __data["hasNextPage"] }
       }
     }
   }

@@ -59,14 +59,14 @@ struct AnimeSeasonListView: View {
                 toolbarContent
             }
         }
-        .onAppear {
+        .task {
             if let initSeason {
                 viewModel.season = initSeason
             }
             if let initYear {
                 viewModel.year = initYear
             }
-            viewModel.getAnimeSeasonal()
+            await viewModel.getAnimeSeasonal()
         }
     }
     
@@ -91,8 +91,8 @@ struct AnimeSeasonListView: View {
 
             if viewModel.hasNextPage {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getAnimeSeasonal()
+                    .task {
+                        await viewModel.getAnimeSeasonal()
                     }
             }
         }
@@ -121,8 +121,8 @@ struct AnimeSeasonListView: View {
             
             if viewModel.hasNextPage {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getAnimeSeasonal()
+                    .task {
+                        await viewModel.getAnimeSeasonal()
                     }
             }
         }
@@ -151,7 +151,7 @@ struct AnimeSeasonListView: View {
                     }
                 }
                 .onChange(of: viewModel.sort) { _ in
-                    viewModel.getAnimeSeasonal(resetPage: true)
+                    viewModel.resetPage()
                 }
             }
             Menu("Season") {
@@ -161,7 +161,7 @@ struct AnimeSeasonListView: View {
                     }
                 }
                 .onChange(of: viewModel.season) { _ in
-                    viewModel.getAnimeSeasonal(resetPage: true)
+                    viewModel.resetPage()
                 }
             }
             Menu("Year") {
@@ -171,7 +171,7 @@ struct AnimeSeasonListView: View {
                     }
                 }
                 .onChange(of: viewModel.year) { _ in
-                    viewModel.getAnimeSeasonal(resetPage: true)
+                    viewModel.resetPage()
                 }
             }
         } label: {

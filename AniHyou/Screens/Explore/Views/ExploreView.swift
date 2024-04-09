@@ -61,7 +61,9 @@ struct ExploreView: View {
                         }
                     }
                     .onChange(of: viewModel.yearFrom) { _ in
-                        viewModel.runSearch()
+                        Task {
+                            await viewModel.runSearch()
+                        }
                     }
                     
                     Picker("To year", selection: $viewModel.yearTo) {
@@ -72,7 +74,9 @@ struct ExploreView: View {
                         }
                     }
                     .onChange(of: viewModel.yearTo) { _ in
-                        viewModel.runSearch()
+                        Task {
+                            await viewModel.runSearch()
+                        }
                     }
                     
                     Picker("Country", selection: $viewModel.country) {
@@ -82,22 +86,30 @@ struct ExploreView: View {
                         }
                     }
                     .onChange(of: viewModel.country) { _ in
-                        viewModel.runSearch()
+                        Task {
+                            await viewModel.runSearch()
+                        }
                     }
                     
                     TriPicker("On my list", selection: $viewModel.mediaOnMyList)
                         .onChange(of: viewModel.mediaOnMyList) { _ in
-                            viewModel.runSearch()
+                            Task {
+                                await viewModel.runSearch()
+                            }
                         }
                     
                     TriPicker("Doujinshi", selection: $viewModel.isDoujinshi)
                         .onChange(of: viewModel.isDoujinshi) { _ in
-                            viewModel.runSearch()
+                            Task {
+                                await viewModel.runSearch()
+                            }
                         }
                     
                     TriPicker("Adult", selection: $viewModel.isAdult)
                         .onChange(of: viewModel.isAdult) { _ in
-                            viewModel.runSearch()
+                            Task {
+                                await viewModel.runSearch()
+                            }
                         }
                     
                     Button("Clear", role: .destructive) {
@@ -117,67 +129,57 @@ struct ExploreView: View {
                     }
                 }
 
-                ForEach(viewModel.searchedMedia, id: \.?.id) { item in
-                    if let item {
-                        let startYear = if let year = item.startDate?.year {
-                            String(year)
-                        } else {
-                            "Unknown"
-                        }
-                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                            HListItemWithSubtitleView(
-                                title: item.title?.userPreferred,
-                                twoSubtitleTexts: (
-                                    item.format?.value?.localizedName,
-                                    "\(startYear)"
-                                ),
-                                imageUrl: item.coverImage?.large,
-                                status: item.mediaListEntry?.status?.value
-                            )
-                            .mediaContextMenu(
-                                mediaId: item.id,
-                                mediaType: item.type?.value,
-                                mediaListStatus: item.mediaListEntry?.status?.value
-                            )
-                        }
-                        .buttonStyle(.plain)
+                ForEach(viewModel.searchedMedia, id: \.id) { item in
+                    let startYear = if let year = item.startDate?.year {
+                        String(year)
+                    } else {
+                        "Unknown"
                     }
+                    NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                        HListItemWithSubtitleView(
+                            title: item.title?.userPreferred,
+                            twoSubtitleTexts: (
+                                item.format?.value?.localizedName,
+                                "\(startYear)"
+                            ),
+                            imageUrl: item.coverImage?.large,
+                            status: item.mediaListEntry?.status?.value
+                        )
+                        .mediaContextMenu(
+                            mediaId: item.id,
+                            mediaType: item.type?.value,
+                            mediaListStatus: item.mediaListEntry?.status?.value
+                        )
+                    }
+                    .buttonStyle(.plain)
                 }
             case .characters:
-                ForEach(viewModel.searchedCharacters, id: \.?.id) { item in
-                    if let item {
-                        NavigationLink(destination: CharacterDetailsView(characterId: item.id)) {
-                            HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
-                        }
-                        .buttonStyle(.plain)
+                ForEach(viewModel.searchedCharacters, id: \.id) { item in
+                    NavigationLink(destination: CharacterDetailsView(characterId: item.id)) {
+                        HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
                     }
+                    .buttonStyle(.plain)
                 }
             case .staff:
-                ForEach(viewModel.searchedStaff, id: \.?.id) { item in
-                    if let item {
-                        NavigationLink(destination: StaffDetailsView(staffId: item.id)) {
-                            HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
-                        }
-                        .buttonStyle(.plain)
+                ForEach(viewModel.searchedStaff, id: \.id) { item in
+                    NavigationLink(destination: StaffDetailsView(staffId: item.id)) {
+                        HListItemWithSubtitleView(title: item.name?.userPreferred, imageUrl: item.image?.medium)
                     }
+                    .buttonStyle(.plain)
                 }
             case .studios:
-                ForEach(viewModel.searchedStudios, id: \.?.id) { item in
-                    if let item {
-                        NavigationLink(destination: StudioDetailsView(studioId: item.id)) {
-                            HListItemWithSubtitleView(title: item.name)
-                        }
-                        .buttonStyle(.plain)
+                ForEach(viewModel.searchedStudios, id: \.id) { item in
+                    NavigationLink(destination: StudioDetailsView(studioId: item.id)) {
+                        HListItemWithSubtitleView(title: item.name)
                     }
+                    .buttonStyle(.plain)
                 }
             case .users:
-                ForEach(viewModel.searchedUsers, id: \.?.id) { item in
-                    if let item {
-                        NavigationLink(destination: ProfileView(userId: item.id)) {
-                            HListItemWithSubtitleView(title: item.name, imageUrl: item.avatar?.medium)
-                        }
-                        .buttonStyle(.plain)
+                ForEach(viewModel.searchedUsers, id: \.id) { item in
+                    NavigationLink(destination: ProfileView(userId: item.id)) {
+                        HListItemWithSubtitleView(title: item.name, imageUrl: item.avatar?.medium)
                     }
+                    .buttonStyle(.plain)
                 }
             }//:switch
             
@@ -360,7 +362,9 @@ struct ExploreView: View {
             Text("Release Date").tag(MediaSort.startDateDesc)
         }
         .onChange(of: viewModel.sortMedia) { _ in
-            viewModel.runSearch()
+            Task {
+                await viewModel.runSearch()
+            }
         }
         if viewModel.sortMedia != .searchMatch {
             Picker("Order", selection: $viewModel.isAscending) {
@@ -368,7 +372,9 @@ struct ExploreView: View {
                 Text("Descending").tag(false)
             }
             .onChange(of: viewModel.isAscending) { _ in
-                viewModel.onChangeSortOrder()
+                Task {
+                    await viewModel.onChangeSortOrder()
+                }
             }
         }
     }
@@ -386,9 +392,14 @@ struct ExploreView: View {
             }//:HStack
         })//:Button
         .sheet(isPresented: $isGenreSheetPresented) {
-            GenreTagSelectionView(viewModel: viewModel, onDone: {
-                viewModel.runSearch()
-            })
+            GenreTagSelectionView(
+                viewModel: viewModel,
+                onDone: {
+                    Task {
+                        await viewModel.runSearch()
+                    }
+                }
+            )
         }//:Sheet
     }
 
@@ -409,7 +420,11 @@ struct ExploreView: View {
             MultiSelectionSheet(
                 values: MediaFormat.allCases(mediaType: viewModel.mediaType),
                 selectedValues: $viewModel.selectedMediaFormat,
-                onDone: { viewModel.runSearch() },
+                onDone: {
+                    Task {
+                        await viewModel.runSearch()
+                    }
+                },
                 rowContent: { format in
                     Text(format.localizedName)
                 }
@@ -435,7 +450,11 @@ struct ExploreView: View {
             MultiSelectionSheet(
                 values: MediaStatus.allCases,
                 selectedValues: $viewModel.selectedMediaStatus,
-                onDone: { viewModel.runSearch() },
+                onDone: {
+                    Task {
+                        await viewModel.runSearch()
+                    }
+                },
                 rowContent: { status in
                     Text(status.localizedName)
                 }

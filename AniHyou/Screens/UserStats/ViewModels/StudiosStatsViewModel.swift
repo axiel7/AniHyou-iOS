@@ -8,30 +8,21 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class StudiosStatsViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var distribution: StatDistributionType = .titles
     @Published var studios = [StudioStat]()
     
-    func getStudiosStats(userId: Int) {
+    func getStudiosStats(userId: Int) async {
         isLoading = true
-        let sort = distribution.userStatisticsSort(ascencing: false)
-        Network.shared.apollo.fetch(
-            query: UserStatsStudiosQuery(
-                userId: .some(userId),
-                sort: .some([.case(sort)])
-            )
-        ) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let studios = graphQLResult.data?.user?.statistics?.anime?.studios {
-                    self?.studios = studios.compactMap { $0?.fragments.studioStat }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        if let result = await UserStatsRepository.getStudiosStats(
+            userId: userId,
+            distribution: distribution
+        ) {
+            studios = result
         }
+        isLoading = false
     }
 }

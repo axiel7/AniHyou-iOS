@@ -29,6 +29,8 @@ class LikeRepository {
                         ?? (data.asThread?.isLiked ?? data.asThreadComment?.isLiked)
                         //TODO: update cache
                         continuation.resume(returning: isLiked)
+                    } else {
+                        continuation.resume(returning: nil)
                     }
                 case .failure(let error):
                     print(error)

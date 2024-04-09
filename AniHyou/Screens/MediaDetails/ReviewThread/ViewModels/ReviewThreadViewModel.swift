@@ -8,44 +8,24 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class ReviewThreadViewModel: ObservableObject {
 
-    @Published var mediaReviews: MediaReviewsQuery.Data.Media.Reviews?
+    @Published var dataFetched = false
+    @Published var reviews = [MediaReviewsQuery.Data.Media.Reviews.Node]()
 
-    func getMediaReviews(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaReviewsQuery(
-            mediaId: .some(mediaId),
-            page: .some(1),
-            perPage: .some(10)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let reviews = graphQLResult.data?.media?.reviews {
-                    self?.mediaReviews = reviews
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getMediaReviews(mediaId: Int) async {
+        if let result = await MediaRepository.getMediaReviews(mediaId: mediaId, page: 1) {
+            reviews = result.data
         }
+        dataFetched = true
     }
 
-    @Published var mediaThreads = [BasicThreadDetails]()
+    @Published var threads = [BasicThreadDetails]()
 
-    func getMediaThreads(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaThreadsQuery(
-            page: .some(1),
-            perPage: .some(10),
-            mediaCategoryId: .some(mediaId),
-            sort: .some([.case(.isSticky), .case(.createdAtDesc)])
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let threads = graphQLResult.data?.page?.threads {
-                    self?.mediaThreads = threads.compactMap { $0?.fragments.basicThreadDetails }
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getMediaThreads(mediaId: Int) async {
+        if let result = await MediaRepository.getMediaThreads(mediaId: mediaId, page: 1) {
+            threads = result.data
         }
     }
 }

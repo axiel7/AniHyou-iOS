@@ -27,35 +27,31 @@ struct UserSocialView: View {
             LazyVGrid(columns: gridColumns) {
                 switch socialType {
                 case 0:
-                    ForEach(viewModel.followings, id: \.?.id) {
-                        if let user = $0 {
-                            NavigationLink(destination: ProfileView(userId: user.id)) {
-                                UserLargeItemView(user: user.fragments.userFollow)
-                            }
-                            .buttonStyle(.plain)
+                    ForEach(viewModel.followings, id: \.id) { user in
+                        NavigationLink(destination: ProfileView(userId: user.id)) {
+                            UserLargeItemView(user: user.fragments.userFollow)
                         }
+                        .buttonStyle(.plain)
                     }
 
                     if viewModel.hasNextPageFollowings {
                         ProgressView()
-                            .onAppear {
-                                viewModel.getFollowings(userId: userId)
+                            .task {
+                                await viewModel.getFollowings(userId: userId)
                             }
                     }
                 case 1:
-                    ForEach(viewModel.followers, id: \.?.id) {
-                        if let user = $0 {
-                            NavigationLink(destination: ProfileView(userId: user.id)) {
-                                UserLargeItemView(user: user.fragments.userFollow)
-                            }
-                            .buttonStyle(.plain)
+                    ForEach(viewModel.followers, id: \.id) { user in
+                        NavigationLink(destination: ProfileView(userId: user.id)) {
+                            UserLargeItemView(user: user.fragments.userFollow)
                         }
+                        .buttonStyle(.plain)
                     }
 
                     if viewModel.hasNextPageFollowers {
                         ProgressView()
-                            .onAppear {
-                                viewModel.getFollowers(userId: userId)
+                            .task {
+                                await viewModel.getFollowers(userId: userId)
                             }
                     }
                 default:

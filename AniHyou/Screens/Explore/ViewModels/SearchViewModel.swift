@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-// swiftlint:disable:next type_body_length
+@MainActor
 class SearchViewModel: ObservableObject {
 
     //var currentPage = 1
@@ -66,25 +66,25 @@ class SearchViewModel: ObservableObject {
         }
     }
 
-    func runSearch() {
+    func runSearch() async {
         switch type {
         case .anime:
-            searchMedia(type: .anime)
+            await searchMedia(type: .anime)
         case .manga:
-            searchMedia(type: .manga)
+            await searchMedia(type: .manga)
         case .characters:
-            searchCharacters()
+            await searchCharacters()
         case .staff:
-            searchStaff()
+            await searchStaff()
         case .studios:
-            searchStudios()
+            await searchStudios()
         case .users:
-            searchUsers()
+            await searchUsers()
         }
     }
 
     // swiftlint:disable:next cyclomatic_complexity
-    func onChangeSortOrder() {
+    func onChangeSortOrder() async {
         switch sortMedia {
         case .popularity:
             sortMedia = .popularityDesc
@@ -109,12 +109,12 @@ class SearchViewModel: ObservableObject {
         default:
             sortMedia = .searchMatch
         }
-        runSearch()
+        await runSearch()
     }
 
-    @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium?]()
+    @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium]()
 
-    private func searchMedia(type: MediaType) {
+    private func searchMedia(type: MediaType) async {
         if search.isEmpty && !hasFilters { return }
         
         isLoading = true
@@ -129,136 +129,72 @@ class SearchViewModel: ObservableObject {
         {
             sortMedia = .popularityDesc
         }
-
-        Network.shared.apollo.fetch(query: SearchMediaQuery(
-            page: .some(1),
-            perPage: .some(perPage),
-            search: someIfNotEmpty(search),
-            type: .some(.case(type)),
-            sort: .some([.case(sortMedia)]),
-            genre_in: someIfNotEmpty(Array(selectedGenres)),
-            genre_not_in: .none,
-            tag_in: someIfNotEmpty(Array(selectedTags)),
-            tag_not_in: .none,
-            format_in: someEnumArrayIfNotEmpty(Array(selectedMediaFormat)),
-            status_in: someEnumArrayIfNotEmpty(Array(selectedMediaStatus)),
-            startDateGreater: someIfNotNil(yearFrom?.toFuzzyDateInt()),
-            startDateLesser: someIfNotNil(yearTo?.toFuzzyDateInt()),
-            onList: someIfNotNil(mediaOnMyList),
-            isLicensed: someIfNotNil(isDoujinshi?.not()),
-            isAdult: someIfNotNil(isAdult),
-            country: someIfNotNil(country)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let media = page.media {
-                        self?.searchedMedia = media
-                        //self.currentPage += 1
-                        //self.hasNextPage = page.pageInfo?.hasNextPage == true
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        
+        if let result = await MediaRepository.searchMedia(
+            search: search,
+            type: type,
+            sort: [sortMedia],
+            genreIn: Array(selectedGenres),
+            genreNotIn: [],
+            tagIn: Array(selectedTags),
+            tagNotIn: [],
+            formatIn: Array(selectedMediaFormat),
+            statusIn: Array(selectedMediaStatus),
+            startDateGreater: yearFrom,
+            startDateLesser: yearTo,
+            onList: mediaOnMyList,
+            isLicensed: isDoujinshi?.not(),
+            isAdult: isAdult,
+            country: country,
+            page: 1
+        ) {
+            searchedMedia = result.data
         }
+        isLoading = false
     }
 
-    @Published var searchedCharacters = [SearchCharacterQuery.Data.Page.Character?]()
+    @Published var searchedCharacters = [SearchCharacterQuery.Data.Page.Character]()
 
-    private func searchCharacters() {
+    private func searchCharacters() async {
         if search.isEmpty { return }
         isLoading = true
-        Network.shared.apollo.fetch(query: SearchCharacterQuery(
-            page: .some(1),
-            perPage: .some(perPage),
-            search: .some(search)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let characters = page.characters {
-                        self?.searchedCharacters = characters
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        if let result = await CharacterRepository.searchCharacters(search: search, page: 1) {
+            searchedCharacters = result.data
         }
+        isLoading = false
     }
 
-    @Published var searchedStaff = [SearchStaffQuery.Data.Page.Staff?]()
+    @Published var searchedStaff = [SearchStaffQuery.Data.Page.Staff]()
 
-    private func searchStaff() {
+    private func searchStaff() async {
         if search.isEmpty { return }
         isLoading = true
-        Network.shared.apollo.fetch(query: SearchStaffQuery(
-            page: .some(1),
-            perPage: .some(perPage),
-            search: .some(search)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let staff = page.staff {
-                        self?.searchedStaff = staff
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        if let result = await StaffRepository.searchStaff(search: search, page: 1) {
+            searchedStaff = result.data
         }
+        isLoading = false
     }
 
-    @Published var searchedStudios = [SearchStudioQuery.Data.Page.Studio?]()
+    @Published var searchedStudios = [SearchStudioQuery.Data.Page.Studio]()
 
-    private func searchStudios() {
+    private func searchStudios() async {
         if search.isEmpty { return }
         isLoading = true
-        Network.shared.apollo.fetch(query: SearchStudioQuery(
-            page: .some(1),
-            perPage: .some(perPage),
-            search: .some(search)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let studios = page.studios {
-                        self?.searchedStudios = studios
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        if let result = await StudioRepository.searchStudios(search: search, page: 1) {
+            searchedStudios = result.data
         }
+        isLoading = false
     }
 
-    @Published var searchedUsers = [SearchUserQuery.Data.Page.User?]()
+    @Published var searchedUsers = [SearchUserQuery.Data.Page.User]()
 
-    private func searchUsers() {
+    private func searchUsers() async {
         if search.isEmpty { return }
         isLoading = true
-        Network.shared.apollo.fetch(query: SearchUserQuery(
-            page: .some(1),
-            perPage: .some(perPage),
-            search: .some(search)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let page = graphQLResult.data?.page {
-                    if let users = page.users {
-                        self?.searchedUsers = users
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-            self?.isLoading = false
+        if let result = await UserRepository.searchUser(search: search, page: 1) {
+            searchedUsers = result.data
         }
+        isLoading = false
     }
 
     @Published var filterGenreTagText = ""

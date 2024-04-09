@@ -34,16 +34,18 @@ class MediaListRepository {
             ) { result in
                 switch result {
                 case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page {
-                        if let list = pageData.mediaList?.compactMap({ $0 }) {
-                            continuation.resume(
-                                returning: PagedResult(
-                                    data: list,
-                                    page: page + 1,
-                                    hasNextPage: pageData.pageInfo?.hasNextPage == true
-                                )
+                    if let pageData = graphQLResult.data?.page,
+                       let list = pageData.mediaList?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: list,
+                                page: page + 1,
+                                hasNextPage: pageData.pageInfo?.hasNextPage == true
                             )
-                        }
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
                     }
                 case .failure(let error):
                     print(error)
@@ -101,35 +103,99 @@ class MediaListRepository {
         }
     }
     
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
     static func updateEntry(
+        oldEntry: BasicMediaListEntry?,
         mediaId: Int,
         status: MediaListStatus? = nil,
         score: Double? = nil,
-        advancedScores: [Double]? = nil,
+        advancedScores: [String: Double]? = nil,
         progress: Int? = nil,
         progressVolumes: Int? = nil,
-        startedAt: GraphQLNullable<FuzzyDateInput> = .none,
-        completedAt: GraphQLNullable<FuzzyDateInput> = .none,
+        startedAt: Date? = nil,
+        completedAt: Date? = nil,
         repeatCount: Int? = nil,
         isPrivate: Bool? = nil,
         isHiddenFromStatusLists: Bool? = nil,
         notes: String? = nil
     ) async -> BasicMediaListEntry? {
         await withCheckedContinuation { continuation in
-            Network.shared.apollo.perform(mutation: UpdateEntryMutation(
-                mediaId: .some(mediaId),
-                status: someIfNotNil(status),
-                score: someIfNotNil(score),
-                progress: someIfNotNil(progress),
-                progressVolumes: someIfNotNil(progressVolumes),
-                startedAt: startedAt,
-                completedAt: completedAt,
-                repeat: someIfNotNil(repeatCount),
-                private: someIfNotNil(isPrivate),
-                hiddenFromStatusLists: someIfNotNil(isHiddenFromStatusLists),
-                notes: someIfNotNil(notes),
-                advancedScores: someIfNotNil(advancedScores)
-            )) { result in
+            
+            let setStatus: MediaListStatus? = if status != oldEntry?.status?.value {
+                status
+            } else {
+                nil
+            }
+            
+            let setScore: Double? = if score != oldEntry?.score { score } else { nil }
+            
+            let setProgress: Int? = if progress != oldEntry?.progress { progress } else { nil }
+            
+            let setProgressVolumes: Int? = if progressVolumes != oldEntry?.progressVolumes {
+                progressVolumes
+            } else {
+                nil
+            }
+            
+            let setStartedAt: FuzzyDateInput? =
+            if oldEntry?.startedAt?.fragments.fuzzyDateFragment.isEqual(startedAt?.toFuzzyDate()) == false {
+                startedAt?.toFuzzyDate()
+            } else {
+                nil
+            }
+            var startedAtQL = someIfNotNil(setStartedAt)
+            if startedAt == nil { startedAtQL = .null } //remove date
+            
+            let setCompletedAt: FuzzyDateInput? =
+            if oldEntry?.completedAt?.fragments.fuzzyDateFragment.isEqual(completedAt?.toFuzzyDate()) == false {
+                completedAt?.toFuzzyDate()
+            } else {
+                nil
+            }
+            var completedAtQL = someIfNotNil(setCompletedAt)
+            if completedAt == nil { completedAtQL = .null } //remove date
+            
+            let setRepeat: Int? = if repeatCount != oldEntry?.repeat { repeatCount } else { nil }
+            
+            let setIsPrivate: Bool? = if isPrivate != oldEntry?.private { isPrivate } else { nil }
+            
+            let setIsHiddenFromStatusLists: Bool? = if isHiddenFromStatusLists != oldEntry?.hiddenFromStatusLists {
+                isHiddenFromStatusLists
+            } else {
+                nil
+            }
+            
+            let setNotes: String? = if notes != oldEntry?.notes { notes } else { nil }
+            
+            var setAdvancedScores: [Double]?
+            // this is required because in Swift there's no equivalent to LinkedHashMap...
+            // and AniList API expects a float array ordered
+            if let advancedScores,
+                let advancedScoresOrdered = UserDefaults.standard.stringArray(forKey: ADVANCED_SCORES_KEY) {
+                setAdvancedScores = []
+                for name in advancedScoresOrdered {
+                    if let score = advancedScores[name] {
+                        setAdvancedScores?.append(score)
+                    }
+                }
+            }
+            
+            Network.shared.apollo.perform(
+                mutation: UpdateEntryMutation(
+                    mediaId: .some(mediaId),
+                    status: someIfNotNil(setStatus),
+                    score: someIfNotNil(setScore),
+                    progress: someIfNotNil(setProgress),
+                    progressVolumes: someIfNotNil(setProgressVolumes),
+                    startedAt: startedAtQL,
+                    completedAt: completedAtQL,
+                    repeat: someIfNotNil(setRepeat),
+                    private: someIfNotNil(setIsPrivate),
+                    hiddenFromStatusLists: someIfNotNil(setIsHiddenFromStatusLists),
+                    notes: someIfNotNil(setNotes),
+                    advancedScores: someIfNotNil(setAdvancedScores)
+                )
+            ) { result in
                 switch result {
                 case .success(let graphQLResult):
                     if let data = graphQLResult.data?.saveMediaListEntry {
@@ -137,6 +203,7 @@ class MediaListRepository {
                             for error in errors {
                                 print(error)
                             }
+                            continuation.resume(returning: nil)
                         } else {
                             continuation.resume(returning: data.fragments.basicMediaListEntry)
                         }
@@ -195,6 +262,24 @@ class MediaListRepository {
                     }
                     continuation.resume(returning: newObject)
                 } catch {
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func deleteEntry(entryId: Int) async -> Bool? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.perform(
+                mutation: DeleteMediaListMutation(
+                    mediaListEntryId: .some(entryId)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    continuation.resume(returning: graphQLResult.data?.deleteMediaListEntry?.deleted)
+                case .failure(let error):
                     print(error)
                     continuation.resume(returning: nil)
                 }

@@ -26,8 +26,8 @@ struct MediaDetailsView: View {
                 detailsView
             } else {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getMediaDetails(mediaId: mediaId)
+                    .task {
+                        await viewModel.getMediaDetails(mediaId: mediaId)
                     }
             }
         }//:Group
@@ -46,7 +46,9 @@ struct MediaDetailsView: View {
                         inverted: details.isFavourite,
                         scrolled: hasScrolled
                     ) {
-                        viewModel.toggleFavorite()
+                        Task {
+                            await viewModel.toggleFavorite()
+                        }
                     }
                     .font(.system(size: 24))
                 }

@@ -9,6 +9,7 @@ import Foundation
 import AniListAPI
 import UserNotifications
 
+@MainActor
 class NotificationsViewModel: ObservableObject {
 
     @Published var notifications = [GenericNotification]()
@@ -17,15 +18,16 @@ class NotificationsViewModel: ObservableObject {
     var hasNextPage = true
 
     func getNotifications() async {
+        let resetCount = currentPage == 1
         if let result = await UserRepository.getNotifications(
             page: currentPage,
             type: type,
-            resetCount: currentPage == 1
+            resetCount: resetCount
         ) {
-            DispatchQueue.main.async {
-                self.notifications.append(contentsOf: result.data)
-                self.currentPage = result.page
-                self.hasNextPage = result.hasNextPage
+            notifications.append(contentsOf: result.data)
+            currentPage = result.page
+            hasNextPage = result.hasNextPage
+            if resetCount {
                 UNUserNotificationCenter.current().removeAllDeliveredNotifications()
             }
         }

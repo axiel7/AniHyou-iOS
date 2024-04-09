@@ -7,8 +7,8 @@ public class StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename id coverImage { __typename large } title { __typename userPreferred } type mediaListEntry { __typename status } } pageInfo { __typename hasNextPage } } } }"#,
-      fragments: [IsFavouriteStudio.self]
+      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename ...StudioMedia } pageInfo { __typename hasNextPage } } } }"#,
+      fragments: [IsFavouriteStudio.self, StudioMedia.self]
     ))
 
   public var studioId: GraphQLNullable<Int>
@@ -111,11 +111,7 @@ public class StudioDetailsQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("id", Int.self),
-            .field("coverImage", CoverImage?.self),
-            .field("title", Title?.self),
-            .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
-            .field("mediaListEntry", MediaListEntry?.self),
+            .fragment(StudioMedia.self),
           ] }
 
           /// The id of the media
@@ -129,56 +125,18 @@ public class StudioDetailsQuery: GraphQLQuery {
           /// The authenticated user's media list entry for the media
           public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
-          /// Studio.Media.Node.CoverImage
-          ///
-          /// Parent Type: `MediaCoverImage`
-          public struct CoverImage: AniListAPI.SelectionSet {
+          public struct Fragments: FragmentContainer {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-            public static var __selections: [ApolloAPI.Selection] { [
-              .field("__typename", String.self),
-              .field("large", String?.self),
-            ] }
-
-            /// The cover image url of the media at a large size
-            public var large: String? { __data["large"] }
+            public var studioMedia: StudioMedia { _toFragment() }
           }
 
-          /// Studio.Media.Node.Title
-          ///
-          /// Parent Type: `MediaTitle`
-          public struct Title: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+          public typealias CoverImage = StudioMedia.CoverImage
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-            public static var __selections: [ApolloAPI.Selection] { [
-              .field("__typename", String.self),
-              .field("userPreferred", String?.self),
-            ] }
+          public typealias Title = StudioMedia.Title
 
-            /// The currently authenticated users preferred title language. Default romaji for non-authenticated
-            public var userPreferred: String? { __data["userPreferred"] }
-          }
-
-          /// Studio.Media.Node.MediaListEntry
-          ///
-          /// Parent Type: `MediaList`
-          public struct MediaListEntry: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
-
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
-            public static var __selections: [ApolloAPI.Selection] { [
-              .field("__typename", String.self),
-              .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
-            ] }
-
-            /// The watching/reading status
-            public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
-          }
+          public typealias MediaListEntry = StudioMedia.MediaListEntry
         }
 
         /// Studio.Media.PageInfo

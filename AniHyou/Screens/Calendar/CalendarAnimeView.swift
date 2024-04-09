@@ -64,8 +64,8 @@ struct WeekAnimeListView: View {
 
     var body: some View {
         LazyVGrid(columns: gridColumns) {
-            ForEach(viewModel.weeklyAnimes, id: \.?.mediaId) {
-                if let item = $0, let media = item.media {
+            ForEach(viewModel.weeklyAnimes, id: \.mediaId) { item in
+                if let media = item.media {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
                         VListItemView(
                             title: media.title?.userPreferred ?? "",
@@ -86,16 +86,28 @@ struct WeekAnimeListView: View {
 
             if viewModel.hasNextPage {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getAiringAnimes(weekday: weekday, onMyList: onMyList)
+                    .task {
+                        await viewModel.getAiringAnimes(weekday: weekday, onMyList: onMyList)
                     }
             }
         }
         .onChange(of: weekday) { day in
-            viewModel.getAiringAnimes(weekday: day, onMyList: onMyList, resetPage: true)
+            Task {
+                await viewModel.getAiringAnimes(
+                    weekday: day,
+                    onMyList: onMyList,
+                    resetPage: true
+                )
+            }
         }
         .onChange(of: onMyList) { onList in
-            viewModel.getAiringAnimes(weekday: weekday, onMyList: onList, resetPage: true)
+            Task {
+                await viewModel.getAiringAnimes(
+                    weekday: weekday,
+                    onMyList: onList,
+                    resetPage: true
+                )
+            }
         }
     }
 }

@@ -27,8 +27,8 @@ struct ActivityFeedView: View {
                     if viewModel.hasNextPage {
                         HorizontalProgressView()
                             .padding()
-                            .onAppear {
-                                viewModel.getActivities()
+                            .task {
+                                await viewModel.getActivities()
                             }
                     }
                 }

@@ -23,9 +23,15 @@ struct RootExploreView: View {
         }
         .searchable(text: $viewModel.search, placement: .navigationBarDrawer, prompt: "Anime, Manga, and More")
         .onSubmit(of: .search) {
-            viewModel.runSearch()
+            Task {
+                await viewModel.runSearch()
+            }
         }
-        .onChange(of: viewModel.type) { _ in viewModel.runSearch() }
+        .onChange(of: viewModel.type) { _ in
+            Task {
+                await viewModel.runSearch()
+            }
+        }
     }
 }
 

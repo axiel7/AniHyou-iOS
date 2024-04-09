@@ -39,7 +39,11 @@ struct CharacterDetailsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if let character = viewModel.character {
-                    Button(action: { viewModel.toggleFavorite() }) {
+                    Button(action: {
+                        Task {
+                            await viewModel.toggleFavorite()
+                        }
+                    }) {
                         Image(systemName: character.isFavourite ? "heart.fill" : "heart")
                     }
                 }
@@ -104,8 +108,8 @@ struct CharacterDetailsView: View {
             }
         } else {
             HorizontalProgressView()
-                .onAppear {
-                    viewModel.getCharacterDetails(characterId: characterId)
+                .task {
+                    await viewModel.getCharacterDetails(characterId: characterId)
                 }
         }
     }
@@ -113,29 +117,27 @@ struct CharacterDetailsView: View {
     @ViewBuilder
     var characterMedia: some View {
         LazyVStack(alignment: .leading) {
-            ForEach(viewModel.characterMedia, id: \.?.id) {
-                if let item = $0 {
-                    NavigationLink(destination: MediaDetailsView(mediaId: item.node!.id)) {
-                        HListItemWithSubtitleView(
-                            title: item.node?.title?.userPreferred,
-                            subtitleLocalized: item.characterRole?.value?.localizedName,
-                            subtitle2: item.node?.startDate?.year?.stringValue,
-                            imageUrl: item.node?.coverImage?.large,
-                            status: item.node?.mediaListEntry?.status?.value
-                        )
-                        .mediaContextMenu(
-                            mediaId: item.node!.id,
-                            mediaType: item.node!.type?.value,
-                            mediaListStatus: item.node?.mediaListEntry?.status?.value
-                        )
-                    }
-                    .buttonStyle(.plain)
+            ForEach(viewModel.characterMedia, id: \.id) { item in
+                NavigationLink(destination: MediaDetailsView(mediaId: item.node!.id)) {
+                    HListItemWithSubtitleView(
+                        title: item.node?.title?.userPreferred,
+                        subtitleLocalized: item.characterRole?.value?.localizedName,
+                        subtitle2: item.node?.startDate?.year?.stringValue,
+                        imageUrl: item.node?.coverImage?.large,
+                        status: item.node?.mediaListEntry?.status?.value
+                    )
+                    .mediaContextMenu(
+                        mediaId: item.node!.id,
+                        mediaType: item.node!.type?.value,
+                        mediaListStatus: item.node?.mediaListEntry?.status?.value
+                    )
                 }
+                .buttonStyle(.plain)
             }
             if viewModel.hasNextPageMedia {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getCharacterMedia(characterId: characterId)
+                    .task {
+                        await viewModel.getCharacterMedia(characterId: characterId)
                     }
             }
         }//:LazyVStack

@@ -8,40 +8,19 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class StaffDetailsViewModel: ObservableObject {
 
     @Published var staff: StaffDetailsQuery.Data.Staff?
 
-    func getStaffDetails(staffId: Int) {
-        Network.shared.apollo.fetch(query: StaffDetailsQuery(staffId: .some(staffId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let staff = graphQLResult.data?.staff {
-                    self?.staff = staff
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+    func getStaffDetails(staffId: Int) async {
+        staff = await StaffRepository.getStaffDetails(staffId: staffId)
     }
 
-    func toggleFavorite() {
+    func toggleFavorite() async {
         guard let staff else { return }
-        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
-            animeId: .none,
-            mangaId: .none,
-            characterId: .none,
-            staffId: .some(staff.id),
-            studioId: .none
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if graphQLResult.data != nil {
-                    self?.onFavoriteToggled()
-                }
-            case .failure(let error):
-                print(error)
-            }
+        if await FavoritesRepository.toggleFavorite(staffId: staff.id) != nil {
+            onFavoriteToggled()
         }
     }
 
@@ -59,9 +38,7 @@ class StaffDetailsViewModel: ObservableObject {
                     ofType: StaffDetailsQuery.Data.Staff.self,
                     withKey: "Staff:\(staffId)"
                 )
-                DispatchQueue.main.async {
-                    self?.staff = newObject
-                }
+                self?.staff = newObject
             } catch {
                 print(error)
             }
@@ -73,37 +50,15 @@ class StaffDetailsViewModel: ObservableObject {
     var pageMedia = 1
     var hasNextPageMedia = true
 
-    func getStaffMedia(staffId: Int) {
-        Network.shared.apollo.fetch(query: StaffMediaQuery(
-            staffId: .some(staffId),
-            onList: someIfNotNil(mediaOnMyList),
-            page: .some(pageMedia),
-            perPage: .some(25)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.staff?.staffMedia {
-                    if let edges = media.edges {
-                        var mediaGroupDict = [Int: StaffMediaGrouped]()
-                        Dictionary(grouping: edges, by: { $0?.node?.id ?? 0 }).forEach { mediaId, value in
-                            mediaGroupDict[mediaId] = StaffMediaGrouped(
-                                value: value[0]!,
-                                staffRoles: value.map { $0?.staffRole ?? "" }
-                            )
-                        }
-                        let sortedDict = mediaGroupDict.values.sorted(by: { first, second in
-                            return first.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231" >
-                            second.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231"
-                        })
-                        self?.staffMedia.append(contentsOf: sortedDict)
-                    }
-
-                    self?.pageMedia = (media.pageInfo?.currentPage ?? self?.pageMedia ?? 1) + 1
-                    self?.hasNextPageMedia = media.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getStaffMedia(staffId: Int) async {
+        if let result = await StaffRepository.getStaffMedia(
+            staffId: staffId,
+            onMyList: mediaOnMyList,
+            page: pageMedia
+        ) {
+            staffMedia.append(contentsOf: result.data)
+            pageMedia = result.page
+            hasNextPageMedia = result.hasNextPage
         }
     }
 
@@ -113,30 +68,19 @@ class StaffDetailsViewModel: ObservableObject {
         hasNextPageMedia = true
     }
 
-    @Published var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge?]()
+    @Published var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge]()
     var pageCharacters = 1
     var hasNextPageCharacters = true
 
-    func getStaffCharacters(staffId: Int) {
-        Network.shared.apollo.fetch(query: StaffCharacterQuery(
-            staffId: .some(staffId),
-            page: .some(pageCharacters),
-            perPage: .some(25)
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let characters = graphQLResult.data?.staff?.characterMedia {
-                    self?.staffCharacters.append(contentsOf: characters.edges ?? [])
-                    self?.pageCharacters = (characters.pageInfo?.currentPage ?? self?.pageCharacters ?? 1) + 1
-                    self?.hasNextPageCharacters = characters.pageInfo?.hasNextPage ?? false
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getStaffCharacters(staffId: Int) async {
+        if let result = await StaffRepository.getStaffCharacters(staffId: staffId, page: pageCharacters) {
+            staffCharacters.append(contentsOf: result.data)
+            pageCharacters = result.page
+            hasNextPageCharacters = result.hasNextPage
         }
     }
 
-    // MARK: calculated variables
+    // MARK: - calculated variables
 
     var yearsActiveFormatted: String {
         guard let yearsActive = staff?.yearsActive else { return "Unknown" }

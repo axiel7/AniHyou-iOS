@@ -9,7 +9,86 @@ import Foundation
 import AniListAPI
 import Apollo
 
+// swiftlint:disable:next type_body_length
 class UserRepository {
+    
+    static func getUserOptions() async -> UserOptionsFragment? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(query: UserOptionsQuery()) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    continuation.resume(returning: graphQLResult.data?.viewer?.fragments.userOptionsFragment)
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func updateUserOptions(
+        titleLanguage: UserTitleLanguage? = nil,
+        staffNameLanguage: UserStaffNameLanguage? = nil,
+        scoreFormat: ScoreFormat? = nil
+    ) async -> Bool {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.perform(
+                mutation: UpdateUserMutation(
+                    displayAdultContent: .none,
+                    titleLanguage: someIfNotNil(titleLanguage),
+                    staffNameLanguage: someIfNotNil(staffNameLanguage),
+                    scoreFormat: someIfNotNil(scoreFormat),
+                    airingNotifications: .none,
+                    animeListOptions: .none,
+                    mangaListOptions: .none
+                )
+            ) { result in
+                switch result {
+                case .success:
+                    continuation.resume(returning: true)
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: false)
+                }
+            }
+        }
+    }
+    
+    static func searchUser(
+        search: String,
+        page: Int,
+        perPage: Int = 25
+    ) async -> PagedResult<SearchUserQuery.Data.Page.User>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: SearchUserQuery(
+                    page: .some(1),
+                    perPage: .some(perPage),
+                    search: .some(search)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.page,
+                       let users = pageData.users?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: users,
+                                page: page + 1,
+                                hasNextPage: pageData.pageInfo?.hasNextPage == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
     
     static func getUnreadNotificationsCount() async -> Int? {
         await withCheckedContinuation { continuation in
@@ -100,5 +179,206 @@ class UserRepository {
             }
         }
         return unreadCount != nil ? [] : nil
+    }
+    
+    static func getMyUserInfo() async -> UserInfo? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(query: ViewerQuery()) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
+                        //update preferences
+                        UserDefaults.standard.set(
+                            viewer.options?.profileColor?.profileHexColor,
+                            forKey: USER_COLOR_KEY
+                        )
+                        UserDefaults.standard.set(
+                            viewer.options?.staffNameLanguage?.value?.rawValue,
+                            forKey: USER_NAMES_LANG_KEY
+                        )
+                        UserDefaults.standard.set(
+                            viewer.options?.titleLanguage?.value?.rawValue,
+                            forKey: USER_TITLE_LANG_KEY
+                        )
+                        UserDefaults.standard.set(
+                            viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
+                            forKey: USER_SCORE_KEY
+                        )
+                        UserDefaults.standard.setValue(
+                            viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
+                            forKey: ADVANCED_SCORING_ENABLED_KEY
+                        )
+                        UserDefaults.standard.setValue(
+                            viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
+                            forKey: ADVANCED_SCORES_KEY
+                        )
+                        continuation.resume(returning: viewer)
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func getUserInfo(userId: Int) async -> UserInfo? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(query: UserBasicInfoQuery(userId: .some(userId))) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    continuation.resume(returning: graphQLResult.data?.user?.fragments.userInfo)
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func toggleFollow(userId: Int) async -> UserInfo? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.perform(mutation: ToggleFollowMutation(userId: .some(userId))) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let user = graphQLResult.data?.toggleFollow {
+                        Network.shared.apollo.store.withinReadWriteTransaction({ transaction in
+                            do {
+                                try transaction.updateObject(
+                                    ofType: UserInfo.self,
+                                    withKey: "User:\(userId)"
+                                ) { (cachedData: inout UserInfo) in
+                                    cachedData.isFollowing = user.isFollowing
+                                }
+                                let newObject = try transaction.readObject(
+                                    ofType: UserInfo.self,
+                                    withKey: "User:\(userId)"
+                                )
+                                continuation.resume(returning: newObject)
+                            } catch {
+                                print(error)
+                                continuation.resume(returning: nil)
+                            }
+                        })
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func getUserActivity(
+        userId: Int,
+        page: Int,
+        perPage: Int = 25
+    ) async -> PagedResult<UserActivityQuery.Data.Page.Activity>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                    query: UserActivityQuery(
+                    page: .some(page),
+                    perPage: .some(perPage),
+                    userId: .some(userId),
+                    sort: .some([.case(.idDesc)])
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.page,
+                       let activities = pageData.activities?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: activities,
+                                page: page + 1,
+                                hasNextPage: pageData.pageInfo?.hasNextPage == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func getFollowers(
+        userId: Int,
+        page: Int,
+        perPage: Int = 25
+    ) async -> PagedResult<FollowersQuery.Data.Page.Follower>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: FollowersQuery(
+                    userId: userId,
+                    page: .some(page),
+                    perPage: .some(perPage)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.page,
+                       let followers = pageData.followers?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: followers,
+                                page: page + 1,
+                                hasNextPage: pageData.pageInfo?.hasNextPage == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func getFollowings(
+        userId: Int,
+        page: Int,
+        perPage: Int = 25
+    ) async -> PagedResult<FollowingsQuery.Data.Page.Following>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: FollowingsQuery(
+                    userId: userId,
+                    page: .some(page),
+                    perPage: .some(perPage)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.page,
+                       let following = pageData.following?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: following,
+                                page: page + 1,
+                                hasNextPage: pageData.pageInfo?.hasNextPage == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
     }
 }

@@ -9,54 +9,31 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 class MediaDetailsViewModel: ObservableObject {
 
     @Published var mediaDetails: MediaDetailsQuery.Data.Media?
 
-    func getMediaDetails(mediaId: Int) {
-        Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: .some(mediaId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.media {
-                    self?.mediaDetails = media
-                }
-            case .failure(let error):
-                print(error)
-            }
+    func getMediaDetails(mediaId: Int) async {
+        if let result = await MediaRepository.getMediaDetails(mediaId: mediaId) {
+            mediaDetails = result
         }
     }
 
-    func toggleFavorite() {
+    func toggleFavorite() async {
         guard let mediaDetails else { return }
-        var animeId: GraphQLNullable<Int> {
-            if mediaDetails.type == .anime {
-                return .some(mediaDetails.id)
-            } else {
-                return .none
-            }
+        let animeId: Int? = if mediaDetails.type == .anime {
+            mediaDetails.id
+        } else {
+            nil
         }
-        var mangaId: GraphQLNullable<Int> {
-            if mediaDetails.type == .manga {
-                return .some(mediaDetails.id)
-            } else {
-                return .none
-            }
+        let mangaId: Int? = if mediaDetails.type == .manga {
+            mediaDetails.id
+        } else {
+            nil
         }
-        Network.shared.apollo.perform(mutation: ToggleFavouriteMutation(
-            animeId: animeId,
-            mangaId: mangaId,
-            characterId: .none,
-            staffId: .none,
-            studioId: .none
-        )) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if graphQLResult.data != nil {
-                    self?.onFavoriteToggled()
-                }
-            case .failure(let error):
-                print(error)
-            }
+        if await FavoritesRepository.toggleFavorite(animeId: animeId, mangaId: mangaId) != nil {
+            onFavoriteToggled()
         }
     }
 
@@ -74,9 +51,7 @@ class MediaDetailsViewModel: ObservableObject {
                     ofType: MediaDetailsQuery.Data.Media.self,
                     withKey: "Media:\(mediaId)"
                 )
-                DispatchQueue.main.async {
-                    self?.mediaDetails = newObject
-                }
+                self?.mediaDetails = newObject
             } catch {
                 print(error)
             }
@@ -100,9 +75,7 @@ class MediaDetailsViewModel: ObservableObject {
                     ofType: MediaDetailsQuery.Data.Media.self,
                     withKey: "Media:\(updatedEntry?.mediaId ?? (self?.mediaDetails?.id ?? 0))"
                 )
-                DispatchQueue.main.async {
-                    self?.mediaDetails = newObject
-                }
+                self?.mediaDetails = newObject
             } catch {
                 print(error)
             }
@@ -113,10 +86,10 @@ class MediaDetailsViewModel: ObservableObject {
         onEntryUpdated(updatedEntry: nil)
     }
 
-    // MARK: calculated variables
+    // MARK: - calculated variables
 
     var isAnime: Bool {
-        return mediaDetails?.type?.value == .anime
+        mediaDetails?.type?.value == .anime
     }
 
     var genresFormatted: [String]? {

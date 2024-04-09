@@ -61,9 +61,11 @@ struct ThreadDetailsView: View {
                             }
                             .buttonStyle(.plain)
                             Spacer()
-                            Button(
-                                action: { viewModel.toggleLikeThread(threadId: threadId) }
-                            ) {
+                            Button(action: {
+                                Task {
+                                    await viewModel.toggleLikeThread(threadId: threadId)
+                                }
+                            }) {
                                 Label("\(thread.likeCount)", systemImage: "heart")
                             }
                         }
@@ -73,27 +75,25 @@ struct ThreadDetailsView: View {
                 } else {
                     HorizontalProgressView()
                         .padding()
-                        .onAppear {
-                            viewModel.getThreadDetails(threadId: threadId)
+                        .task {
+                            await viewModel.getThreadDetails(threadId: threadId)
                         }
                 }
 
                 // MARK: thread comments
-                ForEach(viewModel.threadComments, id: \.?.id) {
-                    if let comment = $0 {
-                        VStack {
-                            Divider()
-                                .padding(.vertical, 4)
-                            ThreadCommentItemView(viewModel: viewModel, comment: comment)
-                        }
+                ForEach(viewModel.threadComments, id: \.id) { comment in
+                    VStack {
+                        Divider()
+                            .padding(.vertical, 4)
+                        ThreadCommentItemView(viewModel: viewModel, comment: comment)
                     }
                 }
                 .padding(.bottom)
 
                 if viewModel.hasNextPage {
                     ProgressView()
-                        .onAppear {
-                            viewModel.getThreadComments(threadId: threadId)
+                        .task {
+                            await viewModel.getThreadComments(threadId: threadId)
                         }
                 }
             }//:LazyVStack

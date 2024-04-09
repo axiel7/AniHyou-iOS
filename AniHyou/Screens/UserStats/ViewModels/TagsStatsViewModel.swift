@@ -8,49 +8,22 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class TagsStatsViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var distribution: StatDistributionType = .titles
     @Published var tags = [TagStat]()
     
-    func getTagsStats(userId: Int, mediaType: MediaType) {
+    func getTagsStats(userId: Int, mediaType: MediaType) async {
         isLoading = true
-        let sort = distribution.userStatisticsSort(ascencing: false)
-        if mediaType == .anime {
-            Network.shared.apollo.fetch(
-                query: UserStatsAnimeTagsQuery(
-                    userId: .some(userId),
-                    sort: .some([.case(sort)])
-                )
-            ) { [weak self] result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let tags = graphQLResult.data?.user?.statistics?.anime?.tags {
-                        self?.tags = tags.compactMap { $0?.fragments.tagStat }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-                self?.isLoading = false
-            }
-        } else if mediaType == .manga {
-            Network.shared.apollo.fetch(
-                query: UserStatsMangaTagsQuery(
-                    userId: .some(userId),
-                    sort: .some([.case(sort)])
-                )
-            ) { [weak self] result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let tags = graphQLResult.data?.user?.statistics?.manga?.tags {
-                        self?.tags = tags.compactMap { $0?.fragments.tagStat }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-                self?.isLoading = false
-            }
+        if let result = await UserStatsRepository.getTagsStats(
+            userId: userId,
+            mediaType: mediaType,
+            distribution: distribution
+        ) {
+            tags = result
         }
+        isLoading = false
     }
 }

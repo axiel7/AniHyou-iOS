@@ -24,17 +24,17 @@ struct StudioDetailsView: View {
                             .padding()
                     } else {
                         LazyVGrid(columns: gridColumns) {
-                            ForEach(viewModel.studioMedia, id: \.?.id) { item in
-                                NavigationLink(destination: MediaDetailsView(mediaId: item!.id)) {
+                            ForEach(viewModel.studioMedia, id: \.id) { item in
+                                NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                                     VListItemView(
-                                        title: item?.title?.userPreferred ?? "",
-                                        imageUrl: item?.coverImage?.large,
-                                        status: item?.mediaListEntry?.status?.value
+                                        title: item.title?.userPreferred ?? "",
+                                        imageUrl: item.coverImage?.large,
+                                        status: item.mediaListEntry?.status?.value
                                     )
                                     .mediaContextMenu(
-                                        mediaId: item!.id,
-                                        mediaType: item?.type?.value,
-                                        mediaListStatus: item?.mediaListEntry?.status?.value
+                                        mediaId: item.id,
+                                        mediaType: item.type?.value,
+                                        mediaListStatus: item.mediaListEntry?.status?.value
                                     )
                                 }
                                 .buttonStyle(.plain)
@@ -42,8 +42,8 @@ struct StudioDetailsView: View {
                             
                             if viewModel.hasNextPage {
                                 ProgressView()
-                                    .onAppear {
-                                        viewModel.getStudioDetails(studioId: studioId)
+                                    .task {
+                                        await viewModel.getStudioMedia(studioId: studioId)
                                     }
                             }
                         }//:VGrid
@@ -53,7 +53,11 @@ struct StudioDetailsView: View {
             .navigationTitle(studio.name)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: { viewModel.toggleFavorite() }) {
+                    Button(action: {
+                        Task {
+                            await viewModel.toggleFavorite()
+                        }
+                    }) {
                         Text((studio.favourites ?? 0).formatted())
                         Image(systemName: studio.isFavourite ? "heart.fill" : "heart")
                     }
@@ -61,8 +65,8 @@ struct StudioDetailsView: View {
             }
         } else {
             ProgressView()
-                .onAppear {
-                    viewModel.getStudioDetails(studioId: studioId)
+                .task {
+                    await viewModel.getStudioDetails(studioId: studioId)
                 }
         }
     }

@@ -41,7 +41,11 @@ struct StaffDetailsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if let staff = viewModel.staff {
-                    Button(action: { viewModel.toggleFavorite() }) {
+                    Button(action: {
+                        Task {
+                            await viewModel.toggleFavorite()
+                        }
+                    }) {
                         Image(systemName: staff.isFavourite ? "heart.fill" : "heart")
                     }
                 }
@@ -97,8 +101,8 @@ struct StaffDetailsView: View {
             }
         } else {
             HorizontalProgressView()
-                .onAppear {
-                    viewModel.getStaffDetails(staffId: staffId)
+                .task {
+                    await viewModel.getStaffDetails(staffId: staffId)
                 }
         }
     }
@@ -140,8 +144,8 @@ struct StaffDetailsView: View {
             }
             if viewModel.hasNextPageMedia {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getStaffMedia(staffId: staffId)
+                    .task {
+                        await viewModel.getStaffMedia(staffId: staffId)
                     }
             }
         }//:LazyVStack
@@ -151,8 +155,8 @@ struct StaffDetailsView: View {
     @ViewBuilder
     var staffCharacters: some View {
         LazyVStack(alignment: .leading) {
-            ForEach(viewModel.staffCharacters, id: \.?.id) {
-                if let characters = $0?.characters {
+            ForEach(viewModel.staffCharacters, id: \.id) {
+                if let characters = $0.characters {
                     ForEach(characters, id: \.?.id) {
                         if let character = $0 {
                             NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
@@ -168,8 +172,8 @@ struct StaffDetailsView: View {
             }
             if viewModel.hasNextPageCharacters {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getStaffCharacters(staffId: staffId)
+                    .task {
+                        await viewModel.getStaffCharacters(staffId: staffId)
                     }
             }
         }//:LazyVStack

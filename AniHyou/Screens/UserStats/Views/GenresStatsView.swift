@@ -44,11 +44,13 @@ struct GenresStatsView: View {
             }
         }//:VStack
         .frame(minHeight: 500)
-        .onAppear {
-            viewModel.getGenresStats(userId: userId, mediaType: mediaType)
+        .task {
+            await viewModel.getGenresStats(userId: userId, mediaType: mediaType)
         }
         .onChange(of: viewModel.distribution) { _ in
-            viewModel.getGenresStats(userId: userId, mediaType: mediaType)
+            Task {
+                await viewModel.getGenresStats(userId: userId, mediaType: mediaType)
+            }
         }
     }
 }

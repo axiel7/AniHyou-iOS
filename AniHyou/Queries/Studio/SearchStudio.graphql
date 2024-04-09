@@ -4,5 +4,8 @@ query SearchStudio($page: Int, $perPage: Int, $search: String) {
       id
       name
     }
+    pageInfo {
+      hasNextPage
+    }
   }
 }

@@ -3,29 +3,30 @@
 
 @_exported import ApolloAPI
 
-public class MediaReviewsQuery: GraphQLQuery {
-  public static let operationName: String = "MediaReviews"
+public class StudioMediaQuery: GraphQLQuery {
+  public static let operationName: String = "StudioMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) { Media(id: $mediaId) { __typename reviews(page: $page, perPage: $perPage, sort: RATING_DESC) { __typename nodes { __typename id summary score user { __typename name } } pageInfo { __typename hasNextPage } } } }"#
+      #"query StudioMedia($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename ...StudioMedia } pageInfo { __typename hasNextPage } } } }"#,
+      fragments: [StudioMedia.self]
     ))
 
-  public var mediaId: GraphQLNullable<Int>
+  public var studioId: GraphQLNullable<Int>
   public var page: GraphQLNullable<Int>
   public var perPage: GraphQLNullable<Int>
 
   public init(
-    mediaId: GraphQLNullable<Int>,
+    studioId: GraphQLNullable<Int>,
     page: GraphQLNullable<Int>,
     perPage: GraphQLNullable<Int>
   ) {
-    self.mediaId = mediaId
+    self.studioId = studioId
     self.page = page
     self.perPage = perPage
   }
 
   public var __variables: Variables? { [
-    "mediaId": mediaId,
+    "studioId": studioId,
     "page": page,
     "perPage": perPage
   ] }
@@ -36,40 +37,41 @@ public class MediaReviewsQuery: GraphQLQuery {
 
     public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
+      .field("Studio", Studio?.self, arguments: ["id": .variable("studioId")]),
     ] }
 
-    /// Media query
-    public var media: Media? { __data["Media"] }
+    /// Studio query
+    public var studio: Studio? { __data["Studio"] }
 
-    /// Media
+    /// Studio
     ///
-    /// Parent Type: `Media`
-    public struct Media: AniListAPI.SelectionSet {
+    /// Parent Type: `Studio`
+    public struct Studio: AniListAPI.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Studio }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("reviews", Reviews?.self, arguments: [
+        .field("media", Media?.self, arguments: [
+          "isMain": true,
           "page": .variable("page"),
           "perPage": .variable("perPage"),
-          "sort": "RATING_DESC"
+          "sort": ["START_DATE_DESC"]
         ]),
       ] }
 
-      /// User reviews of the media
-      public var reviews: Reviews? { __data["reviews"] }
+      /// The media the studio has worked on
+      public var media: Media? { __data["media"] }
 
-      /// Media.Reviews
+      /// Studio.Media
       ///
-      /// Parent Type: `ReviewConnection`
-      public struct Reviews: AniListAPI.SelectionSet {
+      /// Parent Type: `MediaConnection`
+      public struct Media: AniListAPI.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ReviewConnection }
+        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
@@ -80,50 +82,45 @@ public class MediaReviewsQuery: GraphQLQuery {
         /// The pagination information
         public var pageInfo: PageInfo? { __data["pageInfo"] }
 
-        /// Media.Reviews.Node
+        /// Studio.Media.Node
         ///
-        /// Parent Type: `Review`
+        /// Parent Type: `Media`
         public struct Node: AniListAPI.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Review }
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("id", Int.self),
-            .field("summary", String?.self),
-            .field("score", Int?.self),
-            .field("user", User?.self),
+            .fragment(StudioMedia.self),
           ] }
 
-          /// The id of the review
+          /// The id of the media
           public var id: Int { __data["id"] }
-          /// A short summary of the review
-          public var summary: String? { __data["summary"] }
-          /// The review score of the media
-          public var score: Int? { __data["score"] }
-          /// The creator of the review
-          public var user: User? { __data["user"] }
+          /// The cover images of the media
+          public var coverImage: CoverImage? { __data["coverImage"] }
+          /// The official titles of the media in various languages
+          public var title: Title? { __data["title"] }
+          /// The type of the media; anime or manga
+          public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
+          /// The authenticated user's media list entry for the media
+          public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
 
-          /// Media.Reviews.Node.User
-          ///
-          /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          public struct Fragments: FragmentContainer {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
-              .field("__typename", String.self),
-              .field("name", String.self),
-            ] }
-
-            /// The name of the user
-            public var name: String { __data["name"] }
+            public var studioMedia: StudioMedia { _toFragment() }
           }
+
+          public typealias CoverImage = StudioMedia.CoverImage
+
+          public typealias Title = StudioMedia.Title
+
+          public typealias MediaListEntry = StudioMedia.MediaListEntry
         }
 
-        /// Media.Reviews.PageInfo
+        /// Studio.Media.PageInfo
         ///
         /// Parent Type: `PageInfo`
         public struct PageInfo: AniListAPI.SelectionSet {

@@ -40,14 +40,14 @@ struct ProfileView: View {
                         }
                     }
                     .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
-                    .onAppear {
-                        viewModel.getMyUserInfo()
+                    .task {
+                        await viewModel.getMyUserInfo()
                     }
             }//:NavigationStack
         } else {
             content
-                .onAppear {
-                    viewModel.getUserInfo(userId: userId!)
+                .task {
+                    await viewModel.getUserInfo(userId: userId!)
                 }
                 .tint(Color(hex: viewModel.userInfo?.options?.profileColor?.profileHexColor) ?? .accentColor)
                 .environment(
@@ -126,11 +126,19 @@ struct ProfileView: View {
             } else {
                 VStack(alignment: .center) {
                     if viewModel.userInfo?.isFollowing == true {
-                        Button("Unfollow", action: { viewModel.toggleFollow(userId: userId!) })
-                            .buttonStyle(.bordered)
+                        Button("Unfollow", action: {
+                            Task {
+                                await viewModel.toggleFollow(userId: userId!)
+                            }
+                        })
+                        .buttonStyle(.bordered)
                     } else if viewModel.userInfo?.isFollowing == false {
-                        Button("Follow", action: { viewModel.toggleFollow(userId: userId!) })
-                            .buttonStyle(.borderedProminent)
+                        Button("Follow", action: {
+                            Task {
+                                await viewModel.toggleFollow(userId: userId!)
+                            }
+                        })
+                        .buttonStyle(.borderedProminent)
                     }
                     if viewModel.userInfo?.isFollower == true {
                         Text("Follows you")

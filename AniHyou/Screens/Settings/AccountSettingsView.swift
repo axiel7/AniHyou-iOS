@@ -70,8 +70,8 @@ struct AccountSettingsView: View {
                 }//:Form
             } else {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getUserOptions()
+                    .task {
+                        await viewModel.getUserOptions()
                     }
             }
         }//:Group

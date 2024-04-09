@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 class ActivityDetailsViewModel: ObservableObject {
     
     @Published var isLoading = true
@@ -18,32 +19,26 @@ class ActivityDetailsViewModel: ObservableObject {
     
     @Published var replies = [ActivityReplyFragment]()
     
-    func getDetails(activityId: Int) {
-        Network.shared.apollo.fetch(query: ActivityDetailsQuery(activityId: .some(activityId))) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let activity = graphQLResult.data?.activity {
-                    if let details = activity.asListActivity {
-                        self?.listActivity = details.fragments.listActivityFragment
-                        if let replies = details.replies {
-                            self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
-                        }
-                    } else if let details = activity.asTextActivity {
-                        self?.textActivity = details.fragments.textActivityFragment
-                        if let replies = details.replies {
-                            self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
-                        }
-                    } else if let details = activity.asMessageActivity {
-                        self?.messageActivity = details.fragments.messageActivityFragment
-                        if let replies = details.replies {
-                            self?.replies.append(contentsOf: replies.compactMap { $0?.fragments.activityReplyFragment })
-                        }
-                    }
-                    self?.isLoading = false
+    func getDetails(activityId: Int) async {
+        isLoading = true
+        if let result = await ActivityRepository.getActivityDetails(activityId: activityId) {
+            if let details = result.asListActivity {
+                listActivity = details.fragments.listActivityFragment
+                if let replies = details.replies?.compactMap({ $0?.fragments.activityReplyFragment }) {
+                    self.replies.append(contentsOf: replies)
                 }
-            case .failure(let error):
-                print(error)
+            } else if let details = result.asTextActivity {
+                textActivity = details.fragments.textActivityFragment
+                if let replies = details.replies?.compactMap({ $0?.fragments.activityReplyFragment }) {
+                    self.replies.append(contentsOf: replies)
+                }
+            } else if let details = result.asMessageActivity {
+                messageActivity = details.fragments.messageActivityFragment
+                if let replies = details.replies?.compactMap({ $0?.fragments.activityReplyFragment }) {
+                    self.replies.append(contentsOf: replies)
+                }
             }
         }
+        isLoading = false
     }
 }

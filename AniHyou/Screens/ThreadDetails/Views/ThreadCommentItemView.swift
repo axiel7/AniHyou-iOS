@@ -67,12 +67,17 @@ struct ThreadCommentItemView: View {
                 .frame(width: 60, alignment: .leading)
                 Button(
                     action: {
-                        viewModel.toggleLikeComment(commentId: comment.id)
-                        isLiked.toggle()
-                        if isLiked {
-                            likeCount += 1
-                        } else {
-                            likeCount -= 1
+                        Task {
+                            if let liked = await viewModel.toggleLikeComment(
+                                commentId: comment.id
+                            ) {
+                                isLiked = liked
+                                if liked {
+                                    likeCount += 1
+                                } else {
+                                    likeCount -= 1
+                                }
+                            }
                         }
                     }
                 ) {

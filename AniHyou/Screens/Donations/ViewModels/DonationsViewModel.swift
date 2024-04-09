@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 
+@MainActor
 class DonationsViewModel: ObservableObject {
 
     var transacitonListener: Task<Void, Error>?
@@ -23,7 +24,6 @@ class DonationsViewModel: ObservableObject {
         }
     }
 
-    @MainActor
     func requestProducts() async {
         do {
             products = try await Product.products(for: productIDs)
@@ -33,7 +33,6 @@ class DonationsViewModel: ObservableObject {
         }
     }
 
-    @MainActor
     func purchase(_ product: Product) async throws -> Transaction? {
         let result = try await product.purchase()
         switch result {
@@ -59,13 +58,13 @@ class DonationsViewModel: ObservableObject {
                 switch result {
                 case let.verified(transaction):
                     guard
-                        self.products.first(where: { $0.id == transaction.productID }) != nil
+                        await self.products.first(where: { $0.id == transaction.productID }) != nil
                     else {
                         continue
                     }
                     await transaction.finish()
                 case .unverified:
-                    self.onProductPurchased(false)
+                    await self.onProductPurchased(false)
                     continue
                 }
             }

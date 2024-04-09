@@ -39,28 +39,26 @@ struct UserFavoritesView: View {
     
     var favoriteAnime: some View {
         FavoriteSectionGrid(columns: gridColumns) {
-            ForEach(viewModel.favoritesAnime, id: \.?.id) {
-                if let media = $0 {
-                    NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                        VListItemView(
-                            title: media.title?.userPreferred ?? "",
-                            imageUrl: media.coverImage?.large,
-                            status: media.mediaListEntry?.status?.value
-                        )
-                        .mediaContextMenu(
-                            mediaId: media.id,
-                            mediaType: .anime,
-                            mediaListStatus: media.mediaListEntry?.status?.value
-                        )
-                    }
-                    .buttonStyle(.plain)
+            ForEach(viewModel.favoritesAnime, id: \.id) { media in
+                NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
+                    VListItemView(
+                        title: media.title?.userPreferred ?? "",
+                        imageUrl: media.coverImage?.large,
+                        status: media.mediaListEntry?.status?.value
+                    )
+                    .mediaContextMenu(
+                        mediaId: media.id,
+                        mediaType: .anime,
+                        mediaListStatus: media.mediaListEntry?.status?.value
+                    )
                 }
+                .buttonStyle(.plain)
             }
 
             if viewModel.hasNextPageAnime {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getFavoritesAnime(userId: userId)
+                    .task {
+                        await viewModel.getFavoritesAnime(userId: userId)
                     }
             } else if viewModel.favoritesAnime.isEmpty {
                 EmptyFavoritesText()
@@ -70,28 +68,26 @@ struct UserFavoritesView: View {
     
     var favoriteManga: some View {
         FavoriteSectionGrid(columns: gridColumns) {
-            ForEach(viewModel.favoritesManga, id: \.?.id) {
-                if let media = $0 {
-                    NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
-                        VListItemView(
-                            title: media.title?.userPreferred ?? "",
-                            imageUrl: media.coverImage?.large,
-                            status: media.mediaListEntry?.status?.value
-                        )
-                        .mediaContextMenu(
-                            mediaId: media.id,
-                            mediaType: .manga,
-                            mediaListStatus: media.mediaListEntry?.status?.value
-                        )
-                    }
-                    .buttonStyle(.plain)
+            ForEach(viewModel.favoritesManga, id: \.id) { media in
+                NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
+                    VListItemView(
+                        title: media.title?.userPreferred ?? "",
+                        imageUrl: media.coverImage?.large,
+                        status: media.mediaListEntry?.status?.value
+                    )
+                    .mediaContextMenu(
+                        mediaId: media.id,
+                        mediaType: .manga,
+                        mediaListStatus: media.mediaListEntry?.status?.value
+                    )
                 }
+                .buttonStyle(.plain)
             }
 
             if viewModel.hasNextPageManga {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getFavoritesManga(userId: userId)
+                    .task {
+                        await viewModel.getFavoritesManga(userId: userId)
                     }
             } else if viewModel.favoritesManga.isEmpty {
                 EmptyFavoritesText()
@@ -101,19 +97,17 @@ struct UserFavoritesView: View {
     
     var favoriteCharacters: some View {
         FavoriteSectionGrid(columns: gridColumns) {
-            ForEach(viewModel.favoritesCharacters, id: \.?.id) {
-                if let character = $0 {
-                    NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
-                        VListItemView(title: character.name?.userPreferred ?? "", imageUrl: character.image?.large)
-                    }
-                    .buttonStyle(.plain)
+            ForEach(viewModel.favoritesCharacters, id: \.id) { character in
+                NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
+                    VListItemView(title: character.name?.userPreferred ?? "", imageUrl: character.image?.large)
                 }
+                .buttonStyle(.plain)
             }
 
             if viewModel.hasNextPageCharacter {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getFavoritesCharacter(userId: userId)
+                    .task {
+                        await viewModel.getFavoritesCharacter(userId: userId)
                     }
             } else if viewModel.favoritesCharacters.isEmpty {
                 EmptyFavoritesText()
@@ -123,19 +117,17 @@ struct UserFavoritesView: View {
     
     var favoriteStaff: some View {
         FavoriteSectionGrid(columns: gridColumns) {
-            ForEach(viewModel.favoritesStaff, id: \.?.id) {
-                if let staff = $0 {
-                    NavigationLink(destination: StaffDetailsView(staffId: staff.id)) {
-                        VListItemView(title: staff.name?.userPreferred ?? "", imageUrl: staff.image?.large)
-                    }
-                    .buttonStyle(.plain)
+            ForEach(viewModel.favoritesStaff, id: \.id) { staff in
+                NavigationLink(destination: StaffDetailsView(staffId: staff.id)) {
+                    VListItemView(title: staff.name?.userPreferred ?? "", imageUrl: staff.image?.large)
                 }
+                .buttonStyle(.plain)
             }
 
             if viewModel.hasNextPageStaff {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getFavoritesStaff(userId: userId)
+                    .task {
+                        await viewModel.getFavoritesStaff(userId: userId)
                     }
             } else if viewModel.favoritesStaff.isEmpty {
                 EmptyFavoritesText()
@@ -145,28 +137,26 @@ struct UserFavoritesView: View {
     
     var favoriteStudios: some View {
         FavoriteSectionGrid(columns: gridColumns) {
-            ForEach(viewModel.favoritesStudio, id: \.?.id) {
-                if let studio = $0 {
-                    NavigationLink(destination: StudioDetailsView(studioId: studio.id)) {
-                        Text(studio.name)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(1)
-                            .frame(minWidth: VListItemView.coverWidth - 15)
-                            .padding()
-                            .foregroundStyle(.primary)
-                            .background {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(.regularMaterial)
-                            }
-                    }
-                    .buttonStyle(.plain)
+            ForEach(viewModel.favoritesStudio, id: \.id) { studio in
+                NavigationLink(destination: StudioDetailsView(studioId: studio.id)) {
+                    Text(studio.name)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(1)
+                        .frame(minWidth: VListItemView.coverWidth - 15)
+                        .padding()
+                        .foregroundStyle(.primary)
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.regularMaterial)
+                        }
                 }
+                .buttonStyle(.plain)
             }
 
             if viewModel.hasNextPageStudio {
                 ProgressView()
-                    .onAppear {
-                        viewModel.getFavoritesStudio(userId: userId)
+                    .task {
+                        await viewModel.getFavoritesStudio(userId: userId)
                     }
             }
 

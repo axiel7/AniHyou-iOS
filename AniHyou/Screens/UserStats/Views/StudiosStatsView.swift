@@ -47,11 +47,13 @@ struct StudiosStatsView: View {
             }
         }//:VStack
         .frame(minHeight: 500)
-        .onAppear {
-            viewModel.getStudiosStats(userId: userId)
+        .task {
+            await viewModel.getStudiosStats(userId: userId)
         }
         .onChange(of: viewModel.distribution) { _ in
-            viewModel.getStudiosStats(userId: userId)
+            Task {
+                await viewModel.getStudiosStats(userId: userId)
+            }
         }
     }
 }

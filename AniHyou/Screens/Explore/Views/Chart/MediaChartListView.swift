@@ -27,8 +27,8 @@ struct MediaChartListView: View {
 
             if viewModel.hasNextPage {
                 HorizontalProgressView()
-                    .onAppear {
-                        viewModel.getMediaChart(
+                    .task {
+                        await viewModel.getMediaChart(
                             type: type,
                             sort: sort,
                             status: status,

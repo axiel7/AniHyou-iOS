@@ -44,11 +44,13 @@ struct TagsStatsView: View {
             }
         }//:VStack
         .frame(minHeight: 500)
-        .onAppear {
-            viewModel.getTagsStats(userId: userId, mediaType: mediaType)
+        .task {
+            await viewModel.getTagsStats(userId: userId, mediaType: mediaType)
         }
         .onChange(of: viewModel.distribution) { _ in
-            viewModel.getTagsStats(userId: userId, mediaType: mediaType)
+            Task {
+                await viewModel.getTagsStats(userId: userId, mediaType: mediaType)
+            }
         }
     }
 }

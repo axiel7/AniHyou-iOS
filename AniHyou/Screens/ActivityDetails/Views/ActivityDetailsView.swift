@@ -39,8 +39,8 @@ struct ActivityDetailsView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Activity")
-        .onAppear {
-            viewModel.getDetails(activityId: activityId)
+        .task {
+            await viewModel.getDetails(activityId: activityId)
         }
     }
 }
