@@ -55,6 +55,10 @@ struct MediaListView: View {
                         )
                     }
                 }
+                
+                if viewModel.isLoading {
+                    HorizontalProgressView()
+                }
             }
         }//:List
         .listStyle(.inset)

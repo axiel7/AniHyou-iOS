@@ -65,6 +65,7 @@ class MediaListViewModel: ObservableObject {
     
     func filterList() async {
         if searchText.isEmpty || searchText.count < 3 { return }
+        isLoading = true
         if let result = await MediaRepository.searchMedia(
             search: searchText,
             type: mediaType,
@@ -74,6 +75,7 @@ class MediaListViewModel: ObservableObject {
         ) {
             filteredMedia = result.data
         }
+        isLoading = false
     }
 
     func updateEntryProgress(of entry: BasicMediaListEntry) async {
