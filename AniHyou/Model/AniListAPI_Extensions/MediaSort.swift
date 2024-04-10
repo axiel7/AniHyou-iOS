@@ -63,7 +63,7 @@ extension MediaSort {
         case .duration:
             "Duration"
         case .durationDesc:
-            "Duartion"
+            "Duration"
         case .status:
             "Status"
         case .statusDesc:
@@ -71,7 +71,7 @@ extension MediaSort {
         case .chapters:
             "Chapters"
         case .chaptersDesc:
-            "Chapetrs"
+            "Chapters"
         case .volumes:
             "Volumes"
         case .volumesDesc:
