@@ -11,7 +11,7 @@ import AniListAPI
 
 extension Date {
     var tomorrow: Date? {
-        Calendar.autoupdatingCurrent.date(byAdding: .day, value: 1, to: self)
+        Calendar.current.date(byAdding: .day, value: 1, to: self)
     }
 
     var year: Int {
@@ -27,7 +27,7 @@ extension Date {
     }
 
     var weekday: Int {
-        Calendar.autoupdatingCurrent.component(.weekday, from: self)
+        Calendar.current.component(.weekday, from: self)
     }
 
     var season: MediaSeason {
@@ -92,6 +92,13 @@ extension Date {
             month: GraphQLNullable<Int>(integerLiteral: self.month),
             day: GraphQLNullable<Int>(integerLiteral: self.day)
         )
+    }
+}
+
+extension Calendar {
+    func veryShortSymbol(weekday: Int) -> String {
+        let dayIndex = ((weekday - 1) + (firstWeekday - 1)) % 7
+        return veryShortWeekdaySymbols[dayIndex]
     }
 }
 
