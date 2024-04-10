@@ -48,6 +48,6 @@ extension Collection {
 extension Bool {
     // so we can negate nullable booleans. Idea stolen from kotlin :)
     func not() -> Bool {
-        return !self
+        !self
     }
 }

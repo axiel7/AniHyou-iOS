@@ -50,33 +50,33 @@ extension ScoreFormat {
     func smileyIcon(score: Int) -> ImageResource? {
         switch score {
         case 1:
-            return .sentimentDissatisfied
+            .sentimentDissatisfied
         case 2:
-            return .sentimentNeutral
+            .sentimentNeutral
         case 3:
-            return .sentimentSatisfied
+            .sentimentSatisfied
         default:
-            return nil
+            nil
         }
     }
     
     var localizedName: LocalizedStringKey {
         switch self {
         case .point100:
-            return "100 Point (55/100)"
+            "100 Point (55/100)"
         case .point10Decimal:
-            return "10 Point Decimal (5.5/10)"
+            "10 Point Decimal (5.5/10)"
         case .point10:
-            return "10 Point (5/10)"
+            "10 Point (5/10)"
         case .point5:
-            return "5 Star (3/5)"
+            "5 Star (3/5)"
         case .point3:
-            return "3 Point Smiley :)"
+            "3 Point Smiley :)"
         }
     }
     
     var canUseAdvancedScoring: Bool {
-        return self == .point100 || self == .point10Decimal
+        self == .point100 || self == .point10Decimal
     }
 }
 

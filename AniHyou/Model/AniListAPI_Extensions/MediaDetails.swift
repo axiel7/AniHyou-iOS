@@ -12,11 +12,11 @@ extension BasicMediaDetails {
     var maxProgress: Int? {
         switch type?.value {
         case .anime:
-            return episodes
+            episodes
         case .manga:
-            return chapters
+            chapters
         default:
-            return nil
+            nil
         }
     }
 }

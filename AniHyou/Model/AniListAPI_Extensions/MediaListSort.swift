@@ -13,44 +13,44 @@ extension MediaListSort {
     var localizedName: LocalizedStringKey {
         switch self {
         case .mediaId, .mediaIdDesc:
-            return "Id"
+            "Id"
         case .score, .scoreDesc:
-            return "Score"
+            "Score"
         case .status, .statusDesc:
-            return "Status"
+            "Status"
         case .progress, .progressDesc:
-            return "Progress"
+            "Progress"
         case .progressVolumes, .progressVolumesDesc:
-            return "Progress"
+            "Progress"
         case .repeat, .repeatDesc:
-            return "Repeat"
+            "Repeat"
         case .priority, .priorityDesc:
-            return "Priority"
+            "Priority"
         case .startedOn, .startedOnDesc:
-            return "Started"
+            "Started"
         case .finishedOn, .finishedOnDesc:
-            return "Finished"
+            "Finished"
         case .addedTime:
-            return "Added"
+            "Added"
         case .addedTimeDesc:
-            return "Last Added"
+            "Last Added"
         case .updatedTime:
-            return "Updated"
+            "Updated"
         case .updatedTimeDesc:
-            return "Last Updated"
+            "Last Updated"
         case .mediaTitleRomaji, .mediaTitleRomajiDesc:
-            return "Title"
+            "Title"
         case .mediaTitleEnglish, .mediaTitleEnglishDesc:
-            return "Title"
+            "Title"
         case .mediaTitleNative, .mediaTitleNativeDesc:
-            return "Title"
+            "Title"
         case .mediaPopularity, .mediaPopularityDesc:
-            return "Popularity"
+            "Popularity"
         }
     }
     
     static var allCasesForUi: [MediaListSort] {
-        return [.mediaTitleRomajiDesc, .scoreDesc, .progressDesc, .updatedTimeDesc, .addedTimeDesc, .startedOnDesc,
+        [.mediaTitleRomajiDesc, .scoreDesc, .progressDesc, .updatedTimeDesc, .addedTimeDesc, .startedOnDesc,
             .finishedOnDesc, .repeatDesc, .mediaPopularityDesc]
     }
     
@@ -68,48 +68,48 @@ extension MediaListSort {
     func toAscending() -> MediaListSort {
         switch self {
         case .mediaIdDesc:
-            return .mediaId
+            .mediaId
         case .scoreDesc:
-            return .score
+            .score
         case .statusDesc:
-            return .status
+            .status
         case .progressDesc:
-            return .progress
+            .progress
         case .progressVolumesDesc:
-            return .progressVolumes
+            .progressVolumes
         case .repeatDesc:
-            return .repeat
+            .repeat
         case .priorityDesc:
-            return .priority
+            .priority
         case .startedOnDesc:
-            return .startedOn
+            .startedOn
         case .finishedOnDesc:
-            return .finishedOn
+            .finishedOn
         case .addedTimeDesc:
-            return .addedTime
+            .addedTime
         case .updatedTimeDesc:
-            return .updatedTime
+            .updatedTime
         case .mediaTitleRomajiDesc:
-            return .mediaTitleRomaji
+            .mediaTitleRomaji
         case .mediaTitleEnglishDesc:
-            return .mediaTitleEnglish
+            .mediaTitleEnglish
         case .mediaTitleNativeDesc:
-            return .mediaTitleNative
+            .mediaTitleNative
         case .mediaPopularityDesc:
-            return .mediaPopularity
+            .mediaPopularity
         default:
-            return self
+            self
         }
     }
     
     static func titleSortForLanguage(_ lang: UserTitleLanguage) -> MediaListSort {
         switch lang {
         case .romaji, .romajiStylised:
-            return .mediaTitleRomajiDesc
+            .mediaTitleRomajiDesc
         case .english, .englishStylised:
-            return .mediaTitleEnglishDesc
+            .mediaTitleEnglishDesc
         case .native, .nativeStylised:
-            return .mediaTitleNativeDesc
+            .mediaTitleNativeDesc
         }
     }
 }

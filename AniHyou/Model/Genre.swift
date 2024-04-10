@@ -18,45 +18,45 @@ extension String {
     var genreLocalized: LocalizedStringKey? {
         switch self {
         case "Action":
-            return "Action"
+            "Action"
         case "Adventure":
-            return "Adventure"
+            "Adventure"
         case "Comedy":
-            return "Comedy"
+            "Comedy"
         case "Drama":
-            return "Drama"
+            "Drama"
         case "Ecchi":
-            return "Ecchi"
+            "Ecchi"
         case "Fantasy":
-            return "Fantasy"
+            "Fantasy"
         case "Hentai":
-            return "Hentai"
+            "Hentai"
         case "Horror":
-            return "Horror"
+            "Horror"
         case "Mahou Shoujo":
-            return "Mahou Shoujo"
+            "Mahou Shoujo"
         case "Mecha":
-            return "Mecha"
+            "Mecha"
         case "Music":
-            return "Music"
+            "Music"
         case "Mystery":
-            return "Mystery"
+            "Mystery"
         case "Psychological":
-            return "Psychological"
+            "Psychological"
         case "Romance":
-            return "Romance"
+            "Romance"
         case "Sci-Fi":
-            return "Sci-Fi"
+            "Sci-Fi"
         case "Slice of Life":
-            return "Slice of Life"
+            "Slice of Life"
         case "Sports":
-            return "Sports"
+            "Sports"
         case "Supernatural":
-            return "Supernatural"
+            "Supernatural"
         case "Thriller":
-            return "Thriller"
+            "Thriller"
         default:
-            return nil
+            nil
         }
     }
 }

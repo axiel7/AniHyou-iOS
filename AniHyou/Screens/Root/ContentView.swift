@@ -24,7 +24,7 @@ struct ContentView: View {
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
     @AppStorage(USER_SCORE_KEY) private var myScoreFormatRawValue = ScoreFormat.point100.rawValue
     var myScoreFormat: ScoreFormat {
-        return ScoreFormat(rawValue: myScoreFormatRawValue) ?? .point100
+        ScoreFormat(rawValue: myScoreFormatRawValue) ?? .point100
     }
 
     var body: some View {

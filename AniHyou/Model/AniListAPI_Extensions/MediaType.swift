@@ -12,18 +12,18 @@ extension MediaType {
     var localizedName: LocalizedStringKey {
         switch self {
         case .anime:
-            return "Anime"
+            "Anime"
         case .manga:
-            return "Manga"
+            "Manga"
         }
     }
 
     var mediaUrl: String {
         switch self {
         case .anime:
-            return ANILIST_ANIME_URL
+            ANILIST_ANIME_URL
         case .manga:
-            return ANILIST_MANGA_URL
+            ANILIST_MANGA_URL
         }
     }
 }

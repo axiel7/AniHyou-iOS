@@ -21,34 +21,34 @@ extension SearchType {
     var localizedName: LocalizedStringKey {
         switch self {
         case .anime:
-            return "Anime"
+            "Anime"
         case .manga:
-            return "Manga"
+            "Manga"
         case .characters:
-            return "Characters"
+            "Characters"
         case .staff:
-            return "Staff"
+            "Staff"
         case .studios:
-            return "Studios"
+            "Studios"
         case .users:
-            return "Users"
+            "Users"
         }
     }
 
     var systemImage: String {
         switch self {
         case .anime:
-            return "play.tv"
+            "play.tv"
         case .manga:
-            return "book"
+            "book"
         case .characters:
-            return "face.smiling"
+            "face.smiling"
         case .staff:
-            return "person.text.rectangle"
+            "person.text.rectangle"
         case .studios:
-            return "paintbrush.pointed"
+            "paintbrush.pointed"
         case .users:
-            return "person"
+            "person"
         }
     }
 }

@@ -14,7 +14,7 @@ struct MediaListView: View {
     let statusSelected: MediaListStatusSelect
     var userId: Int?
     var isMyList: Bool {
-        return userId == nil
+        userId == nil
     }
     @StateObject private var viewModel = MediaListViewModel()
     @State private var showingEditSheet = false

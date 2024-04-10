@@ -19,11 +19,11 @@ extension MediaDetailsQuery.Data.Media.ExternalLink {
     var languageShort: String? {
         switch language {
         case "Japanese":
-            return "JP"
+            "JP"
         case "English":
-            return "EN"
+            "EN"
         default:
-            return language
+            language
         }
     }
 }

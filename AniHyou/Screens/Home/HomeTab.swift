@@ -17,18 +17,18 @@ extension HomeTab {
     var localizedName: LocalizedStringKey {
         switch self {
         case .discover:
-            return "Discover"
+            "Discover"
         case .activity:
-            return "Activity"
+            "Activity"
         }
     }
     
     var systemImage: String {
         switch self {
         case .discover:
-            return "globe"
+            "globe"
         case .activity:
-            return "text.bubble"
+            "text.bubble"
         }
     }
 }

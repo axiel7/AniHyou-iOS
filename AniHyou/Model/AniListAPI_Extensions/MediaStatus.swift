@@ -13,15 +13,15 @@ extension MediaStatus {
     var localizedName: LocalizedStringKey {
         switch self {
         case .finished:
-            return "Finished"
+            "Finished"
         case .releasing:
-            return "Releasing"
+            "Releasing"
         case .notYetReleased:
-            return "Not yet released"
+            "Not yet released"
         case .cancelled:
-            return "Cancelled"
+            "Cancelled"
         case .hiatus:
-            return "Hiatus"
+            "Hiatus"
         }
     }
 }

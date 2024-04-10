@@ -13,17 +13,17 @@ extension MediaListStatus {
     var localizedStringKey: String {
         switch self {
         case .current:
-            return "Current"
+            "Current"
         case .completed:
-            return "Completed"
+            "Completed"
         case .paused:
-            return "Paused"
+            "Paused"
         case .planning:
-            return "Planning"
+            "Planning"
         case .dropped:
-            return "Dropped"
+            "Dropped"
         case .repeating:
-            return "Repeating"
+            "Repeating"
         }
     }
 
@@ -35,34 +35,34 @@ extension MediaListStatus {
     var systemImage: String {
         switch self {
         case .current:
-            return "play.circle"
+            "play.circle"
         case .completed:
-            return "checkmark.circle"
+            "checkmark.circle"
         case .paused:
-            return "pause.circle"
+            "pause.circle"
         case .planning:
-            return "clock"
+            "clock"
         case .dropped:
-            return "trash"
+            "trash"
         case .repeating:
-            return "repeat"
+            "repeat"
         }
     }
 
     var color: Color {
         switch self {
         case .current:
-            return .blue
+            .blue
         case .planning:
-            return .green
+            .green
         case .completed:
-            return .purple
+            .purple
         case .dropped:
-            return .red
+            .red
         case .paused:
-            return .yellow
+            .yellow
         case .repeating:
-            return .blue
+            .blue
         }
     }
 }
@@ -71,13 +71,13 @@ extension MediaListStatus? {
     var statusesCanChangeTo: [MediaListStatus] {
         switch self {
         case nil:
-            return [.planning]
+            [.planning]
         case .current, .repeating:
-            return [.completed, .dropped, .paused]
+            [.completed, .dropped, .paused]
         case .completed:
-            return [.repeating]
+            [.repeating]
         case .paused, .dropped, .planning:
-            return [.current]
+            [.current]
         }
     }
 }
@@ -94,19 +94,19 @@ enum MediaListStatusSelect: String, CaseIterable, Hashable {
     var value: MediaListStatus? {
         switch self {
         case .all:
-            return nil
+            nil
         case .current:
-            return .current
+            .current
         case .planning:
-            return .planning
+            .planning
         case .completed:
-            return .completed
+            .completed
         case .dropped:
-            return .dropped
+            .dropped
         case .paused:
-            return .paused
+            .paused
         case .repeating:
-            return .repeating
+            .repeating
         }
     }
     

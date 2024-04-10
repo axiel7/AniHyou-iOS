@@ -17,7 +17,7 @@ struct ProfileView: View {
 
     var userId: Int?
     var isMyProfile: Bool {
-        return userId == nil
+        userId == nil
     }
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false

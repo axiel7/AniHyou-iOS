@@ -31,11 +31,7 @@ struct StarRatingView: View {
     }
 
     func image(for number: Double) -> Image {
-        if number > rating {
-            return offImage
-        } else {
-            return onImage
-        }
+        number > rating ? offImage : onImage
     }
 }
 

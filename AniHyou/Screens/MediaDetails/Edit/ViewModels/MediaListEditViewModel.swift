@@ -32,30 +32,30 @@ class MediaListEditViewModel: ObservableObject {
     var scoreMax: Double {
         switch scoreFormat {
         case .point100:
-            return 100
+            100
         case .point10, .point10Decimal:
-            return 10
+            10
         case .point5:
-            return 5
+            5
         case .point3:
-            return 3
+            3
         }
     }
 
     var scoreHint: String {
-        return String(format: "%.0f", scoreMax)
+        String(format: "%.0f", scoreMax)
     }
 
     var scoreRange: ClosedRange<Double> {
-        return 0...scoreMax
+        0...scoreMax
     }
 
     var scoreStep: Double {
         switch scoreFormat {
         case .point100, .point10, .point5, .point3:
-            return 1
+            1
         case .point10Decimal:
-            return 0.5
+            0.5
         }
     }
 

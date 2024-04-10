@@ -12,7 +12,7 @@ import AniListAPI
 extension String {
 
     var htmlStripped: String {
-        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 
     var firstCapitalized: String { prefix(1).capitalized + dropFirst() }
@@ -35,7 +35,7 @@ extension String {
     }
     
     public func localized(with arguments: [CVarArg]) -> String {
-        return String(format: NSLocalizedString(self, comment: ""), locale: nil, arguments: arguments)
+        String(format: NSLocalizedString(self, comment: ""), locale: nil, arguments: arguments)
     }
 }
 

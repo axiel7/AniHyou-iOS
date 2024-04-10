@@ -15,9 +15,9 @@ public enum LongSwipeDirection: String, Equatable, CaseIterable {
     var localizedName: LocalizedStringKey {
         switch self {
         case .left:
-            return "Left"
+            "Left"
         case .right:
-            return "Right"
+            "Right"
         }
     }
 }

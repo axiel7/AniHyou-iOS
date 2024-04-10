@@ -17,22 +17,22 @@ enum ActivityFeedType: CaseIterable, Hashable {
     var value: ActivityType? {
         switch self {
         case .all:
-            return nil
+            nil
         case .text:
-            return .text
+            .text
         case .listProgress:
-            return .mediaList
+            .mediaList
         }
     }
     
     var lozalizedName: LocalizedStringKey {
         switch self {
         case .all:
-            return "All"
+            "All"
         case .text:
-            return "Text Status"
+            "Text Status"
         case .listProgress:
-            return "List Progress"
+            "List Progress"
         }
     }
 }

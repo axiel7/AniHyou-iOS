@@ -10,7 +10,7 @@ import Foundation
 extension Int {
 
     var stringValue: String {
-        return "\(self)"
+        "\(self)"
     }
     
     // MARK: - helper extension functions to use with nullable receiver

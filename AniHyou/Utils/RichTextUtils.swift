@@ -11,7 +11,7 @@ import RichText
 
 extension RichText {
     func defaultStyle() -> RichText {
-        return self
+        self
             .imageRadius(8)
             .linkColor(light: .accentColor, dark: .accentColor)
             .placeholder {

@@ -42,7 +42,7 @@ struct SmileyRatingView: View {
     }
 
     func image(_ name: ImageResource) -> some View {
-        return Image(name)
+        Image(name)
             .resizable()
             .frame(width: size, height: size)
             .padding(.horizontal)

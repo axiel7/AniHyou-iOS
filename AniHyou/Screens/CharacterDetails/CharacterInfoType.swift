@@ -17,18 +17,18 @@ extension CharacterInfoType {
     var localizedName: LocalizedStringKey {
         switch self {
         case .overview:
-            return "Overview"
+            "Overview"
         case .media:
-            return "Media"
+            "Media"
         }
     }
 
     var systemImage: String {
         switch self {
         case .overview:
-            return "info.circle"
+            "info.circle"
         case .media:
-            return "play.square"
+            "play.square"
         }
     }
 }

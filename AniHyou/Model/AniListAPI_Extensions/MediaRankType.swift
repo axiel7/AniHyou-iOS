@@ -13,18 +13,18 @@ extension MediaRankType {
     var systemImage: String {
         switch self {
         case .rated:
-            return "star"
+            "star"
         case .popular:
-            return "heart"
+            "heart"
         }
     }
 
     var color: Color {
         switch self {
         case .rated:
-            return .yellow
+            .yellow
         case .popular:
-            return .pink
+            .pink
         }
     }
     

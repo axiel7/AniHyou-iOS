@@ -20,30 +20,30 @@ extension MediaInfoType {
     var localizedName: LocalizedStringKey {
         switch self {
         case .general:
-            return "General"
+            "General"
         case .charactersAndStaff:
-            return "Characters and Staff"
+            "Characters and Staff"
         case .relationsAndRecommendations:
-            return "Relations and Recommendations"
+            "Relations and Recommendations"
         case .stats:
-            return "Stats"
+            "Stats"
         case .reviewsAndThreads:
-            return "Review and Threads"
+            "Review and Threads"
         }
     }
 
     var systemImage: String {
         switch self {
         case .general:
-            return "info.circle"
+            "info.circle"
         case .charactersAndStaff:
-            return "person"
+            "person"
         case .relationsAndRecommendations:
-            return "shuffle"
+            "shuffle"
         case .stats:
-            return "percent"
+            "percent"
         case .reviewsAndThreads:
-            return "square.and.pencil"
+            "square.and.pencil"
         }
     }
 }

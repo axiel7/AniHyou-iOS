@@ -34,9 +34,9 @@ struct FullCoverView: View {
                     .padding()
                     .onDrag {
                         if let image = image {
-                            return NSItemProvider(object: image)
+                            NSItemProvider(object: image)
                         } else {
-                            return NSItemProvider(contentsOf: URL(string: imageUrl ?? "")) ?? NSItemProvider()
+                            NSItemProvider(contentsOf: URL(string: imageUrl ?? "")) ?? NSItemProvider()
                         }
                     }
             }//:VStack

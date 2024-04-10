@@ -13,13 +13,13 @@ extension CountryOfOrigin {
     var localizedName: LocalizedStringKey {
         switch self {
         case .japan:
-            return "Japan"
+            "Japan"
         case .southKorea:
-            return "South Korea"
+            "South Korea"
         case .china:
-            return "China"
+            "China"
         case .taiwan:
-            return "Taiwan"
+            "Taiwan"
         }
     }
     

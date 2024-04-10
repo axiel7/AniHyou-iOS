@@ -13,11 +13,11 @@ extension CharacterRole {
     var localizedName: LocalizedStringKey {
         switch self {
         case .main:
-            return "Main"
+            "Main"
         case .supporting:
-            return "Supporting"
+            "Supporting"
         case .background:
-            return "Background"
+            "Background"
         }
     }
 }

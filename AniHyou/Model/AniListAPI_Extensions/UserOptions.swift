@@ -38,17 +38,17 @@ extension UserTitleLanguage {
     var localizedName: LocalizedStringKey {
         switch self {
         case .romaji:
-            return "Romaji"
+            "Romaji"
         case .english:
-            return "English"
+            "English"
         case .native:
-            return "Native"
+            "Native"
         case .romajiStylised:
-            return "Romaji"
+            "Romaji"
         case .englishStylised:
-            return "English"
+            "English"
         case .nativeStylised:
-            return "Native"
+            "Native"
         }
     }
     
@@ -59,11 +59,11 @@ extension UserStaffNameLanguage {
     var localizedName: LocalizedStringKey {
         switch self {
         case .romajiWestern:
-            return "Romaji (Western Order)"
+            "Romaji (Western Order)"
         case .romaji:
-            return "Romaji"
+            "Romaji"
         case .native:
-            return "Native"
+            "Native"
         }
     }
 }

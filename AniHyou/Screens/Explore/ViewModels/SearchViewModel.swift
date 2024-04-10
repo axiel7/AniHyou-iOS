@@ -33,7 +33,7 @@ class SearchViewModel: ObservableObject {
     @Published var country: CountryOfOrigin?
     
     private var hasFilters: Bool {
-        return sortMedia != .searchMatch
+        sortMedia != .searchMatch
         || !selectedGenres.isEmpty
         || !selectedTags.isEmpty
         || !selectedMediaFormat.isEmpty
@@ -60,9 +60,9 @@ class SearchViewModel: ObservableObject {
     
     var mediaType: MediaType {
         if type == .manga {
-            return .manga
+            .manga
         } else {
-            return .anime
+            .anime
         }
     }
 

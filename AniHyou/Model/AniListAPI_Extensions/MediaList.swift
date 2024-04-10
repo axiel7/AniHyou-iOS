@@ -17,7 +17,7 @@ extension UserMediaListQuery.Data.Page.MediaList {
     }
     
     var uniqueListId: String? {
-        return "\(self.mediaId)-\(self.id)"
+        "\(self.mediaId)-\(self.id)"
     }
 }
 
@@ -27,13 +27,9 @@ extension BasicMediaListEntry {
     }
     
     var shouldShowIncrementButton: Bool {
-        if status?.value == .repeating
+        status?.value == .repeating
             || status?.value == .current
             || status?.value == .planning
-        {
-            return true
-        }
-        return false
     }
 }
 
@@ -41,9 +37,9 @@ extension CustomJSON {
     func toAdvancedScores() -> [String: Double] {
         switch self {
         case .dictionary(let dictionary):
-            return dictionary.compactMapValues { $0 as? Double }
+            dictionary.compactMapValues { $0 as? Double }
         case .array:
-            return [:]
+            [:]
         }
     }
 }

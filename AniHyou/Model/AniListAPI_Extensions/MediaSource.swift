@@ -13,35 +13,35 @@ extension MediaSource {
     var localizedName: LocalizedStringKey {
         switch self {
         case .original:
-            return "Original"
+            "Original"
         case .manga:
-            return "Manga"
+            "Manga"
         case .lightNovel:
-            return "Light novel"
+            "Light novel"
         case .visualNovel:
-            return "Visual novel"
+            "Visual novel"
         case .videoGame:
-            return "VideoGame"
+            "VideoGame"
         case .other:
-            return "Other"
+            "Other"
         case .novel:
-            return "Novel"
+            "Novel"
         case .doujinshi:
-            return "Doujinshi"
+            "Doujinshi"
         case .anime:
-            return "Anime"
+            "Anime"
         case .webNovel:
-            return "Web novel"
+            "Web novel"
         case .liveAction:
-            return "Live action"
+            "Live action"
         case .game:
-            return "Game"
+            "Game"
         case .comic:
-            return "Comic"
+            "Comic"
         case .multimediaProject:
-            return "Multimedia project"
+            "Multimedia project"
         case .pictureBook:
-            return "Picture book"
+            "Picture book"
         }
     }
 }

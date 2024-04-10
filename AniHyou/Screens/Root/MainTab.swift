@@ -18,30 +18,30 @@ enum MainTab: Int {
     var localizedName: LocalizedStringKey {
         switch self {
         case .home:
-            return "Home"
+            "Home"
         case .anime:
-            return "Anime"
+            "Anime"
         case .manga:
-            return "Manga"
+            "Manga"
         case .profile:
-            return "Profile"
+            "Profile"
         case .explore:
-            return "Explore"
+            "Explore"
         }
     }
     
     var systemImage: String {
         switch self {
         case .home:
-            return "house"
+            "house"
         case .anime:
-            return "play.tv"
+            "play.tv"
         case .manga:
-            return "book"
+            "book"
         case .profile:
-            return "person"
+            "person"
         case .explore:
-            return "magnifyingglass"
+            "magnifyingglass"
         }
     }
 }

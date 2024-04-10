@@ -13,31 +13,31 @@ extension MediaRelation {
     var localizedName: LocalizedStringKey {
         switch self {
         case .adaptation:
-            return "Adaptation"
+            "Adaptation"
         case .prequel:
-            return "Prequel"
+            "Prequel"
         case .sequel:
-            return "Sequel"
+            "Sequel"
         case .parent:
-            return "Parent"
+            "Parent"
         case .sideStory:
-            return "Side Story"
+            "Side Story"
         case .character:
-            return "Character"
+            "Character"
         case .summary:
-            return "Summary"
+            "Summary"
         case .alternative:
-            return "Alternative"
+            "Alternative"
         case .spinOff:
-            return "Spin Off"
+            "Spin Off"
         case .other:
-            return "Other"
+            "Other"
         case .source:
-            return "Source"
+            "Source"
         case .compilation:
-            return "Compilation"
+            "Compilation"
         case .contains:
-            return "Contains"
+            "Contains"
         }
     }
 }

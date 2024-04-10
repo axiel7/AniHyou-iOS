@@ -9,7 +9,7 @@ import AniListAPI
 
 extension ChildCommentsQuery.Data.Page.ThreadComment {
     var childCommentsParsed: [ChildCommentsQuery.Data.Page.ThreadComment]? {
-        return childComments?.toThreadComments()
+        childComments?.toThreadComments()
     }
 }
 
@@ -17,9 +17,9 @@ extension CustomJSON {
     func toThreadComments() -> [ChildCommentsQuery.Data.Page.ThreadComment]? {
         switch self {
         case .dictionary(let dictionary):
-            return try? [ChildCommentsQuery.Data.Page.ThreadComment(data: dictionary)]
+            try? [ChildCommentsQuery.Data.Page.ThreadComment(data: dictionary)]
         case .array(let array):
-            return array.compactMap {
+            array.compactMap {
                 try? ChildCommentsQuery.Data.Page.ThreadComment(data: $0)
             }
         }

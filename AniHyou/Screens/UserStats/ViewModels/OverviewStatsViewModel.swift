@@ -41,9 +41,9 @@ class OverviewStatsViewModel: ObservableObject {
     
     private static func lengthStatComparator(_ length: String?) -> Int {
         if length?.contains("+") == true { //ex: 101+
-            return length!.count * 2
+            length!.count * 2
         } else { //ex: 29-55 or null
-            return length?.count ?? Int.max
+            length?.count ?? Int.max
         }
     }
 

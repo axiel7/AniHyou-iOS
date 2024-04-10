@@ -14,7 +14,7 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
     private let clientId = Bundle.main.object(forInfoDictionaryKey: "ANILIST_CLIENT_ID") as? String ?? ""
 
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        return ASPresentationAnchor()
+        ASPresentationAnchor()
     }
 
     func login() {

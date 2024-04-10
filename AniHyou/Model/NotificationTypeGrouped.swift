@@ -19,35 +19,35 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
     var value: [NotificationType] {
         switch self {
         case .all:
-            return []
+            []
         case .airing:
-            return [.airing]
+            [.airing]
         case .activity:
-            return [.activityLike, .activityReply, .activityReplyLike, .activityMention, .activityMessage,
+            [.activityLike, .activityReply, .activityReplyLike, .activityMention, .activityMessage,
                     .activityReplySubscribed]
         case .forum:
-            return [.threadLike, .threadCommentReply, .threadCommentLike, .threadCommentMention, .threadSubscribed]
+            [.threadLike, .threadCommentReply, .threadCommentLike, .threadCommentMention, .threadSubscribed]
         case .follows:
-            return [.following]
+            [.following]
         case .media:
-            return [.relatedMediaAddition, .mediaDataChange, .mediaMerge, .mediaDeletion]
+            [.relatedMediaAddition, .mediaDataChange, .mediaMerge, .mediaDeletion]
         }
     }
 
     var localizedName: LocalizedStringKey {
         switch self {
         case .all:
-            return "All"
+            "All"
         case .airing:
-            return "Airing"
+            "Airing"
         case .activity:
-            return "Activity"
+            "Activity"
         case .forum:
-            return "Forum"
+            "Forum"
         case .follows:
-            return "Follows"
+            "Follows"
         case .media:
-            return "Media"
+            "Media"
         }
     }
 }

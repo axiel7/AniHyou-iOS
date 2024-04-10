@@ -11,37 +11,37 @@ import AniListAPI
 
 extension Date {
     var tomorrow: Date? {
-        return Calendar.current.date(byAdding: .day, value: 1, to: self)
+        Calendar.autoupdatingCurrent.date(byAdding: .day, value: 1, to: self)
     }
 
     var year: Int {
-        return Calendar(identifier: .gregorian).component(.year, from: self)
+        Calendar(identifier: .gregorian).component(.year, from: self)
     }
 
     var month: Int {
-        return Calendar(identifier: .gregorian).component(.month, from: self)
+        Calendar(identifier: .gregorian).component(.month, from: self)
     }
 
     var day: Int {
-        return Calendar(identifier: .gregorian).component(.day, from: self)
+        Calendar(identifier: .gregorian).component(.day, from: self)
     }
 
     var weekday: Int {
-        return Calendar(identifier: .gregorian).component(.weekday, from: self)
+        Calendar.autoupdatingCurrent.component(.weekday, from: self)
     }
 
     var season: MediaSeason {
         switch self.month {
         case 1, 2, 12:
-            return .winter
+            .winter
         case 3, 4, 5:
-            return .spring
+            .spring
         case 6, 7, 8:
-            return .summer
+            .summer
         case 9, 10, 11:
-            return .fall
+            .fall
         default:
-            return .spring
+            .spring
         }
     }
 
@@ -87,7 +87,7 @@ extension Date {
     }
 
     func toFuzzyDate() -> FuzzyDateInput {
-        return FuzzyDateInput(
+        FuzzyDateInput(
             year: GraphQLNullable<Int>(integerLiteral: self.year),
             month: GraphQLNullable<Int>(integerLiteral: self.month),
             day: GraphQLNullable<Int>(integerLiteral: self.day)
@@ -97,7 +97,7 @@ extension Date {
 
 extension Int {
     func minutesToDays() -> Double {
-        return Double(self) / 1440
+        Double(self) / 1440
     }
     
     func toFuzzyDateInt() -> FuzzyDateInt? {
@@ -147,7 +147,7 @@ extension FuzzyDateFragment {
     }
     
     func isoString() -> String {
-        return "\(year ?? 3000)\(month ?? 12)\(day ?? 31)"
+        "\(year ?? 3000)\(month ?? 12)\(day ?? 31)"
     }
 }
 

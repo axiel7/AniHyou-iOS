@@ -12,7 +12,7 @@ import WidgetKit
 class LoginRepository {
     
     static func authUserId() -> Int {
-        return UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
+        UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
     }
     
     static func saveUserId(id: Int) {

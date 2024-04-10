@@ -19,26 +19,26 @@ extension ProfileInfoType {
     var localizedName: LocalizedStringKey {
         switch self {
         case .activity:
-            return "Activity"
+            "Activity"
         case .stats:
-            return "Stats"
+            "Stats"
         case .favorites:
-            return "Favorites"
+            "Favorites"
         case .social:
-            return "Social"
+            "Social"
         }
     }
 
     var systemImage: String {
         switch self {
         case .activity:
-            return "waveform.path.ecg"
+            "waveform.path.ecg"
         case .stats:
-            return "percent"
+            "percent"
         case .favorites:
-            return "star"
+            "star"
         case .social:
-            return "person.3"
+            "person.3"
         }
     }
 }

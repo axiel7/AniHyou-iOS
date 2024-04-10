@@ -13,17 +13,17 @@ extension MediaSeason {
     var localizedStringKey: String {
         switch self {
         case .winter:
-            return "Winter"
+            "Winter"
         case .spring:
-            return "Spring"
+            "Spring"
         case .summer:
-            return "Summer"
+            "Summer"
         case .fall:
-            return "Fall"
+            "Fall"
         }
     }
 
     var localizedName: LocalizedStringKey {
-        return LocalizedStringKey(stringLiteral: localizedStringKey)
+        LocalizedStringKey(stringLiteral: localizedStringKey)
     }
 }

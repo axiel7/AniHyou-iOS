@@ -16,59 +16,59 @@ extension MediaFormat {
     static func allCases(mediaType: MediaType) -> [MediaFormat] {
         switch mediaType {
         case .anime:
-            return animeCases
+            animeCases
         case .manga:
-            return mangaCases
+            mangaCases
         }
     }
 
     var localizedName: LocalizedStringKey {
         switch self {
         case .tv:
-            return "TV"
+            "TV"
         case .tvShort:
-            return "TV Short"
+            "TV Short"
         case .movie:
-            return "Movie"
+            "Movie"
         case .special:
-            return "Special"
+            "Special"
         case .ova:
-            return "OVA"
+            "OVA"
         case .ona:
-            return "ONA"
+            "ONA"
         case .music:
-            return "Music"
+            "Music"
         case .manga:
-            return "Manga"
+            "Manga"
         case .novel:
-            return "Novel"
+            "Novel"
         case .oneShot:
-            return "OneShot"
+            "OneShot"
         }
     }
 
     var color: Color {
         switch self {
         case .tv:
-            return .accentColor
+            .accentColor
         case .tvShort:
-            return Color("Score90")
+            Color("Score90")
         case .movie:
-            return Color("Score100")
+            Color("Score100")
         case .special:
-            return Color("Score50")
+            Color("Score50")
         case .ova:
-            return Color("Score30")
+            Color("Score30")
         case .ona:
-            return Color("Score20")
+            Color("Score20")
         case .music:
-            return Color("Score60")
+            Color("Score60")
         case .manga:
-            return .accentColor
+            .accentColor
         case .novel:
-            return Color("Score90")
+            Color("Score90")
         case .oneShot:
-            return Color("Score70")
+            Color("Score70")
         }
     }
 }

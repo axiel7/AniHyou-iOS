@@ -18,15 +18,15 @@ enum FavoriteType: Hashable, CaseIterable {
     var localizedName: LocalizedStringKey {
         switch self {
         case .anime:
-            return "Anime"
+            "Anime"
         case .manga:
-            return "Manga"
+            "Manga"
         case .characters:
-            return "Characters"
+            "Characters"
         case .staff:
-            return "Staff"
+            "Staff"
         case .studios:
-            return "Studios"
+            "Studios"
         }
     }
 }

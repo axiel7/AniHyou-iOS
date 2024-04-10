@@ -19,23 +19,23 @@ public enum UserStatType: Equatable, Hashable, CaseIterable {
 
 extension UserStatType {
     var isAnime: Bool {
-        return self == .voiceActors || self == .studios
+        self == .voiceActors || self == .studios
     }
     
     var localizedName: LocalizedStringKey {
         switch self {
         case .overview:
-            return "Overview"
+            "Overview"
         case .genres:
-            return "Genres"
+            "Genres"
         case .tags:
-            return "Tags"
+            "Tags"
         case .staff:
-            return "Staff"
+            "Staff"
         case .voiceActors:
-            return "Voice Actors"
+            "Voice Actors"
         case .studios:
-            return "Studios"
+            "Studios"
         }
     }
 }

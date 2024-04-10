@@ -53,7 +53,7 @@ class DonationsViewModel: ObservableObject {
     }
 
     func listenForTransactions() -> Task<Void, Error> {
-        return Task.detached {
+        Task.detached {
             for await result in Transaction.updates {
                 switch result {
                 case let.verified(transaction):
@@ -75,13 +75,13 @@ class DonationsViewModel: ObservableObject {
 extension Product {
     var emoji: String {
         if id.starts(with: "first") {
-            return "😀"
+            "😀"
         } else if id.starts(with: "second") {
-            return "😁"
+            "😁"
         } else if id.starts(with: "third") {
-            return "🤩"
+            "🤩"
         } else {
-            return ""
+            ""
         }
     }
 }

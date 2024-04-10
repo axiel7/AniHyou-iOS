@@ -17,22 +17,22 @@ enum StatDistributionType: CaseIterable, Hashable {
     var localizedName: LocalizedStringKey {
         switch self {
         case .titles:
-            return "Title count"
+            "Title count"
         case .time:
-            return "Time spent"
+            "Time spent"
         case .score:
-            return "Mean score"
+            "Mean score"
         }
     }
     
     func userStatisticsSort(ascencing: Bool) -> UserStatisticsSort {
         switch self {
         case .titles:
-            return ascencing ? .count : .countDesc
+            ascencing ? .count : .countDesc
         case .time:
-            return ascencing ? .progress : .progressDesc
+            ascencing ? .progress : .progressDesc
         case .score:
-            return ascencing ? .meanScore : .meanScoreDesc
+            ascencing ? .meanScore : .meanScoreDesc
         }
     }
 }

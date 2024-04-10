@@ -61,7 +61,7 @@ struct HorizontalBarStatsView: View {
 
     private func calculateProportionalWidth(_ value: CGFloat) -> CGFloat {
         //simplified: ((value * 100 / totalValue) / 100) * screenWidth
-        return value / totalValue * screenWidth
+        value / totalValue * screenWidth
     }
 }
 
