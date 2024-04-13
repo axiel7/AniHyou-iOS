@@ -74,11 +74,13 @@ struct MediaDetailsMainInfo: View {
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
                     }
-                    Spacer()
+                    if isPhone {
+                        Spacer()
+                    }
                     ShareLink(item: viewModel.mediaShareLink ?? "") {
                         Label("Share", systemImage: "square.and.arrow.up")
                     }
-                    .padding(.trailing)
+                    .padding(.horizontal)
                     .labelStyle(.iconOnly)
                 }//:HStack
             }//:VStack

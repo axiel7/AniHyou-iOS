@@ -144,39 +144,34 @@ struct AnimeSeasonListView: View {
             Image(systemName: listStyle == .grid ? "list.bullet" : "square.grid.2x2")
         }
         Menu {
-            Menu("Sort") {
-                Picker("Sort", selection: $viewModel.sort) {
-                    ForEach(SeasonViewModel.seasonSorts, id: \.self) {
-                        Text($0.localizedName)
-                    }
-                }
-                .onChange(of: viewModel.sort) { _ in
-                    viewModel.resetPage()
+            Picker("Sort", selection: $viewModel.sort) {
+                ForEach(SeasonViewModel.seasonSorts, id: \.self) {
+                    Text($0.localizedName)
                 }
             }
-            Menu("Season") {
-                Picker("Season", selection: $viewModel.season) {
-                    ForEach(MediaSeason.allCases, id: \.self) {
-                        Text($0.localizedName)
-                    }
-                }
-                .onChange(of: viewModel.season) { _ in
-                    viewModel.resetPage()
+            .onChange(of: viewModel.sort) { _ in
+                viewModel.resetPage()
+            }
+            Picker("Season", selection: $viewModel.season) {
+                ForEach(MediaSeason.allCases, id: \.self) {
+                    Text($0.localizedName)
                 }
             }
-            Menu("Year") {
-                Picker("Year", selection: $viewModel.year) {
-                    ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
-                        Text(String($0))
-                    }
+            .onChange(of: viewModel.season) { _ in
+                viewModel.resetPage()
+            }
+            Picker("Year", selection: $viewModel.year) {
+                ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
+                    Text(String($0))
                 }
-                .onChange(of: viewModel.year) { _ in
-                    viewModel.resetPage()
-                }
+            }
+            .onChange(of: viewModel.year) { _ in
+                viewModel.resetPage()
             }
         } label: {
             Image(systemName: "line.3.horizontal.decrease.circle")
         }
+        .pickerStyle(.menu)
     }
 }
 

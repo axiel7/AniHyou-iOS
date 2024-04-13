@@ -11,10 +11,10 @@ import AniListAPI
 private extension View {
     @ViewBuilder
     func listStyle() -> some View {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            self.listStyle(.automatic)
-        } else {
+        if isPhone {
             self.listStyle(.inset)
+        } else {
+            self.listStyle(.automatic)
         }
     }
 }

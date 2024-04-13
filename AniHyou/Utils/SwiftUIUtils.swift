@@ -19,3 +19,7 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         viewControllers.count > 1
     }
 }
+
+var isPhone: Bool {
+    UIDevice.current.userInterfaceIdiom == .phone
+}
