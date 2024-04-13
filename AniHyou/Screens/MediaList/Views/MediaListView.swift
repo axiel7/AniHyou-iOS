@@ -8,6 +8,17 @@
 import SwiftUI
 import AniListAPI
 
+private extension View {
+    @ViewBuilder
+    func listStyle() -> some View {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            self.listStyle(.automatic)
+        } else {
+            self.listStyle(.inset)
+        }
+    }
+}
+
 struct MediaListView: View {
 
     let type: MediaType
@@ -21,7 +32,7 @@ struct MediaListView: View {
 
     @AppStorage(LIST_SORT) private var sort = MediaListSort.updatedTimeDesc
     @AppStorage(LIST_SORT_ORDER) private var sortAscending = false
-    @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
+    @AppStorage(LIST_STYLE_KEY) private var listItemsStyle = 0
     @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
 
     var body: some View {
@@ -61,7 +72,7 @@ struct MediaListView: View {
                 }
             }
         }//:List
-        .listStyle(.inset)
+        .listStyle()
         .searchable(text: $viewModel.searchText)
         .refreshable {
             if viewModel.searchText.isEmpty {
@@ -147,7 +158,7 @@ struct MediaListView: View {
         showStatus: Bool
     ) -> some View {
         NavigationLink(destination: MediaDetailsView(mediaId: details.id)) {
-            switch listStyle {
+            switch listItemsStyle {
             case 1:
                 MediaListItemMinimalView(
                     details: details,
