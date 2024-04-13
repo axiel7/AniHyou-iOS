@@ -95,6 +95,8 @@ public class MediaThreadsQuery: GraphQLQuery {
         public var likeCount: Int { __data["likeCount"] }
         /// If the currently authenticated user liked the thread
         public var isLiked: Bool? { __data["isLiked"] }
+        /// If the currently authenticated user is subscribed to the thread
+        public var isSubscribed: Bool? { __data["isSubscribed"] }
         /// The number of comments on the thread
         public var replyCount: Int? { __data["replyCount"] }
         /// If the thread is locked and can receive comments

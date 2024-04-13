@@ -28,7 +28,7 @@ struct ThreadDetailsView: View {
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack {
-                if let thread = viewModel.details ?? initThread {
+                if let thread = viewModel.details {
                     // MARK: thread info
                     VStack(alignment: .leading) {
                         Text(thread.title ?? "")
@@ -66,7 +66,11 @@ struct ThreadDetailsView: View {
                                     await viewModel.toggleLikeThread(threadId: threadId)
                                 }
                             }) {
-                                Label("\(thread.likeCount)", systemImage: "heart")
+                                let isLiked = thread.isLiked == true
+                                Label(
+                                    "\(thread.likeCount)",
+                                    systemImage: isLiked ? "heart.fill" : "heart"
+                                )
                             }
                         }
                         .padding(.horizontal)
@@ -99,6 +103,26 @@ struct ThreadDetailsView: View {
             }//:LazyVStack
         }//:VScrollView
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                let isSubscribed = viewModel.details?.isSubscribed == true
+                Button(action: {
+                    Task {
+                        await viewModel.subscribeToThread(
+                            threadId: threadId,
+                            subscribe: !isSubscribed
+                        )
+                    }
+                }) {
+                    Image(systemName: isSubscribed ? "bell.fill" : "bell")
+                }
+            }
+        }
+        .onAppear {
+            if let initThread {
+                viewModel.details = initThread
+            }
+        }
     }
 }
 

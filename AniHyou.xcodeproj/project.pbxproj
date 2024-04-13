@@ -396,6 +396,7 @@
 		48218AFF2BC57B9300A03421 /* StudioMedia.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = StudioMedia.graphql; sourceTree = "<group>"; };
 		48218B012BC5828300A03421 /* ReviewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepository.swift; sourceTree = "<group>"; };
 		48218B032BC5842C00A03421 /* ThreadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadRepository.swift; sourceTree = "<group>"; };
+		48218B0A2BCAD5F900A03421 /* SubscribeThread.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SubscribeThread.graphql; sourceTree = "<group>"; };
 		482801772AB031DC004E11D6 /* MarkdownUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownUtils.swift; sourceTree = "<group>"; };
 		48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeBehindWidget.swift; sourceTree = "<group>"; };
 		48294CDA2AB92067005E7CD2 /* BaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntry.swift; sourceTree = "<group>"; };
@@ -1298,6 +1299,7 @@
 			children = (
 				48AAE4112AE003D2003413B0 /* ThreadDetails.graphql */,
 				48691FF22ADD06A9009DCDFE /* ChildComments.graphql */,
+				48218B0A2BCAD5F900A03421 /* SubscribeThread.graphql */,
 			);
 			path = Thread;
 			sourceTree = "<group>";

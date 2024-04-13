@@ -4,13 +4,15 @@ query ThreadDetails($threadId: Int) {
     }
 }
 
-fragment BasicThreadDetails on Thread {
+fragment BasicThreadDetails on Thread
+@apollo_client_ios_localCacheMutation {
     id
     title
     body
     viewCount
     likeCount
     isLiked
+    isSubscribed
     replyCount
     isLocked
     user {

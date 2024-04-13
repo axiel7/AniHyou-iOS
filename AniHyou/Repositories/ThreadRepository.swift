@@ -24,6 +24,28 @@ class ThreadRepository {
         }
     }
     
+    static func subscribeToThread(
+        threadId: Int,
+        subscribe: Bool
+    ) async -> Bool? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.perform(
+                mutation: SubscribeThreadMutation(
+                    threadId: .some(threadId),
+                    subscribe: .some(subscribe)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    continuation.resume(returning: graphQLResult.data?.toggleThreadSubscription?.isSubscribed)
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
     static func getThreadComments(
         threadId: Int,
         page: Int,
