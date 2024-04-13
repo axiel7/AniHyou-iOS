@@ -140,6 +140,7 @@ struct StaffDetailsView: View {
                         )
                     }
                     .buttonStyle(.plain)
+                    .padding(.bottom)
                 }
             }
             if viewModel.hasNextPageMedia {
@@ -166,6 +167,7 @@ struct StaffDetailsView: View {
                                 )
                             }
                             .buttonStyle(.plain)
+                            .padding(.bottom)
                         }
                     }
                 }

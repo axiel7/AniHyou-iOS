@@ -133,6 +133,7 @@ struct CharacterDetailsView: View {
                     )
                 }
                 .buttonStyle(.plain)
+                .padding(.bottom)
             }
             if viewModel.hasNextPageMedia {
                 HorizontalProgressView()
