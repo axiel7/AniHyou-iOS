@@ -15,7 +15,7 @@ Follow the development on the official Discord server:
 
 [![Discord Banner 3](https://discordapp.com/api/guilds/741059285122940928/widget.png?style=banner2)](https://discord.gg/CTv3WdfxHh)
 
-![screenshots](https://axiel7.github.io/anihyou.39100785.png)
+![screenshots](https://axiel7.github.io/anihyou.80eeddfd.png)
 
 ## Current features
 - **There's a watchOS version!⌚️**
