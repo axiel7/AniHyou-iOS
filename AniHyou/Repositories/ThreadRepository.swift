@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class ThreadRepository {
+struct ThreadRepository {
     
     static func getThreadDetails(threadId: Int) async -> BasicThreadDetails? {
         await withCheckedContinuation { continuation in

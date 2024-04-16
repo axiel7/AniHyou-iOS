@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class UserStatsRepository {
+struct UserStatsRepository {
     
     static func getAnimeOverview(
         userId: Int

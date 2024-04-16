@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class FavoritesRepository {
+struct FavoritesRepository {
     
     static func toggleFavorite(
         animeId: Int? = nil,

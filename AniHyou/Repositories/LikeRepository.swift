@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class LikeRepository {
+struct LikeRepository {
     
     static func toggleLike(
         likeableId: Int,

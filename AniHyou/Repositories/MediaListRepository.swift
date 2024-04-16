@@ -9,7 +9,7 @@ import Foundation
 import AniListAPI
 import WidgetKit
 
-class MediaListRepository {
+struct MediaListRepository {
     
     static func getUserMediaList(
         userId: Int,

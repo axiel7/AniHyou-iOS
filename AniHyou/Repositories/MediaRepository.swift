@@ -10,7 +10,7 @@ import AniListAPI
 
 // swiftlint:disable file_length
 // swiftlint:disable:next type_body_length
-class MediaRepository {
+struct MediaRepository {
     
     static func getMediaSorted(
         sort: [MediaSort],

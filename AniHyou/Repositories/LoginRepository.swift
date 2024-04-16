@@ -9,7 +9,7 @@ import Foundation
 import AniListAPI
 import WidgetKit
 
-class LoginRepository {
+struct LoginRepository {
     
     static func authUserId() -> Int {
         UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0

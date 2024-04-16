@@ -7,14 +7,8 @@
 
 import Foundation
 
-class PagedResult<Data> {
+struct PagedResult<Data> {
     let data: [Data]
     let page: Int
     let hasNextPage: Bool
-    
-    init(data: [Data], page: Int, hasNextPage: Bool) {
-        self.data = data
-        self.page = page
-        self.hasNextPage = hasNextPage
-    }
 }

@@ -9,7 +9,7 @@ import Foundation
 import BackgroundTasks
 import UserNotifications
 
-class NotificationsManager {
+final class NotificationsManager {
     
     static func handleFetchTask(_ task: BGAppRefreshTask) {
         NotificationsManager.scheduleFetch()

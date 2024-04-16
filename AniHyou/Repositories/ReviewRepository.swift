@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class ReviewRepository {
+struct ReviewRepository {
     
     static func getReviewDetails(reviewId: Int) async -> CommonReviewDetails? {
         await withCheckedContinuation { continuation in

@@ -10,7 +10,7 @@ import AniListAPI
 import Apollo
 
 // swiftlint:disable:next type_body_length
-class UserRepository {
+struct UserRepository {
     
     static func getUserOptions() async -> UserOptionsFragment? {
         await withCheckedContinuation { continuation in

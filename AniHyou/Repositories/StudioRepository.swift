@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class StudioRepository {
+struct StudioRepository {
     
     static func searchStudios(
         search: String,

@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class CharacterRepository {
+struct CharacterRepository {
     
     static func searchCharacters(
         search: String,

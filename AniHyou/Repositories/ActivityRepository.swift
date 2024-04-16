@@ -8,7 +8,7 @@
 import Foundation
 import AniListAPI
 
-class ActivityRepository {
+struct ActivityRepository {
     
     static func getActivities(
         type: ActivityFeedType,
