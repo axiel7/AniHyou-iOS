@@ -5,7 +5,7 @@
 
 Another unofficial iOS AniList client
 
-[<img alt="App Store" height="80" src="https://github.com/axiel7/AniHyou/blob/main/AppStore-badge.png?raw=true"/>](https://apps.apple.com/us/app/anihyou/id1635777325)
+[<img alt="App Store" height="80" src="https://github.com/axiel7/AniHyou-iOS/blob/main/AppStore-badge.png?raw=true"/>](https://apps.apple.com/us/app/anihyou/id1635777325)
 
 Android version [here](https://github.com/axiel7/AniHyou-android)
 
@@ -15,7 +15,7 @@ Follow the development on the official Discord server:
 
 [![Discord Banner 3](https://discordapp.com/api/guilds/741059285122940928/widget.png?style=banner2)](https://discord.gg/CTv3WdfxHh)
 
-![screenshots](https://axiel7.github.io/anihyou.80eeddfd.png)
+![screenshots](https://github.com/axiel7/AniHyou-iOS/blob/main/screenshots.png)
 
 ## Current features
 - **There's a watchOS version!⌚️**
