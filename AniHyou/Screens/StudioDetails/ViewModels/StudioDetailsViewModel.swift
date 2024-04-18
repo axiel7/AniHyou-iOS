@@ -48,7 +48,9 @@ class StudioDetailsViewModel: ObservableObject {
                     ofType: StudioDetailsQuery.Data.Studio.self,
                     withKey: "Studio:\(studioId)"
                 )
-                self?.studio = newObject
+                DispatchQueue.main.async {
+                    self?.studio = newObject
+                }
             } catch {
                 print(error)
             }

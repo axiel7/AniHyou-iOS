@@ -38,7 +38,9 @@ class CharacterDetailsViewModel: ObservableObject {
                     ofType: CharacterDetailsQuery.Data.Character.self,
                     withKey: "Character:\(characterId)"
                 )
-                self?.character = newObject
+                DispatchQueue.main.async {
+                    self?.character = newObject
+                }
             } catch {
                 print(error)
             }

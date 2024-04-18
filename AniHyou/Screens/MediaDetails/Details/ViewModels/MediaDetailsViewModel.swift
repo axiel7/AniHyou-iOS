@@ -51,7 +51,9 @@ class MediaDetailsViewModel: ObservableObject {
                     ofType: MediaDetailsQuery.Data.Media.self,
                     withKey: "Media:\(mediaId)"
                 )
-                self?.mediaDetails = newObject
+                DispatchQueue.main.async {
+                    self?.mediaDetails = newObject
+                }
             } catch {
                 print(error)
             }
@@ -75,7 +77,9 @@ class MediaDetailsViewModel: ObservableObject {
                     ofType: MediaDetailsQuery.Data.Media.self,
                     withKey: "Media:\(updatedEntry?.mediaId ?? (self?.mediaDetails?.id ?? 0))"
                 )
-                self?.mediaDetails = newObject
+                DispatchQueue.main.async {
+                    self?.mediaDetails = newObject
+                }
             } catch {
                 print(error)
             }

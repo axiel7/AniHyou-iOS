@@ -38,7 +38,9 @@ class StaffDetailsViewModel: ObservableObject {
                     ofType: StaffDetailsQuery.Data.Staff.self,
                     withKey: "Staff:\(staffId)"
                 )
-                self?.staff = newObject
+                DispatchQueue.main.async {
+                    self?.staff = newObject
+                }
             } catch {
                 print(error)
             }
