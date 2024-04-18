@@ -66,16 +66,12 @@ struct HListItemWithSubtitleView: View {
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 if let meanScore {
-                    HStack(alignment: .bottom, spacing: 4) {
-                        Image(systemName: "star.fill")
-                            .font(.footnote)
-                            .foregroundStyle(.gray)
-                        Text("\(meanScore)%")
-                            .font(.footnote)
-                            .foregroundStyle(.gray)
-                    }
-                    .padding(.vertical, 1)
-                } else if let subtitle2 {
+                    Label("\(meanScore)%", systemImage: "star.fill")
+                        .foregroundStyle(ScoreFormat.point100.color(score: meanScore))
+                        .font(.footnote)
+                        .padding(.vertical, 1)
+                }
+                if let subtitle2 {
                     Text(subtitle2)
                         .font(.footnote)
                         .foregroundStyle(.gray)
