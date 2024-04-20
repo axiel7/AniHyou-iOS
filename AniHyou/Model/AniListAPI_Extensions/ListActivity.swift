@@ -13,8 +13,10 @@ extension ListActivityFragment {
     
     // these ugly switches are required because otherwise Xcode won't localize the status strings
     static let watchedStatus = "watched episode"
+    static let rewatchedStatus = "rewatched episode"
     static let plansToWatchStatus = "plans to watch"
     static let readStatus = "read chapter"
+    static let rereadStatus = "reread chapter"
     static let plansToReadStatus = "plans to read"
     static let completedStatus = "completed"
     static let droppedStatus = "dropped"
@@ -26,10 +28,14 @@ extension ListActivityFragment {
             switch status {
             case ListActivityFragment.watchedStatus:
                 return "Watched episode %1$@ of %2$@".localized(with: [progress, mediaTitle])
+            case ListActivityFragment.rewatchedStatus:
+                return "Rewatched episode %1$@ of %2$@".localized(with: [progress, mediaTitle])
             case ListActivityFragment.readStatus:
                 return "Read chapter %1$@ of %2$@".localized(with: [progress, mediaTitle])
+            case ListActivityFragment.rereadStatus:
+                return "Reread chapter %1$@ of %2$@".localized(with: [progress, mediaTitle])
             default:
-                return "\(status?.firstCapitalized ?? "") of \(mediaTitle)"
+                return "\(status?.firstCapitalized ?? "") \(progress) of \(mediaTitle)"
             }
         } else {
             switch status {

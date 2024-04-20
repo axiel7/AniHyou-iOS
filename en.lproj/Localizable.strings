@@ -9,7 +9,9 @@
 "Unknown" = "Unknown";
 
 "Watched episode %1$@ of %2$@" = "Watched episode %1$@ of %2$@";
+"Rewatched episode %1$@ of %2$@" = "Rewatched episode %1$@ of %2$@";
 "Read chapter %1$@ of %2$@" = "Read chapter %1$@ of %2$@";
+"Reread chapter %1$@ of %2$@" = "Reread chapter %1$@ of %2$@";
 
 "Current" = "Current";
 "Completed" = "Completed";
