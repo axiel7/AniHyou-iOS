@@ -370,9 +370,6 @@
 /* No comment provided by engineer. */
 "Forum" = "Foro";
 
-/* (No Comment) */
-"friday_short" = "V";
-
 /* No comment provided by engineer. */
 "From year" = "Desde el año";
 
@@ -510,12 +507,6 @@
 
 /* No comment provided by engineer. */
 "Minimal" = "Minimalista";
-
-/* Localizable.strings
-  AniHyou
-
-  Created by Axel Lopez on 13/10/2023. */
-"monday_short" = "L";
 
 /* No comment provided by engineer. */
 "More filters" = "Más filtros";
@@ -677,6 +668,9 @@
 "Publishing Manga" = "Manga Publicándose";
 
 /* No comment provided by engineer. */
+"Push notifications" = "Notificaciones push";
+
+/* No comment provided by engineer. */
 "Quick access to your anime or manga list." = "Acceso rápido a tu lista de anime o manga.";
 
 /* No comment provided by engineer. */
@@ -715,6 +709,9 @@
 /* (No Comment) */
 "Repeating" = "Repitiendo";
 
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "Volvió a leer el capítulo %1$@ de %2$@";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Restaurar compras";
 
@@ -723,6 +720,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Reseñas";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "Volvió a ver el episodio %1$@ de %2$@";
 
 /* No comment provided by engineer. */
 "Right" = "Derecha";
@@ -735,9 +735,6 @@
 
 /* No comment provided by engineer. */
 "Romance" = "Romance";
-
-/* (No Comment) */
-"saturday_short" = "S";
 
 /* No comment provided by engineer. */
 "Save" = "Guardar";
@@ -877,9 +874,6 @@
 /* No comment provided by engineer. */
 "Summer" = "Verano";
 
-/* (No Comment) */
-"sunday_short" = "D";
-
 /* No comment provided by engineer. */
 "Supernatural" = "Sobrenatural";
 
@@ -921,9 +915,6 @@
 
 /* No comment provided by engineer. */
 "Thriller" = "Thriller";
-
-/* (No Comment) */
-"thursday_short" = "J";
 
 /* No comment provided by engineer. */
 "Time spent" = "Tiempo dedicado";
@@ -979,9 +970,6 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "Manga en Tendencia";
 
-/* (No Comment) */
-"tuesday_short" = "M";
-
 /* No comment provided by engineer. */
 "TV" = "TV";
 
@@ -991,7 +979,10 @@
 /* No comment provided by engineer. */
 "Unfollow" = "Dejar de seguir";
 
-/* (No Comment) */
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Desconocido";
 
 /* No comment provided by engineer. */
@@ -1038,9 +1029,6 @@
 
 /* No comment provided by engineer. */
 "Web novel" = "Novela web";
-
-/* (No Comment) */
-"wednesday_short" = "X";
 
 /* No comment provided by engineer. */
 "Weekday" = "Día de la semana";
