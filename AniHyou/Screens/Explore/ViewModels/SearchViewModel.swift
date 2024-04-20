@@ -67,6 +67,7 @@ class SearchViewModel: ObservableObject {
     }
 
     func runSearch() async {
+        search = search.trimmingCharacters(in: .whitespaces)
         switch type {
         case .anime:
             await searchMedia(type: .anime)
@@ -80,6 +81,11 @@ class SearchViewModel: ObservableObject {
             await searchStudios()
         case .users:
             await searchUsers()
+        }
+        // workaround for keep showing the searchingView when search text is empty
+        // and a sheet or navigation link is being presented
+        if search.isEmpty {
+            search = " "
         }
     }
 

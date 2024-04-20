@@ -21,7 +21,11 @@ struct RootExploreView: View {
                 .navigationTitle("Explore")
                 .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
         }
-        .searchable(text: $viewModel.search, placement: .navigationBarDrawer, prompt: "Anime, Manga, and More")
+        .searchable(
+            text: $viewModel.search,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Anime, Manga, and More"
+        )
         .onSubmit(of: .search) {
             Task {
                 await viewModel.runSearch()

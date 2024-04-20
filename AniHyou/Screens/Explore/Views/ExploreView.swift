@@ -23,13 +23,11 @@ struct ExploreView: View {
     private let currentYear = Date.now.year
 
     var body: some View {
-        ZStack {
-            if isSearching {
-                searchingView
-            } else {
-                preSearchView
-            }
-        }//:ZStack
+        if isSearching {
+            searchingView
+        } else {
+            preSearchView
+        }
     }
 
     private var searchingView: some View {
@@ -400,6 +398,11 @@ struct ExploreView: View {
                     }
                 }
             )
+            .onAppear {
+                if viewModel.search.isEmpty {
+                    viewModel.search = " "
+                }
+            }
         }//:Sheet
     }
 
@@ -429,6 +432,11 @@ struct ExploreView: View {
                     Text(format.localizedName)
                 }
             )
+            .onAppear {
+                if viewModel.search.isEmpty {
+                    viewModel.search = " "
+                }
+            }
         }//:Sheet
     }
 
@@ -459,6 +467,11 @@ struct ExploreView: View {
                     Text(status.localizedName)
                 }
             )
+            .onAppear {
+                if viewModel.search.isEmpty {
+                    viewModel.search = " "
+                }
+            }
         }//:Sheet
     }
 }
