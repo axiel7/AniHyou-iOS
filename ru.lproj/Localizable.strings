@@ -65,7 +65,7 @@
 "Airing" = "Выходит";
 
 /* No comment provided by engineer. */
-"Airing Anime" = "Выпускающийся аниме";
+"Airing Anime" = "Выпускающиеся аниме";
 
 /* No comment provided by engineer. */
 "Airing Next" = "Далее выпуститься";
@@ -367,9 +367,6 @@
 /* No comment provided by engineer. */
 "Forum" = "Форум";
 
-/* (No Comment) */
-"friday_short" = "Пт";
-
 /* No comment provided by engineer. */
 "From year" = "За год";
 
@@ -507,12 +504,6 @@
 
 /* No comment provided by engineer. */
 "Minimal" = "Минимализм";
-
-/* Localizable.strings
-  AniHyou
-
-  Created by Axel Lopez on 13/10/2023. */
-"monday_short" = "Пн";
 
 /* No comment provided by engineer. */
 "More filters" = "Больше фильтров";
@@ -674,6 +665,9 @@
 "Publishing Manga" = "Выходящая манга";
 
 /* No comment provided by engineer. */
+"Push notifications" = "Push-уведомления";
+
+/* No comment provided by engineer. */
 "Quick access to your anime or manga list." = "Быстрый доступ к вашим аниме или списку манг.";
 
 /* No comment provided by engineer. */
@@ -712,6 +706,9 @@
 /* (No Comment) */
 "Repeating" = "Повторяется";
 
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "Перечитать главу %1$@ из %2$@";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Восстановить покупки";
 
@@ -720,6 +717,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Отзывы";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "Пересмотреть эпизод %1$@ из %2$@";
 
 /* No comment provided by engineer. */
 "Right" = "Вправо";
@@ -732,9 +732,6 @@
 
 /* No comment provided by engineer. */
 "Romance" = "Романтика";
-
-/* (No Comment) */
-"saturday_short" = "Сб";
 
 /* No comment provided by engineer. */
 "Save" = "Сохранить";
@@ -874,9 +871,6 @@
 /* No comment provided by engineer. */
 "Summer" = "Лето";
 
-/* (No Comment) */
-"sunday_short" = "Вс";
-
 /* No comment provided by engineer. */
 "Supernatural" = "Сверхъестественное";
 
@@ -918,9 +912,6 @@
 
 /* No comment provided by engineer. */
 "Thriller" = "Триллер";
-
-/* (No Comment) */
-"thursday_short" = "Чт";
 
 /* No comment provided by engineer. */
 "Time spent" = "Потрачено времени";
@@ -976,9 +967,6 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "Манга в тренде";
 
-/* (No Comment) */
-"tuesday_short" = "Вт";
-
 /* No comment provided by engineer. */
 "TV" = "TV";
 
@@ -988,7 +976,10 @@
 /* No comment provided by engineer. */
 "Unfollow" = "Перестать следить";
 
-/* (No Comment) */
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Неизвестно";
 
 /* No comment provided by engineer. */
@@ -1035,9 +1026,6 @@
 
 /* No comment provided by engineer. */
 "Web novel" = "Веб новелла";
-
-/* (No Comment) */
-"wednesday_short" = "Ср";
 
 /* No comment provided by engineer. */
 "Weekday" = "День недели";
