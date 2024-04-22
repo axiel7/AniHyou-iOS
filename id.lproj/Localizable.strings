@@ -35,7 +35,7 @@
 "Account settings" = "Pengaturan Akun";
 
 /* No comment provided by engineer. */
-"Action" = "Aksi";
+"Action" = "Tindakan";
 
 /* No comment provided by engineer. */
 "Activity" = "Aktivitas";
@@ -367,9 +367,6 @@
 /* No comment provided by engineer. */
 "Forum" = "Forum";
 
-/* (No Comment) */
-"friday_short" = "Jmt";
-
 /* No comment provided by engineer. */
 "From year" = "Dari tahun";
 
@@ -507,12 +504,6 @@
 
 /* No comment provided by engineer. */
 "Minimal" = "Minimalis";
-
-/* Localizable.strings
-  AniHyou
-
-  Created by Axel Lopez on 13/10/2023. */
-"monday_short" = "Snn";
 
 /* No comment provided by engineer. */
 "More filters" = "Filter lainnya";
@@ -674,6 +665,9 @@
 "Publishing Manga" = "Penerbitan Manga";
 
 /* No comment provided by engineer. */
+"Push notifications" = "Notifikasi push";
+
+/* No comment provided by engineer. */
 "Quick access to your anime or manga list." = "Akses cepat ke daftar anime atau manga kamu.";
 
 /* No comment provided by engineer. */
@@ -712,6 +706,9 @@
 /* (No Comment) */
 "Repeating" = "Diulangi";
 
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "Baca ulang chapter %1$@ dari %2$@";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Pulihkan Pembelian";
 
@@ -720,6 +717,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Ulasan";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "Tonton ulang episode %1$@ dari %2$@";
 
 /* No comment provided by engineer. */
 "Right" = "Kanan";
@@ -732,9 +732,6 @@
 
 /* No comment provided by engineer. */
 "Romance" = "Romansa";
-
-/* (No Comment) */
-"saturday_short" = "Sbt";
 
 /* No comment provided by engineer. */
 "Save" = "Simpan";
@@ -874,9 +871,6 @@
 /* No comment provided by engineer. */
 "Summer" = "Musim Panas";
 
-/* (No Comment) */
-"sunday_short" = "Ming";
-
 /* No comment provided by engineer. */
 "Supernatural" = "Supranatural";
 
@@ -918,9 +912,6 @@
 
 /* No comment provided by engineer. */
 "Thriller" = "Thriller";
-
-/* (No Comment) */
-"thursday_short" = "Kms";
 
 /* No comment provided by engineer. */
 "Time spent" = "Waktu dihabiskan";
@@ -976,9 +967,6 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "Manga Trending";
 
-/* (No Comment) */
-"tuesday_short" = "Slsa";
-
 /* No comment provided by engineer. */
 "TV" = "TV";
 
@@ -988,7 +976,10 @@
 /* No comment provided by engineer. */
 "Unfollow" = "Berhenti ikuti";
 
-/* (No Comment) */
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Tak diketahui";
 
 /* No comment provided by engineer. */
@@ -1035,9 +1026,6 @@
 
 /* No comment provided by engineer. */
 "Web novel" = "Web Novel";
-
-/* (No Comment) */
-"wednesday_short" = "Rb";
 
 /* No comment provided by engineer. */
 "Weekday" = "Hari kerja";
