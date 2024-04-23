@@ -367,9 +367,6 @@
 /* No comment provided by engineer. */
 "Forum" = "Forum";
 
-/* (No Comment) */
-"friday_short" = "Cum";
-
 /* No comment provided by engineer. */
 "From year" = "Şu yıldan";
 
@@ -507,12 +504,6 @@
 
 /* No comment provided by engineer. */
 "Minimal" = "Basit";
-
-/* Localizable.strings
-  AniHyou
-
-  Created by Axel Lopez on 13/10/2023. */
-"monday_short" = "Pzt";
 
 /* No comment provided by engineer. */
 "More filters" = "Detaylı filtre";
@@ -674,6 +665,9 @@
 "Publishing Manga" = "Yayınlanan Manga";
 
 /* No comment provided by engineer. */
+"Push notifications" = "Anlık bildirimler";
+
+/* No comment provided by engineer. */
 "Quick access to your anime or manga list." = "Anime ve manga listeniz için hızlı erişim.";
 
 /* No comment provided by engineer. */
@@ -712,6 +706,9 @@
 /* (No Comment) */
 "Repeating" = "Tekrarlanan";
 
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "%2$@ için tekrar okunan kısım %1$@";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Satın alımları geri yükle";
 
@@ -720,6 +717,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Değerlendirmeler";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "%2$@ için tekrar izlenen bölüm %1$@";
 
 /* No comment provided by engineer. */
 "Right" = "Sağ";
@@ -732,9 +732,6 @@
 
 /* No comment provided by engineer. */
 "Romance" = "Romantizm";
-
-/* (No Comment) */
-"saturday_short" = "Cmt";
 
 /* No comment provided by engineer. */
 "Save" = "Kaydet";
@@ -874,9 +871,6 @@
 /* No comment provided by engineer. */
 "Summer" = "Yaz";
 
-/* (No Comment) */
-"sunday_short" = "Paz";
-
 /* No comment provided by engineer. */
 "Supernatural" = "Doğaüstü";
 
@@ -918,9 +912,6 @@
 
 /* No comment provided by engineer. */
 "Thriller" = "Gerilim";
-
-/* (No Comment) */
-"thursday_short" = "Per";
 
 /* No comment provided by engineer. */
 "Time spent" = "Harcanan süre";
@@ -976,9 +967,6 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "Popüler Manga";
 
-/* (No Comment) */
-"tuesday_short" = "Sal";
-
 /* No comment provided by engineer. */
 "TV" = "TV";
 
@@ -988,7 +976,10 @@
 /* No comment provided by engineer. */
 "Unfollow" = "Takibi Bırak";
 
-/* (No Comment) */
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Bilinmiyor";
 
 /* No comment provided by engineer. */
@@ -1035,9 +1026,6 @@
 
 /* No comment provided by engineer. */
 "Web novel" = "Web romanı";
-
-/* (No Comment) */
-"wednesday_short" = "Çar";
 
 /* No comment provided by engineer. */
 "Weekday" = "Hafta içi";
