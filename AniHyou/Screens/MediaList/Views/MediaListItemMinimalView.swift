@@ -39,7 +39,11 @@ struct MediaListItemMinimalView: View {
                     Image(systemName: status.systemImage)
                         .foregroundStyle(.gray)
                 }
-                Text("\(entry?.progress ?? 0)/\(details?.maxProgress ?? 0)")
+                if let maxProgress = details?.maxProgress {
+                    Text("\(entry?.progress ?? 0)/\(maxProgress)")
+                } else {
+                    Text("\(entry?.progress ?? 0)")
+                }
                 Spacer()
                 if let repeatCount = entry?.repeat, repeatCount > 0 {
                     Image(systemName: "arrow.clockwise")
