@@ -29,9 +29,6 @@ struct MediaListItemMinimalView: View {
                     airingColor: .gray
                 )
                 .font(.subheadline)
-                .padding(.vertical, 1)
-            } else {
-                Spacer()
             }
 
             HStack {

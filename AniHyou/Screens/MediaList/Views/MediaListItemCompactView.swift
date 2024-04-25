@@ -49,10 +49,8 @@ struct MediaListItemCompactView: View {
                         airingColor: .gray
                     )
                     .font(.subheadline)
-                    .padding(.top, 1)
-                } else {
-                    Spacer()
                 }
+                Spacer()
 
                 HStack {
                     if let maxProgress = details?.maxProgress {

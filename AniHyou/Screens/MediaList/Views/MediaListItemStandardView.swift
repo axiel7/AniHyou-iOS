@@ -50,7 +50,6 @@ struct MediaListItemStandardView: View {
                         airingColor: .gray
                     )
                     .font(.subheadline)
-                    .lineLimit(1)
                     .padding(.bottom, 1)
                 }
 
