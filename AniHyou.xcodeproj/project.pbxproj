@@ -1862,6 +1862,7 @@
 			buildConfigurationList = 481AD4E82851CE74001779EE /* Build configuration list for PBXNativeTarget "AniHyou" */;
 			buildPhases = (
 				48BC1DBA2A6108B20086317E /* SwiftLint */,
+				4873757D2BDA547500A1424F /* Apollo Generate */,
 				481AD4D62851CE73001779EE /* Sources */,
 				481AD4D72851CE73001779EE /* Frameworks */,
 				481AD4D82851CE73001779EE /* Resources */,
@@ -1910,7 +1911,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48EFCDEB29FFAD210096BF6E /* Build configuration list for PBXNativeTarget "AniHyou WidgetExtension" */;
 			buildPhases = (
-				4873757C2BD6B82800A1424F /* Apollo Generate */,
 				48EFCDD129FFAD200096BF6E /* Sources */,
 				48EFCDD229FFAD200096BF6E /* Frameworks */,
 				48EFCDD329FFAD200096BF6E /* Resources */,
@@ -2058,7 +2058,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4873757C2BD6B82800A1424F /* Apollo Generate */ = {
+		4873757D2BDA547500A1424F /* Apollo Generate */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2072,6 +2072,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/AniListAPI",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
