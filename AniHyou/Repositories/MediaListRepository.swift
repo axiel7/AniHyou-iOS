@@ -286,4 +286,46 @@ struct MediaListRepository {
             }
         }
     }
+    
+    static func getMediaListIds(
+        userId: Int,
+        type: MediaType,
+        status: MediaListStatus?,
+        chunk: Int,
+        perChunk: Int = 500
+    ) async -> PagedResult<Int>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: MediaListIdsQuery(
+                    type: .some(.case(type)),
+                    userId: .some(userId),
+                    status: someIfNotNil(status),
+                    chunk: .some(chunk),
+                    perChunk: .some(perChunk)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageInfo = graphQLResult.data?.mediaListCollection,
+                       let ids = pageInfo.lists?
+                           .compactMap({ $0?.entries })
+                           .flatMap({ $0.compactMap({ $0?.mediaId }) })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: ids,
+                                page: chunk + 1,
+                                hasNextPage: pageInfo.hasNextChunk == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
 }

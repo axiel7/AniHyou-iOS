@@ -129,6 +129,9 @@ struct MediaListView: View {
                 )
             }
         }
+        .navigationDestination(isPresented: $viewModel.showingRandomEntry) {
+            MediaDetailsView(mediaId: viewModel.randomId ?? 0)
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Menu {
@@ -141,8 +144,14 @@ struct MediaListView: View {
                         Text("Ascending").tag(true)
                         Text("Descending").tag(false)
                     }
+                    
+                    Button("Random", systemImage: "shuffle") {
+                        Task {
+                            await viewModel.getRandomEntryId()
+                        }
+                    }
                 } label: {
-                    Image(systemName: "arrow.up.arrow.down")
+                    Image(systemName: "ellipsis.circle")
                 }
             }
         }

@@ -41,6 +41,8 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "MediaList": return AniListAPI.Objects.MediaList
     case "FuzzyDate": return AniListAPI.Objects.FuzzyDate
     case "Deleted": return AniListAPI.Objects.Deleted
+    case "MediaListCollection": return AniListAPI.Objects.MediaListCollection
+    case "MediaListGroup": return AniListAPI.Objects.MediaListGroup
     case "AiringSchedule": return AniListAPI.Objects.AiringSchedule
     case "User": return AniListAPI.Objects.User
     case "UserAvatar": return AniListAPI.Objects.UserAvatar

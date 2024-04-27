@@ -27,6 +27,10 @@ class MediaListViewModel: ObservableObject {
     
     @Published var searchText = ""
     @Published var isLoading = false
+    
+    @Published var showingRandomEntry = false
+    var randomId: Int?
+    private var entriesIds = [Int]()
 
     func getUserMediaList(otherUserId: Int?) async {
         if let otherUserId { userId = otherUserId }
@@ -125,6 +129,30 @@ class MediaListViewModel: ObservableObject {
         if newValueOrdered != sort {
             sort = newValueOrdered
             refreshList()
+        }
+    }
+    
+    func getRandomEntryId(chunk: Int = 1) async {
+        if chunk == 1 && !entriesIds.isEmpty {
+            randomId = entriesIds.randomElement()
+            showingRandomEntry = true
+        } else {
+            isLoading = true
+            if let result = await MediaListRepository.getMediaListIds(
+                userId: userId,
+                type: mediaType,
+                status: mediaListStatus,
+                chunk: chunk
+            ) {
+                entriesIds.append(contentsOf: result.data)
+                if result.hasNextPage {
+                    await getRandomEntryId(chunk: chunk + 1)
+                } else {
+                    randomId = entriesIds.randomElement()
+                    showingRandomEntry = true
+                }
+            }
+            isLoading = false
         }
     }
 }
