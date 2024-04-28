@@ -137,7 +137,13 @@
 "Changes will take effect on app restart" = "Зміни набудуть чинності після перезавантаження";
 
 /* No comment provided by engineer. */
+"Chapter Count" = "Кількість розділів";
+
+/* No comment provided by engineer. */
 "Chapters" = "Розділи";
+
+/* No comment provided by engineer. */
+"Chapters read" = "Прочитані розділи";
 
 /* No comment provided by engineer. */
 "Chapters Read" = "Прочитані розділи";
@@ -170,15 +176,12 @@
 "Comic" = "Комікс";
 
 /* No comment provided by engineer. */
-"Coming soon" = "Незабаром";
-
-/* No comment provided by engineer. */
 "Compact" = "Компактний";
 
 /* No comment provided by engineer. */
 "Compilation" = "Збірка";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Completed" = "Завершено";
 
 /* No comment provided by engineer. */
@@ -203,6 +206,9 @@
 "Country" = "Країна";
 
 /* No comment provided by engineer. */
+"Country Distribution" = "Розподіл за країнами";
+
+/* (No Comment) */
 "Current" = "Поточні";
 
 /* No comment provided by engineer. */
@@ -245,6 +251,9 @@
 "Display" = "Дисплей";
 
 /* No comment provided by engineer. */
+"Distribution type" = "Тип розподілу";
+
+/* No comment provided by engineer. */
 "Donate" = "Пожертвувати";
 
 /* No comment provided by engineer. */
@@ -252,6 +261,9 @@
 
 /* No comment provided by engineer. */
 "Donation" = "Донат";
+
+/* No comment provided by engineer. */
+"Donator" = "Донатер";
 
 /* No comment provided by engineer. */
 "Done" = "Готово";
@@ -262,7 +274,7 @@
 /* No comment provided by engineer. */
 "Drama" = "Драма";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Dropped" = "Кинуто";
 
 /* No comment provided by engineer. */
@@ -291,6 +303,9 @@
 
 /* No comment provided by engineer. */
 "Ep %lld at %@" = "Сер %lld о %@";
+
+/* No comment provided by engineer. */
+"Episode Count" = "Кількість епізодів";
 
 /* No comment provided by engineer. */
 "Episodes" = "епізод(-ів)";
@@ -347,13 +362,10 @@
 "Format" = "Формат";
 
 /* No comment provided by engineer. */
-"Format distribution" = "Розподіл форматування";
+"Format Distribution" = "Розподіл форматування";
 
 /* No comment provided by engineer. */
 "Forum" = "Форум";
-
-/* (No Comment) */
-"friday_short" = "Пт";
 
 /* No comment provided by engineer. */
 "From year" = "Від року";
@@ -384,6 +396,9 @@
 
 /* No comment provided by engineer. */
 "Hide filters" = "Приховати фільтри";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "Не показувати в списках статусу";
 
 /* No comment provided by engineer. */
 "Hide spoiler" = "Приховати спойлер";
@@ -467,6 +482,9 @@
 "Manga List" = "Каталог манґи";
 
 /* No comment provided by engineer. */
+"Mean score" = "Середня оцінка";
+
+/* No comment provided by engineer. */
 "Mean Score" = "Середній бал";
 
 /* No comment provided by engineer. */
@@ -486,12 +504,6 @@
 
 /* No comment provided by engineer. */
 "Minimal" = "Мінімальний";
-
-/* Localizable.strings
-  AniHyou
-
-  Created by Axel Lopez on 13/10/2023. */
-"monday_short" = "Пн";
 
 /* No comment provided by engineer. */
 "More filters" = "Більше фільтрів";
@@ -592,7 +604,7 @@
 /* No comment provided by engineer. */
 "Parent" = "Джерело";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Paused" = "Призупинено";
 
 /* No comment provided by engineer. */
@@ -601,7 +613,7 @@
 /* No comment provided by engineer. */
 "Picture book" = "Книжка з малюнками";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Planning" = "Планується";
 
 /* No comment provided by engineer. */
@@ -653,6 +665,9 @@
 "Publishing Manga" = "Манґа, що публікується";
 
 /* No comment provided by engineer. */
+"Push notifications" = "Push-сповіщення";
+
+/* No comment provided by engineer. */
 "Quick access to your anime or manga list." = "Швидкий доступ до вашого каталогу аніме або манґи.";
 
 /* No comment provided by engineer. */
@@ -660,6 +675,9 @@
 
 /* (No Comment) */
 "Read chapter %1$@ of %2$@" = "Прочитати розділ %1$@ в %2$@";
+
+/* No comment provided by engineer. */
+"Read Year" = "Рік читання";
 
 /* No comment provided by engineer. */
 "Recommendations" = "Рекомендації";
@@ -674,6 +692,9 @@
 "Release Date" = "Дата випуску";
 
 /* No comment provided by engineer. */
+"Release Year" = "Рік виходу";
+
+/* No comment provided by engineer. */
 "Releasing" = "Реліз";
 
 /* No comment provided by engineer. */
@@ -682,8 +703,11 @@
 /* No comment provided by engineer. */
 "Repeat Count" = "Кількість повторів";
 
-/* No comment provided by engineer. */
+/* (No Comment) */
 "Repeating" = "Повторювані";
+
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "Перечитано розділ %1$@ з %2$@";
 
 /* No comment provided by engineer. */
 "Restore purchases" = "Відновити покупки";
@@ -693,6 +717,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Відгуки";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "Повторно переглянуто епізод %1$@ з %2$@";
 
 /* No comment provided by engineer. */
 "Right" = "Праворуч";
@@ -705,9 +732,6 @@
 
 /* No comment provided by engineer. */
 "Romance" = "Романтика";
-
-/* (No Comment) */
-"saturday_short" = "Сб";
 
 /* No comment provided by engineer. */
 "Save" = "Зберегти";
@@ -741,6 +765,9 @@
 
 /* No comment provided by engineer. */
 "Sequel" = "Продовження";
+
+/* Set to Status */
+"Set as %@" = "Встановити як %@";
 
 /* No comment provided by engineer. */
 "Set progress" = "Встановити прогрес";
@@ -830,6 +857,9 @@
 "Status distribution" = "Розподіл статусу";
 
 /* No comment provided by engineer. */
+"Status Distribution" = "Розподіл статусу";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Сторінки трансляцій";
 
 /* No comment provided by engineer. */
@@ -840,9 +870,6 @@
 
 /* No comment provided by engineer. */
 "Summer" = "Літо";
-
-/* (No Comment) */
-"sunday_short" = "Нд";
 
 /* No comment provided by engineer. */
 "Supernatural" = "Надприродне";
@@ -886,11 +913,14 @@
 /* No comment provided by engineer. */
 "Thriller" = "Трилер";
 
-/* (No Comment) */
-"thursday_short" = "Чт";
+/* No comment provided by engineer. */
+"Time spent" = "Витрачено часу";
 
 /* No comment provided by engineer. */
 "Title" = "Назва";
+
+/* No comment provided by engineer. */
+"Title count" = "Кількість назв";
 
 /* No comment provided by engineer. */
 "Title language" = "Мова назви";
@@ -909,6 +939,9 @@
 
 /* No comment provided by engineer. */
 "Top 100 Manga" = "Топ 100 манґ";
+
+/* No comment provided by engineer. */
+"Top Movies" = "Найпопулярніші фільми";
 
 /* No comment provided by engineer. */
 "Top Popular" = "Найпопулярніші";
@@ -934,9 +967,6 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "Популярна манґа";
 
-/* (No Comment) */
-"tuesday_short" = "Вт";
-
 /* No comment provided by engineer. */
 "TV" = "TV";
 
@@ -946,7 +976,10 @@
 /* No comment provided by engineer. */
 "Unfollow" = "Відписатися";
 
-/* (No Comment) */
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Невідомо";
 
 /* No comment provided by engineer. */
@@ -985,14 +1018,14 @@
 /* No comment provided by engineer. */
 "Volumes Read" = "Прочитано розділів";
 
+/* No comment provided by engineer. */
+"Watch Year" = "Рік відстеження";
+
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Переглянута серія %1$@ з %2$@";
 
 /* No comment provided by engineer. */
 "Web novel" = "Веб-роман";
-
-/* (No Comment) */
-"wednesday_short" = "Ср";
 
 /* No comment provided by engineer. */
 "Weekday" = "Будні дні";
