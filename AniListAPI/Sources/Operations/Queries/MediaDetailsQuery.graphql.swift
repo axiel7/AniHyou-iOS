@@ -7,7 +7,7 @@ public class MediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "MediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails title { __typename userPreferred romaji english native } synonyms format status description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
+      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails title { __typename userPreferred romaji english native } synonyms format status(version: 2) description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
       fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IsFavouriteMedia.self]
     ))
 
@@ -44,7 +44,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         .field("title", Title?.self),
         .field("synonyms", [String?]?.self),
         .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
-        .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self),
+        .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self, arguments: ["version": 2]),
         .field("description", String?.self, arguments: ["asHtml": true]),
         .field("startDate", StartDate?.self),
         .field("endDate", EndDate?.self),
