@@ -14,8 +14,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func application(
         _ application: UIApplication,
-        willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
         BGTaskScheduler.shared.register(
             forTaskWithIdentifier: FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER,
             using: nil
@@ -24,14 +25,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 NotificationsManager.handleFetchTask(task)
             }
         }
-        return true
-    }
-    
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-    ) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
         return true
     }
     
@@ -49,5 +42,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
         completionHandler()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        NotificationsManager.scheduleFetch()
     }
 }
