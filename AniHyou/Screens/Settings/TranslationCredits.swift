@@ -11,6 +11,7 @@ private let translations = [
     "az_AZ": "oolyvi",
     "in_ID": "Clxf12, naturbrilian",
     "ja_JP": "axiel7",
+    "pl_PL": "xiggeush, YOGI_AOGI",
     "pt_BR": "Crono0, Torti, Ratolino, RickyM7, SamOak",
     "ru_RU": "Ronner231, grin3671",
     "es_ES": "axiel7",

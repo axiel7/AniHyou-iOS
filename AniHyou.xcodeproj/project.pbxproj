@@ -582,6 +582,8 @@
 		48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaRelationsAndRecommendations.graphql; sourceTree = "<group>"; };
 		48CA07BA2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRelationsAndRecommendationsView.swift; sourceTree = "<group>"; };
 		48CDB1662A70D5B000102E03 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
+		48CFA73F2BF7CE6A00446173 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48CFA7402BF7CE6A00446173 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48D044E02A57AC9600ED3623 /* MultiSelectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionSheet.swift; sourceTree = "<group>"; };
 		48D3B965297AC55F0064E829 /* MediaListItemCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemCompactView.swift; sourceTree = "<group>"; };
 		48D774EF2A2ECF3C00370921 /* AniListAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AniListAPI; sourceTree = "<group>"; };
@@ -1993,6 +1995,7 @@
 				Base,
 				"pt-BR",
 				az,
+				pl,
 			);
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
@@ -2420,6 +2423,7 @@
 				48A835D12B12D919008641FC /* uk */,
 				487F4BE32B282ED90002237C /* pt-BR */,
 				483867642B70991900DA9A47 /* az */,
+				48CFA7402BF7CE6A00446173 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2435,6 +2439,7 @@
 				48A835D02B12D919008641FC /* uk */,
 				487F4BE22B282ED90002237C /* pt-BR */,
 				483867632B70991900DA9A47 /* az */,
+				48CFA73F2BF7CE6A00446173 /* pl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
