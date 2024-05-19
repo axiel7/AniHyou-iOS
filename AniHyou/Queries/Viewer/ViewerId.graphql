@@ -11,6 +11,10 @@ query ViewerId {
       animeList {
         advancedScoring
         advancedScoringEnabled # shared between animeList and mangaList
+        customLists
+      }
+      mangaList {
+        customLists
       }
     }
   }

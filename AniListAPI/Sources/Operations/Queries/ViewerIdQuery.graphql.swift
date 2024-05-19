@@ -7,7 +7,7 @@ public class ViewerIdQuery: GraphQLQuery {
   public static let operationName: String = "ViewerId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query ViewerId { Viewer { __typename id options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled } } } }"#
+      #"query ViewerId { Viewer { __typename id options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists } mangaList { __typename customLists } } } }"#
     ))
 
   public init() {}
@@ -81,12 +81,15 @@ public class ViewerIdQuery: GraphQLQuery {
           .field("__typename", String.self),
           .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
           .field("animeList", AnimeList?.self),
+          .field("mangaList", MangaList?.self),
         ] }
 
         /// The score format the user is using for media lists
         public var scoreFormat: GraphQLEnum<AniListAPI.ScoreFormat>? { __data["scoreFormat"] }
         /// The user's anime list options
         public var animeList: AnimeList? { __data["animeList"] }
+        /// The user's manga list options
+        public var mangaList: MangaList? { __data["mangaList"] }
 
         /// Viewer.MediaListOptions.AnimeList
         ///
@@ -100,12 +103,32 @@ public class ViewerIdQuery: GraphQLQuery {
             .field("__typename", String.self),
             .field("advancedScoring", [String?]?.self),
             .field("advancedScoringEnabled", Bool?.self),
+            .field("customLists", [String?]?.self),
           ] }
 
           /// The names of the user's advanced scoring sections
           public var advancedScoring: [String?]? { __data["advancedScoring"] }
           /// If advanced scoring is enabled
           public var advancedScoringEnabled: Bool? { __data["advancedScoringEnabled"] }
+          /// The names of the user's custom lists
+          public var customLists: [String?]? { __data["customLists"] }
+        }
+
+        /// Viewer.MediaListOptions.MangaList
+        ///
+        /// Parent Type: `MediaListTypeOptions`
+        public struct MangaList: AniListAPI.SelectionSet {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+          public static var __selections: [ApolloAPI.Selection] { [
+            .field("__typename", String.self),
+            .field("customLists", [String?]?.self),
+          ] }
+
+          /// The names of the user's custom lists
+          public var customLists: [String?]? { __data["customLists"] }
         }
       }
     }

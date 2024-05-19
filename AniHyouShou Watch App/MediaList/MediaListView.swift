@@ -27,32 +27,30 @@ struct MediaListView: View {
                     ProgressView()
                         .task {
                             if viewModel.hasNextPage {
-                                await viewModel.getUserMediaList(otherUserId: nil)
+                                await viewModel.getUserMediaList()
                             }
                         }
                 }
             }
-            .navigationTitle(type == .anime ? "Anime" : "Manga")
+            .navigationTitle(type.localizedName)
         }
         .task {
             viewModel.mediaType = type
-            viewModel.mediaListStatus = .current
-            await viewModel.getUserMediaList(otherUserId: nil)
+            await viewModel.getUserMediaList()
         }
     }
 }
 
 struct MediaListItemStandardView: View {
 
-    let item: UserMediaListQuery.Data.Page.MediaList
+    let item: CommonUserMediaList
 
     var body: some View {
         HStack {
             Text(item.media?.title?.userPreferred ?? "")
                 .lineLimit(2)
             Spacer()
-            let maxProgress = item.media?.fragments.basicMediaDetails.maxProgress
-            Text("\(item.progress ?? 0)/\(maxProgress ?? 0)")
+            Text("\(item.progress ?? 0)/\(item.maxProgress)")
         }
     }
 }

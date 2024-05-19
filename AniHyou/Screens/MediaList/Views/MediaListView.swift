@@ -22,12 +22,11 @@ private extension View {
 struct MediaListView: View {
 
     let type: MediaType
-    let statusSelected: MediaListStatusSelect
     var userId: Int?
     var isMyList: Bool {
         userId == nil
     }
-    @StateObject private var viewModel = MediaListViewModel()
+    @ObservedObject var viewModel: MediaListViewModel
     @State private var showingEditSheet = false
 
     @AppStorage(LIST_SORT) private var sort = MediaListSort.updatedTimeDesc
@@ -44,7 +43,7 @@ struct MediaListView: View {
                             details: details,
                             entry: item.fragments.basicMediaListEntry,
                             schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
-                            showStatus: statusSelected == .all
+                            showStatus: viewModel.selectedListName == nil
                         )
                     }
                 }
@@ -107,8 +106,6 @@ struct MediaListView: View {
             }
         }
         .onAppear {
-            viewModel.mediaType = type
-            viewModel.mediaListStatus = statusSelected.value
             viewModel.onSortChanged(sort, isAscending: sortAscending)
         }
         .sheet(isPresented: $showingEditSheet) {
@@ -155,7 +152,20 @@ struct MediaListView: View {
                 }
             }
         }
-        .navigationTitle(statusSelected.localizedName)
+        .navigationTitle(navigationTitle)
+    }
+    
+    var navigationTitle: String {
+        if let status = viewModel.selectedListName.asMediaListStatus() {
+            let localizedKey = String.LocalizationValue(
+                stringLiteral: status.localizedStringKey
+            )
+            return String(localized: localizedKey)
+        } else if let listName = viewModel.selectedListName {
+            return listName
+        } else {
+            return "All"
+        }
     }
 
     @ViewBuilder
@@ -255,6 +265,6 @@ struct MediaListView: View {
 
 #Preview {
     NavigationStack {
-        MediaListView(type: .anime, statusSelected: .current, userId: 208863)
+        MediaListView(type: .anime, userId: 208863, viewModel: MediaListViewModel())
     }
 }

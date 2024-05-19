@@ -212,6 +212,14 @@ struct UserRepository {
                             viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
                             forKey: ADVANCED_SCORES_KEY
                         )
+                        UserDefaults.standard.setValue(
+                            viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
+                            forKey: ANIME_CUSTOM_LISTS_KEY
+                        )
+                        UserDefaults.standard.setValue(
+                            viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
+                            forKey: MANGA_CUSTOM_LISTS_KEY
+                        )
                         continuation.resume(returning: viewer)
                     } else {
                         continuation.resume(returning: nil)

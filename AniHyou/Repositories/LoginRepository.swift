@@ -47,6 +47,8 @@ struct LoginRepository {
         UserDefaults.standard.removeObject(forKey: USER_SCORE_KEY)
         UserDefaults.standard.removeObject(forKey: ADVANCED_SCORING_ENABLED_KEY)
         UserDefaults.standard.removeObject(forKey: ADVANCED_SCORES_KEY)
+        UserDefaults.standard.removeObject(forKey: ANIME_CUSTOM_LISTS_KEY)
+        UserDefaults.standard.removeObject(forKey: MANGA_CUSTOM_LISTS_KEY)
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -79,6 +81,14 @@ struct LoginRepository {
                     UserDefaults.standard.setValue(
                         viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
                         forKey: ADVANCED_SCORES_KEY
+                    )
+                    UserDefaults.standard.setValue(
+                        viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
+                        forKey: ANIME_CUSTOM_LISTS_KEY
+                    )
+                    UserDefaults.standard.setValue(
+                        viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
+                        forKey: MANGA_CUSTOM_LISTS_KEY
                     )
                 }
             case .failure(let error):

@@ -51,7 +51,7 @@ struct SetProgressIntent: AppIntent {
             progress: progress,
             status: MediaListStatus(rawValue: status ?? "")
         ) {
-            _ = await MediaListRepository.updateCachedEntry(entry)
+            let _: CommonMediaListEntry? = await MediaListRepository.updateCachedEntry(entry)
             return .result(value: true)
         } else {
             return .result(value: false)

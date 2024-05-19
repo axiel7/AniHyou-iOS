@@ -10,45 +10,38 @@ import AniListAPI
 
 struct UpdateMediaEntryView: View {
 
-    let entry: UserMediaListQuery.Data.Page.MediaList?
+    let entry: CommonUserMediaList
     @ObservedObject var viewModel: MediaListViewModel
 
     var body: some View {
-        Group {
-            if let entry {
-                VStack(alignment: .leading) {
-                    Text(entry.media?.title?.userPreferred ?? "")
-                        .font(.title3)
-                    Spacer()
+        VStack(alignment: .leading) {
+            Text(entry.media?.title?.userPreferred ?? "")
+                .font(.title3)
+            Spacer()
 
-                    let maxProgress = entry.media?.fragments.basicMediaDetails.maxProgress
-                    Text("\(entry.progress ?? 0)/\(maxProgress ?? 0)")
+            Text("\(entry.progress ?? 0)/\(entry.maxProgress)")
 
-                    Button(
-                        action: {
-                            Task {
-                                await viewModel.updateEntryProgress(of: entry.fragments.basicMediaListEntry)
-                            }
-                        },
-                        label: {
-                            if viewModel.isLoading {
-                                ProgressView()
-                                .frame(height: 13)
-                            } else {
-                                Text("+1")
-                            }
-                        }
-                    )
-                    .tint(Color(hex: entry.media?.coverImage?.color))
+            Button(
+                action: {
+                    Task {
+                        await viewModel.updateEntryProgress(of: entry)
+                    }
+                },
+                label: {
+                    if viewModel.isLoading {
+                        ProgressView()
+                        .frame(height: 13)
+                    } else {
+                        Text("+1")
+                    }
                 }
-            } else {
-                Text("Error no entry")
-            }
+            )
+            .tint(Color(hex: entry.media?.coverImage?.color))
         }
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    UpdateMediaEntryView(entry: nil, viewModel: MediaListViewModel())
+    UpdateMediaEntryView(entry: .init(_fieldData: nil), viewModel: MediaListViewModel())
 }

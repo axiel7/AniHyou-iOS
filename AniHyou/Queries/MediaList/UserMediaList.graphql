@@ -1,19 +1,7 @@
 query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {
   Page(page: $page, perPage: $perPage) {
     mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
-      ...BasicMediaListEntry
-      mediaId
-      media {
-        ...BasicMediaDetails
-        coverImage {
-          large
-          color
-        }
-        nextAiringEpisode {
-          ...AiringEpisode
-        }
-        status
-      }
+      ...CommonUserMediaList
     }
     pageInfo {
       hasNextPage
@@ -21,28 +9,23 @@ query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $
   }
 }
 
-fragment BasicMediaListEntry on MediaList
-@apollo_client_ios_localCacheMutation {
-  id
-  mediaId
-  progress
-  progressVolumes
-  status
-  score
-  advancedScores
-  repeat
-  private
-  hiddenFromStatusLists
-  startedAt {
-    ...FuzzyDateFragment
-  }
-  completedAt {
-    ...FuzzyDateFragment
-  }
-  notes
-}
-
-fragment AiringEpisode on AiringSchedule {
-  episode
-  airingAt
+fragment CommonUserMediaList on MediaList {
+    id
+    mediaId
+    media {
+        title {
+          userPreferred
+        }
+        coverImage {
+          color
+        }
+        episodes
+        chapters
+        nextAiringEpisode {
+            episode
+            airingAt
+        }
+    }
+    progress
+    status
 }

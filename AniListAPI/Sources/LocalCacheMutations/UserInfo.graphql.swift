@@ -5,7 +5,7 @@
 
 public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled } } isFollowing isFollower donatorBadge donatorTier }"#
+    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists } mangaList { __typename customLists } } isFollowing isFollower donatorBadge donatorTier }"#
   }
 
   public var __data: DataDict
@@ -213,6 +213,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
       .field("__typename", String.self),
       .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
       .field("animeList", AnimeList?.self),
+      .field("mangaList", MangaList?.self),
     ] }
 
     /// The score format the user is using for media lists
@@ -225,16 +226,23 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
       get { __data["animeList"] }
       set { __data["animeList"] = newValue }
     }
+    /// The user's manga list options
+    public var mangaList: MangaList? {
+      get { __data["mangaList"] }
+      set { __data["mangaList"] = newValue }
+    }
 
     public init(
       scoreFormat: GraphQLEnum<AniListAPI.ScoreFormat>? = nil,
-      animeList: AnimeList? = nil
+      animeList: AnimeList? = nil,
+      mangaList: MangaList? = nil
     ) {
       self.init(_dataDict: DataDict(
         data: [
           "__typename": AniListAPI.Objects.MediaListOptions.typename,
           "scoreFormat": scoreFormat,
           "animeList": animeList._fieldData,
+          "mangaList": mangaList._fieldData,
         ],
         fulfilledFragments: [
           ObjectIdentifier(UserInfo.MediaListOptions.self)
@@ -254,6 +262,7 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
         .field("__typename", String.self),
         .field("advancedScoring", [String?]?.self),
         .field("advancedScoringEnabled", Bool?.self),
+        .field("customLists", [String?]?.self),
       ] }
 
       /// The names of the user's advanced scoring sections
@@ -266,19 +275,60 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
         get { __data["advancedScoringEnabled"] }
         set { __data["advancedScoringEnabled"] = newValue }
       }
+      /// The names of the user's custom lists
+      public var customLists: [String?]? {
+        get { __data["customLists"] }
+        set { __data["customLists"] = newValue }
+      }
 
       public init(
         advancedScoring: [String?]? = nil,
-        advancedScoringEnabled: Bool? = nil
+        advancedScoringEnabled: Bool? = nil,
+        customLists: [String?]? = nil
       ) {
         self.init(_dataDict: DataDict(
           data: [
             "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
             "advancedScoring": advancedScoring,
             "advancedScoringEnabled": advancedScoringEnabled,
+            "customLists": customLists,
           ],
           fulfilledFragments: [
             ObjectIdentifier(UserInfo.MediaListOptions.AnimeList.self)
+          ]
+        ))
+      }
+    }
+
+    /// MediaListOptions.MangaList
+    ///
+    /// Parent Type: `MediaListTypeOptions`
+    public struct MangaList: AniListAPI.MutableSelectionSet {
+      public var __data: DataDict
+      public init(_dataDict: DataDict) { __data = _dataDict }
+
+      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+      public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
+        .field("customLists", [String?]?.self),
+      ] }
+
+      /// The names of the user's custom lists
+      public var customLists: [String?]? {
+        get { __data["customLists"] }
+        set { __data["customLists"] = newValue }
+      }
+
+      public init(
+        customLists: [String?]? = nil
+      ) {
+        self.init(_dataDict: DataDict(
+          data: [
+            "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
+            "customLists": customLists,
+          ],
+          fulfilledFragments: [
+            ObjectIdentifier(UserInfo.MediaListOptions.MangaList.self)
           ]
         ))
       }

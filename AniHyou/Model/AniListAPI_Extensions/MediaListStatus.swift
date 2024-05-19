@@ -65,6 +65,8 @@ extension MediaListStatus {
             .blue
         }
     }
+    
+    static let listNames = ["Watching", "Reading", "Planning", "Completed", "Dropped", "Paused", "Repeating"]
 }
 
 extension MediaListStatus? {
@@ -82,47 +84,15 @@ extension MediaListStatus? {
     }
 }
 
-enum MediaListStatusSelect: String, CaseIterable, Hashable {
-    case all
-    case current
-    case planning
-    case completed
-    case dropped
-    case paused
-    case repeating
-    
-    var value: MediaListStatus? {
-        switch self {
-        case .all:
-            nil
-        case .current:
-            .current
-        case .planning:
-            .planning
-        case .completed:
-            .completed
-        case .dropped:
-            .dropped
-        case .paused:
-            .paused
-        case .repeating:
-            .repeating
-        }
+extension MediaType {
+    var currentListStatus: LocalizedStringKey {
+        self == .anime ? "Wacthing" : "Reading"
     }
-    
-    var localizedName: LocalizedStringKey {
-        if self == .all {
-            return "All"
-        } else {
-            return value?.localizedName ?? "None"
-        }
-    }
-    
-    var systemImage: String {
-        if self == .all {
-            return "list.bullet.circle"
-        } else {
-            return value?.systemImage ?? "list.bullet.circle"
-        }
+}
+
+extension String? {
+    func asMediaListStatus() -> MediaListStatus? {
+        guard let self else { return nil }
+        return MediaListStatus(rawValue: self)
     }
 }

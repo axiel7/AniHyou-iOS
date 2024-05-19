@@ -13,7 +13,8 @@ import AniListAPI
 class MediaListViewModel: ObservableObject {
 
     var userId: Int = LoginRepository.authUserId()
-    @Published var mediaList = [UserMediaListQuery.Data.Page.MediaList]()
+    private var lists: [String: [CommonMediaListEntry]] = [:]
+    @Published var mediaList = [CommonMediaListEntry]()
     var selectedDetails: BasicMediaDetails?
     var selectedEntry: BasicMediaListEntry?
 
@@ -22,7 +23,7 @@ class MediaListViewModel: ObservableObject {
     var forceReload = false
 
     var mediaType: MediaType = .anime
-    var mediaListStatus: MediaListStatus?
+    @Published private(set) var selectedListName: String?
     private var sort: MediaListSort?
     
     @Published var searchText = ""
@@ -31,27 +32,46 @@ class MediaListViewModel: ObservableObject {
     @Published var showingRandomEntry = false
     var randomId: Int?
     private var entriesIds = [Int]()
+    
+    func initialize(
+        mediaType: MediaType,
+        selectedList: String,
+        sort: MediaListSort,
+        sortAscending: Bool
+    ) {
+        self.mediaType = mediaType
+        self.onChangeList(selectedList)
+        self.onSortChanged(sort, isAscending: sortAscending)
+    }
 
     func getUserMediaList(otherUserId: Int?) async {
         if let otherUserId { userId = otherUserId }
         isLoading = true
-        let sortArray: [MediaListSort] = if mediaListStatus == nil {
-            [.status, sort ?? .addedTimeDesc]
-        } else {
-            [sort ?? .addedTimeDesc, .mediaIdDesc]
-        }
-        
-        if let result = await MediaListRepository.getUserMediaList(
+        if let result = await MediaListRepository.getMediaListCollection(
             userId: userId,
             mediaType: mediaType,
-            status: mediaListStatus,
-            sort: sortArray,
-            page: currentPage,
+            sort: [sort ?? .addedTimeDesc],
+            chunk: currentPage,
             forceReload: forceReload
         ) {
             currentPage = result.page
             hasNextPage = result.hasNextPage
-            mediaList.append(contentsOf: result.data)
+            var newEntries: [CommonMediaListEntry] = []
+            result.data.forEach { list in
+                if let name = list.name {
+                    let entries = list.entries?.compactMap({ $0?.fragments.commonMediaListEntry }) ?? []
+                    lists[name] = (lists[name] ?? []) + entries
+                    if selectedListName == nil && list.isCustomList == false {
+                        newEntries.append(contentsOf: entries)
+                    } else if name == selectedListName {
+                        newEntries.append(contentsOf: entries)
+                    }
+                }
+            }
+            mediaList.append(contentsOf: newEntries)
+            if newEntries.isEmpty && result.hasNextPage {
+                await getUserMediaList(otherUserId: otherUserId)
+            }
             await filterList()
         }
         isLoading = false
@@ -62,6 +82,7 @@ class MediaListViewModel: ObservableObject {
         currentPage = 1
         hasNextPage = true
         forceReload = true
+        lists = [:]
         mediaList = []
     }
     
@@ -80,6 +101,22 @@ class MediaListViewModel: ObservableObject {
             filteredMedia = result.data
         }
         isLoading = false
+    }
+    
+    func onChangeList(_ listName: String) {
+        if listName == "All" {
+            selectedListName = nil
+            mediaList = lists.keys
+                .filter { MediaListStatus.listNames.contains($0) }
+                .flatMap { lists[$0] ?? [] }
+        } else {
+            selectedListName = if listName == "Current" {
+                mediaType == .anime ? "Watching" : "Reading"
+            } else {
+                listName
+            }
+            mediaList = lists[selectedListName!] ?? []
+        }
     }
 
     func updateEntryProgress(of entry: BasicMediaListEntry) async {
@@ -105,7 +142,7 @@ class MediaListViewModel: ObservableObject {
         if mediaList[safe: foundIndex]?.status != entry.status {
             onEntryDeleted(entryId: entry.id)
         } else { // update the local cache
-            if let updatedItem = await MediaListRepository.updateCachedEntry(entry) {
+            if let updatedItem: CommonMediaListEntry = await MediaListRepository.updateCachedEntry(entry) {
                 mediaList[foundIndex] = updatedItem
             }
         }
@@ -141,7 +178,7 @@ class MediaListViewModel: ObservableObject {
             if let result = await MediaListRepository.getMediaListIds(
                 userId: userId,
                 type: mediaType,
-                status: mediaListStatus,
+                status: selectedListName.asMediaListStatus(),
                 chunk: chunk
             ) {
                 entriesIds.append(contentsOf: result.data)

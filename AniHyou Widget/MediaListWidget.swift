@@ -48,48 +48,40 @@ struct MediaListProvider: AppIntentTimelineProvider {
             return Timeline(entries: [entry], policy: .never)
         }
         
-        var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: now)!
+        let maxItems = context.family.maxMediaListItems
         
-        return await withCheckedContinuation { continuation in
-            Network.shared.apollo.fetch(query: UserMediaListQuery(
-                page: .some(1),
-                perPage: .some(12),
-                userId: .some(userId),
-                type: .some(.case(mediaType)),
-                status: .some(.case(.current)),
-                sort: .some([.case(.updatedTimeDesc)])
-            )) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let mediaList = graphQLResult.data?.page?.mediaList {
-                        let maxItems = context.family.maxMediaListItems
-                        let tempList = Array(mediaList.prefix(maxItems))
-                        
-                        let entry = MediaListEntry(
-                            animeList: tempList,
-                            date: nextUpdateDate,
-                            placeholderText: nil,
-                            widgetSize: context.displaySize
-                        )
-                        continuation.resume(returning: Timeline(entries: [entry], policy: .after(nextUpdateDate)))
-                    }
-                case .failure(let error):
-                    nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
-                    let entry = MediaListEntry(
-                        animeList: [],
-                        date: nextUpdateDate,
-                        placeholderText: "Error updating:\n\(error)",
-                        widgetSize: context.displaySize
-                    )
-                    continuation.resume(returning: Timeline(entries: [entry], policy: .after(nextUpdateDate)))
-                }
-            }
+        if let result = await MediaListRepository.getUserMediaList(
+            userId: userId,
+            mediaType: mediaType,
+            status: .current,
+            sort: [.updatedTimeDesc],
+            page: 1,
+            perPage: 12
+        ) {
+            let tempList = Array(result.data.prefix(maxItems))
+            let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: now)!
+            let entry = MediaListEntry(
+                animeList: tempList,
+                date: nextUpdateDate,
+                placeholderText: nil,
+                widgetSize: context.displaySize
+            )
+            return Timeline(entries: [entry], policy: .after(nextUpdateDate))
+        } else {
+            let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
+            let entry = MediaListEntry(
+                animeList: [],
+                date: nextUpdateDate,
+                placeholderText: "Error updating",
+                widgetSize: context.displaySize
+            )
+            return Timeline(entries: [entry], policy: .after(nextUpdateDate))
         }
     }
 }
 
 struct MediaListEntry: BaseEntry {
-    let animeList: [UserMediaListQuery.Data.Page.MediaList?]
+    let animeList: [CommonUserMediaList]
     var date: Date
     var placeholderText: String?
     var widgetSize: CGSize
@@ -147,13 +139,11 @@ struct MediaListWidgetEntryView: View {
             Text("Nothing in your list")
                 .multilineTextAlignment(.center)
         } else {
-            ForEach(Array(entry.animeList.enumerated()), id: \.element?.id) { index, item in
-                if let item {
-                    MediaListItemView(item: item, tintColor: tintColor)
-                    if (index + 1) < entry.animeList.count {
-                        Divider()
-                            .padding(.leading)
-                    }
+            ForEach(Array(entry.animeList.enumerated()), id: \.element.id) { index, item in
+                MediaListItemView(item: item, tintColor: tintColor)
+                if (index + 1) < entry.animeList.count {
+                    Divider()
+                        .padding(.leading)
                 }
             }//:ForEach
         }
@@ -163,7 +153,7 @@ struct MediaListWidgetEntryView: View {
 @available(iOSApplicationExtension 17.0, *)
 private struct MediaListItemView: View {
     
-    let item: UserMediaListQuery.Data.Page.MediaList
+    let item: CommonUserMediaList
     let tintColor: Color
     
     var body: some View {
@@ -176,8 +166,7 @@ private struct MediaListItemView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        let maxProgress = item.media?.fragments.basicMediaDetails.maxProgress
-                        Text("\(item.progress ?? 0)/\(maxProgress ?? 0)")
+                        Text("\(item.progress ?? 0)/\(item.maxProgress)")
                             .foregroundStyle(.secondary)
                             .frame(width: 40, alignment: .leading)
                         

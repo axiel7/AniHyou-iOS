@@ -1,0 +1,60 @@
+query UserListCollection(
+    $userId: Int,
+    $type: MediaType,
+    $sort: [MediaListSort],
+    $chunk: Int,
+    $perChunk: Int
+) {
+    MediaListCollection(userId: $userId, type: $type, sort: $sort, chunk: $chunk, perChunk: $perChunk) {
+        lists {
+            name
+            isCustomList
+            entries {
+                ...CommonMediaListEntry
+            }
+        }
+        hasNextChunk
+    }
+}
+
+fragment BasicMediaListEntry on MediaList
+@apollo_client_ios_localCacheMutation {
+  id
+  mediaId
+  progress
+  progressVolumes
+  status
+  score
+  advancedScores
+  repeat
+  private
+  hiddenFromStatusLists
+  startedAt {
+    ...FuzzyDateFragment
+  }
+  completedAt {
+    ...FuzzyDateFragment
+  }
+  notes
+}
+
+fragment CommonMediaListEntry on MediaList {
+    ...BasicMediaListEntry
+    id
+    mediaId
+    media {
+        ...BasicMediaDetails
+        coverImage {
+            large
+        }
+        nextAiringEpisode {
+            ...AiringEpisode
+        }
+        status
+    }
+}
+
+fragment AiringEpisode on AiringSchedule {
+  episode
+  airingAt
+}

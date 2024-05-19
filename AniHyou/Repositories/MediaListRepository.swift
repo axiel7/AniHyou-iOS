@@ -9,7 +9,50 @@ import Foundation
 import AniListAPI
 import WidgetKit
 
+// swiftlint disable:next type_body_length
 struct MediaListRepository {
+    
+    static func getMediaListCollection(
+        userId: Int,
+        mediaType: MediaType,
+        sort: [MediaListSort],
+        chunk: Int,
+        perChunk: Int = 100,
+        forceReload: Bool = false
+    ) async -> PagedResult<UserListCollectionQuery.Data.MediaListCollection.List>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: UserListCollectionQuery(
+                    userId: .some(userId),
+                    type: .some(.case(mediaType)),
+                    sort: .some(sort.map({ .case($0) })),
+                    chunk: .some(chunk),
+                    perChunk: .some(perChunk)
+                ),
+                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.mediaListCollection,
+                       let lists = pageData.lists?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: lists,
+                                page: chunk + 1,
+                                hasNextPage: pageData.hasNextChunk == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
     
     static func getUserMediaList(
         userId: Int,
@@ -17,9 +60,8 @@ struct MediaListRepository {
         status: MediaListStatus?,
         sort: [MediaListSort],
         page: Int,
-        perPage: Int = 25,
-        forceReload: Bool = false
-    ) async -> PagedResult<UserMediaListQuery.Data.Page.MediaList>? {
+        perPage: Int = 25
+    ) async -> PagedResult<CommonUserMediaList>? {
         await withCheckedContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserMediaListQuery(
@@ -29,13 +71,12 @@ struct MediaListRepository {
                     type: .some(.case(mediaType)),
                     status: someIfNotNil(status),
                     sort: .some(sort.map({ .case($0) }))
-                ),
-                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+                )
             ) { result in
                 switch result {
                 case .success(let graphQLResult):
                     if let pageData = graphQLResult.data?.page,
-                       let list = pageData.mediaList?.compactMap({ $0 })
+                       let list = pageData.mediaList?.compactMap({ $0?.fragments.commonUserMediaList })
                     {
                         continuation.resume(
                             returning: PagedResult(
@@ -241,7 +282,8 @@ struct MediaListRepository {
         }
     }
     
-    static func updateCachedEntry(_ entry: BasicMediaListEntry) async -> UserMediaListQuery.Data.Page.MediaList? {
+    @discardableResult
+    static func updateCachedEntry<T: RootSelectionSet>(_ entry: BasicMediaListEntry) async -> T? {
         await withCheckedContinuation { continuation in
             Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 do {
@@ -253,7 +295,7 @@ struct MediaListRepository {
                     }
 
                     let newObject = try transaction.readObject(
-                        ofType: UserMediaListQuery.Data.Page.MediaList.self,
+                        ofType: T.self,
                         withKey: "MediaList:\(entry.id).\(entry.mediaId)"
                     )
                     if #available(iOS 17.0, *) {

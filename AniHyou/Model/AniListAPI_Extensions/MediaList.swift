@@ -8,16 +8,25 @@
 import SwiftUI
 import AniListAPI
 
-extension UserMediaListQuery.Data.Page.MediaList {
+extension CommonMediaListEntry {
+    var uniqueListId: String? {
+        "\(self.mediaId)-\(self.id)"
+    }
+}
 
+extension CommonUserMediaList {
+    var uniqueListId: String? {
+        "\(self.mediaId)-\(self.id)"
+    }
+    
     var coverColorWithAlpha: Color? {
         if let color = self.media?.coverImage?.color {
             return Color(hex: color + "88")
         } else { return nil }
     }
     
-    var uniqueListId: String? {
-        "\(self.mediaId)-\(self.id)"
+    var maxProgress: Int {
+        media?.episodes ?? media?.chapters ?? 0
     }
 }
 
