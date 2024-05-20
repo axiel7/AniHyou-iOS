@@ -11,7 +11,7 @@ import AniListAPI
 @MainActor
 class MediaListEditViewModel: ObservableObject {
 
-    var oldEntry: BasicMediaListEntry?
+    var entry: BasicMediaListEntry?
 
     @Published var isLoading = false
 
@@ -60,10 +60,10 @@ class MediaListEditViewModel: ObservableObject {
     }
 
     @Published var isUpdateSuccess = false
-    var updatedEntry: BasicMediaListEntry?
 
     // swiftlint:disable:next function_parameter_count
     func updateEntry(
+        mediaType: MediaType,
         mediaId: Int,
         status: MediaListStatus?,
         score: Double?,
@@ -75,12 +75,14 @@ class MediaListEditViewModel: ObservableObject {
         repeatCount: Int?,
         isPrivate: Bool?,
         isHiddenFromStatusLists: Bool?,
+        customLists: [String: Bool],
         notes: String?
     ) async {
         isLoading = true
         
         if let updatedEntry = await MediaListRepository.updateEntry(
-            oldEntry: oldEntry,
+            oldEntry: entry,
+            mediaType: mediaType,
             mediaId: mediaId,
             status: status,
             score: score,
@@ -92,9 +94,10 @@ class MediaListEditViewModel: ObservableObject {
             repeatCount: repeatCount,
             isPrivate: isPrivate,
             isHiddenFromStatusLists: isHiddenFromStatusLists,
+            customLists: customLists.isEmpty ? nil : customLists,
             notes: notes
         ) {
-            self.updatedEntry = updatedEntry
+            self.entry = updatedEntry
             NotificationCenter.default.post(name: "updatedMediaListEntry", object: updatedEntry)
             isUpdateSuccess = true
             isLoading = false
@@ -105,7 +108,8 @@ class MediaListEditViewModel: ObservableObject {
 
     @Published var isDeleteSuccess = false
 
-    func deleteEntry(entryId: Int) async {
+    func deleteEntry() async {
+        guard let entryId = entry?.id else { return }
         isLoading = true
         isDeleteSuccess = await MediaListRepository.deleteEntry(entryId: entryId) == true
         isLoading = false

@@ -36,6 +36,7 @@ fragment BasicMediaListEntry on MediaList
     ...FuzzyDateFragment
   }
   notes
+  customLists
 }
 
 fragment CommonMediaListEntry on MediaList {

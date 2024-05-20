@@ -136,6 +136,8 @@ public class UserListCollectionQuery: GraphQLQuery {
           public var completedAt: CompletedAt? { __data["completedAt"] }
           /// Text notes
           public var notes: String? { __data["notes"] }
+          /// Map of booleans for which custom lists the entry are in
+          public var customLists: AniListAPI.Json? { __data["customLists"] }
 
           public struct Fragments: FragmentContainer {
             public let __data: DataDict

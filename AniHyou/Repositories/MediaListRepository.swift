@@ -9,7 +9,7 @@ import Foundation
 import AniListAPI
 import WidgetKit
 
-// swiftlint disable:next type_body_length
+// swiftlint:disable:next type_body_length
 struct MediaListRepository {
     
     static func getMediaListCollection(
@@ -109,6 +109,7 @@ struct MediaListRepository {
             private: nil,
             hiddenFromStatusLists: nil,
             notes: nil,
+            customLists: nil,
             advancedScores: nil
         )) { result in
             switch result {
@@ -147,6 +148,7 @@ struct MediaListRepository {
     // swiftlint:disable:next cyclomatic_complexity function_body_length
     static func updateEntry(
         oldEntry: BasicMediaListEntry?,
+        mediaType: MediaType,
         mediaId: Int,
         status: MediaListStatus? = nil,
         score: Double? = nil,
@@ -158,6 +160,7 @@ struct MediaListRepository {
         repeatCount: Int? = nil,
         isPrivate: Bool? = nil,
         isHiddenFromStatusLists: Bool? = nil,
+        customLists: [String: Bool]? = nil,
         notes: String? = nil
     ) async -> BasicMediaListEntry? {
         await withCheckedContinuation { continuation in
@@ -206,6 +209,8 @@ struct MediaListRepository {
                 nil
             }
             
+            let setCustomLists: [String]? = customLists?.filter({ $0.value }).keys.sorted()
+            
             let setNotes: String? = if notes != oldEntry?.notes { notes } else { nil }
             
             var setAdvancedScores: [Double]?
@@ -234,6 +239,7 @@ struct MediaListRepository {
                     private: someIfNotNil(setIsPrivate),
                     hiddenFromStatusLists: someIfNotNil(setIsHiddenFromStatusLists),
                     notes: someIfNotNil(setNotes),
+                    customLists: someIfNotNil(setCustomLists),
                     advancedScores: someIfNotNil(setAdvancedScores)
                 )
             ) { result in

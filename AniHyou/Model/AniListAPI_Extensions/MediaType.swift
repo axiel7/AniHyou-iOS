@@ -26,4 +26,13 @@ extension MediaType {
             ANILIST_MANGA_URL
         }
     }
+    
+    var customListsKey: String {
+        switch self {
+        case .anime:
+            ANIME_CUSTOM_LISTS_KEY
+        case .manga:
+            MANGA_CUSTOM_LISTS_KEY
+        }
+    }
 }

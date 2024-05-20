@@ -18,11 +18,7 @@ struct MediaListStatusView: View {
     @State private var mediaId = 0
     
     private var customLists: [String]? {
-        if mediaType == .anime {
-            UserDefaults.standard.stringArray(forKey: ANIME_CUSTOM_LISTS_KEY)
-        } else {
-            UserDefaults.standard.stringArray(forKey: MANGA_CUSTOM_LISTS_KEY)
-        }
+        UserDefaults.standard.stringArray(forKey: mediaType.customListsKey)
     }
 
     var body: some View {

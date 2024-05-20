@@ -5,7 +5,7 @@
 
 public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment BasicMediaListEntry on MediaList { __typename id mediaId progress progressVolumes status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes }"#
+    #"fragment BasicMediaListEntry on MediaList { __typename id mediaId progress progressVolumes status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes customLists }"#
   }
 
   public var __data: DataDict
@@ -27,6 +27,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     .field("startedAt", StartedAt?.self),
     .field("completedAt", CompletedAt?.self),
     .field("notes", String?.self),
+    .field("customLists", AniListAPI.Json?.self),
   ] }
 
   /// The id of the list entry
@@ -94,6 +95,11 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     get { __data["notes"] }
     set { __data["notes"] = newValue }
   }
+  /// Map of booleans for which custom lists the entry are in
+  public var customLists: AniListAPI.Json? {
+    get { __data["customLists"] }
+    set { __data["customLists"] = newValue }
+  }
 
   public init(
     id: Int,
@@ -108,7 +114,8 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     hiddenFromStatusLists: Bool? = nil,
     startedAt: StartedAt? = nil,
     completedAt: CompletedAt? = nil,
-    notes: String? = nil
+    notes: String? = nil,
+    customLists: AniListAPI.Json? = nil
   ) {
     self.init(_dataDict: DataDict(
       data: [
@@ -126,6 +133,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
         "startedAt": startedAt._fieldData,
         "completedAt": completedAt._fieldData,
         "notes": notes,
+        "customLists": customLists,
       ],
       fulfilledFragments: [
         ObjectIdentifier(BasicMediaListEntry.self)

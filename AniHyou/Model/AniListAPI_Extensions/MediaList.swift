@@ -35,6 +35,10 @@ extension BasicMediaListEntry {
         self.advancedScores?.toAdvancedScores()
     }
     
+    var customListsDict: [String: Bool]? {
+        self.customLists?.toCustomLists()
+    }
+    
     var shouldShowIncrementButton: Bool {
         status?.value == .repeating
             || status?.value == .current
@@ -47,6 +51,15 @@ extension CustomJSON {
         switch self {
         case .dictionary(let dictionary):
             dictionary.compactMapValues { $0 as? Double }
+        case .array:
+            [:]
+        }
+    }
+    
+    func toCustomLists() -> [String: Bool] {
+        switch self {
+        case .dictionary(let dictionary):
+            dictionary.compactMapValues { $0 as? Bool }
         case .array:
             [:]
         }

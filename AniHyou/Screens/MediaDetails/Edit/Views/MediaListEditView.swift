@@ -35,6 +35,7 @@ struct MediaListEditView: View {
     @State private var isHiddenFromStatusLists = false
     @State private var notes = ""
     @State private var advancedScores: [String: Double] = [:]
+    @State private var customLists: [String: Bool] = [:]
 
     private let textFieldWidth: CGFloat = 65
     private let decimalFormatter: NumberFormatter = {
@@ -128,6 +129,12 @@ struct MediaListEditView: View {
                     DatePickerToggleView(text: "Start Date", selection: $startDate, isDateSet: $isStartDateSet)
                     DatePickerToggleView(text: "Finish Date", selection: $finishDate, isDateSet: $isFinishDateSet)
                 }
+                
+                Section {
+                    NavigationLink("Custom lists") {
+                        MediaCustomListsView(customLists: $customLists)
+                    }
+                }
 
                 Section {
                     Toggle("Hide from status lists", isOn: $isHiddenFromStatusLists)
@@ -149,7 +156,7 @@ struct MediaListEditView: View {
                 .confirmationDialog("Delete this entry?", isPresented: $showDeleteDialog) {
                     Button("Delete", role: .destructive) {
                         Task {
-                            await viewModel.deleteEntry(entryId: mediaList!.id)
+                            await viewModel.deleteEntry()
                         }
                     }
                 } message: {
@@ -173,6 +180,7 @@ struct MediaListEditView: View {
                         Button("Save") {
                             Task {
                                 await viewModel.updateEntry(
+                                    mediaType: mediaDetails.type!.value!,
                                     mediaId: mediaDetails.id,
                                     status: status,
                                     score: viewModel.score,
@@ -184,6 +192,7 @@ struct MediaListEditView: View {
                                     repeatCount: repeatCount,
                                     isPrivate: isPrivate,
                                     isHiddenFromStatusLists: isHiddenFromStatusLists,
+                                    customLists: customLists,
                                     notes: notes
                                 )
                             }
@@ -197,7 +206,7 @@ struct MediaListEditView: View {
             setValues()
         }
         .onChange(of: viewModel.isUpdateSuccess) { isUpdateSuccess in
-            if isUpdateSuccess, let entry = viewModel.updatedEntry {
+            if isUpdateSuccess, let entry = viewModel.entry {
                 onSave(entry)
                 dismiss()
             }
@@ -238,7 +247,7 @@ struct MediaListEditView: View {
     }
 
     private func setValues() {
-        viewModel.oldEntry = self.mediaList
+        viewModel.entry = self.mediaList
         self.status = self.mediaList?.status?.value ?? .planning
         self.progress = self.mediaList?.progress ?? 0
         self.progressVolumes = self.mediaList?.progressVolumes ?? 0
@@ -270,6 +279,7 @@ struct MediaListEditView: View {
         self.isHiddenFromStatusLists = self.mediaList?.hiddenFromStatusLists ?? false
         self.notes = self.mediaList?.notes ?? ""
         self.advancedScores = self.mediaList?.advancedScoresDict ?? [:]
+        self.customLists = self.mediaList?.customListsDict ?? [:]
     }
 }
 

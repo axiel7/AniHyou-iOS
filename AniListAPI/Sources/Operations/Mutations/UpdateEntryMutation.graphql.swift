@@ -7,7 +7,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntry"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $hiddenFromStatusLists: Boolean, $notes: String, $advancedScores: [Float]) { SaveMediaListEntry( mediaId: $mediaId status: $status score: $score progress: $progress progressVolumes: $progressVolumes startedAt: $startedAt completedAt: $completedAt repeat: $repeat private: $private hiddenFromStatusLists: $hiddenFromStatusLists notes: $notes advancedScores: $advancedScores ) { __typename ...BasicMediaListEntry mediaId } }"#,
+      #"mutation UpdateEntry($mediaId: Int, $status: MediaListStatus, $score: Float, $progress: Int, $progressVolumes: Int, $startedAt: FuzzyDateInput, $completedAt: FuzzyDateInput, $repeat: Int, $private: Boolean, $hiddenFromStatusLists: Boolean, $notes: String, $customLists: [String], $advancedScores: [Float]) { SaveMediaListEntry( mediaId: $mediaId status: $status score: $score progress: $progress progressVolumes: $progressVolumes startedAt: $startedAt completedAt: $completedAt repeat: $repeat private: $private hiddenFromStatusLists: $hiddenFromStatusLists notes: $notes customLists: $customLists advancedScores: $advancedScores ) { __typename ...BasicMediaListEntry mediaId } }"#,
       fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
@@ -22,6 +22,7 @@ public class UpdateEntryMutation: GraphQLMutation {
   public var `private`: GraphQLNullable<Bool>
   public var hiddenFromStatusLists: GraphQLNullable<Bool>
   public var notes: GraphQLNullable<String>
+  public var customLists: GraphQLNullable<[String?]>
   public var advancedScores: GraphQLNullable<[Double?]>
 
   public init(
@@ -36,6 +37,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     `private`: GraphQLNullable<Bool>,
     hiddenFromStatusLists: GraphQLNullable<Bool>,
     notes: GraphQLNullable<String>,
+    customLists: GraphQLNullable<[String?]>,
     advancedScores: GraphQLNullable<[Double?]>
   ) {
     self.mediaId = mediaId
@@ -49,6 +51,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     self.`private` = `private`
     self.hiddenFromStatusLists = hiddenFromStatusLists
     self.notes = notes
+    self.customLists = customLists
     self.advancedScores = advancedScores
   }
 
@@ -64,6 +67,7 @@ public class UpdateEntryMutation: GraphQLMutation {
     "private": `private`,
     "hiddenFromStatusLists": hiddenFromStatusLists,
     "notes": notes,
+    "customLists": customLists,
     "advancedScores": advancedScores
   ] }
 
@@ -85,6 +89,7 @@ public class UpdateEntryMutation: GraphQLMutation {
         "private": .variable("private"),
         "hiddenFromStatusLists": .variable("hiddenFromStatusLists"),
         "notes": .variable("notes"),
+        "customLists": .variable("customLists"),
         "advancedScores": .variable("advancedScores")
       ]),
     ] }
@@ -132,6 +137,8 @@ public class UpdateEntryMutation: GraphQLMutation {
       public var completedAt: CompletedAt? { __data["completedAt"] }
       /// Text notes
       public var notes: String? { __data["notes"] }
+      /// Map of booleans for which custom lists the entry are in
+      public var customLists: AniListAPI.Json? { __data["customLists"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict
