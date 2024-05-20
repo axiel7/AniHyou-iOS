@@ -2088,7 +2088,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n./apollo-ios-cli generate\n";
+			shellScript = "if [[ -n $CLOUD_BUILD ]];\nthen\n    ./apollo-ios-cli generate\nfi\n";
 		};
 		48BC1DBA2A6108B20086317E /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
