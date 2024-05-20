@@ -1873,7 +1873,6 @@
 			buildConfigurationList = 481AD4E82851CE74001779EE /* Build configuration list for PBXNativeTarget "AniHyou" */;
 			buildPhases = (
 				48BC1DBA2A6108B20086317E /* SwiftLint */,
-				4873757D2BDA547500A1424F /* Apollo Generate */,
 				481AD4D62851CE73001779EE /* Sources */,
 				481AD4D72851CE73001779EE /* Frameworks */,
 				481AD4D82851CE73001779EE /* Resources */,
@@ -2070,26 +2069,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4873757D2BDA547500A1424F /* Apollo Generate */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/AniHyou/Queries",
-			);
-			name = "Apollo Generate";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/AniListAPI",
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "if [[ -n $CLOUD_BUILD ]];\nthen\n    ./apollo-ios-cli generate\nfi\n";
-		};
 		48BC1DBA2A6108B20086317E /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
