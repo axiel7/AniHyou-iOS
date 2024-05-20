@@ -2072,7 +2072,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		4873757D2BDA547500A1424F /* Apollo Generate */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -2086,7 +2086,7 @@
 			outputPaths = (
 				"$(SRCROOT)/AniListAPI",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n./apollo-ios-cli generate\n";
 		};
