@@ -17,7 +17,7 @@ struct MediaListRepository {
         mediaType: MediaType,
         sort: [MediaListSort],
         chunk: Int,
-        perChunk: Int = 100,
+        perChunk: Int = 50,
         forceReload: Bool = false
     ) async -> PagedResult<UserListCollectionQuery.Data.MediaListCollection.List>? {
         await withCheckedContinuation { continuation in

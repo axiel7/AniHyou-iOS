@@ -69,7 +69,7 @@ class MediaListViewModel: ObservableObject {
                 }
             }
             mediaList.append(contentsOf: newEntries)
-            if newEntries.isEmpty && result.hasNextPage {
+            if mediaList.isEmpty && result.hasNextPage {
                 await getUserMediaList(otherUserId: otherUserId)
             }
             await filterList()
