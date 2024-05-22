@@ -8,6 +8,7 @@
 import SwiftUI
 import AniListAPI
 
+// swiftlint:disable:next type_body_length
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss
 
@@ -279,7 +280,15 @@ struct MediaListEditView: View {
         self.isHiddenFromStatusLists = self.mediaList?.hiddenFromStatusLists ?? false
         self.notes = self.mediaList?.notes ?? ""
         self.advancedScores = self.mediaList?.advancedScoresDict ?? [:]
-        self.customLists = self.mediaList?.customListsDict ?? [:]
+        if let customListsDict = self.mediaList?.customListsDict {
+            self.customLists = customListsDict
+        } else { // new entry, use custom list from settings
+            UserDefaults.standard.stringArray(
+                forKey: mediaDetails.type!.value!.customListsKey
+            )?.forEach { name in
+                self.customLists[name] = false
+            }
+        }
     }
 }
 
