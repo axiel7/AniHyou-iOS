@@ -23,7 +23,6 @@
 		4815DFAA2A2ED1DF00352A9B /* AniListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4815DFA92A2ED1DF00352A9B /* AniListAPI */; };
 		4815DFAC2A2ED49F00352A9B /* ExpandableRichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */; };
 		481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */; };
-		481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 481A6B0F2864CD0F00AB9C89 /* Kingfisher */; };
 		481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DD2851CE73001779EE /* AniHyouApp.swift */; };
 		481AD4E02851CE73001779EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DF2851CE73001779EE /* ContentView.swift */; };
 		481AD4E22851CE74001779EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AD4E12851CE74001779EE /* Assets.xcassets */; };
@@ -87,6 +86,8 @@
 		48294CEC2ABA9E9B005E7CD2 /* MediaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E2C2A85B4D700EF0CA2 /* MediaList.swift */; };
 		48294CEE2ABAA4BB005E7CD2 /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */; };
 		482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */; };
+		482E581C2C00B7870089AE28 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 482E581B2C00B7870089AE28 /* Nuke */; };
+		482E581E2C00B7870089AE28 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482E581D2C00B7870089AE28 /* NukeUI */; };
 		4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */; };
 		4832B02C285F35E200E79D27 /* SwiftUIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */; };
 		4832B02E285F38DC00E79D27 /* TopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B02D285F38DC00E79D27 /* TopBannerView.swift */; };
@@ -680,12 +681,13 @@
 			files = (
 				4815DFA62A2ED1D400352A9B /* AniListAPI in Frameworks */,
 				48DF50F52A669B7C00DF1C87 /* StoreKit.framework in Frameworks */,
-				481A6B102864CD0F00AB9C89 /* Kingfisher in Frameworks */,
 				482801762AB00541004E11D6 /* MarkdownUI in Frameworks */,
 				48D9B6342A2B07FB00299DD8 /* Apollo in Frameworks */,
 				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
 				48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */,
+				482E581E2C00B7870089AE28 /* NukeUI in Frameworks */,
 				48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */,
+				482E581C2C00B7870089AE28 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1888,12 +1890,13 @@
 			name = AniHyou;
 			packageProductDependencies = (
 				488C268728539CC30005EE15 /* KeychainSwift */,
-				481A6B0F2864CD0F00AB9C89 /* Kingfisher */,
 				48604D7A28A15AD1006A6AF8 /* RichText */,
 				48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */,
 				48D9B6332A2B07FB00299DD8 /* Apollo */,
 				4815DFA52A2ED1D400352A9B /* AniListAPI */,
 				482801752AB00541004E11D6 /* MarkdownUI */,
+				482E581B2C00B7870089AE28 /* Nuke */,
+				482E581D2C00B7870089AE28 /* NukeUI */,
 			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
@@ -2006,11 +2009,11 @@
 			mainGroup = 481AD4D12851CE73001779EE;
 			packageReferences = (
 				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */,
 				48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */,
 				48D9B6322A2B07FB00299DD8 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
 			projectDirPath = "";
@@ -2848,20 +2851,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
+			};
+		};
+		482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
 			};
 		};
 		48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */ = {
@@ -2911,15 +2914,20 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = AniListAPI;
 		};
-		481A6B0F2864CD0F00AB9C89 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 481A6B0E2864CD0F00AB9C89 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		482801752AB00541004E11D6 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		482E581B2C00B7870089AE28 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		482E581D2C00B7870089AE28 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 		48604D7A28A15AD1006A6AF8 /* RichText */ = {
 			isa = XCSwiftPackageProductDependency;

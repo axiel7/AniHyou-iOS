@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 import MarkdownUI
-import Kingfisher
+import Nuke
+import NukeUI
 
 extension Markdown {
     func defaultStyle(fontSize: CGFloat = 10) -> some View {
@@ -40,16 +41,16 @@ extension String {
     }
 }
 
-// Markdown image provider with Kingfisher
+// Markdown image provider with Nuke
 struct KFImageProvider: ImageProvider {
+    @MainActor
     func makeImage(url: URL?) -> some View {
-        if url?.lastPathComponent.hasSuffix(".gif") == true {
-            KFAnimatedImage(url)
-                .scaledToFill()
-        } else {
-            KFImage(url)
-                .resizable()
-                .scaledToFill()
+        LazyImage(url: url) { state in
+            if let image = state.image {
+                image
+                    .resizable()
+                    .scaledToFill()
+            }
         }
     }
 }
@@ -60,22 +61,19 @@ extension ImageProvider where Self == KFImageProvider {
     }
 }
 
-// Markdown inline image provider with Kingfisher
-struct KFInlineImageProvider: InlineImageProvider {
+// Markdown inline image provider with Nuke
+struct NukeInlineImageProvider: InlineImageProvider {
     func image(with url: URL, label: String) async throws -> Image {
-        await withCheckedContinuation { continuation in
-            KingfisherManager.shared.retrieveImage(with: url) { result in
-                if let image = try? result.get().image {
-                    continuation.resume(returning: Image(uiImage: image).resizable())
-                } else {
-                    continuation.resume(returning: Image(systemName: "xmark.app"))
-                }
-            }
+        if let image = try? await ImagePipeline.shared.image(for: url) {
+            Image(uiImage: image)
+                .resizable()
+        } else {
+            Image(systemName: "xmark.app")
         }
     }
 }
 
-extension InlineImageProvider where Self == KFInlineImageProvider {
+extension InlineImageProvider where Self == NukeInlineImageProvider {
     static var kfImage: Self {
         .init()
     }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+import NukeUI
 
 struct TopBannerView: View {
 
@@ -20,15 +20,19 @@ struct TopBannerView: View {
         }
     }
     
+    @MainActor
     var image: some View {
-        KFImage(URL(string: imageUrl ?? ""))
-            .placeholder {
+        LazyImage(url: URL(string: imageUrl ?? "")) { state in
+            if let image = state.image {
+                image
+                    .resizable()
+                    .scaledToFill()
+            } else {
                 Rectangle()
                     .foregroundStyle(Color(hex: placeholderHexColor) ?? .gray)
                     .scaledToFill()
             }
-            .resizable()
-            .scaledToFill()
+        }
     }
 }
 

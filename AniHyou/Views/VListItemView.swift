@@ -25,8 +25,7 @@ struct VListItemView: View {
                 MediaCoverView(
                     imageUrl: imageUrl,
                     width: VListItemView.coverWidth,
-                    height: VListItemView.coverHeight,
-                    cancelOnDisappear: true
+                    height: VListItemView.coverHeight
                 )
                 if let status {
                     Image(systemName: status.systemImage)

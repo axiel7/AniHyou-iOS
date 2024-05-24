@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+import NukeUI
 import AniListAPI
 
 struct UserSocialView: View {
@@ -70,11 +70,15 @@ struct UserLargeItemView: View {
 
     var body: some View {
         VStack {
-            KFImage(URL(string: user.avatar?.large ?? ""))
-                .placeholder {
+            LazyImage(url: URL(string: user.avatar?.large ?? "")) { state in
+                if let image = state.image {
+                    image
+                        .imageCover(width: imageWidth, height: imageHeight)
+                } else {
                     CoverPlaceholderView(systemName: "hourglass", width: imageWidth, height: imageHeight)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
-                .imageCover(width: imageWidth, height: imageHeight)
+            }
 
             Text(user.name)
                 .foregroundStyle(.primary)

@@ -29,8 +29,7 @@ struct HListItemWithSubtitleView: View {
                 MediaCoverView(
                     imageUrl: imageUrl,
                     width: HListItemWithSubtitleView.coverWidth,
-                    height: HListItemWithSubtitleView.coverHeight,
-                    cancelOnDisappear: true
+                    height: HListItemWithSubtitleView.coverHeight
                 )
                 if let status {
                     Image(systemName: status.systemImage)

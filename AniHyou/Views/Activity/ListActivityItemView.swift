@@ -28,8 +28,7 @@ struct ListActivityItemView: View {
                 MediaCoverView(
                     imageUrl: activity.media?.coverImage?.medium ?? "",
                     width: 53,
-                    height: 80,
-                    cancelOnDisappear: false
+                    height: 80
                 )
             }
             .buttonStyle(.plain)

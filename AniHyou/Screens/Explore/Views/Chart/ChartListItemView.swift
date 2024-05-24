@@ -22,8 +22,7 @@ struct ChartListItemView: View {
                 MediaCoverView(
                     imageUrl: item.coverImage?.large,
                     width: coverWidth,
-                    height: coverHeight,
-                    cancelOnDisappear: true
+                    height: coverHeight
                 )
                 if let status = item.mediaListEntry?.status?.value {
                     Image(systemName: status.systemImage)

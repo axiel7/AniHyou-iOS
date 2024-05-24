@@ -24,8 +24,7 @@ struct MediaListItemCompactView: View {
                 MediaCoverView(
                     imageUrl: details?.coverImage?.large,
                     width: coverWidth,
-                    height: coverHeight,
-                    cancelOnDisappear: false
+                    height: coverHeight
                 )
                 if showStatus, let status = entry?.status?.value {
                     Image(systemName: status.systemImage)

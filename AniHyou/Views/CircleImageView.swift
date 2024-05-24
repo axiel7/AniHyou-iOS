@@ -6,7 +6,17 @@
 //
 
 import SwiftUI
-import Kingfisher
+import NukeUI
+
+private extension Image {
+    func circleImage(size: CGFloat) -> some View {
+        self
+            .resizable()
+            .scaledToFill()
+            .clipShape(Circle())
+            .frame(width: size, height: size, alignment: .center)
+    }
+}
 
 struct CircleImageView: View {
 
@@ -15,16 +25,15 @@ struct CircleImageView: View {
     var systemPlaceHolder: String = "person.circle.fill"
 
     var body: some View {
-        KFImage(URL(string: imageUrl ?? ""))
-            .placeholder {
+        LazyImage(url: URL(string: imageUrl ?? "")) { state in
+            if let image = state.image {
+                image
+                    .circleImage(size: size)
+            } else {
                 Image(systemName: systemPlaceHolder)
-                    .resizable()
-                    .frame(width: size, height: size, alignment: .center)
+                    .circleImage(size: size)
             }
-            .resizable()
-            .scaledToFill()
-            .clipShape(Circle())
-            .frame(width: size, height: size, alignment: .center)
+        }
     }
 }
 

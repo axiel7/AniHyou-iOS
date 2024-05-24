@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import Kingfisher
+import NukeUI
 
-private var image: KFCrossPlatformImage?
+//private var image: Image?
 
 struct FullCoverView: View {
 
@@ -20,25 +20,27 @@ struct FullCoverView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                KFImage(URL(string: imageUrl ?? ""))
-                    .placeholder {
+                LazyImage(url: URL(string: imageUrl ?? "")) { state in
+                    if let image = state.image {
+                        image
+                            .resizable()
+                            .minimumScaleFactor(1)
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .padding()
+                            .onDrag {
+                                if let uiImage = try? state.result?.get().image {
+                                    NSItemProvider(object: uiImage)
+                                } else {
+                                    NSItemProvider(contentsOf: URL(string: imageUrl ?? "")) ?? NSItemProvider()
+                                }
+                            }
+                    } else if state.error != nil {
+                        CoverPlaceholderView(systemName: "exclamationmark.triangle", width: 100, height: 180)
+                    } else {
                         ProgressView()
                     }
-                    .onSuccess { result in
-                        image = result.image
-                    }
-                    .resizable()
-                    .scaleFactor(1)
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .padding()
-                    .onDrag {
-                        if let image = image {
-                            NSItemProvider(object: image)
-                        } else {
-                            NSItemProvider(contentsOf: URL(string: imageUrl ?? "")) ?? NSItemProvider()
-                        }
-                    }
+                }
             }//:VStack
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {

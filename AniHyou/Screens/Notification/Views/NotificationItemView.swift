@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+import NukeUI
 
 struct NotificationItemView: View {
 
@@ -17,11 +17,15 @@ struct NotificationItemView: View {
     var body: some View {
         NavigationLink(destination: destination) {
             HStack {
-                KFImage(URL(string: notification.imageUrl ?? ""))
-                    .placeholder {
+                LazyImage(url: URL(string: notification.imageUrl ?? "")) { state in
+                    if let image = state.image {
+                        image
+                            .imageCover(width: imageWidth, height: imageHeight)
+                    } else {
                         CoverPlaceholderView(systemName: "hourglass", width: imageWidth, height: imageHeight)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
                     }
-                    .imageCover(width: imageWidth, height: imageHeight)
+                }
 
                 Text(notification.text)
                     .lineLimit(2)
