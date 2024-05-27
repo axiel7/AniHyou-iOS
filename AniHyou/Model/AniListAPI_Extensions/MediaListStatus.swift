@@ -86,7 +86,7 @@ extension MediaListStatus? {
 
 extension MediaType {
     var currentListStatus: LocalizedStringKey {
-        self == .anime ? "Wacthing" : "Reading"
+        self == .anime ? "Watching" : "Reading"
     }
 }
 
