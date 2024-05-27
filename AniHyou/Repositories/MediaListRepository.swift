@@ -265,14 +265,16 @@ struct MediaListRepository {
     
     static func updateProgress(
         entryId: Int,
-        progress: Int,
+        progress: Int?,
+        progressVolumes: Int? = nil,
         status: MediaListStatus? = nil
     ) async -> BasicMediaListEntry? {
         await withCheckedContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: UpdateEntryProgressMutation(
                     saveMediaListEntryId: .some(entryId),
-                    progress: .some(progress),
+                    progress: someIfNotNil(progress),
+                    progressVolumes: someIfNotNil(progressVolumes),
                     status: someIfNotNil(status)
                 )
             ) { result in

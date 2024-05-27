@@ -7,27 +7,31 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntryProgress"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $status: MediaListStatus) { SaveMediaListEntry( id: $saveMediaListEntryId progress: $progress status: $status ) { __typename ...BasicMediaListEntry } }"#,
+      #"mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $progressVolumes: Int, $status: MediaListStatus) { SaveMediaListEntry( id: $saveMediaListEntryId progress: $progress progressVolumes: $progressVolumes status: $status ) { __typename ...BasicMediaListEntry } }"#,
       fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
   public var saveMediaListEntryId: GraphQLNullable<Int>
   public var progress: GraphQLNullable<Int>
+  public var progressVolumes: GraphQLNullable<Int>
   public var status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
 
   public init(
     saveMediaListEntryId: GraphQLNullable<Int>,
     progress: GraphQLNullable<Int>,
+    progressVolumes: GraphQLNullable<Int>,
     status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
   ) {
     self.saveMediaListEntryId = saveMediaListEntryId
     self.progress = progress
+    self.progressVolumes = progressVolumes
     self.status = status
   }
 
   public var __variables: Variables? { [
     "saveMediaListEntryId": saveMediaListEntryId,
     "progress": progress,
+    "progressVolumes": progressVolumes,
     "status": status
   ] }
 
@@ -40,6 +44,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
       .field("SaveMediaListEntry", SaveMediaListEntry?.self, arguments: [
         "id": .variable("saveMediaListEntryId"),
         "progress": .variable("progress"),
+        "progressVolumes": .variable("progressVolumes"),
         "status": .variable("status")
       ]),
     ] }

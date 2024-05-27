@@ -37,9 +37,9 @@ struct MediaListItemMinimalView: View {
                         .foregroundStyle(.gray)
                 }
                 if let maxProgress = details?.maxProgress {
-                    Text("\(entry?.progress ?? 0)/\(maxProgress)")
+                    Text("\(entry?.progressPreferred ?? 0)/\(maxProgress)")
                 } else {
-                    Text("\(entry?.progress ?? 0)")
+                    Text("\(entry?.progressPreferred ?? 0)")
                 }
                 Spacer()
                 if let repeatCount = entry?.repeat, repeatCount > 0 {

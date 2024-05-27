@@ -217,7 +217,9 @@ struct MediaListView: View {
                             Label("Ep", systemImage: "plus")
                             // should show a sheet to add a rating
                         } else if type == .manga {
-                            Label("Ch", systemImage: "plus")
+                            Label(entry.isVolumeProgress ? "Vol" : "Ch",
+                                  systemImage: "plus"
+                            )
                         }
                     }
                 )
@@ -240,7 +242,9 @@ struct MediaListView: View {
                                 Label("Ep", systemImage: "plus")
                                 // should show a sheet to add a rating
                             } else if type == .manga {
-                                Label("Ch", systemImage: "plus")
+                                Label(entry.isVolumeProgress ? "Vol" : "Ch",
+                                      systemImage: "plus"
+                                )
                             }
                         }
                     )

@@ -1,5 +1,5 @@
-mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $status: MediaListStatus) {
-  SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress, status: $status) {
+mutation UpdateEntryProgress($saveMediaListEntryId: Int, $progress: Int, $progressVolumes: Int, $status: MediaListStatus) {
+  SaveMediaListEntry(id: $saveMediaListEntryId, progress: $progress, progressVolumes: $progressVolumes, status: $status) {
     ...BasicMediaListEntry
   }
 }

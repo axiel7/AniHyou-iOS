@@ -54,9 +54,9 @@ struct MediaListItemStandardView: View {
 
                 HStack {
                     if let maxProgress = details?.maxProgress {
-                        Text("\(entry?.progress ?? 0)/\(maxProgress)")
+                        Text("\(entry?.progressPreferred ?? 0)/\(maxProgress)")
                     } else {
-                        Text("\(entry?.progress ?? 0)")
+                        Text("\(entry?.progressPreferred ?? 0)")
                     }
                     Spacer()
                     if let repeatCount = entry?.repeat, repeatCount > 0 {
@@ -71,7 +71,7 @@ struct MediaListItemStandardView: View {
                 }
 
                 ProgressView(
-                    value: Float(entry?.progress ?? 0),
+                    value: Float(entry?.progressPreferred ?? 0),
                     total: Float(details?.maxProgress ?? Int.max)
                 )
             }

@@ -31,6 +31,18 @@ extension CommonUserMediaList {
 }
 
 extension BasicMediaListEntry {
+    var isVolumeProgress: Bool {
+        (progress == nil || progress == 0) && (progressVolumes ?? 0) > 0
+    }
+    
+    var progressPreferred: Int? {
+        if isVolumeProgress {
+            progressVolumes
+        } else {
+            progress
+        }
+    }
+    
     var advancedScoresDict: [String: Double]? {
         self.advancedScores?.toAdvancedScores()
     }
