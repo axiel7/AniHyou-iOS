@@ -13,10 +13,12 @@ import AniListAPI
 class MediaDetailsViewModel: ObservableObject {
 
     @Published var mediaDetails: MediaDetailsQuery.Data.Media?
+    @Published var listEntry: BasicMediaListEntry?
 
     func getMediaDetails(mediaId: Int) async {
         if let result = await MediaRepository.getMediaDetails(mediaId: mediaId) {
             mediaDetails = result
+            listEntry = result.mediaListEntry?.fragments.basicMediaListEntry
         }
     }
 
@@ -73,12 +75,8 @@ class MediaDetailsViewModel: ObservableObject {
                     }
                 }
 
-                let newObject = try transaction.readObject(
-                    ofType: MediaDetailsQuery.Data.Media.self,
-                    withKey: "Media:\(updatedEntry?.mediaId ?? (self?.mediaDetails?.id ?? 0))"
-                )
                 DispatchQueue.main.async {
-                    self?.mediaDetails = newObject
+                    self?.listEntry = updatedEntry
                 }
             } catch {
                 print(error)
@@ -94,6 +92,10 @@ class MediaDetailsViewModel: ObservableObject {
 
     var isAnime: Bool {
         mediaDetails?.type?.value == .anime
+    }
+    
+    var isNewEntry: Bool {
+        listEntry == nil
     }
 
     var genresFormatted: [String]? {

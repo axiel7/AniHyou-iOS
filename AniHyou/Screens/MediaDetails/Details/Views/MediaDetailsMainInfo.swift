@@ -18,9 +18,6 @@ struct MediaDetailsMainInfo: View {
     @State private var showingCoverSheet = false
     @State private var showingNotLoggedAlert = false
     @State private var showingPlayPopover = false
-    var isNewEntry: Bool {
-        viewModel.mediaDetails?.mediaListEntry == nil
-    }
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {
@@ -58,12 +55,12 @@ struct MediaDetailsMainInfo: View {
                             showingNotLoggedAlert = true
                         }
                     } label: {
-                        if isNewEntry {
+                        if viewModel.isNewEntry {
                             Label("Add to List", systemImage: "plus")
                                 .font(.system(size: 17, weight: .bold))
                                 .textCase(.uppercase)
                         } else {
-                            Label(viewModel.mediaDetails?.mediaListEntry?.status?.value?.localizedName ?? "",
+                            Label(viewModel.listEntry?.status?.value?.localizedName ?? "",
                                   systemImage: "square.and.pencil"
                             )
                             .font(.system(size: 17, weight: .bold))
@@ -95,7 +92,7 @@ struct MediaDetailsMainInfo: View {
         .sheet(isPresented: $showingEditSheet) {
             MediaListEditView(
                 mediaDetails: viewModel.mediaDetails!.fragments.basicMediaDetails,
-                mediaList: viewModel.mediaDetails!.mediaListEntry?.fragments.basicMediaListEntry,
+                mediaList: viewModel.listEntry,
                 onSave: { updatedEntry in
                     viewModel.onEntryUpdated(updatedEntry: updatedEntry)
                 },
