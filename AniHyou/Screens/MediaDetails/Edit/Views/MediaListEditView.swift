@@ -53,6 +53,12 @@ struct MediaListEditView: View {
                         Label(status.localizedName, systemImage: status.systemImage)
                     }
                 }
+                .onChange(of: status) { status in
+                    if status == .completed && !isFinishDateSet {
+                        finishDate = .now
+                        isFinishDateSet = true
+                    }
+                }
 
                 Section("Score") {
                     switch viewModel.scoreFormat {
@@ -100,6 +106,16 @@ struct MediaListEditView: View {
                             value: $progress, in: 0...(mediaDetails.maxProgress ?? Int.max)
                         )
                     }
+                    .onChange(of: progress) { progress in
+                        if status == .planning || mediaList == nil {
+                            onUpdatedFromPlanning()
+                        }
+                        if let maxProgress = mediaDetails.maxProgress,
+                           progress >= maxProgress 
+                        {
+                            onMaxProgressReached()
+                        }
+                    }
                     if mediaDetails.type == .manga {
                         HStack {
                             TextField("", value: $progressVolumes, formatter: NumberFormatter())
@@ -112,6 +128,16 @@ struct MediaListEditView: View {
                                     }
                                 }
                             Stepper("Volumes", value: $progressVolumes, in: 0...(mediaDetails.volumes ?? Int.max))
+                        }
+                        .onChange(of: progressVolumes) { volumes in
+                            if status == .planning || mediaList == nil {
+                                onUpdatedFromPlanning()
+                            }
+                            if let maxVolumes = mediaDetails.volumes,
+                               volumes >= maxVolumes
+                            {
+                                onMaxProgressReached()
+                            }
                         }
                     }
                 }
@@ -244,6 +270,22 @@ struct MediaListEditView: View {
             } header: {
                 Text(name)
             }
+        }
+    }
+    
+    private func onMaxProgressReached() {
+        status = .completed
+        if !isFinishDateSet {
+            finishDate = .now
+            isFinishDateSet = true
+        }
+    }
+    
+    private func onUpdatedFromPlanning() {
+        status = .current
+        if !isStartDateSet {
+            startDate = .now
+            isStartDateSet = true
         }
     }
 
