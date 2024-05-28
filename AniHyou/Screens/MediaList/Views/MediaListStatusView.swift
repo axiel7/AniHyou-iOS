@@ -24,7 +24,7 @@ struct MediaListStatusView: View {
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedList) {
-                Label("All", systemImage: "list.bullet.circle")
+                Label("All", systemImage: "list.bullet.circle").tag("All")
                 ForEach(MediaListStatus.allCases, id: \.localizedStringKey) { status in
                     if status == .current {
                         Label(mediaType.currentListStatus, systemImage: status.systemImage)
