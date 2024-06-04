@@ -55,13 +55,13 @@ struct MediaListView: View {
                         }
                 }
             } else {
-                ForEach(viewModel.filteredMedia, id: \.id) { media in
-                    if let entry = media.mediaListEntry?.fragments.basicMediaListEntry {
+                ForEach(viewModel.filteredMedia, id: \.uniqueListId) { item in
+                    if let details = item.media?.fragments.basicMediaDetails {
                         buildListItem(
-                            details: media.fragments.basicMediaDetails,
-                            entry: entry,
-                            schedule: media.nextAiringEpisode?.fragments.airingEpisode,
-                            showStatus: true
+                            details: details,
+                            entry: item.fragments.basicMediaListEntry,
+                            schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
+                            showStatus: viewModel.selectedListName == nil
                         )
                     }
                 }

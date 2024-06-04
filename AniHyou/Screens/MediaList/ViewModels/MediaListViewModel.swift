@@ -72,7 +72,6 @@ class MediaListViewModel: ObservableObject {
             if mediaList.isEmpty && result.hasNextPage {
                 await getUserMediaList(otherUserId: otherUserId)
             }
-            await filterList()
         }
         isLoading = false
         forceReload = false
@@ -86,21 +85,23 @@ class MediaListViewModel: ObservableObject {
         mediaList = []
     }
     
-    @Published var filteredMedia = [SearchMediaQuery.Data.Page.Medium]()
+    @Published var filteredMedia = [CommonMediaListEntry]()
     
     func filterList() async {
         if searchText.isEmpty || searchText.count < 3 { return }
         isLoading = true
-        if let result = await MediaRepository.searchMedia(
-            search: searchText,
-            type: mediaType,
-            sort: [.searchMatch],
-            onList: true,
-            page: 1
-        ) {
-            filteredMedia = result.data
+        filteredMedia = mediaList.filter {
+            if let title = $0.media?.title?.userPreferred {
+                title.range(of: searchText, options: .caseInsensitive) != nil
+            } else {
+                false
+            }
         }
         isLoading = false
+        if hasNextPage {
+            await getUserMediaList(otherUserId: userId)
+            await filterList()
+        }
     }
     
     func onChangeList(_ listName: String) {
