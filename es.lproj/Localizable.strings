@@ -221,6 +221,9 @@
 "Custom color" = "Color personalizado";
 
 /* No comment provided by engineer. */
+"Custom lists" = "Listas personalizadas";
+
+/* No comment provided by engineer. */
 "Dates" = "Fechas";
 
 /* No comment provided by engineer. */
@@ -315,9 +318,6 @@
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Episodios Vistos";
-
-/* No comment provided by engineer. */
-"Error no entry" = "Error sin entrada";
 
 /* No comment provided by engineer. */
 "Explore" = "Explorar";
@@ -674,6 +674,9 @@
 "Quick access to your anime or manga list." = "Acceso rápido a tu lista de anime o manga.";
 
 /* No comment provided by engineer. */
+"Random" = "Aleatorio";
+
+/* No comment provided by engineer. */
 "Rankings" = "Clasificaciones";
 
 /* (No Comment) */
@@ -681,6 +684,9 @@
 
 /* No comment provided by engineer. */
 "Read Year" = "Año de Lectura";
+
+/* No comment provided by engineer. */
+"Reading" = "Leyendo";
 
 /* No comment provided by engineer. */
 "Recommendations" = "Recomendaciones";
@@ -1014,6 +1020,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Actores de Voz";
+
+/* No comment provided by engineer. */
+"Vol" = "Vol";
 
 /* No comment provided by engineer. */
 "Volumes" = "Volúmenes";

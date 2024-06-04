@@ -218,6 +218,9 @@
 "Custom color" = "Пользовательский цвет";
 
 /* No comment provided by engineer. */
+"Custom lists" = "Пользовательские списки";
+
+/* No comment provided by engineer. */
 "Dates" = "Даты";
 
 /* No comment provided by engineer. */
@@ -312,9 +315,6 @@
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Эпизодов просмотрено";
-
-/* No comment provided by engineer. */
-"Error no entry" = "Ошибка нет записи";
 
 /* No comment provided by engineer. */
 "Explore" = "Исследовать";
@@ -482,7 +482,7 @@
 "Manga List" = "Список манг";
 
 /* No comment provided by engineer. */
-"Mean score" = "Средний счет";
+"Mean score" = "Счет";
 
 /* No comment provided by engineer. */
 "Mean Score" = "Счет";
@@ -671,6 +671,9 @@
 "Quick access to your anime or manga list." = "Быстрый доступ к вашим аниме или списку манг.";
 
 /* No comment provided by engineer. */
+"Random" = "Случайное";
+
+/* No comment provided by engineer. */
 "Rankings" = "Рейтинги";
 
 /* (No Comment) */
@@ -678,6 +681,9 @@
 
 /* No comment provided by engineer. */
 "Read Year" = "Год чтения";
+
+/* No comment provided by engineer. */
+"Reading" = "Читает";
 
 /* No comment provided by engineer. */
 "Recommendations" = "Рекомендации";
@@ -1011,6 +1017,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Актеры озвучивания";
+
+/* No comment provided by engineer. */
+"Vol" = "Том";
 
 /* No comment provided by engineer. */
 "Volumes" = "Тома";

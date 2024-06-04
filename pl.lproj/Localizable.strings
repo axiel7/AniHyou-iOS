@@ -206,7 +206,7 @@
 "Country Distribution" = "Kraj dystrybucji";
 
 /* (No Comment) */
-"Current" = "Obecnie";
+"Current" = "Bieżące";
 
 /* No comment provided by engineer. */
 "Custom" = "Własny";
@@ -309,9 +309,6 @@
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Obejrzane Odcinki";
-
-/* No comment provided by engineer. */
-"Error no entry" = "Błąd braku wpisu";
 
 /* No comment provided by engineer. */
 "Explore" = "Eksploruj";
@@ -668,6 +665,9 @@
 "Quick access to your anime or manga list." = "Szybki dostęp do listy anime lub mangi.";
 
 /* No comment provided by engineer. */
+"Random" = "Losowe";
+
+/* No comment provided by engineer. */
 "Rankings" = "Rankingi";
 
 /* (No Comment) */
@@ -675,6 +675,9 @@
 
 /* No comment provided by engineer. */
 "Read Year" = "Rok przeczytania";
+
+/* No comment provided by engineer. */
+"Reading" = "Czytane";
 
 /* No comment provided by engineer. */
 "Recommendations" = "Polecane";

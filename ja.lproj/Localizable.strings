@@ -77,9 +77,6 @@
 "All" = "すべて";
 
 /* No comment provided by engineer. */
-"Alternative" = "オルタナティブ";
-
-/* No comment provided by engineer. */
 "Anime" = "アニメ";
 
 /* No comment provided by engineer. */
@@ -132,9 +129,6 @@
 
 /* No comment provided by engineer. */
 "Changes will take effect on app restart" = "変更はアプリの再起動時に反映";
-
-/* No comment provided by engineer. */
-"Chapter Count" = "話数";
 
 /* No comment provided by engineer. */
 "Chapters" = "話";
@@ -299,16 +293,10 @@
 "Ep %lld at %@" = "第%lld話 %@に";
 
 /* No comment provided by engineer. */
-"Episode Count" = "話数";
-
-/* No comment provided by engineer. */
 "Episodes" = "話";
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "見た話";
-
-/* No comment provided by engineer. */
-"Error no entry" = "エントリがありません";
 
 /* No comment provided by engineer. */
 "Explore" = "検索";
@@ -360,9 +348,6 @@
 
 /* No comment provided by engineer. */
 "Forum" = "フォーラム";
-
-/* (No Comment) */
-"friday_short" = "金";
 
 /* No comment provided by engineer. */
 "From year" = "年から";
@@ -446,9 +431,6 @@
 "List entry ID" = "リストエントリID";
 
 /* No comment provided by engineer. */
-"List Progress" = "リストの進行状況";
-
-/* No comment provided by engineer. */
 "List style" = "リストスタイル";
 
 /* No comment provided by engineer. */
@@ -502,12 +484,6 @@
 /* No comment provided by engineer. */
 "Minimal" = "ミニマル";
 
-/* Localizable.strings
-  AniHyou
-
-  Created by Axel Lopez on 13/10/2023. */
-"monday_short" = "月";
-
 /* No comment provided by engineer. */
 "More filters" = "その他のフィルター";
 
@@ -534,9 +510,6 @@
 
 /* No comment provided by engineer. */
 "No" = "いいえ";
-
-/* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "リストに配信中のアニメがいません\n(*´-`)";
 
 /* No comment provided by engineer. */
 "No anime for today\n(*´-`)" = "今日のアニメはありません\n(*´-`)";
@@ -662,6 +635,9 @@
 "Publishing Manga" = "公開中";
 
 /* No comment provided by engineer. */
+"Push notifications" = "プッシュ通知";
+
+/* No comment provided by engineer. */
 "Rankings" = "ランキング";
 
 /* (No Comment) */
@@ -669,6 +645,9 @@
 
 /* No comment provided by engineer. */
 "Read Year" = "年";
+
+/* No comment provided by engineer. */
+"Reading" = "読んでいます";
 
 /* No comment provided by engineer. */
 "Recommendations" = "おすすめ";
@@ -717,9 +696,6 @@
 
 /* No comment provided by engineer. */
 "Romance" = "ロマンス";
-
-/* (No Comment) */
-"saturday_short" = "土";
 
 /* No comment provided by engineer. */
 "Save" = "保存";
@@ -847,9 +823,6 @@
 /* No comment provided by engineer. */
 "Summer" = "夏";
 
-/* (No Comment) */
-"sunday_short" = "日";
-
 /* No comment provided by engineer. */
 "Supernatural" = "神秘的な";
 
@@ -882,9 +855,6 @@
 
 /* No comment provided by engineer. */
 "Thriller" = "スリラー";
-
-/* (No Comment) */
-"thursday_short" = "木";
 
 /* No comment provided by engineer. */
 "Title" = "作品名";
@@ -934,9 +904,6 @@
 /* No comment provided by engineer. */
 "Trending Manga" = "人気のマンガ";
 
-/* (No Comment) */
-"tuesday_short" = "火";
-
 /* No comment provided by engineer. */
 "TV" = "テレビ";
 
@@ -946,7 +913,10 @@
 /* No comment provided by engineer. */
 "Unfollow" = "フォロー解除";
 
-/* (No Comment) */
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "不明";
 
 /* No comment provided by engineer. */
@@ -994,9 +964,6 @@
 /* No comment provided by engineer. */
 "Web novel" = "WEBノベル";
 
-/* (No Comment) */
-"wednesday_short" = "水";
-
 /* No comment provided by engineer. */
 "Weekday" = "平日";
 
@@ -1011,7 +978,4 @@
 
 /* No comment provided by engineer. */
 "Yes" = "はい";
-
-/* No comment provided by engineer. */
-"You may need to login again in your browser" = "ブラウザで再度ログインする必要があります。";
 

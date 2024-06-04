@@ -218,6 +218,9 @@
 "Custom color" = "Kostum warna";
 
 /* No comment provided by engineer. */
+"Custom lists" = "Daftar kustom";
+
+/* No comment provided by engineer. */
 "Dates" = "Tanggal";
 
 /* No comment provided by engineer. */
@@ -312,9 +315,6 @@
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Episode Ditonton";
-
-/* No comment provided by engineer. */
-"Error no entry" = "Error tidak ada entri";
 
 /* No comment provided by engineer. */
 "Explore" = "Eksplorasi";
@@ -671,6 +671,9 @@
 "Quick access to your anime or manga list." = "Akses cepat ke daftar anime atau manga kamu.";
 
 /* No comment provided by engineer. */
+"Random" = "Random";
+
+/* No comment provided by engineer. */
 "Rankings" = "Peringkat";
 
 /* (No Comment) */
@@ -678,6 +681,9 @@
 
 /* No comment provided by engineer. */
 "Read Year" = "Tahun Membaca";
+
+/* No comment provided by engineer. */
+"Reading" = "Membaca";
 
 /* No comment provided by engineer. */
 "Recommendations" = "Rekomendasi";
@@ -1011,6 +1017,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Pengisi Suara";
+
+/* No comment provided by engineer. */
+"Vol" = "Vol";
 
 /* No comment provided by engineer. */
 "Volumes" = "Volume";

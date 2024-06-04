@@ -218,6 +218,9 @@
 "Custom color" = "Özel renk";
 
 /* No comment provided by engineer. */
+"Custom lists" = "Özel listeler";
+
+/* No comment provided by engineer. */
 "Dates" = "Tarihler";
 
 /* No comment provided by engineer. */
@@ -312,9 +315,6 @@
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "İzlenen Bölümler";
-
-/* No comment provided by engineer. */
-"Error no entry" = "Girdi yok. Hata";
 
 /* No comment provided by engineer. */
 "Explore" = "Keşfet";
@@ -671,6 +671,9 @@
 "Quick access to your anime or manga list." = "Anime ve manga listeniz için hızlı erişim.";
 
 /* No comment provided by engineer. */
+"Random" = "Rastgele";
+
+/* No comment provided by engineer. */
 "Rankings" = "Sıralama";
 
 /* (No Comment) */
@@ -678,6 +681,9 @@
 
 /* No comment provided by engineer. */
 "Read Year" = "Okuma Yılı";
+
+/* No comment provided by engineer. */
+"Reading" = "Okunuyor";
 
 /* No comment provided by engineer. */
 "Recommendations" = "Tavsiyeler";
@@ -1011,6 +1017,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Seslendirenler";
+
+/* No comment provided by engineer. */
+"Vol" = "Vol";
 
 /* No comment provided by engineer. */
 "Volumes" = "Cilt";
