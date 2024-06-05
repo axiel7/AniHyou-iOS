@@ -67,7 +67,9 @@ struct MediaListItemStandardView: View {
                         Image(systemName: "note.text")
                             .foregroundStyle(.gray)
                     }
-                    MediaListScoreIndicator(score: entry?.score ?? 0)
+                    if let score = entry?.score, score > 0 {
+                        MediaListScoreIndicator(score: score)
+                    }
                 }
 
                 ProgressView(
