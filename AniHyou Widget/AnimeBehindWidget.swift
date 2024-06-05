@@ -51,10 +51,13 @@ struct AnimeBehindProvider: TimelineProvider {
         
         var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: now)!
         
-        Network.shared.apollo.fetch(query: UserCurrentAnimeListQuery(
-            userId: .some(userId),
-            sort: .some([.case(.updatedTimeDesc)])
-        )) { result in
+        Network.shared.apollo.fetch(
+            query: UserCurrentAnimeListQuery(
+                userId: .some(userId),
+                sort: .some([.case(.updatedTimeDesc)])
+            ),
+            cachePolicy: .fetchIgnoringCacheCompletely
+        ) { result in
             switch result {
             case .success(let graphQLResult):
                 if let mediaList = graphQLResult.data?.page?.mediaList {
