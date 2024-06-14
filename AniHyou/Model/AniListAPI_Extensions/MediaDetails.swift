@@ -9,7 +9,22 @@ import Foundation
 import AniListAPI
 
 extension BasicMediaDetails {
-    var maxProgress: Int? {
+    func maxProgress(isVolume: Bool) -> Int? {
+        switch type?.value {
+        case .anime:
+            episodes
+        case .manga:
+            if isVolume {
+                volumes
+            } else {
+                chapters
+            }
+        default:
+            nil
+        }
+    }
+    
+    var maxEpOrCh: Int? {
         switch type?.value {
         case .anime:
             episodes

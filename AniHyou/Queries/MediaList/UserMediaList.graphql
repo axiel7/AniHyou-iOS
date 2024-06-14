@@ -19,13 +19,16 @@ fragment CommonUserMediaList on MediaList {
         coverImage {
           color
         }
+        type
         episodes
         chapters
+        volumes
         nextAiringEpisode {
             episode
             airingAt
         }
     }
     progress
+    progressVolumes
     status
 }

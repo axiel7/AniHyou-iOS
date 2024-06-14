@@ -97,21 +97,21 @@ struct MediaListEditView: View {
                             .textFieldStyle(.roundedBorder)
                             .frame(width: textFieldWidth)
                             .onChange(of: progress) { value in
-                                if let max = mediaDetails.maxProgress, value > max {
+                                if let max = mediaDetails.maxEpOrCh, value > max {
                                     progress = max
                                 }
                             }
                         Stepper(
                             mediaDetails.type == .anime ? "Episodes" : "Chapters",
-                            value: $progress, in: 0...(mediaDetails.maxProgress ?? Int.max)
+                            value: $progress, in: 0...(mediaDetails.maxEpOrCh ?? Int.max)
                         )
                     }
                     .onChange(of: progress) { progress in
                         if status == .planning || mediaList == nil {
                             onUpdatedFromPlanning()
                         }
-                        if let maxProgress = mediaDetails.maxProgress,
-                           progress >= maxProgress 
+                        if let maxProgress = mediaDetails.maxEpOrCh,
+                           progress >= maxProgress
                         {
                             onMaxProgressReached()
                         }

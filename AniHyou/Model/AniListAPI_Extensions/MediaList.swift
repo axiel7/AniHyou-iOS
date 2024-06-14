@@ -25,8 +25,23 @@ extension CommonUserMediaList {
         } else { return nil }
     }
     
+    var isVolumeProgress: Bool {
+        (progress == nil || progress == 0) && (progressVolumes ?? 0) > 0
+    }
+    
     var maxProgress: Int {
-        media?.episodes ?? media?.chapters ?? 0
+        switch media?.type?.value {
+        case .anime:
+            media?.episodes ?? 0
+        case .manga:
+            if isVolumeProgress {
+                media?.volumes ?? 0
+            } else {
+                media?.chapters ?? 0
+            }
+        default:
+            0
+        }
     }
 }
 

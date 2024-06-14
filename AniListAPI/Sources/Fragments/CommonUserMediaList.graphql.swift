@@ -5,7 +5,7 @@
 
 public struct CommonUserMediaList: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment CommonUserMediaList on MediaList { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename color } episodes chapters nextAiringEpisode { __typename episode airingAt } } progress status }"#
+    #"fragment CommonUserMediaList on MediaList { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename color } type episodes chapters volumes nextAiringEpisode { __typename episode airingAt } } progress progressVolumes status }"#
   }
 
   public let __data: DataDict
@@ -18,6 +18,7 @@ public struct CommonUserMediaList: AniListAPI.SelectionSet, Fragment {
     .field("mediaId", Int.self),
     .field("media", Media?.self),
     .field("progress", Int?.self),
+    .field("progressVolumes", Int?.self),
     .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
   ] }
 
@@ -28,6 +29,8 @@ public struct CommonUserMediaList: AniListAPI.SelectionSet, Fragment {
   public var media: Media? { __data["media"] }
   /// The amount of episodes/chapters consumed by the user
   public var progress: Int? { __data["progress"] }
+  /// The amount of volumes read by the user
+  public var progressVolumes: Int? { __data["progressVolumes"] }
   /// The watching/reading status
   public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
 
@@ -43,8 +46,10 @@ public struct CommonUserMediaList: AniListAPI.SelectionSet, Fragment {
       .field("__typename", String.self),
       .field("title", Title?.self),
       .field("coverImage", CoverImage?.self),
+      .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
       .field("episodes", Int?.self),
       .field("chapters", Int?.self),
+      .field("volumes", Int?.self),
       .field("nextAiringEpisode", NextAiringEpisode?.self),
     ] }
 
@@ -52,10 +57,14 @@ public struct CommonUserMediaList: AniListAPI.SelectionSet, Fragment {
     public var title: Title? { __data["title"] }
     /// The cover images of the media
     public var coverImage: CoverImage? { __data["coverImage"] }
+    /// The type of the media; anime or manga
+    public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
     /// The amount of episodes the anime has when complete
     public var episodes: Int? { __data["episodes"] }
     /// The amount of chapters the manga has when complete
     public var chapters: Int? { __data["chapters"] }
+    /// The amount of volumes the manga has when complete
+    public var volumes: Int? { __data["volumes"] }
     /// The media's next episode airing schedule
     public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
 
