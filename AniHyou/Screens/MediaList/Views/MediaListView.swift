@@ -134,7 +134,14 @@ struct MediaListView: View {
                 Menu {
                     Picker("Sort", selection: $sort) {
                         ForEach(MediaListSort.allCasesForUi, id: \.self) {
-                            Text($0.localizedName).tag($0)
+                            if $0 == .mediaTitleRomajiDesc || $0 == .mediaPopularityDesc {
+                                Label(
+                                    $0.localizedName,
+                                    systemImage: "exclamationmark.triangle"
+                                ).tag($0)
+                            } else {
+                                Text($0.localizedName).tag($0)
+                            }
                         }
                     }
                     Picker("Order", selection: $sortAscending) {
