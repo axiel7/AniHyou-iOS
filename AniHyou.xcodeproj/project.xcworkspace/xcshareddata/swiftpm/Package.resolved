@@ -57,10 +57,10 @@
     {
       "identity" : "swift-markdown-ui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
+      "location" : "https://github.com/electricsidecar-dev/swift-markdown-ui",
       "state" : {
-        "revision" : "ae799d015a5374708f7b4c85f3294c05f2a564e2",
-        "version" : "2.3.0"
+        "branch" : "recursive",
+        "revision" : "f0d1b7fe722e6eda41db2e56f75529956ffa42fa"
       }
     },
     {
