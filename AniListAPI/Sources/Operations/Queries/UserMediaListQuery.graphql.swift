@@ -100,6 +100,8 @@ public class UserMediaListQuery: GraphQLQuery {
         public var media: Media? { __data["media"] }
         /// The amount of episodes/chapters consumed by the user
         public var progress: Int? { __data["progress"] }
+        /// The amount of volumes read by the user
+        public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The watching/reading status
         public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
 

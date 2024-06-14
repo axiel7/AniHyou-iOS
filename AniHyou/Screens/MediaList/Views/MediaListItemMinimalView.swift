@@ -36,7 +36,9 @@ struct MediaListItemMinimalView: View {
                     Image(systemName: status.systemImage)
                         .foregroundStyle(.gray)
                 }
-                if let maxProgress = details?.maxProgress {
+                if let maxProgress = details?.maxProgress(
+                    isVolume: entry?.isVolumeProgress == true
+                ) {
                     Text("\(entry?.progressPreferred ?? 0)/\(maxProgress)")
                 } else {
                     Text("\(entry?.progressPreferred ?? 0)")

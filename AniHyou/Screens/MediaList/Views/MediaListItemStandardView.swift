@@ -52,8 +52,11 @@ struct MediaListItemStandardView: View {
                     .padding(.bottom, 1)
                 }
 
+                let maxProgress = details?.maxProgress(
+                    isVolume: entry?.isVolumeProgress == true
+                )
                 HStack {
-                    if let maxProgress = details?.maxProgress {
+                    if let maxProgress {
                         Text("\(entry?.progressPreferred ?? 0)/\(maxProgress)")
                     } else {
                         Text("\(entry?.progressPreferred ?? 0)")
@@ -74,7 +77,7 @@ struct MediaListItemStandardView: View {
 
                 ProgressView(
                     value: Float(entry?.progressPreferred ?? 0),
-                    total: Float(details?.maxProgress ?? Int.max)
+                    total: Float(maxProgress ?? Int.max)
                 )
             }
         }
