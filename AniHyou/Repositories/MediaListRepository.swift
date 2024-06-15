@@ -16,8 +16,8 @@ struct MediaListRepository {
         userId: Int,
         mediaType: MediaType,
         sort: [MediaListSort],
-        chunk: Int,
-        perChunk: Int = 50,
+        chunk: Int?,
+        perChunk: Int? = 50,
         forceReload: Bool = false
     ) async -> PagedResult<UserListCollectionQuery.Data.MediaListCollection.List>? {
         await withCheckedContinuation { continuation in
@@ -26,8 +26,8 @@ struct MediaListRepository {
                     userId: .some(userId),
                     type: .some(.case(mediaType)),
                     sort: .some(sort.map({ .case($0) })),
-                    chunk: .some(chunk),
-                    perChunk: .some(perChunk)
+                    chunk: someIfNotNil(chunk),
+                    perChunk: someIfNotNil(perChunk)
                 ),
                 cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
             ) { result in
@@ -39,7 +39,7 @@ struct MediaListRepository {
                         continuation.resume(
                             returning: PagedResult(
                                 data: lists,
-                                page: chunk + 1,
+                                page: (chunk ?? 0) + 1,
                                 hasNextPage: pageData.hasNextChunk == true
                             )
                         )

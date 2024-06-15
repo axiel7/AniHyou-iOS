@@ -47,11 +47,15 @@ class MediaListViewModel: ObservableObject {
     func getUserMediaList(otherUserId: Int?) async {
         if let otherUserId { userId = otherUserId }
         isLoading = true
+        let loadByChunk = sort == nil || sort == .updatedTimeDesc
+        let chunk: Int? = if loadByChunk { currentPage } else { nil }
+        let perChunk: Int? = if loadByChunk { 100 } else { nil }
         if let result = await MediaListRepository.getMediaListCollection(
             userId: userId,
             mediaType: mediaType,
-            sort: [sort ?? .addedTimeDesc],
-            chunk: currentPage,
+            sort: [sort ?? .updatedTimeDesc],
+            chunk: chunk,
+            perChunk: perChunk,
             forceReload: forceReload
         ) {
             currentPage = result.page
