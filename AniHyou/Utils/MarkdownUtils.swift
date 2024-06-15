@@ -42,7 +42,7 @@ extension String {
 }
 
 // Markdown image provider with Nuke
-struct KFImageProvider: ImageProvider {
+struct KFImageProvider: @preconcurrency ImageProvider {
     @MainActor
     func makeImage(url: URL?) -> some View {
         LazyImage(url: url) { state in
