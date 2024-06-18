@@ -218,6 +218,9 @@
 "Custom color" = "Cor customizada";
 
 /* No comment provided by engineer. */
+"Custom lists" = "Listas personalizadas";
+
+/* No comment provided by engineer. */
 "Dates" = "Datas";
 
 /* No comment provided by engineer. */
@@ -249,6 +252,9 @@
 
 /* No comment provided by engineer. */
 "Display" = "Tela";
+
+/* No comment provided by engineer. */
+"Distribution type" = "Tipo de distribuição";
 
 /* No comment provided by engineer. */
 "Donate" = "Doar";
@@ -390,6 +396,9 @@
 
 /* No comment provided by engineer. */
 "Hide filters" = "Ocultar filtros";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "Ocultar de listas de status";
 
 /* No comment provided by engineer. */
 "Hide spoiler" = "Ocultar spoiler";
@@ -662,6 +671,9 @@
 "Quick access to your anime or manga list." = "Acesso rápido à sua lista de anime ou mangá.";
 
 /* No comment provided by engineer. */
+"Random" = "Aleatório";
+
+/* No comment provided by engineer. */
 "Rankings" = "Classificações";
 
 /* (No Comment) */
@@ -700,6 +712,9 @@
 /* (No Comment) */
 "Repeating" = "Repetindo";
 
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "Releu capítulo %1$@ de %2$@";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Restaurar compras";
 
@@ -708,6 +723,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Resenhas";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "Reassistiu episódio %1$@ de %2$@";
 
 /* No comment provided by engineer. */
 "Right" = "Direita";
@@ -753,6 +771,9 @@
 
 /* No comment provided by engineer. */
 "Sequel" = "Sequência";
+
+/* Set to Status */
+"Set as %@" = "Definir como %@";
 
 /* No comment provided by engineer. */
 "Set progress" = "Definir progresso";
@@ -996,6 +1017,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Atores de Voz";
+
+/* No comment provided by engineer. */
+"Vol" = "Vol.";
 
 /* No comment provided by engineer. */
 "Volumes" = "Volumes";
