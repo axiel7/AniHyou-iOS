@@ -37,7 +37,7 @@ extension View {
                     .id(mediaId.wrappedValue)
             }
             .onOpenURL { url in
-                if url.scheme == "anihyou" {
+                if url.scheme == "anihyou" && url.pathComponents.contains("media") {
                     mediaId.wrappedValue = Int(url.lastPathComponent) ?? 0
                     showingMediaDetails.wrappedValue = mediaId.wrappedValue != 0
                 }

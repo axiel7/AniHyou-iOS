@@ -61,6 +61,11 @@ struct ContentView: View {
             RootExploreView()
                 .tabItem(.explore)
         }//:TabView
+        .onOpenURL { url in
+            if url.scheme == "anihyou" && url.pathComponents.contains("search") {
+                selectedTabIndex = 4
+            }
+        }
     }
 }
 

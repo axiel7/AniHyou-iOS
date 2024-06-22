@@ -11,7 +11,9 @@ import SwiftUI
 @main
 struct AniHyouWidgets {
     static func main() {
-        if #available(iOSApplicationExtension 17.0, *) {
+        if #available(iOSApplicationExtension 18.0, *) {
+            AniHyouWidgets18.main()
+        } else if #available(iOSApplicationExtension 17.0, *) {
             AniHyouWidgets17.main()
         } else {
             AniHyouWidgets16.main()
@@ -31,5 +33,15 @@ struct AniHyouWidgets17: WidgetBundle {
         AiringWidget()
         AnimeBehindWidget()
         MediaListWidget()
+    }
+}
+
+@available(iOSApplicationExtension 18.0, *)
+struct AniHyouWidgets18: WidgetBundle {
+    var body: some Widget {
+        AiringWidget()
+        AnimeBehindWidget()
+        MediaListWidget()
+        SearchControl()
     }
 }

@@ -111,6 +111,9 @@
 		48575D872A3EACEE00F8AD22 /* NotificationTypeGrouped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48575D862A3EACEE00F8AD22 /* NotificationTypeGrouped.swift */; };
 		48575D892A3EBD2200F8AD22 /* ToolbarIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48575D882A3EBD2200F8AD22 /* ToolbarIconButton.swift */; };
 		4859F4ED286DB73E00BCB9B2 /* RootExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */; };
+		485E38942C22F98E00485739 /* SearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485E38932C22F98900485739 /* SearchControl.swift */; };
+		485E38962C230B7100485739 /* OpenSearchIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485E38952C230B6B00485739 /* OpenSearchIntent.swift */; };
+		485E38982C230B7100485739 /* OpenSearchIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485E38952C230B6B00485739 /* OpenSearchIntent.swift */; };
 		48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 48604D7A28A15AD1006A6AF8 /* RichText */; };
 		486354EB2B73437300A5DBB7 /* AiringText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486354EA2B73437300A5DBB7 /* AiringText.swift */; };
 		486354EC2B73446A00A5DBB7 /* AiringText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486354EA2B73437300A5DBB7 /* AiringText.swift */; };
@@ -452,6 +455,8 @@
 		48575D862A3EACEE00F8AD22 /* NotificationTypeGrouped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypeGrouped.swift; sourceTree = "<group>"; };
 		48575D882A3EBD2200F8AD22 /* ToolbarIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarIconButton.swift; sourceTree = "<group>"; };
 		4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootExploreView.swift; sourceTree = "<group>"; };
+		485E38932C22F98900485739 /* SearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControl.swift; sourceTree = "<group>"; };
+		485E38952C230B6B00485739 /* OpenSearchIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSearchIntent.swift; sourceTree = "<group>"; };
 		486354EA2B73437300A5DBB7 /* AiringText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiringText.swift; sourceTree = "<group>"; };
 		48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerBasicInfo.graphql; sourceTree = "<group>"; };
 		48643F442853C54800D7C328 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -951,6 +956,7 @@
 			children = (
 				48294CDD2AB936D9005E7CD2 /* SetProgressIntent.swift */,
 				48294CE72ABA93F9005E7CD2 /* SelectMediaTypeIntent.swift */,
+				485E38952C230B6B00485739 /* OpenSearchIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -1538,6 +1544,7 @@
 				48EFCDDD29FFAD200096BF6E /* AiringWidget.swift */,
 				48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */,
 				48294CEA2ABA9B95005E7CD2 /* MediaListWidget.swift */,
+				485E38932C22F98900485739 /* SearchControl.swift */,
 				48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */,
 				48EFCDE029FFAD210096BF6E /* Assets.xcassets */,
 				48EFCDE229FFAD210096BF6E /* Info.plist */,
@@ -2279,6 +2286,7 @@
 				48CA07BB2870A0E40048854E /* MediaRelationsAndRecommendationsView.swift in Sources */,
 				4884AAB02965AC94009A3B8C /* GenreTagSelectionView.swift in Sources */,
 				48F278E4296ECED8000827F7 /* MediaTagItemView.swift in Sources */,
+				485E38982C230B7100485739 /* OpenSearchIntent.swift in Sources */,
 				481AD4F62851D917001779EE /* HomeView.swift in Sources */,
 				48FC947F2868C0BD00C87F56 /* ChartViewModel.swift in Sources */,
 				482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */,
@@ -2317,6 +2325,7 @@
 				48294CE62AB96164005E7CD2 /* MediaListRepository.swift in Sources */,
 				48294CEC2ABA9E9B005E7CD2 /* MediaList.swift in Sources */,
 				48294CE82ABA93F9005E7CD2 /* SelectMediaTypeIntent.swift in Sources */,
+				485E38942C22F98E00485739 /* SearchControl.swift in Sources */,
 				48294CE12AB95020005E7CD2 /* MediaListStatus.swift in Sources */,
 				48B7ABE72BB328AB0047998F /* ThreadComment.swift in Sources */,
 				48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */,
@@ -2333,6 +2342,7 @@
 				48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */,
 				48EFCDDE29FFAD200096BF6E /* AiringWidget.swift in Sources */,
 				4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,
+				485E38962C230B7100485739 /* OpenSearchIntent.swift in Sources */,
 				48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */,
 				48EFCDF529FFE70A0096BF6E /* Constants.swift in Sources */,
 				48294CEB2ABA9B95005E7CD2 /* MediaListWidget.swift in Sources */,
