@@ -81,9 +81,12 @@ struct MediaDetailsView: View {
                     mainStats
                     
                     // MARK: - Synopsis
-                    ExpandableTextView(text: $attributedSynopsis, showCopy: true)
-                     .padding(.top)
-                     .padding(.horizontal)
+                    ExpandableTextView(
+                        text: $attributedSynopsis,
+                        showTranslate: !isLocaleEnglish
+                    )
+                    .padding(.top)
+                    .padding(.horizontal)
                     
                     // MARK: - More info
                     moreInfo

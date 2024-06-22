@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Translation
 
 // A magic trick for keeping the swipe to back functionality when navigationBarBackButtonHidden is set
 // https://developer.apple.com/forums/thread/662510?answerId=672073022#672073022
@@ -22,4 +23,20 @@ extension UINavigationController: UIGestureRecognizerDelegate {
 
 var isPhone: Bool {
     UIDevice.current.userInterfaceIdiom == .phone
+}
+
+var isLocaleEnglish: Bool {
+    let lang = Locale.autoupdatingCurrent.language
+    return lang.isEquivalent(to: .init(identifier: "en")) || lang.isEquivalent(to: .init(identifier: "en-UK"))
+}
+
+extension View {
+    @ViewBuilder
+    func translationPresentationCompat(isPresented: Binding<Bool>, text: String) -> some View {
+        if #available(iOS 17.4, *) {
+            self.translationPresentation(isPresented: isPresented, text: text)
+        } else {
+            self
+        }
+    }
 }
