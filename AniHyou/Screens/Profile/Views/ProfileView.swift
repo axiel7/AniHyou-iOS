@@ -158,7 +158,7 @@ struct ProfileView: View {
             VStack {
                 if let about = viewModel.userInfo?.about {
                     ExpandableRichText(about)
-                } else {
+                } else if viewModel.isLoading {
                     HorizontalProgressView()
                 }
             }
