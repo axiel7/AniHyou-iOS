@@ -13,6 +13,10 @@ import AniListAPI
 class ProfileViewModel: ObservableObject {
 
     @Published var userInfo: UserInfo?
+    
+    var isLoading: Bool {
+        userInfo == nil
+    }
 
     func getMyUserInfo() async {
         userInfo = await UserRepository.getMyUserInfo()
