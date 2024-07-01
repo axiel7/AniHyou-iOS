@@ -23,7 +23,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
     ] }
@@ -38,7 +38,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("relations", Relations?.self),
@@ -60,7 +60,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("edges", [Edge?]?.self),
@@ -75,7 +75,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaEdge }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaEdge }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(MediaRelated.self),
@@ -103,7 +103,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.RecommendationConnection }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.RecommendationConnection }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
@@ -118,7 +118,7 @@ public class MediaRelationsAndRecommendationsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Recommendation }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Recommendation }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(MediaRecommended.self),

@@ -30,7 +30,7 @@ public class ToggleLikeMutation: GraphQLMutation {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("ToggleLikeV2", ToggleLikeV2?.self, arguments: [
         "id": .variable("likeableId"),
@@ -48,7 +48,7 @@ public class ToggleLikeMutation: GraphQLMutation {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Unions.LikeableUnion }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.LikeableUnion }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .inlineFragment(AsListActivity.self),
@@ -74,7 +74,7 @@ public class ToggleLikeMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ToggleLikeMutation.Data.ToggleLikeV2
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("isLiked", Bool?.self),
@@ -94,7 +94,7 @@ public class ToggleLikeMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ToggleLikeMutation.Data.ToggleLikeV2
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("isLiked", Bool?.self),
@@ -114,7 +114,7 @@ public class ToggleLikeMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ToggleLikeMutation.Data.ToggleLikeV2
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("isLiked", Bool?.self),
@@ -134,7 +134,7 @@ public class ToggleLikeMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ToggleLikeMutation.Data.ToggleLikeV2
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("isLiked", Bool?.self),
@@ -154,7 +154,7 @@ public class ToggleLikeMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ToggleLikeMutation.Data.ToggleLikeV2
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("isLiked", Bool?.self),
@@ -174,7 +174,7 @@ public class ToggleLikeMutation: GraphQLMutation {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ToggleLikeMutation.Data.ToggleLikeV2
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ThreadComment }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadComment }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("id", Int.self),
           .field("isLiked", Bool?.self),

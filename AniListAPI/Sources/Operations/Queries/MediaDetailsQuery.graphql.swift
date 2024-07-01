@@ -23,7 +23,7 @@ public class MediaDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
     ] }
@@ -38,7 +38,7 @@ public class MediaDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("title", Title?.self),
@@ -148,7 +148,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("userPreferred", String?.self),
@@ -174,7 +174,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(FuzzyDateFragment.self),
@@ -202,7 +202,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(FuzzyDateFragment.self),
@@ -230,7 +230,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("large", String?.self),
@@ -253,7 +253,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StudioConnection }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StudioConnection }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
@@ -268,7 +268,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Studio }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Studio }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("id", Int.self),
@@ -292,7 +292,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("airingAt", Int.self),
@@ -312,7 +312,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("startedAt", StartedAt?.self),
@@ -363,7 +363,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(FuzzyDateFragment.self),
@@ -391,7 +391,7 @@ public class MediaDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(FuzzyDateFragment.self),
@@ -420,7 +420,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaExternalLink }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaExternalLink }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),
@@ -448,7 +448,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTrailer }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTrailer }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", String?.self),
@@ -471,7 +471,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaStreamingEpisode }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaStreamingEpisode }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("url", String?.self),
@@ -497,7 +497,7 @@ public class MediaDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTag }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTag }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),

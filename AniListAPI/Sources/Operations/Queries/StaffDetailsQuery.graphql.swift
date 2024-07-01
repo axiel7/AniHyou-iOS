@@ -23,7 +23,7 @@ public class StaffDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Staff", Staff?.self, arguments: ["id": .variable("staffId")]),
     ] }
@@ -38,7 +38,7 @@ public class StaffDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Staff }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Staff }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", Int.self),
@@ -98,7 +98,7 @@ public class StaffDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffName }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffName }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("userPreferred", String?.self),
@@ -121,7 +121,7 @@ public class StaffDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("large", String?.self),
@@ -138,7 +138,7 @@ public class StaffDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(FuzzyDateFragment.self),
@@ -166,7 +166,7 @@ public class StaffDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(FuzzyDateFragment.self),

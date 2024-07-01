@@ -39,7 +39,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("SaveMediaListEntry", SaveMediaListEntry?.self, arguments: [
         "id": .variable("saveMediaListEntryId"),
@@ -59,7 +59,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(BasicMediaListEntry.self),
@@ -108,7 +108,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
 
         /// Numeric Day (24)
         public var day: Int? { __data["day"] }
@@ -132,7 +132,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
 
         /// Numeric Day (24)
         public var day: Int? { __data["day"] }

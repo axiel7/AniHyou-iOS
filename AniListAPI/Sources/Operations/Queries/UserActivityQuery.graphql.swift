@@ -39,7 +39,7 @@ public class UserActivityQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
@@ -56,7 +56,7 @@ public class UserActivityQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("activities", [Activity?]?.self, arguments: [
@@ -77,7 +77,7 @@ public class UserActivityQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .inlineFragment(AsTextActivity.self),
@@ -97,7 +97,7 @@ public class UserActivityQuery: GraphQLQuery {
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .fragment(TextActivityFragment.self),
           ] }
@@ -139,7 +139,7 @@ public class UserActivityQuery: GraphQLQuery {
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .fragment(ListActivityFragment.self),
           ] }
@@ -189,7 +189,7 @@ public class UserActivityQuery: GraphQLQuery {
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .fragment(MessageActivityFragment.self),
           ] }
@@ -233,7 +233,7 @@ public class UserActivityQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),

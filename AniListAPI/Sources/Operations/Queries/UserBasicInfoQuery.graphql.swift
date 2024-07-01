@@ -23,7 +23,7 @@ public class UserBasicInfoQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
@@ -38,7 +38,7 @@ public class UserBasicInfoQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(UserInfo.self),

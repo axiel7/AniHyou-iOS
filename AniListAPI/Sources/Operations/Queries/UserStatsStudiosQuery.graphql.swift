@@ -31,7 +31,7 @@ public class UserStatsStudiosQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
@@ -46,7 +46,7 @@ public class UserStatsStudiosQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("statistics", Statistics?.self),
@@ -62,7 +62,7 @@ public class UserStatsStudiosQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("anime", Anime?.self),
@@ -77,7 +77,7 @@ public class UserStatsStudiosQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("studios", [Studio?]?.self, arguments: ["sort": .variable("sort")]),
@@ -92,7 +92,7 @@ public class UserStatsStudiosQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStudioStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStudioStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .fragment(StudioStat.self),

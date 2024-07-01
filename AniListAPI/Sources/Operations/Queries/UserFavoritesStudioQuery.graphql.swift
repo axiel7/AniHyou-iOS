@@ -34,7 +34,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
@@ -49,7 +49,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("favourites", Favourites?.self),
@@ -65,7 +65,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("studios", Studios?.self, arguments: [
@@ -84,7 +84,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StudioConnection }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StudioConnection }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("nodes", [Node?]?.self),
@@ -102,7 +102,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Studio }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Studio }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
@@ -122,7 +122,7 @@ public class UserFavoritesStudioQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("currentPage", Int?.self),

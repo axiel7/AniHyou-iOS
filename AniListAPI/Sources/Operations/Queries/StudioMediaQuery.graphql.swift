@@ -35,7 +35,7 @@ public class StudioMediaQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Studio", Studio?.self, arguments: ["id": .variable("studioId")]),
     ] }
@@ -50,7 +50,7 @@ public class StudioMediaQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Studio }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Studio }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("media", Media?.self, arguments: [
@@ -71,7 +71,7 @@ public class StudioMediaQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("nodes", [Node?]?.self),
@@ -89,7 +89,7 @@ public class StudioMediaQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(StudioMedia.self),
@@ -127,7 +127,7 @@ public class StudioMediaQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("hasNextPage", Bool?.self),

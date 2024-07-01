@@ -42,7 +42,7 @@ public class MediaListIdsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("MediaListCollection", MediaListCollection?.self, arguments: [
         "type": .variable("type"),
@@ -63,7 +63,7 @@ public class MediaListIdsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListCollection }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListCollection }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("lists", [List?]?.self),
@@ -82,7 +82,7 @@ public class MediaListIdsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListGroup }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListGroup }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("entries", [Entry?]?.self),
@@ -98,7 +98,7 @@ public class MediaListIdsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("mediaId", Int.self),

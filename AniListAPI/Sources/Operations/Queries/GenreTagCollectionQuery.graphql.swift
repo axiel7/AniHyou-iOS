@@ -16,7 +16,7 @@ public class GenreTagCollectionQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("GenreCollection", [String?]?.self),
       .field("MediaTagCollection", [MediaTagCollection?]?.self),
@@ -34,7 +34,7 @@ public class GenreTagCollectionQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTag }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTag }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", Int.self),

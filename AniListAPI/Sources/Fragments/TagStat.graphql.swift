@@ -11,7 +11,7 @@ public struct TagStat: AniListAPI.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserTagStatistic }
+  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserTagStatistic }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("tag", Tag?.self),
@@ -34,7 +34,7 @@ public struct TagStat: AniListAPI.SelectionSet, Fragment {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTag }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTag }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("id", Int.self),

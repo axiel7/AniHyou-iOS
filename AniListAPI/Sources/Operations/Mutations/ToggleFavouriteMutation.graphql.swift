@@ -42,7 +42,7 @@ public class ToggleFavouriteMutation: GraphQLMutation {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("ToggleFavourite", ToggleFavourite?.self, arguments: [
         "animeId": .variable("animeId"),
@@ -63,7 +63,7 @@ public class ToggleFavouriteMutation: GraphQLMutation {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("anime", Anime?.self),
@@ -79,7 +79,7 @@ public class ToggleFavouriteMutation: GraphQLMutation {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("pageInfo", PageInfo?.self),
@@ -95,7 +95,7 @@ public class ToggleFavouriteMutation: GraphQLMutation {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("currentPage", Int?.self),

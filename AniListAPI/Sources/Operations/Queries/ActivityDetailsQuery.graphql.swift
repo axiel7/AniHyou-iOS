@@ -23,7 +23,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Activity", Activity?.self, arguments: ["id": .variable("activityId")]),
     ] }
@@ -38,7 +38,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .inlineFragment(AsTextActivity.self),
@@ -58,7 +58,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ActivityDetailsQuery.Data.Activity
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("replies", [Reply?]?.self),
           .fragment(TextActivityFragment.self),
@@ -99,7 +99,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(ActivityReplyFragment.self),
@@ -141,7 +141,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ActivityDetailsQuery.Data.Activity
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("replies", [Reply?]?.self),
           .fragment(ListActivityFragment.self),
@@ -188,7 +188,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(ActivityReplyFragment.self),
@@ -232,7 +232,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ActivityDetailsQuery.Data.Activity
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("replies", [Reply?]?.self),
           .fragment(MessageActivityFragment.self),
@@ -275,7 +275,7 @@ public class ActivityDetailsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReply }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(ActivityReplyFragment.self),
