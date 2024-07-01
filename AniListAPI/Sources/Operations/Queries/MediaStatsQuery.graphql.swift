@@ -22,7 +22,7 @@ public class MediaStatsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
     ] }
@@ -37,7 +37,7 @@ public class MediaStatsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("stats", Stats?.self),
@@ -55,7 +55,7 @@ public class MediaStatsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaStats }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaStats }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("statusDistribution", [StatusDistribution?]?.self),
@@ -72,7 +72,7 @@ public class MediaStatsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StatusDistribution }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StatusDistribution }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
@@ -92,7 +92,7 @@ public class MediaStatsQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ScoreDistribution }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ScoreDistribution }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("score", Int?.self),
@@ -112,7 +112,7 @@ public class MediaStatsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaRank }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaRank }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),

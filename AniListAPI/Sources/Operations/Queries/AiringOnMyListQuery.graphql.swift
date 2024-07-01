@@ -30,7 +30,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
@@ -47,7 +47,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("media", [Medium?]?.self, arguments: [
@@ -70,7 +70,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),
@@ -101,7 +101,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("userPreferred", String?.self),
@@ -118,7 +118,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("large", String?.self),
@@ -135,7 +135,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("episode", Int.self),
@@ -155,7 +155,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
@@ -173,7 +173,7 @@ public class AiringOnMyListQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),

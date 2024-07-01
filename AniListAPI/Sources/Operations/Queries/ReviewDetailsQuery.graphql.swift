@@ -23,7 +23,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Review", Review?.self, arguments: ["id": .variable("reviewId")]),
     ] }
@@ -38,7 +38,7 @@ public class ReviewDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Review }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Review }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(CommonReviewDetails.self),

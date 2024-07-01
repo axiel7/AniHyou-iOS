@@ -39,7 +39,7 @@ public class ActivityFeedQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
@@ -56,7 +56,7 @@ public class ActivityFeedQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("activities", [Activity?]?.self, arguments: [
@@ -78,7 +78,7 @@ public class ActivityFeedQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .inlineFragment(AsTextActivity.self),
@@ -96,7 +96,7 @@ public class ActivityFeedQuery: GraphQLQuery {
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = ActivityFeedQuery.Data.Page.Activity
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .fragment(TextActivityFragment.self),
           ] }
@@ -138,7 +138,7 @@ public class ActivityFeedQuery: GraphQLQuery {
           public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = ActivityFeedQuery.Data.Page.Activity
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("user", User?.self),
             .fragment(ListActivityFragment.self),
@@ -183,7 +183,7 @@ public class ActivityFeedQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
@@ -202,7 +202,7 @@ public class ActivityFeedQuery: GraphQLQuery {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
@@ -224,7 +224,7 @@ public class ActivityFeedQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),

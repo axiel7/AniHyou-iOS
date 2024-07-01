@@ -23,7 +23,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Character", Character?.self, arguments: ["id": .variable("characterId")]),
     ] }
@@ -38,7 +38,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Character }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Character }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", Int.self),
@@ -88,7 +88,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.CharacterName }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterName }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("userPreferred", String?.self),
@@ -114,7 +114,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.CharacterImage }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterImage }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("large", String?.self),
@@ -131,7 +131,7 @@ public class CharacterDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(FuzzyDateFragment.self),

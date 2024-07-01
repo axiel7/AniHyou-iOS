@@ -23,7 +23,7 @@ public class ThreadDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("Thread", Thread?.self, arguments: ["id": .variable("threadId")]),
     ] }
@@ -38,7 +38,7 @@ public class ThreadDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(BasicThreadDetails.self),

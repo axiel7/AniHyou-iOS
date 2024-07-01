@@ -11,7 +11,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Recommendation }
+  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Recommendation }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("mediaRecommendation", MediaRecommendation?.self),
@@ -27,7 +27,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("id", Int.self),
@@ -58,7 +58,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("userPreferred", String?.self),
@@ -75,7 +75,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("large", String?.self),
@@ -92,7 +92,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),

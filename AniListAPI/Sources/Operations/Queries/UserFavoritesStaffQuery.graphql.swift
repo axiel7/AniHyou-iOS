@@ -34,7 +34,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
@@ -49,7 +49,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("favourites", Favourites?.self),
@@ -65,7 +65,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("staff", Staff?.self, arguments: [
@@ -84,7 +84,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffConnection }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffConnection }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("nodes", [Node?]?.self),
@@ -102,7 +102,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Staff }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Staff }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
@@ -124,7 +124,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffName }
+              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffName }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("userPreferred", String?.self),
@@ -141,7 +141,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
+              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("large", String?.self),
@@ -159,7 +159,7 @@ public class UserFavoritesStaffQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("currentPage", Int?.self),

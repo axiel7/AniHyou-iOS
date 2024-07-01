@@ -11,7 +11,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserVoiceActorStatistic }
+  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserVoiceActorStatistic }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("voiceActor", VoiceActor?.self),
@@ -34,7 +34,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Staff }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Staff }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("id", Int.self),
@@ -56,7 +56,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffName }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffName }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("userPreferred", String?.self),
@@ -73,7 +73,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("medium", String?.self),

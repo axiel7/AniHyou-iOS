@@ -22,7 +22,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
     ] }
@@ -37,7 +37,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("mediaListOptions", MediaListOptions?.self),
@@ -56,7 +56,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
@@ -73,7 +73,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("anime", Anime?.self),
@@ -88,7 +88,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("count", Int.self),
@@ -125,7 +125,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserScoreStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserScoreStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
@@ -147,7 +147,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserLengthStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserLengthStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("length", String?.self),
@@ -169,7 +169,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserFormatStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserFormatStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
@@ -191,7 +191,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStatusStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatusStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
@@ -213,7 +213,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserCountryStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserCountryStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
@@ -235,7 +235,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserReleaseYearStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserReleaseYearStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
@@ -257,7 +257,7 @@ public class UserStatsAnimeOverviewQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserStartYearStatistic }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStartYearStatistic }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),

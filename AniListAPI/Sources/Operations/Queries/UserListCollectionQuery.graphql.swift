@@ -43,7 +43,7 @@ public class UserListCollectionQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("MediaListCollection", MediaListCollection?.self, arguments: [
         "userId": .variable("userId"),
@@ -65,7 +65,7 @@ public class UserListCollectionQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListCollection }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListCollection }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("lists", [List?]?.self),
@@ -84,7 +84,7 @@ public class UserListCollectionQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListGroup }
+        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListGroup }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("name", String?.self),
@@ -104,7 +104,7 @@ public class UserListCollectionQuery: GraphQLQuery {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(CommonMediaListEntry.self),
@@ -155,7 +155,7 @@ public class UserListCollectionQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Media }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
 
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
@@ -190,7 +190,7 @@ public class UserListCollectionQuery: GraphQLQuery {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
 
               /// The cover image url of the media at a large size
               public var large: String? { __data["large"] }
@@ -203,7 +203,7 @@ public class UserListCollectionQuery: GraphQLQuery {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
 
               /// The airing episode number
               public var episode: Int { __data["episode"] }
@@ -228,7 +228,7 @@ public class UserListCollectionQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
 
             /// Numeric Day (24)
             public var day: Int? { __data["day"] }
@@ -252,7 +252,7 @@ public class UserListCollectionQuery: GraphQLQuery {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
 
             /// Numeric Day (24)
             public var day: Int? { __data["day"] }

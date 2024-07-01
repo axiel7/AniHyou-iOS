@@ -11,7 +11,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.User }
+  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
@@ -33,7 +33,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.UserOptions }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserOptions }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("displayAdultContent", Bool?.self),
@@ -62,7 +62,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
@@ -84,7 +84,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("advancedScoringEnabled", Bool?.self),
@@ -104,7 +104,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("advancedScoringEnabled", Bool?.self),

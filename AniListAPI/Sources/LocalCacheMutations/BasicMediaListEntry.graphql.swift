@@ -11,7 +11,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public var __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
@@ -148,7 +148,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     public var __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .fragment(FuzzyDateFragment.self),
@@ -209,7 +209,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     public var __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .fragment(FuzzyDateFragment.self),

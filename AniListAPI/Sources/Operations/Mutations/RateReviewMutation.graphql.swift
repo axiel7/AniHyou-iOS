@@ -30,7 +30,7 @@ public class RateReviewMutation: GraphQLMutation {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("RateReview", RateReview?.self, arguments: [
         "reviewId": .variable("reviewId"),
@@ -48,7 +48,7 @@ public class RateReviewMutation: GraphQLMutation {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { AniListAPI.Objects.Review }
+      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Review }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", Int.self),
