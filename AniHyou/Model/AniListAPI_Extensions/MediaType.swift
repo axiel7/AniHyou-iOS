@@ -35,4 +35,13 @@ extension MediaType {
             MANGA_CUSTOM_LISTS_KEY
         }
     }
+    
+    var listStatusKey: String {
+        switch self {
+        case .anime:
+            ANIME_LIST_STATUS_KEY
+        case .manga:
+            MANGA_LIST_STATUS_KEY
+        }
+    }
 }

@@ -35,6 +35,7 @@ struct ContentView: View {
             if isLoggedIn {
                 MediaListStatusView(mediaType: .anime)
                     .tabItem(.anime)
+                    .id(MediaType.anime)
                     .environment(\.scoreFormat, myScoreFormat)
             } else {
                 NotLoggedView()
@@ -44,6 +45,7 @@ struct ContentView: View {
             if isLoggedIn {
                 MediaListStatusView(mediaType: .manga)
                     .tabItem(.manga)
+                    .id(MediaType.manga)
                     .environment(\.scoreFormat, myScoreFormat)
             } else {
                 NotLoggedView()
