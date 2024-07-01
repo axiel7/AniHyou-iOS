@@ -13,7 +13,7 @@ struct MediaListStatusView: View {
     let mediaType: MediaType
     var userId: Int?
     @StateObject private var viewModel = MediaListViewModel()
-    @AppStorage(LIST_STATUS_KEY) private var selectedList: String?
+    @State private var selection: String?
     @State private var showingMediaDetails = false
     @State private var mediaId = 0
     
@@ -23,7 +23,7 @@ struct MediaListStatusView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selectedList) {
+            List(selection: $selection) {
                 Label("All", systemImage: "list.bullet.circle").tag("All")
                 ForEach(MediaListStatus.allCases, id: \.localizedStringKey) { status in
                     if status == .current {
@@ -40,20 +40,22 @@ struct MediaListStatusView: View {
             }
             .navigationTitle(mediaType == .anime ? "Anime List" : "Manga List")
         } detail: {
-            if let selectedList {
+            if let selection {
                 NavigationStack {
                     MediaListView(type: mediaType, userId: userId, viewModel: viewModel)
-                        .id(selectedList)
+                        .id(selection)
                         .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
                 }
             }
         }//:NavigationSplitView
-        .onChange(of: selectedList) { value in
+        .onChange(of: selection) { value in
             if let value {
+                UserDefaults.standard.setValue(value, forKey: mediaType.listStatusKey)
                 viewModel.onChangeList(value)
             }
         }
         .onAppear {
+            let selectedList = UserDefaults.standard.string(forKey: mediaType.listStatusKey)
             viewModel.mediaType = mediaType
             if let selectedList {
                 viewModel.onChangeList(selectedList)
