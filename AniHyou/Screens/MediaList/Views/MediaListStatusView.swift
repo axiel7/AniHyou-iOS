@@ -51,14 +51,19 @@ struct MediaListStatusView: View {
         .onChange(of: selection) { value in
             if let value {
                 UserDefaults.standard.setValue(value, forKey: mediaType.listStatusKey)
-                viewModel.onChangeList(value)
+                Task {
+                    viewModel.onChangeList(value)
+                }
             }
         }
         .onAppear {
             let selectedList = UserDefaults.standard.string(forKey: mediaType.listStatusKey)
             viewModel.mediaType = mediaType
             if let selectedList {
-                viewModel.onChangeList(selectedList)
+                selection = selectedList
+                Task {
+                    viewModel.onChangeList(selectedList)
+                }
             }
         }
     }
