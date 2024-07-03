@@ -18,8 +18,6 @@ class MediaListViewModel: ObservableObject {
     var selectedDetails: BasicMediaDetails?
     var selectedEntry: BasicMediaListEntry?
 
-    var currentPage = 1
-    var hasNextPage = false
     var forceReload = false
 
     var mediaType: MediaType = .anime
@@ -32,38 +30,36 @@ class MediaListViewModel: ObservableObject {
     @Published var showingRandomEntry = false
     var randomId: Int?
     private var entriesIds = [Int]()
-    
-    func initialize(
-        mediaType: MediaType,
-        selectedList: String,
-        sort: MediaListSort,
-        sortAscending: Bool
-    ) {
-        self.mediaType = mediaType
-        self.onChangeList(selectedList)
-        self.onSortChanged(sort, isAscending: sortAscending)
-    }
 
-    func getUserMediaList(otherUserId: Int?) async {
-        if let otherUserId { userId = otherUserId }
+    private func getUserMediaList() async {
         isLoading = true
-        let loadByChunk = sort == nil || sort == .updatedTimeDesc
-        let chunk: Int? = if loadByChunk { currentPage } else { nil }
-        let perChunk: Int? = if loadByChunk { 100 } else { nil }
+        let sortValue: [MediaListSort] = if sort?.isTitle == true {
+            [.mediaId]
+        } else {
+            [sort ?? .mediaId]
+        }
         if let result = await MediaListRepository.getMediaListCollection(
             userId: userId,
             mediaType: mediaType,
-            sort: [sort ?? .updatedTimeDesc],
-            chunk: chunk,
-            perChunk: perChunk,
+            sort: sortValue,
+            chunk: nil,
+            perChunk: nil,
             forceReload: forceReload
         ) {
-            currentPage = result.page
-            hasNextPage = result.hasNextPage
             var newEntries: [CommonMediaListEntry] = []
             result.data.forEach { list in
                 if let name = list.name {
-                    let entries = list.entries?.compactMap({ $0?.fragments.commonMediaListEntry }) ?? []
+                    var entries = list.entries?.compactMap({ $0?.fragments.commonMediaListEntry }) ?? []
+                    if sort?.isTitle == true {
+                        // sort locally bc api is bugged
+                        entries = entries.sorted(by: {
+                            if sort?.isDesc == true {
+                                $0.media?.title?.userPreferred ?? "" > $1.media?.title?.userPreferred ?? ""
+                            } else {
+                                $0.media?.title?.userPreferred ?? "" < $1.media?.title?.userPreferred ?? ""
+                            }
+                        })
+                    }
                     lists[name] = (lists[name] ?? []) + entries
                     if selectedListName == nil && list.isCustomList == false {
                         newEntries.append(contentsOf: entries)
@@ -73,20 +69,16 @@ class MediaListViewModel: ObservableObject {
                 }
             }
             mediaList.append(contentsOf: newEntries)
-            if mediaList.isEmpty && result.hasNextPage {
-                await getUserMediaList(otherUserId: otherUserId)
-            }
         }
         isLoading = false
         forceReload = false
     }
 
-    func refreshList() {
-        currentPage = 1
-        hasNextPage = true
+    func refreshList() async {
         forceReload = true
         lists = [:]
         mediaList = []
+        await getUserMediaList()
     }
     
     @Published var filteredMedia = [CommonMediaListEntry]()
@@ -102,10 +94,6 @@ class MediaListViewModel: ObservableObject {
             }
         }
         isLoading = false
-        if hasNextPage {
-            await getUserMediaList(otherUserId: userId)
-            await filterList()
-        }
     }
     
     func onChangeList(_ listName: String) {
@@ -168,44 +156,16 @@ class MediaListViewModel: ObservableObject {
         mediaList.removeAll(where: { $0.id == entryId })
     }
 
-    func onSortChanged(_ newValue: MediaListSort, isAscending: Bool) {
-        var newValueOrdered = newValue
-        if newValue == .mediaTitleRomajiDesc {
-            if
-                let preferredLang = UserDefaults.standard.string(forKey: USER_TITLE_LANG_KEY),
-                let titleLanguage = UserTitleLanguage(rawValue: preferredLang)
-            {
-                newValueOrdered = MediaListSort.titleSortForLanguage(titleLanguage)
-            }
-        }
-        newValueOrdered = isAscending ? newValueOrdered.toAscending() : newValueOrdered
+    func onSortChanged(_ newValue: MediaListSort, isAscending: Bool) async {
+        let newValueOrdered = isAscending ? newValue.toAscending() : newValue
         if newValueOrdered != sort {
             sort = newValueOrdered
-            refreshList()
+            await refreshList()
         }
     }
     
-    func getRandomEntryId(chunk: Int = 1) async {
-        if chunk == 1 && !entriesIds.isEmpty {
-            randomId = entriesIds.randomElement()
-            showingRandomEntry = true
-        } else {
-            isLoading = true
-            if let result = await MediaListRepository.getMediaListIds(
-                userId: userId,
-                type: mediaType,
-                status: selectedListName.asMediaListStatus(),
-                chunk: chunk
-            ) {
-                entriesIds.append(contentsOf: result.data)
-                if result.hasNextPage {
-                    await getRandomEntryId(chunk: chunk + 1)
-                } else {
-                    randomId = entriesIds.randomElement()
-                    showingRandomEntry = true
-                }
-            }
-            isLoading = false
-        }
+    func getRandomEntryId() {
+        randomId = mediaList.randomElement()?.id
+        showingRandomEntry = randomId != nil
     }
 }

@@ -47,13 +47,6 @@ struct MediaListView: View {
                         )
                     }
                 }
-                
-                if viewModel.hasNextPage {
-                    HorizontalProgressView()
-                        .task {
-                            await viewModel.getUserMediaList(otherUserId: userId)
-                        }
-                }
             } else {
                 ForEach(viewModel.filteredMedia, id: \.uniqueListId) { item in
                     if let details = item.media?.fragments.basicMediaDetails {
@@ -65,24 +58,28 @@ struct MediaListView: View {
                         )
                     }
                 }
-                
-                if viewModel.isLoading {
-                    HorizontalProgressView()
-                }
+            }
+            
+            if viewModel.isLoading {
+                HorizontalProgressView()
             }
         }//:List
         .listStyle()
         .searchable(text: $viewModel.searchText)
         .refreshable {
             if viewModel.searchText.isEmpty {
-                viewModel.refreshList()
+                await viewModel.refreshList()
             }
         }
         .onChange(of: sort) { newValue in
-            viewModel.onSortChanged(newValue, isAscending: sortAscending)
+            Task {
+                await viewModel.onSortChanged(newValue, isAscending: sortAscending)
+            }
         }
         .onChange(of: sortAscending) { newValue in
-            viewModel.onSortChanged(sort, isAscending: newValue)
+            Task {
+                await viewModel.onSortChanged(sort, isAscending: newValue)
+            }
         }
         .onSubmit(of: .search) {
             Task {
@@ -105,8 +102,8 @@ struct MediaListView: View {
                 }
             }
         }
-        .onAppear {
-            viewModel.onSortChanged(sort, isAscending: sortAscending)
+        .task {
+            await viewModel.onSortChanged(sort, isAscending: sortAscending)
         }
         .sheet(isPresented: $showingEditSheet) {
             if let details = viewModel.selectedDetails,
@@ -134,14 +131,7 @@ struct MediaListView: View {
                 Menu {
                     Picker("Sort", selection: $sort) {
                         ForEach(MediaListSort.allCasesForUi, id: \.self) {
-                            if $0 == .mediaTitleRomajiDesc || $0 == .mediaPopularityDesc {
-                                Label(
-                                    $0.localizedName,
-                                    systemImage: "exclamationmark.triangle"
-                                ).tag($0)
-                            } else {
-                                Text($0.localizedName).tag($0)
-                            }
+                            Text($0.localizedName).tag($0)
                         }
                     }
                     Picker("Order", selection: $sortAscending) {
@@ -150,9 +140,7 @@ struct MediaListView: View {
                     }
                     
                     Button("Random", systemImage: "shuffle") {
-                        Task {
-                            await viewModel.getRandomEntryId()
-                        }
+                        viewModel.getRandomEntryId()
                     }
                 } label: {
                     Image(systemName: "ellipsis.circle")

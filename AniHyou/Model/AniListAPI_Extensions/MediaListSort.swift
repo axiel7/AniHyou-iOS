@@ -51,7 +51,7 @@ extension MediaListSort {
     
     static var allCasesForUi: [MediaListSort] {
         [.mediaTitleRomajiDesc, .scoreDesc, .progressDesc, .updatedTimeDesc, .addedTimeDesc, .startedOnDesc,
-            .finishedOnDesc, .repeatDesc, .mediaPopularityDesc]
+            .finishedOnDesc, .repeatDesc]
     }
     
     var isDesc: Bool {
@@ -64,6 +64,17 @@ extension MediaListSort {
             return false
         }
     }
+    
+    var isTitle: Bool {
+        switch self {
+        case .mediaTitleNative, .mediaTitleNativeDesc, .mediaTitleRomaji, .mediaTitleRomajiDesc, 
+                .mediaTitleEnglish, .mediaTitleEnglishDesc:
+            return true
+        default:
+            return false
+        }
+    }
+    
     // swiftlint:disable:next cyclomatic_complexity
     func toAscending() -> MediaListSort {
         switch self {
