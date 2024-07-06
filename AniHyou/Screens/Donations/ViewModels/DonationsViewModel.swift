@@ -53,18 +53,28 @@ class DonationsViewModel: ObservableObject {
     }
 
     func listenForTransactions() -> Task<Void, Error> {
-        Task.detached {
+        Task(priority: .background) {
             for await result in Transaction.updates {
                 switch result {
                 case let.verified(transaction):
                     guard
-                        await self.products.first(where: { $0.id == transaction.productID }) != nil
+                        products.first(where: { $0.id == transaction.productID }) != nil
                     else {
                         continue
                     }
+                    if let revocationDate = transaction.revocationDate {
+                         onProductPurchased(false)
+                    } else if let expirationDate = transaction.expirationDate,
+                        expirationDate < Date() {
+                        continue
+                    } else if transaction.isUpgraded {
+                        continue
+                    } else {
+                        onProductPurchased(true)
+                    }
                     await transaction.finish()
                 case .unverified:
-                    await self.onProductPurchased(false)
+                    onProductPurchased(false)
                     continue
                 }
             }
