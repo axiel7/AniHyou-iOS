@@ -35,6 +35,12 @@ struct HomeView: View {
                     .toolbar {
                         toolbarContent
                     }
+            case .current:
+                CurrentView()
+                    .navigationTitle("Current")
+                    .toolbar {
+                        toolbarContent
+                    }
             }
         }
         .task {

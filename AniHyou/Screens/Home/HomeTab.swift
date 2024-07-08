@@ -11,6 +11,7 @@ import SwiftUI
 enum HomeTab: Int, CaseIterable {
     case discover = 0
     case activity = 1
+    case current = 2
 }
 
 extension HomeTab {
@@ -20,6 +21,8 @@ extension HomeTab {
             "Discover"
         case .activity:
             "Activity"
+        case .current:
+            "Current"
         }
     }
     
@@ -29,6 +32,8 @@ extension HomeTab {
             "globe"
         case .activity:
             "text.bubble"
+        case .current:
+            "play.circle"
         }
     }
 }

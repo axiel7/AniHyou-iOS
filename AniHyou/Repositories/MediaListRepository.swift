@@ -61,7 +61,7 @@ struct MediaListRepository {
         sort: [MediaListSort],
         page: Int,
         perPage: Int = 25
-    ) async -> PagedResult<CommonUserMediaList>? {
+    ) async -> PagedResult<CommonMediaListEntry>? {
         await withCheckedContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserMediaListQuery(
@@ -76,7 +76,49 @@ struct MediaListRepository {
                 switch result {
                 case .success(let graphQLResult):
                     if let pageData = graphQLResult.data?.page,
-                       let list = pageData.mediaList?.compactMap({ $0?.fragments.commonUserMediaList })
+                       let list = pageData.mediaList?.compactMap({ $0?.fragments.commonMediaListEntry })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: list,
+                                page: page + 1,
+                                hasNextPage: pageData.pageInfo?.hasNextPage == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    static func getShouUserMediaList(
+        userId: Int,
+        mediaType: MediaType,
+        status: MediaListStatus?,
+        sort: [MediaListSort],
+        page: Int,
+        perPage: Int = 25
+    ) async -> PagedResult<ShouUserMediaList>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: ShouUserMediaListQuery(
+                    page: .some(page),
+                    perPage: .some(perPage),
+                    userId: .some(userId),
+                    type: .some(.case(mediaType)),
+                    status: someIfNotNil(status),
+                    sort: .some(sort.map({ .case($0) }))
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let pageData = graphQLResult.data?.page,
+                       let list = pageData.mediaList?.compactMap({ $0?.fragments.shouUserMediaList })
                     {
                         continuation.resume(
                             returning: PagedResult(
@@ -261,6 +303,29 @@ struct MediaListRepository {
                 }
             }
         }
+    }
+    
+    static func incrementOneProgress(of entry: BasicMediaListEntry) async -> BasicMediaListEntry? {
+        var status: MediaListStatus?
+        if entry.status == .planning {
+            status = .current
+        }
+        let progress: Int? = if !entry.isVolumeProgress {
+            (entry.progress ?? 0) + 1
+        } else {
+            nil
+        }
+        let progressVolumes: Int? = if entry.isVolumeProgress {
+            (entry.progressVolumes ?? 0) + 1
+        } else {
+            nil
+        }
+        return await MediaListRepository.updateProgress(
+            entryId: entry.id,
+            progress: progress,
+            progressVolumes: progressVolumes,
+            status: status
+        )
     }
     
     static func updateProgress(

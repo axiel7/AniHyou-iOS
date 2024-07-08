@@ -114,29 +114,9 @@ class MediaListViewModel: ObservableObject {
 
     func updateEntryProgress(of entry: BasicMediaListEntry) async {
         isLoading = true
-        var status: MediaListStatus?
-        if entry.status == .planning {
-            status = .current
-        }
-        let progress: Int? = if !entry.isVolumeProgress {
-            (entry.progress ?? 0) + 1
-        } else {
-            nil
-        }
-        let progressVolumes: Int? = if entry.isVolumeProgress {
-            (entry.progressVolumes ?? 0) + 1
-        } else {
-            nil
-        }
-        if let newEntry = await MediaListRepository.updateProgress(
-            entryId: entry.id,
-            progress: progress,
-            progressVolumes: progressVolumes,
-            status: status
-        ) {
+        if let newEntry = await MediaListRepository.incrementOneProgress(of: entry) {
             await onEntryUpdated(newEntry)
         }
-        
         isLoading = false
     }
 

@@ -32,6 +32,7 @@ struct ActivityFeedView: View {
                             }
                     }
                 }
+                .padding(.top, 12)
             }
         }
         .toolbar {

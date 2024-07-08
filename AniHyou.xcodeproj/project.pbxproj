@@ -123,6 +123,9 @@
 		486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED208285DD649002D29E1 /* MediaListStatusView.swift */; };
 		486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
 		486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED213285E3261002D29E1 /* MediaDetailsView.swift */; };
+		48801D212C3BEDC5000BEA3A /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D202C3BEDC5000BEA3A /* CurrentView.swift */; };
+		48801D232C3BF093000BEA3A /* CurrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */; };
+		48801D252C3BF397000BEA3A /* CurrentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D242C3BF397000BEA3A /* CurrentListItemView.swift */; };
 		488408CD2BF88B5A00580DA0 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488408CC2BF88B5A00580DA0 /* MediaListViewModel.swift */; };
 		488408D42BFB86FA00580DA0 /* MediaCustomListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488408D32BFB86FA00580DA0 /* MediaCustomListsView.swift */; };
 		4884AAB02965AC94009A3B8C /* GenreTagSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */; };
@@ -472,8 +475,12 @@
 		4873757E2BDCF36500A1424F /* MediaListIds.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaListIds.graphql; sourceTree = "<group>"; };
 		487F4BE22B282ED90002237C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		487F4BE32B282ED90002237C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		48801D202C3BEDC5000BEA3A /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
+		48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewModel.swift; sourceTree = "<group>"; };
+		48801D242C3BF397000BEA3A /* CurrentListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentListItemView.swift; sourceTree = "<group>"; };
+		48801D262C3BFA06000BEA3A /* UserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserMediaList.graphql; sourceTree = "<group>"; };
 		488408CC2BF88B5A00580DA0 /* MediaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewModel.swift; sourceTree = "<group>"; };
-		488408CE2BF88CAD00580DA0 /* UserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserMediaList.graphql; sourceTree = "<group>"; };
+		488408CE2BF88CAD00580DA0 /* ShouUserMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShouUserMediaList.graphql; sourceTree = "<group>"; };
 		488408D32BFB86FA00580DA0 /* MediaCustomListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCustomListsView.swift; sourceTree = "<group>"; };
 		4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTagSelectionView.swift; sourceTree = "<group>"; };
 		488763D52977F83F00402934 /* HorizontalBarStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarStatsView.swift; sourceTree = "<group>"; };
@@ -1282,7 +1289,8 @@
 				481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */,
 				48EFCDEF29FFB3320096BF6E /* UserCurrentAnimeList.graphql */,
 				486ED1FF285DD329002D29E1 /* UserListCollection.graphql */,
-				488408CE2BF88CAD00580DA0 /* UserMediaList.graphql */,
+				48801D262C3BFA06000BEA3A /* UserMediaList.graphql */,
+				488408CE2BF88CAD00580DA0 /* ShouUserMediaList.graphql */,
 				4873757E2BDCF36500A1424F /* MediaListIds.graphql */,
 			);
 			path = MediaList;
@@ -1622,8 +1630,10 @@
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
 				4820F6A32ADE8BB600A4F465 /* DiscoverView.swift */,
-				4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */,
 				4820F6AA2ADE96FF00A4F465 /* ActivityFeedView.swift */,
+				48801D202C3BEDC5000BEA3A /* CurrentView.swift */,
+				48801D242C3BF397000BEA3A /* CurrentListItemView.swift */,
+				4892DDED2A2DE0B8009AFB63 /* TrendingListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1633,6 +1643,7 @@
 			children = (
 				481AD4F72851D927001779EE /* DiscoverViewModel.swift */,
 				4820F6AE2ADE97A200A4F465 /* ActivityFeedViewModel.swift */,
+				48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2236,6 +2247,7 @@
 				48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */,
 				48DD404E2994FF6500FED7BF /* NotificationItemView.swift in Sources */,
 				4820F6A62ADE8CD700A4F465 /* HomeTab.swift in Sources */,
+				48801D232C3BF093000BEA3A /* CurrentViewModel.swift in Sources */,
 				480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */,
 				486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */,
 				4832B032285F406300E79D27 /* StringsPreview.swift in Sources */,
@@ -2250,8 +2262,10 @@
 				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
 				48B7AC212BB59D4E0047998F /* VoiceActorsStatsViewModel.swift in Sources */,
 				48B7ABEF2BB4214A0047998F /* NumberUtils.swift in Sources */,
+				48801D252C3BF397000BEA3A /* CurrentListItemView.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
 				4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */,
+				48801D212C3BEDC5000BEA3A /* CurrentView.swift in Sources */,
 				48B7AC272BB59FB70047998F /* StudiosStatsView.swift in Sources */,
 				4820F6BA2ADF9B3800A4F465 /* LikeRepository.swift in Sources */,
 				488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */,

@@ -1,0 +1,34 @@
+query ShouUserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) {
+  Page(page: $page, perPage: $perPage) {
+    mediaList(userId: $userId, type: $type, status: $status, sort: $sort) {
+      ...ShouUserMediaList
+    }
+    pageInfo {
+      hasNextPage
+    }
+  }
+}
+
+fragment ShouUserMediaList on MediaList {
+    id
+    mediaId
+    media {
+        title {
+          userPreferred
+        }
+        coverImage {
+          color
+        }
+        type
+        episodes
+        chapters
+        volumes
+        nextAiringEpisode {
+            episode
+            airingAt
+        }
+    }
+    progress
+    progressVolumes
+    status
+}

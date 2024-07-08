@@ -43,7 +43,7 @@ struct MediaListView: View {
 
 struct MediaListItemStandardView: View {
 
-    let item: CommonUserMediaList
+    let item: ShouUserMediaList
 
     var body: some View {
         HStack {

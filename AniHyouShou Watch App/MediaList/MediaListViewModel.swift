@@ -19,11 +19,11 @@ class MediaListViewModel: ObservableObject {
     var currentPage = 1
     var hasNextPage = false
     @Published var isLoading = false
-    @Published var mediaList: [CommonUserMediaList] = []
+    @Published var mediaList: [ShouUserMediaList] = []
     
     func getUserMediaList() async {
         isLoading = true
-        if let result = await MediaListRepository.getUserMediaList(
+        if let result = await MediaListRepository.getShouUserMediaList(
             userId: userId,
             mediaType: mediaType,
             status: status,
@@ -38,7 +38,7 @@ class MediaListViewModel: ObservableObject {
         isLoading = false
     }
     
-    func updateEntryProgress(of entry: CommonUserMediaList) async {
+    func updateEntryProgress(of entry: ShouUserMediaList) async {
         let newProgress = (entry.progress ?? 0) + 1
         let newStatus: MediaListStatus? = newProgress >= entry.maxProgress ? .completed : nil
         if let result = await MediaListRepository.updateProgress(
@@ -56,7 +56,7 @@ class MediaListViewModel: ObservableObject {
         if mediaList[safe: foundIndex]?.status != entry.status {
             mediaList.remove(at: foundIndex)
         } else { // update the local cache
-            if let updatedItem: CommonUserMediaList = await MediaListRepository.updateCachedEntry(entry) {
+            if let updatedItem: ShouUserMediaList = await MediaListRepository.updateCachedEntry(entry) {
                 mediaList[foundIndex] = updatedItem
             }
         }

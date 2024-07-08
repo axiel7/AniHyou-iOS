@@ -31,6 +31,7 @@ struct ContentView: View {
         TabView(selection: $selectedTabIndex) {
             HomeView()
                 .tabItem(.home)
+                .environment(\.scoreFormat, myScoreFormat)
             
             if isLoggedIn {
                 MediaListStatusView(mediaType: .anime)

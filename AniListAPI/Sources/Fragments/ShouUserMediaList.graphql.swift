@@ -3,9 +3,9 @@
 
 @_exported import ApolloAPI
 
-public struct CommonUserMediaList: AniListAPI.SelectionSet, Fragment {
+public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment CommonUserMediaList on MediaList { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename color } type episodes chapters volumes nextAiringEpisode { __typename episode airingAt } } progress progressVolumes status }"#
+    #"fragment ShouUserMediaList on MediaList { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename color } type episodes chapters volumes nextAiringEpisode { __typename episode airingAt } } progress progressVolumes status }"#
   }
 
   public let __data: DataDict

@@ -50,7 +50,7 @@ struct MediaListProvider: AppIntentTimelineProvider {
         
         let maxItems = context.family.maxMediaListItems
         
-        if let result = await MediaListRepository.getUserMediaList(
+        if let result = await MediaListRepository.getShouUserMediaList(
             userId: userId,
             mediaType: mediaType,
             status: .current,
@@ -81,7 +81,7 @@ struct MediaListProvider: AppIntentTimelineProvider {
 }
 
 struct MediaListEntry: BaseEntry {
-    let animeList: [CommonUserMediaList]
+    let animeList: [ShouUserMediaList]
     var date: Date
     var placeholderText: String?
     var widgetSize: CGSize
@@ -153,7 +153,7 @@ struct MediaListWidgetEntryView: View {
 @available(iOSApplicationExtension 17.0, *)
 private struct MediaListItemView: View {
     
-    let item: CommonUserMediaList
+    let item: ShouUserMediaList
     let tintColor: Color
     
     var body: some View {

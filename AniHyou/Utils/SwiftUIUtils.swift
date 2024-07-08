@@ -39,4 +39,35 @@ extension View {
             self
         }
     }
+    
+    @ViewBuilder
+    func scrollTargetLayoutCompat() -> some View {
+        if #available(iOS 17.0, *) {
+            self.scrollTargetLayout()
+        } else {
+            self
+        }
+    }
+    
+    @ViewBuilder
+    func scrollTargetBehaviorCompat() -> some View {
+        if #available(iOS 17.0, *) {
+            self.scrollTargetBehavior(.viewAligned(limitBehavior: .always))
+        } else {
+            self
+        }
+    }
+}
+
+struct RoundedButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .fontWeight(.semibold)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(.regularMaterial)
+            .foregroundStyle(.tint)
+            .opacity(configuration.isPressed ? 0.7 : 1)
+            .clipShape(Capsule())
+    }
 }

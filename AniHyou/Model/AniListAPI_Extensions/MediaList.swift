@@ -14,7 +14,7 @@ extension CommonMediaListEntry {
     }
 }
 
-extension CommonUserMediaList {
+extension ShouUserMediaList {
     var uniqueListId: String? {
         "\(self.mediaId)-\(self.id)"
     }

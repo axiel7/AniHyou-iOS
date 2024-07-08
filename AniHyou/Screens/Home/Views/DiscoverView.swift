@@ -27,6 +27,7 @@ struct DiscoverView: View {
 
                     trendingManga
                 }//:VStack
+                .padding(.top, 12)
             }//:VScrollView
         }//:NavigationStack
     }
