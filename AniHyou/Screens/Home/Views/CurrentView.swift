@@ -10,6 +10,23 @@ import AniListAPI
 
 struct CurrentView: View {
     
+    enum ListType {
+        case airing
+        case anime
+        case manga
+        
+        var title: LocalizedStringKey {
+            switch self {
+            case .airing:
+                "Airing"
+            case .anime:
+                "Watching"
+            case .manga:
+                "Reading"
+            }
+        }
+    }
+    
     @StateObject private var viewModel = CurrentViewModel()
     
     private let gridRows = [
@@ -23,17 +40,17 @@ struct CurrentView: View {
                 VStack {
                     let hasAiring = !viewModel.airingList.isEmpty
                     if hasAiring {
-                        list(title: "Airing", items: viewModel.airingList)
+                        list(type: .airing, items: viewModel.airingList)
                     }
                     
                     let hasAnime = !viewModel.animeList.isEmpty
                     if hasAnime {
-                        list(title: "Watching", items: viewModel.animeList)
+                        list(type: .anime, items: viewModel.animeList)
                     }
                     
                     let hasManga = !viewModel.mangaList.isEmpty
                     if hasManga {
-                        list(title: "Reading", items: viewModel.mangaList)
+                        list(type: .manga, items: viewModel.mangaList)
                     }
                     
                     if viewModel.isLoading {
@@ -62,11 +79,11 @@ struct CurrentView: View {
     
     @ViewBuilder
     func list(
-        title: LocalizedStringKey,
+        type: ListType,
         items: [CommonMediaListEntry]
     ) -> some View {
         HStack(alignment: .center) {
-            Text(title)
+            Text(type.title)
                 .font(.title2)
                 .bold()
             Spacer()
@@ -87,7 +104,7 @@ struct CurrentView: View {
                             schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
                             onClickPlus: {
                                 Task {
-                                    await viewModel.updateEntryProgress(of: item)
+                                    await viewModel.updateEntryProgress(of: item, type: type)
                                 }
                             }
                         )

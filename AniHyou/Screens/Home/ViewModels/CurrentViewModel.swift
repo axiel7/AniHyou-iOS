@@ -45,27 +45,40 @@ class CurrentViewModel: ObservableObject {
         }
     }
     
-    func updateEntryProgress(of entry: CommonMediaListEntry) async {
+    func updateEntryProgress(of entry: CommonMediaListEntry, type: CurrentView.ListType) async {
         if let newEntry = await MediaListRepository.incrementOneProgress(of: entry.fragments.basicMediaListEntry) {
             guard let mediaType = entry.media?.type?.value else { return }
-            await onEntryUpdated(newEntry, mediaType: mediaType)
+            await onEntryUpdated(newEntry, type: type)
         }
     }
     
-    func onEntryUpdated(_ entry: BasicMediaListEntry, mediaType: MediaType) async {
-        let list = mediaType == .anime ? animeList : mangaList
+    func onEntryUpdated(_ entry: BasicMediaListEntry, type: CurrentView.ListType) async {
+        let list = switch type {
+        case .airing:
+            airingList
+        case .anime:
+            animeList
+        case .manga:
+            mangaList
+        }
         guard let foundIndex = list.firstIndex(where: { $0.id == entry.id }) else { return }
         if list[safe: foundIndex]?.status != entry.status {
-            if mediaType == .anime {
+            switch type {
+            case .airing:
+                airingList.removeAll(where: { $0.id == entry.id })
+            case .anime:
                 animeList.removeAll(where: { $0.id == entry.id })
-            } else {
+            case .manga:
                 mangaList.removeAll(where: { $0.id == entry.id })
             }
         } else {
             if let updatedItem: CommonMediaListEntry = await MediaListRepository.updateCachedEntry(entry) {
-                if mediaType == .anime {
+                switch type {
+                case .airing:
+                    airingList[foundIndex] = updatedItem
+                case .anime:
                     animeList[foundIndex] = updatedItem
-                } else {
+                case .manga:
                     mangaList[foundIndex] = updatedItem
                 }
             }
