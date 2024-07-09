@@ -82,6 +82,8 @@ struct CurrentView: View {
         type: ListType,
         items: [CommonMediaListEntry]
     ) -> some View {
+        let rows: CGFloat = items.count == 1 ? 1 : 2
+        
         HStack(alignment: .center) {
             Text(type.title)
                 .font(.title2)
@@ -113,7 +115,7 @@ struct CurrentView: View {
                 }
             }
             .scrollTargetLayoutCompat()
-            .frame(height: CurrentListItemView.height * 2 + 20)
+            .frame(height: CurrentListItemView.height * rows + 20)
             .padding(.leading)
         }
         .scrollTargetBehaviorCompat()
