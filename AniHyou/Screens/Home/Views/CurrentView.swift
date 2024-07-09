@@ -21,19 +21,52 @@ struct CurrentView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    list(mediaType: .anime)
+                    let hasAiring = !viewModel.airingList.isEmpty
+                    if hasAiring {
+                        list(title: "Airing", items: viewModel.airingList)
+                    }
                     
-                    list(mediaType: .manga)
+                    let hasAnime = !viewModel.animeList.isEmpty
+                    if hasAnime {
+                        list(title: "Watching", items: viewModel.animeList)
+                    }
+                    
+                    let hasManga = !viewModel.mangaList.isEmpty
+                    if hasManga {
+                        list(title: "Reading", items: viewModel.mangaList)
+                    }
+                    
+                    if viewModel.isLoading {
+                        HorizontalProgressView()
+                    }
+                    
+                    let hasNothing = !hasAiring && !hasAnime && !hasManga
+                    if hasNothing {
+                        HStack {
+                            Spacer()
+                            Text("Nothing in your list")
+                            Spacer()
+                        }
+                    }
                 }
                 .padding(.top, 12)
+            }
+            .refreshable {
+                await viewModel.fetchLists()
+            }
+            .task {
+                await viewModel.fetchLists()
             }
         }
     }
     
     @ViewBuilder
-    func list(mediaType: MediaType) -> some View {
+    func list(
+        title: LocalizedStringKey,
+        items: [CommonMediaListEntry]
+    ) -> some View {
         HStack(alignment: .center) {
-            Text(mediaType.currentListStatus)
+            Text(title)
                 .font(.title2)
                 .bold()
             Spacer()
@@ -44,7 +77,6 @@ struct CurrentView: View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: gridRows, spacing: 16) {
-                let items = mediaType == .anime ? viewModel.animeList : viewModel.mangaList
                 ForEach(items, id: \.uniqueListId) { item in
                     NavigationLink(
                         destination: MediaDetailsView(mediaId: item.mediaId)
@@ -68,9 +100,6 @@ struct CurrentView: View {
             .padding(.leading)
         }
         .scrollTargetBehaviorCompat()
-        .task {
-            await viewModel.getMediaList(mediaType: mediaType)
-        }
     }
 }
 

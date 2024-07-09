@@ -11,8 +11,17 @@ import AniListAPI
 @MainActor
 class CurrentViewModel: ObservableObject {
     
+    @Published var isLoading = false
+    @Published var airingList: [CommonMediaListEntry] = []
     @Published var animeList: [CommonMediaListEntry] = []
     @Published var mangaList: [CommonMediaListEntry] = []
+    
+    func fetchLists() async {
+        isLoading = true
+        await getMediaList(mediaType: .anime)
+        await getMediaList(mediaType: .manga)
+        isLoading = false
+    }
     
     func getMediaList(mediaType: MediaType) async {
         if let result = await MediaListRepository.getUserMediaList(
@@ -24,7 +33,12 @@ class CurrentViewModel: ObservableObject {
             perPage: 25
         ) {
             if mediaType == .anime {
-                animeList = result.data
+                airingList = result.data
+                    .filter { $0.media?.status?.value == .releasing }
+                    .sorted(by: {
+                        $0.media?.nextAiringEpisode?.airingAt ?? 0 < $1.media?.nextAiringEpisode?.airingAt ?? 0
+                    })
+                animeList = result.data.filter { $0.media?.status?.value != .releasing }
             } else if mediaType == .manga {
                 mangaList = result.data
             }
