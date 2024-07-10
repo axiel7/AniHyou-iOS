@@ -66,7 +66,7 @@ class DiscoverViewModel: ObservableObject {
             page: page,
             perPage: 10
         ) {
-            trendingAnimes = result.data
+            trendingAnimes += result.data
             hasNextPageTrendingAnime = result.hasNextPage
             pageTrendingAnime = result.page
         }
@@ -99,9 +99,45 @@ class DiscoverViewModel: ObservableObject {
             page: page,
             perPage: 10
         ) {
-            trendingManga = result.data
+            trendingManga += result.data
             hasNextPageTrendingManga = result.hasNextPage
             pageTrendingManga = result.page
+        }
+    }
+    
+    // MARK: Newly anime
+    var pageNewlyAnime = 1
+    var hasNextPageNewlyAnime = true
+    @Published var newlyAnime = [MediaSortedQuery.Data.Page.Medium]()
+    
+    func getNewlyAnime(page: Int = 1) async {
+        if let result = await MediaRepository.getMediaSorted(
+            sort: [.idDesc],
+            mediaType: .anime,
+            page: page,
+            perPage: 10
+        ) {
+            newlyAnime += result.data
+            hasNextPageNewlyAnime = result.hasNextPage
+            pageNewlyAnime = result.page
+        }
+    }
+    
+    // MARK: Newly manga
+    var pageNewlyManga = 1
+    var hasNextPageNewlyManga = true
+    @Published var newlyManga = [MediaSortedQuery.Data.Page.Medium]()
+    
+    func getNewlyManga(page: Int = 1) async {
+        if let result = await MediaRepository.getMediaSorted(
+            sort: [.idDesc],
+            mediaType: .manga,
+            page: page,
+            perPage: 10
+        ) {
+            newlyManga += result.data
+            hasNextPageNewlyManga = result.hasNextPage
+            pageNewlyManga = result.page
         }
     }
 }

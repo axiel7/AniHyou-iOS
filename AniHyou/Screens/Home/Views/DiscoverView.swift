@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 // swiftlint:disable:next type_body_length
 struct DiscoverView: View {
@@ -19,13 +20,113 @@ struct DiscoverView: View {
 
                     airingNext
 
-                    thisSeason
+                    mediaSeason(
+                        season: viewModel.nowAnimeSeason,
+                        media: viewModel.seasonAnimes
+                    )
+                    .task {
+                        await viewModel.getSeasonAnimes()
+                    }
 
-                    trendingAnime
+                    mediaContent(
+                        title: "Trending Anime",
+                        mediaType: .anime,
+                        media: viewModel.trendingAnimes,
+                        headerDestination: {
+                            DiscoverMediaListView(
+                                viewModel: viewModel,
+                                mediaType: .anime,
+                                media: viewModel.trendingAnimes,
+                                hasNextPage: viewModel.hasNextPageTrendingAnime,
+                                loadMore: {
+                                    await viewModel.getTrendingAnimes(
+                                        page: viewModel.pageTrendingAnime
+                                    )
+                                }
+                            )
+                            .navigationTitle("Trending Anime")
+                        }
+                    )
+                    .task {
+                        await viewModel.getTrendingAnimes()
+                    }
 
-                    nextSeason
+                    mediaSeason(
+                        season: viewModel.nextAnimeSeason,
+                        media: viewModel.nextSeasonAnimes
+                    )
+                    .task {
+                        await viewModel.getNextSeasonAnimes()
+                    }
 
-                    trendingManga
+                    mediaContent(
+                        title: "Trending Manga",
+                        mediaType: .manga,
+                        media: viewModel.trendingManga,
+                        headerDestination: {
+                            DiscoverMediaListView(
+                                viewModel: viewModel,
+                                mediaType: .manga,
+                                media: viewModel.trendingManga,
+                                hasNextPage: viewModel.hasNextPageTrendingManga,
+                                loadMore: {
+                                    await viewModel.getTrendingManga(
+                                        page: viewModel.pageTrendingManga
+                                    )
+                                }
+                            )
+                            .navigationTitle("Trending Manga")
+                        }
+                    )
+                    .task {
+                        await viewModel.getTrendingManga()
+                    }
+                    
+                    mediaContent(
+                        title: "Newly Added Anime",
+                        mediaType: .anime,
+                        media: viewModel.newlyAnime,
+                        headerDestination: {
+                            DiscoverMediaListView(
+                                viewModel: viewModel,
+                                mediaType: .anime,
+                                media: viewModel.newlyAnime,
+                                hasNextPage: viewModel.hasNextPageNewlyAnime,
+                                loadMore: {
+                                    await viewModel.getNewlyAnime(
+                                        page: viewModel.pageNewlyAnime
+                                    )
+                                }
+                            )
+                            .navigationTitle("Newly Added Anime")
+                        }
+                    )
+                    .task {
+                        await viewModel.getNewlyAnime()
+                    }
+                    
+                    mediaContent(
+                        title: "Newly Added Manga",
+                        mediaType: .manga,
+                        media: viewModel.newlyManga,
+                        headerDestination: {
+                            DiscoverMediaListView(
+                                viewModel: viewModel,
+                                mediaType: .manga,
+                                media: viewModel.newlyManga,
+                                hasNextPage: viewModel.hasNextPageNewlyManga,
+                                loadMore: {
+                                    await viewModel.getNewlyManga(
+                                        page: viewModel.pageNewlyManga
+                                    )
+                                }
+                            )
+                            .navigationTitle("Newly Added Manga")
+                        }
+                    )
+                    .task {
+                        await viewModel.getNewlyManga()
+                    }
                 }//:VStack
                 .padding(.top, 12)
             }//:VScrollView
@@ -111,28 +212,33 @@ struct DiscoverView: View {
         }//:ZStack
         Divider()
     }
-
+    
     @ViewBuilder
-    var thisSeason: some View {
+    func mediaSeason(
+        season: AnimeSeason,
+        media: [SeasonalAnimeQuery.Data.Page.Medium]
+    ) -> some View {
         HStack(alignment: .center) {
             Group {
-                Text(viewModel.nowAnimeSeason.season.localizedName) +
-                Text(" \(viewModel.nowAnimeSeason.year.stringValue)")
+                Text(season.season.localizedName) +
+                Text(" \(season.year.stringValue)")
             }
             .font(.title2)
             .bold()
             Spacer()
-            NavigationLink("See All", destination: AnimeSeasonListView(initSeason: viewModel.nowAnimeSeason.season))
+            NavigationLink("See All") {
+                AnimeSeasonListView(initSeason: season.season)
+            }
         }
         .padding(.horizontal)
         .padding(.top, 8)
         ZStack {
-            if viewModel.seasonAnimes.count == 0 {
+            if media.count == 0 {
                 ProgressView()
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top) {
-                    ForEach(viewModel.seasonAnimes, id: \.id) { item in
+                    ForEach(media, id: \.id) { item in
                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                             VListItemView(
                                 title: item.title?.userPreferred ?? "",
@@ -153,31 +259,33 @@ struct DiscoverView: View {
                 .padding(.leading, 14)
             }//:HScrollView
             .frame(minHeight: 180)
-            .task {
-                await viewModel.getSeasonAnimes()
-            }
         }//:ZStack
         Divider()
     }
-
+    
     @ViewBuilder
-    var trendingAnime: some View {
+    func mediaContent(
+        title: LocalizedStringKey,
+        mediaType: MediaType,
+        media: [MediaSortedQuery.Data.Page.Medium],
+        headerDestination: () -> some View
+    ) -> some View {
         HStack(alignment: .center) {
-            Text("Trending Anime")
+            Text(title)
                 .font(.title2)
                 .bold()
             Spacer()
-            NavigationLink("See All", destination: TrendingListView(viewModel: viewModel, mediaType: .anime))
+            NavigationLink("See All", destination: headerDestination)
         }
         .padding(.horizontal)
         .padding(.top, 8)
         ZStack {
-            if viewModel.trendingAnimes.count == 0 {
+            if media.count == 0 {
                 ProgressView()
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top) {
-                    ForEach(viewModel.trendingAnimes, id: \.id) { item in
+                    ForEach(media, id: \.id) { item in
                         NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
                             VListItemView(
                                 title: item.title?.userPreferred ?? "",
@@ -188,7 +296,7 @@ struct DiscoverView: View {
                             .padding(.trailing, 4)
                             .mediaContextMenu(
                                 mediaId: item.id,
-                                mediaType: .anime,
+                                mediaType: mediaType,
                                 mediaListStatus: item.mediaListEntry?.status?.value
                             )
                         }
@@ -198,102 +306,6 @@ struct DiscoverView: View {
                 .padding(.leading, 14)
             }//:HScrollView
             .frame(minHeight: 180)
-            .task {
-                await viewModel.getTrendingAnimes()
-            }
-        }//:ZStack
-        Divider()
-    }
-
-    @ViewBuilder
-    var nextSeason: some View {
-        HStack(alignment: .center) {
-            Text("Next Season")
-                .font(.title2)
-                .bold()
-            Spacer()
-            NavigationLink("See All", destination: AnimeSeasonListView(
-                initSeason: viewModel.nextAnimeSeason.season,
-                initYear: viewModel.nextAnimeSeason.year)
-            )
-        }
-        .padding(.horizontal)
-        .padding(.top, 8)
-        ZStack {
-            if viewModel.nextSeasonAnimes.count == 0 {
-                ProgressView()
-            }
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top) {
-                    ForEach(viewModel.nextSeasonAnimes, id: \.id) { item in
-                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                            VListItemView(
-                                title: item.title?.userPreferred ?? "",
-                                imageUrl: item.coverImage?.large,
-                                meanScore: item.meanScore,
-                                status: item.mediaListEntry?.status?.value
-                            )
-                            .padding(.trailing, 4)
-                            .mediaContextMenu(
-                                mediaId: item.id,
-                                mediaType: .anime,
-                                mediaListStatus: item.mediaListEntry?.status?.value
-                            )
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }//:HStack
-                .padding(.leading, 14)
-            }//:HScrollView
-            .frame(minHeight: 180)
-            .task {
-                await viewModel.getNextSeasonAnimes()
-            }
-        }//:ZStack
-        Divider()
-    }
-
-    @ViewBuilder
-    var trendingManga: some View {
-        HStack(alignment: .center) {
-            Text("Trending Manga")
-                .font(.title2)
-                .bold()
-            Spacer()
-            NavigationLink("See All", destination: TrendingListView(viewModel: viewModel, mediaType: .manga))
-        }
-        .padding(.horizontal)
-        .padding(.top, 8)
-        ZStack {
-            if viewModel.trendingManga.count == 0 {
-                ProgressView()
-            }
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top) {
-                    ForEach(viewModel.trendingManga, id: \.id) { item in
-                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                            VListItemView(
-                                title: item.title?.userPreferred ?? "",
-                                imageUrl: item.coverImage?.large,
-                                meanScore: item.meanScore,
-                                status: item.mediaListEntry?.status?.value
-                            )
-                            .padding(.trailing, 4)
-                            .mediaContextMenu(
-                                mediaId: item.id,
-                                mediaType: .manga,
-                                mediaListStatus: item.mediaListEntry?.status?.value
-                            )
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }//:HStack
-                .padding(.leading, 14)
-            }//:HScrollView
-            .frame(minHeight: 180)
-            .task {
-                await viewModel.getTrendingManga()
-            }
         }//:ZStack
         .padding(.bottom)
     }
