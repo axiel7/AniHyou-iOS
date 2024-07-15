@@ -29,18 +29,21 @@ struct HomeView: View {
                     .toolbar {
                         toolbarContent
                     }
+                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             case .activity:
                 ActivityFeedView()
                     .navigationTitle("Activity")
                     .toolbar {
                         toolbarContent
                     }
+                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             case .current:
                 CurrentView()
                     .navigationTitle("Current")
                     .toolbar {
                         toolbarContent
                     }
+                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             }
         }
         .task {
@@ -52,7 +55,6 @@ struct HomeView: View {
         .sheet(isPresented: $showNotificationsSheet) {
             NotificationsView()
         }
-        .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
     }
     
     @ToolbarContentBuilder
