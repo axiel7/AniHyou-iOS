@@ -29,7 +29,8 @@ struct CurrentView: View {
     
     @StateObject private var viewModel = CurrentViewModel()
     
-    private let gridRows = [
+    private let oneGirdRow = [GridItem(.fixed(CurrentListItemView.height))]
+    private let twoGridRows = [
         GridItem(.fixed(CurrentListItemView.height), spacing: 16),
         GridItem(.fixed(CurrentListItemView.height))
     ]
@@ -82,7 +83,8 @@ struct CurrentView: View {
         type: ListType,
         items: [CommonMediaListEntry]
     ) -> some View {
-        let rows: CGFloat = items.count == 1 ? 1 : 2
+        let rowsCount: CGFloat = items.count == 1 ? 1 : 2
+        let rows = rowsCount == 1 ? oneGirdRow : twoGridRows
         
         HStack(alignment: .center) {
             Text(type.title)
@@ -95,7 +97,7 @@ struct CurrentView: View {
         .padding(.top, 8)
         
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: gridRows, spacing: 16) {
+            LazyHGrid(rows: rows, spacing: 16) {
                 ForEach(items, id: \.uniqueListId) { item in
                     NavigationLink(
                         destination: MediaDetailsView(mediaId: item.mediaId)
@@ -115,7 +117,7 @@ struct CurrentView: View {
                 }
             }
             .scrollTargetLayoutCompat()
-            .frame(height: CurrentListItemView.height * rows + 20)
+            .frame(height: CurrentListItemView.height * rowsCount + 20)
             .padding(.leading)
         }
         .scrollTargetBehaviorCompat()
