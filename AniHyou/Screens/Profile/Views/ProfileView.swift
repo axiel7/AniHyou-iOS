@@ -145,6 +145,7 @@ struct ProfileView: View {
                     }
                 }
                 .padding(.horizontal)
+                .padding(.top, 24)
             }
         }//:HStack
         .sheet(isPresented: $showingImageSheet) {
