@@ -504,6 +504,7 @@
 		4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = NotificationCount.graphql; sourceTree = "<group>"; };
 		4892DDED2A2DE0B8009AFB63 /* DiscoverMediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMediaListView.swift; sourceTree = "<group>"; };
+		489471D02C483EA70053C91B /* MediaFollowing.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaFollowing.graphql; sourceTree = "<group>"; };
 		489622502934E4E400C6CB3F /* DeleteMediaList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteMediaList.graphql; sourceTree = "<group>"; };
 		489BA4142A52740500B2445E /* AiringMediaHorizontalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiringMediaHorizontalItemView.swift; sourceTree = "<group>"; };
 		489C7E8B2918FE81004B0B39 /* CharacterDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CharacterDetails.graphql; sourceTree = "<group>"; };
@@ -1275,6 +1276,7 @@
 				48CA07B828709FFF0048854E /* MediaRelationsAndRecommendations.graphql */,
 				484A6D5F28747FD50044C34A /* MediaReviews.graphql */,
 				488763D92978180B00402934 /* MediaStats.graphql */,
+				489471D02C483EA70053C91B /* MediaFollowing.graphql */,
 				483CEABA289E67A000D30266 /* MediaThreads.graphql */,
 				48BB54F82A5E97BD0061D4C7 /* PreviewMediaDetails.graphql */,
 			);

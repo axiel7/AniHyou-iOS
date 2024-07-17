@@ -15,10 +15,17 @@ class MediaStatsViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var statusDistribution = [Stat]()
     @Published var scoreDistribution = [Stat]()
-    @Published var rankings = [MediaStatsQuery.Data.Media.Ranking?]()
-
-    func getMediaStats(mediaId: Int) async {
+    @Published var rankings = [MediaStatsQuery.Data.Media.Ranking]()
+    @Published var following = [MediaFollowingQuery.Data.Page.MediaList]()
+    
+    func fetchData(mediaId: Int) async {
         isLoading = true
+        await getMediaStats(mediaId: mediaId)
+        await getMediaFollowing(mediaId: mediaId)
+        isLoading = false
+    }
+
+    private func getMediaStats(mediaId: Int) async {
         if let result = await MediaRepository.getMediaStats(mediaId: mediaId) {
             result.stats?.statusDistribution?.forEach {
                 if let stat = $0 {
@@ -45,6 +52,11 @@ class MediaStatsViewModel: ObservableObject {
             }
             rankings = result.rankings?.compactMap({ $0 }) ?? []
         }
-        isLoading = false
+    }
+    
+    private func getMediaFollowing(mediaId: Int) async {
+        if let result = await MediaRepository.getMediaFollowing(mediaId: mediaId, page: 1, perPage: 25) {
+            following = result.data
+        }
     }
 }

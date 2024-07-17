@@ -362,6 +362,42 @@ struct MediaRepository {
         }
     }
     
+    static func getMediaFollowing(
+        mediaId: Int,
+        page: Int,
+        perPage: Int
+    ) async -> PagedResult<MediaFollowingQuery.Data.Page.MediaList>? {
+        await withCheckedContinuation { continuation in
+            Network.shared.apollo.fetch(
+                query: MediaFollowingQuery(
+                    id: .some(mediaId),
+                    page: .some(page),
+                    perPage: .some(perPage)
+                )
+            ) { result in
+                switch result {
+                case .success(let graphQLResult):
+                    if let data = graphQLResult.data?.page,
+                       let media = data.mediaList?.compactMap({ $0 })
+                    {
+                        continuation.resume(
+                            returning: PagedResult(
+                                data: media,
+                                page: page + 1,
+                                hasNextPage: data.pageInfo?.hasNextPage == true
+                            )
+                        )
+                    } else {
+                        continuation.resume(returning: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
     static func getMediaReviews(
         mediaId: Int,
         page: Int,
