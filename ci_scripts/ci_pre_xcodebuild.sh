@@ -11,5 +11,8 @@ if [[ -n $ANILIST_CLIENT_ID ]];
 then
     cd ../AniHyou
     touch Config.xcconfig
-    echo "ANILIST_CLIENT_ID=${ANILIST_CLIENT_ID}" > Config.xcconfig
+    echo """
+    ANILIST_CLIENT_ID=${ANILIST_CLIENT_ID}
+    MAL_CLIENT_ID=${MAL_CLIENT_ID}
+    """ > Config.xcconfig
 fi

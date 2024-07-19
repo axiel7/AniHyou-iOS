@@ -4,6 +4,8 @@
 <dict>
 	<key>ANILIST_CLIENT_ID</key>
 	<string>$(ANILIST_CLIENT_ID)</string>
+	<key>MAL_CLIENT_ID</key>
+	<string>${MAL_CLIENT_ID}</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>com.axiel7.AniHyou.fetch_notifications</string>

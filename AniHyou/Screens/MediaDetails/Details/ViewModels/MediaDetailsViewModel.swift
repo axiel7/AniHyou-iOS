@@ -14,12 +14,24 @@ class MediaDetailsViewModel: ObservableObject {
 
     @Published var mediaDetails: MediaDetailsQuery.Data.Media?
     @Published var listEntry: BasicMediaListEntry?
+    @Published var openings: [AnimeThemes.Theme]?
+    @Published var endings: [AnimeThemes.Theme]?
+    @Published var isLoadingThemes = true
 
     func getMediaDetails(mediaId: Int) async {
         if let result = await MediaRepository.getMediaDetails(mediaId: mediaId) {
             mediaDetails = result
             listEntry = result.mediaListEntry?.fragments.basicMediaListEntry
         }
+    }
+    
+    func getAnimeThemes(idMal: Int) async {
+        isLoadingThemes = true
+        if let result = await MediaRepository.getAnimeThemes(idMal: idMal) {
+            openings = result.openingThemes
+            endings = result.endingThemes
+        }
+        isLoadingThemes = false
     }
 
     func toggleFavorite() async {

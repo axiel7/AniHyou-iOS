@@ -470,5 +470,12 @@ struct MediaRepository {
             }
         }
     }
+    
+    static func getAnimeThemes(idMal: Int) async -> AnimeThemes? {
+        let fields = "opening_themes,ending_themes"
+        guard let url = URL(string: "\(MAL_API_URL)anime/\(idMal)?fields=\(fields)") else { return nil }
+        
+        return await Network.shared.getMalRequest(for: url)
+    }
 }
 // swiftlint:enable file_length

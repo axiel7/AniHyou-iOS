@@ -22,6 +22,22 @@ struct MediaGeneralInfoView: View {
             tags
 
             multimediaContent
+            
+            if let openings = viewModel.openings {
+                themesList(title: "Openings", themes: openings)
+            } else if viewModel.isLoadingThemes {
+                HorizontalProgressView()
+                    .task {
+                        if viewModel.isAnime, let idMal = viewModel.mediaDetails?.idMal {
+                            await viewModel.getAnimeThemes(idMal: idMal)
+                        } else {
+                            viewModel.isLoadingThemes = false
+                        }
+                    }
+            }
+            if let endings = viewModel.endings {
+                themesList(title: "Endings", themes: endings)
+            }
         }
     }
     
@@ -214,6 +230,26 @@ struct MediaGeneralInfoView: View {
                     }
                 }
             }
+        }
+    }
+    
+    @ViewBuilder
+    func themesList(
+        title: String,
+        themes: [AnimeThemes.Theme]
+    ) -> some View {
+        Text(title)
+            .font(.title3)
+            .bold()
+            .padding(.horizontal)
+            .padding(.bottom, 4)
+        ForEach(themes) { theme in
+            Link(destination: theme.youtubeUrl) {
+                Text(theme.text)
+                    .multilineTextAlignment(.leading)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 4)
         }
     }
 }

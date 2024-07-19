@@ -19,7 +19,10 @@ let ANILIST_GRAPHQL = "https://graphql.anilist.co/graphql"
 let ANILIST_ANIME_URL = "\(ANILIST_URL)/anime/"
 let ANILIST_MANGA_URL = "\(ANILIST_URL)/manga/"
 
+let MAL_API_URL = "https://api.myanimelist.net/v2/"
+
 let YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v="
+let YOUTUBE_QUERY_URL = "https://www.youtube.com/results?search_query="
 let DAILYMOTION_VIDEO_URL = "https://www.dailymotion.com/video/"
 
 // Preferences keys
