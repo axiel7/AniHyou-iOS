@@ -148,6 +148,21 @@ class MediaDetailsViewModel: ObservableObject {
         guard let synonyms = mediaDetails?.synonyms else { return nil }
         return synonyms.compactMap { $0 }.joined(separator: "\n")
     }
+    
+    var seasonFormatted: String? {
+        if let season = mediaDetails?.season?.value {
+            let localizedKey = String.LocalizationValue(
+                stringLiteral: season.localizedStringKey
+            )
+            if let year = mediaDetails?.seasonYear {
+                return String(localized: localizedKey) + " \(year)"
+            } else {
+                return String(localized: localizedKey)
+            }
+        } else {
+            return nil
+        }
+    }
 
     var streamingLinks: [MediaDetailsQuery.Data.Media.ExternalLink?] {
         guard let externalLinks = mediaDetails?.externalLinks else { return [] }

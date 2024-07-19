@@ -41,21 +41,6 @@ struct MediaGeneralInfoView: View {
         }
     }
     
-    var seasonFormatted: String? {
-        if let season = viewModel.mediaDetails?.season?.value {
-            let localizedKey = String.LocalizationValue(
-                stringLiteral: season.localizedStringKey
-            )
-            if let year = viewModel.mediaDetails?.seasonYear {
-                return String(localized: localizedKey) + " \(year)"
-            } else {
-                return String(localized: localizedKey)
-            }
-        } else {
-            return nil
-        }
-    }
-    
     @ViewBuilder
     var generalInfo: some View {
         Text("Information")
@@ -84,7 +69,7 @@ struct MediaGeneralInfoView: View {
         )
         
         if viewModel.isAnime {
-            HInfoView(name: "Season", value: seasonFormatted)
+            HInfoView(name: "Season", value: viewModel.seasonFormatted)
             HInfoView(name: "Studios", value: viewModel.studiosFormatted, isExpandable: true) {
                 ForEach(viewModel.studios ?? [], id: \.id) { studio in
                     NavigationLink(studio.name) {
