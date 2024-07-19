@@ -13,7 +13,6 @@ struct MediaGeneralInfoView: View {
 
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showSpoilerTags = false
-    private let linksColumns = [GridItem(.flexible()), GridItem(.flexible())]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -190,14 +189,19 @@ struct MediaGeneralInfoView: View {
                 .font(.title3)
                 .bold()
                 .padding(.horizontal)
-            LazyVGrid(columns: linksColumns) {
+            VFlow(alignment: .leading) {
                 ForEach(viewModel.streamingLinks, id: \.?.id) {
                     if let item  = $0 {
                         Link(item.displayName, destination: URL(string: item.url!)!)
-                            .padding(4)
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .tint(.primary)
+                            .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                     }
                 }
             }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
 
         // MARK: - External links
@@ -206,15 +210,19 @@ struct MediaGeneralInfoView: View {
                 .font(.title3)
                 .bold()
                 .padding(.horizontal)
-                .padding(.top)
-            LazyVGrid(columns: linksColumns) {
+            VFlow(alignment: .leading) {
                 ForEach(viewModel.externalLinks, id: \.?.id) {
                     if let item  = $0 {
                         Link(item.displayName, destination: URL(string: item.url!)!)
-                            .padding(4)
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .tint(.primary)
+                            .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                     }
                 }
             }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
     }
     
