@@ -14,7 +14,7 @@ struct RectangleTextView: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .fill(
                     LinearGradient(gradient: Gradient(colors: [color, color]), startPoint: .bottom, endPoint: .top)
                         //.padding(.bottom, 20)

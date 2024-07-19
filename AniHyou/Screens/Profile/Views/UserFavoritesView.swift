@@ -146,7 +146,7 @@ struct UserFavoritesView: View {
                         .padding()
                         .foregroundStyle(.primary)
                         .background {
-                            RoundedRectangle(cornerRadius: 8)
+                            RoundedRectangle(cornerRadius: 8, style: .continuous)
                                 .fill(.regularMaterial)
                         }
                 }

@@ -17,7 +17,7 @@ struct VideoThumbnailView: View {
     var body: some View {
         ZStack {
             MediaCoverView(imageUrl: imageUrl, width: videoWidth, height: videoHeight)
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 8, style: .continuous)
                 .foregroundStyle(.black.opacity(0.2))
                 .frame(width: videoWidth, height: videoHeight)
             Image(systemName: "play.circle")

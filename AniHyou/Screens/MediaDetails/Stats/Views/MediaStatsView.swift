@@ -75,7 +75,7 @@ struct MediaStatsView: View {
                 }
                 .padding(8)
                 .background(.regularMaterial)
-                .clipShape(RoundedRectangle(cornerRadius: 4))
+                .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
             }
             .padding(.horizontal)
         }

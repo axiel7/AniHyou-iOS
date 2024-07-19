@@ -21,7 +21,7 @@ extension Markdown {
             }
             .markdownBlockStyle(\.image) { configuration in
                 configuration.label
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                    .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
             }
     }
 }

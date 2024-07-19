@@ -14,7 +14,7 @@ extension Image {
             .resizable()
             .scaledToFill()
             .frame(width: width, height: height)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }
 

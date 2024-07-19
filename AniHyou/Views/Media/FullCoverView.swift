@@ -26,7 +26,7 @@ struct FullCoverView: View {
                             .resizable()
                             .minimumScaleFactor(1)
                             .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                             .padding()
                             .onDrag {
                                 if let uiImage = try? state.result?.get().image {

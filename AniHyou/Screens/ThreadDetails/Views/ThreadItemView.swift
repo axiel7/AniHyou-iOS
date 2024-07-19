@@ -38,7 +38,7 @@ struct ThreadItemView: View {
         }
         .frame(width: 300, height: 150)
         .background(.regularMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }
 

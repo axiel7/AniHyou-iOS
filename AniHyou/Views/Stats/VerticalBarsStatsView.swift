@@ -28,7 +28,7 @@ struct VerticalBarsStatsView: View {
                     VStack {
                         Text(stat.value.formatted())
                             .font(.footnote)
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
                             .frame(width: 25, height: stat.value / maxStatValue * maxBarHeight)
                             .foregroundStyle(stat.color)
                         Group {

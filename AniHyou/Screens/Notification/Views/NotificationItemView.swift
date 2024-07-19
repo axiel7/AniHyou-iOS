@@ -23,7 +23,7 @@ struct NotificationItemView: View {
                             .imageCover(width: imageWidth, height: imageHeight)
                     } else {
                         CoverPlaceholderView(systemName: "hourglass", width: imageWidth, height: imageHeight)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     }
                 }
 

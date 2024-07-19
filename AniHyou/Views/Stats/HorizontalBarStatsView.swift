@@ -39,7 +39,7 @@ struct HorizontalBarStatsView: View {
                             .foregroundStyle(.white)
                             .padding(4)
                             .background {
-                                RoundedRectangle(cornerRadius: 4)
+                                RoundedRectangle(cornerRadius: 4, style: .continuous)
                                     .foregroundStyle(stat.color)
                             }
                             Text(stat.value.formatted())

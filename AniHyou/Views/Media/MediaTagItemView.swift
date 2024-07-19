@@ -13,7 +13,7 @@ private extension MediaTagItemView {
     @ViewBuilder
     func spoilerOverlay(_ tint: Color) -> some View {
         if tag?.isMediaSpoiler == true {
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .stroke()
                 .foregroundStyle(tint)
         } else {
@@ -41,7 +41,7 @@ struct MediaTagItemView: View {
         }
         .padding(.horizontal)
         .padding(.vertical, 8)
-        .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 8))
+        .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .overlay {
             spoilerOverlay(tint)
         }

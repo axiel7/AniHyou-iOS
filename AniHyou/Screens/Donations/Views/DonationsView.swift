@@ -17,7 +17,7 @@ struct DonationsView: View {
             VStack(spacing: 16) {
                 Image("AniHyou-Default")
                     .resizable()
-                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
                     .frame(width: 100, height: 100)
 
                 Text("Support the development of AniHyou!")

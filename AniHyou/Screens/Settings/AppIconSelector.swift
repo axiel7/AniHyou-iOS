@@ -27,13 +27,13 @@ struct AppIconSelector: View {
                     VStack {
                         ZStack {
                             if isSelected {
-                                RoundedRectangle(cornerRadius: 22.0)
+                                RoundedRectangle(cornerRadius: 22.0, style: .continuous)
                                     .foregroundStyle(.ultraThickMaterial)
                                     .frame(width: iconSize+4, height: iconSize+4)
                             }
                             Image(icon)
                                 .resizable()
-                                .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
                                 .frame(width: iconSize, height: iconSize)
                         }
 
