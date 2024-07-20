@@ -177,8 +177,6 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
       public var fuzzyDateFragment: FuzzyDateFragment {
         get { _toFragment() }
         _modify { var f = fuzzyDateFragment; yield &f; __data = f.__data }
-        @available(*, unavailable, message: "mutate properties of the fragment instead.")
-        set { preconditionFailure() }
       }
     }
 
@@ -238,8 +236,6 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
       public var fuzzyDateFragment: FuzzyDateFragment {
         get { _toFragment() }
         _modify { var f = fuzzyDateFragment; yield &f; __data = f.__data }
-        @available(*, unavailable, message: "mutate properties of the fragment instead.")
-        set { preconditionFailure() }
       }
     }
 
