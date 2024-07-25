@@ -58,16 +58,3 @@ extension View {
         }
     }
 }
-
-struct RoundedButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .fontWeight(.semibold)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(.regularMaterial)
-            .foregroundStyle(.tint)
-            .opacity(configuration.isPressed ? 0.7 : 1)
-            .clipShape(Capsule())
-    }
-}

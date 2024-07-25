@@ -53,7 +53,7 @@ struct CurrentListItemView: View {
                         )
                     }
                 }
-                .buttonStyle(RoundedButton())
+                .buttonStyle(RoundedButtonStyle())
 
                 HStack {
                     if let maxProgress = details?.maxProgress(
