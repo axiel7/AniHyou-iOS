@@ -53,7 +53,9 @@ struct CurrentListItemView: View {
                         )
                     }
                 }
-                .buttonStyle(RoundedButtonStyle())
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
+                .controlSize(.small)
 
                 HStack {
                     if let maxProgress = details?.maxProgress(
