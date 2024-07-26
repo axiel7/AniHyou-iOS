@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    let isLoggedIn: Bool
     @AppStorage(HOME_TAB_KEY) private var currentTab: HomeTab?
     @State private var unreadNotificationsCount = 0
     @State private var showNotificationsSheet = false
@@ -38,12 +39,18 @@ struct HomeView: View {
                     }
                     .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             case .current:
-                CurrentView()
-                    .navigationTitle("Current")
-                    .toolbar {
-                        toolbarContent
+                Group {
+                    if isLoggedIn {
+                        CurrentView()
+                    } else {
+                        NotLoggedView()
                     }
-                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
+                }
+                .navigationTitle("Current")
+                .toolbar {
+                    toolbarContent
+                }
+                .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             }
         }
         .task {
@@ -68,5 +75,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(isLoggedIn: false)
 }

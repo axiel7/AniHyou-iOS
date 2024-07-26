@@ -29,7 +29,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {
-            HomeView()
+            HomeView(isLoggedIn: isLoggedIn)
                 .tabItem(.home)
                 .environment(\.scoreFormat, myScoreFormat)
             
