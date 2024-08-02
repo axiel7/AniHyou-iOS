@@ -114,6 +114,14 @@
 		48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 48604D7A28A15AD1006A6AF8 /* RichText */; };
 		486354EB2B73437300A5DBB7 /* AiringText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486354EA2B73437300A5DBB7 /* AiringText.swift */; };
 		486354EC2B73446A00A5DBB7 /* AiringText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486354EA2B73437300A5DBB7 /* AiringText.swift */; };
+		4863796B2C5D5ABA003E779D /* GlobalAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */; };
+		4863796C2C5D5ABA003E779D /* GlobalAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE80FC2920ECF900344DA5 /* GlobalAppState.swift */; };
+		4863796E2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863796D2C5D5CB2003E779D /* AuthErrorInterceptor.swift */; };
+		4863796F2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863796D2C5D5CB2003E779D /* AuthErrorInterceptor.swift */; };
+		486379702C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863796D2C5D5CB2003E779D /* AuthErrorInterceptor.swift */; };
+		486379722C5D614F003E779D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486379712C5D614A003E779D /* ErrorResponse.swift */; };
+		486379732C5D6390003E779D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486379712C5D614A003E779D /* ErrorResponse.swift */; };
+		486379742C5D6390003E779D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486379712C5D614A003E779D /* ErrorResponse.swift */; };
 		48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48643F442853C54800D7C328 /* ProfileViewModel.swift */; };
 		48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0B2860CBF40064C70A /* MediaListEditView.swift */; };
 		48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */; };
@@ -458,6 +466,8 @@
 		48575D882A3EBD2200F8AD22 /* ToolbarIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarIconButton.swift; sourceTree = "<group>"; };
 		4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootExploreView.swift; sourceTree = "<group>"; };
 		486354EA2B73437300A5DBB7 /* AiringText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiringText.swift; sourceTree = "<group>"; };
+		4863796D2C5D5CB2003E779D /* AuthErrorInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorInterceptor.swift; sourceTree = "<group>"; };
+		486379712C5D614A003E779D /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		48643F422853C50400D7C328 /* ViewerBasicInfo.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerBasicInfo.graphql; sourceTree = "<group>"; };
 		48643F442853C54800D7C328 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		48650F0B2860CBF40064C70A /* MediaListEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListEditView.swift; sourceTree = "<group>"; };
@@ -1144,6 +1154,7 @@
 			children = (
 				481AD4F92851DA02001779EE /* Network.swift */,
 				488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */,
+				4863796D2C5D5CB2003E779D /* AuthErrorInterceptor.swift */,
 				488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */,
 				48B7AC302BB758510047998F /* PagedResult.swift */,
 			);
@@ -1189,6 +1200,7 @@
 				48DD40482994EA9200FED7BF /* GenericNotification.swift */,
 				48575D862A3EACEE00F8AD22 /* NotificationTypeGrouped.swift */,
 				48B25E6E2C4AF2E300862F4E /* AnimeThemes.swift */,
+				486379712C5D614A003E779D /* ErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2260,6 +2272,7 @@
 				4832B032285F406300E79D27 /* StringsPreview.swift in Sources */,
 				48B7AC112BB4A1EA0047998F /* GenresStatsView.swift in Sources */,
 				48B7AC332BB80F9C0047998F /* NotificationsManager.swift in Sources */,
+				486379702C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
 				481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */,
 				481AD4FC2851F131001779EE /* HListItemWithSubtitleView.swift in Sources */,
 				48B7AC172BB56DEF0047998F /* TagsStatsView.swift in Sources */,
@@ -2304,6 +2317,7 @@
 				48FC947F2868C0BD00C87F56 /* ChartViewModel.swift in Sources */,
 				482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */,
 				488763D82977F8FF00402934 /* Stat.swift in Sources */,
+				486379722C5D614F003E779D /* ErrorResponse.swift in Sources */,
 				4806BBB12963398C00CB07A6 /* SmileyRatingView.swift in Sources */,
 				4820F6B42ADEA52000A4F465 /* ActivityType.swift in Sources */,
 				480A41A528ECA1A30066288D /* ModelUtils.swift in Sources */,
@@ -2334,6 +2348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4863796F2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
 				48294CE92ABA9893005E7CD2 /* MediaType.swift in Sources */,
 				48294CE62AB96164005E7CD2 /* MediaListRepository.swift in Sources */,
 				48294CEC2ABA9E9B005E7CD2 /* MediaList.swift in Sources */,
@@ -2352,6 +2367,7 @@
 				48294CDF2AB936D9005E7CD2 /* SetProgressIntent.swift in Sources */,
 				48294CEE2ABAA4BB005E7CD2 /* WidgetUtils.swift in Sources */,
 				48EFCE0229FFF3590096BF6E /* DateUtils.swift in Sources */,
+				4863796C2C5D5ABA003E779D /* GlobalAppState.swift in Sources */,
 				48EFCDDE29FFAD200096BF6E /* AiringWidget.swift in Sources */,
 				4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */,
 				48A1A8F52A3986FF00ACC6FF /* KeychainUtils.swift in Sources */,
@@ -2360,6 +2376,7 @@
 				48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */,
 				48D929E52ABAC00600330C71 /* WatchConnectivityManager.swift in Sources */,
 				48294CDB2AB92067005E7CD2 /* BaseEntry.swift in Sources */,
+				486379742C5D6390003E779D /* ErrorResponse.swift in Sources */,
 				48D929E62ABAC06900330C71 /* UserOptions.swift in Sources */,
 				48218AF02BC310C200A03421 /* PagedResult.swift in Sources */,
 			);
@@ -2369,6 +2386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4863796E2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
 				48294CE32AB95332005E7CD2 /* MediaListStatus.swift in Sources */,
 				48F279332970299D000827F7 /* Network.swift in Sources */,
 				48E58E472A85BA7B00EF0CA2 /* ModelUtils.swift in Sources */,
@@ -2388,6 +2406,7 @@
 				48F2792D29701C9B000827F7 /* LoginRepository.swift in Sources */,
 				48218B082BC592F300A03421 /* MediaDetails.swift in Sources */,
 				48218B072BC592A500A03421 /* MediaRepository.swift in Sources */,
+				4863796B2C5D5ABA003E779D /* GlobalAppState.swift in Sources */,
 				48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */,
 				48F2792929700D68000827F7 /* WatchConnectivityManager.swift in Sources */,
 				48F27936297029C7000827F7 /* UpdatedMediaEntry.swift in Sources */,
@@ -2397,6 +2416,7 @@
 				48294CE52AB96163005E7CD2 /* MediaListRepository.swift in Sources */,
 				48F2792B29700DFA000827F7 /* MainViewModel.swift in Sources */,
 				48218B062BC5884700A03421 /* AnimeSeason.swift in Sources */,
+				486379732C5D6390003E779D /* ErrorResponse.swift in Sources */,
 				48E58E482A85BA9C00EF0CA2 /* UserOptions.swift in Sources */,
 				48F2792C29700F33000827F7 /* Constants.swift in Sources */,
 			);

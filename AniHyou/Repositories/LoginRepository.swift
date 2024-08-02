@@ -36,6 +36,13 @@ struct LoginRepository {
         refreshUserIdAndOptions()
     }
     
+    static func onTokenExpired() {
+        TokenAddingInterceptor.token = nil
+        KeychainUtils.shared.keychain.delete(USER_TOKEN_KEY)
+        UserDefaults.standard.set(false, forKey: LOGGED_IN_KEY)
+        GlobalAppState.shared.globalId = UUID()
+    }
+    
     static func logOut() {
         KeychainUtils.shared.keychain.delete(USER_TOKEN_KEY)
         UserDefaults.standard.removeObject(forKey: USER_ID_KEY)

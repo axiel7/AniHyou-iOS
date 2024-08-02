@@ -16,4 +16,10 @@ class NetworkInterceptorProvider: DefaultInterceptorProvider {
         interceptors.insert(TokenAddingInterceptor(), at: 0)
         return interceptors
     }
+    
+    override func additionalErrorInterceptor<Operation>(
+        for operation: Operation
+    ) -> (any ApolloErrorInterceptor)? where Operation: GraphQLOperation {
+        return AuthErrorInterceptor()
+    }
 }
