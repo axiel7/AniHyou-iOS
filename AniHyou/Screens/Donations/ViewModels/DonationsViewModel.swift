@@ -62,7 +62,7 @@ class DonationsViewModel: ObservableObject {
                     else {
                         continue
                     }
-                    if let revocationDate = transaction.revocationDate {
+                    if transaction.revocationDate != nil {
                          onProductPurchased(false)
                     } else if let expirationDate = transaction.expirationDate,
                         expirationDate < Date() {

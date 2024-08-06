@@ -443,4 +443,5 @@ struct MediaListRepository {
             }
         }
     }
+// swiftlint:disable:next file_length
 }

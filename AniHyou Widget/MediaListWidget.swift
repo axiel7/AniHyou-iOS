@@ -150,7 +150,7 @@ struct MediaListWidgetEntryView: View {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOS 17.0, *)
 private struct MediaListItemView: View {
     
     let item: ShouUserMediaList

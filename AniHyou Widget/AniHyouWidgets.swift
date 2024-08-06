@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct AniHyouWidgets {
     static func main() {
-        if #available(iOSApplicationExtension 17.0, *) {
+        if #available(iOS 17.0, *) {
             AniHyouWidgets17.main()
         } else {
             AniHyouWidgets16.main()
@@ -25,7 +25,7 @@ struct AniHyouWidgets16: WidgetBundle {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOS 17.0, *)
 struct AniHyouWidgets17: WidgetBundle {
     var body: some Widget {
         AiringWidget()
