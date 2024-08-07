@@ -1,0 +1,831 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld فصول";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld حلقات";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld مجلدات";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "3 نقاط مبتسمة :)";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 نجوم (3\\5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 نقاط (5\\10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10 نقاط عشرية (5.5\\10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 نقطة (55\\100)";
+
+/* No comment provided by engineer. */
+"Accent color" = "اللون الثانوي";
+
+/* No comment provided by engineer. */
+"Account settings" = "إعدادات الحساب";
+
+/* No comment provided by engineer. */
+"Action" = "أكشن";
+
+/* No comment provided by engineer. */
+"Activity" = "النشاط";
+
+/* No comment provided by engineer. */
+"Activity type" = "نوع النشاط";
+
+/* No comment provided by engineer. */
+"Adaptation" = "نسخة الأنيمي/المانغا";
+
+/* No comment provided by engineer. */
+"Add to List" = "أضف لقائمة";
+
+/* No comment provided by engineer. */
+"Added" = "تمت الإضافة";
+
+/* No comment provided by engineer. */
+"Adult" = "للكبار";
+
+/* No comment provided by engineer. */
+"Adventure" = "مغامرة";
+
+/* No comment provided by engineer. */
+"Age" = "العمر";
+
+/* No comment provided by engineer. */
+"Airing" = "يبث";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "الأنمي المبث";
+
+/* No comment provided by engineer. */
+"Airing Next" = "يبث تالي";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "يُعرض حالياً في قائمتي";
+
+/* No comment provided by engineer. */
+"All" = "الكل";
+
+/* No comment provided by engineer. */
+"Alternative" = "البديل";
+
+/* No comment provided by engineer. */
+"Anime" = "الأنمي";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "أنمي في الخلف";
+
+/* No comment provided by engineer. */
+"Anime List" = "قائمة الأنمي";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "أنمي , مانجا , و المزيد";
+
+/* No comment provided by engineer. */
+"App Icon" = "أيقونة التطبيق";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "هل أنت متأكد من تسجيل الخروج؟";
+
+/* No comment provided by engineer. */
+"Ascending" = "تصاعدي";
+
+/* No comment provided by engineer. */
+"Average Score" = "متوسط الدرجة";
+
+/* No comment provided by engineer. */
+"Background" = "معلومات أساسية";
+
+/* No comment provided by engineer. */
+"Birth" = "الميلاد";
+
+/* No comment provided by engineer. */
+"Birthday" = "تاريخ الميلاد";
+
+/* No comment provided by engineer. */
+"Blood type" = "فئة الدم";
+
+/* No comment provided by engineer. */
+"Blood Type" = "فئة الدم";
+
+/* No comment provided by engineer. */
+"Calendar" = "التقويم";
+
+/* No comment provided by engineer. */
+"Cancel" = "إلغاء";
+
+/* No comment provided by engineer. */
+"Cancelled" = "مُلغى";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "سوف تحدث التغييرات عند إعادة تشغيل التطبيق";
+
+/* No comment provided by engineer. */
+"Chapter Count" = "عدد الفصول";
+
+/* No comment provided by engineer. */
+"Chapters" = "الفصول";
+
+/* No comment provided by engineer. */
+"Chapters read" = "الفصول المقروءة";
+
+/* No comment provided by engineer. */
+"Character" = "شخصية";
+
+/* No comment provided by engineer. */
+"Characters" = "الشخصيات";
+
+/* No comment provided by engineer. */
+"China" = "الصين";
+
+/* No comment provided by engineer. */
+"Clear" = "إزالة";
+
+/* No comment provided by engineer. */
+"Close" = "إغلاق";
+
+/* No comment provided by engineer. */
+"Comedy" = "كوميدي";
+
+/* No comment provided by engineer. */
+"Comic" = "قصة مصورة";
+
+/* No comment provided by engineer. */
+"Compact" = "مضغوط";
+
+/* No comment provided by engineer. */
+"Compilation" = "ملخص";
+
+/* (No Comment) */
+"Completed" = "مكتمل";
+
+/* No comment provided by engineer. */
+"Contains" = "يحتوي على";
+
+/* No comment provided by engineer. */
+"Content" = "المحتوى";
+
+/* No comment provided by engineer. */
+"Country" = "البلد/الدولة";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "توزّع البلدان";
+
+/* (No Comment) */
+"Current" = "الحالي";
+
+/* No comment provided by engineer. */
+"Custom" = "مخصص";
+
+/* No comment provided by engineer. */
+"Custom color" = "لون مخصص";
+
+/* No comment provided by engineer. */
+"Custom lists" = "قائمة مخصصة";
+
+/* No comment provided by engineer. */
+"Dates" = "تاريخ";
+
+/* No comment provided by engineer. */
+"Days Watched" = "أيام المشاهدة";
+
+/* No comment provided by engineer. */
+"Default" = "افتراضي";
+
+/* No comment provided by engineer. */
+"Delete" = "حذف";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "حذف هذا الإدخال؟";
+
+/* No comment provided by engineer. */
+"Descending" = "تنازلي";
+
+/* No comment provided by engineer. */
+"Developers" = "المطورون";
+
+/* No comment provided by engineer. */
+"Discord server" = "خادم الديسكورد";
+
+/* No comment provided by engineer. */
+"Discover" = "إكتشف";
+
+/* No comment provided by engineer. */
+"Display" = "العرض";
+
+/* No comment provided by engineer. */
+"Distribution type" = "نوع التوزيع";
+
+/* No comment provided by engineer. */
+"Donate" = "تبرع";
+
+/* No comment provided by engineer. */
+"Donate!" = "تبرع!";
+
+/* No comment provided by engineer. */
+"Donation" = "التبرع";
+
+/* No comment provided by engineer. */
+"Donator" = "داعم";
+
+/* No comment provided by engineer. */
+"Done" = "تم";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "دوجينشي";
+
+/* No comment provided by engineer. */
+"Drama" = "دراما";
+
+/* (No Comment) */
+"Dropped" = "سئمت منه";
+
+/* No comment provided by engineer. */
+"Duration" = "المدة";
+
+/* No comment provided by engineer. */
+"Ecchi" = "ايتشي";
+
+/* No comment provided by engineer. */
+"Edit" = "تعديل";
+
+/* No comment provided by engineer. */
+"End date" = "تاريخ الانتهاء";
+
+/* No comment provided by engineer. */
+"English" = "الإنجليزية";
+
+/* No comment provided by engineer. */
+"Episode Count" = "عدد الحلقات";
+
+/* No comment provided by engineer. */
+"Episodes" = "الحلقات";
+
+/* No comment provided by engineer. */
+"Explore" = "تصفح";
+
+/* No comment provided by engineer. */
+"External links" = "روابط خارجية";
+
+/* No comment provided by engineer. */
+"Fall" = "الخريف";
+
+/* No comment provided by engineer. */
+"Fantasy" = "الخيال";
+
+/* No comment provided by engineer. */
+"Favorites" = "المُفضلات";
+
+/* No comment provided by engineer. */
+"Feed type" = "نوع الموجز";
+
+/* No comment provided by engineer. */
+"Filter" = "فلتر";
+
+/* No comment provided by engineer. */
+"Finished" = "منتهي";
+
+/* No comment provided by engineer. */
+"Follow" = "متابعة";
+
+/* No comment provided by engineer. */
+"Followers" = "مُتابِعون";
+
+/* No comment provided by engineer. */
+"Following" = "يتابِع";
+
+/* No comment provided by engineer. */
+"Follows you" = "يُتابِعُك";
+
+/* No comment provided by engineer. */
+"Format" = "التنسيق";
+
+/* No comment provided by engineer. */
+"Format Distribution" = "توزّع التنسيق";
+
+/* No comment provided by engineer. */
+"Forum" = "المنتدى";
+
+/* No comment provided by engineer. */
+"From year" = "من عام";
+
+/* No comment provided by engineer. */
+"Game" = "لعبة";
+
+/* No comment provided by engineer. */
+"Gender" = "الجنس";
+
+/* No comment provided by engineer. */
+"General" = "عام";
+
+/* No comment provided by engineer. */
+"Genres" = "التصنيفات";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "مستودع GitHub";
+
+/* No comment provided by engineer. */
+"Global" = "عالمي";
+
+/* No comment provided by engineer. */
+"Hentai" = "هنتاي";
+
+/* No comment provided by engineer. */
+"Hiatus" = "متوقف";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "عدم الظهور في قائمة الحالة";
+
+/* No comment provided by engineer. */
+"Home" = "الرئيسية";
+
+/* No comment provided by engineer. */
+"Hometown" = "الموطن";
+
+/* No comment provided by engineer. */
+"Horror" = "رعب";
+
+/* No comment provided by engineer. */
+"Info type" = "نوع المعلومات";
+
+/* No comment provided by engineer. */
+"Information" = "معلومات";
+
+/* No comment provided by engineer. */
+"Japan" = "اليابان";
+
+/* No comment provided by engineer. */
+"Japanese" = "اليابانية";
+
+/* No comment provided by engineer. */
+"Last Updated" = "آخر تحديث";
+
+/* No comment provided by engineer. */
+"Left" = "يسار";
+
+/* No comment provided by engineer. */
+"Light novel" = "رواية خفيفة";
+
+/* No comment provided by engineer. */
+"List Progress" = "تقدم القائمة";
+
+/* No comment provided by engineer. */
+"List style" = "شكل القائمة";
+
+/* No comment provided by engineer. */
+"Live action" = "نسخة حية";
+
+/* No comment provided by engineer. */
+"Loading" = "تحميل";
+
+/* No comment provided by engineer. */
+"Log out" = "تسجيل الخروج";
+
+/* No comment provided by engineer. */
+"Login" = "تسجيل الدخول";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "فتيات بقوة سحرية";
+
+/* No comment provided by engineer. */
+"Main" = "رئيسية";
+
+/* No comment provided by engineer. */
+"Manga" = "المانجا";
+
+/* No comment provided by engineer. */
+"Manga List" = "قائمة المانغا";
+
+/* No comment provided by engineer. */
+"Mean score" = "الدرجة";
+
+/* No comment provided by engineer. */
+"Mean Score" = "الدرجة";
+
+/* No comment provided by engineer. */
+"Mecha" = "ميكا";
+
+/* No comment provided by engineer. */
+"Media" = "وسائط";
+
+/* No comment provided by engineer. */
+"Minimal" = "مبسط";
+
+/* No comment provided by engineer. */
+"Most popular" = "الأكثر شعبية";
+
+/* No comment provided by engineer. */
+"Movie" = "فيلم";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "مشروع متعدد الوسائط";
+
+/* No comment provided by engineer. */
+"Music" = "موسيقى";
+
+/* No comment provided by engineer. */
+"Mystery" = "غموض";
+
+/* No comment provided by engineer. */
+"Native" = "اللغة الأم";
+
+/* No comment provided by engineer. */
+"No" = "لا";
+
+/* No comment provided by engineer. */
+"No media" = "لا وسائط";
+
+/* No comment provided by engineer. */
+"No recommendations" = "لا توجد اقتراحات";
+
+/* No comment provided by engineer. */
+"No reviews" = "لا توجد مراجعات";
+
+/* No comment provided by engineer. */
+"None" = "لا شيء";
+
+/* No comment provided by engineer. */
+"Not yet released" = "لم يصدر بعد";
+
+/* No comment provided by engineer. */
+"Notes" = "ملاحظات";
+
+/* No comment provided by engineer. */
+"Notifications" = "الإشعارات";
+
+/* No comment provided by engineer. */
+"Novel" = "رواية";
+
+/* No comment provided by engineer. */
+"Occupations" = "المهنة";
+
+/* No comment provided by engineer. */
+"OK" = "حسنًا";
+
+/* No comment provided by engineer. */
+"On my list" = "في قائمتي";
+
+/* No comment provided by engineer. */
+"ONA" = "أونا";
+
+/* No comment provided by engineer. */
+"Original" = "أصلي";
+
+/* No comment provided by engineer. */
+"Other" = "أخرى";
+
+/* No comment provided by engineer. */
+"OVA" = "أوفا";
+
+/* No comment provided by engineer. */
+"Overview" = "نظرة عامة";
+
+/* No comment provided by engineer. */
+"Parent" = "الأصلي";
+
+/* (No Comment) */
+"Paused" = "متوقف مؤقتاً";
+
+/* No comment provided by engineer. */
+"Picture book" = "كتاب مصور";
+
+/* (No Comment) */
+"Planning" = "أرغب بمشاهدة";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "يرجى تسجيل الدخول لاستخدام هذه الميزة";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "أنيمي شعبي";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "مانغا شعبية";
+
+/* No comment provided by engineer. */
+"Popularity" = "الشعبية";
+
+/* No comment provided by engineer. */
+"Prequel" = "بادئة";
+
+/* No comment provided by engineer. */
+"Priority" = "الأولوية";
+
+/* No comment provided by engineer. */
+"Private" = "خاص";
+
+/* No comment provided by engineer. */
+"Producers" = "المنتجين";
+
+/* No comment provided by engineer. */
+"Profile" = "الملفّ الشخصي";
+
+/* No comment provided by engineer. */
+"Progress" = "التقدم";
+
+/* No comment provided by engineer. */
+"Psychological" = "نفسي";
+
+/* No comment provided by engineer. */
+"Publishing" = "لا زالت تنشر";
+
+/* No comment provided by engineer. */
+"Push notifications" = "الإشعارات المُرسلة";
+
+/* No comment provided by engineer. */
+"Random" = "عشوائي";
+
+/* No comment provided by engineer. */
+"Rankings" = "المتصدرون";
+
+/* No comment provided by engineer. */
+"Read Year" = "سنة القراءة";
+
+/* No comment provided by engineer. */
+"Reading" = "أقرأُه";
+
+/* No comment provided by engineer. */
+"Recommendations" = "الاقترحات";
+
+/* No comment provided by engineer. */
+"Release Year" = "سنة الإصدار";
+
+/* No comment provided by engineer. */
+"Releasing" = "مستمر";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "عدد التكرار";
+
+/* (No Comment) */
+"Repeating" = "إعادة";
+
+/* No comment provided by engineer. */
+"Reviews" = "المراجعات";
+
+/* No comment provided by engineer. */
+"Romaji" = "روماجي";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "روماجي (ترتيب غربي)";
+
+/* No comment provided by engineer. */
+"Romance" = "رومانسي";
+
+/* No comment provided by engineer. */
+"Save" = "حفظ";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "خيال علمي";
+
+/* No comment provided by engineer. */
+"Score" = "الدرجة";
+
+/* No comment provided by engineer. */
+"Score distribution" = "توزّع الدرجات";
+
+/* No comment provided by engineer. */
+"Score format" = "تنسيق الدرجة";
+
+/* No comment provided by engineer. */
+"Search type" = "نوع البحث";
+
+/* No comment provided by engineer. */
+"Season" = "موسم";
+
+/* No comment provided by engineer. */
+"See All" = "رؤية الكل";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "اختر نوع الوسائط";
+
+/* No comment provided by engineer. */
+"Sequel" = "تكملة";
+
+/* No comment provided by engineer. */
+"Settings" = "الإعدادات";
+
+/* No comment provided by engineer. */
+"Share" = "مشاركة";
+
+/* No comment provided by engineer. */
+"Show more" = "عرض المزيد";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "أظهر فقط الأنمي الذي سيُعرض قريبًا والموجود في قائمتك";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "إظهار الحرق";
+
+/* No comment provided by engineer. */
+"Side Story" = "قصة جانبية";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "شريحة من الحياة";
+
+/* No comment provided by engineer. */
+"Social" = "اجتماعي";
+
+/* No comment provided by engineer. */
+"Sort" = "ترتيب";
+
+/* No comment provided by engineer. */
+"Source" = "المصدر";
+
+/* No comment provided by engineer. */
+"South Korea" = "كوريا الجنوبية";
+
+/* No comment provided by engineer. */
+"Special" = "حلقة خاصة";
+
+/* No comment provided by engineer. */
+"Spin Off" = "عمل جانبي";
+
+/* No comment provided by engineer. */
+"Sports" = "رياضي";
+
+/* No comment provided by engineer. */
+"Spring" = "الربيع";
+
+/* No comment provided by engineer. */
+"Staff" = "طاقم العمل";
+
+/* No comment provided by engineer. */
+"Standard" = "اعتيادي";
+
+/* No comment provided by engineer. */
+"Start date" = "تاريخ البدء";
+
+/* No comment provided by engineer. */
+"Start Date" = "تاريخ البث";
+
+/* No comment provided by engineer. */
+"Stats" = "الإحصائيات";
+
+/* No comment provided by engineer. */
+"Status" = "الحالة";
+
+/* No comment provided by engineer. */
+"Status distribution" = "توزّع الحالات";
+
+/* No comment provided by engineer. */
+"Status Distribution" = "توزّع الحالات";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "مواقع البث";
+
+/* No comment provided by engineer. */
+"Studios" = "الاستوديو";
+
+/* No comment provided by engineer. */
+"Summary" = "ملخص";
+
+/* No comment provided by engineer. */
+"Summer" = "الصيف";
+
+/* No comment provided by engineer. */
+"Supernatural" = "خارق للطبيعة";
+
+/* No comment provided by engineer. */
+"Supporting" = "مساعدة";
+
+/* No comment provided by engineer. */
+"Synonyms" = "يسمى أيضًا";
+
+/* No comment provided by engineer. */
+"Tags" = "العلامات";
+
+/* No comment provided by engineer. */
+"Taiwan" = "تايوان";
+
+/* No comment provided by engineer. */
+"Text Status" = "حالة النص";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "شكرا لك :)";
+
+/* No comment provided by engineer. */
+"Threads" = "المواضيع";
+
+/* No comment provided by engineer. */
+"Thriller" = "إثارة";
+
+/* No comment provided by engineer. */
+"Time spent" = "الوقت المستغرق";
+
+/* No comment provided by engineer. */
+"Title" = "العنوان";
+
+/* No comment provided by engineer. */
+"Title count" = "عدد العناوين";
+
+/* No comment provided by engineer. */
+"Title language" = "لغة العنوان";
+
+/* No comment provided by engineer. */
+"Titles Count" = "عدد العناوين";
+
+/* No comment provided by engineer. */
+"To year" = "إلى العام";
+
+/* No comment provided by engineer. */
+"Top 100" = "أفضل 100";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "أفضل 100 أنمي";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "أفضل 100 مانغا";
+
+/* No comment provided by engineer. */
+"Top Movies" = "أفضل الأفلام";
+
+/* No comment provided by engineer. */
+"Top Popular" = "أعلى شعبية";
+
+/* No comment provided by engineer. */
+"Total Anime" = "إجمالي الأنمي";
+
+/* No comment provided by engineer. */
+"Total Manga" = "إجمالي المانجا";
+
+/* No comment provided by engineer. */
+"Trailer" = "العرض الدعائي";
+
+/* No comment provided by engineer. */
+"Translations" = "المترجمون";
+
+/* No comment provided by engineer. */
+"Trending" = "الشائعة";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "الأنمي الرائج";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "مانجا شائعة";
+
+/* No comment provided by engineer. */
+"TV" = "مسلسل";
+
+/* No comment provided by engineer. */
+"TV Short" = "مسلسل قصير";
+
+/* No comment provided by engineer. */
+"Unfollow" = "إلغاء المتابعة";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "غير معروف";
+
+/* No comment provided by engineer. */
+"Upcoming" = "القادم";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "الأنمي القادم";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "المانجا القادمة";
+
+/* No comment provided by engineer. */
+"Updated" = "محدّث";
+
+/* No comment provided by engineer. */
+"Users" = "المستخدمون";
+
+/* No comment provided by engineer. */
+"Users likes" = "أعجب المستخدمين";
+
+/* No comment provided by engineer. */
+"Version %@" = "الإصدار %@";
+
+/* No comment provided by engineer. */
+"Visual novel" = "رواية مرئية";
+
+/* No comment provided by engineer. */
+"Volumes" = "المجلدات";
+
+/* No comment provided by engineer. */
+"Watch Year" = "سنة المشاهدة";
+
+/* No comment provided by engineer. */
+"Web novel" = "رواية ويب";
+
+/* No comment provided by engineer. */
+"Winter" = "الشتاء";
+
+/* No comment provided by engineer. */
+"Year" = "السنة";
+
+/* No comment provided by engineer. */
+"Years active" = "السنوات النشطة";
+
+/* No comment provided by engineer. */
+"Yes" = "نعم";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "قد تحتاج إلى تسجيل الدخول مرة أخرى في متصفحك";
+

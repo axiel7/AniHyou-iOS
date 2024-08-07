@@ -8,6 +8,7 @@
 import SwiftUI
 
 private let translations = [
+    "ar_SA": "yngams, Hussain889, Hussain69o, WhiteCanvas, eyadalomar, sakugaky, Comikazie, mlvin, bobteen1",
     "az_AZ": "oolyvi",
     "in_ID": "Clxf12, naturbrilian",
     "ja_JP": "axiel7",
