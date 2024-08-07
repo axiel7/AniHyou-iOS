@@ -47,7 +47,7 @@
 "Adaptation" = "Адаптація";
 
 /* No comment provided by engineer. */
-"Add to List" = "До списку";
+"Add to List" = "Додати";
 
 /* No comment provided by engineer. */
 "Added" = "Додано";
@@ -197,12 +197,6 @@
 "Content" = "Вміст";
 
 /* No comment provided by engineer. */
-"Copied!" = "Скопійовано!";
-
-/* No comment provided by engineer. */
-"Copy" = "Копіювати";
-
-/* No comment provided by engineer. */
 "Country" = "Країна";
 
 /* No comment provided by engineer. */
@@ -216,6 +210,9 @@
 
 /* No comment provided by engineer. */
 "Custom color" = "Користувацький колір";
+
+/* No comment provided by engineer. */
+"Custom lists" = "Користувацькі каталоги";
 
 /* No comment provided by engineer. */
 "Dates" = "Дати";
@@ -443,7 +440,7 @@
 "Light novel" = "Ранобе";
 
 /* No comment provided by engineer. */
-"List entry ID" = "ID запису в списку";
+"List entry ID" = "ID запису в каталозі";
 
 /* No comment provided by engineer. */
 "List Progress" = "Прогрес в Каталозі";
@@ -524,13 +521,10 @@
 "Native" = "Оригінальна";
 
 /* No comment provided by engineer. */
-"Next Season" = "Наступний сезон";
-
-/* No comment provided by engineer. */
 "No" = "Ні";
 
 /* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "Немає аніме у вашому списку\n(*'-`)";
+"No airing anime in your list\n(*´-`)" = "Немає аніме-онгоінгів у вашому каталозі\n(*'-`)";
 
 /* No comment provided by engineer. */
 "No anime for today\n(*´-`)" = "На сьогодні аніме немає\n(*'-`)";
@@ -554,7 +548,7 @@
 "Notes" = "Примітки";
 
 /* No comment provided by engineer. */
-"Nothing in your list" = "Нічого у вашому списку";
+"Nothing in your list" = "Ваш каталог порожній";
 
 /* No comment provided by engineer. */
 "Notifications" = "Сповіщення";
@@ -578,7 +572,7 @@
 "OneShot" = "Ваншот";
 
 /* No comment provided by engineer. */
-"Optional status to update the list entry to (e.g. COMPLETED)" = "Необов'язковий статус для оновлення запису в списку (наприклад, ЗАВЕРШЕНО)";
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Необов'язковий статус для оновлення запису в каталозі (наприклад, ЗАВЕРШЕНО)";
 
 /* No comment provided by engineer. */
 "Order" = "Порядок";
@@ -776,7 +770,7 @@
 "Set progress" = "Встановити прогрес";
 
 /* No comment provided by engineer. */
-"Sets a list entry progress to the specified number." = "Встановлює прогрес введення списку до вказаного числа.";
+"Sets a list entry progress to the specified number." = "Встановлює прогрес ведення каталогу до вказаного числа.";
 
 /* No comment provided by engineer. */
 "Settings" = "Налаштування";
@@ -791,16 +785,16 @@
 "Show more" = "Показати більше";
 
 /* No comment provided by engineer. */
-"Show only airing soon anime that are in your list" = "Показувати тільки ті аніме, які найближчим часом вийдуть і які є у вашій бібліотеці";
+"Show only airing soon anime that are in your list" = "Показувати тільки ті аніме, що вийдуть найближчим часом та додані до вашого каталогу";
 
 /* No comment provided by engineer. */
 "Show spoiler" = "Показати спойлер";
 
 /* No comment provided by engineer. */
-"Shows the animes with behind episodes in your list." = "Показує аніме з простроченими серіями зі свого списку.";
+"Shows the animes with behind episodes in your list." = "Показує аніме з простроченими серіями з вашого каталогу.";
 
 /* No comment provided by engineer. */
-"Shows the next airing animes in your list." = "Показує аніме з вашого списку, які вийдуть найближчим часом.";
+"Shows the next airing animes in your list." = "Показує аніме з вашого каталогу, які вийдуть найближчим часом.";
 
 /* No comment provided by engineer. */
 "Side Story" = "Побічна історія";
@@ -1014,6 +1008,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Актори озвучування";
+
+/* No comment provided by engineer. */
+"Vol" = "Том";
 
 /* No comment provided by engineer. */
 "Volumes" = "Томи";

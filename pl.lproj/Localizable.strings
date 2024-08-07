@@ -194,12 +194,6 @@
 "Content" = "Zawartość";
 
 /* No comment provided by engineer. */
-"Copied!" = "Skopiowano!";
-
-/* No comment provided by engineer. */
-"Copy" = "Kopiuj";
-
-/* No comment provided by engineer. */
 "Country" = "Kraj";
 
 /* No comment provided by engineer. */
@@ -213,6 +207,9 @@
 
 /* No comment provided by engineer. */
 "Custom color" = "Własny kolor";
+
+/* No comment provided by engineer. */
+"Custom lists" = "Listy Niestandardowe";
 
 /* No comment provided by engineer. */
 "Dates" = "Daty";
@@ -519,9 +516,6 @@
 
 /* No comment provided by engineer. */
 "Native" = "Natywny";
-
-/* No comment provided by engineer. */
-"Next Season" = "Następny Sezon";
 
 /* No comment provided by engineer. */
 "No" = "Nie";
@@ -1011,6 +1005,9 @@
 
 /* No comment provided by engineer. */
 "Voice Actors" = "Aktorzy głosowi";
+
+/* No comment provided by engineer. */
+"Vol" = "Tom";
 
 /* No comment provided by engineer. */
 "Volumes" = "Tomów";

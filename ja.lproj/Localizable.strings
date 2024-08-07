@@ -77,6 +77,9 @@
 "All" = "すべて";
 
 /* No comment provided by engineer. */
+"Alternative" = "オルタナティブ";
+
+/* No comment provided by engineer. */
 "Anime" = "アニメ";
 
 /* No comment provided by engineer. */
@@ -129,6 +132,9 @@
 
 /* No comment provided by engineer. */
 "Changes will take effect on app restart" = "変更はアプリの再起動時に反映";
+
+/* No comment provided by engineer. */
+"Chapter Count" = "話数";
 
 /* No comment provided by engineer. */
 "Chapters" = "話";
@@ -186,12 +192,6 @@
 
 /* No comment provided by engineer. */
 "Content" = "コンテンツ";
-
-/* No comment provided by engineer. */
-"Copied!" = "コピーしました！";
-
-/* No comment provided by engineer. */
-"Copy" = "コピー";
 
 /* No comment provided by engineer. */
 "Country" = "国";
@@ -291,6 +291,9 @@
 
 /* No comment provided by engineer. */
 "Ep %lld at %@" = "第%lld話 %@に";
+
+/* No comment provided by engineer. */
+"Episode Count" = "話数";
 
 /* No comment provided by engineer. */
 "Episodes" = "話";
@@ -431,6 +434,9 @@
 "List entry ID" = "リストエントリID";
 
 /* No comment provided by engineer. */
+"List Progress" = "リストの進行状況";
+
+/* No comment provided by engineer. */
 "List style" = "リストスタイル";
 
 /* No comment provided by engineer. */
@@ -506,10 +512,10 @@
 "Native" = "ネイティブ";
 
 /* No comment provided by engineer. */
-"Next Season" = "次のシーズン";
+"No" = "いいえ";
 
 /* No comment provided by engineer. */
-"No" = "いいえ";
+"No airing anime in your list\n(*´-`)" = "リストに配信中のアニメがいません\n(*´-`)";
 
 /* No comment provided by engineer. */
 "No anime for today\n(*´-`)" = "今日のアニメはありません\n(*´-`)";
@@ -636,6 +642,9 @@
 
 /* No comment provided by engineer. */
 "Push notifications" = "プッシュ通知";
+
+/* No comment provided by engineer. */
+"Random" = "ランダム";
 
 /* No comment provided by engineer. */
 "Rankings" = "ランキング";
@@ -978,4 +987,7 @@
 
 /* No comment provided by engineer. */
 "Yes" = "はい";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "ブラウザで再度ログインする必要があります。";
 
