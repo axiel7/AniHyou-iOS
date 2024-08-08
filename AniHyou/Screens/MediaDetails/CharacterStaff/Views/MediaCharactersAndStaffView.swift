@@ -53,9 +53,11 @@ struct MediaCharactersAndStaffView: View {
                     }
                 }
             }//:HGrid
+            .scrollTargetLayoutCompat()
             .frame(height: StaffView.imageSize * 2 + 20)
             .padding(.leading)
         }//:HScrollView
+        .scrollTargetBehaviorCompat()
         .padding(.bottom)
     }
 

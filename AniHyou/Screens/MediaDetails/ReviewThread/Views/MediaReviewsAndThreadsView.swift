@@ -33,9 +33,11 @@ struct MediaReviewsAndThreadsView: View {
                             .buttonStyle(.plain)
                         }
                     }//:HStack
+                    .scrollTargetLayoutCompat()
                     .padding(.leading)
                     .frame(height: 160)
                 }//:HScrollView
+                .scrollTargetBehaviorCompat()
             }
 
             Text("Reviews")
@@ -63,8 +65,10 @@ struct MediaReviewsAndThreadsView: View {
                                 .buttonStyle(.plain)
                             }
                         }//:HGrid
+                        .scrollTargetLayoutCompat()
                         .padding(.leading)
                     }//:HScrollView
+                    .scrollTargetBehaviorCompat()
                     .frame(height: 320)
                 }
             }//:ZStack

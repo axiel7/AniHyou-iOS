@@ -199,8 +199,10 @@ struct DiscoverView: View {
                         }
                     }
                 }//:HStack
+                .scrollTargetLayoutCompat()
                 .padding(.leading, 8)
             }//:HScrollView
+            .scrollTargetBehaviorCompat()
             .frame(height: 145)
             .task {
                 if airingOnMyList {
