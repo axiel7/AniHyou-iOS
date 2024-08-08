@@ -13,8 +13,12 @@ class CurrentViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var airingList: [CommonMediaListEntry] = []
+    @Published var behindList: [CommonMediaListEntry] = []
     @Published var animeList: [CommonMediaListEntry] = []
     @Published var mangaList: [CommonMediaListEntry] = []
+    var hasNothing: Bool {
+        airingList.isEmpty && behindList.isEmpty && animeList.isEmpty && mangaList.isEmpty
+    }
     
     func fetchLists() async {
         isLoading = true
@@ -34,10 +38,13 @@ class CurrentViewModel: ObservableObject {
         ) {
             if mediaType == .anime {
                 airingList = result.data
-                    .filter { $0.media?.status?.value == .releasing }
+                    .filter { $0.media?.status?.value == .releasing && !$0.isBehind }
                     .sorted(by: {
                         $0.media?.nextAiringEpisode?.airingAt ?? 0 < $1.media?.nextAiringEpisode?.airingAt ?? 0
                     })
+                behindList = result.data
+                    .filter { $0.media?.status?.value == .releasing && $0.isBehind }
+                    .sorted(by: { $0.episodesBehind < $1.episodesBehind })
                 animeList = result.data.filter { $0.media?.status?.value != .releasing }
             } else if mediaType == .manga {
                 mangaList = result.data
@@ -52,35 +59,47 @@ class CurrentViewModel: ObservableObject {
     }
     
     func onEntryUpdated(_ entry: BasicMediaListEntry, type: CurrentView.ListType) async {
-        let list = switch type {
+        var list = getList(of: type)
+        guard let foundIndex = list.firstIndex(where: { $0.id == entry.id }) else { return }
+        if list[safe: foundIndex]?.status != entry.status {
+            list.removeAll(where: { $0.id == entry.id })
+        } else {
+            if let updatedItem: CommonMediaListEntry = await MediaListRepository.updateCachedEntry(entry) {
+                list[foundIndex] = updatedItem
+            }
+            if type == .behind
+                && !entry.isBehind(nextAiringEpisode: list[foundIndex].media?.nextAiringEpisode?.episode)
+            {
+                airingList.append(list[foundIndex])
+                behindList.remove(at: foundIndex)
+            }
+        }
+        setList(of: type, list)
+    }
+    
+    private func getList(of type: CurrentView.ListType) -> [CommonMediaListEntry] {
+        switch type {
         case .airing:
             airingList
+        case .behind:
+            behindList
         case .anime:
             animeList
         case .manga:
             mangaList
         }
-        guard let foundIndex = list.firstIndex(where: { $0.id == entry.id }) else { return }
-        if list[safe: foundIndex]?.status != entry.status {
-            switch type {
-            case .airing:
-                airingList.removeAll(where: { $0.id == entry.id })
-            case .anime:
-                animeList.removeAll(where: { $0.id == entry.id })
-            case .manga:
-                mangaList.removeAll(where: { $0.id == entry.id })
-            }
-        } else {
-            if let updatedItem: CommonMediaListEntry = await MediaListRepository.updateCachedEntry(entry) {
-                switch type {
-                case .airing:
-                    airingList[foundIndex] = updatedItem
-                case .anime:
-                    animeList[foundIndex] = updatedItem
-                case .manga:
-                    mangaList[foundIndex] = updatedItem
-                }
-            }
+    }
+    
+    private func setList(of type: CurrentView.ListType, _ value: [CommonMediaListEntry]) {
+        switch type {
+        case .airing:
+            airingList = value
+        case .behind:
+            behindList = value
+        case .anime:
+            animeList = value
+        case .manga:
+            mangaList = value
         }
     }
 }

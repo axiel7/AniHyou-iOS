@@ -10,8 +10,9 @@ import AniListAPI
 
 struct CurrentView: View {
     
-    enum ListType {
+    enum ListType: CaseIterable {
         case airing
+        case behind
         case anime
         case manga
         
@@ -19,6 +20,8 @@ struct CurrentView: View {
             switch self {
             case .airing:
                 "Airing"
+            case .behind:
+                "Anime Behind"
             case .anime:
                 "Watching"
             case .manga:
@@ -39,27 +42,27 @@ struct CurrentView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    let hasAiring = !viewModel.airingList.isEmpty
-                    if hasAiring {
-                        list(type: .airing, items: viewModel.airingList)
-                    }
-                    
-                    let hasAnime = !viewModel.animeList.isEmpty
-                    if hasAnime {
-                        list(type: .anime, items: viewModel.animeList)
-                    }
-                    
-                    let hasManga = !viewModel.mangaList.isEmpty
-                    if hasManga {
-                        list(type: .manga, items: viewModel.mangaList)
+                    ForEach(ListType.allCases, id: \.self) { type in
+                        let items = switch type {
+                        case .airing:
+                            viewModel.airingList
+                        case .behind:
+                            viewModel.behindList
+                        case .anime:
+                            viewModel.animeList
+                        case .manga:
+                            viewModel.mangaList
+                        }
+                        if !items.isEmpty {
+                            list(type: type, items: items)
+                        }
                     }
                     
                     if viewModel.isLoading {
                         HorizontalProgressView()
                     }
                     
-                    let hasNothing = !hasAiring && !hasAnime && !hasManga
-                    if hasNothing {
+                    if viewModel.hasNothing {
                         HStack {
                             Spacer()
                             Text("Nothing in your list")

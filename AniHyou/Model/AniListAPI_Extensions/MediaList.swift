@@ -12,6 +12,14 @@ extension CommonMediaListEntry {
     var uniqueListId: String? {
         "\(self.mediaId)-\(self.id)"
     }
+    
+    var isBehind: Bool {
+        (progress ?? 0) < (media?.nextAiringEpisode?.episode.minus(1) ?? 0)
+    }
+    
+    var episodesBehind: Int {
+        (media?.nextAiringEpisode?.episode.minus(1) ?? 0) - (progress ?? 0)
+    }
 }
 
 extension ShouUserMediaList {
@@ -56,6 +64,10 @@ extension BasicMediaListEntry {
         } else {
             progress
         }
+    }
+    
+    func isBehind(nextAiringEpisode: Int?) -> Bool {
+        (progress ?? 0) < (nextAiringEpisode ?? 0) - 1
     }
     
     var advancedScoresDict: [String: Double]? {

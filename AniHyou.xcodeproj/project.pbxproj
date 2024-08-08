@@ -152,6 +152,8 @@
 		488C268C28539E240005EE15 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */; };
 		488C268F28539F320005EE15 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */; };
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
+		488FCDB42C64C63C00D8B47D /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
+		488FCDB52C64C63C00D8B47D /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
 		4892AB7D2A52E6CE004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
 		4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
 		4892AB7F2A52E718004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
@@ -2351,6 +2353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488FCDB52C64C63C00D8B47D /* NumberUtils.swift in Sources */,
 				4863796F2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
 				48294CE92ABA9893005E7CD2 /* MediaType.swift in Sources */,
 				48294CE62AB96164005E7CD2 /* MediaListRepository.swift in Sources */,
@@ -2389,6 +2392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488FCDB42C64C63C00D8B47D /* NumberUtils.swift in Sources */,
 				4863796E2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
 				48294CE32AB95332005E7CD2 /* MediaListStatus.swift in Sources */,
 				48F279332970299D000827F7 /* Network.swift in Sources */,
