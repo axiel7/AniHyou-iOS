@@ -145,51 +145,7 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
     public typealias Title = BasicMediaDetails.Title
   }
 
-  /// StartedAt
-  ///
-  /// Parent Type: `FuzzyDate`
-  public struct StartedAt: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+  public typealias StartedAt = BasicMediaListEntry.StartedAt
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
-
-    /// Numeric Day (24)
-    public var day: Int? { __data["day"] }
-    /// Numeric Month (3)
-    public var month: Int? { __data["month"] }
-    /// Numeric Year (2017)
-    public var year: Int? { __data["year"] }
-
-    public struct Fragments: FragmentContainer {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
-
-      public var fuzzyDateFragment: FuzzyDateFragment { _toFragment() }
-    }
-  }
-
-  /// CompletedAt
-  ///
-  /// Parent Type: `FuzzyDate`
-  public struct CompletedAt: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
-
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
-
-    /// Numeric Day (24)
-    public var day: Int? { __data["day"] }
-    /// Numeric Month (3)
-    public var month: Int? { __data["month"] }
-    /// Numeric Year (2017)
-    public var year: Int? { __data["year"] }
-
-    public struct Fragments: FragmentContainer {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
-
-      public var fuzzyDateFragment: FuzzyDateFragment { _toFragment() }
-    }
-  }
+  public typealias CompletedAt = BasicMediaListEntry.CompletedAt
 }
