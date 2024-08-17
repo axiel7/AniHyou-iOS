@@ -13,6 +13,7 @@ struct MediaGeneralInfoView: View {
 
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showSpoilerTags = false
+    @State var showDialog = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,7 +24,11 @@ struct MediaGeneralInfoView: View {
             multimediaContent
             
             if let openings = viewModel.openings {
-                themesList(title: "Openings", themes: openings)
+                themesList(
+                    title: "Openings",
+                    themes: openings,
+                    showingDialog: $showDialog
+                )
             } else if viewModel.isLoadingThemes {
                 HorizontalProgressView()
                     .task {
@@ -35,7 +40,11 @@ struct MediaGeneralInfoView: View {
                     }
             }
             if let endings = viewModel.endings {
-                themesList(title: "Endings", themes: endings)
+                themesList(
+                    title: "Endings",
+                    themes: endings,
+                    showingDialog: $showDialog
+                )
             }
         }
     }
@@ -229,7 +238,8 @@ struct MediaGeneralInfoView: View {
     @ViewBuilder
     func themesList(
         title: String,
-        themes: [AnimeThemes.Theme]
+        themes: [AnimeThemes.Theme],
+        showingDialog: Binding<Bool>
     ) -> some View {
         Text(title)
             .font(.title3)
@@ -237,12 +247,19 @@ struct MediaGeneralInfoView: View {
             .padding(.horizontal)
             .padding(.bottom, 4)
         ForEach(themes) { theme in
-            Link(destination: theme.youtubeUrl) {
+            Button(action: { showingDialog.wrappedValue = true }) {
                 Text(theme.text)
                     .multilineTextAlignment(.leading)
             }
             .padding(.horizontal)
             .padding(.bottom, 4)
+            .confirmationDialog("", isPresented: showingDialog) {
+                ForEach(MusicStreaming.allCases, id: \.self) { service in
+                    Link(service.name,
+                         destination: URL(string: service.searchUrl + theme.queryText)!
+                    )
+                }
+            }
         }
     }
 }
