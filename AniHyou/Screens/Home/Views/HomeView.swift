@@ -24,7 +24,7 @@ struct HomeView: View {
             .navigationTitle("Home")
         } detail: {
             switch currentTab {
-            case .discover, nil:
+            case .discover:
                 DiscoverView()
                     .navigationTitle("Discover")
                     .toolbar {
@@ -51,6 +51,8 @@ struct HomeView: View {
                     toolbarContent
                 }
                 .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
+            case nil:
+                EmptyView()
             }
         }
         .task {
