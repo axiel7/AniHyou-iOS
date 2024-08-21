@@ -70,8 +70,7 @@ class CurrentViewModel: ObservableObject {
             if type == .behind
                 && !entry.isBehind(nextAiringEpisode: list[foundIndex].media?.nextAiringEpisode?.episode)
             {
-                airingList.append(list[foundIndex])
-                behindList.remove(at: foundIndex)
+                airingList.append(list.remove(at: foundIndex))
             }
         }
         setList(of: type, list)
