@@ -10,20 +10,19 @@ import SwiftUI
 struct HomeView: View {
     
     let isLoggedIn: Bool
-    @AppStorage(HOME_TAB_KEY) private var currentTab: HomeTab?
-    @State private var unreadNotificationsCount = 0
+    @StateObject private var viewModel = HomeViewModel()
     @State private var showNotificationsSheet = false
     @State private var mediaId = 0
     @State private var showingMediaDetails = false
 
     var body: some View {
         NavigationSplitView {
-            List(HomeTab.allCases, id: \.self, selection: $currentTab) { tab in
+            List(HomeTab.allCases, id: \.self, selection: $viewModel.currentTab) { tab in
                 Label(tab.localizedName, systemImage: tab.systemImage)
             }
             .navigationTitle("Home")
         } detail: {
-            switch currentTab {
+            switch viewModel.currentTab {
             case .discover:
                 DiscoverView()
                     .navigationTitle("Discover")
@@ -56,10 +55,10 @@ struct HomeView: View {
             }
         }
         .task {
-            unreadNotificationsCount = await UserRepository.getUnreadNotificationsCount() ?? 0
+            await viewModel.getUnreadNotificationsCount()
         }
         .onReceive(NotificationCenter.default.publisher(for: "readNotifications")) { _ in
-            unreadNotificationsCount = 0
+            viewModel.unreadNotificationsCount = 0
         }
         .sheet(isPresented: $showNotificationsSheet) {
             NotificationsView()
@@ -70,7 +69,10 @@ struct HomeView: View {
     var toolbarContent: some ToolbarContent {
         ToolbarItem {
             Button(action: { showNotificationsSheet = true }) {
-                Label("Notifications", systemImage: unreadNotificationsCount > 0 ? "bell.badge" : "bell")
+                Label(
+                    "Notifications",
+                    systemImage: viewModel.unreadNotificationsCount > 0 ? "bell.badge" : "bell"
+                )
             }
         }
     }

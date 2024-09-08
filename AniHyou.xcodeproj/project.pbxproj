@@ -126,6 +126,7 @@
 		48650F0C2860CBF40064C70A /* MediaListEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0B2860CBF40064C70A /* MediaListEditView.swift */; };
 		48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48650F0D2860CE720064C70A /* MediaListEditViewModel.swift */; };
 		48691FF72ADD119D009DCDFE /* ThreadCommentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48691FF62ADD119D009DCDFE /* ThreadCommentDetailsView.swift */; };
+		486E6FBF2C8D8E8F0069260D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486E6FBE2C8D8E8B0069260D /* HomeViewModel.swift */; };
 		486ED205285DD484002D29E1 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED204285DD484002D29E1 /* MediaListView.swift */; };
 		486ED207285DD4D8002D29E1 /* MediaListItemStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */; };
 		486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED208285DD649002D29E1 /* MediaListStatusView.swift */; };
@@ -481,6 +482,7 @@
 		48691FF22ADD06A9009DCDFE /* ChildComments.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChildComments.graphql; sourceTree = "<group>"; };
 		48691FF62ADD119D009DCDFE /* ThreadCommentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCommentDetailsView.swift; sourceTree = "<group>"; };
 		48691FF82ADD1DA6009DCDFE /* ToggleLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToggleLike.graphql; sourceTree = "<group>"; };
+		486E6FBE2C8D8E8B0069260D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		486ED1FF285DD329002D29E1 /* UserListCollection.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserListCollection.graphql; sourceTree = "<group>"; };
 		486ED204285DD484002D29E1 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
 		486ED206285DD4D8002D29E1 /* MediaListItemStandardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListItemStandardView.swift; sourceTree = "<group>"; };
@@ -1663,6 +1665,7 @@
 		48F763F628ACE4CB00C82D75 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				486E6FBE2C8D8E8B0069260D /* HomeViewModel.swift */,
 				481AD4F72851D927001779EE /* DiscoverViewModel.swift */,
 				4820F6AE2ADE97A200A4F465 /* ActivityFeedViewModel.swift */,
 				48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */,
@@ -2005,7 +2008,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					481AD4D92851CE73001779EE = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -2275,6 +2278,7 @@
 				480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */,
 				486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */,
 				4832B032285F406300E79D27 /* StringsPreview.swift in Sources */,
+				486E6FBF2C8D8E8F0069260D /* HomeViewModel.swift in Sources */,
 				48B7AC112BB4A1EA0047998F /* GenresStatsView.swift in Sources */,
 				48B7AC332BB80F9C0047998F /* NotificationsManager.swift in Sources */,
 				486379702C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
@@ -2615,7 +2619,6 @@
 		481AD4E92851CE74001779EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -2650,7 +2653,6 @@
 		481AD4EA2851CE74001779EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
