@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 class HomeViewModel: ObservableObject {
     
     @AppStorage(HOME_TAB_KEY) var currentTab: HomeTab?
