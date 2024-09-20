@@ -13,6 +13,8 @@ struct MediaGeneralInfoView: View {
 
     @ObservedObject var viewModel: MediaDetailsViewModel
     @State private var showSpoilerTags = false
+    @State private var showAllTags = false
+    private let tagLimit = 10
     @State var showDialog = false
 
     var body: some View {
@@ -107,14 +109,14 @@ struct MediaGeneralInfoView: View {
 
     @ViewBuilder
     var tags: some View {
-        if let mediaTags = viewModel.mediaDetails?.tags {
+        if let mediaTags = viewModel.mediaDetails?.tags?.compactMap({ $0 }) {
             HStack {
                 Text("Tags")
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
                 Spacer()
-                if mediaTags.contains(where: { $0?.isMediaSpoiler == true }) {
+                if mediaTags.contains(where: { $0.isMediaSpoiler == true }) {
                     Button(
                         action: {
                             withAnimation {
@@ -131,17 +133,34 @@ struct MediaGeneralInfoView: View {
             }
             .padding(.top)
 
-            let tagsFiltered = mediaTags.filter {
-                $0?.isMediaSpoiler == false || $0?.isMediaSpoiler == showSpoilerTags
-            }
+            let tagsFiltered = mediaTags
+                .filter {
+                    $0.isMediaSpoiler == false || $0.isMediaSpoiler == showSpoilerTags
+                }
+                .prefix(showAllTags ? mediaTags.count : tagLimit)
+            
             VFlow(alignment: .leading) {
-                ForEach(tagsFiltered, id: \.?.id) {
-                    if let tag = $0 {
-                        MediaTagItemView(tag: tag)
-                    }
+                ForEach(tagsFiltered, id: \.id) { tag in
+                    MediaTagItemView(tag: tag)
                 }
             }
             .padding(.horizontal)
+            
+            HStack {
+                Spacer()
+                Button(
+                    action: {
+                        withAnimation {
+                            showAllTags.toggle()
+                        }
+                    },
+                    label: {
+                        Text(showAllTags ? "Show less" : "Show more")
+                            .font(.footnote)
+                    }
+                )
+                .padding(.horizontal)
+            }
             .padding(.bottom)
         }
     }
