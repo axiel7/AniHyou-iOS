@@ -30,6 +30,20 @@ extension MediaListStatus {
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(stringLiteral: localizedStringKey)
     }
+    
+    func localizedStringKey(type: MediaType) -> String {
+        if self == .current {
+            type == .anime ? "Watching" : "Reading"
+        } else if self == .repeating {
+            type == .anime ? "Rewatching" : "Rereading"
+        } else {
+            localizedStringKey
+        }
+    }
+    
+    func localizedName(type: MediaType) -> LocalizedStringKey {
+        LocalizedStringKey(stringLiteral: localizedStringKey(type: type))
+    }
 
     /// System symbol name representing this status
     var systemImage: String {

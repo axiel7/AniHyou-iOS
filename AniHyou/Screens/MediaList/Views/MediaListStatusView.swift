@@ -25,12 +25,12 @@ struct MediaListStatusView: View {
         NavigationSplitView {
             List(selection: $selection) {
                 Label("All", systemImage: "list.bullet.circle").tag("All")
-                ForEach(MediaListStatus.allCases, id: \.localizedStringKey) { status in
-                    if status == .current {
-                        Label(mediaType.currentListStatus, systemImage: status.systemImage)
-                    } else {
-                        Label(status.localizedName, systemImage: status.systemImage)
-                    }
+                ForEach(MediaListStatus.allCases, id: \.rawValue) { status in
+                    Label(
+                        status.localizedName(type: mediaType),
+                        systemImage: status.systemImage
+                    )
+                    .tag(status.localizedStringKey(type: mediaType))
                 }
                 if let customLists {
                     ForEach(customLists, id: \.self) { name in

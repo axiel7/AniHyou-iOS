@@ -103,10 +103,12 @@ class MediaListViewModel: ObservableObject {
                 .filter { MediaListStatus.listNames.contains($0) }
                 .flatMap { lists[$0] ?? [] }
         } else {
-            selectedListName = if listName == "Current" {
-                mediaType == .anime ? "Watching" : "Reading"
+            if let listStatus = MediaListStatus.allCases
+                .first(where: { $0.localizedStringKey(type: mediaType) == listName })
+            {
+                selectedListName = listStatus.localizedStringKey(type: mediaType)
             } else {
-                listName
+                selectedListName = listName
             }
             mediaList = lists[selectedListName!] ?? []
         }
