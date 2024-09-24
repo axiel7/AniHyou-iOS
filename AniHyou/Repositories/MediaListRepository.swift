@@ -20,7 +20,7 @@ struct MediaListRepository {
         perChunk: Int? = 50,
         forceReload: Bool = false
     ) async -> PagedResult<UserListCollectionQuery.Data.MediaListCollection.List>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserListCollectionQuery(
                     userId: .some(userId),
@@ -62,7 +62,7 @@ struct MediaListRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<CommonMediaListEntry>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserMediaListQuery(
                     page: .some(page),
@@ -104,7 +104,7 @@ struct MediaListRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<ShouUserMediaList>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: ShouUserMediaListQuery(
                     page: .some(page),
@@ -205,7 +205,7 @@ struct MediaListRepository {
         customLists: [String: Bool]? = nil,
         notes: String? = nil
     ) async -> BasicMediaListEntry? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             
             let setStatus: MediaListStatus? = if status != oldEntry?.status?.value {
                 status
@@ -334,7 +334,7 @@ struct MediaListRepository {
         progressVolumes: Int? = nil,
         status: MediaListStatus? = nil
     ) async -> BasicMediaListEntry? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: UpdateEntryProgressMutation(
                     saveMediaListEntryId: .some(entryId),
@@ -357,7 +357,7 @@ struct MediaListRepository {
     
     @discardableResult
     static func updateCachedEntry<T: RootSelectionSet>(_ entry: BasicMediaListEntry) async -> T? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 do {
                     try transaction.updateObject(
@@ -385,7 +385,7 @@ struct MediaListRepository {
     }
     
     static func deleteEntry(entryId: Int) async -> Bool? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: DeleteMediaListMutation(
                     mediaListEntryId: .some(entryId)
@@ -409,7 +409,7 @@ struct MediaListRepository {
         chunk: Int,
         perChunk: Int = 500
     ) async -> PagedResult<Int>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaListIdsQuery(
                     type: .some(.case(type)),

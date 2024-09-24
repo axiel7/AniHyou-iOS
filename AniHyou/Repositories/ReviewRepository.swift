@@ -11,7 +11,7 @@ import AniListAPI
 struct ReviewRepository {
     
     static func getReviewDetails(reviewId: Int) async -> CommonReviewDetails? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: ReviewDetailsQuery(reviewId: .some(reviewId))) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -28,7 +28,7 @@ struct ReviewRepository {
         reviewId: Int,
         rating: ReviewRating
     ) async -> CommonReviewDetails? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: RateReviewMutation(
                     reviewId: .some(reviewId),

@@ -16,7 +16,7 @@ struct ActivityRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<ActivityFeedQuery.Data.Page.Activity>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             let typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]> =
             if type == .all {
                 .none
@@ -55,7 +55,7 @@ struct ActivityRepository {
     }
     
     static func getActivityDetails(activityId: Int) async -> ActivityDetailsQuery.Data.Activity? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: ActivityDetailsQuery(activityId: .some(activityId))) { result in
                 switch result {
                 case .success(let graphQLResult):

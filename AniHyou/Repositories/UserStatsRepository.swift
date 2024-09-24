@@ -13,7 +13,7 @@ struct UserStatsRepository {
     static func getAnimeOverview(
         userId: Int
     ) async -> UserStatsAnimeOverviewQuery.Data.User? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserStatsAnimeOverviewQuery(userId: .some(userId))
             ) { result in
@@ -31,7 +31,7 @@ struct UserStatsRepository {
     static func getMangaOverview(
         userId: Int
     ) async -> UserStatsMangaOverviewQuery.Data.User? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserStatsMangaOverviewQuery(userId: .some(userId))
             ) { result in
@@ -51,7 +51,7 @@ struct UserStatsRepository {
         mediaType: MediaType,
         distribution: StatDistributionType
     ) async -> [GenreStat]? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             let sort = distribution.userStatisticsSort(ascencing: false)
             if mediaType == .anime {
                 Network.shared.apollo.fetch(
@@ -98,7 +98,7 @@ struct UserStatsRepository {
         mediaType: MediaType,
         distribution: StatDistributionType
     ) async -> [TagStat]? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             let sort = distribution.userStatisticsSort(ascencing: false)
             if mediaType == .anime {
                 Network.shared.apollo.fetch(
@@ -145,7 +145,7 @@ struct UserStatsRepository {
         mediaType: MediaType,
         distribution: StatDistributionType
     ) async -> [StaffStat]? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             let sort = distribution.userStatisticsSort(ascencing: false)
             if mediaType == .anime {
                 Network.shared.apollo.fetch(
@@ -191,7 +191,7 @@ struct UserStatsRepository {
         userId: Int,
         distribution: StatDistributionType
     ) async -> [VoiceActorStat]? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             let sort = distribution.userStatisticsSort(ascencing: false)
             Network.shared.apollo.fetch(
                 query: UserStatsVoiceActorsQuery(
@@ -217,7 +217,7 @@ struct UserStatsRepository {
         userId: Int,
         distribution: StatDistributionType
     ) async -> [StudioStat]? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             let sort = distribution.userStatisticsSort(ascencing: false)
             Network.shared.apollo.fetch(
                 query: UserStatsStudiosQuery(

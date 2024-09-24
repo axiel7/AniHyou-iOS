@@ -11,7 +11,7 @@ import AniListAPI
 struct ThreadRepository {
     
     static func getThreadDetails(threadId: Int) async -> BasicThreadDetails? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: ThreadDetailsQuery(threadId: .some(threadId))) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -28,7 +28,7 @@ struct ThreadRepository {
         threadId: Int,
         subscribe: Bool
     ) async -> Bool? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: SubscribeThreadMutation(
                     threadId: .some(threadId),
@@ -51,7 +51,7 @@ struct ThreadRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<ChildCommentsQuery.Data.Page.ThreadComment>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: ChildCommentsQuery(
                     page: .some(page),

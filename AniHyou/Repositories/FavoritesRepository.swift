@@ -17,7 +17,7 @@ struct FavoritesRepository {
         staffId: Int? = nil,
         studioId: Int? = nil
     ) async -> Bool? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: ToggleFavouriteMutation(
                     animeId: someIfNotNil(animeId),
@@ -43,7 +43,7 @@ struct FavoritesRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserFavoritesAnimeQuery(
                     userId: .some(userId),
@@ -79,7 +79,7 @@ struct FavoritesRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserFavoritesMangaQuery(
                     userId: .some(userId),
@@ -115,7 +115,7 @@ struct FavoritesRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserFavoritesCharacterQuery(
                     userId: .some(userId),
@@ -151,7 +151,7 @@ struct FavoritesRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserFavoritesStaffQuery(
                     userId: .some(userId),
@@ -187,7 +187,7 @@ struct FavoritesRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserFavoritesStudioQuery(
                     userId: .some(userId),

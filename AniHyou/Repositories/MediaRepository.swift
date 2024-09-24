@@ -18,7 +18,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<MediaSortedQuery.Data.Page.Medium>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaSortedQuery(
                     page: .some(page),
@@ -58,7 +58,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<MediaChartQuery.Data.Page.Medium>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaChartQuery(
                     page: .some(page),
@@ -99,7 +99,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<SeasonalAnimeQuery.Data.Page.Medium>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: SeasonalAnimeQuery(
                     page: .some(page),
@@ -160,7 +160,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<AiringAnimesQuery.Data.Page.AiringSchedule>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: AiringAnimesQuery(
                     page: .some(page),
@@ -204,7 +204,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<AiringOnMyListQuery.Data.Page.Medium>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: AiringOnMyListQuery(
                     page: .some(page),
@@ -257,7 +257,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<SearchMediaQuery.Data.Page.Medium>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: SearchMediaQuery(
                 page: .some(1),
                 perPage: .some(perPage),
@@ -301,7 +301,7 @@ struct MediaRepository {
     }
     
     static func getMediaDetails(mediaId: Int) async -> MediaDetailsQuery.Data.Media? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: .some(mediaId))) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -315,7 +315,7 @@ struct MediaRepository {
     }
     
     static func getMediaCharactersAndStaff(mediaId: Int) async -> MediaCharactersAndStaffQuery.Data.Media? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: .some(mediaId))) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -331,7 +331,7 @@ struct MediaRepository {
     static func getMediaRelationsAndRecommendations(
         mediaId: Int
     ) async -> MediaRelationsAndRecommendationsQuery.Data.Media? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaRelationsAndRecommendationsQuery(
                     mediaId: .some(mediaId)
@@ -349,7 +349,7 @@ struct MediaRepository {
     }
     
     static func getMediaStats(mediaId: Int) async -> MediaStatsQuery.Data.Media? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: MediaStatsQuery(mediaId: .some(mediaId))) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -367,7 +367,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int
     ) async -> PagedResult<MediaFollowingQuery.Data.Page.MediaList>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaFollowingQuery(
                     id: .some(mediaId),
@@ -403,7 +403,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<MediaReviewsQuery.Data.Media.Reviews.Node>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaReviewsQuery(
                     mediaId: .some(mediaId),
@@ -439,7 +439,7 @@ struct MediaRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<BasicThreadDetails>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: MediaThreadsQuery(
                     page: .some(page),

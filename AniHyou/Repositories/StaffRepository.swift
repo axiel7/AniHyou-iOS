@@ -15,7 +15,7 @@ struct StaffRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<SearchStaffQuery.Data.Page.Staff>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: SearchStaffQuery(
                     page: .some(page),
@@ -47,7 +47,7 @@ struct StaffRepository {
     }
     
     static func getStaffDetails(staffId: Int) async -> StaffDetailsQuery.Data.Staff? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: StaffDetailsQuery(staffId: .some(staffId))) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -66,7 +66,7 @@ struct StaffRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<StaffMediaGrouped>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: StaffMediaQuery(
                     staffId: .some(staffId),
@@ -114,7 +114,7 @@ struct StaffRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<StaffCharacterQuery.Data.Staff.CharacterMedia.Edge>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: StaffCharacterQuery(
                     staffId: .some(staffId),

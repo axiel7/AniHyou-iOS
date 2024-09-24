@@ -15,7 +15,7 @@ struct CharacterRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<SearchCharacterQuery.Data.Page.Character>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: SearchCharacterQuery(
                     page: .some(page),
@@ -47,7 +47,7 @@ struct CharacterRepository {
     }
     
     static func getCharacterDetails(characterId: Int) async -> CharacterDetailsQuery.Data.Character? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: CharacterDetailsQuery(
                     characterId: .some(characterId)
@@ -69,7 +69,7 @@ struct CharacterRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<CharacterMediaQuery.Data.Character.Media.Edge>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: CharacterMediaQuery(
                     characterId: .some(characterId),

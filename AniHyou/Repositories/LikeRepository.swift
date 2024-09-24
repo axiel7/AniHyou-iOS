@@ -14,7 +14,7 @@ struct LikeRepository {
         likeableId: Int,
         likeableType: LikeableType
     ) async -> Bool? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: ToggleLikeMutation(
                     likeableId: .some(likeableId),

@@ -15,7 +15,7 @@ struct StudioRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<SearchStudioQuery.Data.Page.Studio>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: SearchStudioQuery(
                     page: .some(1),
@@ -50,7 +50,7 @@ struct StudioRepository {
         studioId: Int,
         perPage: Int = 25
     ) async -> StudioDetailsQuery.Data.Studio? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: StudioDetailsQuery(
                     studioId: .some(studioId),
@@ -74,7 +74,7 @@ struct StudioRepository {
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<StudioMedia>? {
-        await withCheckedContinuation { continuation in
+        await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: StudioMediaQuery(
                     studioId: .some(studioId),
