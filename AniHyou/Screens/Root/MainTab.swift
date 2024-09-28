@@ -8,12 +8,16 @@
 import Foundation
 import SwiftUI
 
-enum MainTab: Int {
+enum MainTab: Int, CaseIterable, Identifiable {
     case home = 0
     case anime = 1
     case manga = 2
     case profile = 3
     case explore = 4
+    
+    var id: Int {
+        self.rawValue
+    }
     
     var localizedName: LocalizedStringKey {
         switch self {

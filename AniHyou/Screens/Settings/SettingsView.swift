@@ -51,6 +51,8 @@ struct SettingsView: View {
     
     @AppStorage(LIST_STYLE_KEY) private var listStyle = 0
     
+    @AppStorage(DEFAULT_TAB_KEY) private var defaultTab = -1
+    
     @AppStorage(AIRING_ON_MY_LIST_KEY) private var airingOnMyList = false
     
     @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
@@ -187,6 +189,13 @@ struct SettingsView: View {
                             accentColor = hex
                         }
                     }
+            }
+            
+            Picker("Default tab", selection: $defaultTab) {
+                Text("Last used").tag(-1)
+                ForEach(MainTab.allCases) { tab in
+                    Text(tab.localizedName).tag(tab.rawValue)
+                }
             }
         } header: {
             Text("Display")

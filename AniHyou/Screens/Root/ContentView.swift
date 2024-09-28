@@ -21,6 +21,7 @@ fileprivate extension View {
 struct ContentView: View {
 
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
+    @AppStorage(DEFAULT_TAB_KEY) private var defaultTab: Int = -1
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
     @AppStorage(USER_SCORE_KEY) private var myScoreFormatRawValue = ScoreFormat.point100.rawValue
     var myScoreFormat: ScoreFormat {
@@ -64,6 +65,11 @@ struct ContentView: View {
             RootExploreView()
                 .tabItem(.explore)
         }//:TabView
+        .onAppear {
+            if defaultTab != -1 {
+                selectedTabIndex = defaultTab
+            }
+        }
     }
 }
 
