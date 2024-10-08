@@ -33,8 +33,8 @@ class CurrentViewModel: ObservableObject {
             mediaType: mediaType,
             status: .current,
             sort: [.updatedTimeDesc],
-            page: 1,
-            perPage: 25
+            page: nil,
+            perPage: nil
         ) {
             if mediaType == .anime {
                 airingList = result.data

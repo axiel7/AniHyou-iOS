@@ -59,14 +59,14 @@ struct MediaListRepository {
         mediaType: MediaType,
         status: MediaListStatus?,
         sort: [MediaListSort],
-        page: Int,
-        perPage: Int = 25
+        page: Int?,
+        perPage: Int? = 25
     ) async -> PagedResult<CommonMediaListEntry>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: UserMediaListQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
+                    page: someIfNotNil(page),
+                    perPage: someIfNotNil(perPage),
                     userId: .some(userId),
                     type: .some(.case(mediaType)),
                     status: someIfNotNil(status),
@@ -81,7 +81,7 @@ struct MediaListRepository {
                         continuation.resume(
                             returning: PagedResult(
                                 data: list,
-                                page: page + 1,
+                                page: page ?? 0 + 1,
                                 hasNextPage: pageData.pageInfo?.hasNextPage == true
                             )
                         )
