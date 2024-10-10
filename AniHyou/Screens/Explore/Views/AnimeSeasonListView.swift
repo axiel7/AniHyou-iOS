@@ -108,7 +108,8 @@ struct AnimeSeasonListView: View {
                         subtitle: media.airingText,
                         subtitle2Text: media.mainGenresLocalized,
                         imageUrl: media.coverImage?.large,
-                        meanScore: media.meanScore
+                        meanScore: media.meanScore,
+                        status: media.mediaListEntry?.status?.value
                     )
                     .mediaContextMenu(
                         mediaId: media.id,
