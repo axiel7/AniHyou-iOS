@@ -22,34 +22,33 @@ class CurrentViewModel: ObservableObject {
     
     func fetchLists() async {
         isLoading = true
-        await getMediaList(mediaType: .anime)
-        await getMediaList(mediaType: .manga)
+        
+        if let anime = await getMediaList(mediaType: .anime) {
+            airingList = anime
+                .filter { $0.media?.status?.value == .releasing && !$0.isBehind }
+                .sorted(by: {
+                    $0.media?.nextAiringEpisode?.airingAt ?? 0 < $1.media?.nextAiringEpisode?.airingAt ?? 0
+                })
+            behindList = anime
+                .filter { $0.media?.status?.value == .releasing && $0.isBehind }
+                .sorted(by: { $0.episodesBehind < $1.episodesBehind })
+            animeList = anime.filter { $0.media?.status?.value != .releasing }
+        }
+        
+        mangaList = await getMediaList(mediaType: .manga) ?? []
+        
         isLoading = false
     }
     
-    func getMediaList(mediaType: MediaType) async {
-        if let result = await MediaListRepository.getUserMediaList(
+    private func getMediaList(mediaType: MediaType) async -> [CommonMediaListEntry]? {
+        return await MediaListRepository.getUserMediaList(
             userId: LoginRepository.authUserId(),
             mediaType: mediaType,
             status: .current,
             sort: [.updatedTimeDesc],
             page: nil,
             perPage: nil
-        ) {
-            if mediaType == .anime {
-                airingList = result.data
-                    .filter { $0.media?.status?.value == .releasing && !$0.isBehind }
-                    .sorted(by: {
-                        $0.media?.nextAiringEpisode?.airingAt ?? 0 < $1.media?.nextAiringEpisode?.airingAt ?? 0
-                    })
-                behindList = result.data
-                    .filter { $0.media?.status?.value == .releasing && $0.isBehind }
-                    .sorted(by: { $0.episodesBehind < $1.episodesBehind })
-                animeList = result.data.filter { $0.media?.status?.value != .releasing }
-            } else if mediaType == .manga {
-                mangaList = result.data
-            }
-        }
+        )?.data
     }
     
     func updateEntryProgress(of entry: CommonMediaListEntry, type: CurrentView.ListType) async {
