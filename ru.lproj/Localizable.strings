@@ -953,6 +953,9 @@
 "Trailer" = "Трейлер";
 
 /* No comment provided by engineer. */
+"Translate" = "Перевести";
+
+/* No comment provided by engineer. */
 "Translations" = "Переводы";
 
 /* No comment provided by engineer. */
@@ -1023,6 +1026,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Просмотрен эпизод %1$@ из %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "Смотрит";
 
 /* No comment provided by engineer. */
 "Web novel" = "Веб новелла";

@@ -434,6 +434,12 @@
 "Native" = "اللغة الأم";
 
 /* No comment provided by engineer. */
+"Newly Added Anime" = "الأنمي المضاف حديثاً";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "المانجا المضافة حديثاً";
+
+/* No comment provided by engineer. */
 "No" = "لا";
 
 /* No comment provided by engineer. */
@@ -755,6 +761,9 @@
 "Trailer" = "العرض الدعائي";
 
 /* No comment provided by engineer. */
+"Translate" = "ترجمة";
+
+/* No comment provided by engineer. */
 "Translations" = "المترجمون";
 
 /* No comment provided by engineer. */
@@ -810,6 +819,9 @@
 
 /* No comment provided by engineer. */
 "Watch Year" = "سنة المشاهدة";
+
+/* No comment provided by engineer. */
+"Watching" = "أشاهده";
 
 /* No comment provided by engineer. */
 "Web novel" = "رواية ويب";

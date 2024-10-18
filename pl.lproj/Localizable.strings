@@ -224,6 +224,9 @@
 "Default" = "Domyślny";
 
 /* No comment provided by engineer. */
+"Default tab" = "Karta domyślna";
+
+/* No comment provided by engineer. */
 "Delete" = "Usuń";
 
 /* No comment provided by engineer. */
@@ -431,6 +434,9 @@
 "Last Updated" = "Ostatnio Zaktualizowane";
 
 /* No comment provided by engineer. */
+"Last used" = "Ostatnio używane";
+
+/* No comment provided by engineer. */
 "Left" = "Lewo";
 
 /* No comment provided by engineer. */
@@ -516,6 +522,12 @@
 
 /* No comment provided by engineer. */
 "Native" = "Natywny";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "Nowo Dodane Anime";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Nowo Dodana Manga";
 
 /* No comment provided by engineer. */
 "No" = "Nie";
@@ -950,6 +962,9 @@
 "Trailer" = "Zwiastun";
 
 /* No comment provided by engineer. */
+"Translate" = "Przetłumacz";
+
+/* No comment provided by engineer. */
 "Translations" = "Tłumaczenia";
 
 /* No comment provided by engineer. */
@@ -1020,6 +1035,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Obejrzał/a %1$@ odcinek %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "Oglądane";
 
 /* No comment provided by engineer. */
 "Web novel" = "Web novel";

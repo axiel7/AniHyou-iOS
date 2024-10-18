@@ -227,6 +227,9 @@
 "Default" = "Типово";
 
 /* No comment provided by engineer. */
+"Default tab" = "Початкове меню";
+
+/* No comment provided by engineer. */
 "Delete" = "Видалити";
 
 /* No comment provided by engineer. */
@@ -327,6 +330,9 @@
 
 /* No comment provided by engineer. */
 "Feed type" = "Тип стрічки";
+
+/* No comment provided by engineer. */
+"Female" = "Жіночий";
 
 /* No comment provided by engineer. */
 "Filter" = "Фільтри";
@@ -434,6 +440,9 @@
 "Last Updated" = "Останнє оновлення";
 
 /* No comment provided by engineer. */
+"Last used" = "Останнє використане";
+
+/* No comment provided by engineer. */
 "Left" = "Зліва";
 
 /* No comment provided by engineer. */
@@ -468,6 +477,9 @@
 
 /* No comment provided by engineer. */
 "Main" = "Головний";
+
+/* No comment provided by engineer. */
+"Male" = "Чоловічий";
 
 /* No comment provided by engineer. */
 "Manga" = "Манґа";
@@ -521,6 +533,12 @@
 "Native" = "Оригінальна";
 
 /* No comment provided by engineer. */
+"Newly Added Anime" = "Нещодавно додане Аніме";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Нещодавно додана Манґа";
+
+/* No comment provided by engineer. */
 "No" = "Ні";
 
 /* No comment provided by engineer. */
@@ -537,6 +555,9 @@
 
 /* No comment provided by engineer. */
 "No reviews" = "Немає відгуків";
+
+/* No comment provided by engineer. */
+"Non-binary" = "Небінарний";
 
 /* No comment provided by engineer. */
 "None" = "Немає";
@@ -953,6 +974,9 @@
 "Trailer" = "Трейлер";
 
 /* No comment provided by engineer. */
+"Translate" = "Перекласти";
+
+/* No comment provided by engineer. */
 "Translations" = "Перекладачі";
 
 /* No comment provided by engineer. */
@@ -1023,6 +1047,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Переглянута серія %1$@ з %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "Дивлюся";
 
 /* No comment provided by engineer. */
 "Web novel" = "Веб-роман";

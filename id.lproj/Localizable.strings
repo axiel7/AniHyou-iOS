@@ -227,6 +227,9 @@
 "Default" = "Default";
 
 /* No comment provided by engineer. */
+"Default tab" = "Tab default";
+
+/* No comment provided by engineer. */
 "Delete" = "Hapus";
 
 /* No comment provided by engineer. */
@@ -434,6 +437,9 @@
 "Last Updated" = "Terakhir Diperbarui";
 
 /* No comment provided by engineer. */
+"Last used" = "Terakhir digunakan";
+
+/* No comment provided by engineer. */
 "Left" = "Kiri";
 
 /* No comment provided by engineer. */
@@ -519,6 +525,12 @@
 
 /* No comment provided by engineer. */
 "Native" = "Asli";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "Anime Baru Ditambahkan";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Manga Baru Ditambahkan";
 
 /* No comment provided by engineer. */
 "No" = "Tidak";
@@ -953,6 +965,9 @@
 "Trailer" = "Cuplikan";
 
 /* No comment provided by engineer. */
+"Translate" = "Terjemahkan";
+
+/* No comment provided by engineer. */
 "Translations" = "Penerjemahan";
 
 /* No comment provided by engineer. */
@@ -1023,6 +1038,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Menonton episode %1$@ dari %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "Menonton";
 
 /* No comment provided by engineer. */
 "Web novel" = "Web Novel";

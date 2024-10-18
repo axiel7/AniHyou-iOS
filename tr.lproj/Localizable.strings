@@ -227,6 +227,9 @@
 "Default" = "Varsayılan";
 
 /* No comment provided by engineer. */
+"Default tab" = "Varsayılan sekme";
+
+/* No comment provided by engineer. */
 "Delete" = "Sil";
 
 /* No comment provided by engineer. */
@@ -327,6 +330,9 @@
 
 /* No comment provided by engineer. */
 "Feed type" = "Besleme tipi";
+
+/* No comment provided by engineer. */
+"Female" = "Kadın";
 
 /* No comment provided by engineer. */
 "Filter" = "Filtrele";
@@ -434,6 +440,9 @@
 "Last Updated" = "Son Güncelleme";
 
 /* No comment provided by engineer. */
+"Last used" = "Son kullanım";
+
+/* No comment provided by engineer. */
 "Left" = "Sol";
 
 /* No comment provided by engineer. */
@@ -468,6 +477,9 @@
 
 /* No comment provided by engineer. */
 "Main" = "Ana Karakter";
+
+/* No comment provided by engineer. */
+"Male" = "Erkek";
 
 /* No comment provided by engineer. */
 "Manga" = "Manga";
@@ -521,6 +533,12 @@
 "Native" = "Ana Dilde";
 
 /* No comment provided by engineer. */
+"Newly Added Anime" = "Yeni Eklenen Anime";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Yeni Eklenen Manga";
+
+/* No comment provided by engineer. */
 "No" = "Hayır";
 
 /* No comment provided by engineer. */
@@ -537,6 +555,9 @@
 
 /* No comment provided by engineer. */
 "No reviews" = "Değerlendirme yok";
+
+/* No comment provided by engineer. */
+"Non-binary" = "Non-binary";
 
 /* No comment provided by engineer. */
 "None" = "Hiçbiri";
@@ -953,6 +974,9 @@
 "Trailer" = "Ön izleme";
 
 /* No comment provided by engineer. */
+"Translate" = "Tercüme et";
+
+/* No comment provided by engineer. */
 "Translations" = "Çeviriler";
 
 /* No comment provided by engineer. */
@@ -1023,6 +1047,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "%2$@ için İzlenen bölüm %1$@";
+
+/* No comment provided by engineer. */
+"Watching" = "İzleniyor";
 
 /* No comment provided by engineer. */
 "Web novel" = "Web romanı";

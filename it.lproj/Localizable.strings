@@ -224,6 +224,9 @@
 "Default" = "Predefinito";
 
 /* No comment provided by engineer. */
+"Default tab" = "Scheda predefinita";
+
+/* No comment provided by engineer. */
 "Delete" = "Elimina";
 
 /* No comment provided by engineer. */
@@ -324,6 +327,9 @@
 
 /* No comment provided by engineer. */
 "Feed type" = "Tipo feed";
+
+/* No comment provided by engineer. */
+"Female" = "Femmina";
 
 /* No comment provided by engineer. */
 "Filter" = "Filtra";
@@ -431,6 +437,9 @@
 "Last Updated" = "Ultimo aggiornamento";
 
 /* No comment provided by engineer. */
+"Last used" = "Ultima utilizzata";
+
+/* No comment provided by engineer. */
 "Left" = "Sinistra";
 
 /* No comment provided by engineer. */
@@ -465,6 +474,9 @@
 
 /* No comment provided by engineer. */
 "Main" = "Principale";
+
+/* No comment provided by engineer. */
+"Male" = "Maschio";
 
 /* No comment provided by engineer. */
 "Manga" = "Manga";
@@ -518,6 +530,12 @@
 "Native" = "Nativo";
 
 /* No comment provided by engineer. */
+"Newly Added Anime" = "Anime appena aggiunti";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Manga appena aggiunti";
+
+/* No comment provided by engineer. */
 "No" = "No";
 
 /* No comment provided by engineer. */
@@ -534,6 +552,9 @@
 
 /* No comment provided by engineer. */
 "No reviews" = "Nessuna recensione";
+
+/* No comment provided by engineer. */
+"Non-binary" = "Non-binario";
 
 /* No comment provided by engineer. */
 "None" = "Vuoto";
@@ -827,6 +848,9 @@
 "Staff" = "Staff";
 
 /* No comment provided by engineer. */
+"Staff & Character name language" = "Staff & Lingua del nome del personaggio";
+
+/* No comment provided by engineer. */
 "Standard" = "Standard";
 
 /* No comment provided by engineer. */
@@ -890,6 +914,12 @@
 "Thank you :)" = "Grazie :)";
 
 /* No comment provided by engineer. */
+"The amount of episodes/chapters consumed by the user" = "La quantità di episodi/capitoli fruiti dall'utente";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "L'id della voce è di";
+
+/* No comment provided by engineer. */
 "This feature will be unlocked when you make a donation, even the smallest count!" = "Questa funzione verrà sbloccata quando effettuerete una donazione, anche la più piccola!";
 
 /* No comment provided by engineer. */
@@ -939,6 +969,9 @@
 
 /* No comment provided by engineer. */
 "Trailer" = "Trailer";
+
+/* No comment provided by engineer. */
+"Translate" = "Traduci";
 
 /* No comment provided by engineer. */
 "Translations" = "Traduzioni";
@@ -1011,6 +1044,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Guardato l'episodio %1$@ di %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "In visione";
 
 /* No comment provided by engineer. */
 "Web novel" = "Romanzo web";

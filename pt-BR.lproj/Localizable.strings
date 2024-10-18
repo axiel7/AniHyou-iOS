@@ -227,6 +227,9 @@
 "Default" = "Padrão";
 
 /* No comment provided by engineer. */
+"Default tab" = "Aba padrão";
+
+/* No comment provided by engineer. */
 "Delete" = "Excluir";
 
 /* No comment provided by engineer. */
@@ -519,6 +522,12 @@
 
 /* No comment provided by engineer. */
 "Native" = "Nativo";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "Anime Recém-Adicionado";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Manga Recém-Adicionado";
 
 /* No comment provided by engineer. */
 "No" = "Não";
@@ -953,6 +962,9 @@
 "Trailer" = "Trailer";
 
 /* No comment provided by engineer. */
+"Translate" = "Traduzir";
+
+/* No comment provided by engineer. */
 "Translations" = "Traduções";
 
 /* No comment provided by engineer. */
@@ -1023,6 +1035,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Assistiu ao episódio %1$@ de %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "Assistindo";
 
 /* No comment provided by engineer. */
 "Web novel" = "Web novel";

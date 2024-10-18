@@ -230,6 +230,9 @@
 "Default" = "Por defecto";
 
 /* No comment provided by engineer. */
+"Default tab" = "Pestaña por defecto";
+
+/* No comment provided by engineer. */
 "Delete" = "Eliminar";
 
 /* No comment provided by engineer. */
@@ -330,6 +333,9 @@
 
 /* No comment provided by engineer. */
 "Feed type" = "Tipo de feed";
+
+/* No comment provided by engineer. */
+"Female" = "Femenino";
 
 /* No comment provided by engineer. */
 "Filter" = "Filtrar";
@@ -437,6 +443,9 @@
 "Last Updated" = "Actualizado por última vez";
 
 /* No comment provided by engineer. */
+"Last used" = "Último usado";
+
+/* No comment provided by engineer. */
 "Left" = "Izquierda";
 
 /* No comment provided by engineer. */
@@ -471,6 +480,9 @@
 
 /* No comment provided by engineer. */
 "Main" = "Principal";
+
+/* No comment provided by engineer. */
+"Male" = "Masculino";
 
 /* No comment provided by engineer. */
 "Manga" = "Manga";
@@ -524,6 +536,12 @@
 "Native" = "Nativo";
 
 /* No comment provided by engineer. */
+"Newly Added Anime" = "Anime recién añadido";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Manga recién añadido";
+
+/* No comment provided by engineer. */
 "No" = "No";
 
 /* No comment provided by engineer. */
@@ -540,6 +558,9 @@
 
 /* No comment provided by engineer. */
 "No reviews" = "Sin reseñas";
+
+/* No comment provided by engineer. */
+"Non-binary" = "No binario";
 
 /* No comment provided by engineer. */
 "None" = "Ninguno";
@@ -956,6 +977,9 @@
 "Trailer" = "Tráiler";
 
 /* No comment provided by engineer. */
+"Translate" = "Traducir";
+
+/* No comment provided by engineer. */
 "Translations" = "Traducciones";
 
 /* No comment provided by engineer. */
@@ -1026,6 +1050,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "Vio el episodio %1$@ de %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "Viendo";
 
 /* No comment provided by engineer. */
 "Web novel" = "Novela web";
