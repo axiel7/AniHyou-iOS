@@ -1,0 +1,741 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld 章";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld 集";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld 卷";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "五星制 (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10分制 (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "十分制（带小数） (5.5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "百分制 (55/100)";
+
+/* No comment provided by engineer. */
+"Accent color" = "主题配色";
+
+/* No comment provided by engineer. */
+"Account settings" = "账号设置";
+
+/* No comment provided by engineer. */
+"Action" = "操作";
+
+/* No comment provided by engineer. */
+"Activity" = "动态";
+
+/* No comment provided by engineer. */
+"Activity type" = "动态类型";
+
+/* No comment provided by engineer. */
+"Adaptation" = "改编";
+
+/* No comment provided by engineer. */
+"Add to List" = "添加至列表";
+
+/* No comment provided by engineer. */
+"Added" = "已添加";
+
+/* No comment provided by engineer. */
+"Adult" = "成人";
+
+/* No comment provided by engineer. */
+"Adventure" = "冒险";
+
+/* No comment provided by engineer. */
+"Airing" = "正在播出";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "正在热播";
+
+/* No comment provided by engineer. */
+"Airing Next" = "即将放送";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "更新只显示列表内番剧";
+
+/* No comment provided by engineer. */
+"All" = "全部";
+
+/* No comment provided by engineer. */
+"Alternative" = "另类";
+
+/* No comment provided by engineer. */
+"Anime" = "动漫";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "未观看剧集";
+
+/* No comment provided by engineer. */
+"Anime List" = "番剧列表";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "动漫、漫画及更多";
+
+/* No comment provided by engineer. */
+"App Icon" = "应用图标";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "您确定要注销吗";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "如您所知，这款应用程序是完全免费和开源的，\n，但创建一款应用程序需要大量的时间和精力。\n通过捐款，您可以帮助支付\n开发、维护和新功能的费用。";
+
+/* No comment provided by engineer. */
+"Ascending" = "升序";
+
+/* No comment provided by engineer. */
+"Average Score" = "平均评分";
+
+/* No comment provided by engineer. */
+"Background" = "背景";
+
+/* No comment provided by engineer. */
+"Birth" = "生日";
+
+/* No comment provided by engineer. */
+"Birthday" = "生日";
+
+/* No comment provided by engineer. */
+"Blood type" = "血型";
+
+/* No comment provided by engineer. */
+"Blood Type" = "血型";
+
+/* No comment provided by engineer. */
+"Calendar" = "日历";
+
+/* No comment provided by engineer. */
+"Cancel" = "取消";
+
+/* No comment provided by engineer. */
+"Cancelled" = "已取消";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "更改将在应用重启后生效";
+
+/* No comment provided by engineer. */
+"Chapters" = "章";
+
+/* No comment provided by engineer. */
+"Chapters read" = "已阅读章节";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "章节已读";
+
+/* No comment provided by engineer. */
+"Character" = "角色";
+
+/* No comment provided by engineer. */
+"Characters" = "角色";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "角色与职员";
+
+/* No comment provided by engineer. */
+"China" = "中国";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "在动漫与漫画中选择";
+
+/* No comment provided by engineer. */
+"Clear" = "清空";
+
+/* No comment provided by engineer. */
+"Close" = "关闭";
+
+/* No comment provided by engineer. */
+"Comedy" = "喜剧";
+
+/* No comment provided by engineer. */
+"Comic" = "漫画";
+
+/* No comment provided by engineer. */
+"Compact" = "紧凑";
+
+/* No comment provided by engineer. */
+"Compilation" = "合辑";
+
+/* (No Comment) */
+"Completed" = "已完成";
+
+/* No comment provided by engineer. */
+"Completed %@" = "已完成 %@";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "恭喜！您已更新！(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "包含";
+
+/* No comment provided by engineer. */
+"Content" = "内容";
+
+/* No comment provided by engineer. */
+"Country" = "国家";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "国家分布";
+
+/* (No Comment) */
+"Current" = "当前";
+
+/* No comment provided by engineer. */
+"Custom" = "自定义";
+
+/* No comment provided by engineer. */
+"Custom color" = "自定义颜色";
+
+/* No comment provided by engineer. */
+"Dates" = "日期";
+
+/* No comment provided by engineer. */
+"Days Watched" = "已观看天数";
+
+/* No comment provided by engineer. */
+"Death" = "死亡";
+
+/* No comment provided by engineer. */
+"Default" = "默认";
+
+/* No comment provided by engineer. */
+"Delete" = "删除";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "删除此条目？";
+
+/* No comment provided by engineer. */
+"Descending" = "降序";
+
+/* No comment provided by engineer. */
+"Developers" = "开发人员";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discord伺服器";
+
+/* No comment provided by engineer. */
+"Discover" = "探索";
+
+/* No comment provided by engineer. */
+"Display" = "显示";
+
+/* No comment provided by engineer. */
+"Distribution type" = "发行类型";
+
+/* No comment provided by engineer. */
+"Donate" = "捐助";
+
+/* No comment provided by engineer. */
+"Donate!" = "捐助";
+
+/* No comment provided by engineer. */
+"Donation" = "捐赠";
+
+/* No comment provided by engineer. */
+"Donator" = "捐赠者";
+
+/* No comment provided by engineer. */
+"Done" = "完成";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "同人";
+
+/* No comment provided by engineer. */
+"Drama" = "剧情";
+
+/* (No Comment) */
+"Dropped" = "放弃";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "放弃 %@";
+
+/* No comment provided by engineer. */
+"Duration" = "集长";
+
+/* No comment provided by engineer. */
+"Ecchi" = "色情";
+
+/* No comment provided by engineer. */
+"Edit" = "编辑";
+
+/* No comment provided by engineer. */
+"End date" = "结束日期";
+
+/* No comment provided by engineer. */
+"English" = "英语";
+
+/* No comment provided by engineer. */
+"Ep" = "已观看";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "距离第 %lld 集播出还有 %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "第 %lld 集将于 %@ 播出";
+
+/* No comment provided by engineer. */
+"Episode Count" = "集数";
+
+/* No comment provided by engineer. */
+"Episodes" = "集";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "已观看的剧集";
+
+/* No comment provided by engineer. */
+"Explore" = "探索";
+
+/* No comment provided by engineer. */
+"External links" = "外部链接";
+
+/* No comment provided by engineer. */
+"Fall" = "10月番";
+
+/* No comment provided by engineer. */
+"Fantasy" = "幻想";
+
+/* No comment provided by engineer. */
+"Favorites" = "收藏";
+
+/* No comment provided by engineer. */
+"Feed type" = "推送类型";
+
+/* No comment provided by engineer. */
+"Filter" = "筛选";
+
+/* No comment provided by engineer. */
+"Finish Date" = "结束日期";
+
+/* No comment provided by engineer. */
+"Finished" = "完结";
+
+/* No comment provided by engineer. */
+"Follow" = "关注";
+
+/* No comment provided by engineer. */
+"Followers" = "关注者";
+
+/* No comment provided by engineer. */
+"Following" = "正在关注";
+
+/* No comment provided by engineer. */
+"Follows" = "关注";
+
+/* No comment provided by engineer. */
+"Follows you" = "关注了你";
+
+/* No comment provided by engineer. */
+"Format" = "格式";
+
+/* No comment provided by engineer. */
+"Format Distribution" = "格式分布";
+
+/* No comment provided by engineer. */
+"Forum" = "论坛";
+
+/* No comment provided by engineer. */
+"Game" = "游戏";
+
+/* No comment provided by engineer. */
+"Gender" = "性別";
+
+/* No comment provided by engineer. */
+"General" = "概况";
+
+/* No comment provided by engineer. */
+"Genres" = "类型";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "GitHub 仓库";
+
+/* No comment provided by engineer. */
+"Global" = "全站";
+
+/* No comment provided by engineer. */
+"Hentai" = "变态";
+
+/* No comment provided by engineer. */
+"Hide filters" = "隐藏筛选条件";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "从状态列表中隐藏";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "隐藏黑幕";
+
+/* No comment provided by engineer. */
+"Highest rated" = "最高评价";
+
+/* No comment provided by engineer. */
+"Home" = "首页";
+
+/* No comment provided by engineer. */
+"Hometown" = "家乡";
+
+/* No comment provided by engineer. */
+"Horror" = "恐怖";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "观看小时数";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "增加 集/章节";
+
+/* No comment provided by engineer. */
+"Info type" = "信息类型";
+
+/* No comment provided by engineer. */
+"Information" = "信息";
+
+/* No comment provided by engineer. */
+"Japan" = "日本";
+
+/* No comment provided by engineer. */
+"Japanese" = "日语";
+
+/* No comment provided by engineer. */
+"Last Added" = "最近添加";
+
+/* No comment provided by engineer. */
+"Last Updated" = "最近更新";
+
+/* No comment provided by engineer. */
+"Left" = "左侧";
+
+/* No comment provided by engineer. */
+"Light novel" = "轻小说";
+
+/* No comment provided by engineer. */
+"List Progress" = "清单进度";
+
+/* No comment provided by engineer. */
+"List style" = "列表样式";
+
+/* No comment provided by engineer. */
+"Live action" = "实时动作";
+
+/* No comment provided by engineer. */
+"Loading" = "加载中";
+
+/* No comment provided by engineer. */
+"Log out" = "注销";
+
+/* No comment provided by engineer. */
+"Login" = "登录";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "长滑方向";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "魔法少女";
+
+/* No comment provided by engineer. */
+"Main" = "主要";
+
+/* No comment provided by engineer. */
+"Manga" = "漫画";
+
+/* No comment provided by engineer. */
+"Manga List" = "漫画列表";
+
+/* No comment provided by engineer. */
+"Mean score" = "平均分";
+
+/* No comment provided by engineer. */
+"Mean Score" = "平均分";
+
+/* No comment provided by engineer. */
+"Mecha" = "机甲";
+
+/* No comment provided by engineer. */
+"Media" = "媒体";
+
+/* No comment provided by engineer. */
+"Media ID" = "媒体 ID";
+
+/* No comment provided by engineer. */
+"Media List" = "媒体列表";
+
+/* No comment provided by engineer. */
+"Media Type" = "媒体类型";
+
+/* No comment provided by engineer. */
+"Minimal" = "极简";
+
+/* No comment provided by engineer. */
+"More filters" = "更多过滤条件";
+
+/* No comment provided by engineer. */
+"Most popular" = "最受欢迎";
+
+/* No comment provided by engineer. */
+"Movie" = "电影";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "多媒体项目";
+
+/* No comment provided by engineer. */
+"Music" = "音乐";
+
+/* No comment provided by engineer. */
+"Mystery" = "悬疑";
+
+/* No comment provided by engineer. */
+"Native" = "原生";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "新增动漫";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "新增漫画";
+
+/* No comment provided by engineer. */
+"No" = "否";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "您的列表中没有正在放送的动漫\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "今天没有动漫\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "无媒体";
+
+/* No comment provided by engineer. */
+"No recommendations" = "暂无推荐";
+
+/* No comment provided by engineer. */
+"No reviews" = "没有评论";
+
+/* No comment provided by engineer. */
+"None" = "无";
+
+/* No comment provided by engineer. */
+"Not yet released" = "尚未放送";
+
+/* No comment provided by engineer. */
+"Notes" = "备注";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "您的列表中没有任何内容";
+
+/* No comment provided by engineer. */
+"Notifications" = "通知";
+
+/* No comment provided by engineer. */
+"Novel" = "小说";
+
+/* No comment provided by engineer. */
+"OK" = "确定";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"Original" = "原始";
+
+/* No comment provided by engineer. */
+"Other" = "其他";
+
+/* No comment provided by engineer. */
+"Other account settings" = "其他账户设置";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overview" = "概览";
+
+/* No comment provided by engineer. */
+"Parent" = "前传";
+
+/* (No Comment) */
+"Paused" = "已暂停";
+
+/* No comment provided by engineer. */
+"Paused %@" = "暂停 %@";
+
+/* (No Comment) */
+"Planning" = "计划中";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "计划阅读 %@";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "计划观看 %@";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "请登录后使用该功能";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "请打开 iPhone 上的 AniHyou 应用程序，进入个人资料 -> 设置 -> 与 Apple Watch 同步账户";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "热门动漫";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "热门漫画";
+
+/* No comment provided by engineer. */
+"Popularity" = "人气";
+
+/* No comment provided by engineer. */
+"Prequel" = "前传";
+
+/* No comment provided by engineer. */
+"Priority" = "优先级";
+
+/* No comment provided by engineer. */
+"Private" = "隐私模式";
+
+/* No comment provided by engineer. */
+"Producers" = "制作人";
+
+/* No comment provided by engineer. */
+"Profile" = "个人资料";
+
+/* No comment provided by engineer. */
+"Progress" = "进度";
+
+/* No comment provided by engineer. */
+"Psychological" = "心理";
+
+/* No comment provided by engineer. */
+"Publishing" = "发布中";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "发布中漫画";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "快速访问您的动画或漫画列表。";
+
+/* No comment provided by engineer. */
+"Rankings" = "排行榜";
+
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "阅读 %2$@ 的第 %1$@ 章";
+
+/* No comment provided by engineer. */
+"Recommendations" = "推荐";
+
+/* No comment provided by engineer. */
+"Relations" = "相关";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "相关及推荐";
+
+/* No comment provided by engineer. */
+"Release Date" = "发布日期";
+
+/* No comment provided by engineer. */
+"Releasing" = "发布中";
+
+/* No comment provided by engineer. */
+"Repeat" = "重复";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "重复次数";
+
+/* (No Comment) */
+"Repeating" = "重复中";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "恢复购买";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "评论";
+
+/* No comment provided by engineer. */
+"Reviews" = "评论";
+
+/* No comment provided by engineer. */
+"Right" = "右侧";
+
+/* No comment provided by engineer. */
+"Romaji" = "罗马音";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "罗马音(西方顺序)";
+
+/* No comment provided by engineer. */
+"Romance" = "浪漫";
+
+/* No comment provided by engineer. */
+"Save" = "保存";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "科幻";
+
+/* No comment provided by engineer. */
+"Score" = "分数";
+
+/* No comment provided by engineer. */
+"Score distribution" = "得分分布";
+
+/* No comment provided by engineer. */
+"Score format" = "分数格式";
+
+/* No comment provided by engineer. */
+"Search type" = "搜索类型";
+
+/* No comment provided by engineer. */
+"Season" = "季度";
+
+/* No comment provided by engineer. */
+"Sort" = "排序";
+
+/* No comment provided by engineer. */
+"Special" = "特别内容";
+
+/* No comment provided by engineer. */
+"Spring" = "4月番";
+
+/* No comment provided by engineer. */
+"Summer" = "7月番";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "该媒体的条目id是";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "这个功能将在您捐赠后解锁，即便是捐款最小的金额！";
+
+/* No comment provided by engineer. */
+"Threads" = "话题";
+
+/* No comment provided by engineer. */
+"Thriller" = "惊悚";
+
+/* No comment provided by engineer. */
+"Title" = "标题";
+
+/* No comment provided by engineer. */
+"Translate" = "翻译";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "热门漫画";
+
+/* No comment provided by engineer. */
+"TV" = "电视";
+
+/* No comment provided by engineer. */
+"TV Short" = "电视短剧";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "未知";
+
+/* No comment provided by engineer. */
+"Watching" = "正在观看";
+
+/* No comment provided by engineer. */
+"Winter" = "1月番";
+
