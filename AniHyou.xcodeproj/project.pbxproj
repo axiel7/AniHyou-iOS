@@ -243,6 +243,7 @@
 		48DF50F52A669B7C00DF1C87 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DF50F42A669B7C00DF1C87 /* StoreKit.framework */; };
 		48DF50F82A669C1F00DF1C87 /* DonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF50F72A669C1F00DF1C87 /* DonationsView.swift */; };
 		48DF50FD2A66A08F00DF1C87 /* DonationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF50FC2A66A08F00DF1C87 /* DonationsViewModel.swift */; };
+		48E0086C2CC2E6D800DBE1F4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E0086B2CC2E6D400DBE1F4 /* Character.swift */; };
 		48E12595297942DC002DF6CA /* VerticalBarsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E12594297942DC002DF6CA /* VerticalBarsStatsView.swift */; };
 		48E58E2A2A85B49E00EF0CA2 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E292A85B49E00EF0CA2 /* MediaType.swift */; };
 		48E58E2B2A85B4A800EF0CA2 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E292A85B49E00EF0CA2 /* MediaType.swift */; };
@@ -636,6 +637,7 @@
 		48DF50F72A669C1F00DF1C87 /* DonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsView.swift; sourceTree = "<group>"; };
 		48DF50F92A669F3F00DF1C87 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		48DF50FC2A66A08F00DF1C87 /* DonationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsViewModel.swift; sourceTree = "<group>"; };
+		48E0086B2CC2E6D400DBE1F4 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		48E03D0E2965A49D0080C60A /* GenreTagCollectionQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GenreTagCollectionQuery.graphql; sourceTree = "<group>"; };
 		48E12594297942DC002DF6CA /* VerticalBarsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBarsStatsView.swift; sourceTree = "<group>"; };
 		48E58E292A85B49E00EF0CA2 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
@@ -1540,6 +1542,7 @@
 				48E58E372A85B5E000EF0CA2 /* MediaStatus.swift */,
 				48E58E392A85B5F700EF0CA2 /* MediaSource.swift */,
 				48218AED2BC0878D00A03421 /* MediaSort.swift */,
+				48E0086B2CC2E6D400DBE1F4 /* Character.swift */,
 				48E58E3B2A85B61600EF0CA2 /* CharacterRole.swift */,
 				48E58E3D2A85B63100EF0CA2 /* MediaRelation.swift */,
 				48E58E3F2A85B64B00EF0CA2 /* MediaListSort.swift */,
@@ -2267,6 +2270,7 @@
 				48218B022BC5828300A03421 /* ReviewRepository.swift in Sources */,
 				48B25E6F2C4AF2E700862F4E /* AnimeThemes.swift in Sources */,
 				48E80F9E28734DA5002765FC /* FullCoverView.swift in Sources */,
+				48E0086C2CC2E6D800DBE1F4 /* Character.swift in Sources */,
 				48AF5394289E7371006D40B6 /* ThreadDetailsView.swift in Sources */,
 				48AAE40E2ADFA6D5003413B0 /* ActivityReplyItemView.swift in Sources */,
 				48218AF82BC52B6C00A03421 /* StudioRepository.swift in Sources */,

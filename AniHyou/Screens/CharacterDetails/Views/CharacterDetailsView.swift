@@ -94,7 +94,11 @@ struct CharacterDetailsView: View {
                             value: character.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
                         )
                         HInfoView(name: "Age", value: character.age)
-                        HInfoView(name: "Gender", value: character.gender)
+                        if let genderLocalized = character.genderLocalized {
+                            HInfoView(name: "Gender", valueLocalized: genderLocalized)
+                        } else {
+                            HInfoView(name: "Gender", value: character.gender)
+                        }
                         HInfoView(name: "Blood type", value: character.bloodType)
 
                         RichText(html: character.description ?? "")
