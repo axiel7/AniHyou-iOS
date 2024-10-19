@@ -10,8 +10,9 @@ import SwiftUI
 private let translations = [
     "ar_SA": "yngams, Hussain889, Hussain69o, WhiteCanvas, eyadalomar, sakugaky, Comikazie, mlvin, bobteen1",
     "az_AZ": "oolyvi",
+    "zh_Hans": "hualiong, MareDevi, Andypsl8, bengerlorf",
+    "fr_FR": "0xybo, mamanamgae, frosqh, Eria78, nesquick",
     "in_ID": "Clxf12, naturbrilian",
-    "zh-Hans": "hualiong, MareDevi, Andypsl8, bengerlorf",
     "it_IT": "maicol07, DomeF, fraluc06",
     "ja_JP": "axiel7",
     "pl_PL": "xiggeush, YOGI_AOGI",
