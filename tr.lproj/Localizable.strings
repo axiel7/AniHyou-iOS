@@ -14,7 +14,34 @@
 "+1" = "+1";
 
 /* No comment provided by engineer. */
+"1st Key Animation Director" = "1. Anahtar Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "1. Anahtar Animasyon Yönetmen Yardımcısı";
+
+/* No comment provided by engineer. */
+"2D Design" = "2D Tasarım";
+
+/* No comment provided by engineer. */
+"2D Effects" = "2D Efekt";
+
+/* No comment provided by engineer. */
+"2D Works" = "2D Çalışmalar";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "2. Anahtar Animasyon";
+
+/* No comment provided by engineer. */
 "3 Point Smiley :)" = "3 Puan Gülücük :)";
+
+/* No comment provided by engineer. */
+"3D Art" = "3D Sanat";
+
+/* No comment provided by engineer. */
+"3D Works" = "3D Çalışmalar";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DCG";
 
 /* No comment provided by engineer. */
 "5 Star (3/5)" = "5 Yıldız (3/5)";
@@ -29,13 +56,31 @@
 "100 Point (55/100)" = "100 Puan (55/100)";
 
 /* No comment provided by engineer. */
+"A&R Producer" = "Ekip&Rol Yapımcısı";
+
+/* No comment provided by engineer. */
 "Accent color" = "Vurgu Rengi";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "Aksesuar Tasarımı";
 
 /* No comment provided by engineer. */
 "Account settings" = "Hesap ayarları";
 
 /* No comment provided by engineer. */
 "Action" = "Aksiyon";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Aksiyon Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Aksiyon Animasyon Denetmeni";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Aksiyon Animatörü";
+
+/* No comment provided by engineer. */
+"Action Director" = "Aksiyon Yönetmeni";
 
 /* No comment provided by engineer. */
 "Activity" = "Aktivite";
@@ -53,10 +98,19 @@
 "Added" = "Eklendi";
 
 /* No comment provided by engineer. */
+"ADR Director" = "Dublaj Yöneticisi";
+
+/* No comment provided by engineer. */
 "Adult" = "Yetişkin";
 
 /* No comment provided by engineer. */
 "Adventure" = "Macera";
+
+/* No comment provided by engineer. */
+"Advertising" = "Reklam";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Reklam Yapımcısı";
 
 /* No comment provided by engineer. */
 "Age" = "Yaş";
@@ -80,6 +134,21 @@
 "Alternative" = "Alternatif";
 
 /* No comment provided by engineer. */
+"Animation" = "Animasyon";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Aksiyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Animasyon Yapımcısı";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Animasyon Prodüksiyon Asistanı";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Animasyon Denetmeni";
+
+/* No comment provided by engineer. */
 "Anime" = "Anime";
 
 /* No comment provided by engineer. */
@@ -98,16 +167,82 @@
 "Are you sure you want to log out?" = "Çıkış yapmak istediğinizden emin misiniz?";
 
 /* No comment provided by engineer. */
+"Art" = "Sanat";
+
+/* No comment provided by engineer. */
+"Art Board" = "Sanat Panosu";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Sanat Kompozisyonu";
+
+/* No comment provided by engineer. */
+"Art Design" = "Sanat Tasarımı";
+
+/* No comment provided by engineer. */
+"Art Director" = "Sanat Yönetmeni";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Bildiğiniz gibi bu uygulama tamamen ücretsiz ve Açık Kaynaktır, ama bir uygulama geliştirmek çok fazla zaman ve çabaya ihtiyaç duyar.\nBağışta bulunarak masrafların karşılanmasına, uygulamanın geliştirilmesine, bakım yapılmasına ve yeni özellikler getirilmesine yardımcı olursunuz.";
 
 /* No comment provided by engineer. */
 "Ascending" = "Artan";
 
 /* No comment provided by engineer. */
+"Assistance" = "Asistanlık";
+
+/* No comment provided by engineer. */
+"Assistant" = "Asistan";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Animasyon Yönetmen Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Sanat Yönetmen Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Baş Animasyon Yönetmen Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Baş Yönetmen Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Asistan Yönetmen";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Görüntü Yönetmen Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Bölüm Yönetmen Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Yapım Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Yapım Yönetimi Asistanı";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Birim Müdür Asistanı";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Yardımcı Yapımcı";
+
+/* No comment provided by engineer. */
 "Average Score" = "Ortalama Puan";
 
 /* No comment provided by engineer. */
 "Background" = "Arka Plan";
+
+/* No comment provided by engineer. */
+"Background Art" = "Sanat Arka Plan";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "Sanat Arka Plan Asistanı";
+
+/* No comment provided by engineer. */
+"Background Manager" = "Arkaplan Yöneticim";
+
+/* No comment provided by engineer. */
+"Background Production" = "Arkaplan Yapım";
 
 /* No comment provided by engineer. */
 "Birth" = "Doğum Günü";
@@ -131,6 +266,42 @@
 "Cancelled" = "İptal edildi";
 
 /* No comment provided by engineer. */
+"CG Animation" = "CG Animasyon";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "CG Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "CG Asitan Yönetmen";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "CG Arka Plan Modelleme";
+
+/* No comment provided by engineer. */
+"CG Director" = "CG Direktörü";
+
+/* No comment provided by engineer. */
+"CG Layout" = "CG Düzeni";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "CG Modelleme";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "CG Modelleme Direktörü";
+
+/* No comment provided by engineer. */
+"CG Producer" = "CG Yapımcısı";
+
+/* No comment provided by engineer. */
+"CG Production" = "CG Yapım";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "CG Denetmeni";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "CG Teknik Yönetmeni";
+
+/* No comment provided by engineer. */
 "Ch" = "Blm";
 
 /* No comment provided by engineer. */
@@ -152,10 +323,37 @@
 "Character" = "Karakter";
 
 /* No comment provided by engineer. */
+"Character Design" = "Karakter Tasarımı";
+
+/* No comment provided by engineer. */
 "Characters" = "Karakterler";
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Karakterler ve Ekip";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "Baş Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"Chief Director" = "Baş Yönetmen";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "Baş Bölüm Yönetmeni";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "Mekanik Animasyon Baş Yönetmeni";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "Baş Yapımcı";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "Baş Yapım Masası";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "Baş Denetmen";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "Baş Birim Yönetmeni";
 
 /* No comment provided by engineer. */
 "China" = "Çin";
@@ -168,6 +366,21 @@
 
 /* No comment provided by engineer. */
 "Close" = "Kapat";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "Ortak Yapımcı";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "Renk Koordinasyonu";
+
+/* No comment provided by engineer. */
+"Color Design" = "Renk Tasarımı";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "Renk Tasarım Asistanı";
+
+/* No comment provided by engineer. */
+"Coloring" = "Renklendirme";
 
 /* No comment provided by engineer. */
 "Comedy" = "Komedi";
@@ -188,6 +401,9 @@
 "Completed %@" = "Tamamlandı %@";
 
 /* No comment provided by engineer. */
+"Concept Art" = "Konsept Tasarımı";
+
+/* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "Tebrikler, her şey güncel!\n(๑>◡<๑)";
 
 /* No comment provided by engineer. */
@@ -197,10 +413,19 @@
 "Content" = "İçerik";
 
 /* No comment provided by engineer. */
+"Costume Design" = "Kostüm Tasarımı";
+
+/* No comment provided by engineer. */
 "Country" = "Ülke";
 
 /* No comment provided by engineer. */
 "Country Distribution" = "Ülke Dağılımı";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "Kapak İllüstrasyonu";
+
+/* No comment provided by engineer. */
+"Creature Design" = "Yaratık Tasarımı";
 
 /* (No Comment) */
 "Current" = "Şimdiki";
@@ -239,7 +464,40 @@
 "Descending" = "Azalan";
 
 /* No comment provided by engineer. */
+"Design Assistance" = "Tasarım Yönetmeni";
+
+/* No comment provided by engineer. */
+"Design Works" = "Tasarım Çalışmaları";
+
+/* No comment provided by engineer. */
 "Developers" = "Geliştiriciler";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "Dijital Animasyon";
+
+/* No comment provided by engineer. */
+"Digital Art" = "Dijital Sanat";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "Dijital Renklendirme";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "Dijital Optik Kayıt";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "Dijital Boyama";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "Dijital Fotoğrafçılık";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "Dijital Prodüksiyon Asistanı";
+
+/* No comment provided by engineer. */
+"Director" = "Yönetmen";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "Görüntü Yönetmeni";
 
 /* No comment provided by engineer. */
 "Discord server" = "Discord sunucusu";
@@ -290,7 +548,25 @@
 "Edit" = "Düzenle";
 
 /* No comment provided by engineer. */
+"Editing" = "Kurgu";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Kurgu Asistanı";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "Kurgu Yönetmeni";
+
+/* No comment provided by engineer. */
+"Effects" = "Efektler";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "Efekt Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
 "End date" = "Bitiş tarihi";
+
+/* No comment provided by engineer. */
+"Endcard" = "Bitiş Kartı";
 
 /* No comment provided by engineer. */
 "English" = "İngilizce";
@@ -308,16 +584,34 @@
 "Episode Count" = "Bölüm Sayısı";
 
 /* No comment provided by engineer. */
+"Episode Director" = "Bölüm Yönetmeni";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "Bölüm Yönetmeni (ED)";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "Bölüm Yönetmeni (OP)";
+
+/* No comment provided by engineer. */
 "Episodes" = "Bölümler";
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "İzlenen Bölümler";
 
 /* No comment provided by engineer. */
+"Executive Producer" = "Yönetici Yapımcı";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "Yönetici Denetmen";
+
+/* No comment provided by engineer. */
 "Explore" = "Keşfet";
 
 /* No comment provided by engineer. */
 "External links" = "Harici bağlantılar";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "Eyecatch";
 
 /* No comment provided by engineer. */
 "Fall" = "Sonbahar";
@@ -342,6 +636,21 @@
 
 /* No comment provided by engineer. */
 "Finished" = "Tamamlandı";
+
+/* No comment provided by engineer. */
+"Finishing" = "Bitirme";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "Son İşlem Asistanı";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "Son Kontrol";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "Son İşlem Yönetmeni";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "Son İşlem Yapımı";
 
 /* No comment provided by engineer. */
 "Follow" = "Takip";
@@ -389,6 +698,9 @@
 "Global" = "Evrensel";
 
 /* No comment provided by engineer. */
+"HD Editing" = "HD Kurgu";
+
+/* No comment provided by engineer. */
 "Hentai" = "Hentai";
 
 /* No comment provided by engineer. */
@@ -419,6 +731,21 @@
 "Hours Watched" = "İzlenen Saat";
 
 /* No comment provided by engineer. */
+"Illustration" = "İllüstrasyon";
+
+/* No comment provided by engineer. */
+"In-Between Animation" = "Ara Kare Animasyon";
+
+/* No comment provided by engineer. */
+"In-Between Animation Assistance" = "Ara Kare Animasyon Asistanı";
+
+/* No comment provided by engineer. */
+"In-Betweens Check" = "Ara Kare Kontrol";
+
+/* No comment provided by engineer. */
+"In-Betweens Manager" = "Ara Kare Yönetmeni";
+
+/* No comment provided by engineer. */
 "Increment Episode / Chapter" = "Bölüm Artışı";
 
 /* No comment provided by engineer. */
@@ -428,10 +755,31 @@
 "Information" = "Bilgilendirme";
 
 /* No comment provided by engineer. */
+"Insert Song Arrangement" = "Şarkı Düzenlemesi Ekleme";
+
+/* No comment provided by engineer. */
+"Insert Song Composition" = "Şarkı Kompozisyonu Ekleme";
+
+/* No comment provided by engineer. */
+"Insert Song Lyrics" = "Şarkı Sözlerini Ekleme";
+
+/* No comment provided by engineer. */
+"Insert Song Performance" = "Şarkı Performansı Ekleme";
+
+/* No comment provided by engineer. */
 "Japan" = "Japonya";
 
 /* No comment provided by engineer. */
 "Japanese" = "Japonca";
+
+/* No comment provided by engineer. */
+"Key Animation" = "Anahtar Animasyon";
+
+/* No comment provided by engineer. */
+"Key Animation (OP)" = "Anahtar Animasyon (OP)";
+
+/* No comment provided by engineer. */
+"Key Animation Assistance" = "Anahtar Animasyon Asistanı";
 
 /* No comment provided by engineer. */
 "Last Added" = "Son Eklenen";
@@ -443,10 +791,31 @@
 "Last used" = "Son kullanım";
 
 /* No comment provided by engineer. */
+"Layout" = "Plan";
+
+/* No comment provided by engineer. */
+"Layout Animation Director" = "Plan Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"Layout Animation Supervisor" = "Plan Animasyon Denetmeni";
+
+/* No comment provided by engineer. */
+"Layout Editor" = "Plan Düzenleyici";
+
+/* No comment provided by engineer. */
+"Layout Supervisor" = "Plan Denetmeni";
+
+/* No comment provided by engineer. */
 "Left" = "Sol";
 
 /* No comment provided by engineer. */
+"Lettering" = "Harf Kullanımı";
+
+/* No comment provided by engineer. */
 "Light novel" = "Hafif Roman";
+
+/* No comment provided by engineer. */
+"Line Producer" = "Uygulayıcı Yapımcı";
 
 /* No comment provided by engineer. */
 "List entry ID" = "Liste girdi ID";
@@ -456,6 +825,12 @@
 
 /* No comment provided by engineer. */
 "List style" = "Liste stili";
+
+/* No comment provided by engineer. */
+"Literary Arts" = "Edebi Sanatlar";
+
+/* No comment provided by engineer. */
+"Literary Arts Assistance" = "Edebi Sanatlar Asistanı";
 
 /* No comment provided by engineer. */
 "Live action" = "Canlandırma";
@@ -479,6 +854,9 @@
 "Main" = "Ana Karakter";
 
 /* No comment provided by engineer. */
+"Main Animator" = "Ana Animatör";
+
+/* No comment provided by engineer. */
 "Male" = "Erkek";
 
 /* No comment provided by engineer. */
@@ -497,6 +875,15 @@
 "Mecha" = "Mecha";
 
 /* No comment provided by engineer. */
+"Mechanical Animation Director" = "Mekanik Animasyon Yönetmeni";
+
+/* No comment provided by engineer. */
+"Mechanical Design" = "Mekanik Tasarım";
+
+/* No comment provided by engineer. */
+"Mechanical Supervisor" = "Mekanik Denetmeni";
+
+/* No comment provided by engineer. */
 "Media" = "Medya";
 
 /* No comment provided by engineer. */
@@ -512,6 +899,12 @@
 "Minimal" = "Basit";
 
 /* No comment provided by engineer. */
+"Monitor Graphics" = "Monitör Grafikleri";
+
+/* No comment provided by engineer. */
+"Monster Design" = "Canavar Tasarımı";
+
+/* No comment provided by engineer. */
 "More filters" = "Detaylı filtre";
 
 /* No comment provided by engineer. */
@@ -525,6 +918,42 @@
 
 /* No comment provided by engineer. */
 "Music" = "Müzik";
+
+/* No comment provided by engineer. */
+"Music Arrangement" = "Müzik Düzenlemesi";
+
+/* No comment provided by engineer. */
+"Music Assistance" = "Müzik Asistanı";
+
+/* No comment provided by engineer. */
+"Music Composition" = "Müzik Kompozisyonu";
+
+/* No comment provided by engineer. */
+"Music Director" = "Müzik Yönetmeni";
+
+/* No comment provided by engineer. */
+"Music Lyrics" = "Müzik Sözleri";
+
+/* No comment provided by engineer. */
+"Music Performance" = "Müzik Performansı";
+
+/* No comment provided by engineer. */
+"Music Producer" = "Müzik Yapımcısı";
+
+/* No comment provided by engineer. */
+"Music Production" = "Müzik Yapımı";
+
+/* No comment provided by engineer. */
+"Music Production Assistance" = "Müzik Prodüksiyon Asistanı";
+
+/* No comment provided by engineer. */
+"Music Selection" = "Müzik Seçkisi";
+
+/* No comment provided by engineer. */
+"Music Supervisor" = "Müzik Denetmeni";
+
+/* No comment provided by engineer. */
+"Musical Instrument Supervisor" = "Müzik Enstrümanı Denetmeni";
 
 /* No comment provided by engineer. */
 "Mystery" = "Gizem";
@@ -581,6 +1010,12 @@
 "Occupations" = "Faaliyet türü";
 
 /* No comment provided by engineer. */
+"Offline Editing" = "Çevrimdışı Düzenleme";
+
+/* No comment provided by engineer. */
+"Offline Editing Manager" = "Çevrimdışı Düzenleme Yöneticisi";
+
+/* No comment provided by engineer. */
 "OK" = "TAMAM";
 
 /* No comment provided by engineer. */
@@ -593,6 +1028,18 @@
 "OneShot" = "TekBaskı";
 
 /* No comment provided by engineer. */
+"Online Editing" = "Çevrimiçi Düzenleme";
+
+/* No comment provided by engineer. */
+"Online Editing Manager" = "Çevrimiçi Düzenleme Yöneticisi";
+
+/* No comment provided by engineer. */
+"Online HD Editing" = "Çevrimiçi HD Düzenleme";
+
+/* No comment provided by engineer. */
+"Optical Recording" = "Optik Kayıt";
+
+/* No comment provided by engineer. */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Liste girdisini güncellemek için isteğe bağlı durum (e.g. TAMAMLANDI)";
 
 /* No comment provided by engineer. */
@@ -600,6 +1047,21 @@
 
 /* No comment provided by engineer. */
 "Original" = "Orijinal";
+
+/* No comment provided by engineer. */
+"Original Character Design" = "Orijinal Karakter Tasarımı";
+
+/* No comment provided by engineer. */
+"Original Creator" = "Orijinal Yaratıcı";
+
+/* No comment provided by engineer. */
+"Original Illustration" = "Orijinal İllüstrasyon";
+
+/* No comment provided by engineer. */
+"Original Plan" = "Orijinal Plan";
+
+/* No comment provided by engineer. */
+"Original Story" = "Orijinal Hikaye";
 
 /* No comment provided by engineer. */
 "Other" = "Diğer";
@@ -611,7 +1073,13 @@
 "OVA" = "OVA";
 
 /* No comment provided by engineer. */
+"Overseas Advertising Producer" = "Yurtdışı Reklam Yapımcısı";
+
+/* No comment provided by engineer. */
 "Overview" = "Genel Bakış";
+
+/* No comment provided by engineer. */
+"Paint" = "Boyama";
 
 /* No comment provided by engineer. */
 "Parent" = "Kaynak";
@@ -623,10 +1091,28 @@
 "Paused %@" = "Duraklatıldı %@";
 
 /* No comment provided by engineer. */
+"Photography" = "Fotoğrafçılık";
+
+/* No comment provided by engineer. */
+"Photography Assistance" = "Fotoğraf Asistanı";
+
+/* No comment provided by engineer. */
+"Photography Chief" = "Fotoğraf Şefi";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "Fotoğrafçılık Yönetmeni";
+
+/* No comment provided by engineer. */
 "Picture book" = "Fotoğraf albümü";
 
 /* (No Comment) */
 "Planning" = "Planlanan";
+
+/* No comment provided by engineer. */
+"Planning Assistance" = "Planlama Asistanı";
+
+/* No comment provided by engineer. */
+"Planning Producer" = "Planlama Yapımcısı";
 
 /* No comment provided by engineer. */
 "Plans to read %@" = "Okunacak %@";
@@ -659,13 +1145,37 @@
 "Private" = "Gizli";
 
 /* No comment provided by engineer. */
+"Producer" = "Yapımcı";
+
+/* No comment provided by engineer. */
 "Producers" = "Yapımcılar";
+
+/* No comment provided by engineer. */
+"Production" = "Yapım";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "Üretim Asistanı";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "Üretim Asistanı";
+
+/* No comment provided by engineer. */
+"Production Committee" = "Üretim Komitesi";
+
+/* No comment provided by engineer. */
+"Production Design" = "Üretim Tasarımı";
+
+/* No comment provided by engineer. */
+"Production Desk" = "Üretim Masası";
 
 /* No comment provided by engineer. */
 "Profile" = "Profil";
 
 /* No comment provided by engineer. */
 "Progress" = "İlerleme";
+
+/* No comment provided by engineer. */
+"Prop Design" = "Öge Tasarımı";
 
 /* No comment provided by engineer. */
 "Psychological" = "Psikolojik";
@@ -699,6 +1209,18 @@
 
 /* No comment provided by engineer. */
 "Recommendations" = "Tavsiyeler";
+
+/* No comment provided by engineer. */
+"Recording" = "Kayıt";
+
+/* No comment provided by engineer. */
+"Recording Adjustment" = "Kayıt Düzenleme";
+
+/* No comment provided by engineer. */
+"Recording Assistant" = "Kayıt Asistanı";
+
+/* No comment provided by engineer. */
+"Recording Engineer" = "Kayıt Mühendisi";
 
 /* No comment provided by engineer. */
 "Relations" = "İlişkililer";
@@ -767,6 +1289,12 @@
 "Score format" = "Puanlama türü";
 
 /* No comment provided by engineer. */
+"Script" = "Senaryo";
+
+/* No comment provided by engineer. */
+"Script Assistance" = "Senaryo Asistanı";
+
+/* No comment provided by engineer. */
 "Search type" = "Arama tipi";
 
 /* No comment provided by engineer. */
@@ -784,6 +1312,12 @@
 /* No comment provided by engineer. */
 "Sequel" = "Devam Serisi";
 
+/* No comment provided by engineer. */
+"Series Composition" = "Bölüm Kompozisyon";
+
+/* No comment provided by engineer. */
+"Series Composition Assistance" = "Bölüm Kompozisyon Asistanı";
+
 /* Set to Status */
 "Set as %@" = "%@ olarak ayarla";
 
@@ -792,6 +1326,9 @@
 
 /* No comment provided by engineer. */
 "Sets a list entry progress to the specified number." = "Belirli bir numarada liste girdi işlemi ayarlar.";
+
+/* No comment provided by engineer. */
+"Setting Design" = "Dekor Tasarımı";
 
 /* No comment provided by engineer. */
 "Settings" = "Ayarlar";
@@ -830,6 +1367,30 @@
 "Sort" = "Sırala";
 
 /* No comment provided by engineer. */
+"Sound Design" = "Ses Tasarımı";
+
+/* No comment provided by engineer. */
+"Sound Director" = "Ses Yönetmeni";
+
+/* No comment provided by engineer. */
+"Sound Effects" = "Ses Efektleri";
+
+/* No comment provided by engineer. */
+"Sound Effects Assistance" = "Ses Efektleri Asistanı";
+
+/* No comment provided by engineer. */
+"Sound Producer" = "Ses Yapımcısı";
+
+/* No comment provided by engineer. */
+"Sound Production" = "Ses Üretimi";
+
+/* No comment provided by engineer. */
+"Sound Production Manager" = "Ses Prodüksiyon Müdürü";
+
+/* No comment provided by engineer. */
+"Sound Supervisor" = "Ses Denetmeni";
+
+/* No comment provided by engineer. */
 "Source" = "Kaynak";
 
 /* No comment provided by engineer. */
@@ -837,6 +1398,15 @@
 
 /* No comment provided by engineer. */
 "Special" = "Özel";
+
+/* No comment provided by engineer. */
+"Special Design" = "Özel Tasarım";
+
+/* No comment provided by engineer. */
+"Special Effects" = "Özel Efektler";
+
+/* No comment provided by engineer. */
+"Special Effects Assistant" = "Özel Efekt Asistanı";
 
 /* No comment provided by engineer. */
 "Spin Off" = "Uyarlama";
@@ -878,10 +1448,25 @@
 "Status Distribution" = "Durum Dağılımı";
 
 /* No comment provided by engineer. */
+"Story" = "Hikaye";
+
+/* No comment provided by engineer. */
+"Story & Art" = "Hikaye & Sanat";
+
+/* No comment provided by engineer. */
+"Story & Illustration" = "Hikaye & İllüstrasyon";
+
+/* No comment provided by engineer. */
+"Storyboard" = "Storyboard";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Yayınlayan platformlar";
 
 /* No comment provided by engineer. */
 "Studios" = "Stüdyolar";
+
+/* No comment provided by engineer. */
+"Sub Character Design" = "Yan Karakter Tasarımı";
 
 /* No comment provided by engineer. */
 "Summary" = "Özet";
@@ -893,10 +1478,16 @@
 "Supernatural" = "Doğaüstü";
 
 /* No comment provided by engineer. */
+"Supervisor" = "Denetmen";
+
+/* No comment provided by engineer. */
 "Support the development of AniHyou!" = "AniHyou uygulamasının geliştirilmesine destek olun!";
 
 /* No comment provided by engineer. */
 "Supporting" = "Destekleyici";
+
+/* No comment provided by engineer. */
+"Supporting Staff" = "Destek Personeli";
 
 /* No comment provided by engineer. */
 "Sync account with Apple Watch" = "Hesabı Apple Watch ile senkronize et";
@@ -911,6 +1502,9 @@
 "Taiwan" = "Tayvan";
 
 /* No comment provided by engineer. */
+"Technical Director" = "Teknik Yönetmen";
+
+/* No comment provided by engineer. */
 "Text Status" = "Metin Durumu";
 
 /* No comment provided by engineer. */
@@ -921,6 +1515,54 @@
 
 /* No comment provided by engineer. */
 "The id of the media the entry is of" = "Medya girdi id'sinin";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement" = "Tema Şarkısı Düzenlemesi";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Tema Şarkısı Düzenlemesi (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Tema Şarkısı Düzenlemesi (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Tema Şarkısı Düzenlemesi (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition" = "Tema Şarkısı Bestesi";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Tema Şarkısı Bestesi (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Tema Şarkısı Bestesi (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Tema Şarkısı Bestesi (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics" = "Tema Şarkısı Sözleri";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Tema Şarkısı Sözleri (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Tema Şarkısı Sözleri (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Tema Şarkısı Sözleri (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance" = "Tema Şarkısı Performansı";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Tema Şarkısı Performansı (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Tema Şarkısı Performansı (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Tema Şarkısı Performansı (OP)";
 
 /* No comment provided by engineer. */
 "This feature will be unlocked when you make a donation, even the smallest count!" = "Miktar farketmeksizin bağış yaparak bu özelliğin kilidini açabilirsiniz!";
@@ -942,6 +1584,12 @@
 
 /* No comment provided by engineer. */
 "Title language" = "Başlık dili";
+
+/* No comment provided by engineer. */
+"Title Logo Design" = "Film Başlığı Logo Tasarımı";
+
+/* No comment provided by engineer. */
+"Title Logo Design Assistance" = "Film Başlığı Logo Tasarım Asistanı";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Başlık Sayısı";
@@ -971,6 +1619,12 @@
 "Total Manga" = "Toplam Manga";
 
 /* No comment provided by engineer. */
+"Touch-up Art" = "Rötuş Sanatı";
+
+/* No comment provided by engineer. */
+"Touch-up Art & Lettering" = "Rötuş Sanatı & Metin";
+
+/* No comment provided by engineer. */
 "Trailer" = "Ön izleme";
 
 /* No comment provided by engineer. */
@@ -978,6 +1632,9 @@
 
 /* No comment provided by engineer. */
 "Translations" = "Çeviriler";
+
+/* No comment provided by engineer. */
+"Translator" = "Tercüman";
 
 /* No comment provided by engineer. */
 "Trending" = "Popüler";
@@ -996,6 +1653,9 @@
 
 /* No comment provided by engineer. */
 "Unfollow" = "Takibi Bırak";
+
+/* No comment provided by engineer. */
+"Unit Director" = "Birim Yönetmeni";
 
 /* Localizable.strings
   AniHyou
@@ -1025,7 +1685,19 @@
 "Version %@" = "Sürüm %@";
 
 /* No comment provided by engineer. */
+"Video Editing" = "Video Düzenleme";
+
+/* No comment provided by engineer. */
 "VideoGame" = "VideoOyun";
+
+/* No comment provided by engineer. */
+"Visual Coordinator" = "Görsel Koordinatör";
+
+/* No comment provided by engineer. */
+"Visual Director" = "Görsel Yönetmen";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "Görsel Efektler";
 
 /* No comment provided by engineer. */
 "Visual novel" = "Görsel Roman";
@@ -1052,6 +1724,9 @@
 "Watching" = "İzleniyor";
 
 /* No comment provided by engineer. */
+"Weapon Design" = "Silah Tasarımı";
+
+/* No comment provided by engineer. */
 "Web novel" = "Web romanı";
 
 /* No comment provided by engineer. */
@@ -1062,6 +1737,9 @@
 
 /* No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Herhangi bir satın alım işlemiyle, özel uygulama simgelerine ve vurgu renklerine erişim kazanacaksınız!";
+
+/* No comment provided by engineer. */
+"World Design" = "Dünya Tasarımı";
 
 /* No comment provided by engineer. */
 "Year" = "Yıl";

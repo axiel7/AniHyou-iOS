@@ -14,7 +14,34 @@
 "+1" = "+1";
 
 /* No comment provided by engineer. */
+"1st Key Animation Director" = "Directeur de la première animation clé";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "Assistant directeur de la première animation clé";
+
+/* No comment provided by engineer. */
+"2D Design" = "Conception 2D";
+
+/* No comment provided by engineer. */
+"2D Effects" = "Effets 2D";
+
+/* No comment provided by engineer. */
+"2D Works" = "Travaux en 2D";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "Deuxième animation clé";
+
+/* No comment provided by engineer. */
 "3 Point Smiley :)" = "3 Émoticônes :)";
+
+/* No comment provided by engineer. */
+"3D Art" = "Art 3D";
+
+/* No comment provided by engineer. */
+"3D Works" = "Travaux en 3D";
+
+/* No comment provided by engineer. */
+"3DCG" = "3D CG (Computer Graphics)";
 
 /* No comment provided by engineer. */
 "5 Star (3/5)" = "5 Étoiles (3/5)";
@@ -29,13 +56,31 @@
 "100 Point (55/100)" = "100 Points (55/100)";
 
 /* No comment provided by engineer. */
+"A&R Producer" = "Producteur A&R";
+
+/* No comment provided by engineer. */
 "Accent color" = "Couleur d'accentuation";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "Conception d'accessoires";
 
 /* No comment provided by engineer. */
 "Account settings" = "Paramètres du compte";
 
 /* No comment provided by engineer. */
 "Action" = "Action";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Directeur d'animation d'action";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Superviseur d'animation d'action";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Animateur d'action";
+
+/* No comment provided by engineer. */
+"Action Director" = "Directeur d'action";
 
 /* No comment provided by engineer. */
 "Activity" = "Activité";
@@ -53,10 +98,19 @@
 "Added" = "Ajouté";
 
 /* No comment provided by engineer. */
+"ADR Director" = "Directeur ADR";
+
+/* No comment provided by engineer. */
 "Adult" = "Adulte";
 
 /* No comment provided by engineer. */
 "Adventure" = "Aventure";
+
+/* No comment provided by engineer. */
+"Advertising" = "Publicité";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Producteur publicitaire";
 
 /* No comment provided by engineer. */
 "Age" = "Age";
@@ -80,6 +134,21 @@
 "Alternative" = "Alternative";
 
 /* No comment provided by engineer. */
+"Animation" = "Animation";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Directeur d'animation";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Producteur d'animation";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Assistance à la production d'animation";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Superviseur d'animation";
+
+/* No comment provided by engineer. */
 "Anime" = "Animé";
 
 /* No comment provided by engineer. */
@@ -98,16 +167,82 @@
 "Are you sure you want to log out?" = "Êtes-vous sûr(e) de vouloir vous déconnecter ?";
 
 /* No comment provided by engineer. */
+"Art" = "Art";
+
+/* No comment provided by engineer. */
+"Art Board" = "Tableau artistique";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Composition artistique";
+
+/* No comment provided by engineer. */
+"Art Design" = "Conception artistique";
+
+/* No comment provided by engineer. */
+"Art Director" = "Directeur artistique";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Comme vous le savez peut-être, cette application est entièrement gratuite et Open Source,\nmais la création d'une application demande beaucoup de temps et d'efforts.\nEn faisant un don, vous aiderez à couvrir les coûts de \ndéveloppement, de maintenance et de nouvelles fonctionnalités.";
 
 /* No comment provided by engineer. */
 "Ascending" = "Ordre croissant";
 
 /* No comment provided by engineer. */
+"Assistance" = "Assistance";
+
+/* No comment provided by engineer. */
+"Assistant" = "Assistant";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Assistant directeur d'animation";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Assistant directeur artistique";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Assistant directeur en chef de l'animation";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Assistant directeur en chef";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Assistant réalisateur";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Assistant directeur de la photographie";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Assistant réalisateur d'épisode";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Assistant producteur";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Assistant directeur de production";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Assistant directeur d'unité";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Producteur associé";
+
+/* No comment provided by engineer. */
 "Average Score" = "Note moyenne";
 
 /* No comment provided by engineer. */
 "Background" = "Contexte";
+
+/* No comment provided by engineer. */
+"Background Art" = "Décor (Art de fond)";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "Assistance en art de fond";
+
+/* No comment provided by engineer. */
+"Background Manager" = "Responsable des décors";
+
+/* No comment provided by engineer. */
+"Background Production" = "Production des décors";
 
 /* No comment provided by engineer. */
 "Birth" = "Naissance";
@@ -131,6 +266,42 @@
 "Cancelled" = "Annulé";
 
 /* No comment provided by engineer. */
+"CG Animation" = "Animation en CG";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "Directeur de l'animation en CG";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "Assistant directeur CG";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "Modélisation des décors en CG";
+
+/* No comment provided by engineer. */
+"CG Director" = "Directeur CG";
+
+/* No comment provided by engineer. */
+"CG Layout" = "Layout en CG";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "Modélisation en CG";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "Directeur de la modélisation en CG";
+
+/* No comment provided by engineer. */
+"CG Producer" = "Producteur CG";
+
+/* No comment provided by engineer. */
+"CG Production" = "Production CG";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "Superviseur CG";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "Directeur technique CG";
+
+/* No comment provided by engineer. */
 "Ch" = "Chp";
 
 /* No comment provided by engineer. */
@@ -152,10 +323,37 @@
 "Character" = "Personnage";
 
 /* No comment provided by engineer. */
+"Character Design" = "Conception des personnages";
+
+/* No comment provided by engineer. */
 "Characters" = "Personnages";
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Personnages et Équipe Technique";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "Directeur·trice des chef-animateurs·trices";
+
+/* No comment provided by engineer. */
+"Chief Director" = "Directeur en chef";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "Directeur en chef des épisodes";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "Directeur en chef de l'animation mécanique";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "Producteur en chef";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "Bureau de production en chef";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "Superviseur en chef";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "Directeur d'unité en chef";
 
 /* No comment provided by engineer. */
 "China" = "Chine";
@@ -168,6 +366,21 @@
 
 /* No comment provided by engineer. */
 "Close" = "Fermer";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "Co-producteur";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "Coordination des couleurs";
+
+/* No comment provided by engineer. */
+"Color Design" = "Conception des couleurs";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "Assistance en conception des couleurs";
+
+/* No comment provided by engineer. */
+"Coloring" = "Colorisation";
 
 /* No comment provided by engineer. */
 "Comedy" = "Comédie";
@@ -188,6 +401,9 @@
 "Completed %@" = "Complété %@";
 
 /* No comment provided by engineer. */
+"Concept Art" = "Art conceptuel";
+
+/* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "Félicitations, vous êtes à jour !\n(๑>◡<๑)";
 
 /* No comment provided by engineer. */
@@ -197,10 +413,19 @@
 "Content" = "Contenu";
 
 /* No comment provided by engineer. */
+"Costume Design" = "Conception de costumes";
+
+/* No comment provided by engineer. */
 "Country" = "Pays";
 
 /* No comment provided by engineer. */
 "Country Distribution" = "Répartition par pays";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "Illustration de couverture";
+
+/* No comment provided by engineer. */
+"Creature Design" = "Conception de créatures";
 
 /* (No Comment) */
 "Current" = "En Cours";
@@ -239,7 +464,40 @@
 "Descending" = "Décroissant";
 
 /* No comment provided by engineer. */
+"Design Assistance" = "Assistance en conception";
+
+/* No comment provided by engineer. */
+"Design Works" = "Travaux de conception";
+
+/* No comment provided by engineer. */
 "Developers" = "Développeurs";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "Animation numérique";
+
+/* No comment provided by engineer. */
+"Digital Art" = "Art numérique";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "Colorisation numérique";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "Enregistrement optique numérique";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "Peinture numérique";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "Photographie numérique";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "Assistant de production numérique";
+
+/* No comment provided by engineer. */
+"Director" = "Réalisateur";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "Directeur de la photographie";
 
 /* No comment provided by engineer. */
 "Discord server" = "Serveur Discord";
@@ -290,7 +548,25 @@
 "Edit" = "Modifier";
 
 /* No comment provided by engineer. */
+"Editing" = "Montage";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Assistant montage";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "Responsable du montage";
+
+/* No comment provided by engineer. */
+"Effects" = "Effets";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "Directeur des effets d'animation";
+
+/* No comment provided by engineer. */
 "End date" = "Date de fin";
+
+/* No comment provided by engineer. */
+"Endcard" = "Carte de fin";
 
 /* No comment provided by engineer. */
 "English" = "Anglais";
@@ -308,16 +584,34 @@
 "Episode Count" = "Nombre d'épisodes";
 
 /* No comment provided by engineer. */
+"Episode Director" = "Réalisateur d'épisode";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "Réalisateur d'épisode (Ending)";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "Réalisateur d'épisode (Opening)";
+
+/* No comment provided by engineer. */
 "Episodes" = "Épisodes";
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Épisodes vus";
 
 /* No comment provided by engineer. */
+"Executive Producer" = "Producteur exécutif";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "Superviseur exécutif";
+
+/* No comment provided by engineer. */
 "Explore" = "Parcourir";
 
 /* No comment provided by engineer. */
 "External links" = "Liens externes";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "Pause publicitaire";
 
 /* No comment provided by engineer. */
 "Fall" = "Automne";
@@ -342,6 +636,21 @@
 
 /* No comment provided by engineer. */
 "Finished" = "Terminé";
+
+/* No comment provided by engineer. */
+"Finishing" = "Finition";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "Assistance en finition";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "Vérification de finition";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "Responsable de finition";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "Production de finition";
 
 /* No comment provided by engineer. */
 "Follow" = "Suivre";
@@ -386,6 +695,9 @@
 "Global" = "Global";
 
 /* No comment provided by engineer. */
+"HD Editing" = "Montage HD";
+
+/* No comment provided by engineer. */
 "Hentai" = "Hentai";
 
 /* No comment provided by engineer. */
@@ -416,6 +728,21 @@
 "Hours Watched" = "Heures de visionnage";
 
 /* No comment provided by engineer. */
+"Illustration" = "Illustration";
+
+/* No comment provided by engineer. */
+"In-Between Animation" = "Animation intermédiaire";
+
+/* No comment provided by engineer. */
+"In-Between Animation Assistance" = "Assistance à l'animation intermédiaire";
+
+/* No comment provided by engineer. */
+"In-Betweens Check" = "Vérification des intervalles";
+
+/* No comment provided by engineer. */
+"In-Betweens Manager" = "Responsable des intervalles";
+
+/* No comment provided by engineer. */
 "Increment Episode / Chapter" = "Incrémenter l'Épisode / Chapitre";
 
 /* No comment provided by engineer. */
@@ -425,10 +752,31 @@
 "Information" = "Informations";
 
 /* No comment provided by engineer. */
+"Insert Song Arrangement" = "Arrangement de la chanson d'insertion";
+
+/* No comment provided by engineer. */
+"Insert Song Composition" = "Composition de la chanson d'insertion";
+
+/* No comment provided by engineer. */
+"Insert Song Lyrics" = "Paroles de la chanson d'insertion";
+
+/* No comment provided by engineer. */
+"Insert Song Performance" = "Interprétation de la chanson d'insertion";
+
+/* No comment provided by engineer. */
 "Japan" = "Japon";
 
 /* No comment provided by engineer. */
 "Japanese" = "Japonais";
+
+/* No comment provided by engineer. */
+"Key Animation" = "Animation clé";
+
+/* No comment provided by engineer. */
+"Key Animation (OP)" = "Animation clé (Opening)";
+
+/* No comment provided by engineer. */
+"Key Animation Assistance" = "Assistance à l'animation clé";
 
 /* No comment provided by engineer. */
 "Last Added" = "Derniers ajoutés";
@@ -440,10 +788,31 @@
 "Last used" = "Utilisé récemment";
 
 /* No comment provided by engineer. */
+"Layout" = "Layout";
+
+/* No comment provided by engineer. */
+"Layout Animation Director" = "Directeur d'animation du layout";
+
+/* No comment provided by engineer. */
+"Layout Animation Supervisor" = "Superviseur d'animation du layout";
+
+/* No comment provided by engineer. */
+"Layout Editor" = "Éditeur de layout";
+
+/* No comment provided by engineer. */
+"Layout Supervisor" = "Superviseur de layout";
+
+/* No comment provided by engineer. */
 "Left" = "Gauche";
 
 /* No comment provided by engineer. */
+"Lettering" = "Lettrage";
+
+/* No comment provided by engineer. */
 "Light novel" = "Light novel";
+
+/* No comment provided by engineer. */
+"Line Producer" = "Producteur exécutif (chargé de production)";
 
 /* No comment provided by engineer. */
 "List entry ID" = "Identifiant de l'élément de la liste";
@@ -453,6 +822,12 @@
 
 /* No comment provided by engineer. */
 "List style" = "Style de liste";
+
+/* No comment provided by engineer. */
+"Literary Arts" = "Arts littéraires";
+
+/* No comment provided by engineer. */
+"Literary Arts Assistance" = "Assistance en arts littéraires";
 
 /* No comment provided by engineer. */
 "Live action" = "Live action";
@@ -476,6 +851,9 @@
 "Main" = "Principal";
 
 /* No comment provided by engineer. */
+"Main Animator" = "Animateur principal";
+
+/* No comment provided by engineer. */
 "Male" = "Homme";
 
 /* No comment provided by engineer. */
@@ -494,6 +872,15 @@
 "Mecha" = "Mecha";
 
 /* No comment provided by engineer. */
+"Mechanical Animation Director" = "Directeur d'animation mécanique";
+
+/* No comment provided by engineer. */
+"Mechanical Design" = "Conception mécanique";
+
+/* No comment provided by engineer. */
+"Mechanical Supervisor" = "Superviseur mécanique";
+
+/* No comment provided by engineer. */
 "Media" = "Média";
 
 /* No comment provided by engineer. */
@@ -509,6 +896,12 @@
 "Minimal" = "Minimaliste";
 
 /* No comment provided by engineer. */
+"Monitor Graphics" = "Graphismes de moniteur";
+
+/* No comment provided by engineer. */
+"Monster Design" = "Conception de monstres";
+
+/* No comment provided by engineer. */
 "More filters" = "Plus de filtres";
 
 /* No comment provided by engineer. */
@@ -522,6 +915,42 @@
 
 /* No comment provided by engineer. */
 "Music" = "Musique";
+
+/* No comment provided by engineer. */
+"Music Arrangement" = "Arrangement musical";
+
+/* No comment provided by engineer. */
+"Music Assistance" = "Assistance musicale";
+
+/* No comment provided by engineer. */
+"Music Composition" = "Composition musicale";
+
+/* No comment provided by engineer. */
+"Music Director" = "Directeur musical";
+
+/* No comment provided by engineer. */
+"Music Lyrics" = "Paroles musicales";
+
+/* No comment provided by engineer. */
+"Music Performance" = "Interprétation musicale";
+
+/* No comment provided by engineer. */
+"Music Producer" = "Producteur musical";
+
+/* No comment provided by engineer. */
+"Music Production" = "Production musicale";
+
+/* No comment provided by engineer. */
+"Music Production Assistance" = "Assistance à la production musicale";
+
+/* No comment provided by engineer. */
+"Music Selection" = "Sélection musicale";
+
+/* No comment provided by engineer. */
+"Music Supervisor" = "Superviseur musical";
+
+/* No comment provided by engineer. */
+"Musical Instrument Supervisor" = "Superviseur des instruments de musique";
 
 /* No comment provided by engineer. */
 "Mystery" = "Mystère";
@@ -578,6 +1007,12 @@
 "Occupations" = "Professions";
 
 /* No comment provided by engineer. */
+"Offline Editing" = "Montage hors ligne";
+
+/* No comment provided by engineer. */
+"Offline Editing Manager" = "Responsable du montage hors ligne";
+
+/* No comment provided by engineer. */
 "OK" = "OK";
 
 /* No comment provided by engineer. */
@@ -590,6 +1025,18 @@
 "OneShot" = "OneShot";
 
 /* No comment provided by engineer. */
+"Online Editing" = "Montage en ligne";
+
+/* No comment provided by engineer. */
+"Online Editing Manager" = "Responsable du montage en ligne";
+
+/* No comment provided by engineer. */
+"Online HD Editing" = "Montage HD en ligne";
+
+/* No comment provided by engineer. */
+"Optical Recording" = "Enregistrement optique";
+
+/* No comment provided by engineer. */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Statut optionnel pour mettre à jour l'entrée de la liste (par exemple COMPLETED)";
 
 /* No comment provided by engineer. */
@@ -597,6 +1044,21 @@
 
 /* No comment provided by engineer. */
 "Original" = "Original";
+
+/* No comment provided by engineer. */
+"Original Character Design" = "Conception de personnages originaux";
+
+/* No comment provided by engineer. */
+"Original Creator" = "Créateur original";
+
+/* No comment provided by engineer. */
+"Original Illustration" = "Illustration originale";
+
+/* No comment provided by engineer. */
+"Original Plan" = "Plan original";
+
+/* No comment provided by engineer. */
+"Original Story" = "Histoire originale";
 
 /* No comment provided by engineer. */
 "Other" = "Autre";
@@ -608,7 +1070,13 @@
 "OVA" = "OVA";
 
 /* No comment provided by engineer. */
+"Overseas Advertising Producer" = "Producteur publicitaire à l'étranger";
+
+/* No comment provided by engineer. */
 "Overview" = "Vue d'ensemble";
+
+/* No comment provided by engineer. */
+"Paint" = "Peinture";
 
 /* No comment provided by engineer. */
 "Parent" = "Parent";
@@ -620,10 +1088,28 @@
 "Paused %@" = "A mis en pause %@";
 
 /* No comment provided by engineer. */
+"Photography" = "Photographie";
+
+/* No comment provided by engineer. */
+"Photography Assistance" = "Assistance en photographie";
+
+/* No comment provided by engineer. */
+"Photography Chief" = "Chef de la photographie";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "Responsable de la photographie";
+
+/* No comment provided by engineer. */
 "Picture book" = "Album illustré";
 
 /* (No Comment) */
 "Planning" = "Planifié";
+
+/* No comment provided by engineer. */
+"Planning Assistance" = "Assistance en planification";
+
+/* No comment provided by engineer. */
+"Planning Producer" = "Producteur de planification";
 
 /* No comment provided by engineer. */
 "Plans to read %@" = "Planifie de lire %@";
@@ -656,13 +1142,37 @@
 "Private" = "Privé";
 
 /* No comment provided by engineer. */
+"Producer" = "Producteur";
+
+/* No comment provided by engineer. */
 "Producers" = "Producteurs";
+
+/* No comment provided by engineer. */
+"Production" = "Production";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "Assistance à la production";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "Assistant de production";
+
+/* No comment provided by engineer. */
+"Production Committee" = "Comité de production";
+
+/* No comment provided by engineer. */
+"Production Design" = "Conception de production";
+
+/* No comment provided by engineer. */
+"Production Desk" = "Bureau de production";
 
 /* No comment provided by engineer. */
 "Profile" = "Profil";
 
 /* No comment provided by engineer. */
 "Progress" = "Progression";
+
+/* No comment provided by engineer. */
+"Prop Design" = "Conception des accessoires";
 
 /* No comment provided by engineer. */
 "Psychological" = "Psychologique";
@@ -696,6 +1206,18 @@
 
 /* No comment provided by engineer. */
 "Recommendations" = "Recommandations";
+
+/* No comment provided by engineer. */
+"Recording" = "Enregistrement";
+
+/* No comment provided by engineer. */
+"Recording Adjustment" = "Réglage de l'enregistrement";
+
+/* No comment provided by engineer. */
+"Recording Assistant" = "Assistant d'enregistrement";
+
+/* No comment provided by engineer. */
+"Recording Engineer" = "Ingénieur du son";
 
 /* No comment provided by engineer. */
 "Relations" = "Relations";
@@ -764,6 +1286,12 @@
 "Score format" = "Format des notes";
 
 /* No comment provided by engineer. */
+"Script" = "Script";
+
+/* No comment provided by engineer. */
+"Script Assistance" = "Assistance au scénario";
+
+/* No comment provided by engineer. */
 "Search type" = "Type de recherche";
 
 /* No comment provided by engineer. */
@@ -781,6 +1309,12 @@
 /* No comment provided by engineer. */
 "Sequel" = "Suite";
 
+/* No comment provided by engineer. */
+"Series Composition" = "Composition de la série";
+
+/* No comment provided by engineer. */
+"Series Composition Assistance" = "Assistance à la composition de la série";
+
 /* Set to Status */
 "Set as %@" = "Défini comme %@";
 
@@ -789,6 +1323,9 @@
 
 /* No comment provided by engineer. */
 "Sets a list entry progress to the specified number." = "Définit la progression de l'entrée de la liste au numéro spécifié.";
+
+/* No comment provided by engineer. */
+"Setting Design" = "Conception des décors";
 
 /* No comment provided by engineer. */
 "Settings" = "Réglages";
@@ -827,6 +1364,30 @@
 "Sort" = "Trier";
 
 /* No comment provided by engineer. */
+"Sound Design" = "Conception sonore";
+
+/* No comment provided by engineer. */
+"Sound Director" = "Directeur du son";
+
+/* No comment provided by engineer. */
+"Sound Effects" = "Effets sonores";
+
+/* No comment provided by engineer. */
+"Sound Effects Assistance" = "Assistance aux effets sonores";
+
+/* No comment provided by engineer. */
+"Sound Producer" = "Producteur du son";
+
+/* No comment provided by engineer. */
+"Sound Production" = "Production sonore";
+
+/* No comment provided by engineer. */
+"Sound Production Manager" = "Responsable de la production sonore";
+
+/* No comment provided by engineer. */
+"Sound Supervisor" = "Superviseur sonore";
+
+/* No comment provided by engineer. */
 "Source" = "Source";
 
 /* No comment provided by engineer. */
@@ -834,6 +1395,15 @@
 
 /* No comment provided by engineer. */
 "Special" = "Spécial";
+
+/* No comment provided by engineer. */
+"Special Design" = "Conception spéciale";
+
+/* No comment provided by engineer. */
+"Special Effects" = "Effets spéciaux";
+
+/* No comment provided by engineer. */
+"Special Effects Assistant" = "Assistant aux effets spéciaux";
 
 /* No comment provided by engineer. */
 "Spin Off" = "Spin Off";
@@ -875,10 +1445,25 @@
 "Status Distribution" = "Répartition des statuts";
 
 /* No comment provided by engineer. */
+"Story" = "Histoire";
+
+/* No comment provided by engineer. */
+"Story & Art" = "Histoire et Art";
+
+/* No comment provided by engineer. */
+"Story & Illustration" = "Histoire et Illustration";
+
+/* No comment provided by engineer. */
+"Storyboard" = "Scénarimage";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Sites de diffusion";
 
 /* No comment provided by engineer. */
 "Studios" = "Studios";
+
+/* No comment provided by engineer. */
+"Sub Character Design" = "Conception des personnages secondaires";
 
 /* No comment provided by engineer. */
 "Summary" = "Description";
@@ -890,10 +1475,16 @@
 "Supernatural" = "Surnaturel";
 
 /* No comment provided by engineer. */
+"Supervisor" = "Superviseur";
+
+/* No comment provided by engineer. */
 "Support the development of AniHyou!" = "Soutenez le développement d'AniHyou !";
 
 /* No comment provided by engineer. */
 "Supporting" = "Secondaire";
+
+/* No comment provided by engineer. */
+"Supporting Staff" = "Équipe de soutien";
 
 /* No comment provided by engineer. */
 "Sync account with Apple Watch" = "Synchroniser le compte avec l'Apple Watch";
@@ -908,6 +1499,9 @@
 "Taiwan" = "Taïwan";
 
 /* No comment provided by engineer. */
+"Technical Director" = "Directeur technique";
+
+/* No comment provided by engineer. */
 "Text Status" = "Statut personnalisé";
 
 /* No comment provided by engineer. */
@@ -918,6 +1512,54 @@
 
 /* No comment provided by engineer. */
 "The id of the media the entry is of" = "L'identifiant du média auquel appartient l'entrée";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement" = "Arrangement de la chanson thème";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Arrangement de la chanson thème (Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Arrangement de la chanson thème (Opening, Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Arrangement de la chanson thème (Opening)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition" = "Composition de la chanson thème";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Composition de la chanson thème (Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Composition de la chanson thème (Opening, Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Composition de la chanson thème (Opening)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics" = "Paroles de la chanson thème";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Paroles de la chanson thème (Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Paroles de la chanson thème (Opening, Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Paroles de la chanson thème (Opening)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance" = "Interprétation de la chanson thème";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Interprétation de la chanson thème (Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Interprétation de la chanson thème (Opening, Ending)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Interprétation de la chanson thème (Opening)";
 
 /* No comment provided by engineer. */
 "This feature will be unlocked when you make a donation, even the smallest count!" = "Cette fonctionnalité sera débloquée lorsque vous ferez un don, même le plus petit compte !";
@@ -939,6 +1581,12 @@
 
 /* No comment provided by engineer. */
 "Title language" = "Langue du titre";
+
+/* No comment provided by engineer. */
+"Title Logo Design" = "Conception de logo de titre";
+
+/* No comment provided by engineer. */
+"Title Logo Design Assistance" = "Assistance en conception de logo de titre";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Nombre de titres";
@@ -965,6 +1613,12 @@
 "Total Manga" = "Nombre de mangas";
 
 /* No comment provided by engineer. */
+"Touch-up Art" = "Retouche artistique";
+
+/* No comment provided by engineer. */
+"Touch-up Art & Lettering" = "Retouches artistiques et lettrage";
+
+/* No comment provided by engineer. */
 "Trailer" = "Bande-annonce";
 
 /* No comment provided by engineer. */
@@ -972,6 +1626,9 @@
 
 /* No comment provided by engineer. */
 "Translations" = "Traductions";
+
+/* No comment provided by engineer. */
+"Translator" = "Traducteur";
 
 /* No comment provided by engineer. */
 "Trending" = "Tendance";
@@ -990,6 +1647,9 @@
 
 /* No comment provided by engineer. */
 "Unfollow" = "Ne plus suivre";
+
+/* No comment provided by engineer. */
+"Unit Director" = "Directeur d'unité";
 
 /* Localizable.strings
   AniHyou
@@ -1019,7 +1679,19 @@
 "Version %@" = "Version %@";
 
 /* No comment provided by engineer. */
+"Video Editing" = "Montage vidéo";
+
+/* No comment provided by engineer. */
 "VideoGame" = "Jeu vidéo";
+
+/* No comment provided by engineer. */
+"Visual Coordinator" = "Coordinateur visuel";
+
+/* No comment provided by engineer. */
+"Visual Director" = "Directeur visuel";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "Effets visuels";
 
 /* No comment provided by engineer. */
 "Visual novel" = "Visual novel";
@@ -1046,6 +1718,9 @@
 "Watching" = "En cours";
 
 /* No comment provided by engineer. */
+"Weapon Design" = "Conception des armes";
+
+/* No comment provided by engineer. */
 "Web novel" = "Web novel";
 
 /* No comment provided by engineer. */
@@ -1056,6 +1731,9 @@
 
 /* No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Pour tout achat, vous aurez accès à des icônes d'application exclusives et à des couleurs d'accentuation personnalisées !";
+
+/* No comment provided by engineer. */
+"World Design" = "Conception du monde";
 
 /* No comment provided by engineer. */
 "Year" = "Année";
