@@ -12,16 +12,14 @@ class Network {
     static let shared = Network()
     private let malClientId = Bundle.main.object(forInfoDictionaryKey: "MAL_CLIENT_ID") as? String ?? ""
 
-    private(set) lazy var apollo: ApolloClient = {
-        let client = URLSessionClient()
+    let apollo: ApolloClient = {
         let store = ApolloStore(cache: InMemoryNormalizedCache())
-        let provider = NetworkInterceptorProvider(client: client, store: store)
+        let provider = NetworkInterceptorProvider(store: store)
         let transport = RequestChainNetworkTransport(
             interceptorProvider: provider,
             endpointURL: URL(string: ANILIST_GRAPHQL)!
         )
-        let apolloClient = ApolloClient(networkTransport: transport, store: store)
-        return apolloClient
+        return ApolloClient(networkTransport: transport, store: store)
     }()
     
     private func buildMalGetURLRequest(_ url: URL) -> URLRequest {

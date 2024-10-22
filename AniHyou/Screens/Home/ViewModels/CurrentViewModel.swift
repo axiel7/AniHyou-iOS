@@ -11,7 +11,7 @@ import AniListAPI
 @MainActor
 class CurrentViewModel: ObservableObject {
     
-    @Published var isLoading = false
+    @Published var isLoading = true
     @Published var airingList: [CommonMediaListEntry] = []
     @Published var behindList: [CommonMediaListEntry] = []
     @Published var animeList: [CommonMediaListEntry] = []

@@ -55,7 +55,6 @@ struct CurrentView: View {
                         }
                         if !items.isEmpty {
                             list(type: type, items: items)
-                                .id(type)
                         }
                     }
                     
