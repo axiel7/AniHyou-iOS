@@ -14,7 +14,16 @@
 "+1" = "+1";
 
 /* No comment provided by engineer. */
+"2D Effects" = "2D ефекти";
+
+/* No comment provided by engineer. */
 "3 Point Smiley :)" = "3-бальна посміхашка :)";
+
+/* No comment provided by engineer. */
+"3D Art" = "3D художник";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DКГ";
 
 /* No comment provided by engineer. */
 "5 Star (3/5)" = "5 Зіркова (3/5)";
@@ -59,6 +68,12 @@
 "Adventure" = "Пригоди";
 
 /* No comment provided by engineer. */
+"Advertising" = "Маркетинг";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Маркетинговий Продюсер";
+
+/* No comment provided by engineer. */
 "Age" = "Вік";
 
 /* No comment provided by engineer. */
@@ -80,6 +95,21 @@
 "Alternative" = "Альтернатива";
 
 /* No comment provided by engineer. */
+"Animation" = "Анімація";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Режисер Анімації";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Анімаційний Продюсер";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Помічник у виробництві анімації";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Управління анімацією";
+
+/* No comment provided by engineer. */
 "Anime" = "Аніме";
 
 /* No comment provided by engineer. */
@@ -98,16 +128,82 @@
 "Are you sure you want to log out?" = "Ви впевнені, що хочете вийти з системи?";
 
 /* No comment provided by engineer. */
+"Art" = "Художник";
+
+/* No comment provided by engineer. */
+"Art Board" = "Рада Художників";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Художня Композиція";
+
+/* No comment provided by engineer. */
+"Art Design" = "Художній дизайн";
+
+/* No comment provided by engineer. */
+"Art Director" = "Художній Режисер";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Як ви знаєте, цей додаток є повністю безкоштовним і з відкритим вихідним кодом,\nале створення програми вимагає багато часу і зусиль.\nЗробивши пожертву, ви допоможете покрити витрати на\nрозробку, технічне обслуговування та нові функції.";
 
 /* No comment provided by engineer. */
 "Ascending" = "За зростанням";
 
 /* No comment provided by engineer. */
+"Assistance" = "Помічник";
+
+/* No comment provided by engineer. */
+"Assistant" = "Помічник";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Помічник Режисера Анімації";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Помічник Художнього Режисера";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Помічник Головного Режисера Анімації";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Помічник головного режисера";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Помічник режисера";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Помічник режисера з фотозйомки";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Помічник режисера епізоду";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Помічник продюсера";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Помічник керівника виробництва";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Помічник директора підрозділу";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Співпродюсер";
+
+/* No comment provided by engineer. */
 "Average Score" = "Середній бал";
 
 /* No comment provided by engineer. */
 "Background" = "Контекст";
+
+/* No comment provided by engineer. */
+"Background Art" = "Тло";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "Помічник з тлом";
+
+/* No comment provided by engineer. */
+"Background Manager" = "Керівник тла";
+
+/* No comment provided by engineer. */
+"Background Production" = "Виробництво тла";
 
 /* No comment provided by engineer. */
 "Birth" = "Дата народження";
@@ -242,6 +338,9 @@
 "Developers" = "Розробники";
 
 /* No comment provided by engineer. */
+"Director" = "Режисер";
+
+/* No comment provided by engineer. */
 "Discord server" = "Discord сервер";
 
 /* No comment provided by engineer. */
@@ -288,6 +387,21 @@
 
 /* No comment provided by engineer. */
 "Edit" = "Змінити";
+
+/* No comment provided by engineer. */
+"Editing" = "Монтаж";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Помічник з монтажу";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "Керівник монтажем";
+
+/* No comment provided by engineer. */
+"Effects" = "Ефекти";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "Помічник режисера анімації";
 
 /* No comment provided by engineer. */
 "End date" = "Дата закінчення";
@@ -479,6 +593,9 @@
 "Main" = "Головний";
 
 /* No comment provided by engineer. */
+"Main Animator" = "Головний аніматор";
+
+/* No comment provided by engineer. */
 "Male" = "Чоловічий";
 
 /* No comment provided by engineer. */
@@ -659,6 +776,9 @@
 "Private" = "Приватне";
 
 /* No comment provided by engineer. */
+"Producer" = "Продюсер";
+
+/* No comment provided by engineer. */
 "Producers" = "Продюсери";
 
 /* No comment provided by engineer. */
@@ -765,6 +885,9 @@
 
 /* No comment provided by engineer. */
 "Score format" = "Формат оцінки";
+
+/* No comment provided by engineer. */
+"Script" = "Сценарій";
 
 /* No comment provided by engineer. */
 "Search type" = "Тип пошуку";
@@ -978,6 +1101,9 @@
 
 /* No comment provided by engineer. */
 "Translations" = "Перекладачі";
+
+/* No comment provided by engineer. */
+"Translator" = "Перекладач";
 
 /* No comment provided by engineer. */
 "Trending" = "Популярне";

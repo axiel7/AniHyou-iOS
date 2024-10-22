@@ -329,6 +329,9 @@
 "Feed type" = "Typ kanału";
 
 /* No comment provided by engineer. */
+"Female" = "Kobieta";
+
+/* No comment provided by engineer. */
 "Filter" = "Filtruj";
 
 /* No comment provided by engineer. */
@@ -473,6 +476,9 @@
 "Main" = "Główna";
 
 /* No comment provided by engineer. */
+"Male" = "Mężczyzna";
+
+/* No comment provided by engineer. */
 "Manga" = "Manga";
 
 /* No comment provided by engineer. */
@@ -546,6 +552,9 @@
 
 /* No comment provided by engineer. */
 "No reviews" = "Brak recenzji";
+
+/* No comment provided by engineer. */
+"Non-binary" = "Niebinarny/a";
 
 /* No comment provided by engineer. */
 "None" = "Brak";

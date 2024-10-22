@@ -26,13 +26,31 @@
 "100 Point (55/100)" = "100 punti (55/100)";
 
 /* No comment provided by engineer. */
+"A&R Producer" = "Produttore A&R";
+
+/* No comment provided by engineer. */
 "Accent color" = "Colore dettagli";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "Design accessori";
 
 /* No comment provided by engineer. */
 "Account settings" = "Impostazioni account";
 
 /* No comment provided by engineer. */
 "Action" = "Azione";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Direttore dell'animazione d'azione";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Supervisore dell'animazione d'azione";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Animatore dell'azione";
+
+/* No comment provided by engineer. */
+"Action Director" = "Direttore dell'azione";
 
 /* No comment provided by engineer. */
 "Activity" = "Attività";
@@ -50,10 +68,19 @@
 "Added" = "Aggiunto";
 
 /* No comment provided by engineer. */
+"ADR Director" = "Direttore ADR";
+
+/* No comment provided by engineer. */
 "Adult" = "Adulto";
 
 /* No comment provided by engineer. */
 "Adventure" = "Avventura";
+
+/* No comment provided by engineer. */
+"Advertising" = "Pubblicità";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Produttore della pubblicità";
 
 /* No comment provided by engineer. */
 "Age" = "Età";
@@ -77,6 +104,21 @@
 "Alternative" = "Alternativa";
 
 /* No comment provided by engineer. */
+"Animation" = "Animazione";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Direttore dell'animazione";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Produttore dell'animazione";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Assistenza alla produzione dell'animazione";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Supervisore dell'animazione";
+
+/* No comment provided by engineer. */
 "Anime" = "Anime";
 
 /* No comment provided by engineer. */
@@ -95,10 +137,55 @@
 "Are you sure you want to log out?" = "Sei sicuro di volerti disconnettere?";
 
 /* No comment provided by engineer. */
+"Art Composition" = "Composizione artistica";
+
+/* No comment provided by engineer. */
+"Art Director" = "Direttore artistico";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Come saprai, questa app è completamente gratuita e Open Source,\nma la creazione di un'applicazione richiede molto tempo e impegno.\nEffettuando una donazione si contribuirà a coprire i costi di sviluppo,\ndi manutenzione e di nuove funzionalità.";
 
 /* No comment provided by engineer. */
 "Ascending" = "Ascendente";
+
+/* No comment provided by engineer. */
+"Assistance" = "Assistenza";
+
+/* No comment provided by engineer. */
+"Assistant" = "Assistente";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Assistente del direttore dell'animazione";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Assistente del direttore artistico";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Assistente del direttore dell'animazione";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Assistente del capo direttore";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Assistente del direttore";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Assistente del direttore della fotografia";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Assistente del direttore dell'episodio";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Assistente del produttore";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Assistente del direttore di produzione";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Assistente del direttore dell'unità";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Produttore associato";
 
 /* No comment provided by engineer. */
 "Average Score" = "Punteggio Medio";
