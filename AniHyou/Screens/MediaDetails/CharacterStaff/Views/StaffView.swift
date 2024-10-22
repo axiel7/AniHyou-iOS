@@ -24,11 +24,17 @@ struct StaffView: View {
                         .lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(.primary)
-                    Text(staff.role ?? "")
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(.gray)
-                        .font(.footnote)
+                    Group {
+                        if let roleLocalized = staff.roleLocalized {
+                            Text(roleLocalized)
+                        } else {
+                            Text(staff.role ?? "")
+                        }
+                    }
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(.gray)
+                    .font(.footnote)
                 }
                 Spacer()
             }

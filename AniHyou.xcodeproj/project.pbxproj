@@ -86,6 +86,7 @@
 		48294CEC2ABA9E9B005E7CD2 /* MediaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58E2C2A85B4D700EF0CA2 /* MediaList.swift */; };
 		48294CEE2ABAA4BB005E7CD2 /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */; };
 		482DC35A2A1F5361009D96F4 /* MediaListScoreIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */; };
+		482E40722CC784D200601803 /* StaffRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E40712CC784CF00601803 /* StaffRole.swift */; };
 		482E581C2C00B7870089AE28 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 482E581B2C00B7870089AE28 /* Nuke */; };
 		482E581E2C00B7870089AE28 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482E581D2C00B7870089AE28 /* NukeUI */; };
 		4832B029285F27E000E79D27 /* MediaDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */; };
@@ -438,6 +439,7 @@
 		482CE57C2A30841200DAE045 /* ToggleFavourite.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToggleFavourite.graphql; sourceTree = "<group>"; };
 		482DC3592A1F5361009D96F4 /* MediaListScoreIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListScoreIndicator.swift; sourceTree = "<group>"; };
 		482DC35B2A1F58BE009D96F4 /* UserStatsMangaOverview.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatsMangaOverview.graphql; sourceTree = "<group>"; };
+		482E40712CC784CF00601803 /* StaffRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffRole.swift; sourceTree = "<group>"; };
 		4832B026285F279600E79D27 /* MediaDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaDetails.graphql; sourceTree = "<group>"; };
 		4832B028285F27E000E79D27 /* MediaDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewModel.swift; sourceTree = "<group>"; };
 		4832B02B285F35E200E79D27 /* SwiftUIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIUtils.swift; sourceTree = "<group>"; };
@@ -1546,6 +1548,7 @@
 				48218AED2BC0878D00A03421 /* MediaSort.swift */,
 				48E0086B2CC2E6D400DBE1F4 /* Character.swift */,
 				48E58E3B2A85B61600EF0CA2 /* CharacterRole.swift */,
+				482E40712CC784CF00601803 /* StaffRole.swift */,
 				48E58E3D2A85B63100EF0CA2 /* MediaRelation.swift */,
 				48E58E3F2A85B64B00EF0CA2 /* MediaListSort.swift */,
 				48E58E412A85B7B800EF0CA2 /* ExternalLink.swift */,
@@ -2307,6 +2310,7 @@
 				48801D252C3BF397000BEA3A /* CurrentListItemView.swift in Sources */,
 				488B7AC1291A6D0800156D80 /* CharacterDetailsViewModel.swift in Sources */,
 				4820F6B62ADEAF1100A4F465 /* ListActivity.swift in Sources */,
+				482E40722CC784D200601803 /* StaffRole.swift in Sources */,
 				48801D212C3BEDC5000BEA3A /* CurrentView.swift in Sources */,
 				48B7AC272BB59FB70047998F /* StudiosStatsView.swift in Sources */,
 				4820F6BA2ADF9B3800A4F465 /* LikeRepository.swift in Sources */,
