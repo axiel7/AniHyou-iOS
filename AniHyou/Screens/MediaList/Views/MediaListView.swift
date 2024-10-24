@@ -151,11 +151,10 @@ struct MediaListView: View {
     }
     
     var navigationTitle: String {
-        if let status = viewModel.selectedListName.asMediaListStatus() {
-            let localizedKey = String.LocalizationValue(
-                stringLiteral: status.localizedStringKey
-            )
-            return String(localized: localizedKey)
+        if let status = viewModel.selectedListName?.localizedListStatus(
+            mediaType: type
+        ) {
+            return status
         } else if let listName = viewModel.selectedListName {
             return listName
         } else {

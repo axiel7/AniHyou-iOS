@@ -19,6 +19,8 @@
 "Planning" = "Planning";
 "Dropped" = "Dropped";
 "Repeating" = "Repeating";
+"Rewatching" = "Rewatching";
+"Rereading" = "Rereading";
 
 // Set to Status
 "Set as %@" = "Set as %@";

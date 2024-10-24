@@ -16,24 +16,18 @@ struct MediaListStatusView: View {
     @State private var selection: String?
     @State private var showingMediaDetails = false
     @State private var mediaId = 0
-    
-    private var customLists: [String]? {
-        UserDefaults.standard.stringArray(forKey: mediaType.customListsKey)
-    }
 
     var body: some View {
         NavigationSplitView {
             List(selection: $selection) {
                 Label("All", systemImage: "list.bullet.circle").tag("All")
-                ForEach(MediaListStatus.allCases, id: \.rawValue) { status in
-                    Label(
-                        status.localizedName(type: mediaType),
-                        systemImage: status.systemImage
-                    )
-                    .tag(status.localizedStringKey(type: mediaType))
-                }
-                if let customLists {
-                    ForEach(customLists, id: \.self) { name in
+                ForEach(viewModel.listNames, id: \.self) { name in
+                    if let status = name.asMediaListStatus() {
+                        Label(
+                            name.localizedListStatus(mediaType: mediaType),
+                            systemImage: status.systemImage
+                        )
+                    } else {
                         Label(name, systemImage: "list.bullet")
                     }
                 }
@@ -63,6 +57,10 @@ struct MediaListStatusView: View {
                 selection = selectedList
                 Task {
                     viewModel.onChangeList(selectedList)
+                }
+            } else if viewModel.listNames.isEmpty {
+                Task {
+                    await viewModel.refreshList()
                 }
             }
         }

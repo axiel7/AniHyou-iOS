@@ -14,6 +14,7 @@ class MediaListViewModel: ObservableObject {
 
     var userId: Int = LoginRepository.authUserId()
     private var lists: [String: [CommonMediaListEntry]] = [:]
+    @Published var listNames: [String] = []
     @Published var mediaList = [CommonMediaListEntry]()
     var selectedDetails: BasicMediaDetails?
     var selectedEntry: BasicMediaListEntry?
@@ -60,6 +61,7 @@ class MediaListViewModel: ObservableObject {
                             }
                         })
                     }
+                    listNames.append(name)
                     lists[name] = (lists[name] ?? []) + entries
                     if selectedListName == nil && list.isCustomList == false {
                         newEntries.append(contentsOf: entries)
@@ -77,6 +79,7 @@ class MediaListViewModel: ObservableObject {
     func refreshList() async {
         forceReload = true
         lists = [:]
+        listNames.removeAll()
         mediaList = []
         await getUserMediaList()
     }

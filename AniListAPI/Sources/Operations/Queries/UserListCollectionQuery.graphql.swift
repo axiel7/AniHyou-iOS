@@ -7,7 +7,7 @@ public class UserListCollectionQuery: GraphQLQuery {
   public static let operationName: String = "UserListCollection"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserListCollection($userId: Int, $type: MediaType, $sort: [MediaListSort], $chunk: Int, $perChunk: Int) { MediaListCollection( userId: $userId type: $type sort: $sort chunk: $chunk perChunk: $perChunk forceSingleCompletedList: true ) { __typename lists { __typename name isCustomList entries { __typename ...CommonMediaListEntry } } hasNextChunk } }"#,
+      #"query UserListCollection($userId: Int, $type: MediaType, $sort: [MediaListSort], $chunk: Int, $perChunk: Int) { MediaListCollection( userId: $userId type: $type sort: $sort chunk: $chunk perChunk: $perChunk ) { __typename lists { __typename name isCustomList entries { __typename ...CommonMediaListEntry } } hasNextChunk } }"#,
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, CommonMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
@@ -50,8 +50,7 @@ public class UserListCollectionQuery: GraphQLQuery {
         "type": .variable("type"),
         "sort": .variable("sort"),
         "chunk": .variable("chunk"),
-        "perChunk": .variable("perChunk"),
-        "forceSingleCompletedList": true
+        "perChunk": .variable("perChunk")
       ]),
     ] }
 

@@ -104,9 +104,49 @@ extension MediaType {
     }
 }
 
-extension String? {
+extension String {
     func asMediaListStatus() -> MediaListStatus? {
-        guard let self else { return nil }
-        return MediaListStatus(rawValue: self)
+        switch self {
+        case "Current", "Watching", "Reading":
+            return .current
+        case "Planning":
+            return .planning
+        case "Completed":
+            return .completed
+        case "Dropped":
+            return .dropped
+        case "Paused":
+            return .paused
+        case "Repeating", "Rewatching", "Rereading":
+            return .repeating
+        default:
+            if hasPrefix("Completed") {
+                return .completed
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    func localizedListStatus(mediaType: MediaType) -> String {
+        if hasPrefix("Completed ") {
+            let localized = String(
+                localized: String.LocalizationValue(stringLiteral: "Completed")
+            )
+            //TODO: localize format
+            let format = replacing("Completed", with: "")
+            return localized + format
+        } else {
+            let value = if self == "Current" {
+                mediaType == .anime ? "Watching" : "Reading"
+            } else if self == "Repeating" {
+                mediaType == .anime ? "Rewatching" : "Rereading"
+            } else {
+                self
+            }
+            return String(
+                localized: String.LocalizationValue(stringLiteral: value)
+            )
+        }
     }
 }
