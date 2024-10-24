@@ -31,10 +31,16 @@ struct TranslationCredits: View {
                 Section {
                     Text(users)
                 } header: {
-                    Text(locale.localizedString(forIdentifier: lang) ?? lang)
+                    let localizedLang = if lang.hasPrefix("zh") {
+                        locale.localizedString(forIdentifier: lang)
+                    } else {
+                        locale.localizedString(forLanguageCode: lang)
+                    }
+                    Text(localizedLang ?? lang)
                 }
             }
         }
+        .navigationTitle("Translations")
     }
 }
 
