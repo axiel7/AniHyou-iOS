@@ -1231,6 +1231,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "重读%2$@的第%1$@章";
 
+/* (No Comment) */
+"Rereading" = "重看";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "恢复购买";
 
@@ -1242,6 +1245,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "重看%2$@的第%1$@集";
+
+/* (No Comment) */
+"Rewatching" = "重看";
 
 /* No comment provided by engineer. */
 "Right" = "右侧";

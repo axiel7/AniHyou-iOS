@@ -23,13 +23,31 @@
 "100 Point (55/100)" = "100 نقطة (55\\100)";
 
 /* No comment provided by engineer. */
+"A&R Producer" = "المنتج المسؤول عن المواهب";
+
+/* No comment provided by engineer. */
 "Accent color" = "اللون الثانوي";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "تصميم الاكسسوارات";
 
 /* No comment provided by engineer. */
 "Account settings" = "إعدادات الحساب";
 
 /* No comment provided by engineer. */
 "Action" = "أكشن";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "مخرج تحريك الحركة";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "مشرف تحريك الحركة";
+
+/* No comment provided by engineer. */
+"Action Animator" = "محرك الحركة";
+
+/* No comment provided by engineer. */
+"Action Director" = "مخرج الحركة";
 
 /* No comment provided by engineer. */
 "Activity" = "النشاط";
@@ -47,10 +65,19 @@
 "Added" = "تمت الإضافة";
 
 /* No comment provided by engineer. */
+"ADR Director" = "مدير الصوتيات";
+
+/* No comment provided by engineer. */
 "Adult" = "للكبار";
 
 /* No comment provided by engineer. */
 "Adventure" = "مغامرة";
+
+/* No comment provided by engineer. */
+"Advertising" = "الإعلانات";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "منتج الإعلانات";
 
 /* No comment provided by engineer. */
 "Age" = "العمر";
@@ -72,6 +99,12 @@
 
 /* No comment provided by engineer. */
 "Alternative" = "البديل";
+
+/* No comment provided by engineer. */
+"Animation Director" = "مخرج الرسوم المتحركة";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "منتج الرسوم المتحركة";
 
 /* No comment provided by engineer. */
 "Anime" = "الأنمي";
@@ -132,6 +165,9 @@
 
 /* No comment provided by engineer. */
 "Chapters read" = "الفصول المقروءة";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "الفصول المقروءة";
 
 /* No comment provided by engineer. */
 "Character" = "شخصية";
@@ -195,6 +231,9 @@
 
 /* No comment provided by engineer. */
 "Default" = "افتراضي";
+
+/* No comment provided by engineer. */
+"Default tab" = "علامة التبويب الافتراضية";
 
 /* No comment provided by engineer. */
 "Delete" = "حذف";
@@ -338,6 +377,9 @@
 "Hiatus" = "متوقف";
 
 /* No comment provided by engineer. */
+"Hide filters" = "إخفاء الفلاتر";
+
+/* No comment provided by engineer. */
 "Hide from status lists" = "عدم الظهور في قائمة الحالة";
 
 /* No comment provided by engineer. */
@@ -363,6 +405,9 @@
 
 /* No comment provided by engineer. */
 "Last Updated" = "آخر تحديث";
+
+/* No comment provided by engineer. */
+"Last used" = "المستخدم أخيراً";
 
 /* No comment provided by engineer. */
 "Left" = "يسار";
@@ -414,6 +459,9 @@
 
 /* No comment provided by engineer. */
 "Minimal" = "مبسط";
+
+/* No comment provided by engineer. */
+"More filters" = "المزيد من الفلاتر";
 
 /* No comment provided by engineer. */
 "Most popular" = "الأكثر شعبية";
@@ -568,8 +616,14 @@
 /* (No Comment) */
 "Repeating" = "إعادة";
 
+/* (No Comment) */
+"Rereading" = "أعيد قراءته";
+
 /* No comment provided by engineer. */
 "Reviews" = "المراجعات";
+
+/* (No Comment) */
+"Rewatching" = "أعيد مشاهدته";
 
 /* No comment provided by engineer. */
 "Romaji" = "روماجي";

@@ -724,6 +724,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Przeczytał/a ponownie %1$@ rozdział mangi %2$@";
 
+/* (No Comment) */
+"Rereading" = "Ponowne czytanie";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Przywróć zakupy";
 
@@ -735,6 +738,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Obejrzał/a ponownie %1$@ odcinek %2$@";
+
+/* (No Comment) */
+"Rewatching" = "Ponowne oglądanie";
 
 /* No comment provided by engineer. */
 "Right" = "Prawa";

@@ -14,7 +14,34 @@
 "+1" = "+1";
 
 /* No comment provided by engineer. */
+"1st Key Animation Director" = "Direktur Animasi Utama Pertama";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "Asisten Sutradara Animasi Utama Pertama";
+
+/* No comment provided by engineer. */
+"2D Design" = "Desain 2D";
+
+/* No comment provided by engineer. */
+"2D Effects" = "Efek 2D";
+
+/* No comment provided by engineer. */
+"2D Works" = "Karya 2D";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "Animasi Kunci ke-2";
+
+/* No comment provided by engineer. */
 "3 Point Smiley :)" = "Nilai 3 Tersenyum (੭˃ᴗ˂) ੭";
+
+/* No comment provided by engineer. */
+"3D Art" = "Seni 3D";
+
+/* No comment provided by engineer. */
+"3D Works" = "Karya 3D";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DCG";
 
 /* No comment provided by engineer. */
 "5 Star (3/5)" = "5 Bintang (3/5)";
@@ -29,13 +56,31 @@
 "100 Point (55/100)" = "Nilai 100 (55/100)";
 
 /* No comment provided by engineer. */
+"A&R Producer" = "A&R Produser";
+
+/* No comment provided by engineer. */
 "Accent color" = "Aksen warna";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "Desain Aksesori";
 
 /* No comment provided by engineer. */
 "Account settings" = "Pengaturan Akun";
 
 /* No comment provided by engineer. */
 "Action" = "Tindakan";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Sutradara Animasi Aksi";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Supervisor Animasi Aksi";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Animator Aksi";
+
+/* No comment provided by engineer. */
+"Action Director" = "Direktur Aksi";
 
 /* No comment provided by engineer. */
 "Activity" = "Aktivitas";
@@ -53,10 +98,19 @@
 "Added" = "Ditambah";
 
 /* No comment provided by engineer. */
+"ADR Director" = "Direktur ADR";
+
+/* No comment provided by engineer. */
 "Adult" = "Dewasa";
 
 /* No comment provided by engineer. */
 "Adventure" = "Petualangan";
+
+/* No comment provided by engineer. */
+"Advertising" = "Periklanan";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Produser Periklanan";
 
 /* No comment provided by engineer. */
 "Age" = "Usia";
@@ -80,6 +134,21 @@
 "Alternative" = "Alternatif";
 
 /* No comment provided by engineer. */
+"Animation" = "Animasi";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Direktur Animasi";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Produser Animasi";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Bantuan Produksi Animasi";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Supervisor Animasi";
+
+/* No comment provided by engineer. */
 "Anime" = "Anime";
 
 /* No comment provided by engineer. */
@@ -98,16 +167,82 @@
 "Are you sure you want to log out?" = "Yakin ingin keluar?";
 
 /* No comment provided by engineer. */
+"Art" = "Seni";
+
+/* No comment provided by engineer. */
+"Art Board" = "Papan Seni";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Komposisi Seni";
+
+/* No comment provided by engineer. */
+"Art Design" = "Desain Seni";
+
+/* No comment provided by engineer. */
+"Art Director" = "Direktur Seni";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Seperti yang Anda ketahui, aplikasi ini sepenuhnya gratis dan Open Source,\ntetapi membuat aplikasi membutuhkan banyak waktu dan usaha.\nDengan memberikan donasi, Anda akan membantu menutupi biaya\npengembangan, pemeliharaan, dan fitur-fitur baru.";
 
 /* No comment provided by engineer. */
 "Ascending" = "Naik";
 
 /* No comment provided by engineer. */
+"Assistance" = "Bantuan";
+
+/* No comment provided by engineer. */
+"Assistant" = "Asisten";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Asisten Sutradara Animasi";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Asisten Direktur Seni";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Asisten Kepala Direktur Animasi";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Asisten Direktur Utama";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Asisten Direktur";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Asisten Direktur Fotografi";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Asisten Sutradara Episode";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Asisten Produser";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Asisten Manajer Produksi";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Asisten Direktur Unit";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Associate Producer";
+
+/* No comment provided by engineer. */
 "Average Score" = "Skor Rata-rata";
 
 /* No comment provided by engineer. */
 "Background" = "Latar belakang";
+
+/* No comment provided by engineer. */
+"Background Art" = "Latar belakang Seni";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "Bantuan Latar Belakang Seni";
+
+/* No comment provided by engineer. */
+"Background Manager" = "Latar Belakang Manajer";
+
+/* No comment provided by engineer. */
+"Background Production" = "Latar Belakang Produksi";
 
 /* No comment provided by engineer. */
 "Birth" = "Tanggal lahir";
@@ -131,6 +266,42 @@
 "Cancelled" = "Dibatalkan";
 
 /* No comment provided by engineer. */
+"CG Animation" = "Animasi CG";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "Direktur Animasi CG";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "Asisten Direktur CG";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "Pemodelan Latar Belakang CG";
+
+/* No comment provided by engineer. */
+"CG Director" = "Direktur CG";
+
+/* No comment provided by engineer. */
+"CG Layout" = "Tata Letak CG";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "Pemodelan CG";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "Direktur Pemodelan CG";
+
+/* No comment provided by engineer. */
+"CG Producer" = "Produser CG";
+
+/* No comment provided by engineer. */
+"CG Production" = "Produksi CG";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "Supervisor CG";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "Direktur Teknis CG";
+
+/* No comment provided by engineer. */
 "Ch" = "Ch";
 
 /* No comment provided by engineer. */
@@ -152,10 +323,37 @@
 "Character" = "Karakter";
 
 /* No comment provided by engineer. */
+"Character Design" = "Desain Karakter";
+
+/* No comment provided by engineer. */
 "Characters" = "Karakter";
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Karakter dan Staf";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "Kepala Direktur Animasi";
+
+/* No comment provided by engineer. */
+"Chief Director" = "Direktur Utama";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "Kepala Direktur Episode";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "Kepala Direktur Animasi Mekanik";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "Kepala Produser";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "Kepala Bagian Produksi";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "Kepala Pengawas";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "Kepala Direktur Unit";
 
 /* No comment provided by engineer. */
 "China" = "Cina";
@@ -168,6 +366,21 @@
 
 /* No comment provided by engineer. */
 "Close" = "Tutup";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "Co-Produser";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "Koordinasi Warna";
+
+/* No comment provided by engineer. */
+"Color Design" = "Desain Warna";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "Bantuan Desain Warna";
+
+/* No comment provided by engineer. */
+"Coloring" = "Mewarnai";
 
 /* No comment provided by engineer. */
 "Comedy" = "Komedi";
@@ -188,6 +401,9 @@
 "Completed %@" = "Selesai %@";
 
 /* No comment provided by engineer. */
+"Concept Art" = "Seni Konsep";
+
+/* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "Selamat, Anda sudah mendapatkan informasi terbaru!\n(๑>◡<๑)";
 
 /* No comment provided by engineer. */
@@ -197,10 +413,19 @@
 "Content" = "Konten";
 
 /* No comment provided by engineer. */
+"Costume Design" = "Desain Kostum";
+
+/* No comment provided by engineer. */
 "Country" = "Negara";
 
 /* No comment provided by engineer. */
 "Country Distribution" = "Negara Distribusi";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "Ilustrasi Sampul";
+
+/* No comment provided by engineer. */
+"Creature Design" = "Desain Makhluk";
 
 /* (No Comment) */
 "Current" = "Saat ini";
@@ -239,7 +464,40 @@
 "Descending" = "Menurun";
 
 /* No comment provided by engineer. */
+"Design Assistance" = "Bantuan Desain";
+
+/* No comment provided by engineer. */
+"Design Works" = "Karya Desain";
+
+/* No comment provided by engineer. */
 "Developers" = "Pengembang";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "Animasi Digital";
+
+/* No comment provided by engineer. */
+"Digital Art" = "Seni Digital";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "Pewarnaan Digital";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "Perekaman Optik Digital";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "Cat Digital";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "Fotografi Digital";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "Asisten Produksi Digital";
+
+/* No comment provided by engineer. */
+"Director" = "Direktur";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "Direktur Fotografi";
 
 /* No comment provided by engineer. */
 "Discord server" = "Server Discord";
@@ -290,7 +548,25 @@
 "Edit" = "Ubah";
 
 /* No comment provided by engineer. */
+"Editing" = "Pengeditan";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Asisten Pengeditan";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "Manajer Pengeditan";
+
+/* No comment provided by engineer. */
+"Effects" = "Efek";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "Sutradara Efek Animasi";
+
+/* No comment provided by engineer. */
 "End date" = "Tanggal berakhir";
+
+/* No comment provided by engineer. */
+"Endcard" = "Kartu akhir";
 
 /* No comment provided by engineer. */
 "English" = "Inggris";
@@ -308,16 +584,34 @@
 "Episode Count" = "Jumlah Episode";
 
 /* No comment provided by engineer. */
+"Episode Director" = "Direktur Episode";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "Direktur Episode (ED)";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "Direktur Episode (OP)";
+
+/* No comment provided by engineer. */
 "Episodes" = "Episode";
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Episode Ditonton";
 
 /* No comment provided by engineer. */
+"Executive Producer" = "Produser Eksekutif";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "Supervisor Eksekutif";
+
+/* No comment provided by engineer. */
 "Explore" = "Eksplorasi";
 
 /* No comment provided by engineer. */
 "External links" = "Tautan eksternal";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "Eyecatch";
 
 /* No comment provided by engineer. */
 "Fall" = "Musim Gugur";
@@ -332,6 +626,9 @@
 "Feed type" = "Jenis Feed";
 
 /* No comment provided by engineer. */
+"Female" = "Wanita";
+
+/* No comment provided by engineer. */
 "Filter" = "Filter";
 
 /* No comment provided by engineer. */
@@ -339,6 +636,21 @@
 
 /* No comment provided by engineer. */
 "Finished" = "Selesai";
+
+/* No comment provided by engineer. */
+"Finishing" = "Penyelesaian";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "Bantuan Penyelesaian";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "Cek Penyelesaian";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "Manajer Penyelesaian";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "Produksi Penyelesaian";
 
 /* No comment provided by engineer. */
 "Follow" = "Ikuti";
@@ -386,6 +698,9 @@
 "Global" = "Global";
 
 /* No comment provided by engineer. */
+"HD Editing" = "Pengeditan HD";
+
+/* No comment provided by engineer. */
 "Hentai" = "Hentai";
 
 /* No comment provided by engineer. */
@@ -416,6 +731,21 @@
 "Hours Watched" = "Jam Menonton";
 
 /* No comment provided by engineer. */
+"Illustration" = "Ilustrasi";
+
+/* No comment provided by engineer. */
+"In-Between Animation" = "Animasi Perantara";
+
+/* No comment provided by engineer. */
+"In-Between Animation Assistance" = "Bantuan Animasi Perantara";
+
+/* No comment provided by engineer. */
+"In-Betweens Check" = "Pemeriksaan Animasi Perantara";
+
+/* No comment provided by engineer. */
+"In-Betweens Manager" = "Manajer Animasi Perantara";
+
+/* No comment provided by engineer. */
 "Increment Episode / Chapter" = "Peningkatan Episode / Bab";
 
 /* No comment provided by engineer. */
@@ -425,10 +755,31 @@
 "Information" = "Informasi";
 
 /* No comment provided by engineer. */
+"Insert Song Arrangement" = "Menyisipkan Aransemen Lagu";
+
+/* No comment provided by engineer. */
+"Insert Song Composition" = "Menyisipkan Komposisi Lagu";
+
+/* No comment provided by engineer. */
+"Insert Song Lyrics" = "Sisipkan Lirik Lagu";
+
+/* No comment provided by engineer. */
+"Insert Song Performance" = "Menyisipkan Pertunjukan Lagu";
+
+/* No comment provided by engineer. */
 "Japan" = "Jepang";
 
 /* No comment provided by engineer. */
 "Japanese" = "Jepang";
+
+/* No comment provided by engineer. */
+"Key Animation" = "Animasi Kunci";
+
+/* No comment provided by engineer. */
+"Key Animation (OP)" = "Animasi Kunci (OP)";
+
+/* No comment provided by engineer. */
+"Key Animation Assistance" = "Bantuan Animasi Utama";
 
 /* No comment provided by engineer. */
 "Last Added" = "Terakhir ditambahkan";
@@ -440,10 +791,31 @@
 "Last used" = "Terakhir digunakan";
 
 /* No comment provided by engineer. */
+"Layout" = "Tata letak";
+
+/* No comment provided by engineer. */
+"Layout Animation Director" = "Direktur Animasi Tata Letak";
+
+/* No comment provided by engineer. */
+"Layout Animation Supervisor" = "Supervisor Animasi Tata Letak";
+
+/* No comment provided by engineer. */
+"Layout Editor" = "Editor Tata Letak";
+
+/* No comment provided by engineer. */
+"Layout Supervisor" = "Supervisor Tata Letak";
+
+/* No comment provided by engineer. */
 "Left" = "Kiri";
 
 /* No comment provided by engineer. */
+"Lettering" = "Huruf";
+
+/* No comment provided by engineer. */
 "Light novel" = "Novel Ringan";
+
+/* No comment provided by engineer. */
+"Line Producer" = "Produser Line";
 
 /* No comment provided by engineer. */
 "List entry ID" = "Daftar entri ID";
@@ -453,6 +825,12 @@
 
 /* No comment provided by engineer. */
 "List style" = "Tampilan daftar";
+
+/* No comment provided by engineer. */
+"Literary Arts" = "Seni Sastra";
+
+/* No comment provided by engineer. */
+"Literary Arts Assistance" = "Bantuan Seni Sastra";
 
 /* No comment provided by engineer. */
 "Live action" = "Live action";
@@ -476,6 +854,12 @@
 "Main" = "Utama";
 
 /* No comment provided by engineer. */
+"Main Animator" = "Animator Utama";
+
+/* No comment provided by engineer. */
+"Male" = "Pria";
+
+/* No comment provided by engineer. */
 "Manga" = "Manga";
 
 /* No comment provided by engineer. */
@@ -489,6 +873,15 @@
 
 /* No comment provided by engineer. */
 "Mecha" = "Robot";
+
+/* No comment provided by engineer. */
+"Mechanical Animation Director" = "Direktur Animasi Mekanik";
+
+/* No comment provided by engineer. */
+"Mechanical Design" = "Desain Mekanis";
+
+/* No comment provided by engineer. */
+"Mechanical Supervisor" = "Supervisor Mekanik";
 
 /* No comment provided by engineer. */
 "Media" = "Media";
@@ -506,6 +899,12 @@
 "Minimal" = "Minimalis";
 
 /* No comment provided by engineer. */
+"Monitor Graphics" = "Memantau Grafik";
+
+/* No comment provided by engineer. */
+"Monster Design" = "Desain Monster";
+
+/* No comment provided by engineer. */
 "More filters" = "Filter lainnya";
 
 /* No comment provided by engineer. */
@@ -519,6 +918,42 @@
 
 /* No comment provided by engineer. */
 "Music" = "Musik";
+
+/* No comment provided by engineer. */
+"Music Arrangement" = "Aransemen Musik";
+
+/* No comment provided by engineer. */
+"Music Assistance" = "Bantuan Musik";
+
+/* No comment provided by engineer. */
+"Music Composition" = "Komposisi Musik";
+
+/* No comment provided by engineer. */
+"Music Director" = "Direktur Musik";
+
+/* No comment provided by engineer. */
+"Music Lyrics" = "Lirik Musik";
+
+/* No comment provided by engineer. */
+"Music Performance" = "Pertunjukan Musik";
+
+/* No comment provided by engineer. */
+"Music Producer" = "Produser Musik";
+
+/* No comment provided by engineer. */
+"Music Production" = "Produksi Musik";
+
+/* No comment provided by engineer. */
+"Music Production Assistance" = "Bantuan Produksi Musik";
+
+/* No comment provided by engineer. */
+"Music Selection" = "Pilihan Musik";
+
+/* No comment provided by engineer. */
+"Music Supervisor" = "Supervisor Musik";
+
+/* No comment provided by engineer. */
+"Musical Instrument Supervisor" = "Pengawas Alat Musik";
 
 /* No comment provided by engineer. */
 "Mystery" = "Misteri";
@@ -551,6 +986,9 @@
 "No reviews" = "Tidak ada ulasan";
 
 /* No comment provided by engineer. */
+"Non-binary" = "Non-biner";
+
+/* No comment provided by engineer. */
 "None" = "Kosong";
 
 /* No comment provided by engineer. */
@@ -572,6 +1010,12 @@
 "Occupations" = "Pekerjaan";
 
 /* No comment provided by engineer. */
+"Offline Editing" = "Pengeditan Offline";
+
+/* No comment provided by engineer. */
+"Offline Editing Manager" = "Manajer Pengeditan Offline";
+
+/* No comment provided by engineer. */
 "OK" = "OK";
 
 /* No comment provided by engineer. */
@@ -584,6 +1028,18 @@
 "OneShot" = "OneShot";
 
 /* No comment provided by engineer. */
+"Online Editing" = "Pengeditan Online";
+
+/* No comment provided by engineer. */
+"Online Editing Manager" = "Manajer Pengeditan Online";
+
+/* No comment provided by engineer. */
+"Online HD Editing" = "Pengeditan HD Online";
+
+/* No comment provided by engineer. */
+"Optical Recording" = "Perekaman Optik";
+
+/* No comment provided by engineer. */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Status opsional untuk memperbarui entri daftar (mis. SELESAI)";
 
 /* No comment provided by engineer. */
@@ -591,6 +1047,21 @@
 
 /* No comment provided by engineer. */
 "Original" = "Original";
+
+/* No comment provided by engineer. */
+"Original Character Design" = "Desain Karakter Asli";
+
+/* No comment provided by engineer. */
+"Original Creator" = "Pencipta Asli";
+
+/* No comment provided by engineer. */
+"Original Illustration" = "Ilustrasi Asli";
+
+/* No comment provided by engineer. */
+"Original Plan" = "Rencana Awal";
+
+/* No comment provided by engineer. */
+"Original Story" = "Cerita Ori";
 
 /* No comment provided by engineer. */
 "Other" = "Lainnya";
@@ -602,7 +1073,13 @@
 "OVA" = "OVA";
 
 /* No comment provided by engineer. */
+"Overseas Advertising Producer" = "Produser Iklan Luar Negeri";
+
+/* No comment provided by engineer. */
 "Overview" = "Pratinjau";
+
+/* No comment provided by engineer. */
+"Paint" = "Melukis";
 
 /* No comment provided by engineer. */
 "Parent" = "Orang tua";
@@ -614,10 +1091,28 @@
 "Paused %@" = "Dijeda %@";
 
 /* No comment provided by engineer. */
+"Photography" = "Fotografi";
+
+/* No comment provided by engineer. */
+"Photography Assistance" = "Bantuan Fotografi";
+
+/* No comment provided by engineer. */
+"Photography Chief" = "Kepala Fotografi";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "Manajer Fotografi";
+
+/* No comment provided by engineer. */
 "Picture book" = "Buku bergambar";
 
 /* (No Comment) */
 "Planning" = "Rencana";
+
+/* No comment provided by engineer. */
+"Planning Assistance" = "Bantuan Perencanaan";
+
+/* No comment provided by engineer. */
+"Planning Producer" = "Produser Perencanaan";
 
 /* No comment provided by engineer. */
 "Plans to read %@" = "Rencana untuk Dibaca %@";
@@ -650,13 +1145,37 @@
 "Private" = "Privasi";
 
 /* No comment provided by engineer. */
+"Producer" = "Produser";
+
+/* No comment provided by engineer. */
 "Producers" = "Produser";
+
+/* No comment provided by engineer. */
+"Production" = "Produksi";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "Bantuan Produksi";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "Asisten produksi";
+
+/* No comment provided by engineer. */
+"Production Committee" = "Komite Produksi";
+
+/* No comment provided by engineer. */
+"Production Design" = "Desain Produksi";
+
+/* No comment provided by engineer. */
+"Production Desk" = "Meja Produksi";
 
 /* No comment provided by engineer. */
 "Profile" = "Profil";
 
 /* No comment provided by engineer. */
 "Progress" = "Progres";
+
+/* No comment provided by engineer. */
+"Prop Design" = "Desain Properti";
 
 /* No comment provided by engineer. */
 "Psychological" = "Psikologi";
@@ -692,6 +1211,18 @@
 "Recommendations" = "Rekomendasi";
 
 /* No comment provided by engineer. */
+"Recording" = "Rekaman";
+
+/* No comment provided by engineer. */
+"Recording Adjustment" = "Penyesuaian Perekaman";
+
+/* No comment provided by engineer. */
+"Recording Assistant" = "Asisten Perekaman";
+
+/* No comment provided by engineer. */
+"Recording Engineer" = "Insinyur Perekaman";
+
+/* No comment provided by engineer. */
 "Relations" = "Relasi";
 
 /* No comment provided by engineer. */
@@ -718,6 +1249,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Baca ulang chapter %1$@ dari %2$@";
 
+/* (No Comment) */
+"Rereading" = "Dibaca Ulang";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Pulihkan Pembelian";
 
@@ -729,6 +1263,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Tonton ulang episode %1$@ dari %2$@";
+
+/* (No Comment) */
+"Rewatching" = "Ditonton Ulang";
 
 /* No comment provided by engineer. */
 "Right" = "Kanan";
@@ -758,6 +1295,12 @@
 "Score format" = "Format Skor";
 
 /* No comment provided by engineer. */
+"Script" = "Naskah";
+
+/* No comment provided by engineer. */
+"Script Assistance" = "Bantuan Naskah";
+
+/* No comment provided by engineer. */
 "Search type" = "Jenis pencarian";
 
 /* No comment provided by engineer. */
@@ -775,6 +1318,12 @@
 /* No comment provided by engineer. */
 "Sequel" = "Sekuel";
 
+/* No comment provided by engineer. */
+"Series Composition" = "Komposisi Serial";
+
+/* No comment provided by engineer. */
+"Series Composition Assistance" = "Bantuan Komposisi Serial";
+
 /* Set to Status */
 "Set as %@" = "Setel sebagai %@";
 
@@ -783,6 +1332,9 @@
 
 /* No comment provided by engineer. */
 "Sets a list entry progress to the specified number." = "Mengatur daftar entri progres ke nomor yang ditentukan.";
+
+/* No comment provided by engineer. */
+"Setting Design" = "Desain Latar";
 
 /* No comment provided by engineer. */
 "Settings" = "Pengaturan";
@@ -821,6 +1373,30 @@
 "Sort" = "Urutkan";
 
 /* No comment provided by engineer. */
+"Sound Design" = "Desain Suara";
+
+/* No comment provided by engineer. */
+"Sound Director" = "Direktur Suara";
+
+/* No comment provided by engineer. */
+"Sound Effects" = "Efek Suara";
+
+/* No comment provided by engineer. */
+"Sound Effects Assistance" = "Bantuan Efek Suara";
+
+/* No comment provided by engineer. */
+"Sound Producer" = "Produser Suara";
+
+/* No comment provided by engineer. */
+"Sound Production" = "Produksi Suara";
+
+/* No comment provided by engineer. */
+"Sound Production Manager" = "Manajer Produksi Suara";
+
+/* No comment provided by engineer. */
+"Sound Supervisor" = "Supervisor Suara";
+
+/* No comment provided by engineer. */
 "Source" = "Sumber";
 
 /* No comment provided by engineer. */
@@ -828,6 +1404,15 @@
 
 /* No comment provided by engineer. */
 "Special" = "Spesial";
+
+/* No comment provided by engineer. */
+"Special Design" = "Desain Khusus";
+
+/* No comment provided by engineer. */
+"Special Effects" = "Efek khusus";
+
+/* No comment provided by engineer. */
+"Special Effects Assistant" = "Asisten Efek Khusus";
 
 /* No comment provided by engineer. */
 "Spin Off" = "Spin Off";
@@ -869,10 +1454,25 @@
 "Status Distribution" = "Status Distribusi";
 
 /* No comment provided by engineer. */
+"Story" = "Cerita";
+
+/* No comment provided by engineer. */
+"Story & Art" = "Cerita & Seni";
+
+/* No comment provided by engineer. */
+"Story & Illustration" = "Cerita & Ilustrasi";
+
+/* No comment provided by engineer. */
+"Storyboard" = "Storyboard";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Situs streaming";
 
 /* No comment provided by engineer. */
 "Studios" = "Studio";
+
+/* No comment provided by engineer. */
+"Sub Character Design" = "Desain Sub Pendukung";
 
 /* No comment provided by engineer. */
 "Summary" = "Ringkasan";
@@ -884,10 +1484,16 @@
 "Supernatural" = "Supranatural";
 
 /* No comment provided by engineer. */
+"Supervisor" = "Supervisor";
+
+/* No comment provided by engineer. */
 "Support the development of AniHyou!" = "Dukung pengembangan AniHyou!";
 
 /* No comment provided by engineer. */
 "Supporting" = "Pendukung";
+
+/* No comment provided by engineer. */
+"Supporting Staff" = "Staf Pendukung";
 
 /* No comment provided by engineer. */
 "Sync account with Apple Watch" = "Sinkronisasi akun dengan Apple Watch";
@@ -902,6 +1508,9 @@
 "Taiwan" = "Taiwan";
 
 /* No comment provided by engineer. */
+"Technical Director" = "Direktur Teknis";
+
+/* No comment provided by engineer. */
 "Text Status" = "Status Teks";
 
 /* No comment provided by engineer. */
@@ -912,6 +1521,54 @@
 
 /* No comment provided by engineer. */
 "The id of the media the entry is of" = "Id dari media tempat entri tersebut berasal";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement" = "Aransemen Lagu Tema";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Aransemen Lagu Tema (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Aransemen Lagu Tema (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Aransemen Lagu Tema (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition" = "Komposisi Lagu Tema";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Komposisi Lagu Tema (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Komposisi Lagu Tema (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Komposisi Lagu Tema (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics" = "Lirik Lagu Tema";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Lirik Lagu Tema (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Lirik Lagu Tema (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Lirik Lagu Tema (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance" = "Pertunjukan Lagu Tema";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Penampilan Lagu Tema (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Penampilan Lagu Tema (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Pertunjukan Lagu Tema (OP)";
 
 /* No comment provided by engineer. */
 "This feature will be unlocked when you make a donation, even the smallest count!" = "Fitur ini akan terbuka jika memberikan donasi, bahkan dalam jumlah terkecil sekalipun!";
@@ -933,6 +1590,12 @@
 
 /* No comment provided by engineer. */
 "Title language" = "Judul bahasa";
+
+/* No comment provided by engineer. */
+"Title Logo Design" = "Desain Logo Judul";
+
+/* No comment provided by engineer. */
+"Title Logo Design Assistance" = "Bantuan Desain Logo Judul";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Jumlah Judul";
@@ -962,6 +1625,12 @@
 "Total Manga" = "Manga Total";
 
 /* No comment provided by engineer. */
+"Touch-up Art" = "Penyempurnaan Seni";
+
+/* No comment provided by engineer. */
+"Touch-up Art & Lettering" = "Penyempurnaan Seni & Huruf";
+
+/* No comment provided by engineer. */
 "Trailer" = "Cuplikan";
 
 /* No comment provided by engineer. */
@@ -969,6 +1638,9 @@
 
 /* No comment provided by engineer. */
 "Translations" = "Penerjemahan";
+
+/* No comment provided by engineer. */
+"Translator" = "Penerjemah";
 
 /* No comment provided by engineer. */
 "Trending" = "Trending";
@@ -987,6 +1659,9 @@
 
 /* No comment provided by engineer. */
 "Unfollow" = "Berhenti ikuti";
+
+/* No comment provided by engineer. */
+"Unit Director" = "Unit Direktur";
 
 /* Localizable.strings
   AniHyou
@@ -1016,7 +1691,19 @@
 "Version %@" = "Versi %@";
 
 /* No comment provided by engineer. */
+"Video Editing" = "Pengeditan Video";
+
+/* No comment provided by engineer. */
 "VideoGame" = "Permainan";
+
+/* No comment provided by engineer. */
+"Visual Coordinator" = "Koordinator Visual";
+
+/* No comment provided by engineer. */
+"Visual Director" = "Direktur Visual";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "Efek Visual";
 
 /* No comment provided by engineer. */
 "Visual novel" = "Novel Visual";
@@ -1043,6 +1730,9 @@
 "Watching" = "Menonton";
 
 /* No comment provided by engineer. */
+"Weapon Design" = "Desain Senjata";
+
+/* No comment provided by engineer. */
 "Web novel" = "Web Novel";
 
 /* No comment provided by engineer. */
@@ -1053,6 +1743,9 @@
 
 /* No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Dengan pembelian apa pun, Anda akan mendapatkan akses ke ikon aplikasi eksklusif dan warna aksen khusus!";
+
+/* No comment provided by engineer. */
+"World Design" = "Desain Dunia";
 
 /* No comment provided by engineer. */
 "Year" = "Tahun";

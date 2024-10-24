@@ -53,6 +53,9 @@
 "Added" = "Добавлено";
 
 /* No comment provided by engineer. */
+"ADR Director" = "Директор дублирования";
+
+/* No comment provided by engineer. */
 "Adult" = "Взрослый";
 
 /* No comment provided by engineer. */
@@ -434,6 +437,9 @@
 "Last Updated" = "Последнее обновление";
 
 /* No comment provided by engineer. */
+"Last used" = "Последнее использование";
+
+/* No comment provided by engineer. */
 "Left" = "Влево";
 
 /* No comment provided by engineer. */
@@ -706,6 +712,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Перечитать главу %1$@ из %2$@";
 
+/* (No Comment) */
+"Rereading" = "Повторное чтение";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Восстановить покупки";
 
@@ -717,6 +726,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Пересмотреть эпизод %1$@ из %2$@";
+
+/* (No Comment) */
+"Rewatching" = "Снова учение";
 
 /* No comment provided by engineer. */
 "Right" = "Вправо";

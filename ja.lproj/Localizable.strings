@@ -56,6 +56,9 @@
 "Added" = "追加完了";
 
 /* No comment provided by engineer. */
+"ADR Director" = "ADR ディレクター";
+
+/* No comment provided by engineer. */
 "Adult" = "アダルト";
 
 /* No comment provided by engineer. */
@@ -425,6 +428,9 @@
 "Last Updated" = "更新日時";
 
 /* No comment provided by engineer. */
+"Last used" = "前回使用";
+
+/* No comment provided by engineer. */
 "Left" = "左";
 
 /* No comment provided by engineer. */
@@ -510,6 +516,12 @@
 
 /* No comment provided by engineer. */
 "Native" = "ネイティブ";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "新着アニメ";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "新着マンガ";
 
 /* No comment provided by engineer. */
 "No" = "いいえ";
@@ -685,6 +697,9 @@
 /* (No Comment) */
 "Repeating" = "繰り返し";
 
+/* (No Comment) */
+"Rereading" = "再読中";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "購入内容を復元する";
 
@@ -693,6 +708,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "レビュー";
+
+/* (No Comment) */
+"Rewatching" = "見直し中";
 
 /* No comment provided by engineer. */
 "Right" = "右";
@@ -902,6 +920,9 @@
 "Trailer" = "PV";
 
 /* No comment provided by engineer. */
+"Translate" = "翻訳する";
+
+/* No comment provided by engineer. */
 "Translations" = "翻訳";
 
 /* No comment provided by engineer. */
@@ -969,6 +990,9 @@
 
 /* (No Comment) */
 "Watched episode %1$@ of %2$@" = "%2$@の第%1$@話を見ました";
+
+/* No comment provided by engineer. */
+"Watching" = "視聴中";
 
 /* No comment provided by engineer. */
 "Web novel" = "WEBノベル";

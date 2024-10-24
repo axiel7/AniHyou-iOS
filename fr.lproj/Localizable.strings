@@ -1246,6 +1246,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "A relu le chapitre %1$@ de %2$@";
 
+/* (No Comment) */
+"Rereading" = "Relecture";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Restaurer les achats";
 
@@ -1257,6 +1260,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "A relu l'épisode %1$@ de %2$@";
+
+/* (No Comment) */
+"Rewatching" = "Regarder à nouveau";
 
 /* No comment provided by engineer. */
 "Right" = "Droite";

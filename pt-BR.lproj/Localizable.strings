@@ -437,6 +437,9 @@
 "Last Updated" = "Última Atualização";
 
 /* No comment provided by engineer. */
+"Last used" = "Último usado";
+
+/* No comment provided by engineer. */
 "Left" = "Esquerda";
 
 /* No comment provided by engineer. */
@@ -715,6 +718,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Releu capítulo %1$@ de %2$@";
 
+/* (No Comment) */
+"Rereading" = "Relendo";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Restaurar compras";
 
@@ -726,6 +732,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Reassistiu episódio %1$@ de %2$@";
+
+/* (No Comment) */
+"Rewatching" = "Revendo";
 
 /* No comment provided by engineer. */
 "Right" = "Direita";

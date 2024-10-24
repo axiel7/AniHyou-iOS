@@ -1249,6 +1249,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "%2$@ için tekrar okunan kısım %1$@";
 
+/* (No Comment) */
+"Rereading" = "Yeniden okunuyor";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Satın alımları geri yükle";
 
@@ -1260,6 +1263,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "%2$@ için tekrar izlenen bölüm %1$@";
+
+/* (No Comment) */
+"Rewatching" = "Yeniden izleniyor";
 
 /* No comment provided by engineer. */
 "Right" = "Sağ";

@@ -847,6 +847,9 @@
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Перечитано розділ %1$@ з %2$@";
 
+/* (No Comment) */
+"Rereading" = "Перечитую";
+
 /* No comment provided by engineer. */
 "Restore purchases" = "Відновити покупки";
 
@@ -858,6 +861,9 @@
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Повторно переглянуто епізод %1$@ з %2$@";
+
+/* (No Comment) */
+"Rewatching" = "Пере-передивляюсь";
 
 /* No comment provided by engineer. */
 "Right" = "Праворуч";
