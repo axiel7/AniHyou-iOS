@@ -147,9 +147,9 @@ extension FuzzyDateFragment {
     }
 
     func isEqual(_ fuzzyDate: FuzzyDateInput?) -> Bool {
-        guard self.day != fuzzyDate?.day.unwrapped else { return false }
-        guard self.month != fuzzyDate?.month.unwrapped else { return false }
-        guard self.year != fuzzyDate?.year.unwrapped else { return false }
+        guard self.day == fuzzyDate?.day.unwrapped else { return false }
+        guard self.month == fuzzyDate?.month.unwrapped else { return false }
+        guard self.year == fuzzyDate?.year.unwrapped else { return false }
         return true
     }
     
