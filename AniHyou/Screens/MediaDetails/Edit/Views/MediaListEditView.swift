@@ -57,6 +57,9 @@ struct MediaListEditView: View {
                     if status == .completed && !isFinishDateSet {
                         finishDate = .now
                         isFinishDateSet = true
+                    } else if status == .current && !isStartDateSet {
+                        startDate = .now
+                        isStartDateSet = true
                     }
                 }
 
