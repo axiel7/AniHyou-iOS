@@ -153,6 +153,10 @@ extension FuzzyDateFragment {
         return true
     }
     
+    func isNil() -> Bool {
+        day == nil && month == nil && year == nil
+    }
+    
     func isoString() -> String {
         "\(year ?? 3000)\(month ?? 12)\(day ?? 31)"
     }

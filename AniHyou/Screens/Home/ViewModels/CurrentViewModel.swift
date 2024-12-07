@@ -52,7 +52,11 @@ class CurrentViewModel: ObservableObject {
     }
     
     func updateEntryProgress(of entry: CommonMediaListEntry, type: CurrentView.ListType) async {
-        if let newEntry = await MediaListRepository.incrementOneProgress(of: entry.fragments.basicMediaListEntry) {
+        if let newEntry = await MediaListRepository.incrementOneProgress(
+            of: entry.fragments.basicMediaListEntry,
+            totalProgress: entry.media?.maxProgress(isVolume: false),
+            totalVolumes: entry.media?.maxProgress(isVolume: true)
+        ) {
             await onEntryUpdated(newEntry, type: type)
         }
     }

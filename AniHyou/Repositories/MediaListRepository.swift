@@ -190,7 +190,6 @@ struct MediaListRepository {
     // swiftlint:disable:next cyclomatic_complexity function_body_length
     static func updateEntry(
         oldEntry: BasicMediaListEntry?,
-        mediaType: MediaType,
         mediaId: Int,
         status: MediaListStatus? = nil,
         score: Double? = nil,
@@ -305,10 +304,17 @@ struct MediaListRepository {
         }
     }
     
-    static func incrementOneProgress(of entry: BasicMediaListEntry) async -> BasicMediaListEntry? {
-        var status: MediaListStatus?
-        if entry.status == .planning {
-            status = .current
+    static func incrementOneProgress(
+        of entry: BasicMediaListEntry,
+        totalProgress: Int?,
+        totalVolumes: Int?
+    ) async -> BasicMediaListEntry? {
+        let isPlanning = entry.status == .planning
+        let isRepeating = entry.status == .repeating
+        let status: MediaListStatus? = if isPlanning {
+            .current
+        } else {
+            nil
         }
         let progress: Int? = if !entry.isVolumeProgress {
             (entry.progress ?? 0) + 1
@@ -320,11 +326,29 @@ struct MediaListRepository {
         } else {
             nil
         }
-        return await MediaListRepository.updateProgress(
-            entryId: entry.id,
+        let startedAt: Date? = if (!isRepeating || entry.startedAt?.fragments.fuzzyDateFragment.isNil() ?? true)
+                            && (isPlanning || !entry.progress.isGreaterThanZero)
+        {
+            Date.now
+        } else {
+            nil
+        }
+        let isMaxProgress = totalProgress != nil && progress != nil && progress! >= totalProgress!
+        let completedAt: Date? = if (!isRepeating || entry.completedAt?.fragments.fuzzyDateFragment.isNil() ?? true)
+                            && isMaxProgress
+        {
+            Date.now
+        } else {
+            nil
+        }
+        return await MediaListRepository.updateEntry(
+            oldEntry: entry,
+            mediaId: entry.mediaId,
+            status: status,
             progress: progress,
             progressVolumes: progressVolumes,
-            status: status
+            startedAt: startedAt,
+            completedAt: completedAt
         )
     }
     

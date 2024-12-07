@@ -203,7 +203,7 @@ struct MediaListView: View {
                 Button(
                     action: {
                         Task {
-                            await viewModel.updateEntryProgress(of: entry)
+                            await viewModel.updateEntryProgress(entry: entry, details: details)
                         }
                     },
                     label: {
@@ -228,7 +228,7 @@ struct MediaListView: View {
                     Button(
                         action: {
                             Task {
-                                await viewModel.updateEntryProgress(of: entry)
+                                await viewModel.updateEntryProgress(entry: entry, details: details)
                             }
                         },
                         label: {

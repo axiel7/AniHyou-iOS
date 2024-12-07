@@ -35,3 +35,20 @@ extension BasicMediaDetails {
         }
     }
 }
+
+extension CommonMediaListEntry.Media {
+    func maxProgress(isVolume: Bool) -> Int? {
+        switch type?.value {
+        case .anime:
+            episodes
+        case .manga:
+            if isVolume {
+                volumes
+            } else {
+                chapters
+            }
+        default:
+            nil
+        }
+    }
+}

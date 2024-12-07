@@ -43,3 +43,10 @@ extension Int {
         Double(self)
     }
 }
+
+extension Int? {
+    var isGreaterThanZero: Bool {
+        guard let self else { return false }
+        return self > 0
+    }
+}

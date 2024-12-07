@@ -63,7 +63,6 @@ class MediaListEditViewModel: ObservableObject {
 
     // swiftlint:disable:next function_parameter_count
     func updateEntry(
-        mediaType: MediaType,
         mediaId: Int,
         status: MediaListStatus?,
         score: Double?,
@@ -82,7 +81,6 @@ class MediaListEditViewModel: ObservableObject {
         
         if let updatedEntry = await MediaListRepository.updateEntry(
             oldEntry: entry,
-            mediaType: mediaType,
             mediaId: mediaId,
             status: status,
             score: score,

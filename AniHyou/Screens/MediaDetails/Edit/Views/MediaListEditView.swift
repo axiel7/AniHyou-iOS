@@ -207,7 +207,6 @@ struct MediaListEditView: View {
                         Button("Save") {
                             Task {
                                 await viewModel.updateEntry(
-                                    mediaType: mediaDetails.type!.value!,
                                     mediaId: mediaDetails.id,
                                     status: status,
                                     score: viewModel.score,
