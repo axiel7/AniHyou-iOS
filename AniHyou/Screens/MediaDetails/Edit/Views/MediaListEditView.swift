@@ -54,9 +54,13 @@ struct MediaListEditView: View {
                     }
                 }
                 .onChange(of: status) { status in
-                    if status == .completed && !isFinishDateSet {
-                        finishDate = .now
-                        isFinishDateSet = true
+                    if status == .completed {
+                        progress = mediaDetails.maxEpOrCh ?? progress
+                        progressVolumes = mediaDetails.volumes ?? progressVolumes
+                        if !isFinishDateSet {
+                            finishDate = .now
+                            isFinishDateSet = true
+                        }
                     } else if status == .current && !isStartDateSet {
                         startDate = .now
                         isStartDateSet = true
