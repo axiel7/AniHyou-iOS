@@ -329,17 +329,17 @@ struct MediaListRepository {
         let startedAt: Date? = if (!isRepeating || entry.startedAt?.fragments.fuzzyDateFragment.isNil() ?? true)
                             && (isPlanning || !entry.progress.isGreaterThanZero)
         {
-            entry.startedAt?.fragments.fuzzyDateFragment.asDate() ?? Date.now
+            Date.now
         } else {
-            nil
+            entry.startedAt?.fragments.fuzzyDateFragment.asDate()
         }
         let isMaxProgress = totalProgress != nil && progress != nil && progress! >= totalProgress!
         let completedAt: Date? = if (!isRepeating || entry.completedAt?.fragments.fuzzyDateFragment.isNil() ?? true)
                             && isMaxProgress
         {
-            entry.completedAt?.fragments.fuzzyDateFragment.asDate() ?? Date.now
+            Date.now
         } else {
-            nil
+            entry.completedAt?.fragments.fuzzyDateFragment.asDate()
         }
         return await MediaListRepository.updateEntry(
             oldEntry: entry,
