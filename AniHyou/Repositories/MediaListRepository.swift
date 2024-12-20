@@ -329,7 +329,7 @@ struct MediaListRepository {
         let startedAt: Date? = if (!isRepeating || entry.startedAt?.fragments.fuzzyDateFragment.isNil() ?? true)
                             && (isPlanning || !entry.progress.isGreaterThanZero)
         {
-            Date.now
+            entry.startedAt?.fragments.fuzzyDateFragment.asDate() ?? Date.now
         } else {
             nil
         }
@@ -337,7 +337,7 @@ struct MediaListRepository {
         let completedAt: Date? = if (!isRepeating || entry.completedAt?.fragments.fuzzyDateFragment.isNil() ?? true)
                             && isMaxProgress
         {
-            Date.now
+            entry.completedAt?.fragments.fuzzyDateFragment.asDate() ?? Date.now
         } else {
             nil
         }

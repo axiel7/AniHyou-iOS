@@ -160,6 +160,14 @@ extension FuzzyDateFragment {
     func isoString() -> String {
         "\(year ?? 3000)\(month ?? 12)\(day ?? 31)"
     }
+    
+    func asDate() -> Date? {
+        if let year, let month, let day {
+            date(year: year, month: month, day: day)
+        } else {
+            nil
+        }
+    }
 }
 
 func date(year: Int, month: Int, day: Int) -> Date? {
