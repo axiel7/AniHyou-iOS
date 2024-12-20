@@ -229,7 +229,7 @@ struct DiscoverView: View {
             .bold()
             Spacer()
             NavigationLink("See All") {
-                AnimeSeasonListView(initSeason: season.season)
+                AnimeSeasonListView(initSeason: season.season, initYear: season.year)
             }
         }
         .padding(.horizontal)
