@@ -61,6 +61,11 @@ struct DonationsView: View {
             .navigationTitle("Donation")
             .navigationBarTitleDisplayMode(.inline)
         }//:VScrollView
+        .alert("Result",
+               isPresented: $viewModel.showAlert,
+               actions: {},
+               message: { Text(viewModel.message ?? "") }
+        )
     }
 }
 

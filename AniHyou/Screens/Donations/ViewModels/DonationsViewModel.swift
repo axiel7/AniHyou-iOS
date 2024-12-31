@@ -16,6 +16,8 @@ class DonationsViewModel: ObservableObject {
     private var productIDs = ["first_tier_donation", "second_tier_donation", "third_tier_donation"]
 
     @Published var products = [Product]()
+    @Published var message: String?
+    @Published var showAlert = false
 
     init() {
         transacitonListener = listenForTransactions()
@@ -38,12 +40,18 @@ class DonationsViewModel: ObservableObject {
         switch result {
         case .success(.verified(let transaction)):
             await transaction.finish()
+            message = "purchase OK"
+            showAlert = true
             onProductPurchased(true)
             return transaction
         case .userCancelled:
+            message = "purchase cancelled"
+            showAlert = true
             onProductPurchased(false)
             return nil
         default:
+            message = "unknown error \(result)"
+            showAlert = true
             return nil
         }
     }
@@ -60,20 +68,30 @@ class DonationsViewModel: ObservableObject {
                     guard
                         products.first(where: { $0.id == transaction.productID }) != nil
                     else {
+                        message = "id not found for \(transaction.productID)"
+                        showAlert = true
                         continue
                     }
-                    if transaction.revocationDate != nil {
-                         onProductPurchased(false)
+                    if transaction.isUpgraded {
+                        continue
+                    } else if transaction.revocationDate != nil {
+                        message = "product revocated: \(transaction.productID)"
+                        showAlert = true
+                        onProductPurchased(false)
                     } else if let expirationDate = transaction.expirationDate,
                         expirationDate < Date() {
-                        continue
-                    } else if transaction.isUpgraded {
+                        message = "product expired: \(transaction.productID)"
+                        showAlert = true
                         continue
                     } else {
+                        message = "product OK, purchase saved"
+                        showAlert = true
                         onProductPurchased(true)
                     }
                     await transaction.finish()
                 case .unverified:
+                    message = "unverified transaction: \(result.debugDescription)"
+                    showAlert = true
                     onProductPurchased(false)
                     continue
                 }
