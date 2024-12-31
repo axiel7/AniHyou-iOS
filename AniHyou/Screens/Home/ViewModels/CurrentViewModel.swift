@@ -44,7 +44,7 @@ class CurrentViewModel: ObservableObject {
         return await MediaListRepository.getUserMediaList(
             userId: LoginRepository.authUserId(),
             mediaType: mediaType,
-            status: .current,
+            statusIn: [.current, .repeating],
             sort: [.updatedTimeDesc],
             page: nil,
             perPage: nil

@@ -57,7 +57,7 @@ struct MediaListRepository {
     static func getUserMediaList(
         userId: Int,
         mediaType: MediaType,
-        status: MediaListStatus?,
+        statusIn: [MediaListStatus]?,
         sort: [MediaListSort],
         page: Int?,
         perPage: Int? = 25
@@ -69,7 +69,7 @@ struct MediaListRepository {
                     perPage: someIfNotNil(perPage),
                     userId: .some(userId),
                     type: .some(.case(mediaType)),
-                    status: someIfNotNil(status),
+                    statusIn: someEnumArrayIfNotEmpty(statusIn),
                     sort: .some(sort.map({ .case($0) }))
                 )
             ) { result in
