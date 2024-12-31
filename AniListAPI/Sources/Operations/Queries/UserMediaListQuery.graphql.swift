@@ -7,7 +7,7 @@ public class UserMediaListQuery: GraphQLQuery {
   public static let operationName: String = "UserMediaList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $status: MediaListStatus, $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status: $status, sort: $sort) { __typename ...CommonMediaListEntry } pageInfo { __typename hasNextPage } } }"#,
+      #"query UserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $statusIn: [MediaListStatus], $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status_in: $statusIn, sort: $sort) { __typename ...CommonMediaListEntry } pageInfo { __typename hasNextPage } } }"#,
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, CommonMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
@@ -15,7 +15,7 @@ public class UserMediaListQuery: GraphQLQuery {
   public var perPage: GraphQLNullable<Int>
   public var userId: GraphQLNullable<Int>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
-  public var status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
+  public var statusIn: GraphQLNullable<[GraphQLEnum<MediaListStatus>?]>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaListSort>?]>
 
   public init(
@@ -23,14 +23,14 @@ public class UserMediaListQuery: GraphQLQuery {
     perPage: GraphQLNullable<Int>,
     userId: GraphQLNullable<Int>,
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
-    status: GraphQLNullable<GraphQLEnum<MediaListStatus>>,
+    statusIn: GraphQLNullable<[GraphQLEnum<MediaListStatus>?]>,
     sort: GraphQLNullable<[GraphQLEnum<MediaListSort>?]>
   ) {
     self.page = page
     self.perPage = perPage
     self.userId = userId
     self.type = type
-    self.status = status
+    self.statusIn = statusIn
     self.sort = sort
   }
 
@@ -39,7 +39,7 @@ public class UserMediaListQuery: GraphQLQuery {
     "perPage": perPage,
     "userId": userId,
     "type": type,
-    "status": status,
+    "statusIn": statusIn,
     "sort": sort
   ] }
 
@@ -70,7 +70,7 @@ public class UserMediaListQuery: GraphQLQuery {
         .field("mediaList", [MediaList?]?.self, arguments: [
           "userId": .variable("userId"),
           "type": .variable("type"),
-          "status": .variable("status"),
+          "status_in": .variable("statusIn"),
           "sort": .variable("sort")
         ]),
         .field("pageInfo", PageInfo?.self),
