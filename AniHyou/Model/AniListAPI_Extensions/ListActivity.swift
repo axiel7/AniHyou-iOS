@@ -13,27 +13,34 @@ extension ListActivityFragment {
     
     // these ugly switches are required because otherwise Xcode won't localize the status strings
     static let watchedStatus = "watched episode"
-    static let rewatchedStatus = "rewatched episode"
+    static let rewatchedEpisodeStatus = "rewatched episode"
+    static let rewatchedStatus = "rewatched"
     static let plansToWatchStatus = "plans to watch"
     static let readStatus = "read chapter"
-    static let rereadStatus = "reread chapter"
+    static let rereadChapterStatus = "reread chapter"
+    static let rereadStatus = "reread"
     static let plansToReadStatus = "plans to read"
     static let completedStatus = "completed"
     static let droppedStatus = "dropped"
-    static let pausedStatus = "paused"
+    static let pausedWatchingStatus = "paused watching"
+    static let pausedReadingStatus = "paused reading"
     
     var text: String {
         let mediaTitle = media?.title?.userPreferred ?? ""
-        if let progress {
+        if let progress, progress != "0" {
             switch status {
             case ListActivityFragment.watchedStatus:
                 return "Watched episode %1$@ of %2$@".localized(with: [progress, mediaTitle])
-            case ListActivityFragment.rewatchedStatus:
+            case ListActivityFragment.rewatchedEpisodeStatus:
                 return "Rewatched episode %1$@ of %2$@".localized(with: [progress, mediaTitle])
+            case ListActivityFragment.rewatchedStatus:
+                return String(localized: "Rewatched \(mediaTitle)")
             case ListActivityFragment.readStatus:
                 return "Read chapter %1$@ of %2$@".localized(with: [progress, mediaTitle])
-            case ListActivityFragment.rereadStatus:
+            case ListActivityFragment.rereadChapterStatus:
                 return "Reread chapter %1$@ of %2$@".localized(with: [progress, mediaTitle])
+            case ListActivityFragment.rereadStatus:
+                return String(localized: "Reread \(mediaTitle)")
             default:
                 return "\(status?.firstCapitalized ?? "") \(progress) of \(mediaTitle)"
             }
@@ -47,7 +54,7 @@ extension ListActivityFragment {
                 return String(localized: "Completed \(mediaTitle)")
             case ListActivityFragment.droppedStatus:
                 return String(localized: "Dropped \(mediaTitle)")
-            case ListActivityFragment.pausedStatus:
+            case ListActivityFragment.pausedWatchingStatus, ListActivityFragment.pausedReadingStatus:
                 return String(localized: "Paused \(mediaTitle)")
             default:
                 return "\(status?.firstCapitalized ?? "") \(mediaTitle)"
