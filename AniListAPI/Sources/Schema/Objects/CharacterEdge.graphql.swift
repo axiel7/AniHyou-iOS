@@ -7,6 +7,7 @@ public extension Objects {
   /// Character connection edge
   static let CharacterEdge = ApolloAPI.Object(
     typename: "CharacterEdge",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

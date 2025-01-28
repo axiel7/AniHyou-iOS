@@ -7,6 +7,7 @@ public extension Objects {
   /// Notification for when a user is send an activity message
   static let ActivityMessageNotification = ApolloAPI.Object(
     typename: "ActivityMessageNotification",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

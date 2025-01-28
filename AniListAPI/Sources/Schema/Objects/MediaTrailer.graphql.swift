@@ -7,6 +7,7 @@ public extension Objects {
   /// Media trailer or advertisement
   static let MediaTrailer = ApolloAPI.Object(
     typename: "MediaTrailer",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

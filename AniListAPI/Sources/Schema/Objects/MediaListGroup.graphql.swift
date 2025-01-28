@@ -7,6 +7,7 @@ public extension Objects {
   /// List group of anime or manga entries
   static let MediaListGroup = ApolloAPI.Object(
     typename: "MediaListGroup",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

@@ -7,6 +7,7 @@ public extension Objects {
   /// Notification for when a activity reply is liked
   static let ActivityReplyLikeNotification = ApolloAPI.Object(
     typename: "ActivityReplyLikeNotification",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

@@ -7,6 +7,7 @@ public extension Objects {
   /// Notification for when the authenticated user is followed by another user
   static let FollowingNotification = ApolloAPI.Object(
     typename: "FollowingNotification",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

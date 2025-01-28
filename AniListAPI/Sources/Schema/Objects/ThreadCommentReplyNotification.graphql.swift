@@ -7,6 +7,7 @@ public extension Objects {
   /// Notification for when a user replies to your forum thread comment
   static let ThreadCommentReplyNotification = ApolloAPI.Object(
     typename: "ThreadCommentReplyNotification",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

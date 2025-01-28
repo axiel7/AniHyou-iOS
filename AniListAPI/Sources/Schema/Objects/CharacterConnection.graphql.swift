@@ -6,6 +6,7 @@ import ApolloAPI
 public extension Objects {
   static let CharacterConnection = ApolloAPI.Object(
     typename: "CharacterConnection",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

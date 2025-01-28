@@ -7,6 +7,7 @@ public extension Objects {
   /// Page of data
   static let Page = ApolloAPI.Object(
     typename: "Page",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

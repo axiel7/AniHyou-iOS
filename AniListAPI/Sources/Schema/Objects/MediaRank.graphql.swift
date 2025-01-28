@@ -7,6 +7,7 @@ public extension Objects {
   /// The ranking of a media in a particular time span and format compared to other media
   static let MediaRank = ApolloAPI.Object(
     typename: "MediaRank",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

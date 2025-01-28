@@ -7,6 +7,7 @@ public extension Objects {
   /// User text activity
   static let TextActivity = ApolloAPI.Object(
     typename: "TextActivity",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

@@ -7,6 +7,7 @@ public extension Objects {
   /// Media connection edge
   static let MediaEdge = ApolloAPI.Object(
     typename: "MediaEdge",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

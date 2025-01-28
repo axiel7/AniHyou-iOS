@@ -6,6 +6,7 @@ import ApolloAPI
 public extension Objects {
   static let PageInfo = ApolloAPI.Object(
     typename: "PageInfo",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

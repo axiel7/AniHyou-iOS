@@ -7,6 +7,7 @@ public extension Objects {
   /// A user
   static let User = ApolloAPI.Object(
     typename: "User",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

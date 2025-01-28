@@ -7,6 +7,7 @@ public extension Objects {
   /// A character that features in an anime or manga
   static let Character = ApolloAPI.Object(
     typename: "Character",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

@@ -7,6 +7,7 @@ public extension Objects {
   /// Notification for when new media is added to the site
   static let RelatedMediaAdditionNotification = ApolloAPI.Object(
     typename: "RelatedMediaAdditionNotification",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

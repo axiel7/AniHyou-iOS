@@ -7,6 +7,7 @@ public extension Objects {
   /// A user's avatars
   static let UserAvatar = ApolloAPI.Object(
     typename: "UserAvatar",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

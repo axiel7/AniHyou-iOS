@@ -6,6 +6,7 @@ import ApolloAPI
 public extension Objects {
   static let StaffConnection = ApolloAPI.Object(
     typename: "StaffConnection",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

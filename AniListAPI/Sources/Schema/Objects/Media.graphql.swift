@@ -7,6 +7,7 @@ public extension Objects {
   /// Anime or Manga
   static let Media = ApolloAPI.Object(
     typename: "Media",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

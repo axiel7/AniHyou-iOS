@@ -6,6 +6,7 @@ import ApolloAPI
 public extension Objects {
   static let UserReleaseYearStatistic = ApolloAPI.Object(
     typename: "UserReleaseYearStatistic",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

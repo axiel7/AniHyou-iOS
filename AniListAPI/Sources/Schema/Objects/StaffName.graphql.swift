@@ -7,6 +7,7 @@ public extension Objects {
   /// The names of the staff member
   static let StaffName = ApolloAPI.Object(
     typename: "StaffName",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

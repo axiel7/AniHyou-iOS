@@ -7,6 +7,7 @@ public extension Objects {
   /// A user's list options for anime or manga lists
   static let MediaListTypeOptions = ApolloAPI.Object(
     typename: "MediaListTypeOptions",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

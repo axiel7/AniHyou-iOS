@@ -7,6 +7,7 @@ public extension Objects {
   /// User list activity (anime & manga updates)
   static let ListActivity = ApolloAPI.Object(
     typename: "ListActivity",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }
