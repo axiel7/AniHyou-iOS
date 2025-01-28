@@ -77,6 +77,18 @@ struct ExploreView: View {
                         }
                     }
                     
+                    Picker("Season", selection: $viewModel.season) {
+                        Text("None").tag(Optional<MediaSeason>(nil))
+                        ForEach(MediaSeason.allCases, id: \.self) {
+                            Text($0.localizedName).tag(Optional($0))
+                        }
+                    }
+                    .onChange(of: viewModel.season) { _ in
+                        Task {
+                            await viewModel.runSearch()
+                        }
+                    }
+                    
                     Picker("Country", selection: $viewModel.country) {
                         Text("None").tag(Optional<CountryOfOrigin>(nil))
                         ForEach(CountryOfOrigin.allCases, id: \.self) {

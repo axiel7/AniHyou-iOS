@@ -7,7 +7,7 @@ public class SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country ) { __typename ...BasicMediaDetails meanScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename currentPage hasNextPage } } }"#,
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $season: MediaSeason, $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in season: $season startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country ) { __typename ...BasicMediaDetails meanScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename currentPage hasNextPage } } }"#,
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
@@ -22,6 +22,7 @@ public class SearchMediaQuery: GraphQLQuery {
   public var tag_not_in: GraphQLNullable<[String?]>
   public var format_in: GraphQLNullable<[GraphQLEnum<MediaFormat>?]>
   public var status_in: GraphQLNullable<[GraphQLEnum<MediaStatus>?]>
+  public var season: GraphQLNullable<GraphQLEnum<MediaSeason>>
   public var startDateGreater: GraphQLNullable<FuzzyDateInt>
   public var startDateLesser: GraphQLNullable<FuzzyDateInt>
   public var onList: GraphQLNullable<Bool>
@@ -41,6 +42,7 @@ public class SearchMediaQuery: GraphQLQuery {
     tag_not_in: GraphQLNullable<[String?]>,
     format_in: GraphQLNullable<[GraphQLEnum<MediaFormat>?]>,
     status_in: GraphQLNullable<[GraphQLEnum<MediaStatus>?]>,
+    season: GraphQLNullable<GraphQLEnum<MediaSeason>>,
     startDateGreater: GraphQLNullable<FuzzyDateInt>,
     startDateLesser: GraphQLNullable<FuzzyDateInt>,
     onList: GraphQLNullable<Bool>,
@@ -59,6 +61,7 @@ public class SearchMediaQuery: GraphQLQuery {
     self.tag_not_in = tag_not_in
     self.format_in = format_in
     self.status_in = status_in
+    self.season = season
     self.startDateGreater = startDateGreater
     self.startDateLesser = startDateLesser
     self.onList = onList
@@ -79,6 +82,7 @@ public class SearchMediaQuery: GraphQLQuery {
     "tag_not_in": tag_not_in,
     "format_in": format_in,
     "status_in": status_in,
+    "season": season,
     "startDateGreater": startDateGreater,
     "startDateLesser": startDateLesser,
     "onList": onList,
@@ -121,6 +125,7 @@ public class SearchMediaQuery: GraphQLQuery {
           "tag_not_in": .variable("tag_not_in"),
           "format_in": .variable("format_in"),
           "status_in": .variable("status_in"),
+          "season": .variable("season"),
           "startDate_greater": .variable("startDateGreater"),
           "startDate_lesser": .variable("startDateLesser"),
           "onList": .variable("onList"),

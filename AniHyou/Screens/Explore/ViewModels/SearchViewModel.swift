@@ -27,6 +27,7 @@ class SearchViewModel: ObservableObject {
     @Published var selectedMediaStatus = Set<MediaStatus>()
     @Published var yearFrom: Int?
     @Published var yearTo: Int?
+    @Published var season: MediaSeason?
     @Published var mediaOnMyList: Bool?
     @Published var isDoujinshi: Bool?
     @Published var isAdult: Bool?
@@ -39,6 +40,7 @@ class SearchViewModel: ObservableObject {
         || !selectedMediaFormat.isEmpty
         || !selectedMediaStatus.isEmpty
         || yearFrom != nil || yearTo != nil
+        || season != nil
         || mediaOnMyList != nil
         || isDoujinshi != nil
         || isAdult != nil
@@ -52,6 +54,7 @@ class SearchViewModel: ObservableObject {
         selectedMediaStatus.removeAll()
         yearFrom = nil
         yearTo = nil
+        season = nil
         mediaOnMyList = nil
         isDoujinshi = nil
         isAdult = nil
@@ -146,6 +149,7 @@ class SearchViewModel: ObservableObject {
             statusIn: Array(selectedMediaStatus),
             startDateGreater: yearFrom,
             startDateLesser: yearTo,
+            season: season,
             onList: mediaOnMyList,
             isLicensed: isDoujinshi?.not(),
             isAdult: isAdult,
