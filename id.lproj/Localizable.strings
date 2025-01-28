@@ -1246,6 +1246,9 @@
 /* (No Comment) */
 "Repeating" = "Diulangi";
 
+/* No comment provided by engineer. */
+"Reread %@" = "Dibaca kembali %@";
+
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Baca ulang chapter %1$@ dari %2$@";
 
@@ -1260,6 +1263,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Ulasan";
+
+/* No comment provided by engineer. */
+"Rewatched %@" = "Ditonton ulang %@";
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Tonton ulang episode %1$@ dari %2$@";

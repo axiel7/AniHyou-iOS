@@ -344,6 +344,9 @@
 "Chief Producer" = "首席制作人";
 
 /* No comment provided by engineer. */
+"Chief Production Desk" = "首席制作主编";
+
+/* No comment provided by engineer. */
 "Chief Supervisor" = "首席主管";
 
 /* No comment provided by engineer. */
@@ -392,7 +395,7 @@
 "Completed" = "已完成";
 
 /* No comment provided by engineer. */
-"Completed %@" = "已完成 %@";
+"Completed %@" = "已完成《%@》";
 
 /* No comment provided by engineer. */
 "Concept Art" = "概念美术";
@@ -410,10 +413,10 @@
 "Costume Design" = "服装设计";
 
 /* No comment provided by engineer. */
-"Country" = "国家";
+"Country" = "国家/地区";
 
 /* No comment provided by engineer. */
-"Country Distribution" = "国家分布";
+"Country Distribution" = "国家/地区分布";
 
 /* No comment provided by engineer. */
 "Cover Illustration" = "封面";
@@ -530,7 +533,7 @@
 "Dropped" = "放弃";
 
 /* No comment provided by engineer. */
-"Dropped %@" = "放弃 %@";
+"Dropped %@" = "已放弃《%@》";
 
 /* No comment provided by engineer. */
 "Duration" = "集长";
@@ -806,6 +809,9 @@
 "Light novel" = "轻小说";
 
 /* No comment provided by engineer. */
+"Line Producer" = "线制作人";
+
+/* No comment provided by engineer. */
 "List entry ID" = "列表条目 ID";
 
 /* No comment provided by engineer. */
@@ -1013,6 +1019,9 @@
 "ONA" = "ONA";
 
 /* No comment provided by engineer. */
+"OneShot" = "一镜到底";
+
+/* No comment provided by engineer. */
 "Online Editing" = "在线编辑";
 
 /* No comment provided by engineer. */
@@ -1073,7 +1082,7 @@
 "Paused" = "已暂停";
 
 /* No comment provided by engineer. */
-"Paused %@" = "暂停 %@";
+"Paused %@" = "已暂停《%@》";
 
 /* No comment provided by engineer. */
 "Photography" = "摄影";
@@ -1100,10 +1109,10 @@
 "Planning Producer" = "企划制作人";
 
 /* No comment provided by engineer. */
-"Plans to read %@" = "计划阅读 %@";
+"Plans to read %@" = "计划阅读《%@》";
 
 /* No comment provided by engineer. */
-"Plans to watch %@" = "计划观看 %@";
+"Plans to watch %@" = "计划观看《%@》";
 
 /* No comment provided by engineer. */
 "Please login to use this feature" = "请登录后使用该功能";
@@ -1151,6 +1160,9 @@
 "Production Design" = "制作设计";
 
 /* No comment provided by engineer. */
+"Production Desk" = "制作主编";
+
+/* No comment provided by engineer. */
 "Profile" = "个人资料";
 
 /* No comment provided by engineer. */
@@ -1181,7 +1193,7 @@
 "Rankings" = "排行榜";
 
 /* (No Comment) */
-"Read chapter %1$@ of %2$@" = "阅读 %2$@ 的第 %1$@ 章";
+"Read chapter %1$@ of %2$@" = "阅读了《%2$@》的第%1$@章";
 
 /* No comment provided by engineer. */
 "Read Year" = "阅读年份";
@@ -1228,8 +1240,11 @@
 /* (No Comment) */
 "Repeating" = "重复中";
 
+/* No comment provided by engineer. */
+"Reread %@" = "重读了《%@》";
+
 /* (No Comment) */
-"Reread chapter %1$@ of %2$@" = "重读%2$@的第%1$@章";
+"Reread chapter %1$@ of %2$@" = "重读了《%2$@》的第%1$@章";
 
 /* (No Comment) */
 "Rereading" = "重看";
@@ -1243,8 +1258,11 @@
 /* No comment provided by engineer. */
 "Reviews" = "评论";
 
+/* No comment provided by engineer. */
+"Rewatched %@" = "重看了《%@》";
+
 /* (No Comment) */
-"Rewatched episode %1$@ of %2$@" = "重看%2$@的第%1$@集";
+"Rewatched episode %1$@ of %2$@" = "重看了《%2$@》的第%1$@集";
 
 /* (No Comment) */
 "Rewatching" = "重看";
@@ -1280,7 +1298,7 @@
 "Script" = "脚本";
 
 /* No comment provided by engineer. */
-"Script Assistance" = "脚本助理";
+"Script Assistance" = "脚本协助";
 
 /* No comment provided by engineer. */
 "Search type" = "搜索类型";
@@ -1304,7 +1322,7 @@
 "Series Composition" = "系列构成";
 
 /* No comment provided by engineer. */
-"Series Composition Assistance" = "系列构成助理";
+"Series Composition Assistance" = "系列构成协助";
 
 /* Set to Status */
 "Set as %@" = "设为%@";
@@ -1364,7 +1382,7 @@
 "Sound Effects" = "音效";
 
 /* No comment provided by engineer. */
-"Sound Effects Assistance" = "音效助理";
+"Sound Effects Assistance" = "音效协助";
 
 /* No comment provided by engineer. */
 "Sound Producer" = "音响制作人";
@@ -1397,7 +1415,7 @@
 "Special Effects Assistant" = "特效助理";
 
 /* No comment provided by engineer. */
-"Spin Off" = "衍生作品";
+"Spin Off" = "衍生";
 
 /* No comment provided by engineer. */
 "Sports" = "运动";
@@ -1457,7 +1475,7 @@
 "Sub Character Design" = "次要角色设计";
 
 /* No comment provided by engineer. */
-"Summary" = "合集";
+"Summary" = "总集篇";
 
 /* No comment provided by engineer. */
 "Summer" = "7月番";
@@ -1487,7 +1505,7 @@
 "Tags" = "标签";
 
 /* No comment provided by engineer. */
-"Taiwan" = "中国台湾";
+"Taiwan" = "台湾";
 
 /* No comment provided by engineer. */
 "Technical Director" = "技术监督";
@@ -1577,7 +1595,7 @@
 "Title Logo Design" = "标题Logo设计";
 
 /* No comment provided by engineer. */
-"Title Logo Design Assistance" = "标题Logo设计助理";
+"Title Logo Design Assistance" = "标题Logo设计协助";
 
 /* No comment provided by engineer. */
 "Titles Count" = "作品数";
@@ -1703,7 +1721,7 @@
 "Watch Year" = "观看年份";
 
 /* (No Comment) */
-"Watched episode %1$@ of %2$@" = "已观看%2$@的第%1$@集";
+"Watched episode %1$@ of %2$@" = "观看了《%2$@》的第%1$@集";
 
 /* No comment provided by engineer. */
 "Watching" = "观看中";

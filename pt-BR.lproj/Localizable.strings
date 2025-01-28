@@ -32,10 +32,25 @@
 "Accent color" = "Cor de destaque";
 
 /* No comment provided by engineer. */
+"Accessory Design" = "Design de Acessórios";
+
+/* No comment provided by engineer. */
 "Account settings" = "Configurações da conta";
 
 /* No comment provided by engineer. */
 "Action" = "Ação";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Diretor de Animação de Ação";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Supervisor de Animação de Ação";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Animador de Ação";
+
+/* No comment provided by engineer. */
+"Action Director" = "Diretor de Ação";
 
 /* No comment provided by engineer. */
 "Activity" = "Atividade";
@@ -59,6 +74,12 @@
 "Adventure" = "Aventura";
 
 /* No comment provided by engineer. */
+"Advertising" = "Anúncios";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Produtor de Anúncios";
+
+/* No comment provided by engineer. */
 "Age" = "Idade";
 
 /* No comment provided by engineer. */
@@ -80,6 +101,21 @@
 "Alternative" = "Alternativo";
 
 /* No comment provided by engineer. */
+"Animation" = "Animação";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Diretor de Animação";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Produtor de Animação";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Assistência à Produção de Animação";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Supervisor de Animação";
+
+/* No comment provided by engineer. */
 "Anime" = "Anime";
 
 /* No comment provided by engineer. */
@@ -98,16 +134,49 @@
 "Are you sure you want to log out?" = "Tem certeza de que deseja deslogar?";
 
 /* No comment provided by engineer. */
+"Art" = "Arte";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Composição de Arte";
+
+/* No comment provided by engineer. */
+"Art Design" = "Design de Arte";
+
+/* No comment provided by engineer. */
+"Art Director" = "Diretor de Arte";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Como você deve saber, esse aplicativo é totalmente gratuito e de código aberto,\nmas a criação de um aplicativo exige muito tempo e esforço.\nAo fazer uma doação, você ajudará a cobrir os custos de\ndesenvolvimento, manutenção e novos recursos.";
 
 /* No comment provided by engineer. */
 "Ascending" = "Crescente";
 
 /* No comment provided by engineer. */
+"Assistance" = "Assistência";
+
+/* No comment provided by engineer. */
+"Assistant" = "Assistente";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Diretor de Animação Assistente";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Diretor de Arte Assistente";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Diretor Assistente";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Produtor Assistente";
+
+/* No comment provided by engineer. */
 "Average Score" = "Nota média";
 
 /* No comment provided by engineer. */
 "Background" = "Contexto";
+
+/* No comment provided by engineer. */
+"Background Art" = "Arte de Fundo";
 
 /* No comment provided by engineer. */
 "Birth" = "Aniversário";
@@ -242,6 +311,21 @@
 "Developers" = "Desenvolvedores";
 
 /* No comment provided by engineer. */
+"Digital Art" = "Arte Digital";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "Fotografia Digital";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "Assistente de Produção Digital";
+
+/* No comment provided by engineer. */
+"Director" = "Diretor";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "Diretor de Fotografia";
+
+/* No comment provided by engineer. */
 "Discord server" = "Server do Discord";
 
 /* No comment provided by engineer. */
@@ -288,6 +372,9 @@
 
 /* No comment provided by engineer. */
 "Edit" = "Editar";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Assistente de Edição";
 
 /* No comment provided by engineer. */
 "End date" = "Data de término";

@@ -101,10 +101,19 @@
 "Alternative" = "البديل";
 
 /* No comment provided by engineer. */
+"Animation" = "الرسوم المتحركة";
+
+/* No comment provided by engineer. */
 "Animation Director" = "مخرج الرسوم المتحركة";
 
 /* No comment provided by engineer. */
 "Animation Producer" = "منتج الرسوم المتحركة";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "المساعد في إنتاج الرسوم المتحركة";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "مشرف الرسوم المتحركة";
 
 /* No comment provided by engineer. */
 "Anime" = "الأنمي";
@@ -123,6 +132,9 @@
 
 /* No comment provided by engineer. */
 "Are you sure you want to log out?" = "هل أنت متأكد من تسجيل الخروج؟";
+
+/* No comment provided by engineer. */
+"Art" = "الفن";
 
 /* No comment provided by engineer. */
 "Ascending" = "تصاعدي";

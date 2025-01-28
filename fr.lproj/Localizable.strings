@@ -1243,6 +1243,9 @@
 /* (No Comment) */
 "Repeating" = "Répété";
 
+/* No comment provided by engineer. */
+"Reread %@" = "A relu %@";
+
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "A relu le chapitre %1$@ de %2$@";
 
@@ -1257,6 +1260,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Avis";
+
+/* No comment provided by engineer. */
+"Rewatched %@" = "A regardé à nouveau %@";
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "A relu l'épisode %1$@ de %2$@";

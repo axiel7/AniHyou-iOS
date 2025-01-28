@@ -1246,6 +1246,9 @@
 /* (No Comment) */
 "Repeating" = "Tekrarlanan";
 
+/* No comment provided by engineer. */
+"Reread %@" = "Tekrar okuma %@";
+
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "%2$@ için tekrar okunan kısım %1$@";
 
@@ -1260,6 +1263,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Değerlendirmeler";
+
+/* No comment provided by engineer. */
+"Rewatched %@" = "Tekrar izleme %@";
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "%2$@ için tekrar izlenen bölüm %1$@";
