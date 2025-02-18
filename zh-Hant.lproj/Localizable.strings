@@ -1,0 +1,1758 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld章節";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld單集";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld 卷";
+
+/* No comment provided by engineer. */
+"^[%lld episode behind](inflect: true)" = "^[落後%lld集](inflect：true)";
+
+/* No comment provided by engineer. */
+"1st Key Animation Director" = "第一關鍵幀動畫監督";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "第一關鍵幀動畫監督助理";
+
+/* No comment provided by engineer. */
+"2D Design" = "2D 設計";
+
+/* No comment provided by engineer. */
+"2D Effects" = "2D特效";
+
+/* No comment provided by engineer. */
+"2D Works" = "2D";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "第二關鍵幀動畫";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "3點笑臉 :)";
+
+/* No comment provided by engineer. */
+"3D Art" = "3D";
+
+/* No comment provided by engineer. */
+"3D Works" = "3D";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DCG";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "五星制（3/5）";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "十分制（5/10）";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "帶小數十分制（5.5/10）";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "百分制（55/100）";
+
+/* No comment provided by engineer. */
+"A&R Producer" = "A&R 製片人";
+
+/* No comment provided by engineer. */
+"Accent color" = "強調色";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "配件設計";
+
+/* No comment provided by engineer. */
+"Account settings" = "帳戶設定";
+
+/* No comment provided by engineer. */
+"Action" = "動作";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "動作作畫監督";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "動作作畫主管";
+
+/* No comment provided by engineer. */
+"Action Animator" = "動畫師";
+
+/* No comment provided by engineer. */
+"Action Director" = "動作監督";
+
+/* No comment provided by engineer. */
+"Activity" = "動態";
+
+/* No comment provided by engineer. */
+"Activity type" = "動態型別";
+
+/* No comment provided by engineer. */
+"Adaptation" = "改編";
+
+/* No comment provided by engineer. */
+"Add to List" = "新增至清單";
+
+/* No comment provided by engineer. */
+"Added" = "已添加";
+
+/* No comment provided by engineer. */
+"ADR Director" = "ADR監督";
+
+/* No comment provided by engineer. */
+"Adult" = "成人";
+
+/* No comment provided by engineer. */
+"Adventure" = "冒險";
+
+/* No comment provided by engineer. */
+"Advertising" = "廣告";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "廣告製作人";
+
+/* No comment provided by engineer. */
+"Age" = "年齡";
+
+/* No comment provided by engineer. */
+"Airing" = "正在播出";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "正在播出";
+
+/* No comment provided by engineer. */
+"Airing Next" = "即將播出";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "在我的列表上播出";
+
+/* No comment provided by engineer. */
+"All" = "全部";
+
+/* No comment provided by engineer. */
+"Alternative" = "另類";
+
+/* No comment provided by engineer. */
+"Animation" = "動畫";
+
+/* No comment provided by engineer. */
+"Animation Director" = "作畫監督";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "動畫製作人";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "動畫製作協助";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "動畫主管";
+
+/* No comment provided by engineer. */
+"Anime" = "動畫";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "未觀看劇集";
+
+/* No comment provided by engineer. */
+"Anime List" = "動畫列表";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "動畫、漫畫及更多";
+
+/* No comment provided by engineer. */
+"App Icon" = "應用程式圖示";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "確定要登出嗎？";
+
+/* No comment provided by engineer. */
+"Art" = "美術";
+
+/* No comment provided by engineer. */
+"Art Board" = "藝術版面";
+
+/* No comment provided by engineer. */
+"Art Composition" = "美術構成";
+
+/* No comment provided by engineer. */
+"Art Design" = "藝術設計";
+
+/* No comment provided by engineer. */
+"Art Director" = "美術監督";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "如你所知，這個應用程式是完全免費且開源的，但開發一個應用程式需要大量的時間和精力。透過捐款，您將幫助支付開發、維護和新功能的費用。";
+
+/* No comment provided by engineer. */
+"Ascending" = "升序";
+
+/* No comment provided by engineer. */
+"Assistance" = "協助";
+
+/* No comment provided by engineer. */
+"Assistant" = "助理";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "副作畫監督";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "副美術監督";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "總作畫監督助理";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "總監督助理";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "副監督";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "攝影監督助理";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "劇集監督助理";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "助理製片人";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "副製作經理";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "單元監督助理";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "副製片人";
+
+/* No comment provided by engineer. */
+"Average Score" = "平均評分";
+
+/* No comment provided by engineer. */
+"Background" = "背景";
+
+/* No comment provided by engineer. */
+"Background Art" = "背景美術";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "背景美術協助";
+
+/* No comment provided by engineer. */
+"Background Manager" = "背景經理";
+
+/* No comment provided by engineer. */
+"Background Production" = "背景製作";
+
+/* No comment provided by engineer. */
+"Birth" = "生日";
+
+/* No comment provided by engineer. */
+"Birthday" = "生日";
+
+/* No comment provided by engineer. */
+"Blood type" = "血型";
+
+/* No comment provided by engineer. */
+"Blood Type" = "血型";
+
+/* No comment provided by engineer. */
+"Calendar" = "週期表";
+
+/* No comment provided by engineer. */
+"Cancel" = "取消";
+
+/* No comment provided by engineer. */
+"Cancelled" = "已取消";
+
+/* No comment provided by engineer. */
+"CG Animation" = "CG 動畫";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "CG 動畫監督";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "CG 副监督";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "CG 背景建模";
+
+/* No comment provided by engineer. */
+"CG Director" = "CG 监督";
+
+/* No comment provided by engineer. */
+"CG Layout" = "CG 布局";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "CG 建模";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "CG 建模監督";
+
+/* No comment provided by engineer. */
+"CG Producer" = "CG 製作人";
+
+/* No comment provided by engineer. */
+"CG Production" = "CG 製作";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "CG 主管";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "CG 技術監督";
+
+/* No comment provided by engineer. */
+"Ch" = "章";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "變更將在應用程式重新啟動時生效";
+
+/* No comment provided by engineer. */
+"Chapter Count" = "章節數";
+
+/* No comment provided by engineer. */
+"Chapters" = "章節";
+
+/* No comment provided by engineer. */
+"Chapters read" = "已閲讀章節數";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "章節已讀";
+
+/* No comment provided by engineer. */
+"Character" = "人物";
+
+/* No comment provided by engineer. */
+"Character Design" = "角色設計";
+
+/* No comment provided by engineer. */
+"Characters" = "主角";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "角色與工作人員";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "總作畫監督";
+
+/* No comment provided by engineer. */
+"Chief Director" = "總監督";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "總劇集監督";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "總機械作畫監督";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "首席製片人";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "首席製作辦事處";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "總監督";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "總單元監督";
+
+/* No comment provided by engineer. */
+"China" = "中國";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "選擇動漫或漫畫。";
+
+/* No comment provided by engineer. */
+"Clear" = "清空";
+
+/* No comment provided by engineer. */
+"Close" = "關閉";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "聯合製片人";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "色彩協調";
+
+/* No comment provided by engineer. */
+"Color Design" = "色彩設計";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "色彩設計協助";
+
+/* No comment provided by engineer. */
+"Coloring" = "著色";
+
+/* No comment provided by engineer. */
+"Comedy" = "喜劇";
+
+/* No comment provided by engineer. */
+"Comic" = "漫畫";
+
+/* No comment provided by engineer. */
+"Compact" = "緊湊";
+
+/* No comment provided by engineer. */
+"Compilation" = "合輯";
+
+/* (No Comment) */
+"Completed" = "已完成";
+
+/* No comment provided by engineer. */
+"Completed %@" = "已完成《%@》";
+
+/* No comment provided by engineer. */
+"Concept Art" = "概念美術";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "恭喜！您已成功更新！(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "包含";
+
+/* No comment provided by engineer. */
+"Content" = "內容";
+
+/* No comment provided by engineer. */
+"Costume Design" = "服裝設計";
+
+/* No comment provided by engineer. */
+"Country" = "國家/地區";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "國家/地區分佈";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "封面插圖";
+
+/* No comment provided by engineer. */
+"Creature Design" = "生物設計";
+
+/* (No Comment) */
+"Current" = "本季";
+
+/* No comment provided by engineer. */
+"Custom" = "自訂";
+
+/* No comment provided by engineer. */
+"Custom color" = "自定义颜色";
+
+/* No comment provided by engineer. */
+"Custom lists" = "自訂列表";
+
+/* No comment provided by engineer. */
+"Dates" = "日期";
+
+/* No comment provided by engineer. */
+"Days Watched" = "已觀看天數";
+
+/* No comment provided by engineer. */
+"Death" = "死亡";
+
+/* No comment provided by engineer. */
+"Default" = "預設";
+
+/* No comment provided by engineer. */
+"Default tab" = "默認標籤頁";
+
+/* No comment provided by engineer. */
+"Delete" = "刪除";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "刪除此項目嗎？";
+
+/* No comment provided by engineer. */
+"Descending" = "降序";
+
+/* No comment provided by engineer. */
+"Design Assistance" = "設計協助";
+
+/* No comment provided by engineer. */
+"Design Works" = "設定";
+
+/* No comment provided by engineer. */
+"Developers" = "開發人員";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "數位動畫";
+
+/* No comment provided by engineer. */
+"Digital Art" = "數位美術";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "數位著色";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "數字光盤刻錄";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "數位繪圖";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "數位攝影";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "數位製作助理";
+
+/* No comment provided by engineer. */
+"Director" = "監督";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "攝影監督";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discord 伺服器";
+
+/* No comment provided by engineer. */
+"Discover" = "發現";
+
+/* No comment provided by engineer. */
+"Display" = "顯示";
+
+/* No comment provided by engineer. */
+"Distribution type" = "發行類型";
+
+/* No comment provided by engineer. */
+"Donate" = "捐贈";
+
+/* No comment provided by engineer. */
+"Donate!" = "捐贈！";
+
+/* No comment provided by engineer. */
+"Donation" = "捐贈";
+
+/* No comment provided by engineer. */
+"Donator" = "捐款者";
+
+/* No comment provided by engineer. */
+"Done" = "完成";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "同人";
+
+/* No comment provided by engineer. */
+"Drama" = "戲劇";
+
+/* (No Comment) */
+"Dropped" = "丟棄";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "已放棄《%@》";
+
+/* No comment provided by engineer. */
+"Duration" = "每集長度";
+
+/* No comment provided by engineer. */
+"Ecchi" = "色情";
+
+/* No comment provided by engineer. */
+"Edit" = "編輯";
+
+/* No comment provided by engineer. */
+"Editing" = "編輯";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "編輯助理";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "編輯經理";
+
+/* No comment provided by engineer. */
+"Effects" = "特效";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "動畫特效監督";
+
+/* No comment provided by engineer. */
+"End date" = "結束日期";
+
+/* No comment provided by engineer. */
+"Endcard" = "片尾插畫";
+
+/* No comment provided by engineer. */
+"English" = "英文";
+
+/* No comment provided by engineer. */
+"Ep" = "已觀看";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "距離第 %lld 集播出還有 %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "第 %lld 集將於 %@ 播出";
+
+/* No comment provided by engineer. */
+"Episode Count" = "劇集數";
+
+/* No comment provided by engineer. */
+"Episode Director" = "劇集監督";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "劇集監督（ED）";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "劇集監督（OP）";
+
+/* No comment provided by engineer. */
+"Episodes" = "單集";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "已觀看的劇集";
+
+/* No comment provided by engineer. */
+"Executive Producer" = "執行製作人";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "執行主管";
+
+/* No comment provided by engineer. */
+"Explore" = "探索";
+
+/* No comment provided by engineer. */
+"External links" = "外部鏈接";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "中場過度";
+
+/* No comment provided by engineer. */
+"Fall" = "秋季";
+
+/* No comment provided by engineer. */
+"Fantasy" = "幻想";
+
+/* No comment provided by engineer. */
+"Favorites" = "收藏";
+
+/* No comment provided by engineer. */
+"Feed type" = "推播類型";
+
+/* No comment provided by engineer. */
+"Female" = "女";
+
+/* No comment provided by engineer. */
+"Filter" = "篩選";
+
+/* No comment provided by engineer. */
+"Finish Date" = "截止日期";
+
+/* No comment provided by engineer. */
+"Finished" = "完結";
+
+/* No comment provided by engineer. */
+"Finishing" = "完片";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "完片協助";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "完片審核";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "完片經理";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "完片製作";
+
+/* No comment provided by engineer. */
+"Follow" = "關注";
+
+/* No comment provided by engineer. */
+"Followers" = "關注者";
+
+/* No comment provided by engineer. */
+"Following" = "正在關注";
+
+/* No comment provided by engineer. */
+"Follows" = "跟隨";
+
+/* No comment provided by engineer. */
+"Follows you" = "關注了你";
+
+/* No comment provided by engineer. */
+"Format" = "形式";
+
+/* No comment provided by engineer. */
+"Format Distribution" = "類型分佈";
+
+/* No comment provided by engineer. */
+"Forum" = "論壇";
+
+/* No comment provided by engineer. */
+"Game" = "遊戲";
+
+/* No comment provided by engineer. */
+"Gender" = "性別";
+
+/* No comment provided by engineer. */
+"General" = "概況";
+
+/* No comment provided by engineer. */
+"Genres" = "類型";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "Github 倉庫";
+
+/* No comment provided by engineer. */
+"Global" = "全站";
+
+/* No comment provided by engineer. */
+"HD Editing" = "高清編輯";
+
+/* No comment provided by engineer. */
+"Hentai" = "變態";
+
+/* No comment provided by engineer. */
+"Hiatus" = "停止更新";
+
+/* No comment provided by engineer. */
+"Hide filters" = "隱藏篩選條件";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "從狀態列表中隱藏";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "隱藏劇透";
+
+/* No comment provided by engineer. */
+"Highest rated" = "最高評分";
+
+/* No comment provided by engineer. */
+"Home" = "首頁";
+
+/* No comment provided by engineer. */
+"Hometown" = "居住地";
+
+/* No comment provided by engineer. */
+"Horror" = "恐怖";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "觀看時長";
+
+/* No comment provided by engineer. */
+"Illustration" = "插圖";
+
+/* No comment provided by engineer. */
+"In-Between Animation" = "中間幀動畫";
+
+/* No comment provided by engineer. */
+"In-Between Animation Assistance" = "中間幀動畫協助";
+
+/* No comment provided by engineer. */
+"In-Betweens Check" = "中間幀審核";
+
+/* No comment provided by engineer. */
+"In-Betweens Manager" = "中間幀經理";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "增加 集數/章節";
+
+/* No comment provided by engineer. */
+"Info type" = "資訊類型";
+
+/* No comment provided by engineer. */
+"Information" = "信息";
+
+/* No comment provided by engineer. */
+"Insert Song Arrangement" = "插曲編曲";
+
+/* No comment provided by engineer. */
+"Insert Song Composition" = "插曲作曲";
+
+/* No comment provided by engineer. */
+"Insert Song Lyrics" = "插曲作詞";
+
+/* No comment provided by engineer. */
+"Insert Song Performance" = "插曲演唱";
+
+/* No comment provided by engineer. */
+"Japan" = "日本";
+
+/* No comment provided by engineer. */
+"Japanese" = "日文";
+
+/* No comment provided by engineer. */
+"Key Animation" = "關鍵幀動畫";
+
+/* No comment provided by engineer. */
+"Key Animation (OP)" = "關鍵幀動畫（OP）";
+
+/* No comment provided by engineer. */
+"Key Animation Assistance" = "關鍵幀動畫協助";
+
+/* No comment provided by engineer. */
+"Last Added" = "最後新增";
+
+/* No comment provided by engineer. */
+"Last Updated" = "最後更新";
+
+/* No comment provided by engineer. */
+"Last used" = "最後使用";
+
+/* No comment provided by engineer. */
+"Layout" = "佈局";
+
+/* No comment provided by engineer. */
+"Layout Animation Director" = "動畫佈局監督";
+
+/* No comment provided by engineer. */
+"Layout Animation Supervisor" = "動畫佈局主管";
+
+/* No comment provided by engineer. */
+"Layout Editor" = "佈局編輯";
+
+/* No comment provided by engineer. */
+"Layout Supervisor" = "佈局主管";
+
+/* No comment provided by engineer. */
+"Left" = "左側";
+
+/* No comment provided by engineer. */
+"Lettering" = "簽字";
+
+/* No comment provided by engineer. */
+"Light novel" = "輕小説";
+
+/* No comment provided by engineer. */
+"Line Producer" = "綫製作人";
+
+/* No comment provided by engineer. */
+"List entry ID" = "清單項目 ID";
+
+/* No comment provided by engineer. */
+"List Progress" = "列表進度";
+
+/* No comment provided by engineer. */
+"List style" = "清單樣式";
+
+/* No comment provided by engineer. */
+"Literary Arts" = "文學藝術";
+
+/* No comment provided by engineer. */
+"Literary Arts Assistance" = "文學藝術協助";
+
+/* No comment provided by engineer. */
+"Live action" = "實時動作";
+
+/* No comment provided by engineer. */
+"Loading" = "載入中";
+
+/* No comment provided by engineer. */
+"Log out" = "登出";
+
+/* No comment provided by engineer. */
+"Login" = "登入";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "長滑動方向";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "魔法少女";
+
+/* No comment provided by engineer. */
+"Main" = "主角";
+
+/* No comment provided by engineer. */
+"Main Animator" = "主動畫師";
+
+/* No comment provided by engineer. */
+"Male" = "男";
+
+/* No comment provided by engineer. */
+"Manga" = "漫畫";
+
+/* No comment provided by engineer. */
+"Manga List" = "漫畫清單";
+
+/* No comment provided by engineer. */
+"Mean score" = "平均評分";
+
+/* No comment provided by engineer. */
+"Mean Score" = "平均分數";
+
+/* No comment provided by engineer. */
+"Mecha" = "機甲";
+
+/* No comment provided by engineer. */
+"Mechanical Animation Director" = "機械動畫監督";
+
+/* No comment provided by engineer. */
+"Mechanical Design" = "機械設計";
+
+/* No comment provided by engineer. */
+"Mechanical Supervisor" = "機械動畫主管";
+
+/* No comment provided by engineer. */
+"Media" = "媒體";
+
+/* No comment provided by engineer. */
+"Media ID" = "媒體 ID";
+
+/* No comment provided by engineer. */
+"Media List" = "媒體清單";
+
+/* No comment provided by engineer. */
+"Media Type" = "媒體類型";
+
+/* No comment provided by engineer. */
+"Minimal" = "最小";
+
+/* No comment provided by engineer. */
+"Monitor Graphics" = "顯示器圖像";
+
+/* No comment provided by engineer. */
+"Monster Design" = "怪物設計";
+
+/* No comment provided by engineer. */
+"More filters" = "更多篩選條件";
+
+/* No comment provided by engineer. */
+"Most popular" = "最受歡迎";
+
+/* No comment provided by engineer. */
+"Movie" = "電影";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "多媒體項目";
+
+/* No comment provided by engineer. */
+"Music" = "音樂";
+
+/* No comment provided by engineer. */
+"Music Arrangement" = "音樂編曲";
+
+/* No comment provided by engineer. */
+"Music Assistance" = "音樂協助";
+
+/* No comment provided by engineer. */
+"Music Composition" = "音樂創作";
+
+/* No comment provided by engineer. */
+"Music Director" = "音樂監督";
+
+/* No comment provided by engineer. */
+"Music Lyrics" = "音樂歌詞";
+
+/* No comment provided by engineer. */
+"Music Performance" = "音樂表演";
+
+/* No comment provided by engineer. */
+"Music Producer" = "音樂製作人";
+
+/* No comment provided by engineer. */
+"Music Production" = "音樂製作";
+
+/* No comment provided by engineer. */
+"Music Production Assistance" = "音樂製作協助";
+
+/* No comment provided by engineer. */
+"Music Selection" = "音樂選擇";
+
+/* No comment provided by engineer. */
+"Music Supervisor" = "音樂主管";
+
+/* No comment provided by engineer. */
+"Musical Instrument Supervisor" = "樂器主管";
+
+/* No comment provided by engineer. */
+"Mystery" = "神秘";
+
+/* No comment provided by engineer. */
+"Native" = "原生";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "新增動畫";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "新增漫畫";
+
+/* No comment provided by engineer. */
+"No" = "否";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "您的清單中沒有正在播出的動畫\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "今天沒有動畫\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "無媒體";
+
+/* No comment provided by engineer. */
+"No recommendations" = "沒有推薦";
+
+/* No comment provided by engineer. */
+"No reviews" = "暫無評論";
+
+/* No comment provided by engineer. */
+"Non-binary" = "不明";
+
+/* No comment provided by engineer. */
+"None" = "無";
+
+/* No comment provided by engineer. */
+"Not yet released" = "尚未放鬆";
+
+/* No comment provided by engineer. */
+"Notes" = "備註";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "您的清單中沒有任何內容";
+
+/* No comment provided by engineer. */
+"Notifications" = "通知";
+
+/* No comment provided by engineer. */
+"Novel" = "小說";
+
+/* No comment provided by engineer. */
+"Occupations" = "職業";
+
+/* No comment provided by engineer. */
+"Offline Editing" = "離線編輯";
+
+/* No comment provided by engineer. */
+"Offline Editing Manager" = "離線編輯經理";
+
+/* No comment provided by engineer. */
+"OK" = "確定";
+
+/* No comment provided by engineer. */
+"On my list" = "在我列表上的";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "一鏡到底";
+
+/* No comment provided by engineer. */
+"Online Editing" = "線上編輯";
+
+/* No comment provided by engineer. */
+"Online Editing Manager" = "線上編輯經理";
+
+/* No comment provided by engineer. */
+"Online HD Editing" = "線上 HD 編輯";
+
+/* No comment provided by engineer. */
+"Optical Recording" = "光盤錄製";
+
+/* No comment provided by engineer. */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "更新列表項目的可選狀態（例如：已完成）";
+
+/* No comment provided by engineer. */
+"Order" = "順序";
+
+/* No comment provided by engineer. */
+"Original" = "原創動畫";
+
+/* No comment provided by engineer. */
+"Original Character Design" = "角色原案設計";
+
+/* No comment provided by engineer. */
+"Original Creator" = "原作者";
+
+/* No comment provided by engineer. */
+"Original Illustration" = "原作插畫";
+
+/* No comment provided by engineer. */
+"Original Plan" = "原作企劃";
+
+/* No comment provided by engineer. */
+"Original Story" = "原作劇情";
+
+/* No comment provided by engineer. */
+"Other" = "其它";
+
+/* No comment provided by engineer. */
+"Other account settings" = "其他帳戶設定";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overseas Advertising Producer" = "海外廣告製作人";
+
+/* No comment provided by engineer. */
+"Overview" = "概覽";
+
+/* No comment provided by engineer. */
+"Paint" = "繪畫";
+
+/* No comment provided by engineer. */
+"Parent" = "主綫";
+
+/* (No Comment) */
+"Paused" = "已暫停";
+
+/* No comment provided by engineer. */
+"Paused %@" = "已暫停《%@》";
+
+/* No comment provided by engineer. */
+"Photography" = "攝影";
+
+/* No comment provided by engineer. */
+"Photography Assistance" = "攝影協助";
+
+/* No comment provided by engineer. */
+"Photography Chief" = "攝影主管";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "攝影經理";
+
+/* No comment provided by engineer. */
+"Picture book" = "繪本";
+
+/* (No Comment) */
+"Planning" = "企劃";
+
+/* No comment provided by engineer. */
+"Planning Assistance" = "企劃協助";
+
+/* No comment provided by engineer. */
+"Planning Producer" = "企劃製作人";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "計劃閲讀《%@》";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "計劃觀看《%@》";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "請先登入以使用此功能";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "請打開 iPhone 上的 AniHyou 應用程式，進入個人資料 -> 設定 -> 與 Apple Watch 同步帳戶";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "熱門動畫";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "熱門漫畫";
+
+/* No comment provided by engineer. */
+"Popularity" = "人氣";
+
+/* No comment provided by engineer. */
+"Prequel" = "前傳";
+
+/* No comment provided by engineer. */
+"Priority" = "优先级";
+
+/* No comment provided by engineer. */
+"Private" = "隱私模式";
+
+/* No comment provided by engineer. */
+"Producer" = "製作人";
+
+/* No comment provided by engineer. */
+"Producers" = "製作方";
+
+/* No comment provided by engineer. */
+"Production" = "製作";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "製作協助";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "製作助理";
+
+/* No comment provided by engineer. */
+"Production Committee" = "製作委員會";
+
+/* No comment provided by engineer. */
+"Production Design" = "製作設計";
+
+/* No comment provided by engineer. */
+"Production Desk" = "製作辦事處";
+
+/* No comment provided by engineer. */
+"Profile" = "個人檔案";
+
+/* No comment provided by engineer. */
+"Progress" = "進度";
+
+/* No comment provided by engineer. */
+"Prop Design" = "道具設計";
+
+/* No comment provided by engineer. */
+"Psychological" = "心理學";
+
+/* No comment provided by engineer. */
+"Publishing" = "正在發表";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "連載中漫畫";
+
+/* No comment provided by engineer. */
+"Push notifications" = "推送通知";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "快速存取您的動畫或漫畫清單。";
+
+/* No comment provided by engineer. */
+"Random" = "隨機";
+
+/* No comment provided by engineer. */
+"Rankings" = "排行榜";
+
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "閲讀了《%2$@》的第%1$@章";
+
+/* No comment provided by engineer. */
+"Read Year" = "閲讀年份";
+
+/* No comment provided by engineer. */
+"Reading" = "閱讀中";
+
+/* No comment provided by engineer. */
+"Recommendations" = "推薦";
+
+/* No comment provided by engineer. */
+"Recording" = "錄音";
+
+/* No comment provided by engineer. */
+"Recording Adjustment" = "錄音調整";
+
+/* No comment provided by engineer. */
+"Recording Assistant" = "錄音助理";
+
+/* No comment provided by engineer. */
+"Recording Engineer" = "錄音師";
+
+/* No comment provided by engineer. */
+"Relations" = "相關";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "相關與推薦";
+
+/* No comment provided by engineer. */
+"Release Date" = "發行日期";
+
+/* No comment provided by engineer. */
+"Release Year" = "發佈年份";
+
+/* No comment provided by engineer. */
+"Releasing" = "連載中";
+
+/* No comment provided by engineer. */
+"Repeat" = "重複";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "重溫次數";
+
+/* (No Comment) */
+"Repeating" = "重溫中";
+
+/* No comment provided by engineer. */
+"Reread %@" = "重讀了《%@》";
+
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "重讀了《%2$@》的第%1$@章";
+
+/* (No Comment) */
+"Rereading" = "重複閱讀";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "恢復購買";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "評論";
+
+/* No comment provided by engineer. */
+"Reviews" = "評論";
+
+/* No comment provided by engineer. */
+"Rewatched %@" = "重看了《%@》";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "重看了《%2$@》的第%1$@集";
+
+/* (No Comment) */
+"Rewatching" = "重複觀看";
+
+/* No comment provided by engineer. */
+"Right" = "右側";
+
+/* No comment provided by engineer. */
+"Romaji" = "羅馬字";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "羅馬字（西方順序）";
+
+/* No comment provided by engineer. */
+"Romance" = "浪漫";
+
+/* No comment provided by engineer. */
+"Save" = "保存";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "科幻";
+
+/* No comment provided by engineer. */
+"Score" = "分數";
+
+/* No comment provided by engineer. */
+"Score distribution" = "評分分布";
+
+/* No comment provided by engineer. */
+"Score format" = "評分格式";
+
+/* No comment provided by engineer. */
+"Script" = "腳本";
+
+/* No comment provided by engineer. */
+"Script Assistance" = "腳本協助";
+
+/* No comment provided by engineer. */
+"Search type" = "搜尋類型";
+
+/* No comment provided by engineer. */
+"Season" = "季度";
+
+/* No comment provided by engineer. */
+"See All" = "查看全部";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "選擇媒體類型";
+
+/* No comment provided by engineer. */
+"Selection type" = "選擇類型";
+
+/* No comment provided by engineer. */
+"Sequel" = "續集";
+
+/* No comment provided by engineer. */
+"Series Composition" = "系列構成";
+
+/* No comment provided by engineer. */
+"Series Composition Assistance" = "系列構成協助";
+
+/* Set to Status */
+"Set as %@" = "設定為%@";
+
+/* No comment provided by engineer. */
+"Set progress" = "設定進度";
+
+/* No comment provided by engineer. */
+"Sets a list entry progress to the specified number." = "將清單項目進度設置為指定的數字。";
+
+/* No comment provided by engineer. */
+"Setting Design" = "設定設計";
+
+/* No comment provided by engineer. */
+"Settings" = "設定";
+
+/* No comment provided by engineer. */
+"Share" = "分享";
+
+/* No comment provided by engineer. */
+"Show less" = "顯示較少";
+
+/* No comment provided by engineer. */
+"Show more" = "顯示更多";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "僅顯示您列表中即將播出的動漫";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "顯示劇透";
+
+/* No comment provided by engineer. */
+"Shows the animes with behind episodes in your list." = "顯示清單中劇集較少的動畫。";
+
+/* No comment provided by engineer. */
+"Shows the next airing animes in your list." = "顯示清單中下一部播出的動畫。";
+
+/* No comment provided by engineer. */
+"Side Story" = "番外篇";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "日常";
+
+/* No comment provided by engineer. */
+"Social" = "社群";
+
+/* No comment provided by engineer. */
+"Sort" = "排序";
+
+/* No comment provided by engineer. */
+"Sound Design" = "聲音設計";
+
+/* No comment provided by engineer. */
+"Sound Director" = "音響監督";
+
+/* No comment provided by engineer. */
+"Sound Effects" = "音效";
+
+/* No comment provided by engineer. */
+"Sound Effects Assistance" = "音效協助";
+
+/* No comment provided by engineer. */
+"Sound Producer" = "音響製作人";
+
+/* No comment provided by engineer. */
+"Sound Production" = "音響製作";
+
+/* No comment provided by engineer. */
+"Sound Production Manager" = "音響製作經理";
+
+/* No comment provided by engineer. */
+"Sound Supervisor" = "音響主管";
+
+/* No comment provided by engineer. */
+"Source" = "來源";
+
+/* No comment provided by engineer. */
+"South Korea" = "韓國";
+
+/* No comment provided by engineer. */
+"Special" = "特別的";
+
+/* No comment provided by engineer. */
+"Special Design" = "特殊設計";
+
+/* No comment provided by engineer. */
+"Special Effects" = "特效";
+
+/* No comment provided by engineer. */
+"Special Effects Assistant" = "特效協助";
+
+/* No comment provided by engineer. */
+"Spin Off" = "衍生作品";
+
+/* No comment provided by engineer. */
+"Sports" = "運動";
+
+/* No comment provided by engineer. */
+"Spring" = "春季";
+
+/* No comment provided by engineer. */
+"Staff" = "製作人員";
+
+/* No comment provided by engineer. */
+"Staff & Character name language" = "製作人員和角色名稱的語言";
+
+/* No comment provided by engineer. */
+"Standard" = "標準";
+
+/* No comment provided by engineer. */
+"Start date" = "開始日期";
+
+/* No comment provided by engineer. */
+"Start Date" = "開始日期";
+
+/* No comment provided by engineer. */
+"Started" = "已開始";
+
+/* No comment provided by engineer. */
+"Stats" = "統計";
+
+/* No comment provided by engineer. */
+"Status" = "狀態";
+
+/* No comment provided by engineer. */
+"Status distribution" = "狀態分布";
+
+/* No comment provided by engineer. */
+"Status Distribution" = "狀態分布";
+
+/* No comment provided by engineer. */
+"Story" = "故事";
+
+/* No comment provided by engineer. */
+"Story & Art" = "故事&美術";
+
+/* No comment provided by engineer. */
+"Story & Illustration" = "故事&插圖";
+
+/* No comment provided by engineer. */
+"Storyboard" = "分镜";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "在綫發佈網站";
+
+/* No comment provided by engineer. */
+"Studios" = "工作室";
+
+/* No comment provided by engineer. */
+"Sub Character Design" = "次要角色設計";
+
+/* No comment provided by engineer. */
+"Summary" = "概要";
+
+/* No comment provided by engineer. */
+"Summer" = "夏季";
+
+/* No comment provided by engineer. */
+"Supernatural" = "超自然";
+
+/* No comment provided by engineer. */
+"Supervisor" = "主管";
+
+/* No comment provided by engineer. */
+"Support the development of AniHyou!" = "支持 AniHyou 的開發！";
+
+/* No comment provided by engineer. */
+"Supporting" = "配角";
+
+/* No comment provided by engineer. */
+"Supporting Staff" = "輔助人員";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "與 Apple Watch 同步帳戶";
+
+/* No comment provided by engineer. */
+"Synonyms" = "同義詞";
+
+/* No comment provided by engineer. */
+"Tags" = "標籤";
+
+/* No comment provided by engineer. */
+"Taiwan" = "臺灣";
+
+/* No comment provided by engineer. */
+"Technical Director" = "技術監督";
+
+/* No comment provided by engineer. */
+"Text Status" = "文本狀態";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "謝謝 :)";
+
+/* No comment provided by engineer. */
+"The amount of episodes/chapters consumed by the user" = "使用者看過的集數/章節數";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "該媒體的條目id是";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement" = "主題曲編曲";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "主題曲編曲（ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "主題曲編曲（OP，ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "主題曲編曲（OP）";
+
+/* No comment provided by engineer. */
+"Theme Song Composition" = "主題曲作曲";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (ED)" = "主題曲作曲（ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "主題曲作曲（OP，ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP)" = "主題曲作曲（OP）";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics" = "主題曲作詞";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "主題曲作詞（ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "主題曲作詞（OP，ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "主題曲作詞（OP）";
+
+/* No comment provided by engineer. */
+"Theme Song Performance" = "主題曲演唱";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (ED)" = "主題曲演唱（ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "主題曲演唱（OP，ED）";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP)" = "主題曲演唱（OP）";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "這個功能將在您捐款後解鎖，即使是捐款最小的金額！";
+
+/* No comment provided by engineer. */
+"Threads" = "帖子";
+
+/* No comment provided by engineer. */
+"Thriller" = "驚悚";
+
+/* No comment provided by engineer. */
+"Time spent" = "花費時間";
+
+/* No comment provided by engineer. */
+"Title" = "標題";
+
+/* No comment provided by engineer. */
+"Title count" = "作品數";
+
+/* No comment provided by engineer. */
+"Title language" = "標題語言";
+
+/* No comment provided by engineer. */
+"Title Logo Design" = "標題Logo設計";
+
+/* No comment provided by engineer. */
+"Title Logo Design Assistance" = "標題Logo設計協助";
+
+/* No comment provided by engineer. */
+"Titles Count" = "作品數";
+
+/* No comment provided by engineer. */
+"Top 100" = "Top 100";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "前 100 名動畫";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "前 100 名漫畫";
+
+/* No comment provided by engineer. */
+"Top Movies" = "熱門電影";
+
+/* No comment provided by engineer. */
+"Top Popular" = "熱門排行";
+
+/* No comment provided by engineer. */
+"Total Anime" = "動畫總數";
+
+/* No comment provided by engineer. */
+"Total Manga" = "漫畫總數";
+
+/* No comment provided by engineer. */
+"Touch-up Art" = "修圖";
+
+/* No comment provided by engineer. */
+"Touch-up Art & Lettering" = "修圖&簽字";
+
+/* No comment provided by engineer. */
+"Trailer" = "PV";
+
+/* No comment provided by engineer. */
+"Translate" = "翻譯";
+
+/* No comment provided by engineer. */
+"Translations" = "翻譯";
+
+/* No comment provided by engineer. */
+"Translator" = "翻譯";
+
+/* No comment provided by engineer. */
+"Trending" = "熱門";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "熱門動畫";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "熱門漫畫";
+
+/* No comment provided by engineer. */
+"TV" = "電視動畫";
+
+/* No comment provided by engineer. */
+"TV Short" = "TV短劇";
+
+/* No comment provided by engineer. */
+"Unfollow" = "取消跟隨";
+
+/* No comment provided by engineer. */
+"Unit Director" = "單元監督";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "未知";
+
+/* No comment provided by engineer. */
+"Upcoming" = "即將到來";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "即將推出的動畫";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "即將推出的漫畫";
+
+/* No comment provided by engineer. */
+"Updated" = "已更新";
+
+/* No comment provided by engineer. */
+"Users" = "用戶";
+
+/* No comment provided by engineer. */
+"Users likes" = "用戶收藏";
+
+/* No comment provided by engineer. */
+"Version %@" = "版本：%@";
+
+/* No comment provided by engineer. */
+"Video Editing" = "剪輯";
+
+/* No comment provided by engineer. */
+"VideoGame" = "視訊遊戲";
+
+/* No comment provided by engineer. */
+"Visual Coordinator" = "視覺協調";
+
+/* No comment provided by engineer. */
+"Visual Director" = "視覺監督";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "視覺效果";
+
+/* No comment provided by engineer. */
+"Visual novel" = "視覺小説";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "配音演員";
+
+/* No comment provided by engineer. */
+"Vol" = "卷";
+
+/* No comment provided by engineer. */
+"Volumes" = "冊數";
+
+/* No comment provided by engineer. */
+"Volumes Read" = "已閲讀卷數";
+
+/* No comment provided by engineer. */
+"Watch Year" = "觀看年份";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "觀看了《%2$@》的第%1$@集";
+
+/* No comment provided by engineer. */
+"Watching" = "觀看中";
+
+/* No comment provided by engineer. */
+"Weapon Design" = "武器設計";
+
+/* No comment provided by engineer. */
+"Web novel" = "Web版小説";
+
+/* No comment provided by engineer. */
+"Weekday" = "工作日";
+
+/* No comment provided by engineer. */
+"Winter" = "冬季";
+
+/* No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "透過購買任何產品，您可以獲得獨家應用程式圖示和自訂帳戶顏色！";
+
+/* No comment provided by engineer. */
+"World Design" = "世界觀設計";
+
+/* No comment provided by engineer. */
+"Year" = "年";
+
+/* No comment provided by engineer. */
+"Years active" = "活動年數";
+
+/* No comment provided by engineer. */
+"Yes" = "確定";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "您可能需要在瀏覽器中重新登入";
+
