@@ -269,13 +269,13 @@
 "CG Animation Director" = "CG 動畫監督";
 
 /* No comment provided by engineer. */
-"CG Assistant Director" = "CG 副监督";
+"CG Assistant Director" = "CG 副監督";
 
 /* No comment provided by engineer. */
 "CG Background Modeling" = "CG 背景建模";
 
 /* No comment provided by engineer. */
-"CG Director" = "CG 监督";
+"CG Director" = "CG 監督";
 
 /* No comment provided by engineer. */
 "CG Layout" = "CG 布局";
@@ -311,7 +311,7 @@
 "Chapters" = "章節";
 
 /* No comment provided by engineer. */
-"Chapters read" = "已閲讀章節數";
+"Chapters read" = "已閱讀章節數";
 
 /* No comment provided by engineer. */
 "Chapters Read" = "章節已讀";
@@ -431,7 +431,7 @@
 "Custom" = "自訂";
 
 /* No comment provided by engineer. */
-"Custom color" = "自定义颜色";
+"Custom color" = "自訂顏色";
 
 /* No comment provided by engineer. */
 "Custom lists" = "自訂列表";
@@ -449,7 +449,7 @@
 "Default" = "預設";
 
 /* No comment provided by engineer. */
-"Default tab" = "默認標籤頁";
+"Default tab" = "預設分頁";
 
 /* No comment provided by engineer. */
 "Delete" = "刪除";
@@ -479,7 +479,7 @@
 "Digital Coloring" = "數位著色";
 
 /* No comment provided by engineer. */
-"Digital Optical Recording" = "數字光盤刻錄";
+"Digital Optical Recording" = "數字光碟燒錄";
 
 /* No comment provided by engineer. */
 "Digital Paint" = "數位繪圖";
@@ -605,7 +605,7 @@
 "Explore" = "探索";
 
 /* No comment provided by engineer. */
-"External links" = "外部鏈接";
+"External links" = "外部連結";
 
 /* No comment provided by engineer. */
 "Eyecatch" = "中場過度";
@@ -692,7 +692,7 @@
 "Global" = "全站";
 
 /* No comment provided by engineer. */
-"HD Editing" = "高清編輯";
+"HD Editing" = "高畫質編輯";
 
 /* No comment provided by engineer. */
 "Hentai" = "變態";
@@ -746,7 +746,7 @@
 "Info type" = "資訊類型";
 
 /* No comment provided by engineer. */
-"Information" = "信息";
+"Information" = "資訊";
 
 /* No comment provided by engineer. */
 "Insert Song Arrangement" = "插曲編曲";
@@ -806,10 +806,10 @@
 "Lettering" = "簽字";
 
 /* No comment provided by engineer. */
-"Light novel" = "輕小説";
+"Light novel" = "輕小說";
 
 /* No comment provided by engineer. */
-"Line Producer" = "綫製作人";
+"Line Producer" = "線製作人";
 
 /* No comment provided by engineer. */
 "List entry ID" = "清單項目 ID";
@@ -827,7 +827,7 @@
 "Literary Arts Assistance" = "文學藝術協助";
 
 /* No comment provided by engineer. */
-"Live action" = "實時動作";
+"Live action" = "即時動作";
 
 /* No comment provided by engineer. */
 "Loading" = "載入中";
@@ -1031,7 +1031,7 @@
 "Online HD Editing" = "線上 HD 編輯";
 
 /* No comment provided by engineer. */
-"Optical Recording" = "光盤錄製";
+"Optical Recording" = "光碟錄製";
 
 /* No comment provided by engineer. */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "更新列表項目的可選狀態（例如：已完成）";
@@ -1076,7 +1076,7 @@
 "Paint" = "繪畫";
 
 /* No comment provided by engineer. */
-"Parent" = "主綫";
+"Parent" = "主線";
 
 /* (No Comment) */
 "Paused" = "已暫停";
@@ -1109,7 +1109,7 @@
 "Planning Producer" = "企劃製作人";
 
 /* No comment provided by engineer. */
-"Plans to read %@" = "計劃閲讀《%@》";
+"Plans to read %@" = "計劃閱讀《%@》";
 
 /* No comment provided by engineer. */
 "Plans to watch %@" = "計劃觀看《%@》";
@@ -1133,7 +1133,7 @@
 "Prequel" = "前傳";
 
 /* No comment provided by engineer. */
-"Priority" = "优先级";
+"Priority" = "優先度";
 
 /* No comment provided by engineer. */
 "Private" = "隱私模式";
@@ -1193,10 +1193,10 @@
 "Rankings" = "排行榜";
 
 /* (No Comment) */
-"Read chapter %1$@ of %2$@" = "閲讀了《%2$@》的第%1$@章";
+"Read chapter %1$@ of %2$@" = "閱讀了《%2$@》的第%1$@章";
 
 /* No comment provided by engineer. */
-"Read Year" = "閲讀年份";
+"Read Year" = "閱讀年份";
 
 /* No comment provided by engineer. */
 "Reading" = "閱讀中";
@@ -1250,7 +1250,7 @@
 "Rereading" = "重複閱讀";
 
 /* No comment provided by engineer. */
-"Restore purchases" = "恢復購買";
+"Restore purchases" = "復原購買";
 
 /* No comment provided by engineer. */
 "Review and Threads" = "評論";
@@ -1280,7 +1280,7 @@
 "Romance" = "浪漫";
 
 /* No comment provided by engineer. */
-"Save" = "保存";
+"Save" = "儲存";
 
 /* No comment provided by engineer. */
 "Sci-Fi" = "科幻";
@@ -1331,7 +1331,7 @@
 "Set progress" = "設定進度";
 
 /* No comment provided by engineer. */
-"Sets a list entry progress to the specified number." = "將清單項目進度設置為指定的數字。";
+"Sets a list entry progress to the specified number." = "將清單項目進度設定為指定的數字。";
 
 /* No comment provided by engineer. */
 "Setting Design" = "設定設計";
@@ -1463,10 +1463,10 @@
 "Story & Illustration" = "故事&插圖";
 
 /* No comment provided by engineer. */
-"Storyboard" = "分镜";
+"Storyboard" = "分鏡";
 
 /* No comment provided by engineer. */
-"Streaming sites" = "在綫發佈網站";
+"Streaming sites" = "線上發佈網站";
 
 /* No comment provided by engineer. */
 "Studios" = "工作室";
@@ -1487,7 +1487,7 @@
 "Supervisor" = "主管";
 
 /* No comment provided by engineer. */
-"Support the development of AniHyou!" = "支持 AniHyou 的開發！";
+"Support the development of AniHyou!" = "支援 AniHyou 的開發！";
 
 /* No comment provided by engineer. */
 "Supporting" = "配角";
@@ -1511,7 +1511,7 @@
 "Technical Director" = "技術監督";
 
 /* No comment provided by engineer. */
-"Text Status" = "文本狀態";
+"Text Status" = "文字狀態";
 
 /* No comment provided by engineer. */
 "Thank you :)" = "謝謝 :)";
@@ -1679,10 +1679,10 @@
 "Updated" = "已更新";
 
 /* No comment provided by engineer. */
-"Users" = "用戶";
+"Users" = "使用者";
 
 /* No comment provided by engineer. */
-"Users likes" = "用戶收藏";
+"Users likes" = "使用者收藏";
 
 /* No comment provided by engineer. */
 "Version %@" = "版本：%@";
@@ -1703,7 +1703,7 @@
 "Visual Effects" = "視覺效果";
 
 /* No comment provided by engineer. */
-"Visual novel" = "視覺小説";
+"Visual novel" = "視覺小說";
 
 /* No comment provided by engineer. */
 "Voice Actors" = "配音演員";
@@ -1715,7 +1715,7 @@
 "Volumes" = "冊數";
 
 /* No comment provided by engineer. */
-"Volumes Read" = "已閲讀卷數";
+"Volumes Read" = "已閱讀卷數";
 
 /* No comment provided by engineer. */
 "Watch Year" = "觀看年份";
@@ -1730,7 +1730,7 @@
 "Weapon Design" = "武器設計";
 
 /* No comment provided by engineer. */
-"Web novel" = "Web版小説";
+"Web novel" = "Web版小說";
 
 /* No comment provided by engineer. */
 "Weekday" = "工作日";
@@ -1755,4 +1755,3 @@
 
 /* No comment provided by engineer. */
 "You may need to login again in your browser" = "您可能需要在瀏覽器中重新登入";
-
