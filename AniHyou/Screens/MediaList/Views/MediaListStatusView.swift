@@ -53,6 +53,9 @@ struct MediaListStatusView: View {
         .onAppear {
             let selectedList = UserDefaults.standard.string(forKey: mediaType.listStatusKey)
             viewModel.mediaType = mediaType
+            if let userId {
+                viewModel.userId = userId
+            }
             if let selectedList {
                 selection = selectedList
                 Task {
