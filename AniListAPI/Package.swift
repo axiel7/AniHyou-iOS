@@ -14,7 +14,7 @@ let package = Package(
     .library(name: "AniListAPI", targets: ["AniListAPI"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/apollographql/apollo-ios", exact: "1.17.0"),
+    .package(url: "https://github.com/apollographql/apollo-ios", exact: "1.19.0"),
   ],
   targets: [
     .target(
