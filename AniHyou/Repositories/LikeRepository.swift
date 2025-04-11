@@ -24,9 +24,9 @@ struct LikeRepository {
                 switch result {
                 case .success(let graphQLResult):
                     if let data = graphQLResult.data?.toggleLikeV2 {
-                        let isLiked = (data.asListActivity?.isLiked ?? data.asTextActivity?.isLiked)
-                        ?? (data.asMessageActivity?.isLiked ?? data.asActivityReply?.isLiked)
-                        ?? (data.asThread?.isLiked ?? data.asThreadComment?.isLiked)
+                        let isLiked = data.asListActivity?.isLiked ?? data.asTextActivity?.isLiked
+                        ?? data.asMessageActivity?.isLiked ?? data.asActivityReply?.isLiked
+                        ?? data.asThread?.isLiked ?? data.asThreadComment?.isLiked
                         //TODO: update cache
                         continuation.resume(returning: isLiked)
                     } else {
