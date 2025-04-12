@@ -40,10 +40,14 @@ class OverviewStatsViewModel: ObservableObject {
     private var scoreFormat: ScoreFormat = .point100
     
     private static func lengthStatComparator(_ length: String?) -> Int {
-        if length?.contains("+") == true { //ex: 101+
-            length!.count * 2
-        } else { //ex: 29-55 or null
-            length?.count ?? Int.max
+        if let length {
+            if length.contains("+") { //ex: 101+
+                Int(length.replacing("+", with: "")) ?? 0
+            } else { //ex: 29-55
+                Int(length.split(separator: "-")[0]) ?? 0
+            }
+        } else { // Unknown length, add last
+            Int.max
         }
     }
 
@@ -85,7 +89,9 @@ class OverviewStatsViewModel: ObservableObject {
                         )
                     }
                 }
-            stats.releaseYears?.forEach {
+            stats.releaseYears?
+                .sorted { $0?.releaseYear ?? 0 > $1?.releaseYear ?? 0 }
+                .forEach {
                 if let year = $0 {
                     addReleaseYearStat(
                         releaseYear: year.releaseYear,
@@ -95,7 +101,9 @@ class OverviewStatsViewModel: ObservableObject {
                     )
                 }
             }
-            stats.startYears?.forEach {
+            stats.startYears?
+                .sorted { $0?.startYear ?? 0 > $1?.startYear ?? 0 }
+                .forEach {
                 if let year = $0 {
                     addStartYearStat(
                         startYear: year.startYear,
@@ -183,7 +191,9 @@ class OverviewStatsViewModel: ObservableObject {
                         )
                     }
                 }
-            stats.releaseYears?.forEach {
+            stats.releaseYears?
+                .sorted { $0?.releaseYear ?? 0 > $1?.releaseYear ?? 0 }
+                .forEach {
                 if let year = $0 {
                     addReleaseYearStat(
                         releaseYear: year.releaseYear,
@@ -193,7 +203,9 @@ class OverviewStatsViewModel: ObservableObject {
                     )
                 }
             }
-            stats.startYears?.forEach {
+            stats.startYears?
+                .sorted { $0?.startYear ?? 0 > $1?.startYear ?? 0 }
+                .forEach {
                 if let year = $0 {
                     addStartYearStat(
                         startYear: year.startYear,
@@ -264,21 +276,21 @@ class OverviewStatsViewModel: ObservableObject {
     private func addLengthStat(length: String?, count: Int, time: Int, meanScore: Double) {
         lengthStatsCount.append(
             Stat(
-                id: length ?? "",
+                id: length ?? "??",
                 value: CGFloat(count),
                 color: .accentColor
             )
         )
         lengthStatsTime.append(
             Stat(
-                id: length ?? "",
+                id: length ?? "??",
                 value: CGFloat(time),
                 color: .accentColor
             )
         )
         lengthStatsScore.append(
             Stat(
-                id: length ?? "",
+                id: length ?? "??",
                 value: CGFloat(meanScore),
                 color: .accentColor
             )
@@ -288,21 +300,21 @@ class OverviewStatsViewModel: ObservableObject {
     private func addReleaseYearStat(releaseYear: Int?, count: Int, time: Int, meanScore: Double) {
         releaseYearStatsCount.append(
             Stat(
-                id: releaseYear?.stringValue ?? "",
+                id: releaseYear?.stringValue ?? "??",
                 value: CGFloat(count),
                 color: .accentColor
             )
         )
         releaseYearStatsTime.append(
             Stat(
-                id: releaseYear?.stringValue ?? "",
+                id: releaseYear?.stringValue ?? "??",
                 value: CGFloat(time),
                 color: .accentColor
             )
         )
         releaseYearStatsScore.append(
             Stat(
-                id: releaseYear?.stringValue ?? "",
+                id: releaseYear?.stringValue ?? "??",
                 value: CGFloat(meanScore),
                 color: .accentColor
             )
@@ -312,21 +324,21 @@ class OverviewStatsViewModel: ObservableObject {
     private func addStartYearStat(startYear: Int?, count: Int, time: Int, meanScore: Double) {
         startYearStatsCount.append(
             Stat(
-                id: startYear?.stringValue ?? "",
+                id: startYear?.stringValue ?? "??",
                 value: CGFloat(count),
                 color: .accentColor
             )
         )
         startYearStatsTime.append(
             Stat(
-                id: startYear?.stringValue ?? "",
+                id: startYear?.stringValue ?? "??",
                 value: CGFloat(time),
                 color: .accentColor
             )
         )
         startYearStatsScore.append(
             Stat(
-                id: startYear?.stringValue ?? "",
+                id: startYear?.stringValue ?? "??",
                 value: CGFloat(meanScore),
                 color: .accentColor
             )
