@@ -10,23 +10,22 @@ import AniListAPI
 
 @MainActor
 class MediaListViewModel: ObservableObject {
-    
+
     private let userId = LoginRepository.authUserId()
-    
+
     var mediaType: MediaType = .anime
-    var status: MediaListStatus = .current
-    
+    var status: [MediaListStatus] = [.current,.repeating]
     var currentPage = 1
     var hasNextPage = false
     @Published var isLoading = false
     @Published var mediaList: [ShouUserMediaList] = []
-    
+
     func getUserMediaList() async {
         isLoading = true
         if let result = await MediaListRepository.getShouUserMediaList(
             userId: userId,
             mediaType: mediaType,
-            status: status,
+            statusIn: status,
             sort: [.addedTimeDesc],
             page: currentPage,
             perPage: 50
@@ -37,7 +36,7 @@ class MediaListViewModel: ObservableObject {
         }
         isLoading = false
     }
-    
+
     func updateEntryProgress(of entry: ShouUserMediaList) async {
         let newProgress = (entry.progress ?? 0) + 1
         let newStatus: MediaListStatus? = newProgress >= entry.maxProgress ? .completed : nil
@@ -49,7 +48,7 @@ class MediaListViewModel: ObservableObject {
             await onEntryUpdated(result)
         }
     }
-    
+
     private func onEntryUpdated(_ entry: BasicMediaListEntry) async {
         guard let foundIndex = mediaList.firstIndex(where: { $0.id == entry.id }) else { return }
         //if the status changed, remove from this list
