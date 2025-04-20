@@ -53,7 +53,7 @@ struct MediaListProvider: AppIntentTimelineProvider {
         if let result = await MediaListRepository.getShouUserMediaList(
             userId: userId,
             mediaType: mediaType,
-            statusIn: [.current,.repeating],
+            statusIn: [.current, .repeating],
             sort: [.updatedTimeDesc],
             page: 1,
             perPage: 12

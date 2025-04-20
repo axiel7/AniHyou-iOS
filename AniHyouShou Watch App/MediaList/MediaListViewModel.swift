@@ -14,7 +14,7 @@ class MediaListViewModel: ObservableObject {
     private let userId = LoginRepository.authUserId()
 
     var mediaType: MediaType = .anime
-    var status: [MediaListStatus] = [.current,.repeating]
+    var status: [MediaListStatus] = [.current, .repeating]
     var currentPage = 1
     var hasNextPage = false
     @Published var isLoading = false
