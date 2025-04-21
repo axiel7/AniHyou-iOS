@@ -9,6 +9,7 @@ import SwiftUI
 import AniListAPI
 
 struct UpdateMediaEntryView: View {
+    @Environment(\.dismiss) var dismiss
 
     let entry: ShouUserMediaList
     @ObservedObject var viewModel: MediaListViewModel
@@ -37,6 +38,11 @@ struct UpdateMediaEntryView: View {
                 }
             )
             .tint(Color(hex: entry.media?.coverImage?.color))
+        }
+        .onChange(of: viewModel.shouldDismiss){ shouldDismiss in
+            if shouldDismiss{
+                dismiss()
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
     }
