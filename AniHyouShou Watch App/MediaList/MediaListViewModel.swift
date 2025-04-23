@@ -5,7 +5,6 @@
 //  Created by Axel Lopez on 18/05/2024.
 //
 
-import SwiftUI
 import Foundation
 import AniListAPI
 

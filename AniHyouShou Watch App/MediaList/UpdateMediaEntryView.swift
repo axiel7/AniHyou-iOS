@@ -39,8 +39,8 @@ struct UpdateMediaEntryView: View {
             )
             .tint(Color(hex: entry.media?.coverImage?.color))
         }
-        .onChange(of: viewModel.shouldDismiss){ shouldDismiss in
-            if shouldDismiss{
+        .onChange(of: viewModel.shouldDismiss) { shouldDismiss in
+            if shouldDismiss {
                 dismiss()
             }
         }
