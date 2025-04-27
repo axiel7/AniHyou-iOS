@@ -60,13 +60,15 @@ struct AnimeSeasonListView: View {
             }
         }
         .task {
-            if let initSeason {
-                viewModel.season = initSeason
+            if viewModel.animeSeasonal.isEmpty {
+                if let initSeason {
+                    viewModel.season = initSeason
+                }
+                if let initYear {
+                    viewModel.year = initYear
+                }
+                await viewModel.getAnimeSeasonal()
             }
-            if let initYear {
-                viewModel.year = initYear
-            }
-            await viewModel.getAnimeSeasonal()
         }
     }
     
