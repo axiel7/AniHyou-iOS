@@ -15,8 +15,8 @@ public class ShouUserMediaListQuery: GraphQLQuery {
   public var perPage: GraphQLNullable<Int>
   public var userId: GraphQLNullable<Int>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
-  public var sort: GraphQLNullable<[GraphQLEnum<MediaListSort>?]>
   public var statusIn: GraphQLNullable<[GraphQLEnum<MediaListStatus>?]>
+  public var sort: GraphQLNullable<[GraphQLEnum<MediaListSort>?]>
 
   public init(
     page: GraphQLNullable<Int>,
@@ -70,7 +70,7 @@ public class ShouUserMediaListQuery: GraphQLQuery {
         .field("mediaList", [MediaList?]?.self, arguments: [
           "userId": .variable("userId"),
           "type": .variable("type"),
-          "statusIn": .variable("statusIn"),
+          "status_in": .variable("statusIn"),
           "sort": .variable("sort")
         ]),
         .field("pageInfo", PageInfo?.self),
