@@ -157,12 +157,14 @@ struct StaffDetailsView: View {
     var staffCharacters: some View {
         LazyVStack(alignment: .leading) {
             ForEach(viewModel.staffCharacters, id: \.id) {
-                if let characters = $0.characters {
+                if let characters = $0.characters,
+                    let node = $0.node {
                     ForEach(characters, id: \.?.id) {
                         if let character = $0 {
                             NavigationLink(destination: CharacterDetailsView(characterId: character.id)) {
                                 HListItemWithSubtitleView(
                                     title: character.name?.userPreferred,
+                                    subtitle: node.title?.userPreferred,
                                     imageUrl: character.image?.large
                                 )
                             }
