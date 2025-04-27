@@ -156,6 +156,15 @@ struct StaffDetailsView: View {
     @ViewBuilder
     var staffCharacters: some View {
         LazyVStack(alignment: .leading) {
+            HStack {
+                Text("On my list")
+                Spacer()
+                TriPicker("On my list", selection: $viewModel.charactersOnMyList)
+                    .onChange(of: viewModel.charactersOnMyList) { _ in
+                        viewModel.resetStaffCharacters()
+                    }
+            }
+            
             ForEach(viewModel.staffCharacters, id: \.id) {
                 if let characters = $0.characters,
                     let node = $0.node {

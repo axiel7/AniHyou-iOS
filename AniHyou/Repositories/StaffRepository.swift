@@ -111,6 +111,7 @@ struct StaffRepository {
     
     static func getStaffCharacters(
         staffId: Int,
+        onMyList: Bool?,
         page: Int,
         perPage: Int = 25
     ) async -> PagedResult<StaffCharacterQuery.Data.Staff.CharacterMedia.Edge>? {
@@ -118,6 +119,7 @@ struct StaffRepository {
             Network.shared.apollo.fetch(
                 query: StaffCharacterQuery(
                     staffId: .some(staffId),
+                    onList: someIfNotNil(onMyList),
                     page: .some(page),
                     perPage: .some(perPage)
                 )

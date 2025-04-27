@@ -70,16 +70,27 @@ class StaffDetailsViewModel: ObservableObject {
         hasNextPageMedia = true
     }
 
+    @Published var charactersOnMyList: Bool?
     @Published var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge]()
     var pageCharacters = 1
     var hasNextPageCharacters = true
 
     func getStaffCharacters(staffId: Int) async {
-        if let result = await StaffRepository.getStaffCharacters(staffId: staffId, page: pageCharacters) {
+        if let result = await StaffRepository.getStaffCharacters(
+            staffId: staffId,
+            onMyList: charactersOnMyList,
+            page: pageCharacters
+        ) {
             staffCharacters.append(contentsOf: result.data)
             pageCharacters = result.page
             hasNextPageCharacters = result.hasNextPage
         }
+    }
+    
+    func resetStaffCharacters() {
+        pageCharacters = 1
+        staffCharacters.removeAll()
+        hasNextPageCharacters = true
     }
 
     // MARK: - calculated variables
