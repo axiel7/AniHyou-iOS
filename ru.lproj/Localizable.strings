@@ -14,7 +14,34 @@
 "+1" = "+1";
 
 /* No comment provided by engineer. */
+"1st Key Animation Director" = "1-й ключевой режиссёр анимации";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "1-й ключевой помощник режиссёра анимации";
+
+/* No comment provided by engineer. */
+"2D Design" = "2D-дизайн";
+
+/* No comment provided by engineer. */
+"2D Effects" = "2D-эффекты";
+
+/* No comment provided by engineer. */
+"2D Works" = "2D-работы";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "2-я ключевая анимация";
+
+/* No comment provided by engineer. */
 "3 Point Smiley :)" = "3 Очка Смайл :)";
+
+/* No comment provided by engineer. */
+"3D Art" = "3D-искусство";
+
+/* No comment provided by engineer. */
+"3D Works" = "3D-работы";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DCG";
 
 /* No comment provided by engineer. */
 "5 Star (3/5)" = "5 Звезд (3/5)";
@@ -29,13 +56,31 @@
 "100 Point (55/100)" = "100 Очков (55/100)";
 
 /* No comment provided by engineer. */
+"A&R Producer" = "A&R Продюсер";
+
+/* No comment provided by engineer. */
 "Accent color" = "Цвет акцента";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "Дизайн аксессуаров";
 
 /* No comment provided by engineer. */
 "Account settings" = "Настройки аккаунта";
 
 /* No comment provided by engineer. */
 "Action" = "Экшен";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Режиссёр анимационного экшена";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Супервайзер анимации экшена";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Аниматор экшена";
+
+/* No comment provided by engineer. */
+"Action Director" = "Директор экшена";
 
 /* No comment provided by engineer. */
 "Activity" = "Активность";
@@ -62,6 +107,12 @@
 "Adventure" = "Приключения";
 
 /* No comment provided by engineer. */
+"Advertising" = "Реклама";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Рекламный продюсер";
+
+/* No comment provided by engineer. */
 "Age" = "Возраст";
 
 /* No comment provided by engineer. */
@@ -83,6 +134,21 @@
 "Alternative" = "Альтернативная";
 
 /* No comment provided by engineer. */
+"Animation" = "Анимация";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Режиссёр анимации";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Продюсер анимации";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Помощь в производстве анимации";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Супервайзер анимации";
+
+/* No comment provided by engineer. */
 "Anime" = "Аниме";
 
 /* No comment provided by engineer. */
@@ -101,16 +167,82 @@
 "Are you sure you want to log out?" = "Вы уверены, что хотите выйти?";
 
 /* No comment provided by engineer. */
+"Art" = "Искусство";
+
+/* No comment provided by engineer. */
+"Art Board" = "Художественная доска";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Художественная композиция";
+
+/* No comment provided by engineer. */
+"Art Design" = "Художественное проектирование";
+
+/* No comment provided by engineer. */
+"Art Director" = "Художественный директор";
+
+/* No comment provided by engineer. */
 "As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Как вы знаете это приложение полностью бесплатное и с открытым исходным кодом\nно создание приложения требует много времени и усилии\nСделав пожертвование вы поможете нам покрыть расходы на\nразработку, обслуживание, и новые возможности.";
 
 /* No comment provided by engineer. */
 "Ascending" = "По возрастанию";
 
 /* No comment provided by engineer. */
+"Assistance" = "Помощь";
+
+/* No comment provided by engineer. */
+"Assistant" = "Помощник";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Помощник режиссёра анимации";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Помощник художественного директора";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Помощник главного анимационного режиссёра";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Помощник главного директора";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Помощник директора";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Помощник режиссёра по фотосъёмке";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Помощник режиссёра эпизодов";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Помощник продюсера";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Помощник руководителя производства";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Помощник директора подразделения";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Ассоциированный продюсер";
+
+/* No comment provided by engineer. */
 "Average Score" = "Средний счет";
 
 /* No comment provided by engineer. */
 "Background" = "Фон";
+
+/* No comment provided by engineer. */
+"Background Art" = "Фоновое искусство";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "Помощь в создании фонового искусства";
+
+/* No comment provided by engineer. */
+"Background Manager" = "Фоновый менеджер";
+
+/* No comment provided by engineer. */
+"Background Production" = "Фоновое производство";
 
 /* No comment provided by engineer. */
 "Birth" = "День рождения";
@@ -134,6 +266,42 @@
 "Cancelled" = "Отменено";
 
 /* No comment provided by engineer. */
+"CG Animation" = "CG-анимация";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "Режиссёр CG-анимации";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "CG Помощник режиссёра";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "CG Моделирование фонов";
+
+/* No comment provided by engineer. */
+"CG Director" = "CG Режиссёр";
+
+/* No comment provided by engineer. */
+"CG Layout" = "CG Макет";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "CG-Моделирование";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "Директор по CG-моделированию";
+
+/* No comment provided by engineer. */
+"CG Producer" = "CG Продюсер";
+
+/* No comment provided by engineer. */
+"CG Production" = "CG Производство";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "CG Супервайзер";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "CG Технический директор";
+
+/* No comment provided by engineer. */
 "Ch" = "Гл";
 
 /* No comment provided by engineer. */
@@ -155,10 +323,37 @@
 "Character" = "Персонаж";
 
 /* No comment provided by engineer. */
+"Character Design" = "Дизайн персонажей";
+
+/* No comment provided by engineer. */
 "Characters" = "Персонажи";
 
 /* No comment provided by engineer. */
 "Characters and Staff" = "Персонажи и Персонал";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "Главный режиссёр анимации";
+
+/* No comment provided by engineer. */
+"Chief Director" = "Главный директор";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "Главный режиссёр эпизодов";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "Главный режиссёр механической анимации";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "Главный продюсер";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "Главный производственный стол";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "Главный супервайзер";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "Главный директор подразделения";
 
 /* No comment provided by engineer. */
 "China" = "Китай";
@@ -171,6 +366,21 @@
 
 /* No comment provided by engineer. */
 "Close" = "Закрыть";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "Сопродюсер";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "Координация цветов";
+
+/* No comment provided by engineer. */
+"Color Design" = "Цветовой дизайн";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "Помощь в разработке цветового дизайна";
+
+/* No comment provided by engineer. */
+"Coloring" = "Раскраска";
 
 /* No comment provided by engineer. */
 "Comedy" = "Комедия";
@@ -191,6 +401,9 @@
 "Completed %@" = "Завершен %@";
 
 /* No comment provided by engineer. */
+"Concept Art" = "Концепт арт";
+
+/* No comment provided by engineer. */
 "Congratulations, you are up to date!\n(๑>◡<๑)" = "Поздравляем, вы в курсе событий!\n(๑>◡<๑)";
 
 /* No comment provided by engineer. */
@@ -200,10 +413,19 @@
 "Content" = "Контент";
 
 /* No comment provided by engineer. */
+"Costume Design" = "Дизайн костюмов";
+
+/* No comment provided by engineer. */
 "Country" = "Страна";
 
 /* No comment provided by engineer. */
 "Country Distribution" = "Распределение по странам";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "Иллюстрации на обложке";
+
+/* No comment provided by engineer. */
+"Creature Design" = "Дизайн существ";
 
 /* (No Comment) */
 "Current" = "Текущее";
@@ -230,6 +452,9 @@
 "Default" = "По умолчанию";
 
 /* No comment provided by engineer. */
+"Default tab" = "Вкладка по умолчанию";
+
+/* No comment provided by engineer. */
 "Delete" = "Удалить";
 
 /* No comment provided by engineer. */
@@ -239,7 +464,40 @@
 "Descending" = "По убыванию";
 
 /* No comment provided by engineer. */
+"Design Assistance" = "Помощь в проектировании";
+
+/* No comment provided by engineer. */
+"Design Works" = "Проектные работы";
+
+/* No comment provided by engineer. */
 "Developers" = "Разработчики";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "Цифровая анимация";
+
+/* No comment provided by engineer. */
+"Digital Art" = "Цифровое искусство";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "Цифровая раскраска";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "Цифровая оптическая запись";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "Цифровые краски";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "Цифровая фотография";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "Помощник по цифровому производству";
+
+/* No comment provided by engineer. */
+"Director" = "Директор";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "Директор по фотосъёмке";
 
 /* No comment provided by engineer. */
 "Discord server" = "Discord сервер";
@@ -290,7 +548,25 @@
 "Edit" = "Изменить";
 
 /* No comment provided by engineer. */
+"Editing" = "Редактирование";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Помощник редактирования";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "Менеджер по редактированию";
+
+/* No comment provided by engineer. */
+"Effects" = "Эффекты";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "Директор по анимации эффектов";
+
+/* No comment provided by engineer. */
 "End date" = "Дата завершения";
+
+/* No comment provided by engineer. */
+"Endcard" = "Конечная карточка";
 
 /* No comment provided by engineer. */
 "English" = "Английский";
@@ -308,16 +584,34 @@
 "Episode Count" = "Число эпизодов";
 
 /* No comment provided by engineer. */
+"Episode Director" = "Режиссёр эпизода";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "Режиссёр эпизода (ED)";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "Режиссёр эпизода (OP)";
+
+/* No comment provided by engineer. */
 "Episodes" = "Эпизоды";
 
 /* No comment provided by engineer. */
 "Episodes Watched" = "Эпизодов просмотрено";
 
 /* No comment provided by engineer. */
+"Executive Producer" = "Исполнительный продюсер";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "Исполнительный супервайзер";
+
+/* No comment provided by engineer. */
 "Explore" = "Исследовать";
 
 /* No comment provided by engineer. */
 "External links" = "Внешние ссылки";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "Eyecatch";
 
 /* No comment provided by engineer. */
 "Fall" = "Осень";
@@ -332,6 +626,9 @@
 "Feed type" = "Тип ленты";
 
 /* No comment provided by engineer. */
+"Female" = "Женщина";
+
+/* No comment provided by engineer. */
 "Filter" = "Фильтр";
 
 /* No comment provided by engineer. */
@@ -339,6 +636,21 @@
 
 /* No comment provided by engineer. */
 "Finished" = "Завершено";
+
+/* No comment provided by engineer. */
+"Finishing" = "Отделка";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "Помощь в отделке";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "Проверка отделки";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "Менеджер по отделке";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "Отделочное производство";
 
 /* No comment provided by engineer. */
 "Follow" = "Следить";
@@ -386,6 +698,9 @@
 "Global" = "Глобальное";
 
 /* No comment provided by engineer. */
+"HD Editing" = "HD Редактирование";
+
+/* No comment provided by engineer. */
 "Hentai" = "Хэнтай";
 
 /* No comment provided by engineer. */
@@ -416,6 +731,21 @@
 "Hours Watched" = "Часов просмотрено";
 
 /* No comment provided by engineer. */
+"Illustration" = "Иллюстрация";
+
+/* No comment provided by engineer. */
+"In-Between Animation" = "Промежуточная анимация";
+
+/* No comment provided by engineer. */
+"In-Between Animation Assistance" = "Помощник в промежуточной анимации";
+
+/* No comment provided by engineer. */
+"In-Betweens Check" = "Проверка промежуточных";
+
+/* No comment provided by engineer. */
+"In-Betweens Manager" = "Менеджер по промежуточным";
+
+/* No comment provided by engineer. */
 "Increment Episode / Chapter" = "Увеличить эпизод / Главу";
 
 /* No comment provided by engineer. */
@@ -425,10 +755,31 @@
 "Information" = "Информация";
 
 /* No comment provided by engineer. */
+"Insert Song Arrangement" = "Аранжировка вставной песни";
+
+/* No comment provided by engineer. */
+"Insert Song Composition" = "Композиция вставной песни";
+
+/* No comment provided by engineer. */
+"Insert Song Lyrics" = "Текст вставной песни";
+
+/* No comment provided by engineer. */
+"Insert Song Performance" = "Исполнение вставной песни";
+
+/* No comment provided by engineer. */
 "Japan" = "Япония";
 
 /* No comment provided by engineer. */
 "Japanese" = "Японский";
+
+/* No comment provided by engineer. */
+"Key Animation" = "Ключевая анимация";
+
+/* No comment provided by engineer. */
+"Key Animation (OP)" = "Ключевая анимация (OP)";
+
+/* No comment provided by engineer. */
+"Key Animation Assistance" = "Помощь в создании ключевых анимаций";
 
 /* No comment provided by engineer. */
 "Last Added" = "Недавно добавлено";
@@ -440,10 +791,31 @@
 "Last used" = "Последнее использование";
 
 /* No comment provided by engineer. */
+"Layout" = "Макет";
+
+/* No comment provided by engineer. */
+"Layout Animation Director" = "Директор по анимации макета";
+
+/* No comment provided by engineer. */
+"Layout Animation Supervisor" = "Супервайзер по анимации макета";
+
+/* No comment provided by engineer. */
+"Layout Editor" = "Редактор макета";
+
+/* No comment provided by engineer. */
+"Layout Supervisor" = "Супервайзер по макету";
+
+/* No comment provided by engineer. */
 "Left" = "Влево";
 
 /* No comment provided by engineer. */
+"Lettering" = "Нанесение надписей";
+
+/* No comment provided by engineer. */
 "Light novel" = "Легкая новелла";
+
+/* No comment provided by engineer. */
+"Line Producer" = "Линейный продюсер";
 
 /* No comment provided by engineer. */
 "List entry ID" = "ID записи в списке";
@@ -453,6 +825,12 @@
 
 /* No comment provided by engineer. */
 "List style" = "Стиль списка";
+
+/* No comment provided by engineer. */
+"Literary Arts" = "Литературное искусство";
+
+/* No comment provided by engineer. */
+"Literary Arts Assistance" = "Помощь в области литературного искусства";
 
 /* No comment provided by engineer. */
 "Live action" = "Живое действие";
@@ -476,6 +854,12 @@
 "Main" = "Главная";
 
 /* No comment provided by engineer. */
+"Main Animator" = "Главный аниматор";
+
+/* No comment provided by engineer. */
+"Male" = "Мужчина";
+
+/* No comment provided by engineer. */
 "Manga" = "Манга";
 
 /* No comment provided by engineer. */
@@ -489,6 +873,15 @@
 
 /* No comment provided by engineer. */
 "Mecha" = "Меха";
+
+/* No comment provided by engineer. */
+"Mechanical Animation Director" = "Режиссёр механической анимации";
+
+/* No comment provided by engineer. */
+"Mechanical Design" = "Механический дизайн";
+
+/* No comment provided by engineer. */
+"Mechanical Supervisor" = "Механический супервайзер";
 
 /* No comment provided by engineer. */
 "Media" = "Медиа";
@@ -506,6 +899,12 @@
 "Minimal" = "Минимализм";
 
 /* No comment provided by engineer. */
+"Monitor Graphics" = "Графика монитора";
+
+/* No comment provided by engineer. */
+"Monster Design" = "Дизайн монстра";
+
+/* No comment provided by engineer. */
 "More filters" = "Больше фильтров";
 
 /* No comment provided by engineer. */
@@ -521,10 +920,52 @@
 "Music" = "Музыка";
 
 /* No comment provided by engineer. */
+"Music Arrangement" = "Аранжировка музыки";
+
+/* No comment provided by engineer. */
+"Music Assistance" = "Музыкальная помощь";
+
+/* No comment provided by engineer. */
+"Music Composition" = "Музыкальная композиция";
+
+/* No comment provided by engineer. */
+"Music Director" = "Музыкальный руководитель";
+
+/* No comment provided by engineer. */
+"Music Lyrics" = "Музыкальные тексты";
+
+/* No comment provided by engineer. */
+"Music Performance" = "Музыкальное исполнение";
+
+/* No comment provided by engineer. */
+"Music Producer" = "Музыкальный продюсер";
+
+/* No comment provided by engineer. */
+"Music Production" = "Производство музыки";
+
+/* No comment provided by engineer. */
+"Music Production Assistance" = "Помощь в создании музыки";
+
+/* No comment provided by engineer. */
+"Music Selection" = "Выбор музыки";
+
+/* No comment provided by engineer. */
+"Music Supervisor" = "Музыкальный супервайзер";
+
+/* No comment provided by engineer. */
+"Musical Instrument Supervisor" = "Супервайзер по музыкальным инструментам";
+
+/* No comment provided by engineer. */
 "Mystery" = "Таинственное";
 
 /* No comment provided by engineer. */
 "Native" = "Родное";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "Недавно добавленные аниме";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Недавно добавленная манга";
 
 /* No comment provided by engineer. */
 "No" = "Нет";
@@ -543,6 +984,9 @@
 
 /* No comment provided by engineer. */
 "No reviews" = "Нет отзывов";
+
+/* No comment provided by engineer. */
+"Non-binary" = "Небинарный";
 
 /* No comment provided by engineer. */
 "None" = "Ничего";
@@ -566,6 +1010,12 @@
 "Occupations" = "Профессии";
 
 /* No comment provided by engineer. */
+"Offline Editing" = "Автономное редактирование";
+
+/* No comment provided by engineer. */
+"Offline Editing Manager" = "Менеджер автономного редактирования";
+
+/* No comment provided by engineer. */
 "OK" = "Применить";
 
 /* No comment provided by engineer. */
@@ -578,6 +1028,18 @@
 "OneShot" = "OneShot";
 
 /* No comment provided by engineer. */
+"Online Editing" = "Редактирование онлайн";
+
+/* No comment provided by engineer. */
+"Online Editing Manager" = "Менеджер по онлайн-редактированию";
+
+/* No comment provided by engineer. */
+"Online HD Editing" = "Онлайн-редактирование в формате HD";
+
+/* No comment provided by engineer. */
+"Optical Recording" = "Оптическая запись";
+
+/* No comment provided by engineer. */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Необязательный статус для обновления записи списка (например, ЗАВЕРШЕНО)";
 
 /* No comment provided by engineer. */
@@ -585,6 +1047,21 @@
 
 /* No comment provided by engineer. */
 "Original" = "Первоисточник";
+
+/* No comment provided by engineer. */
+"Original Character Design" = "Оригинальный дизайн персонажей";
+
+/* No comment provided by engineer. */
+"Original Creator" = "Оригинальный создатель";
+
+/* No comment provided by engineer. */
+"Original Illustration" = "Оригинальная иллюстрация";
+
+/* No comment provided by engineer. */
+"Original Plan" = "Оригинальный план";
+
+/* No comment provided by engineer. */
+"Original Story" = "Оригинальная история";
 
 /* No comment provided by engineer. */
 "Other" = "Прочее";
@@ -596,7 +1073,13 @@
 "OVA" = "OVA";
 
 /* No comment provided by engineer. */
+"Overseas Advertising Producer" = "Продюсер зарубежной рекламы";
+
+/* No comment provided by engineer. */
 "Overview" = "Общие сведения";
+
+/* No comment provided by engineer. */
+"Paint" = "Краска";
 
 /* No comment provided by engineer. */
 "Parent" = "Родитель";
@@ -608,10 +1091,28 @@
 "Paused %@" = "На паузе %@";
 
 /* No comment provided by engineer. */
+"Photography" = "Фотография";
+
+/* No comment provided by engineer. */
+"Photography Assistance" = "Помощь в фотосъёмке";
+
+/* No comment provided by engineer. */
+"Photography Chief" = "Начальник отдела фотографии";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "Менеджер по фотографии";
+
+/* No comment provided by engineer. */
 "Picture book" = "Книга с картинками";
 
 /* (No Comment) */
 "Planning" = "Планируется";
+
+/* No comment provided by engineer. */
+"Planning Assistance" = "Помощь в планировании";
+
+/* No comment provided by engineer. */
+"Planning Producer" = "Продюсер по планированию";
 
 /* No comment provided by engineer. */
 "Plans to read %@" = "Планы для чтения %@";
@@ -644,13 +1145,37 @@
 "Private" = "Приватное";
 
 /* No comment provided by engineer. */
+"Producer" = "Продюсер";
+
+/* No comment provided by engineer. */
 "Producers" = "Продюсеры";
+
+/* No comment provided by engineer. */
+"Production" = "Производство";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "Помощь в производстве";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "Помощник по производству";
+
+/* No comment provided by engineer. */
+"Production Committee" = "Производственный комитет";
+
+/* No comment provided by engineer. */
+"Production Design" = "Дизайн производства";
+
+/* No comment provided by engineer. */
+"Production Desk" = "Производственный стол";
 
 /* No comment provided by engineer. */
 "Profile" = "Профиль";
 
 /* No comment provided by engineer. */
 "Progress" = "Прогресс";
+
+/* No comment provided by engineer. */
+"Prop Design" = "Дизайн реквизита";
 
 /* No comment provided by engineer. */
 "Psychological" = "Психологическое";
@@ -686,6 +1211,18 @@
 "Recommendations" = "Рекомендации";
 
 /* No comment provided by engineer. */
+"Recording" = "Запись";
+
+/* No comment provided by engineer. */
+"Recording Adjustment" = "Регулировка записи";
+
+/* No comment provided by engineer. */
+"Recording Assistant" = "Помощник по записи";
+
+/* No comment provided by engineer. */
+"Recording Engineer" = "Инженер записи";
+
+/* No comment provided by engineer. */
 "Relations" = "Связи";
 
 /* No comment provided by engineer. */
@@ -709,6 +1246,9 @@
 /* (No Comment) */
 "Repeating" = "Повторяется";
 
+/* No comment provided by engineer. */
+"Reread %@" = "Перечитать %@";
+
 /* (No Comment) */
 "Reread chapter %1$@ of %2$@" = "Перечитать главу %1$@ из %2$@";
 
@@ -723,6 +1263,9 @@
 
 /* No comment provided by engineer. */
 "Reviews" = "Отзывы";
+
+/* No comment provided by engineer. */
+"Rewatched %@" = "Пересмотреть %@";
 
 /* (No Comment) */
 "Rewatched episode %1$@ of %2$@" = "Пересмотреть эпизод %1$@ из %2$@";
@@ -758,6 +1301,12 @@
 "Score format" = "Формат счета";
 
 /* No comment provided by engineer. */
+"Script" = "Сценарий";
+
+/* No comment provided by engineer. */
+"Script Assistance" = "Помощник по сценарию";
+
+/* No comment provided by engineer. */
 "Search type" = "Тип поиска";
 
 /* No comment provided by engineer. */
@@ -775,6 +1324,12 @@
 /* No comment provided by engineer. */
 "Sequel" = "Продолжение";
 
+/* No comment provided by engineer. */
+"Series Composition" = "Композиция серий";
+
+/* No comment provided by engineer. */
+"Series Composition Assistance" = "Помощь в композиции серий";
+
 /* Set to Status */
 "Set as %@" = "Установить как %@";
 
@@ -783,6 +1338,9 @@
 
 /* No comment provided by engineer. */
 "Sets a list entry progress to the specified number." = "Устанавливает прогресс записи в списке на указанный номер.";
+
+/* No comment provided by engineer. */
+"Setting Design" = "Дизайн декораций";
 
 /* No comment provided by engineer. */
 "Settings" = "Настройки";
@@ -821,6 +1379,30 @@
 "Sort" = "Сортировка";
 
 /* No comment provided by engineer. */
+"Sound Design" = "Звуковой дизайн";
+
+/* No comment provided by engineer. */
+"Sound Director" = "Директор по звуку";
+
+/* No comment provided by engineer. */
+"Sound Effects" = "Звуковые эффекты";
+
+/* No comment provided by engineer. */
+"Sound Effects Assistance" = "Помощь по звуковым эффектам";
+
+/* No comment provided by engineer. */
+"Sound Producer" = "Звуковой продюсер";
+
+/* No comment provided by engineer. */
+"Sound Production" = "Производство звука";
+
+/* No comment provided by engineer. */
+"Sound Production Manager" = "Менеджер по производству звука";
+
+/* No comment provided by engineer. */
+"Sound Supervisor" = "Звуковой супервайзер";
+
+/* No comment provided by engineer. */
 "Source" = "Источник";
 
 /* No comment provided by engineer. */
@@ -828,6 +1410,15 @@
 
 /* No comment provided by engineer. */
 "Special" = "Спешл";
+
+/* No comment provided by engineer. */
+"Special Design" = "Специальный дизайн";
+
+/* No comment provided by engineer. */
+"Special Effects" = "Специальные эффекты";
+
+/* No comment provided by engineer. */
+"Special Effects Assistant" = "Помощник по специальным эффектам";
 
 /* No comment provided by engineer. */
 "Spin Off" = "Спин-офф";
@@ -869,10 +1460,25 @@
 "Status Distribution" = "Статус распределение";
 
 /* No comment provided by engineer. */
+"Story" = "История";
+
+/* No comment provided by engineer. */
+"Story & Art" = "История & Искусство";
+
+/* No comment provided by engineer. */
+"Story & Illustration" = "История & Иллюстрация";
+
+/* No comment provided by engineer. */
+"Storyboard" = "Раскадровка";
+
+/* No comment provided by engineer. */
 "Streaming sites" = "Стриминг сайты";
 
 /* No comment provided by engineer. */
 "Studios" = "Студии";
+
+/* No comment provided by engineer. */
+"Sub Character Design" = "Дизайн субперсонажей";
 
 /* No comment provided by engineer. */
 "Summary" = "Обобщение";
@@ -884,10 +1490,16 @@
 "Supernatural" = "Сверхъестественное";
 
 /* No comment provided by engineer. */
+"Supervisor" = "Супервайзер";
+
+/* No comment provided by engineer. */
 "Support the development of AniHyou!" = "Поддержите разработку AniHyou!";
 
 /* No comment provided by engineer. */
 "Supporting" = "Поддержка";
+
+/* No comment provided by engineer. */
+"Supporting Staff" = "Вспомогательный персонал";
 
 /* No comment provided by engineer. */
 "Sync account with Apple Watch" = "Синхронизируйте аккаунт с Apple Watch";
@@ -902,6 +1514,9 @@
 "Taiwan" = "Тайвань";
 
 /* No comment provided by engineer. */
+"Technical Director" = "Технический директор";
+
+/* No comment provided by engineer. */
 "Text Status" = "Статус текста";
 
 /* No comment provided by engineer. */
@@ -912,6 +1527,54 @@
 
 /* No comment provided by engineer. */
 "The id of the media the entry is of" = "Id медиа записи";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement" = "Аранжировка тематической песни";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Аранжировка тематической песни (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Аранжировка тематической песни (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Аранжировка тематической песни (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition" = "Композиция тематической песни";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Композиция тематической песни (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Композиция тематической песни (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Композиция тематической песни (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics" = "Текст тематической песни";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Текст тематической песни (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Текст тематической песни (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Текст тематической песни (OP)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance" = "Исполнение тематической песни";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Исполнение тематической песни (ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Исполнение тематической песни (OP, ED)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Исполнение тематической песни (OP)";
 
 /* No comment provided by engineer. */
 "This feature will be unlocked when you make a donation, even the smallest count!" = "Эта функция будет разблокирована, когда вы сделаете пожертвование, даже слишком маленькое!";
@@ -933,6 +1596,12 @@
 
 /* No comment provided by engineer. */
 "Title language" = "Язык названия";
+
+/* No comment provided by engineer. */
+"Title Logo Design" = "Дизайн логотипа названия";
+
+/* No comment provided by engineer. */
+"Title Logo Design Assistance" = "Помощь в разработке дизайна логотипа названия";
 
 /* No comment provided by engineer. */
 "Titles Count" = "Количество названий";
@@ -962,6 +1631,12 @@
 "Total Manga" = "Всего манг";
 
 /* No comment provided by engineer. */
+"Touch-up Art" = "Искусство ретуши";
+
+/* No comment provided by engineer. */
+"Touch-up Art & Lettering" = "Искусство ретуши & Нанесение надписей";
+
+/* No comment provided by engineer. */
 "Trailer" = "Трейлер";
 
 /* No comment provided by engineer. */
@@ -969,6 +1644,9 @@
 
 /* No comment provided by engineer. */
 "Translations" = "Переводы";
+
+/* No comment provided by engineer. */
+"Translator" = "Переводчик";
 
 /* No comment provided by engineer. */
 "Trending" = "В тренде";
@@ -987,6 +1665,9 @@
 
 /* No comment provided by engineer. */
 "Unfollow" = "Перестать следить";
+
+/* No comment provided by engineer. */
+"Unit Director" = "Директор подразделения";
 
 /* Localizable.strings
   AniHyou
@@ -1016,7 +1697,19 @@
 "Version %@" = "Версия %@";
 
 /* No comment provided by engineer. */
+"Video Editing" = "Редактирование видео";
+
+/* No comment provided by engineer. */
 "VideoGame" = "ВидеоИгра";
+
+/* No comment provided by engineer. */
+"Visual Coordinator" = "Визуальный координатор";
+
+/* No comment provided by engineer. */
+"Visual Director" = "Визуальный директор";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "Визуальные эффекты";
 
 /* No comment provided by engineer. */
 "Visual novel" = "Визуальная новелла";
@@ -1043,6 +1736,9 @@
 "Watching" = "Смотрит";
 
 /* No comment provided by engineer. */
+"Weapon Design" = "Дизайн оружия";
+
+/* No comment provided by engineer. */
 "Web novel" = "Веб новелла";
 
 /* No comment provided by engineer. */
@@ -1053,6 +1749,9 @@
 
 /* No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "С любой покупкой вы получите доступ к эксклюзивным значкам приложений и пользовательские акцентовые цвета!";
+
+/* No comment provided by engineer. */
+"World Design" = "Дизайн мира";
 
 /* No comment provided by engineer. */
 "Year" = "Год";
