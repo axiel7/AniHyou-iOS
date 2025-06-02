@@ -1,0 +1,1722 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld ตอน";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld ตอนที่";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld เล่ม";
+
+/* No comment provided by engineer. */
+"^[%lld episode behind](inflect: true)" = "^[%lld ตอนที่ยังไม่ได้ดู](inflect: true)";
+
+/* No comment provided by engineer. */
+"1st Key Animation Director" = "หัวหน้าผู้กำกับแอนิเมชันหลัก";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "ผู้ช่วยหัวหน้าผู้กำกับแอนิเมชันหลัก";
+
+/* No comment provided by engineer. */
+"2D Design" = "ออกแบบ 2D";
+
+/* No comment provided by engineer. */
+"2D Effects" = "เอฟเฟกต์ 2D";
+
+/* No comment provided by engineer. */
+"2D Works" = "งาน 2D";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "แอนิเมชันหลักลำดับที่สอง";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "ระบบคะแนน 3 จุดแบบอิโมจิ";
+
+/* No comment provided by engineer. */
+"3D Art" = "3D Art";
+
+/* No comment provided by engineer. */
+"3D Works" = "งาน 3D";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DCG";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 ดาว (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 คะแนน (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10 คะแนน ทศนิยม (5.5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 คะแนน (55/100)";
+
+/* No comment provided by engineer. */
+"A&R Producer" = "A&R ผู้ผลิต";
+
+/* No comment provided by engineer. */
+"Accent color" = "สีเน้น";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "ออกแบบเครื่องประดับ";
+
+/* No comment provided by engineer. */
+"Account settings" = "ตั้งค่าบัญชี";
+
+/* No comment provided by engineer. */
+"Action" = "แอ๊กชัน";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "ผู้กำกับอนิเมชันแอ็คชัน";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "หัวหน้าฝ่ายแอนิเมชั่น";
+
+/* No comment provided by engineer. */
+"Action Animator" = "นักอนิเมเตอร์";
+
+/* No comment provided by engineer. */
+"Action Director" = "ผู้กำกับ";
+
+/* No comment provided by engineer. */
+"Activity" = "กิจกรรม";
+
+/* No comment provided by engineer. */
+"Activity type" = "ประเภทกิจกรรม";
+
+/* No comment provided by engineer. */
+"Adaptation" = "ดัดแปลง";
+
+/* No comment provided by engineer. */
+"Add to List" = "เพิ่มรายการ";
+
+/* No comment provided by engineer. */
+"Added" = "เพิ่มแล้ว";
+
+/* No comment provided by engineer. */
+"ADR Director" = "ผู้กำกับ ADR";
+
+/* No comment provided by engineer. */
+"Adult" = "ผู้ใหญ่";
+
+/* No comment provided by engineer. */
+"Adventure" = "ผจญภัย";
+
+/* No comment provided by engineer. */
+"Advertising" = "การโฆษณา";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "ผู้ผลิตโฆษณา";
+
+/* No comment provided by engineer. */
+"Age" = "อายุ";
+
+/* No comment provided by engineer. */
+"Airing" = "มาแล้ว";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "อนิเมะที่กำลังออกอากาศ";
+
+/* No comment provided by engineer. */
+"Airing Next" = "กำลังจะออกอากาศ";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "ออกอากาศในรายการของฉัน";
+
+/* No comment provided by engineer. */
+"All" = "ทั้งหมด";
+
+/* No comment provided by engineer. */
+"Alternative" = "ทางเลือก";
+
+/* No comment provided by engineer. */
+"Animation" = "แอนิเมชั่น";
+
+/* No comment provided by engineer. */
+"Animation Director" = "ผู้กำกับแอนิเมชั่น";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "ผู้กำกับการผลิต";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "ผู้ช่วยผู้กำกับ";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "หัวหน้างานแอนิเมชั่น";
+
+/* No comment provided by engineer. */
+"Anime" = "อนิเมะ";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "อนิเมะที่ตามดู";
+
+/* No comment provided by engineer. */
+"Anime List" = "รายการอนิเมะ";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "อนิเมะ, มังงะ และ อื่น ๆ";
+
+/* No comment provided by engineer. */
+"App Icon" = "ไอคอนแอป";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "คุณแน่ใจหรือว่าต้องการออกจากระบบ ?";
+
+/* No comment provided by engineer. */
+"Art" = "ศิลปะ";
+
+/* No comment provided by engineer. */
+"Art Board" = "บอร์ดงานศิลปะ";
+
+/* No comment provided by engineer. */
+"Art Composition" = "การจัดองค์ประกอบภาพ";
+
+/* No comment provided by engineer. */
+"Art Design" = "ออกแบบภาพ";
+
+/* No comment provided by engineer. */
+"Art Director" = "ผู้กำกับศิลป์";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "อย่างที่คุณอาจทราบดีว่าแอปนี้เป็นโอเพ่นซอร์สและฟรีอย่างสมบูรณ์\nแต่การสร้างแอปต้องใช้เวลาและความพยายามอย่างมาก\nการบริจาคจะช่วยครอบคลุมค่าใช้จ่ายในการพัฒนา บำรุงรักษา และฟีเจอร์ใหม่ ๆ";
+
+/* No comment provided by engineer. */
+"Ascending" = "น้อยไปมาก";
+
+/* No comment provided by engineer. */
+"Assistance" = "ผู้ช่วยเหลือ";
+
+/* No comment provided by engineer. */
+"Assistant" = "ผู้ช่วย";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "ผู้ช่วยกำกับแอนิเมชันแอ็คชัน";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "ผู้ช่วยกำกับภาพ";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "ผู้ช่วยผู้อำนวยการฝ่ายแอนิเมชันแอ็คชัน";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "ผู้ช่วยผู้กำกับหลัก";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "ผู้ช่วยผู้กำกับ";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "ผู้ช่วยผู้กำกับภาพถ่าย";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "ผู้ช่วยผู้กำกับตอน";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "ผู้ช่วยผู้ผลิต";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "ผู้ช่วยผู้จัดการการผลิต";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "ผู้ช่วยผู้กำกับหน่วยงาน";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "รองผู้อำนวยการสร้าง";
+
+/* No comment provided by engineer. */
+"Average Score" = "คะแนนเฉลี่ย";
+
+/* No comment provided by engineer. */
+"Background" = "เบื้องหลัง";
+
+/* No comment provided by engineer. */
+"Background Art" = "ภาพพื้นหลัง";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "ผู้ช่วยศิลปะพื้นหลัง";
+
+/* No comment provided by engineer. */
+"Background Manager" = "ผู้จัดการศิลปะพื้นหลัง";
+
+/* No comment provided by engineer. */
+"Background Production" = "การผลิตศิลปะพื้นหลัง";
+
+/* No comment provided by engineer. */
+"Birth" = "วันเกิด";
+
+/* No comment provided by engineer. */
+"Birthday" = "วันเกิด";
+
+/* No comment provided by engineer. */
+"Blood type" = "กรุ๊ปเลือด";
+
+/* No comment provided by engineer. */
+"Blood Type" = "กรุ๊ปเลือด";
+
+/* No comment provided by engineer. */
+"Calendar" = "ปฏิทิน";
+
+/* No comment provided by engineer. */
+"Cancel" = "ยกเลิก";
+
+/* No comment provided by engineer. */
+"Cancelled" = "ยกเลิก";
+
+/* No comment provided by engineer. */
+"CG Animation" = "แอนิเมชัน CG";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "ผู้กำกับแอนิเมชัน CG";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "ผู้ช่วยผู้กำกับแอนิเมชัน CG";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "CG Background Modeling";
+
+/* No comment provided by engineer. */
+"CG Director" = "ผู้กำกับ CG";
+
+/* No comment provided by engineer. */
+"CG Layout" = "จัดวางฉาก CG";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "สร้างโมเดล CG";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "ผู้กำกับงานสร้างโมเดล CG";
+
+/* No comment provided by engineer. */
+"CG Producer" = "โปรดิวเซอร์ CG";
+
+/* No comment provided by engineer. */
+"CG Production" = "ฝ่ายผลิต CG";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "หัวหน้าฝ่าย CG";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "ผู้กำกับเทคนิค";
+
+/* No comment provided by engineer. */
+"Ch" = "ตอน";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "การเปลี่ยนแปลงจะมีผลเมื่อแอปรีสตาร์ท";
+
+/* No comment provided by engineer. */
+"Chapter Count" = "จำนวนบท";
+
+/* No comment provided by engineer. */
+"Chapters" = "ตอน";
+
+/* No comment provided by engineer. */
+"Chapters read" = "อ่านแล้ว";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "อ่านแล้ว";
+
+/* No comment provided by engineer. */
+"Character" = "ตัวละคร";
+
+/* No comment provided by engineer. */
+"Character Design" = "ออกแบบตัวละค";
+
+/* No comment provided by engineer. */
+"Characters" = "ตัวละคร";
+
+/* No comment provided by engineer. */
+"Characters and Staff" = "ตัวละคร และ ทีมงาน";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "หัวหน้าผู้กำกับแอนิเมชัน";
+
+/* No comment provided by engineer. */
+"Chief Director" = "หัวหน้าผู้กำกับ";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "หัวหน้าผู้กำกับตอน";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "หัวหน้าผู้กำกับแอนิเมชันกลไก";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "หัวหน้าผู้อำนวยการสร้าง";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "หัวหน้าฝ่ายผลิต";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "หัวหน้าที่ปรึกษา";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "หัวหน้าผู้กำกับหน่วย";
+
+/* No comment provided by engineer. */
+"China" = "จีน";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "เลือกระหว่าง อนิเมะ หรือ มังงะ";
+
+/* No comment provided by engineer. */
+"Clear" = "ล้าง";
+
+/* No comment provided by engineer. */
+"Close" = "ปิด";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "ผู้ร่วมอำนวยการสร้าง";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "ประสานสี";
+
+/* No comment provided by engineer. */
+"Color Design" = "ออกแบบสี";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "ผู้ช่วยออกแบบสี";
+
+/* No comment provided by engineer. */
+"Coloring" = "ลงสี";
+
+/* No comment provided by engineer. */
+"Comedy" = "ตลก";
+
+/* No comment provided by engineer. */
+"Comic" = "การ์ตูน";
+
+/* No comment provided by engineer. */
+"Compact" = "กะทัดรัด";
+
+/* No comment provided by engineer. */
+"Compilation" = "สถานะ";
+
+/* (No Comment) */
+"Completed" = "ดูจบแล้ว";
+
+/* No comment provided by engineer. */
+"Completed %@" = "ดูจบแล้ว %@";
+
+/* No comment provided by engineer. */
+"Concept Art" = "อาร์ตคอนเซ็ปต์";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "ยินดีด้วย คุณได้รับการอัพเดทแล้ว\n(๑>◡<๑)";
+
+/* No comment provided by engineer. */
+"Contains" = "ประกอบด้วย";
+
+/* No comment provided by engineer. */
+"Content" = "เนื้อหา";
+
+/* No comment provided by engineer. */
+"Costume Design" = "ออกแบบเครื่องแต่งกาย";
+
+/* No comment provided by engineer. */
+"Country" = "ประเทศ";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "กระจายตามประเทศ";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "ภาพประกอบหน้าปก";
+
+/* No comment provided by engineer. */
+"Creature Design" = "ออกแบบสิ่งมีชีวิต";
+
+/* (No Comment) */
+"Current" = "ปัจจุบัน";
+
+/* No comment provided by engineer. */
+"Custom" = "กำหนดเอง";
+
+/* No comment provided by engineer. */
+"Custom color" = "กำหนดสีเอง";
+
+/* No comment provided by engineer. */
+"Custom lists" = "รายการ แบบกำหนดเอง";
+
+/* No comment provided by engineer. */
+"Dates" = "วันที่";
+
+/* No comment provided by engineer. */
+"Days Watched" = "วันที่ดู";
+
+/* No comment provided by engineer. */
+"Death" = "เสียชีวิต";
+
+/* No comment provided by engineer. */
+"Default" = "ค่าเริ่มต้น";
+
+/* No comment provided by engineer. */
+"Default tab" = "แท็บเริ่มต้น";
+
+/* No comment provided by engineer. */
+"Delete" = "ลบ";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "ลบรายการนี้ ?";
+
+/* No comment provided by engineer. */
+"Descending" = "มากไปน้อย";
+
+/* No comment provided by engineer. */
+"Design Assistance" = "ผู้ช่วยออกแบบ";
+
+/* No comment provided by engineer. */
+"Design Works" = "ผลงานออกแบบ";
+
+/* No comment provided by engineer. */
+"Developers" = "นักพัฒนา";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "แอนิเมชั่นดิจิทัล";
+
+/* No comment provided by engineer. */
+"Digital Art" = "ศิลปะดิจิทัล";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "การระบายสีแบบดิจิทัล";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "การบันทึกแบบดิจิตอลออปติคัล";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "สีดิจิทัล";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "ถ่ายภาพดิจิทัล";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "ผู้ช่วยฝ่ายผลิตดิจิทัล\n";
+
+/* No comment provided by engineer. */
+"Director" = "ผู้กำกับ";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "ผู้กำกับภาพ";
+
+/* No comment provided by engineer. */
+"Discord server" = "เซิร์ฟเวอร์ Discord";
+
+/* No comment provided by engineer. */
+"Discover" = "ค้นพบ";
+
+/* No comment provided by engineer. */
+"Display" = "การแสดงผล";
+
+/* No comment provided by engineer. */
+"Donate" = "บริจาค";
+
+/* No comment provided by engineer. */
+"Donate!" = "บริจาค !";
+
+/* No comment provided by engineer. */
+"Donation" = "บริจาค";
+
+/* No comment provided by engineer. */
+"Donator" = "ผู้บริจาค";
+
+/* No comment provided by engineer. */
+"Done" = "เรียบร้อย";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "หนังสือแฟนเมด";
+
+/* No comment provided by engineer. */
+"Drama" = "ดราม่า";
+
+/* (No Comment) */
+"Dropped" = "เลิกดู";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "เลิกดู %@";
+
+/* No comment provided by engineer. */
+"Duration" = "ตอนละ";
+
+/* No comment provided by engineer. */
+"Ecchi" = "เอจจิ";
+
+/* No comment provided by engineer. */
+"Edit" = "แก้ไข";
+
+/* No comment provided by engineer. */
+"Editing" = "การตัดต่อ";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "ผู้ช่วยตัดต่อ";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "ผู้จัดการฝ่ายตัดต่อ";
+
+/* No comment provided by engineer. */
+"Effects" = "เอฟเฟกต์";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "หัวหน้าผู้กำกับแอนิเมชันเอฟเฟกต์";
+
+/* No comment provided by engineer. */
+"End date" = "จบวันที่";
+
+/* No comment provided by engineer. */
+"Endcard" = "การ์ดท้ายตอน";
+
+/* No comment provided by engineer. */
+"English" = "ภาษาอังกฤษ";
+
+/* No comment provided by engineer. */
+"Ep" = "ตอน";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "ตอนที่ %lld %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "ตอนที่ %lld ตอน %@";
+
+/* No comment provided by engineer. */
+"Episode Count" = "จำนวนตอน";
+
+/* No comment provided by engineer. */
+"Episode Director" = "ผู้กำกับตอน";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "ผู้กำกับตอน (เพลงปิด)";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "ผู้กำกับตอน (เพลงเปิด)";
+
+/* No comment provided by engineer. */
+"Episodes" = "ตอน";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "ตอนที่ดู";
+
+/* No comment provided by engineer. */
+"Executive Producer" = "ผู้อำนวยการสร้าง";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "หัวหน้าที่ปรึกษา";
+
+/* No comment provided by engineer. */
+"Explore" = "ค้นหา";
+
+/* No comment provided by engineer. */
+"External links" = "ลิงก์ภายนอก";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "ภาพคั่นตอน";
+
+/* No comment provided by engineer. */
+"Fall" = "ใบไม้ร่วง";
+
+/* No comment provided by engineer. */
+"Fantasy" = "แฟนตาซี";
+
+/* No comment provided by engineer. */
+"Favorites" = "รายการโปรด";
+
+/* No comment provided by engineer. */
+"Feed type" = "ประเภทฟีด";
+
+/* No comment provided by engineer. */
+"Female" = "ผู้หญิง";
+
+/* No comment provided by engineer. */
+"Filter" = "ตัวกรอง";
+
+/* No comment provided by engineer. */
+"Finish Date" = "วันที่ดูจบ";
+
+/* No comment provided by engineer. */
+"Finished" = "ดูจบแล้ว";
+
+/* No comment provided by engineer. */
+"Finishing" = "ตกแต่ง";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "ผู้ช่วยฝ่ายตกแต่ง";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "ตรวจสอบงานตกแต่ง";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "ผู้จัดการฝ่ายตกแต่ง";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "ผลิตงานตกแต่ง";
+
+/* No comment provided by engineer. */
+"Follow" = "ติดตาม";
+
+/* No comment provided by engineer. */
+"Followers" = "ผู้ติดตาม";
+
+/* No comment provided by engineer. */
+"Following" = "กำลังติดตาม";
+
+/* No comment provided by engineer. */
+"Follows" = "ติดตาม";
+
+/* No comment provided by engineer. */
+"Follows you" = "ติดตามคุณ";
+
+/* No comment provided by engineer. */
+"Format" = "รูปแบบ";
+
+/* No comment provided by engineer. */
+"Format Distribution" = "การกระจายรูปแบบ";
+
+/* No comment provided by engineer. */
+"Forum" = "กระดานสนทนา";
+
+/* No comment provided by engineer. */
+"Game" = "เกม";
+
+/* No comment provided by engineer. */
+"Gender" = "เพศ";
+
+/* No comment provided by engineer. */
+"General" = "ทั่วไป";
+
+/* No comment provided by engineer. */
+"Genres" = "ประเภท";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "GitHub repository";
+
+/* No comment provided by engineer. */
+"Global" = "ทั้งหมด";
+
+/* No comment provided by engineer. */
+"HD Editing" = "การตัดต่อ HD";
+
+/* No comment provided by engineer. */
+"Hentai" = "เฮนไต";
+
+/* No comment provided by engineer. */
+"Hiatus" = "หยุดชั่วคราว";
+
+/* No comment provided by engineer. */
+"Hide filters" = "ซ่อนตัวกรอง";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "ซ่อนจากรายการสถานะ";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "ซ่อนสปอย";
+
+/* No comment provided by engineer. */
+"Highest rated" = "คะแนนสูงสุด";
+
+/* No comment provided by engineer. */
+"Home" = "หน้าหลัก";
+
+/* No comment provided by engineer. */
+"Hometown" = "บ้านเกิด";
+
+/* No comment provided by engineer. */
+"Horror" = "สยองขวัญ";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "ชั่วโมงที่ดู";
+
+/* No comment provided by engineer. */
+"Illustration" = "ภาพประกอบ";
+
+/* No comment provided by engineer. */
+"In-Between Animation" = "แอนิเมชันระหว่างเฟรม";
+
+/* No comment provided by engineer. */
+"In-Between Animation Assistance" = "ผู้ช่วยแอนิเมชันระหว่างเฟรม";
+
+/* No comment provided by engineer. */
+"In-Betweens Check" = "ตรวจสอบแอนิเมชันระหว่างเฟรม";
+
+/* No comment provided by engineer. */
+"In-Betweens Manager" = "ผู้จัดการแอนิเมชันระหว่างเฟรม";
+
+/* No comment provided by engineer. */
+"Increment Episode / Chapter" = "เพิ่ม ตอน/บท";
+
+/* No comment provided by engineer. */
+"Info type" = "ประเภทข้อมูล";
+
+/* No comment provided by engineer. */
+"Information" = "เกี่ยวกับ";
+
+/* No comment provided by engineer. */
+"Insert Song Arrangement" = "เรียบเรียงเพลงแทรก";
+
+/* No comment provided by engineer. */
+"Insert Song Composition" = "แต่งเพลงแทรก";
+
+/* No comment provided by engineer. */
+"Insert Song Lyrics" = "เนื้อเพลงแทรก";
+
+/* No comment provided by engineer. */
+"Insert Song Performance" = "แสดงเพลงแทรก";
+
+/* No comment provided by engineer. */
+"Japan" = "ญี่ปุ่น";
+
+/* No comment provided by engineer. */
+"Japanese" = "ภาษาญี่ปุ่น";
+
+/* No comment provided by engineer. */
+"Key Animation" = "แอนิเมชันหลัก";
+
+/* No comment provided by engineer. */
+"Key Animation (OP)" = "แอนิเมชันหลัก (เพลงเปิด)";
+
+/* No comment provided by engineer. */
+"Key Animation Assistance" = "ผู้ช่วยแอนิเมชันหลัก";
+
+/* No comment provided by engineer. */
+"Last Added" = "เพิ่มล่าสุด";
+
+/* No comment provided by engineer. */
+"Last Updated" = "อัปเดตล่าสุด";
+
+/* No comment provided by engineer. */
+"Last used" = "ใช้ล่าสุด";
+
+/* No comment provided by engineer. */
+"Layout" = "จัดวาง";
+
+/* No comment provided by engineer. */
+"Layout Animation Director" = "ผู้กำกับแอนิเมชันเลย์เอาต์";
+
+/* No comment provided by engineer. */
+"Layout Animation Supervisor" = "หัวหน้าผู้กำกับแอนิเมชันเลย์เอาต์";
+
+/* No comment provided by engineer. */
+"Layout Editor" = "บรรณาธิการเลย์เอาต์";
+
+/* No comment provided by engineer. */
+"Layout Supervisor" = "หัวหน้าฝ่ายเลย์เอาต์";
+
+/* No comment provided by engineer. */
+"Left" = "ซ้าย";
+
+/* No comment provided by engineer. */
+"Lettering" = "ออกแบบตัวอักษร";
+
+/* No comment provided by engineer. */
+"Light novel" = "นวนิยาย";
+
+/* No comment provided by engineer. */
+"Line Producer" = "โปรดิวเซอร์สายงานผลิต";
+
+/* No comment provided by engineer. */
+"List entry ID" = "ID รายการ";
+
+/* No comment provided by engineer. */
+"List Progress" = "สถานะรายการ";
+
+/* No comment provided by engineer. */
+"List style" = "รูปแบบรายการ";
+
+/* No comment provided by engineer. */
+"Literary Arts" = "ศิลปะวรรณกรรม";
+
+/* No comment provided by engineer. */
+"Literary Arts Assistance" = "ผู้ช่วยด้านศิลปะวรรณกรรม";
+
+/* No comment provided by engineer. */
+"Live action" = "เวอร์ชันคนแสดง";
+
+/* No comment provided by engineer. */
+"Loading" = "กำลังโหลด";
+
+/* No comment provided by engineer. */
+"Log out" = "ออกจากระบบ";
+
+/* No comment provided by engineer. */
+"Login" = "ล็อกอิน";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "ทิศทางการปัด";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "สาวน้อยเวทมนตร์";
+
+/* No comment provided by engineer. */
+"Main" = "ตัวหลัก";
+
+/* No comment provided by engineer. */
+"Main Animator" = "นักแอนิเมชันหลัก";
+
+/* No comment provided by engineer. */
+"Male" = "ผู้ชาย";
+
+/* No comment provided by engineer. */
+"Manga" = "มังงะ";
+
+/* No comment provided by engineer. */
+"Manga List" = "รายการ มังงะ\n";
+
+/* No comment provided by engineer. */
+"Mean score" = "คะแนนเฉลี่ย";
+
+/* No comment provided by engineer. */
+"Mean Score" = "คะแนนเฉลี่ย";
+
+/* No comment provided by engineer. */
+"Mecha" = "หุ่นยนต์รบ";
+
+/* No comment provided by engineer. */
+"Mechanical Animation Director" = "ผู้กำกับแอนิเมชันกลไก";
+
+/* No comment provided by engineer. */
+"Mechanical Design" = "การออกแบบกลไก";
+
+/* No comment provided by engineer. */
+"Mechanical Supervisor" = "หัวหน้าฝ่ายกลไก";
+
+/* No comment provided by engineer. */
+"Media" = "สื่อมีเดีย";
+
+/* No comment provided by engineer. */
+"Media ID" = "ID มีเดีย";
+
+/* No comment provided by engineer. */
+"Media List" = "รายการ สื่อ";
+
+/* No comment provided by engineer. */
+"Media Type" = "ประเภทสื่อ";
+
+/* No comment provided by engineer. */
+"Minimal" = "มินิมอล";
+
+/* No comment provided by engineer. */
+"Monitor Graphics" = "กราฟิกหน้าจอ";
+
+/* No comment provided by engineer. */
+"Monster Design" = "ออกแบบมอนสเตอร์";
+
+/* No comment provided by engineer. */
+"More filters" = "ตัวกรองเพิ่มเติม";
+
+/* No comment provided by engineer. */
+"Most popular" = "ยอดนิยม";
+
+/* No comment provided by engineer. */
+"Movie" = "ภาพยนตร์";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "โปรเจกต์มัลติมีเดีย";
+
+/* No comment provided by engineer. */
+"Music" = "ดนตรี";
+
+/* No comment provided by engineer. */
+"Music Arrangement" = "เรียบเรียงดนตรี";
+
+/* No comment provided by engineer. */
+"Music Assistance" = "ผู้ช่วยด้านดนตรี";
+
+/* No comment provided by engineer. */
+"Music Composition" = "แต่งเพลง";
+
+/* No comment provided by engineer. */
+"Music Director" = "ผู้กำกับดนตรี";
+
+/* No comment provided by engineer. */
+"Music Lyrics" = "เนื้อเพลง";
+
+/* No comment provided by engineer. */
+"Music Performance" = "แสดงดนตรี";
+
+/* No comment provided by engineer. */
+"Music Producer" = "โปรดิวเซอร์เพลง";
+
+/* No comment provided by engineer. */
+"Music Production" = "ผลิตเพลง";
+
+/* No comment provided by engineer. */
+"Music Production Assistance" = "ผู้ช่วยฝ่ายผลิตเพลง";
+
+/* No comment provided by engineer. */
+"Music Selection" = "คัดเลือกเพลง";
+
+/* No comment provided by engineer. */
+"Music Supervisor" = "หัวหน้าฝ่ายดนตรี";
+
+/* No comment provided by engineer. */
+"Musical Instrument Supervisor" = "ผู้ดูแลเครื่องดนตรี";
+
+/* No comment provided by engineer. */
+"Mystery" = "ปริศนา";
+
+/* No comment provided by engineer. */
+"Native" = "ภาษาเดิม";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "อนิเมะที่เพิ่มเข้ามาใหม่";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "มังงะที่เพิ่มเข้ามาใหม่";
+
+/* No comment provided by engineer. */
+"No" = "ไม่";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "ไม่มีอนิเมะฉาย ในรายการของคุณ (*´-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "ไม่มีอนิเมะในวันนี้ (*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "ไม่มีสื่อ";
+
+/* No comment provided by engineer. */
+"No recommendations" = "ไม่มีเรื่องแนะนำ";
+
+/* No comment provided by engineer. */
+"No reviews" = "ไม่มีรีวิว";
+
+/* No comment provided by engineer. */
+"Non-binary" = "ไม่ระบุเพศ";
+
+/* No comment provided by engineer. */
+"None" = "ไม่มี";
+
+/* No comment provided by engineer. */
+"Not yet released" = "ยังไม่ออกอากาศ";
+
+/* No comment provided by engineer. */
+"Notes" = "โน้ต";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "ไม่มีอะไรในรายการ";
+
+/* No comment provided by engineer. */
+"Notifications" = "การแจ้งเตือน";
+
+/* No comment provided by engineer. */
+"Novel" = "นิยาย";
+
+/* No comment provided by engineer. */
+"Occupations" = "อาชีพ";
+
+/* No comment provided by engineer. */
+"Offline Editing" = "ตัดต่อออฟไลน์";
+
+/* No comment provided by engineer. */
+"Offline Editing Manager" = "ผู้จัดการฝ่ายตัดต่อออฟไลน์";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"On my list" = "ในรายการของฉัน";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "วันช็อต";
+
+/* No comment provided by engineer. */
+"Online Editing" = "ตัดต่อออนไลน์";
+
+/* No comment provided by engineer. */
+"Online Editing Manager" = "ผู้จัดการฝ่ายตัดต่อออนไลน์";
+
+/* No comment provided by engineer. */
+"Online HD Editing" = "ตัดต่อ HD ออนไลน์";
+
+/* No comment provided by engineer. */
+"Optical Recording" = "บันทึกด้วยระบบออปติคัล";
+
+/* No comment provided by engineer. */
+"Order" = "ลำดับ";
+
+/* No comment provided by engineer. */
+"Original" = "ต้นฉบับ";
+
+/* No comment provided by engineer. */
+"Original Character Design" = "ออกแบบตัวละครต้นฉบับ";
+
+/* No comment provided by engineer. */
+"Original Creator" = "ผู้สร้างต้นฉบับ";
+
+/* No comment provided by engineer. */
+"Original Illustration" = "ภาพประกอบต้นฉบับ";
+
+/* No comment provided by engineer. */
+"Original Plan" = "แผนต้นฉบับ";
+
+/* No comment provided by engineer. */
+"Original Story" = "เรื่องราวต้นฉบับ";
+
+/* No comment provided by engineer. */
+"Other" = "อื่น ๆ";
+
+/* No comment provided by engineer. */
+"Other account settings" = "ตั้งค่าบัญชีอื่น ๆ";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overseas Advertising Producer" = "ผู้ผลิตโฆษณาต่างประเทศ";
+
+/* No comment provided by engineer. */
+"Overview" = "ภาพรวม";
+
+/* No comment provided by engineer. */
+"Paint" = "ลงสี";
+
+/* No comment provided by engineer. */
+"Parent" = "ภาคหลัก";
+
+/* (No Comment) */
+"Paused" = "หยุดพัก";
+
+/* No comment provided by engineer. */
+"Paused %@" = "หยุดดู %@";
+
+/* No comment provided by engineer. */
+"Photography" = "ถ่ายภาพ";
+
+/* No comment provided by engineer. */
+"Photography Assistance" = "ผู้ช่วยด้านการถ่ายภาพ";
+
+/* No comment provided by engineer. */
+"Photography Chief" = "หัวหน้าฝ่ายถ่ายภาพ";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "ผู้จัดการฝ่ายถ่ายภาพ";
+
+/* No comment provided by engineer. */
+"Picture book" = "หนังสือภาพ";
+
+/* (No Comment) */
+"Planning" = "วางแผนจะดู";
+
+/* No comment provided by engineer. */
+"Planning Assistance" = "ผู้ช่วยฝ่ายวางแผน";
+
+/* No comment provided by engineer. */
+"Planning Producer" = "โปรดิวเซอร์ฝ่ายวางแผน";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "วางแผนที่จะอ่าน %@";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "วางแผนที่จะดู %@";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "ล็อกอิน เพื่อใช้ ฟีเจอร์นี้";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "อนิเมะยอดนิยม";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "มังงะยอดนิยม";
+
+/* No comment provided by engineer. */
+"Popularity" = "ความนิยม";
+
+/* No comment provided by engineer. */
+"Prequel" = "ภาคก่อน";
+
+/* No comment provided by engineer. */
+"Private" = "ส่วนตัว";
+
+/* No comment provided by engineer. */
+"Producer" = "ผู้อำนวยการสร้าง";
+
+/* No comment provided by engineer. */
+"Producers" = "ผู้ผลิต";
+
+/* No comment provided by engineer. */
+"Production" = "การผลิต";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "ผู้ช่วยฝ่ายผลิต";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "ผู้ช่วยฝ่ายผลิต";
+
+/* No comment provided by engineer. */
+"Production Committee" = "คณะกรรมการฝ่ายผลิต";
+
+/* No comment provided by engineer. */
+"Production Design" = "ออกแบบการผลิต";
+
+/* No comment provided by engineer. */
+"Production Desk" = "โต๊ะฝ่ายผลิต";
+
+/* No comment provided by engineer. */
+"Profile" = "โปรไฟล์";
+
+/* No comment provided by engineer. */
+"Progress" = "ความคืบหน้า";
+
+/* No comment provided by engineer. */
+"Prop Design" = "ออกแบบอุปกรณ์ประกอบฉาก";
+
+/* No comment provided by engineer. */
+"Psychological" = "จิตวิทยา";
+
+/* No comment provided by engineer. */
+"Publishing" = "กำลังเผยแพร่";
+
+/* No comment provided by engineer. */
+"Push notifications" = "การแจ้งเตือนแบบพุช";
+
+/* No comment provided by engineer. */
+"Random" = "สุ่ม";
+
+/* No comment provided by engineer. */
+"Rankings" = "อันดับ";
+
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "อ่านบทที่ %1$@ จาก %2$@";
+
+/* No comment provided by engineer. */
+"Read Year" = "ปีที่อ่าน";
+
+/* No comment provided by engineer. */
+"Reading" = "กำลังอ่าน";
+
+/* No comment provided by engineer. */
+"Recommendations" = "แนะนำ";
+
+/* No comment provided by engineer. */
+"Recording" = "บันทึกเสียง";
+
+/* No comment provided by engineer. */
+"Recording Adjustment" = "ปรับแต่งการบันทึกเสียง";
+
+/* No comment provided by engineer. */
+"Recording Assistant" = "ผู้ช่วยบันทึกเสียง";
+
+/* No comment provided by engineer. */
+"Recording Engineer" = "วิศวกรบันทึกเสียง";
+
+/* No comment provided by engineer. */
+"Release Date" = "วันที่เผยแพร่\n";
+
+/* No comment provided by engineer. */
+"Release Year" = "ปีที่ออกฉาย";
+
+/* No comment provided by engineer. */
+"Releasing" = "ออกอากาศแล้ว";
+
+/* No comment provided by engineer. */
+"Repeat" = "ดูซ้ำ";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "ดูซ้ำแล้ว";
+
+/* (No Comment) */
+"Repeating" = "กำลังดูซ้ำ";
+
+/* No comment provided by engineer. */
+"Reread %@" = "อ่านซ้ำเรื่อง %@";
+
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "อ่านซ้ำบทที่ %1$@ จาก %2$@";
+
+/* (No Comment) */
+"Rereading" = "อ่านซ้ำ";
+
+/* No comment provided by engineer. */
+"Restore purchases" = "เรียกคืนการซื้อ";
+
+/* No comment provided by engineer. */
+"Review and Threads" = "บทวิจารณ์ และ กระทู้";
+
+/* No comment provided by engineer. */
+"Reviews" = "รีวิว";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "ดูซ้ำตอนที่ %1$@ จาก %2$@";
+
+/* (No Comment) */
+"Rewatching" = "ดูซ้ำ";
+
+/* No comment provided by engineer. */
+"Right" = "ขวา";
+
+/* No comment provided by engineer. */
+"Romaji" = "โรมาจิ";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "โรมาจิ (แบบตะวันตก)";
+
+/* No comment provided by engineer. */
+"Romance" = "โรแมนติก";
+
+/* No comment provided by engineer. */
+"Save" = "บันทึก";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "ไซไฟ";
+
+/* No comment provided by engineer. */
+"Score" = "คะแนน";
+
+/* No comment provided by engineer. */
+"Score distribution" = "คะแนนกระจาย";
+
+/* No comment provided by engineer. */
+"Score format" = "รูปแบบคะแนน";
+
+/* No comment provided by engineer. */
+"Script" = "บท";
+
+/* No comment provided by engineer. */
+"Script Assistance" = "ผู้ช่วยเขียนบท";
+
+/* No comment provided by engineer. */
+"Search type" = "ค้นหาประเภท";
+
+/* No comment provided by engineer. */
+"Season" = "ฤดู";
+
+/* No comment provided by engineer. */
+"See All" = "ดูทั้งหมด";
+
+/* No comment provided by engineer. */
+"Select Media Type" = "เลือกประเภทสื่อ";
+
+/* No comment provided by engineer. */
+"Selection type" = "ประเภทการเลือก";
+
+/* No comment provided by engineer. */
+"Sequel" = "ภาคต่อ";
+
+/* No comment provided by engineer. */
+"Series Composition" = "เรียบเรียงเนื้อเรื่องของซีรีส์";
+
+/* No comment provided by engineer. */
+"Series Composition Assistance" = "ผู้ช่วยด้านการเรียบเรียงเนื้อเรื่องของซีรีส์";
+
+/* Set to Status */
+"Set as %@" = "ตั้งเป็น %@";
+
+/* No comment provided by engineer. */
+"Set progress" = "ตั้งความคืบหน้า";
+
+/* No comment provided by engineer. */
+"Setting Design" = "ออกแบบฉาก";
+
+/* No comment provided by engineer. */
+"Settings" = "ตั้งค่า";
+
+/* No comment provided by engineer. */
+"Share" = "แชร์";
+
+/* No comment provided by engineer. */
+"Show less" = "แสดงน้อยลง";
+
+/* No comment provided by engineer. */
+"Show more" = "ดูเพิ่มเติม";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "แสดงเฉพาะอนิเมะที่อยู่ในรายการของฉัน";
+
+/* No comment provided by engineer. */
+"Show spoiler" = "แสดงสปอย";
+
+/* No comment provided by engineer. */
+"Shows the animes with behind episodes in your list." = "แสดงอนิเมะ ที่ตามดูในรายการ";
+
+/* No comment provided by engineer. */
+"Shows the next airing animes in your list." = "แสดงอนิเมะที่กำลังฉาย";
+
+/* No comment provided by engineer. */
+"Side Story" = "เรื่องเสริม";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "ชีวิตประจำวัน";
+
+/* No comment provided by engineer. */
+"Social" = "โซเชียล";
+
+/* No comment provided by engineer. */
+"Sort" = "เรียงตาม";
+
+/* No comment provided by engineer. */
+"Sound Design" = "รออกแบบเสียง";
+
+/* No comment provided by engineer. */
+"Sound Director" = "ผู้กำกับเสียง";
+
+/* No comment provided by engineer. */
+"Sound Effects" = "เอฟเฟกต์เสียง";
+
+/* No comment provided by engineer. */
+"Sound Effects Assistance" = "ผู้ช่วยด้านเอฟเฟกต์เสียง";
+
+/* No comment provided by engineer. */
+"Sound Producer" = "โปรดิวเซอร์เสียง";
+
+/* No comment provided by engineer. */
+"Sound Production" = "ผลิตเสียง";
+
+/* No comment provided by engineer. */
+"Sound Production Manager" = "ผู้จัดการฝ่ายผลิตเสียง";
+
+/* No comment provided by engineer. */
+"Sound Supervisor" = "หัวหน้าฝ่ายเสียง";
+
+/* No comment provided by engineer. */
+"Source" = "ที่มา";
+
+/* No comment provided by engineer. */
+"South Korea" = "เกาหลีใต้";
+
+/* No comment provided by engineer. */
+"Special" = "พิเศษ";
+
+/* No comment provided by engineer. */
+"Special Design" = "ออกแบบพิเศษ";
+
+/* No comment provided by engineer. */
+"Special Effects" = "เอฟเฟกต์พิเศษ";
+
+/* No comment provided by engineer. */
+"Special Effects Assistant" = "ผู้ช่วยด้านเอฟเฟกต์พิเศษ";
+
+/* No comment provided by engineer. */
+"Spin Off" = "ภาคแยก";
+
+/* No comment provided by engineer. */
+"Sports" = "กีฬา";
+
+/* No comment provided by engineer. */
+"Spring" = "ใบไม้ผลิ";
+
+/* No comment provided by engineer. */
+"Staff" = "ทีมงาน";
+
+/* No comment provided by engineer. */
+"Standard" = "มาตรฐาน";
+
+/* No comment provided by engineer. */
+"Start date" = "เริ่มวันที่";
+
+/* No comment provided by engineer. */
+"Start Date" = "วันที่เริ่ม";
+
+/* No comment provided by engineer. */
+"Started" = "วันที่เริ่ม";
+
+/* No comment provided by engineer. */
+"Stats" = "สถิติ";
+
+/* No comment provided by engineer. */
+"Status" = "สถานะ";
+
+/* No comment provided by engineer. */
+"Status distribution" = "การกระจายสถานะ";
+
+/* No comment provided by engineer. */
+"Status Distribution" = "การกระจายสถานะ";
+
+/* No comment provided by engineer. */
+"Story" = "เนื้อเรื่อง";
+
+/* No comment provided by engineer. */
+"Story & Art" = "เรื่อง & ภาพ";
+
+/* No comment provided by engineer. */
+"Story & Illustration" = "เรื่อง & ภาพประกอบ";
+
+/* No comment provided by engineer. */
+"Storyboard" = "สตอรี่บอร์ด";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "สตรีมที่ออกอากาศ";
+
+/* No comment provided by engineer. */
+"Studios" = "สตูดิโอ";
+
+/* No comment provided by engineer. */
+"Sub Character Design" = "ออกแบบตัวละครรอง";
+
+/* No comment provided by engineer. */
+"Summary" = "บทสรุป";
+
+/* No comment provided by engineer. */
+"Summer" = "ร้อน";
+
+/* No comment provided by engineer. */
+"Supernatural" = "เหนือธรรมชาติ";
+
+/* No comment provided by engineer. */
+"Supervisor" = "หัวหน้าที่ปรึกษา";
+
+/* No comment provided by engineer. */
+"Support the development of AniHyou!" = "สนับสนุนการพัฒนา AniHyou!";
+
+/* No comment provided by engineer. */
+"Supporting" = "ช่วยดำเนินเรื่อง";
+
+/* No comment provided by engineer. */
+"Supporting Staff" = "ผู้ช่วยทีมงาน";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "ซิงค์บัญชีกับ Apple Watch";
+
+/* No comment provided by engineer. */
+"Synonyms" = "คำเหมือน";
+
+/* No comment provided by engineer. */
+"Tags" = "แท็ก";
+
+/* No comment provided by engineer. */
+"Taiwan" = "ไต้หวัน";
+
+/* No comment provided by engineer. */
+"Technical Director" = "ผู้กำกับฝ่ายเทคนิค";
+
+/* No comment provided by engineer. */
+"Text Status" = "สถานะข้อความ";
+
+/* No comment provided by engineer. */
+"Thank you :)" = "ขอบคุณ :)";
+
+/* No comment provided by engineer. */
+"The id of the media the entry is of" = "ID สื่อนี้เป็นของ";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement" = "เรียบเรียงเพลงธีม";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "เรียบเรียงเพลงธีม (เพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "เรียบเรียงเพลงธีม (เพลงเปิดและเพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "เรียบเรียงเพลงธีม (เพลงเปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition" = "แต่งเพลงธีม";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (ED)" = "แต่งเพลงธีม (เพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "แต่งเพลงธีม (เพลงเปิดและเพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Composition (OP)" = "แต่งเพลงธีม (เพลงเปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics" = "เนื้อเพลงธีม";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "เนื้อเพลงธีม (เพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "เนื้อเพลงธีม (เพลงเปิดและเพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "เนื้อเพลงธีม (เพลงเปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance" = "การแสดงเพลงธีม";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (ED)" = "แสดงเพลงธีม (เพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "แสดงเพลงธีม (เพลงเปิดและเพลงปิด)";
+
+/* No comment provided by engineer. */
+"Theme Song Performance (OP)" = "แสดงเพลงธีม (เพลงเปิด)";
+
+/* No comment provided by engineer. */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "ฟีเจอร์นี้จะถูกปลดล็อคเมื่อคุณบริจาค แม้ว่าจะเป็นจำนวนน้อยก็ตาม!";
+
+/* No comment provided by engineer. */
+"Threads" = "กระทู้";
+
+/* No comment provided by engineer. */
+"Thriller" = "ระทึกขวัญ";
+
+/* No comment provided by engineer. */
+"Time spent" = "เวลาที่ใช้ไป";
+
+/* No comment provided by engineer. */
+"Title" = "ชื่อ";
+
+/* No comment provided by engineer. */
+"Title count" = "จำนวนเรื่อง";
+
+/* No comment provided by engineer. */
+"Title language" = "ภาษาของชื่อเรื่อง";
+
+/* No comment provided by engineer. */
+"Title Logo Design" = "ออกแบบโลโก้ชื่อเรื่อง";
+
+/* No comment provided by engineer. */
+"Title Logo Design Assistance" = "ผู้ช่วยออกแบบโลโก้ชื่อเรื่อง";
+
+/* No comment provided by engineer. */
+"Titles Count" = "จำนวนเรื่อง";
+
+/* No comment provided by engineer. */
+"Top 100" = "100 อันดับแรก";
+
+/* No comment provided by engineer. */
+"Top 100 Anime" = "อนิเมะ 100 อันดับแรก";
+
+/* No comment provided by engineer. */
+"Top 100 Manga" = "มังงะ 100 อันดับแรก";
+
+/* No comment provided by engineer. */
+"Top Movies" = "ภาพยนตร์ยอดนิยม";
+
+/* No comment provided by engineer. */
+"Top Popular" = "อันดับนิยม";
+
+/* No comment provided by engineer. */
+"Total Anime" = "อนิเมะทั้งหมด";
+
+/* No comment provided by engineer. */
+"Total Manga" = "มังงะทั้งหมด";
+
+/* No comment provided by engineer. */
+"Touch-up Art" = "ตกแต่งงานศิลป์";
+
+/* No comment provided by engineer. */
+"Touch-up Art & Lettering" = "ตกแต่งงานศิลป์ & ตัวอักษร";
+
+/* No comment provided by engineer. */
+"Trailer" = "ตัวอย่าง";
+
+/* No comment provided by engineer. */
+"Translate" = "แปล";
+
+/* No comment provided by engineer. */
+"Translations" = "แปล";
+
+/* No comment provided by engineer. */
+"Translator" = "ผู้แปลภาษา";
+
+/* No comment provided by engineer. */
+"Trending" = "กำลังมาแรง";
+
+/* No comment provided by engineer. */
+"Trending Anime" = "อนิเมะที่กำลังนิยม";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "มังงะ ยอดนิยม";
+
+/* No comment provided by engineer. */
+"TV" = "ทีวี";
+
+/* No comment provided by engineer. */
+"TV Short" = "ทีวีแบบสั้น";
+
+/* No comment provided by engineer. */
+"Unfollow" = "เลิกติดตาม";
+
+/* No comment provided by engineer. */
+"Unit Director" = "ผู้กำกับหน่วย";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "Unknown";
+
+/* No comment provided by engineer. */
+"Upcoming" = "เร็ว ๆ นี้";
+
+/* No comment provided by engineer. */
+"Upcoming Anime" = "อนิเมะที่มา เร็ว ๆ นี้";
+
+/* No comment provided by engineer. */
+"Upcoming Manga" = "มังงะใหม่เร็ว ๆ นี้";
+
+/* No comment provided by engineer. */
+"Updated" = "อัปเดต";
+
+/* No comment provided by engineer. */
+"Users" = "ผู้ใช้";
+
+/* No comment provided by engineer. */
+"Users likes" = "จำนวนผู้ชื่นชอบ";
+
+/* No comment provided by engineer. */
+"Version %@" = "เวอร์ชั่น %@";
+
+/* No comment provided by engineer. */
+"Video Editing" = "ตัดต่อวิดีโอ";
+
+/* No comment provided by engineer. */
+"VideoGame" = "วิดีโอเกม";
+
+/* No comment provided by engineer. */
+"Visual Coordinator" = "ผู้ประสานงานด้านภาพ";
+
+/* No comment provided by engineer. */
+"Visual Director" = "ผู้กำกับภาพ";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "เอฟเฟกต์ภาพ";
+
+/* No comment provided by engineer. */
+"Visual novel" = "นิยายภาพ";
+
+/* No comment provided by engineer. */
+"Voice Actors" = "นักพากย์";
+
+/* No comment provided by engineer. */
+"Vol" = "เล่ม";
+
+/* No comment provided by engineer. */
+"Volumes" = "เล่ม";
+
+/* No comment provided by engineer. */
+"Volumes Read" = "เล่มที่อ่าน";
+
+/* No comment provided by engineer. */
+"Watch Year" = "ปีที่รับชม";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "ดูตอนที่ %1$@ จาก %2$@";
+
+/* No comment provided by engineer. */
+"Watching" = "กำลังดู";
+
+/* No comment provided by engineer. */
+"Weapon Design" = "ออกแบบอาวุธ";
+
+/* No comment provided by engineer. */
+"Web novel" = "นิยายออนไลน์";
+
+/* No comment provided by engineer. */
+"Weekday" = "วันธรรมดา";
+
+/* No comment provided by engineer. */
+"Winter" = "หนาว";
+
+/* No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "เมื่อคุณซื้อใด ๆ คุณจะได้รับไอคอนแอปสุดพิเศษและสีเน้นแบบกำหนดเอง!";
+
+/* No comment provided by engineer. */
+"World Design" = "World Design";
+
+/* No comment provided by engineer. */
+"Year" = "ปี";
+
+/* No comment provided by engineer. */
+"Years active" = "ปีที่ใช้งาน";
+
+/* No comment provided by engineer. */
+"Yes" = "ใช่";
+
+/* No comment provided by engineer. */
+"You may need to login again in your browser" = "คุณอาจจำเป็นต้องเข้าสู่ระบบอีกครั้งในเบราว์เซอร์ของคุณ";
+
