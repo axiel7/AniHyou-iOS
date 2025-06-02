@@ -1,0 +1,1290 @@
+/* No comment provided by engineer. */
+"%lld chapters" = "%lld Kapitel";
+
+/* No comment provided by engineer. */
+"%lld episodes" = "%lld Folgen";
+
+/* No comment provided by engineer. */
+"%lld volumes" = "%lld Bände";
+
+/* No comment provided by engineer. */
+"+1" = "+1";
+
+/* No comment provided by engineer. */
+"1st Key Animation Director" = "1. Key Animation Regisseur";
+
+/* No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "1. Key Animation Regieassistenz";
+
+/* No comment provided by engineer. */
+"2D Design" = "2D-Design";
+
+/* No comment provided by engineer. */
+"2D Effects" = "2D-Effekte";
+
+/* No comment provided by engineer. */
+"2D Works" = "2D-Arbeiten";
+
+/* No comment provided by engineer. */
+"2nd Key Animation" = "2. Key Animation";
+
+/* No comment provided by engineer. */
+"3 Point Smiley :)" = "3-Punkte-Smiley :)";
+
+/* No comment provided by engineer. */
+"3D Art" = "3D-Kunst";
+
+/* No comment provided by engineer. */
+"3D Works" = "3D-Arbeiten";
+
+/* No comment provided by engineer. */
+"3DCG" = "3DCG";
+
+/* No comment provided by engineer. */
+"5 Star (3/5)" = "5 Sterne (3/5)";
+
+/* No comment provided by engineer. */
+"10 Point (5/10)" = "10 Punkte (5/10)";
+
+/* No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10 Punkte-Dezimalzahl (5.5/10)";
+
+/* No comment provided by engineer. */
+"100 Point (55/100)" = "100 Punkte (55/100)";
+
+/* No comment provided by engineer. */
+"A&R Producer" = "A&R Produzent";
+
+/* No comment provided by engineer. */
+"Accent color" = "Akzentfarbe";
+
+/* No comment provided by engineer. */
+"Accessory Design" = "Accessoire-Design";
+
+/* No comment provided by engineer. */
+"Account settings" = "Kontoeinstellungen";
+
+/* No comment provided by engineer. */
+"Action" = "Aktion";
+
+/* No comment provided by engineer. */
+"Action Animation Director" = "Action-Animations-Regisseur";
+
+/* No comment provided by engineer. */
+"Action Animation Supervisor" = "Action-Animations-Aufsicht";
+
+/* No comment provided by engineer. */
+"Action Animator" = "Action-Animator";
+
+/* No comment provided by engineer. */
+"Action Director" = "Action Regisseur";
+
+/* No comment provided by engineer. */
+"Activity" = "Aktivität";
+
+/* No comment provided by engineer. */
+"Activity type" = "Aktivitätstyp";
+
+/* No comment provided by engineer. */
+"Adaptation" = "Adaption";
+
+/* No comment provided by engineer. */
+"Add to List" = "Hinzufügen";
+
+/* No comment provided by engineer. */
+"Added" = "Hinzugefügt";
+
+/* No comment provided by engineer. */
+"ADR Director" = "ADR Regie";
+
+/* No comment provided by engineer. */
+"Adult" = "Erwachsene";
+
+/* No comment provided by engineer. */
+"Adventure" = "Abenteuer";
+
+/* No comment provided by engineer. */
+"Advertising" = "Werbung";
+
+/* No comment provided by engineer. */
+"Advertising Producer" = "Werbe-Produzent";
+
+/* No comment provided by engineer. */
+"Age" = "Alter";
+
+/* No comment provided by engineer. */
+"Airing" = "Am Laufen";
+
+/* No comment provided by engineer. */
+"Airing Anime" = "Ausstrahlende Animes";
+
+/* No comment provided by engineer. */
+"Airing Next" = "Ausstrahlend";
+
+/* No comment provided by engineer. */
+"Airing on my list" = "Veröffentlicht auf meiner Liste";
+
+/* No comment provided by engineer. */
+"All" = "Alle";
+
+/* No comment provided by engineer. */
+"Alternative" = "Alternativ";
+
+/* No comment provided by engineer. */
+"Animation" = "Animation";
+
+/* No comment provided by engineer. */
+"Animation Director" = "Animationsregisseur";
+
+/* No comment provided by engineer. */
+"Animation Producer" = "Animationsproduzent";
+
+/* No comment provided by engineer. */
+"Animation Production Assistance" = "Assistenz Animationsproduktion";
+
+/* No comment provided by engineer. */
+"Animation Supervisor" = "Animationsaufsicht";
+
+/* No comment provided by engineer. */
+"Anime" = "Anime";
+
+/* No comment provided by engineer. */
+"Anime Behind" = "Ausstehende Folgen";
+
+/* No comment provided by engineer. */
+"Anime List" = "Anime Liste";
+
+/* No comment provided by engineer. */
+"Anime, Manga, and More" = "Anime, Manga und mehr";
+
+/* No comment provided by engineer. */
+"App Icon" = "App-Symbol";
+
+/* No comment provided by engineer. */
+"Are you sure you want to log out?" = "Möchtest du dich wirklich abmelden?";
+
+/* No comment provided by engineer. */
+"Art" = "Kunst";
+
+/* No comment provided by engineer. */
+"Art Board" = "Artboard";
+
+/* No comment provided by engineer. */
+"Art Composition" = "Kunstkomposition";
+
+/* No comment provided by engineer. */
+"Art Design" = "Grafikdesign";
+
+/* No comment provided by engineer. */
+"Art Director" = "Artdirector";
+
+/* No comment provided by engineer. */
+"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Wie du vielleicht weißt, ist diese App völlig kostenlos und Open Source,\ndennoch erfordert die Entwicklung einer App eine Menge Zeit und Mühe.\nMit einer Spende kannst du dazu beitragen, Kosten für die Entwicklung, Wartung und neuer Features zu decken.";
+
+/* No comment provided by engineer. */
+"Ascending" = "Aufsteigend";
+
+/* No comment provided by engineer. */
+"Assistance" = "Assistenz";
+
+/* No comment provided by engineer. */
+"Assistant" = "Assistent";
+
+/* No comment provided by engineer. */
+"Assistant Animation Director" = "Assistent Animation Direktor";
+
+/* No comment provided by engineer. */
+"Assistant Art Director" = "Assistent Artdirector";
+
+/* No comment provided by engineer. */
+"Assistant Chief Animation Director" = "Assistent Haupt-Animationsleiter";
+
+/* No comment provided by engineer. */
+"Assistant Chief Director" = "Assistent Regieleitung";
+
+/* No comment provided by engineer. */
+"Assistant Director" = "Regieassistent";
+
+/* No comment provided by engineer. */
+"Assistant Director of Photography" = "Assistent Kameraarbeit";
+
+/* No comment provided by engineer. */
+"Assistant Episode Director" = "Assistent Episodenregisseur";
+
+/* No comment provided by engineer. */
+"Assistant Producer" = "Produktionsassistent";
+
+/* No comment provided by engineer. */
+"Assistant Production Manager" = "Assistent Produktionsmanager";
+
+/* No comment provided by engineer. */
+"Assistant Unit Director" = "Assistent Teilregisseur";
+
+/* No comment provided by engineer. */
+"Associate Producer" = "Produktionsassistent";
+
+/* No comment provided by engineer. */
+"Average Score" = "Durchschnittliche Bewertung";
+
+/* No comment provided by engineer. */
+"Background" = "Kontext";
+
+/* No comment provided by engineer. */
+"Background Art" = "Hintergrundbild";
+
+/* No comment provided by engineer. */
+"Background Art Assistance" = "Assistenz Hintergrundbild";
+
+/* No comment provided by engineer. */
+"Background Manager" = "Koordinator Hintergrundbild";
+
+/* No comment provided by engineer. */
+"Background Production" = "Produktion Hintergrundbild";
+
+/* No comment provided by engineer. */
+"Birth" = "Geburtstag";
+
+/* No comment provided by engineer. */
+"Birthday" = "Geburtstag";
+
+/* No comment provided by engineer. */
+"Blood type" = "Blutgruppe";
+
+/* No comment provided by engineer. */
+"Blood Type" = "Blutgruppe";
+
+/* No comment provided by engineer. */
+"Calendar" = "Kalender";
+
+/* No comment provided by engineer. */
+"Cancel" = "Abbrechen";
+
+/* No comment provided by engineer. */
+"Cancelled" = "Abgesagt";
+
+/* No comment provided by engineer. */
+"CG Animation" = "CG Animation";
+
+/* No comment provided by engineer. */
+"CG Animation Director" = "CG Animationsregisseur";
+
+/* No comment provided by engineer. */
+"CG Assistant Director" = "CG Regieassistenz";
+
+/* No comment provided by engineer. */
+"CG Background Modeling" = "CG Hintergrundmodellierung";
+
+/* No comment provided by engineer. */
+"CG Director" = "CG Regisseur";
+
+/* No comment provided by engineer. */
+"CG Layout" = "CG Layout";
+
+/* No comment provided by engineer. */
+"CG Modeling" = "CG Modellierung";
+
+/* No comment provided by engineer. */
+"CG Modeling Director" = "CG Modellierungsleiter";
+
+/* No comment provided by engineer. */
+"CG Producer" = "CG Produzent";
+
+/* No comment provided by engineer. */
+"CG Production" = "CG Produktion";
+
+/* No comment provided by engineer. */
+"CG Supervisor" = "CG Aufsicht";
+
+/* No comment provided by engineer. */
+"CG Technical Director" = "CG Technischer Leiter";
+
+/* No comment provided by engineer. */
+"Ch" = "Kap";
+
+/* No comment provided by engineer. */
+"Changes will take effect on app restart" = "Die Änderungen werden beim Neustart der Anwendung wirksam";
+
+/* No comment provided by engineer. */
+"Chapter Count" = "Anzahl der Kapitel";
+
+/* No comment provided by engineer. */
+"Chapters" = "Kapitel";
+
+/* No comment provided by engineer. */
+"Chapters read" = "Gelesene Kapitel";
+
+/* No comment provided by engineer. */
+"Chapters Read" = "Gelesene Kapitel";
+
+/* No comment provided by engineer. */
+"Character" = "Charakter";
+
+/* No comment provided by engineer. */
+"Character Design" = "Charakter Gestaltung";
+
+/* No comment provided by engineer. */
+"Characters" = "Charaktere";
+
+/* No comment provided by engineer. */
+"Chief Animation Director" = "Hauptanimationsregisseur";
+
+/* No comment provided by engineer. */
+"Chief Director" = "Regieleitung";
+
+/* No comment provided by engineer. */
+"Chief Episode Director" = "Leitender Episodenregisseur";
+
+/* No comment provided by engineer. */
+"Chief Mechanical Animation Director" = "Leiter Mechanische Animation";
+
+/* No comment provided by engineer. */
+"Chief Producer" = "Chefproduzent";
+
+/* No comment provided by engineer. */
+"Chief Production Desk" = "Produktionsbüroleiter";
+
+/* No comment provided by engineer. */
+"Chief Supervisor" = "Aufsichtsleitung";
+
+/* No comment provided by engineer. */
+"Chief Unit Director" = "Hauptabteilungsleiter";
+
+/* No comment provided by engineer. */
+"China" = "China";
+
+/* No comment provided by engineer. */
+"Choose between Anime or Manga." = "Wähle zwischen Anime oder Manga.";
+
+/* No comment provided by engineer. */
+"Clear" = "Zurücksetzen";
+
+/* No comment provided by engineer. */
+"Close" = "Schließen";
+
+/* No comment provided by engineer. */
+"Co-Producer" = "Koproduzent";
+
+/* No comment provided by engineer. */
+"Color Coordination" = "Farbkoordination";
+
+/* No comment provided by engineer. */
+"Color Design" = "Farbgestaltungsassistenz";
+
+/* No comment provided by engineer. */
+"Color Design Assistance" = "Farbgestaltung";
+
+/* No comment provided by engineer. */
+"Coloring" = "Farbgebung";
+
+/* No comment provided by engineer. */
+"Comedy" = "Komödie";
+
+/* No comment provided by engineer. */
+"Comic" = "Comic";
+
+/* No comment provided by engineer. */
+"Compact" = "Kompakt";
+
+/* No comment provided by engineer. */
+"Compilation" = "Zusammenstellung";
+
+/* (No Comment) */
+"Completed" = "Abgeschlossen";
+
+/* No comment provided by engineer. */
+"Completed %@" = "%@ abgeschlossen";
+
+/* No comment provided by engineer. */
+"Concept Art" = "Concept Art";
+
+/* No comment provided by engineer. */
+"Congratulations, you are up to date!\n(๑>◡<๑)" = "Super, du bist auf dem neuesten Stand";
+
+/* No comment provided by engineer. */
+"Contains" = "Enthält";
+
+/* No comment provided by engineer. */
+"Content" = "Inhalt";
+
+/* No comment provided by engineer. */
+"Costume Design" = "Kostümgestaltung";
+
+/* No comment provided by engineer. */
+"Country" = "Land";
+
+/* No comment provided by engineer. */
+"Country Distribution" = "Länderverteilung";
+
+/* No comment provided by engineer. */
+"Cover Illustration" = "Cover-Illustration";
+
+/* No comment provided by engineer. */
+"Creature Design" = "Kreaturengestaltung";
+
+/* (No Comment) */
+"Current" = "Aktuell";
+
+/* No comment provided by engineer. */
+"Custom" = "Benutzerdefiniert";
+
+/* No comment provided by engineer. */
+"Custom color" = "Eigene Farbe";
+
+/* No comment provided by engineer. */
+"Custom lists" = "Eigene Listen";
+
+/* No comment provided by engineer. */
+"Dates" = "Zeitraum";
+
+/* No comment provided by engineer. */
+"Days Watched" = "Tage gesehen";
+
+/* No comment provided by engineer. */
+"Death" = "Tod";
+
+/* No comment provided by engineer. */
+"Default" = "Standard";
+
+/* No comment provided by engineer. */
+"Default tab" = "Standardseite";
+
+/* No comment provided by engineer. */
+"Delete" = "Löschen";
+
+/* No comment provided by engineer. */
+"Delete this entry?" = "Diesen Eintrag löschen?";
+
+/* No comment provided by engineer. */
+"Descending" = "Absteigend";
+
+/* No comment provided by engineer. */
+"Design Assistance" = "Gestaltungsassistenz";
+
+/* No comment provided by engineer. */
+"Design Works" = "Gestaltungsarbeiten";
+
+/* No comment provided by engineer. */
+"Digital Animation" = "Digitalanimation";
+
+/* No comment provided by engineer. */
+"Digital Art" = "Digitale Kunst";
+
+/* No comment provided by engineer. */
+"Digital Coloring" = "Digitale Farbgebung";
+
+/* No comment provided by engineer. */
+"Digital Optical Recording" = "Digitale optische Aufnahme";
+
+/* No comment provided by engineer. */
+"Digital Paint" = "Digitale Malerei";
+
+/* No comment provided by engineer. */
+"Digital Photography" = "Digitale Fotografie";
+
+/* No comment provided by engineer. */
+"Digital Production Assistant" = "Digital-Produktionsassistent";
+
+/* No comment provided by engineer. */
+"Director" = "Direktor";
+
+/* No comment provided by engineer. */
+"Director of Photography" = "Kameraarbeit";
+
+/* No comment provided by engineer. */
+"Discord server" = "Discord-Server";
+
+/* No comment provided by engineer. */
+"Discover" = "Entdecken";
+
+/* No comment provided by engineer. */
+"Display" = "Anzeigen";
+
+/* No comment provided by engineer. */
+"Distribution type" = "Vertriebsart";
+
+/* No comment provided by engineer. */
+"Donate" = "Spenden";
+
+/* No comment provided by engineer. */
+"Donate!" = "Spende!";
+
+/* No comment provided by engineer. */
+"Donation" = "Spende";
+
+/* No comment provided by engineer. */
+"Donator" = "Spender";
+
+/* No comment provided by engineer. */
+"Done" = "Fertig";
+
+/* No comment provided by engineer. */
+"Doujinshi" = "Doujinshi";
+
+/* No comment provided by engineer. */
+"Drama" = "Drama";
+
+/* (No Comment) */
+"Dropped" = "Abgebrochen";
+
+/* No comment provided by engineer. */
+"Dropped %@" = "%@ abgebrochen";
+
+/* No comment provided by engineer. */
+"Duration" = "Laufzeit";
+
+/* No comment provided by engineer. */
+"Ecchi" = "Ecchi";
+
+/* No comment provided by engineer. */
+"Edit" = "Bearbeiten";
+
+/* No comment provided by engineer. */
+"Editing" = "Schnitt";
+
+/* No comment provided by engineer. */
+"Editing Assistant" = "Schnittassistent";
+
+/* No comment provided by engineer. */
+"Editing Manager" = "Schnittleitung";
+
+/* No comment provided by engineer. */
+"Effects" = "Effekte";
+
+/* No comment provided by engineer. */
+"Effects Animation Director" = "Effekt-Animationsregisseur";
+
+/* No comment provided by engineer. */
+"End date" = "Enddatum";
+
+/* No comment provided by engineer. */
+"Endcard" = "Abspann";
+
+/* No comment provided by engineer. */
+"English" = "Englisch";
+
+/* No comment provided by engineer. */
+"Ep" = "Ep";
+
+/* No comment provided by engineer. */
+"Ep %lld %@" = "Ep %lld %@";
+
+/* No comment provided by engineer. */
+"Ep %lld at %@" = "Ep %lld um %@";
+
+/* No comment provided by engineer. */
+"Episode Count" = "Episodenanzahl";
+
+/* No comment provided by engineer. */
+"Episode Director" = "Episodenregisseur";
+
+/* No comment provided by engineer. */
+"Episode Director (ED)" = "Episodenregisseur (ED)";
+
+/* No comment provided by engineer. */
+"Episode Director (OP)" = "Episodenregisseur (OP)";
+
+/* No comment provided by engineer. */
+"Episodes" = "Folgen";
+
+/* No comment provided by engineer. */
+"Episodes Watched" = "Gesehene Folgen";
+
+/* No comment provided by engineer. */
+"Executive Producer" = "Geschäftsführender Produzent";
+
+/* No comment provided by engineer. */
+"Executive Supervisor" = "Geschäftsführender Aufseher";
+
+/* No comment provided by engineer. */
+"Explore" = "Erkunden";
+
+/* No comment provided by engineer. */
+"External links" = "Externe Verweise";
+
+/* No comment provided by engineer. */
+"Eyecatch" = "Blickfang";
+
+/* No comment provided by engineer. */
+"Fall" = "Herbst";
+
+/* No comment provided by engineer. */
+"Fantasy" = "Fantasie";
+
+/* No comment provided by engineer. */
+"Favorites" = "Favoriten";
+
+/* No comment provided by engineer. */
+"Feed type" = "Feed-Typ";
+
+/* No comment provided by engineer. */
+"Female" = "Weiblich";
+
+/* No comment provided by engineer. */
+"Filter" = "Filter";
+
+/* No comment provided by engineer. */
+"Finish Date" = "Enddatum";
+
+/* No comment provided by engineer. */
+"Finished" = "Abgeschlossen";
+
+/* No comment provided by engineer. */
+"Finishing" = "Abschluss";
+
+/* No comment provided by engineer. */
+"Finishing Assistance" = "Abschlussassistenz";
+
+/* No comment provided by engineer. */
+"Finishing Check" = "Abschlussprüfung";
+
+/* No comment provided by engineer. */
+"Finishing Manager" = "Abschlusskoordinator";
+
+/* No comment provided by engineer. */
+"Finishing Production" = "Abschlussproduktion";
+
+/* No comment provided by engineer. */
+"Follow" = "Folgen";
+
+/* No comment provided by engineer. */
+"Followers" = "Beobachter";
+
+/* No comment provided by engineer. */
+"Following" = "Folgend";
+
+/* No comment provided by engineer. */
+"Follows" = "Folgt";
+
+/* No comment provided by engineer. */
+"Follows you" = "Folgt dir";
+
+/* No comment provided by engineer. */
+"Format" = "Format";
+
+/* No comment provided by engineer. */
+"Format Distribution" = "Format-Verteilung";
+
+/* No comment provided by engineer. */
+"Forum" = "Forum";
+
+/* No comment provided by engineer. */
+"From year" = "Ab Jahr";
+
+/* No comment provided by engineer. */
+"Game" = "Spiel";
+
+/* No comment provided by engineer. */
+"Gender" = "Geschlecht";
+
+/* No comment provided by engineer. */
+"General" = "Allgemein";
+
+/* No comment provided by engineer. */
+"Genres" = "Genres";
+
+/* No comment provided by engineer. */
+"GitHub repository" = "GitHub-Repository";
+
+/* No comment provided by engineer. */
+"Global" = "Global";
+
+/* No comment provided by engineer. */
+"Hentai" = "Hentai";
+
+/* No comment provided by engineer. */
+"Hiatus" = "Hiatus";
+
+/* No comment provided by engineer. */
+"Hide filters" = "Filter ausblenden";
+
+/* No comment provided by engineer. */
+"Hide from status lists" = "Aus Statuslisten ausblenden";
+
+/* No comment provided by engineer. */
+"Hide spoiler" = "Spoiler verbergen";
+
+/* No comment provided by engineer. */
+"Highest rated" = "Beste Bewertung";
+
+/* No comment provided by engineer. */
+"Home" = "Startseite";
+
+/* No comment provided by engineer. */
+"Hometown" = "Heimatstadt";
+
+/* No comment provided by engineer. */
+"Horror" = "Horror";
+
+/* No comment provided by engineer. */
+"Hours Watched" = "Stunden gesehen";
+
+/* No comment provided by engineer. */
+"Illustration" = "Illustration";
+
+/* No comment provided by engineer. */
+"Info type" = "Infotyp";
+
+/* No comment provided by engineer. */
+"Information" = "Informationen";
+
+/* No comment provided by engineer. */
+"Japan" = "Japan";
+
+/* No comment provided by engineer. */
+"Japanese" = "Japanisch";
+
+/* No comment provided by engineer. */
+"Last Added" = "Zuletzt hinzugefügt";
+
+/* No comment provided by engineer. */
+"Last Updated" = "Zuletzt aktualisiert";
+
+/* No comment provided by engineer. */
+"Last used" = "Zuletzt verwendet";
+
+/* No comment provided by engineer. */
+"Left" = "Links";
+
+/* No comment provided by engineer. */
+"Light novel" = "Light Novel";
+
+/* No comment provided by engineer. */
+"List Progress" = "Listen-Fortschritt";
+
+/* No comment provided by engineer. */
+"List style" = "Listen-Stil";
+
+/* No comment provided by engineer. */
+"Live action" = "Live-Action";
+
+/* No comment provided by engineer. */
+"Loading" = "Lädt";
+
+/* No comment provided by engineer. */
+"Log out" = "Abmelden";
+
+/* No comment provided by engineer. */
+"Login" = "Anmelden";
+
+/* No comment provided by engineer. */
+"Long Swipe Direction" = "Wischrichtung";
+
+/* No comment provided by engineer. */
+"Mahou Shoujo" = "Mahou Shoujo";
+
+/* No comment provided by engineer. */
+"Main" = "Primär";
+
+/* No comment provided by engineer. */
+"Male" = "Männlich";
+
+/* No comment provided by engineer. */
+"Manga" = "Manga";
+
+/* No comment provided by engineer. */
+"Manga List" = "Manga Liste";
+
+/* No comment provided by engineer. */
+"Mean score" = "Durchschnitt";
+
+/* No comment provided by engineer. */
+"Mean Score" = "Durchschnitt";
+
+/* No comment provided by engineer. */
+"Mecha" = "Mecha";
+
+/* No comment provided by engineer. */
+"Media" = "Medien";
+
+/* No comment provided by engineer. */
+"Media List" = "Medienliste";
+
+/* No comment provided by engineer. */
+"Media Type" = "Medientyp";
+
+/* No comment provided by engineer. */
+"Minimal" = "Minimal";
+
+/* No comment provided by engineer. */
+"More filters" = "Weitere Filter";
+
+/* No comment provided by engineer. */
+"Most popular" = "Beliebtester";
+
+/* No comment provided by engineer. */
+"Movie" = "Film";
+
+/* No comment provided by engineer. */
+"Multimedia project" = "Multimedia-Projekt";
+
+/* No comment provided by engineer. */
+"Music" = "Musik";
+
+/* No comment provided by engineer. */
+"Mystery" = "Geheimnis";
+
+/* No comment provided by engineer. */
+"Native" = "Einheimisch";
+
+/* No comment provided by engineer. */
+"Newly Added Anime" = "Neu hinzugefügte Anime";
+
+/* No comment provided by engineer. */
+"Newly Added Manga" = "Neu hinzugefügte Manga";
+
+/* No comment provided by engineer. */
+"No" = "Nein";
+
+/* No comment provided by engineer. */
+"No airing anime in your list\n(*´-`)" = "Kein erscheinender Anime in deiner Liste\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No anime for today\n(*´-`)" = "Heute kein Anime\n(*´-`)";
+
+/* No comment provided by engineer. */
+"No media" = "Keine Medieninhalte";
+
+/* No comment provided by engineer. */
+"No recommendations" = "Keine Empfehlungen";
+
+/* No comment provided by engineer. */
+"No reviews" = "Keine Rezensionen";
+
+/* No comment provided by engineer. */
+"Non-binary" = "Divers";
+
+/* No comment provided by engineer. */
+"None" = "Keine";
+
+/* No comment provided by engineer. */
+"Not yet released" = "Nocht nicht veröffentlicht";
+
+/* No comment provided by engineer. */
+"Notes" = "Notizen";
+
+/* No comment provided by engineer. */
+"Nothing in your list" = "Nichts in deiner Liste";
+
+/* No comment provided by engineer. */
+"Notifications" = "Benachrichtigungen";
+
+/* No comment provided by engineer. */
+"Novel" = "Roman";
+
+/* No comment provided by engineer. */
+"Occupations" = "Berufe";
+
+/* No comment provided by engineer. */
+"Offline Editing" = "Offline-Bearbeitung";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"On my list" = "Auf meiner Liste";
+
+/* No comment provided by engineer. */
+"ONA" = "ONA";
+
+/* No comment provided by engineer. */
+"OneShot" = "One Shot";
+
+/* No comment provided by engineer. */
+"Order" = "Sortierung";
+
+/* No comment provided by engineer. */
+"Original" = "Original";
+
+/* No comment provided by engineer. */
+"Other" = "Anderes";
+
+/* No comment provided by engineer. */
+"Other account settings" = "AniList-Accounteinstellungen";
+
+/* No comment provided by engineer. */
+"OVA" = "OVA";
+
+/* No comment provided by engineer. */
+"Overview" = "Überblick";
+
+/* No comment provided by engineer. */
+"Parent" = "Übergeordnete Geschichte";
+
+/* (No Comment) */
+"Paused" = "Pausiert";
+
+/* No comment provided by engineer. */
+"Paused %@" = "%@ pausiert";
+
+/* No comment provided by engineer. */
+"Photography" = "Fotografie";
+
+/* No comment provided by engineer. */
+"Photography Manager" = "Fotografie Manager";
+
+/* No comment provided by engineer. */
+"Picture book" = "Bilderbuch";
+
+/* (No Comment) */
+"Planning" = "Geplant";
+
+/* No comment provided by engineer. */
+"Plans to read %@" = "Plant %@ zu lesen";
+
+/* No comment provided by engineer. */
+"Plans to watch %@" = "Plant %@ zu schauen";
+
+/* No comment provided by engineer. */
+"Please login to use this feature" = "Bitte melden Sie sich an, um diese Funktion zu nutzen";
+
+/* No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Bitte öffne die AniHyou App auf deinem iPhone, gehe zu Profil → Einstellungen und wähle \"Konto mit Apple Watch synchronisieren\"";
+
+/* No comment provided by engineer. */
+"Popular Anime" = "Beliebte Anime";
+
+/* No comment provided by engineer. */
+"Popular Manga" = "Beliebte Manga";
+
+/* No comment provided by engineer. */
+"Popularity" = "Beliebtheit";
+
+/* No comment provided by engineer. */
+"Prequel" = "Prequel";
+
+/* No comment provided by engineer. */
+"Private" = "Privat";
+
+/* No comment provided by engineer. */
+"Producer" = "Produzent";
+
+/* No comment provided by engineer. */
+"Producers" = "Produzenten";
+
+/* No comment provided by engineer. */
+"Production" = "Produktion";
+
+/* No comment provided by engineer. */
+"Production Assistance" = "Produktionsassistenz";
+
+/* No comment provided by engineer. */
+"Production Assistant" = "Produktionsassistent";
+
+/* No comment provided by engineer. */
+"Production Committee" = "Produktionsausschuss";
+
+/* No comment provided by engineer. */
+"Production Design" = "Produktionsdesign";
+
+/* No comment provided by engineer. */
+"Production Desk" = "Produktionstisch";
+
+/* No comment provided by engineer. */
+"Profile" = "Profil";
+
+/* No comment provided by engineer. */
+"Progress" = "Fortschritt";
+
+/* No comment provided by engineer. */
+"Prop Design" = "Requisiten-Design";
+
+/* No comment provided by engineer. */
+"Psychological" = "Psychologisch";
+
+/* No comment provided by engineer. */
+"Publishing" = "Am Laufen";
+
+/* No comment provided by engineer. */
+"Publishing Manga" = "Erscheinende Manga";
+
+/* No comment provided by engineer. */
+"Push notifications" = "Push-Benachrichtigungen";
+
+/* No comment provided by engineer. */
+"Quick access to your anime or manga list." = "Schneller Zugriff auf deine Anime- oder Mangaliste.";
+
+/* No comment provided by engineer. */
+"Random" = "Zufall";
+
+/* No comment provided by engineer. */
+"Rankings" = "Rangliste";
+
+/* (No Comment) */
+"Read chapter %1$@ of %2$@" = "Kapitel %1$@ von %2$@ gelesen";
+
+/* No comment provided by engineer. */
+"Read Year" = "Lese-Jahr";
+
+/* No comment provided by engineer. */
+"Reading" = "Am Lesen";
+
+/* No comment provided by engineer. */
+"Recommendations" = "Empfehlungen";
+
+/* No comment provided by engineer. */
+"Relations" = "Verwandt";
+
+/* No comment provided by engineer. */
+"Relations and Recommendations" = "Verwandtes und Empfehlungen";
+
+/* No comment provided by engineer. */
+"Release Date" = "Erscheinungsdatum";
+
+/* No comment provided by engineer. */
+"Release Year" = "Erscheinungsjahr";
+
+/* No comment provided by engineer. */
+"Releasing" = "Wird Veröffentlicht";
+
+/* No comment provided by engineer. */
+"Repeat Count" = "Anzahl der Wiederholungen";
+
+/* (No Comment) */
+"Repeating" = "Am Wiederholen";
+
+/* No comment provided by engineer. */
+"Reread %@" = "%@ erneut gelesen";
+
+/* (No Comment) */
+"Reread chapter %1$@ of %2$@" = "Kapitel %1$@ von %2$@ erneut gelesen";
+
+/* (No Comment) */
+"Rereading" = "Erneut Lesen";
+
+/* No comment provided by engineer. */
+"Reviews" = "Rezensionen";
+
+/* (No Comment) */
+"Rewatched episode %1$@ of %2$@" = "Episode %1$@ von %2$@ erneut gesehen";
+
+/* (No Comment) */
+"Rewatching" = "Erneut Anschauen";
+
+/* No comment provided by engineer. */
+"Romaji" = "Romaji";
+
+/* No comment provided by engineer. */
+"Romaji (Western Order)" = "Romaji (Westliche Ordnung)";
+
+/* No comment provided by engineer. */
+"Romance" = "Romantik";
+
+/* No comment provided by engineer. */
+"Save" = "Speichern";
+
+/* No comment provided by engineer. */
+"Sci-Fi" = "Sci-Fi";
+
+/* No comment provided by engineer. */
+"Score" = "Bewertung";
+
+/* No comment provided by engineer. */
+"Score format" = "Score-Format";
+
+/* No comment provided by engineer. */
+"Season" = "Saison";
+
+/* No comment provided by engineer. */
+"See All" = "Alle ansehen";
+
+/* No comment provided by engineer. */
+"Sequel" = "Sequel";
+
+/* No comment provided by engineer. */
+"Settings" = "Einstellungen";
+
+/* No comment provided by engineer. */
+"Share" = "Teilen";
+
+/* No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "Zeige nur bald ausgestrahlte Anime, die in deiner Liste stehen";
+
+/* No comment provided by engineer. */
+"Slice of Life" = "Slice of Life";
+
+/* No comment provided by engineer. */
+"Sort" = "Sortieren";
+
+/* No comment provided by engineer. */
+"Source" = "Quelle";
+
+/* No comment provided by engineer. */
+"South Korea" = "Südkorea";
+
+/* No comment provided by engineer. */
+"Special" = "Spezial";
+
+/* No comment provided by engineer. */
+"Spin Off" = "Spin Off";
+
+/* No comment provided by engineer. */
+"Sports" = "Sport";
+
+/* No comment provided by engineer. */
+"Spring" = "Frühling";
+
+/* No comment provided by engineer. */
+"Staff" = "Team";
+
+/* No comment provided by engineer. */
+"Standard" = "Standard";
+
+/* No comment provided by engineer. */
+"Start date" = "Startdatum";
+
+/* No comment provided by engineer. */
+"Start Date" = "Startdatum";
+
+/* No comment provided by engineer. */
+"Stats" = "Statistiken";
+
+/* No comment provided by engineer. */
+"Status" = "Status";
+
+/* No comment provided by engineer. */
+"Status Distribution" = "Statusverteilung";
+
+/* No comment provided by engineer. */
+"Streaming sites" = "Streaming-Websites";
+
+/* No comment provided by engineer. */
+"Studios" = "Studios";
+
+/* No comment provided by engineer. */
+"Summary" = "Zusammenfassung";
+
+/* No comment provided by engineer. */
+"Summer" = "Sommer";
+
+/* No comment provided by engineer. */
+"Supernatural" = "Übernatürlich";
+
+/* No comment provided by engineer. */
+"Supporting" = "Sekundäres";
+
+/* No comment provided by engineer. */
+"Sync account with Apple Watch" = "Konto mit Apple Watch synchronisieren";
+
+/* No comment provided by engineer. */
+"Synonyms" = "Synonyme";
+
+/* No comment provided by engineer. */
+"Tags" = "Tags";
+
+/* No comment provided by engineer. */
+"Taiwan" = "Taiwan";
+
+/* No comment provided by engineer. */
+"Text Status" = "Text-Status";
+
+/* No comment provided by engineer. */
+"Threads" = "Themen";
+
+/* No comment provided by engineer. */
+"Thriller" = "Thriller";
+
+/* No comment provided by engineer. */
+"Time spent" = "Verbrachte Zeit";
+
+/* No comment provided by engineer. */
+"Title" = "Titel";
+
+/* No comment provided by engineer. */
+"Title count" = "Anzahl der Titel";
+
+/* No comment provided by engineer. */
+"Title language" = "Titelsprache";
+
+/* No comment provided by engineer. */
+"To year" = "Bis Jahr";
+
+/* No comment provided by engineer. */
+"Top 100" = "Top 100";
+
+/* No comment provided by engineer. */
+"Top Movies" = "Top Filme";
+
+/* No comment provided by engineer. */
+"Top Popular" = "Top Beliebtheit";
+
+/* No comment provided by engineer. */
+"Trailer" = "Trailer";
+
+/* No comment provided by engineer. */
+"Translate" = "Übersetzen";
+
+/* No comment provided by engineer. */
+"Translations" = "Übersetzungen";
+
+/* No comment provided by engineer. */
+"Trending" = "Beliebt";
+
+/* No comment provided by engineer. */
+"Trending Manga" = "Mangatrends";
+
+/* No comment provided by engineer. */
+"TV" = "TV";
+
+/* No comment provided by engineer. */
+"TV Short" = "Kurzserie";
+
+/* Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "Unbekannt";
+
+/* No comment provided by engineer. */
+"Upcoming" = "Demnächst";
+
+/* No comment provided by engineer. */
+"Updated" = "Aktualisiert";
+
+/* No comment provided by engineer. */
+"Users" = "Nutzer";
+
+/* No comment provided by engineer. */
+"Users likes" = "Benutzer gefällt";
+
+/* No comment provided by engineer. */
+"Video Editing" = "Videobearbeitung";
+
+/* No comment provided by engineer. */
+"Visual Director" = "Visueller Direktor";
+
+/* No comment provided by engineer. */
+"Visual Effects" = "Visuelle Effekte";
+
+/* No comment provided by engineer. */
+"Visual novel" = "Visual Novel";
+
+/* No comment provided by engineer. */
+"Volumes" = "Bände";
+
+/* No comment provided by engineer. */
+"Watch Year" = "Schau-Jahr";
+
+/* (No Comment) */
+"Watched episode %1$@ of %2$@" = "Episode %1$@ von %2$@ gesehen";
+
+/* No comment provided by engineer. */
+"Watching" = "Am Schauen";
+
+/* No comment provided by engineer. */
+"Weapon Design" = "Waffendesign";
+
+/* No comment provided by engineer. */
+"Web novel" = "Web Novel";
+
+/* No comment provided by engineer. */
+"Winter" = "Winter";
+
+/* No comment provided by engineer. */
+"World Design" = "Weltdesign";
+
+/* No comment provided by engineer. */
+"Year" = "Jahr";
+
+/* No comment provided by engineer. */
+"Years active" = "Jahre aktiv";
+
