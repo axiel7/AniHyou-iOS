@@ -67,7 +67,7 @@ struct MediaDetailsMainInfo: View {
                             .textCase(.uppercase)
                         }
                     }//:Button
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyleGlassProminentCompat()
                     .alert("Please login to use this feature", isPresented: $showingNotLoggedAlert) {
                         Button("OK", role: .cancel) { }
                     }

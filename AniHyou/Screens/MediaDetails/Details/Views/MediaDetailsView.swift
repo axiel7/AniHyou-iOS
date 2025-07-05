@@ -32,25 +32,43 @@ struct MediaDetailsView: View {
             }
         }//:Group
         .navigationBarTitleDisplayMode(.inline) // fixes banner shuttering
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(!isiOS26)
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                ToolbarBackButton(scrolled: hasScrolled) {
-                    dismiss()
+            if #unavailable(iOS 26) {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarBackButton(scrolled: hasScrolled) {
+                        dismiss()
+                    }
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 if let details = viewModel.mediaDetails {
-                    ToolbarIconButton(
-                        systemImage: "heart",
-                        inverted: details.isFavourite,
-                        scrolled: hasScrolled
-                    ) {
-                        Task {
-                            await viewModel.toggleFavorite()
+                    if #available(iOS 26, *) {
+                        Button(action: {
+                            Task {
+                                await viewModel.toggleFavorite()
+                            }
+                        }) {
+                            let icon = if details.isFavourite {
+                                "heart.fill"
+                            } else {
+                                "heart"
+                            }
+                            Image(systemName: icon)
                         }
+                        .tint(nil)
+                    } else {
+                        ToolbarIconButton(
+                            systemImage: "heart",
+                            inverted: details.isFavourite,
+                            scrolled: hasScrolled
+                        ) {
+                            Task {
+                                await viewModel.toggleFavorite()
+                            }
+                        }
+                        .font(.system(size: 24))
                     }
-                    .font(.system(size: 24))
                 }
             }
         }

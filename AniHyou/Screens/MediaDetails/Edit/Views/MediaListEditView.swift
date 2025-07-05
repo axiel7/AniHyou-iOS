@@ -201,38 +201,7 @@ struct MediaListEditView: View {
             })//:Form
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if viewModel.isLoading {
-                        ProgressView()
-                    } else {
-                        Button("Save") {
-                            Task {
-                                await viewModel.updateEntry(
-                                    mediaId: mediaDetails.id,
-                                    status: status,
-                                    score: viewModel.score,
-                                    advancedScoresDict: advancedScores,
-                                    progress: progress,
-                                    progressVolumes: progressVolumes,
-                                    startedAt: isStartDateSet ? startDate : nil,
-                                    completedAt: isFinishDateSet ? finishDate : nil,
-                                    repeatCount: repeatCount,
-                                    isPrivate: isPrivate,
-                                    isHiddenFromStatusLists: isHiddenFromStatusLists,
-                                    customLists: customLists,
-                                    notes: notes
-                                )
-                            }
-                        }
-                        .font(.bold(.body)())
-                    }
-                }
+                toolbarContent
             }//:Toolbar
         }//:NavigationStack
         .onAppear {
@@ -248,6 +217,57 @@ struct MediaListEditView: View {
             if viewModel.isDeleteSuccess {
                 onDelete()
                 dismiss()
+            }
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            if #available(iOS 26, *) {
+                Button(action: { dismiss() }) {
+                    Label("Cancel", systemImage: "xmark")
+                }
+                .tint(nil)
+            } else {
+                Button("Cancel") {
+                    dismiss()
+                }
+            }
+        }
+
+        ToolbarItem(placement: .navigationBarTrailing) {
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                let action: () -> Void = {
+                    Task {
+                        await viewModel.updateEntry(
+                            mediaId: mediaDetails.id,
+                            status: status,
+                            score: viewModel.score,
+                            advancedScoresDict: advancedScores,
+                            progress: progress,
+                            progressVolumes: progressVolumes,
+                            startedAt: isStartDateSet ? startDate : nil,
+                            completedAt: isFinishDateSet ? finishDate : nil,
+                            repeatCount: repeatCount,
+                            isPrivate: isPrivate,
+                            isHiddenFromStatusLists: isHiddenFromStatusLists,
+                            customLists: customLists,
+                            notes: notes
+                        )
+                    }
+                }
+                if #available(iOS 26, *) {
+                    Button(action: action) {
+                        Label("Save", systemImage: "checkmark")
+                    }
+                    .buttonStyle(.borderedProminent)
+                } else {
+                    Button("Save", action: action)
+                        .font(.bold(.body)())
+                }
             }
         }
     }

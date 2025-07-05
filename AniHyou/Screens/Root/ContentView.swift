@@ -8,16 +8,6 @@
 import SwiftUI
 import AniListAPI
 
-fileprivate extension View {
-    func tabItem(_ tab: MainTab) -> some View {
-        self
-            .tabItem {
-                Label(tab.localizedName, systemImage: tab.systemImage)
-            }
-            .tag(tab.rawValue)
-    }
-}
-
 struct ContentView: View {
 
     @AppStorage(SELECTED_TAB_KEY) private var selectedTabIndex: Int = 0
@@ -30,41 +20,60 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedTabIndex) {
-            HomeView(isLoggedIn: isLoggedIn)
-                .tabItem(.home)
-                .environment(\.scoreFormat, myScoreFormat)
-            
-            if isLoggedIn {
-                MediaListStatusView(mediaType: .anime)
-                    .tabItem(.anime)
-                    .id(MediaType.anime)
+            Tab(MainTab.home.localizedName,
+                systemImage: MainTab.home.systemImage,
+                value: MainTab.home.rawValue
+            ) {
+                HomeView(isLoggedIn: isLoggedIn)
                     .environment(\.scoreFormat, myScoreFormat)
-            } else {
-                NotLoggedView()
-                    .tabItem(.anime)
             }
             
-            if isLoggedIn {
-                MediaListStatusView(mediaType: .manga)
-                    .tabItem(.manga)
-                    .id(MediaType.manga)
-                    .environment(\.scoreFormat, myScoreFormat)
-            } else {
-                NotLoggedView()
-                    .tabItem(.manga)
+            Tab(MainTab.anime.localizedName,
+                systemImage: MainTab.anime.systemImage,
+                value: MainTab.anime.rawValue
+            ) {
+                if isLoggedIn {
+                    MediaListStatusView(mediaType: .anime)
+                        .id(MediaType.anime)
+                        .environment(\.scoreFormat, myScoreFormat)
+                } else {
+                    NotLoggedView()
+                }
             }
             
-            if isLoggedIn {
-                ProfileView()
-                    .tabItem(.profile)
-            } else {
-                NotLoggedView()
-                    .tabItem(.profile)
+            Tab(MainTab.manga.localizedName,
+                systemImage: MainTab.manga.systemImage,
+                value: MainTab.manga.rawValue
+            ) {
+                if isLoggedIn {
+                    MediaListStatusView(mediaType: .manga)
+                        .id(MediaType.manga)
+                        .environment(\.scoreFormat, myScoreFormat)
+                } else {
+                    NotLoggedView()
+                }
             }
             
-            RootExploreView()
-                .tabItem(.explore)
+            Tab(MainTab.profile.localizedName,
+                systemImage: MainTab.profile.systemImage,
+                value: MainTab.profile.rawValue
+            ) {
+                if isLoggedIn {
+                    ProfileView()
+                } else {
+                    NotLoggedView()
+                }
+            }
+            
+            Tab(MainTab.explore.localizedName,
+                systemImage: MainTab.explore.systemImage,
+                value: MainTab.explore.rawValue,
+                role: .search
+            ) {
+                RootExploreView()
+            }
         }//:TabView
+        .tabViewStyle(.sidebarAdaptable)
         .onAppear {
             if defaultTab != -1 {
                 selectedTabIndex = defaultTab

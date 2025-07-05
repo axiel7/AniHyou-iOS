@@ -12,6 +12,19 @@ import RichText
 private let avatarSize: CGFloat = 110
 private let bannerHeight: CGFloat = 110
 
+fileprivate extension View {
+    @ViewBuilder
+    func pinnedViewBackground(hasScrolled: Bool) -> some View {
+        if #available(iOS 26, *) {
+            self
+                .glassEffect(isEnabled: hasScrolled)
+        } else {
+            self
+                .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))
+        }
+    }
+}
+
 struct ProfileView: View {
 
     var userId: Int?
@@ -33,11 +46,7 @@ struct ProfileView: View {
                 content
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            Text(viewModel.userInfo?.name ?? "Profile")
-                                .bold()
-                                .opacity(hasScrolled ? 1 : 0)
-                        }
+                        toolbarContent
                     }
                     .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
                     .task {
@@ -46,6 +55,9 @@ struct ProfileView: View {
             }//:NavigationStack
         } else {
             content
+                .toolbar {
+                    toolbarContent
+                }
                 .task {
                     await viewModel.getUserInfo(userId: userId!)
                 }
@@ -56,6 +68,25 @@ struct ProfileView: View {
                 )
         }
     }//:body
+    
+    @ToolbarContentBuilder
+    var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            let username = viewModel.userInfo?.name ?? "Profile"
+            if #available(iOS 26, *) {
+                Text(username)
+                    .bold()
+                    .padding(.horizontal)
+                    .padding(.vertical, 5)
+                    .glassEffect()
+                    .opacity(hasScrolled ? 1 : 0)
+            } else {
+                Text(username)
+                    .bold()
+                    .opacity(hasScrolled ? 1 : 0)
+            }
+        }
+    }
 
     var content: some View {
         ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
@@ -127,6 +158,7 @@ struct ProfileView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
                 .padding()
+                .buttonStyleGlassProminentCompat()
             } else {
                 VStack(alignment: .center) {
                     if viewModel.userInfo?.isFollowing == true {
@@ -142,7 +174,7 @@ struct ProfileView: View {
                                 await viewModel.toggleFollow(userId: userId!)
                             }
                         })
-                        .buttonStyle(.borderedProminent)
+                        .buttonStyleGlassProminentCompat()
                     }
                     if viewModel.userInfo?.isFollower == true {
                         Text("Follows you")
@@ -198,8 +230,10 @@ struct ProfileView: View {
                     .pickerStyle(.segmented)
                     .labelStyle(.iconOnly)
                     .padding()
-                    .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))
-                    Divider()
+                    .pinnedViewBackground(hasScrolled: hasScrolled)
+                    if #unavailable(iOS 26) {
+                        Divider()
+                    }
                 }
             }//:Section
         }

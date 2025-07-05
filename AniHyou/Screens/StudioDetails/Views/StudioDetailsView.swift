@@ -61,6 +61,7 @@ struct StudioDetailsView: View {
                         Text((studio.favourites ?? 0).formatted())
                         Image(systemName: studio.isFavourite ? "heart.fill" : "heart")
                     }
+                    .tint(nil)
                 }
             }
         } else {

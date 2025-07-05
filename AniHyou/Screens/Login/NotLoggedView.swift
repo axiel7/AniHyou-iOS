@@ -21,7 +21,7 @@ struct NotLoggedView: View {
                     Text("Login")
                 }
             )
-            .buttonStyle(.borderedProminent)
+            .buttonStyleGlassProminentCompat()
         }
     }
 }

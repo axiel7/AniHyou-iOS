@@ -46,6 +46,7 @@ struct CharacterDetailsView: View {
                     }) {
                         Image(systemName: character.isFavourite ? "heart.fill" : "heart")
                     }
+                    .tint(nil)
                 }
             }
         }

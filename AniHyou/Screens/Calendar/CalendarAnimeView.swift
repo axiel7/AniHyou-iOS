@@ -41,8 +41,16 @@ struct CalendarAnimeView: View {
                             }
                         })
                     },
-                    label: { Label("Filter", systemImage: "line.3.horizontal.decrease.circle") }
+                    label: {
+                        let icon = if #available(iOS 26, *) {
+                            "line.3.horizontal.decrease"
+                        } else {
+                            "line.3.horizontal.decrease.circle"
+                        }
+                        Label("Filter", systemImage: icon)
+                    }
                 )
+                .tint(nil)
             }
         }
     }

@@ -29,3 +29,34 @@ var isLocaleEnglish: Bool {
     let lang = Locale.autoupdatingCurrent.language
     return lang.isEquivalent(to: .init(identifier: "en")) || lang.isEquivalent(to: .init(identifier: "en-UK"))
 }
+
+var isiOS26: Bool {
+    if #available(iOS 26, *) {
+        return true
+    } else {
+        return false
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func glassEffectCompat(
+        in shape: some Shape = .capsule,
+        isEnabled: Bool = true
+    ) -> some View {
+        if #available(iOS 26, *) {
+            self.glassEffect(in: shape, isEnabled: isEnabled)
+        } else {
+            self
+        }
+    }
+    
+    @ViewBuilder
+    func buttonStyleGlassProminentCompat() -> some View {
+        if #available(iOS 26, *) {
+            self.buttonStyle(.glassProminent)
+        } else {
+            self.buttonStyle(.borderedProminent)
+        }
+    }
+}

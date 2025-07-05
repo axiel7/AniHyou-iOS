@@ -142,9 +142,15 @@ struct MediaListView: View {
                     Button("Random", systemImage: "shuffle") {
                         viewModel.getRandomEntryId()
                     }
+                    .tint(nil)
                 } label: {
-                    Image(systemName: "ellipsis.circle")
+                    if #available(iOS 26, *) {
+                        Image(systemName: "ellipsis")
+                    } else {
+                        Image(systemName: "ellipsis.circle")
+                    }
                 }
+                .tint(nil)
             }
         }
         .navigationTitle(navigationTitle)

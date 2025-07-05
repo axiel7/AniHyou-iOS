@@ -74,6 +74,7 @@ struct HomeView: View {
                     systemImage: viewModel.unreadNotificationsCount > 0 ? "bell.badge" : "bell"
                 )
             }
+            .tint(nil)
         }
     }
 }

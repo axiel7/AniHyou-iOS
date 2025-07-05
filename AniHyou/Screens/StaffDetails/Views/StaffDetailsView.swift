@@ -48,6 +48,7 @@ struct StaffDetailsView: View {
                     }) {
                         Image(systemName: staff.isFavourite ? "heart.fill" : "heart")
                     }
+                    .tint(nil)
                 }
             }
         }

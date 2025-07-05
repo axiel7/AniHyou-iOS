@@ -116,6 +116,7 @@ struct ThreadDetailsView: View {
                 }) {
                     Image(systemName: isSubscribed ? "bell.fill" : "bell")
                 }
+                .tint(nil)
             }
         }
         .onAppear {

@@ -45,7 +45,7 @@ struct DonationsView: View {
                         }
                     }
                 }
-                .buttonStyle(.borderedProminent)
+                .buttonStyleGlassProminentCompat()
                 .buttonBorderShape(.capsule)
 
                 Text("With any purchase you will gain access to exclusive app icons and custom accent colors!")

@@ -71,6 +71,7 @@ struct CurrentView: View {
                     }
                 }
                 .padding(.top, 12)
+                .padding(.bottom, 8)
             }
             .refreshable {
                 await viewModel.fetchLists()

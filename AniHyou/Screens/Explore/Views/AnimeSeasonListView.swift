@@ -147,6 +147,7 @@ struct AnimeSeasonListView: View {
         } label: {
             Image(systemName: listStyle == .grid ? "list.bullet" : "square.grid.2x2")
         }
+        .tint(nil)
         Menu {
             Picker("Sort", selection: $viewModel.sort) {
                 ForEach(SeasonViewModel.seasonSorts, id: \.self) {
@@ -173,9 +174,14 @@ struct AnimeSeasonListView: View {
                 viewModel.resetPage()
             }
         } label: {
-            Image(systemName: "line.3.horizontal.decrease.circle")
+            if #available(iOS 26, *) {
+                Image(systemName: "line.3.horizontal.decrease")
+            } else {
+                Image(systemName: "line.3.horizontal.decrease.circle")
+            }
         }
         .pickerStyle(.menu)
+        .tint(nil)
     }
 }
 
