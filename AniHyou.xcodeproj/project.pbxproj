@@ -314,6 +314,8 @@
 		48FC947F2868C0BD00C87F56 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC947E2868C0BD00C87F56 /* ChartViewModel.swift */; };
 		48FC94812868C0F400C87F56 /* MediaChartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94802868C0F400C87F56 /* MediaChartListView.swift */; };
 		48FC94832868C6DB00C87F56 /* ChartListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC94822868C6DB00C87F56 /* ChartListItemView.swift */; };
+		48FFC8BB2E10969900831B8E /* AniHyou.icon in Resources */ = {isa = PBXBuildFile; fileRef = 48FFC8BA2E10969900831B8E /* AniHyou.icon */; };
+		48FFC8BC2E10969900831B8E /* AniHyou.icon in Resources */ = {isa = PBXBuildFile; fileRef = 48FFC8BA2E10969900831B8E /* AniHyou.icon */; };
 		84734AE62A7DF658000BD9E6 /* MediaListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -714,6 +716,7 @@
 		48FC947E2868C0BD00C87F56 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		48FC94802868C0F400C87F56 /* MediaChartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaChartListView.swift; sourceTree = "<group>"; };
 		48FC94822868C6DB00C87F56 /* ChartListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListItemView.swift; sourceTree = "<group>"; };
+		48FFC8BA2E10969900831B8E /* AniHyou.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AniHyou.icon; sourceTree = "<group>"; };
 		84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -864,6 +867,7 @@
 				488C267A2853801A0005EE15 /* Constants.swift */,
 				481AD4E32851CE74001779EE /* Preview Content */,
 				481AD4E12851CE74001779EE /* Assets.xcassets */,
+				48FFC8BA2E10969900831B8E /* AniHyou.icon */,
 				48EFCDFF29FFED440096BF6E /* AniHyou.entitlements */,
 				488C2681285386600005EE15 /* Info.plist */,
 				488C267F2853822E0005EE15 /* Config.xcconfig */,
@@ -2097,6 +2101,7 @@
 				48B7ABE92BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
+				48FFC8BC2E10969900831B8E /* AniHyou.icon in Resources */,
 				48218B002BC57B9300A03421 /* StudioMedia.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2125,6 +2130,7 @@
 			files = (
 				48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */,
 				48C5014B2AD9091600E4243D /* Localizable.strings in Resources */,
+				48FFC8BB2E10969900831B8E /* AniHyou.icon in Resources */,
 				48B7ABEA2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				48F27911296EFE78000827F7 /* Assets.xcassets in Resources */,
 			);

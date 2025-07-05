@@ -1,0 +1,29 @@
+{
+  "fill" : {
+    "automatic-gradient" : "srgb:0.32157,0.42353,0.98824,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "AniHyou_frg.svg",
+          "name" : "AniHyou_frg"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
