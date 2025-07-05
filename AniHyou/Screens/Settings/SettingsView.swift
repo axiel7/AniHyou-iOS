@@ -130,8 +130,8 @@ struct SettingsView: View {
         .onAppear {
             selectedColor = Color(hex: customAccentColor)!
         }
-        .onChange(of: notificationsEnabled) { enabled in
-            if enabled {
+        .onChange(of: notificationsEnabled) {
+            if notificationsEnabled {
                 requestNotificationPermission()
             } else {
                 NotificationsManager.cancelSchedule()
@@ -152,8 +152,8 @@ struct SettingsView: View {
                     Text(mode.localizedName).tag(mode)
                 }
             }
-            .onChange(of: accentColorMode) { mode in
-                switch mode {
+            .onChange(of: accentColorMode) {
+                switch accentColorMode {
                 case .anihyou:
                     accentColor = ANIHYOU_COLOR
                 case .profile:
@@ -183,8 +183,8 @@ struct SettingsView: View {
 
             if accentColorMode == .custom {
                 ColorPicker("Custom color", selection: $selectedColor, supportsOpacity: false)
-                    .onChange(of: selectedColor) { color in
-                        if let hex = color.toHex() {
+                    .onChange(of: selectedColor) {
+                        if let hex = selectedColor.toHex() {
                             customAccentColor = hex
                             accentColor = hex
                         }

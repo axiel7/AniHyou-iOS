@@ -37,7 +37,6 @@ struct MediaCoverView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     MediaCoverView(imageUrl: "", width: 73, height: 110)
-        .previewLayout(.sizeThatFits)
 }

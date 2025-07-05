@@ -24,8 +24,10 @@ struct AccountSettingsView: View {
                                 Text(lang.localizedName).tag(lang)
                             }
                         }
-                        .onChange(of: viewModel.titleLanguage) { lang in
-                            viewModel.updateUserOptions(titleLanguage: lang)
+                        .onChange(of: viewModel.titleLanguage) {
+                            viewModel.updateUserOptions(
+                                titleLanguage: viewModel.titleLanguage
+                            )
                             showChangesAlert = true
                         }
                         Picker("Staff & Character name language", selection: $viewModel.staffNameLanguage) {
@@ -33,8 +35,10 @@ struct AccountSettingsView: View {
                                 Text(lang.localizedName).tag(lang)
                             }
                         }
-                        .onChange(of: viewModel.staffNameLanguage) { lang in
-                            viewModel.updateUserOptions(staffNameLanguage: lang)
+                        .onChange(of: viewModel.staffNameLanguage) {
+                            viewModel.updateUserOptions(
+                                staffNameLanguage: viewModel.staffNameLanguage
+                            )
                             showChangesAlert = true
                         }
                         Picker("Score format", selection: $viewModel.scoreFormat) {
@@ -42,8 +46,10 @@ struct AccountSettingsView: View {
                                 Text(format.localizedName).tag(format)
                             }
                         }
-                        .onChange(of: viewModel.scoreFormat) { format in
-                            viewModel.updateUserOptions(scoreFormat: format)
+                        .onChange(of: viewModel.scoreFormat) {
+                            viewModel.updateUserOptions(
+                                scoreFormat: viewModel.scoreFormat
+                            )
                             showChangesAlert = true
                         }
                     } header: {

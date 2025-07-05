@@ -44,7 +44,7 @@ struct ActivityFeedView: View {
                                 Text(type.lozalizedName).tag(type)
                             }
                         }
-                        .onChange(of: viewModel.type) { _ in
+                        .onChange(of: viewModel.type) {
                             viewModel.refresh()
                         }
                     }
@@ -53,7 +53,7 @@ struct ActivityFeedView: View {
                             Text("Following").tag(true)
                             Text("Global").tag(false)
                         }
-                        .onChange(of: viewModel.isFollowing) { _ in
+                        .onChange(of: viewModel.isFollowing) {
                             viewModel.refresh()
                         }
                     }

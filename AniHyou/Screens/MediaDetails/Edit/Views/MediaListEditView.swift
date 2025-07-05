@@ -53,7 +53,7 @@ struct MediaListEditView: View {
                         Label(status.localizedName, systemImage: status.systemImage)
                     }
                 }
-                .onChange(of: status) { status in
+                .onChange(of: status) {
                     if status == .completed {
                         progress = mediaDetails.maxEpOrCh ?? progress
                         progressVolumes = mediaDetails.volumes ?? progressVolumes
@@ -103,8 +103,8 @@ struct MediaListEditView: View {
                             .keyboardType(.numberPad)
                             .textFieldStyle(.roundedBorder)
                             .frame(width: textFieldWidth)
-                            .onChange(of: progress) { value in
-                                if let max = mediaDetails.maxEpOrCh, value > max {
+                            .onChange(of: progress) {
+                                if let max = mediaDetails.maxEpOrCh, progress > max {
                                     progress = max
                                 }
                             }
@@ -113,7 +113,7 @@ struct MediaListEditView: View {
                             value: $progress, in: 0...(mediaDetails.maxEpOrCh ?? Int.max)
                         )
                     }
-                    .onChange(of: progress) { progress in
+                    .onChange(of: progress) {
                         if status == .planning || mediaList == nil {
                             onUpdatedFromPlanning()
                         }
@@ -129,19 +129,19 @@ struct MediaListEditView: View {
                                 .keyboardType(.numberPad)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: textFieldWidth)
-                                .onChange(of: progressVolumes) { value in
-                                    if let max = mediaDetails.volumes, value > max {
+                                .onChange(of: progressVolumes) {
+                                    if let max = mediaDetails.volumes, progressVolumes > max {
                                         progressVolumes = max
                                     }
                                 }
                             Stepper("Volumes", value: $progressVolumes, in: 0...(mediaDetails.volumes ?? Int.max))
                         }
-                        .onChange(of: progressVolumes) { volumes in
+                        .onChange(of: progressVolumes) {
                             if status == .planning || mediaList == nil {
                                 onUpdatedFromPlanning()
                             }
                             if let maxVolumes = mediaDetails.volumes,
-                               volumes >= maxVolumes
+                               progressVolumes >= maxVolumes
                             {
                                 onMaxProgressReached()
                             }
@@ -238,14 +238,14 @@ struct MediaListEditView: View {
         .onAppear {
             setValues()
         }
-        .onChange(of: viewModel.isUpdateSuccess) { isUpdateSuccess in
-            if isUpdateSuccess, let entry = viewModel.entry {
+        .onChange(of: viewModel.isUpdateSuccess) {
+            if viewModel.isUpdateSuccess, let entry = viewModel.entry {
                 onSave(entry)
                 dismiss()
             }
         }
-        .onChange(of: viewModel.isDeleteSuccess) { isDeleteSuccess in
-            if isDeleteSuccess {
+        .onChange(of: viewModel.isDeleteSuccess) {
+            if viewModel.isDeleteSuccess {
                 onDelete()
                 dismiss()
             }

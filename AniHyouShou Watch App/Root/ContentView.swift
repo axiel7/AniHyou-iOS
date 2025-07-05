@@ -43,8 +43,8 @@ struct ContentView: View {
                 .padding()
             }
         }//:Group
-        .onChange(of: connectivityManager.receivedMessage ?? "") { message in
-            if !message.isEmpty {
+        .onChange(of: connectivityManager.receivedMessage) {
+            if let message = connectivityManager.receivedMessage, !message.isEmpty {
                 Task.init {
                     await viewModel.saveUserData(key: connectivityManager.key, value: message)
                 }

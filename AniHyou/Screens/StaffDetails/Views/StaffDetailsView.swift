@@ -118,7 +118,7 @@ struct StaffDetailsView: View {
                 Text("On my list")
                 Spacer()
                 TriPicker("On my list", selection: $viewModel.mediaOnMyList)
-                    .onChange(of: viewModel.mediaOnMyList) { _ in
+                    .onChange(of: viewModel.mediaOnMyList) {
                         viewModel.resetStaffMedia()
                     }
             }
@@ -160,7 +160,7 @@ struct StaffDetailsView: View {
                 Text("On my list")
                 Spacer()
                 TriPicker("On my list", selection: $viewModel.charactersOnMyList)
-                    .onChange(of: viewModel.charactersOnMyList) { _ in
+                    .onChange(of: viewModel.charactersOnMyList) {
                         viewModel.resetStaffCharacters()
                     }
             }

@@ -84,7 +84,7 @@ struct HListItemWithSubtitleView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     HListItemWithSubtitleView(
         title: "Cowboy Bebop: Tengoku no Tobira and a large title",
         subtitle: "Airing in 59 min",
@@ -94,5 +94,4 @@ struct HListItemWithSubtitleView: View {
     )
     .frame(width: 280, alignment: .leading)
     .padding(.leading, 8)
-    .previewLayout(.sizeThatFits)
 }

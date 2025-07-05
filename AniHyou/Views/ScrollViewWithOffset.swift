@@ -41,16 +41,6 @@ struct ScrollViewWithOffset<Content>: View where Content: View {
                     return Color.clear
                 })
         }
-        .coordinateSpace(namespace)
-    }
-}
-
-extension View {
-    func coordinateSpace(_ name: AnyHashable) -> some View {
-        if #available(iOS 17.0, *) {
-            return self.coordinateSpace(.named(name))
-        } else {
-            return self.coordinateSpace(name: name)
-        }
+        .coordinateSpace(.named(namespace))
     }
 }

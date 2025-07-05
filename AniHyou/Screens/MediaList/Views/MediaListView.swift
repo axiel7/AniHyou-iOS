@@ -71,14 +71,14 @@ struct MediaListView: View {
                 await viewModel.refreshList()
             }
         }
-        .onChange(of: sort) { newValue in
+        .onChange(of: sort) {
             Task {
-                await viewModel.onSortChanged(newValue, isAscending: sortAscending)
+                await viewModel.onSortChanged(sort, isAscending: sortAscending)
             }
         }
-        .onChange(of: sortAscending) { newValue in
+        .onChange(of: sortAscending) {
             Task {
-                await viewModel.onSortChanged(sort, isAscending: newValue)
+                await viewModel.onSortChanged(sort, isAscending: sortAscending)
             }
         }
         .onSubmit(of: .search) {

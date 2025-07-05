@@ -42,11 +42,11 @@ struct MediaListStatusView: View {
                 }
             }
         }//:NavigationSplitView
-        .onChange(of: selection) { value in
-            if let value {
-                UserDefaults.standard.setValue(value, forKey: mediaType.listStatusKey)
+        .onChange(of: selection) {
+            if let selection {
+                UserDefaults.standard.setValue(selection, forKey: mediaType.listStatusKey)
                 Task {
-                    viewModel.onChangeList(value)
+                    viewModel.onChangeList(selection)
                 }
             }
         }

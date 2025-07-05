@@ -23,7 +23,6 @@ struct CoverPlaceholderView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     CoverPlaceholderView(systemName: "hourglass", width: 80, height: 120)
-        .previewLayout(.sizeThatFits)
 }

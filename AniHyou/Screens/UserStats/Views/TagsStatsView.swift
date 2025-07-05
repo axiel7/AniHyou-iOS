@@ -47,7 +47,7 @@ struct TagsStatsView: View {
         .task {
             await viewModel.getTagsStats(userId: userId, mediaType: mediaType)
         }
-        .onChange(of: viewModel.distribution) { _ in
+        .onChange(of: viewModel.distribution) {
             Task {
                 await viewModel.getTagsStats(userId: userId, mediaType: mediaType)
             }

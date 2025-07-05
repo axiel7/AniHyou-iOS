@@ -119,11 +119,11 @@ struct CurrentView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .scrollTargetLayoutCompat()
+            .scrollTargetLayout()
             .frame(height: CurrentListItemView.height * rowsCount + 20)
             .padding(.leading)
         }
-        .scrollTargetBehaviorCompat()
+        .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
     }
 }
 

@@ -33,11 +33,11 @@ struct MediaReviewsAndThreadsView: View {
                             .buttonStyle(.plain)
                         }
                     }//:HStack
-                    .scrollTargetLayoutCompat()
+                    .scrollTargetLayout()
                     .padding(.leading)
                     .frame(height: 160)
                 }//:HScrollView
-                .scrollTargetBehaviorCompat()
+                .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
             }
 
             Text("Reviews")
@@ -65,10 +65,10 @@ struct MediaReviewsAndThreadsView: View {
                                 .buttonStyle(.plain)
                             }
                         }//:HGrid
-                        .scrollTargetLayoutCompat()
+                        .scrollTargetLayout()
                         .padding(.leading)
                     }//:HScrollView
-                    .scrollTargetBehaviorCompat()
+                    .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
                     .frame(height: 320)
                 }
             }//:ZStack

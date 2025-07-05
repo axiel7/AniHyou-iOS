@@ -47,7 +47,7 @@ struct GenresStatsView: View {
         .task {
             await viewModel.getGenresStats(userId: userId, mediaType: mediaType)
         }
-        .onChange(of: viewModel.distribution) { _ in
+        .onChange(of: viewModel.distribution) {
             Task {
                 await viewModel.getGenresStats(userId: userId, mediaType: mediaType)
             }

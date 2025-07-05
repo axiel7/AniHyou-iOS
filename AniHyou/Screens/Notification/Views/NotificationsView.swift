@@ -36,7 +36,7 @@ struct NotificationsView: View {
                                 }
                         }
                     }
-                    .onChange(of: viewModel.type) { _ in
+                    .onChange(of: viewModel.type) {
                         viewModel.resetPage()
                     }
                 } else {

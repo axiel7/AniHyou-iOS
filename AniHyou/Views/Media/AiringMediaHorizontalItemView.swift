@@ -73,7 +73,7 @@ struct AiringMediaHorizontalItemView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     AiringMediaHorizontalItemView(
         title: "Cowboy Bebop: Tengoku no Tobira and a large title",
         imageUrl: "https://picsum.photos/300/200",
@@ -83,5 +83,4 @@ struct AiringMediaHorizontalItemView: View {
     )
     .frame(width: 280, alignment: .leading)
     .padding(.leading, 8)
-    .previewLayout(.sizeThatFits)
 }

@@ -135,26 +135,13 @@ struct AiringWidgetEntryView: View {
     }
 
     var body: some View {
-        if #available(iOS 17.0, *) {
-            VStack(alignment: .leading) {
-                content
-            }//:VStack
-            .containerBackground(.background, for: .widget)
-            .padding(.vertical, paddingLenght)
-            .frame(height: entry.widgetSize.height, alignment: aligment)
-            .tint(tintColor)
-        } else {
-            ZStack {
-                Color(.widgetBackground)
-                    .ignoresSafeArea()
-                VStack(alignment: .leading) {
-                    content
-                }//:VStack
-                .padding(.vertical, paddingLenght)
-                .frame(height: entry.widgetSize.height, alignment: aligment)
-                .tint(tintColor)
-            }//:ZStack
-        }
+        VStack(alignment: .leading) {
+            content
+        }//:VStack
+        .containerBackground(.background, for: .widget)
+        .padding(.vertical, paddingLenght)
+        .frame(height: entry.widgetSize.height, alignment: aligment)
+        .tint(tintColor)
     }
     
     @ViewBuilder
@@ -206,13 +193,6 @@ struct AiringWidgetEntryView: View {
     
     @ViewBuilder
     var smallContent: some View {
-        var smallPadding: CGFloat? {
-            if #available(iOS 17.0, *) {
-                return 0
-            } else {
-                return nil
-            }
-        }
         if
             let item = entry.animeList.first,
             let item, // swift wtf ↑
@@ -231,7 +211,7 @@ struct AiringWidgetEntryView: View {
             }//:VStack
             .allowsTightening(true)
             .multilineTextAlignment(.leading)
-            .padding(.all, smallPadding)
+            .padding(.all, 0)
         }
     }
 }
@@ -250,13 +230,15 @@ struct AiringWidget: Widget {
     }
 }
 
-#Preview {
-    let entry = AiringEntry(
-        animeList: [],
-        date: Date(),
-        placeholderText: "This is a preview",
-        widgetSize: CGSize(width: 291, height: 141)
-    )
-    return AiringWidgetEntryView(entry: entry)
-        .previewContext(WidgetPreviewContext(family: .systemLarge))
-}
+#Preview(
+    as: .systemLarge,
+    widget: { AiringWidget() },
+    timeline: {
+        AiringEntry(
+            animeList: [],
+            date: Date(),
+            placeholderText: "This is a preview",
+            widgetSize: CGSize(width: 291, height: 141)
+        )
+    }
+)

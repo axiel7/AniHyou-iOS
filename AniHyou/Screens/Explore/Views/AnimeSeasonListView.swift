@@ -153,7 +153,7 @@ struct AnimeSeasonListView: View {
                     Text($0.localizedName)
                 }
             }
-            .onChange(of: viewModel.sort) { _ in
+            .onChange(of: viewModel.sort) {
                 viewModel.resetPage()
             }
             Picker("Season", selection: $viewModel.season) {
@@ -161,7 +161,7 @@ struct AnimeSeasonListView: View {
                     Text($0.localizedName)
                 }
             }
-            .onChange(of: viewModel.season) { _ in
+            .onChange(of: viewModel.season) {
                 viewModel.resetPage()
             }
             Picker("Year", selection: $viewModel.year) {
@@ -169,7 +169,7 @@ struct AnimeSeasonListView: View {
                     Text(String($0))
                 }
             }
-            .onChange(of: viewModel.year) { _ in
+            .onChange(of: viewModel.year) {
                 viewModel.resetPage()
             }
         } label: {

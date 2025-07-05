@@ -114,7 +114,6 @@ struct AnimeBehindEntry: BaseEntry {
     var widgetSize: CGSize
 }
 
-@available(iOS 17.0, *)
 struct AnimeBehindWidgetEntryView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     @AppStorage(ACCENT_COLOR_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var accentColor = ANIHYOU_COLOR
@@ -208,7 +207,6 @@ struct AnimeBehindWidgetEntryView: View {
     }
 }
 
-@available(iOS 17.0, *)
 struct AnimeBehindWidget: Widget {
     let kind: String = ANIME_BEHIND_WIDGET_KIND
 
@@ -223,13 +221,15 @@ struct AnimeBehindWidget: Widget {
     }
 }
 
-@available(iOS 17.0, *)
-#Preview {
-    AnimeBehindWidgetEntryView(entry: AnimeBehindEntry(
-        animeList: [],
-        date: Date(),
-        placeholderText: "Anime with unwatched episodes appear here",
-        widgetSize: CGSize(width: 291, height: 141)
-    ))
-    .previewContext(WidgetPreviewContext(family: .systemMedium))
-}
+#Preview(
+    as: .systemMedium,
+    widget: { AnimeBehindWidget() },
+    timeline: {
+        AnimeBehindEntry(
+            animeList: [],
+            date: Date(),
+            placeholderText: "Anime with unwatched episodes appear here",
+            widgetSize: CGSize(width: 291, height: 141)
+        )
+    }
+)

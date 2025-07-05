@@ -31,7 +31,7 @@ struct RootExploreView: View {
                 await viewModel.runSearch()
             }
         }
-        .onChange(of: viewModel.type) { _ in
+        .onChange(of: viewModel.type) {
             Task {
                 await viewModel.runSearch()
             }

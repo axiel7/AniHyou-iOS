@@ -50,7 +50,7 @@ struct StudiosStatsView: View {
         .task {
             await viewModel.getStudiosStats(userId: userId)
         }
-        .onChange(of: viewModel.distribution) { _ in
+        .onChange(of: viewModel.distribution) {
             Task {
                 await viewModel.getStudiosStats(userId: userId)
             }

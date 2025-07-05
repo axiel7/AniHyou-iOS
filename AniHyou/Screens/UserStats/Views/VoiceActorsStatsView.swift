@@ -51,7 +51,7 @@ struct VoiceActorsStatsView: View {
         .task {
             await viewModel.getVoiceActorsStats(userId: userId)
         }
-        .onChange(of: viewModel.distribution) { _ in
+        .onChange(of: viewModel.distribution) {
             Task {
                 await viewModel.getVoiceActorsStats(userId: userId)
             }

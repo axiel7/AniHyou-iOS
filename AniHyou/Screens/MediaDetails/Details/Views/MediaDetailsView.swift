@@ -54,9 +54,9 @@ struct MediaDetailsView: View {
                 }
             }
         }
-        .onChange(of: viewModel.mediaDetails) { details in
+        .onChange(of: viewModel.mediaDetails) {
             DispatchQueue.main.async {
-                attributedSynopsis = details?.description?.htmlToAttributedString()
+                attributedSynopsis = viewModel.mediaDetails?.description?.htmlToAttributedString()
                     ?? NSAttributedString(string: "No description")
             }
         }

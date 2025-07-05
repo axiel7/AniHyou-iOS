@@ -25,8 +25,8 @@ struct UserStatsHostView: View {
                     }
                 }
             }
-            .onChange(of: statType) { value in
-                if mediaType == .manga && value.isAnime {
+            .onChange(of: statType) {
+                if mediaType == .manga && statType.isAnime {
                     mediaType = .anime
                 }
             }

@@ -29,32 +29,3 @@ var isLocaleEnglish: Bool {
     let lang = Locale.autoupdatingCurrent.language
     return lang.isEquivalent(to: .init(identifier: "en")) || lang.isEquivalent(to: .init(identifier: "en-UK"))
 }
-
-extension View {
-    @ViewBuilder
-    func translationPresentationCompat(isPresented: Binding<Bool>, text: String) -> some View {
-        if #available(iOS 17.4, *) {
-            self.translationPresentation(isPresented: isPresented, text: text)
-        } else {
-            self
-        }
-    }
-    
-    @ViewBuilder
-    func scrollTargetLayoutCompat() -> some View {
-        if #available(iOS 17.0, *) {
-            self.scrollTargetLayout()
-        } else {
-            self
-        }
-    }
-    
-    @ViewBuilder
-    func scrollTargetBehaviorCompat() -> some View {
-        if #available(iOS 17.0, *) {
-            self.scrollTargetBehavior(.viewAligned(limitBehavior: .always))
-        } else {
-            self
-        }
-    }
-}

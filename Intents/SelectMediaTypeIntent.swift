@@ -41,7 +41,6 @@ enum MediaTypeAppEnum: String, AppEnum {
     ]
 }
 
-@available(iOS 17.0, *)
 struct SelectMediaTypeIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Select Media Type"
     static var description = IntentDescription("Choose between Anime or Manga.")

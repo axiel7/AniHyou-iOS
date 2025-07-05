@@ -31,8 +31,8 @@ struct DatePickerToggleView: View {
                     }
                 }
             }
-            .onChange(of: isDateSet.wrappedValue) { isSet in
-                showDatePicker = isSet
+            .onChange(of: isDateSet.wrappedValue) {
+                showDatePicker = isDateSet.wrappedValue
             }
             if showDatePicker {
                 DatePicker("Start Date", selection: selection, displayedComponents: [.date])

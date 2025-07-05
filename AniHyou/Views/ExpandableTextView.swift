@@ -28,7 +28,7 @@ struct ExpandableTextView: View {
             Text(styledText)
                 .lineLimit(isExpanded ? nil : lineLimit)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .translationPresentationCompat(
+                .translationPresentation(
                     isPresented: $showingTranslation,
                     text: text.string
                 )

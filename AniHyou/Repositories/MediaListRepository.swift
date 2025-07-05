@@ -395,10 +395,8 @@ struct MediaListRepository {
                         ofType: T.self,
                         withKey: "MediaList:\(entry.id).\(entry.mediaId)"
                     )
-                    if #available(iOS 17.0, *) {
-                        WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
-                        WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
-                    }
+                    WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
+                    WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
                     continuation.resume(returning: newObject)
                 } catch {
                     print(error)

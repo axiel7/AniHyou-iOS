@@ -58,7 +58,7 @@ struct ExploreView: View {
                             Text(String($0)).tag(Optional($0))
                         }
                     }
-                    .onChange(of: viewModel.yearFrom) { _ in
+                    .onChange(of: viewModel.yearFrom) {
                         Task {
                             await viewModel.runSearch()
                         }
@@ -71,7 +71,7 @@ struct ExploreView: View {
                             Text(String($0)).tag(Optional($0))
                         }
                     }
-                    .onChange(of: viewModel.yearTo) { _ in
+                    .onChange(of: viewModel.yearTo) {
                         Task {
                             await viewModel.runSearch()
                         }
@@ -83,7 +83,7 @@ struct ExploreView: View {
                             Text($0.localizedName).tag(Optional($0))
                         }
                     }
-                    .onChange(of: viewModel.season) { _ in
+                    .onChange(of: viewModel.season) {
                         Task {
                             await viewModel.runSearch()
                         }
@@ -95,28 +95,28 @@ struct ExploreView: View {
                             Text($0.localizedName).tag(Optional($0))
                         }
                     }
-                    .onChange(of: viewModel.country) { _ in
+                    .onChange(of: viewModel.country) {
                         Task {
                             await viewModel.runSearch()
                         }
                     }
                     
                     TriPicker("On my list", selection: $viewModel.mediaOnMyList)
-                        .onChange(of: viewModel.mediaOnMyList) { _ in
+                        .onChange(of: viewModel.mediaOnMyList) {
                             Task {
                                 await viewModel.runSearch()
                             }
                         }
                     
                     TriPicker("Doujinshi", selection: $viewModel.isDoujinshi)
-                        .onChange(of: viewModel.isDoujinshi) { _ in
+                        .onChange(of: viewModel.isDoujinshi) {
                             Task {
                                 await viewModel.runSearch()
                             }
                         }
                     
                     TriPicker("Adult", selection: $viewModel.isAdult)
-                        .onChange(of: viewModel.isAdult) { _ in
+                        .onChange(of: viewModel.isAdult) {
                             Task {
                                 await viewModel.runSearch()
                             }
@@ -371,7 +371,7 @@ struct ExploreView: View {
             Text("Favorites").tag(MediaSort.favouritesDesc)
             Text("Release Date").tag(MediaSort.startDateDesc)
         }
-        .onChange(of: viewModel.sortMedia) { _ in
+        .onChange(of: viewModel.sortMedia) {
             Task {
                 await viewModel.runSearch()
             }
@@ -381,7 +381,7 @@ struct ExploreView: View {
                 Text("Ascending").tag(true)
                 Text("Descending").tag(false)
             }
-            .onChange(of: viewModel.isAscending) { _ in
+            .onChange(of: viewModel.isAscending) {
                 Task {
                     await viewModel.onChangeSortOrder()
                 }

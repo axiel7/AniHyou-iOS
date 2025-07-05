@@ -9,7 +9,6 @@ import WidgetKit
 import SwiftUI
 import AniListAPI
 
-@available(iOS 17.0, *)
 struct MediaListProvider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> MediaListEntry {
         MediaListEntry(
@@ -87,7 +86,6 @@ struct MediaListEntry: BaseEntry {
     var widgetSize: CGSize
 }
 
-@available(iOS 17.0, *)
 struct MediaListWidgetEntryView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     @AppStorage(ACCENT_COLOR_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var accentColor = ANIHYOU_COLOR
@@ -150,7 +148,6 @@ struct MediaListWidgetEntryView: View {
     }
 }
 
-@available(iOS 17.0, *)
 private struct MediaListItemView: View {
     
     let item: ShouUserMediaList
@@ -196,7 +193,6 @@ private struct MediaListItemView: View {
     }
 }
 
-@available(iOS 17.0, *)
 struct MediaListWidget: Widget {
     let kind: String = MEDIA_LIST_WIDGET_KIND
 
@@ -214,13 +210,15 @@ struct MediaListWidget: Widget {
     }
 }
 
-@available(iOS 17.0, *)
-#Preview {
-    MediaListWidgetEntryView(entry: MediaListEntry(
-        animeList: [],
-        date: Date(),
-        placeholderText: "Your anime or manga list here.",
-        widgetSize: CGSize(width: 291, height: 141)
-    ))
-    .previewContext(WidgetPreviewContext(family: .systemMedium))
-}
+#Preview(
+    as: .systemMedium,
+    widget: { MediaListWidget() },
+    timeline: {
+        MediaListEntry(
+            animeList: [],
+            date: Date(),
+            placeholderText: "Your anime or manga list here.",
+            widgetSize: CGSize(width: 291, height: 141)
+        )
+    }
+)

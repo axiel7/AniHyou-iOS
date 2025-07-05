@@ -87,20 +87,20 @@ struct WeekAnimeListView: View {
                     }
             }
         }
-        .onChange(of: weekday) { day in
+        .onChange(of: weekday) {
             Task {
                 await viewModel.getAiringAnimes(
-                    weekday: day,
+                    weekday: weekday,
                     onMyList: onMyList,
                     resetPage: true
                 )
             }
         }
-        .onChange(of: onMyList) { onList in
+        .onChange(of: onMyList) {
             Task {
                 await viewModel.getAiringAnimes(
                     weekday: weekday,
-                    onMyList: onList,
+                    onMyList: onMyList,
                     resetPage: true
                 )
             }
