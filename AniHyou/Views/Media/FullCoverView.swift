@@ -43,10 +43,19 @@ struct FullCoverView: View {
                 }
             }//:VStack
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: { dismiss()}, label: {
-                        Text("Done").bold()
-                    })
+                if #available(iOS 26, *) {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(action: { dismiss() }) {
+                            Label("Close", systemImage: "xmark")
+                        }
+                    }
+                } else {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(action: { dismiss() }) {
+                            Text("Done").bold()
+                        }
+                        .tint(nil)
+                    }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)

@@ -30,15 +30,27 @@ struct MultiSelectionSheet<Data: Hashable, RowContent: View>: View {
                         .tint(.red)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(
-                            action: {
-                                onDone()
-                                dismiss()
-                            },
-                            label: {
-                                Text("Done").bold()
+                        if #available(iOS 26, *) {
+                            Button(
+                                action: {
+                                    onDone()
+                                    dismiss()
+                                }
+                            ) {
+                                Label("Done", systemImage: "checkmark")
                             }
-                        )
+                            .buttonStyle(.borderedProminent)
+                        } else {
+                            Button(
+                                action: {
+                                    onDone()
+                                    dismiss()
+                                },
+                                label: {
+                                    Text("Done").bold()
+                                }
+                            )
+                        }
                     }
                 }
         }

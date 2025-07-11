@@ -46,11 +46,20 @@ struct NotificationsView: View {
             .navigationTitle("Notifications")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem {
-                    Button("Done") {
-                        dismiss()
+                if #available(iOS 26, *) {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(action: { dismiss() }) {
+                            Label("Close", systemImage: "xmark")
+                        }
+                        .tint(nil)
                     }
-                    .font(.bold(.body)())
+                } else {
+                    ToolbarItem {
+                        Button("Done") {
+                            dismiss()
+                        }
+                        .font(.bold(.body)())
+                    }
                 }
             }
         }//:NavigationStack
