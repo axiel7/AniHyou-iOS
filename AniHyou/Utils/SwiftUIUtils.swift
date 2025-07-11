@@ -44,8 +44,8 @@ extension View {
         in shape: some Shape = .capsule,
         isEnabled: Bool = true
     ) -> some View {
-        if #available(iOS 26, *) {
-            self.glassEffect(in: shape, isEnabled: isEnabled)
+        if #available(iOS 26, *), isEnabled {
+            self.glassEffect(in: shape)
         } else {
             self
         }
