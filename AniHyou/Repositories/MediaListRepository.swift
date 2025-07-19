@@ -60,7 +60,8 @@ struct MediaListRepository {
         statusIn: [MediaListStatus]?,
         sort: [MediaListSort],
         page: Int?,
-        perPage: Int? = 25
+        perPage: Int? = 25,
+        forceReload: Bool = false
     ) async -> PagedResult<CommonMediaListEntry>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -71,7 +72,8 @@ struct MediaListRepository {
                     type: .some(.case(mediaType)),
                     statusIn: someEnumArrayIfNotEmpty(statusIn),
                     sort: .some(sort.map({ .case($0) }))
-                )
+                ),
+                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
             ) { result in
                 switch result {
                 case .success(let graphQLResult):

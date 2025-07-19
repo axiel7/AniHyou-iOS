@@ -20,10 +20,10 @@ class CurrentViewModel: ObservableObject {
         airingList.isEmpty && behindList.isEmpty && animeList.isEmpty && mangaList.isEmpty
     }
     
-    func fetchLists() async {
+    func fetchLists(refresh: Bool = false) async {
         isLoading = true
         
-        if let anime = await getMediaList(mediaType: .anime) {
+        if let anime = await getMediaList(.anime, refresh: refresh) {
             airingList = anime
                 .filter { $0.media?.status?.value == .releasing && !$0.isBehind }
                 .sorted(by: {
@@ -35,19 +35,20 @@ class CurrentViewModel: ObservableObject {
             animeList = anime.filter { $0.media?.status?.value != .releasing }
         }
         
-        mangaList = await getMediaList(mediaType: .manga) ?? []
+        mangaList = await getMediaList(.manga, refresh: refresh) ?? []
         
         isLoading = false
     }
     
-    private func getMediaList(mediaType: MediaType) async -> [CommonMediaListEntry]? {
+    private func getMediaList(_ mediaType: MediaType, refresh: Bool) async -> [CommonMediaListEntry]? {
         return await MediaListRepository.getUserMediaList(
             userId: LoginRepository.authUserId(),
             mediaType: mediaType,
             statusIn: [.current, .repeating],
             sort: [.updatedTimeDesc],
             page: nil,
-            perPage: nil
+            perPage: nil,
+            forceReload: refresh
         )?.data
     }
     
