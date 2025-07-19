@@ -24,6 +24,8 @@ struct UserSocialView: View {
                 Text("Following").tag(0)
                 Text("Followers").tag(1)
             }
+            .padding(.bottom)
+            
             LazyVGrid(columns: gridColumns) {
                 switch socialType {
                 case 0:
@@ -59,6 +61,7 @@ struct UserSocialView: View {
                 }
             }
         }
+        .padding(.bottom)
     }
 }
 

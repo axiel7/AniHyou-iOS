@@ -17,24 +17,28 @@ struct UserFavoritesView: View {
     ]
 
     var body: some View {
-        Picker("Favorites", selection: $favoriteType) {
-            ForEach(FavoriteType.allCases, id: \.self) {
-                Text($0.localizedName)
+        VStack(alignment: .leading) {
+            Picker("Favorites", selection: $favoriteType) {
+                ForEach(FavoriteType.allCases, id: \.self) {
+                    Text($0.localizedName)
+                }
+            }
+            .padding(.bottom)
+            
+            switch favoriteType {
+            case .anime:
+                favoriteAnime
+            case .manga:
+                favoriteManga
+            case .characters:
+                favoriteCharacters
+            case .staff:
+                favoriteStaff
+            case .studios:
+                favoriteStudios
             }
         }
-        
-        switch favoriteType {
-        case .anime:
-            favoriteAnime
-        case .manga:
-            favoriteManga
-        case .characters:
-            favoriteCharacters
-        case .staff:
-            favoriteStaff
-        case .studios:
-            favoriteStudios
-        }
+        .padding(.bottom)
     }
     
     var favoriteAnime: some View {

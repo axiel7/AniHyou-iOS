@@ -48,13 +48,13 @@ struct FullCoverView: View {
                         Button(action: { dismiss() }) {
                             Label("Close", systemImage: "xmark")
                         }
+                        .tint(nil)
                     }
                 } else {
                     ToolbarItem(placement: .primaryAction) {
                         Button(action: { dismiss() }) {
                             Text("Done").bold()
                         }
-                        .tint(nil)
                     }
                 }
             }
