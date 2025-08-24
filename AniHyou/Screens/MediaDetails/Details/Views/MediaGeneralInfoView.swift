@@ -15,7 +15,8 @@ struct MediaGeneralInfoView: View {
     @State private var showSpoilerTags = false
     @State private var showAllTags = false
     private let tagLimit = 10
-    @State var showDialog = false
+    @State var showOpDialog = false
+    @State var showEdDialog = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,7 +30,7 @@ struct MediaGeneralInfoView: View {
                 themesList(
                     title: "Openings",
                     themes: openings,
-                    showingDialog: $showDialog
+                    showingDialog: $showOpDialog
                 )
             } else if viewModel.isLoadingThemes {
                 HorizontalProgressView()
@@ -45,7 +46,7 @@ struct MediaGeneralInfoView: View {
                 themesList(
                     title: "Endings",
                     themes: endings,
-                    showingDialog: $showDialog
+                    showingDialog: $showEdDialog
                 )
             }
         }
