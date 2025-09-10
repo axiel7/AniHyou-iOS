@@ -1,909 +1,1155 @@
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
 "%lld chapters" = "%lld فصول";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
 "%lld episodes" = "%lld حلقات";
-
-/* No comment provided by engineer. */
+/* num of volumes.
+Eg: 23 volumes */
 "%lld volumes" = "%lld مجلدات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
 "3 Point Smiley :)" = "3 نقاط مبتسمة :)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
 "5 Star (3/5)" = "5 نجوم (3\\5)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
 "10 Point (5/10)" = "10 نقاط (5\\10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "10 نقاط عشرية (5.5\\10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
 "100 Point (55/100)" = "100 نقطة (55\\100)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+A&R Producer
+No comment provided by engineer. */
 "A&R Producer" = "المنتج المسؤول عن المواهب";
-
-/* No comment provided by engineer. */
-"Accent color" = "اللون الثانوي";
-
-/* No comment provided by engineer. */
-"Accessory Design" = "تصميم الاكسسوارات";
-
-/* No comment provided by engineer. */
-"Account settings" = "إعدادات الحساب";
-
-/* No comment provided by engineer. */
-"Action" = "أكشن";
-
-/* No comment provided by engineer. */
-"Action Animation Director" = "مخرج تحريك الحركة";
-
-/* No comment provided by engineer. */
-"Action Animation Supervisor" = "مشرف تحريك الحركة";
-
-/* No comment provided by engineer. */
-"Action Animator" = "محرك الحركة";
-
-/* No comment provided by engineer. */
-"Action Director" = "مخرج الحركة";
-
-/* No comment provided by engineer. */
-"Activity" = "النشاط";
-
-/* No comment provided by engineer. */
-"Activity type" = "نوع النشاط";
-
-/* No comment provided by engineer. */
-"Adaptation" = "نسخة الأنيمي/المانغا";
-
-/* No comment provided by engineer. */
-"Add to List" = "أضف لقائمة";
-
-/* No comment provided by engineer. */
-"Added" = "تمت الإضافة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ADR Director
+No comment provided by engineer. */
 "ADR Director" = "مدير الصوتيات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
+"Accent color" = "اللون الثانوي";
+/* en.lproj/Localizable.strings
+Accessory Design
+No comment provided by engineer. */
+"Accessory Design" = "تصميم الاكسسوارات";
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
+"Account settings" = "إعدادات الحساب";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "أكشن";
+/* en.lproj/Localizable.strings
+Action Animation Director
+No comment provided by engineer. */
+"Action Animation Director" = "مخرج تحريك الحركة";
+/* en.lproj/Localizable.strings
+Action Animation Supervisor
+No comment provided by engineer. */
+"Action Animation Supervisor" = "مشرف تحريك الحركة";
+/* en.lproj/Localizable.strings
+Action Animator
+No comment provided by engineer. */
+"Action Animator" = "محرك الحركة";
+/* en.lproj/Localizable.strings
+Action Director
+No comment provided by engineer. */
+"Action Director" = "مخرج الحركة";
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
+"Activity" = "النشاط";
+/* Types: All, Text Status, List Progress */
+"Activity type" = "نوع النشاط";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "نسخة الأنيمي/المانغا";
+/* if the translation is too long, translate just (Add) */
+"Add to List" = "أضف لقائمة";
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
+"Added" = "تمت الإضافة";
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
 "Adult" = "للكبار";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
 "Adventure" = "مغامرة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising
+No comment provided by engineer. */
 "Advertising" = "الإعلانات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising Producer
+No comment provided by engineer. */
 "Advertising Producer" = "منتج الإعلانات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
 "Age" = "العمر";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
 "Airing" = "يبث";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
 "Airing Anime" = "الأنمي المبث";
-
-/* No comment provided by engineer. */
+/* you can translate it simply as (Airing) */
 "Airing Next" = "يبث تالي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing on my list
+No comment provided by engineer. */
 "Airing on my list" = "يُعرض حالياً في قائمتي";
-
-/* No comment provided by engineer. */
+/* for this one use the masculine form when applied. */
 "All" = "الكل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
 "Alternative" = "البديل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation
+No comment provided by engineer. */
 "Animation" = "الرسوم المتحركة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Director
+No comment provided by engineer. */
 "Animation Director" = "مخرج الرسوم المتحركة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Producer
+No comment provided by engineer. */
 "Animation Producer" = "منتج الرسوم المتحركة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Production Assistance
+No comment provided by engineer. */
 "Animation Production Assistance" = "المساعد في إنتاج الرسوم المتحركة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Supervisor
+No comment provided by engineer. */
 "Animation Supervisor" = "مشرف الرسوم المتحركة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
 "Anime" = "الأنمي";
-
-/* No comment provided by engineer. */
+/* anime with unwatched episodes */
 "Anime Behind" = "أنمي في الخلف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
 "Anime List" = "قائمة الأنمي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
 "Anime, Manga, and More" = "أنمي , مانجا , و المزيد";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
 "App Icon" = "أيقونة التطبيق";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Are you sure you want to log out?
+No comment provided by engineer. */
 "Are you sure you want to log out?" = "هل أنت متأكد من تسجيل الخروج؟";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art
+No comment provided by engineer. */
 "Art" = "الفن";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ascending
+No comment provided by engineer. */
 "Ascending" = "تصاعدي";
-
-/* No comment provided by engineer. */
+/* weighted Average Score */
 "Average Score" = "متوسط الدرجة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
 "Background" = "معلومات أساسية";
-
-/* No comment provided by engineer. */
+/* Birthday */
 "Birth" = "الميلاد";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
 "Birthday" = "تاريخ الميلاد";
-
-/* No comment provided by engineer. */
-"Blood type" = "فئة الدم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
 "Blood Type" = "فئة الدم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood type
+No comment provided by engineer. */
+"Blood type" = "فئة الدم";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
 "Calendar" = "التقويم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
 "Cancel" = "إلغاء";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
 "Cancelled" = "مُلغى";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
 "Changes will take effect on app restart" = "سوف تحدث التغييرات عند إعادة تشغيل التطبيق";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapter Count
+No comment provided by engineer. */
 "Chapter Count" = "عدد الفصول";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
 "Chapters" = "الفصول";
-
-/* No comment provided by engineer. */
-"Chapters read" = "الفصول المقروءة";
-
-/* No comment provided by engineer. */
+/* stats */
 "Chapters Read" = "الفصول المقروءة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "الفصول المقروءة";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
 "Character" = "شخصية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
 "Characters" = "الشخصيات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
 "China" = "الصين";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
 "Clear" = "إزالة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
 "Close" = "إغلاق";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
 "Comedy" = "كوميدي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
 "Comic" = "قصة مصورة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
 "Compact" = "مضغوط";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compilation
+No comment provided by engineer. */
 "Compilation" = "ملخص";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Completed */
 "Completed" = "مكتمل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Contains
+No comment provided by engineer. */
 "Contains" = "يحتوي على";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
 "Content" = "المحتوى";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
 "Country" = "البلد/الدولة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country Distribution
+No comment provided by engineer. */
 "Country Distribution" = "توزّع البلدان";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Current */
 "Current" = "الحالي";
-
-/* No comment provided by engineer. */
+/* custom app color */
 "Custom" = "مخصص";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
 "Custom color" = "لون مخصص";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom lists
+No comment provided by engineer. */
 "Custom lists" = "قائمة مخصصة";
-
-/* No comment provided by engineer. */
+/* Dates: start date and end date */
 "Dates" = "تاريخ";
-
-/* No comment provided by engineer. */
+/* stats */
 "Days Watched" = "أيام المشاهدة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
 "Default" = "افتراضي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default tab
+No comment provided by engineer. */
 "Default tab" = "علامة التبويب الافتراضية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
 "Delete" = "حذف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete this entry?
+No comment provided by engineer. */
 "Delete this entry?" = "حذف هذا الإدخال؟";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
 "Descending" = "تنازلي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Developers
+No comment provided by engineer. */
 "Developers" = "المطورون";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discord server
+No comment provided by engineer. */
 "Discord server" = "خادم الديسكورد";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discover
+No comment provided by engineer. */
 "Discover" = "إكتشف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
 "Display" = "العرض";
-
-/* No comment provided by engineer. */
+/* Stat Distribution type.
+Title count, mean score, or time spent */
 "Distribution type" = "نوع التوزيع";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
 "Donate" = "تبرع";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
 "Donate!" = "تبرع!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
 "Donation" = "التبرع";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
 "Donator" = "داعم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
 "Done" = "تم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
 "Doujinshi" = "دوجينشي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
 "Drama" = "دراما";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Dropped */
 "Dropped" = "سئمت منه";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
 "Duration" = "المدة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
 "Ecchi" = "ايتشي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
 "Edit" = "تعديل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
 "End date" = "تاريخ الانتهاء";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
 "English" = "الإنجليزية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Count
+No comment provided by engineer. */
 "Episode Count" = "عدد الحلقات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
 "Episodes" = "الحلقات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
 "Explore" = "تصفح";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
 "External links" = "روابط خارجية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
 "Fall" = "الخريف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
 "Fantasy" = "الخيال";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
 "Favorites" = "المُفضلات";
-
-/* No comment provided by engineer. */
+/* Activity feed type: Following or Global */
 "Feed type" = "نوع الموجز";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
 "Filter" = "فلتر";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
 "Finished" = "منتهي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
 "Follow" = "متابعة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
 "Followers" = "مُتابِعون";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
 "Following" = "يتابِع";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
 "Follows you" = "يُتابِعُك";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
 "Format" = "التنسيق";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format Distribution
+No comment provided by engineer. */
 "Format Distribution" = "توزّع التنسيق";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
 "Forum" = "المنتدى";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+From year
+No comment provided by engineer. */
 "From year" = "من عام";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
 "Game" = "لعبة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
 "Gender" = "الجنس";
-
-/* No comment provided by engineer. */
+/* general information about the anime/manga */
 "General" = "عام";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
 "Genres" = "التصنيفات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
 "GitHub repository" = "مستودع GitHub";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
 "Global" = "عالمي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
 "Hentai" = "هنتاي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
 "Hiatus" = "متوقف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide filters
+No comment provided by engineer. */
 "Hide filters" = "إخفاء الفلاتر";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide from status lists
+No comment provided by engineer. */
 "Hide from status lists" = "عدم الظهور في قائمة الحالة";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Home" = "الرئيسية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
 "Hometown" = "الموطن";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
 "Horror" = "رعب";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
 "Info type" = "نوع المعلومات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
 "Information" = "معلومات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
 "Japan" = "اليابان";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
 "Japanese" = "اليابانية";
-
-/* No comment provided by engineer. */
+/* sort by update date */
 "Last Updated" = "آخر تحديث";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
 "Last used" = "المستخدم أخيراً";
-
-/* No comment provided by engineer. */
+/* Left swipe direction */
 "Left" = "يسار";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
 "Light novel" = "رواية خفيفة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List Progress
+No comment provided by engineer. */
 "List Progress" = "تقدم القائمة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
 "List style" = "شكل القائمة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
 "Live action" = "نسخة حية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
 "Loading" = "تحميل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Log out
+No comment provided by engineer. */
 "Log out" = "تسجيل الخروج";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
 "Login" = "تسجيل الدخول";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
 "Mahou Shoujo" = "فتيات بقوة سحرية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
 "Main" = "رئيسية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
 "Manga" = "المانجا";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
 "Manga List" = "قائمة المانغا";
-
-/* No comment provided by engineer. */
-"Mean score" = "الدرجة";
-
-/* No comment provided by engineer. */
+/* normalized score.
+You can translate it simply as (Score) */
 "Mean Score" = "الدرجة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "الدرجة";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
 "Mecha" = "ميكا";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Media
+No comment provided by engineer. */
 "Media" = "وسائط";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
 "Minimal" = "مبسط";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+More filters
+No comment provided by engineer. */
 "More filters" = "المزيد من الفلاتر";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Most popular 2023 */
 "Most popular" = "الأكثر شعبية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
 "Movie" = "فيلم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
 "Multimedia project" = "مشروع متعدد الوسائط";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
 "Music" = "موسيقى";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
 "Mystery" = "غموض";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
 "Native" = "اللغة الأم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Anime
+No comment provided by engineer. */
 "Newly Added Anime" = "الأنمي المضاف حديثاً";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Manga
+No comment provided by engineer. */
 "Newly Added Manga" = "المانجا المضافة حديثاً";
-
-/* No comment provided by engineer. */
+/* toggle off */
 "No" = "لا";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No media
+No comment provided by engineer. */
 "No media" = "لا وسائط";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
 "No recommendations" = "لا توجد اقتراحات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No reviews
+No comment provided by engineer. */
 "No reviews" = "لا توجد مراجعات";
-
-/* No comment provided by engineer. */
+/* nothing selected */
 "None" = "لا شيء";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
 "Not yet released" = "لم يصدر بعد";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
 "Notes" = "ملاحظات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
 "Notifications" = "الإشعارات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
 "Novel" = "رواية";
-
-/* No comment provided by engineer. */
-"Occupations" = "المهنة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
 "OK" = "حسنًا";
-
-/* No comment provided by engineer. */
-"On my list" = "في قائمتي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
 "ONA" = "أونا";
-
-/* No comment provided by engineer. */
-"Original" = "أصلي";
-
-/* No comment provided by engineer. */
-"Other" = "أخرى";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
 "OVA" = "أوفا";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Occupations
+No comment provided by engineer. */
+"Occupations" = "المهنة";
+/* en.lproj/Localizable.strings
+On my list
+No comment provided by engineer. */
+"On my list" = "في قائمتي";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "أصلي";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "أخرى";
+/* en.lproj/Localizable.strings
+Overview
+No comment provided by engineer. */
 "Overview" = "نظرة عامة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Parent
+No comment provided by engineer. */
 "Parent" = "الأصلي";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Paused */
 "Paused" = "متوقف مؤقتاً";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
 "Picture book" = "كتاب مصور";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Planning */
 "Planning" = "أرغب بمشاهدة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
 "Please login to use this feature" = "يرجى تسجيل الدخول لاستخدام هذه الميزة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
 "Popular Anime" = "أنيمي شعبي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
 "Popular Manga" = "مانغا شعبية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
 "Popularity" = "الشعبية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
 "Prequel" = "بادئة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Priority
+No comment provided by engineer. */
 "Priority" = "الأولوية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Private
+No comment provided by engineer. */
 "Private" = "خاص";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
 "Producers" = "المنتجين";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Profile" = "الملفّ الشخصي";
-
-/* No comment provided by engineer. */
+/* list entry progress */
 "Progress" = "التقدم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
 "Psychological" = "نفسي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
 "Publishing" = "لا زالت تنشر";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
 "Push notifications" = "الإشعارات المُرسلة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
 "Random" = "عشوائي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
 "Rankings" = "المتصدرون";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
 "Read Year" = "سنة القراءة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
 "Reading" = "أقرأُه";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
 "Recommendations" = "الاقترحات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Year
+No comment provided by engineer. */
 "Release Year" = "سنة الإصدار";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
 "Releasing" = "مستمر";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
 "Repeat Count" = "عدد التكرار";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Repeating */
 "Repeating" = "إعادة";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rereading */
 "Rereading" = "أعيد قراءته";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reviews
+No comment provided by engineer. */
 "Reviews" = "المراجعات";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rewatching */
 "Rewatching" = "أعيد مشاهدته";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
 "Romaji" = "روماجي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
 "Romaji (Western Order)" = "روماجي (ترتيب غربي)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
 "Romance" = "رومانسي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
 "Save" = "حفظ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
 "Sci-Fi" = "خيال علمي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
 "Score" = "الدرجة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
 "Score distribution" = "توزّع الدرجات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score format
+No comment provided by engineer. */
 "Score format" = "تنسيق الدرجة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
 "Search type" = "نوع البحث";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
 "Season" = "موسم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+See All
+No comment provided by engineer. */
 "See All" = "رؤية الكل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
 "Select Media Type" = "اختر نوع الوسائط";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
 "Sequel" = "تكملة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
 "Settings" = "الإعدادات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
 "Share" = "مشاركة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
 "Show more" = "عرض المزيد";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show only airing soon anime that are in your list
+No comment provided by engineer. */
 "Show only airing soon anime that are in your list" = "أظهر فقط الأنمي الذي سيُعرض قريبًا والموجود في قائمتك";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
 "Show spoiler" = "إظهار الحرق";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
 "Side Story" = "قصة جانبية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
 "Slice of Life" = "شريحة من الحياة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Social
+No comment provided by engineer. */
 "Social" = "اجتماعي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
 "Sort" = "ترتيب";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
 "Source" = "المصدر";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+South Korea
+No comment provided by engineer. */
 "South Korea" = "كوريا الجنوبية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
 "Special" = "حلقة خاصة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spin Off
+No comment provided by engineer. */
 "Spin Off" = "عمل جانبي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
 "Sports" = "رياضي";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
 "Spring" = "الربيع";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Staff
+No comment provided by engineer. */
 "Staff" = "طاقم العمل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
 "Standard" = "اعتيادي";
-
-/* No comment provided by engineer. */
-"Start date" = "تاريخ البدء";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
 "Start Date" = "تاريخ البث";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "تاريخ البدء";
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
 "Stats" = "الإحصائيات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
 "Status" = "الحالة";
-
-/* No comment provided by engineer. */
-"Status distribution" = "توزّع الحالات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status Distribution
+No comment provided by engineer. */
 "Status Distribution" = "توزّع الحالات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status distribution
+No comment provided by engineer. */
+"Status distribution" = "توزّع الحالات";
+/* en.lproj/Localizable.strings
+Streaming sites
+No comment provided by engineer. */
 "Streaming sites" = "مواقع البث";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
 "Studios" = "الاستوديو";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
 "Summary" = "ملخص";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
 "Summer" = "الصيف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
 "Supernatural" = "خارق للطبيعة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
 "Supporting" = "مساعدة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
 "Synonyms" = "يسمى أيضًا";
-
-/* No comment provided by engineer. */
-"Tags" = "العلامات";
-
-/* No comment provided by engineer. */
-"Taiwan" = "تايوان";
-
-/* No comment provided by engineer. */
-"Text Status" = "حالة النص";
-
-/* No comment provided by engineer. */
-"Thank you :)" = "شكرا لك :)";
-
-/* No comment provided by engineer. */
-"Threads" = "المواضيع";
-
-/* No comment provided by engineer. */
-"Thriller" = "إثارة";
-
-/* No comment provided by engineer. */
-"Time spent" = "الوقت المستغرق";
-
-/* No comment provided by engineer. */
-"Title" = "العنوان";
-
-/* No comment provided by engineer. */
-"Title count" = "عدد العناوين";
-
-/* No comment provided by engineer. */
-"Title language" = "لغة العنوان";
-
-/* No comment provided by engineer. */
-"Titles Count" = "عدد العناوين";
-
-/* No comment provided by engineer. */
-"To year" = "إلى العام";
-
-/* No comment provided by engineer. */
-"Top 100" = "أفضل 100";
-
-/* No comment provided by engineer. */
-"Top 100 Anime" = "أفضل 100 أنمي";
-
-/* No comment provided by engineer. */
-"Top 100 Manga" = "أفضل 100 مانغا";
-
-/* No comment provided by engineer. */
-"Top Movies" = "أفضل الأفلام";
-
-/* No comment provided by engineer. */
-"Top Popular" = "أعلى شعبية";
-
-/* No comment provided by engineer. */
-"Total Anime" = "إجمالي الأنمي";
-
-/* No comment provided by engineer. */
-"Total Manga" = "إجمالي المانجا";
-
-/* No comment provided by engineer. */
-"Trailer" = "العرض الدعائي";
-
-/* No comment provided by engineer. */
-"Translate" = "ترجمة";
-
-/* No comment provided by engineer. */
-"Translations" = "المترجمون";
-
-/* No comment provided by engineer. */
-"Trending" = "الشائعة";
-
-/* No comment provided by engineer. */
-"Trending Anime" = "الأنمي الرائج";
-
-/* No comment provided by engineer. */
-"Trending Manga" = "مانجا شائعة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
 "TV" = "مسلسل";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
 "TV Short" = "مسلسل قصير";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "العلامات";
+/* en.lproj/Localizable.strings
+Taiwan
+No comment provided by engineer. */
+"Taiwan" = "تايوان";
+/* en.lproj/Localizable.strings
+Text Status
+No comment provided by engineer. */
+"Text Status" = "حالة النص";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "شكرا لك :)";
+/* en.lproj/Localizable.strings
+Threads
+No comment provided by engineer. */
+"Threads" = "المواضيع";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "إثارة";
+/* en.lproj/Localizable.strings
+Time spent
+No comment provided by engineer. */
+"Time spent" = "الوقت المستغرق";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "العنوان";
+/* en.lproj/Localizable.strings
+Title count
+No comment provided by engineer. */
+"Title count" = "عدد العناوين";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "لغة العنوان";
+/* this is a stat. num of anime or manga in your list */
+"Titles Count" = "عدد العناوين";
+/* en.lproj/Localizable.strings
+To year
+No comment provided by engineer. */
+"To year" = "إلى العام";
+/* en.lproj/Localizable.strings
+Top 100
+No comment provided by engineer. */
+"Top 100" = "أفضل 100";
+/* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "أفضل 100 أنمي";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "أفضل 100 مانغا";
+/* en.lproj/Localizable.strings
+Top Movies
+No comment provided by engineer. */
+"Top Movies" = "أفضل الأفلام";
+/* en.lproj/Localizable.strings
+Top Popular
+No comment provided by engineer. */
+"Top Popular" = "أعلى شعبية";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "إجمالي الأنمي";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "إجمالي المانجا";
+/* en.lproj/Localizable.strings
+Trailer
+No comment provided by engineer. */
+"Trailer" = "العرض الدعائي";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "ترجمة";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "المترجمون";
+/* en.lproj/Localizable.strings
+Trending
+No comment provided by engineer. */
+"Trending" = "الشائعة";
+/* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "الأنمي الرائج";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "مانجا شائعة";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
 "Unfollow" = "إلغاء المتابعة";
-
-/* Localizable.strings
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "غير معروف";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
 "Upcoming" = "القادم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
 "Upcoming Anime" = "الأنمي القادم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
 "Upcoming Manga" = "المانجا القادمة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
 "Updated" = "محدّث";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users
+No comment provided by engineer. */
 "Users" = "المستخدمون";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users likes
+No comment provided by engineer. */
 "Users likes" = "أعجب المستخدمين";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
 "Version %@" = "الإصدار %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
 "Visual novel" = "رواية مرئية";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
 "Volumes" = "المجلدات";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watch Year
+No comment provided by engineer. */
 "Watch Year" = "سنة المشاهدة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
 "Watching" = "أشاهده";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
 "Web novel" = "رواية ويب";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
 "Winter" = "الشتاء";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
 "Year" = "السنة";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Years active
+No comment provided by engineer. */
 "Years active" = "السنوات النشطة";
-
-/* No comment provided by engineer. */
+/* toggle on */
 "Yes" = "نعم";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+You may need to login again in your browser
+No comment provided by engineer. */
 "You may need to login again in your browser" = "قد تحتاج إلى تسجيل الدخول مرة أخرى في متصفحك";
-

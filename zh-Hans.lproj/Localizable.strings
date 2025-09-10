@@ -1,1758 +1,2210 @@
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
 "%lld chapters" = "%lld 章";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
 "%lld episodes" = "%lld 集";
-
-/* No comment provided by engineer. */
+/* num of volumes.
+Eg: 23 volumes */
 "%lld volumes" = "%lld 卷";
-
-/* No comment provided by engineer. */
-"^[%lld episode behind](inflect: true)" = "^[落后%lld集](inflect：true)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+1st Key Animation Director
+No comment provided by engineer. */
 "1st Key Animation Director" = "第一关键动画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+1st Key Assistant Animation Director
+No comment provided by engineer. */
 "1st Key Assistant Animation Director" = "第一关键帧动画监督助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2D Design
+No comment provided by engineer. */
 "2D Design" = "2D设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2D Effects
+No comment provided by engineer. */
 "2D Effects" = "2D特效";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2D Works
+No comment provided by engineer. */
 "2D Works" = "2D作品";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2nd Key Animation
+No comment provided by engineer. */
 "2nd Key Animation" = "第二关键帧动画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
 "3 Point Smiley :)" = "3点笑脸 :)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3D Art
+No comment provided by engineer. */
 "3D Art" = "3D";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3D Works
+No comment provided by engineer. */
 "3D Works" = "3D作品";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3DCG
+No comment provided by engineer. */
 "3DCG" = "3DCG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
 "5 Star (3/5)" = "五星制 (3/5)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
 "10 Point (5/10)" = "10分制 (5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "十分制（带小数） (5.5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
 "100 Point (55/100)" = "百分制 (55/100)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+A&R Producer
+No comment provided by engineer. */
 "A&R Producer" = "A&R制作人";
-
-/* No comment provided by engineer. */
-"Accent color" = "主题配色";
-
-/* No comment provided by engineer. */
-"Accessory Design" = "配件设计";
-
-/* No comment provided by engineer. */
-"Account settings" = "账号设置";
-
-/* No comment provided by engineer. */
-"Action" = "操作";
-
-/* No comment provided by engineer. */
-"Action Animation Director" = "动作作画监督";
-
-/* No comment provided by engineer. */
-"Action Animation Supervisor" = "动作动画主管";
-
-/* No comment provided by engineer. */
-"Action Animator" = "动作动画师";
-
-/* No comment provided by engineer. */
-"Action Director" = "动作监督";
-
-/* No comment provided by engineer. */
-"Activity" = "动态";
-
-/* No comment provided by engineer. */
-"Activity type" = "动态类型";
-
-/* No comment provided by engineer. */
-"Adaptation" = "改编";
-
-/* No comment provided by engineer. */
-"Add to List" = "添加至列表";
-
-/* No comment provided by engineer. */
-"Added" = "已添加";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ADR Director
+No comment provided by engineer. */
 "ADR Director" = "ADR监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
+"Accent color" = "主题配色";
+/* en.lproj/Localizable.strings
+Accessory Design
+No comment provided by engineer. */
+"Accessory Design" = "配件设计";
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
+"Account settings" = "账号设置";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "操作";
+/* en.lproj/Localizable.strings
+Action Animation Director
+No comment provided by engineer. */
+"Action Animation Director" = "动作作画监督";
+/* en.lproj/Localizable.strings
+Action Animation Supervisor
+No comment provided by engineer. */
+"Action Animation Supervisor" = "动作动画主管";
+/* en.lproj/Localizable.strings
+Action Animator
+No comment provided by engineer. */
+"Action Animator" = "动作动画师";
+/* en.lproj/Localizable.strings
+Action Director
+No comment provided by engineer. */
+"Action Director" = "动作监督";
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
+"Activity" = "动态";
+/* Types: All, Text Status, List Progress */
+"Activity type" = "动态类型";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "改编";
+/* if the translation is too long, translate just (Add) */
+"Add to List" = "添加至列表";
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
+"Added" = "已添加";
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
 "Adult" = "成人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
 "Adventure" = "冒险";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising
+No comment provided by engineer. */
 "Advertising" = "广告";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising Producer
+No comment provided by engineer. */
 "Advertising Producer" = "广告制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
 "Age" = "年龄";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
 "Airing" = "正在播出";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
 "Airing Anime" = "正在热播";
-
-/* No comment provided by engineer. */
+/* you can translate it simply as (Airing) */
 "Airing Next" = "即将放送";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing on my list
+No comment provided by engineer. */
 "Airing on my list" = "更新只显示列表内番剧";
-
-/* No comment provided by engineer. */
+/* for this one use the masculine form when applied. */
 "All" = "全部";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
 "Alternative" = "另类";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation
+No comment provided by engineer. */
 "Animation" = "动画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Director
+No comment provided by engineer. */
 "Animation Director" = "作画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Producer
+No comment provided by engineer. */
 "Animation Producer" = "动画制片人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Production Assistance
+No comment provided by engineer. */
 "Animation Production Assistance" = "动画制作协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Supervisor
+No comment provided by engineer. */
 "Animation Supervisor" = "动画主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
 "Anime" = "动漫";
-
-/* No comment provided by engineer. */
+/* anime with unwatched episodes */
 "Anime Behind" = "未观看剧集";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
 "Anime List" = "番剧列表";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
 "Anime, Manga, and More" = "动漫、漫画及更多";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
 "App Icon" = "应用图标";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Are you sure you want to log out?
+No comment provided by engineer. */
 "Are you sure you want to log out?" = "您确定要注销吗";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art
+No comment provided by engineer. */
 "Art" = "美术";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Board
+No comment provided by engineer. */
 "Art Board" = "艺术版面";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Composition
+No comment provided by engineer. */
 "Art Composition" = "美术构成";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Design
+No comment provided by engineer. */
 "Art Design" = "美术设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Director
+No comment provided by engineer. */
 "Art Director" = "美术监督";
-
-/* No comment provided by engineer. */
-"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "如您所知，这款应用程序是完全免费和开源的，\n，但创建一款应用程序需要大量的时间和精力。\n通过捐款，您可以帮助支付\n开发、维护和新功能的费用。";
-
-/* No comment provided by engineer. */
+/* Please try to use the same break lines */
+"As you may known this app is completely free and Open Source,
+but creating an app requires a lot of time and effort.
+By making a donation you will help cover the costs of
+development, maintenance, and new features." = "如您所知，这款应用程序是完全免费和开源的，\n，但创建一款应用程序需要大量的时间和精力。\n通过捐款，您可以帮助支付\n开发、维护和新功能的费用。";
+/* en.lproj/Localizable.strings
+Ascending
+No comment provided by engineer. */
 "Ascending" = "升序";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistance
+No comment provided by engineer. */
 "Assistance" = "协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant
+No comment provided by engineer. */
 "Assistant" = "助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Animation Director
+No comment provided by engineer. */
 "Assistant Animation Director" = "副作画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Art Director
+No comment provided by engineer. */
 "Assistant Art Director" = "美术副监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Chief Animation Director
+No comment provided by engineer. */
 "Assistant Chief Animation Director" = "总作画监督助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Chief Director
+No comment provided by engineer. */
 "Assistant Chief Director" = "总监督助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Director
+No comment provided by engineer. */
 "Assistant Director" = "副监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Director of Photography
+No comment provided by engineer. */
 "Assistant Director of Photography" = "摄影监督助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Episode Director
+No comment provided by engineer. */
 "Assistant Episode Director" = "剧集监督助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Producer
+No comment provided by engineer. */
 "Assistant Producer" = "助理制片人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Production Manager
+No comment provided by engineer. */
 "Assistant Production Manager" = "制作副经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Unit Director
+No comment provided by engineer. */
 "Assistant Unit Director" = "单元监督助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Associate Producer
+No comment provided by engineer. */
 "Associate Producer" = "协同制作人";
-
-/* No comment provided by engineer. */
+/* weighted Average Score */
 "Average Score" = "平均评分";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
 "Background" = "背景";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Art
+No comment provided by engineer. */
 "Background Art" = "背景美术";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Art Assistance
+No comment provided by engineer. */
 "Background Art Assistance" = "背景美术协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Manager
+No comment provided by engineer. */
 "Background Manager" = "背景经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Production
+No comment provided by engineer. */
 "Background Production" = "背景制作";
-
-/* No comment provided by engineer. */
+/* Birthday */
 "Birth" = "生日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
 "Birthday" = "生日";
-
-/* No comment provided by engineer. */
-"Blood type" = "血型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
 "Blood Type" = "血型";
-
-/* No comment provided by engineer. */
-"Calendar" = "日历";
-
-/* No comment provided by engineer. */
-"Cancel" = "取消";
-
-/* No comment provided by engineer. */
-"Cancelled" = "已取消";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood type
+No comment provided by engineer. */
+"Blood type" = "血型";
+/* en.lproj/Localizable.strings
+CG Animation
+No comment provided by engineer. */
 "CG Animation" = "CG动画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Animation Director
+No comment provided by engineer. */
 "CG Animation Director" = "CG动画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Assistant Director
+No comment provided by engineer. */
 "CG Assistant Director" = "CG副监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Background Modeling
+No comment provided by engineer. */
 "CG Background Modeling" = "CG背景建模";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Director
+No comment provided by engineer. */
 "CG Director" = "CG监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Layout
+No comment provided by engineer. */
 "CG Layout" = "CG布局";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Modeling
+No comment provided by engineer. */
 "CG Modeling" = "CG建模";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Modeling Director
+No comment provided by engineer. */
 "CG Modeling Director" = "CG建模监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Producer
+No comment provided by engineer. */
 "CG Producer" = "CG制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Production
+No comment provided by engineer. */
 "CG Production" = "CG制作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Supervisor
+No comment provided by engineer. */
 "CG Supervisor" = "CG主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Technical Director
+No comment provided by engineer. */
 "CG Technical Director" = "CG技术监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
+"Calendar" = "日历";
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
+"Cancel" = "取消";
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
+"Cancelled" = "已取消";
+/* chapter abbreviation */
 "Ch" = "章";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
 "Changes will take effect on app restart" = "更改将在应用重启后生效";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapter Count
+No comment provided by engineer. */
 "Chapter Count" = "章节数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
 "Chapters" = "章";
-
-/* No comment provided by engineer. */
-"Chapters read" = "已阅读章节";
-
-/* No comment provided by engineer. */
+/* stats */
 "Chapters Read" = "章节已读";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "已阅读章节";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
 "Character" = "角色";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Character Design
+No comment provided by engineer. */
 "Character Design" = "角色设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
 "Characters" = "角色";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
 "Characters and Staff" = "角色与职员";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Animation Director
+No comment provided by engineer. */
 "Chief Animation Director" = "总作画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Director
+No comment provided by engineer. */
 "Chief Director" = "总监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Episode Director
+No comment provided by engineer. */
 "Chief Episode Director" = "总剧集监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Mechanical Animation Director
+No comment provided by engineer. */
 "Chief Mechanical Animation Director" = "总机械动画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Producer
+No comment provided by engineer. */
 "Chief Producer" = "首席制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Production Desk
+No comment provided by engineer. */
 "Chief Production Desk" = "首席制作主编";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Supervisor
+No comment provided by engineer. */
 "Chief Supervisor" = "首席主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Unit Director
+No comment provided by engineer. */
 "Chief Unit Director" = "总单元监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
 "China" = "中国";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Choose between Anime or Manga.
+No comment provided by engineer. */
 "Choose between Anime or Manga." = "在动漫与漫画中选择";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
 "Clear" = "清空";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
 "Close" = "关闭";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Co-Producer
+No comment provided by engineer. */
 "Co-Producer" = "联合制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Color Coordination
+No comment provided by engineer. */
 "Color Coordination" = "色彩协调";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Color Design
+No comment provided by engineer. */
 "Color Design" = "色彩设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Color Design Assistance
+No comment provided by engineer. */
 "Color Design Assistance" = "色彩设计协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Coloring
+No comment provided by engineer. */
 "Coloring" = "着色";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
 "Comedy" = "喜剧";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
 "Comic" = "漫画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
 "Compact" = "紧凑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compilation
+No comment provided by engineer. */
 "Compilation" = "合辑";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Completed */
 "Completed" = "已完成";
-
-/* No comment provided by engineer. */
+/* An user list activity status.
+Eg: Completed [Anime/Manga Title] */
 "Completed %@" = "已完成《%@》";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Concept Art
+No comment provided by engineer. */
 "Concept Art" = "概念美术";
-
-/* No comment provided by engineer. */
-"Congratulations, you are up to date!\n(๑>◡<๑)" = "恭喜！您已更新！(๑>◡<๑)";
-
-/* No comment provided by engineer. */
+/* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
+"Congratulations, you are up to date!
+(๑>◡<๑)" = "恭喜！您已更新！(๑>◡<๑)";
+/* en.lproj/Localizable.strings
+Contains
+No comment provided by engineer. */
 "Contains" = "包含";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
 "Content" = "内容";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Costume Design
+No comment provided by engineer. */
 "Costume Design" = "服装设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
 "Country" = "国家/地区";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country Distribution
+No comment provided by engineer. */
 "Country Distribution" = "国家/地区分布";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cover Illustration
+No comment provided by engineer. */
 "Cover Illustration" = "封面";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Creature Design
+No comment provided by engineer. */
 "Creature Design" = "生物设计";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Current */
 "Current" = "当前";
-
-/* No comment provided by engineer. */
+/* custom app color */
 "Custom" = "自定义";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
 "Custom color" = "自定义颜色";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom lists
+No comment provided by engineer. */
 "Custom lists" = "自定义列表";
-
-/* No comment provided by engineer. */
+/* Dates: start date and end date */
 "Dates" = "日期";
-
-/* No comment provided by engineer. */
+/* stats */
 "Days Watched" = "已观看天数";
-
-/* No comment provided by engineer. */
+/* date of death */
 "Death" = "死亡";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
 "Default" = "默认";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default tab
+No comment provided by engineer. */
 "Default tab" = "默认标签页";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
 "Delete" = "删除";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete this entry?
+No comment provided by engineer. */
 "Delete this entry?" = "删除此条目？";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
 "Descending" = "降序";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Design Assistance
+No comment provided by engineer. */
 "Design Assistance" = "设计协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Design Works
+No comment provided by engineer. */
 "Design Works" = "设定";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Developers
+No comment provided by engineer. */
 "Developers" = "开发人员";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Animation
+No comment provided by engineer. */
 "Digital Animation" = "数字动画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Art
+No comment provided by engineer. */
 "Digital Art" = "数字美术";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Coloring
+No comment provided by engineer. */
 "Digital Coloring" = "数字着色";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Optical Recording
+No comment provided by engineer. */
 "Digital Optical Recording" = "数字光学录音";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Paint
+No comment provided by engineer. */
 "Digital Paint" = "数字绘画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Photography
+No comment provided by engineer. */
 "Digital Photography" = "数码摄影";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Production Assistant
+No comment provided by engineer. */
 "Digital Production Assistant" = "数字制作助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Director
+No comment provided by engineer. */
 "Director" = "监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Director of Photography
+No comment provided by engineer. */
 "Director of Photography" = "摄影监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discord server
+No comment provided by engineer. */
 "Discord server" = "Discord伺服器";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discover
+No comment provided by engineer. */
 "Discover" = "探索";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
 "Display" = "显示";
-
-/* No comment provided by engineer. */
+/* Stat Distribution type.
+Title count, mean score, or time spent */
 "Distribution type" = "发行类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
 "Donate" = "捐助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
 "Donate!" = "捐助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
 "Donation" = "捐赠";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
 "Donator" = "捐赠者";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
 "Done" = "完成";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
 "Doujinshi" = "同人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
 "Drama" = "剧情";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Dropped */
 "Dropped" = "放弃";
-
-/* No comment provided by engineer. */
+/* (User) Dropped [Anime/Manga Title] */
 "Dropped %@" = "已放弃《%@》";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
 "Duration" = "集长";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
 "Ecchi" = "色情";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
 "Edit" = "编辑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing
+No comment provided by engineer. */
 "Editing" = "编辑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing Assistant
+No comment provided by engineer. */
 "Editing Assistant" = "编辑助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing Manager
+No comment provided by engineer. */
 "Editing Manager" = "编辑经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Effects
+No comment provided by engineer. */
 "Effects" = "特效";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Effects Animation Director
+No comment provided by engineer. */
 "Effects Animation Director" = "动画特效监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
 "End date" = "结束日期";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Endcard
+No comment provided by engineer. */
 "Endcard" = "片尾插画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
 "English" = "英语";
-
-/* No comment provided by engineer. */
+/* episodes abbreviation */
 "Ep" = "已观看";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and time.
+Eg: Ep [23] [in 35 minutes] */
 "Ep %lld %@" = "距离第 %lld 集播出还有 %@";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and a specific hour.
+Eg: Ep [23] at [12:30] */
 "Ep %lld at %@" = "第 %lld 集将于 %@ 播出";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Count
+No comment provided by engineer. */
 "Episode Count" = "集数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Director
+No comment provided by engineer. */
 "Episode Director" = "剧集监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Director (ED)
+No comment provided by engineer. */
 "Episode Director (ED)" = "剧集监督（ED）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Director (OP)
+No comment provided by engineer. */
 "Episode Director (OP)" = "剧集监督（OP）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
 "Episodes" = "集";
-
-/* No comment provided by engineer. */
+/* stats */
 "Episodes Watched" = "已观看的剧集";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Executive Producer
+No comment provided by engineer. */
 "Executive Producer" = "执行制片人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Executive Supervisor
+No comment provided by engineer. */
 "Executive Supervisor" = "执行主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
 "Explore" = "探索";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
 "External links" = "外部链接";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Eyecatch
+No comment provided by engineer. */
 "Eyecatch" = "中场过渡";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
 "Fall" = "10月番";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
 "Fantasy" = "幻想";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
 "Favorites" = "收藏";
-
-/* No comment provided by engineer. */
+/* Activity feed type: Following or Global */
 "Feed type" = "推送类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Female
+No comment provided by engineer. */
 "Female" = "女";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
 "Filter" = "筛选";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finish Date
+No comment provided by engineer. */
 "Finish Date" = "结束日期";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
 "Finished" = "完结";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing
+No comment provided by engineer. */
 "Finishing" = "完片";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Assistance
+No comment provided by engineer. */
 "Finishing Assistance" = "完片协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Check
+No comment provided by engineer. */
 "Finishing Check" = "完片审核";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Manager
+No comment provided by engineer. */
 "Finishing Manager" = "完片经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Production
+No comment provided by engineer. */
 "Finishing Production" = "完片制作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
 "Follow" = "关注";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
 "Followers" = "关注者";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
 "Following" = "正在关注";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows
+No comment provided by engineer. */
 "Follows" = "关注";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
 "Follows you" = "关注了你";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
 "Format" = "格式";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format Distribution
+No comment provided by engineer. */
 "Format Distribution" = "格式分布";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
 "Forum" = "论坛";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
 "Game" = "游戏";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
 "Gender" = "性別";
-
-/* No comment provided by engineer. */
+/* general information about the anime/manga */
 "General" = "概况";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
 "Genres" = "类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
 "GitHub repository" = "GitHub 仓库";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
 "Global" = "全站";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+HD Editing
+No comment provided by engineer. */
 "HD Editing" = "高清编辑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
 "Hentai" = "变态";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
 "Hiatus" = "停止更新";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide filters
+No comment provided by engineer. */
 "Hide filters" = "隐藏筛选条件";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide from status lists
+No comment provided by engineer. */
 "Hide from status lists" = "从状态列表中隐藏";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide spoiler
+No comment provided by engineer. */
 "Hide spoiler" = "隐藏黑幕";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Highest rated 2023 */
 "Highest rated" = "最高评价";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Home" = "首页";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
 "Hometown" = "家乡";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
 "Horror" = "恐怖";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hours Watched
+No comment provided by engineer. */
 "Hours Watched" = "观看小时数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Illustration
+No comment provided by engineer. */
 "Illustration" = "插图";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Between Animation
+No comment provided by engineer. */
 "In-Between Animation" = "中间帧动画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Between Animation Assistance
+No comment provided by engineer. */
 "In-Between Animation Assistance" = "中间帧动画协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Betweens Check
+No comment provided by engineer. */
 "In-Betweens Check" = "中间帧审核";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Betweens Manager
+No comment provided by engineer. */
 "In-Betweens Manager" = "中间帧经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Increment Episode / Chapter
+No comment provided by engineer. */
 "Increment Episode / Chapter" = "增加 集/章节";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
 "Info type" = "信息类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
 "Information" = "信息";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Arrangement
+No comment provided by engineer. */
 "Insert Song Arrangement" = "插曲编曲";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Composition
+No comment provided by engineer. */
 "Insert Song Composition" = "插曲作曲";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Lyrics
+No comment provided by engineer. */
 "Insert Song Lyrics" = "插曲作词";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Performance
+No comment provided by engineer. */
 "Insert Song Performance" = "插曲演唱";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
 "Japan" = "日本";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
 "Japanese" = "日语";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Key Animation
+No comment provided by engineer. */
 "Key Animation" = "关键动画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Key Animation (OP)
+No comment provided by engineer. */
 "Key Animation (OP)" = "关键帧动画（OP）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Key Animation Assistance
+No comment provided by engineer. */
 "Key Animation Assistance" = "关键动画协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last Added
+No comment provided by engineer. */
 "Last Added" = "最近添加";
-
-/* No comment provided by engineer. */
+/* sort by update date */
 "Last Updated" = "最近更新";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
 "Last used" = "最后一次使用";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout
+No comment provided by engineer. */
 "Layout" = "布局";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Animation Director
+No comment provided by engineer. */
 "Layout Animation Director" = "动画布局监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Animation Supervisor
+No comment provided by engineer. */
 "Layout Animation Supervisor" = "动画布局主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Editor
+No comment provided by engineer. */
 "Layout Editor" = "布局编辑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Supervisor
+No comment provided by engineer. */
 "Layout Supervisor" = "布局主管";
-
-/* No comment provided by engineer. */
+/* Left swipe direction */
 "Left" = "左侧";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Lettering
+No comment provided by engineer. */
 "Lettering" = "嵌字";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
 "Light novel" = "轻小说";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Line Producer
+No comment provided by engineer. */
 "Line Producer" = "线制作人";
-
-/* No comment provided by engineer. */
-"List entry ID" = "列表条目 ID";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List Progress
+No comment provided by engineer. */
 "List Progress" = "清单进度";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
+"List entry ID" = "列表条目 ID";
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
 "List style" = "列表样式";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Literary Arts
+No comment provided by engineer. */
 "Literary Arts" = "文学艺术";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Literary Arts Assistance
+No comment provided by engineer. */
 "Literary Arts Assistance" = "文学艺术协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
 "Live action" = "实时动作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
 "Loading" = "加载中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Log out
+No comment provided by engineer. */
 "Log out" = "注销";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
 "Login" = "登录";
-
-/* No comment provided by engineer. */
+/* or (Swipe Direction) for short */
 "Long Swipe Direction" = "长滑方向";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
 "Mahou Shoujo" = "魔法少女";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
 "Main" = "主要";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main Animator
+No comment provided by engineer. */
 "Main Animator" = "主动画师";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Male
+No comment provided by engineer. */
 "Male" = "男";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
 "Manga" = "漫画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
 "Manga List" = "漫画列表";
-
-/* No comment provided by engineer. */
-"Mean score" = "平均分";
-
-/* No comment provided by engineer. */
+/* normalized score.
+You can translate it simply as (Score) */
 "Mean Score" = "平均分";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "平均分";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
 "Mecha" = "机甲";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mechanical Animation Director
+No comment provided by engineer. */
 "Mechanical Animation Director" = "机械动画监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mechanical Design
+No comment provided by engineer. */
 "Mechanical Design" = "机械设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mechanical Supervisor
+No comment provided by engineer. */
 "Mechanical Supervisor" = "机械动画主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Media
+No comment provided by engineer. */
 "Media" = "媒体";
-
-/* No comment provided by engineer. */
+/* not a very important string. Used for app intents */
 "Media ID" = "媒体 ID";
-
-/* No comment provided by engineer. */
+/* Anime/Manga List */
 "Media List" = "媒体列表";
-
-/* No comment provided by engineer. */
+/* Anime or Manga */
 "Media Type" = "媒体类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
 "Minimal" = "极简";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Monitor Graphics
+No comment provided by engineer. */
 "Monitor Graphics" = "显示器图像";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Monster Design
+No comment provided by engineer. */
 "Monster Design" = "怪物设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+More filters
+No comment provided by engineer. */
 "More filters" = "更多过滤条件";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Most popular 2023 */
 "Most popular" = "最受欢迎";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
 "Movie" = "电影";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
 "Multimedia project" = "多媒体项目";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
 "Music" = "音乐";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Arrangement
+No comment provided by engineer. */
 "Music Arrangement" = "音乐编排";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Assistance
+No comment provided by engineer. */
 "Music Assistance" = "音乐协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Composition
+No comment provided by engineer. */
 "Music Composition" = "音乐创作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Director
+No comment provided by engineer. */
 "Music Director" = "音乐监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Lyrics
+No comment provided by engineer. */
 "Music Lyrics" = "音乐歌词";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Performance
+No comment provided by engineer. */
 "Music Performance" = "音乐演唱";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Producer
+No comment provided by engineer. */
 "Music Producer" = "音乐制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Production
+No comment provided by engineer. */
 "Music Production" = "音乐制作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Production Assistance
+No comment provided by engineer. */
 "Music Production Assistance" = "音乐制作协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Selection
+No comment provided by engineer. */
 "Music Selection" = "音乐筛选";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Supervisor
+No comment provided by engineer. */
 "Music Supervisor" = "音乐主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Musical Instrument Supervisor
+No comment provided by engineer. */
 "Musical Instrument Supervisor" = "乐器主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
 "Mystery" = "悬疑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
 "Native" = "原生";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Anime
+No comment provided by engineer. */
 "Newly Added Anime" = "新增动漫";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Manga
+No comment provided by engineer. */
 "Newly Added Manga" = "新增漫画";
-
-/* No comment provided by engineer. */
+/* toggle off */
 "No" = "否";
-
-/* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "您的列表中没有正在放送的动漫\n(*´-`)";
-
-/* No comment provided by engineer. */
-"No anime for today\n(*´-`)" = "今天没有动漫\n(*´-`)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No airing anime in your list
+(*´-`)
+No comment provided by engineer. */
+"No airing anime in your list
+(*´-`)" = "您的列表中没有正在放送的动漫\n(*´-`)";
+/* en.lproj/Localizable.strings
+No anime for today
+(*´-`)
+No comment provided by engineer. */
+"No anime for today
+(*´-`)" = "今天没有动漫\n(*´-`)";
+/* en.lproj/Localizable.strings
+No media
+No comment provided by engineer. */
 "No media" = "无媒体";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
 "No recommendations" = "暂无推荐";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No reviews
+No comment provided by engineer. */
 "No reviews" = "没有评论";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Non-binary
+No comment provided by engineer. */
 "Non-binary" = "不明";
-
-/* No comment provided by engineer. */
+/* nothing selected */
 "None" = "无";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
 "Not yet released" = "尚未放送";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
 "Notes" = "备注";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Nothing in your list
+No comment provided by engineer. */
 "Nothing in your list" = "您的列表中没有任何内容";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
 "Notifications" = "通知";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
 "Novel" = "小说";
-
-/* No comment provided by engineer. */
-"Occupations" = "职位";
-
-/* No comment provided by engineer. */
-"Offline Editing" = "离线编辑";
-
-/* No comment provided by engineer. */
-"Offline Editing Manager" = "离线编辑经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
 "OK" = "确定";
-
-/* No comment provided by engineer. */
-"On my list" = "在我列表上的";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
 "ONA" = "ONA";
-
-/* No comment provided by engineer. */
-"OneShot" = "一镜到底";
-
-/* No comment provided by engineer. */
-"Online Editing" = "在线编辑";
-
-/* No comment provided by engineer. */
-"Online Editing Manager" = "在线编辑经理";
-
-/* No comment provided by engineer. */
-"Online HD Editing" = "在线高清编辑";
-
-/* No comment provided by engineer. */
-"Optical Recording" = "光盘录制";
-
-/* No comment provided by engineer. */
-"Optional status to update the list entry to (e.g. COMPLETED)" = "更新列表条目的可选状态（例如：已完成）";
-
-/* No comment provided by engineer. */
-"Order" = "顺序";
-
-/* No comment provided by engineer. */
-"Original" = "原始";
-
-/* No comment provided by engineer. */
-"Original Character Design" = "角色原案设计";
-
-/* No comment provided by engineer. */
-"Original Creator" = "原作者";
-
-/* No comment provided by engineer. */
-"Original Illustration" = "原作插图";
-
-/* No comment provided by engineer. */
-"Original Plan" = "原作企划";
-
-/* No comment provided by engineer. */
-"Original Story" = "原作剧情";
-
-/* No comment provided by engineer. */
-"Other" = "其他";
-
-/* No comment provided by engineer. */
-"Other account settings" = "其他账户设置";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
 "OVA" = "OVA";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Occupations
+No comment provided by engineer. */
+"Occupations" = "职位";
+/* en.lproj/Localizable.strings
+Offline Editing
+No comment provided by engineer. */
+"Offline Editing" = "离线编辑";
+/* en.lproj/Localizable.strings
+Offline Editing Manager
+No comment provided by engineer. */
+"Offline Editing Manager" = "离线编辑经理";
+/* en.lproj/Localizable.strings
+On my list
+No comment provided by engineer. */
+"On my list" = "在我列表上的";
+/* en.lproj/Localizable.strings
+OneShot
+No comment provided by engineer. */
+"OneShot" = "一镜到底";
+/* en.lproj/Localizable.strings
+Online Editing
+No comment provided by engineer. */
+"Online Editing" = "在线编辑";
+/* en.lproj/Localizable.strings
+Online Editing Manager
+No comment provided by engineer. */
+"Online Editing Manager" = "在线编辑经理";
+/* en.lproj/Localizable.strings
+Online HD Editing
+No comment provided by engineer. */
+"Online HD Editing" = "在线高清编辑";
+/* en.lproj/Localizable.strings
+Optical Recording
+No comment provided by engineer. */
+"Optical Recording" = "光盘录制";
+/* not a very important string. used for app intents */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "更新列表条目的可选状态（例如：已完成）";
+/* sort order */
+"Order" = "顺序";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "原始";
+/* en.lproj/Localizable.strings
+Original Character Design
+No comment provided by engineer. */
+"Original Character Design" = "角色原案设计";
+/* en.lproj/Localizable.strings
+Original Creator
+No comment provided by engineer. */
+"Original Creator" = "原作者";
+/* en.lproj/Localizable.strings
+Original Illustration
+No comment provided by engineer. */
+"Original Illustration" = "原作插图";
+/* en.lproj/Localizable.strings
+Original Plan
+No comment provided by engineer. */
+"Original Plan" = "原作企划";
+/* en.lproj/Localizable.strings
+Original Story
+No comment provided by engineer. */
+"Original Story" = "原作剧情";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "其他";
+/* text for a button that opens AniList website */
+"Other account settings" = "其他账户设置";
+/* en.lproj/Localizable.strings
+Overseas Advertising Producer
+No comment provided by engineer. */
 "Overseas Advertising Producer" = "海外广告制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Overview
+No comment provided by engineer. */
 "Overview" = "概览";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Paint
+No comment provided by engineer. */
 "Paint" = "绘画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Parent
+No comment provided by engineer. */
 "Parent" = "前传";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Paused */
 "Paused" = "已暂停";
-
-/* No comment provided by engineer. */
+/* (User) Paused [Anime/Manga Title] */
 "Paused %@" = "已暂停《%@》";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography
+No comment provided by engineer. */
 "Photography" = "摄影";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography Assistance
+No comment provided by engineer. */
 "Photography Assistance" = "摄影协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography Chief
+No comment provided by engineer. */
 "Photography Chief" = "摄影主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography Manager
+No comment provided by engineer. */
 "Photography Manager" = "摄影经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
 "Picture book" = "绘本";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Planning */
 "Planning" = "计划中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Planning Assistance
+No comment provided by engineer. */
 "Planning Assistance" = "企划协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Planning Producer
+No comment provided by engineer. */
 "Planning Producer" = "企划制作人";
-
-/* No comment provided by engineer. */
+/* Plans to read [Manga Title] */
 "Plans to read %@" = "计划阅读《%@》";
-
-/* No comment provided by engineer. */
+/* Plans to watch [Anime Title] */
 "Plans to watch %@" = "计划观看《%@》";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
 "Please login to use this feature" = "请登录后使用该功能";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch
+No comment provided by engineer. */
 "Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "请打开 iPhone 上的 AniHyou 应用程序，进入个人资料 -> 设置 -> 与 Apple Watch 同步账户";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
 "Popular Anime" = "热门动漫";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
 "Popular Manga" = "热门漫画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
 "Popularity" = "人气";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
 "Prequel" = "前传";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Priority
+No comment provided by engineer. */
 "Priority" = "优先级";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Private
+No comment provided by engineer. */
 "Private" = "隐私模式";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producer
+No comment provided by engineer. */
 "Producer" = "制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
 "Producers" = "制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production
+No comment provided by engineer. */
 "Production" = "制作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Assistance
+No comment provided by engineer. */
 "Production Assistance" = "制作协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Assistant
+No comment provided by engineer. */
 "Production Assistant" = "制作助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Committee
+No comment provided by engineer. */
 "Production Committee" = "制作委员会";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Design
+No comment provided by engineer. */
 "Production Design" = "制作设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Desk
+No comment provided by engineer. */
 "Production Desk" = "制作主编";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Profile" = "个人资料";
-
-/* No comment provided by engineer. */
+/* list entry progress */
 "Progress" = "进度";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prop Design
+No comment provided by engineer. */
 "Prop Design" = "道具设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
 "Psychological" = "心理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
 "Publishing" = "发布中";
-
-/* No comment provided by engineer. */
+/* screen title.
+Manga that are being published */
 "Publishing Manga" = "发布中漫画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
 "Push notifications" = "推送通知";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Quick access to your anime or manga list." = "快速访问您的动画或漫画列表。";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
 "Random" = "随机";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
 "Rankings" = "排行榜";
-
-/* (No Comment) */
-"Read chapter %1$@ of %2$@" = "阅读了《%2$@》的第%1$@章";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
 "Read Year" = "阅读年份";
-
-/* No comment provided by engineer. */
+/* Eg: (User) Read chapter [25] of [Manga Title] */
+"Read chapter %1$@ of %2$@" = "阅读了《%2$@》的第%1$@章";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
 "Reading" = "阅读中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
 "Recommendations" = "推荐";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording
+No comment provided by engineer. */
 "Recording" = "录音";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording Adjustment
+No comment provided by engineer. */
 "Recording Adjustment" = "录音调整";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording Assistant
+No comment provided by engineer. */
 "Recording Assistant" = "录音助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording Engineer
+No comment provided by engineer. */
 "Recording Engineer" = "录音师";
-
-/* No comment provided by engineer. */
+/* Related anime/manga */
 "Relations" = "相关";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Relations and Recommendations
+No comment provided by engineer. */
 "Relations and Recommendations" = "相关及推荐";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Date
+No comment provided by engineer. */
 "Release Date" = "发布日期";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Year
+No comment provided by engineer. */
 "Release Year" = "发布年份";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
 "Releasing" = "发布中";
-
-/* No comment provided by engineer. */
+/* sort by repeat count */
 "Repeat" = "重复";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
 "Repeat Count" = "重复次数";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Repeating */
 "Repeating" = "重复中";
-
-/* No comment provided by engineer. */
+/* Reread [Kimetsu no Yaiba] */
 "Reread %@" = "重读了《%@》";
-
-/* (No Comment) */
+/* (User) Reread chapter [1 - 27] of [Kimetsu no Yaiba] */
 "Reread chapter %1$@ of %2$@" = "重读了《%2$@》的第%1$@章";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rereading */
 "Rereading" = "重看";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Restore purchases
+No comment provided by engineer. */
 "Restore purchases" = "恢复购买";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Review and Threads
+No comment provided by engineer. */
 "Review and Threads" = "评论";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reviews
+No comment provided by engineer. */
 "Reviews" = "评论";
-
-/* No comment provided by engineer. */
+/* Rewatched [Kimetsu no Yaiba] */
 "Rewatched %@" = "重看了《%@》";
-
-/* (No Comment) */
+/* (User) Rewatched episode [1 - 27] of [Kimetsu no Yaiba] */
 "Rewatched episode %1$@ of %2$@" = "重看了《%2$@》的第%1$@集";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rewatching */
 "Rewatching" = "重看";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Right
+No comment provided by engineer. */
 "Right" = "右侧";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
 "Romaji" = "罗马音";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
 "Romaji (Western Order)" = "罗马音(西方顺序)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
 "Romance" = "浪漫";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
 "Save" = "保存";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
 "Sci-Fi" = "科幻";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
 "Score" = "分数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
 "Score distribution" = "得分分布";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score format
+No comment provided by engineer. */
 "Score format" = "分数格式";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Script
+No comment provided by engineer. */
 "Script" = "脚本";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Script Assistance
+No comment provided by engineer. */
 "Script Assistance" = "脚本协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
 "Search type" = "搜索类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
 "Season" = "季度";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+See All
+No comment provided by engineer. */
 "See All" = "查看所有";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
 "Select Media Type" = "选择媒体类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Selection type
+No comment provided by engineer. */
 "Selection type" = "选择类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
 "Sequel" = "续作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Series Composition
+No comment provided by engineer. */
 "Series Composition" = "系列构成";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Series Composition Assistance
+No comment provided by engineer. */
 "Series Composition Assistance" = "系列构成协助";
-
-/* Set to Status */
+/* Set to Status.
+Example: Set as Completed */
 "Set as %@" = "设为%@";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Set progress" = "设置进度";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Sets a list entry progress to the specified number." = "将列表条目进度设置为指定的数字。";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Setting Design
+No comment provided by engineer. */
 "Setting Design" = "场景设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
 "Settings" = "设置";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
 "Share" = "分享";
-
-/* No comment provided by engineer. */
+/* Show less text */
 "Show less" = "隐藏内容";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
 "Show more" = "显示更多";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show only airing soon anime that are in your list
+No comment provided by engineer. */
 "Show only airing soon anime that are in your list" = "仅显示您列表中的即将播出的动漫";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
 "Show spoiler" = "显示剧透";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Shows the animes with behind episodes in your list." = "显示列表中剧集较少的动画。";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Shows the next airing animes in your list." = "显示列表中下一部播出的动画。";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
 "Side Story" = "番外";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
 "Slice of Life" = "日常";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Social
+No comment provided by engineer. */
 "Social" = "社交";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
 "Sort" = "排序";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Design
+No comment provided by engineer. */
 "Sound Design" = "音响设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Director
+No comment provided by engineer. */
 "Sound Director" = "音响监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Effects
+No comment provided by engineer. */
 "Sound Effects" = "音效";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Effects Assistance
+No comment provided by engineer. */
 "Sound Effects Assistance" = "音效协助";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Producer
+No comment provided by engineer. */
 "Sound Producer" = "音响制作人";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Production
+No comment provided by engineer. */
 "Sound Production" = "音响制作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Production Manager
+No comment provided by engineer. */
 "Sound Production Manager" = "音响制作经理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Supervisor
+No comment provided by engineer. */
 "Sound Supervisor" = "音响主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
 "Source" = "原作类型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+South Korea
+No comment provided by engineer. */
 "South Korea" = "韩国";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
 "Special" = "特别内容";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special Design
+No comment provided by engineer. */
 "Special Design" = "特殊设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special Effects
+No comment provided by engineer. */
 "Special Effects" = "特效";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special Effects Assistant
+No comment provided by engineer. */
 "Special Effects Assistant" = "特效助理";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spin Off
+No comment provided by engineer. */
 "Spin Off" = "衍生";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
 "Sports" = "运动";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
 "Spring" = "4月番";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Staff
+No comment provided by engineer. */
 "Staff" = "相关人员";
-
-/* No comment provided by engineer. */
+/* you can use (and) instead of (&) */
 "Staff & Character name language" = "相关人员和角色名称的语言";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
 "Standard" = "标准";
-
-/* No comment provided by engineer. */
-"Start date" = "开始日期";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
 "Start Date" = "开始日期";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "开始日期";
+/* sort by date started */
 "Started" = "已开始";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
 "Stats" = "统计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
 "Status" = "状态";
-
-/* No comment provided by engineer. */
-"Status distribution" = "状态分布";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status Distribution
+No comment provided by engineer. */
 "Status Distribution" = "状态分布";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status distribution
+No comment provided by engineer. */
+"Status distribution" = "状态分布";
+/* en.lproj/Localizable.strings
+Story
+No comment provided by engineer. */
 "Story" = "故事";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Story & Art
+No comment provided by engineer. */
 "Story & Art" = "故事&美术";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Story & Illustration
+No comment provided by engineer. */
 "Story & Illustration" = "故事&插图";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Storyboard
+No comment provided by engineer. */
 "Storyboard" = "分镜";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Streaming sites
+No comment provided by engineer. */
 "Streaming sites" = "在线发布网站";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
 "Studios" = "工作室";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sub Character Design
+No comment provided by engineer. */
 "Sub Character Design" = "次要角色设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
 "Summary" = "总集篇";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
 "Summer" = "7月番";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
 "Supernatural" = "超自然";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supervisor
+No comment provided by engineer. */
 "Supervisor" = "主管";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Support the development of AniHyou!
+No comment provided by engineer. */
 "Support the development of AniHyou!" = "支持Anihyou的开发!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
 "Supporting" = "配角";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting Staff
+No comment provided by engineer. */
 "Supporting Staff" = "辅助人员";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sync account with Apple Watch
+No comment provided by engineer. */
 "Sync account with Apple Watch" = "将账户与 Apple Watch 同步";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
 "Synonyms" = "别名";
-
-/* No comment provided by engineer. */
-"Tags" = "标签";
-
-/* No comment provided by engineer. */
-"Taiwan" = "台湾";
-
-/* No comment provided by engineer. */
-"Technical Director" = "技术监督";
-
-/* No comment provided by engineer. */
-"Text Status" = "文本状态";
-
-/* No comment provided by engineer. */
-"Thank you :)" = "谢谢 :)";
-
-/* No comment provided by engineer. */
-"The amount of episodes/chapters consumed by the user" = "用户看过的集数/章节数";
-
-/* No comment provided by engineer. */
-"The id of the media the entry is of" = "该媒体的条目id是";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement" = "主题曲编曲";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement (ED)" = "主题曲编曲（ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement (OP, ED)" = "主题曲编曲（OP，ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement (OP)" = "主题曲编曲（OP）";
-
-/* No comment provided by engineer. */
-"Theme Song Composition" = "主题曲作曲";
-
-/* No comment provided by engineer. */
-"Theme Song Composition (ED)" = "主题曲作曲（ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Composition (OP, ED)" = "主题曲作曲（OP，ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Composition (OP)" = "主题曲作曲（OP）";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics" = "主题曲作词";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics (ED)" = "主题曲作词（ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics (OP, ED)" = "主题曲作词（OP，ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics (OP)" = "主题曲作词（OP）";
-
-/* No comment provided by engineer. */
-"Theme Song Performance" = "主题曲演唱";
-
-/* No comment provided by engineer. */
-"Theme Song Performance (ED)" = "主题曲演唱（ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Performance (OP, ED)" = "主题曲演唱（OP，ED）";
-
-/* No comment provided by engineer. */
-"Theme Song Performance (OP)" = "主题曲演唱（OP）";
-
-/* No comment provided by engineer. */
-"This feature will be unlocked when you make a donation, even the smallest count!" = "这个功能将在您捐赠后解锁，即便是捐款最小的金额！";
-
-/* No comment provided by engineer. */
-"Threads" = "话题";
-
-/* No comment provided by engineer. */
-"Thriller" = "惊悚";
-
-/* No comment provided by engineer. */
-"Time spent" = "花费时长";
-
-/* No comment provided by engineer. */
-"Title" = "标题";
-
-/* No comment provided by engineer. */
-"Title count" = "作品数";
-
-/* No comment provided by engineer. */
-"Title language" = "作品标题的语言";
-
-/* No comment provided by engineer. */
-"Title Logo Design" = "标题Logo设计";
-
-/* No comment provided by engineer. */
-"Title Logo Design Assistance" = "标题Logo设计协助";
-
-/* No comment provided by engineer. */
-"Titles Count" = "作品数";
-
-/* No comment provided by engineer. */
-"Top 100" = "Top 100";
-
-/* No comment provided by engineer. */
-"Top 100 Anime" = "前100部热门动漫";
-
-/* No comment provided by engineer. */
-"Top 100 Manga" = "前100部热门漫画";
-
-/* No comment provided by engineer. */
-"Top Movies" = "热门电影";
-
-/* No comment provided by engineer. */
-"Top Popular" = "热门排行";
-
-/* No comment provided by engineer. */
-"Total Anime" = "动漫总数";
-
-/* No comment provided by engineer. */
-"Total Manga" = "漫画总数";
-
-/* No comment provided by engineer. */
-"Touch-up Art" = "修图";
-
-/* No comment provided by engineer. */
-"Touch-up Art & Lettering" = "修图&嵌字";
-
-/* No comment provided by engineer. */
-"Trailer" = "PV";
-
-/* No comment provided by engineer. */
-"Translate" = "翻译";
-
-/* No comment provided by engineer. */
-"Translations" = "翻译";
-
-/* No comment provided by engineer. */
-"Translator" = "翻译";
-
-/* No comment provided by engineer. */
-"Trending" = "热门";
-
-/* No comment provided by engineer. */
-"Trending Anime" = "热门动漫";
-
-/* No comment provided by engineer. */
-"Trending Manga" = "热门漫画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
 "TV" = "电视";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
 "TV Short" = "电视短剧";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "标签";
+/* en.lproj/Localizable.strings
+Taiwan
+No comment provided by engineer. */
+"Taiwan" = "台湾";
+/* en.lproj/Localizable.strings
+Technical Director
+No comment provided by engineer. */
+"Technical Director" = "技术监督";
+/* en.lproj/Localizable.strings
+Text Status
+No comment provided by engineer. */
+"Text Status" = "文本状态";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "谢谢 :)";
+/* not a very important string. used for app intents */
+"The amount of episodes/chapters consumed by the user" = "用户看过的集数/章节数";
+/* not a very important string. used for app intents */
+"The id of the media the entry is of" = "该媒体的条目id是";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement
+No comment provided by engineer. */
+"Theme Song Arrangement" = "主题曲编曲";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "主题曲编曲（ED）";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "主题曲编曲（OP）";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP, ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "主题曲编曲（OP，ED）";
+/* en.lproj/Localizable.strings
+Theme Song Composition
+No comment provided by engineer. */
+"Theme Song Composition" = "主题曲作曲";
+/* en.lproj/Localizable.strings
+Theme Song Composition (ED)
+No comment provided by engineer. */
+"Theme Song Composition (ED)" = "主题曲作曲（ED）";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP)
+No comment provided by engineer. */
+"Theme Song Composition (OP)" = "主题曲作曲（OP）";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP, ED)
+No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "主题曲作曲（OP，ED）";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics
+No comment provided by engineer. */
+"Theme Song Lyrics" = "主题曲作词";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "主题曲作词（ED）";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "主题曲作词（OP）";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP, ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "主题曲作词（OP，ED）";
+/* en.lproj/Localizable.strings
+Theme Song Performance
+No comment provided by engineer. */
+"Theme Song Performance" = "主题曲演唱";
+/* en.lproj/Localizable.strings
+Theme Song Performance (ED)
+No comment provided by engineer. */
+"Theme Song Performance (ED)" = "主题曲演唱（ED）";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP)
+No comment provided by engineer. */
+"Theme Song Performance (OP)" = "主题曲演唱（OP）";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP, ED)
+No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "主题曲演唱（OP，ED）";
+/* feel free to translate so it sounds better in your language */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "这个功能将在您捐赠后解锁，即便是捐款最小的金额！";
+/* en.lproj/Localizable.strings
+Threads
+No comment provided by engineer. */
+"Threads" = "话题";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "惊悚";
+/* en.lproj/Localizable.strings
+Time spent
+No comment provided by engineer. */
+"Time spent" = "花费时长";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "标题";
+/* en.lproj/Localizable.strings
+Title Logo Design
+No comment provided by engineer. */
+"Title Logo Design" = "标题Logo设计";
+/* en.lproj/Localizable.strings
+Title Logo Design Assistance
+No comment provided by engineer. */
+"Title Logo Design Assistance" = "标题Logo设计协助";
+/* en.lproj/Localizable.strings
+Title count
+No comment provided by engineer. */
+"Title count" = "作品数";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "作品标题的语言";
+/* this is a stat. num of anime or manga in your list */
+"Titles Count" = "作品数";
+/* en.lproj/Localizable.strings
+Top 100
+No comment provided by engineer. */
+"Top 100" = "Top 100";
+/* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "前100部热门动漫";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "前100部热门漫画";
+/* en.lproj/Localizable.strings
+Top Movies
+No comment provided by engineer. */
+"Top Movies" = "热门电影";
+/* en.lproj/Localizable.strings
+Top Popular
+No comment provided by engineer. */
+"Top Popular" = "热门排行";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "动漫总数";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "漫画总数";
+/* en.lproj/Localizable.strings
+Touch-up Art
+No comment provided by engineer. */
+"Touch-up Art" = "修图";
+/* en.lproj/Localizable.strings
+Touch-up Art & Lettering
+No comment provided by engineer. */
+"Touch-up Art & Lettering" = "修图&嵌字";
+/* en.lproj/Localizable.strings
+Trailer
+No comment provided by engineer. */
+"Trailer" = "PV";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "翻译";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "翻译";
+/* en.lproj/Localizable.strings
+Translator
+No comment provided by engineer. */
+"Translator" = "翻译";
+/* en.lproj/Localizable.strings
+Trending
+No comment provided by engineer. */
+"Trending" = "热门";
+/* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "热门动漫";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "热门漫画";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
 "Unfollow" = "取消关注";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Unit Director
+No comment provided by engineer. */
 "Unit Director" = "单元监督";
-
-/* Localizable.strings
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "未知";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
 "Upcoming" = "即将发布";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
 "Upcoming Anime" = "即将播出的动漫";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
 "Upcoming Manga" = "即将发布的漫画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
 "Updated" = "已更新";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users
+No comment provided by engineer. */
 "Users" = "用户";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users likes
+No comment provided by engineer. */
 "Users likes" = "用户收藏";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
 "Version %@" = "版本号：%@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Video Editing
+No comment provided by engineer. */
 "Video Editing" = "剪辑";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+VideoGame
+No comment provided by engineer. */
 "VideoGame" = "视频游戏";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual Coordinator
+No comment provided by engineer. */
 "Visual Coordinator" = "视觉协调";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual Director
+No comment provided by engineer. */
 "Visual Director" = "视觉监督";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual Effects
+No comment provided by engineer. */
 "Visual Effects" = "视觉效果";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
 "Visual novel" = "视觉小说";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Voice Actors
+No comment provided by engineer. */
 "Voice Actors" = "声优";
-
-/* No comment provided by engineer. */
+/* Volumes abbreviation */
 "Vol" = "卷";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
 "Volumes" = "卷";
-
-/* No comment provided by engineer. */
+/* num of volumes read */
 "Volumes Read" = "已阅读卷数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watch Year
+No comment provided by engineer. */
 "Watch Year" = "观看年份";
-
-/* (No Comment) */
+/* Eg: (User) Watched episode [25] of [Anime Title] */
 "Watched episode %1$@ of %2$@" = "观看了《%2$@》的第%1$@集";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
 "Watching" = "观看中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weapon Design
+No comment provided by engineer. */
 "Weapon Design" = "武器设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
 "Web novel" = "Web版小说";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weekday
+No comment provided by engineer. */
 "Weekday" = "工作日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
 "Winter" = "1月番";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+With any purchase you will gain access to exclusive app icons and custom accent colors!
+No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "通过购买任何产品，您可以获得独家应用程序图标和自定义账户颜色！";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+World Design
+No comment provided by engineer. */
 "World Design" = "世界观设计";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
 "Year" = "年份";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Years active
+No comment provided by engineer. */
 "Years active" = "活跃年数";
-
-/* No comment provided by engineer. */
+/* toggle on */
 "Yes" = "确定";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+You may need to login again in your browser
+No comment provided by engineer. */
 "You may need to login again in your browser" = "您可能需要在浏览器中重新登录";
-
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[落后%lld集](inflect：true)";

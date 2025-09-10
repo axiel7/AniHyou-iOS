@@ -1,1017 +1,1224 @@
-/* No comment provided by engineer. */
-", " = "、";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
 "%lld chapters" = "%lld話";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
 "%lld episodes" = "%lld話";
-
-/* No comment provided by engineer. */
+/* num of volumes.
+Eg: 23 volumes */
 "%lld volumes" = "%lld巻";
-
-/* No comment provided by engineer. */
-"^[%lld episode behind](inflect: true)" = "^[第%lld話遅い](inflect: true)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
++1
+No comment provided by engineer. */
 "+1" = "+1";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+,
+No comment provided by engineer. */
+", " = "、";
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
 "3 Point Smiley :)" = "3点スマイリー　( ◠‿◠ )";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
 "5 Star (3/5)" = "５点（３/５）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
 "10 Point (5/10)" = "１０点（５/１０）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "１０小数点（５.５/１０）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
 "100 Point (55/100)" = "１００点（５５/１００）";
-
-/* No comment provided by engineer. */
-"Accent color" = "アクセントカラー";
-
-/* No comment provided by engineer. */
-"Account settings" = "アカウントの設定";
-
-/* No comment provided by engineer. */
-"Action" = "アクション";
-
-/* No comment provided by engineer. */
-"Activity" = "アクティビティ";
-
-/* No comment provided by engineer. */
-"Activity type" = "アクティビティタイプ";
-
-/* No comment provided by engineer. */
-"Adaptation" = "適応";
-
-/* No comment provided by engineer. */
-"Add to List" = "リストに追加";
-
-/* No comment provided by engineer. */
-"Added" = "追加完了";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ADR Director
+No comment provided by engineer. */
 "ADR Director" = "ADR ディレクター";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
+"Accent color" = "アクセントカラー";
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
+"Account settings" = "アカウントの設定";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "アクション";
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
+"Activity" = "アクティビティ";
+/* Types: All, Text Status, List Progress */
+"Activity type" = "アクティビティタイプ";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "適応";
+/* if the translation is too long, translate just (Add) */
+"Add to List" = "リストに追加";
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
+"Added" = "追加完了";
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
 "Adult" = "アダルト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
 "Adventure" = "冒険";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
 "Age" = "年齢";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
 "Airing" = "配信中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
 "Airing Anime" = "配信中のアニメ";
-
-/* No comment provided by engineer. */
+/* you can translate it simply as (Airing) */
 "Airing Next" = "配信中";
-
-/* No comment provided by engineer. */
+/* for this one use the masculine form when applied. */
 "All" = "すべて";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
 "Alternative" = "オルタナティブ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
 "Anime" = "アニメ";
-
-/* No comment provided by engineer. */
-"Anime Behind" = "遅いなアニメ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
 "Anime List" = "アニメリスト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
 "Anime, Manga, and More" = "アニメ、マンガ、その他";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
 "App Icon" = "アプリアイコン";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Are you sure you want to log out?
+No comment provided by engineer. */
 "Are you sure you want to log out?" = "ログアウトしてもよろしいですか?";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ascending
+No comment provided by engineer. */
 "Ascending" = "昇順";
-
-/* No comment provided by engineer. */
+/* weighted Average Score */
 "Average Score" = "平均スコア";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
 "Background" = "背景";
-
-/* No comment provided by engineer. */
+/* Birthday */
 "Birth" = "誕生日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
 "Birthday" = "誕生日";
-
-/* No comment provided by engineer. */
-"Blood type" = "血液型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
 "Blood Type" = "血液型";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood type
+No comment provided by engineer. */
+"Blood type" = "血液型";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
 "Calendar" = "カレンダー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
 "Cancel" = "キャンセル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
 "Cancelled" = "中止";
-
-/* No comment provided by engineer. */
+/* chapter abbreviation */
 "Ch" = "話";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
 "Changes will take effect on app restart" = "変更はアプリの再起動時に反映";
-
-/* No comment provided by engineer. */
-"Chapter Count" = "話数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
 "Chapters" = "話";
-
-/* No comment provided by engineer. */
-"Chapters read" = "読んだ章";
-
-/* No comment provided by engineer. */
+/* stats */
 "Chapters Read" = "読んだ話";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "読んだ章";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
 "Character" = "キャラクター";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
 "Characters" = "キャラクター";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
 "Characters and Staff" = "キャラクターとスタッフ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
 "China" = "中国";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Choose between Anime or Manga.
+No comment provided by engineer. */
 "Choose between Anime or Manga." = "アニメかマンガのどちらかを選択します。";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
 "Clear" = "削除する";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
 "Close" = "閉じる";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
 "Comedy" = "コメディ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
 "Comic" = "コミック";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
 "Compact" = "コンパクト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compilation
+No comment provided by engineer. */
 "Compilation" = "コンパイル";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Completed */
 "Completed" = "完了";
-
-/* No comment provided by engineer. */
+/* An user list activity status.
+Eg: Completed [Anime/Manga Title] */
 "Completed %@" = "%@を完了しました";
-
-/* No comment provided by engineer. */
-"Congratulations, you are up to date!\n(๑>◡<๑)" = "おめでとう、全部見たね！\n(๑>◡<๑)";
-
-/* No comment provided by engineer. */
+/* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
+"Congratulations, you are up to date!
+(๑>◡<๑)" = "おめでとう、全部見たね！\n(๑>◡<๑)";
+/* en.lproj/Localizable.strings
+Contains
+No comment provided by engineer. */
 "Contains" = "含む";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
 "Content" = "コンテンツ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
 "Country" = "国";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country Distribution
+No comment provided by engineer. */
 "Country Distribution" = "国の内訳";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Current */
 "Current" = "今時";
-
-/* No comment provided by engineer. */
+/* custom app color */
 "Custom" = "カスタム";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
 "Custom color" = "カスタムカラー";
-
-/* No comment provided by engineer. */
+/* Dates: start date and end date */
 "Dates" = "日付";
-
-/* No comment provided by engineer. */
+/* stats */
 "Days Watched" = "見た日";
-
-/* No comment provided by engineer. */
+/* date of death */
 "Death" = "死亡";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
 "Default" = "デフォルト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
 "Delete" = "削除する";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete this entry?
+No comment provided by engineer. */
 "Delete this entry?" = "このエントリを削除しますか？";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
 "Descending" = "降順";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Developers
+No comment provided by engineer. */
 "Developers" = "プログラマー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discord server
+No comment provided by engineer. */
 "Discord server" = "Discordサーバー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discover
+No comment provided by engineer. */
 "Discover" = "見つける";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
 "Display" = "ディスプレー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
 "Donate" = "寄付する";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
 "Donate!" = "寄付する！";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
 "Donation" = "寄付";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
 "Donator" = "ドナー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
 "Done" = "完了";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
 "Doujinshi" = "同人誌";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
 "Drama" = "ドラマ";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Dropped */
 "Dropped" = "視聴を中断";
-
-/* No comment provided by engineer. */
+/* (User) Dropped [Anime/Manga Title] */
 "Dropped %@" = "%@を視聴を中断しました";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
 "Duration" = "放送時間";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
 "Ecchi" = "エッチ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
 "Edit" = "編集";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
 "End date" = "終了日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
 "English" = "英語";
-
-/* No comment provided by engineer. */
+/* episodes abbreviation */
 "Ep" = "話";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and time.
+Eg: Ep [23] [in 35 minutes] */
 "Ep %lld %@" = "第%lld話 %@";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and a specific hour.
+Eg: Ep [23] at [12:30] */
 "Ep %lld at %@" = "第%lld話 %@に";
-
-/* No comment provided by engineer. */
-"Episode Count" = "話数";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
 "Episodes" = "話";
-
-/* No comment provided by engineer. */
+/* stats */
 "Episodes Watched" = "見た話";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
 "Explore" = "検索";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
 "External links" = "外部リンク";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
 "Fall" = "秋";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
 "Fantasy" = "ファンタジー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
 "Favorites" = "お気に入り";
-
-/* No comment provided by engineer. */
+/* Activity feed type: Following or Global */
 "Feed type" = "フィードタイプ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
 "Filter" = "検索";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finish Date
+No comment provided by engineer. */
 "Finish Date" = "終了日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
 "Finished" = "終了";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
 "Follow" = "フォロー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
 "Followers" = "フォロワー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
 "Following" = "フォロー中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows
+No comment provided by engineer. */
 "Follows" = "フォロー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
 "Follows you" = "フォローされています";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
 "Format" = "形式";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format Distribution
+No comment provided by engineer. */
 "Format Distribution" = "形式の内訳";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
 "Forum" = "フォーラム";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+From year
+No comment provided by engineer. */
 "From year" = "年から";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
 "Game" = "ゲーム";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
 "Gender" = "性別";
-
-/* No comment provided by engineer. */
+/* general information about the anime/manga */
 "General" = "一般";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
 "Genres" = "ジャンル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
 "GitHub repository" = "GitHubリポジトリ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
 "Global" = "グローバル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
 "Hentai" = "変態";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
 "Hiatus" = "中断";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide filters
+No comment provided by engineer. */
 "Hide filters" = "フィルターを非表示";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide from status lists
+No comment provided by engineer. */
 "Hide from status lists" = "ステータスリストから隠す";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide spoiler
+No comment provided by engineer. */
 "Hide spoiler" = "ネタバレを隠す";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Highest rated 2023 */
 "Highest rated" = "評価の高い";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Home" = "ホーム";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
 "Hometown" = "故郷";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
 "Horror" = "ホラー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hours Watched
+No comment provided by engineer. */
 "Hours Watched" = "見た時間";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Increment Episode / Chapter
+No comment provided by engineer. */
 "Increment Episode / Chapter" = "話のインクリメント";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
 "Info type" = "情報のタイプ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
 "Information" = "情報";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
 "Japan" = "日本";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
 "Japanese" = "日本語";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last Added
+No comment provided by engineer. */
 "Last Added" = "追加日";
-
-/* No comment provided by engineer. */
+/* sort by update date */
 "Last Updated" = "更新日時";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
 "Last used" = "前回使用";
-
-/* No comment provided by engineer. */
+/* Left swipe direction */
 "Left" = "左";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
 "Light novel" = "ライトノベル";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "List entry ID" = "リストエントリID";
-
-/* No comment provided by engineer. */
-"List Progress" = "リストの進行状況";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
 "List style" = "リストスタイル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
 "Live action" = "実写版";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
 "Loading" = "読み込み中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Log out
+No comment provided by engineer. */
 "Log out" = "ログアウト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
 "Login" = "ログイン";
-
-/* No comment provided by engineer. */
+/* or (Swipe Direction) for short */
 "Long Swipe Direction" = "スワイプの方向";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
 "Mahou Shoujo" = "魔法少女";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
 "Main" = "主人公";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
 "Manga" = "マンガ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
 "Manga List" = "マンガリスト";
-
-/* No comment provided by engineer. */
-"Mean score" = "スコア";
-
-/* No comment provided by engineer. */
+/* normalized score.
+You can translate it simply as (Score) */
 "Mean Score" = "スコア";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "スコア";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
 "Mecha" = "メカ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Media
+No comment provided by engineer. */
 "Media" = "メディア";
-
-/* No comment provided by engineer. */
+/* not a very important string. Used for app intents */
 "Media ID" = "メディア ID";
-
-/* No comment provided by engineer. */
+/* Anime/Manga List */
 "Media List" = "メディアリスト";
-
-/* No comment provided by engineer. */
+/* Anime or Manga */
 "Media Type" = "メディアタイプ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
 "Minimal" = "ミニマル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+More filters
+No comment provided by engineer. */
 "More filters" = "その他のフィルター";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Most popular 2023 */
 "Most popular" = "一番人気";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
 "Movie" = "動画";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
 "Multimedia project" = "マルチメディアプロジェクト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
 "Music" = "音楽";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
 "Mystery" = "ミステリー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
 "Native" = "ネイティブ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Anime
+No comment provided by engineer. */
 "Newly Added Anime" = "新着アニメ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Manga
+No comment provided by engineer. */
 "Newly Added Manga" = "新着マンガ";
-
-/* No comment provided by engineer. */
+/* toggle off */
 "No" = "いいえ";
-
-/* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "リストに配信中のアニメがいません\n(*´-`)";
-
-/* No comment provided by engineer. */
-"No anime for today\n(*´-`)" = "今日のアニメはありません\n(*´-`)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No anime for today
+(*´-`)
+No comment provided by engineer. */
+"No anime for today
+(*´-`)" = "今日のアニメはありません\n(*´-`)";
+/* en.lproj/Localizable.strings
+No media
+No comment provided by engineer. */
 "No media" = "メディアなし";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
 "No recommendations" = "おすすめはありません";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No reviews
+No comment provided by engineer. */
 "No reviews" = "レビューなし";
-
-/* No comment provided by engineer. */
+/* nothing selected */
 "None" = "なし";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
 "Not yet released" = "未発表";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
 "Notes" = "メモ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Nothing in your list
+No comment provided by engineer. */
 "Nothing in your list" = "リストには何もありません";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
 "Notifications" = "通知";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
 "Novel" = "小説";
-
-/* No comment provided by engineer. */
-"Occupations" = "職業";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
 "OK" = "OK";
-
-/* No comment provided by engineer. */
-"On my list" = "自分のリストに";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
 "ONA" = "ONA";
-
-/* No comment provided by engineer. */
-"OneShot" = "ワンショット";
-
-/* No comment provided by engineer. */
-"Order" = "順序";
-
-/* No comment provided by engineer. */
-"Original" = "オリジナル";
-
-/* No comment provided by engineer. */
-"Other" = "他";
-
-/* No comment provided by engineer. */
-"Other account settings" = "その他のアカウントの設定";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
 "OVA" = "OVA";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Occupations
+No comment provided by engineer. */
+"Occupations" = "職業";
+/* en.lproj/Localizable.strings
+On my list
+No comment provided by engineer. */
+"On my list" = "自分のリストに";
+/* en.lproj/Localizable.strings
+OneShot
+No comment provided by engineer. */
+"OneShot" = "ワンショット";
+/* sort order */
+"Order" = "順序";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "オリジナル";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "他";
+/* text for a button that opens AniList website */
+"Other account settings" = "その他のアカウントの設定";
+/* en.lproj/Localizable.strings
+Overview
+No comment provided by engineer. */
 "Overview" = "概要";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Parent
+No comment provided by engineer. */
 "Parent" = "原作";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Paused */
 "Paused" = "保留";
-
-/* No comment provided by engineer. */
+/* (User) Paused [Anime/Manga Title] */
 "Paused %@" = "%@を保留しました";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
 "Picture book" = "絵本";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Planning */
 "Planning" = "視聴予定";
-
-/* No comment provided by engineer. */
+/* Plans to read [Manga Title] */
 "Plans to read %@" = "%@を読む予定";
-
-/* No comment provided by engineer. */
+/* Plans to watch [Anime Title] */
 "Plans to watch %@" = "%@を見る予定";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
 "Please login to use this feature" = "この機能を使用するには、ログインしてください。";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
 "Popular Anime" = "人気のアニメ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
 "Popular Manga" = "人気のマンガ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
 "Popularity" = "人気";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
 "Prequel" = "前篇";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Priority
+No comment provided by engineer. */
 "Priority" = "優先";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Private
+No comment provided by engineer. */
 "Private" = "非公開";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
 "Producers" = "プロデューサー";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Profile" = "プロフ";
-
-/* No comment provided by engineer. */
+/* list entry progress */
 "Progress" = "進歩";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
 "Psychological" = "心理的";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
 "Publishing" = "公開中";
-
-/* No comment provided by engineer. */
+/* screen title.
+Manga that are being published */
 "Publishing Manga" = "公開中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
 "Push notifications" = "プッシュ通知";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
 "Random" = "ランダム";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
 "Rankings" = "ランキング";
-
-/* (No Comment) */
-"Read chapter %1$@ of %2$@" = "%2$@の第%1$@話を読みました";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
 "Read Year" = "年";
-
-/* No comment provided by engineer. */
+/* Eg: (User) Read chapter [25] of [Manga Title] */
+"Read chapter %1$@ of %2$@" = "%2$@の第%1$@話を読みました";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
 "Reading" = "読んでいます";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
 "Recommendations" = "おすすめ";
-
-/* No comment provided by engineer. */
+/* Related anime/manga */
 "Relations" = "関連";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Relations and Recommendations
+No comment provided by engineer. */
 "Relations and Recommendations" = "関連とおすすめ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Date
+No comment provided by engineer. */
 "Release Date" = "公開日時";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Year
+No comment provided by engineer. */
 "Release Year" = "発売年";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
 "Releasing" = "公開中";
-
-/* No comment provided by engineer. */
+/* sort by repeat count */
 "Repeat" = "繰り返し";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
 "Repeat Count" = "繰り返し回数";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Repeating */
 "Repeating" = "繰り返し";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rereading */
 "Rereading" = "再読中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Restore purchases
+No comment provided by engineer. */
 "Restore purchases" = "購入内容を復元する";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Review and Threads
+No comment provided by engineer. */
 "Review and Threads" = "レビューとスレッド";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reviews
+No comment provided by engineer. */
 "Reviews" = "レビュー";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rewatching */
 "Rewatching" = "見直し中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Right
+No comment provided by engineer. */
 "Right" = "右";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
 "Romaji" = "ローマ字";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
 "Romaji (Western Order)" = "英語表記（ローマ字）";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
 "Romance" = "ロマンス";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
 "Save" = "保存";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
 "Sci-Fi" = "SF";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
 "Score" = "スコア";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
 "Score distribution" = "スコアの内訳";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score format
+No comment provided by engineer. */
 "Score format" = "スコアの形式";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
 "Search type" = "検索タイプ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
 "Season" = "季節";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+See All
+No comment provided by engineer. */
 "See All" = "すべてを表示";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
 "Select Media Type" = "メディアタイプを選択";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Selection type
+No comment provided by engineer. */
 "Selection type" = "選択タイプ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
 "Sequel" = "続";
-
-/* Set to Status */
+/* Set to Status.
+Example: Set as Completed */
 "Set as %@" = "%@ に設定";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Set progress" = "進捗を設定";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
 "Settings" = "設定";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
 "Share" = "分け合う";
-
-/* No comment provided by engineer. */
+/* Show less text */
 "Show less" = "表示を減らす";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
 "Show more" = "さらに表示";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
 "Show spoiler" = "ネタバレを表示";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
 "Side Story" = "サイドストーリー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
 "Slice of Life" = "日常";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Social
+No comment provided by engineer. */
 "Social" = "ソーシャル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
 "Sort" = "並び替え";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
 "Source" = "原作";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+South Korea
+No comment provided by engineer. */
 "South Korea" = "韓国";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
 "Special" = "スペシャル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spin Off
+No comment provided by engineer. */
 "Spin Off" = "スピンオフ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
 "Sports" = "スポーツ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
 "Spring" = "春";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Staff
+No comment provided by engineer. */
 "Staff" = "スタッフ";
-
-/* No comment provided by engineer. */
+/* you can use (and) instead of (&) */
 "Staff & Character name language" = "スタッフとキャラクター名の言語";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
 "Standard" = "スタンダード";
-
-/* No comment provided by engineer. */
-"Start date" = "公開日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
 "Start Date" = "公開日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "公開日";
+/* sort by date started */
 "Started" = "開始";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
 "Stats" = "統計";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
 "Status" = "ステータス";
-
-/* No comment provided by engineer. */
-"Status distribution" = "ステータスの内訳";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status Distribution
+No comment provided by engineer. */
 "Status Distribution" = "ステータスの内訳";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status distribution
+No comment provided by engineer. */
+"Status distribution" = "ステータスの内訳";
+/* en.lproj/Localizable.strings
+Streaming sites
+No comment provided by engineer. */
 "Streaming sites" = "配信サイト";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
 "Studios" = "スタジオ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
 "Summary" = "摘要";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
 "Summer" = "夏";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
 "Supernatural" = "神秘的な";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
 "Supporting" = "助演";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sync account with Apple Watch
+No comment provided by engineer. */
 "Sync account with Apple Watch" = "Apple Watch とアカウントを同期する";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
 "Synonyms" = "同義語";
-
-/* No comment provided by engineer. */
-"Tags" = "タグ";
-
-/* No comment provided by engineer. */
-"Taiwan" = "台湾";
-
-/* No comment provided by engineer. */
-"Text Status" = "テキストのステータス";
-
-/* No comment provided by engineer. */
-"Thank you :)" = "ありがとうございます！(๑>◡<๑)";
-
-/* No comment provided by engineer. */
-"The id of the media the entry is of" = "エントリのメディアID";
-
-/* No comment provided by engineer. */
-"Threads" = "スレッド";
-
-/* No comment provided by engineer. */
-"Thriller" = "スリラー";
-
-/* No comment provided by engineer. */
-"Title" = "作品名";
-
-/* No comment provided by engineer. */
-"Title count" = "タイトル数";
-
-/* No comment provided by engineer. */
-"Title language" = "作品名の言語";
-
-/* No comment provided by engineer. */
-"To year" = "年まで";
-
-/* No comment provided by engineer. */
-"Top 100" = "トップ１００";
-
-/* No comment provided by engineer. */
-"Top 100 Anime" = "トップ１００アニメ";
-
-/* No comment provided by engineer. */
-"Top 100 Manga" = "トップ１００マンガ";
-
-/* No comment provided by engineer. */
-"Top Movies" = "映画のトップ";
-
-/* No comment provided by engineer. */
-"Top Popular" = "人気のトップ";
-
-/* No comment provided by engineer. */
-"Total Anime" = "アニメ合計";
-
-/* No comment provided by engineer. */
-"Total Manga" = "マンガ合計";
-
-/* No comment provided by engineer. */
-"Trailer" = "PV";
-
-/* No comment provided by engineer. */
-"Translate" = "翻訳する";
-
-/* No comment provided by engineer. */
-"Translations" = "翻訳";
-
-/* No comment provided by engineer. */
-"Trending" = "トレンド";
-
-/* No comment provided by engineer. */
-"Trending Anime" = "人気のアニメ";
-
-/* No comment provided by engineer. */
-"Trending Manga" = "人気のマンガ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
 "TV" = "テレビ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
 "TV Short" = "テレビショート";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "タグ";
+/* en.lproj/Localizable.strings
+Taiwan
+No comment provided by engineer. */
+"Taiwan" = "台湾";
+/* en.lproj/Localizable.strings
+Text Status
+No comment provided by engineer. */
+"Text Status" = "テキストのステータス";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "ありがとうございます！(๑>◡<๑)";
+/* not a very important string. used for app intents */
+"The id of the media the entry is of" = "エントリのメディアID";
+/* en.lproj/Localizable.strings
+Threads
+No comment provided by engineer. */
+"Threads" = "スレッド";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "スリラー";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "作品名";
+/* en.lproj/Localizable.strings
+Title count
+No comment provided by engineer. */
+"Title count" = "タイトル数";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "作品名の言語";
+/* en.lproj/Localizable.strings
+To year
+No comment provided by engineer. */
+"To year" = "年まで";
+/* en.lproj/Localizable.strings
+Top 100
+No comment provided by engineer. */
+"Top 100" = "トップ１００";
+/* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "トップ１００アニメ";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "トップ１００マンガ";
+/* en.lproj/Localizable.strings
+Top Movies
+No comment provided by engineer. */
+"Top Movies" = "映画のトップ";
+/* en.lproj/Localizable.strings
+Top Popular
+No comment provided by engineer. */
+"Top Popular" = "人気のトップ";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "アニメ合計";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "マンガ合計";
+/* en.lproj/Localizable.strings
+Trailer
+No comment provided by engineer. */
+"Trailer" = "PV";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "翻訳する";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "翻訳";
+/* en.lproj/Localizable.strings
+Trending
+No comment provided by engineer. */
+"Trending" = "トレンド";
+/* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "人気のアニメ";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "人気のマンガ";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
 "Unfollow" = "フォロー解除";
-
-/* Localizable.strings
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "不明";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
 "Upcoming" = "近日公開";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
 "Upcoming Anime" = "近日公開のアニメ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
 "Upcoming Manga" = "近日公開のマンガ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
 "Updated" = "更新";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users
+No comment provided by engineer. */
 "Users" = "ユーザー";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users likes
+No comment provided by engineer. */
 "Users likes" = "ユーザーのいいね！";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
 "Version %@" = "バージョン %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+VideoGame
+No comment provided by engineer. */
 "VideoGame" = "ゲーム";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
 "Visual novel" = "ビジュアルノベル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Voice Actors
+No comment provided by engineer. */
 "Voice Actors" = "声優";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
 "Volumes" = "単行本";
-
-/* No comment provided by engineer. */
+/* num of volumes read */
 "Volumes Read" = "読んだ巻";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watch Year
+No comment provided by engineer. */
 "Watch Year" = "年";
-
-/* (No Comment) */
+/* Eg: (User) Watched episode [25] of [Anime Title] */
 "Watched episode %1$@ of %2$@" = "%2$@の第%1$@話を見ました";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
 "Watching" = "視聴中";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
 "Web novel" = "WEBノベル";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weekday
+No comment provided by engineer. */
 "Weekday" = "平日";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
 "Winter" = "冬";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
 "Year" = "年";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Years active
+No comment provided by engineer. */
 "Years active" = "生産年数";
-
-/* No comment provided by engineer. */
+/* toggle on */
 "Yes" = "はい";
-
-/* No comment provided by engineer. */
-"You may need to login again in your browser" = "ブラウザで再度ログインする必要があります。";
-
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[第%lld話遅い](inflect: true)";

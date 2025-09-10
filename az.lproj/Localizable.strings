@@ -1,1029 +1,1252 @@
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
 "%lld chapters" = "%lld fəsil";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
 "%lld episodes" = "%lld bölüm";
-
-/* No comment provided by engineer. */
+/* num of volumes.
+Eg: 23 volumes */
 "%lld volumes" = "%lld cild";
-
-/* No comment provided by engineer. */
-"^[%lld episode behind](inflect: true)" = "^[%lld bölüm arxada](inflect: true)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
 "3 Point Smiley :)" = "3 Xal Smiley :)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
 "5 Star (3/5)" = "5 Ulduz (3/5)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
 "10 Point (5/10)" = "10 Xal (5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "10 Xal onluq sistemdə (5.5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
 "100 Point (55/100)" = "100 Xal (55/100)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
 "Accent color" = "Aksent rəngi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
 "Account settings" = "Hesab tənzimlənmələri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
 "Action" = "Hərəkətlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
 "Activity" = "Aktivlik";
-
-/* No comment provided by engineer. */
+/* Types: All, Text Status, List Progress */
 "Activity type" = "Fəaliyyət tipi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
 "Adaptation" = "Uyğunlaşma";
-
-/* No comment provided by engineer. */
+/* if the translation is too long, translate just (Add) */
 "Add to List" = "Əlavə et";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
 "Added" = "Əlavə edildi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
 "Adult" = "Yetkin";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
 "Adventure" = "Macəra";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
 "Age" = "Yaş";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
 "Airing" = "Hazırda yayımlanan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
 "Airing Anime" = "Yayımlanan Anime";
-
-/* No comment provided by engineer. */
+/* you can translate it simply as (Airing) */
 "Airing Next" = "Sonra Yayımlanacaqlar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing on my list
+No comment provided by engineer. */
 "Airing on my list" = "Mənim listimdə yayımlanan";
-
-/* No comment provided by engineer. */
+/* for this one use the masculine form when applied. */
 "All" = "Hamısı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
 "Alternative" = "Alternativ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
 "Anime" = "Anime";
-
-/* No comment provided by engineer. */
+/* anime with unwatched episodes */
 "Anime Behind" = "Arxadakı Anime";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
 "Anime List" = "Anime listi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
 "Anime, Manga, and More" = "Anime, Manqa və dahası";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
 "App Icon" = "Tətbiq ikonu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Are you sure you want to log out?
+No comment provided by engineer. */
 "Are you sure you want to log out?" = "Çıxmaq istədiyinizə əminsiniz?";
-
-/* No comment provided by engineer. */
-"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Bildiyiniz kimi tamamilə pulsuz və Open Source tətbiq yaratmaq çoxlu vaxt və zəhmət tələb edir, lakin bizə bəxşiş ataraq inkişaf prosesimizdə və yeni özəlliklərin gəlməsində bizə dəstək ola bilərsiniz.";
-
-/* No comment provided by engineer. */
+/* Please try to use the same break lines */
+"As you may known this app is completely free and Open Source,
+but creating an app requires a lot of time and effort.
+By making a donation you will help cover the costs of
+development, maintenance, and new features." = "Bildiyiniz kimi tamamilə pulsuz və Open Source tətbiq yaratmaq çoxlu vaxt və zəhmət tələb edir, lakin bizə bəxşiş ataraq inkişaf prosesimizdə və yeni özəlliklərin gəlməsində bizə dəstək ola bilərsiniz.";
+/* en.lproj/Localizable.strings
+Ascending
+No comment provided by engineer. */
 "Ascending" = "Artan sırada";
-
-/* No comment provided by engineer. */
+/* weighted Average Score */
 "Average Score" = "Ortalama Xal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
 "Background" = "Arxa fon";
-
-/* No comment provided by engineer. */
+/* Birthday */
 "Birth" = "Doğum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
 "Birthday" = "Ad günü";
-
-/* No comment provided by engineer. */
-"Blood type" = "Qan qrupu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
 "Blood Type" = "Qan Qrupu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood type
+No comment provided by engineer. */
+"Blood type" = "Qan qrupu";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
 "Calendar" = "Təqvim";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
 "Cancel" = "Ləvğ et";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
 "Cancelled" = "Ləvğ edilib";
-
-/* No comment provided by engineer. */
+/* chapter abbreviation */
 "Ch" = "Fs";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
 "Changes will take effect on app restart" = "Dəyişikliklər tətbiq yenidən başladıldıqda görünəcək";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapter Count
+No comment provided by engineer. */
 "Chapter Count" = "Fəsil sayı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
 "Chapters" = "Fəsillər";
-
-/* No comment provided by engineer. */
-"Chapters read" = "Oxunan fəsillər";
-
-/* No comment provided by engineer. */
+/* stats */
 "Chapters Read" = "Oxunan fəsillər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "Oxunan fəsillər";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
 "Character" = "Xarakter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
 "Characters" = "Xarakterlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
 "Characters and Staff" = "Xarakterlər və Heyət";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
 "China" = "Çin";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Choose between Anime or Manga.
+No comment provided by engineer. */
 "Choose between Anime or Manga." = "Anime və ya Manqa seçin.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
 "Clear" = "Təmizlə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
 "Close" = "Bağla";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
 "Comedy" = "Komediya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
 "Comic" = "Komiks";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
 "Compact" = "Kompakt";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compilation
+No comment provided by engineer. */
 "Compilation" = "Tərtib";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Completed */
 "Completed" = "Bitirdiyim";
-
-/* No comment provided by engineer. */
+/* An user list activity status.
+Eg: Completed [Anime/Manga Title] */
 "Completed %@" = "Bitirdiyim %@";
-
-/* No comment provided by engineer. */
-"Congratulations, you are up to date!\n(๑>◡<๑)" = "Təbriklər, siz artıq yeniliklərdən xəbərdarsınız! (๑>◡<๑)";
-
-/* No comment provided by engineer. */
+/* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
+"Congratulations, you are up to date!
+(๑>◡<๑)" = "Təbriklər, siz artıq yeniliklərdən xəbərdarsınız! (๑>◡<๑)";
+/* en.lproj/Localizable.strings
+Contains
+No comment provided by engineer. */
 "Contains" = "Tərkibi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
 "Content" = "Məzmun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
 "Country" = "Ölkə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country Distribution
+No comment provided by engineer. */
 "Country Distribution" = "Ölkə paylanımı";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Current */
 "Current" = "Cari";
-
-/* No comment provided by engineer. */
+/* custom app color */
 "Custom" = "Özəl";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
 "Custom color" = "Özəl rəng";
-
-/* No comment provided by engineer. */
+/* Dates: start date and end date */
 "Dates" = "Tarix";
-
-/* No comment provided by engineer. */
+/* stats */
 "Days Watched" = "Baxılan günlər";
-
-/* No comment provided by engineer. */
+/* date of death */
 "Death" = "Ölmə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
 "Default" = "İlkin";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
 "Delete" = "Sil";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete this entry?
+No comment provided by engineer. */
 "Delete this entry?" = "Bu qeyd silinsin?";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
 "Descending" = "Azalan sırada";
-
-/* No comment provided by engineer. */
-"Developers" = "Developer'lər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Developers
+No comment provided by engineer. */
+"Developers" = "Developer\'lər";
+/* en.lproj/Localizable.strings
+Discord server
+No comment provided by engineer. */
 "Discord server" = "Discord serveri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discover
+No comment provided by engineer. */
 "Discover" = "Kəşf et";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
 "Display" = "Görüntü";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
 "Donate" = "İanə ver";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
 "Donate!" = "İanə ver!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
 "Donation" = "İanə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
 "Donator" = "Bəxşişçilər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
 "Done" = "Bitdi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
 "Doujinshi" = "Doujinshi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
 "Drama" = "Dram";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Dropped */
 "Dropped" = "Yarıda Buraxdığım";
-
-/* No comment provided by engineer. */
+/* (User) Dropped [Anime/Manga Title] */
 "Dropped %@" = "Yarıda Buraxdığım %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
 "Duration" = "Müddət";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
 "Ecchi" = "Ecchi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
 "Edit" = "Düzəliş et";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
 "End date" = "Bitmə tarixi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
 "English" = "İngilis dili";
-
-/* No comment provided by engineer. */
+/* episodes abbreviation */
 "Ep" = "Bö";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and time.
+Eg: Ep [23] [in 35 minutes] */
 "Ep %lld %@" = "Bö %lld %@";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and a specific hour.
+Eg: Ep [23] at [12:30] */
 "Ep %lld at %@" = "Bö %lld saat %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Count
+No comment provided by engineer. */
 "Episode Count" = "Bölüm sayı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
 "Episodes" = "Bölümlər";
-
-/* No comment provided by engineer. */
+/* stats */
 "Episodes Watched" = "Baxılan bölümlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
 "Explore" = "Axtar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
 "External links" = "Xarici Linklər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
 "Fall" = "Payız";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
 "Fantasy" = "Fantaziya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
 "Favorites" = "Favoritlər";
-
-/* No comment provided by engineer. */
+/* Activity feed type: Following or Global */
 "Feed type" = "Fəaliyyət tipi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
 "Filter" = "Filterlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finish Date
+No comment provided by engineer. */
 "Finish Date" = "Bitmə tarixi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
 "Finished" = "Bitdi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
 "Follow" = "İzlə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
 "Followers" = "İzləyicilər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
 "Following" = "İzləyir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows
+No comment provided by engineer. */
 "Follows" = "İzlə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
 "Follows you" = "Səni izləyir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
 "Format" = "Formatı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format Distribution
+No comment provided by engineer. */
 "Format Distribution" = "Format paylaşımı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
 "Forum" = "Forum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+From year
+No comment provided by engineer. */
 "From year" = "Ildən";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
 "Game" = "Oyun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
 "Gender" = "Cinsiyyət";
-
-/* No comment provided by engineer. */
+/* general information about the anime/manga */
 "General" = "Ümumi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
 "Genres" = "Janrlar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
 "GitHub repository" = "GitHub repository";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
 "Global" = "Qlobal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
 "Hentai" = "Hentai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
 "Hiatus" = "Fasilədə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide filters
+No comment provided by engineer. */
 "Hide filters" = "Filtrləri gizlə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide spoiler
+No comment provided by engineer. */
 "Hide spoiler" = "Spoyleri gizlə";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Highest rated 2023 */
 "Highest rated" = "Yüksək reytinqli";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Home" = "Ana Səhifə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
 "Hometown" = "Doğulduğu yer";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
 "Horror" = "Qorxu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hours Watched
+No comment provided by engineer. */
 "Hours Watched" = "Baxılan saat";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Increment Episode / Chapter
+No comment provided by engineer. */
 "Increment Episode / Chapter" = "Artırılan bölüm / fəsil";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
 "Info type" = "Məlumat tipi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
 "Information" = "Məlumat";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
 "Japan" = "Yaponiya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
 "Japanese" = "Yapon dili";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last Added
+No comment provided by engineer. */
 "Last Added" = "Son əlavə edilən";
-
-/* No comment provided by engineer. */
+/* sort by update date */
 "Last Updated" = "Son yenilənən";
-
-/* No comment provided by engineer. */
+/* Left swipe direction */
 "Left" = "Sol";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
 "Light novel" = "Yüngül roman";
-
-/* No comment provided by engineer. */
-"List entry ID" = "List qeydi ID";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List Progress
+No comment provided by engineer. */
 "List Progress" = "List Yüksəlişi";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
+"List entry ID" = "List qeydi ID";
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
 "List style" = "List stili";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
 "Live action" = "Canlı fəaliyyət";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
 "Loading" = "Yüklənir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Log out
+No comment provided by engineer. */
 "Log out" = "Çıxış et";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
 "Login" = "Daxil ol";
-
-/* No comment provided by engineer. */
+/* or (Swipe Direction) for short */
 "Long Swipe Direction" = "Uzun sürüşdürmə istiqaməti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
 "Mahou Shoujo" = "Mahou Shoujo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
 "Main" = "Əsas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
 "Manga" = "Manqa";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
 "Manga List" = "Manqa listi";
-
-/* No comment provided by engineer. */
-"Mean score" = "Orta xalı";
-
-/* No comment provided by engineer. */
+/* normalized score.
+You can translate it simply as (Score) */
 "Mean Score" = "Ortalama xalı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "Orta xalı";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
 "Mecha" = "Mexanik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Media
+No comment provided by engineer. */
 "Media" = "Media";
-
-/* No comment provided by engineer. */
+/* not a very important string. Used for app intents */
 "Media ID" = "Medya ID";
-
-/* No comment provided by engineer. */
+/* Anime/Manga List */
 "Media List" = "Medya listi";
-
-/* No comment provided by engineer. */
+/* Anime or Manga */
 "Media Type" = "Medya növü";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
 "Minimal" = "Minimal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+More filters
+No comment provided by engineer. */
 "More filters" = "Daha çox filtrlər";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Most popular 2023 */
 "Most popular" = "Daha populyar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
 "Movie" = "Film";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
 "Multimedia project" = "Multimedia proyekti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
 "Music" = "Musiqi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
 "Mystery" = "Dedektiv";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
 "Native" = "Ana dili";
-
-/* No comment provided by engineer. */
+/* toggle off */
 "No" = "Xeyr";
-
-/* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "Listinizdə yayımlanan anime yoxdur (*´-`)";
-
-/* No comment provided by engineer. */
-"No anime for today\n(*´-`)" = "Bu gün üçün anime yoxdur (*´-`)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No airing anime in your list
+(*´-`)
+No comment provided by engineer. */
+"No airing anime in your list
+(*´-`)" = "Listinizdə yayımlanan anime yoxdur (*´-`)";
+/* en.lproj/Localizable.strings
+No anime for today
+(*´-`)
+No comment provided by engineer. */
+"No anime for today
+(*´-`)" = "Bu gün üçün anime yoxdur (*´-`)";
+/* en.lproj/Localizable.strings
+No media
+No comment provided by engineer. */
 "No media" = "Media yoxdur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
 "No recommendations" = "Tövsiyələr yoxdur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No reviews
+No comment provided by engineer. */
 "No reviews" = "İncələmə yoxdur";
-
-/* No comment provided by engineer. */
+/* nothing selected */
 "None" = "Heç biri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
 "Not yet released" = "Hələ yayımlanmayıb";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
 "Notes" = "Qeydlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Nothing in your list
+No comment provided by engineer. */
 "Nothing in your list" = "Listiniz boşdur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
 "Notifications" = "Bildirişlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
 "Novel" = "Roman";
-
-/* No comment provided by engineer. */
-"Occupations" = "Fəaliyyət növü";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
 "OK" = "OK";
-
-/* No comment provided by engineer. */
-"On my list" = "Mənim listimdə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
 "ONA" = "ONA";
-
-/* No comment provided by engineer. */
-"OneShot" = "BirDəfəlik";
-
-/* No comment provided by engineer. */
-"Optional status to update the list entry to (e.g. COMPLETED)" = "List qeydlərini yeniləmək üçün könüllü status (məs. BİTİRİLİB)";
-
-/* No comment provided by engineer. */
-"Order" = "Sıralama";
-
-/* No comment provided by engineer. */
-"Original" = "Orijinal";
-
-/* No comment provided by engineer. */
-"Other" = "Digər";
-
-/* No comment provided by engineer. */
-"Other account settings" = "Başqa hesab tənzimlənmələri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
 "OVA" = "OVA";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Occupations
+No comment provided by engineer. */
+"Occupations" = "Fəaliyyət növü";
+/* en.lproj/Localizable.strings
+On my list
+No comment provided by engineer. */
+"On my list" = "Mənim listimdə";
+/* en.lproj/Localizable.strings
+OneShot
+No comment provided by engineer. */
+"OneShot" = "BirDəfəlik";
+/* not a very important string. used for app intents */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "List qeydlərini yeniləmək üçün könüllü status (məs. BİTİRİLİB)";
+/* sort order */
+"Order" = "Sıralama";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "Orijinal";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "Digər";
+/* text for a button that opens AniList website */
+"Other account settings" = "Başqa hesab tənzimlənmələri";
+/* en.lproj/Localizable.strings
+Overview
+No comment provided by engineer. */
 "Overview" = "İcmal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Parent
+No comment provided by engineer. */
 "Parent" = "Əlaqə";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Paused */
 "Paused" = "Yarıda saxladığım";
-
-/* No comment provided by engineer. */
+/* (User) Paused [Anime/Manga Title] */
 "Paused %@" = "Durdurulub %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
 "Picture book" = "Şəkil kitab";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Planning */
 "Planning" = "Planladığım";
-
-/* No comment provided by engineer. */
+/* Plans to read [Manga Title] */
 "Plans to read %@" = "Oxumaq planlanılır %@";
-
-/* No comment provided by engineer. */
+/* Plans to watch [Anime Title] */
 "Plans to watch %@" = "İzləmək planlanılır %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
 "Please login to use this feature" = "Bu funksiyadan istifadə etmək üçün daxil olun";
-
-/* No comment provided by engineer. */
-"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Zəhmət olmasa AniHyou tətbiqini öz iPhone'da açın və Apple Watch ilə Profil -> Tənzimlənmələr -> Sinxronizasiya bölməsinə daxil olun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch
+No comment provided by engineer. */
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Zəhmət olmasa AniHyou tətbiqini öz iPhone\'da açın və Apple Watch ilə Profil -> Tənzimlənmələr -> Sinxronizasiya bölməsinə daxil olun";
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
 "Popular Anime" = "Populyar Anime";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
 "Popular Manga" = "Populyar Manqa";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
 "Popularity" = "Populyarlıq";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
 "Prequel" = "Ön fikirlər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Priority
+No comment provided by engineer. */
 "Priority" = "Prioritet";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Private
+No comment provided by engineer. */
 "Private" = "Gizli";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
 "Producers" = "Prodüserlər";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Profile" = "Profil";
-
-/* No comment provided by engineer. */
+/* list entry progress */
 "Progress" = "İrəliləyiş";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
 "Psychological" = "Psixoloji";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
 "Publishing" = "Yayımlanan";
-
-/* No comment provided by engineer. */
+/* screen title.
+Manga that are being published */
 "Publishing Manga" = "Yayımlanan Manqa";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
 "Push notifications" = "Ani Bildirişlər";
-
-/* No comment provided by engineer. */
-"Quick access to your anime or manga list." = "Anime və ya Manqa list'nə qısayol.";
-
-/* No comment provided by engineer. */
+/* widget description */
+"Quick access to your anime or manga list." = "Anime və ya Manqa list\'nə qısayol.";
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
 "Rankings" = "Sıralamalar";
-
-/* (No Comment) */
-"Read chapter %1$@ of %2$@" = "Bölmə %1$@ %2$@ ilə oxu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
 "Read Year" = "Oxunulan il";
-
-/* No comment provided by engineer. */
+/* Eg: (User) Read chapter [25] of [Manga Title] */
+"Read chapter %1$@ of %2$@" = "Bölmə %1$@ %2$@ ilə oxu";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
 "Reading" = "Oxuyur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
 "Recommendations" = "Tövsiyələr";
-
-/* No comment provided by engineer. */
+/* Related anime/manga */
 "Relations" = "Əlaqələr";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Relations and Recommendations
+No comment provided by engineer. */
 "Relations and Recommendations" = "Əlaqələr və Tövsiyələr";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Date
+No comment provided by engineer. */
 "Release Date" = "Buraxılış tarixi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Year
+No comment provided by engineer. */
 "Release Year" = "Yayımlandığı il";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
 "Releasing" = "Yayımlanır";
-
-/* No comment provided by engineer. */
+/* sort by repeat count */
 "Repeat" = "Təkrarla";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
 "Repeat Count" = "Təkrar sayı";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Repeating */
 "Repeating" = "Təkrar baxdığım";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Restore purchases
+No comment provided by engineer. */
 "Restore purchases" = "Satınalmaları bərpa edin";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Review and Threads
+No comment provided by engineer. */
 "Review and Threads" = "İncələmələr və Baxış";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reviews
+No comment provided by engineer. */
 "Reviews" = "İncələmələr";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Right
+No comment provided by engineer. */
 "Right" = "Sağ";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
 "Romaji" = "Romaji";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
 "Romaji (Western Order)" = "Romaji (Qərb Sırasında)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
 "Romance" = "Romantika";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
 "Save" = "Yadda saxla";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
 "Sci-Fi" = "Elmi fantastik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
 "Score" = "Xal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
 "Score distribution" = "Xal paylanması";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score format
+No comment provided by engineer. */
 "Score format" = "Xal formatı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
 "Search type" = "Axtarış tipi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
 "Season" = "Sezon";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+See All
+No comment provided by engineer. */
 "See All" = "Hamısını Gör";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
 "Select Media Type" = "Media Tipi seç";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Selection type
+No comment provided by engineer. */
 "Selection type" = "Tipi seç";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
 "Sequel" = "Davamındakı fikirlər";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Set progress" = "İrəliləyiş təyini";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Sets a list entry progress to the specified number." = "List qeydlərini müvafiq nömrəyə təyin et.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
 "Settings" = "Tənzimlənmələr";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
 "Share" = "Paylaş";
-
-/* No comment provided by engineer. */
+/* Show less text */
 "Show less" = "Daha az göstər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
 "Show more" = "Daha çox göstər";
-
-/* No comment provided by engineer. */
-"Show only airing soon anime that are in your list" = "Sadəcə sənin listindəki tezliklə yayımlanacaq anime'ləri göstər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show only airing soon anime that are in your list
+No comment provided by engineer. */
+"Show only airing soon anime that are in your list" = "Sadəcə sənin listindəki tezliklə yayımlanacaq anime\'ləri göstər";
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
 "Show spoiler" = "Spoyleri göstər";
-
-/* No comment provided by engineer. */
-"Shows the animes with behind episodes in your list." = "Listindəki episode'lardan kənar anime'ləri göstər.";
-
-/* No comment provided by engineer. */
-"Shows the next airing animes in your list." = "Listindəki sonra yayımlanacaq anime'ləri göstər.";
-
-/* No comment provided by engineer. */
+/* widget description */
+"Shows the animes with behind episodes in your list." = "Listindəki episode\'lardan kənar anime\'ləri göstər.";
+/* widget description */
+"Shows the next airing animes in your list." = "Listindəki sonra yayımlanacaq anime\'ləri göstər.";
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
 "Side Story" = "Yan hekayə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
 "Slice of Life" = "Həyatdan bir parça";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Social
+No comment provided by engineer. */
 "Social" = "Sosial";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
 "Sort" = "Sırala";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
 "Source" = "Mənbə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+South Korea
+No comment provided by engineer. */
 "South Korea" = "Cənubi Koreya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
 "Special" = "Xüsusi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spin Off
+No comment provided by engineer. */
 "Spin Off" = "Fırlanma";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
 "Sports" = "İdman";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
 "Spring" = "Yaz";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Staff
+No comment provided by engineer. */
 "Staff" = "Heyət";
-
-/* No comment provided by engineer. */
+/* you can use (and) instead of (&) */
 "Staff & Character name language" = "Heyət & Xarakter adlarının dili";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
 "Standard" = "Standart";
-
-/* No comment provided by engineer. */
-"Start date" = "Başlanma tarixi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
 "Start Date" = "Başlanğıc tarixi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "Başlanma tarixi";
+/* sort by date started */
 "Started" = "Başlanma tarixi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
 "Stats" = "Statistika";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
 "Status" = "Statusu";
-
-/* No comment provided by engineer. */
-"Status distribution" = "Status paylaşımı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status Distribution
+No comment provided by engineer. */
 "Status Distribution" = "Status paylaşımı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status distribution
+No comment provided by engineer. */
+"Status distribution" = "Status paylaşımı";
+/* en.lproj/Localizable.strings
+Streaming sites
+No comment provided by engineer. */
 "Streaming sites" = "Yayımlanan saytlar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
 "Studios" = "Studiyalar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
 "Summary" = "Xülasə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
 "Summer" = "Yay";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
 "Supernatural" = "Fövqəltəbii";
-
-/* No comment provided by engineer. */
-"Support the development of AniHyou!" = " AniHyou'nun işlərini dəstəklə!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Support the development of AniHyou!
+No comment provided by engineer. */
+"Support the development of AniHyou!" = " AniHyou\'nun işlərini dəstəklə!";
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
 "Supporting" = "Dəstəkçi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sync account with Apple Watch
+No comment provided by engineer. */
 "Sync account with Apple Watch" = "Hesabı Apple Watch ilə sinxronizasiya et";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
 "Synonyms" = "Sinonimlər";
-
-/* No comment provided by engineer. */
-"Tags" = "Teqlər";
-
-/* No comment provided by engineer. */
-"Taiwan" = "Tayvan";
-
-/* No comment provided by engineer. */
-"Text Status" = "Yazı Statusu";
-
-/* No comment provided by engineer. */
-"Thank you :)" = "Təşəkkürlər :)";
-
-/* No comment provided by engineer. */
-"The amount of episodes/chapters consumed by the user" = "İstifadəçinin bölüm/xarakter sayı";
-
-/* No comment provided by engineer. */
-"The id of the media the entry is of" = "Media qeydinin id'si";
-
-/* No comment provided by engineer. */
-"This feature will be unlocked when you make a donation, even the smallest count!" = "Bu özəllik hətta çox kiçik bəxşişlə belə açıla bilər!";
-
-/* No comment provided by engineer. */
-"Threads" = "Mövzu";
-
-/* No comment provided by engineer. */
-"Thriller" = "Gərilim";
-
-/* No comment provided by engineer. */
-"Time spent" = "Keçən zaman";
-
-/* No comment provided by engineer. */
-"Title" = "Başlıq";
-
-/* No comment provided by engineer. */
-"Title count" = "Başlıq sayı";
-
-/* No comment provided by engineer. */
-"Title language" = "Başlıq dili";
-
-/* No comment provided by engineer. */
-"Titles Count" = "Başlıq sayı";
-
-/* No comment provided by engineer. */
-"To year" = "Ilə";
-
-/* No comment provided by engineer. */
-"Top 100" = "Top 100";
-
-/* No comment provided by engineer. */
-"Top 100 Anime" = "Top 100 Anime";
-
-/* No comment provided by engineer. */
-"Top 100 Manga" = "Top 100 Manqa";
-
-/* No comment provided by engineer. */
-"Top Movies" = "Top Filmlər";
-
-/* No comment provided by engineer. */
-"Top Popular" = "Top Populyar";
-
-/* No comment provided by engineer. */
-"Total Anime" = "Ümumi Anime";
-
-/* No comment provided by engineer. */
-"Total Manga" = "Ümumi Manqa";
-
-/* No comment provided by engineer. */
-"Trailer" = "Treyler";
-
-/* No comment provided by engineer. */
-"Translate" = "Tərcümə";
-
-/* No comment provided by engineer. */
-"Translations" = "Tərcümələr";
-
-/* No comment provided by engineer. */
-"Trending" = "Trend";
-
-/* No comment provided by engineer. */
-"Trending Anime" = "Trend Anime'lər";
-
-/* No comment provided by engineer. */
-"Trending Manga" = "Trend Manqalar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
 "TV" = "TV";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
 "TV Short" = "TV Short";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "Teqlər";
+/* en.lproj/Localizable.strings
+Taiwan
+No comment provided by engineer. */
+"Taiwan" = "Tayvan";
+/* en.lproj/Localizable.strings
+Text Status
+No comment provided by engineer. */
+"Text Status" = "Yazı Statusu";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "Təşəkkürlər :)";
+/* not a very important string. used for app intents */
+"The amount of episodes/chapters consumed by the user" = "İstifadəçinin bölüm/xarakter sayı";
+/* not a very important string. used for app intents */
+"The id of the media the entry is of" = "Media qeydinin id\'si";
+/* feel free to translate so it sounds better in your language */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Bu özəllik hətta çox kiçik bəxşişlə belə açıla bilər!";
+/* en.lproj/Localizable.strings
+Threads
+No comment provided by engineer. */
+"Threads" = "Mövzu";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "Gərilim";
+/* en.lproj/Localizable.strings
+Time spent
+No comment provided by engineer. */
+"Time spent" = "Keçən zaman";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "Başlıq";
+/* en.lproj/Localizable.strings
+Title count
+No comment provided by engineer. */
+"Title count" = "Başlıq sayı";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "Başlıq dili";
+/* this is a stat. num of anime or manga in your list */
+"Titles Count" = "Başlıq sayı";
+/* en.lproj/Localizable.strings
+To year
+No comment provided by engineer. */
+"To year" = "Ilə";
+/* en.lproj/Localizable.strings
+Top 100
+No comment provided by engineer. */
+"Top 100" = "Top 100";
+/* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "Top 100 Anime";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "Top 100 Manqa";
+/* en.lproj/Localizable.strings
+Top Movies
+No comment provided by engineer. */
+"Top Movies" = "Top Filmlər";
+/* en.lproj/Localizable.strings
+Top Popular
+No comment provided by engineer. */
+"Top Popular" = "Top Populyar";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "Ümumi Anime";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "Ümumi Manqa";
+/* en.lproj/Localizable.strings
+Trailer
+No comment provided by engineer. */
+"Trailer" = "Treyler";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "Tərcümə";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "Tərcümələr";
+/* en.lproj/Localizable.strings
+Trending
+No comment provided by engineer. */
+"Trending" = "Trend";
+/* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "Trend Anime\'lər";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "Trend Manqalar";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
 "Unfollow" = "İzləməni durdur";
-
-/* Localizable.strings
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Bilinməyən";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
 "Upcoming" = "Gözlənilən";
-
-/* No comment provided by engineer. */
-"Upcoming Anime" = "Yayımlanacaq Anime'lər";
-
-/* No comment provided by engineer. */
-"Upcoming Manga" = "Yayımlanacaq Manqa'lar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
+"Upcoming Anime" = "Yayımlanacaq Anime\'lər";
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
+"Upcoming Manga" = "Yayımlanacaq Manqa\'lar";
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
 "Updated" = "Yeniləndi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users
+No comment provided by engineer. */
 "Users" = "İstifadəçilər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users likes
+No comment provided by engineer. */
 "Users likes" = "Bəyənən istifadəçilər";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
 "Version %@" = "Versiya %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+VideoGame
+No comment provided by engineer. */
 "VideoGame" = "VideoOyun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
 "Visual novel" = "Vizual roman";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Voice Actors
+No comment provided by engineer. */
 "Voice Actors" = "Səs aktyorları";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
 "Volumes" = "Cildlər";
-
-/* No comment provided by engineer. */
+/* num of volumes read */
 "Volumes Read" = "Oxunulan hissə";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watch Year
+No comment provided by engineer. */
 "Watch Year" = "Baxılan il";
-
-/* (No Comment) */
-"Watched episode %1$@ of %2$@" = "%2$@'dən bölüm %1$@ baxıldı";
-
-/* No comment provided by engineer. */
+/* Eg: (User) Watched episode [25] of [Anime Title] */
+"Watched episode %1$@ of %2$@" = "%2$@\'dən bölüm %1$@ baxıldı";
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
 "Watching" = "İzləyir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
 "Web novel" = "Web romanı";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weekday
+No comment provided by engineer. */
 "Weekday" = "Həftə içi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
 "Winter" = "Qış";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+With any purchase you will gain access to exclusive app icons and custom accent colors!
+No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Ödəniş ilə siz ekskluziv tətbiq ikonları və özəl aksent rənglərinə sahib ola bilərsiniz!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
 "Year" = "İl";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Years active
+No comment provided by engineer. */
 "Years active" = "Aktiv il sayı";
-
-/* No comment provided by engineer. */
+/* toggle on */
 "Yes" = "Bəli";
-
-/* No comment provided by engineer. */
-"You may need to login again in your browser" = "Siz gərək browser'də yenidən giriş edəsiniz";
-
+/* en.lproj/Localizable.strings
+You may need to login again in your browser
+No comment provided by engineer. */
+"You may need to login again in your browser" = "Siz gərək browser\'də yenidən giriş edəsiniz";
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[%lld bölüm arxada](inflect: true)";

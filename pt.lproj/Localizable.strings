@@ -1,0 +1,428 @@
+/* en.lproj/Localizable.strings
++1
+No comment provided by engineer. */
+"+1" = "+1";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "Ação";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "Adaptação";
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
+"Adventure" = "Aventura";
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
+"Airing" = "Exibindo";
+/* for this one use the masculine form when applied. */
+"All" = "Todos";
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
+"Anime" = "Anime";
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
+"Background" = "Contexto";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
+"Calendar" = "Calendário";
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
+"Cancel" = "Cancelar";
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
+"Changes will take effect on app restart" = "Mudanças terão efeito ao reiniciar a app";
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
+"Chapters" = "Capítulos";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
+"Character" = "Personagem";
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
+"Characters" = "Personagens";
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
+"Comedy" = "Comédia";
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
+"Compact" = "Compacto";
+/* en.lproj/Localizable.strings
+Completed */
+"Completed" = "Concluído";
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
+"Content" = "Conteúdo";
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
+"Default" = "Padrão";
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
+"Delete" = "Eliminar";
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
+"Display" = "Visualização";
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
+"Drama" = "Drama";
+/* en.lproj/Localizable.strings
+Dropped */
+"Dropped" = "Desistido";
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
+"Duration" = "Duração";
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
+"Ecchi" = "Ecchi";
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
+"Edit" = "Editar";
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
+"English" = "Inglês";
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
+"Episodes" = "Episódios";
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
+"Explore" = "Explorar";
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
+"Fall" = "Outono";
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
+"Fantasy" = "Fantasia";
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
+"Finished" = "Concluído";
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
+"Game" = "Jogo";
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
+"Hentai" = "Hentai";
+/* as short as possible */
+"Home" = "Início";
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
+"Horror" = "Terror";
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
+"Japanese" = "Japonês";
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
+"Last used" = "Último usado";
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
+"List style" = "Estilo da lista";
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
+"Loading" = "Carregando";
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
+"Login" = "Iniciar Sessão";
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
+"Mahou Shoujo" = "Menina Mágica";
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
+"Main" = "Principal";
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
+"Manga" = "Mangá";
+/* normalized score.
+You can translate it simply as (Score) */
+"Mean Score" = "Pontuação";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
+"Mecha" = "Robô";
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
+"Minimal" = "Minimalista";
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
+"Movie" = "Filme";
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
+"Music" = "Música";
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
+"Mystery" = "Mistério";
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
+"No recommendations" = "Sem recomendações";
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
+"Notes" = "Notas";
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
+"Notifications" = "Notificações";
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
+"Novel" = "Novela";
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
+"OK" = "OK";
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
+"ONA" = "ONA";
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
+"OVA" = "OVA";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "Original";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "Outro";
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
+"Please login to use this feature" = "Por favor efetue o login para usar a esta função";
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
+"Popularity" = "Popularidade";
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
+"Prequel" = "Prequela";
+/* as short as possible */
+"Profile" = "Perfil";
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
+"Psychological" = "Psicológico";
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
+"Publishing" = "Publicando";
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
+"Random" = "Aleatório";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
+"Reading" = "Lendo";
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
+"Recommendations" = "Recomendações";
+/* en.lproj/Localizable.strings
+Rereading */
+"Rereading" = "Relendo";
+/* en.lproj/Localizable.strings
+Rewatching */
+"Rewatching" = "Ver de Novo";
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
+"Romaji" = "Romaji";
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
+"Romance" = "Romance";
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
+"Sci-Fi" = "Ficção Científica";
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
+"Score" = "Pontuação";
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
+"Season" = "Temporada";
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
+"Sequel" = "Sequela";
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
+"Settings" = "Configurações";
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
+"Share" = "Compartilhar";
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
+"Slice of Life" = "Vida Quotidiana";
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
+"Sort" = "Ordenar";
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
+"Source" = "Origem";
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
+"Special" = "Especial";
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
+"Sports" = "Esportes";
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
+"Spring" = "Primavera";
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
+"Standard" = "Standard";
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
+"Start Date" = "Data de Início";
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "Data de início";
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
+"Stats" = "Estatísticas";
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
+"Status" = "Estado";
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
+"Studios" = "Estúdios";
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
+"Summary" = "Resumo";
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
+"Summer" = "Verão";
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
+"Supernatural" = "Sobrenatural";
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
+"Supporting" = "Secundário";
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
+"Synonyms" = "Sinónimos";
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
+"TV" = "TV";
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "Etiquetas";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "Suspense";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "Título";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "Idioma do título";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "Traduzir";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "Traduções";
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "Desconhecido";
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
+"Upcoming" = "Próximos";
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
+"Updated" = "Atualizado";
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
+"Volumes" = "Volumes";
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
+"Watching" = "Vendo";
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
+"Winter" = "Inverno";
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
+"Year" = "Ano";

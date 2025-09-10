@@ -1,1767 +1,2222 @@
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
 "%lld chapters" = "%lld chapter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
 "%lld episodes" = "%lld episode";
-
-/* No comment provided by engineer. */
+/* num of volumes.
+Eg: 23 volumes */
 "%lld volumes" = "%lld volume";
-
-/* No comment provided by engineer. */
-"^[%lld episode behind](inflect: true)" = "^[%lld episode tertinggal](inflect: true)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
++1
+No comment provided by engineer. */
 "+1" = "+1";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+1st Key Animation Director
+No comment provided by engineer. */
 "1st Key Animation Director" = "Direktur Animasi Utama Pertama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+1st Key Assistant Animation Director
+No comment provided by engineer. */
 "1st Key Assistant Animation Director" = "Asisten Sutradara Animasi Utama Pertama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2D Design
+No comment provided by engineer. */
 "2D Design" = "Desain 2D";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2D Effects
+No comment provided by engineer. */
 "2D Effects" = "Efek 2D";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2D Works
+No comment provided by engineer. */
 "2D Works" = "Karya 2D";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+2nd Key Animation
+No comment provided by engineer. */
 "2nd Key Animation" = "Animasi Kunci ke-2";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
 "3 Point Smiley :)" = "Nilai 3 Tersenyum (੭˃ᴗ˂) ੭";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3D Art
+No comment provided by engineer. */
 "3D Art" = "Seni 3D";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3D Works
+No comment provided by engineer. */
 "3D Works" = "Karya 3D";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+3DCG
+No comment provided by engineer. */
 "3DCG" = "3DCG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
 "5 Star (3/5)" = "5 Bintang (3/5)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
 "10 Point (5/10)" = "Nilai 10 (5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "Nilai 10 Desimal (5.5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
 "100 Point (55/100)" = "Nilai 100 (55/100)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+A&R Producer
+No comment provided by engineer. */
 "A&R Producer" = "A&R Produser";
-
-/* No comment provided by engineer. */
-"Accent color" = "Aksen warna";
-
-/* No comment provided by engineer. */
-"Accessory Design" = "Desain Aksesori";
-
-/* No comment provided by engineer. */
-"Account settings" = "Pengaturan Akun";
-
-/* No comment provided by engineer. */
-"Action" = "Tindakan";
-
-/* No comment provided by engineer. */
-"Action Animation Director" = "Sutradara Animasi Aksi";
-
-/* No comment provided by engineer. */
-"Action Animation Supervisor" = "Supervisor Animasi Aksi";
-
-/* No comment provided by engineer. */
-"Action Animator" = "Animator Aksi";
-
-/* No comment provided by engineer. */
-"Action Director" = "Direktur Aksi";
-
-/* No comment provided by engineer. */
-"Activity" = "Aktivitas";
-
-/* No comment provided by engineer. */
-"Activity type" = "Tipe aktivitas";
-
-/* No comment provided by engineer. */
-"Adaptation" = "Adaptasi";
-
-/* No comment provided by engineer. */
-"Add to List" = "Tambahkan";
-
-/* No comment provided by engineer. */
-"Added" = "Ditambah";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ADR Director
+No comment provided by engineer. */
 "ADR Director" = "Direktur ADR";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
+"Accent color" = "Aksen warna";
+/* en.lproj/Localizable.strings
+Accessory Design
+No comment provided by engineer. */
+"Accessory Design" = "Desain Aksesori";
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
+"Account settings" = "Pengaturan Akun";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "Tindakan";
+/* en.lproj/Localizable.strings
+Action Animation Director
+No comment provided by engineer. */
+"Action Animation Director" = "Sutradara Animasi Aksi";
+/* en.lproj/Localizable.strings
+Action Animation Supervisor
+No comment provided by engineer. */
+"Action Animation Supervisor" = "Supervisor Animasi Aksi";
+/* en.lproj/Localizable.strings
+Action Animator
+No comment provided by engineer. */
+"Action Animator" = "Animator Aksi";
+/* en.lproj/Localizable.strings
+Action Director
+No comment provided by engineer. */
+"Action Director" = "Direktur Aksi";
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
+"Activity" = "Aktivitas";
+/* Types: All, Text Status, List Progress */
+"Activity type" = "Tipe aktivitas";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "Adaptasi";
+/* if the translation is too long, translate just (Add) */
+"Add to List" = "Tambahkan";
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
+"Added" = "Ditambah";
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
 "Adult" = "Dewasa";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
 "Adventure" = "Petualangan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising
+No comment provided by engineer. */
 "Advertising" = "Periklanan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising Producer
+No comment provided by engineer. */
 "Advertising Producer" = "Produser Periklanan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
 "Age" = "Usia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
 "Airing" = "Ditayangkan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
 "Airing Anime" = "Anime yang ditayangkan";
-
-/* No comment provided by engineer. */
+/* you can translate it simply as (Airing) */
 "Airing Next" = "Ditayangkan Berikutnya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing on my list
+No comment provided by engineer. */
 "Airing on my list" = "Tayang di daftar saya";
-
-/* No comment provided by engineer. */
+/* for this one use the masculine form when applied. */
 "All" = "Semua";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
 "Alternative" = "Alternatif";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation
+No comment provided by engineer. */
 "Animation" = "Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Director
+No comment provided by engineer. */
 "Animation Director" = "Direktur Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Producer
+No comment provided by engineer. */
 "Animation Producer" = "Produser Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Production Assistance
+No comment provided by engineer. */
 "Animation Production Assistance" = "Bantuan Produksi Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Supervisor
+No comment provided by engineer. */
 "Animation Supervisor" = "Supervisor Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
 "Anime" = "Anime";
-
-/* No comment provided by engineer. */
+/* anime with unwatched episodes */
 "Anime Behind" = "Anime Tertinggal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
 "Anime List" = "Daftar Anime";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
 "Anime, Manga, and More" = "Anime, Manga, dan Lainnya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
 "App Icon" = "Ikon Aplikasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Are you sure you want to log out?
+No comment provided by engineer. */
 "Are you sure you want to log out?" = "Yakin ingin keluar?";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art
+No comment provided by engineer. */
 "Art" = "Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Board
+No comment provided by engineer. */
 "Art Board" = "Papan Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Composition
+No comment provided by engineer. */
 "Art Composition" = "Komposisi Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Design
+No comment provided by engineer. */
 "Art Design" = "Desain Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Director
+No comment provided by engineer. */
 "Art Director" = "Direktur Seni";
-
-/* No comment provided by engineer. */
-"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Seperti yang Anda ketahui, aplikasi ini sepenuhnya gratis dan Open Source,\ntetapi membuat aplikasi membutuhkan banyak waktu dan usaha.\nDengan memberikan donasi, Anda akan membantu menutupi biaya\npengembangan, pemeliharaan, dan fitur-fitur baru.";
-
-/* No comment provided by engineer. */
+/* Please try to use the same break lines */
+"As you may known this app is completely free and Open Source,
+but creating an app requires a lot of time and effort.
+By making a donation you will help cover the costs of
+development, maintenance, and new features." = "Seperti yang Anda ketahui, aplikasi ini sepenuhnya gratis dan Open Source,\ntetapi membuat aplikasi membutuhkan banyak waktu dan usaha.\nDengan memberikan donasi, Anda akan membantu menutupi biaya\npengembangan, pemeliharaan, dan fitur-fitur baru.";
+/* en.lproj/Localizable.strings
+Ascending
+No comment provided by engineer. */
 "Ascending" = "Naik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistance
+No comment provided by engineer. */
 "Assistance" = "Bantuan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant
+No comment provided by engineer. */
 "Assistant" = "Asisten";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Animation Director
+No comment provided by engineer. */
 "Assistant Animation Director" = "Asisten Sutradara Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Art Director
+No comment provided by engineer. */
 "Assistant Art Director" = "Asisten Direktur Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Chief Animation Director
+No comment provided by engineer. */
 "Assistant Chief Animation Director" = "Asisten Kepala Direktur Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Chief Director
+No comment provided by engineer. */
 "Assistant Chief Director" = "Asisten Direktur Utama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Director
+No comment provided by engineer. */
 "Assistant Director" = "Asisten Direktur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Director of Photography
+No comment provided by engineer. */
 "Assistant Director of Photography" = "Asisten Direktur Fotografi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Episode Director
+No comment provided by engineer. */
 "Assistant Episode Director" = "Asisten Sutradara Episode";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Producer
+No comment provided by engineer. */
 "Assistant Producer" = "Asisten Produser";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Production Manager
+No comment provided by engineer. */
 "Assistant Production Manager" = "Asisten Manajer Produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Unit Director
+No comment provided by engineer. */
 "Assistant Unit Director" = "Asisten Direktur Unit";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Associate Producer
+No comment provided by engineer. */
 "Associate Producer" = "Associate Producer";
-
-/* No comment provided by engineer. */
+/* weighted Average Score */
 "Average Score" = "Skor Rata-rata";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
 "Background" = "Latar belakang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Art
+No comment provided by engineer. */
 "Background Art" = "Latar belakang Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Art Assistance
+No comment provided by engineer. */
 "Background Art Assistance" = "Bantuan Latar Belakang Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Manager
+No comment provided by engineer. */
 "Background Manager" = "Latar Belakang Manajer";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Production
+No comment provided by engineer. */
 "Background Production" = "Latar Belakang Produksi";
-
-/* No comment provided by engineer. */
+/* Birthday */
 "Birth" = "Tanggal lahir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
 "Birthday" = "Ulang tahun";
-
-/* No comment provided by engineer. */
-"Blood type" = "Golongan darah";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
 "Blood Type" = "Golongan darah";
-
-/* No comment provided by engineer. */
-"Calendar" = "Kalender";
-
-/* No comment provided by engineer. */
-"Cancel" = "Batal";
-
-/* No comment provided by engineer. */
-"Cancelled" = "Dibatalkan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood type
+No comment provided by engineer. */
+"Blood type" = "Golongan darah";
+/* en.lproj/Localizable.strings
+CG Animation
+No comment provided by engineer. */
 "CG Animation" = "Animasi CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Animation Director
+No comment provided by engineer. */
 "CG Animation Director" = "Direktur Animasi CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Assistant Director
+No comment provided by engineer. */
 "CG Assistant Director" = "Asisten Direktur CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Background Modeling
+No comment provided by engineer. */
 "CG Background Modeling" = "Pemodelan Latar Belakang CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Director
+No comment provided by engineer. */
 "CG Director" = "Direktur CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Layout
+No comment provided by engineer. */
 "CG Layout" = "Tata Letak CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Modeling
+No comment provided by engineer. */
 "CG Modeling" = "Pemodelan CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Modeling Director
+No comment provided by engineer. */
 "CG Modeling Director" = "Direktur Pemodelan CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Producer
+No comment provided by engineer. */
 "CG Producer" = "Produser CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Production
+No comment provided by engineer. */
 "CG Production" = "Produksi CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Supervisor
+No comment provided by engineer. */
 "CG Supervisor" = "Supervisor CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+CG Technical Director
+No comment provided by engineer. */
 "CG Technical Director" = "Direktur Teknis CG";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
+"Calendar" = "Kalender";
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
+"Cancel" = "Batal";
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
+"Cancelled" = "Dibatalkan";
+/* chapter abbreviation */
 "Ch" = "Ch";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
 "Changes will take effect on app restart" = "Perubahan dilakukan saat app dimulai ulang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapter Count
+No comment provided by engineer. */
 "Chapter Count" = "Jumlah Chapter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
 "Chapters" = "Chapter";
-
-/* No comment provided by engineer. */
-"Chapters read" = "Chapter dibaca";
-
-/* No comment provided by engineer. */
+/* stats */
 "Chapters Read" = "Chapter Dibaca";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "Chapter dibaca";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
 "Character" = "Karakter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Character Design
+No comment provided by engineer. */
 "Character Design" = "Desain Karakter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
 "Characters" = "Karakter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
 "Characters and Staff" = "Karakter dan Staf";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Animation Director
+No comment provided by engineer. */
 "Chief Animation Director" = "Kepala Direktur Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Director
+No comment provided by engineer. */
 "Chief Director" = "Direktur Utama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Episode Director
+No comment provided by engineer. */
 "Chief Episode Director" = "Kepala Direktur Episode";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Mechanical Animation Director
+No comment provided by engineer. */
 "Chief Mechanical Animation Director" = "Kepala Direktur Animasi Mekanik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Producer
+No comment provided by engineer. */
 "Chief Producer" = "Kepala Produser";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Production Desk
+No comment provided by engineer. */
 "Chief Production Desk" = "Kepala Bagian Produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Supervisor
+No comment provided by engineer. */
 "Chief Supervisor" = "Kepala Pengawas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chief Unit Director
+No comment provided by engineer. */
 "Chief Unit Director" = "Kepala Direktur Unit";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
 "China" = "Cina";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Choose between Anime or Manga.
+No comment provided by engineer. */
 "Choose between Anime or Manga." = "Pilih antara Anime atau Manga.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
 "Clear" = "Kosongkan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
 "Close" = "Tutup";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Co-Producer
+No comment provided by engineer. */
 "Co-Producer" = "Co-Produser";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Color Coordination
+No comment provided by engineer. */
 "Color Coordination" = "Koordinasi Warna";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Color Design
+No comment provided by engineer. */
 "Color Design" = "Desain Warna";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Color Design Assistance
+No comment provided by engineer. */
 "Color Design Assistance" = "Bantuan Desain Warna";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Coloring
+No comment provided by engineer. */
 "Coloring" = "Mewarnai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
 "Comedy" = "Komedi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
 "Comic" = "Komik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
 "Compact" = "Sederhana";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compilation
+No comment provided by engineer. */
 "Compilation" = "Kompilasi";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Completed */
 "Completed" = "Selesai";
-
-/* No comment provided by engineer. */
+/* An user list activity status.
+Eg: Completed [Anime/Manga Title] */
 "Completed %@" = "Selesai %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Concept Art
+No comment provided by engineer. */
 "Concept Art" = "Seni Konsep";
-
-/* No comment provided by engineer. */
-"Congratulations, you are up to date!\n(๑>◡<๑)" = "Selamat, Anda sudah mendapatkan informasi terbaru!\n(๑>◡<๑)";
-
-/* No comment provided by engineer. */
+/* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
+"Congratulations, you are up to date!
+(๑>◡<๑)" = "Selamat, Anda sudah mendapatkan informasi terbaru!\n(๑>◡<๑)";
+/* en.lproj/Localizable.strings
+Contains
+No comment provided by engineer. */
 "Contains" = "Berisi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
 "Content" = "Konten";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Costume Design
+No comment provided by engineer. */
 "Costume Design" = "Desain Kostum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
 "Country" = "Negara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country Distribution
+No comment provided by engineer. */
 "Country Distribution" = "Negara Distribusi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cover Illustration
+No comment provided by engineer. */
 "Cover Illustration" = "Ilustrasi Sampul";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Creature Design
+No comment provided by engineer. */
 "Creature Design" = "Desain Makhluk";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Current */
 "Current" = "Saat ini";
-
-/* No comment provided by engineer. */
+/* custom app color */
 "Custom" = "Kustomisasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
 "Custom color" = "Kostum warna";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom lists
+No comment provided by engineer. */
 "Custom lists" = "Daftar kustom";
-
-/* No comment provided by engineer. */
+/* Dates: start date and end date */
 "Dates" = "Tanggal";
-
-/* No comment provided by engineer. */
+/* stats */
 "Days Watched" = "Hari Ditonton";
-
-/* No comment provided by engineer. */
+/* date of death */
 "Death" = "Kematian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
 "Default" = "Default";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default tab
+No comment provided by engineer. */
 "Default tab" = "Tab default";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
 "Delete" = "Hapus";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete this entry?
+No comment provided by engineer. */
 "Delete this entry?" = "Hapus entri ini?";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
 "Descending" = "Menurun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Design Assistance
+No comment provided by engineer. */
 "Design Assistance" = "Bantuan Desain";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Design Works
+No comment provided by engineer. */
 "Design Works" = "Karya Desain";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Developers
+No comment provided by engineer. */
 "Developers" = "Pengembang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Animation
+No comment provided by engineer. */
 "Digital Animation" = "Animasi Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Art
+No comment provided by engineer. */
 "Digital Art" = "Seni Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Coloring
+No comment provided by engineer. */
 "Digital Coloring" = "Pewarnaan Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Optical Recording
+No comment provided by engineer. */
 "Digital Optical Recording" = "Perekaman Optik Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Paint
+No comment provided by engineer. */
 "Digital Paint" = "Cat Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Photography
+No comment provided by engineer. */
 "Digital Photography" = "Fotografi Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Production Assistant
+No comment provided by engineer. */
 "Digital Production Assistant" = "Asisten Produksi Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Director
+No comment provided by engineer. */
 "Director" = "Direktur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Director of Photography
+No comment provided by engineer. */
 "Director of Photography" = "Direktur Fotografi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discord server
+No comment provided by engineer. */
 "Discord server" = "Server Discord";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discover
+No comment provided by engineer. */
 "Discover" = "Jelajahi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
 "Display" = "Tampilan";
-
-/* No comment provided by engineer. */
+/* Stat Distribution type.
+Title count, mean score, or time spent */
 "Distribution type" = "Tipe distribusi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
 "Donate" = "Donasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
 "Donate!" = "Donasi!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
 "Donation" = "Donatur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
 "Donator" = "Donatur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
 "Done" = "Selesai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
 "Doujinshi" = "Doujinshi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
 "Drama" = "Drama";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Dropped */
 "Dropped" = "Dihapus";
-
-/* No comment provided by engineer. */
+/* (User) Dropped [Anime/Manga Title] */
 "Dropped %@" = "Dihapus %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
 "Duration" = "Durasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
 "Ecchi" = "Ecchi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
 "Edit" = "Ubah";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing
+No comment provided by engineer. */
 "Editing" = "Pengeditan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing Assistant
+No comment provided by engineer. */
 "Editing Assistant" = "Asisten Pengeditan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing Manager
+No comment provided by engineer. */
 "Editing Manager" = "Manajer Pengeditan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Effects
+No comment provided by engineer. */
 "Effects" = "Efek";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Effects Animation Director
+No comment provided by engineer. */
 "Effects Animation Director" = "Sutradara Efek Animasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
 "End date" = "Tanggal berakhir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Endcard
+No comment provided by engineer. */
 "Endcard" = "Kartu akhir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
 "English" = "Inggris";
-
-/* No comment provided by engineer. */
+/* episodes abbreviation */
 "Ep" = "Ep";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and time.
+Eg: Ep [23] [in 35 minutes] */
 "Ep %lld %@" = "Ep %lld %@";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and a specific hour.
+Eg: Ep [23] at [12:30] */
 "Ep %lld at %@" = "Ep %lld pada %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Count
+No comment provided by engineer. */
 "Episode Count" = "Jumlah Episode";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Director
+No comment provided by engineer. */
 "Episode Director" = "Direktur Episode";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Director (ED)
+No comment provided by engineer. */
 "Episode Director (ED)" = "Direktur Episode (ED)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Director (OP)
+No comment provided by engineer. */
 "Episode Director (OP)" = "Direktur Episode (OP)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
 "Episodes" = "Episode";
-
-/* No comment provided by engineer. */
+/* stats */
 "Episodes Watched" = "Episode Ditonton";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Executive Producer
+No comment provided by engineer. */
 "Executive Producer" = "Produser Eksekutif";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Executive Supervisor
+No comment provided by engineer. */
 "Executive Supervisor" = "Supervisor Eksekutif";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
 "Explore" = "Eksplorasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
 "External links" = "Tautan eksternal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Eyecatch
+No comment provided by engineer. */
 "Eyecatch" = "Eyecatch";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
 "Fall" = "Musim Gugur";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
 "Fantasy" = "Fantasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
 "Favorites" = "Favorit";
-
-/* No comment provided by engineer. */
+/* Activity feed type: Following or Global */
 "Feed type" = "Jenis Feed";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Female
+No comment provided by engineer. */
 "Female" = "Wanita";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
 "Filter" = "Filter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finish Date
+No comment provided by engineer. */
 "Finish Date" = "Tanggal Selesai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
 "Finished" = "Selesai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing
+No comment provided by engineer. */
 "Finishing" = "Penyelesaian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Assistance
+No comment provided by engineer. */
 "Finishing Assistance" = "Bantuan Penyelesaian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Check
+No comment provided by engineer. */
 "Finishing Check" = "Cek Penyelesaian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Manager
+No comment provided by engineer. */
 "Finishing Manager" = "Manajer Penyelesaian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finishing Production
+No comment provided by engineer. */
 "Finishing Production" = "Produksi Penyelesaian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
 "Follow" = "Ikuti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
 "Followers" = "Pengikut";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
 "Following" = "Diikuti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows
+No comment provided by engineer. */
 "Follows" = "Diikuti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
 "Follows you" = "Mengikuti Anda";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
 "Format" = "Format";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format Distribution
+No comment provided by engineer. */
 "Format Distribution" = "Distribusi Format";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
 "Forum" = "Forum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+From year
+No comment provided by engineer. */
 "From year" = "Dari tahun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
 "Game" = "Game";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
 "Gender" = "Gender";
-
-/* No comment provided by engineer. */
+/* general information about the anime/manga */
 "General" = "Umum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
 "Genres" = "Genre";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
 "GitHub repository" = "Repositori GitHub";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
 "Global" = "Global";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+HD Editing
+No comment provided by engineer. */
 "HD Editing" = "Pengeditan HD";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
 "Hentai" = "Hentai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
 "Hiatus" = "Hiatus";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide filters
+No comment provided by engineer. */
 "Hide filters" = "Sembunyikan filter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide from status lists
+No comment provided by engineer. */
 "Hide from status lists" = "Sembunyikan dari daftar status";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide spoiler
+No comment provided by engineer. */
 "Hide spoiler" = "Sembunyikan Spoiler";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Highest rated 2023 */
 "Highest rated" = "Peringkat tertinggi";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Home" = "Beranda";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
 "Hometown" = "Kota Asal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
 "Horror" = "Horor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hours Watched
+No comment provided by engineer. */
 "Hours Watched" = "Jam Menonton";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Illustration
+No comment provided by engineer. */
 "Illustration" = "Ilustrasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Between Animation
+No comment provided by engineer. */
 "In-Between Animation" = "Animasi Perantara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Between Animation Assistance
+No comment provided by engineer. */
 "In-Between Animation Assistance" = "Bantuan Animasi Perantara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Betweens Check
+No comment provided by engineer. */
 "In-Betweens Check" = "Pemeriksaan Animasi Perantara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+In-Betweens Manager
+No comment provided by engineer. */
 "In-Betweens Manager" = "Manajer Animasi Perantara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Increment Episode / Chapter
+No comment provided by engineer. */
 "Increment Episode / Chapter" = "Peningkatan Episode / Bab";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
 "Info type" = "Jenis info";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
 "Information" = "Informasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Arrangement
+No comment provided by engineer. */
 "Insert Song Arrangement" = "Menyisipkan Aransemen Lagu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Composition
+No comment provided by engineer. */
 "Insert Song Composition" = "Menyisipkan Komposisi Lagu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Lyrics
+No comment provided by engineer. */
 "Insert Song Lyrics" = "Sisipkan Lirik Lagu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Insert Song Performance
+No comment provided by engineer. */
 "Insert Song Performance" = "Menyisipkan Pertunjukan Lagu";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
 "Japan" = "Jepang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
 "Japanese" = "Jepang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Key Animation
+No comment provided by engineer. */
 "Key Animation" = "Animasi Kunci";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Key Animation (OP)
+No comment provided by engineer. */
 "Key Animation (OP)" = "Animasi Kunci (OP)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Key Animation Assistance
+No comment provided by engineer. */
 "Key Animation Assistance" = "Bantuan Animasi Utama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last Added
+No comment provided by engineer. */
 "Last Added" = "Terakhir ditambahkan";
-
-/* No comment provided by engineer. */
+/* sort by update date */
 "Last Updated" = "Terakhir Diperbarui";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
 "Last used" = "Terakhir digunakan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout
+No comment provided by engineer. */
 "Layout" = "Tata letak";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Animation Director
+No comment provided by engineer. */
 "Layout Animation Director" = "Direktur Animasi Tata Letak";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Animation Supervisor
+No comment provided by engineer. */
 "Layout Animation Supervisor" = "Supervisor Animasi Tata Letak";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Editor
+No comment provided by engineer. */
 "Layout Editor" = "Editor Tata Letak";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Layout Supervisor
+No comment provided by engineer. */
 "Layout Supervisor" = "Supervisor Tata Letak";
-
-/* No comment provided by engineer. */
+/* Left swipe direction */
 "Left" = "Kiri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Lettering
+No comment provided by engineer. */
 "Lettering" = "Huruf";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
 "Light novel" = "Novel Ringan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Line Producer
+No comment provided by engineer. */
 "Line Producer" = "Produser Line";
-
-/* No comment provided by engineer. */
-"List entry ID" = "Daftar entri ID";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List Progress
+No comment provided by engineer. */
 "List Progress" = "Daftar Progres";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
+"List entry ID" = "Daftar entri ID";
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
 "List style" = "Tampilan daftar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Literary Arts
+No comment provided by engineer. */
 "Literary Arts" = "Seni Sastra";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Literary Arts Assistance
+No comment provided by engineer. */
 "Literary Arts Assistance" = "Bantuan Seni Sastra";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
 "Live action" = "Live action";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
 "Loading" = "Memuat";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Log out
+No comment provided by engineer. */
 "Log out" = "Keluar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
 "Login" = "Masuk";
-
-/* No comment provided by engineer. */
+/* or (Swipe Direction) for short */
 "Long Swipe Direction" = "Arah Geser";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
 "Mahou Shoujo" = "Mahou Shoujo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
 "Main" = "Utama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main Animator
+No comment provided by engineer. */
 "Main Animator" = "Animator Utama";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Male
+No comment provided by engineer. */
 "Male" = "Pria";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
 "Manga" = "Manga";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
 "Manga List" = "Daftar Manga";
-
-/* No comment provided by engineer. */
-"Mean score" = "Nilai Rata-rata";
-
-/* No comment provided by engineer. */
+/* normalized score.
+You can translate it simply as (Score) */
 "Mean Score" = "Skor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "Nilai Rata-rata";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
 "Mecha" = "Robot";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mechanical Animation Director
+No comment provided by engineer. */
 "Mechanical Animation Director" = "Direktur Animasi Mekanik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mechanical Design
+No comment provided by engineer. */
 "Mechanical Design" = "Desain Mekanis";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mechanical Supervisor
+No comment provided by engineer. */
 "Mechanical Supervisor" = "Supervisor Mekanik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Media
+No comment provided by engineer. */
 "Media" = "Media";
-
-/* No comment provided by engineer. */
+/* not a very important string. Used for app intents */
 "Media ID" = "ID Media";
-
-/* No comment provided by engineer. */
+/* Anime/Manga List */
 "Media List" = "Daftar Media";
-
-/* No comment provided by engineer. */
+/* Anime or Manga */
 "Media Type" = "Tipe Media";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
 "Minimal" = "Minimalis";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Monitor Graphics
+No comment provided by engineer. */
 "Monitor Graphics" = "Memantau Grafik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Monster Design
+No comment provided by engineer. */
 "Monster Design" = "Desain Monster";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+More filters
+No comment provided by engineer. */
 "More filters" = "Filter lainnya";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Most popular 2023 */
 "Most popular" = "Terpopuler";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
 "Movie" = "Movie";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
 "Multimedia project" = "Proyek Multimedia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
 "Music" = "Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Arrangement
+No comment provided by engineer. */
 "Music Arrangement" = "Aransemen Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Assistance
+No comment provided by engineer. */
 "Music Assistance" = "Bantuan Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Composition
+No comment provided by engineer. */
 "Music Composition" = "Komposisi Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Director
+No comment provided by engineer. */
 "Music Director" = "Direktur Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Lyrics
+No comment provided by engineer. */
 "Music Lyrics" = "Lirik Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Performance
+No comment provided by engineer. */
 "Music Performance" = "Pertunjukan Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Producer
+No comment provided by engineer. */
 "Music Producer" = "Produser Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Production
+No comment provided by engineer. */
 "Music Production" = "Produksi Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Production Assistance
+No comment provided by engineer. */
 "Music Production Assistance" = "Bantuan Produksi Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Selection
+No comment provided by engineer. */
 "Music Selection" = "Pilihan Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music Supervisor
+No comment provided by engineer. */
 "Music Supervisor" = "Supervisor Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Musical Instrument Supervisor
+No comment provided by engineer. */
 "Musical Instrument Supervisor" = "Pengawas Alat Musik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
 "Mystery" = "Misteri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
 "Native" = "Asli";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Anime
+No comment provided by engineer. */
 "Newly Added Anime" = "Anime Baru Ditambahkan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Manga
+No comment provided by engineer. */
 "Newly Added Manga" = "Manga Baru Ditambahkan";
-
-/* No comment provided by engineer. */
+/* toggle off */
 "No" = "Tidak";
-
-/* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "Tidak ada anime yang ditayangkan dalam daftar Anda\n(*´-`)";
-
-/* No comment provided by engineer. */
-"No anime for today\n(*´-`)" = "Tidak ada anime untuk hari ini\n(*´-`)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No airing anime in your list
+(*´-`)
+No comment provided by engineer. */
+"No airing anime in your list
+(*´-`)" = "Tidak ada anime yang ditayangkan dalam daftar Anda\n(*´-`)";
+/* en.lproj/Localizable.strings
+No anime for today
+(*´-`)
+No comment provided by engineer. */
+"No anime for today
+(*´-`)" = "Tidak ada anime untuk hari ini\n(*´-`)";
+/* en.lproj/Localizable.strings
+No media
+No comment provided by engineer. */
 "No media" = "Tanpa media";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
 "No recommendations" = "Tidak ada rekomendasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No reviews
+No comment provided by engineer. */
 "No reviews" = "Tidak ada ulasan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Non-binary
+No comment provided by engineer. */
 "Non-binary" = "Non-biner";
-
-/* No comment provided by engineer. */
+/* nothing selected */
 "None" = "Kosong";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
 "Not yet released" = "Belum Dirilis";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
 "Notes" = "Catatan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Nothing in your list
+No comment provided by engineer. */
 "Nothing in your list" = "Tidak ada di daftar Anda";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
 "Notifications" = "Notifikasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
 "Novel" = "Novel";
-
-/* No comment provided by engineer. */
-"Occupations" = "Pekerjaan";
-
-/* No comment provided by engineer. */
-"Offline Editing" = "Pengeditan Offline";
-
-/* No comment provided by engineer. */
-"Offline Editing Manager" = "Manajer Pengeditan Offline";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
 "OK" = "OK";
-
-/* No comment provided by engineer. */
-"On my list" = "Di daftar anime saya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
 "ONA" = "ONA";
-
-/* No comment provided by engineer. */
-"OneShot" = "OneShot";
-
-/* No comment provided by engineer. */
-"Online Editing" = "Pengeditan Online";
-
-/* No comment provided by engineer. */
-"Online Editing Manager" = "Manajer Pengeditan Online";
-
-/* No comment provided by engineer. */
-"Online HD Editing" = "Pengeditan HD Online";
-
-/* No comment provided by engineer. */
-"Optical Recording" = "Perekaman Optik";
-
-/* No comment provided by engineer. */
-"Optional status to update the list entry to (e.g. COMPLETED)" = "Status opsional untuk memperbarui entri daftar (mis. SELESAI)";
-
-/* No comment provided by engineer. */
-"Order" = "Urutan";
-
-/* No comment provided by engineer. */
-"Original" = "Original";
-
-/* No comment provided by engineer. */
-"Original Character Design" = "Desain Karakter Asli";
-
-/* No comment provided by engineer. */
-"Original Creator" = "Pencipta Asli";
-
-/* No comment provided by engineer. */
-"Original Illustration" = "Ilustrasi Asli";
-
-/* No comment provided by engineer. */
-"Original Plan" = "Rencana Awal";
-
-/* No comment provided by engineer. */
-"Original Story" = "Cerita Ori";
-
-/* No comment provided by engineer. */
-"Other" = "Lainnya";
-
-/* No comment provided by engineer. */
-"Other account settings" = "Pengaturan akun lainnya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
 "OVA" = "OVA";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Occupations
+No comment provided by engineer. */
+"Occupations" = "Pekerjaan";
+/* en.lproj/Localizable.strings
+Offline Editing
+No comment provided by engineer. */
+"Offline Editing" = "Pengeditan Offline";
+/* en.lproj/Localizable.strings
+Offline Editing Manager
+No comment provided by engineer. */
+"Offline Editing Manager" = "Manajer Pengeditan Offline";
+/* en.lproj/Localizable.strings
+On my list
+No comment provided by engineer. */
+"On my list" = "Di daftar anime saya";
+/* en.lproj/Localizable.strings
+OneShot
+No comment provided by engineer. */
+"OneShot" = "OneShot";
+/* en.lproj/Localizable.strings
+Online Editing
+No comment provided by engineer. */
+"Online Editing" = "Pengeditan Online";
+/* en.lproj/Localizable.strings
+Online Editing Manager
+No comment provided by engineer. */
+"Online Editing Manager" = "Manajer Pengeditan Online";
+/* en.lproj/Localizable.strings
+Online HD Editing
+No comment provided by engineer. */
+"Online HD Editing" = "Pengeditan HD Online";
+/* en.lproj/Localizable.strings
+Optical Recording
+No comment provided by engineer. */
+"Optical Recording" = "Perekaman Optik";
+/* not a very important string. used for app intents */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Status opsional untuk memperbarui entri daftar (mis. SELESAI)";
+/* sort order */
+"Order" = "Urutan";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "Original";
+/* en.lproj/Localizable.strings
+Original Character Design
+No comment provided by engineer. */
+"Original Character Design" = "Desain Karakter Asli";
+/* en.lproj/Localizable.strings
+Original Creator
+No comment provided by engineer. */
+"Original Creator" = "Pencipta Asli";
+/* en.lproj/Localizable.strings
+Original Illustration
+No comment provided by engineer. */
+"Original Illustration" = "Ilustrasi Asli";
+/* en.lproj/Localizable.strings
+Original Plan
+No comment provided by engineer. */
+"Original Plan" = "Rencana Awal";
+/* en.lproj/Localizable.strings
+Original Story
+No comment provided by engineer. */
+"Original Story" = "Cerita Ori";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "Lainnya";
+/* text for a button that opens AniList website */
+"Other account settings" = "Pengaturan akun lainnya";
+/* en.lproj/Localizable.strings
+Overseas Advertising Producer
+No comment provided by engineer. */
 "Overseas Advertising Producer" = "Produser Iklan Luar Negeri";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Overview
+No comment provided by engineer. */
 "Overview" = "Pratinjau";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Paint
+No comment provided by engineer. */
 "Paint" = "Melukis";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Parent
+No comment provided by engineer. */
 "Parent" = "Orang tua";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Paused */
 "Paused" = "Ditunda";
-
-/* No comment provided by engineer. */
+/* (User) Paused [Anime/Manga Title] */
 "Paused %@" = "Dijeda %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography
+No comment provided by engineer. */
 "Photography" = "Fotografi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography Assistance
+No comment provided by engineer. */
 "Photography Assistance" = "Bantuan Fotografi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography Chief
+No comment provided by engineer. */
 "Photography Chief" = "Kepala Fotografi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Photography Manager
+No comment provided by engineer. */
 "Photography Manager" = "Manajer Fotografi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
 "Picture book" = "Buku bergambar";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Planning */
 "Planning" = "Rencana";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Planning Assistance
+No comment provided by engineer. */
 "Planning Assistance" = "Bantuan Perencanaan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Planning Producer
+No comment provided by engineer. */
 "Planning Producer" = "Produser Perencanaan";
-
-/* No comment provided by engineer. */
+/* Plans to read [Manga Title] */
 "Plans to read %@" = "Rencana untuk Dibaca %@";
-
-/* No comment provided by engineer. */
+/* Plans to watch [Anime Title] */
 "Plans to watch %@" = "Rencana untuk Ditonton %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
 "Please login to use this feature" = "Login untuk menggunakan fitur ini";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch
+No comment provided by engineer. */
 "Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Buka aplikasi AniHyou di iPhone Anda dan buka Profil -> Pengaturan -> Sinkronisasi akun dengan Apple Watch";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
 "Popular Anime" = "Anime Populer";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
 "Popular Manga" = "Manga Populer";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
 "Popularity" = "Popularitas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
 "Prequel" = "Prekuel";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Priority
+No comment provided by engineer. */
 "Priority" = "Prioritas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Private
+No comment provided by engineer. */
 "Private" = "Privasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producer
+No comment provided by engineer. */
 "Producer" = "Produser";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
 "Producers" = "Produser";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production
+No comment provided by engineer. */
 "Production" = "Produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Assistance
+No comment provided by engineer. */
 "Production Assistance" = "Bantuan Produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Assistant
+No comment provided by engineer. */
 "Production Assistant" = "Asisten produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Committee
+No comment provided by engineer. */
 "Production Committee" = "Komite Produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Design
+No comment provided by engineer. */
 "Production Design" = "Desain Produksi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Production Desk
+No comment provided by engineer. */
 "Production Desk" = "Meja Produksi";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Profile" = "Profil";
-
-/* No comment provided by engineer. */
+/* list entry progress */
 "Progress" = "Progres";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prop Design
+No comment provided by engineer. */
 "Prop Design" = "Desain Properti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
 "Psychological" = "Psikologi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
 "Publishing" = "Diterbitkan";
-
-/* No comment provided by engineer. */
+/* screen title.
+Manga that are being published */
 "Publishing Manga" = "Penerbitan Manga";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
 "Push notifications" = "Notifikasi push";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Quick access to your anime or manga list." = "Akses cepat ke daftar anime atau manga kamu.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
 "Random" = "Random";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
 "Rankings" = "Peringkat";
-
-/* (No Comment) */
-"Read chapter %1$@ of %2$@" = "Baca chapter %1$@ dari %2$@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
 "Read Year" = "Tahun Membaca";
-
-/* No comment provided by engineer. */
+/* Eg: (User) Read chapter [25] of [Manga Title] */
+"Read chapter %1$@ of %2$@" = "Baca chapter %1$@ dari %2$@";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
 "Reading" = "Membaca";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
 "Recommendations" = "Rekomendasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording
+No comment provided by engineer. */
 "Recording" = "Rekaman";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording Adjustment
+No comment provided by engineer. */
 "Recording Adjustment" = "Penyesuaian Perekaman";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording Assistant
+No comment provided by engineer. */
 "Recording Assistant" = "Asisten Perekaman";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recording Engineer
+No comment provided by engineer. */
 "Recording Engineer" = "Insinyur Perekaman";
-
-/* No comment provided by engineer. */
+/* Related anime/manga */
 "Relations" = "Relasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Relations and Recommendations
+No comment provided by engineer. */
 "Relations and Recommendations" = "Relasi dan Rekomendasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Date
+No comment provided by engineer. */
 "Release Date" = "Tanggal Rilis";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Year
+No comment provided by engineer. */
 "Release Year" = "Tahun Rilis";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
 "Releasing" = "Dirilis";
-
-/* No comment provided by engineer. */
+/* sort by repeat count */
 "Repeat" = "Ulangi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
 "Repeat Count" = "Jumlah Diulangi";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Repeating */
 "Repeating" = "Diulangi";
-
-/* No comment provided by engineer. */
+/* Reread [Kimetsu no Yaiba] */
 "Reread %@" = "Dibaca kembali %@";
-
-/* (No Comment) */
+/* (User) Reread chapter [1 - 27] of [Kimetsu no Yaiba] */
 "Reread chapter %1$@ of %2$@" = "Baca ulang chapter %1$@ dari %2$@";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rereading */
 "Rereading" = "Dibaca Ulang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Restore purchases
+No comment provided by engineer. */
 "Restore purchases" = "Pulihkan Pembelian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Review and Threads
+No comment provided by engineer. */
 "Review and Threads" = "Ulasan dan Bahasan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reviews
+No comment provided by engineer. */
 "Reviews" = "Ulasan";
-
-/* No comment provided by engineer. */
+/* Rewatched [Kimetsu no Yaiba] */
 "Rewatched %@" = "Ditonton ulang %@";
-
-/* (No Comment) */
+/* (User) Rewatched episode [1 - 27] of [Kimetsu no Yaiba] */
 "Rewatched episode %1$@ of %2$@" = "Tonton ulang episode %1$@ dari %2$@";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rewatching */
 "Rewatching" = "Ditonton Ulang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Right
+No comment provided by engineer. */
 "Right" = "Kanan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
 "Romaji" = "Romaji";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
 "Romaji (Western Order)" = "Romaji (Ordo Barat)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
 "Romance" = "Romansa";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
 "Save" = "Simpan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
 "Sci-Fi" = "Fiksi Ilmiah";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
 "Score" = "Skor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
 "Score distribution" = "Skor distribusi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score format
+No comment provided by engineer. */
 "Score format" = "Format Skor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Script
+No comment provided by engineer. */
 "Script" = "Naskah";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Script Assistance
+No comment provided by engineer. */
 "Script Assistance" = "Bantuan Naskah";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
 "Search type" = "Jenis pencarian";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
 "Season" = "Musim";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+See All
+No comment provided by engineer. */
 "See All" = "Lihat semua";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
 "Select Media Type" = "Halaman Dipilih";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Selection type
+No comment provided by engineer. */
 "Selection type" = "Tipe pilihan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
 "Sequel" = "Sekuel";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Series Composition
+No comment provided by engineer. */
 "Series Composition" = "Komposisi Serial";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Series Composition Assistance
+No comment provided by engineer. */
 "Series Composition Assistance" = "Bantuan Komposisi Serial";
-
-/* Set to Status */
+/* Set to Status.
+Example: Set as Completed */
 "Set as %@" = "Setel sebagai %@";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Set progress" = "Menetapkan progres";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Sets a list entry progress to the specified number." = "Mengatur daftar entri progres ke nomor yang ditentukan.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Setting Design
+No comment provided by engineer. */
 "Setting Design" = "Desain Latar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
 "Settings" = "Pengaturan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
 "Share" = "Bagikan";
-
-/* No comment provided by engineer. */
+/* Show less text */
 "Show less" = "Seringkasnya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
 "Show more" = "Selengkapnya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show only airing soon anime that are in your list
+No comment provided by engineer. */
 "Show only airing soon anime that are in your list" = "Tampilkan anime yang akan segera tayang yang ada dalam daftar Anda";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
 "Show spoiler" = "Tampilkan spoiler";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Shows the animes with behind episodes in your list." = "Menampilkan anime dengan episode di belakang dalam daftar anda.";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Shows the next airing animes in your list." = "Menampilkan anime yang ditayangkan berikutnya dalam daftar Anda.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
 "Side Story" = "Cerita Sampingan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
 "Slice of Life" = "Potongan Kehidupan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Social
+No comment provided by engineer. */
 "Social" = "Sosial";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
 "Sort" = "Urutkan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Design
+No comment provided by engineer. */
 "Sound Design" = "Desain Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Director
+No comment provided by engineer. */
 "Sound Director" = "Direktur Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Effects
+No comment provided by engineer. */
 "Sound Effects" = "Efek Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Effects Assistance
+No comment provided by engineer. */
 "Sound Effects Assistance" = "Bantuan Efek Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Producer
+No comment provided by engineer. */
 "Sound Producer" = "Produser Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Production
+No comment provided by engineer. */
 "Sound Production" = "Produksi Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Production Manager
+No comment provided by engineer. */
 "Sound Production Manager" = "Manajer Produksi Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sound Supervisor
+No comment provided by engineer. */
 "Sound Supervisor" = "Supervisor Suara";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
 "Source" = "Sumber";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+South Korea
+No comment provided by engineer. */
 "South Korea" = "Korea Selatan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
 "Special" = "Spesial";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special Design
+No comment provided by engineer. */
 "Special Design" = "Desain Khusus";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special Effects
+No comment provided by engineer. */
 "Special Effects" = "Efek khusus";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special Effects Assistant
+No comment provided by engineer. */
 "Special Effects Assistant" = "Asisten Efek Khusus";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spin Off
+No comment provided by engineer. */
 "Spin Off" = "Spin Off";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
 "Sports" = "Olahraga";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
 "Spring" = "Musim Semi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Staff
+No comment provided by engineer. */
 "Staff" = "Staff";
-
-/* No comment provided by engineer. */
+/* you can use (and) instead of (&) */
 "Staff & Character name language" = "Bahasa untuk nama Staff & Karakter";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
 "Standard" = "Standar";
-
-/* No comment provided by engineer. */
-"Start date" = "Tanggal mulai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
 "Start Date" = "Tanggal Mulai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "Tanggal mulai";
+/* sort by date started */
 "Started" = "Dimulai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
 "Stats" = "Statistik";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
 "Status" = "Status";
-
-/* No comment provided by engineer. */
-"Status distribution" = "Status distribusi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status Distribution
+No comment provided by engineer. */
 "Status Distribution" = "Status Distribusi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status distribution
+No comment provided by engineer. */
+"Status distribution" = "Status distribusi";
+/* en.lproj/Localizable.strings
+Story
+No comment provided by engineer. */
 "Story" = "Cerita";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Story & Art
+No comment provided by engineer. */
 "Story & Art" = "Cerita & Seni";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Story & Illustration
+No comment provided by engineer. */
 "Story & Illustration" = "Cerita & Ilustrasi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Storyboard
+No comment provided by engineer. */
 "Storyboard" = "Storyboard";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Streaming sites
+No comment provided by engineer. */
 "Streaming sites" = "Situs streaming";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
 "Studios" = "Studio";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sub Character Design
+No comment provided by engineer. */
 "Sub Character Design" = "Desain Sub Pendukung";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
 "Summary" = "Ringkasan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
 "Summer" = "Musim Panas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
 "Supernatural" = "Supranatural";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supervisor
+No comment provided by engineer. */
 "Supervisor" = "Supervisor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Support the development of AniHyou!
+No comment provided by engineer. */
 "Support the development of AniHyou!" = "Dukung pengembangan AniHyou!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
 "Supporting" = "Pendukung";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting Staff
+No comment provided by engineer. */
 "Supporting Staff" = "Staf Pendukung";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sync account with Apple Watch
+No comment provided by engineer. */
 "Sync account with Apple Watch" = "Sinkronisasi akun dengan Apple Watch";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
 "Synonyms" = "Kesamaan";
-
-/* No comment provided by engineer. */
-"Tags" = "Tanda";
-
-/* No comment provided by engineer. */
-"Taiwan" = "Taiwan";
-
-/* No comment provided by engineer. */
-"Technical Director" = "Direktur Teknis";
-
-/* No comment provided by engineer. */
-"Text Status" = "Status Teks";
-
-/* No comment provided by engineer. */
-"Thank you :)" = "Terima Kasih◝(ᵔᵕᵔ)◜";
-
-/* No comment provided by engineer. */
-"The amount of episodes/chapters consumed by the user" = "Jumlah episode/bab yang dikonsumsi oleh pengguna";
-
-/* No comment provided by engineer. */
-"The id of the media the entry is of" = "Id dari media tempat entri tersebut berasal";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement" = "Aransemen Lagu Tema";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement (ED)" = "Aransemen Lagu Tema (ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement (OP, ED)" = "Aransemen Lagu Tema (OP, ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Arrangement (OP)" = "Aransemen Lagu Tema (OP)";
-
-/* No comment provided by engineer. */
-"Theme Song Composition" = "Komposisi Lagu Tema";
-
-/* No comment provided by engineer. */
-"Theme Song Composition (ED)" = "Komposisi Lagu Tema (ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Composition (OP, ED)" = "Komposisi Lagu Tema (OP, ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Composition (OP)" = "Komposisi Lagu Tema (OP)";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics" = "Lirik Lagu Tema";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics (ED)" = "Lirik Lagu Tema (ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics (OP, ED)" = "Lirik Lagu Tema (OP, ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Lyrics (OP)" = "Lirik Lagu Tema (OP)";
-
-/* No comment provided by engineer. */
-"Theme Song Performance" = "Pertunjukan Lagu Tema";
-
-/* No comment provided by engineer. */
-"Theme Song Performance (ED)" = "Penampilan Lagu Tema (ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Performance (OP, ED)" = "Penampilan Lagu Tema (OP, ED)";
-
-/* No comment provided by engineer. */
-"Theme Song Performance (OP)" = "Pertunjukan Lagu Tema (OP)";
-
-/* No comment provided by engineer. */
-"This feature will be unlocked when you make a donation, even the smallest count!" = "Fitur ini akan terbuka jika memberikan donasi, bahkan dalam jumlah terkecil sekalipun!";
-
-/* No comment provided by engineer. */
-"Threads" = "Bahasan";
-
-/* No comment provided by engineer. */
-"Thriller" = "Thriller";
-
-/* No comment provided by engineer. */
-"Time spent" = "Waktu dihabiskan";
-
-/* No comment provided by engineer. */
-"Title" = "Judul";
-
-/* No comment provided by engineer. */
-"Title count" = "Jumlah judul";
-
-/* No comment provided by engineer. */
-"Title language" = "Judul bahasa";
-
-/* No comment provided by engineer. */
-"Title Logo Design" = "Desain Logo Judul";
-
-/* No comment provided by engineer. */
-"Title Logo Design Assistance" = "Bantuan Desain Logo Judul";
-
-/* No comment provided by engineer. */
-"Titles Count" = "Jumlah Judul";
-
-/* No comment provided by engineer. */
-"To year" = "Ke tahun";
-
-/* No comment provided by engineer. */
-"Top 100" = "Top 100";
-
-/* No comment provided by engineer. */
-"Top 100 Anime" = "Top 100 Anime";
-
-/* No comment provided by engineer. */
-"Top 100 Manga" = "Top 100 Manga";
-
-/* No comment provided by engineer. */
-"Top Movies" = "Top Film";
-
-/* No comment provided by engineer. */
-"Top Popular" = "Top Populer";
-
-/* No comment provided by engineer. */
-"Total Anime" = "Anime Total";
-
-/* No comment provided by engineer. */
-"Total Manga" = "Manga Total";
-
-/* No comment provided by engineer. */
-"Touch-up Art" = "Penyempurnaan Seni";
-
-/* No comment provided by engineer. */
-"Touch-up Art & Lettering" = "Penyempurnaan Seni & Huruf";
-
-/* No comment provided by engineer. */
-"Trailer" = "Cuplikan";
-
-/* No comment provided by engineer. */
-"Translate" = "Terjemahkan";
-
-/* No comment provided by engineer. */
-"Translations" = "Penerjemahan";
-
-/* No comment provided by engineer. */
-"Translator" = "Penerjemah";
-
-/* No comment provided by engineer. */
-"Trending" = "Trending";
-
-/* No comment provided by engineer. */
-"Trending Anime" = "Anime Trending";
-
-/* No comment provided by engineer. */
-"Trending Manga" = "Manga Trending";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
 "TV" = "TV";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
 "TV Short" = "Film Pendek";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "Tanda";
+/* en.lproj/Localizable.strings
+Taiwan
+No comment provided by engineer. */
+"Taiwan" = "Taiwan";
+/* en.lproj/Localizable.strings
+Technical Director
+No comment provided by engineer. */
+"Technical Director" = "Direktur Teknis";
+/* en.lproj/Localizable.strings
+Text Status
+No comment provided by engineer. */
+"Text Status" = "Status Teks";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "Terima Kasih◝(ᵔᵕᵔ)◜";
+/* not a very important string. used for app intents */
+"The amount of episodes/chapters consumed by the user" = "Jumlah episode/bab yang dikonsumsi oleh pengguna";
+/* not a very important string. used for app intents */
+"The id of the media the entry is of" = "Id dari media tempat entri tersebut berasal";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement
+No comment provided by engineer. */
+"Theme Song Arrangement" = "Aransemen Lagu Tema";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Aransemen Lagu Tema (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Aransemen Lagu Tema (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP, ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Aransemen Lagu Tema (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Composition
+No comment provided by engineer. */
+"Theme Song Composition" = "Komposisi Lagu Tema";
+/* en.lproj/Localizable.strings
+Theme Song Composition (ED)
+No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Komposisi Lagu Tema (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP)
+No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Komposisi Lagu Tema (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP, ED)
+No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Komposisi Lagu Tema (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics
+No comment provided by engineer. */
+"Theme Song Lyrics" = "Lirik Lagu Tema";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Lirik Lagu Tema (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Lirik Lagu Tema (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP, ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Lirik Lagu Tema (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Performance
+No comment provided by engineer. */
+"Theme Song Performance" = "Pertunjukan Lagu Tema";
+/* en.lproj/Localizable.strings
+Theme Song Performance (ED)
+No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Penampilan Lagu Tema (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP)
+No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Pertunjukan Lagu Tema (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP, ED)
+No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Penampilan Lagu Tema (OP, ED)";
+/* feel free to translate so it sounds better in your language */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Fitur ini akan terbuka jika memberikan donasi, bahkan dalam jumlah terkecil sekalipun!";
+/* en.lproj/Localizable.strings
+Threads
+No comment provided by engineer. */
+"Threads" = "Bahasan";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "Thriller";
+/* en.lproj/Localizable.strings
+Time spent
+No comment provided by engineer. */
+"Time spent" = "Waktu dihabiskan";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "Judul";
+/* en.lproj/Localizable.strings
+Title Logo Design
+No comment provided by engineer. */
+"Title Logo Design" = "Desain Logo Judul";
+/* en.lproj/Localizable.strings
+Title Logo Design Assistance
+No comment provided by engineer. */
+"Title Logo Design Assistance" = "Bantuan Desain Logo Judul";
+/* en.lproj/Localizable.strings
+Title count
+No comment provided by engineer. */
+"Title count" = "Jumlah judul";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "Judul bahasa";
+/* this is a stat. num of anime or manga in your list */
+"Titles Count" = "Jumlah Judul";
+/* en.lproj/Localizable.strings
+To year
+No comment provided by engineer. */
+"To year" = "Ke tahun";
+/* en.lproj/Localizable.strings
+Top 100
+No comment provided by engineer. */
+"Top 100" = "Top 100";
+/* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "Top 100 Anime";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "Top 100 Manga";
+/* en.lproj/Localizable.strings
+Top Movies
+No comment provided by engineer. */
+"Top Movies" = "Top Film";
+/* en.lproj/Localizable.strings
+Top Popular
+No comment provided by engineer. */
+"Top Popular" = "Top Populer";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "Anime Total";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "Manga Total";
+/* en.lproj/Localizable.strings
+Touch-up Art
+No comment provided by engineer. */
+"Touch-up Art" = "Penyempurnaan Seni";
+/* en.lproj/Localizable.strings
+Touch-up Art & Lettering
+No comment provided by engineer. */
+"Touch-up Art & Lettering" = "Penyempurnaan Seni & Huruf";
+/* en.lproj/Localizable.strings
+Trailer
+No comment provided by engineer. */
+"Trailer" = "Cuplikan";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "Terjemahkan";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "Penerjemahan";
+/* en.lproj/Localizable.strings
+Translator
+No comment provided by engineer. */
+"Translator" = "Penerjemah";
+/* en.lproj/Localizable.strings
+Trending
+No comment provided by engineer. */
+"Trending" = "Trending";
+/* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "Anime Trending";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "Manga Trending";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
 "Unfollow" = "Berhenti ikuti";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Unit Director
+No comment provided by engineer. */
 "Unit Director" = "Unit Direktur";
-
-/* Localizable.strings
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Tak diketahui";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
 "Upcoming" = "Mendatang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
 "Upcoming Anime" = "Anime Mendatang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
 "Upcoming Manga" = "Manga Mendatang";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
 "Updated" = "Diperbarui";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users
+No comment provided by engineer. */
 "Users" = "Pengguna";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users likes
+No comment provided by engineer. */
 "Users likes" = "Like pengguna";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
 "Version %@" = "Versi %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Video Editing
+No comment provided by engineer. */
 "Video Editing" = "Pengeditan Video";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+VideoGame
+No comment provided by engineer. */
 "VideoGame" = "Permainan";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual Coordinator
+No comment provided by engineer. */
 "Visual Coordinator" = "Koordinator Visual";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual Director
+No comment provided by engineer. */
 "Visual Director" = "Direktur Visual";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual Effects
+No comment provided by engineer. */
 "Visual Effects" = "Efek Visual";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
 "Visual novel" = "Novel Visual";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Voice Actors
+No comment provided by engineer. */
 "Voice Actors" = "Pengisi Suara";
-
-/* No comment provided by engineer. */
+/* Volumes abbreviation */
 "Vol" = "Vol";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
 "Volumes" = "Volume";
-
-/* No comment provided by engineer. */
+/* num of volumes read */
 "Volumes Read" = "Volume Dibaca";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watch Year
+No comment provided by engineer. */
 "Watch Year" = "Tahun Menonton";
-
-/* (No Comment) */
+/* Eg: (User) Watched episode [25] of [Anime Title] */
 "Watched episode %1$@ of %2$@" = "Menonton episode %1$@ dari %2$@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
 "Watching" = "Menonton";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weapon Design
+No comment provided by engineer. */
 "Weapon Design" = "Desain Senjata";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
 "Web novel" = "Web Novel";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weekday
+No comment provided by engineer. */
 "Weekday" = "Hari kerja";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
 "Winter" = "Musim Dingin";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+With any purchase you will gain access to exclusive app icons and custom accent colors!
+No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Dengan pembelian apa pun, Anda akan mendapatkan akses ke ikon aplikasi eksklusif dan warna aksen khusus!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+World Design
+No comment provided by engineer. */
 "World Design" = "Desain Dunia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
 "Year" = "Tahun";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Years active
+No comment provided by engineer. */
 "Years active" = "Tahun aktif";
-
-/* No comment provided by engineer. */
+/* toggle on */
 "Yes" = "Iya";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+You may need to login again in your browser
+No comment provided by engineer. */
 "You may need to login again in your browser" = "Anda mungkin perlu masuk lagi ke browser Anda";
-
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[%lld episode tertinggal](inflect: true)";

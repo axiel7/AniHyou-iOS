@@ -1,1161 +1,1426 @@
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
 "%lld chapters" = "%lld capítulos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
 "%lld episodes" = "%lld episódios";
-
-/* No comment provided by engineer. */
+/* num of volumes.
+Eg: 23 volumes */
 "%lld volumes" = "%lld volumes";
-
-/* No comment provided by engineer. */
-"^[%lld episode behind](inflect: true)" = "^[%lld episódio(s) atrasado(s)](inflect: true)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
++1
+No comment provided by engineer. */
 "+1" = "+1";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+1st Key Animation Director
+No comment provided by engineer. */
+"1st Key Animation Director" = "1° Diretor-Chave de Animação";
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
 "3 Point Smiley :)" = "Rostinho de 3 Pontos :)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
 "5 Star (3/5)" = "5 Estrelas (3/5)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
 "10 Point (5/10)" = "10 Pontos (5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "10 Pontos Decimais (5,5/10)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
 "100 Point (55/100)" = "100 Pontos (55/100)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+A&R Producer
+No comment provided by engineer. */
+"A&R Producer" = "Produtor A&R";
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
 "Accent color" = "Cor de destaque";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Accessory Design
+No comment provided by engineer. */
 "Accessory Design" = "Design de Acessórios";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
 "Account settings" = "Configurações da conta";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
 "Action" = "Ação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Action Animation Director
+No comment provided by engineer. */
 "Action Animation Director" = "Diretor de Animação de Ação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Action Animation Supervisor
+No comment provided by engineer. */
 "Action Animation Supervisor" = "Supervisor de Animação de Ação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Action Animator
+No comment provided by engineer. */
 "Action Animator" = "Animador de Ação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Action Director
+No comment provided by engineer. */
 "Action Director" = "Diretor de Ação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
 "Activity" = "Atividade";
-
-/* No comment provided by engineer. */
+/* Types: All, Text Status, List Progress */
 "Activity type" = "Tipo de atividade";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
 "Adaptation" = "Adaptação";
-
-/* No comment provided by engineer. */
+/* if the translation is too long, translate just (Add) */
 "Add to List" = "Adicionar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
 "Added" = "Adicionado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
 "Adult" = "Adulto";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
 "Adventure" = "Aventura";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising
+No comment provided by engineer. */
 "Advertising" = "Anúncios";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Advertising Producer
+No comment provided by engineer. */
 "Advertising Producer" = "Produtor de Anúncios";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
 "Age" = "Idade";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
 "Airing" = "Em Exibição";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
 "Airing Anime" = "Animes lançando";
-
-/* No comment provided by engineer. */
+/* you can translate it simply as (Airing) */
 "Airing Next" = "Lançando a seguir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Airing on my list
+No comment provided by engineer. */
 "Airing on my list" = "Lançamentos da minha lista";
-
-/* No comment provided by engineer. */
+/* for this one use the masculine form when applied. */
 "All" = "Todos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
 "Alternative" = "Alternativo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation
+No comment provided by engineer. */
 "Animation" = "Animação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Director
+No comment provided by engineer. */
 "Animation Director" = "Diretor de Animação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Producer
+No comment provided by engineer. */
 "Animation Producer" = "Produtor de Animação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Production Assistance
+No comment provided by engineer. */
 "Animation Production Assistance" = "Assistência à Produção de Animação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Animation Supervisor
+No comment provided by engineer. */
 "Animation Supervisor" = "Supervisor de Animação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
 "Anime" = "Anime";
-
-/* No comment provided by engineer. */
+/* anime with unwatched episodes */
 "Anime Behind" = "Animes Atrasados";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
 "Anime List" = "Lista de Anime";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
 "Anime, Manga, and More" = "Anime, Mangá, e Mais";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
 "App Icon" = "Ícone do App";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Are you sure you want to log out?
+No comment provided by engineer. */
 "Are you sure you want to log out?" = "Tem certeza de que deseja deslogar?";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art
+No comment provided by engineer. */
 "Art" = "Arte";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Composition
+No comment provided by engineer. */
 "Art Composition" = "Composição de Arte";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Design
+No comment provided by engineer. */
 "Art Design" = "Design de Arte";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Art Director
+No comment provided by engineer. */
 "Art Director" = "Diretor de Arte";
-
-/* No comment provided by engineer. */
-"As you may known this app is completely free and Open Source,\nbut creating an app requires a lot of time and effort.\nBy making a donation you will help cover the costs of\ndevelopment, maintenance, and new features." = "Como você deve saber, esse aplicativo é totalmente gratuito e de código aberto,\nmas a criação de um aplicativo exige muito tempo e esforço.\nAo fazer uma doação, você ajudará a cobrir os custos de\ndesenvolvimento, manutenção e novos recursos.";
-
-/* No comment provided by engineer. */
+/* Please try to use the same break lines */
+"As you may known this app is completely free and Open Source,
+but creating an app requires a lot of time and effort.
+By making a donation you will help cover the costs of
+development, maintenance, and new features." = "Como você deve saber, esse aplicativo é totalmente gratuito e de código aberto,\nmas a criação de um aplicativo exige muito tempo e esforço.\nAo fazer uma doação, você ajudará a cobrir os custos de\ndesenvolvimento, manutenção e novos recursos.";
+/* en.lproj/Localizable.strings
+Ascending
+No comment provided by engineer. */
 "Ascending" = "Crescente";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistance
+No comment provided by engineer. */
 "Assistance" = "Assistência";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant
+No comment provided by engineer. */
 "Assistant" = "Assistente";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Animation Director
+No comment provided by engineer. */
 "Assistant Animation Director" = "Diretor de Animação Assistente";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Art Director
+No comment provided by engineer. */
 "Assistant Art Director" = "Diretor de Arte Assistente";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Director
+No comment provided by engineer. */
 "Assistant Director" = "Diretor Assistente";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Assistant Producer
+No comment provided by engineer. */
 "Assistant Producer" = "Produtor Assistente";
-
-/* No comment provided by engineer. */
+/* weighted Average Score */
 "Average Score" = "Nota média";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
 "Background" = "Contexto";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Background Art
+No comment provided by engineer. */
 "Background Art" = "Arte de Fundo";
-
-/* No comment provided by engineer. */
+/* Birthday */
 "Birth" = "Aniversário";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
 "Birthday" = "Aniversário";
-
-/* No comment provided by engineer. */
-"Blood type" = "Tipo sanguíneo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
 "Blood Type" = "Tipo Sanguíneo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Blood type
+No comment provided by engineer. */
+"Blood type" = "Tipo sanguíneo";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
 "Calendar" = "Calendário";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
 "Cancel" = "Cancelar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
 "Cancelled" = "Cancelado";
-
-/* No comment provided by engineer. */
+/* chapter abbreviation */
 "Ch" = "Cap";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
 "Changes will take effect on app restart" = "Mudanças se darão ao reiniciar o app";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapter Count
+No comment provided by engineer. */
 "Chapter Count" = "Número de Capítulos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
 "Chapters" = "Capítulos";
-
-/* No comment provided by engineer. */
-"Chapters read" = "Capítulos lidos";
-
-/* No comment provided by engineer. */
+/* stats */
 "Chapters Read" = "Capítulos Lidos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "Capítulos lidos";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
 "Character" = "Personagem";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
 "Characters" = "Personagens";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
 "Characters and Staff" = "Personagens e Equipe";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
 "China" = "China";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Choose between Anime or Manga.
+No comment provided by engineer. */
 "Choose between Anime or Manga." = "Escolha entre Anime ou Mangá.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
 "Clear" = "Limpar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
 "Close" = "Fechar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
 "Comedy" = "Comédia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
 "Comic" = "Comic";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
 "Compact" = "Compacto";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Compilation
+No comment provided by engineer. */
 "Compilation" = "Compilação";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Completed */
 "Completed" = "Concluído";
-
-/* No comment provided by engineer. */
+/* An user list activity status.
+Eg: Completed [Anime/Manga Title] */
 "Completed %@" = "Completou %@";
-
-/* No comment provided by engineer. */
-"Congratulations, you are up to date!\n(๑>◡<๑)" = "Parabéns, você está atualizado!\n(๑>◡<๑)";
-
-/* No comment provided by engineer. */
+/* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
+"Congratulations, you are up to date!
+(๑>◡<๑)" = "Parabéns, você está atualizado!\n(๑>◡<๑)";
+/* en.lproj/Localizable.strings
+Contains
+No comment provided by engineer. */
 "Contains" = "Contém";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
 "Content" = "Conteúdo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
 "Country" = "País";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Country Distribution
+No comment provided by engineer. */
 "Country Distribution" = "Distribuição de Países";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Current */
 "Current" = "Atual";
-
-/* No comment provided by engineer. */
+/* custom app color */
 "Custom" = "Customizado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
 "Custom color" = "Cor customizada";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Custom lists
+No comment provided by engineer. */
 "Custom lists" = "Listas personalizadas";
-
-/* No comment provided by engineer. */
+/* Dates: start date and end date */
 "Dates" = "Datas";
-
-/* No comment provided by engineer. */
+/* stats */
 "Days Watched" = "Dias Assistidos";
-
-/* No comment provided by engineer. */
+/* date of death */
 "Death" = "Morte";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
 "Default" = "Padrão";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Default tab
+No comment provided by engineer. */
 "Default tab" = "Aba padrão";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
 "Delete" = "Excluir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Delete this entry?
+No comment provided by engineer. */
 "Delete this entry?" = "Deletar essa entrada?";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
 "Descending" = "Decrescente";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Developers
+No comment provided by engineer. */
 "Developers" = "Desenvolvedores";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Art
+No comment provided by engineer. */
 "Digital Art" = "Arte Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Photography
+No comment provided by engineer. */
 "Digital Photography" = "Fotografia Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Digital Production Assistant
+No comment provided by engineer. */
 "Digital Production Assistant" = "Assistente de Produção Digital";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Director
+No comment provided by engineer. */
 "Director" = "Diretor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Director of Photography
+No comment provided by engineer. */
 "Director of Photography" = "Diretor de Fotografia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discord server
+No comment provided by engineer. */
 "Discord server" = "Server do Discord";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Discover
+No comment provided by engineer. */
 "Discover" = "Descobrir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
 "Display" = "Tela";
-
-/* No comment provided by engineer. */
+/* Stat Distribution type.
+Title count, mean score, or time spent */
 "Distribution type" = "Tipo de distribuição";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
 "Donate" = "Doar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
 "Donate!" = "Doar!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
 "Donation" = "Doação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
 "Donator" = "Doador";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
 "Done" = "Feito";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
 "Doujinshi" = "Doujinshi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
 "Drama" = "Drama";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Dropped */
 "Dropped" = "Dropado";
-
-/* No comment provided by engineer. */
+/* (User) Dropped [Anime/Manga Title] */
 "Dropped %@" = "Dropou %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
 "Duration" = "Duração";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
 "Ecchi" = "Ecchi";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
 "Edit" = "Editar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Editing Assistant
+No comment provided by engineer. */
 "Editing Assistant" = "Assistente de Edição";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
 "End date" = "Data de término";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
 "English" = "Inglês";
-
-/* No comment provided by engineer. */
+/* episodes abbreviation */
 "Ep" = "Ep";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and time.
+Eg: Ep [23] [in 35 minutes] */
 "Ep %lld %@" = "Ep %lld %@";
-
-/* No comment provided by engineer. */
+/* Episode abbreviation with number and a specific hour.
+Eg: Ep [23] at [12:30] */
 "Ep %lld at %@" = "Ep %lld em %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episode Count
+No comment provided by engineer. */
 "Episode Count" = "Número de Episódios";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
 "Episodes" = "Episódios";
-
-/* No comment provided by engineer. */
+/* stats */
 "Episodes Watched" = "Episódios Assistidos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
 "Explore" = "Explorar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
 "External links" = "Links externos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
 "Fall" = "Outono";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
 "Fantasy" = "Fantasia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
 "Favorites" = "Favoritos";
-
-/* No comment provided by engineer. */
+/* Activity feed type: Following or Global */
 "Feed type" = "Tipo de feed";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
 "Filter" = "Filtro";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finish Date
+No comment provided by engineer. */
 "Finish Date" = "Data de conclusão";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
 "Finished" = "Finalizado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
 "Follow" = "Seguir";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
 "Followers" = "Seguidores";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
 "Following" = "Seguindo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows
+No comment provided by engineer. */
 "Follows" = "Seguindo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
 "Follows you" = "Segue você";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
 "Format" = "Formato";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Format Distribution
+No comment provided by engineer. */
 "Format Distribution" = "Distribuição de Formato";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
 "Forum" = "Fórum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+From year
+No comment provided by engineer. */
 "From year" = "Do ano";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
 "Game" = "Jogo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
 "Gender" = "Gênero";
-
-/* No comment provided by engineer. */
+/* general information about the anime/manga */
 "General" = "Geral";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
 "Genres" = "Gêneros";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
 "GitHub repository" = "Repositório GitHub";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
 "Global" = "Global";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
 "Hentai" = "Hentai";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
 "Hiatus" = "Hiato";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide filters
+No comment provided by engineer. */
 "Hide filters" = "Ocultar filtros";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide from status lists
+No comment provided by engineer. */
 "Hide from status lists" = "Ocultar de listas de status";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hide spoiler
+No comment provided by engineer. */
 "Hide spoiler" = "Ocultar spoiler";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Highest rated 2023 */
 "Highest rated" = "Melhor avaliado";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Home" = "Início";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
 "Hometown" = "Cidade natal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
 "Horror" = "Terror";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Hours Watched
+No comment provided by engineer. */
 "Hours Watched" = "Horas Assistidas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Increment Episode / Chapter
+No comment provided by engineer. */
 "Increment Episode / Chapter" = "Incrementar Episódio / Capítulo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
 "Info type" = "Tipo de informação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
 "Information" = "Informações";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
 "Japan" = "Japão";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
 "Japanese" = "Japonês";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last Added
+No comment provided by engineer. */
 "Last Added" = "Última Adição";
-
-/* No comment provided by engineer. */
+/* sort by update date */
 "Last Updated" = "Última Atualização";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
 "Last used" = "Último usado";
-
-/* No comment provided by engineer. */
+/* Left swipe direction */
 "Left" = "Esquerda";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
 "Light novel" = "Light novel";
-
-/* No comment provided by engineer. */
-"List entry ID" = "ID de item da lista";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+List Progress
+No comment provided by engineer. */
 "List Progress" = "Progresso da lista";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
+"List entry ID" = "ID de item da lista";
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
 "List style" = "Estilo da lista";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
 "Live action" = "Live action";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
 "Loading" = "Carregando";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Log out
+No comment provided by engineer. */
 "Log out" = "Deslogar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
 "Login" = "Fazer login";
-
-/* No comment provided by engineer. */
+/* or (Swipe Direction) for short */
 "Long Swipe Direction" = "Direção de Gesto";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
 "Mahou Shoujo" = "Mahou Shoujo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
 "Main" = "Principal";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
 "Manga" = "Mangá";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
 "Manga List" = "Lista de Mangás";
-
-/* No comment provided by engineer. */
-"Mean score" = "Nota";
-
-/* No comment provided by engineer. */
+/* normalized score.
+You can translate it simply as (Score) */
 "Mean Score" = "Nota";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "Nota";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
 "Mecha" = "Mecha";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Media
+No comment provided by engineer. */
 "Media" = "Mídia";
-
-/* No comment provided by engineer. */
+/* not a very important string. Used for app intents */
 "Media ID" = "ID da Mídia";
-
-/* No comment provided by engineer. */
+/* Anime/Manga List */
 "Media List" = "Lista de Mídia";
-
-/* No comment provided by engineer. */
+/* Anime or Manga */
 "Media Type" = "Tipo de Mídia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
 "Minimal" = "Mínimo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+More filters
+No comment provided by engineer. */
 "More filters" = "Mais filtros";
-
-/* No comment provided by engineer. */
+/* ranking.
+Eg: #1 Most popular 2023 */
 "Most popular" = "Mais popular";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
 "Movie" = "Filme";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
 "Multimedia project" = "Projeto de multimídia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
 "Music" = "Música";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
 "Mystery" = "Mistério";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
 "Native" = "Nativo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Anime
+No comment provided by engineer. */
 "Newly Added Anime" = "Anime Recém-Adicionado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Newly Added Manga
+No comment provided by engineer. */
 "Newly Added Manga" = "Manga Recém-Adicionado";
-
-/* No comment provided by engineer. */
+/* toggle off */
 "No" = "Não";
-
-/* No comment provided by engineer. */
-"No airing anime in your list\n(*´-`)" = "Sem animes lançando em sua lista\n(*´-`)";
-
-/* No comment provided by engineer. */
-"No anime for today\n(*´-`)" = "Sem animes por hoje\n(*´-`)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No airing anime in your list
+(*´-`)
+No comment provided by engineer. */
+"No airing anime in your list
+(*´-`)" = "Sem animes lançando em sua lista\n(*´-`)";
+/* en.lproj/Localizable.strings
+No anime for today
+(*´-`)
+No comment provided by engineer. */
+"No anime for today
+(*´-`)" = "Sem animes por hoje\n(*´-`)";
+/* en.lproj/Localizable.strings
+No media
+No comment provided by engineer. */
 "No media" = "Sem mídia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
 "No recommendations" = "Sem recomendações";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+No reviews
+No comment provided by engineer. */
 "No reviews" = "Sem resenhas";
-
-/* No comment provided by engineer. */
+/* nothing selected */
 "None" = "Nenhum";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
 "Not yet released" = "Ainda não lançado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
 "Notes" = "Notas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Nothing in your list
+No comment provided by engineer. */
 "Nothing in your list" = "Nada em sua lista";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
 "Notifications" = "Notificações";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
 "Novel" = "Novel";
-
-/* No comment provided by engineer. */
-"Occupations" = "Ocupações";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
 "OK" = "OK";
-
-/* No comment provided by engineer. */
-"On my list" = "Na minha lista";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
 "ONA" = "ONA";
-
-/* No comment provided by engineer. */
-"OneShot" = "OneShot";
-
-/* No comment provided by engineer. */
-"Optional status to update the list entry to (e.g. COMPLETED)" = "Status opcional para atualizar um item da lista (ex. COMPLETO)";
-
-/* No comment provided by engineer. */
-"Order" = "Ordem";
-
-/* No comment provided by engineer. */
-"Original" = "Original";
-
-/* No comment provided by engineer. */
-"Other" = "Outros";
-
-/* No comment provided by engineer. */
-"Other account settings" = "Outras configurações da conta";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
 "OVA" = "OVA";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Occupations
+No comment provided by engineer. */
+"Occupations" = "Ocupações";
+/* en.lproj/Localizable.strings
+On my list
+No comment provided by engineer. */
+"On my list" = "Na minha lista";
+/* en.lproj/Localizable.strings
+OneShot
+No comment provided by engineer. */
+"OneShot" = "OneShot";
+/* not a very important string. used for app intents */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Status opcional para atualizar um item da lista (ex. COMPLETO)";
+/* sort order */
+"Order" = "Ordem";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "Original";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "Outros";
+/* text for a button that opens AniList website */
+"Other account settings" = "Outras configurações da conta";
+/* en.lproj/Localizable.strings
+Overview
+No comment provided by engineer. */
 "Overview" = "Visão geral";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Parent
+No comment provided by engineer. */
 "Parent" = "Parente";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Paused */
 "Paused" = "Pausado";
-
-/* No comment provided by engineer. */
+/* (User) Paused [Anime/Manga Title] */
 "Paused %@" = "Pausado %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
 "Picture book" = "Picture book";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Planning */
 "Planning" = "Planejado";
-
-/* No comment provided by engineer. */
+/* Plans to read [Manga Title] */
 "Plans to read %@" = "Planejado ler %@";
-
-/* No comment provided by engineer. */
+/* Plans to watch [Anime Title] */
 "Plans to watch %@" = "Planejado assistir %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
 "Please login to use this feature" = "Por favor, inicie sessão para usar esta função";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch
+No comment provided by engineer. */
 "Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Por favor, abra o aplicativo Anihyou em seu iPhone e vá para Perfil -> Configurações -> Sincronizar conta com Apple Watch";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
 "Popular Anime" = "Anime Popular";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
 "Popular Manga" = "Mangá Popular";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
 "Popularity" = "Popularidade";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
 "Prequel" = "Antecessor";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Priority
+No comment provided by engineer. */
 "Priority" = "Prioridade";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Private
+No comment provided by engineer. */
 "Private" = "Privada";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
 "Producers" = "Produtores";
-
-/* No comment provided by engineer. */
+/* as short as possible */
 "Profile" = "Perfil";
-
-/* No comment provided by engineer. */
+/* list entry progress */
 "Progress" = "Progresso";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
 "Psychological" = "Psicológico";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
 "Publishing" = "Em Publicação";
-
-/* No comment provided by engineer. */
+/* screen title.
+Manga that are being published */
 "Publishing Manga" = "Mangás sendo publicados";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
 "Push notifications" = "Notificações de Push";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Quick access to your anime or manga list." = "Acesso rápido à sua lista de anime ou mangá.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
 "Random" = "Aleatório";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
 "Rankings" = "Classificações";
-
-/* (No Comment) */
-"Read chapter %1$@ of %2$@" = "Leu o capítulo %1$@ de %2$@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
 "Read Year" = "Lidos cada ano";
-
-/* No comment provided by engineer. */
+/* Eg: (User) Read chapter [25] of [Manga Title] */
+"Read chapter %1$@ of %2$@" = "Leu o capítulo %1$@ de %2$@";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
 "Reading" = "Lendo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
 "Recommendations" = "Recomendações";
-
-/* No comment provided by engineer. */
+/* Related anime/manga */
 "Relations" = "Relacionado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Relations and Recommendations
+No comment provided by engineer. */
 "Relations and Recommendations" = "Relacionados e Recomendações";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Date
+No comment provided by engineer. */
 "Release Date" = "Data de lançamento";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Release Year
+No comment provided by engineer. */
 "Release Year" = "Ano de Lançamento";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
 "Releasing" = "Lançando";
-
-/* No comment provided by engineer. */
+/* sort by repeat count */
 "Repeat" = "Repetido";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
 "Repeat Count" = "Contagem de repetição";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Repeating */
 "Repeating" = "Repetindo";
-
-/* (No Comment) */
+/* (User) Reread chapter [1 - 27] of [Kimetsu no Yaiba] */
 "Reread chapter %1$@ of %2$@" = "Releu capítulo %1$@ de %2$@";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rereading */
 "Rereading" = "Relendo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Restore purchases
+No comment provided by engineer. */
 "Restore purchases" = "Restaurar compras";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Review and Threads
+No comment provided by engineer. */
 "Review and Threads" = "Resenhas e Tópicos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Reviews
+No comment provided by engineer. */
 "Reviews" = "Resenhas";
-
-/* (No Comment) */
+/* (User) Rewatched episode [1 - 27] of [Kimetsu no Yaiba] */
 "Rewatched episode %1$@ of %2$@" = "Reassistiu episódio %1$@ de %2$@";
-
-/* (No Comment) */
+/* en.lproj/Localizable.strings
+Rewatching */
 "Rewatching" = "Revendo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Right
+No comment provided by engineer. */
 "Right" = "Direita";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
 "Romaji" = "Romaji";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
 "Romaji (Western Order)" = "Romaji (Ordem Ocidental)";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
 "Romance" = "Romance";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
 "Save" = "Salvar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
 "Sci-Fi" = "Ficção Científica";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
 "Score" = "Nota";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
 "Score distribution" = "Distribuição da pontuação";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Score format
+No comment provided by engineer. */
 "Score format" = "Formato da nota";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
 "Search type" = "Tipo de pesquisa";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
 "Season" = "Temporada";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+See All
+No comment provided by engineer. */
 "See All" = "Ver Tudo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
 "Select Media Type" = "Selecione Tipo de Mídia";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Selection type
+No comment provided by engineer. */
 "Selection type" = "Tipo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
 "Sequel" = "Sequência";
-
-/* Set to Status */
+/* Set to Status.
+Example: Set as Completed */
 "Set as %@" = "Definir como %@";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Set progress" = "Definir progresso";
-
-/* No comment provided by engineer. */
+/* not a very important string. used for app intents */
 "Sets a list entry progress to the specified number." = "Define o progresso de um item da lista para o número especificado.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
 "Settings" = "Configurações";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
 "Share" = "Compartilhar";
-
-/* No comment provided by engineer. */
+/* Show less text */
 "Show less" = "Mostrar menos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
 "Show more" = "Mostrar mais";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show only airing soon anime that are in your list
+No comment provided by engineer. */
 "Show only airing soon anime that are in your list" = "Exibir apenas animes que estão lançando em minha lista";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
 "Show spoiler" = "Mostrar spoiler";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Shows the animes with behind episodes in your list." = "Mostra animes com episódios atrasados em sua lista.";
-
-/* No comment provided by engineer. */
+/* widget description */
 "Shows the next airing animes in your list." = "Mostra animes que lançarão a seguir em sua lista.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
 "Side Story" = "História Paralela";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
 "Slice of Life" = "Vida Diária";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Social
+No comment provided by engineer. */
 "Social" = "Social";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
 "Sort" = "Ordenar";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
 "Source" = "Fonte";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+South Korea
+No comment provided by engineer. */
 "South Korea" = "Coreia do Sul";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
 "Special" = "Especial";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spin Off
+No comment provided by engineer. */
 "Spin Off" = "Spin Off";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
 "Sports" = "Esportes";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
 "Spring" = "Primavera";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Staff
+No comment provided by engineer. */
 "Staff" = "Equipe";
-
-/* No comment provided by engineer. */
+/* you can use (and) instead of (&) */
 "Staff & Character name language" = "Linguagem do nome da Equipe & Personagens";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
 "Standard" = "Padrão";
-
-/* No comment provided by engineer. */
-"Start date" = "Data de início";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
 "Start Date" = "Data de Início";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "Data de início";
+/* sort by date started */
 "Started" = "Iniciado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
 "Stats" = "Estatísticas";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
 "Status" = "Status";
-
-/* No comment provided by engineer. */
-"Status distribution" = "Distribuição do status";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status Distribution
+No comment provided by engineer. */
 "Status Distribution" = "Distribuição de Status";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Status distribution
+No comment provided by engineer. */
+"Status distribution" = "Distribuição do status";
+/* en.lproj/Localizable.strings
+Streaming sites
+No comment provided by engineer. */
 "Streaming sites" = "Sites de Streaming";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
 "Studios" = "Estúdios";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
 "Summary" = "Resumo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
 "Summer" = "Verão";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
 "Supernatural" = "Sobrenatural";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Support the development of AniHyou!
+No comment provided by engineer. */
 "Support the development of AniHyou!" = "Apoie o desenvolvimento do AniHyou!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
 "Supporting" = "Coadjuvante";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Sync account with Apple Watch
+No comment provided by engineer. */
 "Sync account with Apple Watch" = "Sincronizar conta com Apple Watch";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
 "Synonyms" = "Sinônimos";
-
-/* No comment provided by engineer. */
-"Tags" = "Etiquetas";
-
-/* No comment provided by engineer. */
-"Taiwan" = "Taiwan";
-
-/* No comment provided by engineer. */
-"Text Status" = "Status de texto";
-
-/* No comment provided by engineer. */
-"Thank you :)" = "Obrigado :)";
-
-/* No comment provided by engineer. */
-"The amount of episodes/chapters consumed by the user" = "A quantidade de episódios/capítulos consumidos pelo usuário";
-
-/* No comment provided by engineer. */
-"The id of the media the entry is of" = "O ID da mídia da qual o item faz parte";
-
-/* No comment provided by engineer. */
-"This feature will be unlocked when you make a donation, even the smallest count!" = "Esta função será desbloqueada quando você fizer uma doação. Qualquer quantia já conta!";
-
-/* No comment provided by engineer. */
-"Threads" = "Tópicos";
-
-/* No comment provided by engineer. */
-"Thriller" = "Suspense";
-
-/* No comment provided by engineer. */
-"Time spent" = "Tempo gasto";
-
-/* No comment provided by engineer. */
-"Title" = "Título";
-
-/* No comment provided by engineer. */
-"Title count" = "Contagem de títulos";
-
-/* No comment provided by engineer. */
-"Title language" = "Idioma do título";
-
-/* No comment provided by engineer. */
-"Titles Count" = "Contagem de Títulos";
-
-/* No comment provided by engineer. */
-"To year" = "Até o ano";
-
-/* No comment provided by engineer. */
-"Top 100" = "Top 100";
-
-/* No comment provided by engineer. */
-"Top 100 Anime" = "Top 100 Animes";
-
-/* No comment provided by engineer. */
-"Top 100 Manga" = "Top 100 Mangás";
-
-/* No comment provided by engineer. */
-"Top Movies" = "Principais Filmes";
-
-/* No comment provided by engineer. */
-"Top Popular" = "Top Popular";
-
-/* No comment provided by engineer. */
-"Total Anime" = "Anime Total";
-
-/* No comment provided by engineer. */
-"Total Manga" = "Mangá Total";
-
-/* No comment provided by engineer. */
-"Trailer" = "Trailer";
-
-/* No comment provided by engineer. */
-"Translate" = "Traduzir";
-
-/* No comment provided by engineer. */
-"Translations" = "Traduções";
-
-/* No comment provided by engineer. */
-"Trending" = "Em alta";
-
-/* No comment provided by engineer. */
-"Trending Anime" = "Animes Tendência";
-
-/* No comment provided by engineer. */
-"Trending Manga" = "Mangás Em Alta";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
 "TV" = "TV";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
 "TV Short" = "TV Curta";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "Etiquetas";
+/* en.lproj/Localizable.strings
+Taiwan
+No comment provided by engineer. */
+"Taiwan" = "Taiwan";
+/* en.lproj/Localizable.strings
+Text Status
+No comment provided by engineer. */
+"Text Status" = "Status de texto";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "Obrigado :)";
+/* not a very important string. used for app intents */
+"The amount of episodes/chapters consumed by the user" = "A quantidade de episódios/capítulos consumidos pelo usuário";
+/* not a very important string. used for app intents */
+"The id of the media the entry is of" = "O ID da mídia da qual o item faz parte";
+/* feel free to translate so it sounds better in your language */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Esta função será desbloqueada quando você fizer uma doação. Qualquer quantia já conta!";
+/* en.lproj/Localizable.strings
+Threads
+No comment provided by engineer. */
+"Threads" = "Tópicos";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "Suspense";
+/* en.lproj/Localizable.strings
+Time spent
+No comment provided by engineer. */
+"Time spent" = "Tempo gasto";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "Título";
+/* en.lproj/Localizable.strings
+Title count
+No comment provided by engineer. */
+"Title count" = "Contagem de títulos";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "Idioma do título";
+/* this is a stat. num of anime or manga in your list */
+"Titles Count" = "Contagem de Títulos";
+/* en.lproj/Localizable.strings
+To year
+No comment provided by engineer. */
+"To year" = "Até o ano";
+/* en.lproj/Localizable.strings
+Top 100
+No comment provided by engineer. */
+"Top 100" = "Top 100";
+/* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "Top 100 Animes";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "Top 100 Mangás";
+/* en.lproj/Localizable.strings
+Top Movies
+No comment provided by engineer. */
+"Top Movies" = "Principais Filmes";
+/* en.lproj/Localizable.strings
+Top Popular
+No comment provided by engineer. */
+"Top Popular" = "Top Popular";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "Anime Total";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "Mangá Total";
+/* en.lproj/Localizable.strings
+Trailer
+No comment provided by engineer. */
+"Trailer" = "Trailer";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "Traduzir";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "Traduções";
+/* en.lproj/Localizable.strings
+Trending
+No comment provided by engineer. */
+"Trending" = "Em alta";
+/* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "Animes Tendência";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "Mangás Em Alta";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
 "Unfollow" = "Deixar de seguir";
-
-/* Localizable.strings
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
 "Unknown" = "Desconhecido";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
 "Upcoming" = "Próximos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
 "Upcoming Anime" = "Animes Futuros";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
 "Upcoming Manga" = "Mangás Futuros";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
 "Updated" = "Atualizado";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users
+No comment provided by engineer. */
 "Users" = "Usuários";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Users likes
+No comment provided by engineer. */
 "Users likes" = "Curtidas de usuários";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
 "Version %@" = "Versão %@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+VideoGame
+No comment provided by engineer. */
 "VideoGame" = "Vídeo Game";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
 "Visual novel" = "Visual novel";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Voice Actors
+No comment provided by engineer. */
 "Voice Actors" = "Atores de Voz";
-
-/* No comment provided by engineer. */
+/* Volumes abbreviation */
 "Vol" = "Vol.";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
 "Volumes" = "Volumes";
-
-/* No comment provided by engineer. */
+/* num of volumes read */
 "Volumes Read" = "Volumes Lidos";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watch Year
+No comment provided by engineer. */
 "Watch Year" = "Assistidos cada ano";
-
-/* (No Comment) */
+/* Eg: (User) Watched episode [25] of [Anime Title] */
 "Watched episode %1$@ of %2$@" = "Assistiu ao episódio %1$@ de %2$@";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
 "Watching" = "Assistindo";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
 "Web novel" = "Web novel";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Weekday
+No comment provided by engineer. */
 "Weekday" = "Dia da semana";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
 "Winter" = "Inverno";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+With any purchase you will gain access to exclusive app icons and custom accent colors!
+No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Com qualquer compra você irá receber acesso a ícones exclusivos do aplicativo e cores de destaque personalizadas!";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
 "Year" = "Ano";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+Years active
+No comment provided by engineer. */
 "Years active" = "Anos de atividade";
-
-/* No comment provided by engineer. */
+/* toggle on */
 "Yes" = "Sim";
-
-/* No comment provided by engineer. */
+/* en.lproj/Localizable.strings
+You may need to login again in your browser
+No comment provided by engineer. */
 "You may need to login again in your browser" = "Você pode precisar logar novamente em seu navegador";
-
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[%lld episódio(s) atrasado(s)](inflect: true)";

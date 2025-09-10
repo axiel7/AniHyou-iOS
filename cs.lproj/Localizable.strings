@@ -1,0 +1,520 @@
+/* en.lproj/Localizable.strings
++1
+No comment provided by engineer. */
+"+1" = "+1";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "Akce";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "Adaptace";
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
+"Adventure" = "Dobrodružné";
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
+"Airing" = "Ve Vysílání";
+/* for this one use the masculine form when applied. */
+"All" = "Vše";
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
+"Anime" = "Anime";
+/* en.lproj/Localizable.strings
+Background
+No comment provided by engineer. */
+"Background" = "Kontext";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
+"Calendar" = "Kalendář";
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
+"Cancel" = "Zrušit";
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
+"Cancelled" = "Zrušeno";
+/* en.lproj/Localizable.strings
+Changes will take effect on app restart
+No comment provided by engineer. */
+"Changes will take effect on app restart" = "Změny se projeví při restartu aplikace";
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
+"Chapters" = "Kapitol";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
+"Character" = "Postava";
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
+"Characters" = "Postavy";
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
+"Comedy" = "Komedie";
+/* en.lproj/Localizable.strings
+Comic
+No comment provided by engineer. */
+"Comic" = "Komiks";
+/* en.lproj/Localizable.strings
+Compact
+No comment provided by engineer. */
+"Compact" = "Kompaktní";
+/* en.lproj/Localizable.strings
+Completed */
+"Completed" = "Dokončeno";
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
+"Content" = "Obsah";
+/* en.lproj/Localizable.strings
+Current */
+"Current" = "Běžící";
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
+"Default" = "Výchozí";
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
+"Delete" = "Odstranit";
+/* en.lproj/Localizable.strings
+Display
+No comment provided by engineer. */
+"Display" = "Zobrazení";
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
+"Doujinshi" = "Dódžinši";
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
+"Drama" = "Drama";
+/* en.lproj/Localizable.strings
+Dropped */
+"Dropped" = "Zahozeno";
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
+"Duration" = "Trvání";
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
+"Ecchi" = "Ecchi";
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
+"Edit" = "Upravit";
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
+"End date" = "Datum ukončení";
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
+"English" = "Angličtina";
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
+"Episodes" = "Epizod";
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
+"Explore" = "Procházet";
+/* en.lproj/Localizable.strings
+Fall
+No comment provided by engineer. */
+"Fall" = "Podzim";
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
+"Fantasy" = "Fantasy";
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
+"Favorites" = "Oblíbené";
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
+"Finished" = "Dokončeno";
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
+"Game" = "Hra";
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
+"Hentai" = "Hentai";
+/* en.lproj/Localizable.strings
+Hiatus
+No comment provided by engineer. */
+"Hiatus" = "Má pauzu";
+/* as short as possible */
+"Home" = "Domů";
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
+"Horror" = "Horor";
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
+"Information" = "Informace";
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
+"Japanese" = "Japonština";
+/* en.lproj/Localizable.strings
+Last used
+No comment provided by engineer. */
+"Last used" = "Naposledy použité";
+/* en.lproj/Localizable.strings
+Light novel
+No comment provided by engineer. */
+"Light novel" = "Novela";
+/* en.lproj/Localizable.strings
+List style
+No comment provided by engineer. */
+"List style" = "Styl seznamu";
+/* en.lproj/Localizable.strings
+Live action
+No comment provided by engineer. */
+"Live action" = "Hraný film";
+/* en.lproj/Localizable.strings
+Loading
+No comment provided by engineer. */
+"Loading" = "Načítání";
+/* en.lproj/Localizable.strings
+Login
+No comment provided by engineer. */
+"Login" = "Přihlášení";
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
+"Mahou Shoujo" = "Mahou Shoujo";
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
+"Main" = "Hlavní";
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
+"Manga" = "Manga";
+/* normalized score.
+You can translate it simply as (Score) */
+"Mean Score" = "Skóre";
+/* en.lproj/Localizable.strings
+Mean score
+No comment provided by engineer. */
+"Mean score" = "Hodnocení";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
+"Mecha" = "Mecha";
+/* en.lproj/Localizable.strings
+Minimal
+No comment provided by engineer. */
+"Minimal" = "Minimalistický";
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
+"Movie" = "Film";
+/* en.lproj/Localizable.strings
+Multimedia project
+No comment provided by engineer. */
+"Multimedia project" = "Multimediální projekt";
+/* en.lproj/Localizable.strings
+Music
+No comment provided by engineer. */
+"Music" = "Hudba";
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
+"Mystery" = "Mysteriózní";
+/* en.lproj/Localizable.strings
+No recommendations
+No comment provided by engineer. */
+"No recommendations" = "Žádná doporučení";
+/* en.lproj/Localizable.strings
+Not yet released
+No comment provided by engineer. */
+"Not yet released" = "Dosud nevydáno";
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
+"Notes" = "Poznámky";
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
+"Notifications" = "Oznámení";
+/* en.lproj/Localizable.strings
+Novel
+No comment provided by engineer. */
+"Novel" = "Román";
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
+"OK" = "OK";
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
+"ONA" = "ONA";
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
+"OVA" = "OVA";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "Originální";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "Ostatní";
+/* en.lproj/Localizable.strings
+Paused */
+"Paused" = "Pozastaveno";
+/* en.lproj/Localizable.strings
+Picture book
+No comment provided by engineer. */
+"Picture book" = "Obrázková kniha";
+/* en.lproj/Localizable.strings
+Planning */
+"Planning" = "Plánováno";
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
+"Please login to use this feature" = "Pro použití této funkce se prosím přihlaste";
+/* en.lproj/Localizable.strings
+Popularity
+No comment provided by engineer. */
+"Popularity" = "Popularita";
+/* en.lproj/Localizable.strings
+Prequel
+No comment provided by engineer. */
+"Prequel" = "Prequel";
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
+"Producers" = "Producenti";
+/* as short as possible */
+"Profile" = "Profil";
+/* en.lproj/Localizable.strings
+Psychological
+No comment provided by engineer. */
+"Psychological" = "Psychologický";
+/* en.lproj/Localizable.strings
+Publishing
+No comment provided by engineer. */
+"Publishing" = "Publikováno";
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
+"Random" = "Náhodné";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
+"Reading" = "Čteno";
+/* en.lproj/Localizable.strings
+Recommendations
+No comment provided by engineer. */
+"Recommendations" = "Doporučení";
+/* en.lproj/Localizable.strings
+Releasing
+No comment provided by engineer. */
+"Releasing" = "Vycházející";
+/* en.lproj/Localizable.strings
+Repeating */
+"Repeating" = "Opakováno";
+/* en.lproj/Localizable.strings
+Rereading */
+"Rereading" = "Opětovné čtení";
+/* en.lproj/Localizable.strings
+Rewatching */
+"Rewatching" = "Opětovné sledování";
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
+"Romaji" = "Romaji";
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
+"Romaji (Western Order)" = "Romadži (západní pořadí)";
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
+"Romance" = "Román";
+/* en.lproj/Localizable.strings
+Sci-Fi
+No comment provided by engineer. */
+"Sci-Fi" = "Sci-Fi";
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
+"Score" = "Skóre";
+/* en.lproj/Localizable.strings
+Season
+No comment provided by engineer. */
+"Season" = "Sezóna";
+/* en.lproj/Localizable.strings
+Sequel
+No comment provided by engineer. */
+"Sequel" = "Sequel";
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
+"Settings" = "Nastavení";
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
+"Share" = "Sdílet";
+/* en.lproj/Localizable.strings
+Slice of Life
+No comment provided by engineer. */
+"Slice of Life" = "Ochutnávka života";
+/* en.lproj/Localizable.strings
+Sort
+No comment provided by engineer. */
+"Sort" = "Seřadit";
+/* en.lproj/Localizable.strings
+Source
+No comment provided by engineer. */
+"Source" = "Zdroj";
+/* en.lproj/Localizable.strings
+Special
+No comment provided by engineer. */
+"Special" = "Speciál";
+/* en.lproj/Localizable.strings
+Sports
+No comment provided by engineer. */
+"Sports" = "Sporty";
+/* en.lproj/Localizable.strings
+Spring
+No comment provided by engineer. */
+"Spring" = "Jaro";
+/* en.lproj/Localizable.strings
+Standard
+No comment provided by engineer. */
+"Standard" = "Standardní";
+/* en.lproj/Localizable.strings
+Start Date
+No comment provided by engineer. */
+"Start Date" = "Datum Zahájení";
+/* en.lproj/Localizable.strings
+Start date
+No comment provided by engineer. */
+"Start date" = "Počáteční datum";
+/* en.lproj/Localizable.strings
+Stats
+No comment provided by engineer. */
+"Stats" = "Statistiky";
+/* en.lproj/Localizable.strings
+Status
+No comment provided by engineer. */
+"Status" = "Stav";
+/* en.lproj/Localizable.strings
+Studios
+No comment provided by engineer. */
+"Studios" = "Studia";
+/* en.lproj/Localizable.strings
+Summary
+No comment provided by engineer. */
+"Summary" = "Shrnutí";
+/* en.lproj/Localizable.strings
+Summer
+No comment provided by engineer. */
+"Summer" = "Léto";
+/* en.lproj/Localizable.strings
+Supernatural
+No comment provided by engineer. */
+"Supernatural" = "Nadpřirozené";
+/* en.lproj/Localizable.strings
+Supporting
+No comment provided by engineer. */
+"Supporting" = "Podporující";
+/* en.lproj/Localizable.strings
+Synonyms
+No comment provided by engineer. */
+"Synonyms" = "Synonyma";
+/* en.lproj/Localizable.strings
+TV
+No comment provided by engineer. */
+"TV" = "TV";
+/* en.lproj/Localizable.strings
+TV Short
+No comment provided by engineer. */
+"TV Short" = "Krátkometrážní seriál";
+/* en.lproj/Localizable.strings
+Tags
+No comment provided by engineer. */
+"Tags" = "Štítky";
+/* en.lproj/Localizable.strings
+Thriller
+No comment provided by engineer. */
+"Thriller" = "Thriller";
+/* en.lproj/Localizable.strings
+Title
+No comment provided by engineer. */
+"Title" = "Název";
+/* en.lproj/Localizable.strings
+Title language
+No comment provided by engineer. */
+"Title language" = "Jazyk titulku";
+/* en.lproj/Localizable.strings
+Translate
+No comment provided by engineer. */
+"Translate" = "Přeložit";
+/* en.lproj/Localizable.strings
+Translations
+No comment provided by engineer. */
+"Translations" = "Překladatelé";
+/* en.lproj/Localizable.strings
+Trending Manga
+No comment provided by engineer. */
+"Trending Manga" = "Trendy manga";
+/* en.lproj/Localizable.strings
+Unknown
+Localizable.strings
+  AniHyou
+
+  Created by Axel Lopez on 13/10/2023. */
+"Unknown" = "Neznámo";
+/* en.lproj/Localizable.strings
+Upcoming
+No comment provided by engineer. */
+"Upcoming" = "Nadcházející";
+/* en.lproj/Localizable.strings
+Updated
+No comment provided by engineer. */
+"Updated" = "Aktualizováno";
+/* en.lproj/Localizable.strings
+Visual novel
+No comment provided by engineer. */
+"Visual novel" = "Vizuální novela";
+/* en.lproj/Localizable.strings
+Volumes
+No comment provided by engineer. */
+"Volumes" = "Svazky";
+/* en.lproj/Localizable.strings
+Watching
+No comment provided by engineer. */
+"Watching" = "Sledováno";
+/* en.lproj/Localizable.strings
+Web novel
+No comment provided by engineer. */
+"Web novel" = "Webová novela";
+/* en.lproj/Localizable.strings
+Winter
+No comment provided by engineer. */
+"Winter" = "Zima";
+/* en.lproj/Localizable.strings
+Year
+No comment provided by engineer. */
+"Year" = "Rok";
