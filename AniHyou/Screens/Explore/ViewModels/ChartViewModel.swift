@@ -28,6 +28,7 @@ class ChartViewModel: ObservableObject {
             type: type,
             sort: sort,
             status: status,
+            format: format,
             page: currentPage,
             perPage: perPage
         ) {
