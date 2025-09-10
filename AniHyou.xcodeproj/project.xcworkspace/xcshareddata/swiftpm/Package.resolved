@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NuPlay/RichText.git",
       "state" : {
-        "revision" : "ec3469ee47c17e0f90e4b43f23d7e19bc42e069b",
-        "version" : "2.7.0"
+        "revision" : "50ab84fd9df8afad2060bc11d4fc8a41d8459cc6",
+        "version" : "3.0.2"
       }
     },
     {
