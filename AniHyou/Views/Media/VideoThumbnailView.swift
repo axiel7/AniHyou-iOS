@@ -20,11 +20,13 @@ struct VideoThumbnailView: View {
             RoundedRectangle(cornerRadius: 8, style: .continuous)
                 .foregroundStyle(.black.opacity(0.2))
                 .frame(width: videoWidth, height: videoHeight)
-            Image(systemName: "play.circle")
+            Image(systemName: "play.fill")
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 20, height: 20)
                 .foregroundStyle(.white)
-                .shadow(radius: 32)
+                .padding()
+                .padding(.leading, 1)
+                .background(.thinMaterial, in: .circle)
         }
     }
 }

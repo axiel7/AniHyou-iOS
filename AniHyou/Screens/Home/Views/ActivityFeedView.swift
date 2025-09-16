@@ -60,6 +60,7 @@ struct ActivityFeedView: View {
                 } label: {
                     Image(systemName: "line.3.horizontal.decrease.circle")
                 }
+                .tint(nil)
             }
         }
         .refreshable {
