@@ -133,6 +133,8 @@
 		486ED209285DD649002D29E1 /* MediaListStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED208285DD649002D29E1 /* MediaListStatusView.swift */; };
 		486ED20D285DDC2F002D29E1 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED20C285DDC2F002D29E1 /* MediaListViewModel.swift */; };
 		486ED214285E3261002D29E1 /* MediaDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ED213285E3261002D29E1 /* MediaDetailsView.swift */; };
+		48748FE12E796E5000F3E174 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48748FE02E796E4A00F3E174 /* SearchView.swift */; };
+		48748FE52E7983DF00F3E174 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48748FE42E7983DC00F3E174 /* Chip.swift */; };
 		48801D212C3BEDC5000BEA3A /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D202C3BEDC5000BEA3A /* CurrentView.swift */; };
 		48801D232C3BF093000BEA3A /* CurrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */; };
 		48801D252C3BF397000BEA3A /* CurrentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D242C3BF397000BEA3A /* CurrentListItemView.swift */; };
@@ -502,6 +504,8 @@
 		486ED20E285DDE03002D29E1 /* ViewerId.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewerId.graphql; sourceTree = "<group>"; };
 		486ED213285E3261002D29E1 /* MediaDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsView.swift; sourceTree = "<group>"; };
 		4873757E2BDCF36500A1424F /* MediaListIds.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaListIds.graphql; sourceTree = "<group>"; };
+		48748FE02E796E4A00F3E174 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		48748FE42E7983DC00F3E174 /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip.swift; sourceTree = "<group>"; };
 		487F4BE22B282ED90002237C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		487F4BE32B282ED90002237C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		48801D202C3BEDC5000BEA3A /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
@@ -937,6 +941,7 @@
 				484E883F2A77E88B007E59E1 /* HorizontalProgressView.swift */,
 				48BB9E242ADBC43F00970D01 /* SafariWebView.swift */,
 				484D22822AEE5B9100A20FE6 /* TriPicker.swift */,
+				48748FE42E7983DC00F3E174 /* Chip.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1102,6 +1107,32 @@
 				48EFCDD829FFAD200096BF6E /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48748FDF2E796E1700F3E174 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				48748FE02E796E4A00F3E174 /* SearchView.swift */,
+				4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		48748FE22E7970AB00F3E174 /* Season */ = {
+			isa = PBXGroup;
+			children = (
+				48AC01882968624C00525B69 /* AnimeSeasonListView.swift */,
+			);
+			path = Season;
+			sourceTree = "<group>";
+		};
+		48748FE32E7970E300F3E174 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				4820F6A32ADE8BB600A4F465 /* DiscoverView.swift */,
+				481AD4F72851D927001779EE /* DiscoverViewModel.swift */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 		488763D42977F6FA00402934 /* Stats */ = {
@@ -1675,7 +1706,6 @@
 			isa = PBXGroup;
 			children = (
 				481AD4F52851D917001779EE /* HomeView.swift */,
-				4820F6A32ADE8BB600A4F465 /* DiscoverView.swift */,
 				4820F6AA2ADE96FF00A4F465 /* ActivityFeedView.swift */,
 				48801D202C3BEDC5000BEA3A /* CurrentView.swift */,
 				48801D242C3BF397000BEA3A /* CurrentListItemView.swift */,
@@ -1688,7 +1718,6 @@
 			isa = PBXGroup;
 			children = (
 				486E6FBE2C8D8E8B0069260D /* HomeViewModel.swift */,
-				481AD4F72851D927001779EE /* DiscoverViewModel.swift */,
 				4820F6AE2ADE97A200A4F465 /* ActivityFeedViewModel.swift */,
 				48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */,
 			);
@@ -1809,11 +1838,12 @@
 		48F7640328ACE64500C82D75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48748FE32E7970E300F3E174 /* Discover */,
+				48748FE22E7970AB00F3E174 /* Season */,
+				48748FDF2E796E1700F3E174 /* Search */,
 				48691FF92ADD2496009DCDFE /* Chart */,
 				48FC9478286852A300C87F56 /* ExploreView.swift */,
 				4859F4EC286DB73E00BCB9B2 /* RootExploreView.swift */,
-				4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */,
-				48AC01882968624C00525B69 /* AnimeSeasonListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2178,6 +2208,7 @@
 				48643F452853C54800D7C328 /* ProfileViewModel.swift in Sources */,
 				48218AEE2BC0878D00A03421 /* MediaSort.swift in Sources */,
 				4851578B28A4060C007923A6 /* ThreadCommentItemView.swift in Sources */,
+				48748FE52E7983DF00F3E174 /* Chip.swift in Sources */,
 				48575D872A3EACEE00F8AD22 /* NotificationTypeGrouped.swift in Sources */,
 				4820F6AF2ADE97A200A4F465 /* ActivityFeedViewModel.swift in Sources */,
 				48DD40492994EA9200FED7BF /* GenericNotification.swift in Sources */,
@@ -2318,6 +2349,7 @@
 				48B7AC172BB56DEF0047998F /* TagsStatsView.swift in Sources */,
 				48DBAF7F29B0786400A75167 /* OverviewStatsView.swift in Sources */,
 				4847E11E2B48EE770032521A /* MediaDetails.swift in Sources */,
+				48748FE12E796E5000F3E174 /* SearchView.swift in Sources */,
 				48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */,
 				48EE80FD2920ECF900344DA5 /* GlobalAppState.swift in Sources */,
 				48B7AC212BB59D4E0047998F /* VoiceActorsStatsViewModel.swift in Sources */,

@@ -16,7 +16,8 @@ struct MediaRepository {
         sort: [MediaSort],
         mediaType: MediaType,
         page: Int,
-        perPage: Int = 25
+        perPage: Int = 25,
+        forceReload: Bool = false
     ) async -> PagedResult<MediaSortedQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -25,7 +26,8 @@ struct MediaRepository {
                     perPage: .some(perPage),
                     type: .some(.case(mediaType)),
                     sort: .some(sort.map({ .case($0) }))
-                )
+                ),
+                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
             ) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -158,7 +160,8 @@ struct MediaRepository {
         onMyList: Bool?,
         sort: [AiringSort] = [.time],
         page: Int,
-        perPage: Int = 25
+        perPage: Int = 25,
+        forceReload: Bool = false
     ) async -> PagedResult<AiringAnimesQuery.Data.Page.AiringSchedule>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -168,7 +171,8 @@ struct MediaRepository {
                     sort: .some(sort.map({ .case($0) })),
                     airingAtGreater: someIfNotNil(airingAtGreater),
                     airingAtLesser: someIfNotNil(airingAtLesser)
-                )
+                ),
+                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
             ) { result in
                 switch result {
                 case .success(let graphQLResult):
@@ -202,14 +206,16 @@ struct MediaRepository {
     
     static func getAiringOnMyList(
         page: Int,
-        perPage: Int = 25
+        perPage: Int = 25,
+        forceReload: Bool = false
     ) async -> PagedResult<AiringOnMyListQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
                 query: AiringOnMyListQuery(
                     page: .some(page),
                     perPage: .some(perPage)
-                )
+                ),
+                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
             ) { result in
                 switch result {
                 case .success(let graphQLResult):

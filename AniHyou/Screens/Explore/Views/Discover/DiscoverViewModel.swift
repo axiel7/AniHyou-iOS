@@ -16,7 +16,7 @@ class DiscoverViewModel: ObservableObject {
     // MARK: Airing animes
     @Published var airingAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule]()
 
-    func getAiringAnimes(page: Int = 1) async {
+    func getAiringAnimes(page: Int = 1, forceReload: Bool = false) async {
         let todayTimestamp = Int(Date.now.timeIntervalSince1970)
         
         if let result = await MediaRepository.getAiringAnimes(
@@ -25,7 +25,8 @@ class DiscoverViewModel: ObservableObject {
             onMyList: nil,
             sort: [.time],
             page: page,
-            perPage: 10
+            perPage: 10,
+            forceReload: forceReload
         ) {
             airingAnimes = result.data
         }
@@ -33,8 +34,11 @@ class DiscoverViewModel: ObservableObject {
 
     @Published var airingOnMyList = [AiringOnMyListQuery.Data.Page.Medium]()
 
-    func getAiringOnMyList() async {
-        if let result = await MediaRepository.getAiringOnMyList(page: 1) {
+    func getAiringOnMyList(forceReload: Bool = false) async {
+        if let result = await MediaRepository.getAiringOnMyList(
+            page: 1,
+            forceReload: forceReload
+        ) {
             airingOnMyList = result.data
         }
     }
@@ -59,12 +63,13 @@ class DiscoverViewModel: ObservableObject {
     var hasNextPageTrendingAnime = true
     @Published var trendingAnimes = [MediaSortedQuery.Data.Page.Medium]()
 
-    func getTrendingAnimes(page: Int = 1) async {
+    func getTrendingAnimes(page: Int = 1, forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.trendingDesc],
             mediaType: .anime,
             page: page,
-            perPage: 10
+            perPage: 10,
+            forceReload: forceReload
         ) {
             trendingAnimes += result.data
             hasNextPageTrendingAnime = result.hasNextPage
@@ -92,12 +97,13 @@ class DiscoverViewModel: ObservableObject {
     var hasNextPageTrendingManga = true
     @Published var trendingManga = [MediaSortedQuery.Data.Page.Medium]()
 
-    func getTrendingManga(page: Int = 1) async {
+    func getTrendingManga(page: Int = 1, forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.trendingDesc],
             mediaType: .manga,
             page: page,
-            perPage: 10
+            perPage: 10,
+            forceReload: forceReload
         ) {
             trendingManga += result.data
             hasNextPageTrendingManga = result.hasNextPage
@@ -110,12 +116,13 @@ class DiscoverViewModel: ObservableObject {
     var hasNextPageNewlyAnime = true
     @Published var newlyAnime = [MediaSortedQuery.Data.Page.Medium]()
     
-    func getNewlyAnime(page: Int = 1) async {
+    func getNewlyAnime(page: Int = 1, forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.idDesc],
             mediaType: .anime,
             page: page,
-            perPage: 10
+            perPage: 10,
+            forceReload: forceReload
         ) {
             newlyAnime += result.data
             hasNextPageNewlyAnime = result.hasNextPage
@@ -128,16 +135,47 @@ class DiscoverViewModel: ObservableObject {
     var hasNextPageNewlyManga = true
     @Published var newlyManga = [MediaSortedQuery.Data.Page.Medium]()
     
-    func getNewlyManga(page: Int = 1) async {
+    func getNewlyManga(page: Int = 1, forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.idDesc],
             mediaType: .manga,
             page: page,
-            perPage: 10
+            perPage: 10,
+            forceReload: forceReload
         ) {
             newlyManga += result.data
             hasNextPageNewlyManga = result.hasNextPage
             pageNewlyManga = result.page
+        }
+    }
+    
+    func onRefresh() async {
+        if !airingAnimes.isEmpty {
+            await getAiringAnimes(page: 1, forceReload: true)
+        } else if !airingOnMyList.isEmpty {
+            await getAiringOnMyList(forceReload: true)
+        }
+        
+        if !trendingAnimes.isEmpty {
+            pageTrendingAnime = 1
+            hasNextPageTrendingAnime = true
+            await getTrendingAnimes(page: 1, forceReload: true)
+        }
+        if !trendingManga.isEmpty {
+            pageTrendingManga = 1
+            hasNextPageTrendingManga = true
+            await getTrendingManga(page: 1, forceReload: true)
+        }
+        
+        if !newlyAnime.isEmpty {
+            pageNewlyAnime = 1
+            hasNextPageNewlyAnime = true
+            await getNewlyAnime(page: 1, forceReload: true)
+        }
+        if !newlyManga.isEmpty {
+            pageNewlyManga = 1
+            hasNextPageNewlyManga = true
+            await getNewlyManga(page: 1, forceReload: true)
         }
     }
 }

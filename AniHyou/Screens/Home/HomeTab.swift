@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 enum HomeTab: Int, CaseIterable {
-    case discover = 0
     case activity = 1
     case current = 2
 }
@@ -17,8 +16,6 @@ enum HomeTab: Int, CaseIterable {
 extension HomeTab {
     var localizedName: LocalizedStringKey {
         switch self {
-        case .discover:
-            "Discover"
         case .activity:
             "Activity"
         case .current:
@@ -28,8 +25,6 @@ extension HomeTab {
     
     var systemImage: String {
         switch self {
-        case .discover:
-            "globe"
         case .activity:
             "text.bubble"
         case .current:

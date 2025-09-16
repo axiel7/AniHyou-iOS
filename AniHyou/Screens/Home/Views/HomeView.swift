@@ -23,13 +23,6 @@ struct HomeView: View {
             .navigationTitle("Home")
         } detail: {
             switch viewModel.currentTab {
-            case .discover:
-                DiscoverView()
-                    .navigationTitle("Discover")
-                    .toolbar {
-                        toolbarContent
-                    }
-                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
             case .activity:
                 ActivityFeedView()
                     .navigationTitle("Activity")
