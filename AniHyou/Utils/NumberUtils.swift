@@ -49,4 +49,22 @@ extension Int? {
         guard let self else { return false }
         return self > 0
     }
+    
+    func greaterThanZeroOrNil() -> Int? {
+        if let self, self > 0 {
+            self
+        } else {
+            nil
+        }
+    }
+}
+
+extension Double? {
+    func greaterThanZeroOrNil() -> Double? {
+        if let self, self > 0 {
+            self
+        } else {
+            nil
+        }
+    }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SmileyRatingView: View {
 
-    @Binding var rating: Double
+    @Binding var rating: Double?
     var size: CGFloat = 30
     var offColor = Color.gray
 

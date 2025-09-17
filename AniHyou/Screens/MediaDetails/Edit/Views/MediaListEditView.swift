@@ -23,9 +23,9 @@ struct MediaListEditView: View {
     @AppStorage(ADVANCED_SCORING_ENABLED_KEY) private var advancedScoringEnabled: Bool?
 
     @State private var status: MediaListStatus = .planning
-    @State private var progress = 0
-    @State private var progressVolumes = 0
-    @State private var repeatCount = 0
+    @State private var progress: Int?
+    @State private var progressVolumes: Int?
+    @State private var repeatCount: Int?
     @State private var startDate = Date()
     @State private var isStartDateSet = false
     @State private var finishDate = Date()
@@ -67,97 +67,9 @@ struct MediaListEditView: View {
                     }
                 }
 
-                Section("Score") {
-                    switch viewModel.scoreFormat {
-                    case .point5:
-                        HStack {
-                            Spacer()
-                            StarRatingView(rating: $viewModel.score)
-                            Spacer()
-                        }
-                    case .point3:
-                        HStack {
-                            Spacer()
-                            SmileyRatingView(rating: $viewModel.score)
-                            Spacer()
-                        }
-                    default:
-                        HStack {
-                            TextField("", value: $viewModel.score, formatter: decimalFormatter)
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: textFieldWidth)
-
-                            Stepper("/\(viewModel.scoreHint)",
-                                    value: $viewModel.score,
-                                    in: viewModel.scoreRange,
-                                    step: viewModel.scoreStep
-                            )
-                        }
-                    }
-                }
-
-                Section("Progress") {
-                    HStack {
-                        TextField("", value: $progress, formatter: NumberFormatter())
-                            .keyboardType(.numberPad)
-                            .textFieldStyle(.roundedBorder)
-                            .frame(width: textFieldWidth)
-                            .onChange(of: progress) {
-                                if let max = mediaDetails.maxEpOrCh, progress > max {
-                                    progress = max
-                                }
-                            }
-                        Stepper(
-                            mediaDetails.type == .anime ? "Episodes" : "Chapters",
-                            value: $progress, in: 0...(mediaDetails.maxEpOrCh ?? Int.max)
-                        )
-                    }
-                    .onChange(of: progress) {
-                        if status == .planning || mediaList == nil {
-                            onUpdatedFromPlanning()
-                        }
-                        if let maxProgress = mediaDetails.maxEpOrCh,
-                           progress >= maxProgress
-                        {
-                            onMaxProgressReached()
-                        }
-                    }
-                    if mediaDetails.type == .manga {
-                        HStack {
-                            TextField("", value: $progressVolumes, formatter: NumberFormatter())
-                                .keyboardType(.numberPad)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: textFieldWidth)
-                                .onChange(of: progressVolumes) {
-                                    if let max = mediaDetails.volumes, progressVolumes > max {
-                                        progressVolumes = max
-                                    }
-                                }
-                            Stepper("Volumes", value: $progressVolumes, in: 0...(mediaDetails.volumes ?? Int.max))
-                        }
-                        .onChange(of: progressVolumes) {
-                            if status == .planning || mediaList == nil {
-                                onUpdatedFromPlanning()
-                            }
-                            if let maxVolumes = mediaDetails.volumes,
-                               progressVolumes >= maxVolumes
-                            {
-                                onMaxProgressReached()
-                            }
-                        }
-                    }
-                }
-
-                Section {
-                    HStack {
-                        TextField("", value: $repeatCount, formatter: NumberFormatter())
-                            .keyboardType(.numberPad)
-                            .textFieldStyle(.roundedBorder)
-                            .frame(width: textFieldWidth)
-                        Stepper("Repeat Count", value: $repeatCount, in: 0...Int.max)
-                    }
-                }
+                scoreSection
+                
+                progressSection
 
                 Section("Dates") {
                     DatePickerToggleView(text: "Start Date", selection: $startDate, isDateSet: $isStartDateSet)
@@ -217,6 +129,175 @@ struct MediaListEditView: View {
             if viewModel.isDeleteSuccess {
                 onDelete()
                 dismiss()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var scoreSection: some View {
+        Section("Score") {
+            switch viewModel.scoreFormat {
+            case .point5:
+                HStack {
+                    Spacer()
+                    StarRatingView(rating: $viewModel.score)
+                    Spacer()
+                }
+            case .point3:
+                HStack {
+                    Spacer()
+                    SmileyRatingView(rating: $viewModel.score)
+                    Spacer()
+                }
+            default:
+                HStack {
+                    TextField("0", value: $viewModel.score, formatter: decimalFormatter)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: textFieldWidth)
+
+                    Stepper(
+                        "/\(viewModel.scoreHint)",
+                        onIncrement: {
+                            if (viewModel.score ?? 0) < viewModel.scoreMax {
+                                if viewModel.score == nil {
+                                    viewModel.score = viewModel.scoreStep
+                                } else {
+                                    viewModel.score! += viewModel.scoreStep
+                                }
+                            }
+                        },
+                        onDecrement: {
+                            if viewModel.score != nil && viewModel.score! > 0 {
+                                if (viewModel.score! - viewModel.scoreStep) <= 0 {
+                                    viewModel.score = nil
+                                } else {
+                                    viewModel.score! -= viewModel.scoreStep
+                                }
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var progressSection: some View {
+        Section("Progress") {
+            HStack {
+                TextField("0", value: $progress, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: textFieldWidth)
+                    .onChange(of: progress) {
+                        if let max = mediaDetails.maxEpOrCh, (progress ?? 0) > max {
+                            progress = max
+                        }
+                    }
+                Stepper(
+                    mediaDetails.type == .anime ? "Episodes" : "Chapters",
+                    onIncrement: {
+                        if let maxValue = mediaDetails.maxEpOrCh, (progress ?? 0) < maxValue {
+                            if progress == nil {
+                                progress = 1
+                            } else {
+                                progress! += 1
+                            }
+                        }
+                    },
+                    onDecrement: {
+                        if progress != nil && progress! > 0 {
+                            if progress == 1 {
+                                progress = nil
+                            } else {
+                                progress! -= 1
+                            }
+                        }
+                    }
+                )
+            }
+            .onChange(of: progress) {
+                if status == .planning || mediaList == nil {
+                    onUpdatedFromPlanning()
+                }
+                if let maxProgress = mediaDetails.maxEpOrCh,
+                   (progress ?? 0) >= maxProgress
+                {
+                    onMaxProgressReached()
+                }
+            }
+            if mediaDetails.type == .manga {
+                HStack {
+                    TextField("0", value: $progressVolumes, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: textFieldWidth)
+                        .onChange(of: progressVolumes) {
+                            if let max = mediaDetails.volumes, (progressVolumes ?? 0) > max {
+                                progressVolumes = max
+                            }
+                        }
+                    Stepper(
+                        "Volumes",
+                        onIncrement: {
+                            if let maxValue = mediaDetails.volumes, (progressVolumes ?? 0) < maxValue {
+                                if progressVolumes == nil {
+                                    progressVolumes = 1
+                                } else {
+                                    progressVolumes! += 1
+                                }
+                            }
+                        },
+                        onDecrement: {
+                            if progressVolumes != nil && progressVolumes! > 0 {
+                                if progressVolumes == 1 {
+                                    progressVolumes = nil
+                                } else {
+                                    progressVolumes! -= 1
+                                }
+                            }
+                        }
+                    )
+                }
+                .onChange(of: progressVolumes) {
+                    if status == .planning || mediaList == nil {
+                        onUpdatedFromPlanning()
+                    }
+                    if let maxVolumes = mediaDetails.volumes,
+                       (progressVolumes ?? 0) >= maxVolumes
+                    {
+                        onMaxProgressReached()
+                    }
+                }
+            }
+        }
+
+        Section {
+            HStack {
+                TextField("0", value: $repeatCount, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: textFieldWidth)
+                Stepper(
+                    "Repeat Count",
+                    onIncrement: {
+                        if repeatCount == nil {
+                            repeatCount = 1
+                        } else {
+                            repeatCount! += 1
+                        }
+                    },
+                    onDecrement: {
+                        if repeatCount != nil && repeatCount! > 0 {
+                            if repeatCount == 1 {
+                                repeatCount = nil
+                            } else {
+                                repeatCount! -= 1
+                            }
+                        }
+                    }
+                )
             }
         }
     }
@@ -289,7 +370,7 @@ struct MediaListEditView: View {
                     
                     Stepper("/\(viewModel.scoreHint)",
                             value: value,
-                            in: viewModel.scoreRange,
+                            in: 0...viewModel.scoreMax,
                             step: viewModel.scoreStep
                     )
                 }
@@ -318,10 +399,10 @@ struct MediaListEditView: View {
     private func setValues() {
         viewModel.entry = self.mediaList
         self.status = self.mediaList?.status?.value ?? .planning
-        self.progress = self.mediaList?.progress ?? 0
-        self.progressVolumes = self.mediaList?.progressVolumes ?? 0
-        self.repeatCount = self.mediaList?.repeat ?? 0
-        viewModel.score = self.mediaList?.score ?? 0
+        self.progress = self.mediaList?.progress.greaterThanZeroOrNil()
+        self.progressVolumes = self.mediaList?.progressVolumes.greaterThanZeroOrNil()
+        self.repeatCount = self.mediaList?.repeat.greaterThanZeroOrNil()
+        viewModel.score = self.mediaList?.score.greaterThanZeroOrNil()
         if let startedYear = self.mediaList?.startedAt?.year {
             if let startedMonth = self.mediaList?.startedAt?.month {
                 if let startedDay = self.mediaList?.startedAt?.day {
@@ -362,4 +443,5 @@ struct MediaListEditView: View {
 
 #Preview {
     MediaListEditView(mediaDetails: BasicMediaDetails(_fieldData: nil))
+// swiftlint:disable:next file_length
 }

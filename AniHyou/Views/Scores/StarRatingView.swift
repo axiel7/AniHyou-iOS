@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StarRatingView: View {
 
-    @Binding var rating: Double
+    @Binding var rating: Double?
 
     private let offImage = Image(systemName: "star")
     private let onImage = Image(systemName: "star.fill")
@@ -20,7 +20,7 @@ struct StarRatingView: View {
             ForEach(1...5, id: \.self) {
                 let number = Double($0)
                 image(for: number)
-                    .foregroundStyle(number > rating ? offColor : .accentColor)
+                    .foregroundStyle(number > (rating ?? 0) ? offColor : .accentColor)
                     .onTapGesture {
                         if rating == number {
                             rating = 0
@@ -31,7 +31,7 @@ struct StarRatingView: View {
     }
 
     func image(for number: Double) -> Image {
-        number > rating ? offImage : onImage
+        number > (rating ?? 0) ? offImage : onImage
     }
 }
 

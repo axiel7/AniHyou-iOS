@@ -8,6 +8,7 @@
 import SwiftUI
 import AniListAPI
 
+// swiftlint:disable:next type_body_length
 struct SearchView: View {
     
     @ObservedObject var viewModel: SearchViewModel

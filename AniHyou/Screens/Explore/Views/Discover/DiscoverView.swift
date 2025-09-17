@@ -449,9 +449,9 @@ struct DiscoverView: View {
     }
 }
 
-// swiftlint:disable:next file_length
 #Preview {
     NavigationStack {
         DiscoverView()
     }
+// swiftlint:disable:next file_length
 }

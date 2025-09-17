@@ -15,9 +15,9 @@ class MediaListEditViewModel: ObservableObject {
 
     @Published var isLoading = false
 
-    @Published var score: Double = 0 {
+    @Published var score: Double? {
         didSet {
-            if score > scoreMax {
+            if let value = score, value > scoreMax {
                 score = oldValue
             }
         }
@@ -44,10 +44,6 @@ class MediaListEditViewModel: ObservableObject {
 
     var scoreHint: String {
         String(format: "%.0f", scoreMax)
-    }
-
-    var scoreRange: ClosedRange<Double> {
-        0...scoreMax
     }
 
     var scoreStep: Double {
