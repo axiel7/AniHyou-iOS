@@ -59,4 +59,15 @@ extension View {
             self.buttonStyle(.borderedProminent)
         }
     }
+    
+    @ViewBuilder
+    func pinnedViewBackground(hasScrolled: Bool) -> some View {
+        if #available(iOS 26, *) {
+            self
+                .glassEffectCompat(isEnabled: hasScrolled)
+        } else {
+            self
+                .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))
+        }
+    }
 }

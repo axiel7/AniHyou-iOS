@@ -12,19 +12,6 @@ import RichText
 private let avatarSize: CGFloat = 110
 private let bannerHeight: CGFloat = 110
 
-fileprivate extension View {
-    @ViewBuilder
-    func pinnedViewBackground(hasScrolled: Bool) -> some View {
-        if #available(iOS 26, *) {
-            self
-                .glassEffectCompat(isEnabled: hasScrolled)
-        } else {
-            self
-                .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))
-        }
-    }
-}
-
 struct ProfileView: View {
 
     var userId: Int?

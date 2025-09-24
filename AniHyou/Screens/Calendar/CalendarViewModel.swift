@@ -18,7 +18,11 @@ class CalendarViewModel: ObservableObject {
     func getAiringAnimes(weekday: Int, onMyList: Bool, resetPage: Bool = false) async {
         if resetPage { currentPage = 1 }
         
-        if let result = await MediaRepository.getAiringAnimes(weekday: weekday, onMyList: onMyList, page: currentPage) {
+        if let result = await MediaRepository.getAiringAnimes(
+            weekday: weekday,
+            onMyList: onMyList,
+            page: currentPage
+        ) {
             if resetPage {
                 weeklyAnimes = result.data
             } else {

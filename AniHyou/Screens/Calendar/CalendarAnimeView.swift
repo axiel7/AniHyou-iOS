@@ -11,20 +11,28 @@ struct CalendarAnimeView: View {
 
     @State private var weekday = Date.now.weekday
     @State private var onMylist = false
+    @State private var hasScrolled = false
 
     var body: some View {
-        VStack {
-            Picker("Weekday", selection: $weekday) {
-                ForEach(1...7, id: \.self) { day in
-                    Text(Calendar.current.veryShortSymbol(weekday: day))
+        ScrollViewWithOffset(onScroll: { hasScrolled = $0.y < 0 }) {
+            LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
+                Section {
+                    WeekAnimeListView(weekday: weekday, onMyList: onMylist)
+                } header: {
+                    VStack(spacing: 0) {
+                        Picker("Weekday", selection: $weekday) {
+                            ForEach(Calendar.current.weekdaysOrderedByFirstWeekday(), id: \.self) { day in
+                                Text(Calendar.current.veryShortSymbol(weekday: day))
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding()
+                        .pinnedViewBackground(hasScrolled: hasScrolled)
+                        if #unavailable(iOS 26) {
+                            Divider()
+                        }
+                    }
                 }
-            }
-            .pickerStyle(.segmented)
-            .padding()
-
-            Spacer()
-            ScrollView(.vertical) {
-                WeekAnimeListView(weekday: weekday, onMyList: onMylist)
             }
         }
         .navigationBarTitle("Calendar")
@@ -68,7 +76,7 @@ struct WeekAnimeListView: View {
 
     var body: some View {
         LazyVGrid(columns: gridColumns) {
-            ForEach(viewModel.weeklyAnimes, id: \.mediaId) { item in
+            ForEach(viewModel.weeklyAnimes, id: \.id) { item in
                 if let media = item.media {
                     NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
                         VListItemView(

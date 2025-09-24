@@ -73,17 +73,31 @@ extension Date {
 
     /// returns the requesed weekday timestamp (start or end of the day)
     func getThisWeekdayTimestamp(weekday: Int, isEndOfDay: Bool) -> Int {
-        let diff = weekday - self.weekday
-        if let weekdayDate = Calendar.current.date(byAdding: .day, value: diff, to: self) {
-            if isEndOfDay {
-                return Int(Calendar.current.date(
-                    byAdding: DateComponents(day: 1, second: -1),
-                    to: weekdayDate)!.timeIntervalSince1970
-                )
+        let calendar = Calendar.current
+        let currentWeekday = calendar.component(.weekday, from: self)
+        
+        let diff = weekday - currentWeekday
+        guard let weekdayDate = calendar.date(byAdding: .day, value: diff, to: self) else {
+            return 0
+        }
+        
+        // Truncate to midnight
+        let startOfDay = calendar.startOfDay(for: weekdayDate)
+        
+        let resultDate: Date
+        if isEndOfDay {
+            // Next day midnight minus 1 second
+            if let nextDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) {
+                resultDate = nextDay.addingTimeInterval(-1)
             } else {
-                return Int(Calendar.current.startOfDay(for: weekdayDate).timeIntervalSince1970)
+                resultDate = startOfDay
             }
-        } else { return 0 }
+        } else {
+            // Same day midnight minus 1 second
+            resultDate = startOfDay.addingTimeInterval(-1)
+        }
+        
+        return Int(resultDate.timeIntervalSince1970)
     }
 
     func toFuzzyDate() -> FuzzyDateInput {
@@ -97,8 +111,17 @@ extension Date {
 
 extension Calendar {
     func veryShortSymbol(weekday: Int) -> String {
-        let dayIndex = ((weekday - 1) + (firstWeekday - 1)) % 7
-        return veryShortWeekdaySymbols[dayIndex]
+        return veryShortWeekdaySymbols[weekday - 1]
+    }
+    
+    func weekdaysOrderedByFirstWeekday() -> [Int] {
+        let first = self.firstWeekday
+        
+        let all = Array(1...7)
+        
+        // Slice starting from firstWeekday, then wrap
+        let ordered = Array(all[first-1..<all.count] + all[0..<first-1])
+        return ordered
     }
 }
 
