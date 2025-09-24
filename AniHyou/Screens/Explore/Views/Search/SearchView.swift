@@ -8,6 +8,7 @@
 import SwiftUI
 import AniListAPI
 
+// swiftlint:disable syntactic_sugar
 // swiftlint:disable:next type_body_length
 struct SearchView: View {
     
@@ -315,3 +316,4 @@ struct SearchView: View {
         }//:Sheet
     }
 }
+// swiftlint:enable syntactic_sugar
