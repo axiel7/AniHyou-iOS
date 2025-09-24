@@ -12,15 +12,6 @@ import Nuke
 import NukeUI
 import RegexBuilder
 
-private let centerRegex = Regex {
-    "~~~"
-    Capture {
-        ZeroOrMore(.any)
-    }
-    "~~~"
-  }
-  .anchorsMatchLineEndings()
-
 private let imageRegex = Regex {
     "img"
     Capture {
@@ -71,9 +62,7 @@ extension String {
     func formatMarkdown() -> String {
         var str = self
         // remove center tags, markdown doesnt support it
-        str.replace(centerRegex) { matches in
-            "\(matches.1)"
-        }
+        str.replace("~~~", with: "")
         // formats the weird AniList markdown syntax img(url) to the standard ![img](url)
         str.replace(imageRegex) { matches in
             "\n![\(matches.1)]\(matches.2)"
