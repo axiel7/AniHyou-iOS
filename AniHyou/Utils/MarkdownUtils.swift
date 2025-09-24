@@ -10,6 +10,47 @@ import SwiftUI
 import MarkdownUI
 import Nuke
 import NukeUI
+import RegexBuilder
+
+private let centerRegex = Regex {
+    "~~~"
+    Capture {
+        ZeroOrMore(.any)
+    }
+    "~~~"
+  }
+  .anchorsMatchLineEndings()
+
+private let imageRegex = Regex {
+    "img"
+    Capture {
+      Regex {
+        ZeroOrMore(.digit)
+        ZeroOrMore {
+          "%"
+        }
+      }
+    }
+    Capture {
+      Regex {
+        "("
+        ZeroOrMore(.reluctant) {
+          /./
+        }
+        ")"
+      }
+    }
+  }
+  .anchorsMatchLineEndings()
+
+private let spoilerRegex = Regex {
+    "~!"
+    Capture {
+        ZeroOrMore(.any)
+    }
+    "!~"
+  }
+  .anchorsMatchLineEndings()
 
 extension Markdown {
     func defaultStyle(fontSize: CGFloat = 10) -> some View {
@@ -29,12 +70,16 @@ extension Markdown {
 extension String {
     func formatMarkdown() -> String {
         var str = self
+        // remove center tags, markdown doesnt support it
+        str.replace(centerRegex) { matches in
+            "\(matches.1)"
+        }
         // formats the weird AniList markdown syntax img(url) to the standard ![img](url)
-        str.replace(/img(\d*%*)(\(.*?\))/) { matches in
+        str.replace(imageRegex) { matches in
             "\n![\(matches.1)]\(matches.2)"
         }
         // TODO: better format spoiler ~!!~
-        str.replace(/~!(.*)!~/) { matches in
+        str.replace(spoilerRegex) { matches in
             "**SPOILER:** ~\(matches.1)~"
         }
         return str
