@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class StaffDetailsViewModel: ObservableObject {
+@Observable class StaffDetailsViewModel {
 
-    @Published var staff: StaffDetailsQuery.Data.Staff?
+    var staff: StaffDetailsQuery.Data.Staff?
 
     func getStaffDetails(staffId: Int) async {
         staff = await StaffRepository.getStaffDetails(staffId: staffId)
@@ -47,8 +46,8 @@ class StaffDetailsViewModel: ObservableObject {
         })
     }
 
-    @Published var mediaOnMyList: Bool?
-    @Published var staffMedia = [StaffMediaGrouped]()
+    var mediaOnMyList: Bool?
+    var staffMedia = [StaffMediaGrouped]()
     var pageMedia = 1
     var hasNextPageMedia = true
 
@@ -70,8 +69,8 @@ class StaffDetailsViewModel: ObservableObject {
         hasNextPageMedia = true
     }
 
-    @Published var charactersOnMyList: Bool?
-    @Published var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge]()
+    var charactersOnMyList: Bool?
+    var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge]()
     var pageCharacters = 1
     var hasNextPageCharacters = true
 

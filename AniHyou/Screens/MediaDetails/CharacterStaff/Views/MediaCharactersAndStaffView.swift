@@ -10,7 +10,7 @@ import SwiftUI
 struct MediaCharactersAndStaffView: View {
 
     let mediaId: Int
-    @StateObject private var viewModel = CharacterStaffViewModel()
+    @State private var viewModel = CharacterStaffViewModel()
     private let gridRows = [
         GridItem(.fixed(StaffView.imageSize), spacing: 16, alignment: .leading),
         GridItem(.fixed(StaffView.imageSize), alignment: .leading)

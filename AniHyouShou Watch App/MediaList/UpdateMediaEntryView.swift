@@ -12,7 +12,7 @@ struct UpdateMediaEntryView: View {
     @Environment(\.dismiss) var dismiss
 
     let entry: ShouUserMediaList
-    @ObservedObject var viewModel: MediaListViewModel
+    var viewModel: MediaListViewModel
 
     var body: some View {
         VStack(alignment: .leading) {

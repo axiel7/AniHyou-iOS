@@ -8,12 +8,11 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class TagsStatsViewModel: ObservableObject {
+@Observable class TagsStatsViewModel {
     
-    @Published var isLoading = false
-    @Published var distribution: StatDistributionType = .titles
-    @Published var tags = [TagStat]()
+    var isLoading = false
+    var distribution: StatDistributionType = .titles
+    var tags = [TagStat]()
     
     func getTagsStats(userId: Int, mediaType: MediaType) async {
         isLoading = true

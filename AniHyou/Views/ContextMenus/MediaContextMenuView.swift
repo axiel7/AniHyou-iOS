@@ -49,7 +49,7 @@ extension View {
 struct MediaContextMenuView: View {
     
     var mediaId: Int
-    @StateObject private var viewModel = MediaContextMenuViewModel()
+    @State private var viewModel = MediaContextMenuViewModel()
     
     var body: some View {
         ZStack {

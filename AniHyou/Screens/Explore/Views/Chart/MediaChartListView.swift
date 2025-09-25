@@ -15,7 +15,7 @@ struct MediaChartListView: View {
     let sort: MediaSort
     var status: MediaStatus?
     var format: MediaFormat?
-    @StateObject private var viewModel = ChartViewModel()
+    @State private var viewModel = ChartViewModel()
 
     var body: some View {
         List {

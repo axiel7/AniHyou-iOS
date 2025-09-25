@@ -68,7 +68,7 @@ struct WeekAnimeListView: View {
 
     let weekday: Int
     let onMyList: Bool
-    @StateObject private var viewModel = CalendarViewModel()
+    @State private var viewModel = CalendarViewModel()
 
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
@@ -103,6 +103,7 @@ struct WeekAnimeListView: View {
                     }
             }
         }
+        .padding(.bottom)
         .onChange(of: weekday) {
             Task {
                 await viewModel.getAiringAnimes(

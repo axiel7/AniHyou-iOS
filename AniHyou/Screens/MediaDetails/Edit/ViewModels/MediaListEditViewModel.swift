@@ -8,14 +8,13 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class MediaListEditViewModel: ObservableObject {
+@Observable class MediaListEditViewModel {
 
     var entry: BasicMediaListEntry?
 
-    @Published var isLoading = false
+    var isLoading = false
 
-    @Published var score: Double? {
+    var score: Double? {
         didSet {
             if let value = score, value > scoreMax {
                 score = oldValue
@@ -55,7 +54,7 @@ class MediaListEditViewModel: ObservableObject {
         }
     }
 
-    @Published var isUpdateSuccess = false
+    var isUpdateSuccess = false
 
     // swiftlint:disable:next function_parameter_count
     func updateEntry(
@@ -100,7 +99,7 @@ class MediaListEditViewModel: ObservableObject {
         }
     }
 
-    @Published var isDeleteSuccess = false
+    var isDeleteSuccess = false
 
     func deleteEntry() async {
         guard let entryId = entry?.id else { return }

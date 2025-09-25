@@ -18,7 +18,7 @@ struct ProfileView: View {
     var isMyProfile: Bool {
         userId == nil
     }
-    @StateObject private var viewModel = ProfileViewModel()
+    @State private var viewModel = ProfileViewModel()
     @State private var showLogOutDialog = false
     @State private var infoType: ProfileInfoType = .activity
     @State private var hasScrolled = false

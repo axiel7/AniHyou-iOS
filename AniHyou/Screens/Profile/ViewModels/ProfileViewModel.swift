@@ -9,10 +9,9 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
-@MainActor
-class ProfileViewModel: ObservableObject {
+@Observable class ProfileViewModel {
 
-    @Published var userInfo: UserInfo?
+    var userInfo: UserInfo?
     
     var isLoading: Bool {
         userInfo == nil

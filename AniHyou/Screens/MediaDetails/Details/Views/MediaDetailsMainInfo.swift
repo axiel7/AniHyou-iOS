@@ -13,7 +13,7 @@ private let coverHeight: CGFloat = 153
 struct MediaDetailsMainInfo: View {
 
     let mediaId: Int
-    @ObservedObject var viewModel: MediaDetailsViewModel
+    var viewModel: MediaDetailsViewModel
     @State private var showingEditSheet = false
     @State private var showingCoverSheet = false
     @State private var showingNotLoggedAlert = false

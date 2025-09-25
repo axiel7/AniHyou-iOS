@@ -11,7 +11,7 @@ import SwiftUI
 struct AniHyouApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject private var globalAppState = GlobalAppState.shared
+    @State private var globalAppState = GlobalAppState.shared
     @AppStorage(ACCENT_COLOR_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var accentColor = ANIHYOU_COLOR
 
     var body: some Scene {

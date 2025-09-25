@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class UserFavoritesViewModel: ObservableObject {
+@Observable class UserFavoritesViewModel {
 
-    @Published var favoritesAnime = [UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node]()
+    var favoritesAnime = [UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node]()
 
     var currentPageAnime = 1
     var hasNextPageAnime = true
@@ -24,7 +23,7 @@ class UserFavoritesViewModel: ObservableObject {
         }
     }
 
-    @Published var favoritesManga = [UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node]()
+    var favoritesManga = [UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node]()
 
     var currentPageManga = 1
     var hasNextPageManga = true
@@ -37,7 +36,7 @@ class UserFavoritesViewModel: ObservableObject {
         }
     }
 
-    @Published var favoritesCharacters = [UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node]()
+    var favoritesCharacters = [UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node]()
 
     var currentPageCharacter = 1
     var hasNextPageCharacter = true
@@ -50,7 +49,7 @@ class UserFavoritesViewModel: ObservableObject {
         }
     }
 
-    @Published var favoritesStaff = [UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node]()
+    var favoritesStaff = [UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node]()
 
     var currentPageStaff = 1
     var hasNextPageStaff = true
@@ -63,7 +62,7 @@ class UserFavoritesViewModel: ObservableObject {
         }
     }
 
-    @Published var favoritesStudio = [UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node]()
+    var favoritesStudio = [UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node]()
 
     var currentPageStudio = 1
     var hasNextPageStudio = true

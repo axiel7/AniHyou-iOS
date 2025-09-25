@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GenreTagSelectionView: View {
 
-    @ObservedObject var viewModel: SearchViewModel
+    @Bindable var viewModel: SearchViewModel
     let onDone: () -> Void
     @State private var selectionType: Int = 0
     @Environment(\.dismiss) private var dismiss

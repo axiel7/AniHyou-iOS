@@ -11,7 +11,7 @@ import AniListAPI
 struct MediaListView: View {
 
     let type: MediaType
-    @StateObject private var viewModel = MediaListViewModel()
+    @State private var viewModel = MediaListViewModel()
 
     var body: some View {
         NavigationStack {

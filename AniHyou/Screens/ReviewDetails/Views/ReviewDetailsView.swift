@@ -11,7 +11,7 @@ import RichText
 struct ReviewDetailsView: View {
 
     let reviewId: Int
-    @StateObject private var viewModel = ReviewDetailsViewModel()
+    @State private var viewModel = ReviewDetailsViewModel()
 
     var body: some View {
         ScrollView(.vertical) {

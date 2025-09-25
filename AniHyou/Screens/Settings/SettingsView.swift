@@ -41,8 +41,8 @@ public enum AccentColorMode: String, Equatable, CaseIterable {
 
 struct SettingsView: View {
 
-    @StateObject private var viewModel = SettingsViewModel()
-    @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
+    @State private var viewModel = SettingsViewModel()
+    private var connectivityManager = WatchConnectivityManager.shared
     
     @State private var showLogOutDialog = false
     @State private var showColorPicker = false

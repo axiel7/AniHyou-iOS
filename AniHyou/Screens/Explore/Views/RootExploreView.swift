@@ -11,7 +11,7 @@ import SwiftUI
 
 struct RootExploreView: View {
 
-    @StateObject private var viewModel = SearchViewModel()
+    @State private var viewModel = SearchViewModel()
     @State private var showingMediaDetails = false
     @State private var mediaId = 0
 

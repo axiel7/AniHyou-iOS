@@ -10,7 +10,7 @@ import SwiftUI
 struct MediaRelationsAndRecommendationsView: View {
 
     let mediaId: Int
-    @StateObject private var viewModel = RelationRecommendationViewModel()
+    @State private var viewModel = RelationRecommendationViewModel()
 
     var body: some View {
         if let relationsAndRecommendations = viewModel.mediaRelationsAndRecommendations {

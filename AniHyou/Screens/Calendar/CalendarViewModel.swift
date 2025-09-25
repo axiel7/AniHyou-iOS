@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class CalendarViewModel: ObservableObject {
+@Observable class CalendarViewModel {
 
-    @Published var weeklyAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule]()
+    var weeklyAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule]()
     var currentPage = 1
     var hasNextPage = true
 

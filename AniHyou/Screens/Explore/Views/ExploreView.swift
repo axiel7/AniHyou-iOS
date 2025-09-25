@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ExploreView: View {
 
-    @ObservedObject var viewModel: SearchViewModel
+    var viewModel: SearchViewModel
     @Environment(\.isSearching) private var isSearching
 
     var body: some View {

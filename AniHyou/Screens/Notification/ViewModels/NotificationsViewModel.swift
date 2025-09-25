@@ -9,11 +9,10 @@ import Foundation
 import AniListAPI
 import UserNotifications
 
-@MainActor
-class NotificationsViewModel: ObservableObject {
+@Observable class NotificationsViewModel {
 
-    @Published var notifications = [GenericNotification]()
-    @Published var type: NotificationTypeGrouped = .all
+    var notifications = [GenericNotification]()
+    var type: NotificationTypeGrouped = .all
     var currentPage = 1
     var hasNextPage = true
 

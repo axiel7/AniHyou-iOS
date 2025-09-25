@@ -12,7 +12,7 @@ import AniListAPI
 // swiftlint:disable:next type_body_length
 struct SearchView: View {
     
-    @ObservedObject var viewModel: SearchViewModel
+    @Bindable var viewModel: SearchViewModel
     @State private var isGenreSheetPresented = false
     @State private var isMediaFormatSheetPresented = false
     @State private var isMediaStatusPresented = false

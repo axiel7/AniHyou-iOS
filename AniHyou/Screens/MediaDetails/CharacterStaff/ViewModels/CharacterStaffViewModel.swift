@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class CharacterStaffViewModel: ObservableObject {
+@Observable class CharacterStaffViewModel {
 
-    @Published var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Media?
+    var mediaCharactersAndStaff: MediaCharactersAndStaffQuery.Data.Media?
 
     func getMediaCharactersAndStaff(mediaId: Int) async {
         if let result = await MediaRepository.getMediaCharactersAndStaff(mediaId: mediaId) {

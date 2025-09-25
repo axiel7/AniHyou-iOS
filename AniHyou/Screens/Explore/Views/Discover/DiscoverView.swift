@@ -11,7 +11,7 @@ import AniListAPI
 // swiftlint:disable:next type_body_length
 struct DiscoverView: View {
     
-    @StateObject private var viewModel = DiscoverViewModel()
+    @State private var viewModel = DiscoverViewModel()
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {

@@ -8,8 +8,7 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class MediaListViewModel: ObservableObject {
+@Observable class MediaListViewModel {
 
     private let userId = LoginRepository.authUserId()
 
@@ -17,9 +16,9 @@ class MediaListViewModel: ObservableObject {
     var status: [MediaListStatus] = [.current, .repeating]
     var currentPage = 1
     var hasNextPage = false
-    @Published var isLoading = false
-    @Published var mediaList: [ShouUserMediaList] = []
-    @Published var shouldDismiss = false
+    var isLoading = false
+    var mediaList: [ShouUserMediaList] = []
+    var shouldDismiss = false
 
     func getUserMediaList() async {
         isLoading = true

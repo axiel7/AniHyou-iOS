@@ -8,12 +8,11 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class VoiceActorsStatsViewModel: ObservableObject {
+@Observable class VoiceActorsStatsViewModel {
     
-    @Published var isLoading = false
-    @Published var distribution: StatDistributionType = .titles
-    @Published var voiceActors = [VoiceActorStat]()
+    var isLoading = false
+    var distribution: StatDistributionType = .titles
+    var voiceActors = [VoiceActorStat]()
     
     func getVoiceActorsStats(userId: Int) async {
         isLoading = true

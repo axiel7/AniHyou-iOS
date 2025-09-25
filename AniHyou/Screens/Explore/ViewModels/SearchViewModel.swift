@@ -8,30 +8,29 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class SearchViewModel: ObservableObject {
+@Observable class SearchViewModel {
 
     //var currentPage = 1
     //var hasNextPage = true
     private let perPage = 25
 
     var search: String = ""
-    @Published var isLoading = false
-    @Published var type: SearchType = .anime
-    @Published var sortMedia: MediaSort = .searchMatch
-    @Published var isAscending = false
-    @Published var selectedGenres = Set<String>()
-    @Published var selectedTags = Set<String>()
-    @Published var selectedGenresTagsJoined = ""
-    @Published var selectedMediaFormat = Set<MediaFormat>()
-    @Published var selectedMediaStatus = Set<MediaStatus>()
-    @Published var yearFrom: Int?
-    @Published var yearTo: Int?
-    @Published var season: MediaSeason?
-    @Published var mediaOnMyList: Bool?
-    @Published var isDoujinshi: Bool?
-    @Published var isAdult: Bool?
-    @Published var country: CountryOfOrigin?
+    var isLoading = false
+    var type: SearchType = .anime
+    var sortMedia: MediaSort = .searchMatch
+    var isAscending = false
+    var selectedGenres = Set<String>()
+    var selectedTags = Set<String>()
+    var selectedGenresTagsJoined = ""
+    var selectedMediaFormat = Set<MediaFormat>()
+    var selectedMediaStatus = Set<MediaStatus>()
+    var yearFrom: Int?
+    var yearTo: Int?
+    var season: MediaSeason?
+    var mediaOnMyList: Bool?
+    var isDoujinshi: Bool?
+    var isAdult: Bool?
+    var country: CountryOfOrigin?
     
     private var hasFilters: Bool {
         sortMedia != .searchMatch
@@ -121,7 +120,7 @@ class SearchViewModel: ObservableObject {
         await runSearch()
     }
 
-    @Published var searchedMedia = [SearchMediaQuery.Data.Page.Medium]()
+    var searchedMedia = [SearchMediaQuery.Data.Page.Medium]()
 
     private func searchMedia(type: MediaType) async {
         if search.isEmpty && !hasFilters { return }
@@ -161,7 +160,7 @@ class SearchViewModel: ObservableObject {
         isLoading = false
     }
 
-    @Published var searchedCharacters = [SearchCharacterQuery.Data.Page.Character]()
+    var searchedCharacters = [SearchCharacterQuery.Data.Page.Character]()
 
     private func searchCharacters() async {
         if search.isEmpty { return }
@@ -172,7 +171,7 @@ class SearchViewModel: ObservableObject {
         isLoading = false
     }
 
-    @Published var searchedStaff = [SearchStaffQuery.Data.Page.Staff]()
+    var searchedStaff = [SearchStaffQuery.Data.Page.Staff]()
 
     private func searchStaff() async {
         if search.isEmpty { return }
@@ -183,7 +182,7 @@ class SearchViewModel: ObservableObject {
         isLoading = false
     }
 
-    @Published var searchedStudios = [SearchStudioQuery.Data.Page.Studio]()
+    var searchedStudios = [SearchStudioQuery.Data.Page.Studio]()
 
     private func searchStudios() async {
         if search.isEmpty { return }
@@ -194,7 +193,7 @@ class SearchViewModel: ObservableObject {
         isLoading = false
     }
 
-    @Published var searchedUsers = [SearchUserQuery.Data.Page.User]()
+    var searchedUsers = [SearchUserQuery.Data.Page.User]()
 
     private func searchUsers() async {
         if search.isEmpty { return }
@@ -205,7 +204,7 @@ class SearchViewModel: ObservableObject {
         isLoading = false
     }
 
-    @Published var filterGenreTagText = ""
+    var filterGenreTagText = ""
     var filteredGenres: [Genre] {
         guard let genreCollection else { return [] }
         if filterGenreTagText.isEmpty {
@@ -223,8 +222,8 @@ class SearchViewModel: ObservableObject {
         }
     }
 
-    @Published var genreCollection: [Genre]?
-    @Published var tagCollection: [Genre]?
+    var genreCollection: [Genre]?
+    var tagCollection: [Genre]?
 
     func getGenreTagCollection() {
         Network.shared.apollo.fetch(query: GenreTagCollectionQuery()) { [weak self] result in

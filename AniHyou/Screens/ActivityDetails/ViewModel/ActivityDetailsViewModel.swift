@@ -8,16 +8,15 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class ActivityDetailsViewModel: ObservableObject {
+@Observable class ActivityDetailsViewModel {
     
-    @Published var isLoading = true
+    var isLoading = true
     
-    @Published var listActivity: ListActivityFragment?
-    @Published var textActivity: TextActivityFragment?
-    @Published var messageActivity: MessageActivityFragment?
+    var listActivity: ListActivityFragment?
+    var textActivity: TextActivityFragment?
+    var messageActivity: MessageActivityFragment?
     
-    @Published var replies = [ActivityReplyFragment]()
+    var replies = [ActivityReplyFragment]()
     
     func getDetails(activityId: Int) async {
         isLoading = true

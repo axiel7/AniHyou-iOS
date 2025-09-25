@@ -1130,7 +1130,7 @@
 			isa = PBXGroup;
 			children = (
 				4820F6A32ADE8BB600A4F465 /* DiscoverView.swift */,
-				481AD4F72851D927001779EE /* DiscoverViewModel.swift */,
+				4892DDED2A2DE0B8009AFB63 /* DiscoverMediaListView.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -1709,7 +1709,6 @@
 				4820F6AA2ADE96FF00A4F465 /* ActivityFeedView.swift */,
 				48801D202C3BEDC5000BEA3A /* CurrentView.swift */,
 				48801D242C3BF397000BEA3A /* CurrentListItemView.swift */,
-				4892DDED2A2DE0B8009AFB63 /* DiscoverMediaListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1828,6 +1827,7 @@
 		48F7640228ACE63F00C82D75 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				481AD4F72851D927001779EE /* DiscoverViewModel.swift */,
 				48FC947E2868C0BD00C87F56 /* ChartViewModel.swift */,
 				48218AEB2BC0829200A03421 /* SeasonViewModel.swift */,
 				48AB01F7286B724A004DC7FF /* SearchViewModel.swift */,

@@ -12,7 +12,7 @@ struct UserActivityView: View {
 
     let userId: Int
     let isMyProfile: Bool
-    @StateObject private var viewModel = UserActivityViewModel()
+    @State private var viewModel = UserActivityViewModel()
     @Environment(\.scoreFormat) private var scoreFormat: ScoreFormat
 
     var body: some View {

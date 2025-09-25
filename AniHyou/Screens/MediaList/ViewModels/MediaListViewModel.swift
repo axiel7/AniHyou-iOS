@@ -9,26 +9,25 @@ import Foundation
 import Apollo
 import AniListAPI
 
-@MainActor
-class MediaListViewModel: ObservableObject {
+@Observable class MediaListViewModel {
 
     var userId: Int = LoginRepository.authUserId()
     private var lists: [String: [CommonMediaListEntry]] = [:]
-    @Published var listNames: [String] = []
-    @Published var mediaList = [CommonMediaListEntry]()
+    var listNames: [String] = []
+    var mediaList = [CommonMediaListEntry]()
     var selectedDetails: BasicMediaDetails?
     var selectedEntry: BasicMediaListEntry?
 
     var forceReload = false
 
     var mediaType: MediaType = .anime
-    @Published private(set) var selectedListName: String?
+    private(set) var selectedListName: String?
     private var sort: MediaListSort?
     
-    @Published var searchText = ""
-    @Published var isLoading = false
+    var searchText = ""
+    var isLoading = false
     
-    @Published var showingRandomEntry = false
+    var showingRandomEntry = false
     var randomId: Int?
     private var entriesIds = [Int]()
 
@@ -84,7 +83,7 @@ class MediaListViewModel: ObservableObject {
         await getUserMediaList()
     }
     
-    @Published var filteredMedia = [CommonMediaListEntry]()
+    var filteredMedia = [CommonMediaListEntry]()
     
     func filterList() async {
         if searchText.isEmpty || searchText.count < 3 { return }

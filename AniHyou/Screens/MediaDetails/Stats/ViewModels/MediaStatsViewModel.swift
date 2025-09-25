@@ -9,14 +9,13 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
-@MainActor
-class MediaStatsViewModel: ObservableObject {
+@Observable class MediaStatsViewModel {
 
-    @Published var isLoading = true
-    @Published var statusDistribution = [Stat]()
-    @Published var scoreDistribution = [Stat]()
-    @Published var rankings = [MediaStatsQuery.Data.Media.Ranking]()
-    @Published var following = [MediaFollowingQuery.Data.Page.MediaList]()
+    var isLoading = true
+    var statusDistribution = [Stat]()
+    var scoreDistribution = [Stat]()
+    var rankings = [MediaStatsQuery.Data.Media.Ranking]()
+    var following = [MediaFollowingQuery.Data.Page.MediaList]()
     
     func fetchData(mediaId: Int) async {
         isLoading = true

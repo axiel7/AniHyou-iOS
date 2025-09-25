@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class CharacterDetailsViewModel: ObservableObject {
+@Observable class CharacterDetailsViewModel {
 
-    @Published var character: CharacterDetailsQuery.Data.Character?
+    var character: CharacterDetailsQuery.Data.Character?
 
     func getCharacterDetails(characterId: Int) async {
         character = await CharacterRepository.getCharacterDetails(characterId: characterId)
@@ -47,7 +46,7 @@ class CharacterDetailsViewModel: ObservableObject {
         })
     }
 
-    @Published var characterMedia = [CharacterMediaQuery.Data.Character.Media.Edge]()
+    var characterMedia = [CharacterMediaQuery.Data.Character.Media.Edge]()
     var pageMedia = 1
     var hasNextPageMedia = true
 

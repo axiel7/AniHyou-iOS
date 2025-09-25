@@ -13,7 +13,7 @@ private let bannerHeight: CGFloat = 180
 struct MediaDetailsView: View {
 
     let mediaId: Int
-    @StateObject private var viewModel = MediaDetailsViewModel()
+    @State private var viewModel = MediaDetailsViewModel()
     @State private var infoType: MediaInfoType = .general
     @State private var attributedSynopsis = NSAttributedString(string: "Loading")
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct VoiceActorsStatsView: View {
     
     let userId: Int
-    @StateObject private var viewModel = VoiceActorsStatsViewModel()
+    @State private var viewModel = VoiceActorsStatsViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

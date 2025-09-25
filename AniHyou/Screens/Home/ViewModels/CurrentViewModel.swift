@@ -8,14 +8,13 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class CurrentViewModel: ObservableObject {
+@Observable class CurrentViewModel {
     
-    @Published var isLoading = true
-    @Published var airingList: [CommonMediaListEntry] = []
-    @Published var behindList: [CommonMediaListEntry] = []
-    @Published var animeList: [CommonMediaListEntry] = []
-    @Published var mangaList: [CommonMediaListEntry] = []
+    var isLoading = true
+    var airingList: [CommonMediaListEntry] = []
+    var behindList: [CommonMediaListEntry] = []
+    var animeList: [CommonMediaListEntry] = []
+    var mangaList: [CommonMediaListEntry] = []
     var hasNothing: Bool {
         airingList.isEmpty && behindList.isEmpty && animeList.isEmpty && mangaList.isEmpty
     }

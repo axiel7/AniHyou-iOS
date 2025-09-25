@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
-    @ObservedObject private var viewModel = MainViewModel()
+    private var connectivityManager = WatchConnectivityManager.shared
+    @State private var viewModel = MainViewModel()
     @AppStorage("selected_tab_index") private var selectedTabIndex: Int = 0
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 

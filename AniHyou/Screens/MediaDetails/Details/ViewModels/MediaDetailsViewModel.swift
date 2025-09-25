@@ -9,14 +9,13 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
-@MainActor
-class MediaDetailsViewModel: ObservableObject {
+@Observable class MediaDetailsViewModel {
 
-    @Published var mediaDetails: MediaDetailsQuery.Data.Media?
-    @Published var listEntry: BasicMediaListEntry?
-    @Published var openings: [AnimeThemes.Theme]?
-    @Published var endings: [AnimeThemes.Theme]?
-    @Published var isLoadingThemes = true
+    var mediaDetails: MediaDetailsQuery.Data.Media?
+    var listEntry: BasicMediaListEntry?
+    var openings: [AnimeThemes.Theme]?
+    var endings: [AnimeThemes.Theme]?
+    var isLoadingThemes = true
 
     func getMediaDetails(mediaId: Int) async {
         if let result = await MediaRepository.getMediaDetails(mediaId: mediaId) {

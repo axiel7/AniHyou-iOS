@@ -8,16 +8,15 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class ActivityFeedViewModel: ObservableObject {
+@Observable class ActivityFeedViewModel {
     
     private var currentPage = 1
     var hasNextPage = true
     
-    @Published var type = ActivityFeedType.all
-    @Published var isFollowing = true
+    var type = ActivityFeedType.all
+    var isFollowing = true
     
-    @Published var activities = [ActivityFeedQuery.Data.Page.Activity]()
+    var activities = [ActivityFeedQuery.Data.Page.Activity]()
     
     func getActivities() async {
         if let result = await ActivityRepository.getActivities(

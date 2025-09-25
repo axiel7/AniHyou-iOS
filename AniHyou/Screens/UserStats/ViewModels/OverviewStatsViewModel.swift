@@ -9,33 +9,32 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
-@MainActor
 // swiftlint:disable:next type_body_length
-class OverviewStatsViewModel: ObservableObject {
+@Observable class OverviewStatsViewModel {
 
-    @Published var isLoading = false
+    var isLoading = false
 
-    @Published var scoreStatsCount = [Stat]()
-    @Published var scoreStatsTime = [Stat]()
+    var scoreStatsCount = [Stat]()
+    var scoreStatsTime = [Stat]()
     
-    @Published var lengthStatsCount = [Stat]()
-    @Published var lengthStatsTime = [Stat]()
-    @Published var lengthStatsScore = [Stat]()
+    var lengthStatsCount = [Stat]()
+    var lengthStatsTime = [Stat]()
+    var lengthStatsScore = [Stat]()
     
-    @Published var releaseYearStatsCount = [Stat]()
-    @Published var releaseYearStatsTime = [Stat]()
-    @Published var releaseYearStatsScore = [Stat]()
+    var releaseYearStatsCount = [Stat]()
+    var releaseYearStatsTime = [Stat]()
+    var releaseYearStatsScore = [Stat]()
     
-    @Published var startYearStatsCount = [Stat]()
-    @Published var startYearStatsTime = [Stat]()
-    @Published var startYearStatsScore = [Stat]()
+    var startYearStatsCount = [Stat]()
+    var startYearStatsTime = [Stat]()
+    var startYearStatsScore = [Stat]()
     
-    @Published var formatsDistribution = [Stat]()
-    @Published var statusDistribution = [Stat]()
-    @Published var countryDistribution = [Stat]()
+    var formatsDistribution = [Stat]()
+    var statusDistribution = [Stat]()
+    var countryDistribution = [Stat]()
 
-    @Published var animeStats: UserStatsAnimeOverviewQuery.Data.User.Statistics.Anime?
-    @Published var mangaStats: UserStatsMangaOverviewQuery.Data.User.Statistics.Manga?
+    var animeStats: UserStatsAnimeOverviewQuery.Data.User.Statistics.Anime?
+    var mangaStats: UserStatsMangaOverviewQuery.Data.User.Statistics.Manga?
     
     private var scoreFormat: ScoreFormat = .point100
     

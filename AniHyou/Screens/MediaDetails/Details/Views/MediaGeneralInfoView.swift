@@ -11,7 +11,7 @@ import AniListAPI
 
 struct MediaGeneralInfoView: View {
 
-    @ObservedObject var viewModel: MediaDetailsViewModel
+    var viewModel: MediaDetailsViewModel
     @State private var showSpoilerTags = false
     @State private var showAllTags = false
     private let tagLimit = 10

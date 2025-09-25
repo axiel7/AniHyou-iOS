@@ -26,7 +26,7 @@ struct MediaListView: View {
     var isMyList: Bool {
         userId == nil
     }
-    @ObservedObject var viewModel: MediaListViewModel
+    @Bindable var viewModel: MediaListViewModel
     @State private var showingEditSheet = false
 
     @AppStorage(LIST_SORT) private var sort = MediaListSort.updatedTimeDesc
@@ -36,33 +36,7 @@ struct MediaListView: View {
 
     var body: some View {
         List {
-            if viewModel.searchText.isEmpty {
-                ForEach(viewModel.mediaList, id: \.uniqueListId) { item in
-                    if let details = item.media?.fragments.basicMediaDetails {
-                        buildListItem(
-                            details: details,
-                            entry: item.fragments.basicMediaListEntry,
-                            schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
-                            showStatus: viewModel.selectedListName == nil
-                        )
-                    }
-                }
-            } else {
-                ForEach(viewModel.filteredMedia, id: \.uniqueListId) { item in
-                    if let details = item.media?.fragments.basicMediaDetails {
-                        buildListItem(
-                            details: details,
-                            entry: item.fragments.basicMediaListEntry,
-                            schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
-                            showStatus: viewModel.selectedListName == nil
-                        )
-                    }
-                }
-            }
-            
-            if viewModel.isLoading {
-                HorizontalProgressView()
-            }
+            listContent
         }//:List
         .listStyle()
         .searchable(text: $viewModel.searchText)
@@ -86,10 +60,9 @@ struct MediaListView: View {
                 await viewModel.filterList()
             }
         }
-        .onReceive(
-            viewModel.$searchText.debounce(for: .seconds(2), scheduler: RunLoop.main)
-        ) { _ in
+        .onChange(of: viewModel.searchText) {
             Task {
+                try? await Task.sleep(for: .seconds(2))
                 await viewModel.filterList()
             }
         }
@@ -127,36 +100,12 @@ struct MediaListView: View {
             MediaDetailsView(mediaId: viewModel.randomId ?? 0)
         }
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Menu {
-                    Picker("Sort", selection: $sort) {
-                        ForEach(MediaListSort.allCasesForUi, id: \.self) {
-                            Text($0.localizedName).tag($0)
-                        }
-                    }
-                    Picker("Order", selection: $sortAscending) {
-                        Text("Ascending").tag(true)
-                        Text("Descending").tag(false)
-                    }
-                    
-                    Button("Random", systemImage: "shuffle") {
-                        viewModel.getRandomEntryId()
-                    }
-                    .tint(nil)
-                } label: {
-                    if #available(iOS 26, *) {
-                        Image(systemName: "ellipsis")
-                    } else {
-                        Image(systemName: "ellipsis.circle")
-                    }
-                }
-                .tint(nil)
-            }
+            toolbarContent
         }
         .navigationTitle(navigationTitle)
     }
     
-    var navigationTitle: String {
+    private var navigationTitle: String {
         if let status = viewModel.selectedListName?.localizedListStatus(
             mediaType: type
         ) {
@@ -167,10 +116,70 @@ struct MediaListView: View {
             return "All"
         }
     }
+    
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .primaryAction) {
+            Menu {
+                Picker("Sort", selection: $sort) {
+                    ForEach(MediaListSort.allCasesForUi, id: \.self) {
+                        Text($0.localizedName).tag($0)
+                    }
+                }
+                Picker("Order", selection: $sortAscending) {
+                    Text("Ascending").tag(true)
+                    Text("Descending").tag(false)
+                }
+                
+                Button("Random", systemImage: "shuffle") {
+                    viewModel.getRandomEntryId()
+                }
+                .tint(nil)
+            } label: {
+                if #available(iOS 26, *) {
+                    Image(systemName: "ellipsis")
+                } else {
+                    Image(systemName: "ellipsis.circle")
+                }
+            }
+            .tint(nil)
+        }
+    }
+    
+    @ViewBuilder
+    private var listContent: some View {
+        if viewModel.searchText.isEmpty {
+            ForEach(viewModel.mediaList, id: \.uniqueListId) { item in
+                if let details = item.media?.fragments.basicMediaDetails {
+                    buildListItem(
+                        details: details,
+                        entry: item.fragments.basicMediaListEntry,
+                        schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
+                        showStatus: viewModel.selectedListName == nil
+                    )
+                }
+            }
+        } else {
+            ForEach(viewModel.filteredMedia, id: \.uniqueListId) { item in
+                if let details = item.media?.fragments.basicMediaDetails {
+                    buildListItem(
+                        details: details,
+                        entry: item.fragments.basicMediaListEntry,
+                        schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
+                        showStatus: viewModel.selectedListName == nil
+                    )
+                }
+            }
+        }
+        
+        if viewModel.isLoading {
+            HorizontalProgressView()
+        }
+    }
 
     @ViewBuilder
     // swiftlint:disable:next function_body_length
-    func buildListItem(
+    private func buildListItem(
         details: BasicMediaDetails,
         entry: BasicMediaListEntry,
         schedule: AiringEpisode?,

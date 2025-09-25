@@ -30,7 +30,7 @@ struct CurrentView: View {
         }
     }
     
-    @StateObject private var viewModel = CurrentViewModel()
+    @State private var viewModel = CurrentViewModel()
     
     private let oneGirdRow = [GridItem(.fixed(CurrentListItemView.height))]
     private let twoGridRows = [

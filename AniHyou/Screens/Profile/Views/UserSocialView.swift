@@ -13,7 +13,7 @@ struct UserSocialView: View {
 
     let userId: Int
     @State private var socialType = 0
-    @StateObject private var viewModel = UserSocialViewModel()
+    @State private var viewModel = UserSocialViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: 95))
     ]

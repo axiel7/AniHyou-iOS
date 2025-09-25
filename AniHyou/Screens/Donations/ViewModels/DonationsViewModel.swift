@@ -8,14 +8,13 @@
 import Foundation
 import StoreKit
 
-@MainActor
-class DonationsViewModel: ObservableObject {
+@Observable class DonationsViewModel {
 
     var transacitonListener: Task<Void, Error>?
 
     private var productIDs = ["first_tier_donation", "second_tier_donation", "third_tier_donation"]
 
-    @Published var products = [Product]()
+    var products = [Product]()
 
     init() {
         transacitonListener = listenForTransactions()

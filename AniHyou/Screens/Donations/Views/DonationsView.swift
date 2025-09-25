@@ -10,7 +10,7 @@ import StoreKit
 
 struct DonationsView: View {
 
-    @StateObject private var viewModel = DonationsViewModel()
+    @State private var viewModel = DonationsViewModel()
 
     var body: some View {
         ScrollView(.vertical) {

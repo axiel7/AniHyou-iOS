@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ThreadCommentDetailsView: View {
     
-    @ObservedObject var viewModel: ThreadDetailsViewModel
+    var viewModel: ThreadDetailsViewModel
     
     let comment: ChildCommentsQuery.Data.Page.ThreadComment
     @State var isLiked: Bool

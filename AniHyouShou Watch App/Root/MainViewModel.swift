@@ -9,7 +9,7 @@ import Foundation
 import KeychainSwift
 import AniListAPI
 
-class MainViewModel: ObservableObject {
+@Observable class MainViewModel {
 
     func saveUserData(key: String, value: String) async {
         switch key {

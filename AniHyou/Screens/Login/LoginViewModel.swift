@@ -9,7 +9,8 @@ import Foundation
 import AuthenticationServices
 import KeychainSwift
 
-class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
+@Observable
+class LoginViewModel: NSObject, ASWebAuthenticationPresentationContextProviding {
 
     private let clientId = Bundle.main.object(forInfoDictionaryKey: "ANILIST_CLIENT_ID") as? String ?? ""
 

@@ -17,7 +17,7 @@ struct MediaListEditView: View {
     var onSave: (_ updatedEntry: BasicMediaListEntry) -> Void = { _ in }
     var onDelete: () -> Void = {}
 
-    @StateObject private var viewModel = MediaListEditViewModel()
+    @State private var viewModel = MediaListEditViewModel()
     @State private var showDeleteDialog = false
     
     @AppStorage(ADVANCED_SCORING_ENABLED_KEY) private var advancedScoringEnabled: Bool?

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityFeedView: View {
     
-    @StateObject private var viewModel = ActivityFeedViewModel()
+    @State private var viewModel = ActivityFeedViewModel()
     
     var body: some View {
         NavigationStack {

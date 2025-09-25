@@ -9,11 +9,10 @@ import Foundation
 import Apollo
 import AniListAPI
 
-@MainActor
-class ThreadDetailsViewModel: ObservableObject {
+@Observable class ThreadDetailsViewModel {
 
-    @Published var details: BasicThreadDetails?
-    @Published var threadComments = [ChildCommentsQuery.Data.Page.ThreadComment]()
+    var details: BasicThreadDetails?
+    var threadComments = [ChildCommentsQuery.Data.Page.ThreadComment]()
 
     var currentPage = 1
     var hasNextPage = true

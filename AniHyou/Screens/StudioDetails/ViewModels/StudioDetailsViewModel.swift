@@ -8,11 +8,10 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class StudioDetailsViewModel: ObservableObject {
+@Observable class StudioDetailsViewModel {
 
-    @Published var studio: StudioDetailsQuery.Data.Studio?
-    @Published var studioMedia = [StudioMedia]()
+    var studio: StudioDetailsQuery.Data.Studio?
+    var studioMedia = [StudioMedia]()
     var currentPage = 1
     var hasNextPage = false
 

@@ -12,7 +12,7 @@ struct MediaListStatusView: View {
 
     let mediaType: MediaType
     var userId: Int?
-    @StateObject private var viewModel = MediaListViewModel()
+    @State private var viewModel = MediaListViewModel()
     @State private var selection: String?
     @State private var showingMediaDetails = false
     @State private var mediaId = 0

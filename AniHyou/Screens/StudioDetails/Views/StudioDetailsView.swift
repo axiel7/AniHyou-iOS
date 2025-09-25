@@ -10,7 +10,7 @@ import SwiftUI
 struct StudioDetailsView: View {
 
     let studioId: Int
-    @StateObject private var viewModel = StudioDetailsViewModel()
+    @State private var viewModel = StudioDetailsViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 20))
     ]

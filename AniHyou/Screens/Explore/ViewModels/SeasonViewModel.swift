@@ -8,16 +8,15 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class SeasonViewModel: ObservableObject {
+@Observable class SeasonViewModel {
     
     private let perPage = 25
     static let seasonSorts: [MediaSort] = [.popularityDesc, .scoreDesc, .startDateDesc, .endDateDesc]
     
-    @Published var season: MediaSeason = Date.now.season
-    @Published var year: Int = Date.now.year
-    @Published var sort: MediaSort = .popularityDesc
-    @Published var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium]()
+    var season: MediaSeason = Date.now.season
+    var year: Int = Date.now.year
+    var sort: MediaSort = .popularityDesc
+    var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium]()
 
     var currentPage = 1
     var hasNextPage = false

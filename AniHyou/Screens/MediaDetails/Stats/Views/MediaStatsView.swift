@@ -10,7 +10,7 @@ import AniListAPI
 
 struct MediaStatsView: View {
 
-    @StateObject private var viewModel = MediaStatsViewModel()
+    @State private var viewModel = MediaStatsViewModel()
     let mediaId: Int
 
     var body: some View {

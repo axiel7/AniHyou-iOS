@@ -11,7 +11,7 @@ import AniListAPI
 
 struct ThreadDetailsView: View {
 
-    @StateObject private var viewModel = ThreadDetailsViewModel()
+    @State private var viewModel = ThreadDetailsViewModel()
     
     let threadId: Int
     var initThread: BasicThreadDetails?

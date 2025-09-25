@@ -8,13 +8,12 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class UserActivityViewModel: ObservableObject {
+@Observable class UserActivityViewModel {
 
     var currentPage = 1
     var hasNextPage = true
 
-    @Published var activities = [UserActivityQuery.Data.Page.Activity]()
+    var activities = [UserActivityQuery.Data.Page.Activity]()
 
     func getUserActivity(userId: Int) async {
         if let result = await UserRepository.getUserActivity(userId: userId, page: currentPage) {

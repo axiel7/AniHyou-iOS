@@ -12,7 +12,7 @@ import AniListAPI
 struct StaffDetailsView: View {
 
     let staffId: Int
-    @StateObject private var viewModel = StaffDetailsViewModel()
+    @State private var viewModel = StaffDetailsViewModel()
     @State private var infoType: StaffInfoType = .overview
     @State private var showImageSheet = false
 

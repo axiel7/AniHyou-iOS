@@ -10,7 +10,7 @@ import AniListAPI
 
 struct AccountSettingsView: View {
     
-    @ObservedObject var viewModel: SettingsViewModel
+    @Bindable var viewModel: SettingsViewModel
     @State private var showChangesAlert = false
     @State private var showWebView = false
     

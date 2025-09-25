@@ -11,7 +11,7 @@ import RichText
 struct CharacterDetailsView: View {
 
     let characterId: Int
-    @StateObject private var viewModel = CharacterDetailsViewModel()
+    @State private var viewModel = CharacterDetailsViewModel()
     @State private var infoType: CharacterInfoType = .overview
     @State private var showNameSpoiler = false
     @State private var showImageSheet = false

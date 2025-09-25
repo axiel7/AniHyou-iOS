@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class RelationRecommendationViewModel: ObservableObject {
+@Observable class RelationRecommendationViewModel {
 
-    @Published var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Media?
+    var mediaRelationsAndRecommendations: MediaRelationsAndRecommendationsQuery.Data.Media?
 
     func getMediaRelationsAndRecommendations(mediaId: Int) async {
         if let result = await MediaRepository.getMediaRelationsAndRecommendations(mediaId: mediaId) {

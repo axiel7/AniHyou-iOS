@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ActivityDetailsView: View {
     
-    @StateObject private var viewModel = ActivityDetailsViewModel()
+    @State private var viewModel = ActivityDetailsViewModel()
     
     let activityId: Int
     

@@ -10,7 +10,7 @@ import SwiftUI
 struct StudiosStatsView: View {
     
     let userId: Int
-    @StateObject private var viewModel = StudiosStatsViewModel()
+    @State private var viewModel = StudiosStatsViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

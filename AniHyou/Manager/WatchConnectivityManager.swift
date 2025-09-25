@@ -8,10 +8,11 @@
 import Foundation
 import WatchConnectivity
 
-final class WatchConnectivityManager: NSObject, ObservableObject {
+@Observable
+final class WatchConnectivityManager: NSObject {
     static let shared = WatchConnectivityManager()
-    @Published var isWatchAppInstalled = false
-    @Published var receivedMessage: String?
+    var isWatchAppInstalled = false
+    var receivedMessage: String?
     var key = ""
 
     private override init() {

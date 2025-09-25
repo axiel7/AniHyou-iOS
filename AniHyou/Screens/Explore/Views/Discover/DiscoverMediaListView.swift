@@ -10,7 +10,7 @@ import AniListAPI
 
 struct DiscoverMediaListView: View {
 
-    @ObservedObject var viewModel: DiscoverViewModel
+    var viewModel: DiscoverViewModel
     let mediaType: MediaType
     
     let media: [MediaSortedQuery.Data.Page.Medium]

@@ -8,11 +8,9 @@
 import Foundation
 import SwiftUI
 
-@MainActor
-class HomeViewModel: ObservableObject {
+@Observable class HomeViewModel {
     
-    @AppStorage(HOME_TAB_KEY) var currentTab: HomeTab?
-    @Published var unreadNotificationsCount = 0
+    var unreadNotificationsCount = 0
     
     func getUnreadNotificationsCount() async {
         unreadNotificationsCount = await UserRepository.getUnreadNotificationsCount() ?? 0

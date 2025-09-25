@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class ReviewDetailsViewModel: ObservableObject {
+@Observable class ReviewDetailsViewModel {
 
-    @Published var review: CommonReviewDetails?
+    var review: CommonReviewDetails?
     var userAcceptance: Int {
         guard let rating = review?.rating else { return 0 }
         guard let ratingAmount = review?.ratingAmount else { return 0 }

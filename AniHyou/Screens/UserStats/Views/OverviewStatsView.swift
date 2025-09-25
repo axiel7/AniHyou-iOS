@@ -12,7 +12,7 @@ struct OverviewStatsView: View {
 
     let userId: Int
     let mediaType: MediaType
-    @StateObject private var viewModel = OverviewStatsViewModel()
+    @State private var viewModel = OverviewStatsViewModel()
     @State private var scoreStatType: StatDistributionType = .titles
     @State private var lengthStatType: StatDistributionType = .titles
     @State private var releaseYearStatType: StatDistributionType = .titles

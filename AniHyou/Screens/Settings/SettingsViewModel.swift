@@ -10,16 +10,15 @@ import KeychainSwift
 import WidgetKit
 import AniListAPI
 
-@MainActor
-class SettingsViewModel: ObservableObject {
+@Observable class SettingsViewModel {
     
-    @Published var isLoggedOut = false
-    @Published var isLoading = true
+    var isLoggedOut = false
+    var isLoading = true
     
-    @Published var areOptionsFetched = false
-    @Published var titleLanguage = UserTitleLanguage.romaji
-    @Published var staffNameLanguage = UserStaffNameLanguage.romaji
-    @Published var scoreFormat = ScoreFormat.point10
+    var areOptionsFetched = false
+    var titleLanguage = UserTitleLanguage.romaji
+    var staffNameLanguage = UserStaffNameLanguage.romaji
+    var scoreFormat = ScoreFormat.point10
 
     func logOut() {
         LoginRepository.logOut()

@@ -12,7 +12,7 @@ struct StaffStatsView: View {
     
     let userId: Int
     let mediaType: MediaType
-    @StateObject private var viewModel = StaffStatsViewModel()
+    @State private var viewModel = StaffStatsViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

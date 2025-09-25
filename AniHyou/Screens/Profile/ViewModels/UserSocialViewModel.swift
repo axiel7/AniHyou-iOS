@@ -8,10 +8,9 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class UserSocialViewModel: ObservableObject {
+@Observable class UserSocialViewModel {
 
-    @Published var followers = [FollowersQuery.Data.Page.Follower]()
+    var followers = [FollowersQuery.Data.Page.Follower]()
     private var currentPageFollowers = 1
     var hasNextPageFollowers = true
 
@@ -23,7 +22,7 @@ class UserSocialViewModel: ObservableObject {
         }
     }
 
-    @Published var followings = [FollowingsQuery.Data.Page.Following]()
+    var followings = [FollowingsQuery.Data.Page.Following]()
     private var currentPageFollowings = 1
     var hasNextPageFollowings = true
 

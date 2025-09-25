@@ -10,19 +10,20 @@ import SwiftUI
 struct HomeView: View {
     
     let isLoggedIn: Bool
-    @StateObject private var viewModel = HomeViewModel()
+    @AppStorage(HOME_TAB_KEY) var currentTab: HomeTab?
+    @State private var viewModel = HomeViewModel()
     @State private var showNotificationsSheet = false
     @State private var mediaId = 0
     @State private var showingMediaDetails = false
 
     var body: some View {
         NavigationSplitView {
-            List(HomeTab.allCases, id: \.self, selection: $viewModel.currentTab) { tab in
+            List(HomeTab.allCases, id: \.self, selection: $currentTab) { tab in
                 Label(tab.localizedName, systemImage: tab.systemImage)
             }
             .navigationTitle("Home")
         } detail: {
-            switch viewModel.currentTab {
+            switch currentTab {
             case .activity:
                 ActivityFeedView()
                     .navigationTitle("Activity")

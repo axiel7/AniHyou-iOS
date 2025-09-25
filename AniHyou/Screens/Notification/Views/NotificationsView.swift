@@ -10,7 +10,7 @@ import SwiftUI
 struct NotificationsView: View {
 
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var viewModel = NotificationsViewModel()
+    @State private var viewModel = NotificationsViewModel()
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
 
     var body: some View {

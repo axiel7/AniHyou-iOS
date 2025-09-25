@@ -8,12 +8,11 @@
 import Foundation
 import AniListAPI
 
-@MainActor
-class StaffStatsViewModel: ObservableObject {
+@Observable class StaffStatsViewModel {
     
-    @Published var isLoading = false
-    @Published var distribution: StatDistributionType = .titles
-    @Published var staff = [StaffStat]()
+    var isLoading = false
+    var distribution: StatDistributionType = .titles
+    var staff = [StaffStat]()
     
     func getStaffStats(userId: Int, mediaType: MediaType) async {
         isLoading = true

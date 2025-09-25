@@ -36,7 +36,7 @@ struct AnimeSeasonListView: View {
     var initYear: Int?
     private let currentYear = Date.now.year
     @AppStorage(SEASON_LIST_STYLE_KEY) private var listStyle: ListStyle = .grid
-    @StateObject private var viewModel = SeasonViewModel()
+    @State private var viewModel = SeasonViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
