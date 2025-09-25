@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -348,25 +348,21 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		48EFCDE829FFAD210096BF6E /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolder = PlugIns;
 			files = (
 				48EFCDE729FFAD210096BF6E /* AniHyou WidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48F27918296EFE78000827F7 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
+			dstSubfolder = Product;
 			files = (
 				48F27917296EFE78000827F7 /* AniHyou.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -727,7 +723,6 @@
 /* Begin PBXFrameworksBuildPhase section */
 		481AD4D72851CE73001779EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4815DFA62A2ED1D400352A9B /* AniListAPI in Frameworks */,
 				48DF50F52A669B7C00DF1C87 /* StoreKit.framework in Frameworks */,
@@ -739,18 +734,14 @@
 				48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */,
 				482E581C2C00B7870089AE28 /* Nuke in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48218B0C2BD1157800A03421 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48EFCDD229FFAD200096BF6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4815DFAA2A2ED1DF00352A9B /* AniListAPI in Frameworks */,
 				48D9B6382A2B085D00299DD8 /* Apollo in Frameworks */,
@@ -758,17 +749,14 @@
 				48EFCDD929FFAD200096BF6E /* SwiftUI.framework in Frameworks */,
 				48EFCDD729FFAD200096BF6E /* WidgetKit.framework in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48F27907296EFE77000827F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4815DFA82A2ED1DA00352A9B /* AniListAPI in Frameworks */,
 				48F27921296F092F000827F7 /* KeychainSwift in Frameworks */,
 				48D9B6362A2B085700299DD8 /* Apollo in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -2018,8 +2006,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = "AniHyou WidgetExtension";
 			packageProductDependencies = (
 				48EFCDFC29FFE8EB0096BF6E /* KeychainSwift */,
@@ -2039,8 +2025,6 @@
 				48F27908296EFE77000827F7 /* Resources */,
 			);
 			buildRules = (
-			);
-			dependencies = (
 			);
 			name = "AniHyouShou Watch App";
 			packageProductDependencies = (
@@ -2078,7 +2062,6 @@
 				};
 			};
 			buildConfigurationList = 481AD4D52851CE73001779EE /* Build configuration list for PBXProject "AniHyou" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2110,6 +2093,7 @@
 				482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2125,7 +2109,6 @@
 /* Begin PBXResourcesBuildPhase section */
 		481AD4D82851CE73001779EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				48C5014A2AD9091600E4243D /* Localizable.strings in Resources */,
 				48B7ABE92BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
@@ -2134,29 +2117,23 @@
 				48FFC8BC2E10969900831B8E /* AniHyou.icon in Resources */,
 				48218B002BC57B9300A03421 /* StudioMedia.graphql in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48218B0D2BD1157800A03421 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48EFCDD329FFAD200096BF6E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				48EFCDE129FFAD210096BF6E /* Assets.xcassets in Resources */,
 				48C5016B2ADAD00400E4243D /* InfoPlist.strings in Resources */,
 				48B7ABEB2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				48C5014C2AD9091600E4243D /* Localizable.strings in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48F27908296EFE77000827F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				48F27914296EFE78000827F7 /* Preview Assets.xcassets in Resources */,
 				48C5014B2AD9091600E4243D /* Localizable.strings in Resources */,
@@ -2164,7 +2141,6 @@
 				48B7ABEA2BB346BA0047998F /* PrivacyInfo.xcprivacy in Resources */,
 				48F27911296EFE78000827F7 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
@@ -2172,28 +2148,26 @@
 		48BC1DBA2A6108B20086317E /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
 			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = (
+				"if [[ \"$(uname -m)\" == arm64 ]]; then",
+				"    export PATH=\"/opt/homebrew/bin:$PATH\"",
+				"fi",
+				"",
+				"if which swiftlint > /dev/null; then",
+				"  swiftlint",
+				"else",
+				"  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"",
+				"fi",
+				"",
+			);
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		481AD4D62851CE73001779EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				48DBAF8129B0796F00A75167 /* UserStatsHostView.swift in Sources */,
 				48BB9E232ADBC08D00970D01 /* AccountSettingsView.swift in Sources */,
@@ -2406,20 +2380,16 @@
 				488763E129781AD200402934 /* MediaStatsView.swift in Sources */,
 				48BB9E252ADBC43F00970D01 /* SafariWebView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48218B0B2BD1157800A03421 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				48218B1A2BD11A8900A03421 /* StringTests.swift in Sources */,
 				48218B122BD1157800A03421 /* UserTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48EFCDD129FFAD200096BF6E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				488FCDB52C64C63C00D8B47D /* NumberUtils.swift in Sources */,
 				4863796F2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
@@ -2454,11 +2424,9 @@
 				48D929E62ABAC06900330C71 /* UserOptions.swift in Sources */,
 				48218AF02BC310C200A03421 /* PagedResult.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48F27906296EFE77000827F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				488FCDB42C64C63C00D8B47D /* NumberUtils.swift in Sources */,
 				4863796E2C5D5CBB003E779D /* AuthErrorInterceptor.swift in Sources */,
@@ -2495,7 +2463,6 @@
 				48E58E482A85BA9C00EF0CA2 /* UserOptions.swift in Sources */,
 				48F2792C29700F33000827F7 /* Constants.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -2568,7 +2535,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		481AD4E62851CE74001779EE /* Debug */ = {
+		481AD4E62851CE74001779EE /* Debug configuration for PBXProject "AniHyou" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 488C267F2853822E0005EE15 /* Config.xcconfig */;
 			buildSettings = {
@@ -2622,7 +2589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2630,11 +2597,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Debug;
 		};
-		481AD4E72851CE74001779EE /* Release */ = {
+		481AD4E72851CE74001779EE /* Release configuration for PBXProject "AniHyou" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 488C267F2853822E0005EE15 /* Config.xcconfig */;
 			buildSettings = {
@@ -2682,7 +2649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2690,11 +2657,11 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Release;
 		};
-		481AD4E92851CE74001779EE /* Debug */ = {
+		481AD4E92851CE74001779EE /* Debug configuration for PBXNativeTarget "AniHyou" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AniHyou;
@@ -2727,7 +2694,7 @@
 			};
 			name = Debug;
 		};
-		481AD4EA2851CE74001779EE /* Release */ = {
+		481AD4EA2851CE74001779EE /* Release configuration for PBXNativeTarget "AniHyou" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AniHyou;
@@ -2760,7 +2727,7 @@
 			};
 			name = Release;
 		};
-		48218B152BD1157800A03421 /* Debug */ = {
+		48218B152BD1157800A03421 /* Debug configuration for PBXNativeTarget "AniHyouTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2783,7 +2750,7 @@
 			};
 			name = Debug;
 		};
-		48218B162BD1157800A03421 /* Release */ = {
+		48218B162BD1157800A03421 /* Release configuration for PBXNativeTarget "AniHyouTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2805,7 +2772,7 @@
 			};
 			name = Release;
 		};
-		48EFCDE929FFAD210096BF6E /* Debug */ = {
+		48EFCDE929FFAD210096BF6E /* Debug configuration for PBXNativeTarget "AniHyou WidgetExtension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2834,7 +2801,7 @@
 			};
 			name = Debug;
 		};
-		48EFCDEA29FFAD210096BF6E /* Release */ = {
+		48EFCDEA29FFAD210096BF6E /* Release configuration for PBXNativeTarget "AniHyou WidgetExtension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2863,7 +2830,7 @@
 			};
 			name = Release;
 		};
-		48F27919296EFE78000827F7 /* Debug */ = {
+		48F27919296EFE78000827F7 /* Debug configuration for PBXNativeTarget "AniHyouShou Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AniHyou;
@@ -2894,7 +2861,7 @@
 			};
 			name = Debug;
 		};
-		48F2791A296EFE78000827F7 /* Release */ = {
+		48F2791A296EFE78000827F7 /* Release configuration for PBXNativeTarget "AniHyouShou Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AniHyou;
@@ -2931,46 +2898,41 @@
 		481AD4D52851CE73001779EE /* Build configuration list for PBXProject "AniHyou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				481AD4E62851CE74001779EE /* Debug */,
-				481AD4E72851CE74001779EE /* Release */,
+				481AD4E62851CE74001779EE /* Debug configuration for PBXProject "AniHyou" */,
+				481AD4E72851CE74001779EE /* Release configuration for PBXProject "AniHyou" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		481AD4E82851CE74001779EE /* Build configuration list for PBXNativeTarget "AniHyou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				481AD4E92851CE74001779EE /* Debug */,
-				481AD4EA2851CE74001779EE /* Release */,
+				481AD4E92851CE74001779EE /* Debug configuration for PBXNativeTarget "AniHyou" */,
+				481AD4EA2851CE74001779EE /* Release configuration for PBXNativeTarget "AniHyou" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		48218B172BD1157800A03421 /* Build configuration list for PBXNativeTarget "AniHyouTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48218B152BD1157800A03421 /* Debug */,
-				48218B162BD1157800A03421 /* Release */,
+				48218B152BD1157800A03421 /* Debug configuration for PBXNativeTarget "AniHyouTests" */,
+				48218B162BD1157800A03421 /* Release configuration for PBXNativeTarget "AniHyouTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		48EFCDEB29FFAD210096BF6E /* Build configuration list for PBXNativeTarget "AniHyou WidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48EFCDE929FFAD210096BF6E /* Debug */,
-				48EFCDEA29FFAD210096BF6E /* Release */,
+				48EFCDE929FFAD210096BF6E /* Debug configuration for PBXNativeTarget "AniHyou WidgetExtension" */,
+				48EFCDEA29FFAD210096BF6E /* Release configuration for PBXNativeTarget "AniHyou WidgetExtension" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		48F2791B296EFE78000827F7 /* Build configuration list for PBXNativeTarget "AniHyouShou Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48F27919296EFE78000827F7 /* Debug */,
-				48F2791A296EFE78000827F7 /* Release */,
+				48F27919296EFE78000827F7 /* Debug configuration for PBXNativeTarget "AniHyouShou Watch App" */,
+				48F2791A296EFE78000827F7 /* Release configuration for PBXNativeTarget "AniHyouShou Watch App" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
