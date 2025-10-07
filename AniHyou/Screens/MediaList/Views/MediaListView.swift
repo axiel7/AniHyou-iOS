@@ -76,7 +76,9 @@ struct MediaListView: View {
             }
         }
         .task {
-            await viewModel.onSortChanged(sort, isAscending: sortAscending)
+            if userId == nil {
+                await viewModel.onSortChanged(sort, isAscending: sortAscending)
+            }
         }
         .sheet(isPresented: $showingEditSheet) {
             if let details = viewModel.selectedDetails,

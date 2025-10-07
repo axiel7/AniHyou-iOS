@@ -37,32 +37,31 @@ struct MediaListStatusView: View {
             if let selection {
                 NavigationStack {
                     MediaListView(type: mediaType, userId: userId, viewModel: viewModel)
-                        .id(selection)
+                        .id("\(selection)\(userId ?? 0)")
                         .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
                 }
             }
         }//:NavigationSplitView
         .onChange(of: selection) {
             if let selection {
-                UserDefaults.standard.setValue(selection, forKey: mediaType.listStatusKey)
+                if userId == nil {
+                    UserDefaults.standard.setValue(selection, forKey: mediaType.listStatusKey)
+                }
                 Task {
                     viewModel.onChangeList(selection)
                 }
             }
         }
-        .onAppear {
-            let selectedList = UserDefaults.standard.string(forKey: mediaType.listStatusKey)
+        .task {
             viewModel.mediaType = mediaType
             if let userId {
                 viewModel.userId = userId
-            }
-            if let selectedList {
-                selection = selectedList
-                Task {
+                await viewModel.refreshList()
+            } else {
+                if let selectedList = UserDefaults.standard.string(forKey: mediaType.listStatusKey) {
+                    selection = selectedList
                     viewModel.onChangeList(selectedList)
-                }
-            } else if viewModel.listNames.isEmpty {
-                Task {
+                } else if viewModel.listNames.isEmpty {
                     await viewModel.refreshList()
                 }
             }
