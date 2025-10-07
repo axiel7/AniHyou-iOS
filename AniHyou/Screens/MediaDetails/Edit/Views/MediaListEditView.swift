@@ -202,7 +202,8 @@ struct MediaListEditView: View {
                 Stepper(
                     mediaDetails?.type == .anime ? "Episodes" : "Chapters",
                     onIncrement: {
-                        if let maxValue = mediaDetails?.maxEpOrCh, (progress ?? 0) < maxValue {
+                        let maxValue = mediaDetails?.maxEpOrCh
+                        if maxValue == nil || (progress ?? 0) < maxValue! {
                             if progress == nil {
                                 progress = 1
                             } else {
@@ -245,7 +246,8 @@ struct MediaListEditView: View {
                     Stepper(
                         "Volumes",
                         onIncrement: {
-                            if let maxValue = mediaDetails?.volumes, (progressVolumes ?? 0) < maxValue {
+                            let maxValue = mediaDetails?.volumes
+                            if maxValue == nil || (progressVolumes ?? 0) < maxValue! {
                                 if progressVolumes == nil {
                                     progressVolumes = 1
                                 } else {

@@ -53,32 +53,33 @@ import AniListAPI
 
     func onFavoriteToggled() async {
         guard let mediaId = mediaDetails?.id else { return }
-        try? await Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
-            do {
+        do {
+            let newData = try await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 try await transaction.updateObject(
                     ofType: IsFavouriteMedia.self,
                     withKey: "Media:\(mediaId)"
                 ) { (cachedData: inout IsFavouriteMedia) in
                     cachedData.isFavourite = !cachedData.isFavourite
                 }
-                let newObject = try await transaction.readObject(
+                
+                return try await transaction.readObject(
                     ofType: MediaDetailsQuery.Data.Media.self,
                     withKey: "Media:\(mediaId)"
                 )
-                DispatchQueue.main.async {
-                    self?.mediaDetails = newObject
-                }
-            } catch {
-                print(error)
             }
-        })
+            mediaDetails = newData
+        } catch {
+            print(error)
+        }
+        
     }
 
     func onEntryUpdated(updatedEntry: BasicMediaListEntry?) async {
-        //Update the local cache
-        try? await Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+        // Update the local cache
+        listEntry = updatedEntry
+        if let updatedEntry {
             do {
-                if let updatedEntry {
+                try await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                     try await transaction.updateObject(
                         ofType: BasicMediaListEntry.self,
                         withKey: "MediaList:\(updatedEntry.id).\(updatedEntry.mediaId)"
@@ -86,14 +87,10 @@ import AniListAPI
                         cachedData = updatedEntry
                     }
                 }
-
-                DispatchQueue.main.async {
-                    self?.listEntry = updatedEntry
-                }
             } catch {
                 print(error)
             }
-        })
+        }
     }
 
     func onEntryDeleted() async {
