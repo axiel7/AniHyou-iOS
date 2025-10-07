@@ -8,9 +8,10 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class ActivityFeedViewModel {
     
-    private var currentPage = 1
+    private var currentPage: Int32 = 1
     var hasNextPage = true
     
     var type = ActivityFeedType.all

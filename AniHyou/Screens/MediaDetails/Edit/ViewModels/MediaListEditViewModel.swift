@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class MediaListEditViewModel {
 
     var entry: BasicMediaListEntry?
@@ -76,7 +77,7 @@ import AniListAPI
         
         if let updatedEntry = await MediaListRepository.updateEntry(
             oldEntry: entry,
-            mediaId: mediaId,
+            mediaId: Int32(mediaId),
             status: status,
             score: score,
             advancedScores: advancedScoresDict,
@@ -104,7 +105,7 @@ import AniListAPI
     func deleteEntry() async {
         guard let entryId = entry?.id else { return }
         isLoading = true
-        isDeleteSuccess = await MediaListRepository.deleteEntry(entryId: entryId) == true
+        isDeleteSuccess = await MediaListRepository.deleteEntry(entryId: Int32(entryId)) == true
         isLoading = false
     }
 }

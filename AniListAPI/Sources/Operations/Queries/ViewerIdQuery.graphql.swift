@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class ViewerIdQuery: GraphQLQuery {
+public struct ViewerIdQuery: GraphQLQuery {
   public static let operationName: String = "ViewerId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -13,12 +14,15 @@ public class ViewerIdQuery: GraphQLQuery {
   public init() {}
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Viewer", Viewer?.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      ViewerIdQuery.Data.self
     ] }
 
     /// Get the currently authenticated user
@@ -28,15 +32,18 @@ public class ViewerIdQuery: GraphQLQuery {
     ///
     /// Parent Type: `User`
     public struct Viewer: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", Int.self),
         .field("options", Options?.self),
         .field("mediaListOptions", MediaListOptions?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        ViewerIdQuery.Data.Viewer.self
       ] }
 
       /// The id of the user
@@ -50,15 +57,18 @@ public class ViewerIdQuery: GraphQLQuery {
       ///
       /// Parent Type: `UserOptions`
       public struct Options: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserOptions }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserOptions }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("profileColor", String?.self),
           .field("staffNameLanguage", GraphQLEnum<AniListAPI.UserStaffNameLanguage>?.self),
           .field("titleLanguage", GraphQLEnum<AniListAPI.UserTitleLanguage>?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          ViewerIdQuery.Data.Viewer.Options.self
         ] }
 
         /// Profile highlight color (blue, purple, pink, orange, red, green, gray)
@@ -73,15 +83,18 @@ public class ViewerIdQuery: GraphQLQuery {
       ///
       /// Parent Type: `MediaListOptions`
       public struct MediaListOptions: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
           .field("animeList", AnimeList?.self),
           .field("mangaList", MangaList?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          ViewerIdQuery.Data.Viewer.MediaListOptions.self
         ] }
 
         /// The score format the user is using for media lists
@@ -95,15 +108,18 @@ public class ViewerIdQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaListTypeOptions`
         public struct AnimeList: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("advancedScoring", [String?]?.self),
             .field("advancedScoringEnabled", Bool?.self),
             .field("customLists", [String?]?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            ViewerIdQuery.Data.Viewer.MediaListOptions.AnimeList.self
           ] }
 
           /// The names of the user's advanced scoring sections
@@ -118,13 +134,16 @@ public class ViewerIdQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaListTypeOptions`
         public struct MangaList: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("customLists", [String?]?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            ViewerIdQuery.Data.Viewer.MediaListOptions.MangaList.self
           ] }
 
           /// The names of the user's custom lists

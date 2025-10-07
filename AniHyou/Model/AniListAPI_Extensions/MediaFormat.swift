@@ -8,6 +8,7 @@
 import SwiftUI
 import AniListAPI
 
+@MainActor
 extension MediaFormat {
     
     static let animeCases: [MediaFormat] = [.tv, .tvShort, .movie, .special, .ova, .ona, .music]

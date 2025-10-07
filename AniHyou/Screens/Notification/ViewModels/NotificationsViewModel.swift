@@ -9,11 +9,12 @@ import Foundation
 import AniListAPI
 import UserNotifications
 
+@MainActor
 @Observable class NotificationsViewModel {
 
     var notifications = [GenericNotification]()
     var type: NotificationTypeGrouped = .all
-    var currentPage = 1
+    var currentPage: Int32 = 1
     var hasNextPage = true
 
     func getNotifications() async {

@@ -2,41 +2,45 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UserFavoritesCharacterQuery: GraphQLQuery {
+public struct UserFavoritesCharacterQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query UserFavoritesCharacter($userId: Int, $page: Int, $perPage: Int) { User(id: $userId) { __typename favourites { __typename characters(page: $page, perPage: $perPage) { __typename nodes { __typename id name { __typename userPreferred } image { __typename large } } pageInfo { __typename currentPage hasNextPage } } } } }"#
     ))
 
-  public var userId: GraphQLNullable<Int>
-  public var page: GraphQLNullable<Int>
-  public var perPage: GraphQLNullable<Int>
+  public var userId: GraphQLNullable<Int32>
+  public var page: GraphQLNullable<Int32>
+  public var perPage: GraphQLNullable<Int32>
 
   public init(
-    userId: GraphQLNullable<Int>,
-    page: GraphQLNullable<Int>,
-    perPage: GraphQLNullable<Int>
+    userId: GraphQLNullable<Int32>,
+    page: GraphQLNullable<Int32>,
+    perPage: GraphQLNullable<Int32>
   ) {
     self.userId = userId
     self.page = page
     self.perPage = perPage
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "userId": userId,
     "page": page,
     "perPage": perPage
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserFavoritesCharacterQuery.Data.self
     ] }
 
     /// User query
@@ -46,13 +50,16 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
     ///
     /// Parent Type: `User`
     public struct User: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("favourites", Favourites?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserFavoritesCharacterQuery.Data.User.self
       ] }
 
       /// The users favourites
@@ -62,16 +69,19 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
       ///
       /// Parent Type: `Favourites`
       public struct Favourites: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("characters", Characters?.self, arguments: [
             "page": .variable("page"),
             "perPage": .variable("perPage")
           ]),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserFavoritesCharacterQuery.Data.User.Favourites.self
         ] }
 
         /// Favourite characters
@@ -81,14 +91,17 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
         ///
         /// Parent Type: `CharacterConnection`
         public struct Characters: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterConnection }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterConnection }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("nodes", [Node?]?.self),
             .field("pageInfo", PageInfo?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserFavoritesCharacterQuery.Data.User.Favourites.Characters.self
           ] }
 
           public var nodes: [Node?]? { __data["nodes"] }
@@ -99,15 +112,18 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
           ///
           /// Parent Type: `Character`
           public struct Node: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Character }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Character }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
               .field("name", Name?.self),
               .field("image", Image?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node.self
             ] }
 
             /// The id of the character
@@ -121,13 +137,16 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
             ///
             /// Parent Type: `CharacterName`
             public struct Name: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterName }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterName }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("userPreferred", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node.Name.self
               ] }
 
               /// The currently authenticated users preferred name language. Default romaji for non-authenticated
@@ -138,13 +157,16 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
             ///
             /// Parent Type: `CharacterImage`
             public struct Image: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterImage }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("large", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node.Image.self
               ] }
 
               /// The character's image of media at its largest size
@@ -156,14 +178,17 @@ public class UserFavoritesCharacterQuery: GraphQLQuery {
           ///
           /// Parent Type: `PageInfo`
           public struct PageInfo: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("currentPage", Int?.self),
               .field("hasNextPage", Bool?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserFavoritesCharacterQuery.Data.User.Favourites.Characters.PageInfo.self
             ] }
 
             /// The current page

@@ -13,8 +13,8 @@ struct ActivityRepository {
     static func getActivities(
         type: ActivityFeedType,
         isFollowing: Bool,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<ActivityFeedQuery.Data.Page.Activity>? {
         await withUnsafeContinuation { continuation in
             let typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]> =
@@ -54,7 +54,7 @@ struct ActivityRepository {
         }
     }
     
-    static func getActivityDetails(activityId: Int) async -> ActivityDetailsQuery.Data.Activity? {
+    static func getActivityDetails(activityId: Int32) async -> ActivityDetailsQuery.Data.Activity? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: ActivityDetailsQuery(activityId: .some(activityId))) { result in
                 switch result {

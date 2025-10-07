@@ -8,15 +8,16 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class UserFavoritesViewModel {
 
     var favoritesAnime = [UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node]()
 
-    var currentPageAnime = 1
+    var currentPageAnime: Int32 = 1
     var hasNextPageAnime = true
 
     func getFavoritesAnime(userId: Int) async {
-        if let result = await FavoritesRepository.getAnime(userId: userId, page: currentPageAnime) {
+        if let result = await FavoritesRepository.getAnime(userId: Int32(userId), page: currentPageAnime) {
             favoritesAnime.append(contentsOf: result.data)
             currentPageAnime = result.page
             hasNextPageAnime = result.hasNextPage
@@ -25,11 +26,11 @@ import AniListAPI
 
     var favoritesManga = [UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node]()
 
-    var currentPageManga = 1
+    var currentPageManga: Int32 = 1
     var hasNextPageManga = true
 
     func getFavoritesManga(userId: Int) async {
-        if let result = await FavoritesRepository.getManga(userId: userId, page: currentPageManga) {
+        if let result = await FavoritesRepository.getManga(userId: Int32(userId), page: currentPageManga) {
             favoritesManga.append(contentsOf: result.data)
             currentPageManga = result.page
             hasNextPageManga = result.hasNextPage
@@ -38,11 +39,11 @@ import AniListAPI
 
     var favoritesCharacters = [UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node]()
 
-    var currentPageCharacter = 1
+    var currentPageCharacter: Int32 = 1
     var hasNextPageCharacter = true
 
     func getFavoritesCharacter(userId: Int) async {
-        if let result = await FavoritesRepository.getCharacters(userId: userId, page: currentPageCharacter) {
+        if let result = await FavoritesRepository.getCharacters(userId: Int32(userId), page: currentPageCharacter) {
             favoritesCharacters.append(contentsOf: result.data)
             currentPageCharacter = result.page
             hasNextPageCharacter = result.hasNextPage
@@ -51,11 +52,11 @@ import AniListAPI
 
     var favoritesStaff = [UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node]()
 
-    var currentPageStaff = 1
+    var currentPageStaff: Int32 = 1
     var hasNextPageStaff = true
 
     func getFavoritesStaff(userId: Int) async {
-        if let result = await FavoritesRepository.getStaff(userId: userId, page: currentPageStaff) {
+        if let result = await FavoritesRepository.getStaff(userId: Int32(userId), page: currentPageStaff) {
             favoritesStaff.append(contentsOf: result.data)
             currentPageStaff = result.page
             hasNextPageStaff = result.hasNextPage
@@ -64,11 +65,11 @@ import AniListAPI
 
     var favoritesStudio = [UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node]()
 
-    var currentPageStudio = 1
+    var currentPageStudio: Int32 = 1
     var hasNextPageStudio = true
 
     func getFavoritesStudio(userId: Int) async {
-        if let result = await FavoritesRepository.getStudios(userId: userId, page: currentPageStudio) {
+        if let result = await FavoritesRepository.getStudios(userId: Int32(userId), page: currentPageStudio) {
             favoritesStudio.append(contentsOf: result.data)
             currentPageStudio = result.page
             hasNextPageStudio = result.hasNextPage

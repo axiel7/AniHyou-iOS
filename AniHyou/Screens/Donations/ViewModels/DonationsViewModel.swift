@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 
+@MainActor
 @Observable class DonationsViewModel {
 
     var transacitonListener: Task<Void, Error>?
@@ -18,7 +19,7 @@ import StoreKit
 
     init() {
         transacitonListener = listenForTransactions()
-        Task {
+        Task { @MainActor in
             await requestProducts()
         }
     }

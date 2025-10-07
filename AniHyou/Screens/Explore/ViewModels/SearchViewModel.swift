@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class SearchViewModel {
 
     //var currentPage = 1
@@ -232,15 +233,25 @@ import AniListAPI
                 if let data = graphQLResult.data {
                     // Workaround: SwiftUI List item selection only works on Identifiable objects
                     if let genres = data.genreCollection {
-                        self?.genreCollection = genres
-                            .compactMap { $0 }
-                            .compactMap { Genre(id: $0) }
+                        /*self?.genreCollection = genres
+                            .compactMap {
+                                if let genre = $0 {
+                                    Genre(id: genre)
+                                } else {
+                                    nil
+                                }
+                            }*/
                     }
 
                     if let tags = data.mediaTagCollection {
-                        self?.tagCollection = tags
-                            .compactMap { $0 }
-                            .compactMap { Genre(id: $0.name) }
+                        /*self?.tagCollection = tags
+                            .compactMap {
+                                if let tag = $0 {
+                                    Genre(id: tag.name)
+                                } else {
+                                    nil
+                                }
+                            }*/
                     }
                 }
             case .failure(let error):

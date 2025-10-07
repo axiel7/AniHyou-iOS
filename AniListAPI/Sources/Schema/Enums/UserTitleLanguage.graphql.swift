@@ -1,7 +1,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import ApolloAPI
+@_spi(Internal) import ApolloAPI
 
 /// The language the user wants to see media titles in
 public enum UserTitleLanguage: String, EnumType {

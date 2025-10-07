@@ -12,18 +12,19 @@ struct ThreadCommentDetailsView: View {
     
     var viewModel: ThreadDetailsViewModel
     
-    let comment: ChildCommentsQuery.Data.Page.ThreadComment
+    let comment: ChildCommentsQuery.Data.Page.ThreadComment?
+    @State var childCommentsParsed: [ChildCommentsQuery.Data.Page.ThreadComment]?
     @State var isLiked: Bool
     @State var likeCount: Int
     
     init(
         viewModel: ThreadDetailsViewModel,
-        comment: ChildCommentsQuery.Data.Page.ThreadComment
+        comment: ChildCommentsQuery.Data.Page.ThreadComment?
     ) {
         self.viewModel = viewModel
         self.comment = comment
-        self.isLiked = comment.isLiked == true
-        self.likeCount = comment.likeCount
+        self.isLiked = comment?.isLiked == true
+        self.likeCount = comment?.likeCount ?? 0
     }
     
     var body: some View {
@@ -36,22 +37,25 @@ struct ThreadCommentDetailsView: View {
                 )
                 Divider()
                     .padding(.vertical)
-                if let childComments = comment.childCommentsParsed {
-                    ForEach(childComments, id: \.id) {
+                if let childCommentsParsed {
+                    ForEach(childCommentsParsed, id: \.id) {
                         ThreadCommentItemView(viewModel: viewModel, comment: $0)
                         Divider()
                             .padding(.vertical)
                     }
                 }
             }
+            .task {
+                childCommentsParsed = await comment?.childComments?.toThreadComments()
+            }
         }
-        .navigationTitle(comment.user?.name ?? "")
+        .navigationTitle(comment?.user?.name ?? "")
     }
 }
 
 #Preview {
     ThreadCommentDetailsView(
         viewModel: ThreadDetailsViewModel(),
-        comment: .init(_fieldData: nil)
+        comment: nil
     )
 }

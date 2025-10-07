@@ -2,17 +2,18 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
 public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment BasicMediaListEntry on MediaList { __typename id mediaId progress progressVolumes status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes customLists }"#
   }
 
-  public var __data: DataDict
-  public init(_dataDict: DataDict) { __data = _dataDict }
+  @_spi(Unsafe) public var __data: DataDict
+  @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
-  public static var __selections: [ApolloAPI.Selection] { [
+  @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+  @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
     .field("mediaId", Int.self),
@@ -28,6 +29,9 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     .field("completedAt", CompletedAt?.self),
     .field("notes", String?.self),
     .field("customLists", AniListAPI.Json?.self),
+  ] }
+  @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+    BasicMediaListEntry.self
   ] }
 
   /// The id of the list entry
@@ -117,41 +121,40 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     notes: String? = nil,
     customLists: AniListAPI.Json? = nil
   ) {
-    self.init(_dataDict: DataDict(
-      data: [
-        "__typename": AniListAPI.Objects.MediaList.typename,
-        "id": id,
-        "mediaId": mediaId,
-        "progress": progress,
-        "progressVolumes": progressVolumes,
-        "status": status,
-        "score": score,
-        "advancedScores": advancedScores,
-        "repeat": _repeat,
-        "private": _private,
-        "hiddenFromStatusLists": hiddenFromStatusLists,
-        "startedAt": startedAt._fieldData,
-        "completedAt": completedAt._fieldData,
-        "notes": notes,
-        "customLists": customLists,
-      ],
-      fulfilledFragments: [
-        ObjectIdentifier(BasicMediaListEntry.self)
-      ]
-    ))
+    self.init(unsafelyWithData: [
+      "__typename": AniListAPI.Objects.MediaList.typename,
+      "id": id,
+      "mediaId": mediaId,
+      "progress": progress,
+      "progressVolumes": progressVolumes,
+      "status": status,
+      "score": score,
+      "advancedScores": advancedScores,
+      "repeat": _repeat,
+      "private": _private,
+      "hiddenFromStatusLists": hiddenFromStatusLists,
+      "startedAt": startedAt._fieldData,
+      "completedAt": completedAt._fieldData,
+      "notes": notes,
+      "customLists": customLists,
+    ])
   }
 
   /// StartedAt
   ///
   /// Parent Type: `FuzzyDate`
   public struct StartedAt: AniListAPI.MutableSelectionSet {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public var __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .fragment(FuzzyDateFragment.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      BasicMediaListEntry.StartedAt.self,
+      FuzzyDateFragment.self
     ] }
 
     /// Numeric Day (24)
@@ -171,8 +174,8 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     }
 
     public struct Fragments: FragmentContainer {
-      public var __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public var __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
       public var fuzzyDateFragment: FuzzyDateFragment {
         get { _toFragment() }
@@ -185,18 +188,12 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
       month: Int? = nil,
       year: Int? = nil
     ) {
-      self.init(_dataDict: DataDict(
-        data: [
-          "__typename": AniListAPI.Objects.FuzzyDate.typename,
-          "day": day,
-          "month": month,
-          "year": year,
-        ],
-        fulfilledFragments: [
-          ObjectIdentifier(BasicMediaListEntry.StartedAt.self),
-          ObjectIdentifier(FuzzyDateFragment.self)
-        ]
-      ))
+      self.init(unsafelyWithData: [
+        "__typename": AniListAPI.Objects.FuzzyDate.typename,
+        "day": day,
+        "month": month,
+        "year": year,
+      ])
     }
   }
 
@@ -204,13 +201,17 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   ///
   /// Parent Type: `FuzzyDate`
   public struct CompletedAt: AniListAPI.MutableSelectionSet {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public var __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .fragment(FuzzyDateFragment.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      BasicMediaListEntry.CompletedAt.self,
+      FuzzyDateFragment.self
     ] }
 
     /// Numeric Day (24)
@@ -230,8 +231,8 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
     }
 
     public struct Fragments: FragmentContainer {
-      public var __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public var __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
       public var fuzzyDateFragment: FuzzyDateFragment {
         get { _toFragment() }
@@ -244,18 +245,12 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
       month: Int? = nil,
       year: Int? = nil
     ) {
-      self.init(_dataDict: DataDict(
-        data: [
-          "__typename": AniListAPI.Objects.FuzzyDate.typename,
-          "day": day,
-          "month": month,
-          "year": year,
-        ],
-        fulfilledFragments: [
-          ObjectIdentifier(BasicMediaListEntry.CompletedAt.self),
-          ObjectIdentifier(FuzzyDateFragment.self)
-        ]
-      ))
+      self.init(unsafelyWithData: [
+        "__typename": AniListAPI.Objects.FuzzyDate.typename,
+        "day": day,
+        "month": month,
+        "year": year,
+      ])
     }
   }
 }

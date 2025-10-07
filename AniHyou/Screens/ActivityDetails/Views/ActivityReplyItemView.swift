@@ -52,7 +52,7 @@ struct ActivityReplyItemView: View {
                     action: {
                         Task {
                             if let likeResult = await LikeRepository.toggleLike(
-                                likeableId: reply.id,
+                                likeableId: Int32(reply.id),
                                 likeableType: .activityReply
                             ) {
                                 isLiked = likeResult

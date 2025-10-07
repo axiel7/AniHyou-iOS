@@ -2,22 +2,23 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class NotificationsQuery: GraphQLQuery {
+public struct NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType], $resetNotificationCount: Boolean) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: $resetNotificationCount, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
-  public var page: GraphQLNullable<Int>
-  public var perPage: GraphQLNullable<Int>
+  public var page: GraphQLNullable<Int32>
+  public var perPage: GraphQLNullable<Int32>
   public var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>
   public var resetNotificationCount: GraphQLNullable<Bool>
 
   public init(
-    page: GraphQLNullable<Int>,
-    perPage: GraphQLNullable<Int>,
+    page: GraphQLNullable<Int32>,
+    perPage: GraphQLNullable<Int32>,
     typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]>,
     resetNotificationCount: GraphQLNullable<Bool>
   ) {
@@ -27,7 +28,7 @@ public class NotificationsQuery: GraphQLQuery {
     self.resetNotificationCount = resetNotificationCount
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "typeIn": typeIn,
@@ -35,15 +36,18 @@ public class NotificationsQuery: GraphQLQuery {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      NotificationsQuery.Data.self
     ] }
 
     public var page: Page? { __data["Page"] }
@@ -52,17 +56,20 @@ public class NotificationsQuery: GraphQLQuery {
     ///
     /// Parent Type: `Page`
     public struct Page: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("notifications", [Notification?]?.self, arguments: [
           "resetNotificationCount": .variable("resetNotificationCount"),
           "type_in": .variable("typeIn")
         ]),
         .field("pageInfo", PageInfo?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        NotificationsQuery.Data.Page.self
       ] }
 
       public var notifications: [Notification?]? { __data["notifications"] }
@@ -73,11 +80,11 @@ public class NotificationsQuery: GraphQLQuery {
       ///
       /// Parent Type: `NotificationUnion`
       public struct Notification: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.NotificationUnion }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.NotificationUnion }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .inlineFragment(AsAiringNotification.self),
           .inlineFragment(AsFollowingNotification.self),
@@ -96,6 +103,9 @@ public class NotificationsQuery: GraphQLQuery {
           .inlineFragment(AsMediaDataChangeNotification.self),
           .inlineFragment(AsMediaMergeNotification.self),
           .inlineFragment(AsMediaDeletionNotification.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          NotificationsQuery.Data.Page.Notification.self
         ] }
 
         public var asAiringNotification: AsAiringNotification? { _asInlineFragment() }
@@ -120,12 +130,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `AiringNotification`
         public struct AsAiringNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("contexts", [String?]?.self),
             .field("animeId", Int.self),
@@ -133,6 +143,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("media", Media?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsAiringNotification.self
           ] }
 
           /// The id of the Notification
@@ -154,14 +168,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Media`
           public struct Media: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsAiringNotification.Media.self
             ] }
 
             /// The official titles of the media in various languages
@@ -173,13 +190,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaTitle`
             public struct Title: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("userPreferred", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsAiringNotification.Media.Title.self
               ] }
 
               /// The currently authenticated users preferred title language. Default romaji for non-authenticated
@@ -190,13 +210,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaCoverImage`
             public struct CoverImage: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsAiringNotification.Media.CoverImage.self
               ] }
 
               /// The cover image url of the media at medium size
@@ -209,18 +232,22 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `FollowingNotification`
         public struct AsFollowingNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FollowingNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FollowingNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("userId", Int.self),
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsFollowingNotification.self
           ] }
 
           /// The id of the Notification
@@ -240,14 +267,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsFollowingNotification.User.self
             ] }
 
             /// The name of the user
@@ -259,13 +289,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsFollowingNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -278,12 +311,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ActivityMessageNotification`
         public struct AsActivityMessageNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityMessageNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityMessageNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("activityId", Int.self),
@@ -291,6 +324,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsActivityMessageNotification.self
           ] }
 
           /// The id of the Notification
@@ -312,14 +349,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsActivityMessageNotification.User.self
             ] }
 
             /// The name of the user
@@ -331,13 +371,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsActivityMessageNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -350,12 +393,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ActivityMentionNotification`
         public struct AsActivityMentionNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityMentionNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityMentionNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("activityId", Int.self),
@@ -363,6 +406,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsActivityMentionNotification.self
           ] }
 
           /// The id of the Notification
@@ -384,14 +431,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsActivityMentionNotification.User.self
             ] }
 
             /// The name of the user
@@ -403,13 +453,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsActivityMentionNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -422,12 +475,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ActivityReplyNotification`
         public struct AsActivityReplyNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReplyNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReplyNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("activityId", Int.self),
@@ -435,6 +488,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsActivityReplyNotification.self
           ] }
 
           /// The id of the Notification
@@ -456,14 +513,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsActivityReplyNotification.User.self
             ] }
 
             /// The name of the user
@@ -475,13 +535,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsActivityReplyNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -494,12 +557,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ActivityReplySubscribedNotification`
         public struct AsActivityReplySubscribedNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReplySubscribedNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReplySubscribedNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("activityId", Int.self),
@@ -507,6 +570,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsActivityReplySubscribedNotification.self
           ] }
 
           /// The id of the Notification
@@ -528,14 +595,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsActivityReplySubscribedNotification.User.self
             ] }
 
             /// The name of the user
@@ -547,13 +617,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsActivityReplySubscribedNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -566,12 +639,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ActivityLikeNotification`
         public struct AsActivityLikeNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityLikeNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityLikeNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("activityId", Int.self),
@@ -579,6 +652,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsActivityLikeNotification.self
           ] }
 
           /// The id of the Notification
@@ -600,14 +677,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsActivityLikeNotification.User.self
             ] }
 
             /// The name of the user
@@ -619,13 +699,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsActivityLikeNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -638,12 +721,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ActivityReplyLikeNotification`
         public struct AsActivityReplyLikeNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReplyLikeNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ActivityReplyLikeNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("activityId", Int.self),
@@ -651,6 +734,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsActivityReplyLikeNotification.self
           ] }
 
           /// The id of the Notification
@@ -672,14 +759,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsActivityReplyLikeNotification.User.self
             ] }
 
             /// The name of the user
@@ -691,13 +781,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsActivityReplyLikeNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -710,12 +803,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ThreadCommentMentionNotification`
         public struct AsThreadCommentMentionNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentMentionNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentMentionNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
@@ -724,6 +817,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsThreadCommentMentionNotification.self
           ] }
 
           /// The id of the Notification
@@ -747,13 +844,16 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Thread`
           public struct Thread: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentMentionNotification.Thread.self
             ] }
 
             /// The id of the thread
@@ -764,14 +864,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentMentionNotification.User.self
             ] }
 
             /// The name of the user
@@ -783,13 +886,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsThreadCommentMentionNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -802,12 +908,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ThreadCommentReplyNotification`
         public struct AsThreadCommentReplyNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentReplyNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentReplyNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
@@ -816,6 +922,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsThreadCommentReplyNotification.self
           ] }
 
           /// The id of the Notification
@@ -839,13 +949,16 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Thread`
           public struct Thread: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentReplyNotification.Thread.self
             ] }
 
             /// The id of the thread
@@ -856,14 +969,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentReplyNotification.User.self
             ] }
 
             /// The name of the user
@@ -875,13 +991,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsThreadCommentReplyNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -894,12 +1013,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ThreadCommentSubscribedNotification`
         public struct AsThreadCommentSubscribedNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentSubscribedNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentSubscribedNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
@@ -908,6 +1027,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsThreadCommentSubscribedNotification.self
           ] }
 
           /// The id of the Notification
@@ -931,13 +1054,16 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Thread`
           public struct Thread: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentSubscribedNotification.Thread.self
             ] }
 
             /// The id of the thread
@@ -948,14 +1074,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentSubscribedNotification.User.self
             ] }
 
             /// The name of the user
@@ -967,13 +1096,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsThreadCommentSubscribedNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -986,12 +1118,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ThreadCommentLikeNotification`
         public struct AsThreadCommentLikeNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentLikeNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadCommentLikeNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("commentId", Int.self),
@@ -1000,6 +1132,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsThreadCommentLikeNotification.self
           ] }
 
           /// The id of the Notification
@@ -1023,13 +1159,16 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Thread`
           public struct Thread: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", Int.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentLikeNotification.Thread.self
             ] }
 
             /// The id of the thread
@@ -1040,14 +1179,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadCommentLikeNotification.User.self
             ] }
 
             /// The name of the user
@@ -1059,13 +1201,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsThreadCommentLikeNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -1078,12 +1223,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ThreadLikeNotification`
         public struct AsThreadLikeNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadLikeNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadLikeNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("threadId", Int.self),
@@ -1091,6 +1236,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("user", User?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsThreadLikeNotification.self
           ] }
 
           /// The id of the Notification
@@ -1112,14 +1261,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `User`
           public struct User: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("name", String.self),
               .field("avatar", Avatar?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsThreadLikeNotification.User.self
             ] }
 
             /// The name of the user
@@ -1131,13 +1283,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `UserAvatar`
             public struct Avatar: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsThreadLikeNotification.User.Avatar.self
               ] }
 
               /// The avatar of user at medium size
@@ -1150,18 +1305,22 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `RelatedMediaAdditionNotification`
         public struct AsRelatedMediaAdditionNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.RelatedMediaAdditionNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.RelatedMediaAdditionNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("mediaId", Int.self),
             .field("media", Media?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsRelatedMediaAdditionNotification.self
           ] }
 
           /// The id of the Notification
@@ -1181,14 +1340,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Media`
           public struct Media: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsRelatedMediaAdditionNotification.Media.self
             ] }
 
             /// The official titles of the media in various languages
@@ -1200,13 +1362,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaTitle`
             public struct Title: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("userPreferred", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsRelatedMediaAdditionNotification.Media.Title.self
               ] }
 
               /// The currently authenticated users preferred title language. Default romaji for non-authenticated
@@ -1217,13 +1382,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaCoverImage`
             public struct CoverImage: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsRelatedMediaAdditionNotification.Media.CoverImage.self
               ] }
 
               /// The cover image url of the media at medium size
@@ -1236,18 +1404,22 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaDataChangeNotification`
         public struct AsMediaDataChangeNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaDataChangeNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaDataChangeNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("mediaId", Int.self),
             .field("media", Media?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsMediaDataChangeNotification.self
           ] }
 
           /// The id of the Notification
@@ -1267,14 +1439,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Media`
           public struct Media: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsMediaDataChangeNotification.Media.self
             ] }
 
             /// The official titles of the media in various languages
@@ -1286,13 +1461,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaTitle`
             public struct Title: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("userPreferred", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsMediaDataChangeNotification.Media.Title.self
               ] }
 
               /// The currently authenticated users preferred title language. Default romaji for non-authenticated
@@ -1303,13 +1481,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaCoverImage`
             public struct CoverImage: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsMediaDataChangeNotification.Media.CoverImage.self
               ] }
 
               /// The cover image url of the media at medium size
@@ -1322,12 +1503,12 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaMergeNotification`
         public struct AsMediaMergeNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaMergeNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaMergeNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("reason", String?.self),
@@ -1335,6 +1516,10 @@ public class NotificationsQuery: GraphQLQuery {
             .field("media", Media?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsMediaMergeNotification.self
           ] }
 
           /// The id of the Notification
@@ -1356,14 +1541,17 @@ public class NotificationsQuery: GraphQLQuery {
           ///
           /// Parent Type: `Media`
           public struct Media: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsMediaMergeNotification.Media.self
             ] }
 
             /// The official titles of the media in various languages
@@ -1375,13 +1563,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaTitle`
             public struct Title: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaTitle }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("userPreferred", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsMediaMergeNotification.Media.Title.self
               ] }
 
               /// The currently authenticated users preferred title language. Default romaji for non-authenticated
@@ -1392,13 +1583,16 @@ public class NotificationsQuery: GraphQLQuery {
             ///
             /// Parent Type: `MediaCoverImage`
             public struct CoverImage: AniListAPI.SelectionSet {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-              public static var __selections: [ApolloAPI.Selection] { [
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("medium", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsMediaMergeNotification.Media.CoverImage.self
               ] }
 
               /// The cover image url of the media at medium size
@@ -1411,18 +1605,22 @@ public class NotificationsQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaDeletionNotification`
         public struct AsMediaDeletionNotification: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaDeletionNotification }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaDeletionNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("id", Int.self),
             .field("context", String?.self),
             .field("reason", String?.self),
             .field("deletedMediaTitle", String?.self),
             .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
             .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsMediaDeletionNotification.self
           ] }
 
           /// The id of the Notification
@@ -1444,14 +1642,17 @@ public class NotificationsQuery: GraphQLQuery {
       ///
       /// Parent Type: `PageInfo`
       public struct PageInfo: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          NotificationsQuery.Data.Page.PageInfo.self
         ] }
 
         /// The current page

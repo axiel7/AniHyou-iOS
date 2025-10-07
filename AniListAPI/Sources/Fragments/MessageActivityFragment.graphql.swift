@@ -2,17 +2,18 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
 public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment MessageActivityFragment on MessageActivity { __typename id createdAt isLiked likeCount replyCount isPrivate isLocked message messengerId messenger { __typename name avatar { __typename medium } } }"#
   }
 
-  public let __data: DataDict
-  public init(_dataDict: DataDict) { __data = _dataDict }
+  @_spi(Unsafe) public let __data: DataDict
+  @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
-  public static var __selections: [ApolloAPI.Selection] { [
+  @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
+  @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
     .field("createdAt", Int.self),
@@ -24,6 +25,9 @@ public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment {
     .field("message", String?.self),
     .field("messengerId", Int?.self),
     .field("messenger", Messenger?.self),
+  ] }
+  @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+    MessageActivityFragment.self
   ] }
 
   /// The id of the activity
@@ -51,14 +55,17 @@ public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment {
   ///
   /// Parent Type: `User`
   public struct Messenger: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("name", String.self),
       .field("avatar", Avatar?.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      MessageActivityFragment.Messenger.self
     ] }
 
     /// The name of the user
@@ -70,13 +77,16 @@ public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment {
     ///
     /// Parent Type: `UserAvatar`
     public struct Avatar: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("medium", String?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        MessageActivityFragment.Messenger.Avatar.self
       ] }
 
       /// The avatar of user at medium size

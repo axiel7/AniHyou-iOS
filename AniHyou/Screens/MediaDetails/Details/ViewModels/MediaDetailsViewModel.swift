@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 @Observable class MediaDetailsViewModel {
 
     var mediaDetails: MediaDetailsQuery.Data.Media?
@@ -18,7 +19,7 @@ import AniListAPI
     var isLoadingThemes = true
 
     func getMediaDetails(mediaId: Int) async {
-        if let result = await MediaRepository.getMediaDetails(mediaId: mediaId) {
+        if let result = await MediaRepository.getMediaDetails(mediaId: Int32(mediaId)) {
             mediaDetails = result
             listEntry = result.mediaListEntry?.fragments.basicMediaListEntry
         }
@@ -35,13 +36,13 @@ import AniListAPI
 
     func toggleFavorite() async {
         guard let mediaDetails else { return }
-        let animeId: Int? = if mediaDetails.type == .anime {
-            mediaDetails.id
+        let animeId: Int32? = if mediaDetails.type == .anime {
+            Int32(mediaDetails.id)
         } else {
             nil
         }
-        let mangaId: Int? = if mediaDetails.type == .manga {
-            mediaDetails.id
+        let mangaId: Int32? = if mediaDetails.type == .manga {
+            Int32(mediaDetails.id)
         } else {
             nil
         }
@@ -54,13 +55,13 @@ import AniListAPI
         guard let mediaId = mediaDetails?.id else { return }
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
-                try transaction.updateObject(
+                try await transaction.updateObject(
                     ofType: IsFavouriteMedia.self,
                     withKey: "Media:\(mediaId)"
                 ) { (cachedData: inout IsFavouriteMedia) in
                     cachedData.isFavourite = !cachedData.isFavourite
                 }
-                let newObject = try transaction.readObject(
+                let newObject = try await transaction.readObject(
                     ofType: MediaDetailsQuery.Data.Media.self,
                     withKey: "Media:\(mediaId)"
                 )
@@ -78,7 +79,7 @@ import AniListAPI
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
                 if let updatedEntry {
-                    try transaction.updateObject(
+                    try await transaction.updateObject(
                         ofType: BasicMediaListEntry.self,
                         withKey: "MediaList:\(updatedEntry.id).\(updatedEntry.mediaId)"
                     ) { (cachedData: inout BasicMediaListEntry) in

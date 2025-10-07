@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class CurrentViewModel {
     
     var isLoading = true
@@ -41,7 +42,7 @@ import AniListAPI
     
     private func getMediaList(_ mediaType: MediaType, refresh: Bool) async -> [CommonMediaListEntry]? {
         return await MediaListRepository.getUserMediaList(
-            userId: LoginRepository.authUserId(),
+            userId: Int32(LoginRepository.authUserId()),
             mediaType: mediaType,
             statusIn: [.current, .repeating],
             sort: [.updatedTimeDesc],

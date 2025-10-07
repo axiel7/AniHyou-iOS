@@ -58,7 +58,7 @@ struct MessageActivityItemView: View {
                     action: {
                         Task {
                             if let likeResult = await LikeRepository.toggleLike(
-                                likeableId: activity.id,
+                                likeableId: Int32(activity.id),
                                 likeableType: .activity
                             ) {
                                 isLiked = likeResult

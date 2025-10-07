@@ -11,6 +11,7 @@ import UserNotifications
 
 final class NotificationsManager {
     
+    @MainActor
     static func handleFetchTask(_ task: BGAppRefreshTask) {
         NotificationsManager.scheduleFetch()
         

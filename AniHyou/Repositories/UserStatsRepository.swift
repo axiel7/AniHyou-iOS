@@ -11,7 +11,7 @@ import AniListAPI
 struct UserStatsRepository {
     
     static func getAnimeOverview(
-        userId: Int
+        userId: Int32
     ) async -> UserStatsAnimeOverviewQuery.Data.User? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -29,7 +29,7 @@ struct UserStatsRepository {
     }
     
     static func getMangaOverview(
-        userId: Int
+        userId: Int32
     ) async -> UserStatsMangaOverviewQuery.Data.User? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -47,7 +47,7 @@ struct UserStatsRepository {
     }
     
     static func getGenresStats(
-        userId: Int,
+        userId: Int32,
         mediaType: MediaType,
         distribution: StatDistributionType
     ) async -> [GenreStat]? {
@@ -94,7 +94,7 @@ struct UserStatsRepository {
     }
     
     static func getTagsStats(
-        userId: Int,
+        userId: Int32,
         mediaType: MediaType,
         distribution: StatDistributionType
     ) async -> [TagStat]? {
@@ -141,7 +141,7 @@ struct UserStatsRepository {
     }
     
     static func getStaffStats(
-        userId: Int,
+        userId: Int32,
         mediaType: MediaType,
         distribution: StatDistributionType
     ) async -> [StaffStat]? {
@@ -188,7 +188,7 @@ struct UserStatsRepository {
     }
     
     static func getVoiceActorsStats(
-        userId: Int,
+        userId: Int32,
         distribution: StatDistributionType
     ) async -> [VoiceActorStat]? {
         await withUnsafeContinuation { continuation in
@@ -214,7 +214,7 @@ struct UserStatsRepository {
     }
     
     static func getStudiosStats(
-        userId: Int,
+        userId: Int32,
         distribution: StatDistributionType
     ) async -> [StudioStat]? {
         await withUnsafeContinuation { continuation in

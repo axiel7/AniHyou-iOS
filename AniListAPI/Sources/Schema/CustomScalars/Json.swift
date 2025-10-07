@@ -5,18 +5,18 @@
 // Any changes to this file will not be overwritten by future
 // code generation execution.
 
-import ApolloAPI
+@_spi(Execution) @_spi(Internal) import ApolloAPI
 
 public typealias Json = CustomJSON
 
 public enum CustomJSON: CustomScalarType, Hashable {
-    case dictionary([String: AnyHashable])
-    case array([[String: AnyHashable]])
+    case dictionary([String: JSONValue])
+    case array([[String: JSONValue]])
 
     public init(_jsonValue value: JSONValue) throws {
-        if let dict = value as? [String: AnyHashable] {
+        if let dict = value as? [String: JSONValue] {
             self = .dictionary(dict)
-        } else if let array = value as? [[String: AnyHashable]] {
+        } else if let array = value as? [[String: JSONValue]] {
             self = .array(array)
         } else {
             throw JSONDecodingError.couldNotConvert(value: value, to: CustomJSON.self)
@@ -25,14 +25,15 @@ public enum CustomJSON: CustomScalarType, Hashable {
 
     public var _jsonValue: JSONValue {
         switch self {
-        case let .dictionary(json as AnyHashable),
-             let .array(json as AnyHashable):
-            return json
+        case .dictionary(let dictionary):
+            dictionary as JSONValue
+        case .array(let array):
+            array as JSONValue
         }
     }
 
     public static func == (lhs: CustomJSON, rhs: CustomJSON) -> Bool {
-        lhs._jsonValue == rhs._jsonValue
+        lhs._jsonValue.hashValue == rhs._jsonValue.hashValue
     }
 
     public func hash(into hasher: inout Hasher) {

@@ -13,18 +13,18 @@ private let coverHeight: CGFloat = 110
 
 struct ChartListItemView: View {
 
-    let item: MediaChartQuery.Data.Page.Medium
+    let item: MediaChartQuery.Data.Page.Medium?
     let position: Int
 
     var body: some View {
         HStack(alignment: .center) {
             ZStack(alignment: .bottomTrailing) {
                 MediaCoverView(
-                    imageUrl: item.coverImage?.large,
+                    imageUrl: item?.coverImage?.large,
                     width: coverWidth,
                     height: coverHeight
                 )
-                if let status = item.mediaListEntry?.status?.value {
+                if let status = item?.mediaListEntry?.status?.value {
                     Image(systemName: status.systemImage)
                         .padding(4)
                         .background(.thinMaterial, in: .circle)
@@ -40,16 +40,16 @@ struct ChartListItemView: View {
                 .padding(.trailing, 8)
 
             VStack(alignment: .leading) {
-                Text(item.title?.userPreferred ?? "")
+                Text(item?.title?.userPreferred ?? "")
                     .font(.body)
                     .foregroundStyle(.primary)
                     .padding(.bottom, 2)
                     .lineLimit(3)
                     .multilineTextAlignment(.leading)
                 Group {
-                    Text(item.format?.value?.localizedName ?? "Unknown") +
+                    Text(item?.format?.value?.localizedName ?? "Unknown") +
                     Text(" · ") +
-                    Text(item.startDate?.year?.stringValue ?? "")
+                    Text(item?.startDate?.year?.stringValue ?? "")
                 }
                 .font(.subheadline)
                 .foregroundStyle(.gray)
@@ -63,5 +63,5 @@ struct ChartListItemView: View {
 }
 
 #Preview {
-    ChartListItemView(item: .init(_fieldData: nil), position: 100)
+    ChartListItemView(item: nil, position: 100)
 }

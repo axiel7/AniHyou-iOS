@@ -2,21 +2,25 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
 public struct FuzzyDateFragment: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment FuzzyDateFragment on FuzzyDate { __typename day month year }"#
   }
 
-  public var __data: DataDict
-  public init(_dataDict: DataDict) { __data = _dataDict }
+  @_spi(Unsafe) public var __data: DataDict
+  @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
-  public static var __selections: [ApolloAPI.Selection] { [
+  @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+  @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("day", Int?.self),
     .field("month", Int?.self),
     .field("year", Int?.self),
+  ] }
+  @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+    FuzzyDateFragment.self
   ] }
 
   /// Numeric Day (24)
@@ -40,16 +44,11 @@ public struct FuzzyDateFragment: AniListAPI.MutableSelectionSet, Fragment {
     month: Int? = nil,
     year: Int? = nil
   ) {
-    self.init(_dataDict: DataDict(
-      data: [
-        "__typename": AniListAPI.Objects.FuzzyDate.typename,
-        "day": day,
-        "month": month,
-        "year": year,
-      ],
-      fulfilledFragments: [
-        ObjectIdentifier(FuzzyDateFragment.self)
-      ]
-    ))
+    self.init(unsafelyWithData: [
+      "__typename": AniListAPI.Objects.FuzzyDate.typename,
+      "day": day,
+      "month": month,
+      "year": year,
+    ])
   }
 }

@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ThreadRepository {
     
-    static func getThreadDetails(threadId: Int) async -> BasicThreadDetails? {
+    static func getThreadDetails(threadId: Int32) async -> BasicThreadDetails? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: ThreadDetailsQuery(threadId: .some(threadId))) { result in
                 switch result {
@@ -25,7 +25,7 @@ struct ThreadRepository {
     }
     
     static func subscribeToThread(
-        threadId: Int,
+        threadId: Int32,
         subscribe: Bool
     ) async -> Bool? {
         await withUnsafeContinuation { continuation in
@@ -47,9 +47,9 @@ struct ThreadRepository {
     }
     
     static func getThreadComments(
-        threadId: Int,
-        page: Int,
-        perPage: Int = 25
+        threadId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<ChildCommentsQuery.Data.Page.ThreadComment>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

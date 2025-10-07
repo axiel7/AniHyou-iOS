@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UserBasicInfoQuery: GraphQLQuery {
+public struct UserBasicInfoQuery: GraphQLQuery {
   public static let operationName: String = "UserBasicInfo"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,21 +12,24 @@ public class UserBasicInfoQuery: GraphQLQuery {
       fragments: [UserInfo.self]
     ))
 
-  public var userId: GraphQLNullable<Int>
+  public var userId: GraphQLNullable<Int32>
 
-  public init(userId: GraphQLNullable<Int>) {
+  public init(userId: GraphQLNullable<Int32>) {
     self.userId = userId
   }
 
-  public var __variables: Variables? { ["userId": userId] }
+  @_spi(Unsafe) public var __variables: Variables? { ["userId": userId] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserBasicInfoQuery.Data.self
     ] }
 
     /// User query
@@ -35,13 +39,17 @@ public class UserBasicInfoQuery: GraphQLQuery {
     ///
     /// Parent Type: `User`
     public struct User: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(UserInfo.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserBasicInfoQuery.Data.User.self,
+        UserInfo.self
       ] }
 
       /// The id of the user
@@ -68,8 +76,8 @@ public class UserBasicInfoQuery: GraphQLQuery {
       public var donatorTier: Int? { __data["donatorTier"] }
 
       public struct Fragments: FragmentContainer {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var userInfo: UserInfo { _toFragment() }
       }

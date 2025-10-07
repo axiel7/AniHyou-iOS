@@ -52,7 +52,7 @@ extension UserTitleLanguage {
         }
     }
     
-    static public var allCasesNormal: [UserTitleLanguage] = [.romaji, .english, .native]
+    static public let allCasesNormal: [UserTitleLanguage] = [.romaji, .english, .native]
 }
 
 extension UserStaffNameLanguage {

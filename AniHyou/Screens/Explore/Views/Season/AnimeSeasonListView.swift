@@ -155,7 +155,7 @@ struct AnimeSeasonListView: View {
                 }
             }
             .onChange(of: viewModel.sort) {
-                viewModel.resetPage()
+                Task { await viewModel.resetPage() }
             }
             Picker("Season", selection: $viewModel.season) {
                 ForEach(MediaSeason.allCases, id: \.self) {
@@ -163,7 +163,7 @@ struct AnimeSeasonListView: View {
                 }
             }
             .onChange(of: viewModel.season) {
-                viewModel.resetPage()
+                Task { await viewModel.resetPage() }
             }
             Picker("Year", selection: $viewModel.year) {
                 ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
@@ -171,7 +171,7 @@ struct AnimeSeasonListView: View {
                 }
             }
             .onChange(of: viewModel.year) {
-                viewModel.resetPage()
+                Task { await viewModel.resetPage() }
             }
         } label: {
             if #available(iOS 26, *) {

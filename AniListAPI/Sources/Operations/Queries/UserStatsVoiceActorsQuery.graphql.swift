@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UserStatsVoiceActorsQuery: GraphQLQuery {
+public struct UserStatsVoiceActorsQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsVoiceActors"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,29 +12,32 @@ public class UserStatsVoiceActorsQuery: GraphQLQuery {
       fragments: [VoiceActorStat.self]
     ))
 
-  public var userId: GraphQLNullable<Int>
+  public var userId: GraphQLNullable<Int32>
   public var sort: GraphQLNullable<[GraphQLEnum<UserStatisticsSort>?]>
 
   public init(
-    userId: GraphQLNullable<Int>,
+    userId: GraphQLNullable<Int32>,
     sort: GraphQLNullable<[GraphQLEnum<UserStatisticsSort>?]>
   ) {
     self.userId = userId
     self.sort = sort
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "userId": userId,
     "sort": sort
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserStatsVoiceActorsQuery.Data.self
     ] }
 
     /// User query
@@ -43,13 +47,16 @@ public class UserStatsVoiceActorsQuery: GraphQLQuery {
     ///
     /// Parent Type: `User`
     public struct User: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("statistics", Statistics?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserStatsVoiceActorsQuery.Data.User.self
       ] }
 
       /// The users anime & manga list statistics
@@ -59,13 +66,16 @@ public class UserStatsVoiceActorsQuery: GraphQLQuery {
       ///
       /// Parent Type: `UserStatisticTypes`
       public struct Statistics: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("anime", Anime?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserStatsVoiceActorsQuery.Data.User.Statistics.self
         ] }
 
         public var anime: Anime? { __data["anime"] }
@@ -74,13 +84,16 @@ public class UserStatsVoiceActorsQuery: GraphQLQuery {
         ///
         /// Parent Type: `UserStatistics`
         public struct Anime: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("voiceActors", [VoiceActor?]?.self, arguments: ["sort": .variable("sort")]),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserStatsVoiceActorsQuery.Data.User.Statistics.Anime.self
           ] }
 
           public var voiceActors: [VoiceActor?]? { __data["voiceActors"] }
@@ -89,13 +102,17 @@ public class UserStatsVoiceActorsQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserVoiceActorStatistic`
           public struct VoiceActor: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserVoiceActorStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserVoiceActorStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .fragment(VoiceActorStat.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsVoiceActorsQuery.Data.User.Statistics.Anime.VoiceActor.self,
+              VoiceActorStat.self
             ] }
 
             public var voiceActor: VoiceActor? { __data["voiceActor"] }
@@ -105,8 +122,8 @@ public class UserStatsVoiceActorsQuery: GraphQLQuery {
             public var chaptersRead: Int { __data["chaptersRead"] }
 
             public struct Fragments: FragmentContainer {
-              public let __data: DataDict
-              public init(_dataDict: DataDict) { __data = _dataDict }
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
               public var voiceActorStat: VoiceActorStat { _toFragment() }
             }

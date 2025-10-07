@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import AniListAPI
+@preconcurrency import AniListAPI
 
+@MainActor
 @Observable class SeasonViewModel {
     
-    private let perPage = 25
     static let seasonSorts: [MediaSort] = [.popularityDesc, .scoreDesc, .startDateDesc, .endDateDesc]
     
     var season: MediaSeason = Date.now.season
@@ -18,13 +18,13 @@ import AniListAPI
     var sort: MediaSort = .popularityDesc
     var animeSeasonal = [SeasonalAnimeQuery.Data.Page.Medium]()
 
-    var currentPage = 1
+    var currentPage: Int32 = 1
     var hasNextPage = false
 
     func getAnimeSeasonal(resetPage: Bool = false) async {
         if let result = await MediaRepository.getAnimeSeasonal(
             season: season,
-            year: year,
+            year: Int32(year),
             sort: [sort],
             page: currentPage
         ) {
@@ -38,10 +38,8 @@ import AniListAPI
         }
     }
     
-    func resetPage() {
-        Task {
-            currentPage = 1
-            await getAnimeSeasonal(resetPage: true)
-        }
+    func resetPage() async {
+        currentPage = 1
+        await getAnimeSeasonal(resetPage: true)
     }
 }

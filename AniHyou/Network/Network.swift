@@ -8,15 +8,17 @@
 import Foundation
 import Apollo
 
-class Network {
+final class Network: Sendable {
     static let shared = Network()
     private let malClientId = Bundle.main.object(forInfoDictionaryKey: "MAL_CLIENT_ID") as? String ?? ""
 
     let apollo: ApolloClient = {
         let store = ApolloStore(cache: InMemoryNormalizedCache())
-        let provider = NetworkInterceptorProvider(store: store)
+        let provider = NetworkInterceptorProvider()
         let transport = RequestChainNetworkTransport(
+            urlSession: URLSession.shared,
             interceptorProvider: provider,
+            store: store,
             endpointURL: URL(string: ANILIST_GRAPHQL)!
         )
         return ApolloClient(networkTransport: transport, store: store)

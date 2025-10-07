@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class SearchMediaQuery: GraphQLQuery {
+public struct SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,8 +12,8 @@ public class SearchMediaQuery: GraphQLQuery {
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
-  public var page: GraphQLNullable<Int>
-  public var perPage: GraphQLNullable<Int>
+  public var page: GraphQLNullable<Int32>
+  public var perPage: GraphQLNullable<Int32>
   public var search: GraphQLNullable<String>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
@@ -31,8 +32,8 @@ public class SearchMediaQuery: GraphQLQuery {
   public var country: GraphQLNullable<CountryCode>
 
   public init(
-    page: GraphQLNullable<Int>,
-    perPage: GraphQLNullable<Int>,
+    page: GraphQLNullable<Int32>,
+    perPage: GraphQLNullable<Int32>,
     search: GraphQLNullable<String>,
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
@@ -70,7 +71,7 @@ public class SearchMediaQuery: GraphQLQuery {
     self.country = country
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "search": search,
@@ -92,15 +93,18 @@ public class SearchMediaQuery: GraphQLQuery {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      SearchMediaQuery.Data.self
     ] }
 
     public var page: Page? { __data["Page"] }
@@ -109,11 +113,11 @@ public class SearchMediaQuery: GraphQLQuery {
     ///
     /// Parent Type: `Page`
     public struct Page: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("media", [Medium?]?.self, arguments: [
           "search": .variable("search"),
@@ -135,6 +139,9 @@ public class SearchMediaQuery: GraphQLQuery {
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        SearchMediaQuery.Data.Page.self
+      ] }
 
       public var media: [Medium?]? { __data["media"] }
       /// The pagination information
@@ -144,11 +151,11 @@ public class SearchMediaQuery: GraphQLQuery {
       ///
       /// Parent Type: `Media`
       public struct Medium: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("meanScore", Int?.self),
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
@@ -156,6 +163,10 @@ public class SearchMediaQuery: GraphQLQuery {
           .field("startDate", StartDate?.self),
           .field("nextAiringEpisode", NextAiringEpisode?.self),
           .fragment(BasicMediaDetails.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          SearchMediaQuery.Data.Page.Medium.self,
+          BasicMediaDetails.self
         ] }
 
         /// Mean score of all the user's scores of the media
@@ -184,8 +195,8 @@ public class SearchMediaQuery: GraphQLQuery {
         public var coverImage: CoverImage? { __data["coverImage"] }
 
         public struct Fragments: FragmentContainer {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var basicMediaDetails: BasicMediaDetails { _toFragment() }
         }
@@ -194,13 +205,17 @@ public class SearchMediaQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaList`
         public struct MediaListEntry: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(BasicMediaListEntry.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            SearchMediaQuery.Data.Page.Medium.MediaListEntry.self,
+            BasicMediaListEntry.self
           ] }
 
           /// The id of the list entry
@@ -233,8 +248,8 @@ public class SearchMediaQuery: GraphQLQuery {
           public var customLists: AniListAPI.Json? { __data["customLists"] }
 
           public struct Fragments: FragmentContainer {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
           }
@@ -248,13 +263,16 @@ public class SearchMediaQuery: GraphQLQuery {
         ///
         /// Parent Type: `FuzzyDate`
         public struct StartDate: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("year", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            SearchMediaQuery.Data.Page.Medium.StartDate.self
           ] }
 
           /// Numeric Year (2017)
@@ -265,13 +283,17 @@ public class SearchMediaQuery: GraphQLQuery {
         ///
         /// Parent Type: `AiringSchedule`
         public struct NextAiringEpisode: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(AiringEpisode.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            SearchMediaQuery.Data.Page.Medium.NextAiringEpisode.self,
+            AiringEpisode.self
           ] }
 
           /// The airing episode number
@@ -280,8 +302,8 @@ public class SearchMediaQuery: GraphQLQuery {
           public var airingAt: Int { __data["airingAt"] }
 
           public struct Fragments: FragmentContainer {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var airingEpisode: AiringEpisode { _toFragment() }
           }
@@ -296,14 +318,17 @@ public class SearchMediaQuery: GraphQLQuery {
       ///
       /// Parent Type: `PageInfo`
       public struct PageInfo: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          SearchMediaQuery.Data.Page.PageInfo.self
         ] }
 
         /// The current page

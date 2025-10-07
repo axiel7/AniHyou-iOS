@@ -2,17 +2,18 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
 public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment BasicThreadDetails on Thread { __typename id title body viewCount likeCount isLiked isSubscribed replyCount isLocked user { __typename id name avatar { __typename medium } } createdAt }"#
   }
 
-  public var __data: DataDict
-  public init(_dataDict: DataDict) { __data = _dataDict }
+  @_spi(Unsafe) public var __data: DataDict
+  @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
-  public static var __selections: [ApolloAPI.Selection] { [
+  @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+  @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
     .field("title", String?.self),
@@ -25,6 +26,9 @@ public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
     .field("isLocked", Bool?.self),
     .field("user", User?.self),
     .field("createdAt", Int.self),
+  ] }
+  @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+    BasicThreadDetails.self
   ] }
 
   /// The id of the thread
@@ -96,40 +100,38 @@ public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
     user: User? = nil,
     createdAt: Int
   ) {
-    self.init(_dataDict: DataDict(
-      data: [
-        "__typename": AniListAPI.Objects.Thread.typename,
-        "id": id,
-        "title": title,
-        "body": body,
-        "viewCount": viewCount,
-        "likeCount": likeCount,
-        "isLiked": isLiked,
-        "isSubscribed": isSubscribed,
-        "replyCount": replyCount,
-        "isLocked": isLocked,
-        "user": user._fieldData,
-        "createdAt": createdAt,
-      ],
-      fulfilledFragments: [
-        ObjectIdentifier(BasicThreadDetails.self)
-      ]
-    ))
+    self.init(unsafelyWithData: [
+      "__typename": AniListAPI.Objects.Thread.typename,
+      "id": id,
+      "title": title,
+      "body": body,
+      "viewCount": viewCount,
+      "likeCount": likeCount,
+      "isLiked": isLiked,
+      "isSubscribed": isSubscribed,
+      "replyCount": replyCount,
+      "isLocked": isLocked,
+      "user": user._fieldData,
+      "createdAt": createdAt,
+    ])
   }
 
   /// User
   ///
   /// Parent Type: `User`
   public struct User: AniListAPI.MutableSelectionSet {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public var __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("id", Int.self),
       .field("name", String.self),
       .field("avatar", Avatar?.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      BasicThreadDetails.User.self
     ] }
 
     /// The id of the user
@@ -153,30 +155,28 @@ public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
       name: String,
       avatar: Avatar? = nil
     ) {
-      self.init(_dataDict: DataDict(
-        data: [
-          "__typename": AniListAPI.Objects.User.typename,
-          "id": id,
-          "name": name,
-          "avatar": avatar._fieldData,
-        ],
-        fulfilledFragments: [
-          ObjectIdentifier(BasicThreadDetails.User.self)
-        ]
-      ))
+      self.init(unsafelyWithData: [
+        "__typename": AniListAPI.Objects.User.typename,
+        "id": id,
+        "name": name,
+        "avatar": avatar._fieldData,
+      ])
     }
 
     /// User.Avatar
     ///
     /// Parent Type: `UserAvatar`
     public struct Avatar: AniListAPI.MutableSelectionSet {
-      public var __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public var __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("medium", String?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        BasicThreadDetails.User.Avatar.self
       ] }
 
       /// The avatar of user at medium size
@@ -188,15 +188,10 @@ public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
       public init(
         medium: String? = nil
       ) {
-        self.init(_dataDict: DataDict(
-          data: [
-            "__typename": AniListAPI.Objects.UserAvatar.typename,
-            "medium": medium,
-          ],
-          fulfilledFragments: [
-            ObjectIdentifier(BasicThreadDetails.User.Avatar.self)
-          ]
-        ))
+        self.init(unsafelyWithData: [
+          "__typename": AniListAPI.Objects.UserAvatar.typename,
+          "medium": medium,
+        ])
       }
     }
   }

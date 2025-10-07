@@ -11,7 +11,7 @@ import AniListAPI
 struct LikeRepository {
     
     static func toggleLike(
-        likeableId: Int,
+        likeableId: Int32,
         likeableType: LikeableType
     ) async -> Bool? {
         await withUnsafeContinuation { continuation in

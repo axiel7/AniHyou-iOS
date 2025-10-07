@@ -10,11 +10,11 @@ import AniListAPI
 
 struct ReviewItemView: View {
 
-    let review: MediaReviewsQuery.Data.Media.Reviews.Node
+    let review: MediaReviewsQuery.Data.Media.Reviews.Node?
 
     var body: some View {
         VStack {
-            Text(review.summary ?? "")
+            Text(review?.summary ?? "")
                 .italic()
                 .bold()
                 .lineLimit(3)
@@ -23,10 +23,10 @@ struct ReviewItemView: View {
                 .foregroundStyle(.primary)
             Spacer()
             HStack {
-                Text("\(review.score ?? 0)/100")
+                Text("\(review?.score ?? 0)/100")
                     .foregroundStyle(.primary)
                 Spacer()
-                Text(review.user?.name ?? "")
+                Text(review?.user?.name ?? "")
                     .lineLimit(1)
                     .foregroundStyle(.primary)
             }
@@ -41,5 +41,5 @@ struct ReviewItemView: View {
 }
 
 #Preview {
-    ReviewItemView(review: .init(_fieldData: nil))
+    ReviewItemView(review: nil)
 }

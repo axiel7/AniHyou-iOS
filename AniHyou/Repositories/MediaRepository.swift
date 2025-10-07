@@ -15,8 +15,8 @@ struct MediaRepository {
     static func getMediaSorted(
         sort: [MediaSort],
         mediaType: MediaType,
-        page: Int,
-        perPage: Int = 25,
+        page: Int32,
+        perPage: Int32 = 25,
         forceReload: Bool = false
     ) async -> PagedResult<MediaSortedQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
@@ -57,8 +57,8 @@ struct MediaRepository {
         sort: MediaSort,
         status: MediaStatus?,
         format: MediaFormat? = nil,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<MediaChartQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -96,10 +96,10 @@ struct MediaRepository {
     
     static func getAnimeSeasonal(
         season: MediaSeason,
-        year: Int,
+        year: Int32,
         sort: [MediaSort],
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<SeasonalAnimeQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -138,15 +138,15 @@ struct MediaRepository {
         weekday: Int,
         onMyList: Bool?,
         sort: [AiringSort] = [.time],
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<AiringAnimesQuery.Data.Page.AiringSchedule>? {
         let now = Date.now
         let weekdayStartTimestamp = now.getThisWeekdayTimestamp(weekday: weekday, isEndOfDay: false)
         let weekDayEndTimestamp = now.getThisWeekdayTimestamp(weekday: weekday, isEndOfDay: true)
         return await getAiringAnimes(
-            airingAtGreater: weekdayStartTimestamp,
-            airingAtLesser: weekDayEndTimestamp,
+            airingAtGreater: Int32(weekdayStartTimestamp),
+            airingAtLesser: Int32(weekDayEndTimestamp),
             onMyList: onMyList,
             sort: sort,
             page: page,
@@ -155,12 +155,12 @@ struct MediaRepository {
     }
     
     static func getAiringAnimes(
-        airingAtGreater: Int?,
-        airingAtLesser: Int?,
+        airingAtGreater: Int32?,
+        airingAtLesser: Int32?,
         onMyList: Bool?,
         sort: [AiringSort] = [.time],
-        page: Int,
-        perPage: Int = 25,
+        page: Int32,
+        perPage: Int32 = 25,
         forceReload: Bool = false
     ) async -> PagedResult<AiringAnimesQuery.Data.Page.AiringSchedule>? {
         await withUnsafeContinuation { continuation in
@@ -205,8 +205,8 @@ struct MediaRepository {
     }
     
     static func getAiringOnMyList(
-        page: Int,
-        perPage: Int = 25,
+        page: Int32,
+        perPage: Int32 = 25,
         forceReload: Bool = false
     ) async -> PagedResult<AiringOnMyListQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
@@ -261,8 +261,8 @@ struct MediaRepository {
         isLicensed: Bool? = nil,
         isAdult: Bool? = nil,
         country: CountryOfOrigin? = nil,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<SearchMediaQuery.Data.Page.Medium>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: SearchMediaQuery(
@@ -308,7 +308,7 @@ struct MediaRepository {
         }
     }
     
-    static func getMediaDetails(mediaId: Int) async -> MediaDetailsQuery.Data.Media? {
+    static func getMediaDetails(mediaId: Int32) async -> MediaDetailsQuery.Data.Media? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: MediaDetailsQuery(mediaId: .some(mediaId))) { result in
                 switch result {
@@ -322,7 +322,7 @@ struct MediaRepository {
         }
     }
     
-    static func getMediaCharactersAndStaff(mediaId: Int) async -> MediaCharactersAndStaffQuery.Data.Media? {
+    static func getMediaCharactersAndStaff(mediaId: Int32) async -> MediaCharactersAndStaffQuery.Data.Media? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: MediaCharactersAndStaffQuery(mediaId: .some(mediaId))) { result in
                 switch result {
@@ -337,7 +337,7 @@ struct MediaRepository {
     }
     
     static func getMediaRelationsAndRecommendations(
-        mediaId: Int
+        mediaId: Int32
     ) async -> MediaRelationsAndRecommendationsQuery.Data.Media? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -356,7 +356,7 @@ struct MediaRepository {
         }
     }
     
-    static func getMediaStats(mediaId: Int) async -> MediaStatsQuery.Data.Media? {
+    static func getMediaStats(mediaId: Int32) async -> MediaStatsQuery.Data.Media? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: MediaStatsQuery(mediaId: .some(mediaId))) { result in
                 switch result {
@@ -371,9 +371,9 @@ struct MediaRepository {
     }
     
     static func getMediaFollowing(
-        mediaId: Int,
-        page: Int,
-        perPage: Int
+        mediaId: Int32,
+        page: Int32,
+        perPage: Int32
     ) async -> PagedResult<MediaFollowingQuery.Data.Page.MediaList>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -407,9 +407,9 @@ struct MediaRepository {
     }
     
     static func getMediaReviews(
-        mediaId: Int,
-        page: Int,
-        perPage: Int = 25
+        mediaId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<MediaReviewsQuery.Data.Media.Reviews.Node>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -443,9 +443,9 @@ struct MediaRepository {
     }
     
     static func getMediaThreads(
-        mediaId: Int,
-        page: Int,
-        perPage: Int = 25
+        mediaId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<BasicThreadDetails>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

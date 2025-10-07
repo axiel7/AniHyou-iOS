@@ -14,7 +14,7 @@ import AniListAPI
 
     var mediaType: MediaType = .anime
     var status: [MediaListStatus] = [.current, .repeating]
-    var currentPage = 1
+    var currentPage: Int32 = 1
     var hasNextPage = false
     var isLoading = false
     var mediaList: [ShouUserMediaList] = []
@@ -23,7 +23,7 @@ import AniListAPI
     func getUserMediaList() async {
         isLoading = true
         if let result = await MediaListRepository.getShouUserMediaList(
-            userId: userId,
+            userId: Int32(userId),
             mediaType: mediaType,
             statusIn: status,
             sort: [.addedTimeDesc],
@@ -44,8 +44,8 @@ import AniListAPI
             entry.maxProgress == 0 ? nil :
             (newProgress >= entry.maxProgress ? .completed : nil)
         if let result = await MediaListRepository.updateProgress(
-            entryId: entry.id,
-            progress: newProgress,
+            entryId: Int32(entry.id),
+            progress: Int32(newProgress),
             status: newStatus
         ) {
             await onEntryUpdated(result)

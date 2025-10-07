@@ -10,6 +10,7 @@ import KeychainSwift
 import WidgetKit
 import AniListAPI
 
+@MainActor
 @Observable class SettingsViewModel {
     
     var isLoggedOut = false

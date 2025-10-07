@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UserActivityQuery: GraphQLQuery {
+public struct UserActivityQuery: GraphQLQuery {
   public static let operationName: String = "UserActivity"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,15 +12,15 @@ public class UserActivityQuery: GraphQLQuery {
       fragments: [ListActivityFragment.self, MessageActivityFragment.self, TextActivityFragment.self]
     ))
 
-  public var page: GraphQLNullable<Int>
-  public var perPage: GraphQLNullable<Int>
-  public var userId: GraphQLNullable<Int>
+  public var page: GraphQLNullable<Int32>
+  public var perPage: GraphQLNullable<Int32>
+  public var userId: GraphQLNullable<Int32>
   public var sort: GraphQLNullable<[GraphQLEnum<ActivitySort>?]>
 
   public init(
-    page: GraphQLNullable<Int>,
-    perPage: GraphQLNullable<Int>,
-    userId: GraphQLNullable<Int>,
+    page: GraphQLNullable<Int32>,
+    perPage: GraphQLNullable<Int32>,
+    userId: GraphQLNullable<Int32>,
     sort: GraphQLNullable<[GraphQLEnum<ActivitySort>?]>
   ) {
     self.page = page
@@ -28,7 +29,7 @@ public class UserActivityQuery: GraphQLQuery {
     self.sort = sort
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "userId": userId,
@@ -36,15 +37,18 @@ public class UserActivityQuery: GraphQLQuery {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserActivityQuery.Data.self
     ] }
 
     public var page: Page? { __data["Page"] }
@@ -53,17 +57,20 @@ public class UserActivityQuery: GraphQLQuery {
     ///
     /// Parent Type: `Page`
     public struct Page: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("activities", [Activity?]?.self, arguments: [
           "userId": .variable("userId"),
           "sort": .variable("sort")
         ]),
         .field("pageInfo", PageInfo?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserActivityQuery.Data.Page.self
       ] }
 
       public var activities: [Activity?]? { __data["activities"] }
@@ -74,15 +81,18 @@ public class UserActivityQuery: GraphQLQuery {
       ///
       /// Parent Type: `ActivityUnion`
       public struct Activity: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Unions.ActivityUnion }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .inlineFragment(AsTextActivity.self),
           .inlineFragment(AsListActivity.self),
           .inlineFragment(AsMessageActivity.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserActivityQuery.Data.Page.Activity.self
         ] }
 
         public var asTextActivity: AsTextActivity? { _asInlineFragment() }
@@ -93,13 +103,18 @@ public class UserActivityQuery: GraphQLQuery {
         ///
         /// Parent Type: `TextActivity`
         public struct AsTextActivity: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.TextActivity }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .fragment(TextActivityFragment.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserActivityQuery.Data.Page.Activity.self,
+            UserActivityQuery.Data.Page.Activity.AsTextActivity.self,
+            TextActivityFragment.self
           ] }
 
           /// The id of the activity
@@ -122,8 +137,8 @@ public class UserActivityQuery: GraphQLQuery {
           public var user: User? { __data["user"] }
 
           public struct Fragments: FragmentContainer {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var textActivityFragment: TextActivityFragment { _toFragment() }
           }
@@ -135,13 +150,18 @@ public class UserActivityQuery: GraphQLQuery {
         ///
         /// Parent Type: `ListActivity`
         public struct AsListActivity: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ListActivity }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .fragment(ListActivityFragment.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserActivityQuery.Data.Page.Activity.self,
+            UserActivityQuery.Data.Page.Activity.AsListActivity.self,
+            ListActivityFragment.self
           ] }
 
           /// The id of the activity
@@ -170,8 +190,8 @@ public class UserActivityQuery: GraphQLQuery {
           public var media: Media? { __data["media"] }
 
           public struct Fragments: FragmentContainer {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var listActivityFragment: ListActivityFragment { _toFragment() }
           }
@@ -185,13 +205,18 @@ public class UserActivityQuery: GraphQLQuery {
         ///
         /// Parent Type: `MessageActivity`
         public struct AsMessageActivity: AniListAPI.InlineFragment {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public typealias RootEntityType = UserActivityQuery.Data.Page.Activity
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MessageActivity }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .fragment(MessageActivityFragment.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserActivityQuery.Data.Page.Activity.self,
+            UserActivityQuery.Data.Page.Activity.AsMessageActivity.self,
+            MessageActivityFragment.self
           ] }
 
           /// The id of the activity
@@ -216,8 +241,8 @@ public class UserActivityQuery: GraphQLQuery {
           public var messenger: Messenger? { __data["messenger"] }
 
           public struct Fragments: FragmentContainer {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var messageActivityFragment: MessageActivityFragment { _toFragment() }
           }
@@ -230,14 +255,17 @@ public class UserActivityQuery: GraphQLQuery {
       ///
       /// Parent Type: `PageInfo`
       public struct PageInfo: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserActivityQuery.Data.Page.PageInfo.self
         ] }
 
         /// The current page

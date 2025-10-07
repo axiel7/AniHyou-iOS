@@ -2,26 +2,27 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class ToggleFavouriteMutation: GraphQLMutation {
+public struct ToggleFavouriteMutation: GraphQLMutation {
   public static let operationName: String = "ToggleFavourite"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"mutation ToggleFavourite($animeId: Int, $mangaId: Int, $characterId: Int, $staffId: Int, $studioId: Int) { ToggleFavourite( animeId: $animeId mangaId: $mangaId characterId: $characterId staffId: $staffId studioId: $studioId ) { __typename anime { __typename pageInfo { __typename currentPage } } } }"#
     ))
 
-  public var animeId: GraphQLNullable<Int>
-  public var mangaId: GraphQLNullable<Int>
-  public var characterId: GraphQLNullable<Int>
-  public var staffId: GraphQLNullable<Int>
-  public var studioId: GraphQLNullable<Int>
+  public var animeId: GraphQLNullable<Int32>
+  public var mangaId: GraphQLNullable<Int32>
+  public var characterId: GraphQLNullable<Int32>
+  public var staffId: GraphQLNullable<Int32>
+  public var studioId: GraphQLNullable<Int32>
 
   public init(
-    animeId: GraphQLNullable<Int>,
-    mangaId: GraphQLNullable<Int>,
-    characterId: GraphQLNullable<Int>,
-    staffId: GraphQLNullable<Int>,
-    studioId: GraphQLNullable<Int>
+    animeId: GraphQLNullable<Int32>,
+    mangaId: GraphQLNullable<Int32>,
+    characterId: GraphQLNullable<Int32>,
+    staffId: GraphQLNullable<Int32>,
+    studioId: GraphQLNullable<Int32>
   ) {
     self.animeId = animeId
     self.mangaId = mangaId
@@ -30,7 +31,7 @@ public class ToggleFavouriteMutation: GraphQLMutation {
     self.studioId = studioId
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "animeId": animeId,
     "mangaId": mangaId,
     "characterId": characterId,
@@ -39,11 +40,11 @@ public class ToggleFavouriteMutation: GraphQLMutation {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("ToggleFavourite", ToggleFavourite?.self, arguments: [
         "animeId": .variable("animeId"),
         "mangaId": .variable("mangaId"),
@@ -51,6 +52,9 @@ public class ToggleFavouriteMutation: GraphQLMutation {
         "staffId": .variable("staffId"),
         "studioId": .variable("studioId")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      ToggleFavouriteMutation.Data.self
     ] }
 
     /// Favourite or unfavourite an anime, manga, character, staff member, or studio
@@ -60,13 +64,16 @@ public class ToggleFavouriteMutation: GraphQLMutation {
     ///
     /// Parent Type: `Favourites`
     public struct ToggleFavourite: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Favourites }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("anime", Anime?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        ToggleFavouriteMutation.Data.ToggleFavourite.self
       ] }
 
       /// Favourite anime
@@ -76,13 +83,16 @@ public class ToggleFavouriteMutation: GraphQLMutation {
       ///
       /// Parent Type: `MediaConnection`
       public struct Anime: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaConnection }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("pageInfo", PageInfo?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          ToggleFavouriteMutation.Data.ToggleFavourite.Anime.self
         ] }
 
         /// The pagination information
@@ -92,13 +102,16 @@ public class ToggleFavouriteMutation: GraphQLMutation {
         ///
         /// Parent Type: `PageInfo`
         public struct PageInfo: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("currentPage", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            ToggleFavouriteMutation.Data.ToggleFavourite.Anime.PageInfo.self
           ] }
 
           /// The current page

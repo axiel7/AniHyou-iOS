@@ -5,9 +5,10 @@
 // Any changes to this file will not be overwritten by future
 // code generation execution.
 
-import ApolloAPI
+@_spi(Execution) @_spi(Internal) import ApolloAPI
 
 /// ISO 3166-1 alpha-2 country code
+
 public typealias CountryCode = CountryOfOrigin
 
 public enum CountryOfOrigin: String, CustomScalarType, CaseIterable, Hashable {
@@ -32,7 +33,7 @@ public enum CountryOfOrigin: String, CustomScalarType, CaseIterable, Hashable {
     }
 
     public static func == (lhs: CountryOfOrigin, rhs: CountryOfOrigin) -> Bool {
-        lhs._jsonValue == rhs._jsonValue
+        lhs.rawValue == rhs.rawValue
     }
 
     public func hash(into hasher: inout Hasher) {

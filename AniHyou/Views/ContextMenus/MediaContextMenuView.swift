@@ -16,7 +16,10 @@ extension View {
     ) -> some View {
         ForEach(mediaListStatus.statusesCanChangeTo, id: \.rawValue) { status in
             Button {
-                MediaListRepository.updateListStatus(mediaId: mediaId, status: status)
+                MediaListRepository.updateListStatus(
+                    mediaId: Int32(mediaId),
+                    status: status
+                )
             } label: {
                 let localizedKey = String.LocalizationValue(
                     stringLiteral: status.localizedStringKey

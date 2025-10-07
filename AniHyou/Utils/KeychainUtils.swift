@@ -8,12 +8,16 @@
 import Foundation
 import KeychainSwift
 
-class KeychainUtils {
+final class KeychainUtils: Sendable {
     static let shared = KeychainUtils()
     
-    private(set) lazy var keychain: KeychainSwift = {
+    let keychain: KeychainSwift
+    
+    init() {
         let newKeychain = KeychainSwift()
         newKeychain.synchronizable = true
-        return newKeychain
-    }()
+        keychain = newKeychain
+    }
 }
+
+extension KeychainSwift: @unchecked @retroactive Sendable {}

@@ -21,8 +21,8 @@ import AniListAPI
 
 struct SetProgressIntent: AppIntent {
     
-    static var title: LocalizedStringResource = "Set progress"
-    static var description = IntentDescription("Sets a list entry progress to the specified number.")
+    static let title: LocalizedStringResource = "Set progress"
+    static let description = IntentDescription("Sets a list entry progress to the specified number.")
 
     @Parameter(title: "Media ID", description: "The id of the media the entry is of")
     var mediaId: Int
@@ -47,8 +47,8 @@ struct SetProgressIntent: AppIntent {
     
     func perform() async throws -> some IntentResult & ReturnsValue<Bool> {
         if let entry = await MediaListRepository.updateProgress(
-            entryId: entryId,
-            progress: progress,
+            entryId: Int32(entryId),
+            progress: Int32(progress),
             status: MediaListStatus(rawValue: status ?? "")
         ) {
             let _: CommonMediaListEntry? = await MediaListRepository.updateCachedEntry(entry)

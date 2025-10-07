@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class ActivityDetailsViewModel {
     
     var isLoading = true
@@ -20,7 +21,7 @@ import AniListAPI
     
     func getDetails(activityId: Int) async {
         isLoading = true
-        if let result = await ActivityRepository.getActivityDetails(activityId: activityId) {
+        if let result = await ActivityRepository.getActivityDetails(activityId: Int32(activityId)) {
             if let details = result.asListActivity {
                 listActivity = details.fragments.listActivityFragment
                 if let replies = details.replies?.compactMap({ $0?.fragments.activityReplyFragment }) {

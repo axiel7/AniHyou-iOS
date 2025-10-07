@@ -10,11 +10,11 @@ import AniListAPI
 
 struct ThreadItemView: View {
 
-    let thread: BasicThreadDetails
+    let thread: BasicThreadDetails?
 
     var body: some View {
         VStack {
-            Text(thread.title ?? "")
+            Text(thread?.title ?? "")
                 .italic()
                 .bold()
                 .lineLimit(3)
@@ -23,12 +23,12 @@ struct ThreadItemView: View {
                 .foregroundStyle(.primary)
             Spacer()
             HStack {
-                Label("\(thread.replyCount ?? 0)", systemImage: "bubble.left")
+                Label("\(thread?.replyCount ?? 0)", systemImage: "bubble.left")
                     .foregroundStyle(.primary)
-                Label("\(thread.viewCount ?? 0)", systemImage: "eye")
+                Label("\(thread?.viewCount ?? 0)", systemImage: "eye")
                     .foregroundStyle(.primary)
                 Spacer()
-                Text(thread.user?.name ?? "")
+                Text(thread?.user?.name ?? "")
                     .lineLimit(1)
                     .foregroundStyle(.primary)
             }
@@ -43,5 +43,5 @@ struct ThreadItemView: View {
 }
 
 #Preview {
-    ThreadItemView(thread: .init(_fieldData: nil))
+    ThreadItemView(thread: nil)
 }

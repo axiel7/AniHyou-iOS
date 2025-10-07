@@ -9,17 +9,19 @@ import Foundation
 import Apollo
 import ApolloAPI
 
-class NetworkInterceptorProvider: DefaultInterceptorProvider {
-    override func interceptors<Operation>(for operation: Operation) -> [ApolloInterceptor]
-    where Operation: GraphQLOperation {
-        var interceptors = super.interceptors(for: operation)
-        interceptors.insert(TokenAddingInterceptor(), at: 0)
-        return interceptors
+final class NetworkInterceptorProvider: InterceptorProvider {
+    
+    func httpInterceptors<Operation: GraphQLOperation>(for operation: Operation) -> [any HTTPInterceptor] {
+        return DefaultInterceptorProvider.shared.httpInterceptors(for: operation) + [
+          TokenAddingInterceptor()
+        ]
     }
     
-    override func additionalErrorInterceptor<Operation>(
+    func graphQLInterceptors<Operation>(
         for operation: Operation
-    ) -> (any ApolloErrorInterceptor)? where Operation: GraphQLOperation {
-        return AuthErrorInterceptor()
+    ) -> [any GraphQLInterceptor] where Operation: GraphQLOperation {
+        return DefaultInterceptorProvider.shared.graphQLInterceptors(for: operation) + [
+            AuthErrorInterceptor()
+        ]
     }
 }

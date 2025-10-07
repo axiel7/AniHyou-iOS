@@ -2,44 +2,48 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class ChildCommentsQuery: GraphQLQuery {
+public struct ChildCommentsQuery: GraphQLQuery {
   public static let operationName: String = "ChildComments"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query ChildComments($page: Int, $perPage: Int, $threadId: Int) { Page(page: $page, perPage: $perPage) { __typename threadComments(threadId: $threadId) { __typename id comment likeCount isLiked createdAt isLocked user { __typename id name avatar { __typename medium } } childComments } pageInfo { __typename currentPage hasNextPage } } }"#
     ))
 
-  public var page: GraphQLNullable<Int>
-  public var perPage: GraphQLNullable<Int>
-  public var threadId: GraphQLNullable<Int>
+  public var page: GraphQLNullable<Int32>
+  public var perPage: GraphQLNullable<Int32>
+  public var threadId: GraphQLNullable<Int32>
 
   public init(
-    page: GraphQLNullable<Int>,
-    perPage: GraphQLNullable<Int>,
-    threadId: GraphQLNullable<Int>
+    page: GraphQLNullable<Int32>,
+    perPage: GraphQLNullable<Int32>,
+    threadId: GraphQLNullable<Int32>
   ) {
     self.page = page
     self.perPage = perPage
     self.threadId = threadId
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "threadId": threadId
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Page", Page?.self, arguments: [
         "page": .variable("page"),
         "perPage": .variable("perPage")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      ChildCommentsQuery.Data.self
     ] }
 
     public var page: Page? { __data["Page"] }
@@ -48,14 +52,17 @@ public class ChildCommentsQuery: GraphQLQuery {
     ///
     /// Parent Type: `Page`
     public struct Page: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Page }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("threadComments", [ThreadComment?]?.self, arguments: ["threadId": .variable("threadId")]),
         .field("pageInfo", PageInfo?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        ChildCommentsQuery.Data.Page.self
       ] }
 
       public var threadComments: [ThreadComment?]? { __data["threadComments"] }
@@ -66,11 +73,11 @@ public class ChildCommentsQuery: GraphQLQuery {
       ///
       /// Parent Type: `ThreadComment`
       public struct ThreadComment: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadComment }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ThreadComment }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),
           .field("comment", String?.self),
@@ -80,6 +87,9 @@ public class ChildCommentsQuery: GraphQLQuery {
           .field("isLocked", Bool?.self),
           .field("user", User?.self),
           .field("childComments", AniListAPI.Json?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          ChildCommentsQuery.Data.Page.ThreadComment.self
         ] }
 
         /// The id of the comment
@@ -103,15 +113,18 @@ public class ChildCommentsQuery: GraphQLQuery {
         ///
         /// Parent Type: `User`
         public struct User: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("id", Int.self),
             .field("name", String.self),
             .field("avatar", Avatar?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            ChildCommentsQuery.Data.Page.ThreadComment.User.self
           ] }
 
           /// The id of the user
@@ -125,13 +138,16 @@ public class ChildCommentsQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserAvatar`
           public struct Avatar: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("medium", String?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              ChildCommentsQuery.Data.Page.ThreadComment.User.Avatar.self
             ] }
 
             /// The avatar of user at medium size
@@ -144,14 +160,17 @@ public class ChildCommentsQuery: GraphQLQuery {
       ///
       /// Parent Type: `PageInfo`
       public struct PageInfo: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("currentPage", Int?.self),
           .field("hasNextPage", Bool?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          ChildCommentsQuery.Data.Page.PageInfo.self
         ] }
 
         /// The current page

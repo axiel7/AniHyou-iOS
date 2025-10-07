@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class VoiceActorsStatsViewModel {
     
     var isLoading = false
@@ -17,7 +18,7 @@ import AniListAPI
     func getVoiceActorsStats(userId: Int) async {
         isLoading = true
         if let result = await UserStatsRepository.getVoiceActorsStats(
-            userId: userId,
+            userId: Int32(userId),
             distribution: distribution
         ) {
             voiceActors = result

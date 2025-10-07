@@ -8,17 +8,18 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class StaffDetailsViewModel {
 
     var staff: StaffDetailsQuery.Data.Staff?
 
     func getStaffDetails(staffId: Int) async {
-        staff = await StaffRepository.getStaffDetails(staffId: staffId)
+        staff = await StaffRepository.getStaffDetails(staffId: Int32(staffId))
     }
 
     func toggleFavorite() async {
         guard let staff else { return }
-        if await FavoritesRepository.toggleFavorite(staffId: staff.id) != nil {
+        if await FavoritesRepository.toggleFavorite(staffId: Int32(staff.id)) != nil {
             onFavoriteToggled()
         }
     }
@@ -27,18 +28,18 @@ import AniListAPI
         guard let staffId = staff?.id else { return }
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
-                try transaction.updateObject(
+                try await transaction.updateObject(
                     ofType: IsFavouriteStaff.self,
                     withKey: "Staff:\(staffId)"
                 ) { (cachedData: inout IsFavouriteStaff) in
                     cachedData.isFavourite = !cachedData.isFavourite
                 }
-                let newObject = try transaction.readObject(
+                let newObject = try await transaction.readObject(
                     ofType: StaffDetailsQuery.Data.Staff.self,
                     withKey: "Staff:\(staffId)"
                 )
                 DispatchQueue.main.async {
-                    self?.staff = newObject
+                    //self?.staff = newObject
                 }
             } catch {
                 print(error)
@@ -48,12 +49,12 @@ import AniListAPI
 
     var mediaOnMyList: Bool?
     var staffMedia = [StaffMediaGrouped]()
-    var pageMedia = 1
+    var pageMedia: Int32 = 1
     var hasNextPageMedia = true
 
     func getStaffMedia(staffId: Int) async {
         if let result = await StaffRepository.getStaffMedia(
-            staffId: staffId,
+            staffId: Int32(staffId),
             onMyList: mediaOnMyList,
             page: pageMedia
         ) {
@@ -71,12 +72,12 @@ import AniListAPI
 
     var charactersOnMyList: Bool?
     var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge]()
-    var pageCharacters = 1
+    var pageCharacters: Int32 = 1
     var hasNextPageCharacters = true
 
     func getStaffCharacters(staffId: Int) async {
         if let result = await StaffRepository.getStaffCharacters(
-            staffId: staffId,
+            staffId: Int32(staffId),
             onMyList: charactersOnMyList,
             page: pageCharacters
         ) {

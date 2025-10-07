@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UpdateEntryProgressMutation: GraphQLMutation {
+public struct UpdateEntryProgressMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntryProgress"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,15 +12,15 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
       fragments: [BasicMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
-  public var saveMediaListEntryId: GraphQLNullable<Int>
-  public var progress: GraphQLNullable<Int>
-  public var progressVolumes: GraphQLNullable<Int>
+  public var saveMediaListEntryId: GraphQLNullable<Int32>
+  public var progress: GraphQLNullable<Int32>
+  public var progressVolumes: GraphQLNullable<Int32>
   public var status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
 
   public init(
-    saveMediaListEntryId: GraphQLNullable<Int>,
-    progress: GraphQLNullable<Int>,
-    progressVolumes: GraphQLNullable<Int>,
+    saveMediaListEntryId: GraphQLNullable<Int32>,
+    progress: GraphQLNullable<Int32>,
+    progressVolumes: GraphQLNullable<Int32>,
     status: GraphQLNullable<GraphQLEnum<MediaListStatus>>
   ) {
     self.saveMediaListEntryId = saveMediaListEntryId
@@ -28,7 +29,7 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
     self.status = status
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "saveMediaListEntryId": saveMediaListEntryId,
     "progress": progress,
     "progressVolumes": progressVolumes,
@@ -36,17 +37,20 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("SaveMediaListEntry", SaveMediaListEntry?.self, arguments: [
         "id": .variable("saveMediaListEntryId"),
         "progress": .variable("progress"),
         "progressVolumes": .variable("progressVolumes"),
         "status": .variable("status")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UpdateEntryProgressMutation.Data.self
     ] }
 
     /// Create or update a media list entry
@@ -56,13 +60,17 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
     ///
     /// Parent Type: `MediaList`
     public struct SaveMediaListEntry: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(BasicMediaListEntry.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UpdateEntryProgressMutation.Data.SaveMediaListEntry.self,
+        BasicMediaListEntry.self
       ] }
 
       /// The id of the list entry
@@ -95,8 +103,8 @@ public class UpdateEntryProgressMutation: GraphQLMutation {
       public var customLists: AniListAPI.Json? { __data["customLists"] }
 
       public struct Fragments: FragmentContainer {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
       }

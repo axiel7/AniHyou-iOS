@@ -53,7 +53,7 @@ struct AnimeBehindProvider: TimelineProvider {
         
         Network.shared.apollo.fetch(
             query: UserCurrentAnimeListQuery(
-                userId: .some(userId),
+                userId: .some(Int32(userId)),
                 sort: .some([.case(.updatedTimeDesc)])
             ),
             cachePolicy: .fetchIgnoringCacheCompletely

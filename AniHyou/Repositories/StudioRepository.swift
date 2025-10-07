@@ -12,8 +12,8 @@ struct StudioRepository {
     
     static func searchStudios(
         search: String,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<SearchStudioQuery.Data.Page.Studio>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -47,8 +47,8 @@ struct StudioRepository {
     }
     
     static func getStudioDetails(
-        studioId: Int,
-        perPage: Int = 25
+        studioId: Int32,
+        perPage: Int32 = 25
     ) async -> StudioDetailsQuery.Data.Studio? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -70,9 +70,9 @@ struct StudioRepository {
     }
     
     static func getStudioMedia(
-        studioId: Int,
-        page: Int,
-        perPage: Int = 25
+        studioId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<StudioMedia>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

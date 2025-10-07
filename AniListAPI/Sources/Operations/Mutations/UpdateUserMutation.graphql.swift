@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UpdateUserMutation: GraphQLMutation {
+public struct UpdateUserMutation: GraphQLMutation {
   public static let operationName: String = "UpdateUser"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -37,7 +38,7 @@ public class UpdateUserMutation: GraphQLMutation {
     self.mangaListOptions = mangaListOptions
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "displayAdultContent": displayAdultContent,
     "titleLanguage": titleLanguage,
     "staffNameLanguage": staffNameLanguage,
@@ -48,11 +49,11 @@ public class UpdateUserMutation: GraphQLMutation {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Mutation }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("UpdateUser", UpdateUser?.self, arguments: [
         "displayAdultContent": .variable("displayAdultContent"),
         "titleLanguage": .variable("titleLanguage"),
@@ -63,6 +64,9 @@ public class UpdateUserMutation: GraphQLMutation {
         "mangaListOptions": .variable("mangaListOptions")
       ]),
     ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UpdateUserMutation.Data.self
+    ] }
 
     public var updateUser: UpdateUser? { __data["UpdateUser"] }
 
@@ -70,13 +74,17 @@ public class UpdateUserMutation: GraphQLMutation {
     ///
     /// Parent Type: `User`
     public struct UpdateUser: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(UserOptionsFragment.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UpdateUserMutation.Data.UpdateUser.self,
+        UserOptionsFragment.self
       ] }
 
       /// The id of the user
@@ -87,8 +95,8 @@ public class UpdateUserMutation: GraphQLMutation {
       public var mediaListOptions: MediaListOptions? { __data["mediaListOptions"] }
 
       public struct Fragments: FragmentContainer {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var userOptionsFragment: UserOptionsFragment { _toFragment() }
       }

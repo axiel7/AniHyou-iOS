@@ -12,23 +12,23 @@ struct StaffView: View {
 
     static let imageSize: CGFloat = 70
 
-    let staff: MediaStaff
+    let staff: MediaStaff?
 
     var body: some View {
-        NavigationLink(destination: StaffDetailsView(staffId: staff.node!.id)) {
+        NavigationLink(destination: StaffDetailsView(staffId: staff!.node!.id)) {
             HStack {
-                CircleImageView(imageUrl: staff.node?.image?.medium, size: StaffView.imageSize)
+                CircleImageView(imageUrl: staff?.node?.image?.medium, size: StaffView.imageSize)
 
                 VStack(alignment: .leading) {
-                    Text(staff.node?.name?.userPreferred ?? "")
+                    Text(staff?.node?.name?.userPreferred ?? "")
                         .lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(.primary)
                     Group {
-                        if let roleLocalized = staff.roleLocalized {
+                        if let roleLocalized = staff?.roleLocalized {
                             Text(roleLocalized)
                         } else {
-                            Text(staff.role ?? "")
+                            Text(staff?.role ?? "")
                         }
                     }
                     .lineLimit(2)
@@ -45,5 +45,5 @@ struct StaffView: View {
 }
 
 #Preview {
-    StaffView(staff: .init(_fieldData: nil))
+    StaffView(staff: nil)
 }

@@ -2,29 +2,33 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UserStatsMangaOverviewQuery: GraphQLQuery {
+public struct UserStatsMangaOverviewQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsMangaOverview"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query UserStatsMangaOverview($userId: Int) { User(id: $userId) { __typename mediaListOptions { __typename scoreFormat } statistics { __typename manga { __typename count chaptersRead volumesRead meanScore standardDeviation scores(sort: MEAN_SCORE) { __typename count chaptersRead meanScore score } lengths { __typename length count chaptersRead meanScore } formats { __typename count chaptersRead meanScore format } statuses { __typename count chaptersRead meanScore status } countries { __typename count chaptersRead meanScore country } releaseYears { __typename count chaptersRead meanScore releaseYear } startYears { __typename count chaptersRead meanScore startYear } } } } }"#
     ))
 
-  public var userId: GraphQLNullable<Int>
+  public var userId: GraphQLNullable<Int32>
 
-  public init(userId: GraphQLNullable<Int>) {
+  public init(userId: GraphQLNullable<Int32>) {
     self.userId = userId
   }
 
-  public var __variables: Variables? { ["userId": userId] }
+  @_spi(Unsafe) public var __variables: Variables? { ["userId": userId] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("User", User?.self, arguments: ["id": .variable("userId")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserStatsMangaOverviewQuery.Data.self
     ] }
 
     /// User query
@@ -34,14 +38,17 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
     ///
     /// Parent Type: `User`
     public struct User: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("mediaListOptions", MediaListOptions?.self),
         .field("statistics", Statistics?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserStatsMangaOverviewQuery.Data.User.self
       ] }
 
       /// The user's media list options
@@ -53,13 +60,16 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
       ///
       /// Parent Type: `MediaListOptions`
       public struct MediaListOptions: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserStatsMangaOverviewQuery.Data.User.MediaListOptions.self
         ] }
 
         /// The score format the user is using for media lists
@@ -70,13 +80,16 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
       ///
       /// Parent Type: `UserStatisticTypes`
       public struct Statistics: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatisticTypes }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("manga", Manga?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserStatsMangaOverviewQuery.Data.User.Statistics.self
         ] }
 
         public var manga: Manga? { __data["manga"] }
@@ -85,11 +98,11 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
         ///
         /// Parent Type: `UserStatistics`
         public struct Manga: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatistics }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("count", Int.self),
             .field("chaptersRead", Int.self),
@@ -103,6 +116,9 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
             .field("countries", [Country?]?.self),
             .field("releaseYears", [ReleaseYear?]?.self),
             .field("startYears", [StartYear?]?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.self
           ] }
 
           public var count: Int { __data["count"] }
@@ -122,16 +138,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserScoreStatistic`
           public struct Score: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserScoreStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserScoreStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
               .field("score", Int?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.Score.self
             ] }
 
             public var count: Int { __data["count"] }
@@ -144,16 +163,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserLengthStatistic`
           public struct Length: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserLengthStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserLengthStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("length", String?.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.Length.self
             ] }
 
             public var length: String? { __data["length"] }
@@ -166,16 +188,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserFormatStatistic`
           public struct Format: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserFormatStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserFormatStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
               .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.Format.self
             ] }
 
             public var count: Int { __data["count"] }
@@ -188,16 +213,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserStatusStatistic`
           public struct Status: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatusStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStatusStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
               .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.Status.self
             ] }
 
             public var count: Int { __data["count"] }
@@ -210,16 +238,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserCountryStatistic`
           public struct Country: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserCountryStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserCountryStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
               .field("country", AniListAPI.CountryCode?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.Country.self
             ] }
 
             public var count: Int { __data["count"] }
@@ -232,16 +263,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserReleaseYearStatistic`
           public struct ReleaseYear: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserReleaseYearStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserReleaseYearStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
               .field("releaseYear", Int?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.ReleaseYear.self
             ] }
 
             public var count: Int { __data["count"] }
@@ -254,16 +288,19 @@ public class UserStatsMangaOverviewQuery: GraphQLQuery {
           ///
           /// Parent Type: `UserStartYearStatistic`
           public struct StartYear: AniListAPI.SelectionSet {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStartYearStatistic }
-            public static var __selections: [ApolloAPI.Selection] { [
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserStartYearStatistic }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("count", Int.self),
               .field("chaptersRead", Int.self),
               .field("meanScore", Double.self),
               .field("startYear", Int?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              UserStatsMangaOverviewQuery.Data.User.Statistics.Manga.StartYear.self
             ] }
 
             public var count: Int { __data["count"] }

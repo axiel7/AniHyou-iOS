@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class StaffStatsViewModel {
     
     var isLoading = false
@@ -17,7 +18,7 @@ import AniListAPI
     func getStaffStats(userId: Int, mediaType: MediaType) async {
         isLoading = true
         if let result = await UserStatsRepository.getStaffStats(
-            userId: userId,
+            userId: Int32(userId),
             mediaType: mediaType,
             distribution: distribution
         ) {

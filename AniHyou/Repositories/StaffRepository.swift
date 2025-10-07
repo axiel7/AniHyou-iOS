@@ -12,8 +12,8 @@ struct StaffRepository {
     
     static func searchStaff(
         search: String,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<SearchStaffQuery.Data.Page.Staff>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -46,7 +46,7 @@ struct StaffRepository {
         }
     }
     
-    static func getStaffDetails(staffId: Int) async -> StaffDetailsQuery.Data.Staff? {
+    static func getStaffDetails(staffId: Int32) async -> StaffDetailsQuery.Data.Staff? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: StaffDetailsQuery(staffId: .some(staffId))) { result in
                 switch result {
@@ -61,10 +61,10 @@ struct StaffRepository {
     }
     
     static func getStaffMedia(
-        staffId: Int,
+        staffId: Int32,
         onMyList: Bool?,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<StaffMediaGrouped>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -110,10 +110,10 @@ struct StaffRepository {
     }
     
     static func getStaffCharacters(
-        staffId: Int,
+        staffId: Int32,
         onMyList: Bool?,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<StaffCharacterQuery.Data.Staff.CharacterMedia.Edge>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

@@ -8,13 +8,14 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class ChartViewModel {
 
-    private let perPage = 25
+    private let perPage: Int32 = 25
 
     var mediaChart = [MediaChartQuery.Data.Page.Medium]()
 
-    var currentPage = 1
+    var currentPage: Int32 = 1
     var hasNextPage = true
 
     func getMediaChart(

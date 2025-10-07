@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class UserListCollectionQuery: GraphQLQuery {
+public struct UserListCollectionQuery: GraphQLQuery {
   public static let operationName: String = "UserListCollection"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,18 +12,18 @@ public class UserListCollectionQuery: GraphQLQuery {
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, CommonMediaListEntry.self, FuzzyDateFragment.self]
     ))
 
-  public var userId: GraphQLNullable<Int>
+  public var userId: GraphQLNullable<Int32>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaListSort>?]>
-  public var chunk: GraphQLNullable<Int>
-  public var perChunk: GraphQLNullable<Int>
+  public var chunk: GraphQLNullable<Int32>
+  public var perChunk: GraphQLNullable<Int32>
 
   public init(
-    userId: GraphQLNullable<Int>,
+    userId: GraphQLNullable<Int32>,
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
     sort: GraphQLNullable<[GraphQLEnum<MediaListSort>?]>,
-    chunk: GraphQLNullable<Int>,
-    perChunk: GraphQLNullable<Int>
+    chunk: GraphQLNullable<Int32>,
+    perChunk: GraphQLNullable<Int32>
   ) {
     self.userId = userId
     self.type = type
@@ -31,7 +32,7 @@ public class UserListCollectionQuery: GraphQLQuery {
     self.perChunk = perChunk
   }
 
-  public var __variables: Variables? { [
+  @_spi(Unsafe) public var __variables: Variables? { [
     "userId": userId,
     "type": type,
     "sort": sort,
@@ -40,11 +41,11 @@ public class UserListCollectionQuery: GraphQLQuery {
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("MediaListCollection", MediaListCollection?.self, arguments: [
         "userId": .variable("userId"),
         "type": .variable("type"),
@@ -52,6 +53,9 @@ public class UserListCollectionQuery: GraphQLQuery {
         "chunk": .variable("chunk"),
         "perChunk": .variable("perChunk")
       ]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserListCollectionQuery.Data.self
     ] }
 
     /// Media list collection query, provides list pre-grouped by status & custom lists. User ID and Media Type arguments required.
@@ -61,14 +65,17 @@ public class UserListCollectionQuery: GraphQLQuery {
     ///
     /// Parent Type: `MediaListCollection`
     public struct MediaListCollection: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListCollection }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListCollection }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("lists", [List?]?.self),
         .field("hasNextChunk", Bool?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserListCollectionQuery.Data.MediaListCollection.self
       ] }
 
       /// Grouped media list entries
@@ -80,15 +87,18 @@ public class UserListCollectionQuery: GraphQLQuery {
       ///
       /// Parent Type: `MediaListGroup`
       public struct List: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListGroup }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListGroup }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("name", String?.self),
           .field("isCustomList", Bool?.self),
           .field("entries", [Entry?]?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          UserListCollectionQuery.Data.MediaListCollection.List.self
         ] }
 
         public var name: String? { __data["name"] }
@@ -100,13 +110,18 @@ public class UserListCollectionQuery: GraphQLQuery {
         ///
         /// Parent Type: `MediaList`
         public struct Entry: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .fragment(CommonMediaListEntry.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            UserListCollectionQuery.Data.MediaListCollection.List.Entry.self,
+            CommonMediaListEntry.self,
+            BasicMediaListEntry.self
           ] }
 
           /// The id of the list entry
@@ -140,8 +155,8 @@ public class UserListCollectionQuery: GraphQLQuery {
           public var customLists: AniListAPI.Json? { __data["customLists"] }
 
           public struct Fragments: FragmentContainer {
-            public let __data: DataDict
-            public init(_dataDict: DataDict) { __data = _dataDict }
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
             public var commonMediaListEntry: CommonMediaListEntry { _toFragment() }
             public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }

@@ -2,22 +2,27 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
 public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment CommonMediaListEntry on MediaList { __typename ...BasicMediaListEntry id mediaId media { __typename ...BasicMediaDetails coverImage { __typename large } nextAiringEpisode { __typename ...AiringEpisode } status } }"#
   }
 
-  public let __data: DataDict
-  public init(_dataDict: DataDict) { __data = _dataDict }
+  @_spi(Unsafe) public let __data: DataDict
+  @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
-  public static var __selections: [ApolloAPI.Selection] { [
+  @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaList }
+  @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
     .field("mediaId", Int.self),
     .field("media", Media?.self),
     .fragment(BasicMediaListEntry.self),
+  ] }
+  @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+    CommonMediaListEntry.self,
+    BasicMediaListEntry.self
   ] }
 
   /// The id of the list entry
@@ -51,8 +56,8 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
   public var customLists: AniListAPI.Json? { __data["customLists"] }
 
   public struct Fragments: FragmentContainer {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
     public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
   }
@@ -61,16 +66,20 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
   ///
   /// Parent Type: `Media`
   public struct Media: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("coverImage", CoverImage?.self),
       .field("nextAiringEpisode", NextAiringEpisode?.self),
       .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self),
       .fragment(BasicMediaDetails.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      CommonMediaListEntry.Media.self,
+      BasicMediaDetails.self
     ] }
 
     /// The cover images of the media
@@ -93,8 +102,8 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
     public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
 
     public struct Fragments: FragmentContainer {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
       public var basicMediaDetails: BasicMediaDetails { _toFragment() }
     }
@@ -103,13 +112,16 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
     ///
     /// Parent Type: `MediaCoverImage`
     public struct CoverImage: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("large", String?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        CommonMediaListEntry.Media.CoverImage.self
       ] }
 
       /// The cover image url of the media at a large size
@@ -120,13 +132,17 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
     ///
     /// Parent Type: `AiringSchedule`
     public struct NextAiringEpisode: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.AiringSchedule }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(AiringEpisode.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        CommonMediaListEntry.Media.NextAiringEpisode.self,
+        AiringEpisode.self
       ] }
 
       /// The airing episode number
@@ -135,8 +151,8 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
       public var airingAt: Int { __data["airingAt"] }
 
       public struct Fragments: FragmentContainer {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var airingEpisode: AiringEpisode { _toFragment() }
       }

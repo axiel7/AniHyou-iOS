@@ -9,6 +9,6 @@ import Foundation
 
 struct PagedResult<Data> {
     let data: [Data]
-    let page: Int
+    let page: Int32
     let hasNextPage: Bool
 }

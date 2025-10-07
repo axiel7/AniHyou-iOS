@@ -51,3 +51,19 @@ extension Bool {
         !self
     }
 }
+
+extension Sequence {
+    func asyncCompactMap<T>(
+        _ transform: (Element) async throws -> T?
+    ) async rethrows -> [T] {
+        var values = [T]()
+
+        for element in self {
+            if let transformed = try await transform(element) {
+                values.append(transformed)
+            }
+        }
+
+        return values
+    }
+}

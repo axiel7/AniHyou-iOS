@@ -8,7 +8,7 @@
 import SwiftUI
 import AniListAPI
 
-public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable {
+public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable, Sendable {
     case all
     case airing
     case activity

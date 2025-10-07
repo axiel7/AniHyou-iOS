@@ -9,6 +9,7 @@ import Foundation
 import Apollo
 import AniListAPI
 
+@MainActor
 @Observable class MediaListViewModel {
 
     var userId: Int = LoginRepository.authUserId()
@@ -39,7 +40,7 @@ import AniListAPI
             [sort ?? .mediaId]
         }
         if let result = await MediaListRepository.getMediaListCollection(
-            userId: userId,
+            userId: Int32(userId),
             mediaType: mediaType,
             sort: sortValue,
             chunk: nil,

@@ -8,15 +8,16 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class StudioDetailsViewModel {
 
     var studio: StudioDetailsQuery.Data.Studio?
     var studioMedia = [StudioMedia]()
-    var currentPage = 1
+    var currentPage: Int32 = 1
     var hasNextPage = false
 
     func getStudioDetails(studioId: Int) async {
-        if let result = await StudioRepository.getStudioDetails(studioId: studioId) {
+        if let result = await StudioRepository.getStudioDetails(studioId: Int32(studioId)) {
             studio = result
             if let mediaItems = result.media?.nodes?.compactMap({ $0?.fragments.studioMedia }) {
                 studioMedia.append(contentsOf: mediaItems)
@@ -28,7 +29,7 @@ import AniListAPI
 
     func toggleFavorite() async {
         guard let studio else { return }
-        if await FavoritesRepository.toggleFavorite(studioId: studio.id) != nil {
+        if await FavoritesRepository.toggleFavorite(studioId: Int32(studio.id)) != nil {
             onFavoriteToggled()
         }
     }
@@ -37,18 +38,18 @@ import AniListAPI
         guard let studioId = studio?.id else { return }
         Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
-                try transaction.updateObject(
+                try await transaction.updateObject(
                     ofType: IsFavouriteStudio.self,
                     withKey: "Studio:\(studioId)"
                 ) { (cachedData: inout IsFavouriteStudio) in
                     cachedData.isFavourite = !cachedData.isFavourite
                 }
-                let newObject = try transaction.readObject(
+                let newObject = try await transaction.readObject(
                     ofType: StudioDetailsQuery.Data.Studio.self,
                     withKey: "Studio:\(studioId)"
                 )
                 DispatchQueue.main.async {
-                    self?.studio = newObject
+                    //self?.studio = newObject
                 }
             } catch {
                 print(error)
@@ -57,7 +58,7 @@ import AniListAPI
     }
     
     func getStudioMedia(studioId: Int) async {
-        if let result = await StudioRepository.getStudioMedia(studioId: studioId, page: currentPage) {
+        if let result = await StudioRepository.getStudioMedia(studioId: Int32(studioId), page: currentPage) {
             studioMedia.append(contentsOf: result.data)
             currentPage = result.page
             hasNextPage = result.hasNextPage

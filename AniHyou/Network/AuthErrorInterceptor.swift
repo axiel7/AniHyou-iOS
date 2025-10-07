@@ -9,21 +9,20 @@ import Foundation
 import Apollo
 import ApolloAPI
 
-class AuthErrorInterceptor: ApolloErrorInterceptor {
-    func handleErrorAsync<Operation>(
-        error: any Error,
-        chain: any Apollo.RequestChain,
-        request: Apollo.HTTPRequest<Operation>,
-        response: Apollo.HTTPResponse<Operation>?,
-        completion: @escaping (Result<Apollo.GraphQLResult<Operation.Data>, any Error>) -> Void
-    ) where Operation: GraphQLOperation {
-        if let data = response?.rawData,
-           let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data)
-        {
-            if errorResponse.errors.contains(where: { $0.message == "Invalid token" }) {
-                LoginRepository.onTokenExpired()
-            }
-        }
-        completion(.failure(error))
-    }
+final class AuthErrorInterceptor: GraphQLInterceptor {
+    
+    func intercept<Request: GraphQLRequest>(
+      request: Request,
+      next: NextInterceptorFunction<Request>
+    ) async throws -> InterceptorResultStream<Request> {
+        return await next(request)
+          .mapErrors { error in
+              if error.localizedDescription.contains("Inavlid token") {
+                  Task { @MainActor in
+                      LoginRepository.onTokenExpired()
+                  }
+              }
+              throw error
+          }
+      }
 }

@@ -19,9 +19,9 @@ struct LoginRepository {
         UserDefaults(suiteName: ANIHYOU_GROUP)?.set(id, forKey: USER_ID_KEY)
     }
     
+    @MainActor
     static func onNewToken(_ token: String, expiresIn: String) {
         //save token in the keychain
-        TokenAddingInterceptor.token = token
         KeychainUtils.shared.keychain.set(token, forKey: USER_TOKEN_KEY)
         #if os(iOS)
         //send token to apple watch
@@ -36,8 +36,8 @@ struct LoginRepository {
         refreshUserIdAndOptions()
     }
     
+    @MainActor
     static func onTokenExpired() {
-        TokenAddingInterceptor.token = nil
         KeychainUtils.shared.keychain.delete(USER_TOKEN_KEY)
         UserDefaults.standard.set(false, forKey: LOGGED_IN_KEY)
         GlobalAppState.shared.globalId = UUID()
@@ -66,7 +66,9 @@ struct LoginRepository {
                 if let viewer = graphQLResult.data?.viewer {
                     saveUserId(id: viewer.id)
                     #if os(iOS)
-                    WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(viewer.id))
+                    Task { @MainActor in
+                        WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(viewer.id))
+                    }
                     #endif
                     UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
                     UserDefaults.standard.set(

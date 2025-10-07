@@ -56,8 +56,8 @@ struct UserRepository {
     
     static func searchUser(
         search: String,
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<SearchUserQuery.Data.Page.User>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -108,11 +108,11 @@ struct UserRepository {
     }
     
     static func getNotifications(
-        page: Int,
-        perPage: Int = 20,
+        page: Int32,
+        perPage: Int32 = 20,
         type: NotificationTypeGrouped,
         resetCount: Bool,
-        cachePolicy: CachePolicy = .default
+        cachePolicy: CachePolicy_v1 = .default
     ) async -> PagedResult<GenericNotification>? {
         await withUnsafeContinuation { continuation in
             var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> =
@@ -160,7 +160,7 @@ struct UserRepository {
         if let unreadCount, unreadCount > 0 {
             if let notifications = await getNotifications(
                 page: 1,
-                perPage: unreadCount,
+                perPage: Int32(unreadCount),
                 type: .all,
                 resetCount: false,
                 cachePolicy: .fetchIgnoringCacheData
@@ -232,7 +232,7 @@ struct UserRepository {
         }
     }
     
-    static func getUserInfo(userId: Int) async -> UserInfo? {
+    static func getUserInfo(userId: Int32) async -> UserInfo? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: UserBasicInfoQuery(userId: .some(userId))) { result in
                 switch result {
@@ -246,7 +246,7 @@ struct UserRepository {
         }
     }
     
-    static func toggleFollow(userId: Int) async -> UserInfo? {
+    static func toggleFollow(userId: Int32) async -> UserInfo? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(mutation: ToggleFollowMutation(userId: .some(userId))) { result in
                 switch result {
@@ -254,13 +254,13 @@ struct UserRepository {
                     if let user = graphQLResult.data?.toggleFollow {
                         Network.shared.apollo.store.withinReadWriteTransaction({ transaction in
                             do {
-                                try transaction.updateObject(
+                                try await transaction.updateObject(
                                     ofType: UserInfo.self,
                                     withKey: "User:\(userId)"
                                 ) { (cachedData: inout UserInfo) in
                                     cachedData.isFollowing = user.isFollowing
                                 }
-                                let newObject = try transaction.readObject(
+                                let newObject = try await transaction.readObject(
                                     ofType: UserInfo.self,
                                     withKey: "User:\(userId)"
                                 )
@@ -282,9 +282,9 @@ struct UserRepository {
     }
     
     static func getUserActivity(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<UserActivityQuery.Data.Page.Activity>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -319,9 +319,9 @@ struct UserRepository {
     }
     
     static func getFollowers(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<FollowersQuery.Data.Page.Follower>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -355,9 +355,9 @@ struct UserRepository {
     }
     
     static func getFollowings(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<FollowingsQuery.Data.Page.Following>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

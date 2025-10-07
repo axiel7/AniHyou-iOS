@@ -12,6 +12,7 @@ import Nuke
 import NukeUI
 import RegexBuilder
 
+@MainActor
 private let imageRegex = Regex {
     "img"
     Capture {
@@ -34,6 +35,7 @@ private let imageRegex = Regex {
   }
   .anchorsMatchLineEndings()
 
+@MainActor
 private let spoilerRegex = Regex {
     "~!"
     Capture {
@@ -59,6 +61,7 @@ extension Markdown {
 }
 
 extension String {
+    @MainActor
     func formatMarkdown() -> String {
         var str = self
         // remove center tags, markdown doesnt support it

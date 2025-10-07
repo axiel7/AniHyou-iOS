@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 // swiftlint:disable:next type_body_length
 @Observable class OverviewStatsViewModel {
 
@@ -53,7 +54,7 @@ import AniListAPI
     // swiftlint:disable:next function_body_length
     func getAnimeOverview(userId: Int) async {
         isLoading = true
-        if let result = await UserStatsRepository.getAnimeOverview(userId: userId),
+        if let result = await UserStatsRepository.getAnimeOverview(userId: Int32(userId)),
            let scoreFormat = result.mediaListOptions?.scoreFormat?.value,
            let stats = result.statistics?.anime
         {
@@ -155,7 +156,7 @@ import AniListAPI
     // swiftlint:disable:next function_body_length
     func getMangaOverview(userId: Int) async {
         isLoading = true
-        if let result = await UserStatsRepository.getMangaOverview(userId: userId),
+        if let result = await UserStatsRepository.getMangaOverview(userId: Int32(userId)),
            let scoreFormat = result.mediaListOptions?.scoreFormat?.value,
            let stats = result.statistics?.manga
         {

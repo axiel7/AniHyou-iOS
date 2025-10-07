@@ -10,7 +10,7 @@ import UIKit
 import BackgroundTasks
 import AniListAPI
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate, @MainActor UNUserNotificationCenterDelegate {
     
     func application(
         _ application: UIApplication,

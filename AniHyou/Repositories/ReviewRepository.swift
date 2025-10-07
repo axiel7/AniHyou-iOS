@@ -10,7 +10,7 @@ import AniListAPI
 
 struct ReviewRepository {
     
-    static func getReviewDetails(reviewId: Int) async -> CommonReviewDetails? {
+    static func getReviewDetails(reviewId: Int32) async -> CommonReviewDetails? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(query: ReviewDetailsQuery(reviewId: .some(reviewId))) { result in
                 switch result {
@@ -25,7 +25,7 @@ struct ReviewRepository {
     }
     
     static func rateReview(
-        reviewId: Int,
+        reviewId: Int32,
         rating: ReviewRating
     ) async -> CommonReviewDetails? {
         await withUnsafeContinuation { continuation in
@@ -40,7 +40,7 @@ struct ReviewRepository {
                     if let data = graphQLResult.data?.rateReview {
                         Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                             do {
-                                try transaction.updateObject(
+                                try await transaction.updateObject(
                                     ofType: CommonReviewDetails.self,
                                     withKey: "Review:\(reviewId)"
                                 ) { (cachedData: inout CommonReviewDetails) in
@@ -48,7 +48,7 @@ struct ReviewRepository {
                                     cachedData.rating = data.rating
                                     cachedData.ratingAmount = data.ratingAmount
                                 }
-                                let newObject = try transaction.readObject(
+                                let newObject = try await transaction.readObject(
                                     ofType: CommonReviewDetails.self,
                                     withKey: "Review:\(reviewId)"
                                 )

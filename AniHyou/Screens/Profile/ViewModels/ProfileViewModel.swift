@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 @Observable class ProfileViewModel {
 
     var userInfo: UserInfo?
@@ -22,11 +23,11 @@ import AniListAPI
     }
 
     func getUserInfo(userId: Int) async {
-        userInfo = await UserRepository.getUserInfo(userId: userId)
+        userInfo = await UserRepository.getUserInfo(userId: Int32(userId))
     }
 
     func toggleFollow(userId: Int) async {
-        if let result = await UserRepository.toggleFollow(userId: userId) {
+        if let result = await UserRepository.toggleFollow(userId: Int32(userId)) {
             userInfo = result
         }
     }

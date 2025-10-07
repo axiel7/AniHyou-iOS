@@ -17,7 +17,7 @@
     "schemaTypes" : {
       "path" : "./AniListAPI",
       "moduleType" : {
-        "swiftPackageManager" : {
+        "swiftPackage" : {
         }
       }
     },

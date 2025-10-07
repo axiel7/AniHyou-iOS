@@ -11,21 +11,21 @@ import AniListAPI
 struct UpdateMediaEntryView: View {
     @Environment(\.dismiss) var dismiss
 
-    let entry: ShouUserMediaList
+    let entry: ShouUserMediaList?
     var viewModel: MediaListViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(entry.media?.title?.userPreferred ?? "")
+            Text(entry?.media?.title?.userPreferred ?? "")
                 .font(.title3)
             Spacer()
 
-            Text("\(entry.progress ?? 0)/\(entry.maxProgress)")
+            Text("\(entry?.progress ?? 0)/\(entry?.maxProgress ?? 0)")
 
             Button(
                 action: {
                     Task {
-                        await viewModel.updateEntryProgress(of: entry)
+                        await viewModel.updateEntryProgress(of: entry!)
                     }
                 },
                 label: {
@@ -37,7 +37,7 @@ struct UpdateMediaEntryView: View {
                     }
                 }
             )
-            .tint(Color(hex: entry.media?.coverImage?.color))
+            .tint(Color(hex: entry?.media?.coverImage?.color))
         }
         .onChange(of: viewModel.shouldDismiss) {
             if viewModel.shouldDismiss {
@@ -49,5 +49,5 @@ struct UpdateMediaEntryView: View {
 }
 
 #Preview {
-    UpdateMediaEntryView(entry: .init(_fieldData: nil), viewModel: MediaListViewModel())
+    UpdateMediaEntryView(entry: nil, viewModel: MediaListViewModel())
 }

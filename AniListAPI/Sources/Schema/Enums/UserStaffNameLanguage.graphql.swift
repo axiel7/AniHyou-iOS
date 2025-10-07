@@ -1,7 +1,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import ApolloAPI
+@_spi(Internal) import ApolloAPI
 
 /// The language the user wants to see staff and character names in
 public enum UserStaffNameLanguage: String, EnumType {

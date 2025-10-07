@@ -2,29 +2,33 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class MediaStatsQuery: GraphQLQuery {
+public struct MediaStatsQuery: GraphQLQuery {
   public static let operationName: String = "MediaStats"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query MediaStats($mediaId: Int) { Media(id: $mediaId) { __typename stats { __typename statusDistribution { __typename status amount } scoreDistribution { __typename score amount } } rankings { __typename id rank context type season year } } }"#
     ))
 
-  public var mediaId: GraphQLNullable<Int>
+  public var mediaId: GraphQLNullable<Int32>
 
-  public init(mediaId: GraphQLNullable<Int>) {
+  public init(mediaId: GraphQLNullable<Int32>) {
     self.mediaId = mediaId
   }
 
-  public var __variables: Variables? { ["mediaId": mediaId] }
+  @_spi(Unsafe) public var __variables: Variables? { ["mediaId": mediaId] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Media", Media?.self, arguments: ["id": .variable("mediaId")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      MediaStatsQuery.Data.self
     ] }
 
     /// Media query
@@ -34,14 +38,17 @@ public class MediaStatsQuery: GraphQLQuery {
     ///
     /// Parent Type: `Media`
     public struct Media: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("stats", Stats?.self),
         .field("rankings", [Ranking?]?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        MediaStatsQuery.Data.Media.self
       ] }
 
       public var stats: Stats? { __data["stats"] }
@@ -52,14 +59,17 @@ public class MediaStatsQuery: GraphQLQuery {
       ///
       /// Parent Type: `MediaStats`
       public struct Stats: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaStats }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaStats }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("statusDistribution", [StatusDistribution?]?.self),
           .field("scoreDistribution", [ScoreDistribution?]?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          MediaStatsQuery.Data.Media.Stats.self
         ] }
 
         public var statusDistribution: [StatusDistribution?]? { __data["statusDistribution"] }
@@ -69,14 +79,17 @@ public class MediaStatsQuery: GraphQLQuery {
         ///
         /// Parent Type: `StatusDistribution`
         public struct StatusDistribution: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StatusDistribution }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StatusDistribution }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("status", GraphQLEnum<AniListAPI.MediaListStatus>?.self),
             .field("amount", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            MediaStatsQuery.Data.Media.Stats.StatusDistribution.self
           ] }
 
           /// The day the activity took place (Unix timestamp)
@@ -89,14 +102,17 @@ public class MediaStatsQuery: GraphQLQuery {
         ///
         /// Parent Type: `ScoreDistribution`
         public struct ScoreDistribution: AniListAPI.SelectionSet {
-          public let __data: DataDict
-          public init(_dataDict: DataDict) { __data = _dataDict }
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ScoreDistribution }
-          public static var __selections: [ApolloAPI.Selection] { [
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.ScoreDistribution }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("score", Int?.self),
             .field("amount", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            MediaStatsQuery.Data.Media.Stats.ScoreDistribution.self
           ] }
 
           public var score: Int? { __data["score"] }
@@ -109,11 +125,11 @@ public class MediaStatsQuery: GraphQLQuery {
       ///
       /// Parent Type: `MediaRank`
       public struct Ranking: AniListAPI.SelectionSet {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaRank }
-        public static var __selections: [ApolloAPI.Selection] { [
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaRank }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", Int.self),
           .field("rank", Int.self),
@@ -121,6 +137,9 @@ public class MediaStatsQuery: GraphQLQuery {
           .field("type", GraphQLEnum<AniListAPI.MediaRankType>.self),
           .field("season", GraphQLEnum<AniListAPI.MediaSeason>?.self),
           .field("year", Int?.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          MediaStatsQuery.Data.Media.Ranking.self
         ] }
 
         /// The id of the rank

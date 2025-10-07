@@ -42,6 +42,10 @@ extension Int {
     func toDouble() -> Double {
         Double(self)
     }
+    
+    func toInt32() -> Int32 {
+        Int32(self)
+    }
 }
 
 extension Int? {
@@ -57,6 +61,14 @@ extension Int? {
             nil
         }
     }
+    
+    /*func toInt32() -> Int32? {
+        if let self {
+            Int32(self)
+        } else {
+            nil
+        }
+    }*/
 }
 
 extension Double? {

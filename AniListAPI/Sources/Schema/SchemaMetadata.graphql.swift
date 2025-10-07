@@ -18,7 +18,7 @@ where Schema == AniListAPI.SchemaMetadata {}
 public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
   public static let configuration: any ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
 
-  public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
+  @_spi(Execution) public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
     switch typename {
     case "ActivityLikeNotification": return AniListAPI.Objects.ActivityLikeNotification
     case "ActivityMentionNotification": return AniListAPI.Objects.ActivityMentionNotification

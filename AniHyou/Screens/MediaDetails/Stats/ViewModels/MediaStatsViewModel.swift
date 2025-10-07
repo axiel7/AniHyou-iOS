@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import AniListAPI
 
+@MainActor
 @Observable class MediaStatsViewModel {
 
     var isLoading = true
@@ -25,7 +26,7 @@ import AniListAPI
     }
 
     private func getMediaStats(mediaId: Int) async {
-        if let result = await MediaRepository.getMediaStats(mediaId: mediaId) {
+        if let result = await MediaRepository.getMediaStats(mediaId: Int32(mediaId)) {
             result.stats?.statusDistribution?.forEach {
                 if let stat = $0 {
                     statusDistribution.append(
@@ -54,7 +55,7 @@ import AniListAPI
     }
     
     private func getMediaFollowing(mediaId: Int) async {
-        if let result = await MediaRepository.getMediaFollowing(mediaId: mediaId, page: 1, perPage: 25) {
+        if let result = await MediaRepository.getMediaFollowing(mediaId: Int32(mediaId), page: 1, perPage: 25) {
             following = result.data
         }
     }

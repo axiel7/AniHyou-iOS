@@ -13,32 +13,32 @@ struct ThreadCommentItemView: View {
 
     var viewModel: ThreadDetailsViewModel
     
-    let comment: ChildCommentsQuery.Data.Page.ThreadComment
+    let comment: ChildCommentsQuery.Data.Page.ThreadComment?
+    @State var childCommentsParsed: [ChildCommentsQuery.Data.Page.ThreadComment]?
     @State var isLiked: Bool
     @State var likeCount: Int
-    var commentButtonDisabled = false
+    @State var commentButtonDisabled = false
     
     init(
         viewModel: ThreadDetailsViewModel,
-        comment: ChildCommentsQuery.Data.Page.ThreadComment,
+        comment: ChildCommentsQuery.Data.Page.ThreadComment?,
         commentButtonDisabled: Bool = false
     ) {
         self.viewModel = viewModel
         self.comment = comment
-        self.isLiked = comment.isLiked == true
-        self.likeCount = comment.likeCount
+        self.isLiked = comment?.isLiked == true
+        self.likeCount = comment?.likeCount ?? 0
         self.commentButtonDisabled = commentButtonDisabled
-        && comment.childCommentsParsed?.isEmpty == false
     }
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                NavigationLink(destination: ProfileView(userId: comment.user?.id ?? 0)) {
+                NavigationLink(destination: ProfileView(userId: comment?.user?.id ?? 0)) {
                     HStack(alignment: .center) {
-                        CircleImageView(imageUrl: comment.user?.avatar?.medium, size: 24)
+                        CircleImageView(imageUrl: comment?.user?.avatar?.medium, size: 24)
 
-                        Text(comment.user?.name ?? "Loading")
+                        Text(comment?.user?.name ?? "Loading")
                             .bold()
                             .font(.subheadline)
                             .padding(.bottom, 1)
@@ -46,22 +46,22 @@ struct ThreadCommentItemView: View {
                 }
                 .buttonStyle(.plain)
                 Spacer()
-                let createdAt = Date(timeIntervalSince1970: Double(comment.createdAt))
+                let createdAt = Date(timeIntervalSince1970: Double(comment?.createdAt ?? 0))
                 Text("\(createdAt, format: .relative(presentation: .numeric))")
                     .font(.footnote)
                     .foregroundStyle(.gray)
                     .padding(.bottom, 1)
             }
 
-            Markdown(comment.comment?.formatMarkdown() ?? "Loading")
+            Markdown(comment?.comment?.formatMarkdown() ?? "Loading")
                 .defaultStyle()
 
             HStack {
                 Spacer()
                 NavigationLink(
-                    destination: ThreadCommentDetailsView(viewModel: viewModel, comment: comment)
+                    destination: ThreadCommentDetailsView(viewModel: viewModel, comment: comment!)
                 ) {
-                    Label("\(comment.childCommentsParsed?.count ?? 0)", systemImage: "bubble")
+                    Label("\(childCommentsParsed?.count ?? 0)", systemImage: "bubble")
                 }
                 .disabled(commentButtonDisabled)
                 .frame(width: 60, alignment: .leading)
@@ -69,7 +69,7 @@ struct ThreadCommentItemView: View {
                     action: {
                         Task {
                             if let liked = await viewModel.toggleLikeComment(
-                                commentId: comment.id
+                                commentId: comment!.id
                             ) {
                                 isLiked = liked
                                 if liked {
@@ -91,6 +91,10 @@ struct ThreadCommentItemView: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .task {
+            childCommentsParsed = await comment?.childComments?.toThreadComments()
+            commentButtonDisabled = commentButtonDisabled && childCommentsParsed?.isEmpty == false
+        }
     }
 }
 
@@ -98,7 +102,7 @@ struct ThreadCommentItemView: View {
     NavigationStack {
         ThreadCommentItemView(
             viewModel: ThreadDetailsViewModel(),
-            comment: .init(_fieldData: nil)
+            comment: nil
         )
     }
 }

@@ -102,9 +102,9 @@ extension Date {
 
     func toFuzzyDate() -> FuzzyDateInput {
         FuzzyDateInput(
-            year: GraphQLNullable<Int>(integerLiteral: self.year),
-            month: GraphQLNullable<Int>(integerLiteral: self.month),
-            day: GraphQLNullable<Int>(integerLiteral: self.day)
+            year: GraphQLNullable<Int32>(integerLiteral: Int32(self.year)),
+            month: GraphQLNullable<Int32>(integerLiteral: Int32(self.month)),
+            day: GraphQLNullable<Int32>(integerLiteral: Int32(self.day))
         )
     }
 }
@@ -170,9 +170,9 @@ extension FuzzyDateFragment {
     }
 
     func isEqual(_ fuzzyDate: FuzzyDateInput?) -> Bool {
-        guard self.day == fuzzyDate?.day.unwrapped else { return false }
-        guard self.month == fuzzyDate?.month.unwrapped else { return false }
-        guard self.year == fuzzyDate?.year.unwrapped else { return false }
+        guard self.day?.toInt32() == fuzzyDate?.day.unwrapped else { return false }
+        guard self.month?.toInt32() == fuzzyDate?.month.unwrapped else { return false }
+        guard self.year?.toInt32() == fuzzyDate?.year.unwrapped else { return false }
         return true
     }
     

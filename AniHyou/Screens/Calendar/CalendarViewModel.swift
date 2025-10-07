@@ -8,10 +8,11 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class CalendarViewModel {
 
     var weeklyAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule]()
-    var currentPage = 1
+    var currentPage: Int32 = 1
     var hasNextPage = true
 
     func getAiringAnimes(weekday: Int, onMyList: Bool, resetPage: Bool = false) async {

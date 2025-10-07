@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class ReviewDetailsViewModel {
 
     var review: CommonReviewDetails?
@@ -18,11 +19,11 @@ import AniListAPI
     }
 
     func getReviewDetails(reviewId: Int) async {
-        review = await ReviewRepository.getReviewDetails(reviewId: reviewId)
+        review = await ReviewRepository.getReviewDetails(reviewId: Int32(reviewId))
     }
     
     func rateReview(reviewId: Int, rating: ReviewRating) async {
-        if let result = await ReviewRepository.rateReview(reviewId: reviewId, rating: rating) {
+        if let result = await ReviewRepository.rateReview(reviewId: Int32(reviewId), rating: rating) {
             review = result
         }
     }

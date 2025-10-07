@@ -50,7 +50,7 @@ struct MediaListProvider: AppIntentTimelineProvider {
         let maxItems = context.family.maxMediaListItems
         
         if let result = await MediaListRepository.getShouUserMediaList(
-            userId: userId,
+            userId: Int32(userId),
             mediaType: mediaType,
             statusIn: [.current, .repeating],
             sort: [.updatedTimeDesc],

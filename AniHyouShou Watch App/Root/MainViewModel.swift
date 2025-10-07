@@ -14,7 +14,6 @@ import AniListAPI
     func saveUserData(key: String, value: String) async {
         switch key {
         case USER_TOKEN_KEY:
-            TokenAddingInterceptor.token = value
             KeychainUtils.shared.keychain.set(value, forKey: USER_TOKEN_KEY)
             getUserId()
         default:

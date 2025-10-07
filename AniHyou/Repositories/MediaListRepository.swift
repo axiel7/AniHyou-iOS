@@ -13,11 +13,11 @@ import WidgetKit
 struct MediaListRepository {
     
     static func getMediaListCollection(
-        userId: Int,
+        userId: Int32,
         mediaType: MediaType,
         sort: [MediaListSort],
-        chunk: Int?,
-        perChunk: Int? = 50,
+        chunk: Int32?,
+        perChunk: Int32? = 50,
         forceReload: Bool = false
     ) async -> PagedResult<UserListCollectionQuery.Data.MediaListCollection.List>? {
         await withUnsafeContinuation { continuation in
@@ -55,12 +55,12 @@ struct MediaListRepository {
     }
     
     static func getUserMediaList(
-        userId: Int,
+        userId: Int32,
         mediaType: MediaType,
         statusIn: [MediaListStatus]?,
         sort: [MediaListSort],
-        page: Int?,
-        perPage: Int? = 25,
+        page: Int32?,
+        perPage: Int32? = 25,
         forceReload: Bool = false
     ) async -> PagedResult<CommonMediaListEntry>? {
         await withUnsafeContinuation { continuation in
@@ -99,12 +99,12 @@ struct MediaListRepository {
     }
     
     static func getShouUserMediaList(
-        userId: Int,
+        userId: Int32,
         mediaType: MediaType,
         statusIn: [MediaListStatus] = [],
         sort: [MediaListSort],
-        page: Int,
-        perPage: Int = 25
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<ShouUserMediaList>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -140,7 +140,7 @@ struct MediaListRepository {
         }
     }
     
-    static func updateListStatus(mediaId: Int, status: MediaListStatus) {
+    static func updateListStatus(mediaId: Int32, status: MediaListStatus) {
         Network.shared.apollo.perform(mutation: UpdateEntryMutation(
             mediaId: .some(mediaId),
             status: someIfNotNil(status),
@@ -167,11 +167,11 @@ struct MediaListRepository {
         }
     }
     
-    static func onStatusUpdated(mediaId: Int, entryId: Int, status: MediaListStatus) {
+    static func onStatusUpdated(mediaId: Int32, entryId: Int, status: MediaListStatus) {
         // Update the local cache
         Network.shared.apollo.store.withinReadWriteTransaction { transaction in
             do {
-                try transaction.updateObject(
+                try await transaction.updateObject(
                     ofType: BasicMediaListEntry.self,
                     withKey: "MediaList:\(entryId).\(mediaId)"
                 ) { (cachedData: inout BasicMediaListEntry) in
@@ -192,7 +192,7 @@ struct MediaListRepository {
     // swiftlint:disable:next cyclomatic_complexity function_body_length
     static func updateEntry(
         oldEntry: BasicMediaListEntry?,
-        mediaId: Int,
+        mediaId: Int32,
         status: MediaListStatus? = nil,
         score: Double? = nil,
         advancedScores: [String: Double]? = nil,
@@ -216,10 +216,10 @@ struct MediaListRepository {
             
             let setScore: Double? = if score != oldEntry?.score { score } else { nil }
             
-            let setProgress: Int? = if progress != oldEntry?.progress { progress } else { nil }
+            let setProgress: Int32? = if progress != oldEntry?.progress { progress?.toInt32() } else { nil }
             
-            let setProgressVolumes: Int? = if progressVolumes != oldEntry?.progressVolumes {
-                progressVolumes
+            let setProgressVolumes: Int32? = if progressVolumes != oldEntry?.progressVolumes {
+                progressVolumes?.toInt32()
             } else {
                 nil
             }
@@ -242,7 +242,7 @@ struct MediaListRepository {
             var completedAtQL = someIfNotNil(setCompletedAt)
             if completedAt == nil { completedAtQL = .null } //remove date
             
-            let setRepeat: Int? = if repeatCount != oldEntry?.repeat { repeatCount } else { nil }
+            let setRepeat: Int32? = if repeatCount != oldEntry?.repeat { repeatCount?.toInt32() } else { nil }
             
             let setIsPrivate: Bool? = if isPrivate != oldEntry?.private { isPrivate } else { nil }
             
@@ -345,7 +345,7 @@ struct MediaListRepository {
         }
         return await MediaListRepository.updateEntry(
             oldEntry: entry,
-            mediaId: entry.mediaId,
+            mediaId: Int32(entry.mediaId),
             status: status,
             progress: progress,
             progressVolumes: progressVolumes,
@@ -355,9 +355,9 @@ struct MediaListRepository {
     }
     
     static func updateProgress(
-        entryId: Int,
-        progress: Int?,
-        progressVolumes: Int? = nil,
+        entryId: Int32,
+        progress: Int32?,
+        progressVolumes: Int32? = nil,
         status: MediaListStatus? = nil
     ) async -> BasicMediaListEntry? {
         await withUnsafeContinuation { continuation in
@@ -386,14 +386,14 @@ struct MediaListRepository {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 do {
-                    try transaction.updateObject(
+                    try await transaction.updateObject(
                         ofType: BasicMediaListEntry.self,
                         withKey: "MediaList:\(entry.id).\(entry.mediaId)"
                     ) { (cachedData: inout BasicMediaListEntry) in
                         cachedData = entry
                     }
 
-                    let newObject = try transaction.readObject(
+                    let newObject = try await transaction.readObject(
                         ofType: T.self,
                         withKey: "MediaList:\(entry.id).\(entry.mediaId)"
                     )
@@ -408,7 +408,7 @@ struct MediaListRepository {
         }
     }
     
-    static func deleteEntry(entryId: Int) async -> Bool? {
+    static func deleteEntry(entryId: Int32) async -> Bool? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
                 mutation: DeleteMediaListMutation(
@@ -427,11 +427,11 @@ struct MediaListRepository {
     }
     
     static func getMediaListIds(
-        userId: Int,
+        userId: Int32,
         type: MediaType,
         status: MediaListStatus?,
-        chunk: Int,
-        perChunk: Int = 500
+        chunk: Int32,
+        perChunk: Int32 = 500
     ) async -> PagedResult<Int>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

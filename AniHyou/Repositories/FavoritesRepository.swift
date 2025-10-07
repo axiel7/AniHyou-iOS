@@ -11,11 +11,11 @@ import AniListAPI
 struct FavoritesRepository {
     
     static func toggleFavorite(
-        animeId: Int? = nil,
-        mangaId: Int? = nil,
-        characterId: Int? = nil,
-        staffId: Int? = nil,
-        studioId: Int? = nil
+        animeId: Int32? = nil,
+        mangaId: Int32? = nil,
+        characterId: Int32? = nil,
+        staffId: Int32? = nil,
+        studioId: Int32? = nil
     ) async -> Bool? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.perform(
@@ -39,9 +39,9 @@ struct FavoritesRepository {
     }
     
     static func getAnime(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -75,9 +75,9 @@ struct FavoritesRepository {
     }
     
     static func getManga(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -111,9 +111,9 @@ struct FavoritesRepository {
     }
     
     static func getCharacters(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -147,9 +147,9 @@ struct FavoritesRepository {
     }
     
     static func getStaff(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(
@@ -183,9 +183,9 @@ struct FavoritesRepository {
     }
     
     static func getStudios(
-        userId: Int,
-        page: Int,
-        perPage: Int = 25
+        userId: Int32,
+        page: Int32,
+        perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node>? {
         await withUnsafeContinuation { continuation in
             Network.shared.apollo.fetch(

@@ -10,6 +10,7 @@ import WatchConnectivity
 
 @Observable
 final class WatchConnectivityManager: NSObject {
+    @MainActor
     static let shared = WatchConnectivityManager()
     var isWatchAppInstalled = false
     var receivedMessage: String?
@@ -48,9 +49,7 @@ extension WatchConnectivityManager: WCSessionDelegate {
         if let key = message.first?.key {
             self.key = key
             if let messageText = message[key] as? String {
-                DispatchQueue.main.async { [weak self] in
-                    self?.receivedMessage = messageText
-                }
+                self.receivedMessage = messageText
             }
         }
     }

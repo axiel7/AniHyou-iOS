@@ -12,7 +12,7 @@ import AniListAPI
 struct MediaListEditView: View {
     @Environment(\.dismiss) private var dismiss
 
-    let mediaDetails: BasicMediaDetails
+    let mediaDetails: BasicMediaDetails?
     var mediaList: BasicMediaListEntry?
     var onSave: (_ updatedEntry: BasicMediaListEntry) -> Void = { _ in }
     var onDelete: () -> Void = {}
@@ -55,8 +55,8 @@ struct MediaListEditView: View {
                 }
                 .onChange(of: status) {
                     if status == .completed {
-                        progress = mediaDetails.maxEpOrCh ?? progress
-                        progressVolumes = mediaDetails.volumes ?? progressVolumes
+                        progress = mediaDetails?.maxEpOrCh ?? progress
+                        progressVolumes = mediaDetails?.volumes ?? progressVolumes
                         if !isFinishDateSet {
                             finishDate = .now
                             isFinishDateSet = true
@@ -191,14 +191,14 @@ struct MediaListEditView: View {
                     .textFieldStyle(.roundedBorder)
                     .frame(width: textFieldWidth)
                     .onChange(of: progress) {
-                        if let max = mediaDetails.maxEpOrCh, (progress ?? 0) > max {
+                        if let max = mediaDetails?.maxEpOrCh, (progress ?? 0) > max {
                             progress = max
                         }
                     }
                 Stepper(
-                    mediaDetails.type == .anime ? "Episodes" : "Chapters",
+                    mediaDetails?.type == .anime ? "Episodes" : "Chapters",
                     onIncrement: {
-                        if let maxValue = mediaDetails.maxEpOrCh, (progress ?? 0) < maxValue {
+                        if let maxValue = mediaDetails?.maxEpOrCh, (progress ?? 0) < maxValue {
                             if progress == nil {
                                 progress = 1
                             } else {
@@ -221,27 +221,27 @@ struct MediaListEditView: View {
                 if status == .planning || mediaList == nil {
                     onUpdatedFromPlanning()
                 }
-                if let maxProgress = mediaDetails.maxEpOrCh,
+                if let maxProgress = mediaDetails?.maxEpOrCh,
                    (progress ?? 0) >= maxProgress
                 {
                     onMaxProgressReached()
                 }
             }
-            if mediaDetails.type == .manga {
+            if mediaDetails?.type == .manga {
                 HStack {
                     TextField("0", value: $progressVolumes, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: textFieldWidth)
                         .onChange(of: progressVolumes) {
-                            if let max = mediaDetails.volumes, (progressVolumes ?? 0) > max {
+                            if let max = mediaDetails?.volumes, (progressVolumes ?? 0) > max {
                                 progressVolumes = max
                             }
                         }
                     Stepper(
                         "Volumes",
                         onIncrement: {
-                            if let maxValue = mediaDetails.volumes, (progressVolumes ?? 0) < maxValue {
+                            if let maxValue = mediaDetails?.volumes, (progressVolumes ?? 0) < maxValue {
                                 if progressVolumes == nil {
                                     progressVolumes = 1
                                 } else {
@@ -264,7 +264,7 @@ struct MediaListEditView: View {
                     if status == .planning || mediaList == nil {
                         onUpdatedFromPlanning()
                     }
-                    if let maxVolumes = mediaDetails.volumes,
+                    if let maxVolumes = mediaDetails?.volumes,
                        (progressVolumes ?? 0) >= maxVolumes
                     {
                         onMaxProgressReached()
@@ -324,7 +324,7 @@ struct MediaListEditView: View {
                 let action: () -> Void = {
                     Task {
                         await viewModel.updateEntry(
-                            mediaId: mediaDetails.id,
+                            mediaId: mediaDetails!.id,
                             status: status,
                             score: viewModel.score,
                             advancedScoresDict: advancedScores,
@@ -433,7 +433,7 @@ struct MediaListEditView: View {
             self.customLists = customListsDict
         } else { // new entry, use custom list from settings
             UserDefaults.standard.stringArray(
-                forKey: mediaDetails.type!.value!.customListsKey
+                forKey: mediaDetails!.type!.value!.customListsKey
             )?.forEach { name in
                 self.customLists[name] = false
             }
@@ -442,6 +442,6 @@ struct MediaListEditView: View {
 }
 
 #Preview {
-    MediaListEditView(mediaDetails: BasicMediaDetails(_fieldData: nil))
+    MediaListEditView(mediaDetails: nil)
 // swiftlint:disable:next file_length
 }

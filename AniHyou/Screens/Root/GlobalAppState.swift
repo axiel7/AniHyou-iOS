@@ -9,6 +9,7 @@ import Foundation
 
 @Observable
 final class GlobalAppState {
+    @MainActor
     static let shared = GlobalAppState()
 
     // We use this uuid to reset de root content view

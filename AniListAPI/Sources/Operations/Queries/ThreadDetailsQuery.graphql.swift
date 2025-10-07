@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class ThreadDetailsQuery: GraphQLQuery {
+public struct ThreadDetailsQuery: GraphQLQuery {
   public static let operationName: String = "ThreadDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -11,21 +12,24 @@ public class ThreadDetailsQuery: GraphQLQuery {
       fragments: [BasicThreadDetails.self]
     ))
 
-  public var threadId: GraphQLNullable<Int>
+  public var threadId: GraphQLNullable<Int32>
 
-  public init(threadId: GraphQLNullable<Int>) {
+  public init(threadId: GraphQLNullable<Int32>) {
     self.threadId = threadId
   }
 
-  public var __variables: Variables? { ["threadId": threadId] }
+  @_spi(Unsafe) public var __variables: Variables? { ["threadId": threadId] }
 
   public struct Data: AniListAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Query }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("Thread", Thread?.self, arguments: ["id": .variable("threadId")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      ThreadDetailsQuery.Data.self
     ] }
 
     /// Thread query
@@ -35,13 +39,17 @@ public class ThreadDetailsQuery: GraphQLQuery {
     ///
     /// Parent Type: `Thread`
     public struct Thread: AniListAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Thread }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(BasicThreadDetails.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        ThreadDetailsQuery.Data.Thread.self,
+        BasicThreadDetails.self
       ] }
 
       /// The id of the thread
@@ -68,8 +76,8 @@ public class ThreadDetailsQuery: GraphQLQuery {
       public var createdAt: Int { __data["createdAt"] }
 
       public struct Fragments: FragmentContainer {
-        public let __data: DataDict
-        public init(_dataDict: DataDict) { __data = _dataDict }
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
         public var basicThreadDetails: BasicThreadDetails { _toFragment() }
       }

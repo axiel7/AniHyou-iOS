@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 @Observable class HomeViewModel {
     
     var unreadNotificationsCount = 0

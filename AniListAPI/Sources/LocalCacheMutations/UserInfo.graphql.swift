@@ -2,17 +2,18 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
 public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists } mangaList { __typename customLists } } isFollowing isFollower donatorBadge donatorTier }"#
   }
 
-  public var __data: DataDict
-  public init(_dataDict: DataDict) { __data = _dataDict }
+  @_spi(Unsafe) public var __data: DataDict
+  @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
-  public static var __selections: [ApolloAPI.Selection] { [
+  @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.User }
+  @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("id", Int.self),
     .field("name", String.self),
@@ -25,6 +26,9 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     .field("isFollower", Bool?.self),
     .field("donatorBadge", String?.self),
     .field("donatorTier", Int?.self),
+  ] }
+  @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+    UserInfo.self
   ] }
 
   /// The id of the user
@@ -96,38 +100,36 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     donatorBadge: String? = nil,
     donatorTier: Int? = nil
   ) {
-    self.init(_dataDict: DataDict(
-      data: [
-        "__typename": AniListAPI.Objects.User.typename,
-        "id": id,
-        "name": name,
-        "avatar": avatar._fieldData,
-        "bannerImage": bannerImage,
-        "about": about,
-        "options": options._fieldData,
-        "mediaListOptions": mediaListOptions._fieldData,
-        "isFollowing": isFollowing,
-        "isFollower": isFollower,
-        "donatorBadge": donatorBadge,
-        "donatorTier": donatorTier,
-      ],
-      fulfilledFragments: [
-        ObjectIdentifier(UserInfo.self)
-      ]
-    ))
+    self.init(unsafelyWithData: [
+      "__typename": AniListAPI.Objects.User.typename,
+      "id": id,
+      "name": name,
+      "avatar": avatar._fieldData,
+      "bannerImage": bannerImage,
+      "about": about,
+      "options": options._fieldData,
+      "mediaListOptions": mediaListOptions._fieldData,
+      "isFollowing": isFollowing,
+      "isFollower": isFollower,
+      "donatorBadge": donatorBadge,
+      "donatorTier": donatorTier,
+    ])
   }
 
   /// Avatar
   ///
   /// Parent Type: `UserAvatar`
   public struct Avatar: AniListAPI.MutableSelectionSet {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public var __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserAvatar }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("large", String?.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserInfo.Avatar.self
     ] }
 
     /// The avatar of user at its largest size
@@ -139,15 +141,10 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     public init(
       large: String? = nil
     ) {
-      self.init(_dataDict: DataDict(
-        data: [
-          "__typename": AniListAPI.Objects.UserAvatar.typename,
-          "large": large,
-        ],
-        fulfilledFragments: [
-          ObjectIdentifier(UserInfo.Avatar.self)
-        ]
-      ))
+      self.init(unsafelyWithData: [
+        "__typename": AniListAPI.Objects.UserAvatar.typename,
+        "large": large,
+      ])
     }
   }
 
@@ -155,15 +152,18 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   ///
   /// Parent Type: `UserOptions`
   public struct Options: AniListAPI.MutableSelectionSet {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public var __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserOptions }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.UserOptions }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("profileColor", String?.self),
       .field("staffNameLanguage", GraphQLEnum<AniListAPI.UserStaffNameLanguage>?.self),
       .field("titleLanguage", GraphQLEnum<AniListAPI.UserTitleLanguage>?.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserInfo.Options.self
     ] }
 
     /// Profile highlight color (blue, purple, pink, orange, red, green, gray)
@@ -187,17 +187,12 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
       staffNameLanguage: GraphQLEnum<AniListAPI.UserStaffNameLanguage>? = nil,
       titleLanguage: GraphQLEnum<AniListAPI.UserTitleLanguage>? = nil
     ) {
-      self.init(_dataDict: DataDict(
-        data: [
-          "__typename": AniListAPI.Objects.UserOptions.typename,
-          "profileColor": profileColor,
-          "staffNameLanguage": staffNameLanguage,
-          "titleLanguage": titleLanguage,
-        ],
-        fulfilledFragments: [
-          ObjectIdentifier(UserInfo.Options.self)
-        ]
-      ))
+      self.init(unsafelyWithData: [
+        "__typename": AniListAPI.Objects.UserOptions.typename,
+        "profileColor": profileColor,
+        "staffNameLanguage": staffNameLanguage,
+        "titleLanguage": titleLanguage,
+      ])
     }
   }
 
@@ -205,15 +200,18 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
   ///
   /// Parent Type: `MediaListOptions`
   public struct MediaListOptions: AniListAPI.MutableSelectionSet {
-    public var __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public var __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListOptions }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("scoreFormat", GraphQLEnum<AniListAPI.ScoreFormat>?.self),
       .field("animeList", AnimeList?.self),
       .field("mangaList", MangaList?.self),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      UserInfo.MediaListOptions.self
     ] }
 
     /// The score format the user is using for media lists
@@ -237,32 +235,30 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
       animeList: AnimeList? = nil,
       mangaList: MangaList? = nil
     ) {
-      self.init(_dataDict: DataDict(
-        data: [
-          "__typename": AniListAPI.Objects.MediaListOptions.typename,
-          "scoreFormat": scoreFormat,
-          "animeList": animeList._fieldData,
-          "mangaList": mangaList._fieldData,
-        ],
-        fulfilledFragments: [
-          ObjectIdentifier(UserInfo.MediaListOptions.self)
-        ]
-      ))
+      self.init(unsafelyWithData: [
+        "__typename": AniListAPI.Objects.MediaListOptions.typename,
+        "scoreFormat": scoreFormat,
+        "animeList": animeList._fieldData,
+        "mangaList": mangaList._fieldData,
+      ])
     }
 
     /// MediaListOptions.AnimeList
     ///
     /// Parent Type: `MediaListTypeOptions`
     public struct AnimeList: AniListAPI.MutableSelectionSet {
-      public var __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public var __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("advancedScoring", [String?]?.self),
         .field("advancedScoringEnabled", Bool?.self),
         .field("customLists", [String?]?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserInfo.MediaListOptions.AnimeList.self
       ] }
 
       /// The names of the user's advanced scoring sections
@@ -286,17 +282,12 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
         advancedScoringEnabled: Bool? = nil,
         customLists: [String?]? = nil
       ) {
-        self.init(_dataDict: DataDict(
-          data: [
-            "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
-            "advancedScoring": advancedScoring,
-            "advancedScoringEnabled": advancedScoringEnabled,
-            "customLists": customLists,
-          ],
-          fulfilledFragments: [
-            ObjectIdentifier(UserInfo.MediaListOptions.AnimeList.self)
-          ]
-        ))
+        self.init(unsafelyWithData: [
+          "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
+          "advancedScoring": advancedScoring,
+          "advancedScoringEnabled": advancedScoringEnabled,
+          "customLists": customLists,
+        ])
       }
     }
 
@@ -304,13 +295,16 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
     ///
     /// Parent Type: `MediaListTypeOptions`
     public struct MangaList: AniListAPI.MutableSelectionSet {
-      public var __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public var __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaListTypeOptions }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("customLists", [String?]?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        UserInfo.MediaListOptions.MangaList.self
       ] }
 
       /// The names of the user's custom lists
@@ -322,15 +316,10 @@ public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment {
       public init(
         customLists: [String?]? = nil
       ) {
-        self.init(_dataDict: DataDict(
-          data: [
-            "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
-            "customLists": customLists,
-          ],
-          fulfilledFragments: [
-            ObjectIdentifier(UserInfo.MediaListOptions.MangaList.self)
-          ]
-        ))
+        self.init(unsafelyWithData: [
+          "__typename": AniListAPI.Objects.MediaListTypeOptions.typename,
+          "customLists": customLists,
+        ])
       }
     }
   }
