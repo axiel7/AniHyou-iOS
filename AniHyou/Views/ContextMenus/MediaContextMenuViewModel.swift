@@ -13,20 +13,16 @@ import AniListAPI
 
     var details: PreviewMediaDetailsQuery.Data.Media?
 
-    func getDetails(mediaId: Int) {
-        Network.shared.apollo.fetch(
-            query: PreviewMediaDetailsQuery(mediaId: .some(Int32(mediaId)))
-        ) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let media = graphQLResult.data?.media {
-                    Task { @MainActor in
-                        self?.details = media
-                    }
-                }
-            case .failure(let error):
-                print(error)
+    func getDetails(mediaId: Int) async {
+        do {
+            let result = try await Network.shared.apollo.fetch(
+                query: PreviewMediaDetailsQuery(mediaId: .some(Int32(mediaId)))
+            )
+            if let media = result.data?.media {
+                self.details = media
             }
+        } catch {
+            print(error)
         }
     }
 }

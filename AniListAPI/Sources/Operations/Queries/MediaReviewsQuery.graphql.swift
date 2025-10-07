@@ -8,7 +8,8 @@ public struct MediaReviewsQuery: GraphQLQuery {
   public static let operationName: String = "MediaReviews"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) { Media(id: $mediaId) { __typename reviews(page: $page, perPage: $perPage, sort: RATING_DESC) { __typename nodes { __typename id summary score user { __typename name } } pageInfo { __typename hasNextPage } } } }"#
+      #"query MediaReviews($mediaId: Int, $page: Int, $perPage: Int) { Media(id: $mediaId) { __typename reviews(page: $page, perPage: $perPage, sort: RATING_DESC) { __typename nodes { __typename id summary score user { __typename name } } pageInfo { __typename ...CommonPage } } } }"#,
+      fragments: [CommonPage.self]
     ))
 
   public var mediaId: GraphQLNullable<Int32>
@@ -149,14 +150,24 @@ public struct MediaReviewsQuery: GraphQLQuery {
           @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
           @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("hasNextPage", Bool?.self),
+            .fragment(CommonPage.self),
           ] }
           @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-            MediaReviewsQuery.Data.Media.Reviews.PageInfo.self
+            MediaReviewsQuery.Data.Media.Reviews.PageInfo.self,
+            CommonPage.self
           ] }
 
+          /// The current page
+          public var currentPage: Int? { __data["currentPage"] }
           /// If there is another page
           public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+          public struct Fragments: FragmentContainer {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var commonPage: CommonPage { _toFragment() }
+          }
         }
       }
     }

@@ -4,7 +4,7 @@ query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [Thr
       ...BasicThreadDetails
     }
     pageInfo {
-      hasNextPage
+      ...CommonPage
     }
   }
 }

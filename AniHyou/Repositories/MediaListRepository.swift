@@ -20,8 +20,8 @@ struct MediaListRepository {
         perChunk: Int32? = 50,
         forceReload: Bool = false
     ) async -> PagedResult<UserListCollectionQuery.Data.MediaListCollection.List>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
+        do {
+            let result = try await Network.shared.apollo.fetch(
                 query: UserListCollectionQuery(
                     userId: .some(userId),
                     type: .some(.case(mediaType)),
@@ -29,28 +29,21 @@ struct MediaListRepository {
                     chunk: someIfNotNil(chunk),
                     perChunk: someIfNotNil(perChunk)
                 ),
-                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.mediaListCollection,
-                       let lists = pageData.lists?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: lists,
-                                page: (chunk ?? 0) + 1,
-                                hasNextPage: pageData.hasNextChunk == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
+                cachePolicy: forceReload ? .networkOnly : .cacheFirst
+            )
+            if let pageData = result.data?.mediaListCollection,
+               let lists = pageData.lists?.compactMap({ $0 })
+            {
+                return PagedResult(
+                    data: lists,
+                    page: (chunk ?? 0) + 1,
+                    hasNextPage: pageData.hasNextChunk == true
+                )
             }
+            return nil
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -63,39 +56,19 @@ struct MediaListRepository {
         perPage: Int32? = 25,
         forceReload: Bool = false
     ) async -> PagedResult<CommonMediaListEntry>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: UserMediaListQuery(
-                    page: someIfNotNil(page),
-                    perPage: someIfNotNil(perPage),
-                    userId: .some(userId),
-                    type: .some(.case(mediaType)),
-                    statusIn: someEnumArrayIfNotEmpty(statusIn),
-                    sort: .some(sort.map({ .case($0) }))
-                ),
-                cachePolicy: forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let list = pageData.mediaList?.compactMap({ $0?.fragments.commonMediaListEntry })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: list,
-                                page: page ?? 0 + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserMediaListQuery(
+                page: someIfNotNil(page),
+                perPage: someIfNotNil(perPage),
+                userId: .some(userId),
+                type: .some(.case(mediaType)),
+                statusIn: someEnumArrayIfNotEmpty(statusIn),
+                sort: .some(sort.map({ .case($0) }))
+            ),
+            forceReload: forceReload,
+            extractItems: { $0.page?.mediaList?.compactMap { $0?.fragments.commonMediaListEntry } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getShouUserMediaList(
@@ -106,70 +79,50 @@ struct MediaListRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<ShouUserMediaList>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: ShouUserMediaListQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
-                    userId: .some(userId),
-                    type: .some(.case(mediaType)),
-                    statusIn: someEnumArrayIfNotEmpty(statusIn),
-                    sort: .some(sort.map({ .case($0) }))
+        await Network.fetchPagedResult(
+            ShouUserMediaListQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                userId: .some(userId),
+                type: .some(.case(mediaType)),
+                statusIn: someEnumArrayIfNotEmpty(statusIn),
+                sort: .some(sort.map({ .case($0) }))
+            ),
+            extractItems: { $0.page?.mediaList?.compactMap { $0?.fragments.shouUserMediaList } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
+    }
+    
+    static func updateListStatus(mediaId: Int32, status: MediaListStatus) async {
+        do {
+            let result = try await Network.shared.apollo.perform(
+                mutation: UpdateEntryMutation(
+                    mediaId: .some(mediaId),
+                    status: someIfNotNil(status),
+                    score: nil,
+                    progress: nil,
+                    progressVolumes: nil,
+                    startedAt: nil,
+                    completedAt: nil,
+                    repeat: nil,
+                    private: nil,
+                    hiddenFromStatusLists: nil,
+                    notes: nil,
+                    customLists: nil,
+                    advancedScores: nil
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let list = pageData.mediaList?.compactMap({ $0?.fragments.shouUserMediaList })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: list,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
+            )
+            if let entryId = result.data?.saveMediaListEntry?.id {
+                await onStatusUpdated(mediaId: mediaId, entryId: entryId, status: status)
             }
+        } catch {
+            print(error)
         }
     }
     
-    static func updateListStatus(mediaId: Int32, status: MediaListStatus) {
-        Network.shared.apollo.perform(mutation: UpdateEntryMutation(
-            mediaId: .some(mediaId),
-            status: someIfNotNil(status),
-            score: nil,
-            progress: nil,
-            progressVolumes: nil,
-            startedAt: nil,
-            completedAt: nil,
-            repeat: nil,
-            private: nil,
-            hiddenFromStatusLists: nil,
-            notes: nil,
-            customLists: nil,
-            advancedScores: nil
-        )) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let entryId = graphQLResult.data?.saveMediaListEntry?.id {
-                    onStatusUpdated(mediaId: mediaId, entryId: entryId, status: status)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    static func onStatusUpdated(mediaId: Int32, entryId: Int, status: MediaListStatus) {
+    static func onStatusUpdated(mediaId: Int32, entryId: Int, status: MediaListStatus) async {
         // Update the local cache
-        Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+        try? await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
             do {
                 try await transaction.updateObject(
                     ofType: BasicMediaListEntry.self,
@@ -206,70 +159,68 @@ struct MediaListRepository {
         customLists: [String: Bool]? = nil,
         notes: String? = nil
     ) async -> BasicMediaListEntry? {
-        await withUnsafeContinuation { continuation in
-            
-            let setStatus: MediaListStatus? = if status != oldEntry?.status?.value {
-                status
-            } else {
-                nil
-            }
-            
-            let setScore: Double? = if score != oldEntry?.score { score } else { nil }
-            
-            let setProgress: Int32? = if progress != oldEntry?.progress { progress?.toInt32() } else { nil }
-            
-            let setProgressVolumes: Int32? = if progressVolumes != oldEntry?.progressVolumes {
-                progressVolumes?.toInt32()
-            } else {
-                nil
-            }
-            
-            let setStartedAt: FuzzyDateInput? =
-            if oldEntry?.startedAt?.fragments.fuzzyDateFragment.isEqual(startedAt?.toFuzzyDate()) == false {
-                startedAt?.toFuzzyDate()
-            } else {
-                nil
-            }
-            var startedAtQL = someIfNotNil(setStartedAt)
-            if startedAt == nil { startedAtQL = .null } //remove date
-            
-            let setCompletedAt: FuzzyDateInput? =
-            if oldEntry?.completedAt?.fragments.fuzzyDateFragment.isEqual(completedAt?.toFuzzyDate()) == false {
-                completedAt?.toFuzzyDate()
-            } else {
-                nil
-            }
-            var completedAtQL = someIfNotNil(setCompletedAt)
-            if completedAt == nil { completedAtQL = .null } //remove date
-            
-            let setRepeat: Int32? = if repeatCount != oldEntry?.repeat { repeatCount?.toInt32() } else { nil }
-            
-            let setIsPrivate: Bool? = if isPrivate != oldEntry?.private { isPrivate } else { nil }
-            
-            let setIsHiddenFromStatusLists: Bool? = if isHiddenFromStatusLists != oldEntry?.hiddenFromStatusLists {
-                isHiddenFromStatusLists
-            } else {
-                nil
-            }
-            
-            let setCustomLists: [String]? = customLists?.filter({ $0.value }).keys.sorted()
-            
-            let setNotes: String? = if notes != oldEntry?.notes { notes } else { nil }
-            
-            var setAdvancedScores: [Double]?
-            // this is required because in Swift there's no equivalent to LinkedHashMap...
-            // and AniList API expects a float array ordered
-            if let advancedScores,
-                let advancedScoresOrdered = UserDefaults.standard.stringArray(forKey: ADVANCED_SCORES_KEY) {
-                setAdvancedScores = []
-                for name in advancedScoresOrdered {
-                    if let score = advancedScores[name] {
-                        setAdvancedScores?.append(score)
-                    }
+        let setStatus: MediaListStatus? = if status != oldEntry?.status?.value {
+            status
+        } else {
+            nil
+        }
+        
+        let setScore: Double? = if score != oldEntry?.score { score } else { nil }
+        
+        let setProgress: Int32? = if progress != oldEntry?.progress { progress?.toInt32() } else { nil }
+        
+        let setProgressVolumes: Int32? = if progressVolumes != oldEntry?.progressVolumes {
+            progressVolumes?.toInt32()
+        } else {
+            nil
+        }
+        
+        let setStartedAt: FuzzyDateInput? =
+        if oldEntry?.startedAt?.fragments.fuzzyDateFragment.isEqual(startedAt?.toFuzzyDate()) == false {
+            startedAt?.toFuzzyDate()
+        } else {
+            nil
+        }
+        var startedAtQL = someIfNotNil(setStartedAt)
+        if startedAt == nil { startedAtQL = .null } //remove date
+        
+        let setCompletedAt: FuzzyDateInput? =
+        if oldEntry?.completedAt?.fragments.fuzzyDateFragment.isEqual(completedAt?.toFuzzyDate()) == false {
+            completedAt?.toFuzzyDate()
+        } else {
+            nil
+        }
+        var completedAtQL = someIfNotNil(setCompletedAt)
+        if completedAt == nil { completedAtQL = .null } //remove date
+        
+        let setRepeat: Int32? = if repeatCount != oldEntry?.repeat { repeatCount?.toInt32() } else { nil }
+        
+        let setIsPrivate: Bool? = if isPrivate != oldEntry?.private { isPrivate } else { nil }
+        
+        let setIsHiddenFromStatusLists: Bool? = if isHiddenFromStatusLists != oldEntry?.hiddenFromStatusLists {
+            isHiddenFromStatusLists
+        } else {
+            nil
+        }
+        
+        let setCustomLists: [String]? = customLists?.filter({ $0.value }).keys.sorted()
+        
+        let setNotes: String? = if notes != oldEntry?.notes { notes } else { nil }
+        
+        var setAdvancedScores: [Double]?
+        // this is required because in Swift there's no equivalent to LinkedHashMap...
+        // and AniList API expects a float array ordered
+        if let advancedScores,
+            let advancedScoresOrdered = UserDefaults.standard.stringArray(forKey: ADVANCED_SCORES_KEY) {
+            setAdvancedScores = []
+            for name in advancedScoresOrdered {
+                if let score = advancedScores[name] {
+                    setAdvancedScores?.append(score)
                 }
             }
-            
-            Network.shared.apollo.perform(
+        }
+        do {
+            let result = try await Network.shared.apollo.perform(
                 mutation: UpdateEntryMutation(
                     mediaId: .some(mediaId),
                     status: someIfNotNil(setStatus),
@@ -285,24 +236,21 @@ struct MediaListRepository {
                     customLists: someIfNotNil(setCustomLists),
                     advancedScores: someIfNotNil(setAdvancedScores)
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let data = graphQLResult.data?.saveMediaListEntry {
-                        if let errors = graphQLResult.errors {
-                            for error in errors {
-                                print(error)
-                            }
-                            continuation.resume(returning: nil)
-                        } else {
-                            continuation.resume(returning: data.fragments.basicMediaListEntry)
-                        }
+            )
+            if let data = result.data?.saveMediaListEntry {
+                if let errors = result.errors {
+                    for error in errors {
+                        print(error)
                     }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
+                    return nil
+                } else {
+                    return data.fragments.basicMediaListEntry
                 }
             }
+            return nil
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -360,69 +308,58 @@ struct MediaListRepository {
         progressVolumes: Int32? = nil,
         status: MediaListStatus? = nil
     ) async -> BasicMediaListEntry? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.perform(
+        do {
+            let result = try await Network.shared.apollo.perform(
                 mutation: UpdateEntryProgressMutation(
                     saveMediaListEntryId: .some(entryId),
                     progress: someIfNotNil(progress),
                     progressVolumes: someIfNotNil(progressVolumes),
                     status: someIfNotNil(status)
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    let newEntry = graphQLResult.data?.saveMediaListEntry?.fragments.basicMediaListEntry
-                    continuation.resume(returning: newEntry)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+            )
+            return result.data?.saveMediaListEntry?.fragments.basicMediaListEntry
+        } catch {
+            print(error)
+            return nil
         }
     }
     
     @discardableResult
     static func updateCachedEntry<T: RootSelectionSet>(_ entry: BasicMediaListEntry) async -> T? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.store.withinReadWriteTransaction { transaction in
-                do {
-                    try await transaction.updateObject(
-                        ofType: BasicMediaListEntry.self,
-                        withKey: "MediaList:\(entry.id).\(entry.mediaId)"
-                    ) { (cachedData: inout BasicMediaListEntry) in
-                        cachedData = entry
-                    }
-
-                    let newObject = try await transaction.readObject(
-                        ofType: T.self,
-                        withKey: "MediaList:\(entry.id).\(entry.mediaId)"
-                    )
-                    WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
-                    WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
-                    continuation.resume(returning: newObject)
-                } catch {
-                    print(error)
-                    continuation.resume(returning: nil)
+        try? await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+            do {
+                try await transaction.updateObject(
+                    ofType: BasicMediaListEntry.self,
+                    withKey: "MediaList:\(entry.id).\(entry.mediaId)"
+                ) { (cachedData: inout BasicMediaListEntry) in
+                    cachedData = entry
                 }
+
+                let newObject = try await transaction.readObject(
+                    ofType: T.self,
+                    withKey: "MediaList:\(entry.id).\(entry.mediaId)"
+                )
+                WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
+                WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
+                return newObject
+            } catch {
+                print(error)
+                return nil
             }
         }
     }
     
     static func deleteEntry(entryId: Int32) async -> Bool? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.perform(
+        do {
+            let result = try await Network.shared.apollo.perform(
                 mutation: DeleteMediaListMutation(
                     mediaListEntryId: .some(entryId)
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.deleteMediaListEntry?.deleted)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+            )
+            return result.data?.deleteMediaListEntry?.deleted
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -433,8 +370,8 @@ struct MediaListRepository {
         chunk: Int32,
         perChunk: Int32 = 500
     ) async -> PagedResult<Int>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
+        do {
+            let result = try await Network.shared.apollo.fetch(
                 query: MediaListIdsQuery(
                     type: .some(.case(type)),
                     userId: .some(userId),
@@ -442,29 +379,22 @@ struct MediaListRepository {
                     chunk: .some(chunk),
                     perChunk: .some(perChunk)
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageInfo = graphQLResult.data?.mediaListCollection,
-                       let ids = pageInfo.lists?
-                           .compactMap({ $0?.entries })
-                           .flatMap({ $0.compactMap({ $0?.mediaId }) })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: ids,
-                                page: chunk + 1,
-                                hasNextPage: pageInfo.hasNextChunk == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
+            )
+            if let pageInfo = result.data?.mediaListCollection,
+               let ids = pageInfo.lists?
+                   .compactMap({ $0?.entries })
+                   .flatMap({ $0.compactMap({ $0?.mediaId }) })
+            {
+                return PagedResult(
+                    data: ids,
+                    page: chunk + 1,
+                    hasNextPage: pageInfo.hasNextChunk == true
+                )
             }
+            return nil
+        } catch {
+            print(error)
+            return nil
         }
     }
 // swiftlint:disable:next file_length

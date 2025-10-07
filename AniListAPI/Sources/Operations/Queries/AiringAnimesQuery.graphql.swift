@@ -8,7 +8,8 @@ public struct AiringAnimesQuery: GraphQLQuery {
   public static let operationName: String = "AiringAnimes"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } episode airingAt } pageInfo { __typename currentPage hasNextPage } } }"#
+      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } episode airingAt } pageInfo { __typename ...CommonPage } } }"#,
+      fragments: [CommonPage.self]
     ))
 
   public var page: GraphQLNullable<Int32>
@@ -212,17 +213,24 @@ public struct AiringAnimesQuery: GraphQLQuery {
         @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("currentPage", Int?.self),
-          .field("hasNextPage", Bool?.self),
+          .fragment(CommonPage.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-          AiringAnimesQuery.Data.Page.PageInfo.self
+          AiringAnimesQuery.Data.Page.PageInfo.self,
+          CommonPage.self
         ] }
 
         /// The current page
         public var currentPage: Int? { __data["currentPage"] }
         /// If there is another page
         public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+        public struct Fragments: FragmentContainer {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var commonPage: CommonPage { _toFragment() }
+        }
       }
     }
   }

@@ -12,7 +12,6 @@ import WatchConnectivity
 final class WatchConnectivityManager: NSObject {
     @MainActor
     static let shared = WatchConnectivityManager()
-    var isWatchAppInstalled = false
     var receivedMessage: String?
     var key = ""
 
@@ -59,11 +58,6 @@ extension WatchConnectivityManager: WCSessionDelegate {
         activationDidCompleteWith activationState: WCSessionActivationState,
         error: Error?
     ) {
-        #if os(iOS)
-        if activationState == .activated {
-            isWatchAppInstalled = session.isWatchAppInstalled
-        }
-        #endif
     }
 
     #if os(iOS)

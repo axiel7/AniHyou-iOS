@@ -27,8 +27,8 @@ struct GenreTagSelectionView: View {
                 if selectionType == 1 {
                     if viewModel.tagCollection == nil {
                         HorizontalProgressView()
-                            .onAppear {
-                                viewModel.getGenreTagCollection()
+                            .task {
+                                await viewModel.getGenreTagCollection()
                             }
                         Spacer()
                     } else {
@@ -39,8 +39,8 @@ struct GenreTagSelectionView: View {
                 } else {
                     if viewModel.genreCollection == nil {
                         HorizontalProgressView()
-                            .onAppear {
-                                viewModel.getGenreTagCollection()
+                            .task {
+                                await viewModel.getGenreTagCollection()
                             }
                         Spacer()
                     } else {

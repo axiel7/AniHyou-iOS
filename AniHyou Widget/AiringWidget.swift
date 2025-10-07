@@ -50,16 +50,16 @@ struct AiringProvider: TimelineProvider {
         // update every 12h
         var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: now)!
 
-        Network.shared.apollo.fetch(
-            query: UserCurrentAnimeListQuery(
-                userId: .some(Int32(userId)),
-                sort: .some([.case(.updatedTimeDesc)])
-            ),
-            cachePolicy: .fetchIgnoringCacheCompletely
-        ) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let mediaList = graphQLResult.data?.page?.mediaList {
+        Task {
+            do {
+                let result = try await Network.shared.apollo.fetch(
+                    query: UserCurrentAnimeListQuery(
+                        userId: .some(Int32(userId)),
+                        sort: .some([.case(.updatedTimeDesc)])
+                    ),
+                    cachePolicy: .networkOnly
+                )
+                if let mediaList = result.data?.page?.mediaList {
                     var tempList = transformToAiringAnimeList(mediaList)
                     
                     let maxItems = context.family.maxMediaListItems
@@ -74,7 +74,7 @@ struct AiringProvider: TimelineProvider {
                     let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                     completion(timeline)
                 }
-            case .failure(let error):
+            } catch {
                 print(error)
                 nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
                 let entry = AiringEntry(

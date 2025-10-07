@@ -22,14 +22,14 @@ import AniListAPI
     }
 
     func getUserId() {
-        Network.shared.apollo.fetch(query: ViewerIdQuery()) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let viewer = graphQLResult.data?.viewer {
+        Task {
+            do {
+                let result = try await Network.shared.apollo.fetch(query: ViewerIdQuery())
+                if let viewer = result.data?.viewer {
                     LoginRepository.saveUserId(id: viewer.id)
                     UserDefaults.standard.set(true, forKey: LOGGED_IN_KEY)
                 }
-            case .failure(let error):
+            } catch {
                 print(error)
             }
         }

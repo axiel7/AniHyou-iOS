@@ -16,10 +16,12 @@ extension View {
     ) -> some View {
         ForEach(mediaListStatus.statusesCanChangeTo, id: \.rawValue) { status in
             Button {
-                MediaListRepository.updateListStatus(
-                    mediaId: Int32(mediaId),
-                    status: status
-                )
+                Task {
+                    await MediaListRepository.updateListStatus(
+                        mediaId: Int32(mediaId),
+                        status: status
+                    )
+                }
             } label: {
                 let localizedKey = String.LocalizationValue(
                     stringLiteral: status.localizedStringKey
@@ -102,8 +104,8 @@ struct MediaContextMenuView: View {
             } else {
                 VStack(alignment: .center) {
                     ProgressView()
-                        .onAppear {
-                            viewModel.getDetails(mediaId: mediaId)
+                        .task {
+                            await viewModel.getDetails(mediaId: mediaId)
                         }
                 }
             }

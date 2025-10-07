@@ -15,48 +15,26 @@ struct StaffRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<SearchStaffQuery.Data.Page.Staff>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: SearchStaffQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
-                    search: .some(search)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let staff = pageData.staff?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: staff,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            SearchStaffQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                search: .some(search)
+            ),
+            extractItems: { $0.page?.staff?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getStaffDetails(staffId: Int32) async -> StaffDetailsQuery.Data.Staff? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(query: StaffDetailsQuery(staffId: .some(staffId))) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.staff)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(
+                query: StaffDetailsQuery(staffId: .some(staffId))
+            )
+            return result.data?.staff
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -66,47 +44,29 @@ struct StaffRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<StaffMediaGrouped>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: StaffMediaQuery(
-                    staffId: .some(staffId),
-                    onList: someIfNotNil(onMyList),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.staff?.staffMedia,
-                       let edges = pageData.edges
-                    {
-                        var mediaGroupDict = [Int: StaffMediaGrouped]()
-                        Dictionary(grouping: edges, by: { $0?.node?.id ?? 0 }).forEach { mediaId, value in
-                            mediaGroupDict[mediaId] = StaffMediaGrouped(
-                                value: value[0]!,
-                                staffRoles: value.map { $0?.staffRole ?? "" }
-                            )
-                        }
-                        let sortedDict = mediaGroupDict.values.sorted(by: { first, second in
-                            first.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231" >
-                            second.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231"
-                        })
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: sortedDict,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
+        await Network.fetchPagedResult(
+            StaffMediaQuery(
+                staffId: .some(staffId),
+                onList: someIfNotNil(onMyList),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { result in
+                guard let edges = result.staff?.staffMedia?.edges else { return nil }
+                var mediaGroupDict = [Int: StaffMediaGrouped]()
+                Dictionary(grouping: edges, by: { $0?.node?.id ?? 0 }).forEach { mediaId, value in
+                    mediaGroupDict[mediaId] = StaffMediaGrouped(
+                        value: value[0]!,
+                        staffRoles: value.map { $0?.staffRole ?? "" }
+                    )
                 }
-            }
-        }
+                return mediaGroupDict.values.sorted { first, second in
+                    (first.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231") >
+                    (second.value.node?.startDate?.fragments.fuzzyDateFragment.isoString() ?? "30001231")
+                }
+            },
+            extractPage: { $0.staff?.staffMedia?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getStaffCharacters(
@@ -115,35 +75,15 @@ struct StaffRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<StaffCharacterQuery.Data.Staff.CharacterMedia.Edge>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: StaffCharacterQuery(
-                    staffId: .some(staffId),
-                    onList: someIfNotNil(onMyList),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.staff?.characterMedia,
-                       let characters = pageData.edges?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: characters,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            StaffCharacterQuery(
+                staffId: .some(staffId),
+                onList: someIfNotNil(onMyList),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.staff?.characterMedia?.edges?.compactMap { $0 } },
+            extractPage: { $0.staff?.characterMedia?.pageInfo?.fragments.commonPage }
+        )
     }
 }

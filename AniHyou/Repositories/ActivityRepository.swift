@@ -16,55 +16,30 @@ struct ActivityRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<ActivityFeedQuery.Data.Page.Activity>? {
-        await withUnsafeContinuation { continuation in
-            let typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]> =
-            if type == .all {
-                .none
-            } else {
-                .some([.case(type.value!)])
-            }
-            Network.shared.apollo.fetch(
-                query: ActivityFeedQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
-                    isFollowing: .some(isFollowing),
-                    typeIn: typeIn
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let activities = pageData.activities?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: activities,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        let typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]> =
+            type == .all ? .none : .some([.case(type.value!)])
+        
+        return await Network.fetchPagedResult(
+            ActivityFeedQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                isFollowing: .some(isFollowing),
+                typeIn: typeIn
+            ),
+            extractItems: { $0.page?.activities?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getActivityDetails(activityId: Int32) async -> ActivityDetailsQuery.Data.Activity? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(query: ActivityDetailsQuery(activityId: .some(activityId))) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.activity)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(
+                query: ActivityDetailsQuery(activityId: .some(activityId))
+            )
+            return result.data?.activity
+        } catch {
+            print(error)
+            return nil
         }
     }
 }

@@ -20,7 +20,7 @@ struct LoginRepository {
     }
     
     @MainActor
-    static func onNewToken(_ token: String, expiresIn: String) {
+    static func onNewToken(_ token: String, expiresIn: String) async {
         //save token in the keychain
         KeychainUtils.shared.keychain.set(token, forKey: USER_TOKEN_KEY)
         #if os(iOS)
@@ -33,7 +33,7 @@ struct LoginRepository {
         // refresh widgets
         WidgetCenter.shared.reloadAllTimelines()
 
-        refreshUserIdAndOptions()
+        await refreshUserIdAndOptions()
     }
     
     @MainActor
@@ -59,50 +59,48 @@ struct LoginRepository {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    static func refreshUserIdAndOptions() {
-        Network.shared.apollo.fetch(query: ViewerIdQuery()) { result in
-            switch result {
-            case .success(let graphQLResult):
-                if let viewer = graphQLResult.data?.viewer {
-                    saveUserId(id: viewer.id)
-                    #if os(iOS)
-                    Task { @MainActor in
-                        WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(viewer.id))
-                    }
-                    #endif
-                    UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
-                    UserDefaults.standard.set(
-                        viewer.options?.staffNameLanguage?.value?.rawValue,
-                        forKey: USER_NAMES_LANG_KEY
-                    )
-                    UserDefaults.standard.set(
-                        viewer.options?.titleLanguage?.value?.rawValue,
-                        forKey: USER_TITLE_LANG_KEY
-                    )
-                    UserDefaults.standard.set(
-                        viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
-                        forKey: USER_SCORE_KEY
-                    )
-                    UserDefaults.standard.setValue(
-                        viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
-                        forKey: ADVANCED_SCORING_ENABLED_KEY
-                    )
-                    UserDefaults.standard.setValue(
-                        viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
-                        forKey: ADVANCED_SCORES_KEY
-                    )
-                    UserDefaults.standard.setValue(
-                        viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
-                        forKey: ANIME_CUSTOM_LISTS_KEY
-                    )
-                    UserDefaults.standard.setValue(
-                        viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
-                        forKey: MANGA_CUSTOM_LISTS_KEY
-                    )
-                }
-            case .failure(let error):
-                print(error)
+    @MainActor
+    static func refreshUserIdAndOptions() async {
+        do {
+            let result = try await Network.shared.apollo.fetch(query: ViewerIdQuery())
+            if let viewer = result.data?.viewer {
+                saveUserId(id: viewer.id)
+                #if os(iOS)
+                WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(viewer.id))
+                #endif
+                UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
+                UserDefaults.standard.set(
+                    viewer.options?.staffNameLanguage?.value?.rawValue,
+                    forKey: USER_NAMES_LANG_KEY
+                )
+                UserDefaults.standard.set(
+                    viewer.options?.titleLanguage?.value?.rawValue,
+                    forKey: USER_TITLE_LANG_KEY
+                )
+                UserDefaults.standard.set(
+                    viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
+                    forKey: USER_SCORE_KEY
+                )
+                UserDefaults.standard.setValue(
+                    viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
+                    forKey: ADVANCED_SCORING_ENABLED_KEY
+                )
+                UserDefaults.standard.setValue(
+                    viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
+                    forKey: ADVANCED_SCORES_KEY
+                )
+                UserDefaults.standard.setValue(
+                    viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
+                    forKey: ANIME_CUSTOM_LISTS_KEY
+                )
+                UserDefaults.standard.setValue(
+                    viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
+                    forKey: MANGA_CUSTOM_LISTS_KEY
+                )
             }
+        } catch {
+            print(error)
         }
+        
     }
 }

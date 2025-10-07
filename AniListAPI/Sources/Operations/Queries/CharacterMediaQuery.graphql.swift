@@ -8,8 +8,8 @@ public struct CharacterMediaQuery: GraphQLQuery {
   public static let operationName: String = "CharacterMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename currentPage hasNextPage } } } }"#,
-      fragments: [FuzzyDateFragment.self]
+      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename ...CommonPage } } } }"#,
+      fragments: [CommonPage.self, FuzzyDateFragment.self]
     ))
 
   public var characterId: GraphQLNullable<Int32>
@@ -305,17 +305,24 @@ public struct CharacterMediaQuery: GraphQLQuery {
           @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
           @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("currentPage", Int?.self),
-            .field("hasNextPage", Bool?.self),
+            .fragment(CommonPage.self),
           ] }
           @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-            CharacterMediaQuery.Data.Character.Media.PageInfo.self
+            CharacterMediaQuery.Data.Character.Media.PageInfo.self,
+            CommonPage.self
           ] }
 
           /// The current page
           public var currentPage: Int? { __data["currentPage"] }
           /// If there is another page
           public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+          public struct Fragments: FragmentContainer {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var commonPage: CommonPage { _toFragment() }
+          }
         }
       }
     }

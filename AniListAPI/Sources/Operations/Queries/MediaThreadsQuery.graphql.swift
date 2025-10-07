@@ -8,8 +8,8 @@ public struct MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename ...BasicThreadDetails } pageInfo { __typename hasNextPage } } }"#,
-      fragments: [BasicThreadDetails.self]
+      #"query MediaThreads($page: Int, $perPage: Int, $mediaCategoryId: Int, $sort: [ThreadSort]) { Page(page: $page, perPage: $perPage) { __typename threads(mediaCategoryId: $mediaCategoryId, sort: $sort) { __typename ...BasicThreadDetails } pageInfo { __typename ...CommonPage } } }"#,
+      fragments: [BasicThreadDetails.self, CommonPage.self]
     ))
 
   public var page: GraphQLNullable<Int32>
@@ -137,14 +137,24 @@ public struct MediaThreadsQuery: GraphQLQuery {
         @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("hasNextPage", Bool?.self),
+          .fragment(CommonPage.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-          MediaThreadsQuery.Data.Page.PageInfo.self
+          MediaThreadsQuery.Data.Page.PageInfo.self,
+          CommonPage.self
         ] }
 
+        /// The current page
+        public var currentPage: Int? { __data["currentPage"] }
         /// If there is another page
         public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+        public struct Fragments: FragmentContainer {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var commonPage: CommonPage { _toFragment() }
+        }
       }
     }
   }

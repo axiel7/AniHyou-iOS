@@ -7,6 +7,8 @@
 
 import Foundation
 import Apollo
+import ApolloAPI
+import AniListAPI
 
 final class Network: Sendable {
     static let shared = Network()
@@ -40,4 +42,33 @@ final class Network: Sendable {
             return nil
         }
     }
+    
+    @discardableResult
+    static func fetchPagedResult<Query: GraphQLQuery, Item>(
+        _ query: Query,
+        forceReload: Bool = false,
+        extractItems: (Query.Data) -> [Item]?,
+        extractPage: (Query.Data) -> CommonPage?
+    ) async -> PagedResult<Item>? where Query.ResponseFormat == SingleResponseFormat {
+        do {
+            let result = try await Network.shared.apollo.fetch(
+                query: query,
+                cachePolicy: forceReload ? .networkOnly : .cacheFirst
+            )
+            if let data = result.data,
+               let items = extractItems(data) {
+                let pageInfo = extractPage(data)
+                return PagedResult(
+                    data: items,
+                    page: Int32((pageInfo?.currentPage ?? 1) + 1),
+                    hasNextPage: pageInfo?.hasNextPage == true
+                )
+            }
+            return nil
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+
 }

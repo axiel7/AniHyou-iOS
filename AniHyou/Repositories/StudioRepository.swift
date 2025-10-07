@@ -15,91 +15,49 @@ struct StudioRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<SearchStudioQuery.Data.Page.Studio>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: SearchStudioQuery(
-                    page: .some(1),
-                    perPage: .some(perPage),
-                    search: .some(search)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let studios = pageData.studios?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: studios,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            SearchStudioQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                search: .some(search)
+            ),
+            extractItems: { $0.page?.studios?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getStudioDetails(
         studioId: Int32,
         perPage: Int32 = 25
     ) async -> StudioDetailsQuery.Data.Studio? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
+        do {
+            let result = try await Network.shared.apollo.fetch(
                 query: StudioDetailsQuery(
                     studioId: .some(studioId),
                     page: .some(1),
                     perPage: .some(perPage)
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.studio)
-                case.failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+            )
+            return result.data?.studio
+        } catch {
+            print(error)
+            return nil
         }
     }
-    
+
     static func getStudioMedia(
         studioId: Int32,
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<StudioMedia>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: StudioMediaQuery(
-                    studioId: .some(studioId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.studio?.media,
-                       let media = pageData.nodes?.compactMap({ $0?.fragments.studioMedia })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: media,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    }
-                case.failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            StudioMediaQuery(
+                studioId: .some(studioId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.studio?.media?.nodes?.compactMap { $0?.fragments.studioMedia } },
+            extractPage: { $0.studio?.media?.pageInfo?.fragments.commonPage }
+        )
     }
 }

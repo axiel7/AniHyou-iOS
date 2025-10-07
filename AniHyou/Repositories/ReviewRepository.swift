@@ -11,16 +11,14 @@ import AniListAPI
 struct ReviewRepository {
     
     static func getReviewDetails(reviewId: Int32) async -> CommonReviewDetails? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(query: ReviewDetailsQuery(reviewId: .some(reviewId))) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.review?.fragments.commonReviewDetails)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(
+                query: ReviewDetailsQuery(reviewId: .some(reviewId))
+            )
+            return result.data?.review?.fragments.commonReviewDetails
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -28,44 +26,39 @@ struct ReviewRepository {
         reviewId: Int32,
         rating: ReviewRating
     ) async -> CommonReviewDetails? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.perform(
+        do {
+            let result = try await Network.shared.apollo.perform(
                 mutation: RateReviewMutation(
                     reviewId: .some(reviewId),
                     rating: .some(.case(rating))
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let data = graphQLResult.data?.rateReview {
-                        Network.shared.apollo.store.withinReadWriteTransaction { transaction in
-                            do {
-                                try await transaction.updateObject(
-                                    ofType: CommonReviewDetails.self,
-                                    withKey: "Review:\(reviewId)"
-                                ) { (cachedData: inout CommonReviewDetails) in
-                                    cachedData.userRating = data.userRating
-                                    cachedData.rating = data.rating
-                                    cachedData.ratingAmount = data.ratingAmount
-                                }
-                                let newObject = try await transaction.readObject(
-                                    ofType: CommonReviewDetails.self,
-                                    withKey: "Review:\(reviewId)"
-                                )
-                                continuation.resume(returning: newObject)
-                            } catch {
-                                print(error)
-                                continuation.resume(returning: nil)
-                            }
+            )
+            if let data = result.data?.rateReview {
+                return try await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+                    do {
+                        try await transaction.updateObject(
+                            ofType: CommonReviewDetails.self,
+                            withKey: "Review:\(reviewId)"
+                        ) { (cachedData: inout CommonReviewDetails) in
+                            cachedData.userRating = data.userRating
+                            cachedData.rating = data.rating
+                            cachedData.ratingAmount = data.ratingAmount
                         }
-                    } else {
-                        continuation.resume(returning: nil)
+                        let newObject = try await transaction.readObject(
+                            ofType: CommonReviewDetails.self,
+                            withKey: "Review:\(reviewId)"
+                        )
+                        return newObject
+                    } catch {
+                        print(error)
+                        return nil
                     }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
                 }
             }
+            return nil
+        } catch {
+            print(error)
+            return nil
         }
     }
 }

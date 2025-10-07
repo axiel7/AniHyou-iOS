@@ -9,30 +9,25 @@ import Foundation
 import AniListAPI
 import Apollo
 
-// swiftlint:disable:next type_body_length
 struct UserRepository {
-    
+
     static func getUserOptions() async -> UserOptionsFragment? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(query: UserOptionsQuery()) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.viewer?.fragments.userOptionsFragment)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(query: UserOptionsQuery())
+            return result.data?.viewer?.fragments.userOptionsFragment
+        } catch {
+            print(error)
+            return nil
         }
     }
-    
+
     static func updateUserOptions(
         titleLanguage: UserTitleLanguage? = nil,
         staffNameLanguage: UserStaffNameLanguage? = nil,
         scoreFormat: ScoreFormat? = nil
     ) async -> Bool {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.perform(
+        do {
+            let result = try await Network.shared.apollo.perform(
                 mutation: UpdateUserMutation(
                     displayAdultContent: .none,
                     titleLanguage: someIfNotNil(titleLanguage),
@@ -42,117 +37,75 @@ struct UserRepository {
                     animeListOptions: .none,
                     mangaListOptions: .none
                 )
-            ) { result in
-                switch result {
-                case .success:
-                    continuation.resume(returning: true)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: false)
-                }
-            }
+            )
+            return result.data != nil
+        } catch {
+            print(error)
+            return false
         }
     }
-    
+
+    // MARK: - User Search
+
     static func searchUser(
         search: String,
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<SearchUserQuery.Data.Page.User>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: SearchUserQuery(
-                    page: .some(1),
-                    perPage: .some(perPage),
-                    search: .some(search)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let users = pageData.users?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: users,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            SearchUserQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                search: .some(search)
+            ),
+            extractItems: { $0.page?.users?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
-    
+
+    // MARK: - Notifications
+
     static func getUnreadNotificationsCount() async -> Int? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
+        do {
+            let result = try await Network.shared.apollo.fetch(
                 query: NotificationCountQuery(),
-                cachePolicy: .fetchIgnoringCacheCompletely
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.viewer?.unreadNotificationCount)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+                cachePolicy: .networkOnly
+            )
+            return result.data?.viewer?.unreadNotificationCount
+        } catch {
+            print(error)
+            return nil
         }
     }
-    
+
     static func getNotifications(
         page: Int32,
         perPage: Int32 = 20,
         type: NotificationTypeGrouped,
         resetCount: Bool,
-        cachePolicy: CachePolicy_v1 = .default
+        forceReload: Bool = false
     ) async -> PagedResult<GenericNotification>? {
-        await withUnsafeContinuation { continuation in
-            var typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> =
-                .some(type.value.compactMap { GraphQLEnum($0) })
-            if type == .all {
-                typeIn = .none
-            }
-            Network.shared.apollo.fetch(
-                query: NotificationsQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
-                    typeIn: typeIn,
-                    resetNotificationCount: .some(resetCount)
-                ),
-                cachePolicy: cachePolicy
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page {
-                        if let notifications = pageData.notifications?.compactMap({ $0?.toGenericNotification() }) {
-                            if page == 1 {
-                                NotificationCenter.default.post(name: "readNotifications", object: nil)
-                            }
-                            continuation.resume(
-                                returning: PagedResult(
-                                    data: notifications,
-                                    page: page + 1,
-                                    hasNextPage: pageData.pageInfo?.hasNextPage ?? false
-                                )
-                            )
-                        } else {
-                            continuation.resume(returning: nil)
-                        }
+        let typeIn: GraphQLNullable<[GraphQLEnum<NotificationType>?]> =
+            type == .all ? .none : .some(type.value.compactMap { GraphQLEnum($0) })
+
+        return await Network.fetchPagedResult(
+            NotificationsQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                typeIn: typeIn,
+                resetNotificationCount: .some(resetCount)
+            ),
+            forceReload: forceReload,
+            extractItems: {
+                if page == 1 {
+                    DispatchQueue.main.sync {
+                        NotificationCenter.default.post(name: "readNotifications", object: nil)
                     }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
                 }
-            }
-        }
+                return $0.page?.notifications?.compactMap { $0?.toGenericNotification() }
+            },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func fetchNewNotifications() async -> [GenericNotification]? {
@@ -163,7 +116,7 @@ struct UserRepository {
                 perPage: Int32(unreadCount),
                 type: .all,
                 resetCount: false,
-                cachePolicy: .fetchIgnoringCacheData
+                forceReload: true
             )?.data {
                 let lastCreatedAt = UserDefaults.standard.integer(forKey: LAST_NOTIFICATION_CREATED_AT_KEY)
                 let newNotifications = notifications.filter {
@@ -182,102 +135,77 @@ struct UserRepository {
     }
     
     static func getMyUserInfo() async -> UserInfo? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(query: ViewerQuery()) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let viewer = graphQLResult.data?.viewer?.fragments.userInfo {
-                        //update preferences
-                        UserDefaults.standard.set(
-                            viewer.options?.profileColor?.profileHexColor,
-                            forKey: USER_COLOR_KEY
-                        )
-                        UserDefaults.standard.set(
-                            viewer.options?.staffNameLanguage?.value?.rawValue,
-                            forKey: USER_NAMES_LANG_KEY
-                        )
-                        UserDefaults.standard.set(
-                            viewer.options?.titleLanguage?.value?.rawValue,
-                            forKey: USER_TITLE_LANG_KEY
-                        )
-                        UserDefaults.standard.set(
-                            viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
-                            forKey: USER_SCORE_KEY
-                        )
-                        UserDefaults.standard.setValue(
-                            viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
-                            forKey: ADVANCED_SCORING_ENABLED_KEY
-                        )
-                        UserDefaults.standard.setValue(
-                            viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
-                            forKey: ADVANCED_SCORES_KEY
-                        )
-                        UserDefaults.standard.setValue(
-                            viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
-                            forKey: ANIME_CUSTOM_LISTS_KEY
-                        )
-                        UserDefaults.standard.setValue(
-                            viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
-                            forKey: MANGA_CUSTOM_LISTS_KEY
-                        )
-                        continuation.resume(returning: viewer)
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(query: ViewerQuery())
+            guard let viewer = result.data?.viewer?.fragments.userInfo else { return nil }
+
+            //update preferences
+            UserDefaults.standard.set(
+                viewer.options?.profileColor?.profileHexColor,
+                forKey: USER_COLOR_KEY
+            )
+            UserDefaults.standard.set(
+                viewer.options?.staffNameLanguage?.value?.rawValue,
+                forKey: USER_NAMES_LANG_KEY
+            )
+            UserDefaults.standard.set(
+                viewer.options?.titleLanguage?.value?.rawValue,
+                forKey: USER_TITLE_LANG_KEY
+            )
+            UserDefaults.standard.set(
+                viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
+                forKey: USER_SCORE_KEY
+            )
+            UserDefaults.standard.setValue(
+                viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
+                forKey: ADVANCED_SCORING_ENABLED_KEY
+            )
+            UserDefaults.standard.setValue(
+                viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
+                forKey: ADVANCED_SCORES_KEY
+            )
+            UserDefaults.standard.setValue(
+                viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
+                forKey: ANIME_CUSTOM_LISTS_KEY
+            )
+            UserDefaults.standard.setValue(
+                viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
+                forKey: MANGA_CUSTOM_LISTS_KEY
+            )
+            return viewer
+        } catch {
+            print(error)
+            return nil
         }
     }
     
     static func getUserInfo(userId: Int32) async -> UserInfo? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(query: UserBasicInfoQuery(userId: .some(userId))) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.user?.fragments.userInfo)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(query: UserBasicInfoQuery(userId: .some(userId)))
+            return result.data?.user?.fragments.userInfo
+        } catch {
+            print(error)
+            return nil
         }
     }
     
     static func toggleFollow(userId: Int32) async -> UserInfo? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.perform(mutation: ToggleFollowMutation(userId: .some(userId))) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let user = graphQLResult.data?.toggleFollow {
-                        Network.shared.apollo.store.withinReadWriteTransaction({ transaction in
-                            do {
-                                try await transaction.updateObject(
-                                    ofType: UserInfo.self,
-                                    withKey: "User:\(userId)"
-                                ) { (cachedData: inout UserInfo) in
-                                    cachedData.isFollowing = user.isFollowing
-                                }
-                                let newObject = try await transaction.readObject(
-                                    ofType: UserInfo.self,
-                                    withKey: "User:\(userId)"
-                                )
-                                continuation.resume(returning: newObject)
-                            } catch {
-                                print(error)
-                                continuation.resume(returning: nil)
-                            }
-                        })
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
+        do {
+            let result = try await Network.shared.apollo.perform(mutation: ToggleFollowMutation(userId: .some(userId)))
+            guard let user = result.data?.toggleFollow else { return nil }
+
+            return try await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+                try await transaction.updateObject(
+                    ofType: UserInfo.self,
+                    withKey: "User:\(userId)"
+                ) { (cachedData: inout UserInfo) in
+                    cachedData.isFollowing = user.isFollowing
                 }
+                return try await transaction.readObject(ofType: UserInfo.self, withKey: "User:\(userId)")
             }
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -286,36 +214,16 @@ struct UserRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserActivityQuery.Data.Page.Activity>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                    query: UserActivityQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
-                    userId: .some(userId),
-                    sort: .some([.case(.idDesc)])
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let activities = pageData.activities?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: activities,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserActivityQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                userId: .some(userId),
+                sort: .some([.case(.idDesc)])
+            ),
+            extractItems: { $0.page?.activities?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getFollowers(
@@ -323,35 +231,15 @@ struct UserRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<FollowersQuery.Data.Page.Follower>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: FollowersQuery(
-                    userId: userId,
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let followers = pageData.followers?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: followers,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            FollowersQuery(
+                userId: userId,
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.page?.followers?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getFollowings(
@@ -359,34 +247,14 @@ struct UserRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<FollowingsQuery.Data.Page.Following>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: FollowingsQuery(
-                    userId: userId,
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let following = pageData.following?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: following,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            FollowingsQuery(
+                userId: userId,
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.page?.following?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
 }

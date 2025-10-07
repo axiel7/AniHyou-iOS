@@ -47,13 +47,13 @@ import AniListAPI
             nil
         }
         if await FavoritesRepository.toggleFavorite(animeId: animeId, mangaId: mangaId) != nil {
-            onFavoriteToggled()
+            await onFavoriteToggled()
         }
     }
 
-    func onFavoriteToggled() {
+    func onFavoriteToggled() async {
         guard let mediaId = mediaDetails?.id else { return }
-        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+        try? await Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
                 try await transaction.updateObject(
                     ofType: IsFavouriteMedia.self,
@@ -74,9 +74,9 @@ import AniListAPI
         })
     }
 
-    func onEntryUpdated(updatedEntry: BasicMediaListEntry?) {
+    func onEntryUpdated(updatedEntry: BasicMediaListEntry?) async {
         //Update the local cache
-        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+        try? await Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
                 if let updatedEntry {
                     try await transaction.updateObject(
@@ -96,8 +96,8 @@ import AniListAPI
         })
     }
 
-    func onEntryDeleted() {
-        onEntryUpdated(updatedEntry: nil)
+    func onEntryDeleted() async {
+        await onEntryUpdated(updatedEntry: nil)
     }
 
     // MARK: - calculated variables

@@ -21,6 +21,7 @@ extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
     }
 }
 
+@MainActor
 var isPhone: Bool {
     UIDevice.current.userInterfaceIdiom == .phone
 }

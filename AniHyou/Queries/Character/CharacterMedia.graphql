@@ -30,8 +30,7 @@ query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) {
                 }
             }
             pageInfo {
-                currentPage
-                hasNextPage
+                ...CommonPage
             }
         }
     }

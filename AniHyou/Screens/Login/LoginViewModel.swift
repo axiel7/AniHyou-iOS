@@ -51,8 +51,10 @@ class LoginViewModel: NSObject, ASWebAuthenticationPresentationContextProviding 
            let queryItems = components.queryItems,
            let token = queryItems.filter({ $0.name == "access_token" }).first?.value,
            let expirationDate = queryItems.filter({ $0.name == "expires_in" }).first?.value {
-            LoginRepository.onNewToken(token, expiresIn: expirationDate)
-            GlobalAppState.shared.globalId = UUID()
+            Task {
+                await LoginRepository.onNewToken(token, expiresIn: expirationDate)
+                GlobalAppState.shared.globalId = UUID()
+            }
         }
     }
 }

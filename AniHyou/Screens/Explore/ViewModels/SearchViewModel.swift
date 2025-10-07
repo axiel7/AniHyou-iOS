@@ -226,37 +226,35 @@ import AniListAPI
     var genreCollection: [Genre]?
     var tagCollection: [Genre]?
 
-    func getGenreTagCollection() {
-        Network.shared.apollo.fetch(query: GenreTagCollectionQuery()) { [weak self] result in
-            switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data {
-                    // Workaround: SwiftUI List item selection only works on Identifiable objects
-                    if let genres = data.genreCollection {
-                        /*self?.genreCollection = genres
-                            .compactMap {
-                                if let genre = $0 {
-                                    Genre(id: genre)
-                                } else {
-                                    nil
-                                }
-                            }*/
-                    }
-
-                    if let tags = data.mediaTagCollection {
-                        /*self?.tagCollection = tags
-                            .compactMap {
-                                if let tag = $0 {
-                                    Genre(id: tag.name)
-                                } else {
-                                    nil
-                                }
-                            }*/
-                    }
+    func getGenreTagCollection() async {
+        do {
+            let result = try await Network.shared.apollo.fetch(query: GenreTagCollectionQuery())
+            if let data = result.data {
+                // Workaround: SwiftUI List item selection only works on Identifiable objects
+                if let genres = data.genreCollection {
+                    self.genreCollection = genres
+                        .compactMap {
+                            if let genre = $0 {
+                                Genre(id: genre)
+                            } else {
+                                nil
+                            }
+                        }
                 }
-            case .failure(let error):
-                print(error)
+
+                if let tags = data.mediaTagCollection {
+                    self.tagCollection = tags
+                        .compactMap {
+                            if let tag = $0 {
+                                Genre(id: tag.name)
+                            } else {
+                                nil
+                            }
+                        }
+                }
             }
+        } catch {
+            print(error)
         }
     }
 }

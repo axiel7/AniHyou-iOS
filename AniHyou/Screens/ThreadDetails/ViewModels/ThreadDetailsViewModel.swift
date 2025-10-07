@@ -33,7 +33,7 @@ import AniListAPI
     
     func toggleLikeThread(threadId: Int) async {
         if let liked = await LikeRepository.toggleLike(likeableId: Int32(threadId), likeableType: .thread) {
-            onThreadUpdated(liked: liked)
+            await onThreadUpdated(liked: liked)
         }
     }
     
@@ -43,17 +43,17 @@ import AniListAPI
     
     func subscribeToThread(threadId: Int, subscribe: Bool) async {
         if let subscribed = await ThreadRepository.subscribeToThread(threadId: Int32(threadId), subscribe: subscribe) {
-            onThreadUpdated(subscribed: subscribed)
+            await onThreadUpdated(subscribed: subscribed)
         }
     }
     
     private func onThreadUpdated(
         liked: Bool? = nil,
         subscribed: Bool? = nil
-    ) {
+    ) async {
         guard let thread = details else { return }
-        Network.shared.apollo.store.withinReadWriteTransaction { [weak self] transaction in
-            do {
+        do {
+            let newData = try await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
                 try await transaction.updateObject(
                     ofType: BasicThreadDetails.self,
                     withKey: "Thread:\(thread.id)"
@@ -69,14 +69,17 @@ import AniListAPI
                     if let subscribed {
                         cachedData.isSubscribed = subscribed
                     }
-                    let newData = cachedData
-                    DispatchQueue.main.async {
-                        //self?.details = newData
-                    }
                 }
-            } catch {
-                print(error)
+                
+                return try await transaction.readObject(
+                    ofType: BasicThreadDetails.self,
+                    withKey: "Thread:\(thread.id)"
+                )
             }
+            self.details = newData
+        } catch {
+            print(error)
         }
+        
     }
 }

@@ -8,8 +8,8 @@ public struct StaffMediaQuery: GraphQLQuery {
   public static let operationName: String = "StaffMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } staffRole } pageInfo { __typename currentPage hasNextPage } } } }"#,
-      fragments: [FuzzyDateFragment.self]
+      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } staffRole } pageInfo { __typename ...CommonPage } } } }"#,
+      fragments: [CommonPage.self, FuzzyDateFragment.self]
     ))
 
   public var staffId: GraphQLNullable<Int32>
@@ -258,17 +258,24 @@ public struct StaffMediaQuery: GraphQLQuery {
           @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
           @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("currentPage", Int?.self),
-            .field("hasNextPage", Bool?.self),
+            .fragment(CommonPage.self),
           ] }
           @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-            StaffMediaQuery.Data.Staff.StaffMedia.PageInfo.self
+            StaffMediaQuery.Data.Staff.StaffMedia.PageInfo.self,
+            CommonPage.self
           ] }
 
           /// The current page
           public var currentPage: Int? { __data["currentPage"] }
           /// If there is another page
           public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+          public struct Fragments: FragmentContainer {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var commonPage: CommonPage { _toFragment() }
+          }
         }
       }
     }

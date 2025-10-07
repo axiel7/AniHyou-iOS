@@ -94,10 +94,10 @@ struct MediaDetailsMainInfo: View {
                 mediaDetails: viewModel.mediaDetails!.fragments.basicMediaDetails,
                 mediaList: viewModel.listEntry,
                 onSave: { updatedEntry in
-                    viewModel.onEntryUpdated(updatedEntry: updatedEntry)
+                    await viewModel.onEntryUpdated(updatedEntry: updatedEntry)
                 },
                 onDelete: {
-                    viewModel.onEntryDeleted()
+                    await viewModel.onEntryDeleted()
                 }
             )
         }

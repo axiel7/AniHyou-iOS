@@ -15,52 +15,26 @@ struct CharacterRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<SearchCharacterQuery.Data.Page.Character>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: SearchCharacterQuery(
-                    page: .some(page),
-                    perPage: .some(perPage),
-                    search: .some(search)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.page,
-                       let characters = pageData.characters?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: characters,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            SearchCharacterQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                search: .some(search)
+            ),
+            extractItems: { $0.page?.characters?.compactMap { $0 } },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getCharacterDetails(characterId: Int32) async -> CharacterDetailsQuery.Data.Character? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: CharacterDetailsQuery(
-                    characterId: .some(characterId)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data?.character)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+        do {
+            let result = try await Network.shared.apollo.fetch(
+                query: CharacterDetailsQuery(characterId: .some(characterId))
+            )
+            return result.data?.character
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -69,34 +43,14 @@ struct CharacterRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<CharacterMediaQuery.Data.Character.Media.Edge>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: CharacterMediaQuery(
-                    characterId: .some(characterId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.character?.media,
-                       let media = pageData.edges?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: media,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            CharacterMediaQuery(
+                characterId: .some(characterId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.character?.media?.edges?.compactMap { $0 } },
+            extractPage: { $0.character?.media?.pageInfo?.fragments.commonPage }
+        )
     }
 }

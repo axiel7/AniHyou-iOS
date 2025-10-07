@@ -30,13 +30,13 @@ import AniListAPI
     func toggleFavorite() async {
         guard let studio else { return }
         if await FavoritesRepository.toggleFavorite(studioId: Int32(studio.id)) != nil {
-            onFavoriteToggled()
+            await onFavoriteToggled()
         }
     }
 
-    func onFavoriteToggled() {
+    func onFavoriteToggled() async {
         guard let studioId = studio?.id else { return }
-        Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
+        try? await Network.shared.apollo.store.withinReadWriteTransaction({ [weak self] transaction in
             do {
                 try await transaction.updateObject(
                     ofType: IsFavouriteStudio.self,
@@ -49,7 +49,7 @@ import AniListAPI
                     withKey: "Studio:\(studioId)"
                 )
                 DispatchQueue.main.async {
-                    //self?.studio = newObject
+                    self?.studio = newObject
                 }
             } catch {
                 print(error)

@@ -4,7 +4,7 @@ query ShouUserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaTyp
       ...ShouUserMediaList
     }
     pageInfo {
-      hasNextPage
+      ...CommonPage
     }
   }
 }

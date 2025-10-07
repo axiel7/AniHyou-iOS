@@ -15,8 +15,7 @@ query MediaFollowing($id: Int, $page: Int, $perPage: Int) {
              }
          }
          pageInfo {
-             currentPage
-             hasNextPage
+             ...CommonPage
          }
      }
 }

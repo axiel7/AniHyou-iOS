@@ -17,8 +17,8 @@ struct FavoritesRepository {
         staffId: Int32? = nil,
         studioId: Int32? = nil
     ) async -> Bool? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.perform(
+        do {
+            let result = try await Network.shared.apollo.perform(
                 mutation: ToggleFavouriteMutation(
                     animeId: someIfNotNil(animeId),
                     mangaId: someIfNotNil(mangaId),
@@ -26,15 +26,11 @@ struct FavoritesRepository {
                     staffId: someIfNotNil(staffId),
                     studioId: someIfNotNil(studioId)
                 )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    continuation.resume(returning: graphQLResult.data != nil)
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
+            )
+            return result.data != nil
+        } catch {
+            print(error)
+            return nil
         }
     }
     
@@ -43,35 +39,15 @@ struct FavoritesRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: UserFavoritesAnimeQuery(
-                    userId: .some(userId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.user?.favourites?.anime,
-                       let animes = pageData.nodes?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: animes,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserFavoritesAnimeQuery(
+                userId: .some(userId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.user?.favourites?.anime?.nodes?.compactMap { $0 } },
+            extractPage: { $0.user?.favourites?.anime?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getManga(
@@ -79,35 +55,15 @@ struct FavoritesRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesMangaQuery.Data.User.Favourites.Manga.Node>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: UserFavoritesMangaQuery(
-                    userId: .some(userId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.user?.favourites?.manga,
-                       let mangas = pageData.nodes?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: mangas,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserFavoritesMangaQuery(
+                userId: .some(userId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.user?.favourites?.manga?.nodes?.compactMap { $0 } },
+            extractPage: { $0.user?.favourites?.manga?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getCharacters(
@@ -115,35 +71,15 @@ struct FavoritesRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesCharacterQuery.Data.User.Favourites.Characters.Node>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: UserFavoritesCharacterQuery(
-                    userId: .some(userId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.user?.favourites?.characters,
-                       let characters = pageData.nodes?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: characters,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserFavoritesCharacterQuery(
+                userId: .some(userId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.user?.favourites?.characters?.nodes?.compactMap { $0 } },
+            extractPage: { $0.user?.favourites?.characters?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getStaff(
@@ -151,35 +87,15 @@ struct FavoritesRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesStaffQuery.Data.User.Favourites.Staff.Node>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: UserFavoritesStaffQuery(
-                    userId: .some(userId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.user?.favourites?.staff,
-                       let staff = pageData.nodes?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: staff,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserFavoritesStaffQuery(
+                userId: .some(userId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.user?.favourites?.staff?.nodes?.compactMap { $0 } },
+            extractPage: { $0.user?.favourites?.staff?.pageInfo?.fragments.commonPage }
+        )
     }
     
     static func getStudios(
@@ -187,34 +103,14 @@ struct FavoritesRepository {
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserFavoritesStudioQuery.Data.User.Favourites.Studios.Node>? {
-        await withUnsafeContinuation { continuation in
-            Network.shared.apollo.fetch(
-                query: UserFavoritesStudioQuery(
-                    userId: .some(userId),
-                    page: .some(page),
-                    perPage: .some(perPage)
-                )
-            ) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let pageData = graphQLResult.data?.user?.favourites?.studios,
-                       let studios = pageData.nodes?.compactMap({ $0 })
-                    {
-                        continuation.resume(
-                            returning: PagedResult(
-                                data: studios,
-                                page: page + 1,
-                                hasNextPage: pageData.pageInfo?.hasNextPage == true
-                            )
-                        )
-                    } else {
-                        continuation.resume(returning: nil)
-                    }
-                case .failure(let error):
-                    print(error)
-                    continuation.resume(returning: nil)
-                }
-            }
-        }
+        await Network.fetchPagedResult(
+            UserFavoritesStudioQuery(
+                userId: .some(userId),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            extractItems: { $0.user?.favourites?.studios?.nodes?.compactMap { $0 } },
+            extractPage: { $0.user?.favourites?.studios?.pageInfo?.fragments.commonPage }
+        )
     }
 }

@@ -9,7 +9,7 @@ query StudioDetails($studioId: Int, $page: Int, $perPage: Int) {
         ...StudioMedia
       }
       pageInfo {
-        hasNextPage
+        ...CommonPage
       }
     }
   }

@@ -8,7 +8,8 @@ public struct SearchCharacterQuery: GraphQLQuery {
   public static let operationName: String = "SearchCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchCharacter($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename characters(search: $search, sort: SEARCH_MATCH) { __typename id name { __typename userPreferred } image { __typename medium } } pageInfo { __typename hasNextPage } } }"#
+      #"query SearchCharacter($page: Int, $perPage: Int, $search: String) { Page(page: $page, perPage: $perPage) { __typename characters(search: $search, sort: SEARCH_MATCH) { __typename id name { __typename userPreferred } image { __typename medium } } pageInfo { __typename ...CommonPage } } }"#,
+      fragments: [CommonPage.self]
     ))
 
   public var page: GraphQLNullable<Int32>
@@ -148,14 +149,24 @@ public struct SearchCharacterQuery: GraphQLQuery {
         @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
         @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("hasNextPage", Bool?.self),
+          .fragment(CommonPage.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-          SearchCharacterQuery.Data.Page.PageInfo.self
+          SearchCharacterQuery.Data.Page.PageInfo.self,
+          CommonPage.self
         ] }
 
+        /// The current page
+        public var currentPage: Int? { __data["currentPage"] }
         /// If there is another page
         public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+        public struct Fragments: FragmentContainer {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var commonPage: CommonPage { _toFragment() }
+        }
       }
     }
   }

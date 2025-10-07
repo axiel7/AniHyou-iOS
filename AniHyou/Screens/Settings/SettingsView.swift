@@ -96,7 +96,7 @@ struct SettingsView: View {
 
             // log in session
             Section {
-                if connectivityManager.isWatchAppInstalled {
+                if WCSession.default.isWatchAppInstalled {
                     Button("Sync account with Apple Watch") {
                         viewModel.syncAccountWithAppleWatch()
                     }

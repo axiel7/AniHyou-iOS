@@ -8,8 +8,8 @@ public struct StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename ...StudioMedia } pageInfo { __typename hasNextPage } } } }"#,
-      fragments: [IsFavouriteStudio.self, StudioMedia.self]
+      #"query StudioDetails($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename id name favourites ...IsFavouriteStudio media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename ...StudioMedia } pageInfo { __typename ...CommonPage } } } }"#,
+      fragments: [CommonPage.self, IsFavouriteStudio.self, StudioMedia.self]
     ))
 
   public var studioId: GraphQLNullable<Int32>
@@ -164,14 +164,24 @@ public struct StudioDetailsQuery: GraphQLQuery {
           @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.PageInfo }
           @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("hasNextPage", Bool?.self),
+            .fragment(CommonPage.self),
           ] }
           @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
-            StudioDetailsQuery.Data.Studio.Media.PageInfo.self
+            StudioDetailsQuery.Data.Studio.Media.PageInfo.self,
+            CommonPage.self
           ] }
 
+          /// The current page
+          public var currentPage: Int? { __data["currentPage"] }
           /// If there is another page
           public var hasNextPage: Bool? { __data["hasNextPage"] }
+
+          public struct Fragments: FragmentContainer {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            public var commonPage: CommonPage { _toFragment() }
+          }
         }
       }
     }
