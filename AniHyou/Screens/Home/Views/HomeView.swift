@@ -55,7 +55,7 @@ struct HomeView: View {
             viewModel.unreadNotificationsCount = 0
         }
         .sheet(isPresented: $showNotificationsSheet) {
-            NotificationsView()
+            NotificationsView(unreadCount: viewModel.unreadNotificationsCount)
         }
     }
     

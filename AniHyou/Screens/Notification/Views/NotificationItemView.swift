@@ -11,12 +11,18 @@ import NukeUI
 struct NotificationItemView: View {
 
     let notification: GenericNotification
+    let isUnread: Bool
     private let imageWidth: CGFloat = 50
     private let imageHeight: CGFloat = 50
 
     var body: some View {
         NavigationLink(destination: destination) {
             HStack {
+                if isUnread {
+                    RoundedRectangle(cornerRadius: 8)
+                        .frame(width: 4, height: imageHeight)
+                        .foregroundStyle(.tint)
+                }
                 LazyImage(url: URL(string: notification.imageUrl ?? "")) { state in
                     if let image = state.image {
                         image
@@ -28,7 +34,6 @@ struct NotificationItemView: View {
                 }
 
                 Text(notification.text)
-                    .lineLimit(2)
             }//:HStack
         }
     }
@@ -62,5 +67,10 @@ struct NotificationItemView: View {
         type: .airing,
         createdAt: 109120128
     )
-    return NotificationItemView(notification: notification)
+    NavigationStack {
+        List {
+            NotificationItemView(notification: notification, isUnread: true)
+            NotificationItemView(notification: notification, isUnread: false)
+        }
+    }
 }

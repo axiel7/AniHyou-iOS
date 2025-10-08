@@ -12,6 +12,7 @@ struct NotificationsView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel = NotificationsViewModel()
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
+    @State var unreadCount = 0
 
     var body: some View {
         NavigationStack {
@@ -25,8 +26,11 @@ struct NotificationsView: View {
                         }
                         .pickerStyle(.menu)
 
-                        ForEach(viewModel.notifications) { notification in
-                            NotificationItemView(notification: notification)
+                        ForEach(viewModel.notifications.indices, id: \.self) { index in
+                            NotificationItemView(
+                                notification: viewModel.notifications[index],
+                                isUnread: index < unreadCount
+                            )
                         }
 
                         if viewModel.hasNextPage {
@@ -37,6 +41,7 @@ struct NotificationsView: View {
                         }
                     }
                     .onChange(of: viewModel.type) {
+                        unreadCount = 0
                         viewModel.resetPage()
                     }
                 } else {
