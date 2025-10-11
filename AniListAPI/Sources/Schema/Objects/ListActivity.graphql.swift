@@ -8,6 +8,6 @@ public extension Objects {
   static let ListActivity = ApolloAPI.Object(
     typename: "ListActivity",
     implementedInterfaces: [],
-    keyFields: nil
+    keyFields: ["id"]
   )
 }

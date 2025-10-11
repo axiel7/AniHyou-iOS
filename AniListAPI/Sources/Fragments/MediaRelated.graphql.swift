@@ -29,7 +29,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
   /// Node
   ///
   /// Parent Type: `Media`
-  public struct Node: AniListAPI.SelectionSet {
+  public struct Node: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

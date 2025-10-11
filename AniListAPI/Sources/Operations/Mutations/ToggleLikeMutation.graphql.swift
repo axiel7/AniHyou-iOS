@@ -76,7 +76,7 @@ public struct ToggleLikeMutation: GraphQLMutation {
       /// ToggleLikeV2.AsListActivity
       ///
       /// Parent Type: `ListActivity`
-      public struct AsListActivity: AniListAPI.InlineFragment {
+      public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -100,7 +100,7 @@ public struct ToggleLikeMutation: GraphQLMutation {
       /// ToggleLikeV2.AsTextActivity
       ///
       /// Parent Type: `TextActivity`
-      public struct AsTextActivity: AniListAPI.InlineFragment {
+      public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -124,7 +124,7 @@ public struct ToggleLikeMutation: GraphQLMutation {
       /// ToggleLikeV2.AsMessageActivity
       ///
       /// Parent Type: `MessageActivity`
-      public struct AsMessageActivity: AniListAPI.InlineFragment {
+      public struct AsMessageActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -148,7 +148,7 @@ public struct ToggleLikeMutation: GraphQLMutation {
       /// ToggleLikeV2.AsActivityReply
       ///
       /// Parent Type: `ActivityReply`
-      public struct AsActivityReply: AniListAPI.InlineFragment {
+      public struct AsActivityReply: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -172,7 +172,7 @@ public struct ToggleLikeMutation: GraphQLMutation {
       /// ToggleLikeV2.AsThread
       ///
       /// Parent Type: `Thread`
-      public struct AsThread: AniListAPI.InlineFragment {
+      public struct AsThread: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -196,7 +196,7 @@ public struct ToggleLikeMutation: GraphQLMutation {
       /// ToggleLikeV2.AsThreadComment
       ///
       /// Parent Type: `ThreadComment`
-      public struct AsThreadComment: AniListAPI.InlineFragment {
+      public struct AsThreadComment: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -95,7 +95,7 @@ public struct CommonReviewDetails: AniListAPI.MutableSelectionSet, Fragment {
   /// User
   ///
   /// Parent Type: `User`
-  public struct User: AniListAPI.MutableSelectionSet {
+  public struct User: AniListAPI.MutableSelectionSet, Identifiable {
     @_spi(Unsafe) public var __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

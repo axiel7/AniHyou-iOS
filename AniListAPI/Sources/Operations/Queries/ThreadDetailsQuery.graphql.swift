@@ -38,7 +38,7 @@ public struct ThreadDetailsQuery: GraphQLQuery {
     /// Thread
     ///
     /// Parent Type: `Thread`
-    public struct Thread: AniListAPI.SelectionSet {
+    public struct Thread: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

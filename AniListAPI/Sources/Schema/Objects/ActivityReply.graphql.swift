@@ -8,6 +8,6 @@ public extension Objects {
   static let ActivityReply = ApolloAPI.Object(
     typename: "ActivityReply",
     implementedInterfaces: [],
-    keyFields: nil
+    keyFields: ["id"]
   )
 }

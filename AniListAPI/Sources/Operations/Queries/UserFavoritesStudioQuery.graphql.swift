@@ -112,7 +112,7 @@ public struct UserFavoritesStudioQuery: GraphQLQuery {
           /// User.Favourites.Studios.Node
           ///
           /// Parent Type: `Studio`
-          public struct Node: AniListAPI.SelectionSet {
+          public struct Node: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

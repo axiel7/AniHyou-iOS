@@ -8,6 +8,9 @@ public extension Objects {
   static let MediaList = ApolloAPI.Object(
     typename: "MediaList",
     implementedInterfaces: [],
-    keyFields: nil
+    keyFields: [
+      "id",
+      "mediaId"
+    ]
   )
 }

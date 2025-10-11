@@ -8,6 +8,6 @@ public extension Objects {
   static let Staff = ApolloAPI.Object(
     typename: "Staff",
     implementedInterfaces: [],
-    keyFields: nil
+    keyFields: ["id"]
   )
 }

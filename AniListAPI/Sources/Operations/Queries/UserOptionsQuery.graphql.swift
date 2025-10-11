@@ -32,7 +32,7 @@ public struct UserOptionsQuery: GraphQLQuery {
     /// Viewer
     ///
     /// Parent Type: `User`
-    public struct Viewer: AniListAPI.SelectionSet {
+    public struct Viewer: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

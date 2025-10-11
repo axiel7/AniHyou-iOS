@@ -35,7 +35,7 @@ public struct MediaCharacter: AniListAPI.SelectionSet, Fragment {
   /// Node
   ///
   /// Parent Type: `Character`
-  public struct Node: AniListAPI.SelectionSet {
+  public struct Node: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct MediaCharacter: AniListAPI.SelectionSet, Fragment {
   /// VoiceActor
   ///
   /// Parent Type: `Staff`
-  public struct VoiceActor: AniListAPI.SelectionSet {
+  public struct VoiceActor: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

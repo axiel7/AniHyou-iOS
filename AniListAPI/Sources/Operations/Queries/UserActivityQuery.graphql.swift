@@ -102,7 +102,7 @@ public struct UserActivityQuery: GraphQLQuery {
         /// Page.Activity.AsTextActivity
         ///
         /// Parent Type: `TextActivity`
-        public struct AsTextActivity: AniListAPI.InlineFragment {
+        public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -149,7 +149,7 @@ public struct UserActivityQuery: GraphQLQuery {
         /// Page.Activity.AsListActivity
         ///
         /// Parent Type: `ListActivity`
-        public struct AsListActivity: AniListAPI.InlineFragment {
+        public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -204,7 +204,7 @@ public struct UserActivityQuery: GraphQLQuery {
         /// Page.Activity.AsMessageActivity
         ///
         /// Parent Type: `MessageActivity`
-        public struct AsMessageActivity: AniListAPI.InlineFragment {
+        public struct AsMessageActivity: AniListAPI.InlineFragment, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

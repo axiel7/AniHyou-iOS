@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
+public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment BasicThreadDetails on Thread { __typename id title body viewCount likeCount isLiked isSubscribed replyCount isLocked user { __typename id name avatar { __typename medium } } createdAt }"#
   }
@@ -119,7 +119,7 @@ public struct BasicThreadDetails: AniListAPI.MutableSelectionSet, Fragment {
   /// User
   ///
   /// Parent Type: `User`
-  public struct User: AniListAPI.MutableSelectionSet {
+  public struct User: AniListAPI.MutableSelectionSet, Identifiable {
     @_spi(Unsafe) public var __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

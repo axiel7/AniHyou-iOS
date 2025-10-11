@@ -27,7 +27,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
   /// MediaRecommendation
   ///
   /// Parent Type: `Media`
-  public struct MediaRecommendation: AniListAPI.SelectionSet {
+  public struct MediaRecommendation: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -73,7 +73,7 @@ public struct FollowersQuery: GraphQLQuery {
       /// Page.Follower
       ///
       /// Parent Type: `User`
-      public struct Follower: AniListAPI.SelectionSet {
+      public struct Follower: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

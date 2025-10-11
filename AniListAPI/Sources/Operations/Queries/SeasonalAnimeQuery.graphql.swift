@@ -85,7 +85,7 @@ public struct SeasonalAnimeQuery: GraphQLQuery {
       /// Page.Medium
       ///
       /// Parent Type: `Media`
-      public struct Medium: AniListAPI.SelectionSet {
+      public struct Medium: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

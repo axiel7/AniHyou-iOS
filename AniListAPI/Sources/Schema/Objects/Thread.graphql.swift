@@ -8,6 +8,6 @@ public extension Objects {
   static let Thread = ApolloAPI.Object(
     typename: "Thread",
     implementedInterfaces: [],
-    keyFields: nil
+    keyFields: ["id"]
   )
 }

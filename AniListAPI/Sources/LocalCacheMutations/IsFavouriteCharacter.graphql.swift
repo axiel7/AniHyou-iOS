@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct IsFavouriteCharacter: AniListAPI.MutableSelectionSet, Fragment {
+public struct IsFavouriteCharacter: AniListAPI.MutableSelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment IsFavouriteCharacter on Character { __typename id isFavourite }"#
   }

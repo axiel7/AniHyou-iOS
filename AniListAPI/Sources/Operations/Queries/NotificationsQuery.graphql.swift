@@ -844,7 +844,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentMentionNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet {
+          public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -949,7 +949,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentReplyNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet {
+          public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1054,7 +1054,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentSubscribedNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet {
+          public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1159,7 +1159,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentLikeNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet {
+          public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

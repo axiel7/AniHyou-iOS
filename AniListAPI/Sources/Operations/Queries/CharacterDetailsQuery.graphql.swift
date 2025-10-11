@@ -38,7 +38,7 @@ public struct CharacterDetailsQuery: GraphQLQuery {
     /// Character
     ///
     /// Parent Type: `Character`
-    public struct Character: AniListAPI.SelectionSet {
+    public struct Character: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

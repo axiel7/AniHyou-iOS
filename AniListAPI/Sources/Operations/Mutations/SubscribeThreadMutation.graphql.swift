@@ -48,7 +48,7 @@ public struct SubscribeThreadMutation: GraphQLMutation {
     /// ToggleThreadSubscription
     ///
     /// Parent Type: `Thread`
-    public struct ToggleThreadSubscription: AniListAPI.SelectionSet {
+    public struct ToggleThreadSubscription: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

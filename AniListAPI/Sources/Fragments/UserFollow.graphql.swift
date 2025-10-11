@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserFollow: AniListAPI.SelectionSet, Fragment {
+public struct UserFollow: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment UserFollow on User { __typename id name avatar { __typename large } }"#
   }

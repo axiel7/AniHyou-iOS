@@ -34,7 +34,7 @@ public struct StudioStat: AniListAPI.SelectionSet, Fragment {
   /// Studio
   ///
   /// Parent Type: `Studio`
-  public struct Studio: AniListAPI.SelectionSet {
+  public struct Studio: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

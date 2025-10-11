@@ -65,7 +65,7 @@ public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
   /// Media
   ///
   /// Parent Type: `Media`
-  public struct Media: AniListAPI.SelectionSet {
+  public struct Media: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

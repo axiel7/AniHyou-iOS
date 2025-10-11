@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ActivityReplyFragment: AniListAPI.SelectionSet, Fragment {
+public struct ActivityReplyFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment ActivityReplyFragment on ActivityReply { __typename id createdAt isLiked likeCount text userId user { __typename name avatar { __typename medium } } }"#
   }

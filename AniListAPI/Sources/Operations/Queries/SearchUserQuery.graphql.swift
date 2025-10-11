@@ -76,7 +76,7 @@ public struct SearchUserQuery: GraphQLQuery {
       /// Page.User
       ///
       /// Parent Type: `User`
-      public struct User: AniListAPI.SelectionSet {
+      public struct User: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

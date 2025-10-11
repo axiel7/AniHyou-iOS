@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct StudioMedia: AniListAPI.SelectionSet, Fragment {
+public struct StudioMedia: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment StudioMedia on Media { __typename id coverImage { __typename large } title { __typename userPreferred } type mediaListEntry { __typename status } }"#
   }

@@ -8,6 +8,6 @@ public extension Objects {
   static let ThreadComment = ApolloAPI.Object(
     typename: "ThreadComment",
     implementedInterfaces: [],
-    keyFields: nil
+    keyFields: ["id"]
   )
 }

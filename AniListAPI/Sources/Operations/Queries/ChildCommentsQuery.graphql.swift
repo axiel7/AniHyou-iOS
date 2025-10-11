@@ -73,7 +73,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
       /// Page.ThreadComment
       ///
       /// Parent Type: `ThreadComment`
-      public struct ThreadComment: AniListAPI.SelectionSet {
+      public struct ThreadComment: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -113,7 +113,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
         /// Page.ThreadComment.User
         ///
         /// Parent Type: `User`
-        public struct User: AniListAPI.SelectionSet {
+        public struct User: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

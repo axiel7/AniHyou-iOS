@@ -34,7 +34,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
   /// VoiceActor
   ///
   /// Parent Type: `Staff`
-  public struct VoiceActor: AniListAPI.SelectionSet {
+  public struct VoiceActor: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

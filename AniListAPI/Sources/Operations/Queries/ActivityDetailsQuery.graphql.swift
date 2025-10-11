@@ -60,7 +60,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
       /// Activity.AsTextActivity
       ///
       /// Parent Type: `TextActivity`
-      public struct AsTextActivity: AniListAPI.InlineFragment {
+      public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -107,7 +107,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
         /// Activity.AsTextActivity.Reply
         ///
         /// Parent Type: `ActivityReply`
-        public struct Reply: AniListAPI.SelectionSet {
+        public struct Reply: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -152,7 +152,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
       /// Activity.AsListActivity
       ///
       /// Parent Type: `ListActivity`
-      public struct AsListActivity: AniListAPI.InlineFragment {
+      public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -205,7 +205,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
         /// Activity.AsListActivity.Reply
         ///
         /// Parent Type: `ActivityReply`
-        public struct Reply: AniListAPI.SelectionSet {
+        public struct Reply: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -252,7 +252,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
       /// Activity.AsMessageActivity
       ///
       /// Parent Type: `MessageActivity`
-      public struct AsMessageActivity: AniListAPI.InlineFragment {
+      public struct AsMessageActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -301,7 +301,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
         /// Activity.AsMessageActivity.Reply
         ///
         /// Parent Type: `ActivityReply`
-        public struct Reply: AniListAPI.SelectionSet {
+        public struct Reply: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

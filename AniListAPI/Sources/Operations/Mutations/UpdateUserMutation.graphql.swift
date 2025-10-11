@@ -73,7 +73,7 @@ public struct UpdateUserMutation: GraphQLMutation {
     /// UpdateUser
     ///
     /// Parent Type: `User`
-    public struct UpdateUser: AniListAPI.SelectionSet {
+    public struct UpdateUser: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

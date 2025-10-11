@@ -123,7 +123,7 @@ public struct StaffCharacterQuery: GraphQLQuery {
           /// Staff.CharacterMedia.Edge.Node
           ///
           /// Parent Type: `Media`
-          public struct Node: AniListAPI.SelectionSet {
+          public struct Node: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -166,7 +166,7 @@ public struct StaffCharacterQuery: GraphQLQuery {
           /// Staff.CharacterMedia.Edge.Character
           ///
           /// Parent Type: `Character`
-          public struct Character: AniListAPI.SelectionSet {
+          public struct Character: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -6,7 +6,8 @@
       "AniHyou/Queries/**/*.graphql"
     ],
     "schemaSearchPaths" : [
-      "schema.graphqls"
+      "schema.graphqls",
+      "extra.graphqls"
     ]
   },
   "output" : {
