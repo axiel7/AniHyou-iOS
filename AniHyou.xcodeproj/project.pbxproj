@@ -223,6 +223,7 @@
 		48C5015A2ADA340F00E4243D /* TranslationCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C501592ADA340F00E4243D /* TranslationCredits.swift */; };
 		48C5016B2ADAD00400E4243D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C501692ADAD00400E4243D /* InfoPlist.strings */; };
 		48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */; };
+		48C816DE2E9A618E002BC128 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C816DD2E9A618E002BC128 /* ListHeader.swift */; };
 		48CA07A9287035530048854E /* MediaInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07A8287035530048854E /* MediaInfoType.swift */; };
 		48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */; };
 		48CA07B1287064B30048854E /* MediaCharactersAndStaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07B0287064B30048854E /* MediaCharactersAndStaffView.swift */; };
@@ -616,6 +617,7 @@
 		48C608EE290D164F004781C2 /* SearchStudio.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchStudio.graphql; sourceTree = "<group>"; };
 		48C608F0290D16C3004781C2 /* SearchUser.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchUser.graphql; sourceTree = "<group>"; };
 		48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
+		48C816DD2E9A618E002BC128 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		48CA07A8287035530048854E /* MediaInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoType.swift; sourceTree = "<group>"; };
 		48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGeneralInfoView.swift; sourceTree = "<group>"; };
 		48CA07AE287063420048854E /* MediaCharactersAndStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaCharactersAndStaff.graphql; sourceTree = "<group>"; };
@@ -910,9 +912,8 @@
 				488763D42977F6FA00402934 /* Stats */,
 				48CA07AA28703B530048854E /* Media */,
 				4820F6B22ADE9F9900A4F465 /* Activity */,
+				48C816DC2E9A60B3002BC128 /* List */,
 				48FC9473286656F600C87F56 /* HInfoView.swift */,
-				481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */,
-				481AD50628522D74001779EE /* VListItemView.swift */,
 				4832B02D285F38DC00E79D27 /* TopBannerView.swift */,
 				48B7ABF22BB445080047998F /* StretchyHeader.swift */,
 				4832B035285F9E1900E79D27 /* ExpandableTextView.swift */,
@@ -1448,6 +1449,16 @@
 				48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */,
 			);
 			path = ContextMenus;
+			sourceTree = "<group>";
+		};
+		48C816DC2E9A60B3002BC128 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				481AD4FB2851F131001779EE /* HListItemWithSubtitleView.swift */,
+				481AD50628522D74001779EE /* VListItemView.swift */,
+				48C816DD2E9A618E002BC128 /* ListHeader.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		48CA07AA28703B530048854E /* Media */ = {
@@ -2165,6 +2176,7 @@
 				"",
 				"",
 				"",
+				"",
 			);
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2351,6 +2363,7 @@
 				48218AF42BC5287000A03421 /* CharacterRepository.swift in Sources */,
 				488C267928537B5F0005EE15 /* StringUtils.swift in Sources */,
 				48E58E3A2A85B5F700EF0CA2 /* MediaSource.swift in Sources */,
+				48C816DE2E9A618E002BC128 /* ListHeader.swift in Sources */,
 				48218AF62BC52A8600A03421 /* StaffRepository.swift in Sources */,
 				48AB01F8286B724A004DC7FF /* SearchViewModel.swift in Sources */,
 				484E88402A77E88B007E59E1 /* HorizontalProgressView.swift in Sources */,

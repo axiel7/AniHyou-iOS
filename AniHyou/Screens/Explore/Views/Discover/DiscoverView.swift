@@ -273,15 +273,8 @@ struct DiscoverView: View {
     var airingNext: some View {
         @AppStorage(AIRING_ON_MY_LIST_KEY) var airingOnMyList = false
 
-        HStack(alignment: .center) {
-            Text("Airing Next")
-                .font(.title2)
-                .bold()
-            Spacer()
-            NavigationLink("See All", destination: CalendarAnimeView())
-        }
-        .padding(.horizontal)
-        .padding(.top, 8)
+        ListHeader("Airing Next", destination: { CalendarAnimeView() })
+        
         ZStack {
             if viewModel.airingAnimes.count == 0 && viewModel.airingOnMyList.count == 0 {
                 Text("No anime for today\n(*´-`)")
@@ -356,20 +349,10 @@ struct DiscoverView: View {
         season: AnimeSeason,
         media: [SeasonalAnimeQuery.Data.Page.Medium]
     ) -> some View {
-        HStack(alignment: .center) {
-            Group {
-                Text(season.season.localizedName) +
-                Text(" \(season.year.stringValue)")
-            }
-            .font(.title2)
-            .bold()
-            Spacer()
-            NavigationLink("See All") {
-                AnimeSeasonListView(initSeason: season.season, initYear: season.year)
-            }
+        let seasonName = String.LocalizationValue(stringLiteral: season.season.localizedStringKey)
+        ListHeader("\(String(localized: seasonName)) \(season.year.stringValue)") {
+            AnimeSeasonListView(initSeason: season.season, initYear: season.year)
         }
-        .padding(.horizontal)
-        .padding(.top, 8)
         ZStack {
             if media.count == 0 {
                 ProgressView()
@@ -406,17 +389,10 @@ struct DiscoverView: View {
         title: LocalizedStringKey,
         mediaType: MediaType,
         media: [MediaSortedQuery.Data.Page.Medium],
-        headerDestination: () -> some View
+        headerDestination: @escaping () -> some View
     ) -> some View {
-        HStack(alignment: .center) {
-            Text(title)
-                .font(.title2)
-                .bold()
-            Spacer()
-            NavigationLink("See All", destination: headerDestination)
-        }
-        .padding(.horizontal)
-        .padding(.top, 8)
+        ListHeader(title, destination: headerDestination)
+        
         ZStack {
             if media.count == 0 {
                 ProgressView()
