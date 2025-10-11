@@ -71,4 +71,13 @@ extension View {
                 .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))
         }
     }
+    
+    @ViewBuilder
+    func blur(radius: CGFloat, isEnabled: Bool) -> some View {
+        if isEnabled {
+            self.blur(radius: radius)
+        } else {
+            self
+        }
+    }
 }

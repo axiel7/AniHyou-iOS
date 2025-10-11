@@ -12,6 +12,7 @@ query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort
       mediaListEntry {
         status
       }
+      isAdult
     }
     pageInfo {
       ...CommonPage

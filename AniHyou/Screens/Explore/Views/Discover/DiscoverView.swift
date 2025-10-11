@@ -405,7 +405,8 @@ struct DiscoverView: View {
                                 title: item.title?.userPreferred ?? "",
                                 imageUrl: item.coverImage?.large,
                                 meanScore: item.meanScore,
-                                status: item.mediaListEntry?.status?.value
+                                status: item.mediaListEntry?.status?.value,
+                                isAdult: item.isAdult
                             )
                             .padding(.trailing, 4)
                             .mediaContextMenu(

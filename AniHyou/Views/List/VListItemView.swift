@@ -13,11 +13,12 @@ struct VListItemView: View {
     static let coverHeight: CGFloat = 130
 
     let title: String
-    var imageUrl: String?
+    let imageUrl: String?
     var meanScore: Int?
     var nextEpisode: Int?
     var airingAt: Int?
     var status: MediaListStatus?
+    var isAdult: Bool?
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,7 +26,8 @@ struct VListItemView: View {
                 MediaCoverView(
                     imageUrl: imageUrl,
                     width: VListItemView.coverWidth,
-                    height: VListItemView.coverHeight
+                    height: VListItemView.coverHeight,
+                    blurEnabled: isAdult == true
                 )
                 if let status {
                     Image(systemName: status.systemImage)
@@ -70,7 +72,7 @@ struct VListItemView: View {
 #Preview(traits: .sizeThatFitsLayout) {
     LazyHStack(alignment: .top) {
         VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
-        VListItemView(title: "One Piece", imageUrl: "")
+        VListItemView(title: "One Piece", imageUrl: "", isAdult: true)
         VListItemView(title: "One Piece", imageUrl: "", nextEpisode: 123, airingAt: 1228328)
     }
 }

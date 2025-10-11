@@ -8,7 +8,7 @@ public struct MediaSortedQuery: GraphQLQuery {
   public static let operationName: String = "MediaSorted"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -92,6 +92,7 @@ public struct MediaSortedQuery: GraphQLQuery {
           .field("coverImage", CoverImage?.self),
           .field("meanScore", Int?.self),
           .field("mediaListEntry", MediaListEntry?.self),
+          .field("isAdult", Bool?.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
           MediaSortedQuery.Data.Page.Medium.self
@@ -107,6 +108,8 @@ public struct MediaSortedQuery: GraphQLQuery {
         public var meanScore: Int? { __data["meanScore"] }
         /// The authenticated user's media list entry for the media
         public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+        /// If the media is intended only for 18+ adult audiences
+        public var isAdult: Bool? { __data["isAdult"] }
 
         /// Page.Medium.Title
         ///
