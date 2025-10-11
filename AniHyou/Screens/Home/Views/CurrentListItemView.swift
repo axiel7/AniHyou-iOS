@@ -72,10 +72,6 @@ struct CurrentListItemView: View {
                 }
             }//:VStack
         }//:HStack
-        .frame(
-            width: CurrentListItemView.width,
-            height: CurrentListItemView.height
-        )
     }
 }
 

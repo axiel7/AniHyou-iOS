@@ -224,6 +224,8 @@
 		48C5016B2ADAD00400E4243D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C501692ADAD00400E4243D /* InfoPlist.strings */; };
 		48C6F9E22A0BBEFF0084ED8E /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */; };
 		48C816DE2E9A618E002BC128 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C816DD2E9A618E002BC128 /* ListHeader.swift */; };
+		48C816E42E9AC11E002BC128 /* ExpandedCurrentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C816E32E9AC11E002BC128 /* ExpandedCurrentListView.swift */; };
+		48C816E62E9AC2DF002BC128 /* CurrentListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C816E52E9AC2DB002BC128 /* CurrentListType.swift */; };
 		48CA07A9287035530048854E /* MediaInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07A8287035530048854E /* MediaInfoType.swift */; };
 		48CA07AD28703BE60048854E /* MediaGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */; };
 		48CA07B1287064B30048854E /* MediaCharactersAndStaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA07B0287064B30048854E /* MediaCharactersAndStaffView.swift */; };
@@ -618,6 +620,8 @@
 		48C608F0290D16C3004781C2 /* SearchUser.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchUser.graphql; sourceTree = "<group>"; };
 		48C6F9E12A0BBEFF0084ED8E /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
 		48C816DD2E9A618E002BC128 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
+		48C816E32E9AC11E002BC128 /* ExpandedCurrentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCurrentListView.swift; sourceTree = "<group>"; };
+		48C816E52E9AC2DB002BC128 /* CurrentListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentListType.swift; sourceTree = "<group>"; };
 		48CA07A8287035530048854E /* MediaInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoType.swift; sourceTree = "<group>"; };
 		48CA07AC28703BE60048854E /* MediaGeneralInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGeneralInfoView.swift; sourceTree = "<group>"; };
 		48CA07AE287063420048854E /* MediaCharactersAndStaff.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaCharactersAndStaff.graphql; sourceTree = "<group>"; };
@@ -939,6 +943,7 @@
 				48F763F528ACE4C600C82D75 /* Views */,
 				48F763F628ACE4CB00C82D75 /* ViewModels */,
 				4820F6A52ADE8CD700A4F465 /* HomeTab.swift */,
+				48C816E52E9AC2DB002BC128 /* CurrentListType.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1707,6 +1712,7 @@
 				4820F6AA2ADE96FF00A4F465 /* ActivityFeedView.swift */,
 				48801D202C3BEDC5000BEA3A /* CurrentView.swift */,
 				48801D242C3BF397000BEA3A /* CurrentListItemView.swift */,
+				48C816E32E9AC11E002BC128 /* ExpandedCurrentListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2177,6 +2183,7 @@
 				"",
 				"",
 				"",
+				"",
 			);
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2217,6 +2224,7 @@
 				484A6D6B287484C40044C34A /* MediaReviewsAndThreadsView.swift in Sources */,
 				48B7AC232BB59F610047998F /* StudiosStatsViewModel.swift in Sources */,
 				48B7AC152BB569C40047998F /* NotificationCenterUtils.swift in Sources */,
+				48C816E62E9AC2DF002BC128 /* CurrentListType.swift in Sources */,
 				48218B042BC5842C00A03421 /* ThreadRepository.swift in Sources */,
 				48650F0E2860CE720064C70A /* MediaListEditViewModel.swift in Sources */,
 				48D929E82ABAC76900330C71 /* MainTab.swift in Sources */,
@@ -2323,6 +2331,7 @@
 				48BCA59929672334005D3405 /* Genre.swift in Sources */,
 				4837455F2964192F00E81CA3 /* StudioDetailsViewModel.swift in Sources */,
 				48EE81362969DE1C0074482F /* CalendarViewModel.swift in Sources */,
+				48C816E42E9AC11E002BC128 /* ExpandedCurrentListView.swift in Sources */,
 				48DD404E2994FF6500FED7BF /* NotificationItemView.swift in Sources */,
 				4820F6A62ADE8CD700A4F465 /* HomeTab.swift in Sources */,
 				48801D232C3BF093000BEA3A /* CurrentViewModel.swift in Sources */,

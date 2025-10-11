@@ -52,7 +52,7 @@ import AniListAPI
         )?.data
     }
     
-    func updateEntryProgress(of entry: CommonMediaListEntry, type: CurrentView.ListType) async {
+    func updateEntryProgress(of entry: CommonMediaListEntry, type: CurrentListType) async {
         if let newEntry = await MediaListRepository.incrementOneProgress(
             of: entry.fragments.basicMediaListEntry,
             totalProgress: entry.media?.maxProgress(isVolume: false),
@@ -62,7 +62,7 @@ import AniListAPI
         }
     }
     
-    func onEntryUpdated(_ entry: BasicMediaListEntry, type: CurrentView.ListType) async {
+    func onEntryUpdated(_ entry: BasicMediaListEntry, type: CurrentListType) async {
         var list = getList(of: type)
         guard let foundIndex = list.firstIndex(where: { $0.id == entry.id }) else { return }
         if list[safe: foundIndex]?.status != entry.status {
@@ -80,7 +80,7 @@ import AniListAPI
         setList(of: type, list)
     }
     
-    private func getList(of type: CurrentView.ListType) -> [CommonMediaListEntry] {
+    private func getList(of type: CurrentListType) -> [CommonMediaListEntry] {
         switch type {
         case .airing:
             airingList
@@ -93,7 +93,7 @@ import AniListAPI
         }
     }
     
-    private func setList(of type: CurrentView.ListType, _ value: [CommonMediaListEntry]) {
+    private func setList(of type: CurrentListType, _ value: [CommonMediaListEntry]) {
         switch type {
         case .airing:
             airingList = value

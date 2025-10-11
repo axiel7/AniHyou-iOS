@@ -10,26 +10,6 @@ import AniListAPI
 
 struct CurrentView: View {
     
-    enum ListType: CaseIterable {
-        case airing
-        case behind
-        case anime
-        case manga
-        
-        var title: LocalizedStringKey {
-            switch self {
-            case .airing:
-                "Airing"
-            case .behind:
-                "Anime Behind"
-            case .anime:
-                "Watching"
-            case .manga:
-                "Reading"
-            }
-        }
-    }
-    
     @State private var viewModel = CurrentViewModel()
     
     private let oneGirdRow = [GridItem(.fixed(CurrentListItemView.height))]
@@ -42,7 +22,7 @@ struct CurrentView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    ForEach(ListType.allCases, id: \.self) { type in
+                    ForEach(CurrentListType.allCases, id: \.self) { type in
                         let items = switch type {
                         case .airing:
                             viewModel.airingList
@@ -84,21 +64,23 @@ struct CurrentView: View {
     
     @ViewBuilder
     func list(
-        type: ListType,
+        type: CurrentListType,
         items: [CommonMediaListEntry]
     ) -> some View {
         let rowsCount: CGFloat = items.count == 1 ? 1 : 2
         let rows = rowsCount == 1 ? oneGirdRow : twoGridRows
         
-        HStack(alignment: .center) {
-            Text(type.title)
-                .font(.title2)
-                .bold()
-            Spacer()
-            //TODO: See All button
+        ListHeader(type.title) {
+            ExpandedCurrentListView(
+                type: type,
+                items: items,
+                onClickPlus: { item in
+                    Task {
+                        await viewModel.updateEntryProgress(of: item, type: type)
+                    }
+                }
+            )
         }
-        .padding(.horizontal)
-        .padding(.top, 8)
         
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, spacing: 16) {
@@ -115,6 +97,10 @@ struct CurrentView: View {
                                     await viewModel.updateEntryProgress(of: item, type: type)
                                 }
                             }
+                        )
+                        .frame(
+                            width: CurrentListItemView.width,
+                            height: CurrentListItemView.height
                         )
                     }
                     .buttonStyle(.plain)
