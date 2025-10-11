@@ -45,7 +45,9 @@ struct ActivityFeedView: View {
                             }
                         }
                         .onChange(of: viewModel.type) {
-                            viewModel.refresh()
+                            Task {
+                                await viewModel.refresh()
+                            }
                         }
                     }
                     Menu("Feed type") {
@@ -54,7 +56,9 @@ struct ActivityFeedView: View {
                             Text("Global").tag(false)
                         }
                         .onChange(of: viewModel.isFollowing) {
-                            viewModel.refresh()
+                            Task {
+                                await viewModel.refresh()
+                            }
                         }
                     }
                 } label: {
@@ -64,7 +68,7 @@ struct ActivityFeedView: View {
             }
         }
         .refreshable {
-            viewModel.refresh()
+            await viewModel.refresh()
         }
     }
 }

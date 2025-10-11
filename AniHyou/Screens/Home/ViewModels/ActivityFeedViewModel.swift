@@ -19,11 +19,12 @@ import AniListAPI
     
     var activities = [ActivityFeedQuery.Data.Page.Activity]()
     
-    func getActivities() async {
+    func getActivities(forceReload: Bool = false) async {
         if let result = await ActivityRepository.getActivities(
             type: type,
             isFollowing: isFollowing,
-            page: currentPage
+            page: currentPage,
+            forceReload: forceReload
         ) {
             activities.append(contentsOf: result.data)
             currentPage = result.page
@@ -31,9 +32,10 @@ import AniListAPI
         }
     }
     
-    func refresh() {
+    func refresh() async {
+        hasNextPage = false
         currentPage = 1
-        hasNextPage = true
         activities.removeAll()
+        await getActivities(forceReload: true)
     }
 }

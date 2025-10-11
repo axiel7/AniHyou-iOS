@@ -14,7 +14,8 @@ struct ActivityRepository {
         type: ActivityFeedType,
         isFollowing: Bool,
         page: Int32,
-        perPage: Int32 = 25
+        perPage: Int32 = 25,
+        forceReload: Bool
     ) async -> PagedResult<ActivityFeedQuery.Data.Page.Activity>? {
         let typeIn: GraphQLNullable<[GraphQLEnum<ActivityType>?]> =
             type == .all ? .none : .some([.case(type.value!)])
@@ -26,6 +27,7 @@ struct ActivityRepository {
                 isFollowing: .some(isFollowing),
                 typeIn: typeIn
             ),
+            forceReload: forceReload,
             extractItems: { $0.page?.activities?.compactMap { $0 } },
             extractPage: { $0.page?.pageInfo?.fragments.commonPage }
         )
