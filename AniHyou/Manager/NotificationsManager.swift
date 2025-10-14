@@ -11,41 +11,35 @@ import UserNotifications
 
 final class NotificationsManager {
     
-    @MainActor
-    static func handleFetchTask(_ task: BGAppRefreshTask) {
-        NotificationsManager.scheduleFetch()
-        
-        let operation = Task {
-            let notifications = await UserRepository.fetchNewNotifications()
-            if let notifications {
-                for info in notifications {
-                    let content = UNMutableNotificationContent()
-                    content.body = info.text
-                    
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                    let request = UNNotificationRequest(
-                        identifier: info.id.stringValue,
-                        content: content,
-                        trigger: trigger
-                    )
-                    try? await UNUserNotificationCenter.current().add(request)
-                }
+    @discardableResult
+    static func fetchAndSendNotifications() async -> [GenericNotification]? {
+        let notifications = await UserRepository.fetchNewNotifications()
+        if let notifications {
+            for info in notifications {
+                let content = UNMutableNotificationContent()
+                content.body = info.text
+                
+                await NotificationsManager.addNotification(id: info.id.stringValue, content: content)
             }
-            task.setTaskCompleted(success: notifications != nil)
         }
-        
-        task.expirationHandler = {
-            operation.cancel()
+        if notifications?.isEmpty == true {
+            let content = UNMutableNotificationContent()
+            content.body = "No new notifications"
+            
+            await NotificationsManager.addNotification(id: "empty", content: content)
         }
+        return notifications
     }
     
-    static func scheduleFetch() {
+    static func scheduleFetch(repeatHours: Int) {
         let request = BGAppRefreshTaskRequest(identifier: FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER)
-        // Fetch no earlier than 6 hours from now.
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 6 * 3600)
+        // Fetch no earlier than X hours from now.
+        let interval = TimeInterval(repeatHours * 3600)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: interval)
         
         do {
             try BGTaskScheduler.shared.submit(request)
+            
         } catch {
             print("Could not schedule app refresh: \(error)")
         }
@@ -53,5 +47,19 @@ final class NotificationsManager {
     
     static func cancelSchedule() {
         BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER)
+    }
+    
+    static func addNotification(
+        id: String,
+        content: UNMutableNotificationContent,
+        timeInterval: TimeInterval = 5
+    ) async {
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: id,
+            content: content,
+            trigger: trigger
+        )
+        try? await UNUserNotificationCenter.current().add(request)
     }
 }

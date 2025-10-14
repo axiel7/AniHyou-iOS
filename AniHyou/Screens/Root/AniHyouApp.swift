@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BackgroundTasks
 
 @main
 struct AniHyouApp: App {
@@ -19,12 +20,30 @@ struct AniHyouApp: App {
             ContentView()
                 .id(globalAppState.globalId)
                 .tint(Color(hex: accentColor) ?? .accentColor)
-                .onAppear {
+                .task {
                     //transfer user id from old app versions
                     if LoginRepository.authUserId() == 0 {
                         LoginRepository.saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
                     }
+                    await scheduleNotificationFetch()
                 }
+        }
+        .backgroundTask(.appRefresh(FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER)) {
+            NotificationsManager.scheduleFetch(
+                repeatHours: UserDefaults.standard.integer(forKey: NOTIFICATIONS_FETCH_REPEAT_KEY)
+            )
+            await NotificationsManager.fetchAndSendNotifications()
+        }
+    }
+    
+    func scheduleNotificationFetch() async {
+        if UserDefaults.standard.bool(forKey: NOTIFICATIONS_ENABLED_KEY) {
+            let requests = await BGTaskScheduler.shared.pendingTaskRequests()
+            if requests.isEmpty {
+                NotificationsManager.scheduleFetch(
+                    repeatHours: UserDefaults.standard.integer(forKey: NOTIFICATIONS_FETCH_REPEAT_KEY)
+                )
+            }
         }
     }
 }

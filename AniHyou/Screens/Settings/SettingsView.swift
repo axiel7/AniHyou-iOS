@@ -65,6 +65,7 @@ struct SettingsView: View {
     
     @AppStorage(HAS_DONATED_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var hasDonated = false
     @AppStorage(NOTIFICATIONS_ENABLED_KEY) private var notificationsEnabled = false
+    @AppStorage(NOTIFICATIONS_FETCH_REPEAT_KEY) private var notificationsFetchHours = 6
     @State private var showDonationAlert = false
     @State private var navigateToDonations = false
 
@@ -91,6 +92,13 @@ struct SettingsView: View {
             
             Section {
                 Toggle("Push notifications", isOn: $notificationsEnabled)
+                Picker("Update interval", selection: $notificationsFetchHours) {
+                    Text("1h").tag(1)
+                    Text("3h").tag(3)
+                    Text("6h").tag(6)
+                    Text("12h").tag(12)
+                    Text("24h").tag(24)
+                }
                 NavigationLink("Account settings", destination: AccountSettingsView(viewModel: viewModel))
             }
 
@@ -136,6 +144,10 @@ struct SettingsView: View {
             } else {
                 NotificationsManager.cancelSchedule()
             }
+        }
+        .onChange(of: notificationsFetchHours) {
+            NotificationsManager.cancelSchedule()
+            NotificationsManager.scheduleFetch(repeatHours: notificationsFetchHours)
         }
     }
     
@@ -234,7 +246,7 @@ struct SettingsView: View {
                 try await UNUserNotificationCenter.current().requestAuthorization(
                     options: [.alert, .sound, .badge]
                 )
-                NotificationsManager.scheduleFetch()
+                NotificationsManager.scheduleFetch(repeatHours: notificationsFetchHours)
             } catch {
                 DispatchQueue.main.async {
                     notificationsEnabled = false

@@ -17,14 +17,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, @MainActor UNUserNotificatio
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         UNUserNotificationCenter.current().delegate = self
-        BGTaskScheduler.shared.register(
-            forTaskWithIdentifier: FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER,
-            using: nil
-        ) { task in
-            if let task = task as? BGAppRefreshTask {
-                NotificationsManager.handleFetchTask(task)
-            }
-        }
         return true
     }
     
@@ -42,9 +34,5 @@ class AppDelegate: NSObject, UIApplicationDelegate, @MainActor UNUserNotificatio
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
         completionHandler()
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        NotificationsManager.scheduleFetch()
     }
 }
