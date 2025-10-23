@@ -22,12 +22,14 @@ final class NotificationsManager {
                 await NotificationsManager.addNotification(id: info.id.stringValue, content: content)
             }
         }
+        #if DEBUG
         if notifications?.isEmpty == true {
             let content = UNMutableNotificationContent()
             content.body = "No new notifications"
             
             await NotificationsManager.addNotification(id: "empty", content: content)
         }
+        #endif
         return notifications
     }
     
