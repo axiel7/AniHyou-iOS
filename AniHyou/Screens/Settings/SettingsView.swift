@@ -149,6 +149,19 @@ struct SettingsView: View {
             NotificationsManager.cancelSchedule()
             NotificationsManager.scheduleFetch(repeatHours: notificationsFetchHours)
         }
+        .alert(
+            "Donate!",
+            isPresented: $showDonationAlert,
+            actions: {
+                Button("Close", role: .cancel) {}
+                Button("Donate") {
+                    navigateToDonations = true
+                }
+            },
+            message: {
+                Text("This feature will be unlocked when you make a donation, even the smallest count!")
+            }
+        )
     }
     
     @ViewBuilder
@@ -179,19 +192,6 @@ struct SettingsView: View {
                     }
                 }
             }
-            .alert(
-                "Donate!",
-                isPresented: $showDonationAlert,
-                actions: {
-                    Button("Close", role: .cancel) {}
-                    Button("Donate") {
-                        navigateToDonations = true
-                    }
-                },
-                message: {
-                    Text("This feature will be unlocked when you make a donation, even the smallest count!")
-                }
-            )
 
             if accentColorMode == .custom {
                 ColorPicker("Custom color", selection: $selectedColor, supportsOpacity: false)
