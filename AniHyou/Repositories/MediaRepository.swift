@@ -169,6 +169,7 @@ struct MediaRepository {
         isLicensed: Bool? = nil,
         isAdult: Bool? = nil,
         country: CountryOfOrigin? = nil,
+        sourceIn: [MediaSource] = [],
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<SearchMediaQuery.Data.Page.Medium>? {
@@ -191,7 +192,8 @@ struct MediaRepository {
                 onList: someIfNotNil(onList),
                 isLicensed: someIfNotNil(isLicensed),
                 isAdult: someIfNotNil(isAdult),
-                country: someIfNotNil(country)
+                country: someIfNotNil(country),
+                source_in: someEnumArrayIfNotEmpty(sourceIn)
             ),
             extractItems: { $0.page?.media?.compactMap { $0 } },
             extractPage: { $0.page?.pageInfo?.fragments.commonPage }

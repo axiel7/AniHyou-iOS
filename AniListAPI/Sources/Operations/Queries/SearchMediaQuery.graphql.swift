@@ -8,7 +8,7 @@ public struct SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $season: MediaSeason, $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in season: $season startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country ) { __typename ...BasicMediaDetails meanScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $season: MediaSeason, $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode, $source_in: [MediaSource]) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in season: $season startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country source_in: $source_in ) { __typename ...BasicMediaDetails meanScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, CommonPage.self, FuzzyDateFragment.self]
     ))
 
@@ -30,6 +30,7 @@ public struct SearchMediaQuery: GraphQLQuery {
   public var isLicensed: GraphQLNullable<Bool>
   public var isAdult: GraphQLNullable<Bool>
   public var country: GraphQLNullable<CountryCode>
+  public var source_in: GraphQLNullable<[GraphQLEnum<MediaSource>?]>
 
   public init(
     page: GraphQLNullable<Int32>,
@@ -49,7 +50,8 @@ public struct SearchMediaQuery: GraphQLQuery {
     onList: GraphQLNullable<Bool>,
     isLicensed: GraphQLNullable<Bool>,
     isAdult: GraphQLNullable<Bool>,
-    country: GraphQLNullable<CountryCode>
+    country: GraphQLNullable<CountryCode>,
+    source_in: GraphQLNullable<[GraphQLEnum<MediaSource>?]>
   ) {
     self.page = page
     self.perPage = perPage
@@ -69,6 +71,7 @@ public struct SearchMediaQuery: GraphQLQuery {
     self.isLicensed = isLicensed
     self.isAdult = isAdult
     self.country = country
+    self.source_in = source_in
   }
 
   @_spi(Unsafe) public var __variables: Variables? { [
@@ -89,7 +92,8 @@ public struct SearchMediaQuery: GraphQLQuery {
     "onList": onList,
     "isLicensed": isLicensed,
     "isAdult": isAdult,
-    "country": country
+    "country": country,
+    "source_in": source_in
   ] }
 
   public struct Data: AniListAPI.SelectionSet {
@@ -135,7 +139,8 @@ public struct SearchMediaQuery: GraphQLQuery {
           "onList": .variable("onList"),
           "isLicensed": .variable("isLicensed"),
           "isAdult": .variable("isAdult"),
-          "countryOfOrigin": .variable("country")
+          "countryOfOrigin": .variable("country"),
+          "source_in": .variable("source_in")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }

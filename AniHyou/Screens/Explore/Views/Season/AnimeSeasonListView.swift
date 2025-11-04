@@ -21,7 +21,7 @@ extension SeasonalAnimeQuery.Data.Page.Medium {
     }
     
     var mainGenresLocalized: Text? {
-        genres?.prefix(3).compactMap({ $0?.genreLocalized }).joined(separator: ", ")
+        genres?.prefix(3).compactMap({ $0?.genreLocalized }).joined()
     }
 }
 

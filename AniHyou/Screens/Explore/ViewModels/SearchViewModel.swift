@@ -32,6 +32,7 @@ import AniListAPI
     var isDoujinshi: Bool?
     var isAdult: Bool?
     var country: CountryOfOrigin?
+    var sources = Set<MediaSource>()
     
     private var hasFilters: Bool {
         sortMedia != .searchMatch
@@ -44,6 +45,8 @@ import AniListAPI
         || mediaOnMyList != nil
         || isDoujinshi != nil
         || isAdult != nil
+        || country != nil
+        || !sources.isEmpty
     }
     
     func clearFilters() {
@@ -59,6 +62,7 @@ import AniListAPI
         isDoujinshi = nil
         isAdult = nil
         country = nil
+        sources.removeAll()
     }
     
     var mediaType: MediaType {
@@ -154,6 +158,7 @@ import AniListAPI
             isLicensed: isDoujinshi?.not(),
             isAdult: isAdult,
             country: country,
+            sourceIn: Array(sources),
             page: 1
         ) {
             searchedMedia = result.data

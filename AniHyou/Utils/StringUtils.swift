@@ -41,7 +41,7 @@ extension String {
 
 extension [LocalizedStringKey] {
     // thanks Apple, spent 2 days trying to join localized strings
-    func joined(separator: LocalizedStringKey = "") -> Text {
+    func joined(separator: LocalizedStringKey = ", ") -> Text {
         return self.reduce(Text("")) {
             if $1 == self.first {
                 $0 + Text($1)

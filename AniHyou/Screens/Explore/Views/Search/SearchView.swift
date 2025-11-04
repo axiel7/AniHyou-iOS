@@ -17,6 +17,7 @@ struct SearchView: View {
     @State private var isMediaFormatSheetPresented = false
     @State private var isMediaStatusPresented = false
     @State private var isYearSheetPresented = false
+    @State private var isMediaSourcesPresented = false
     @State private var showingMoreFilters = false
     private let currentYear = Date.now.year
     
@@ -35,92 +36,7 @@ struct SearchView: View {
                 mediaSortSelector
 
                 if showingMoreFilters {
-
-                    genreTagSelector
-
-                    mediaFormatSelector
-
-                    mediaStatusSelector
-
-                    Picker("From year", selection: $viewModel.yearFrom) {
-                        Text("None").tag(Optional<Int>(nil))
-                        ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
-                            Text(String($0)).tag(Optional($0))
-                        }
-                    }
-                    .onChange(of: viewModel.yearFrom) {
-                        Task {
-                            await viewModel.runSearch()
-                        }
-                    }
-                    
-                    Picker("To year", selection: $viewModel.yearTo) {
-                        Text("None").tag(Optional<Int>(nil))
-                        let startYear = (viewModel.yearFrom ?? 1940) + 1
-                        ForEach((startYear...(currentYear+1)).reversed(), id: \.self) {
-                            Text(String($0)).tag(Optional($0))
-                        }
-                    }
-                    .onChange(of: viewModel.yearTo) {
-                        Task {
-                            await viewModel.runSearch()
-                        }
-                    }
-                    
-                    Picker("Season", selection: $viewModel.season) {
-                        Text("None").tag(Optional<MediaSeason>(nil))
-                        ForEach(MediaSeason.allCases, id: \.self) {
-                            Text($0.localizedName).tag(Optional($0))
-                        }
-                    }
-                    .onChange(of: viewModel.season) {
-                        Task {
-                            await viewModel.runSearch()
-                        }
-                    }
-                    
-                    Picker("Country", selection: $viewModel.country) {
-                        Text("None").tag(Optional<CountryOfOrigin>(nil))
-                        ForEach(CountryOfOrigin.allCases, id: \.self) {
-                            Text($0.localizedName).tag(Optional($0))
-                        }
-                    }
-                    .onChange(of: viewModel.country) {
-                        Task {
-                            await viewModel.runSearch()
-                        }
-                    }
-                    
-                    TriPicker("On my list", selection: $viewModel.mediaOnMyList)
-                        .onChange(of: viewModel.mediaOnMyList) {
-                            Task {
-                                await viewModel.runSearch()
-                            }
-                        }
-                    
-                    TriPicker("Doujinshi", selection: $viewModel.isDoujinshi)
-                        .onChange(of: viewModel.isDoujinshi) {
-                            Task {
-                                await viewModel.runSearch()
-                            }
-                        }
-                    
-                    TriPicker("Adult", selection: $viewModel.isAdult)
-                        .onChange(of: viewModel.isAdult) {
-                            Task {
-                                await viewModel.runSearch()
-                            }
-                        }
-                    
-                    Button("Clear", role: .destructive) {
-                        viewModel.clearFilters()
-                    }
-
-                    Button("Hide filters") {
-                        withAnimation {
-                            showingMoreFilters = false
-                        }
-                    }
+                    mediaFilters
                 } else {
                     Button("More filters") {
                         withAnimation {
@@ -191,6 +107,97 @@ struct SearchView: View {
     }
     
     @ViewBuilder
+    private var mediaFilters: some View {
+        genreTagSelector
+
+        mediaFormatSelector
+
+        mediaStatusSelector
+
+        Picker("From year", selection: $viewModel.yearFrom) {
+            Text("None").tag(Optional<Int>(nil))
+            ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
+                Text(String($0)).tag(Optional($0))
+            }
+        }
+        .onChange(of: viewModel.yearFrom) {
+            Task {
+                await viewModel.runSearch()
+            }
+        }
+        
+        Picker("To year", selection: $viewModel.yearTo) {
+            Text("None").tag(Optional<Int>(nil))
+            let startYear = (viewModel.yearFrom ?? 1940) + 1
+            ForEach((startYear...(currentYear+1)).reversed(), id: \.self) {
+                Text(String($0)).tag(Optional($0))
+            }
+        }
+        .onChange(of: viewModel.yearTo) {
+            Task {
+                await viewModel.runSearch()
+            }
+        }
+        
+        Picker("Season", selection: $viewModel.season) {
+            Text("None").tag(Optional<MediaSeason>(nil))
+            ForEach(MediaSeason.allCases, id: \.self) {
+                Text($0.localizedName).tag(Optional($0))
+            }
+        }
+        .onChange(of: viewModel.season) {
+            Task {
+                await viewModel.runSearch()
+            }
+        }
+        
+        Picker("Country", selection: $viewModel.country) {
+            Text("None").tag(Optional<CountryOfOrigin>(nil))
+            ForEach(CountryOfOrigin.allCases, id: \.self) {
+                Text($0.localizedName).tag(Optional($0))
+            }
+        }
+        .onChange(of: viewModel.country) {
+            Task {
+                await viewModel.runSearch()
+            }
+        }
+        
+        mediaSourcesSelector
+        
+        TriPicker("On my list", selection: $viewModel.mediaOnMyList)
+            .onChange(of: viewModel.mediaOnMyList) {
+                Task {
+                    await viewModel.runSearch()
+                }
+            }
+        
+        TriPicker("Doujinshi", selection: $viewModel.isDoujinshi)
+            .onChange(of: viewModel.isDoujinshi) {
+                Task {
+                    await viewModel.runSearch()
+                }
+            }
+        
+        TriPicker("Adult", selection: $viewModel.isAdult)
+            .onChange(of: viewModel.isAdult) {
+                Task {
+                    await viewModel.runSearch()
+                }
+            }
+        
+        Button("Clear", role: .destructive) {
+            viewModel.clearFilters()
+        }
+
+        Button("Hide filters") {
+            withAnimation {
+                showingMoreFilters = false
+            }
+        }
+    }
+    
+    @ViewBuilder
     private var mediaSortSelector: some View {
         Picker("Sort", selection: $viewModel.sortMedia) {
             Text("Default").tag(MediaSort.searchMatch)
@@ -225,6 +232,7 @@ struct SearchView: View {
                     .foregroundStyle(.primary)
                 Spacer()
                 Text(viewModel.selectedGenresTagsJoined)
+                    .lineLimit(1)
                     .foregroundStyle(.gray)
                 Image(systemName: "chevron.right")
                     .foregroundStyle(.gray)
@@ -253,9 +261,9 @@ struct SearchView: View {
                 Text("Format")
                     .foregroundStyle(.primary)
                 Spacer()
-                ForEach(Array(viewModel.selectedMediaFormat.prefix(3)), id: \.self) { status in
-                    Text(status.localizedName)
-                }
+                viewModel.selectedMediaFormat.map { $0.localizedName }.joined()
+                    .lineLimit(1)
+                    .foregroundStyle(.gray)
                 Image(systemName: "chevron.right")
                     .foregroundStyle(.gray)
             }//:HStack
@@ -287,10 +295,9 @@ struct SearchView: View {
                 Text("Status")
                     .foregroundStyle(.primary)
                 Spacer()
-                ForEach(Array(viewModel.selectedMediaStatus.prefix(3)), id: \.self) { status in
-                    Text(status.localizedName)
-                }
-                .foregroundStyle(.gray)
+                viewModel.selectedMediaStatus.map { $0.localizedName }.joined()
+                    .lineLimit(1)
+                    .foregroundStyle(.gray)
                 Image(systemName: "chevron.right")
                     .foregroundStyle(.gray)
             }//:HStack
@@ -314,6 +321,40 @@ struct SearchView: View {
                 }
             }
         }//:Sheet
+    }
+    
+    private var mediaSourcesSelector: some View {
+        Button(action: { isMediaSourcesPresented.toggle() }, label: {
+            HStack {
+                Text("Source")
+                    .foregroundStyle(.primary)
+                Spacer()
+                viewModel.sources.map { $0.localizedName }.joined()
+                    .lineLimit(1)
+                    .foregroundStyle(.gray)
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.gray)
+            }
+        })
+        .sheet(isPresented: $isMediaSourcesPresented) {
+            MultiSelectionSheet(
+                values: MediaSource.allCases,
+                selectedValues: $viewModel.sources,
+                onDone: {
+                    Task {
+                        await viewModel.runSearch()
+                    }
+                },
+                rowContent: { source in
+                    Text(source.localizedName)
+                }
+            )
+            .onAppear {
+                if viewModel.search.isEmpty {
+                    viewModel.search = " "
+                }
+            }
+        }
     }
 }
 // swiftlint:enable syntactic_sugar

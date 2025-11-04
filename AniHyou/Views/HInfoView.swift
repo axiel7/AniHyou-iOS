@@ -71,7 +71,7 @@ struct HInfoView: View {
             if !isExpanded {
                 values
                     .map { LocalizedStringKey($0) }
-                    .joined(separator: ", ")
+                .joined()
             } else {
                 ForEach(values, id: \.self) {
                     Text(LocalizedStringKey($0))
