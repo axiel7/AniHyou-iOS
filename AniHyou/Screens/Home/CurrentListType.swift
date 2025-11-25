@@ -12,6 +12,7 @@ enum CurrentListType: CaseIterable {
     case behind
     case anime
     case manga
+    case nextSeason
     
     var title: LocalizedStringKey {
         switch self {
@@ -23,6 +24,8 @@ enum CurrentListType: CaseIterable {
             "Watching"
         case .manga:
             "Reading"
+        case .nextSeason:
+            "Next Season"
         }
     }
 }

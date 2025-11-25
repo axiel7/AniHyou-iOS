@@ -20,6 +20,17 @@ directive @typePolicy(
 ) on OBJECT | INTERFACE
 
 """
+A directive used by Apollo iOS to map query input data to cache keys of objects.
+"""
+directive @fieldPolicy(
+  """The field you are setting the @fieldPolicy for."""
+  forField: String!
+
+  """Set of fields used to compute the cache key."""
+  keyArgs: String!
+) repeatable on OBJECT | INTERFACE
+
+"""
 Directs the executor to defer this fragment when the `if` argument is true or undefined.
 """
 directive @defer(

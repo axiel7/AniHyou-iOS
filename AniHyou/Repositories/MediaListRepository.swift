@@ -93,6 +93,34 @@ struct MediaListRepository {
         )
     }
     
+    static func getMySeasonalAnimeList(
+        startDateGreater: Int,
+        startDateLesser: Int,
+        sort: [MediaSort],
+        page: Int32,
+        perPage: Int32 = 25,
+        forceReload: Bool = false
+    ) async -> PagedResult<CommonMediaListEntry>? {
+        await Network.fetchPagedResult(
+            MySeasonalAnimeQuery(
+                page: .some(page),
+                perPage: .some(perPage),
+                startDate_greater: .some(startDateGreater),
+                startDate_lesser: .some(startDateLesser),
+                sort: .some(sort.map({ .case($0) }))
+            ),
+            forceReload: forceReload,
+            extractItems: {
+                $0.page?.media?.compactMap {
+                    if $0?.mediaListEntry?.status == .planning {
+                        $0?.mediaListEntry?.fragments.commonMediaListEntry
+                    } else { nil }
+                }
+            },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
+    }
+    
     static func updateListStatus(mediaId: Int32, status: MediaListStatus) async {
         do {
             let result = try await Network.shared.apollo.perform(

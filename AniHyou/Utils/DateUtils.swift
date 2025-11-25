@@ -29,6 +29,12 @@ extension Date {
     var weekday: Int {
         Calendar.current.component(.weekday, from: self)
     }
+    
+    func formatted(format: String) -> String {
+         let dateformat = DateFormatter()
+         dateformat.dateFormat = format
+         return dateformat.string(from: self)
+     }
 
     var season: MediaSeason {
         switch self.month {
@@ -107,6 +113,10 @@ extension Date {
             day: GraphQLNullable<Int32>(integerLiteral: Int32(self.day))
         )
     }
+    
+    func toFuzzyDateInt() -> Int {
+        Int(formatted(format: "yyyyMMdd"))!
+    }
 }
 
 extension Calendar {
@@ -150,6 +160,34 @@ extension TimeInterval {
         formatter.allowedUnits = units
         formatter.unitsStyle = unitsStyle
         return formatter.string(from: self)
+    }
+}
+
+extension MediaSeason {
+    var startMonth: Int {
+        switch self {
+        case .winter:
+            12
+        case .spring:
+            3
+        case .summer:
+            6
+        case .fall:
+            9
+        }
+    }
+    
+    var endMonth: Int {
+        switch self {
+        case .winter:
+            2
+        case .spring:
+            5
+        case .summer:
+            8
+        case .fall:
+            11
+        }
     }
 }
 
@@ -199,4 +237,25 @@ func date(year: Int, month: Int, day: Int) -> Date? {
     dateComponents.day = day
     dateComponents.month = month
     return Calendar(identifier: .gregorian).date(from: dateComponents)
+}
+
+func currentSeasonStartDate() -> Date {
+    let now = Date()
+
+    let startMonth = now.season.startMonth
+    let startYear = (now.month == 1) ? now.year - 1 : now.year
+
+    return date(year: startYear, month: startMonth, day: 1)!
+}
+
+func currentSeasonEndDate() -> Date {
+    let now = Date()
+    let calendar = Calendar.current
+
+    let endMonth = now.season.endMonth
+    let endYear = (now.month == 12) ? now.year + 1 : now.year
+
+    // First day of month → then get the last day
+    let startOfMonth = date(year: endYear, month: endMonth, day: 1)
+    return calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth!)!
 }

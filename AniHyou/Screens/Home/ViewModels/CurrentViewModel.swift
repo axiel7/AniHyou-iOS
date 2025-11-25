@@ -16,8 +16,9 @@ import AniListAPI
     var behindList: [CommonMediaListEntry] = []
     var animeList: [CommonMediaListEntry] = []
     var mangaList: [CommonMediaListEntry] = []
+    var nextSeasonList: [CommonMediaListEntry] = []
     var hasNothing: Bool {
-        airingList.isEmpty && behindList.isEmpty && animeList.isEmpty && mangaList.isEmpty
+        airingList.isEmpty && behindList.isEmpty && animeList.isEmpty && mangaList.isEmpty && nextSeasonList.isEmpty
     }
     
     func fetchLists(refresh: Bool = false) async {
@@ -37,6 +38,8 @@ import AniListAPI
         
         mangaList = await getMediaList(.manga, refresh: refresh) ?? []
         
+        nextSeasonList = await getSeasonList(refresh: refresh) ?? []
+        
         isLoading = false
     }
     
@@ -48,6 +51,16 @@ import AniListAPI
             sort: [.updatedTimeDesc],
             page: nil,
             perPage: nil,
+            forceReload: refresh
+        )?.data
+    }
+    
+    private func getSeasonList(refresh: Bool) async -> [CommonMediaListEntry]? {
+        return await MediaListRepository.getMySeasonalAnimeList(
+            startDateGreater: currentSeasonStartDate().toFuzzyDateInt(),
+            startDateLesser: currentSeasonEndDate().toFuzzyDateInt(),
+            sort: [.popularityDesc],
+            page: 1,
             forceReload: refresh
         )?.data
     }
@@ -90,6 +103,8 @@ import AniListAPI
             animeList
         case .manga:
             mangaList
+        case .nextSeason:
+            nextSeasonList
         }
     }
     
@@ -103,6 +118,8 @@ import AniListAPI
             animeList = value
         case .manga:
             mangaList = value
+        case .nextSeason:
+            nextSeasonList = value
         }
     }
 }

@@ -32,6 +32,8 @@ struct CurrentView: View {
                             viewModel.animeList
                         case .manga:
                             viewModel.mangaList
+                        case .nextSeason:
+                            viewModel.nextSeasonList
                         }
                         if !items.isEmpty {
                             list(type: type, items: items)
