@@ -21,6 +21,9 @@ import AniListAPI
         airingList.isEmpty && behindList.isEmpty && animeList.isEmpty && mangaList.isEmpty && nextSeasonList.isEmpty
     }
     
+    private let nowSeason = Date.now.getCurrentAnimeSeason()
+    private let nextSeason = Date.now.getNextAnimeSeason()
+    
     func fetchLists(refresh: Bool = false) async {
         isLoading = true
         
@@ -38,7 +41,7 @@ import AniListAPI
         
         mangaList = await getMediaList(.manga, refresh: refresh) ?? []
         
-        nextSeasonList = await getSeasonList(refresh: refresh) ?? []
+        nextSeasonList = await getSeasonList(refresh: refresh)
         
         isLoading = false
     }
@@ -55,14 +58,22 @@ import AniListAPI
         )?.data
     }
     
-    private func getSeasonList(refresh: Bool) async -> [CommonMediaListEntry]? {
-        return await MediaListRepository.getMySeasonalAnimeList(
-            startDateGreater: currentSeasonStartDate().toFuzzyDateInt(),
-            startDateLesser: currentSeasonEndDate().toFuzzyDateInt(),
+    private func getSeasonList(refresh: Bool) async -> [CommonMediaListEntry] {
+        let nowSeasonList = await MediaListRepository.getMySeasonalAnimeList(
+            season: nowSeason,
             sort: [.popularityDesc],
             page: 1,
             forceReload: refresh
-        )?.data
+        )?.data ?? []
+        
+        let nextSeasonList = await MediaListRepository.getMySeasonalAnimeList(
+            season: nextSeason,
+            sort: [.popularityDesc],
+            page: 1,
+            forceReload: refresh
+        )?.data ?? []
+        
+        return nowSeasonList + nextSeasonList
     }
     
     func updateEntryProgress(of entry: CommonMediaListEntry, type: CurrentListType) async {

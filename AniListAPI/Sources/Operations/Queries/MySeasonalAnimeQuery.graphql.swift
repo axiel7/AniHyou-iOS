@@ -8,35 +8,35 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "MySeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MySeasonalAnime($page: Int, $perPage: Int, $startDate_greater: FuzzyDateInt, $startDate_lesser: FuzzyDateInt, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media( startDate_greater: $startDate_greater startDate_lesser: $startDate_lesser sort: $sort onList: true ) { __typename id mediaListEntry { __typename ...CommonMediaListEntry } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query MySeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort, onList: true) { __typename id mediaListEntry { __typename ...CommonMediaListEntry } } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, CommonMediaListEntry.self, CommonPage.self, FuzzyDateFragment.self]
     ))
 
   public var page: GraphQLNullable<Int32>
   public var perPage: GraphQLNullable<Int32>
-  public var startDate_greater: GraphQLNullable<FuzzyDateInt>
-  public var startDate_lesser: GraphQLNullable<FuzzyDateInt>
+  public var season: GraphQLNullable<GraphQLEnum<MediaSeason>>
+  public var seasonYear: GraphQLNullable<Int32>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
 
   public init(
     page: GraphQLNullable<Int32>,
     perPage: GraphQLNullable<Int32>,
-    startDate_greater: GraphQLNullable<FuzzyDateInt>,
-    startDate_lesser: GraphQLNullable<FuzzyDateInt>,
+    season: GraphQLNullable<GraphQLEnum<MediaSeason>>,
+    seasonYear: GraphQLNullable<Int32>,
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
   ) {
     self.page = page
     self.perPage = perPage
-    self.startDate_greater = startDate_greater
-    self.startDate_lesser = startDate_lesser
+    self.season = season
+    self.seasonYear = seasonYear
     self.sort = sort
   }
 
   @_spi(Unsafe) public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
-    "startDate_greater": startDate_greater,
-    "startDate_lesser": startDate_lesser,
+    "season": season,
+    "seasonYear": seasonYear,
     "sort": sort
   ] }
 
@@ -68,8 +68,8 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
       @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("media", [Medium?]?.self, arguments: [
-          "startDate_greater": .variable("startDate_greater"),
-          "startDate_lesser": .variable("startDate_lesser"),
+          "season": .variable("season"),
+          "seasonYear": .variable("seasonYear"),
           "sort": .variable("sort"),
           "onList": true
         ]),

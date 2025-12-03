@@ -94,8 +94,7 @@ struct MediaListRepository {
     }
     
     static func getMySeasonalAnimeList(
-        startDateGreater: Int,
-        startDateLesser: Int,
+        season: AnimeSeason,
         sort: [MediaSort],
         page: Int32,
         perPage: Int32 = 25,
@@ -105,8 +104,8 @@ struct MediaListRepository {
             MySeasonalAnimeQuery(
                 page: .some(page),
                 perPage: .some(perPage),
-                startDate_greater: .some(startDateGreater),
-                startDate_lesser: .some(startDateLesser),
+                season: .some(.case(season.season)),
+                seasonYear: .some(Int32(season.year)),
                 sort: .some(sort.map({ .case($0) }))
             ),
             forceReload: forceReload,

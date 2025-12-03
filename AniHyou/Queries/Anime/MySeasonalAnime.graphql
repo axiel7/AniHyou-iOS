@@ -1,6 +1,6 @@
-query MySeasonalAnime($page: Int, $perPage: Int, $startDate_greater: FuzzyDateInt, $startDate_lesser: FuzzyDateInt, $sort: [MediaSort]) {
+query MySeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) {
     Page(page: $page, perPage: $perPage) {
-        media( startDate_greater: $startDate_greater, startDate_lesser: $startDate_lesser, sort: $sort, onList: true) {
+        media(season: $season, seasonYear: $seasonYear, sort: $sort, onList: true) {
             id
             mediaListEntry {
                 ...CommonMediaListEntry
