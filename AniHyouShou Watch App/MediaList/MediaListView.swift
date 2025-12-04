@@ -50,7 +50,11 @@ struct MediaListItemStandardView: View {
             Text(item.media?.title?.userPreferred ?? "")
                 .lineLimit(2)
             Spacer()
-            Text("\(item.progress ?? 0)/\(item.maxProgress)")
+            if let maxProgress = item.maxProgress {
+                Text("\(item.progressPreferred ?? 0)/\(maxProgress)")
+            } else {
+                Text("\(item.progressPreferred ?? 0)")
+            }
         }
     }
 }

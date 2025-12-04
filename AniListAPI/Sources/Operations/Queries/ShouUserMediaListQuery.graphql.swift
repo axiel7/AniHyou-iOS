@@ -9,7 +9,7 @@ public struct ShouUserMediaListQuery: GraphQLQuery {
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
       #"query ShouUserMediaList($page: Int, $perPage: Int, $userId: Int, $type: MediaType, $statusIn: [MediaListStatus], $sort: [MediaListSort]) { Page(page: $page, perPage: $perPage) { __typename mediaList(userId: $userId, type: $type, status_in: $statusIn, sort: $sort) { __typename ...ShouUserMediaList } pageInfo { __typename ...CommonPage } } }"#,
-      fragments: [CommonPage.self, ShouUserMediaList.self]
+      fragments: [BasicMediaListEntry.self, CommonPage.self, FuzzyDateFragment.self, ShouUserMediaList.self]
     ))
 
   public var page: GraphQLNullable<Int32>
@@ -101,7 +101,8 @@ public struct ShouUserMediaListQuery: GraphQLQuery {
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
           ShouUserMediaListQuery.Data.Page.MediaList.self,
-          ShouUserMediaList.self
+          ShouUserMediaList.self,
+          BasicMediaListEntry.self
         ] }
 
         /// The id of the list entry
@@ -115,15 +116,38 @@ public struct ShouUserMediaListQuery: GraphQLQuery {
         public var progressVolumes: Int? { __data["progressVolumes"] }
         /// The watching/reading status
         public var status: GraphQLEnum<AniListAPI.MediaListStatus>? { __data["status"] }
+        /// The score of the entry
+        public var score: Double? { __data["score"] }
+        /// Map of advanced scores with name keys
+        public var advancedScores: AniListAPI.Json? { __data["advancedScores"] }
+        /// The amount of times the user has rewatched/read the media
+        public var `repeat`: Int? { __data["repeat"] }
+        /// If the entry should only be visible to authenticated user
+        public var `private`: Bool? { __data["private"] }
+        /// If the entry shown be hidden from non-custom lists
+        public var hiddenFromStatusLists: Bool? { __data["hiddenFromStatusLists"] }
+        /// When the entry was started by the user
+        public var startedAt: StartedAt? { __data["startedAt"] }
+        /// When the entry was completed by the user
+        public var completedAt: CompletedAt? { __data["completedAt"] }
+        /// Text notes
+        public var notes: String? { __data["notes"] }
+        /// Map of booleans for which custom lists the entry are in
+        public var customLists: AniListAPI.Json? { __data["customLists"] }
 
         public struct Fragments: FragmentContainer {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
           public var shouUserMediaList: ShouUserMediaList { _toFragment() }
+          public var basicMediaListEntry: BasicMediaListEntry { _toFragment() }
         }
 
         public typealias Media = ShouUserMediaList.Media
+
+        public typealias StartedAt = BasicMediaListEntry.StartedAt
+
+        public typealias CompletedAt = BasicMediaListEntry.CompletedAt
       }
 
       /// Page.PageInfo

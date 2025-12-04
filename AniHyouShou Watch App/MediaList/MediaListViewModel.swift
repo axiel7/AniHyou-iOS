@@ -38,15 +38,10 @@ import AniListAPI
     }
 
     func updateEntryProgress(of entry: ShouUserMediaList) async {
-        let newProgress = (entry.progress ?? 0) + 1
-        // Things that have no maxProgress are unfinished and thus can not be set as completed
-        let newStatus: MediaListStatus? =
-            entry.maxProgress == 0 ? nil :
-            (newProgress >= entry.maxProgress ? .completed : nil)
-        if let result = await MediaListRepository.updateProgress(
-            entryId: Int32(entry.id),
-            progress: Int32(newProgress),
-            status: newStatus
+        if let result = await MediaListRepository.incrementOneProgress(
+            of: entry.fragments.basicMediaListEntry,
+            totalProgress: entry.totalProgress,
+            totalVolumes: entry.media?.volumes
         ) {
             await onEntryUpdated(result)
         }

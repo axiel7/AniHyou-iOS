@@ -163,9 +163,15 @@ private struct MediaListItemView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        Text("\(item.progress ?? 0)/\(item.maxProgress)")
-                            .foregroundStyle(.secondary)
-                            .frame(width: 40, alignment: .leading)
+                        Group {
+                            if let maxProgress = item.maxProgress {
+                                Text("\(item.progressPreferred ?? 0)/\(maxProgress)")
+                            } else {
+                                Text("\(item.progressPreferred ?? 0)")
+                            }
+                        }
+                        .foregroundStyle(.secondary)
+                        .frame(width: 40, alignment: .leading)
                         
                         if let schedule = item.media?.nextAiringEpisode {
                             AiringText(

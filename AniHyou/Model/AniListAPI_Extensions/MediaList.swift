@@ -33,22 +33,41 @@ extension ShouUserMediaList {
         } else { return nil }
     }
     
+    var totalProgress: Int? {
+        switch media?.type?.value {
+        case .anime:
+            media?.episodes
+        case .manga:
+            media?.chapters
+        default:
+            nil
+        }
+    }
+    
     var isVolumeProgress: Bool {
         (progress == nil || progress == 0) && (progressVolumes ?? 0) > 0
     }
     
-    var maxProgress: Int {
+    var progressPreferred: Int? {
+        if isVolumeProgress {
+            progressVolumes
+        } else {
+            progress
+        }
+    }
+    
+    var maxProgress: Int? {
         switch media?.type?.value {
         case .anime:
-            media?.episodes ?? 0
+            media?.episodes
         case .manga:
             if isVolumeProgress {
-                media?.volumes ?? 0
+                media?.volumes
             } else {
-                media?.chapters ?? 0
+                media?.chapters
             }
         default:
-            0
+            nil
         }
     }
 }

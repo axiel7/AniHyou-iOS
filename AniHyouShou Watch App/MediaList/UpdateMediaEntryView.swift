@@ -20,7 +20,11 @@ struct UpdateMediaEntryView: View {
                 .font(.title3)
             Spacer()
 
-            Text("\(entry?.progress ?? 0)/\(entry?.maxProgress ?? 0)")
+            if let maxProgress = entry?.maxProgress {
+                Text("\(entry?.progressPreferred ?? 0)/\(maxProgress)")
+            } else {
+                Text("\(entry?.progressPreferred ?? 0)")
+            }
 
             Button(
                 action: {
@@ -33,7 +37,13 @@ struct UpdateMediaEntryView: View {
                         ProgressView()
                         .frame(height: 13)
                     } else {
-                        Text("+1")
+                        if entry?.media?.type?.value == .anime {
+                            Label("Ep", systemImage: "plus")
+                        } else {
+                            Label(entry?.isVolumeProgress == true ? "Vol" : "Ch",
+                                  systemImage: "plus"
+                            )
+                        }
                     }
                 }
             )

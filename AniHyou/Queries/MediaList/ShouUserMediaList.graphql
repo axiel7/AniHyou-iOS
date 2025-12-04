@@ -28,7 +28,5 @@ fragment ShouUserMediaList on MediaList {
             airingAt
         }
     }
-    progress
-    progressVolumes
-    status
+    ...BasicMediaListEntry
 }
