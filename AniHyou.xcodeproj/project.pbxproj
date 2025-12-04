@@ -22,6 +22,10 @@
 		4815DFA82A2ED1DA00352A9B /* AniListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4815DFA72A2ED1DA00352A9B /* AniListAPI */; };
 		4815DFAA2A2ED1DF00352A9B /* AniListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4815DFA92A2ED1DF00352A9B /* AniListAPI */; };
 		4815DFAC2A2ED49F00352A9B /* ExpandableRichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */; };
+		48172A382EE1AB3600128E70 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EFCDD629FFAD200096BF6E /* WidgetKit.framework */; };
+		48172A392EE1AB3600128E70 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EFCDD829FFAD200096BF6E /* SwiftUI.framework */; };
+		48172A442EE1AB3800128E70 /* AniHyouShou WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 48172A372EE1AB3600128E70 /* AniHyouShou WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48172A4D2EE1AC0C00128E70 /* LaunchAppWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48172A4C2EE1AC0C00128E70 /* LaunchAppWidget.swift */; };
 		481A6B0928637C1D00AB9C89 /* DatePickerToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */; };
 		481AD4DE2851CE73001779EE /* AniHyouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DD2851CE73001779EE /* AniHyouApp.swift */; };
 		481AD4E02851CE73001779EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AD4DF2851CE73001779EE /* ContentView.swift */; };
@@ -324,6 +328,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		48172A422EE1AB3800128E70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481AD4D22851CE73001779EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48172A362EE1AB3600128E70;
+			remoteInfo = "AniHyouShou WidgetExtension";
+		};
 		48218B132BD1157800A03421 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 481AD4D22851CE73001779EE /* Project object */;
@@ -348,6 +359,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		48172A492EE1AB3800128E70 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				48172A442EE1AB3800128E70 /* AniHyouShou WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+		};
 		48EFCDE829FFAD210096BF6E /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			dstPath = "";
@@ -383,6 +403,8 @@
 		480D76A429AB6A9800B56DE1 /* UserSocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialViewModel.swift; sourceTree = "<group>"; };
 		480F8824294262F3004773CC /* AnimeSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSeason.swift; sourceTree = "<group>"; };
 		4815DFAB2A2ED49F00352A9B /* ExpandableRichText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableRichText.swift; sourceTree = "<group>"; };
+		48172A372EE1AB3600128E70 /* AniHyouShou WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AniHyouShou WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48172A4C2EE1AC0C00128E70 /* LaunchAppWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppWidget.swift; sourceTree = "<group>"; };
 		481A6B0828637C1D00AB9C89 /* DatePickerToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerToggleView.swift; sourceTree = "<group>"; };
 		481A6B0A2863944800AB9C89 /* UpdateEntryProgress.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntryProgress.graphql; sourceTree = "<group>"; };
 		481A6B0C2864BEB500AB9C89 /* UpdateEntry.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateEntry.graphql; sourceTree = "<group>"; };
@@ -725,7 +747,35 @@
 		84734AE52A7DF658000BD9E6 /* MediaListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		48172A452EE1AB3800128E70 /* Exceptions for "AniHyouShou Widget" folder in "AniHyouShou WidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 48172A362EE1AB3600128E70 /* AniHyouShou WidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		48172A3A2EE1AB3600128E70 /* AniHyouShou Widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				48172A452EE1AB3800128E70 /* Exceptions for "AniHyouShou Widget" folder in "AniHyouShou WidgetExtension" target */,
+			);
+			path = "AniHyouShou Widget";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		48172A342EE1AB3600128E70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				48172A392EE1AB3600128E70 /* SwiftUI.framework in Frameworks */,
+				48172A382EE1AB3600128E70 /* WidgetKit.framework in Frameworks */,
+			);
+		};
 		481AD4D72851CE73001779EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
@@ -832,6 +882,7 @@
 				481AD4DC2851CE73001779EE /* AniHyou */,
 				48F2790B296EFE77000827F7 /* AniHyouShou Watch App */,
 				48EFCDDA29FFAD200096BF6E /* AniHyou Widget */,
+				48172A3A2EE1AB3600128E70 /* AniHyouShou Widget */,
 				48294CDC2AB936B0005E7CD2 /* Intents */,
 				48218B102BD1157800A03421 /* AniHyouTests */,
 				481AD4DB2851CE73001779EE /* Products */,
@@ -846,6 +897,7 @@
 				48F2790A296EFE77000827F7 /* AniHyou.app */,
 				48EFCDD529FFAD200096BF6E /* AniHyou WidgetExtension.appex */,
 				48218B0F2BD1157800A03421 /* AniHyouTests.xctest */,
+				48172A372EE1AB3600128E70 /* AniHyouShou WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1626,6 +1678,7 @@
 				48EFCDDD29FFAD200096BF6E /* AiringWidget.swift */,
 				48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */,
 				48294CEA2ABA9B95005E7CD2 /* MediaListWidget.swift */,
+				48172A4C2EE1AC0C00128E70 /* LaunchAppWidget.swift */,
 				48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */,
 				48EFCDE029FFAD210096BF6E /* Assets.xcassets */,
 				48EFCDE229FFAD210096BF6E /* Info.plist */,
@@ -1962,6 +2015,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		48172A362EE1AB3600128E70 /* AniHyouShou WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48172A462EE1AB3800128E70 /* Build configuration list for PBXNativeTarget "AniHyouShou WidgetExtension" */;
+			buildPhases = (
+				48172A332EE1AB3600128E70 /* Sources */,
+				48172A342EE1AB3600128E70 /* Frameworks */,
+				48172A352EE1AB3600128E70 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				48172A3A2EE1AB3600128E70 /* AniHyouShou Widget */,
+			);
+			name = "AniHyouShou WidgetExtension";
+			productName = "AniHyouShou WidgetExtension";
+			productReference = 48172A372EE1AB3600128E70 /* AniHyouShou WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		481AD4D92851CE73001779EE /* AniHyou */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 481AD4E82851CE74001779EE /* Build configuration list for PBXNativeTarget "AniHyou" */;
@@ -2039,8 +2110,12 @@
 				48F27906296EFE77000827F7 /* Sources */,
 				48F27907296EFE77000827F7 /* Frameworks */,
 				48F27908296EFE77000827F7 /* Resources */,
+				48172A492EE1AB3800128E70 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				48172A432EE1AB3800128E70 /* PBXTargetDependency */,
 			);
 			name = "AniHyouShou Watch App";
 			packageProductDependencies = (
@@ -2059,9 +2134,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					48172A362EE1AB3600128E70 = {
+						CreatedOnToolsVersion = 26.1;
+					};
 					481AD4D92851CE73001779EE = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -2117,12 +2195,17 @@
 				481AD4D92851CE73001779EE /* AniHyou */,
 				48F27909296EFE77000827F7 /* AniHyouShou Watch App */,
 				48EFCDD429FFAD200096BF6E /* AniHyou WidgetExtension */,
+				48172A362EE1AB3600128E70 /* AniHyouShou WidgetExtension */,
 				48218B0E2BD1157800A03421 /* AniHyouTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		48172A352EE1AB3600128E70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
 		481AD4D82851CE73001779EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
@@ -2495,6 +2578,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		48172A432EE1AB3800128E70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48172A362EE1AB3600128E70 /* AniHyouShou WidgetExtension */;
+			targetProxy = 48172A422EE1AB3800128E70 /* PBXContainerItemProxy */;
 		48218B142BD1157800A03421 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 481AD4D92851CE73001779EE /* AniHyou */;
@@ -2563,6 +2650,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		48172A472EE1AB3800128E70 /* Debug configuration for PBXNativeTarget "AniHyouShou WidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AniHyouShou Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AniHyouShou Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.8.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.watchkitapp.AniHyouShou-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.6;
+			};
+			name = Debug;
+		};
+		48172A482EE1AB3800128E70 /* Release configuration for PBXNativeTarget "AniHyouShou WidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AniHyouShou Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AniHyouShou Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.8.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.watchkitapp.AniHyouShou-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.6;
+			};
+			name = Release;
 		481AD4E62851CE74001779EE /* Debug configuration for PBXProject "AniHyou" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 488C267F2853822E0005EE15 /* Config.xcconfig */;
@@ -2825,6 +2984,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2854,6 +3015,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axiel7.AniHyou.AniHyou-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2925,6 +3088,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		48172A462EE1AB3800128E70 /* Build configuration list for PBXNativeTarget "AniHyouShou WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48172A472EE1AB3800128E70 /* Debug configuration for PBXNativeTarget "AniHyouShou WidgetExtension" */,
+				48172A482EE1AB3800128E70 /* Release configuration for PBXNativeTarget "AniHyouShou WidgetExtension" */,
+			);
+			defaultConfigurationName = Release;
+		};
 		481AD4D52851CE73001779EE /* Build configuration list for PBXProject "AniHyou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
