@@ -144,6 +144,7 @@
 		4885F92F2EE1B243002C6322 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EFCDD629FFAD200096BF6E /* WidgetKit.framework */; };
 		4885F9302EE1B243002C6322 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EFCDD829FFAD200096BF6E /* SwiftUI.framework */; };
 		4885F93B2EE1B244002C6322 /* AniHyouShou WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4885F92E2EE1B243002C6322 /* AniHyouShou WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4885F9462EE1B372002C6322 /* LaunchAppWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F9452EE1B372002C6322 /* LaunchAppWidget.swift */; };
 		488763D62977F83F00402934 /* HorizontalBarStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763D52977F83F00402934 /* HorizontalBarStatsView.swift */; };
 		488763D82977F8FF00402934 /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763D72977F8FF00402934 /* Stat.swift */; };
 		488763E129781AD200402934 /* MediaStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763E029781AD200402934 /* MediaStatsView.swift */; };
@@ -534,6 +535,7 @@
 		488408D32BFB86FA00580DA0 /* MediaCustomListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCustomListsView.swift; sourceTree = "<group>"; };
 		4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTagSelectionView.swift; sourceTree = "<group>"; };
 		4885F92E2EE1B243002C6322 /* AniHyouShou WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AniHyouShou WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4885F9452EE1B372002C6322 /* LaunchAppWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppWidget.swift; sourceTree = "<group>"; };
 		488763D52977F83F00402934 /* HorizontalBarStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarStatsView.swift; sourceTree = "<group>"; };
 		488763D72977F8FF00402934 /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		488763D92978180B00402934 /* MediaStats.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaStats.graphql; sourceTree = "<group>"; };
@@ -1676,6 +1678,7 @@
 				48EFCDDD29FFAD200096BF6E /* AiringWidget.swift */,
 				48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */,
 				48294CEA2ABA9B95005E7CD2 /* MediaListWidget.swift */,
+				4885F9452EE1B372002C6322 /* LaunchAppWidget.swift */,
 				48294CED2ABAA4BB005E7CD2 /* WidgetUtils.swift */,
 				48EFCDE029FFAD210096BF6E /* Assets.xcassets */,
 				48EFCDE229FFAD210096BF6E /* Info.plist */,
@@ -2515,6 +2518,7 @@
 				48294CE82ABA93F9005E7CD2 /* SelectMediaTypeIntent.swift in Sources */,
 				48294CE12AB95020005E7CD2 /* MediaListStatus.swift in Sources */,
 				48B7ABE72BB328AB0047998F /* ThreadComment.swift in Sources */,
+				4885F9462EE1B372002C6322 /* LaunchAppWidget.swift in Sources */,
 				48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */,
 				48EFCDEE29FFB0A30096BF6E /* NetworkInterceptorProvider.swift in Sources */,
 				486354EC2B73446A00A5DBB7 /* AiringText.swift in Sources */,

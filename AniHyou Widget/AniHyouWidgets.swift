@@ -14,5 +14,6 @@ struct AniHyouWidgets: WidgetBundle {
         AiringWidget()
         AnimeBehindWidget()
         MediaListWidget()
+        LaunchAppWidget()
     }
 }
