@@ -20,21 +20,24 @@ struct AnimeBehindProvider: TimelineProvider {
         )
     }
     
-    func getSnapshot(in context: Context, completion: @escaping (AnimeBehindEntry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping @Sendable (AnimeBehindEntry) -> Void) {
+        let placeholder = placeholder(in: context)
         getAnimeTimeline(context: context, completion: {
             if let entry = $0.entries.first {
                 completion(entry)
             } else {
-                completion(placeholder(in: context))
+                completion(placeholder)
             }
         })
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<AnimeBehindEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<AnimeBehindEntry>) -> Void) {
         getAnimeTimeline(context: context, completion: completion)
     }
     
-    func getAnimeTimeline(context: Context, completion: @escaping (Timeline<AnimeBehindEntry>) -> Void) {
+    func getAnimeTimeline(context: Context, completion: @escaping @Sendable (Timeline<AnimeBehindEntry>) -> Void) {
+        let displaySize = context.displaySize
+        let family = context.family
         let now = Date.now
         
         let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
@@ -44,9 +47,10 @@ struct AnimeBehindProvider: TimelineProvider {
                 animeList: [],
                 date: now,
                 placeholderText: "Login to use this widget",
-                widgetSize: context.displaySize
+                widgetSize: displaySize
             )
             completion(Timeline(entries: [entry], policy: .never))
+            return
         }
         
         var nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 12, to: now)!
@@ -63,14 +67,14 @@ struct AnimeBehindProvider: TimelineProvider {
                 if let mediaList = result.data?.page?.mediaList {
                     var tempList = transformToAnimeBehindList(mediaList)
                     
-                    let maxItems = context.family.maxMediaListItems
+                    let maxItems = family.maxMediaListItems
                     tempList = Array(tempList.prefix(maxItems))
                     
                     let entry = AnimeBehindEntry(
                         animeList: tempList,
                         date: nextUpdateDate,
                         placeholderText: nil,
-                        widgetSize: context.displaySize
+                        widgetSize: displaySize
                     )
                     completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
                 }
@@ -81,7 +85,7 @@ struct AnimeBehindProvider: TimelineProvider {
                     animeList: [],
                     date: nextUpdateDate,
                     placeholderText: "Error updating:\n\(error)",
-                    widgetSize: context.displaySize
+                    widgetSize: displaySize
                 )
                 completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             }

@@ -8,6 +8,7 @@
 import Foundation
 import AniListAPI
 
+@MainActor
 @Observable class MediaListViewModel {
 
     private let userId = LoginRepository.authUserId()

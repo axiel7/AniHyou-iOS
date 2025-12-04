@@ -19,21 +19,24 @@ struct AiringProvider: TimelineProvider {
         )
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (AiringEntry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping @Sendable (AiringEntry) -> Void) {
+        let placeholder = placeholder(in: context)
         getAnimeTimeline(context: context, completion: {
             if let entry = $0.entries.first {
                 completion(entry)
             } else {
-                completion(placeholder(in: context))
+                completion(placeholder)
             }
         })
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<AiringEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<AiringEntry>) -> Void) {
         getAnimeTimeline(context: context, completion: completion)
     }
     
-    func getAnimeTimeline(context: Context, completion: @escaping (Timeline<AiringEntry>) -> Void) {
+    func getAnimeTimeline(context: Context, completion: @escaping @Sendable (Timeline<AiringEntry>) -> Void) {
+        let displaySize = context.displaySize
+        let family = context.family
         let now = Date.now
         let userId = UserDefaults(suiteName: ANIHYOU_GROUP)?.integer(forKey: USER_ID_KEY) ?? 0
 
@@ -62,14 +65,14 @@ struct AiringProvider: TimelineProvider {
                 if let mediaList = result.data?.page?.mediaList {
                     var tempList = transformToAiringAnimeList(mediaList)
                     
-                    let maxItems = context.family.maxMediaListItems
+                    let maxItems = family.maxMediaListItems
                     tempList = Array(tempList.prefix(maxItems))
 
                     let entry = AiringEntry(
                         animeList: tempList,
                         date: nextUpdateDate,
                         placeholderText: nil,
-                        widgetSize: context.displaySize
+                        widgetSize: displaySize
                     )
                     let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                     completion(timeline)
@@ -81,7 +84,7 @@ struct AiringProvider: TimelineProvider {
                     animeList: [],
                     date: nextUpdateDate,
                     placeholderText: "Error updating",
-                    widgetSize: context.displaySize
+                    widgetSize: displaySize
                 )
                 completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             }

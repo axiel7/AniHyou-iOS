@@ -33,17 +33,17 @@ enum MediaTypeAppEnum: String, AppEnum {
         }
     }
     
-    public static var typeDisplayRepresentation = TypeDisplayRepresentation(stringLiteral: "Media Type")
+    public static let typeDisplayRepresentation = TypeDisplayRepresentation(stringLiteral: "Media Type")
     
-    public static var caseDisplayRepresentations: [MediaTypeAppEnum: DisplayRepresentation] = [
+    public static let caseDisplayRepresentations: [MediaTypeAppEnum: DisplayRepresentation] = [
         .anime: "Anime",
         .manga: "Manga"
     ]
 }
 
 struct SelectMediaTypeIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Select Media Type"
-    static var description = IntentDescription("Choose between Anime or Manga.")
+    static let title: LocalizedStringResource = "Select Media Type"
+    static let description = IntentDescription("Choose between Anime or Manga.")
     
     @Parameter(title: "Media Type", default: MediaTypeAppEnum.anime)
     var mediaType: MediaTypeAppEnum

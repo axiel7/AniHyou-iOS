@@ -45,7 +45,7 @@ struct ContentView: View {
         }//:Group
         .onChange(of: connectivityManager.receivedMessage) {
             if let message = connectivityManager.receivedMessage, !message.isEmpty {
-                Task.init {
+                Task {
                     await viewModel.saveUserData(key: connectivityManager.key, value: message)
                 }
             }
