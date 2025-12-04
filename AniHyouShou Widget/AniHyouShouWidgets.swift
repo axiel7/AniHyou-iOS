@@ -1,5 +1,5 @@
 //
-//  AniHyouShou_WidgetBundle.swift
+//  AniHyouShouWidgets.swift
 //  AniHyouShou Widget
 //
 //  Created by Axel Lopez on 4/12/25.
