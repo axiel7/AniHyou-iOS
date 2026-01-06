@@ -54,9 +54,7 @@ struct DiscoverView: View {
                             media: viewModel.trendingAnimes,
                             hasNextPage: viewModel.hasNextPageTrendingAnime,
                             loadMore: {
-                                await viewModel.getTrendingAnimes(
-                                    page: viewModel.pageTrendingAnime
-                                )
+                                await viewModel.getTrendingAnimes()
                             }
                         )
                         .navigationTitle("Trending Anime")
@@ -85,9 +83,7 @@ struct DiscoverView: View {
                             media: viewModel.trendingManga,
                             hasNextPage: viewModel.hasNextPageTrendingManga,
                             loadMore: {
-                                await viewModel.getTrendingManga(
-                                    page: viewModel.pageTrendingManga
-                                )
+                                await viewModel.getTrendingManga()
                             }
                         )
                         .navigationTitle("Trending Manga")
@@ -108,9 +104,7 @@ struct DiscoverView: View {
                             media: viewModel.newlyAnime,
                             hasNextPage: viewModel.hasNextPageNewlyAnime,
                             loadMore: {
-                                await viewModel.getNewlyAnime(
-                                    page: viewModel.pageNewlyAnime
-                                )
+                                await viewModel.getNewlyAnime()
                             }
                         )
                         .navigationTitle("Newly Added Anime")
@@ -131,9 +125,7 @@ struct DiscoverView: View {
                             media: viewModel.newlyManga,
                             hasNextPage: viewModel.hasNextPageNewlyManga,
                             loadMore: {
-                                await viewModel.getNewlyManga(
-                                    page: viewModel.pageNewlyManga
-                                )
+                                await viewModel.getNewlyManga()
                             }
                         )
                         .navigationTitle("Newly Added Manga")

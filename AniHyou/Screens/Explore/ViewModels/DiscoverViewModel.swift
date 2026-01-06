@@ -16,7 +16,7 @@ import AniListAPI
     // MARK: Airing animes
     var airingAnimes = [AiringAnimesQuery.Data.Page.AiringSchedule]()
 
-    func getAiringAnimes(page: Int32 = 1, forceReload: Bool = false) async {
+    func getAiringAnimes(forceReload: Bool = false) async {
         let todayTimestamp = Int32(Date.now.timeIntervalSince1970)
         
         if let result = await MediaRepository.getAiringAnimes(
@@ -24,8 +24,8 @@ import AniListAPI
             airingAtLesser: nil,
             onMyList: nil,
             sort: [.time],
-            page: page,
-            perPage: 10,
+            page: 1,
+            perPage: 15,
             forceReload: forceReload
         ) {
             airingAnimes = result.data
@@ -52,7 +52,7 @@ import AniListAPI
             year: Int32(nowAnimeSeason.year),
             sort: [.popularityDesc],
             page: page,
-            perPage: 10
+            perPage: 15
         ) {
             seasonAnimes = result.data
         }
@@ -63,12 +63,12 @@ import AniListAPI
     var hasNextPageTrendingAnime = true
     var trendingAnimes = [MediaSortedQuery.Data.Page.Medium]()
 
-    func getTrendingAnimes(page: Int32 = 1, forceReload: Bool = false) async {
+    func getTrendingAnimes(forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.trendingDesc],
             mediaType: .anime,
-            page: page,
-            perPage: 10,
+            page: pageTrendingAnime,
+            perPage: 15,
             forceReload: forceReload
         ) {
             trendingAnimes += result.data
@@ -80,13 +80,13 @@ import AniListAPI
     // MARK: next season
     var nextSeasonAnimes = [SeasonalAnimeQuery.Data.Page.Medium]()
 
-    func getNextSeasonAnimes(page: Int32 = 1) async {
+    func getNextSeasonAnimes() async {
         if let result = await MediaRepository.getAnimeSeasonal(
             season: nextAnimeSeason.season,
             year: Int32(nextAnimeSeason.year),
             sort: [.popularityDesc],
-            page: page,
-            perPage: 10
+            page: 1,
+            perPage: 15
         ) {
             nextSeasonAnimes = result.data
         }
@@ -97,12 +97,12 @@ import AniListAPI
     var hasNextPageTrendingManga = true
     var trendingManga = [MediaSortedQuery.Data.Page.Medium]()
 
-    func getTrendingManga(page: Int32 = 1, forceReload: Bool = false) async {
+    func getTrendingManga(forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.trendingDesc],
             mediaType: .manga,
-            page: page,
-            perPage: 10,
+            page: pageTrendingManga,
+            perPage: 15,
             forceReload: forceReload
         ) {
             trendingManga += result.data
@@ -116,12 +116,12 @@ import AniListAPI
     var hasNextPageNewlyAnime = true
     var newlyAnime = [MediaSortedQuery.Data.Page.Medium]()
     
-    func getNewlyAnime(page: Int32 = 1, forceReload: Bool = false) async {
+    func getNewlyAnime(forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.idDesc],
             mediaType: .anime,
-            page: page,
-            perPage: 10,
+            page: pageNewlyAnime,
+            perPage: 15,
             forceReload: forceReload
         ) {
             newlyAnime += result.data
@@ -135,12 +135,12 @@ import AniListAPI
     var hasNextPageNewlyManga = true
     var newlyManga = [MediaSortedQuery.Data.Page.Medium]()
     
-    func getNewlyManga(page: Int32 = 1, forceReload: Bool = false) async {
+    func getNewlyManga(forceReload: Bool = false) async {
         if let result = await MediaRepository.getMediaSorted(
             sort: [.idDesc],
             mediaType: .manga,
-            page: page,
-            perPage: 10,
+            page: pageNewlyManga,
+            perPage: 15,
             forceReload: forceReload
         ) {
             newlyManga += result.data
@@ -151,7 +151,7 @@ import AniListAPI
     
     func onRefresh() async {
         if !airingAnimes.isEmpty {
-            await getAiringAnimes(page: 1, forceReload: true)
+            await getAiringAnimes(forceReload: true)
         } else if !airingOnMyList.isEmpty {
             await getAiringOnMyList(forceReload: true)
         }
@@ -159,23 +159,23 @@ import AniListAPI
         if !trendingAnimes.isEmpty {
             pageTrendingAnime = 1
             hasNextPageTrendingAnime = true
-            await getTrendingAnimes(page: 1, forceReload: true)
+            await getTrendingAnimes(forceReload: true)
         }
         if !trendingManga.isEmpty {
             pageTrendingManga = 1
             hasNextPageTrendingManga = true
-            await getTrendingManga(page: 1, forceReload: true)
+            await getTrendingManga(forceReload: true)
         }
         
         if !newlyAnime.isEmpty {
             pageNewlyAnime = 1
             hasNextPageNewlyAnime = true
-            await getNewlyAnime(page: 1, forceReload: true)
+            await getNewlyAnime(forceReload: true)
         }
         if !newlyManga.isEmpty {
             pageNewlyManga = 1
             hasNextPageNewlyManga = true
-            await getNewlyManga(page: 1, forceReload: true)
+            await getNewlyManga(forceReload: true)
         }
     }
 }
