@@ -82,7 +82,11 @@ import AniListAPI
             totalProgress: entry.media?.maxProgress(isVolume: false),
             totalVolumes: entry.media?.maxProgress(isVolume: true)
         ) {
-            await onEntryUpdated(newEntry, type: type)
+            if type == .nextSeason {
+                await fetchLists(refresh: true)
+            } else {
+                await onEntryUpdated(newEntry, type: type)
+            }
         }
     }
     
