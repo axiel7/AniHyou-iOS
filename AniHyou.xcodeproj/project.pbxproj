@@ -247,6 +247,8 @@
 		48DBAF8129B0796F00A75167 /* UserStatsHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DBAF8029B0796F00A75167 /* UserStatsHostView.swift */; };
 		48DBAF8329B07AB000A75167 /* UserStatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DBAF8229B07AB000A75167 /* UserStatType.swift */; };
 		48DBAF8529B082EA00A75167 /* OverviewStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DBAF8429B082EA00A75167 /* OverviewStatsViewModel.swift */; };
+		48DC4E912F14328E0012BDA6 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267828537B5F0005EE15 /* StringUtils.swift */; };
+		48DC4E922F14328E0012BDA6 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C267828537B5F0005EE15 /* StringUtils.swift */; };
 		48DD40492994EA9200FED7BF /* GenericNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD40482994EA9200FED7BF /* GenericNotification.swift */; };
 		48DD404E2994FF6500FED7BF /* NotificationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD404D2994FF6500FED7BF /* NotificationItemView.swift */; };
 		48DF50F52A669B7C00DF1C87 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DF50F42A669B7C00DF1C87 /* StoreKit.framework */; };
@@ -2520,6 +2522,7 @@
 				48B7ABE72BB328AB0047998F /* ThreadComment.swift in Sources */,
 				4885F9462EE1B372002C6322 /* LaunchAppWidget.swift in Sources */,
 				48294CE42AB95704005E7CD2 /* ModelUtils.swift in Sources */,
+				48DC4E922F14328E0012BDA6 /* StringUtils.swift in Sources */,
 				48EFCDEE29FFB0A30096BF6E /* NetworkInterceptorProvider.swift in Sources */,
 				486354EC2B73446A00A5DBB7 /* AiringText.swift in Sources */,
 				48D929E32ABABDF500330C71 /* LoginRepository.swift in Sources */,
@@ -2554,6 +2557,7 @@
 				48F279332970299D000827F7 /* Network.swift in Sources */,
 				48E58E472A85BA7B00EF0CA2 /* ModelUtils.swift in Sources */,
 				48218B052BC5881000A03421 /* DateUtils.swift in Sources */,
+				48DC4E912F14328E0012BDA6 /* StringUtils.swift in Sources */,
 				48B25E702C4AF41100862F4E /* AnimeThemes.swift in Sources */,
 				48F27934297029A0000827F7 /* TokenAddingInterceptor.swift in Sources */,
 				48E58E2E2A85B4DE00EF0CA2 /* MediaList.swift in Sources */,

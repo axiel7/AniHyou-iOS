@@ -10,6 +10,10 @@ import SwiftUI
 import AniListAPI
 
 extension String {
+    
+    func isBlank() -> Bool {
+        return trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 
     var htmlStripped: String {
         self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)

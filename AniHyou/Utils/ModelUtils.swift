@@ -38,6 +38,11 @@ func someIfNotEmpty(_ value: String?) -> GraphQLNullable<String> {
     return .some(value)
 }
 
+func someIfNotBlank(_ value: String?) -> GraphQLNullable<String> {
+    guard let value, !value.isEmpty, !value.isBlank() else { return .none }
+    return .some(value)
+}
+
 extension Collection {
     /// Returns the element at the specified index if it is within bounds, otherwise nil.
     subscript(safe index: Index) -> Element? {

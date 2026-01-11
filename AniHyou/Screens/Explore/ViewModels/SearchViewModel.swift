@@ -11,8 +11,6 @@ import AniListAPI
 @MainActor
 @Observable class SearchViewModel {
 
-    //var currentPage = 1
-    //var hasNextPage = true
     private let perPage = 25
 
     var search: String = ""
@@ -75,6 +73,17 @@ import AniListAPI
 
     func runSearch() async {
         search = search.trimmingCharacters(in: .whitespaces)
+        pageMedia = 1
+        hasNextPageMedia = false
+        await loadNextPage()
+        // workaround for keep showing the searchingView when search text is empty
+        // and a sheet or navigation link is being presented
+        if search.isEmpty {
+            search = " "
+        }
+    }
+    
+    func loadNextPage() async {
         switch type {
         case .anime:
             await searchMedia(type: .anime)
@@ -88,11 +97,6 @@ import AniListAPI
             await searchStudios()
         case .users:
             await searchUsers()
-        }
-        // workaround for keep showing the searchingView when search text is empty
-        // and a sheet or navigation link is being presented
-        if search.isEmpty {
-            search = " "
         }
     }
 
@@ -126,6 +130,8 @@ import AniListAPI
     }
 
     var searchedMedia = [SearchMediaQuery.Data.Page.Medium]()
+    var pageMedia: Int32 = 1
+    var hasNextPageMedia = false
 
     private func searchMedia(type: MediaType) async {
         if search.isEmpty && !hasFilters { return }
@@ -159,9 +165,15 @@ import AniListAPI
             isAdult: isAdult,
             country: country,
             sourceIn: Array(sources),
-            page: 1
+            page: pageMedia
         ) {
-            searchedMedia = result.data
+            if pageMedia == 1 {
+                searchedMedia = result.data
+            } else {
+                searchedMedia.append(contentsOf: result.data)
+            }
+            pageMedia = result.page
+            hasNextPageMedia = result.hasNextPage
         }
         isLoading = false
     }

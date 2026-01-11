@@ -177,7 +177,7 @@ struct MediaRepository {
             SearchMediaQuery(
                 page: .some(page),
                 perPage: .some(perPage),
-                search: someIfNotEmpty(search),
+                search: someIfNotBlank(search),
                 type: .some(.case(type)),
                 sort: .some(sort.map { .case($0) }),
                 genre_in: someIfNotEmpty(genreIn),

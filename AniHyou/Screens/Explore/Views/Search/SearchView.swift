@@ -69,6 +69,13 @@ struct SearchView: View {
                     }
                     .buttonStyle(.plain)
                 }
+                
+                if viewModel.hasNextPageMedia {
+                    HorizontalProgressView()
+                        .task {
+                            await viewModel.loadNextPage()
+                        }
+                }
             case .characters:
                 ForEach(viewModel.searchedCharacters, id: \.id) { item in
                     NavigationLink(destination: CharacterDetailsView(characterId: item.id)) {
