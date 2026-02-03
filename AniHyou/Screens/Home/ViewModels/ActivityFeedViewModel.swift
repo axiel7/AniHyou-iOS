@@ -11,8 +11,9 @@ import AniListAPI
 @MainActor
 @Observable class ActivityFeedViewModel {
     
+    var isLoading = false
     private var currentPage: Int32 = 1
-    var hasNextPage = true
+    var hasNextPage = false
     
     var type = ActivityFeedType.all
     var isFollowing = true
@@ -20,6 +21,7 @@ import AniListAPI
     var activities = [ActivityFeedQuery.Data.Page.Activity]()
     
     func getActivities(forceReload: Bool = false) async {
+        isLoading = true
         if let result = await ActivityRepository.getActivities(
             type: type,
             isFollowing: isFollowing,
@@ -30,6 +32,7 @@ import AniListAPI
             currentPage = result.page
             hasNextPage = result.hasNextPage
         }
+        isLoading = false
     }
     
     func refresh() async {

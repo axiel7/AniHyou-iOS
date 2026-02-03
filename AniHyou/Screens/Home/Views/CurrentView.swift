@@ -58,7 +58,9 @@ struct CurrentView: View {
             .refreshable {
                 await viewModel.fetchLists(refresh: true)
             }
-            .task {
+        }
+        .onAppear {
+            Task {
                 await viewModel.fetchLists()
             }
         }

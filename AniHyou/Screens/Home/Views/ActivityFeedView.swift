@@ -24,11 +24,13 @@ struct ActivityFeedView: View {
                             Divider()
                         }
                     }
-                    if viewModel.hasNextPage {
+                    if viewModel.hasNextPage || viewModel.isLoading {
                         HorizontalProgressView()
                             .padding()
                             .task {
-                                await viewModel.getActivities()
+                                if viewModel.hasNextPage {
+                                    await viewModel.getActivities()
+                                }
                             }
                     }
                 }
@@ -69,6 +71,11 @@ struct ActivityFeedView: View {
         }
         .refreshable {
             await viewModel.refresh()
+        }
+        .onAppear {
+            Task {
+                await viewModel.refresh()
+            }
         }
     }
 }
