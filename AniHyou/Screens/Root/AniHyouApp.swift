@@ -21,11 +21,15 @@ struct AniHyouApp: App {
                 .id(globalAppState.globalId)
                 .tint(Color(hex: accentColor) ?? .accentColor)
                 .task {
+                    await NotificationsManager.fetchAndSendNotifications()
                     //transfer user id from old app versions
                     if LoginRepository.authUserId() == 0 {
                         LoginRepository.saveUserId(id: UserDefaults.standard.integer(forKey: USER_ID_KEY))
                     }
                     await scheduleNotificationFetch()
+                }
+                .sheet(isPresented: $globalAppState.openNotifications) {
+                    NotificationsView()
                 }
         }
         .backgroundTask(.appRefresh(FETCH_NOTIFICATIONS_BACKGROUND_TASK_IDENTIFIER)) {

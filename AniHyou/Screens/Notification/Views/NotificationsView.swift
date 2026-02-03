@@ -12,7 +12,7 @@ struct NotificationsView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel = NotificationsViewModel()
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
-    @State var unreadCount = 0
+    var unreadCount: Int?
 
     var body: some View {
         NavigationStack {
@@ -29,7 +29,7 @@ struct NotificationsView: View {
                         ForEach(viewModel.notifications.indices, id: \.self) { index in
                             NotificationItemView(
                                 notification: viewModel.notifications[index],
-                                isUnread: index < unreadCount
+                                isUnread: index < viewModel.unreadCount
                             )
                         }
 
@@ -41,8 +41,15 @@ struct NotificationsView: View {
                         }
                     }
                     .onChange(of: viewModel.type) {
-                        unreadCount = 0
                         viewModel.resetPage()
+                    }
+                    .task {
+                        if let unreadCount {
+                            viewModel.unreadCount = unreadCount
+                        } else {
+                            await viewModel.getUnreadNotificationsCount()
+                        }
+                        await viewModel.getNotifications()
                     }
                 } else {
                     NotLoggedView()

@@ -33,6 +33,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, @MainActor UNUserNotificatio
         didReceive response: UNNotificationResponse,
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
+        GlobalAppState.shared.openNotifications = true
         completionHandler()
     }
 }

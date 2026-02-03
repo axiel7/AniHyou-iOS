@@ -12,10 +12,11 @@ import UserNotifications
 @MainActor
 @Observable class NotificationsViewModel {
 
+    var unreadCount = 0
     var notifications = [GenericNotification]()
     var type: NotificationTypeGrouped = .all
     var currentPage: Int32 = 1
-    var hasNextPage = true
+    var hasNextPage = false
 
     func getNotifications() async {
         let resetCount = currentPage == 1
@@ -32,8 +33,13 @@ import UserNotifications
             }
         }
     }
-
+    
+    func getUnreadNotificationsCount() async {
+        unreadCount = await UserRepository.getUnreadNotificationsCount() ?? 0
+    }
+    
     func resetPage() {
+        unreadCount = 0
         notifications.removeAll()
         currentPage = 1
         hasNextPage = true

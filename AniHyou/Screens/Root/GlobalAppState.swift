@@ -14,4 +14,6 @@ final class GlobalAppState {
 
     // We use this uuid to reset de root content view
     var globalId = UUID()
+    
+    var openNotifications = false
 }
