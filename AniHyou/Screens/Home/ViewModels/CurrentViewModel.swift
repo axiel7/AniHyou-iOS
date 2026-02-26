@@ -95,6 +95,7 @@ import AniListAPI
         guard let foundIndex = list.firstIndex(where: { $0.id == entry.id }) else { return }
         if list[safe: foundIndex]?.status != entry.status {
             list.removeAll(where: { $0.id == entry.id })
+            MediaListRepository.reloadWidgets()
         } else {
             if let updatedItem: CommonMediaListEntry = await MediaListRepository.updateCachedEntry(entry) {
                 list[foundIndex] = updatedItem

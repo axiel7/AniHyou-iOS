@@ -146,6 +146,7 @@ import AniListAPI
 
     func onEntryDeleted(entryId: Int) {
         mediaList.removeAll(where: { $0.id == entryId })
+        MediaListRepository.reloadWidgets()
     }
 
     func onSortChanged(_ newValue: MediaListSort, isAscending: Bool) async {

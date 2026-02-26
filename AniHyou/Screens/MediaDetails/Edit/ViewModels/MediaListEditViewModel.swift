@@ -91,6 +91,9 @@ import AniListAPI
             customLists: customLists.isEmpty ? nil : customLists,
             notes: notes
         ) {
+            if shouldUpdateWidget(newEntry: updatedEntry) {
+                MediaListRepository.reloadWidgets()
+            }
             self.entry = updatedEntry
             NotificationCenter.default.post(name: "updatedMediaListEntry", object: updatedEntry)
             isUpdateSuccess = true
@@ -107,5 +110,12 @@ import AniListAPI
         isLoading = true
         isDeleteSuccess = await MediaListRepository.deleteEntry(entryId: Int32(entryId)) == true
         isLoading = false
+    }
+    
+    private func shouldUpdateWidget(newEntry: BasicMediaListEntry) -> Bool {
+        return entry == nil
+        || entry?.status?.value != newEntry.status?.value
+        || entry?.progress != newEntry.progress
+        || entry?.progressVolumes != newEntry.progressVolumes
     }
 }

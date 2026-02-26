@@ -351,9 +351,15 @@ struct MediaListRepository {
         }
     }
     
+    static func reloadWidgets() {
+        WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
+        WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
+    }
+    
     @discardableResult
     static func updateCachedEntry<T: RootSelectionSet>(_ entry: BasicMediaListEntry) async -> T? {
-        try? await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+        reloadWidgets()
+        return try? await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
             do {
                 try await transaction.updateObject(
                     ofType: BasicMediaListEntry.self,
@@ -366,8 +372,6 @@ struct MediaListRepository {
                     ofType: T.self,
                     withKey: "MediaList:\(entry.id).\(entry.mediaId)"
                 )
-                WidgetCenter.shared.reloadTimelines(ofKind: ANIME_BEHIND_WIDGET_KIND)
-                WidgetCenter.shared.reloadTimelines(ofKind: MEDIA_LIST_WIDGET_KIND)
                 return newObject
             } catch {
                 print(error)

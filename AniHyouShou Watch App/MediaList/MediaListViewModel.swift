@@ -53,7 +53,7 @@ import AniListAPI
         //if the status changed, remove from this list
         if mediaList[safe: foundIndex]?.status != entry.status {
             mediaList.remove(at: foundIndex)
-
+            MediaListRepository.reloadWidgets()
             // go back so that the user acknowledges something happened
             shouldDismiss = true
         } else { // update the local cache
