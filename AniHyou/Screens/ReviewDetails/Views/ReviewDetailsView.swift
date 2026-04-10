@@ -12,6 +12,7 @@ struct ReviewDetailsView: View {
 
     let reviewId: Int
     @State private var viewModel = ReviewDetailsViewModel()
+    @State private var showingTranslation = false
 
     var body: some View {
         ScrollView(.vertical) {
@@ -24,6 +25,10 @@ struct ReviewDetailsView: View {
                 RichText(html: review.body!)
                     .defaultStyle()
                     .padding()
+                    .translationPresentation(
+                        isPresented: $showingTranslation,
+                        text: review.body?.htmlStripped ?? ""
+                    )
                 HStack {
                     Spacer()
                     MediaStatView(name: "Score", value: "\(review.score ?? 0)/100", showDivider: false)
@@ -73,6 +78,16 @@ struct ReviewDetailsView: View {
         }
         .navigationTitle(viewModel.review?.user?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if !isLocaleEnglish {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Translate", systemImage: "translate") {
+                        showingTranslation = true
+                    }
+                    .tint(nil)
+                }
+            }
+        }
         .task {
             await viewModel.getReviewDetails(reviewId: reviewId)
         }
