@@ -12,6 +12,7 @@ import AniListAPI
 struct ThreadDetailsView: View {
 
     @State private var viewModel = ThreadDetailsViewModel()
+    @State private var showingTranslation = false
     
     let threadId: Int
     var initThread: BasicThreadDetails?
@@ -46,6 +47,10 @@ struct ThreadDetailsView: View {
                         Markdown(thread.body?.formatMarkdown() ?? "")
                             .defaultStyle()
                             .padding()
+                            .translationPresentation(
+                                isPresented: $showingTranslation,
+                                text: thread.body?.htmlStripped ?? ""
+                            )
                         
                         HStack {
                             NavigationLink(destination: ProfileView(userId: thread.user!.id)) {
@@ -61,6 +66,15 @@ struct ThreadDetailsView: View {
                             }
                             .buttonStyle(.plain)
                             Spacer()
+                            
+                            if !isLocaleEnglish {
+                                Button("Translate", systemImage: "translate") {
+                                    showingTranslation = true
+                                }
+                                .labelStyle(.iconOnly)
+                                .padding(.horizontal)
+                            }
+                            
                             Button(action: {
                                 Task {
                                     await viewModel.toggleLikeThread(threadId: threadId)

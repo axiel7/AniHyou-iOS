@@ -18,6 +18,7 @@ struct ThreadCommentItemView: View {
     @State var isLiked: Bool
     @State var likeCount: Int
     @State var commentButtonDisabled = false
+    @State private var showingTranslation = false
     
     init(
         viewModel: ThreadDetailsViewModel,
@@ -55,9 +56,20 @@ struct ThreadCommentItemView: View {
 
             Markdown(comment?.comment?.formatMarkdown() ?? "Loading")
                 .defaultStyle()
+                .translationPresentation(
+                    isPresented: $showingTranslation,
+                    text: comment?.comment?.htmlStripped ?? ""
+                )
 
             HStack {
                 Spacer()
+                if !isLocaleEnglish {
+                    Button("Translate", systemImage: "translate") {
+                        showingTranslation = true
+                    }
+                    .labelStyle(.iconOnly)
+                    .padding(.horizontal)
+                }
                 NavigationLink(
                     destination: ThreadCommentDetailsView(viewModel: viewModel, comment: comment!)
                 ) {

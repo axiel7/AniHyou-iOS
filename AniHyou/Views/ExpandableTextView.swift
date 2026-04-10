@@ -35,7 +35,7 @@ struct ExpandableTextView: View {
 
             HStack {
                 if showTranslate, #available(iOS 17.4, *) {
-                    Button("Translate") {
+                    Button("Translate", systemImage: "translate") {
                         showingTranslation = true
                     }
                 }

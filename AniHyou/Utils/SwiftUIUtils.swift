@@ -28,7 +28,11 @@ var isPhone: Bool {
 
 var isLocaleEnglish: Bool {
     let lang = Locale.autoupdatingCurrent.language
-    return lang.isEquivalent(to: .init(identifier: "en")) || lang.isEquivalent(to: .init(identifier: "en-UK"))
+    if let langCode = lang.languageCode?.identifier {
+        return langCode.starts(with: "en")
+    } else {
+        return lang.isEquivalent(to: .init(identifier: "en")) || lang.isEquivalent(to: .init(identifier: "en-UK"))
+    }
 }
 
 var isiOS26: Bool {
