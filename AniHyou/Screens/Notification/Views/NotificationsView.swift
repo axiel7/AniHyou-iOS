@@ -27,10 +27,12 @@ struct NotificationsView: View {
                         .pickerStyle(.menu)
 
                         ForEach(viewModel.notifications.indices, id: \.self) { index in
-                            NotificationItemView(
-                                notification: viewModel.notifications[index],
-                                isUnread: index < viewModel.unreadCount
-                            )
+                            if let notification = viewModel.notifications[safe: index] {
+                                NotificationItemView(
+                                    notification: notification,
+                                    isUnread: index < viewModel.unreadCount
+                                )
+                            }
                         }
 
                         if viewModel.hasNextPage {
