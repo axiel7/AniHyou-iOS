@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when a media entry is merged into another for a user who had it on their list
-  static let MediaMergeNotification = ApolloAPI.Object(
+  nonisolated static let MediaMergeNotification = ApolloAPI.Object(
     typename: "MediaMergeNotification",
     implementedInterfaces: [],
     keyFields: nil

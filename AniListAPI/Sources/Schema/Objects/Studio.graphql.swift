@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Animation or production company
-  static let Studio = ApolloAPI.Object(
+  nonisolated static let Studio = ApolloAPI.Object(
     typename: "Studio",
     implementedInterfaces: [],
     keyFields: ["id"]

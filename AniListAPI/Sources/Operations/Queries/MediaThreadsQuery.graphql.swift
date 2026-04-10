@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaThreadsQuery: GraphQLQuery {
+nonisolated public struct MediaThreadsQuery: GraphQLQuery {
   public static let operationName: String = "MediaThreads"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -36,7 +36,7 @@ public struct MediaThreadsQuery: GraphQLQuery {
     "sort": sort
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -56,7 +56,7 @@ public struct MediaThreadsQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -80,7 +80,7 @@ public struct MediaThreadsQuery: GraphQLQuery {
       /// Page.Thread
       ///
       /// Parent Type: `Thread`
-      public struct Thread: AniListAPI.SelectionSet, Identifiable {
+      nonisolated public struct Thread: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -130,7 +130,7 @@ public struct MediaThreadsQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

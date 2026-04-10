@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UpdateEntryMutation: GraphQLMutation {
+nonisolated public struct UpdateEntryMutation: GraphQLMutation {
   public static let operationName: String = "UpdateEntry"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -72,7 +72,7 @@ public struct UpdateEntryMutation: GraphQLMutation {
     "advancedScores": advancedScores
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -104,7 +104,7 @@ public struct UpdateEntryMutation: GraphQLMutation {
     /// SaveMediaListEntry
     ///
     /// Parent Type: `MediaList`
-    public struct SaveMediaListEntry: AniListAPI.SelectionSet {
+    nonisolated public struct SaveMediaListEntry: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

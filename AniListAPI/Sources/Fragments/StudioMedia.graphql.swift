@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct StudioMedia: AniListAPI.SelectionSet, Fragment, Identifiable {
+nonisolated public struct StudioMedia: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment StudioMedia on Media { __typename id coverImage { __typename large } title { __typename userPreferred } type mediaListEntry { __typename status } }"#
   }
@@ -39,7 +39,7 @@ public struct StudioMedia: AniListAPI.SelectionSet, Fragment, Identifiable {
   /// CoverImage
   ///
   /// Parent Type: `MediaCoverImage`
-  public struct CoverImage: AniListAPI.SelectionSet {
+  nonisolated public struct CoverImage: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -59,7 +59,7 @@ public struct StudioMedia: AniListAPI.SelectionSet, Fragment, Identifiable {
   /// Title
   ///
   /// Parent Type: `MediaTitle`
-  public struct Title: AniListAPI.SelectionSet {
+  nonisolated public struct Title: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -79,7 +79,7 @@ public struct StudioMedia: AniListAPI.SelectionSet, Fragment, Identifiable {
   /// MediaListEntry
   ///
   /// Parent Type: `MediaList`
-  public struct MediaListEntry: AniListAPI.SelectionSet {
+  nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

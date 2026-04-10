@@ -4,7 +4,7 @@
 @_spi(Internal) @_spi(Unsafe) import ApolloAPI
 
 /// A user's list options for anime or manga lists
-public struct MediaListOptionsInput: InputObject {
+nonisolated public struct MediaListOptionsInput: InputObject {
   @_spi(Unsafe) public private(set) var __data: InputDict
 
   @_spi(Unsafe) public init(_ data: InputDict) {

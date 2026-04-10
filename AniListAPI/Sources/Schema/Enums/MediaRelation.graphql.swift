@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Type of relation media has to its parent.
-public enum MediaRelation: String, EnumType {
+nonisolated public enum MediaRelation: String, EnumType {
   /// An adaption of this media into a different format
   case adaptation = "ADAPTATION"
   /// Released before the relation

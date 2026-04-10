@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct StaffStat: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct StaffStat: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment StaffStat on UserStaffStatistic { __typename staff { __typename id name { __typename userPreferred } image { __typename medium } } count meanScore minutesWatched chaptersRead }"#
   }
@@ -34,7 +34,7 @@ public struct StaffStat: AniListAPI.SelectionSet, Fragment {
   /// Staff
   ///
   /// Parent Type: `Staff`
-  public struct Staff: AniListAPI.SelectionSet, Identifiable {
+  nonisolated public struct Staff: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -59,7 +59,7 @@ public struct StaffStat: AniListAPI.SelectionSet, Fragment {
     /// Staff.Name
     ///
     /// Parent Type: `StaffName`
-    public struct Name: AniListAPI.SelectionSet {
+    nonisolated public struct Name: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -79,7 +79,7 @@ public struct StaffStat: AniListAPI.SelectionSet, Fragment {
     /// Staff.Image
     ///
     /// Parent Type: `StaffImage`
-    public struct Image: AniListAPI.SelectionSet {
+    nonisolated public struct Image: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

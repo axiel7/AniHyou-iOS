@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Notification type enum
-public enum NotificationType: String, EnumType {
+nonisolated public enum NotificationType: String, EnumType {
   /// A user has sent you message
   case activityMessage = "ACTIVITY_MESSAGE"
   /// A user has replied to your activity
@@ -39,4 +39,10 @@ public enum NotificationType: String, EnumType {
   case mediaMerge = "MEDIA_MERGE"
   /// An anime or manga on the user's list has been deleted from the site
   case mediaDeletion = "MEDIA_DELETION"
+  /// A user's submission has been accepted, partially accepted, or rejected
+  case mediaSubmissionUpdate = "MEDIA_SUBMISSION_UPDATE"
+  /// A user's staff submission has been accepted, partially accepted, or rejected
+  case staffSubmissionUpdate = "STAFF_SUBMISSION_UPDATE"
+  /// A user's character submission has been accepted, partially accepted, or rejected
+  case characterSubmissionUpdate = "CHARACTER_SUBMISSION_UPDATE"
 }

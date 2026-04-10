@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct NotificationsQuery: GraphQLQuery {
+nonisolated public struct NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -36,7 +36,7 @@ public struct NotificationsQuery: GraphQLQuery {
     "resetNotificationCount": resetNotificationCount
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -56,7 +56,7 @@ public struct NotificationsQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -80,7 +80,7 @@ public struct NotificationsQuery: GraphQLQuery {
       /// Page.Notification
       ///
       /// Parent Type: `NotificationUnion`
-      public struct Notification: AniListAPI.SelectionSet {
+      nonisolated public struct Notification: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -130,7 +130,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsAiringNotification
         ///
         /// Parent Type: `AiringNotification`
-        public struct AsAiringNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsAiringNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -168,7 +168,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsAiringNotification.Media
           ///
           /// Parent Type: `Media`
-          public struct Media: AniListAPI.SelectionSet {
+          nonisolated public struct Media: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -190,7 +190,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsAiringNotification.Media.Title
             ///
             /// Parent Type: `MediaTitle`
-            public struct Title: AniListAPI.SelectionSet {
+            nonisolated public struct Title: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -210,7 +210,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsAiringNotification.Media.CoverImage
             ///
             /// Parent Type: `MediaCoverImage`
-            public struct CoverImage: AniListAPI.SelectionSet {
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -232,7 +232,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsFollowingNotification
         ///
         /// Parent Type: `FollowingNotification`
-        public struct AsFollowingNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsFollowingNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -267,7 +267,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsFollowingNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -289,7 +289,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsFollowingNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -311,7 +311,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsActivityMessageNotification
         ///
         /// Parent Type: `ActivityMessageNotification`
-        public struct AsActivityMessageNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsActivityMessageNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -349,7 +349,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsActivityMessageNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -371,7 +371,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsActivityMessageNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -393,7 +393,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsActivityMentionNotification
         ///
         /// Parent Type: `ActivityMentionNotification`
-        public struct AsActivityMentionNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsActivityMentionNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -431,7 +431,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsActivityMentionNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -453,7 +453,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsActivityMentionNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -475,7 +475,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsActivityReplyNotification
         ///
         /// Parent Type: `ActivityReplyNotification`
-        public struct AsActivityReplyNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsActivityReplyNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -513,7 +513,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsActivityReplyNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -535,7 +535,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsActivityReplyNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -557,7 +557,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsActivityReplySubscribedNotification
         ///
         /// Parent Type: `ActivityReplySubscribedNotification`
-        public struct AsActivityReplySubscribedNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsActivityReplySubscribedNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -595,7 +595,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsActivityReplySubscribedNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -617,7 +617,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsActivityReplySubscribedNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -639,7 +639,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsActivityLikeNotification
         ///
         /// Parent Type: `ActivityLikeNotification`
-        public struct AsActivityLikeNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsActivityLikeNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -677,7 +677,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsActivityLikeNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -699,7 +699,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsActivityLikeNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -721,7 +721,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsActivityReplyLikeNotification
         ///
         /// Parent Type: `ActivityReplyLikeNotification`
-        public struct AsActivityReplyLikeNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsActivityReplyLikeNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -759,7 +759,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsActivityReplyLikeNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -781,7 +781,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsActivityReplyLikeNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -803,7 +803,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsThreadCommentMentionNotification
         ///
         /// Parent Type: `ThreadCommentMentionNotification`
-        public struct AsThreadCommentMentionNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsThreadCommentMentionNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -844,7 +844,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentMentionNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -864,7 +864,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentMentionNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -886,7 +886,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsThreadCommentMentionNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -908,7 +908,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsThreadCommentReplyNotification
         ///
         /// Parent Type: `ThreadCommentReplyNotification`
-        public struct AsThreadCommentReplyNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsThreadCommentReplyNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -949,7 +949,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentReplyNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -969,7 +969,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentReplyNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -991,7 +991,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsThreadCommentReplyNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1013,7 +1013,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsThreadCommentSubscribedNotification
         ///
         /// Parent Type: `ThreadCommentSubscribedNotification`
-        public struct AsThreadCommentSubscribedNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsThreadCommentSubscribedNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1054,7 +1054,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentSubscribedNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1074,7 +1074,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentSubscribedNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1096,7 +1096,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsThreadCommentSubscribedNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1118,7 +1118,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsThreadCommentLikeNotification
         ///
         /// Parent Type: `ThreadCommentLikeNotification`
-        public struct AsThreadCommentLikeNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsThreadCommentLikeNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1159,7 +1159,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentLikeNotification.Thread
           ///
           /// Parent Type: `Thread`
-          public struct Thread: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Thread: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1179,7 +1179,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadCommentLikeNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1201,7 +1201,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsThreadCommentLikeNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1223,7 +1223,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsThreadLikeNotification
         ///
         /// Parent Type: `ThreadLikeNotification`
-        public struct AsThreadLikeNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsThreadLikeNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1261,7 +1261,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsThreadLikeNotification.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1283,7 +1283,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsThreadLikeNotification.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1305,7 +1305,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsRelatedMediaAdditionNotification
         ///
         /// Parent Type: `RelatedMediaAdditionNotification`
-        public struct AsRelatedMediaAdditionNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsRelatedMediaAdditionNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1340,7 +1340,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsRelatedMediaAdditionNotification.Media
           ///
           /// Parent Type: `Media`
-          public struct Media: AniListAPI.SelectionSet {
+          nonisolated public struct Media: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1362,7 +1362,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsRelatedMediaAdditionNotification.Media.Title
             ///
             /// Parent Type: `MediaTitle`
-            public struct Title: AniListAPI.SelectionSet {
+            nonisolated public struct Title: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1382,7 +1382,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsRelatedMediaAdditionNotification.Media.CoverImage
             ///
             /// Parent Type: `MediaCoverImage`
-            public struct CoverImage: AniListAPI.SelectionSet {
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1404,7 +1404,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsMediaDataChangeNotification
         ///
         /// Parent Type: `MediaDataChangeNotification`
-        public struct AsMediaDataChangeNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsMediaDataChangeNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1439,7 +1439,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsMediaDataChangeNotification.Media
           ///
           /// Parent Type: `Media`
-          public struct Media: AniListAPI.SelectionSet {
+          nonisolated public struct Media: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1461,7 +1461,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsMediaDataChangeNotification.Media.Title
             ///
             /// Parent Type: `MediaTitle`
-            public struct Title: AniListAPI.SelectionSet {
+            nonisolated public struct Title: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1481,7 +1481,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsMediaDataChangeNotification.Media.CoverImage
             ///
             /// Parent Type: `MediaCoverImage`
-            public struct CoverImage: AniListAPI.SelectionSet {
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1503,7 +1503,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsMediaMergeNotification
         ///
         /// Parent Type: `MediaMergeNotification`
-        public struct AsMediaMergeNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsMediaMergeNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1541,7 +1541,7 @@ public struct NotificationsQuery: GraphQLQuery {
           /// Page.Notification.AsMediaMergeNotification.Media
           ///
           /// Parent Type: `Media`
-          public struct Media: AniListAPI.SelectionSet {
+          nonisolated public struct Media: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1563,7 +1563,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsMediaMergeNotification.Media.Title
             ///
             /// Parent Type: `MediaTitle`
-            public struct Title: AniListAPI.SelectionSet {
+            nonisolated public struct Title: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1583,7 +1583,7 @@ public struct NotificationsQuery: GraphQLQuery {
             /// Page.Notification.AsMediaMergeNotification.Media.CoverImage
             ///
             /// Parent Type: `MediaCoverImage`
-            public struct CoverImage: AniListAPI.SelectionSet {
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1605,7 +1605,7 @@ public struct NotificationsQuery: GraphQLQuery {
         /// Page.Notification.AsMediaDeletionNotification
         ///
         /// Parent Type: `MediaDeletionNotification`
-        public struct AsMediaDeletionNotification: AniListAPI.InlineFragment {
+        nonisolated public struct AsMediaDeletionNotification: AniListAPI.InlineFragment {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -1642,7 +1642,7 @@ public struct NotificationsQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

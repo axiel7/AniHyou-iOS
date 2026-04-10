@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let ReviewConnection = ApolloAPI.Object(
+  nonisolated static let ReviewConnection = ApolloAPI.Object(
     typename: "ReviewConnection",
     implementedInterfaces: [],
     keyFields: nil

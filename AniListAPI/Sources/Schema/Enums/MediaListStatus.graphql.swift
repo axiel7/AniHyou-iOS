@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Media list watching/reading status enum.
-public enum MediaListStatus: String, EnumType {
+nonisolated public enum MediaListStatus: String, EnumType {
   /// Currently watching/reading
   case current = "CURRENT"
   /// Planning to watch/read

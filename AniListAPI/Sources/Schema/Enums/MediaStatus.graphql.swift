@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// The current releasing status of the media
-public enum MediaStatus: String, EnumType {
+nonisolated public enum MediaStatus: String, EnumType {
   /// Has completed and is no longer being released
   case finished = "FINISHED"
   /// Currently releasing

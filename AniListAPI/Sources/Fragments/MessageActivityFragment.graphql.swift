@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
+nonisolated public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment MessageActivityFragment on MessageActivity { __typename id createdAt isLiked likeCount replyCount isPrivate isLocked message messengerId messenger { __typename name avatar { __typename medium } } }"#
   }
@@ -54,7 +54,7 @@ public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment, Identi
   /// Messenger
   ///
   /// Parent Type: `User`
-  public struct Messenger: AniListAPI.SelectionSet {
+  nonisolated public struct Messenger: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -76,7 +76,7 @@ public struct MessageActivityFragment: AniListAPI.SelectionSet, Fragment, Identi
     /// Messenger.Avatar
     ///
     /// Parent Type: `UserAvatar`
-    public struct Avatar: AniListAPI.SelectionSet {
+    nonisolated public struct Avatar: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Types that can be liked
-public enum LikeableType: String, EnumType {
+nonisolated public enum LikeableType: String, EnumType {
   case thread = "THREAD"
   case threadComment = "THREAD_COMMENT"
   case activity = "ACTIVITY"

@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when a user replies to the authenticated users activity
-  static let ActivityReplyNotification = ApolloAPI.Object(
+  nonisolated static let ActivityReplyNotification = ApolloAPI.Object(
     typename: "ActivityReplyNotification",
     implementedInterfaces: [],
     keyFields: nil

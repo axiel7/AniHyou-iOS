@@ -3,7 +3,7 @@
 
 @_spi(Internal) import ApolloAPI
 
-public enum MediaSeason: String, EnumType {
+nonisolated public enum MediaSeason: String, EnumType {
   /// Months December to February
   case winter = "WINTER"
   /// Months March to May

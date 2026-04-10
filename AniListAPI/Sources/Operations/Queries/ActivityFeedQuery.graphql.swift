@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ActivityFeedQuery: GraphQLQuery {
+nonisolated public struct ActivityFeedQuery: GraphQLQuery {
   public static let operationName: String = "ActivityFeed"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -36,7 +36,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
     "typeIn": typeIn
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -56,7 +56,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -81,7 +81,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
       /// Page.Activity
       ///
       /// Parent Type: `ActivityUnion`
-      public struct Activity: AniListAPI.SelectionSet {
+      nonisolated public struct Activity: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
         /// Page.Activity.AsTextActivity
         ///
         /// Parent Type: `TextActivity`
-        public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
+        nonisolated public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -148,7 +148,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
         /// Page.Activity.AsListActivity
         ///
         /// Parent Type: `ListActivity`
-        public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
+        nonisolated public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -199,7 +199,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
           /// Page.Activity.AsListActivity.User
           ///
           /// Parent Type: `User`
-          public struct User: AniListAPI.SelectionSet {
+          nonisolated public struct User: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -221,7 +221,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
             /// Page.Activity.AsListActivity.User.Avatar
             ///
             /// Parent Type: `UserAvatar`
-            public struct Avatar: AniListAPI.SelectionSet {
+            nonisolated public struct Avatar: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -246,7 +246,7 @@ public struct ActivityFeedQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

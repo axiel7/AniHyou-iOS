@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Staff connection edge
-  static let StaffEdge = ApolloAPI.Object(
+  nonisolated static let StaffEdge = ApolloAPI.Object(
     typename: "StaffEdge",
     implementedInterfaces: [],
     keyFields: nil

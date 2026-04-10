@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct CommonPage: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct CommonPage: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment CommonPage on PageInfo { __typename currentPage hasNextPage }"#
   }

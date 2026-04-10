@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct CharacterDetailsQuery: GraphQLQuery {
+nonisolated public struct CharacterDetailsQuery: GraphQLQuery {
   public static let operationName: String = "CharacterDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -20,7 +20,7 @@ public struct CharacterDetailsQuery: GraphQLQuery {
 
   @_spi(Unsafe) public var __variables: Variables? { ["characterId": characterId] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -38,7 +38,7 @@ public struct CharacterDetailsQuery: GraphQLQuery {
     /// Character
     ///
     /// Parent Type: `Character`
-    public struct Character: AniListAPI.SelectionSet, Identifiable {
+    nonisolated public struct Character: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -92,7 +92,7 @@ public struct CharacterDetailsQuery: GraphQLQuery {
       /// Character.Name
       ///
       /// Parent Type: `CharacterName`
-      public struct Name: AniListAPI.SelectionSet {
+      nonisolated public struct Name: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -121,7 +121,7 @@ public struct CharacterDetailsQuery: GraphQLQuery {
       /// Character.Image
       ///
       /// Parent Type: `CharacterImage`
-      public struct Image: AniListAPI.SelectionSet {
+      nonisolated public struct Image: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -141,7 +141,7 @@ public struct CharacterDetailsQuery: GraphQLQuery {
       /// Character.DateOfBirth
       ///
       /// Parent Type: `FuzzyDate`
-      public struct DateOfBirth: AniListAPI.SelectionSet {
+      nonisolated public struct DateOfBirth: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

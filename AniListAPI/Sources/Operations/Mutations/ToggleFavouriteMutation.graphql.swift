@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ToggleFavouriteMutation: GraphQLMutation {
+nonisolated public struct ToggleFavouriteMutation: GraphQLMutation {
   public static let operationName: String = "ToggleFavourite"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -40,7 +40,7 @@ public struct ToggleFavouriteMutation: GraphQLMutation {
     "studioId": studioId
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -64,7 +64,7 @@ public struct ToggleFavouriteMutation: GraphQLMutation {
     /// ToggleFavourite
     ///
     /// Parent Type: `Favourites`
-    public struct ToggleFavourite: AniListAPI.SelectionSet {
+    nonisolated public struct ToggleFavourite: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -83,7 +83,7 @@ public struct ToggleFavouriteMutation: GraphQLMutation {
       /// ToggleFavourite.Anime
       ///
       /// Parent Type: `MediaConnection`
-      public struct Anime: AniListAPI.SelectionSet {
+      nonisolated public struct Anime: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -102,7 +102,7 @@ public struct ToggleFavouriteMutation: GraphQLMutation {
         /// ToggleFavourite.Anime.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AniListAPI.SelectionSet {
+        nonisolated public struct PageInfo: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

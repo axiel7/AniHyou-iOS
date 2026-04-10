@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment ShouUserMediaList on MediaList { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename color } type episodes chapters volumes nextAiringEpisode { __typename episode airingAt } } ...BasicMediaListEntry }"#
   }
@@ -65,7 +65,7 @@ public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
   /// Media
   ///
   /// Parent Type: `Media`
-  public struct Media: AniListAPI.SelectionSet {
+  nonisolated public struct Media: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -102,7 +102,7 @@ public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
     /// Media.Title
     ///
     /// Parent Type: `MediaTitle`
-    public struct Title: AniListAPI.SelectionSet {
+    nonisolated public struct Title: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -122,7 +122,7 @@ public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
     /// Media.CoverImage
     ///
     /// Parent Type: `MediaCoverImage`
-    public struct CoverImage: AniListAPI.SelectionSet {
+    nonisolated public struct CoverImage: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -142,7 +142,7 @@ public struct ShouUserMediaList: AniListAPI.SelectionSet, Fragment {
     /// Media.NextAiringEpisode
     ///
     /// Parent Type: `AiringSchedule`
-    public struct NextAiringEpisode: AniListAPI.SelectionSet {
+    nonisolated public struct NextAiringEpisode: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

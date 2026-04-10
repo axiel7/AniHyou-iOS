@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Activity type enum.
-public enum ActivityType: String, EnumType {
+nonisolated public enum ActivityType: String, EnumType {
   /// A text activity
   case text = "TEXT"
   /// A anime list update activity

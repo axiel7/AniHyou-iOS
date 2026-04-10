@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Media list scoring type
-public enum ScoreFormat: String, EnumType {
+nonisolated public enum ScoreFormat: String, EnumType {
   /// An integer from 0-100
   case point100 = "POINT_100"
   /// A float from 0-10 with 1 decimal place

@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct FollowersQuery: GraphQLQuery {
+nonisolated public struct FollowersQuery: GraphQLQuery {
   public static let operationName: String = "Followers"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct FollowersQuery: GraphQLQuery {
     "perPage": perPage
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -52,7 +52,7 @@ public struct FollowersQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -73,7 +73,7 @@ public struct FollowersQuery: GraphQLQuery {
       /// Page.Follower
       ///
       /// Parent Type: `User`
-      public struct Follower: AniListAPI.SelectionSet, Identifiable {
+      nonisolated public struct Follower: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -107,7 +107,7 @@ public struct FollowersQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Airing schedule sort enums
-public enum AiringSort: String, EnumType {
+nonisolated public enum AiringSort: String, EnumType {
   case id = "ID"
   case idDesc = "ID_DESC"
   case mediaId = "MEDIA_ID"

@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Page of data
-  static let Page = ApolloAPI.Object(
+  nonisolated static let Page = ApolloAPI.Object(
     typename: "Page",
     implementedInterfaces: [],
     keyFields: nil

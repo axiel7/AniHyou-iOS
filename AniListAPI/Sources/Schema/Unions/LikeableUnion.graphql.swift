@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Unions {
   /// Likeable union type
-  static let LikeableUnion = Union(
+  nonisolated static let LikeableUnion = Union(
     name: "LikeableUnion",
     possibleTypes: [
       Objects.ListActivity.self,

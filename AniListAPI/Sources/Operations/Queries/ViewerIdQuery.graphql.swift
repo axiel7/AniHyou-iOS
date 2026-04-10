@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ViewerIdQuery: GraphQLQuery {
+nonisolated public struct ViewerIdQuery: GraphQLQuery {
   public static let operationName: String = "ViewerId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -13,7 +13,7 @@ public struct ViewerIdQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -31,7 +31,7 @@ public struct ViewerIdQuery: GraphQLQuery {
     /// Viewer
     ///
     /// Parent Type: `User`
-    public struct Viewer: AniListAPI.SelectionSet, Identifiable {
+    nonisolated public struct Viewer: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -56,7 +56,7 @@ public struct ViewerIdQuery: GraphQLQuery {
       /// Viewer.Options
       ///
       /// Parent Type: `UserOptions`
-      public struct Options: AniListAPI.SelectionSet {
+      nonisolated public struct Options: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -82,7 +82,7 @@ public struct ViewerIdQuery: GraphQLQuery {
       /// Viewer.MediaListOptions
       ///
       /// Parent Type: `MediaListOptions`
-      public struct MediaListOptions: AniListAPI.SelectionSet {
+      nonisolated public struct MediaListOptions: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -107,7 +107,7 @@ public struct ViewerIdQuery: GraphQLQuery {
         /// Viewer.MediaListOptions.AnimeList
         ///
         /// Parent Type: `MediaListTypeOptions`
-        public struct AnimeList: AniListAPI.SelectionSet {
+        nonisolated public struct AnimeList: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -133,7 +133,7 @@ public struct ViewerIdQuery: GraphQLQuery {
         /// Viewer.MediaListOptions.MangaList
         ///
         /// Parent Type: `MediaListTypeOptions`
-        public struct MangaList: AniListAPI.SelectionSet {
+        nonisolated public struct MangaList: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

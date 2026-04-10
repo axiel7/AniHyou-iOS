@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let StaffImage = ApolloAPI.Object(
+  nonisolated static let StaffImage = ApolloAPI.Object(
     typename: "StaffImage",
     implementedInterfaces: [],
     keyFields: nil

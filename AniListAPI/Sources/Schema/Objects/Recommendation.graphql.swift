@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Media recommendation
-  static let Recommendation = ApolloAPI.Object(
+  nonisolated static let Recommendation = ApolloAPI.Object(
     typename: "Recommendation",
     implementedInterfaces: [],
     keyFields: nil

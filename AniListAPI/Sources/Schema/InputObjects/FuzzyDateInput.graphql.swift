@@ -4,7 +4,7 @@
 @_spi(Internal) @_spi(Unsafe) import ApolloAPI
 
 /// Date object that allows for incomplete date values (fuzzy)
-public struct FuzzyDateInput: InputObject {
+nonisolated public struct FuzzyDateInput: InputObject {
   @_spi(Unsafe) public private(set) var __data: InputDict
 
   @_spi(Unsafe) public init(_ data: InputDict) {

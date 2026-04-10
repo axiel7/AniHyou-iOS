@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Thread sort enums
-public enum ThreadSort: String, EnumType {
+nonisolated public enum ThreadSort: String, EnumType {
   case id = "ID"
   case idDesc = "ID_DESC"
   case title = "TITLE"

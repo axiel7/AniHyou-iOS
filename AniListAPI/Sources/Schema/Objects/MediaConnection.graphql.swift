@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let MediaConnection = ApolloAPI.Object(
+  nonisolated static let MediaConnection = ApolloAPI.Object(
     typename: "MediaConnection",
     implementedInterfaces: [],
     keyFields: nil

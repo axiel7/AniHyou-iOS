@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Forum Thread Comment
-  static let ThreadComment = ApolloAPI.Object(
+  nonisolated static let ThreadComment = ApolloAPI.Object(
     typename: "ThreadComment",
     implementedInterfaces: [],
     keyFields: ["id"]

@@ -778,7 +778,7 @@ type Query {
     activityId: Int
   ): ActivityReply
 
-  """Follow query"""
+  """Following query"""
   Following(
     """User id of the follower/followed"""
     userId: Int!
@@ -787,7 +787,7 @@ type Query {
     sort: [UserSort]
   ): User
 
-  """Follow query"""
+  """Follower query"""
   Follower(
     """User id of the follower/followed"""
     userId: Int!
@@ -1868,6 +1868,19 @@ enum NotificationType {
 
   """An anime or manga on the user's list has been deleted from the site"""
   MEDIA_DELETION
+
+  """A user's submission has been accepted, partially accepted, or rejected"""
+  MEDIA_SUBMISSION_UPDATE
+
+  """
+  A user's staff submission has been accepted, partially accepted, or rejected
+  """
+  STAFF_SUBMISSION_UPDATE
+
+  """
+  A user's character submission has been accepted, partially accepted, or rejected
+  """
+  CHARACTER_SUBMISSION_UPDATE
 }
 
 """The language the user wants to see staff and character names in"""
@@ -3879,7 +3892,7 @@ enum AiringSort {
 }
 
 """Notification union type"""
-union NotificationUnion = AiringNotification | FollowingNotification | ActivityMessageNotification | ActivityMentionNotification | ActivityReplyNotification | ActivityReplySubscribedNotification | ActivityLikeNotification | ActivityReplyLikeNotification | ThreadCommentMentionNotification | ThreadCommentReplyNotification | ThreadCommentSubscribedNotification | ThreadCommentLikeNotification | ThreadLikeNotification | RelatedMediaAdditionNotification | MediaDataChangeNotification | MediaMergeNotification | MediaDeletionNotification
+union NotificationUnion = AiringNotification | FollowingNotification | ActivityMessageNotification | ActivityMentionNotification | ActivityReplyNotification | ActivityReplySubscribedNotification | ActivityLikeNotification | ActivityReplyLikeNotification | ThreadCommentMentionNotification | ThreadCommentReplyNotification | ThreadCommentSubscribedNotification | ThreadCommentLikeNotification | ThreadLikeNotification | RelatedMediaAdditionNotification | MediaDataChangeNotification | MediaMergeNotification | MediaDeletionNotification | MediaSubmissionUpdateNotification | StaffSubmissionUpdateNotification | CharacterSubmissionUpdateNotification
 
 """Notification for when an episode of anime airs"""
 type AiringNotification {
@@ -4694,6 +4707,91 @@ type MediaDeletionNotification {
 
   """The time the notification was created at"""
   createdAt: Int
+}
+
+"""
+Notification for when a media submission is accepted, partially accepted, or rejected
+"""
+type MediaSubmissionUpdateNotification {
+  """The id of the Notification"""
+  id: Int!
+
+  """The type of notification"""
+  type: NotificationType
+
+  """The notification context text"""
+  contexts: [String]
+
+  """The status of the submission"""
+  status: String
+
+  """The notes of the submission"""
+  notes: String
+
+  """The time the notification was created at"""
+  createdAt: Int
+
+  """
+  The media that was created or modified. If this submission was to create a new media and it was rejected, this will be null.
+  """
+  media: Media
+
+  """
+  The title of the media that was submitted. If this submission was to edit an existing media, this will be null.
+  """
+  submittedTitle: String
+}
+
+"""
+Notification for when a staff submission is accepted, partially accepted, or rejected
+"""
+type StaffSubmissionUpdateNotification {
+  """The id of the Notification"""
+  id: Int!
+
+  """The type of notification"""
+  type: NotificationType
+
+  """The notification context text"""
+  contexts: [String]
+
+  """The status of the submission"""
+  status: String
+
+  """The notes of the submission"""
+  notes: String
+
+  """The time the notification was created at"""
+  createdAt: Int
+
+  """The staff that was modified."""
+  staff: Staff
+}
+
+"""
+Notification for when a character submission is accepted, partially accepted, or rejected
+"""
+type CharacterSubmissionUpdateNotification {
+  """The id of the Notification"""
+  id: Int!
+
+  """The type of notification"""
+  type: NotificationType
+
+  """The notification context text"""
+  contexts: [String]
+
+  """The status of the submission"""
+  status: String
+
+  """The notes of the submission"""
+  notes: String
+
+  """The time the notification was created at"""
+  createdAt: Int
+
+  """The character that was modified."""
+  character: Character
 }
 
 """Activity sort enums"""

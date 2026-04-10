@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
+nonisolated public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment ListActivityFragment on ListActivity { __typename id createdAt isLiked likeCount replyCount isLocked type progress status userId user { __typename name avatar { __typename medium } } media { __typename id title { __typename userPreferred } coverImage { __typename medium } } }"#
   }
@@ -60,7 +60,7 @@ public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
   /// User
   ///
   /// Parent Type: `User`
-  public struct User: AniListAPI.SelectionSet {
+  nonisolated public struct User: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -82,7 +82,7 @@ public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
     /// User.Avatar
     ///
     /// Parent Type: `UserAvatar`
-    public struct Avatar: AniListAPI.SelectionSet {
+    nonisolated public struct Avatar: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -103,7 +103,7 @@ public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
   /// Media
   ///
   /// Parent Type: `Media`
-  public struct Media: AniListAPI.SelectionSet, Identifiable {
+  nonisolated public struct Media: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -128,7 +128,7 @@ public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
     /// Media.Title
     ///
     /// Parent Type: `MediaTitle`
-    public struct Title: AniListAPI.SelectionSet {
+    nonisolated public struct Title: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -148,7 +148,7 @@ public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
     /// Media.CoverImage
     ///
     /// Parent Type: `MediaCoverImage`
-    public struct CoverImage: AniListAPI.SelectionSet {
+    nonisolated public struct CoverImage: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

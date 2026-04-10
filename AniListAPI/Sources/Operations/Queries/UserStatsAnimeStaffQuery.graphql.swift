@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserStatsAnimeStaffQuery: GraphQLQuery {
+nonisolated public struct UserStatsAnimeStaffQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsAnimeStaff"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -28,7 +28,7 @@ public struct UserStatsAnimeStaffQuery: GraphQLQuery {
     "sort": sort
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -46,7 +46,7 @@ public struct UserStatsAnimeStaffQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `User`
-    public struct User: AniListAPI.SelectionSet {
+    nonisolated public struct User: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -65,7 +65,7 @@ public struct UserStatsAnimeStaffQuery: GraphQLQuery {
       /// User.Statistics
       ///
       /// Parent Type: `UserStatisticTypes`
-      public struct Statistics: AniListAPI.SelectionSet {
+      nonisolated public struct Statistics: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -83,7 +83,7 @@ public struct UserStatsAnimeStaffQuery: GraphQLQuery {
         /// User.Statistics.Anime
         ///
         /// Parent Type: `UserStatistics`
-        public struct Anime: AniListAPI.SelectionSet {
+        nonisolated public struct Anime: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct UserStatsAnimeStaffQuery: GraphQLQuery {
           /// User.Statistics.Anime.Staff
           ///
           /// Parent Type: `UserStaffStatistic`
-          public struct Staff: AniListAPI.SelectionSet {
+          nonisolated public struct Staff: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

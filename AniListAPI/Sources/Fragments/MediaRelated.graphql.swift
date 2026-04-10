@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment MediaRelated on MediaEdge { __typename relationType(version: 2) node { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } } }"#
   }
@@ -29,7 +29,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
   /// Node
   ///
   /// Parent Type: `Media`
-  public struct Node: AniListAPI.SelectionSet, Identifiable {
+  nonisolated public struct Node: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -63,7 +63,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
     /// Node.Title
     ///
     /// Parent Type: `MediaTitle`
-    public struct Title: AniListAPI.SelectionSet {
+    nonisolated public struct Title: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -83,7 +83,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
     /// Node.CoverImage
     ///
     /// Parent Type: `MediaCoverImage`
-    public struct CoverImage: AniListAPI.SelectionSet {
+    nonisolated public struct CoverImage: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -103,7 +103,7 @@ public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
     /// Node.MediaListEntry
     ///
     /// Parent Type: `MediaList`
-    public struct MediaListEntry: AniListAPI.SelectionSet {
+    nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

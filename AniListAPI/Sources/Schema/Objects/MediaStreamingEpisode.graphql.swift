@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Data and links to legal streaming episodes on external sites
-  static let MediaStreamingEpisode = ApolloAPI.Object(
+  nonisolated static let MediaStreamingEpisode = ApolloAPI.Object(
     typename: "MediaStreamingEpisode",
     implementedInterfaces: [],
     keyFields: nil

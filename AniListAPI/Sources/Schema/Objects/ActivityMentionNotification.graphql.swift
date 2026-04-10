@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Notification for when authenticated user is @ mentioned in activity or reply
-  static let ActivityMentionNotification = ApolloAPI.Object(
+  nonisolated static let ActivityMentionNotification = ApolloAPI.Object(
     typename: "ActivityMentionNotification",
     implementedInterfaces: [],
     keyFields: nil

@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Date object that allows for incomplete date values (fuzzy)
-  static let FuzzyDate = ApolloAPI.Object(
+  nonisolated static let FuzzyDate = ApolloAPI.Object(
     typename: "FuzzyDate",
     implementedInterfaces: [],
     keyFields: nil

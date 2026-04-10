@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment MediaRecommended on Recommendation { __typename mediaRecommendation { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } } }"#
   }
@@ -27,7 +27,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
   /// MediaRecommendation
   ///
   /// Parent Type: `Media`
-  public struct MediaRecommendation: AniListAPI.SelectionSet, Identifiable {
+  nonisolated public struct MediaRecommendation: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -61,7 +61,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
     /// MediaRecommendation.Title
     ///
     /// Parent Type: `MediaTitle`
-    public struct Title: AniListAPI.SelectionSet {
+    nonisolated public struct Title: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -81,7 +81,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
     /// MediaRecommendation.CoverImage
     ///
     /// Parent Type: `MediaCoverImage`
-    public struct CoverImage: AniListAPI.SelectionSet {
+    nonisolated public struct CoverImage: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct MediaRecommended: AniListAPI.SelectionSet, Fragment {
     /// MediaRecommendation.MediaListEntry
     ///
     /// Parent Type: `MediaList`
-    public struct MediaListEntry: AniListAPI.SelectionSet {
+    nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

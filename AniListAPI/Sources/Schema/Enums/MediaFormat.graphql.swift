@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// The format the media was released in
-public enum MediaFormat: String, EnumType {
+nonisolated public enum MediaFormat: String, EnumType {
   /// Anime broadcast on television
   case tv = "TV"
   /// Anime which are under 15 minutes in length and broadcast on television

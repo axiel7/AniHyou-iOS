@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct AiringEpisode: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct AiringEpisode: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment AiringEpisode on AiringSchedule { __typename episode airingAt }"#
   }

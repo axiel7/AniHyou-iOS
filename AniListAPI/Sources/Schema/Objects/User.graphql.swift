@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A user
-  static let User = ApolloAPI.Object(
+  nonisolated static let User = ApolloAPI.Object(
     typename: "User",
     implementedInterfaces: [],
     keyFields: ["id"]

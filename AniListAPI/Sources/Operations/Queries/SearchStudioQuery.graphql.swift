@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct SearchStudioQuery: GraphQLQuery {
+nonisolated public struct SearchStudioQuery: GraphQLQuery {
   public static let operationName: String = "SearchStudio"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct SearchStudioQuery: GraphQLQuery {
     "search": search
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -52,7 +52,7 @@ public struct SearchStudioQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -76,7 +76,7 @@ public struct SearchStudioQuery: GraphQLQuery {
       /// Page.Studio
       ///
       /// Parent Type: `Studio`
-      public struct Studio: AniListAPI.SelectionSet, Identifiable {
+      nonisolated public struct Studio: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -99,7 +99,7 @@ public struct SearchStudioQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

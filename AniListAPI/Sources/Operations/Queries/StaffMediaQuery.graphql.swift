@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct StaffMediaQuery: GraphQLQuery {
+nonisolated public struct StaffMediaQuery: GraphQLQuery {
   public static let operationName: String = "StaffMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -36,7 +36,7 @@ public struct StaffMediaQuery: GraphQLQuery {
     "perPage": perPage
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -54,7 +54,7 @@ public struct StaffMediaQuery: GraphQLQuery {
     /// Staff
     ///
     /// Parent Type: `Staff`
-    public struct Staff: AniListAPI.SelectionSet {
+    nonisolated public struct Staff: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -78,7 +78,7 @@ public struct StaffMediaQuery: GraphQLQuery {
       /// Staff.StaffMedia
       ///
       /// Parent Type: `MediaConnection`
-      public struct StaffMedia: AniListAPI.SelectionSet {
+      nonisolated public struct StaffMedia: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -99,7 +99,7 @@ public struct StaffMediaQuery: GraphQLQuery {
         /// Staff.StaffMedia.Edge
         ///
         /// Parent Type: `MediaEdge`
-        public struct Edge: AniListAPI.SelectionSet {
+        nonisolated public struct Edge: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -123,7 +123,7 @@ public struct StaffMediaQuery: GraphQLQuery {
           /// Staff.StaffMedia.Edge.Node
           ///
           /// Parent Type: `Media`
-          public struct Node: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Node: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -157,7 +157,7 @@ public struct StaffMediaQuery: GraphQLQuery {
             /// Staff.StaffMedia.Edge.Node.Title
             ///
             /// Parent Type: `MediaTitle`
-            public struct Title: AniListAPI.SelectionSet {
+            nonisolated public struct Title: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -177,7 +177,7 @@ public struct StaffMediaQuery: GraphQLQuery {
             /// Staff.StaffMedia.Edge.Node.CoverImage
             ///
             /// Parent Type: `MediaCoverImage`
-            public struct CoverImage: AniListAPI.SelectionSet {
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -197,7 +197,7 @@ public struct StaffMediaQuery: GraphQLQuery {
             /// Staff.StaffMedia.Edge.Node.MediaListEntry
             ///
             /// Parent Type: `MediaList`
-            public struct MediaListEntry: AniListAPI.SelectionSet {
+            nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -217,7 +217,7 @@ public struct StaffMediaQuery: GraphQLQuery {
             /// Staff.StaffMedia.Edge.Node.StartDate
             ///
             /// Parent Type: `FuzzyDate`
-            public struct StartDate: AniListAPI.SelectionSet {
+            nonisolated public struct StartDate: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -251,7 +251,7 @@ public struct StaffMediaQuery: GraphQLQuery {
         /// Staff.StaffMedia.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AniListAPI.SelectionSet {
+        nonisolated public struct PageInfo: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

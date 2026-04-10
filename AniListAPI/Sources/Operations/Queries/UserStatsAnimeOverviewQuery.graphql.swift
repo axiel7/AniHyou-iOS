@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
+nonisolated public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsAnimeOverview"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -19,7 +19,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
 
   @_spi(Unsafe) public var __variables: Variables? { ["userId": userId] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -37,7 +37,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `User`
-    public struct User: AniListAPI.SelectionSet {
+    nonisolated public struct User: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -59,7 +59,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
       /// User.MediaListOptions
       ///
       /// Parent Type: `MediaListOptions`
-      public struct MediaListOptions: AniListAPI.SelectionSet {
+      nonisolated public struct MediaListOptions: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -79,7 +79,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
       /// User.Statistics
       ///
       /// Parent Type: `UserStatisticTypes`
-      public struct Statistics: AniListAPI.SelectionSet {
+      nonisolated public struct Statistics: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -97,7 +97,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
         /// User.Statistics.Anime
         ///
         /// Parent Type: `UserStatistics`
-        public struct Anime: AniListAPI.SelectionSet {
+        nonisolated public struct Anime: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -137,7 +137,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.Score
           ///
           /// Parent Type: `UserScoreStatistic`
-          public struct Score: AniListAPI.SelectionSet {
+          nonisolated public struct Score: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -162,7 +162,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.Length
           ///
           /// Parent Type: `UserLengthStatistic`
-          public struct Length: AniListAPI.SelectionSet {
+          nonisolated public struct Length: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -187,7 +187,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.Format
           ///
           /// Parent Type: `UserFormatStatistic`
-          public struct Format: AniListAPI.SelectionSet {
+          nonisolated public struct Format: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -212,7 +212,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.Status
           ///
           /// Parent Type: `UserStatusStatistic`
-          public struct Status: AniListAPI.SelectionSet {
+          nonisolated public struct Status: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -237,7 +237,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.Country
           ///
           /// Parent Type: `UserCountryStatistic`
-          public struct Country: AniListAPI.SelectionSet {
+          nonisolated public struct Country: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -262,7 +262,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.ReleaseYear
           ///
           /// Parent Type: `UserReleaseYearStatistic`
-          public struct ReleaseYear: AniListAPI.SelectionSet {
+          nonisolated public struct ReleaseYear: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -287,7 +287,7 @@ public struct UserStatsAnimeOverviewQuery: GraphQLQuery {
           /// User.Statistics.Anime.StartYear
           ///
           /// Parent Type: `UserStartYearStatistic`
-          public struct StartYear: AniListAPI.SelectionSet {
+          nonisolated public struct StartYear: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

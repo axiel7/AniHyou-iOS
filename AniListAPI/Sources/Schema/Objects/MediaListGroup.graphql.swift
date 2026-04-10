@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// List group of anime or manga entries
-  static let MediaListGroup = ApolloAPI.Object(
+  nonisolated static let MediaListGroup = ApolloAPI.Object(
     typename: "MediaListGroup",
     implementedInterfaces: [],
     keyFields: nil

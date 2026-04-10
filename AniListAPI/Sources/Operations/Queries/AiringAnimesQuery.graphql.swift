@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct AiringAnimesQuery: GraphQLQuery {
+nonisolated public struct AiringAnimesQuery: GraphQLQuery {
   public static let operationName: String = "AiringAnimes"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -40,7 +40,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
     "airingAtLesser": airingAtLesser
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -60,7 +60,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -85,7 +85,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
       /// Page.AiringSchedule
       ///
       /// Parent Type: `AiringSchedule`
-      public struct AiringSchedule: AniListAPI.SelectionSet {
+      nonisolated public struct AiringSchedule: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -116,7 +116,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
         /// Page.AiringSchedule.Media
         ///
         /// Parent Type: `Media`
-        public struct Media: AniListAPI.SelectionSet {
+        nonisolated public struct Media: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -144,7 +144,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
           /// Page.AiringSchedule.Media.Title
           ///
           /// Parent Type: `MediaTitle`
-          public struct Title: AniListAPI.SelectionSet {
+          nonisolated public struct Title: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -164,7 +164,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
           /// Page.AiringSchedule.Media.CoverImage
           ///
           /// Parent Type: `MediaCoverImage`
-          public struct CoverImage: AniListAPI.SelectionSet {
+          nonisolated public struct CoverImage: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -184,7 +184,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
           /// Page.AiringSchedule.Media.MediaListEntry
           ///
           /// Parent Type: `MediaList`
-          public struct MediaListEntry: AniListAPI.SelectionSet {
+          nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -206,7 +206,7 @@ public struct AiringAnimesQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

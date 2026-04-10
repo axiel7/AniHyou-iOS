@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct CommonReviewDetails: AniListAPI.MutableSelectionSet, Fragment {
+nonisolated public struct CommonReviewDetails: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment CommonReviewDetails on Review { __typename id summary body(asHtml: true) score rating ratingAmount userRating user { __typename id name avatar { __typename medium } } }"#
   }
@@ -95,7 +95,7 @@ public struct CommonReviewDetails: AniListAPI.MutableSelectionSet, Fragment {
   /// User
   ///
   /// Parent Type: `User`
-  public struct User: AniListAPI.MutableSelectionSet, Identifiable {
+  nonisolated public struct User: AniListAPI.MutableSelectionSet, Identifiable {
     @_spi(Unsafe) public var __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -142,7 +142,7 @@ public struct CommonReviewDetails: AniListAPI.MutableSelectionSet, Fragment {
     /// User.Avatar
     ///
     /// Parent Type: `UserAvatar`
-    public struct Avatar: AniListAPI.MutableSelectionSet {
+    nonisolated public struct Avatar: AniListAPI.MutableSelectionSet {
       @_spi(Unsafe) public var __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct SearchCharacterQuery: GraphQLQuery {
+nonisolated public struct SearchCharacterQuery: GraphQLQuery {
   public static let operationName: String = "SearchCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct SearchCharacterQuery: GraphQLQuery {
     "search": search
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -52,7 +52,7 @@ public struct SearchCharacterQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -76,7 +76,7 @@ public struct SearchCharacterQuery: GraphQLQuery {
       /// Page.Character
       ///
       /// Parent Type: `Character`
-      public struct Character: AniListAPI.SelectionSet, Identifiable {
+      nonisolated public struct Character: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct SearchCharacterQuery: GraphQLQuery {
         /// Page.Character.Name
         ///
         /// Parent Type: `CharacterName`
-        public struct Name: AniListAPI.SelectionSet {
+        nonisolated public struct Name: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -121,7 +121,7 @@ public struct SearchCharacterQuery: GraphQLQuery {
         /// Page.Character.Image
         ///
         /// Parent Type: `CharacterImage`
-        public struct Image: AniListAPI.SelectionSet {
+        nonisolated public struct Image: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -142,7 +142,7 @@ public struct SearchCharacterQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

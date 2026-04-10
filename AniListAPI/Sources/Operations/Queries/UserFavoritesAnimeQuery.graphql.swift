@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserFavoritesAnimeQuery: GraphQLQuery {
+nonisolated public struct UserFavoritesAnimeQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
     "perPage": perPage
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -50,7 +50,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `User`
-    public struct User: AniListAPI.SelectionSet {
+    nonisolated public struct User: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -69,7 +69,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
       /// User.Favourites
       ///
       /// Parent Type: `Favourites`
-      public struct Favourites: AniListAPI.SelectionSet {
+      nonisolated public struct Favourites: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -91,7 +91,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
         /// User.Favourites.Anime
         ///
         /// Parent Type: `MediaConnection`
-        public struct Anime: AniListAPI.SelectionSet {
+        nonisolated public struct Anime: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -112,7 +112,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
           /// User.Favourites.Anime.Node
           ///
           /// Parent Type: `Media`
-          public struct Node: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Node: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -140,7 +140,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
             /// User.Favourites.Anime.Node.Title
             ///
             /// Parent Type: `MediaTitle`
-            public struct Title: AniListAPI.SelectionSet {
+            nonisolated public struct Title: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -160,7 +160,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
             /// User.Favourites.Anime.Node.CoverImage
             ///
             /// Parent Type: `MediaCoverImage`
-            public struct CoverImage: AniListAPI.SelectionSet {
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -180,7 +180,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
             /// User.Favourites.Anime.Node.MediaListEntry
             ///
             /// Parent Type: `MediaList`
-            public struct MediaListEntry: AniListAPI.SelectionSet {
+            nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -201,7 +201,7 @@ public struct UserFavoritesAnimeQuery: GraphQLQuery {
           /// User.Favourites.Anime.PageInfo
           ///
           /// Parent Type: `PageInfo`
-          public struct PageInfo: AniListAPI.SelectionSet {
+          nonisolated public struct PageInfo: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

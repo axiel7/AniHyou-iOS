@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Media type enum, anime or manga.
-public enum MediaType: String, EnumType {
+nonisolated public enum MediaType: String, EnumType {
   /// Japanese Anime
   case anime = "ANIME"
   /// Asian comic

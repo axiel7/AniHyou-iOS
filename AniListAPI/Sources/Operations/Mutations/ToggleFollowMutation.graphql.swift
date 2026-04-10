@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ToggleFollowMutation: GraphQLMutation {
+nonisolated public struct ToggleFollowMutation: GraphQLMutation {
   public static let operationName: String = "ToggleFollow"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -19,7 +19,7 @@ public struct ToggleFollowMutation: GraphQLMutation {
 
   @_spi(Unsafe) public var __variables: Variables? { ["userId": userId] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -37,7 +37,7 @@ public struct ToggleFollowMutation: GraphQLMutation {
     /// ToggleFollow
     ///
     /// Parent Type: `User`
-    public struct ToggleFollow: AniListAPI.SelectionSet {
+    nonisolated public struct ToggleFollow: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

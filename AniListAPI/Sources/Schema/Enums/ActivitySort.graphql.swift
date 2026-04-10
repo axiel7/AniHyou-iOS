@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Activity sort enums
-public enum ActivitySort: String, EnumType {
+nonisolated public enum ActivitySort: String, EnumType {
   case id = "ID"
   case idDesc = "ID_DESC"
   case pinned = "PINNED"

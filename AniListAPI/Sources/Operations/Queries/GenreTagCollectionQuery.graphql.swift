@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct GenreTagCollectionQuery: GraphQLQuery {
+nonisolated public struct GenreTagCollectionQuery: GraphQLQuery {
   public static let operationName: String = "GenreTagCollectionQuery"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -13,7 +13,7 @@ public struct GenreTagCollectionQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -34,7 +34,7 @@ public struct GenreTagCollectionQuery: GraphQLQuery {
     /// MediaTagCollection
     ///
     /// Parent Type: `MediaTag`
-    public struct MediaTagCollection: AniListAPI.SelectionSet {
+    nonisolated public struct MediaTagCollection: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

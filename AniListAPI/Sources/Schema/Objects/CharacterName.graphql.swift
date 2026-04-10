@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// The names of the character
-  static let CharacterName = ApolloAPI.Object(
+  nonisolated static let CharacterName = ApolloAPI.Object(
     typename: "CharacterName",
     implementedInterfaces: [],
     keyFields: nil

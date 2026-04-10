@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct TextActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
+nonisolated public struct TextActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment TextActivityFragment on TextActivity { __typename id createdAt isLiked likeCount replyCount isLocked text userId user { __typename name avatar { __typename medium } } }"#
   }
@@ -51,7 +51,7 @@ public struct TextActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
   /// User
   ///
   /// Parent Type: `User`
-  public struct User: AniListAPI.SelectionSet {
+  nonisolated public struct User: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -73,7 +73,7 @@ public struct TextActivityFragment: AniListAPI.SelectionSet, Fragment, Identifia
     /// User.Avatar
     ///
     /// Parent Type: `UserAvatar`
-    public struct Avatar: AniListAPI.SelectionSet {
+    nonisolated public struct Avatar: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

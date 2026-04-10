@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct SubscribeThreadMutation: GraphQLMutation {
+nonisolated public struct SubscribeThreadMutation: GraphQLMutation {
   public static let operationName: String = "SubscribeThread"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -27,7 +27,7 @@ public struct SubscribeThreadMutation: GraphQLMutation {
     "subscribe": subscribe
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -48,7 +48,7 @@ public struct SubscribeThreadMutation: GraphQLMutation {
     /// ToggleThreadSubscription
     ///
     /// Parent Type: `Thread`
-    public struct ToggleThreadSubscription: AniListAPI.SelectionSet, Identifiable {
+    nonisolated public struct ToggleThreadSubscription: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

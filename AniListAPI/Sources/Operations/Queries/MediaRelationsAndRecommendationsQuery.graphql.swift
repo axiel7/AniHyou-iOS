@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
+nonisolated public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
   public static let operationName: String = "MediaRelationsAndRecommendations"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -20,7 +20,7 @@ public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
 
   @_spi(Unsafe) public var __variables: Variables? { ["mediaId": mediaId] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -38,7 +38,7 @@ public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
     /// Media
     ///
     /// Parent Type: `Media`
-    public struct Media: AniListAPI.SelectionSet {
+    nonisolated public struct Media: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -63,7 +63,7 @@ public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
       /// Media.Relations
       ///
       /// Parent Type: `MediaConnection`
-      public struct Relations: AniListAPI.SelectionSet {
+      nonisolated public struct Relations: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -81,7 +81,7 @@ public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         /// Media.Relations.Edge
         ///
         /// Parent Type: `MediaEdge`
-        public struct Edge: AniListAPI.SelectionSet {
+        nonisolated public struct Edge: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -113,7 +113,7 @@ public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
       /// Media.Recommendations
       ///
       /// Parent Type: `RecommendationConnection`
-      public struct Recommendations: AniListAPI.SelectionSet {
+      nonisolated public struct Recommendations: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -131,7 +131,7 @@ public struct MediaRelationsAndRecommendationsQuery: GraphQLQuery {
         /// Media.Recommendations.Node
         ///
         /// Parent Type: `Recommendation`
-        public struct Node: AniListAPI.SelectionSet {
+        nonisolated public struct Node: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

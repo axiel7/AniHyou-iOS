@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MySeasonalAnimeQuery: GraphQLQuery {
+nonisolated public struct MySeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "MySeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -40,7 +40,7 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
     "sort": sort
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -60,7 +60,7 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -86,7 +86,7 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
       /// Page.Medium
       ///
       /// Parent Type: `Media`
-      public struct Medium: AniListAPI.SelectionSet, Identifiable {
+      nonisolated public struct Medium: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -108,7 +108,7 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
         /// Page.Medium.MediaListEntry
         ///
         /// Parent Type: `MediaList`
-        public struct MediaListEntry: AniListAPI.SelectionSet {
+        nonisolated public struct MediaListEntry: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -172,7 +172,7 @@ public struct MySeasonalAnimeQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

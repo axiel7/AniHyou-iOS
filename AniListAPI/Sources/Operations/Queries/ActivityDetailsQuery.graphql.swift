@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ActivityDetailsQuery: GraphQLQuery {
+nonisolated public struct ActivityDetailsQuery: GraphQLQuery {
   public static let operationName: String = "ActivityDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -20,7 +20,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
 
   @_spi(Unsafe) public var __variables: Variables? { ["activityId": activityId] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -38,7 +38,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
     /// Activity
     ///
     /// Parent Type: `ActivityUnion`
-    public struct Activity: AniListAPI.SelectionSet {
+    nonisolated public struct Activity: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -60,7 +60,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
       /// Activity.AsTextActivity
       ///
       /// Parent Type: `TextActivity`
-      public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
+      nonisolated public struct AsTextActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -107,7 +107,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
         /// Activity.AsTextActivity.Reply
         ///
         /// Parent Type: `ActivityReply`
-        public struct Reply: AniListAPI.SelectionSet, Identifiable {
+        nonisolated public struct Reply: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -152,7 +152,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
       /// Activity.AsListActivity
       ///
       /// Parent Type: `ListActivity`
-      public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
+      nonisolated public struct AsListActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -205,7 +205,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
         /// Activity.AsListActivity.Reply
         ///
         /// Parent Type: `ActivityReply`
-        public struct Reply: AniListAPI.SelectionSet, Identifiable {
+        nonisolated public struct Reply: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -252,7 +252,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
       /// Activity.AsMessageActivity
       ///
       /// Parent Type: `MessageActivity`
-      public struct AsMessageActivity: AniListAPI.InlineFragment, Identifiable {
+      nonisolated public struct AsMessageActivity: AniListAPI.InlineFragment, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -301,7 +301,7 @@ public struct ActivityDetailsQuery: GraphQLQuery {
         /// Activity.AsMessageActivity.Reply
         ///
         /// Parent Type: `ActivityReply`
-        public struct Reply: AniListAPI.SelectionSet, Identifiable {
+        nonisolated public struct Reply: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

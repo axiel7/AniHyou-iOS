@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// The role the character plays in the media
-public enum CharacterRole: String, EnumType {
+nonisolated public enum CharacterRole: String, EnumType {
   /// A primary character role in the media
   case main = "MAIN"
   /// A supporting character role in the media

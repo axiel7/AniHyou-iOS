@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
+nonisolated public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment UserOptionsFragment on User { __typename id options { __typename displayAdultContent profileColor staffNameLanguage titleLanguage airingNotifications } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoringEnabled advancedScoring } mangaList { __typename advancedScoringEnabled advancedScoring } } }"#
   }
@@ -33,7 +33,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment, Identifiab
   /// Options
   ///
   /// Parent Type: `UserOptions`
-  public struct Options: AniListAPI.SelectionSet {
+  nonisolated public struct Options: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -65,7 +65,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment, Identifiab
   /// MediaListOptions
   ///
   /// Parent Type: `MediaListOptions`
-  public struct MediaListOptions: AniListAPI.SelectionSet {
+  nonisolated public struct MediaListOptions: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -90,7 +90,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment, Identifiab
     /// MediaListOptions.AnimeList
     ///
     /// Parent Type: `MediaListTypeOptions`
-    public struct AnimeList: AniListAPI.SelectionSet {
+    nonisolated public struct AnimeList: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -113,7 +113,7 @@ public struct UserOptionsFragment: AniListAPI.SelectionSet, Fragment, Identifiab
     /// MediaListOptions.MangaList
     ///
     /// Parent Type: `MediaListTypeOptions`
-    public struct MangaList: AniListAPI.SelectionSet {
+    nonisolated public struct MangaList: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

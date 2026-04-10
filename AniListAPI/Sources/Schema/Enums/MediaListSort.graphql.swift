@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Media list sort enums
-public enum MediaListSort: String, EnumType {
+nonisolated public enum MediaListSort: String, EnumType {
   case mediaId = "MEDIA_ID"
   case mediaIdDesc = "MEDIA_ID_DESC"
   case score = "SCORE"

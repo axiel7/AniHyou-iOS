@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// Source type the media was adapted from
-public enum MediaSource: String, EnumType {
+nonisolated public enum MediaSource: String, EnumType {
   /// An original production not based of another work
   case original = "ORIGINAL"
   /// Asian comic book

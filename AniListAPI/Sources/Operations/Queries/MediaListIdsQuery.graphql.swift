@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaListIdsQuery: GraphQLQuery {
+nonisolated public struct MediaListIdsQuery: GraphQLQuery {
   public static let operationName: String = "MediaListIds"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -39,7 +39,7 @@ public struct MediaListIdsQuery: GraphQLQuery {
     "perChunk": perChunk
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -63,7 +63,7 @@ public struct MediaListIdsQuery: GraphQLQuery {
     /// MediaListCollection
     ///
     /// Parent Type: `MediaListCollection`
-    public struct MediaListCollection: AniListAPI.SelectionSet {
+    nonisolated public struct MediaListCollection: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -85,7 +85,7 @@ public struct MediaListIdsQuery: GraphQLQuery {
       /// MediaListCollection.List
       ///
       /// Parent Type: `MediaListGroup`
-      public struct List: AniListAPI.SelectionSet {
+      nonisolated public struct List: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -104,7 +104,7 @@ public struct MediaListIdsQuery: GraphQLQuery {
         /// MediaListCollection.List.Entry
         ///
         /// Parent Type: `MediaList`
-        public struct Entry: AniListAPI.SelectionSet {
+        nonisolated public struct Entry: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

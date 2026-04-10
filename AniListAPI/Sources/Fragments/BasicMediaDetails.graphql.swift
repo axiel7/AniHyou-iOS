@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, Identifiable {
+nonisolated public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
     #"fragment BasicMediaDetails on Media { __typename id title { __typename userPreferred } episodes chapters volumes type coverImage { __typename large } }"#
   }
@@ -45,7 +45,7 @@ public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, Identifiable
   /// Title
   ///
   /// Parent Type: `MediaTitle`
-  public struct Title: AniListAPI.SelectionSet {
+  nonisolated public struct Title: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -65,7 +65,7 @@ public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, Identifiable
   /// CoverImage
   ///
   /// Parent Type: `MediaCoverImage`
-  public struct CoverImage: AniListAPI.SelectionSet {
+  nonisolated public struct CoverImage: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

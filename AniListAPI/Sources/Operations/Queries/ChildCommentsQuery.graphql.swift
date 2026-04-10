@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct ChildCommentsQuery: GraphQLQuery {
+nonisolated public struct ChildCommentsQuery: GraphQLQuery {
   public static let operationName: String = "ChildComments"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
     "threadId": threadId
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -52,7 +52,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -73,7 +73,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
       /// Page.ThreadComment
       ///
       /// Parent Type: `ThreadComment`
-      public struct ThreadComment: AniListAPI.SelectionSet, Identifiable {
+      nonisolated public struct ThreadComment: AniListAPI.SelectionSet, Identifiable {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -113,7 +113,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
         /// Page.ThreadComment.User
         ///
         /// Parent Type: `User`
-        public struct User: AniListAPI.SelectionSet, Identifiable {
+        nonisolated public struct User: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -138,7 +138,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
           /// Page.ThreadComment.User.Avatar
           ///
           /// Parent Type: `UserAvatar`
-          public struct Avatar: AniListAPI.SelectionSet {
+          nonisolated public struct Avatar: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -160,7 +160,7 @@ public struct ChildCommentsQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

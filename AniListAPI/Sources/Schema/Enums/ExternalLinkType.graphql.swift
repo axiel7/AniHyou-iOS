@@ -3,7 +3,7 @@
 
 @_spi(Internal) import ApolloAPI
 
-public enum ExternalLinkType: String, EnumType {
+nonisolated public enum ExternalLinkType: String, EnumType {
   case info = "INFO"
   case streaming = "STREAMING"
   case social = "SOCIAL"

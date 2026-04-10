@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct FuzzyDateFragment: AniListAPI.MutableSelectionSet, Fragment {
+nonisolated public struct FuzzyDateFragment: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment FuzzyDateFragment on FuzzyDate { __typename day month year }"#
   }

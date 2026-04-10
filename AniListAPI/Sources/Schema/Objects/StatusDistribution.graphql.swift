@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// The distribution of the watching/reading status of media or a user's list
-  static let StatusDistribution = ApolloAPI.Object(
+  nonisolated static let StatusDistribution = ApolloAPI.Object(
     typename: "StatusDistribution",
     implementedInterfaces: [],
     keyFields: nil

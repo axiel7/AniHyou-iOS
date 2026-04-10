@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
+nonisolated public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment BasicMediaListEntry on MediaList { __typename id mediaId progress progressVolumes status score advancedScores repeat private hiddenFromStatusLists startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } notes customLists }"#
   }
@@ -143,7 +143,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   /// StartedAt
   ///
   /// Parent Type: `FuzzyDate`
-  public struct StartedAt: AniListAPI.MutableSelectionSet {
+  nonisolated public struct StartedAt: AniListAPI.MutableSelectionSet {
     @_spi(Unsafe) public var __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -200,7 +200,7 @@ public struct BasicMediaListEntry: AniListAPI.MutableSelectionSet, Fragment {
   /// CompletedAt
   ///
   /// Parent Type: `FuzzyDate`
-  public struct CompletedAt: AniListAPI.MutableSelectionSet {
+  nonisolated public struct CompletedAt: AniListAPI.MutableSelectionSet {
     @_spi(Unsafe) public var __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

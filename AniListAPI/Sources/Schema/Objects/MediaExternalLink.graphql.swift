@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// An external link to another site related to the media or staff member
-  static let MediaExternalLink = ApolloAPI.Object(
+  nonisolated static let MediaExternalLink = ApolloAPI.Object(
     typename: "MediaExternalLink",
     implementedInterfaces: [],
     keyFields: nil

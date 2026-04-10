@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// A user's general options
-  static let UserOptions = ApolloAPI.Object(
+  nonisolated static let UserOptions = ApolloAPI.Object(
     typename: "UserOptions",
     implementedInterfaces: [],
     keyFields: nil

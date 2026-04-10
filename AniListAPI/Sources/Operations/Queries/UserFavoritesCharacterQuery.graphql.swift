@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserFavoritesCharacterQuery: GraphQLQuery {
+nonisolated public struct UserFavoritesCharacterQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesCharacter"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
     "perPage": perPage
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -50,7 +50,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `User`
-    public struct User: AniListAPI.SelectionSet {
+    nonisolated public struct User: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -69,7 +69,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
       /// User.Favourites
       ///
       /// Parent Type: `Favourites`
-      public struct Favourites: AniListAPI.SelectionSet {
+      nonisolated public struct Favourites: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -91,7 +91,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
         /// User.Favourites.Characters
         ///
         /// Parent Type: `CharacterConnection`
-        public struct Characters: AniListAPI.SelectionSet {
+        nonisolated public struct Characters: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -112,7 +112,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
           /// User.Favourites.Characters.Node
           ///
           /// Parent Type: `Character`
-          public struct Node: AniListAPI.SelectionSet, Identifiable {
+          nonisolated public struct Node: AniListAPI.SelectionSet, Identifiable {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -137,7 +137,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
             /// User.Favourites.Characters.Node.Name
             ///
             /// Parent Type: `CharacterName`
-            public struct Name: AniListAPI.SelectionSet {
+            nonisolated public struct Name: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -157,7 +157,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
             /// User.Favourites.Characters.Node.Image
             ///
             /// Parent Type: `CharacterImage`
-            public struct Image: AniListAPI.SelectionSet {
+            nonisolated public struct Image: AniListAPI.SelectionSet {
               @_spi(Unsafe) public let __data: DataDict
               @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -178,7 +178,7 @@ public struct UserFavoritesCharacterQuery: GraphQLQuery {
           /// User.Favourites.Characters.PageInfo
           ///
           /// Parent Type: `PageInfo`
-          public struct PageInfo: AniListAPI.SelectionSet {
+          nonisolated public struct PageInfo: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct NotificationCountQuery: GraphQLQuery {
+nonisolated public struct NotificationCountQuery: GraphQLQuery {
   public static let operationName: String = "NotificationCount"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -13,7 +13,7 @@ public struct NotificationCountQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -31,7 +31,7 @@ public struct NotificationCountQuery: GraphQLQuery {
     /// Viewer
     ///
     /// Parent Type: `User`
-    public struct Viewer: AniListAPI.SelectionSet {
+    nonisolated public struct Viewer: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

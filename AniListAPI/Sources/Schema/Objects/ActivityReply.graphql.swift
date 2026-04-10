@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// Replay to an activity item
-  static let ActivityReply = ApolloAPI.Object(
+  nonisolated static let ActivityReply = ApolloAPI.Object(
     typename: "ActivityReply",
     implementedInterfaces: [],
     keyFields: ["id"]

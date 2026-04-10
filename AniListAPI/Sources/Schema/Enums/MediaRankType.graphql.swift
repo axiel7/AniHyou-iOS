@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// The type of ranking
-public enum MediaRankType: String, EnumType {
+nonisolated public enum MediaRankType: String, EnumType {
   /// Ranking is based on the media's ratings/score
   case rated = "RATED"
   /// Ranking is based on the media's popularity

@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct UserStatsVoiceActorsQuery: GraphQLQuery {
+nonisolated public struct UserStatsVoiceActorsQuery: GraphQLQuery {
   public static let operationName: String = "UserStatsVoiceActors"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -28,7 +28,7 @@ public struct UserStatsVoiceActorsQuery: GraphQLQuery {
     "sort": sort
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -46,7 +46,7 @@ public struct UserStatsVoiceActorsQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `User`
-    public struct User: AniListAPI.SelectionSet {
+    nonisolated public struct User: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -65,7 +65,7 @@ public struct UserStatsVoiceActorsQuery: GraphQLQuery {
       /// User.Statistics
       ///
       /// Parent Type: `UserStatisticTypes`
-      public struct Statistics: AniListAPI.SelectionSet {
+      nonisolated public struct Statistics: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -83,7 +83,7 @@ public struct UserStatsVoiceActorsQuery: GraphQLQuery {
         /// User.Statistics.Anime
         ///
         /// Parent Type: `UserStatistics`
-        public struct Anime: AniListAPI.SelectionSet {
+        nonisolated public struct Anime: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct UserStatsVoiceActorsQuery: GraphQLQuery {
           /// User.Statistics.Anime.VoiceActor
           ///
           /// Parent Type: `UserVoiceActorStatistic`
-          public struct VoiceActor: AniListAPI.SelectionSet {
+          nonisolated public struct VoiceActor: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

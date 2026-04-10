@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaStatsQuery: GraphQLQuery {
+nonisolated public struct MediaStatsQuery: GraphQLQuery {
   public static let operationName: String = "MediaStats"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -19,7 +19,7 @@ public struct MediaStatsQuery: GraphQLQuery {
 
   @_spi(Unsafe) public var __variables: Variables? { ["mediaId": mediaId] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -37,7 +37,7 @@ public struct MediaStatsQuery: GraphQLQuery {
     /// Media
     ///
     /// Parent Type: `Media`
-    public struct Media: AniListAPI.SelectionSet {
+    nonisolated public struct Media: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -58,7 +58,7 @@ public struct MediaStatsQuery: GraphQLQuery {
       /// Media.Stats
       ///
       /// Parent Type: `MediaStats`
-      public struct Stats: AniListAPI.SelectionSet {
+      nonisolated public struct Stats: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -78,7 +78,7 @@ public struct MediaStatsQuery: GraphQLQuery {
         /// Media.Stats.StatusDistribution
         ///
         /// Parent Type: `StatusDistribution`
-        public struct StatusDistribution: AniListAPI.SelectionSet {
+        nonisolated public struct StatusDistribution: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -101,7 +101,7 @@ public struct MediaStatsQuery: GraphQLQuery {
         /// Media.Stats.ScoreDistribution
         ///
         /// Parent Type: `ScoreDistribution`
-        public struct ScoreDistribution: AniListAPI.SelectionSet {
+        nonisolated public struct ScoreDistribution: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -124,7 +124,7 @@ public struct MediaStatsQuery: GraphQLQuery {
       /// Media.Ranking
       ///
       /// Parent Type: `MediaRank`
-      public struct Ranking: AniListAPI.SelectionSet {
+      nonisolated public struct Ranking: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

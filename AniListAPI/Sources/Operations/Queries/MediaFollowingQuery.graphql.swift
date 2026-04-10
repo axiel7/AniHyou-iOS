@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct MediaFollowingQuery: GraphQLQuery {
+nonisolated public struct MediaFollowingQuery: GraphQLQuery {
   public static let operationName: String = "MediaFollowing"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
     "perPage": perPage
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -52,7 +52,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
     /// Page
     ///
     /// Parent Type: `Page`
-    public struct Page: AniListAPI.SelectionSet {
+    nonisolated public struct Page: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -77,7 +77,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
       /// Page.MediaList
       ///
       /// Parent Type: `MediaList`
-      public struct MediaList: AniListAPI.SelectionSet {
+      nonisolated public struct MediaList: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -107,7 +107,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
         /// Page.MediaList.User
         ///
         /// Parent Type: `User`
-        public struct User: AniListAPI.SelectionSet, Identifiable {
+        nonisolated public struct User: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -135,7 +135,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
           /// Page.MediaList.User.Avatar
           ///
           /// Parent Type: `UserAvatar`
-          public struct Avatar: AniListAPI.SelectionSet {
+          nonisolated public struct Avatar: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -155,7 +155,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
           /// Page.MediaList.User.MediaListOptions
           ///
           /// Parent Type: `MediaListOptions`
-          public struct MediaListOptions: AniListAPI.SelectionSet {
+          nonisolated public struct MediaListOptions: AniListAPI.SelectionSet {
             @_spi(Unsafe) public let __data: DataDict
             @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -177,7 +177,7 @@ public struct MediaFollowingQuery: GraphQLQuery {
       /// Page.PageInfo
       ///
       /// Parent Type: `PageInfo`
-      public struct PageInfo: AniListAPI.SelectionSet {
+      nonisolated public struct PageInfo: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

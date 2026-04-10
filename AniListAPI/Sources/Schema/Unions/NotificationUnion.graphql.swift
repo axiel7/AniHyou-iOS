@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Unions {
   /// Notification union type
-  static let NotificationUnion = Union(
+  nonisolated static let NotificationUnion = Union(
     name: "NotificationUnion",
     possibleTypes: [
       Objects.AiringNotification.self,
@@ -24,7 +24,10 @@ public extension Unions {
       Objects.RelatedMediaAdditionNotification.self,
       Objects.MediaDataChangeNotification.self,
       Objects.MediaMergeNotification.self,
-      Objects.MediaDeletionNotification.self
+      Objects.MediaDeletionNotification.self,
+      Objects.MediaSubmissionUpdateNotification.self,
+      Objects.StaffSubmissionUpdateNotification.self,
+      Objects.CharacterSubmissionUpdateNotification.self
     ]
   )
 }

@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Objects {
   /// User's favourite anime, manga, characters, staff & studios
-  static let Favourites = ApolloAPI.Object(
+  nonisolated static let Favourites = ApolloAPI.Object(
     typename: "Favourites",
     implementedInterfaces: [],
     keyFields: nil

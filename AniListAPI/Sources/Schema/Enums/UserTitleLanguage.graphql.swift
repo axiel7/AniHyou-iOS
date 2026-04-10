@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// The language the user wants to see media titles in
-public enum UserTitleLanguage: String, EnumType {
+nonisolated public enum UserTitleLanguage: String, EnumType {
   /// The romanization of the native language title
   case romaji = "ROMAJI"
   /// The official english title

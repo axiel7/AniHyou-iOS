@@ -4,7 +4,7 @@
 @_spi(Internal) import ApolloAPI
 
 /// User statistics sort enum
-public enum UserStatisticsSort: String, EnumType {
+nonisolated public enum UserStatisticsSort: String, EnumType {
   case id = "ID"
   case idDesc = "ID_DESC"
   case count = "COUNT"

@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct StudioDetailsQuery: GraphQLQuery {
+nonisolated public struct StudioDetailsQuery: GraphQLQuery {
   public static let operationName: String = "StudioDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -32,7 +32,7 @@ public struct StudioDetailsQuery: GraphQLQuery {
     "perPage": perPage
   ] }
 
-  public struct Data: AniListAPI.SelectionSet {
+  nonisolated public struct Data: AniListAPI.SelectionSet {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -50,7 +50,7 @@ public struct StudioDetailsQuery: GraphQLQuery {
     /// Studio
     ///
     /// Parent Type: `Studio`
-    public struct Studio: AniListAPI.SelectionSet, Identifiable {
+    nonisolated public struct Studio: AniListAPI.SelectionSet, Identifiable {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -94,7 +94,7 @@ public struct StudioDetailsQuery: GraphQLQuery {
       /// Studio.Media
       ///
       /// Parent Type: `MediaConnection`
-      public struct Media: AniListAPI.SelectionSet {
+      nonisolated public struct Media: AniListAPI.SelectionSet {
         @_spi(Unsafe) public let __data: DataDict
         @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -115,7 +115,7 @@ public struct StudioDetailsQuery: GraphQLQuery {
         /// Studio.Media.Node
         ///
         /// Parent Type: `Media`
-        public struct Node: AniListAPI.SelectionSet, Identifiable {
+        nonisolated public struct Node: AniListAPI.SelectionSet, Identifiable {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -157,7 +157,7 @@ public struct StudioDetailsQuery: GraphQLQuery {
         /// Studio.Media.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AniListAPI.SelectionSet {
+        nonisolated public struct PageInfo: AniListAPI.SelectionSet {
           @_spi(Unsafe) public let __data: DataDict
           @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

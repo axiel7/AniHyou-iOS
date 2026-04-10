@@ -5,7 +5,7 @@ import ApolloAPI
 
 public extension Unions {
   /// Activity union type
-  static let ActivityUnion = Union(
+  nonisolated static let ActivityUnion = Union(
     name: "ActivityUnion",
     possibleTypes: [
       Objects.TextActivity.self,

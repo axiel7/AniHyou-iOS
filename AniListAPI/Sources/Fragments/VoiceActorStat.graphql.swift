@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment VoiceActorStat on UserVoiceActorStatistic { __typename voiceActor { __typename id name { __typename userPreferred } image { __typename medium } } count meanScore minutesWatched chaptersRead }"#
   }
@@ -34,7 +34,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
   /// VoiceActor
   ///
   /// Parent Type: `Staff`
-  public struct VoiceActor: AniListAPI.SelectionSet, Identifiable {
+  nonisolated public struct VoiceActor: AniListAPI.SelectionSet, Identifiable {
     @_spi(Unsafe) public let __data: DataDict
     @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -59,7 +59,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
     /// VoiceActor.Name
     ///
     /// Parent Type: `StaffName`
-    public struct Name: AniListAPI.SelectionSet {
+    nonisolated public struct Name: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
@@ -79,7 +79,7 @@ public struct VoiceActorStat: AniListAPI.SelectionSet, Fragment {
     /// VoiceActor.Image
     ///
     /// Parent Type: `StaffImage`
-    public struct Image: AniListAPI.SelectionSet {
+    nonisolated public struct Image: AniListAPI.SelectionSet {
       @_spi(Unsafe) public let __data: DataDict
       @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 

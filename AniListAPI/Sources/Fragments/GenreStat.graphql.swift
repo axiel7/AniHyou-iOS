@@ -4,7 +4,7 @@
 @_exported import ApolloAPI
 @_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public struct GenreStat: AniListAPI.SelectionSet, Fragment {
+nonisolated public struct GenreStat: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment GenreStat on UserGenreStatistic { __typename genre count meanScore minutesWatched chaptersRead }"#
   }
