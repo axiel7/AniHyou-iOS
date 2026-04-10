@@ -15,6 +15,7 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable, Sendable
     case forum
     case follows
     case media
+    case submission
 
     var value: [NotificationType] {
         switch self {
@@ -31,6 +32,8 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable, Sendable
             [.following]
         case .media:
             [.relatedMediaAddition, .mediaDataChange, .mediaMerge, .mediaDeletion]
+        case .submission:
+            [.mediaSubmissionUpdate, .staffSubmissionUpdate, .characterSubmissionUpdate]
         }
     }
 
@@ -48,6 +51,8 @@ public enum NotificationTypeGrouped: Equatable, Hashable, CaseIterable, Sendable
             "Follows"
         case .media:
             "Media"
+        case .submission:
+            "Submission"
         }
     }
 }
