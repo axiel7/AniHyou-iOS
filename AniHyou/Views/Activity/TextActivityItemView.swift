@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AniListAPI
-import MarkdownUI
+import Textual
 
 struct TextActivityItemView: View {
     
@@ -43,8 +43,7 @@ struct TextActivityItemView: View {
                     .padding(.bottom, 1)
             }//:HStack
             
-            Markdown(activity.text?.formatMarkdown() ?? "Loading")
-                .defaultStyle()
+            InlineText(markdown: activity.text?.formatMarkdown() ?? "Loading")
             
             HStack {
                 Spacer()

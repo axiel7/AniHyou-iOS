@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MarkdownUI
+import Textual
 import AniListAPI
 
 struct MessageActivityItemView: View {
@@ -43,8 +43,7 @@ struct MessageActivityItemView: View {
                     .padding(.bottom, 1)
             }//:HStack
             
-            Markdown(activity.message?.formatMarkdown() ?? "Loading")
-                .defaultStyle()
+            InlineText(markdown: activity.message?.formatMarkdown() ?? "Loading")
             
             HStack {
                 Spacer()

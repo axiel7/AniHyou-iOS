@@ -68,7 +68,6 @@
 		48218B092BC5934900A03421 /* MediaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847E11D2B48EE770032521A /* MediaDetails.swift */; };
 		48218B122BD1157800A03421 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218B112BD1157800A03421 /* UserTests.swift */; };
 		48218B1A2BD11A8900A03421 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48218B192BD11A8900A03421 /* StringTests.swift */; };
-		482801762AB00541004E11D6 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 482801752AB00541004E11D6 /* MarkdownUI */; };
 		482801782AB031DC004E11D6 /* MarkdownUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482801772AB031DC004E11D6 /* MarkdownUtils.swift */; };
 		48294CD92AB91F50005E7CD2 /* AnimeBehindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CD82AB91F50005E7CD2 /* AnimeBehindWidget.swift */; };
 		48294CDB2AB92067005E7CD2 /* BaseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294CDA2AB92067005E7CD2 /* BaseEntry.swift */; };
@@ -138,6 +137,7 @@
 		48801D212C3BEDC5000BEA3A /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D202C3BEDC5000BEA3A /* CurrentView.swift */; };
 		48801D232C3BF093000BEA3A /* CurrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D222C3BF08B000BEA3A /* CurrentViewModel.swift */; };
 		48801D252C3BF397000BEA3A /* CurrentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48801D242C3BF397000BEA3A /* CurrentListItemView.swift */; };
+		4882BA582F939010002C10DE /* Textual in Frameworks */ = {isa = PBXBuildFile; productRef = 4882BA572F939010002C10DE /* Textual */; };
 		488408CD2BF88B5A00580DA0 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488408CC2BF88B5A00580DA0 /* MediaListViewModel.swift */; };
 		488408D42BFB86FA00580DA0 /* MediaCustomListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488408D32BFB86FA00580DA0 /* MediaCustomListsView.swift */; };
 		4884AAB02965AC94009A3B8C /* GenreTagSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884AAAF2965AC94009A3B8C /* GenreTagSelectionView.swift */; };
@@ -776,8 +776,8 @@
 			files = (
 				4815DFA62A2ED1D400352A9B /* AniListAPI in Frameworks */,
 				48DF50F52A669B7C00DF1C87 /* StoreKit.framework in Frameworks */,
-				482801762AB00541004E11D6 /* MarkdownUI in Frameworks */,
 				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
+				4882BA582F939010002C10DE /* Textual in Frameworks */,
 				48F36D492E8A80EC00A53A4B /* Apollo in Frameworks */,
 				48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */,
 				482E581E2C00B7870089AE28 /* NukeUI in Frameworks */,
@@ -2040,10 +2040,10 @@
 				48604D7A28A15AD1006A6AF8 /* RichText */,
 				48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */,
 				4815DFA52A2ED1D400352A9B /* AniListAPI */,
-				482801752AB00541004E11D6 /* MarkdownUI */,
 				482E581B2C00B7870089AE28 /* Nuke */,
 				482E581D2C00B7870089AE28 /* NukeUI */,
 				48F36D482E8A80EC00A53A4B /* Apollo */,
+				4882BA572F939010002C10DE /* Textual */,
 			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
@@ -2186,9 +2186,9 @@
 				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */,
 				48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */,
-				482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */,
 				48A06B982E91914E0089B195 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				4882BA562F939010002C10DE /* XCRemoteSwiftPackageReference "textual" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
@@ -3153,14 +3153,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
@@ -3175,6 +3167,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
+			};
+		};
+		4882BA562F939010002C10DE /* XCRemoteSwiftPackageReference "textual" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/textual";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
 			};
 		};
 		488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
@@ -3216,11 +3216,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = AniListAPI;
 		};
-		482801752AB00541004E11D6 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 482801742AB00541004E11D6 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
 		482E581B2C00B7870089AE28 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */;
@@ -3235,6 +3230,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */;
 			productName = RichText;
+		};
+		4882BA572F939010002C10DE /* Textual */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4882BA562F939010002C10DE /* XCRemoteSwiftPackageReference "textual" */;
+			productName = Textual;
 		};
 		488C268728539CC30005EE15 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;

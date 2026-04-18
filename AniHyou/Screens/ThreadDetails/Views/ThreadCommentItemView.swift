@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AniListAPI
-import MarkdownUI
+import Textual
 
 struct ThreadCommentItemView: View {
 
@@ -54,8 +54,7 @@ struct ThreadCommentItemView: View {
                     .padding(.bottom, 1)
             }
 
-            Markdown(comment?.comment?.formatMarkdown() ?? "Loading")
-                .defaultStyle()
+            InlineText(markdown: comment?.comment?.formatMarkdown() ?? "Loading")
                 .translationPresentation(
                     isPresented: $showingTranslation,
                     text: comment?.comment?.htmlStripped ?? ""

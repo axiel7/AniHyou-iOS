@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MarkdownUI
+import Textual
 import AniListAPI
 
 struct ThreadDetailsView: View {
@@ -44,8 +44,7 @@ struct ThreadDetailsView: View {
                             .foregroundStyle(.gray)
                             .padding(.leading)
                         
-                        Markdown(thread.body?.formatMarkdown() ?? "")
-                            .defaultStyle()
+                        InlineText(markdown: thread.body?.formatMarkdown() ?? "")
                             .padding()
                             .translationPresentation(
                                 isPresented: $showingTranslation,
