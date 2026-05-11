@@ -7,9 +7,10 @@ Another unofficial iOS AniList client
 
 [<img alt="App Store" height="80" src="https://github.com/axiel7/AniHyou-iOS/blob/main/AppStore-badge.png?raw=true"/>](https://apps.apple.com/us/app/anihyou/id1635777325)
 
-Android version [here](https://github.com/axiel7/AniHyou-android)
-
 Try the beta on [TestFlight](https://testflight.apple.com/join/Om3OIlKd)
+
+> [!NOTE]
+> Android version [here](https://github.com/axiel7/AniHyou-android)
 
 Follow the development on the official Discord server:
 
@@ -37,15 +38,16 @@ Follow the development on the official Discord server:
 ```
 ANILIST_CLIENT_ID = XXXX
 ```
-
-To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
+> [!IMPORTANT]
+> To get a Client ID, go to the [Developer section](https://anilist.co/settings/developer) and create a new client with the *Redirect URL* set to `anihyou://auth-response`
 
 ## Technologies used
 - [AniList GraphQL API](https://github.com/AniList/ApiV2-GraphQL-Docs)
 - [Apollo iOS Client](https://github.com/apollographql/apollo-ios)
-- [Kingfisher](https://github.com/onevcat/Kingfisher)
+- [Nuke](https://github.com/kean/Nuke)
 - [KeychainSwift](https://github.com/evgenyneu/keychain-swift)
 - [RichText](https://github.com/NuPlay/RichText)
+- [Textual](https://github.com/gonzalezreal/textual)
 
 # Donate 💸
 Support the development of AniHyou by making a donation via:
