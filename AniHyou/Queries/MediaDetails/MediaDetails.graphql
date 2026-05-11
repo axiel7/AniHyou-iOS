@@ -106,4 +106,5 @@ fragment BasicMediaDetails on Media {
   coverImage {
     large
   }
+  isAdult
 }

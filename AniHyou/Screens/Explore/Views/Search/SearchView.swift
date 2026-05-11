@@ -20,6 +20,7 @@ struct SearchView: View {
     @State private var isMediaSourcesPresented = false
     @State private var showingMoreFilters = false
     private let currentYear = Date.now.year
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     var body: some View {
         List {
@@ -59,7 +60,8 @@ struct SearchView: View {
                                 "\(startYear)"
                             ),
                             imageUrl: item.coverImage?.large,
-                            status: item.mediaListEntry?.status?.value
+                            status: item.mediaListEntry?.status?.value,
+                            blurCover: blurAdultMedia && item.isAdult == true
                         )
                         .mediaContextMenu(
                             mediaId: item.id,

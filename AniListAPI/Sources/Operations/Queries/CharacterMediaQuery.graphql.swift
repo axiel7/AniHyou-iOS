@@ -8,7 +8,7 @@ nonisolated public struct CharacterMediaQuery: GraphQLQuery {
   public static let operationName: String = "CharacterMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename ...CommonPage } } } }"#,
+      #"query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) { Character(id: $characterId) { __typename media(page: $page, perPage: $perPage, sort: [POPULARITY_DESC]) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } isAdult } characterName characterRole voiceActors(sort: [RELEVANCE, LANGUAGE]) { __typename id name { __typename userPreferred } languageV2 } } pageInfo { __typename ...CommonPage } } } }"#,
       fragments: [CommonPage.self, FuzzyDateFragment.self]
     ))
 
@@ -137,6 +137,7 @@ nonisolated public struct CharacterMediaQuery: GraphQLQuery {
               .field("coverImage", CoverImage?.self),
               .field("mediaListEntry", MediaListEntry?.self),
               .field("startDate", StartDate?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               CharacterMediaQuery.Data.Character.Media.Edge.Node.self
@@ -154,6 +155,8 @@ nonisolated public struct CharacterMediaQuery: GraphQLQuery {
             public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
             /// The first official release date of the media
             public var startDate: StartDate? { __data["startDate"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// Character.Media.Edge.Node.Title
             ///

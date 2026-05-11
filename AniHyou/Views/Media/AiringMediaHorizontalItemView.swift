@@ -19,6 +19,7 @@ struct AiringMediaHorizontalItemView: View {
     var nextEpisode: Int?
     var airingAt: Int?
     var status: MediaListStatus?
+    var blurCover = false
 
     var body: some View {
         HStack {
@@ -26,7 +27,8 @@ struct AiringMediaHorizontalItemView: View {
                 MediaCoverView(
                     imageUrl: imageUrl,
                     width: HListItemWithSubtitleView.coverWidth,
-                    height: HListItemWithSubtitleView.coverHeight
+                    height: HListItemWithSubtitleView.coverHeight,
+                    blurEnabled: blurCover
                 )
                 if let status {
                     Image(systemName: status.systemImage)

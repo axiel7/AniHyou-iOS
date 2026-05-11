@@ -8,7 +8,7 @@ nonisolated public struct AiringOnMyListQuery: GraphQLQuery {
   public static let operationName: String = "AiringOnMyList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query AiringOnMyList($page: Int, $perPage: Int) { Page(page: $page, perPage: $perPage) { __typename media(type: ANIME, status: RELEASING, onList: true, sort: [POPULARITY_DESC]) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore nextAiringEpisode { __typename episode airingAt } mediaListEntry { __typename status } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query AiringOnMyList($page: Int, $perPage: Int) { Page(page: $page, perPage: $perPage) { __typename media(type: ANIME, status: RELEASING, onList: true, sort: [POPULARITY_DESC]) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore nextAiringEpisode { __typename episode airingAt } mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -87,6 +87,7 @@ nonisolated public struct AiringOnMyListQuery: GraphQLQuery {
           .field("meanScore", Int?.self),
           .field("nextAiringEpisode", NextAiringEpisode?.self),
           .field("mediaListEntry", MediaListEntry?.self),
+          .field("isAdult", Bool?.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
           AiringOnMyListQuery.Data.Page.Medium.self
@@ -104,6 +105,8 @@ nonisolated public struct AiringOnMyListQuery: GraphQLQuery {
         public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
         /// The authenticated user's media list entry for the media
         public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+        /// If the media is intended only for 18+ adult audiences
+        public var isAdult: Bool? { __data["isAdult"] }
 
         /// Page.Medium.Title
         ///

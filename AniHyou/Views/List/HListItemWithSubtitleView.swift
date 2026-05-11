@@ -22,6 +22,7 @@ struct HListItemWithSubtitleView: View {
     var imageUrl: String?
     var meanScore: Int?
     var status: MediaListStatus?
+    var blurCover = false
 
     var body: some View {
         HStack {
@@ -29,7 +30,8 @@ struct HListItemWithSubtitleView: View {
                 MediaCoverView(
                     imageUrl: imageUrl,
                     width: HListItemWithSubtitleView.coverWidth,
-                    height: HListItemWithSubtitleView.coverHeight
+                    height: HListItemWithSubtitleView.coverHeight,
+                    blurEnabled: blurCover
                 )
                 if let status {
                     Image(systemName: status.systemImage)

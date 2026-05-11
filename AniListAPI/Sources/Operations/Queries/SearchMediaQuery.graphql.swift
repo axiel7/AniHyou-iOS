@@ -198,6 +198,8 @@ nonisolated public struct SearchMediaQuery: GraphQLQuery {
         public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
         /// The cover images of the media
         public var coverImage: CoverImage? { __data["coverImage"] }
+        /// If the media is intended only for 18+ adult audiences
+        public var isAdult: Bool? { __data["isAdult"] }
 
         public struct Fragments: FragmentContainer {
           @_spi(Unsafe) public let __data: DataDict

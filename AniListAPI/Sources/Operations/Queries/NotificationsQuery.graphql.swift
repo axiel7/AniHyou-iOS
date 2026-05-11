@@ -8,7 +8,7 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType], $resetNotificationCount: Boolean) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: $resetNotificationCount, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType], $resetNotificationCount: Boolean) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: $resetNotificationCount, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -177,6 +177,7 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               NotificationsQuery.Data.Page.Notification.AsAiringNotification.Media.self
@@ -186,6 +187,8 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
             public var title: Title? { __data["title"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// Page.Notification.AsAiringNotification.Media.Title
             ///
@@ -1349,6 +1352,7 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               NotificationsQuery.Data.Page.Notification.AsRelatedMediaAdditionNotification.Media.self
@@ -1358,6 +1362,8 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
             public var title: Title? { __data["title"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// Page.Notification.AsRelatedMediaAdditionNotification.Media.Title
             ///
@@ -1448,6 +1454,7 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               NotificationsQuery.Data.Page.Notification.AsMediaDataChangeNotification.Media.self
@@ -1457,6 +1464,8 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
             public var title: Title? { __data["title"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// Page.Notification.AsMediaDataChangeNotification.Media.Title
             ///
@@ -1550,6 +1559,7 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
               .field("__typename", String.self),
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               NotificationsQuery.Data.Page.Notification.AsMediaMergeNotification.Media.self
@@ -1559,6 +1569,8 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
             public var title: Title? { __data["title"] }
             /// The cover images of the media
             public var coverImage: CoverImage? { __data["coverImage"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// Page.Notification.AsMediaMergeNotification.Media.Title
             ///

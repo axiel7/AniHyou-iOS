@@ -23,4 +23,5 @@ fragment StudioMedia on Media {
     mediaListEntry {
         status
     }
+    isAdult
 }

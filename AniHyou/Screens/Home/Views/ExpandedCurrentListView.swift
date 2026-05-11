@@ -13,6 +13,7 @@ struct ExpandedCurrentListView: View {
     let type: CurrentListType
     let items: [CommonMediaListEntry]
     let onClickPlus: (CommonMediaListEntry) -> Void
+    let blurAdultMedia: Bool
     
     var body: some View {
         List(items, id: \.uniqueListId) { item in
@@ -23,7 +24,8 @@ struct ExpandedCurrentListView: View {
                     details: item.media?.fragments.basicMediaDetails,
                     entry: item.fragments.basicMediaListEntry,
                     schedule: item.media?.nextAiringEpisode?.fragments.airingEpisode,
-                    onClickPlus: { onClickPlus(item) }
+                    onClickPlus: { onClickPlus(item) },
+                    blurCover: blurAdultMedia && item.media?.isAdult == true
                 )
                 .frame(height: CurrentListItemView.height)
             }
@@ -35,5 +37,5 @@ struct ExpandedCurrentListView: View {
 }
 
 #Preview {
-    ExpandedCurrentListView(type: .airing, items: [], onClickPlus: { _ in })
+    ExpandedCurrentListView(type: .airing, items: [], onClickPlus: { _ in }, blurAdultMedia: true)
 }

@@ -18,6 +18,7 @@ query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) {
                     startDate {
                         ...FuzzyDateFragment
                     }
+                    isAdult
                 }
                 staffRole
             }

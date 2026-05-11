@@ -14,6 +14,7 @@ struct UserActivityView: View {
     let isMyProfile: Bool
     @State private var viewModel = UserActivityViewModel()
     @Environment(\.scoreFormat) private var scoreFormat: ScoreFormat
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         if !isMyProfile {
@@ -37,7 +38,10 @@ struct UserActivityView: View {
         }
         ForEach(viewModel.activities, id: \.id) { item in
             if let listActivity = item.asListActivity?.fragments.listActivityFragment {
-                ListActivityItemView(activity: listActivity)
+                ListActivityItemView(
+                    activity: listActivity,
+                    blurCover: blurAdultMedia && listActivity.media?.isAdult == true
+                )
                 Divider()
             } else if let textActivity = item.asTextActivity?.fragments.textActivityFragment {
                 TextActivityItemView(activity: textActivity)

@@ -15,6 +15,7 @@ struct CharacterDetailsView: View {
     @State private var infoType: CharacterInfoType = .overview
     @State private var showNameSpoiler = false
     @State private var showImageSheet = false
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         ScrollView(.vertical) {
@@ -129,7 +130,8 @@ struct CharacterDetailsView: View {
                         subtitleLocalized: item.characterRole?.value?.localizedName,
                         subtitle2: item.node?.startDate?.year?.stringValue,
                         imageUrl: item.node?.coverImage?.large,
-                        status: item.node?.mediaListEntry?.status?.value
+                        status: item.node?.mediaListEntry?.status?.value,
+                        blurCover: blurAdultMedia && item.node?.isAdult == true
                     )
                     .mediaContextMenu(
                         mediaId: item.node!.id,

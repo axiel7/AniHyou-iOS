@@ -55,6 +55,7 @@ let NOTIFICATIONS_ENABLED_KEY = "notifications_enabled"
 let NOTIFICATIONS_FETCH_REPEAT_KEY = "notifications_fetch_repeat"
 let LAST_NOTIFICATION_CREATED_AT_KEY = "last_notification_created_at"
 let SEASON_LIST_STYLE_KEY = "season_list_style"
+let BLUR_ADULT_MEDIA = "blur_adult_media"
 
 let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"

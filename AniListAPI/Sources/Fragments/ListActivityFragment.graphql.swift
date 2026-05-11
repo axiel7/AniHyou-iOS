@@ -6,7 +6,7 @@
 
 nonisolated public struct ListActivityFragment: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
-    #"fragment ListActivityFragment on ListActivity { __typename id createdAt isLiked likeCount replyCount isLocked type progress status userId user { __typename name avatar { __typename medium } } media { __typename id title { __typename userPreferred } coverImage { __typename medium } } }"#
+    #"fragment ListActivityFragment on ListActivity { __typename id createdAt isLiked likeCount replyCount isLocked type progress status userId user { __typename name avatar { __typename medium } } media { __typename id title { __typename userPreferred } coverImage { __typename medium } isAdult } }"#
   }
 
   @_spi(Unsafe) public let __data: DataDict
@@ -113,6 +113,7 @@ nonisolated public struct ListActivityFragment: AniListAPI.SelectionSet, Fragmen
       .field("id", Int.self),
       .field("title", Title?.self),
       .field("coverImage", CoverImage?.self),
+      .field("isAdult", Bool?.self),
     ] }
     @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
       ListActivityFragment.Media.self
@@ -124,6 +125,8 @@ nonisolated public struct ListActivityFragment: AniListAPI.SelectionSet, Fragmen
     public var title: Title? { __data["title"] }
     /// The cover images of the media
     public var coverImage: CoverImage? { __data["coverImage"] }
+    /// If the media is intended only for 18+ adult audiences
+    public var isAdult: Bool? { __data["isAdult"] }
 
     /// Media.Title
     ///

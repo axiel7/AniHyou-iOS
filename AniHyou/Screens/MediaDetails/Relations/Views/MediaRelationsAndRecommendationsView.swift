@@ -11,6 +11,7 @@ struct MediaRelationsAndRecommendationsView: View {
 
     let mediaId: Int
     @State private var viewModel = RelationRecommendationViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         if let relationsAndRecommendations = viewModel.mediaRelationsAndRecommendations {
@@ -37,7 +38,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                                 relation.node?.format?.value?.localizedName
                                             ),
                                             imageUrl: relation.node?.coverImage?.large,
-                                            status: relation.node?.mediaListEntry?.status?.value
+                                            status: relation.node?.mediaListEntry?.status?.value,
+                                            blurCover: blurAdultMedia && relation.node?.isAdult == true
                                         )
                                         .padding(.leading)
                                         .frame(width: 280, alignment: .leading)
@@ -78,7 +80,8 @@ struct MediaRelationsAndRecommendationsView: View {
                                         VListItemView(
                                             title: recommendation.title?.userPreferred ?? "",
                                             imageUrl: recommendation.coverImage?.large,
-                                            status: recommendation.mediaListEntry?.status?.value
+                                            status: recommendation.mediaListEntry?.status?.value,
+                                            blurCover: blurAdultMedia && recommendation.isAdult == true
                                         )
                                         .padding(.trailing, 4)
                                         .mediaContextMenu(

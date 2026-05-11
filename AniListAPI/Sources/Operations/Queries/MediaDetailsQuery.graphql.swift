@@ -142,6 +142,8 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
       public var volumes: Int? { __data["volumes"] }
       /// The type of the media; anime or manga
       public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
+      /// If the media is intended only for 18+ adult audiences
+      public var isAdult: Bool? { __data["isAdult"] }
       /// If the media is marked as favourite by the current authenticated user
       public var isFavourite: Bool { __data["isFavourite"] }
 

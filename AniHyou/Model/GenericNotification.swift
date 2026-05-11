@@ -15,6 +15,7 @@ struct GenericNotification: Identifiable {
     let contentId: Int?
     let type: NotificationType
     let createdAt: Int
+    let isAdultMedia: Bool?
 }
 
 extension NotificationsQuery.Data.Page.Notification {
@@ -33,7 +34,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.media?.coverImage?.medium,
                 contentId: noti.animeId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: noti.media?.isAdult
             )
         } else if let noti = self.asFollowingNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -43,7 +45,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.userId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asActivityMessageNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -53,16 +56,19 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.activityId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asActivityMentionNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
             return GenericNotification(
                 id: noti.id,
-                text: text, imageUrl: noti.user?.avatar?.medium,
+                text: text,
+                imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.activityId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asActivityReplyNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -72,7 +78,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.activityId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asActivityReplySubscribedNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -82,7 +89,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.activityId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asActivityLikeNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -92,7 +100,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.activityId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asActivityReplyLikeNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -102,7 +111,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.activityId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asThreadCommentMentionNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -113,7 +123,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 //contentId: noti.commentId, TODO: link to the comment directly
                 contentId: noti.thread?.id,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asThreadCommentReplyNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -124,7 +135,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 //contentId: noti.commentId,
                 contentId: noti.thread?.id,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asThreadCommentSubscribedNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -135,7 +147,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 //contentId: noti.commentId,
                 contentId: noti.thread?.id,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asThreadCommentLikeNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -146,7 +159,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 //contentId: noti.commentId,
                 contentId: noti.thread?.id,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asThreadLikeNotification {
             let text = "\(noti.user?.name ?? "")\(noti.context ?? "")"
@@ -156,7 +170,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.user?.avatar?.medium,
                 contentId: noti.threadId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         } else if let noti = self.asRelatedMediaAdditionNotification {
             let text = "\(noti.media?.title?.userPreferred ?? "")\(noti.context ?? "")"
@@ -166,7 +181,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.media?.coverImage?.medium,
                 contentId: noti.mediaId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: noti.media?.isAdult
             )
         } else if let noti = self.asMediaDataChangeNotification {
             let text = "\(noti.media?.title?.userPreferred ?? "")\(noti.context ?? "")"
@@ -176,7 +192,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.media?.coverImage?.medium,
                 contentId: noti.mediaId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: noti.media?.isAdult
             )
         } else if let noti = self.asMediaMergeNotification {
             let text = "\(noti.media?.title?.userPreferred ?? "")\(noti.context ?? "")"
@@ -186,7 +203,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: noti.media?.coverImage?.medium,
                 contentId: noti.mediaId,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: noti.media?.isAdult
             )
         } else if let noti = self.asMediaDeletionNotification {
             let text = "\(noti.deletedMediaTitle ?? "")\(noti.context ?? "")"
@@ -196,7 +214,8 @@ extension NotificationsQuery.Data.Page.Notification {
                 imageUrl: nil,
                 contentId: 0,
                 type: noti.type!.value!,
-                createdAt: noti.createdAt ?? 0
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
             )
         }
         return nil

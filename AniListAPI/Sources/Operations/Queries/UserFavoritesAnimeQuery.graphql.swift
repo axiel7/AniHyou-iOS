@@ -8,7 +8,7 @@ nonisolated public struct UserFavoritesAnimeQuery: GraphQLQuery {
   public static let operationName: String = "UserFavoritesAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query UserFavoritesAnime($userId: Int, $page: Int, $perPage: Int) { User(id: $userId) { __typename favourites { __typename anime(page: $page, perPage: $perPage) { __typename nodes { __typename id title { __typename userPreferred } coverImage { __typename large } mediaListEntry { __typename status } } pageInfo { __typename ...CommonPage } } } } }"#,
+      #"query UserFavoritesAnime($userId: Int, $page: Int, $perPage: Int) { User(id: $userId) { __typename favourites { __typename anime(page: $page, perPage: $perPage) { __typename nodes { __typename id title { __typename userPreferred } coverImage { __typename large } mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -123,6 +123,7 @@ nonisolated public struct UserFavoritesAnimeQuery: GraphQLQuery {
               .field("title", Title?.self),
               .field("coverImage", CoverImage?.self),
               .field("mediaListEntry", MediaListEntry?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               UserFavoritesAnimeQuery.Data.User.Favourites.Anime.Node.self
@@ -136,6 +137,8 @@ nonisolated public struct UserFavoritesAnimeQuery: GraphQLQuery {
             public var coverImage: CoverImage? { __data["coverImage"] }
             /// The authenticated user's media list entry for the media
             public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// User.Favourites.Anime.Node.Title
             ///

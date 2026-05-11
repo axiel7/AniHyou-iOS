@@ -13,6 +13,7 @@ query UserFavoritesManga($userId: Int, $page: Int, $perPage: Int) {
           mediaListEntry {
             status
           }
+          isAdult
         }
         pageInfo {
           ...CommonPage

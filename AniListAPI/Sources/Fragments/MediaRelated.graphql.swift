@@ -6,7 +6,7 @@
 
 nonisolated public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment MediaRelated on MediaEdge { __typename relationType(version: 2) node { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } } }"#
+    #"fragment MediaRelated on MediaEdge { __typename relationType(version: 2) node { __typename id title { __typename userPreferred } type format coverImage { __typename large } mediaListEntry { __typename status } isAdult } }"#
   }
 
   @_spi(Unsafe) public let __data: DataDict
@@ -42,6 +42,7 @@ nonisolated public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
       .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
       .field("coverImage", CoverImage?.self),
       .field("mediaListEntry", MediaListEntry?.self),
+      .field("isAdult", Bool?.self),
     ] }
     @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
       MediaRelated.Node.self
@@ -59,6 +60,8 @@ nonisolated public struct MediaRelated: AniListAPI.SelectionSet, Fragment {
     public var coverImage: CoverImage? { __data["coverImage"] }
     /// The authenticated user's media list entry for the media
     public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+    /// If the media is intended only for 18+ adult audiences
+    public var isAdult: Bool? { __data["isAdult"] }
 
     /// Node.Title
     ///

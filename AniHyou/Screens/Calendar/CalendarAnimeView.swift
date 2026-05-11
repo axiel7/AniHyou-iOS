@@ -69,6 +69,7 @@ struct WeekAnimeListView: View {
     let weekday: Int
     let onMyList: Bool
     @State private var viewModel = CalendarViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
@@ -84,7 +85,8 @@ struct WeekAnimeListView: View {
                             imageUrl: media.coverImage?.large,
                             nextEpisode: item.episode,
                             airingAt: item.airingAt,
-                            status: media.mediaListEntry?.status?.value
+                            status: media.mediaListEntry?.status?.value,
+                            blurCover: blurAdultMedia && media.isAdult == true
                         )
                         .mediaContextMenu(
                             mediaId: item.mediaId,

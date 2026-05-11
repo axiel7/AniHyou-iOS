@@ -16,12 +16,17 @@ struct MediaChartListView: View {
     var status: MediaStatus?
     var format: MediaFormat?
     @State private var viewModel = ChartViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = false
 
     var body: some View {
         List {
             ForEach(Array(viewModel.mediaChart.enumerated()), id: \.element.id) { pos, item in
                 NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
-                    ChartListItemView(item: item, position: pos+1)
+                    ChartListItemView(
+                        item: item,
+                        position: pos + 1,
+                        blurCover: blurAdultMedia && item.isAdult == true
+                    )
                 }
             }
 

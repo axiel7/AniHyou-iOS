@@ -11,6 +11,7 @@ import AniListAPI
 struct CurrentView: View {
     
     @State private var viewModel = CurrentViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     private let oneGirdRow = [GridItem(.fixed(CurrentListItemView.height))]
     private let twoGridRows = [
@@ -82,7 +83,8 @@ struct CurrentView: View {
                     Task {
                         await viewModel.updateEntryProgress(of: item, type: type)
                     }
-                }
+                },
+                blurAdultMedia: blurAdultMedia
             )
         }
         
@@ -100,7 +102,8 @@ struct CurrentView: View {
                                 Task {
                                     await viewModel.updateEntryProgress(of: item, type: type)
                                 }
-                            }
+                            },
+                            blurCover: blurAdultMedia && item.media?.isAdult == true
                         )
                         .frame(
                             width: CurrentListItemView.width,

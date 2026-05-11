@@ -6,7 +6,7 @@
 
 nonisolated public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
-    #"fragment BasicMediaDetails on Media { __typename id title { __typename userPreferred } episodes chapters volumes type coverImage { __typename large } }"#
+    #"fragment BasicMediaDetails on Media { __typename id title { __typename userPreferred } episodes chapters volumes type coverImage { __typename large } isAdult }"#
   }
 
   @_spi(Unsafe) public let __data: DataDict
@@ -22,6 +22,7 @@ nonisolated public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, 
     .field("volumes", Int?.self),
     .field("type", GraphQLEnum<AniListAPI.MediaType>?.self),
     .field("coverImage", CoverImage?.self),
+    .field("isAdult", Bool?.self),
   ] }
   @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
     BasicMediaDetails.self
@@ -41,6 +42,8 @@ nonisolated public struct BasicMediaDetails: AniListAPI.SelectionSet, Fragment, 
   public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
   /// The cover images of the media
   public var coverImage: CoverImage? { __data["coverImage"] }
+  /// If the media is intended only for 18+ adult audiences
+  public var isAdult: Bool? { __data["isAdult"] }
 
   /// Title
   ///

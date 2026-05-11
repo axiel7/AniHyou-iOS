@@ -8,7 +8,7 @@ nonisolated public struct SeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "SeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } nextAiringEpisode { __typename episode airingAt } genres } pageInfo { __typename ...CommonPage } } }"#,
+      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } nextAiringEpisode { __typename episode airingAt } genres isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -99,6 +99,7 @@ nonisolated public struct SeasonalAnimeQuery: GraphQLQuery {
           .field("mediaListEntry", MediaListEntry?.self),
           .field("nextAiringEpisode", NextAiringEpisode?.self),
           .field("genres", [String?]?.self),
+          .field("isAdult", Bool?.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
           SeasonalAnimeQuery.Data.Page.Medium.self
@@ -118,6 +119,8 @@ nonisolated public struct SeasonalAnimeQuery: GraphQLQuery {
         public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
         /// The genres of the media
         public var genres: [String?]? { __data["genres"] }
+        /// If the media is intended only for 18+ adult audiences
+        public var isAdult: Bool? { __data["isAdult"] }
 
         /// Page.Medium.Title
         ///

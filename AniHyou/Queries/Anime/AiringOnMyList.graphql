@@ -16,6 +16,7 @@ query AiringOnMyList($page: Int, $perPage: Int) {
             mediaListEntry {
                 status
             }
+            isAdult
         }
         pageInfo {
             ...CommonPage

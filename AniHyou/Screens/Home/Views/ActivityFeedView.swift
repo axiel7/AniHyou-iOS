@@ -10,6 +10,7 @@ import SwiftUI
 struct ActivityFeedView: View {
     
     @State private var viewModel = ActivityFeedViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     var body: some View {
         NavigationStack {
@@ -20,7 +21,10 @@ struct ActivityFeedView: View {
                             TextActivityItemView(activity: textActivity)
                             Divider()
                         } else if let listActivity = $0.asListActivity?.fragments.listActivityFragment {
-                            ListActivityItemView(activity: listActivity)
+                            ListActivityItemView(
+                                activity: listActivity,
+                                blurCover: blurAdultMedia && listActivity.media?.isAdult == true
+                            )
                             Divider()
                         }
                     }

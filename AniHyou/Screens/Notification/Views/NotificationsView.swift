@@ -12,6 +12,7 @@ struct NotificationsView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel = NotificationsViewModel()
     @AppStorage(LOGGED_IN_KEY) private var isLoggedIn: Bool = false
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     var unreadCount: Int?
 
     var body: some View {
@@ -30,7 +31,8 @@ struct NotificationsView: View {
                             if let notification = viewModel.notifications[safe: index] {
                                 NotificationItemView(
                                     notification: notification,
-                                    isUnread: index < viewModel.unreadCount
+                                    isUnread: index < viewModel.unreadCount,
+                                    blurCover: blurAdultMedia && notification.isAdultMedia == true
                                 )
                             }
                         }

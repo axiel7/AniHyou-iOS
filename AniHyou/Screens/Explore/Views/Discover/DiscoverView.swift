@@ -12,6 +12,7 @@ import AniListAPI
 struct DiscoverView: View {
     
     @State private var viewModel = DiscoverViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -285,7 +286,8 @@ struct DiscoverView: View {
                                     meanScore: item.meanScore,
                                     nextEpisode: item.nextAiringEpisode?.episode,
                                     airingAt: item.nextAiringEpisode?.airingAt,
-                                    status: item.mediaListEntry?.status?.value
+                                    status: item.mediaListEntry?.status?.value,
+                                    blurCover: blurAdultMedia && item.isAdult == true
                                 )
                                 .padding(.leading, 4)
                                 .frame(width: 280, alignment: .leading)
@@ -306,7 +308,8 @@ struct DiscoverView: View {
                                     meanScore: item.media?.meanScore,
                                     nextEpisode: item.episode,
                                     airingAt: item.airingAt,
-                                    status: item.media?.mediaListEntry?.status?.value
+                                    status: item.media?.mediaListEntry?.status?.value,
+                                    blurCover: blurAdultMedia && item.media?.isAdult == true
                                 )
                                 .padding(.leading, 4)
                                 .frame(width: 280, alignment: .leading)
@@ -357,7 +360,8 @@ struct DiscoverView: View {
                                 title: item.title?.userPreferred ?? "",
                                 imageUrl: item.coverImage?.large,
                                 meanScore: item.meanScore,
-                                status: item.mediaListEntry?.status?.value
+                                status: item.mediaListEntry?.status?.value,
+                                blurCover: blurAdultMedia && item.isAdult == true
                             )
                             .padding(.trailing, 4)
                             .mediaContextMenu(
@@ -398,7 +402,7 @@ struct DiscoverView: View {
                                 imageUrl: item.coverImage?.large,
                                 meanScore: item.meanScore,
                                 status: item.mediaListEntry?.status?.value,
-                                isAdult: item.isAdult
+                                blurCover: blurAdultMedia && item.isAdult == true
                             )
                             .padding(.trailing, 4)
                             .mediaContextMenu(

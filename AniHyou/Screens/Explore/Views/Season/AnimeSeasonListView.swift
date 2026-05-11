@@ -36,6 +36,7 @@ struct AnimeSeasonListView: View {
     var initYear: Int?
     private let currentYear = Date.now.year
     @AppStorage(SEASON_LIST_STYLE_KEY) private var listStyle: ListStyle = .grid
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     @State private var viewModel = SeasonViewModel()
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
@@ -80,7 +81,8 @@ struct AnimeSeasonListView: View {
                         title: media.title?.userPreferred ?? "",
                         imageUrl: media.coverImage?.large,
                         meanScore: media.meanScore,
-                        status: media.mediaListEntry?.status?.value
+                        status: media.mediaListEntry?.status?.value,
+                        blurCover: blurAdultMedia && media.isAdult == true
                     )
                     .mediaContextMenu(
                         mediaId: media.id,
@@ -111,7 +113,8 @@ struct AnimeSeasonListView: View {
                         subtitle2Text: media.mainGenresLocalized,
                         imageUrl: media.coverImage?.large,
                         meanScore: media.meanScore,
-                        status: media.mediaListEntry?.status?.value
+                        status: media.mediaListEntry?.status?.value,
+                        blurCover: blurAdultMedia && media.isAdult == true
                     )
                     .mediaContextMenu(
                         mediaId: media.id,

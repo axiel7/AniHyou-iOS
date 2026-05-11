@@ -8,7 +8,7 @@ nonisolated public struct StaffMediaQuery: GraphQLQuery {
   public static let operationName: String = "StaffMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } } staffRole } pageInfo { __typename ...CommonPage } } } }"#,
+      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } isAdult } staffRole } pageInfo { __typename ...CommonPage } } } }"#,
       fragments: [CommonPage.self, FuzzyDateFragment.self]
     ))
 
@@ -136,6 +136,7 @@ nonisolated public struct StaffMediaQuery: GraphQLQuery {
               .field("coverImage", CoverImage?.self),
               .field("mediaListEntry", MediaListEntry?.self),
               .field("startDate", StartDate?.self),
+              .field("isAdult", Bool?.self),
             ] }
             @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
               StaffMediaQuery.Data.Staff.StaffMedia.Edge.Node.self
@@ -153,6 +154,8 @@ nonisolated public struct StaffMediaQuery: GraphQLQuery {
             public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
             /// The first official release date of the media
             public var startDate: StartDate? { __data["startDate"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
 
             /// Staff.StaffMedia.Edge.Node.Title
             ///

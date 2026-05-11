@@ -18,7 +18,7 @@ struct VListItemView: View {
     var nextEpisode: Int?
     var airingAt: Int?
     var status: MediaListStatus?
-    var isAdult: Bool?
+    var blurCover: Bool = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,7 +27,7 @@ struct VListItemView: View {
                     imageUrl: imageUrl,
                     width: VListItemView.coverWidth,
                     height: VListItemView.coverHeight,
-                    blurEnabled: isAdult == true
+                    blurEnabled: blurCover
                 )
                 if let status {
                     Image(systemName: status.systemImage)
@@ -72,7 +72,7 @@ struct VListItemView: View {
 #Preview(traits: .sizeThatFitsLayout) {
     LazyHStack(alignment: .top) {
         VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
-        VListItemView(title: "One Piece", imageUrl: "", isAdult: true)
+        VListItemView(title: "One Piece", imageUrl: "", blurCover: true)
         VListItemView(title: "One Piece", imageUrl: "", nextEpisode: 123, airingAt: 1228328)
     }
 }

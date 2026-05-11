@@ -139,6 +139,8 @@ nonisolated public struct StudioDetailsQuery: GraphQLQuery {
           public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
           /// The authenticated user's media list entry for the media
           public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+          /// If the media is intended only for 18+ adult audiences
+          public var isAdult: Bool? { __data["isAdult"] }
 
           public struct Fragments: FragmentContainer {
             @_spi(Unsafe) public let __data: DataDict

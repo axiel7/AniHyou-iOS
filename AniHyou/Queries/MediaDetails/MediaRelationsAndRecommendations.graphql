@@ -28,6 +28,7 @@ fragment MediaRelated on MediaEdge {
     mediaListEntry {
       status
     }
+    isAdult
   }
 }
 
@@ -45,5 +46,6 @@ fragment MediaRecommended on Recommendation {
     mediaListEntry {
       status
     }
+    isAdult
   }
 }

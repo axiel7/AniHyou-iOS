@@ -17,13 +17,15 @@ struct CurrentListItemView: View {
     let entry: BasicMediaListEntry?
     let schedule: AiringEpisode?
     let onClickPlus: () -> Void
+    let blurCover: Bool
     
     var body: some View {
         HStack(spacing: 10) {
             MediaCoverView(
                 imageUrl: details?.coverImage?.large,
                 width: 77,
-                height: 115
+                height: 115,
+                blurEnabled: blurCover
             )
 
             VStack(alignment: .leading) {
@@ -80,7 +82,8 @@ struct CurrentListItemView: View {
         details: nil,
         entry: nil,
         schedule: nil,
-        onClickPlus: {}
+        onClickPlus: {},
+        blurCover: true
     )
     .padding(8)
 }

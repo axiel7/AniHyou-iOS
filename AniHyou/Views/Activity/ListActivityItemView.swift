@@ -13,11 +13,13 @@ struct ListActivityItemView: View {
     let activity: ListActivityFragment
     @State var isLiked: Bool
     @State var likeCount: Int
+    var blurCover: Bool
     
-    init(activity: ListActivityFragment) {
+    init(activity: ListActivityFragment, blurCover: Bool) {
         self.activity = activity
         self.isLiked = activity.isLiked == true
         self.likeCount = activity.likeCount
+        self.blurCover = blurCover
     }
 
     var body: some View {
@@ -28,7 +30,8 @@ struct ListActivityItemView: View {
                 MediaCoverView(
                     imageUrl: activity.media?.coverImage?.medium ?? "",
                     width: 53,
-                    height: 80
+                    height: 80,
+                    blurEnabled: blurCover
                 )
             }
             .buttonStyle(.plain)

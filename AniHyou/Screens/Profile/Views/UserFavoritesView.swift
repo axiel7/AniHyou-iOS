@@ -15,6 +15,7 @@ struct UserFavoritesView: View {
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15))
     ]
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,7 +49,8 @@ struct UserFavoritesView: View {
                     VListItemView(
                         title: media.title?.userPreferred ?? "",
                         imageUrl: media.coverImage?.large,
-                        status: media.mediaListEntry?.status?.value
+                        status: media.mediaListEntry?.status?.value,
+                        blurCover: blurAdultMedia && media.isAdult == true
                     )
                     .mediaContextMenu(
                         mediaId: media.id,
@@ -77,7 +79,8 @@ struct UserFavoritesView: View {
                     VListItemView(
                         title: media.title?.userPreferred ?? "",
                         imageUrl: media.coverImage?.large,
-                        status: media.mediaListEntry?.status?.value
+                        status: media.mediaListEntry?.status?.value,
+                        blurCover: blurAdultMedia && media.isAdult == true
                     )
                     .mediaContextMenu(
                         mediaId: media.id,

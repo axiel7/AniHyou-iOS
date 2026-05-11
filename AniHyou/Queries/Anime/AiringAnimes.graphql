@@ -14,6 +14,7 @@ query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGrea
         mediaListEntry {
           status
         }
+        isAdult
       }
       episode
       airingAt

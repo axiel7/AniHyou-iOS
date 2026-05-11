@@ -15,6 +15,7 @@ struct StaffDetailsView: View {
     @State private var viewModel = StaffDetailsViewModel()
     @State private var infoType: StaffInfoType = .overview
     @State private var showImageSheet = false
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         ScrollView(.vertical) {
@@ -132,7 +133,8 @@ struct StaffDetailsView: View {
                             subtitle: item.staffRoles.joined(separator: ", "),
                             subtitle2: media.startDate?.year?.stringValue,
                             imageUrl: media.coverImage?.large,
-                            status: media.mediaListEntry?.status?.value
+                            status: media.mediaListEntry?.status?.value,
+                            blurCover: blurAdultMedia && media.isAdult == true
                         )
                         .mediaContextMenu(
                             mediaId: media.id,

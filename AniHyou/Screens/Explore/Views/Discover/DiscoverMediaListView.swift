@@ -20,6 +20,8 @@ struct DiscoverMediaListView: View {
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
     ]
+    
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 
     var body: some View {
         ScrollView(.vertical) {
@@ -30,7 +32,8 @@ struct DiscoverMediaListView: View {
                             title: media.title?.userPreferred ?? "",
                             imageUrl: media.coverImage?.large,
                             meanScore: media.meanScore,
-                            status: media.mediaListEntry?.status?.value
+                            status: media.mediaListEntry?.status?.value,
+                            blurCover: blurAdultMedia && media.isAdult == true
                         )
                         .mediaContextMenu(
                             mediaId: media.id,

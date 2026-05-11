@@ -8,7 +8,7 @@ nonisolated public struct AiringAnimesQuery: GraphQLQuery {
   public static let operationName: String = "AiringAnimes"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } } episode airingAt } pageInfo { __typename ...CommonPage } } }"#,
+      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } isAdult } episode airingAt } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -127,6 +127,7 @@ nonisolated public struct AiringAnimesQuery: GraphQLQuery {
             .field("coverImage", CoverImage?.self),
             .field("meanScore", Int?.self),
             .field("mediaListEntry", MediaListEntry?.self),
+            .field("isAdult", Bool?.self),
           ] }
           @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
             AiringAnimesQuery.Data.Page.AiringSchedule.Media.self
@@ -140,6 +141,8 @@ nonisolated public struct AiringAnimesQuery: GraphQLQuery {
           public var meanScore: Int? { __data["meanScore"] }
           /// The authenticated user's media list entry for the media
           public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
+          /// If the media is intended only for 18+ adult audiences
+          public var isAdult: Bool? { __data["isAdult"] }
 
           /// Page.AiringSchedule.Media.Title
           ///

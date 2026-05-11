@@ -66,6 +66,7 @@ struct SettingsView: View {
     @AppStorage(HAS_DONATED_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var hasDonated = false
     @AppStorage(NOTIFICATIONS_ENABLED_KEY) private var notificationsEnabled = false
     @AppStorage(NOTIFICATIONS_FETCH_REPEAT_KEY) private var notificationsFetchHours = 6
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     @State private var showDonationAlert = false
     @State private var navigateToDonations = false
 
@@ -85,6 +86,7 @@ struct SettingsView: View {
             
             // content
             Section {
+                Toggle("Blur adult media", isOn: $blurAdultMedia)
                 Toggle("Airing on my list", isOn: $airingOnMyList)
             } footer: {
                 Text("Show only airing soon anime that are in your list")

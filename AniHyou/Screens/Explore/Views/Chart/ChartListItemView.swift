@@ -15,6 +15,7 @@ struct ChartListItemView: View {
 
     let item: MediaChartQuery.Data.Page.Medium?
     let position: Int
+    let blurCover: Bool
 
     var body: some View {
         HStack(alignment: .center) {
@@ -22,7 +23,8 @@ struct ChartListItemView: View {
                 MediaCoverView(
                     imageUrl: item?.coverImage?.large,
                     width: coverWidth,
-                    height: coverHeight
+                    height: coverHeight,
+                    blurEnabled: blurCover
                 )
                 if let status = item?.mediaListEntry?.status?.value {
                     Image(systemName: status.systemImage)
@@ -63,5 +65,5 @@ struct ChartListItemView: View {
 }
 
 #Preview {
-    ChartListItemView(item: nil, position: 100)
+    ChartListItemView(item: nil, position: 100, blurCover: false)
 }

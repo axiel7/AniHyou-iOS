@@ -12,6 +12,7 @@ struct NotificationItemView: View {
 
     let notification: GenericNotification
     let isUnread: Bool
+    let blurCover: Bool
     private let imageWidth: CGFloat = 50
     private let imageHeight: CGFloat = 50
 
@@ -26,7 +27,7 @@ struct NotificationItemView: View {
                 LazyImage(url: URL(string: notification.imageUrl ?? "")) { state in
                     if let image = state.image {
                         image
-                            .imageCover(width: imageWidth, height: imageHeight)
+                            .imageCover(width: imageWidth, height: imageHeight, blur: blurCover)
                     } else {
                         CoverPlaceholderView(systemName: "hourglass", width: imageWidth, height: imageHeight)
                             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -65,12 +66,13 @@ struct NotificationItemView: View {
         imageUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-ODIRpBIbR5Eu.jpg",
         contentId: 1,
         type: .airing,
-        createdAt: 109120128
+        createdAt: 109120128,
+        isAdultMedia: true
     )
     NavigationStack {
         List {
-            NotificationItemView(notification: notification, isUnread: true)
-            NotificationItemView(notification: notification, isUnread: false)
+            NotificationItemView(notification: notification, isUnread: true, blurCover: false)
+            NotificationItemView(notification: notification, isUnread: false, blurCover: true)
         }
     }
 }

@@ -100,6 +100,8 @@ nonisolated public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragmen
     public var volumes: Int? { __data["volumes"] }
     /// The type of the media; anime or manga
     public var type: GraphQLEnum<AniListAPI.MediaType>? { __data["type"] }
+    /// If the media is intended only for 18+ adult audiences
+    public var isAdult: Bool? { __data["isAdult"] }
 
     public struct Fragments: FragmentContainer {
       @_spi(Unsafe) public let __data: DataDict

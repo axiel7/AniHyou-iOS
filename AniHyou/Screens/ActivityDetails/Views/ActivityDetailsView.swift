@@ -11,6 +11,7 @@ import AniListAPI
 struct ActivityDetailsView: View {
     
     @State private var viewModel = ActivityDetailsViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     let activityId: Int
     
@@ -19,7 +20,10 @@ struct ActivityDetailsView: View {
             LazyVStack {
                 Group {
                     if let listActivity = viewModel.listActivity {
-                        ListActivityItemView(activity: listActivity)
+                        ListActivityItemView(
+                            activity: listActivity,
+                            blurCover: blurAdultMedia && listActivity.media?.isAdult == true
+                        )
                     } else if let textActivity = viewModel.textActivity {
                         TextActivityItemView(activity: textActivity)
                     } else if let messageActivity = viewModel.messageActivity {

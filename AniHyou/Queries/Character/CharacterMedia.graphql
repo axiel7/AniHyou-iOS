@@ -18,6 +18,7 @@ query CharacterMedia($characterId: Int, $page: Int, $perPage: Int) {
                     startDate {
                         ...FuzzyDateFragment
                     }
+                    isAdult
                 }
                 characterName
                 characterRole

@@ -11,6 +11,7 @@ struct StudioDetailsView: View {
 
     let studioId: Int
     @State private var viewModel = StudioDetailsViewModel()
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     private let gridColumns = [
         GridItem(.adaptive(minimum: VListItemView.coverWidth + 20))
     ]
@@ -29,7 +30,8 @@ struct StudioDetailsView: View {
                                     VListItemView(
                                         title: item.title?.userPreferred ?? "",
                                         imageUrl: item.coverImage?.large,
-                                        status: item.mediaListEntry?.status?.value
+                                        status: item.mediaListEntry?.status?.value,
+                                        blurCover: blurAdultMedia && item.isAdult == true
                                     )
                                     .mediaContextMenu(
                                         mediaId: item.id,
