@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SwiftUIFlow
+import Flow
 import AniListAPI
 
 private extension MediaTagItemView {
@@ -57,7 +57,7 @@ struct MediaTagItemView: View {
 }
 
 #Preview {
-    VFlow(alignment: .leading) {
+    HFlow {
         ForEach((1...10), id: \.self) { _ in
             MediaTagItemView(tag: nil)
         }

@@ -1,5 +1,5 @@
 {
-  "originHash" : "0657996e0c173fdee7d5345f975278d5c393b67fb5a20f29c0af3504d5472e4a",
+  "originHash" : "2a5e3eaf3e4a3e8dcc76b4b253c2205492e7b7c75f628f82a2c603f1d1926c09",
   "pins" : [
     {
       "identity" : "apollo-ios",
@@ -47,21 +47,21 @@
       }
     },
     {
+      "identity" : "swiftui-flow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tevelee/SwiftUI-Flow",
+      "state" : {
+        "revision" : "d227f999b2894ab737ef5786d9b14d02d3e5362e",
+        "version" : "3.1.1"
+      }
+    },
+    {
       "identity" : "swiftui-math",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swiftui-math",
       "state" : {
         "revision" : "0b5c2cfaaec8d6193db206f675048eeb5ce95f71",
         "version" : "0.1.0"
-      }
-    },
-    {
-      "identity" : "swiftuiflow",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ciaranrobrien/SwiftUIFlow",
-      "state" : {
-        "revision" : "04335cf345d971def270c748ee63d6fcbe885952",
-        "version" : "1.0.0"
       }
     },
     {

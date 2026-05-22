@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SwiftUIFlow
+import Flow
 import AniListAPI
 
 struct MediaGeneralInfoView: View {
@@ -140,7 +140,7 @@ struct MediaGeneralInfoView: View {
                 }
                 .prefix(showAllTags ? mediaTags.count : tagLimit)
             
-            VFlow(alignment: .leading) {
+            HFlow {
                 ForEach(tagsFiltered, id: \.id) { tag in
                     MediaTagItemView(tag: tag)
                 }
@@ -162,7 +162,7 @@ struct MediaGeneralInfoView: View {
                 )
                 .padding(.horizontal)
             }
-            .padding(.bottom)
+            .padding(.vertical)
         }
     }
 
@@ -218,7 +218,7 @@ struct MediaGeneralInfoView: View {
                 .font(.title3)
                 .bold()
                 .padding(.horizontal)
-            VFlow(alignment: .leading) {
+            HFlow {
                 ForEach(viewModel.streamingLinks, id: \.?.id) {
                     if let item  = $0 {
                         Link(item.displayName, destination: URL(string: item.url!)!)
@@ -239,7 +239,7 @@ struct MediaGeneralInfoView: View {
                 .font(.title3)
                 .bold()
                 .padding(.horizontal)
-            VFlow(alignment: .leading) {
+            HFlow {
                 ForEach(viewModel.externalLinks, id: \.?.id) {
                     if let item  = $0 {
                         Link(item.displayName, destination: URL(string: item.url!)!)

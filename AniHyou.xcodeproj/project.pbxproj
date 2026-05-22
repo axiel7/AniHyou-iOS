@@ -15,6 +15,7 @@
 		48099960288B29A9005AE427 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809995F288B29A9005AE427 /* SettingsViewModel.swift */; };
 		480A41A528ECA1A30066288D /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A41A428ECA1A30066288D /* ModelUtils.swift */; };
 		480A41A628ECAD2F0066288D /* ProfileInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844134C28A7A3E000A9CC6D /* ProfileInfoType.swift */; };
+		480BE5A02FC042F500BCAB80 /* Flow in Frameworks */ = {isa = PBXBuildFile; productRef = 480BE59F2FC042F500BCAB80 /* Flow */; };
 		480D76A129AB661E00B56DE1 /* UserSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D76A029AB661E00B56DE1 /* UserSocialView.swift */; };
 		480D76A529AB6A9800B56DE1 /* UserSocialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D76A429AB6A9800B56DE1 /* UserSocialViewModel.swift */; };
 		480F8825294262F3004773CC /* AnimeSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F8824294262F3004773CC /* AnimeSeason.swift */; };
@@ -217,7 +218,6 @@
 		48BB54F72A5E8EE60061D4C7 /* MediaContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F62A5E8EE60061D4C7 /* MediaContextMenuView.swift */; };
 		48BB54FA2A5E99780061D4C7 /* MediaContextMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB54F92A5E99780061D4C7 /* MediaContextMenuViewModel.swift */; };
 		48BB95D12A24464500DE2CD5 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB95D02A24464500DE2CD5 /* ScrollViewWithOffset.swift */; };
-		48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */; };
 		48BB9E232ADBC08D00970D01 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E222ADBC08D00970D01 /* AccountSettingsView.swift */; };
 		48BB9E252ADBC43F00970D01 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E242ADBC43F00970D01 /* SafariWebView.swift */; };
 		48BCA59929672334005D3405 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCA59829672334005D3405 /* Genre.swift */; };
@@ -779,7 +779,7 @@
 				488C268828539CC30005EE15 /* KeychainSwift in Frameworks */,
 				4882BA582F939010002C10DE /* Textual in Frameworks */,
 				48F36D492E8A80EC00A53A4B /* Apollo in Frameworks */,
-				48BB95D42A245CBC00DE2CD5 /* SwiftUIFlow in Frameworks */,
+				480BE5A02FC042F500BCAB80 /* Flow in Frameworks */,
 				482E581E2C00B7870089AE28 /* NukeUI in Frameworks */,
 				48604D7B28A15AD1006A6AF8 /* RichText in Frameworks */,
 				482E581C2C00B7870089AE28 /* Nuke in Frameworks */,
@@ -2038,12 +2038,12 @@
 			packageProductDependencies = (
 				488C268728539CC30005EE15 /* KeychainSwift */,
 				48604D7A28A15AD1006A6AF8 /* RichText */,
-				48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */,
 				4815DFA52A2ED1D400352A9B /* AniListAPI */,
 				482E581B2C00B7870089AE28 /* Nuke */,
 				482E581D2C00B7870089AE28 /* NukeUI */,
 				48F36D482E8A80EC00A53A4B /* Apollo */,
 				4882BA572F939010002C10DE /* Textual */,
+				480BE59F2FC042F500BCAB80 /* Flow */,
 			);
 			productName = AniHyou;
 			productReference = 481AD4DA2851CE73001779EE /* AniHyou.app */;
@@ -2185,10 +2185,10 @@
 			packageReferences = (
 				488C268628539CC30005EE15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				48604D7928A15AD1006A6AF8 /* XCRemoteSwiftPackageReference "RichText" */,
-				48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */,
 				482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */,
 				48A06B982E91914E0089B195 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				4882BA562F939010002C10DE /* XCRemoteSwiftPackageReference "textual" */,
+				480BE59E2FC042F500BCAB80 /* XCRemoteSwiftPackageReference "SwiftUI-Flow" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 481AD4DB2851CE73001779EE /* Products */;
@@ -3153,6 +3153,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		480BE59E2FC042F500BCAB80 /* XCRemoteSwiftPackageReference "SwiftUI-Flow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tevelee/SwiftUI-Flow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		482E581A2C00B7870089AE28 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
@@ -3193,17 +3201,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ciaranrobrien/SwiftUIFlow";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		480BE59F2FC042F500BCAB80 /* Flow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 480BE59E2FC042F500BCAB80 /* XCRemoteSwiftPackageReference "SwiftUI-Flow" */;
+			productName = Flow;
+		};
 		4815DFA52A2ED1D400352A9B /* AniListAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AniListAPI;
@@ -3250,11 +3255,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 48A06B982E91914E0089B195 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
-		};
-		48BB95D32A245CBC00DE2CD5 /* SwiftUIFlow */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 48BB95D22A245CBC00DE2CD5 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */;
-			productName = SwiftUIFlow;
 		};
 		48EFCDFC29FFE8EB0096BF6E /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
