@@ -119,8 +119,13 @@ struct UserRepository {
                 forceReload: true
             )?.data {
                 let lastCreatedAt = UserDefaults.standard.integer(forKey: LAST_NOTIFICATION_CREATED_AT_KEY)
-                let newNotifications = notifications.filter {
+                var newNotifications = notifications.filter {
                     $0.createdAt > lastCreatedAt
+                }
+                if lastCreatedAt == 0 {
+                    // first time the app fetch notifications,
+                    // limit the count to notify so the user is not spammed
+                    newNotifications = Array(newNotifications.prefix(10))
                 }
                 if !newNotifications.isEmpty {
                     UserDefaults.standard.setValue(
