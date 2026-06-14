@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Chip<Content: View>: View {
     
-    let title: String
+    let title: LocalizedStringKey
     @ViewBuilder let icon: Content
     
     var body: some View {

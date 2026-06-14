@@ -22,5 +22,12 @@
 "Rewatching" = "Rewatching";
 "Rereading" = "Rereading";
 
+"Winter" = "Winter";
+"Spring" = "Spring";
+"Summer" = "Summer";
+"Fall" = "Fall";
+
 // Set to Status
 "Set as %@" = "Set as %@";
+
+"Airing Next" = "Airing Next";
