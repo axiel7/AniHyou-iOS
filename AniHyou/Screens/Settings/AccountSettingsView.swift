@@ -67,6 +67,17 @@ struct AccountSettingsView: View {
                     )
                     
                     Section {
+                        Toggle("Airing anime notifications", isOn: $viewModel.airingNotifications)
+                            .onChange(of: viewModel.airingNotifications) {
+                                viewModel.updateUserOptions(
+                                    airingNotifications: viewModel.airingNotifications
+                                )
+                            }
+                    } header: {
+                        Text("Notifications")
+                    }
+                    
+                    Section {
                         Button("Other account settings") {
                             showWebView = true
                         }

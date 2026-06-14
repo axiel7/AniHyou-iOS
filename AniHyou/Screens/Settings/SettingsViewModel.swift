@@ -20,6 +20,7 @@ import AniListAPI
     var titleLanguage = UserTitleLanguage.romaji
     var staffNameLanguage = UserStaffNameLanguage.romaji
     var scoreFormat = ScoreFormat.point10
+    var airingNotifications = false
 
     func logOut() {
         LoginRepository.logOut()
@@ -52,7 +53,8 @@ import AniListAPI
     func updateUserOptions(
         titleLanguage: UserTitleLanguage? = nil,
         staffNameLanguage: UserStaffNameLanguage? = nil,
-        scoreFormat: ScoreFormat? = nil
+        scoreFormat: ScoreFormat? = nil,
+        airingNotifications: Bool? = nil,
     ) {
         Task {
             isLoading = true

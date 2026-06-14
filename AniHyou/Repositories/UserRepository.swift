@@ -24,7 +24,8 @@ struct UserRepository {
     static func updateUserOptions(
         titleLanguage: UserTitleLanguage? = nil,
         staffNameLanguage: UserStaffNameLanguage? = nil,
-        scoreFormat: ScoreFormat? = nil
+        scoreFormat: ScoreFormat? = nil,
+        airingNotifications: Bool? = nil,
     ) async -> Bool {
         do {
             let result = try await Network.shared.apollo.perform(
@@ -33,7 +34,7 @@ struct UserRepository {
                     titleLanguage: someIfNotNil(titleLanguage),
                     staffNameLanguage: someIfNotNil(staffNameLanguage),
                     scoreFormat: someIfNotNil(scoreFormat),
-                    airingNotifications: .none,
+                    airingNotifications: someIfNotNil(airingNotifications),
                     animeListOptions: .none,
                     mangaListOptions: .none
                 )
