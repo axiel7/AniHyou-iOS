@@ -1,0 +1,748 @@
+/* en.lproj/Localizable.strings
+%lld chapters
+No comment provided by engineer. */
+"%lld chapters" = "%lld chương";
+/* en.lproj/Localizable.strings
+%lld episodes
+No comment provided by engineer. */
+"%lld episodes" = "%lld tập";
+/* num of volumes.
+Eg: 23 volumes */
+"%lld volumes" = "%lld tập";
+/* en.lproj/Localizable.strings
+1st Key Animation Director
+No comment provided by engineer. */
+"1st Key Animation Director" = "Giám đốc hoạt ảnh chính thứ nhất";
+/* en.lproj/Localizable.strings
+1st Key Assistant Animation Director
+No comment provided by engineer. */
+"1st Key Assistant Animation Director" = "Giám đốc hoạt ảnh hỗ trợ chính thứ nhất";
+/* en.lproj/Localizable.strings
+2D Design
+No comment provided by engineer. */
+"2D Design" = "Thiết kế 2D";
+/* en.lproj/Localizable.strings
+2D Effects
+No comment provided by engineer. */
+"2D Effects" = "Hiệu ứng 2D";
+/* en.lproj/Localizable.strings
+2D Works
+No comment provided by engineer. */
+"2D Works" = "Tác phẩm 2D";
+/* en.lproj/Localizable.strings
+2nd Key Animation
+No comment provided by engineer. */
+"2nd Key Animation" = "Diễn hoạt chính thứ hai";
+/* en.lproj/Localizable.strings
+3 Point Smiley :)
+No comment provided by engineer. */
+"3 Point Smiley :)" = "3 Điểm mặt cười :)";
+/* en.lproj/Localizable.strings
+3D Works
+No comment provided by engineer. */
+"3D Works" = "Tác phẩm 3D";
+/* en.lproj/Localizable.strings
+3DCG
+No comment provided by engineer. */
+"3DCG" = "3DCG";
+/* en.lproj/Localizable.strings
+5 Star (3/5)
+No comment provided by engineer. */
+"5 Star (3/5)" = "5 Sao (3/5)";
+/* en.lproj/Localizable.strings
+10 Point (5/10)
+No comment provided by engineer. */
+"10 Point (5/10)" = "10 Điểm (5/10)";
+/* en.lproj/Localizable.strings
+10 Point Decimal (5.5/10)
+No comment provided by engineer. */
+"10 Point Decimal (5.5/10)" = "10 Điểm số thập phân (5.5/10)";
+/* en.lproj/Localizable.strings
+100 Point (55/100)
+No comment provided by engineer. */
+"100 Point (55/100)" = "100 Điểm (55/100)";
+/* en.lproj/Localizable.strings
+A&R Producer
+No comment provided by engineer. */
+"A&R Producer" = "Sản xuất A&R";
+/* en.lproj/Localizable.strings
+ADR Director
+No comment provided by engineer. */
+"ADR Director" = "Giám đốc ADR";
+/* en.lproj/Localizable.strings
+Accent color
+No comment provided by engineer. */
+"Accent color" = "Màu nhấn";
+/* en.lproj/Localizable.strings
+Account settings
+No comment provided by engineer. */
+"Account settings" = "Cài đặt tài khoản";
+/* en.lproj/Localizable.strings
+Action
+No comment provided by engineer. */
+"Action" = "Hành động";
+/* en.lproj/Localizable.strings
+Activity
+No comment provided by engineer. */
+"Activity" = "Hoạt động";
+/* Types: All, Text Status, List Progress */
+"Activity type" = "Loại hoạt động";
+/* en.lproj/Localizable.strings
+Adaptation
+No comment provided by engineer. */
+"Adaptation" = "Chuyển thể";
+/* if the translation is too long, translate just (Add) */
+"Add to List" = "Thêm";
+/* en.lproj/Localizable.strings
+Added
+No comment provided by engineer. */
+"Added" = "Đã thêm";
+/* en.lproj/Localizable.strings
+Adult
+No comment provided by engineer. */
+"Adult" = "Người lớn";
+/* en.lproj/Localizable.strings
+Adventure
+No comment provided by engineer. */
+"Adventure" = "Phiêu lưu";
+/* en.lproj/Localizable.strings
+Advertising
+No comment provided by engineer. */
+"Advertising" = "Quảng cáo";
+/* en.lproj/Localizable.strings
+Advertising Producer
+No comment provided by engineer. */
+"Advertising Producer" = "Sản xuất quảng cáo";
+/* en.lproj/Localizable.strings
+Age
+No comment provided by engineer. */
+"Age" = "Tuổi";
+/* en.lproj/Localizable.strings
+Airing
+No comment provided by engineer. */
+"Airing" = "Phát sóng";
+/* en.lproj/Localizable.strings
+Airing Anime
+No comment provided by engineer. */
+"Airing Anime" = "Anime đang phát sóng";
+/* en.lproj/Localizable.strings
+Airing Next */
+"Airing Next" = "Phát sóng tiếp theo";
+/* for this one use the masculine form when applied. */
+"All" = "Tất cả";
+/* en.lproj/Localizable.strings
+Alternative
+No comment provided by engineer. */
+"Alternative" = "Thay thế";
+/* en.lproj/Localizable.strings
+Animation
+No comment provided by engineer. */
+"Animation" = "Hoạt ảnh";
+/* en.lproj/Localizable.strings
+Animation Director
+No comment provided by engineer. */
+"Animation Director" = "Giám đốc hoạt ảnh";
+/* en.lproj/Localizable.strings
+Animation Producer
+No comment provided by engineer. */
+"Animation Producer" = "Sản xuất hoạt ảnh";
+/* en.lproj/Localizable.strings
+Anime
+No comment provided by engineer. */
+"Anime" = "Anime";
+/* anime with unwatched episodes */
+"Anime Behind" = "Anime chưa xem";
+/* en.lproj/Localizable.strings
+Anime List
+No comment provided by engineer. */
+"Anime List" = "Danh sách Anime";
+/* en.lproj/Localizable.strings
+Anime, Manga, and More
+No comment provided by engineer. */
+"Anime, Manga, and More" = "Anime, Manga và hơn thế nữa";
+/* en.lproj/Localizable.strings
+App Icon
+No comment provided by engineer. */
+"App Icon" = "Biểu tượng ứng dụng";
+/* en.lproj/Localizable.strings
+Art
+No comment provided by engineer. */
+"Art" = "Nghệ thuật";
+/* en.lproj/Localizable.strings
+Assistant Episode Director
+No comment provided by engineer. */
+"Assistant Episode Director" = "Trợ lí giám đốc tập phim";
+/* en.lproj/Localizable.strings
+Assistant Producer
+No comment provided by engineer. */
+"Assistant Producer" = "Trợ lý sản xuất";
+/* Birthday */
+"Birth" = "Sinh";
+/* en.lproj/Localizable.strings
+Birthday
+No comment provided by engineer. */
+"Birthday" = "Sinh nhật";
+/* en.lproj/Localizable.strings
+Blood Type
+No comment provided by engineer. */
+"Blood Type" = "Nhóm máu";
+/* en.lproj/Localizable.strings
+CG Producer
+No comment provided by engineer. */
+"CG Producer" = "Sản xuất CG";
+/* en.lproj/Localizable.strings
+Calendar
+No comment provided by engineer. */
+"Calendar" = "Lịch";
+/* en.lproj/Localizable.strings
+Cancel
+No comment provided by engineer. */
+"Cancel" = "Huỷ bỏ";
+/* en.lproj/Localizable.strings
+Cancelled
+No comment provided by engineer. */
+"Cancelled" = "Đã huỷ bỏ";
+/* chapter abbreviation */
+"Ch" = "Chg";
+/* en.lproj/Localizable.strings
+Chapters
+No comment provided by engineer. */
+"Chapters" = "Chương";
+/* stats */
+"Chapters Read" = "Số chương đã đọc";
+/* en.lproj/Localizable.strings
+Chapters read
+No comment provided by engineer. */
+"Chapters read" = "Chương đã đọc";
+/* en.lproj/Localizable.strings
+Character
+No comment provided by engineer. */
+"Character" = "Nhân vật";
+/* en.lproj/Localizable.strings
+Character Design
+No comment provided by engineer. */
+"Character Design" = "Thiết kế nhân vật";
+/* en.lproj/Localizable.strings
+Characters
+No comment provided by engineer. */
+"Characters" = "Nhân vật";
+/* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
+"Characters and Staff" = "Nhân vật và Nhân viên";
+/* en.lproj/Localizable.strings
+Chief Animation Director
+No comment provided by engineer. */
+"Chief Animation Director" = "Giám đốc hoạt ảnh chính";
+/* en.lproj/Localizable.strings
+Chief Director
+No comment provided by engineer. */
+"Chief Director" = "Tổng giám đốc";
+/* en.lproj/Localizable.strings
+Chief Episode Director
+No comment provided by engineer. */
+"Chief Episode Director" = "Tổng giám đốc tập phim";
+/* en.lproj/Localizable.strings
+China
+No comment provided by engineer. */
+"China" = "Trung Quốc";
+/* en.lproj/Localizable.strings
+Choose between Anime or Manga.
+No comment provided by engineer. */
+"Choose between Anime or Manga." = "Chọn giữa Anime hoặc Manga.";
+/* en.lproj/Localizable.strings
+Clear
+No comment provided by engineer. */
+"Clear" = "Xoá sạch";
+/* en.lproj/Localizable.strings
+Close
+No comment provided by engineer. */
+"Close" = "Đóng";
+/* en.lproj/Localizable.strings
+Co-Producer
+No comment provided by engineer. */
+"Co-Producer" = "Đồng sản xuất";
+/* en.lproj/Localizable.strings
+Comedy
+No comment provided by engineer. */
+"Comedy" = "Hài";
+/* en.lproj/Localizable.strings
+Completed */
+"Completed" = "Đã hoàn thành";
+/* An user list activity status.
+Eg: Completed [Anime/Manga Title] */
+"Completed %@" = "Đã hoàn thành %@";
+/* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
+"Congratulations, you are up to date!
+(๑>◡<๑)" = "Vip thật đấy, bạn đã xem hết rồi nà!\n(๑>◡<๑)";
+/* en.lproj/Localizable.strings
+Content
+No comment provided by engineer. */
+"Content" = "Nội dung";
+/* en.lproj/Localizable.strings
+Country
+No comment provided by engineer. */
+"Country" = "Quốc gia";
+/* en.lproj/Localizable.strings
+Current */
+"Current" = "Hiện tại";
+/* custom app color */
+"Custom" = "Tuỳ chỉnh";
+/* en.lproj/Localizable.strings
+Custom color
+No comment provided by engineer. */
+"Custom color" = "Màu tuỳ chỉnh";
+/* en.lproj/Localizable.strings
+Custom lists
+No comment provided by engineer. */
+"Custom lists" = "Danh sách tuỳ chỉnh";
+/* Dates: start date and end date */
+"Dates" = "Ngày tháng";
+/* stats */
+"Days Watched" = "Ngày đã xem";
+/* date of death */
+"Death" = "Qua đời";
+/* en.lproj/Localizable.strings
+Default
+No comment provided by engineer. */
+"Default" = "Mặc định";
+/* en.lproj/Localizable.strings
+Default tab
+No comment provided by engineer. */
+"Default tab" = "Thẻ mặc định";
+/* en.lproj/Localizable.strings
+Delete
+No comment provided by engineer. */
+"Delete" = "Xoá";
+/* en.lproj/Localizable.strings
+Descending
+No comment provided by engineer. */
+"Descending" = "Giảm dần";
+/* en.lproj/Localizable.strings
+Donate
+Settings -> donate button */
+"Donate" = "Ủng hộ";
+/* en.lproj/Localizable.strings
+Donate!
+No comment provided by engineer. */
+"Donate!" = "Ủng hộ!";
+/* en.lproj/Localizable.strings
+Donation
+No comment provided by engineer. */
+"Donation" = "Ủng hộ";
+/* en.lproj/Localizable.strings
+Donator
+No comment provided by engineer. */
+"Donator" = "Người ủng hộ";
+/* en.lproj/Localizable.strings
+Done
+No comment provided by engineer. */
+"Done" = "Xong";
+/* en.lproj/Localizable.strings
+Doujinshi
+No comment provided by engineer. */
+"Doujinshi" = "Doujinshi";
+/* en.lproj/Localizable.strings
+Drama
+No comment provided by engineer. */
+"Drama" = "Drama";
+/* en.lproj/Localizable.strings
+Dropped */
+"Dropped" = "Bị bỏ";
+/* (User) Dropped [Anime/Manga Title] */
+"Dropped %@" = "Đã bỏ %@";
+/* en.lproj/Localizable.strings
+Duration
+No comment provided by engineer. */
+"Duration" = "Thời lượng";
+/* en.lproj/Localizable.strings
+Ecchi
+No comment provided by engineer. */
+"Ecchi" = "Ecchi";
+/* en.lproj/Localizable.strings
+Edit
+No comment provided by engineer. */
+"Edit" = "Sửa";
+/* en.lproj/Localizable.strings
+End date
+No comment provided by engineer. */
+"End date" = "Ngày kết thúc";
+/* en.lproj/Localizable.strings
+Endcard
+No comment provided by engineer. */
+"Endcard" = "Thẻ kết thúc";
+/* en.lproj/Localizable.strings
+English
+No comment provided by engineer. */
+"English" = "Tiếng Anh";
+/* episodes abbreviation */
+"Ep" = "Tập";
+/* Episode abbreviation with number and time.
+Eg: Ep [23] [in 35 minutes] */
+"Ep %lld %@" = "Tập %lld sẽ phát sóng %@ nữa";
+/* Episode abbreviation with number and a specific hour.
+Eg: Ep [23] at [12:30] */
+"Ep %lld at %@" = "Tập %lld sẽ phát sóng lúc %@";
+/* en.lproj/Localizable.strings
+Episode Count
+No comment provided by engineer. */
+"Episode Count" = "Số tập";
+/* en.lproj/Localizable.strings
+Episode Director
+No comment provided by engineer. */
+"Episode Director" = "Giám đốc tập phim";
+/* en.lproj/Localizable.strings
+Episode Director (ED)
+No comment provided by engineer. */
+"Episode Director (ED)" = "Giám đốc tập phim (ED)";
+/* en.lproj/Localizable.strings
+Episode Director (OP)
+No comment provided by engineer. */
+"Episode Director (OP)" = "Giám đốc tập phim (OP)";
+/* en.lproj/Localizable.strings
+Episodes
+No comment provided by engineer. */
+"Episodes" = "Số tập";
+/* stats */
+"Episodes Watched" = "Tập đã xem";
+/* en.lproj/Localizable.strings
+Executive Producer
+No comment provided by engineer. */
+"Executive Producer" = "Giám đốc sản xuất";
+/* en.lproj/Localizable.strings
+Explore
+No comment provided by engineer. */
+"Explore" = "Khám phá";
+/* en.lproj/Localizable.strings
+External links
+No comment provided by engineer. */
+"External links" = "Liên kết ngoài";
+/* en.lproj/Localizable.strings
+Fall */
+"Fall" = "Mùa thu";
+/* en.lproj/Localizable.strings
+Fantasy
+No comment provided by engineer. */
+"Fantasy" = "Kì ảo";
+/* en.lproj/Localizable.strings
+Favorites
+No comment provided by engineer. */
+"Favorites" = "Yêu thích";
+/* en.lproj/Localizable.strings
+Female
+No comment provided by engineer. */
+"Female" = "Nữ";
+/* en.lproj/Localizable.strings
+Filter
+No comment provided by engineer. */
+"Filter" = "Bộ lọc";
+/* en.lproj/Localizable.strings
+Finish Date
+No comment provided by engineer. */
+"Finish Date" = "Ngày kết thúc";
+/* en.lproj/Localizable.strings
+Finished
+No comment provided by engineer. */
+"Finished" = "Đã hoàn tất";
+/* en.lproj/Localizable.strings
+Follow
+No comment provided by engineer. */
+"Follow" = "Theo dõi";
+/* en.lproj/Localizable.strings
+Followers
+No comment provided by engineer. */
+"Followers" = "Người theo dõi";
+/* en.lproj/Localizable.strings
+Following
+No comment provided by engineer. */
+"Following" = "Đang theo dõi";
+/* en.lproj/Localizable.strings
+Follows
+No comment provided by engineer. */
+"Follows" = "Theo dõi";
+/* en.lproj/Localizable.strings
+Follows you
+No comment provided by engineer. */
+"Follows you" = "Theo dõi bạn";
+/* en.lproj/Localizable.strings
+Format
+No comment provided by engineer. */
+"Format" = "Định dạng";
+/* en.lproj/Localizable.strings
+Forum
+No comment provided by engineer. */
+"Forum" = "Diễn đàn";
+/* en.lproj/Localizable.strings
+Game
+No comment provided by engineer. */
+"Game" = "Trò chơi";
+/* en.lproj/Localizable.strings
+Gender
+No comment provided by engineer. */
+"Gender" = "Giới tính";
+/* general information about the anime/manga */
+"General" = "Tổng quát";
+/* en.lproj/Localizable.strings
+Genres
+No comment provided by engineer. */
+"Genres" = "Thể loại";
+/* en.lproj/Localizable.strings
+GitHub repository
+No comment provided by engineer. */
+"GitHub repository" = "Kho lưu trữ GitHub";
+/* en.lproj/Localizable.strings
+Global
+No comment provided by engineer. */
+"Global" = "Toàn cầu";
+/* en.lproj/Localizable.strings
+Hentai
+No comment provided by engineer. */
+"Hentai" = "Hentai";
+/* en.lproj/Localizable.strings
+Hide spoiler
+No comment provided by engineer. */
+"Hide spoiler" = "Ẩn spoiler";
+/* ranking.
+Eg: #1 Highest rated 2023 */
+"Highest rated" = "được đánh giá cao nhất";
+/* as short as possible */
+"Home" = "Tr.chủ";
+/* en.lproj/Localizable.strings
+Hometown
+No comment provided by engineer. */
+"Hometown" = "Quê quán";
+/* en.lproj/Localizable.strings
+Horror
+No comment provided by engineer. */
+"Horror" = "Kinh dị";
+/* en.lproj/Localizable.strings
+Hours Watched
+No comment provided by engineer. */
+"Hours Watched" = "Giờ đã xem";
+/* en.lproj/Localizable.strings
+Illustration
+No comment provided by engineer. */
+"Illustration" = "Minh họa";
+/* en.lproj/Localizable.strings
+Info type
+No comment provided by engineer. */
+"Info type" = "Loại thông tin";
+/* en.lproj/Localizable.strings
+Information
+No comment provided by engineer. */
+"Information" = "Thông tin";
+/* en.lproj/Localizable.strings
+Japan
+No comment provided by engineer. */
+"Japan" = "Nhật Bản";
+/* en.lproj/Localizable.strings
+Japanese
+No comment provided by engineer. */
+"Japanese" = "Tiếng Nhật";
+/* en.lproj/Localizable.strings
+Mahou Shoujo
+No comment provided by engineer. */
+"Mahou Shoujo" = "Ma pháp thiếu nữ";
+/* en.lproj/Localizable.strings
+Main
+No comment provided by engineer. */
+"Main" = "Chính";
+/* en.lproj/Localizable.strings
+Male
+No comment provided by engineer. */
+"Male" = "Nam";
+/* en.lproj/Localizable.strings
+Manga
+No comment provided by engineer. */
+"Manga" = "Manga";
+/* en.lproj/Localizable.strings
+Manga List
+No comment provided by engineer. */
+"Manga List" = "Danh sách Manga";
+/* en.lproj/Localizable.strings
+Mecha
+No comment provided by engineer. */
+"Mecha" = "Mecha";
+/* en.lproj/Localizable.strings
+Movie
+No comment provided by engineer. */
+"Movie" = "Phim";
+/* en.lproj/Localizable.strings
+Music Producer
+No comment provided by engineer. */
+"Music Producer" = "Sản xuất âm nhạc";
+/* en.lproj/Localizable.strings
+Mystery
+No comment provided by engineer. */
+"Mystery" = "Huyền bí";
+/* en.lproj/Localizable.strings
+Native
+No comment provided by engineer. */
+"Native" = "Nguyên bản";
+/* en.lproj/Localizable.strings
+Newly Added Anime
+No comment provided by engineer. */
+"Newly Added Anime" = "Anime mới thêm";
+/* en.lproj/Localizable.strings
+Newly Added Manga
+No comment provided by engineer. */
+"Newly Added Manga" = "Manga mới thêm";
+/* toggle off */
+"No" = "Không";
+/* en.lproj/Localizable.strings
+No anime for today
+(*´-`)
+No comment provided by engineer. */
+"No anime for today
+(*´-`)" = "Hôm nay hổng có anime gòii\n(*´-`)";
+/* nothing selected */
+"None" = "Không";
+/* en.lproj/Localizable.strings
+Notes
+No comment provided by engineer. */
+"Notes" = "Ghi chú";
+/* en.lproj/Localizable.strings
+Notifications
+No comment provided by engineer. */
+"Notifications" = "Thông báo";
+/* en.lproj/Localizable.strings
+OK
+No comment provided by engineer. */
+"OK" = "OK";
+/* en.lproj/Localizable.strings
+ONA
+No comment provided by engineer. */
+"ONA" = "ONA";
+/* en.lproj/Localizable.strings
+OVA
+No comment provided by engineer. */
+"OVA" = "OVA";
+/* en.lproj/Localizable.strings
+OneShot
+No comment provided by engineer. */
+"OneShot" = "OneShot";
+/* en.lproj/Localizable.strings
+Original
+No comment provided by engineer. */
+"Original" = "Gốc";
+/* en.lproj/Localizable.strings
+Other
+No comment provided by engineer. */
+"Other" = "Khác";
+/* text for a button that opens AniList website */
+"Other account settings" = "Cài đặt tài khoản khác";
+/* en.lproj/Localizable.strings
+Paused */
+"Paused" = "Đã tạm dừng";
+/* (User) Paused [Anime/Manga Title] */
+"Paused %@" = "Đã tạm dừng %@";
+/* Plans to read [Manga Title] */
+"Plans to read %@" = "Dự kiến đọc %@";
+/* Plans to watch [Anime Title] */
+"Plans to watch %@" = "Dự kiến xem %@";
+/* en.lproj/Localizable.strings
+Please login to use this feature
+No comment provided by engineer. */
+"Please login to use this feature" = "Hãy đăng nhập để sử dụng tính năng này";
+/* en.lproj/Localizable.strings
+Popular Anime
+No comment provided by engineer. */
+"Popular Anime" = "Anime phổ biến";
+/* en.lproj/Localizable.strings
+Popular Manga
+No comment provided by engineer. */
+"Popular Manga" = "Manga phổ biến";
+/* en.lproj/Localizable.strings
+Producer
+No comment provided by engineer. */
+"Producer" = "Sản xuất";
+/* en.lproj/Localizable.strings
+Producers
+No comment provided by engineer. */
+"Producers" = "Sản xuất";
+/* as short as possible */
+"Profile" = "Hồ sơ";
+/* list entry progress */
+"Progress" = "Tiến độ";
+/* en.lproj/Localizable.strings
+Push notifications
+No comment provided by engineer. */
+"Push notifications" = "Thông báo đẩy";
+/* en.lproj/Localizable.strings
+Random
+No comment provided by engineer. */
+"Random" = "Ngẫu nhiên";
+/* en.lproj/Localizable.strings
+Rankings
+No comment provided by engineer. */
+"Rankings" = "Xếp hạng";
+/* en.lproj/Localizable.strings
+Read Year
+No comment provided by engineer. */
+"Read Year" = "Năm đọc";
+/* Eg: (User) Read chapter [25] of [Manga Title] */
+"Read chapter %1$@ of %2$@" = "Đã đọc chương %1$@ của %2$@";
+/* en.lproj/Localizable.strings
+Reading
+No comment provided by engineer. */
+"Reading" = "Đang đọc";
+/* sort by repeat count */
+"Repeat" = "Lặp lại";
+/* en.lproj/Localizable.strings
+Repeat Count
+No comment provided by engineer. */
+"Repeat Count" = "Lần lặp lại";
+/* Reread [Kimetsu no Yaiba] */
+"Reread %@" = "Đã đọc lại %@";
+/* (User) Reread chapter [1 - 27] of [Kimetsu no Yaiba] */
+"Reread chapter %1$@ of %2$@" = "Đã đọc lại chương %1$@ của %2$@";
+/* (User) Rewatched episode [1 - 27] of [Kimetsu no Yaiba] */
+"Rewatched episode %1$@ of %2$@" = "Đã xem lại tập %1$@ của %2$@";
+/* en.lproj/Localizable.strings
+Romaji
+No comment provided by engineer. */
+"Romaji" = "Romaji";
+/* en.lproj/Localizable.strings
+Romaji (Western Order)
+No comment provided by engineer. */
+"Romaji (Western Order)" = "Romaji (Thứ tự phương Tây)";
+/* en.lproj/Localizable.strings
+Romance
+No comment provided by engineer. */
+"Romance" = "Lãng mạn";
+/* en.lproj/Localizable.strings
+Save
+No comment provided by engineer. */
+"Save" = "Lưu";
+/* en.lproj/Localizable.strings
+Score
+No comment provided by engineer. */
+"Score" = "Điểm";
+/* Set to Status.
+Example: Set as Completed */
+"Set as %@" = "Đặt là %@";
+/* en.lproj/Localizable.strings
+Settings
+No comment provided by engineer. */
+"Settings" = "Cài đặt";
+/* en.lproj/Localizable.strings
+Share
+No comment provided by engineer. */
+"Share" = "Chia sẻ";
+/* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
+"Show spoiler" = "Hiện spoiler";
+/* en.lproj/Localizable.strings
+Sound Producer
+No comment provided by engineer. */
+"Sound Producer" = "Sản xuất âm thanh";
+/* sort by date started */
+"Started" = "Đã bắt đầu";
+/* Volumes abbreviation */
+"Vol" = "Tập";
+/* Eg: (User) Watched episode [25] of [Anime Title] */
+"Watched episode %1$@ of %2$@" = "Đã xem tập %1$@ của %2$@";
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[%lld tập chưa xem](inflect: true)";

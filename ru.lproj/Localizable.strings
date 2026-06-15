@@ -153,8 +153,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "Выпускающиеся аниме";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "Далее выпуститься";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "Уведомления выходящих аниме";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -637,10 +642,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Discord сервер";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "Узнать";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "Отображение";
@@ -775,8 +776,7 @@ Eyecatch
 No comment provided by engineer. */
 "Eyecatch" = "Eyecatch";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Осень";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -1223,6 +1223,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "Недавно добавленная манга";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "Следующий сезон";
 /* toggle off */
 "No" = "Нет";
 /* en.lproj/Localizable.strings
@@ -1646,10 +1650,6 @@ Season
 No comment provided by engineer. */
 "Season" = "Сезон";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "Показать все";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "Выберите тип медиа";
@@ -1787,8 +1787,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "Спорт";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Весна";
 /* en.lproj/Localizable.strings
 Staff
@@ -1859,8 +1858,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "Обобщение";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Лето";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -2118,6 +2116,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "Предстоящая манга";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "Интервал обновлений";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "Обновлено";
@@ -2192,8 +2194,7 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "День недели";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Зима";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!

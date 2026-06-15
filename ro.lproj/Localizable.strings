@@ -1,1288 +1,1280 @@
 /* en.lproj/Localizable.strings
 %lld chapters
 No comment provided by engineer. */
-"%lld chapters" = "%lld розділів";
+"%lld chapters" = "%lld capitole";
 /* en.lproj/Localizable.strings
 %lld episodes
 No comment provided by engineer. */
-"%lld episodes" = "%lld серій";
+"%lld episodes" = "%lld episoade";
 /* num of volumes.
 Eg: 23 volumes */
-"%lld volumes" = "%lld томів";
-/* en.lproj/Localizable.strings
-+1
-No comment provided by engineer. */
-"+1" = "+1";
+"%lld volumes" = "%lld volume";
 /* en.lproj/Localizable.strings
 1st Key Animation Director
 No comment provided by engineer. */
-"1st Key Animation Director" = "Режисер 1-ї ключової анімації";
+"1st Key Animation Director" = "Primul director de animație cheie";
 /* en.lproj/Localizable.strings
 1st Key Assistant Animation Director
 No comment provided by engineer. */
-"1st Key Assistant Animation Director" = "Помічний режисер 1-ї ключової анімації";
+"1st Key Assistant Animation Director" = "Primul director adjunct de animație cheie";
 /* en.lproj/Localizable.strings
 2D Design
 No comment provided by engineer. */
-"2D Design" = "2D-дизайн";
+"2D Design" = "Proiectare 2D";
 /* en.lproj/Localizable.strings
 2D Effects
 No comment provided by engineer. */
-"2D Effects" = "2D ефекти";
+"2D Effects" = "Efecte 2D";
 /* en.lproj/Localizable.strings
 2D Works
 No comment provided by engineer. */
-"2D Works" = "Робота з 2D";
+"2D Works" = "Lucrări 2D";
 /* en.lproj/Localizable.strings
 2nd Key Animation
 No comment provided by engineer. */
-"2nd Key Animation" = "Друга ключова анімація";
+"2nd Key Animation" = "A doua animație cheie";
 /* en.lproj/Localizable.strings
 3 Point Smiley :)
 No comment provided by engineer. */
-"3 Point Smiley :)" = "3-бальна посміхашка :)";
+"3 Point Smiley :)" = "3 puncte zâmbitoare :)";
 /* en.lproj/Localizable.strings
 3D Art
 No comment provided by engineer. */
-"3D Art" = "3D художник";
+"3D Art" = "Artă 3D";
 /* en.lproj/Localizable.strings
 3D Works
 No comment provided by engineer. */
-"3D Works" = "Робота з 3D";
+"3D Works" = "Lucrări 3D";
 /* en.lproj/Localizable.strings
 3DCG
 No comment provided by engineer. */
-"3DCG" = "3DКГ";
+"3DCG" = "Grafică pe computer 3D";
 /* en.lproj/Localizable.strings
 5 Star (3/5)
 No comment provided by engineer. */
-"5 Star (3/5)" = "5 Зіркова (3/5)";
+"5 Star (3/5)" = "5 stele (3/5)";
 /* en.lproj/Localizable.strings
 10 Point (5/10)
 No comment provided by engineer. */
-"10 Point (5/10)" = "10 бальна (5/10)";
+"10 Point (5/10)" = "10 puncte (5/10)";
 /* en.lproj/Localizable.strings
 10 Point Decimal (5.5/10)
 No comment provided by engineer. */
-"10 Point Decimal (5.5/10)" = "10-значна десяткова (5.5/10)";
+"10 Point Decimal (5.5/10)" = "10 puncte cu zecimale (5,5/10)";
 /* en.lproj/Localizable.strings
 100 Point (55/100)
 No comment provided by engineer. */
-"100 Point (55/100)" = "100 бальна (55/100)";
+"100 Point (55/100)" = "100 puncte (55/100)";
 /* en.lproj/Localizable.strings
 A&R Producer
 No comment provided by engineer. */
-"A&R Producer" = "Директор A&R";
+"A&R Producer" = "Producător A&R";
 /* en.lproj/Localizable.strings
 ADR Director
 No comment provided by engineer. */
-"ADR Director" = "Режисер дубляжу";
+"ADR Director" = "Director ADR";
 /* en.lproj/Localizable.strings
 Accent color
 No comment provided by engineer. */
-"Accent color" = "Основний колір";
+"Accent color" = "Culoare de accent";
 /* en.lproj/Localizable.strings
 Accessory Design
 No comment provided by engineer. */
-"Accessory Design" = "Дизайн аксесуарів";
+"Accessory Design" = "Estetică accesorii";
 /* en.lproj/Localizable.strings
 Account settings
 No comment provided by engineer. */
-"Account settings" = "Параметри облікового запису";
+"Account settings" = "Setări cont";
 /* en.lproj/Localizable.strings
 Action
 No comment provided by engineer. */
-"Action" = "Екшн";
+"Action" = "Acțiune";
 /* en.lproj/Localizable.strings
 Action Animation Director
 No comment provided by engineer. */
-"Action Animation Director" = "Режисер динамічної анімації";
+"Action Animation Director" = "Director animație de acțiune";
 /* en.lproj/Localizable.strings
 Action Animation Supervisor
 No comment provided by engineer. */
-"Action Animation Supervisor" = "Доглядач за динамічною анімацією";
+"Action Animation Supervisor" = "Supraveghetor animație de acțiune";
 /* en.lproj/Localizable.strings
 Action Animator
 No comment provided by engineer. */
-"Action Animator" = "Аніматор динаміки";
+"Action Animator" = "Animator de acțiune";
 /* en.lproj/Localizable.strings
 Action Director
 No comment provided by engineer. */
-"Action Director" = "Режисер динамічних сцен";
+"Action Director" = "Director de acțiune";
 /* en.lproj/Localizable.strings
 Activity
 No comment provided by engineer. */
-"Activity" = "Діяльність";
+"Activity" = "Activitate";
 /* Types: All, Text Status, List Progress */
-"Activity type" = "Тип діяльності";
+"Activity type" = "Tip de activitate";
 /* en.lproj/Localizable.strings
 Adaptation
 No comment provided by engineer. */
-"Adaptation" = "Адаптація";
+"Adaptation" = "Adaptare";
 /* if the translation is too long, translate just (Add) */
-"Add to List" = "Додати";
+"Add to List" = "Adăugați";
 /* en.lproj/Localizable.strings
 Added
 No comment provided by engineer. */
-"Added" = "Додано";
+"Added" = "Adăugat";
 /* en.lproj/Localizable.strings
 Adult
 No comment provided by engineer. */
-"Adult" = "Для дорослих";
+"Adult" = "Adult";
 /* en.lproj/Localizable.strings
 Adventure
 No comment provided by engineer. */
-"Adventure" = "Пригоди";
+"Adventure" = "Aventură";
 /* en.lproj/Localizable.strings
 Advertising
 No comment provided by engineer. */
-"Advertising" = "Маркетинг";
+"Advertising" = "Publicitate";
 /* en.lproj/Localizable.strings
 Advertising Producer
 No comment provided by engineer. */
-"Advertising Producer" = "Маркетинговий Продюсер";
+"Advertising Producer" = "Producător de publicitate";
 /* en.lproj/Localizable.strings
 Age
 No comment provided by engineer. */
-"Age" = "Вік";
+"Age" = "Vârsta";
 /* en.lproj/Localizable.strings
 Airing
 No comment provided by engineer. */
-"Airing" = "Виходить";
+"Airing" = "Difuzare";
 /* en.lproj/Localizable.strings
 Airing Anime
 No comment provided by engineer. */
-"Airing Anime" = "Аніме які виходять";
+"Airing Anime" = "Anime în difuzare";
 /* en.lproj/Localizable.strings
 Airing Next */
-"Airing Next" = "Продовжує виходити";
+"Airing Next" = "Urmează să fie difuzat";
 /* en.lproj/Localizable.strings
 Airing anime notifications
 No comment provided by engineer. */
-"Airing anime notifications" = "Сповіщення про вихід аніме";
+"Airing anime notifications" = "Afișarea notificărilor anime";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
-"Airing on my list" = "Виходять у моєму каталозі";
+"Airing on my list" = "Difuzări din lista mea";
 /* for this one use the masculine form when applied. */
-"All" = "Усі";
+"All" = "Toți";
 /* en.lproj/Localizable.strings
 Alternative
 No comment provided by engineer. */
-"Alternative" = "Альтернатива";
+"Alternative" = "Alternativ";
 /* en.lproj/Localizable.strings
 Animation
 No comment provided by engineer. */
-"Animation" = "Анімація";
+"Animation" = "Animație";
 /* en.lproj/Localizable.strings
 Animation Director
 No comment provided by engineer. */
-"Animation Director" = "Режисер Анімації";
+"Animation Director" = "Director de animație";
 /* en.lproj/Localizable.strings
 Animation Producer
 No comment provided by engineer. */
-"Animation Producer" = "Анімаційний Продюсер";
+"Animation Producer" = "Producător de animație";
 /* en.lproj/Localizable.strings
 Animation Production Assistance
 No comment provided by engineer. */
-"Animation Production Assistance" = "Помічник у виробництві анімації";
+"Animation Production Assistance" = "Adjunct producător de animație";
 /* en.lproj/Localizable.strings
 Animation Supervisor
 No comment provided by engineer. */
-"Animation Supervisor" = "Управління анімацією";
+"Animation Supervisor" = "Supraveghetor de animație";
 /* en.lproj/Localizable.strings
 Anime
 No comment provided by engineer. */
-"Anime" = "Аніме";
+"Anime" = "Anime";
 /* anime with unwatched episodes */
-"Anime Behind" = "Аніме позаду";
+"Anime Behind" = "Anime în urmă";
 /* en.lproj/Localizable.strings
 Anime List
 No comment provided by engineer. */
-"Anime List" = "Каталог анiме";
+"Anime List" = "Lista de anime";
 /* en.lproj/Localizable.strings
 Anime, Manga, and More
 No comment provided by engineer. */
-"Anime, Manga, and More" = "Аніме, манґа, та інше";
+"Anime, Manga, and More" = "Anime, manga, și altele";
 /* en.lproj/Localizable.strings
 App Icon
 No comment provided by engineer. */
-"App Icon" = "Іконка застосунку";
+"App Icon" = "Pictograma aplicației";
 /* en.lproj/Localizable.strings
 Are you sure you want to log out?
 No comment provided by engineer. */
-"Are you sure you want to log out?" = "Ви впевнені, що хочете вийти з системи?";
+"Are you sure you want to log out?" = "Sunteți sigur că doriți să vă deconectați?";
 /* en.lproj/Localizable.strings
 Art
 No comment provided by engineer. */
-"Art" = "Художник";
+"Art" = "Artă";
 /* en.lproj/Localizable.strings
 Art Board
 No comment provided by engineer. */
-"Art Board" = "Рада Художників";
+"Art Board" = "Secțiune de artă";
 /* en.lproj/Localizable.strings
 Art Composition
 No comment provided by engineer. */
-"Art Composition" = "Художня Композиція";
+"Art Composition" = "Compoziție artistică";
 /* en.lproj/Localizable.strings
 Art Design
 No comment provided by engineer. */
-"Art Design" = "Художній дизайн";
+"Art Design" = "Design artistic";
 /* en.lproj/Localizable.strings
 Art Director
 No comment provided by engineer. */
-"Art Director" = "Художній Режисер";
+"Art Director" = "Director artistic";
 /* Please try to use the same break lines */
 "As you may known this app is completely free and Open Source,
 but creating an app requires a lot of time and effort.
 By making a donation you will help cover the costs of
-development, maintenance, and new features." = "Як ви знаєте, цей додаток є повністю безкоштовним і з відкритим вихідним кодом,\nале створення програми вимагає багато часу і зусиль.\nЗробивши пожертву, ви допоможете покрити витрати на\nрозробку, технічне обслуговування та нові функції.";
+development, maintenance, and new features." = "După cum probabil știți, această aplicație este complet gratuită \nși Open Source, \ndar crearea unei aplicații necesită mult timp și\nefort. \nFăcând o donație, veți contribui la acoperirea costurilor de \ndezvoltare, întreținere și noi funcții.";
 /* en.lproj/Localizable.strings
 Ascending
 No comment provided by engineer. */
-"Ascending" = "За зростанням";
+"Ascending" = "Crescător";
 /* en.lproj/Localizable.strings
 Assistance
 No comment provided by engineer. */
-"Assistance" = "Помічник";
+"Assistance" = "Asistenţă";
 /* en.lproj/Localizable.strings
 Assistant
 No comment provided by engineer. */
-"Assistant" = "Помічник";
+"Assistant" = "Asistent";
 /* en.lproj/Localizable.strings
 Assistant Animation Director
 No comment provided by engineer. */
-"Assistant Animation Director" = "Помічник Режисера Анімації";
+"Assistant Animation Director" = "Director adjunct de animație";
 /* en.lproj/Localizable.strings
 Assistant Art Director
 No comment provided by engineer. */
-"Assistant Art Director" = "Помічник Художнього Режисера";
+"Assistant Art Director" = "Director adjunct de artă";
 /* en.lproj/Localizable.strings
 Assistant Chief Animation Director
 No comment provided by engineer. */
-"Assistant Chief Animation Director" = "Помічник Головного Режисера Анімації";
+"Assistant Chief Animation Director" = "Director-șef adjunct de animație";
 /* en.lproj/Localizable.strings
 Assistant Chief Director
 No comment provided by engineer. */
-"Assistant Chief Director" = "Помічник головного режисера";
+"Assistant Chief Director" = "Director-șef adjunct";
 /* en.lproj/Localizable.strings
 Assistant Director
 No comment provided by engineer. */
-"Assistant Director" = "Помічник режисера";
+"Assistant Director" = "Director adjunct";
 /* en.lproj/Localizable.strings
 Assistant Director of Photography
 No comment provided by engineer. */
-"Assistant Director of Photography" = "Помічник режисера з фотозйомки";
+"Assistant Director of Photography" = "Director adjunct de fotografie";
 /* en.lproj/Localizable.strings
 Assistant Episode Director
 No comment provided by engineer. */
-"Assistant Episode Director" = "Помічник режисера епізоду";
+"Assistant Episode Director" = "Director adjunct de episod";
 /* en.lproj/Localizable.strings
 Assistant Producer
 No comment provided by engineer. */
-"Assistant Producer" = "Помічник продюсера";
+"Assistant Producer" = "Adjunct producător";
 /* en.lproj/Localizable.strings
 Assistant Production Manager
 No comment provided by engineer. */
-"Assistant Production Manager" = "Помічник керівника виробництва";
+"Assistant Production Manager" = "Adjunct manager de producție";
 /* en.lproj/Localizable.strings
 Assistant Unit Director
 No comment provided by engineer. */
-"Assistant Unit Director" = "Помічник директора підрозділу";
+"Assistant Unit Director" = "Director adjunct de unitate";
 /* en.lproj/Localizable.strings
 Associate Producer
 No comment provided by engineer. */
-"Associate Producer" = "Співпродюсер";
+"Associate Producer" = "Producător asociat";
 /* weighted Average Score */
-"Average Score" = "Середній бал";
+"Average Score" = "Scor mediu";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
-"Background" = "Контекст";
+"Background" = "Fundal";
 /* en.lproj/Localizable.strings
 Background Art
 No comment provided by engineer. */
-"Background Art" = "Тло";
+"Background Art" = "Artă de fundal";
 /* en.lproj/Localizable.strings
 Background Art Assistance
 No comment provided by engineer. */
-"Background Art Assistance" = "Помічник з тлом";
+"Background Art Assistance" = "Asistență artistică de fundal";
 /* en.lproj/Localizable.strings
 Background Manager
 No comment provided by engineer. */
-"Background Manager" = "Керівник тла";
+"Background Manager" = "Manager de fundal";
 /* en.lproj/Localizable.strings
 Background Production
 No comment provided by engineer. */
-"Background Production" = "Виробництво тла";
+"Background Production" = "Producție de fundal";
 /* Birthday */
-"Birth" = "Дата народження";
+"Birth" = "Naştere";
 /* en.lproj/Localizable.strings
 Birthday
 No comment provided by engineer. */
-"Birthday" = "День народження";
+"Birthday" = "Zi de naștere";
 /* en.lproj/Localizable.strings
 Blood Type
 No comment provided by engineer. */
-"Blood Type" = "Група крові";
+"Blood Type" = "Grupa Sanguină";
 /* en.lproj/Localizable.strings
 Blood type
 No comment provided by engineer. */
-"Blood type" = "Група крові";
+"Blood type" = "Grupa sanguină";
 /* en.lproj/Localizable.strings
 CG Animation
 No comment provided by engineer. */
-"CG Animation" = "CG-анімація";
+"CG Animation" = "Animație CG";
 /* en.lproj/Localizable.strings
 CG Animation Director
 No comment provided by engineer. */
-"CG Animation Director" = "Режисер CG-анімації";
+"CG Animation Director" = "Director de animație CG";
 /* en.lproj/Localizable.strings
 CG Assistant Director
 No comment provided by engineer. */
-"CG Assistant Director" = "Помічний керівник CG";
+"CG Assistant Director" = "Director adjunct de CG";
 /* en.lproj/Localizable.strings
 CG Background Modeling
 No comment provided by engineer. */
-"CG Background Modeling" = "Моделюваня тла в CG";
+"CG Background Modeling" = "Modelare de fundal CG";
 /* en.lproj/Localizable.strings
 CG Director
 No comment provided by engineer. */
-"CG Director" = "Керівник CG";
+"CG Director" = "Director de CG";
 /* en.lproj/Localizable.strings
 CG Layout
 No comment provided by engineer. */
-"CG Layout" = "CG-композиція";
+"CG Layout" = "Aspect CG";
 /* en.lproj/Localizable.strings
 CG Modeling
 No comment provided by engineer. */
-"CG Modeling" = "CG-моделювання";
+"CG Modeling" = "Modelare CG";
 /* en.lproj/Localizable.strings
 CG Modeling Director
 No comment provided by engineer. */
-"CG Modeling Director" = "Керівник CG-моделювання";
+"CG Modeling Director" = "Director modelare CG";
 /* en.lproj/Localizable.strings
 CG Producer
 No comment provided by engineer. */
-"CG Producer" = "Продюсер комп\'ютерної графіки";
+"CG Producer" = "Producător CG";
 /* en.lproj/Localizable.strings
 CG Production
 No comment provided by engineer. */
-"CG Production" = "Виробництво комп\'ютерної графіки";
+"CG Production" = "Producție CG";
 /* en.lproj/Localizable.strings
 CG Supervisor
 No comment provided by engineer. */
-"CG Supervisor" = "Наглядач за CG";
+"CG Supervisor" = "Supervizor CG";
 /* en.lproj/Localizable.strings
 CG Technical Director
 No comment provided by engineer. */
-"CG Technical Director" = "Технічний керівник із CG";
+"CG Technical Director" = "Director Tehnic CG";
 /* en.lproj/Localizable.strings
 Calendar
 No comment provided by engineer. */
-"Calendar" = "Календар";
+"Calendar" = "Calendar";
 /* en.lproj/Localizable.strings
 Cancel
 No comment provided by engineer. */
-"Cancel" = "Скасувати";
+"Cancel" = "Anulați";
 /* en.lproj/Localizable.strings
 Cancelled
 No comment provided by engineer. */
-"Cancelled" = "Скасовано";
+"Cancelled" = "Anulat";
 /* chapter abbreviation */
-"Ch" = "Р";
+"Ch" = "Cap.";
 /* en.lproj/Localizable.strings
 Changes will take effect on app restart
 No comment provided by engineer. */
-"Changes will take effect on app restart" = "Зміни набудуть чинності після перезавантаження";
+"Changes will take effect on app restart" = "Modificările vor intra în vigoare la repornirea aplicației";
 /* en.lproj/Localizable.strings
 Chapter Count
 No comment provided by engineer. */
-"Chapter Count" = "Кількість розділів";
+"Chapter Count" = "Număr capitol";
 /* en.lproj/Localizable.strings
 Chapters
 No comment provided by engineer. */
-"Chapters" = "Розділи";
+"Chapters" = "Capitole";
 /* stats */
-"Chapters Read" = "Прочитані розділи";
+"Chapters Read" = "Capitole Citite";
 /* en.lproj/Localizable.strings
 Chapters read
 No comment provided by engineer. */
-"Chapters read" = "Прочитані розділи";
+"Chapters read" = "Capitole citite";
 /* en.lproj/Localizable.strings
 Character
 No comment provided by engineer. */
-"Character" = "Персонаж";
+"Character" = "Personaj";
 /* en.lproj/Localizable.strings
 Character Design
 No comment provided by engineer. */
-"Character Design" = "Дизайн персонажів";
+"Character Design" = "Aspect Personaj";
 /* en.lproj/Localizable.strings
 Characters
 No comment provided by engineer. */
-"Characters" = "Персонажі";
+"Characters" = "Personaje";
 /* en.lproj/Localizable.strings
 Characters and Staff
 No comment provided by engineer. */
-"Characters and Staff" = "Персонажі та персонал";
+"Characters and Staff" = "Personaje și personal";
 /* en.lproj/Localizable.strings
 Chief Animation Director
 No comment provided by engineer. */
-"Chief Animation Director" = "Головний режисер анімації";
+"Chief Animation Director" = "Director șef de animație";
 /* en.lproj/Localizable.strings
 Chief Director
 No comment provided by engineer. */
-"Chief Director" = "Головний режисер";
+"Chief Director" = "Director șef";
 /* en.lproj/Localizable.strings
 Chief Episode Director
 No comment provided by engineer. */
-"Chief Episode Director" = "Головний режисер епізодів";
+"Chief Episode Director" = "Director șef de episod";
 /* en.lproj/Localizable.strings
 Chief Mechanical Animation Director
 No comment provided by engineer. */
-"Chief Mechanical Animation Director" = "Головний режисер механічної анімації";
+"Chief Mechanical Animation Director" = "Director șef de animație mecanică";
 /* en.lproj/Localizable.strings
 Chief Producer
 No comment provided by engineer. */
-"Chief Producer" = "Головний продюсер";
+"Chief Producer" = "Producător șef";
 /* en.lproj/Localizable.strings
 Chief Production Desk
 No comment provided by engineer. */
-"Chief Production Desk" = "Головний виробничий відділ";
+"Chief Production Desk" = "Șef birou de producție";
 /* en.lproj/Localizable.strings
 Chief Supervisor
 No comment provided by engineer. */
-"Chief Supervisor" = "Головний наглядач";
+"Chief Supervisor" = "Supervizor șef";
 /* en.lproj/Localizable.strings
 Chief Unit Director
 No comment provided by engineer. */
-"Chief Unit Director" = "Головний директор відділу";
+"Chief Unit Director" = "Director șef al unității";
 /* en.lproj/Localizable.strings
 China
 No comment provided by engineer. */
-"China" = "Китай";
+"China" = "China";
 /* en.lproj/Localizable.strings
 Choose between Anime or Manga.
 No comment provided by engineer. */
-"Choose between Anime or Manga." = "Виберіть між Аніме та Манґою.";
+"Choose between Anime or Manga." = "Alegeți între Anime sau Manga.";
 /* en.lproj/Localizable.strings
 Clear
 No comment provided by engineer. */
-"Clear" = "Очистити";
+"Clear" = "Goliți";
 /* en.lproj/Localizable.strings
 Close
 No comment provided by engineer. */
-"Close" = "Закрити";
+"Close" = "Închideți";
 /* en.lproj/Localizable.strings
 Co-Producer
 No comment provided by engineer. */
-"Co-Producer" = "Співпродюсер";
+"Co-Producer" = "Co-producător";
 /* en.lproj/Localizable.strings
 Color Coordination
 No comment provided by engineer. */
-"Color Coordination" = "Колірне координування";
+"Color Coordination" = "Coordonarea culorilor";
 /* en.lproj/Localizable.strings
 Color Design
 No comment provided by engineer. */
-"Color Design" = "Кольоровий дизайн";
+"Color Design" = "Aspect culori";
 /* en.lproj/Localizable.strings
 Color Design Assistance
 No comment provided by engineer. */
-"Color Design Assistance" = "Поміч із дизайном кольору";
+"Color Design Assistance" = "Asistență pentru aspect de culori";
 /* en.lproj/Localizable.strings
 Coloring
 No comment provided by engineer. */
-"Coloring" = "Забарвлення";
+"Coloring" = "Colorizare";
 /* en.lproj/Localizable.strings
 Comedy
 No comment provided by engineer. */
-"Comedy" = "Комедія";
+"Comedy" = "Comedie";
 /* en.lproj/Localizable.strings
 Comic
 No comment provided by engineer. */
-"Comic" = "Комікс";
+"Comic" = "Comic";
 /* en.lproj/Localizable.strings
 Compact
 No comment provided by engineer. */
-"Compact" = "Компактний";
+"Compact" = "Compact";
 /* en.lproj/Localizable.strings
 Compilation
 No comment provided by engineer. */
-"Compilation" = "Збірка";
+"Compilation" = "Compilație";
 /* en.lproj/Localizable.strings
 Completed */
-"Completed" = "Завершено";
+"Completed" = "Completat";
 /* An user list activity status.
 Eg: Completed [Anime/Manga Title] */
-"Completed %@" = "Завершено %@";
+"Completed %@" = "Completat %@";
 /* en.lproj/Localizable.strings
 Concept Art
 No comment provided by engineer. */
-"Concept Art" = "Замальовки";
+"Concept Art" = "Artă conceptuală";
 /* Text shown in airing widget when empty. Indicates that you watched all the episodes of currently airing anime */
 "Congratulations, you are up to date!
-(๑>◡<๑)" = "Вітаємо, ви в курсі подій!\n(๑>◡<๑)";
+(๑>◡<๑)" = "Felicitări, sunteți la zi! (><)";
 /* en.lproj/Localizable.strings
 Contains
 No comment provided by engineer. */
-"Contains" = "Вміст";
+"Contains" = "Conține";
 /* en.lproj/Localizable.strings
 Content
 No comment provided by engineer. */
-"Content" = "Вміст";
+"Content" = "Conținut";
 /* en.lproj/Localizable.strings
 Costume Design
 No comment provided by engineer. */
-"Costume Design" = "Дизайн убрань";
+"Costume Design" = "Aspect costume";
 /* en.lproj/Localizable.strings
 Country
 No comment provided by engineer. */
-"Country" = "Країна";
+"Country" = "Țara";
 /* en.lproj/Localizable.strings
 Country Distribution
 No comment provided by engineer. */
-"Country Distribution" = "Розподіл за країнами";
+"Country Distribution" = "Distribuția pe țări";
 /* en.lproj/Localizable.strings
 Cover Illustration
 No comment provided by engineer. */
-"Cover Illustration" = "Ілюстрація обкладинок";
+"Cover Illustration" = "Ilustrație de copertă";
 /* en.lproj/Localizable.strings
 Creature Design
 No comment provided by engineer. */
-"Creature Design" = "Дизайн істот";
+"Creature Design" = "Aspect creature";
 /* en.lproj/Localizable.strings
 Current */
-"Current" = "Поточні";
+"Current" = "Curent";
 /* custom app color */
-"Custom" = "Користувацький";
+"Custom" = "Personalizată";
 /* en.lproj/Localizable.strings
 Custom color
 No comment provided by engineer. */
-"Custom color" = "Користувацький колір";
+"Custom color" = "Culoare personalizată";
 /* en.lproj/Localizable.strings
 Custom lists
 No comment provided by engineer. */
-"Custom lists" = "Користувацькі каталоги";
+"Custom lists" = "Listă personalizată";
 /* Dates: start date and end date */
-"Dates" = "Дати";
+"Dates" = "Date";
 /* stats */
-"Days Watched" = "Дні перегляду";
+"Days Watched" = "Zile vizionate";
 /* date of death */
-"Death" = "Смерть";
+"Death" = "Moarte";
 /* en.lproj/Localizable.strings
 Default
 No comment provided by engineer. */
-"Default" = "Типово";
+"Default" = "Prestabilit";
 /* en.lproj/Localizable.strings
 Default tab
 No comment provided by engineer. */
-"Default tab" = "Початкове меню";
+"Default tab" = "Fila implicită";
 /* en.lproj/Localizable.strings
 Delete
 No comment provided by engineer. */
-"Delete" = "Видалити";
+"Delete" = "Ștergeți";
 /* en.lproj/Localizable.strings
 Delete this entry?
 No comment provided by engineer. */
-"Delete this entry?" = "Вилучити цей запис?";
+"Delete this entry?" = "Ștergeți această intrare?";
 /* en.lproj/Localizable.strings
 Descending
 No comment provided by engineer. */
-"Descending" = "За спаданням";
+"Descending" = "Descrescător";
 /* en.lproj/Localizable.strings
 Design Assistance
 No comment provided by engineer. */
-"Design Assistance" = "Поміч із дизайном";
+"Design Assistance" = "Asistență aspect";
 /* en.lproj/Localizable.strings
 Design Works
 No comment provided by engineer. */
-"Design Works" = "Робота з дизайном";
+"Design Works" = "Lucrări de aspect";
 /* en.lproj/Localizable.strings
 Developers
 No comment provided by engineer. */
-"Developers" = "Розробники";
+"Developers" = "Dezvoltatori";
 /* en.lproj/Localizable.strings
 Digital Animation
 No comment provided by engineer. */
-"Digital Animation" = "Цифрова анімація";
+"Digital Animation" = "Animație digitală";
 /* en.lproj/Localizable.strings
 Digital Art
 No comment provided by engineer. */
-"Digital Art" = "Цифрові ілюстрації";
+"Digital Art" = "Artă digitală";
 /* en.lproj/Localizable.strings
 Digital Coloring
 No comment provided by engineer. */
-"Digital Coloring" = "Цифрове забарвлення";
+"Digital Coloring" = "Colorizare digitală";
 /* en.lproj/Localizable.strings
 Digital Optical Recording
 No comment provided by engineer. */
-"Digital Optical Recording" = "Цифрове оптичне записування";
+"Digital Optical Recording" = "Înregistrare optică digitală";
 /* en.lproj/Localizable.strings
 Digital Paint
 No comment provided by engineer. */
-"Digital Paint" = "Цифрове малювання";
+"Digital Paint" = "Pictură digitală";
 /* en.lproj/Localizable.strings
 Digital Photography
 No comment provided by engineer. */
-"Digital Photography" = "Цифрова фотографія";
+"Digital Photography" = "Fotografie digitală";
 /* en.lproj/Localizable.strings
 Digital Production Assistant
 No comment provided by engineer. */
-"Digital Production Assistant" = "Поміч із цифровим продюсуванням";
+"Digital Production Assistant" = "Asistent de producție digitală";
 /* en.lproj/Localizable.strings
 Director
 No comment provided by engineer. */
-"Director" = "Режисер";
+"Director" = "Director";
 /* en.lproj/Localizable.strings
 Director of Photography
 No comment provided by engineer. */
-"Director of Photography" = "Оператор-постановник";
+"Director of Photography" = "Director de fotografie";
 /* en.lproj/Localizable.strings
 Discord server
 No comment provided by engineer. */
-"Discord server" = "Discord сервер";
+"Discord server" = "Server de Discord";
 /* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
-"Display" = "Дисплей";
+"Display" = "Afișaj";
 /* Stat Distribution type.
 Title count, mean score, or time spent */
-"Distribution type" = "Тип розподілу";
+"Distribution type" = "Tip de distribuție";
 /* en.lproj/Localizable.strings
 Donate
 Settings -> donate button */
-"Donate" = "Пожертвувати";
+"Donate" = "Donați";
 /* en.lproj/Localizable.strings
 Donate!
 No comment provided by engineer. */
-"Donate!" = "Пожертвувати!";
+"Donate!" = "Donați!";
 /* en.lproj/Localizable.strings
 Donation
 No comment provided by engineer. */
-"Donation" = "Донат";
+"Donation" = "Donație";
 /* en.lproj/Localizable.strings
 Donator
 No comment provided by engineer. */
-"Donator" = "Донатер";
+"Donator" = "Donator";
 /* en.lproj/Localizable.strings
 Done
 No comment provided by engineer. */
-"Done" = "Готово";
+"Done" = "Finalizat";
 /* en.lproj/Localizable.strings
 Doujinshi
 No comment provided by engineer. */
-"Doujinshi" = "Доджінші";
+"Doujinshi" = "Doujinshi";
 /* en.lproj/Localizable.strings
 Drama
 No comment provided by engineer. */
-"Drama" = "Драма";
+"Drama" = "Dramă";
 /* en.lproj/Localizable.strings
 Dropped */
-"Dropped" = "Кинуто";
+"Dropped" = "Abandonat";
 /* (User) Dropped [Anime/Manga Title] */
-"Dropped %@" = "Випущено %@";
+"Dropped %@" = "Abandonat %@";
 /* en.lproj/Localizable.strings
 Duration
 No comment provided by engineer. */
-"Duration" = "Тривалість";
+"Duration" = "Durată";
 /* en.lproj/Localizable.strings
 Ecchi
 No comment provided by engineer. */
-"Ecchi" = "Еччі";
+"Ecchi" = "Ecchi";
 /* en.lproj/Localizable.strings
 Edit
 No comment provided by engineer. */
-"Edit" = "Змінити";
+"Edit" = "Editare";
 /* en.lproj/Localizable.strings
 Editing
 No comment provided by engineer. */
-"Editing" = "Монтаж";
+"Editing" = "Editare";
 /* en.lproj/Localizable.strings
 Editing Assistant
 No comment provided by engineer. */
-"Editing Assistant" = "Помічник з монтажу";
+"Editing Assistant" = "Asistent de editare";
 /* en.lproj/Localizable.strings
 Editing Manager
 No comment provided by engineer. */
-"Editing Manager" = "Керівник монтажем";
+"Editing Manager" = "Manager de editare";
 /* en.lproj/Localizable.strings
 Effects
 No comment provided by engineer. */
-"Effects" = "Ефекти";
+"Effects" = "Efecte";
 /* en.lproj/Localizable.strings
 Effects Animation Director
 No comment provided by engineer. */
-"Effects Animation Director" = "Помічник режисера анімації";
+"Effects Animation Director" = "Director de animație pentru efecte";
 /* en.lproj/Localizable.strings
 End date
 No comment provided by engineer. */
-"End date" = "Дата закінчення";
+"End date" = "Data de încheiere";
 /* en.lproj/Localizable.strings
 Endcard
 No comment provided by engineer. */
-"Endcard" = "Прикінцевий малюнок";
+"Endcard" = "Card final";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
-"English" = "Англійська";
+"English" = "Engleză";
 /* episodes abbreviation */
-"Ep" = "Сер";
+"Ep" = "Ep";
 /* Episode abbreviation with number and time.
 Eg: Ep [23] [in 35 minutes] */
-"Ep %lld %@" = "Сер %lld %@";
+"Ep %lld %@" = "Ep %lld %@";
 /* Episode abbreviation with number and a specific hour.
 Eg: Ep [23] at [12:30] */
-"Ep %lld at %@" = "Сер %lld о %@";
+"Ep %lld at %@" = "Ep %lld la %@";
 /* en.lproj/Localizable.strings
 Episode Count
 No comment provided by engineer. */
-"Episode Count" = "Кількість епізодів";
+"Episode Count" = "Numărul de episoade";
 /* en.lproj/Localizable.strings
 Episode Director
 No comment provided by engineer. */
-"Episode Director" = "Режисер епізодів";
+"Episode Director" = "Director de episod";
 /* en.lproj/Localizable.strings
 Episode Director (ED)
 No comment provided by engineer. */
-"Episode Director (ED)" = "Режисер епізодів (ED)";
+"Episode Director (ED)" = "Director de episod (ED)";
 /* en.lproj/Localizable.strings
 Episode Director (OP)
 No comment provided by engineer. */
-"Episode Director (OP)" = "Режисер епізодів (OP)";
+"Episode Director (OP)" = "Director de episod (OP)";
 /* en.lproj/Localizable.strings
 Episodes
 No comment provided by engineer. */
-"Episodes" = "епізод(-ів)";
+"Episodes" = "Episoade";
 /* stats */
-"Episodes Watched" = "Переглянуті серії";
+"Episodes Watched" = "Episoade vizualizate";
 /* en.lproj/Localizable.strings
 Executive Producer
 No comment provided by engineer. */
-"Executive Producer" = "Виконавчий продюсер";
+"Executive Producer" = "Producător executiv";
 /* en.lproj/Localizable.strings
 Executive Supervisor
 No comment provided by engineer. */
-"Executive Supervisor" = "Виконавчий наглядач";
+"Executive Supervisor" = "Supraveghetor executiv";
 /* en.lproj/Localizable.strings
 Explore
 No comment provided by engineer. */
-"Explore" = "Огляд";
+"Explore" = "Explorați";
 /* en.lproj/Localizable.strings
 External links
 No comment provided by engineer. */
-"External links" = "Зовнішні посилання";
+"External links" = "Legături externe";
 /* en.lproj/Localizable.strings
 Eyecatch
 No comment provided by engineer. */
-"Eyecatch" = "Рекламна заставка";
+"Eyecatch" = "Atrăgător";
 /* en.lproj/Localizable.strings
 Fall */
-"Fall" = "Осінь";
+"Fall" = "Toamnă";
 /* en.lproj/Localizable.strings
 Fantasy
 No comment provided by engineer. */
-"Fantasy" = "Фентезі";
+"Fantasy" = "Fantezie";
 /* en.lproj/Localizable.strings
 Favorites
 No comment provided by engineer. */
-"Favorites" = "Обране";
+"Favorites" = "Favorite";
 /* Activity feed type: Following or Global */
-"Feed type" = "Тип стрічки";
+"Feed type" = "Tip de flux";
 /* en.lproj/Localizable.strings
 Female
 No comment provided by engineer. */
-"Female" = "Жіночий";
+"Female" = "Femeie";
 /* en.lproj/Localizable.strings
 Filter
 No comment provided by engineer. */
-"Filter" = "Фільтри";
+"Filter" = "Filtru";
 /* en.lproj/Localizable.strings
 Finish Date
 No comment provided by engineer. */
-"Finish Date" = "Дата закінчення";
+"Finish Date" = "Dată finalizare";
 /* en.lproj/Localizable.strings
 Finished
 No comment provided by engineer. */
-"Finished" = "Завершено";
+"Finished" = "Finalizat";
 /* en.lproj/Localizable.strings
 Finishing
 No comment provided by engineer. */
-"Finishing" = "Завершення";
+"Finishing" = "Finalizare";
 /* en.lproj/Localizable.strings
 Finishing Assistance
 No comment provided by engineer. */
-"Finishing Assistance" = "Поміч із завершальним виробництвом";
+"Finishing Assistance" = "Asistență de finalizare";
 /* en.lproj/Localizable.strings
 Finishing Check
 No comment provided by engineer. */
-"Finishing Check" = "Завершальна перевірка";
+"Finishing Check" = "Verificare finalizare";
 /* en.lproj/Localizable.strings
 Finishing Manager
 No comment provided by engineer. */
-"Finishing Manager" = "Менеджер завершального виробництва";
+"Finishing Manager" = "Manager de finalizare";
 /* en.lproj/Localizable.strings
 Finishing Production
 No comment provided by engineer. */
-"Finishing Production" = "Завершальне виробництво";
+"Finishing Production" = "Producție finalizare";
 /* en.lproj/Localizable.strings
 Follow
 No comment provided by engineer. */
-"Follow" = "Підписатися";
+"Follow" = "Urmăriți";
 /* en.lproj/Localizable.strings
 Followers
 No comment provided by engineer. */
-"Followers" = "Підписники";
+"Followers" = "Urmăritori";
 /* en.lproj/Localizable.strings
 Following
 No comment provided by engineer. */
-"Following" = "Підписаний";
+"Following" = "Urmărit";
 /* en.lproj/Localizable.strings
 Follows
 No comment provided by engineer. */
-"Follows" = "Підписатися";
+"Follows" = "Urmăriri";
 /* en.lproj/Localizable.strings
 Follows you
 No comment provided by engineer. */
-"Follows you" = "Підписаний(-а) на вас";
+"Follows you" = "Vă urmărește";
 /* en.lproj/Localizable.strings
 Format
 No comment provided by engineer. */
-"Format" = "Формат";
+"Format" = "Format";
 /* en.lproj/Localizable.strings
 Format Distribution
 No comment provided by engineer. */
-"Format Distribution" = "Розподіл форматів";
+"Format Distribution" = "Distribuție de format";
 /* en.lproj/Localizable.strings
 Forum
 No comment provided by engineer. */
-"Forum" = "Форум";
-/* en.lproj/Localizable.strings
-From year
-No comment provided by engineer. */
-"From year" = "Від року";
+"Forum" = "Forum";
 /* en.lproj/Localizable.strings
 Game
 No comment provided by engineer. */
-"Game" = "Гра";
+"Game" = "Joc";
 /* en.lproj/Localizable.strings
 Gender
 No comment provided by engineer. */
-"Gender" = "Ґендер";
+"Gender" = "Sex";
 /* general information about the anime/manga */
-"General" = "Загальне";
+"General" = "General";
 /* en.lproj/Localizable.strings
 Genres
 No comment provided by engineer. */
-"Genres" = "Жанри";
+"Genres" = "Genuri";
 /* en.lproj/Localizable.strings
 GitHub repository
 No comment provided by engineer. */
-"GitHub repository" = "Репозиторій GitHub";
+"GitHub repository" = "Depozitul GitHub";
 /* en.lproj/Localizable.strings
 Global
 No comment provided by engineer. */
-"Global" = "Загально";
+"Global" = "Global";
 /* en.lproj/Localizable.strings
 HD Editing
 No comment provided by engineer. */
-"HD Editing" = "HD-редагування";
+"HD Editing" = "Editare HD";
 /* en.lproj/Localizable.strings
 Hentai
 No comment provided by engineer. */
-"Hentai" = "Хентай";
+"Hentai" = "Hentai";
 /* en.lproj/Localizable.strings
 Hiatus
 No comment provided by engineer. */
-"Hiatus" = "Перерва";
+"Hiatus" = "Hiatus";
 /* en.lproj/Localizable.strings
 Hide filters
 No comment provided by engineer. */
-"Hide filters" = "Приховати фільтри";
+"Hide filters" = "Ascundeți filtrele";
 /* en.lproj/Localizable.strings
 Hide from status lists
 No comment provided by engineer. */
-"Hide from status lists" = "Приховати з каталогів статусу";
+"Hide from status lists" = "Ascundeți din listele de stare";
 /* en.lproj/Localizable.strings
 Hide spoiler
 No comment provided by engineer. */
-"Hide spoiler" = "Приховати спойлер";
+"Hide spoiler" = "Ascundeți spoilerele";
 /* ranking.
 Eg: #1 Highest rated 2023 */
-"Highest rated" = "Рейтингові";
+"Highest rated" = "Cel mai apreciat";
 /* as short as possible */
-"Home" = "Головна";
+"Home" = "Acasă";
 /* en.lproj/Localizable.strings
 Hometown
 No comment provided by engineer. */
-"Hometown" = "Рідне місто";
+"Hometown" = "Oraș natal";
 /* en.lproj/Localizable.strings
 Horror
 No comment provided by engineer. */
-"Horror" = "Жахи";
+"Horror" = "Groază";
 /* en.lproj/Localizable.strings
 Hours Watched
 No comment provided by engineer. */
-"Hours Watched" = "Переглянуто годин";
+"Hours Watched" = "Ore vizionate";
 /* en.lproj/Localizable.strings
 Illustration
 No comment provided by engineer. */
-"Illustration" = "Ілюстрації";
+"Illustration" = "Ilustrație";
 /* en.lproj/Localizable.strings
 In-Between Animation
 No comment provided by engineer. */
-"In-Between Animation" = "Проміжна анімація";
+"In-Between Animation" = "Animație intermediară";
 /* en.lproj/Localizable.strings
 In-Between Animation Assistance
 No comment provided by engineer. */
-"In-Between Animation Assistance" = "Поміч із проміжною анімацією";
+"In-Between Animation Assistance" = "Asistent de animație intermediară";
 /* en.lproj/Localizable.strings
 In-Betweens Check
 No comment provided by engineer. */
-"In-Betweens Check" = "Перевірка проміжування";
+"In-Betweens Check" = "Verificarea intermediară";
 /* en.lproj/Localizable.strings
 In-Betweens Manager
 No comment provided by engineer. */
-"In-Betweens Manager" = "Менеджер проміжування";
+"In-Betweens Manager" = "Manager intermediar";
 /* en.lproj/Localizable.strings
 Increment Episode / Chapter
 No comment provided by engineer. */
-"Increment Episode / Chapter" = "Збільшення Серії / Розділу";
+"Increment Episode / Chapter" = "Creștere Episod / Capitol";
 /* en.lproj/Localizable.strings
 Info type
 No comment provided by engineer. */
-"Info type" = "Тип інформації";
+"Info type" = "Tip de informații";
 /* en.lproj/Localizable.strings
 Information
 No comment provided by engineer. */
-"Information" = "Відомості";
+"Information" = "Informații";
 /* en.lproj/Localizable.strings
 Insert Song Arrangement
 No comment provided by engineer. */
-"Insert Song Arrangement" = "Аранжування вставної пісні";
+"Insert Song Arrangement" = "Inserați aranjamentul cântecului";
 /* en.lproj/Localizable.strings
 Insert Song Composition
 No comment provided by engineer. */
-"Insert Song Composition" = "Композитор вставної пісні";
+"Insert Song Composition" = "Inserați compoziția melodiei";
 /* en.lproj/Localizable.strings
 Insert Song Lyrics
 No comment provided by engineer. */
-"Insert Song Lyrics" = "Текст вставної пісні";
+"Insert Song Lyrics" = "Inserați versurile melodiei";
 /* en.lproj/Localizable.strings
 Insert Song Performance
 No comment provided by engineer. */
-"Insert Song Performance" = "Виконання вставної пісні";
+"Insert Song Performance" = "Inserare interpretare melodie";
 /* en.lproj/Localizable.strings
 Japan
 No comment provided by engineer. */
-"Japan" = "Японія";
+"Japan" = "Japonia";
 /* en.lproj/Localizable.strings
 Japanese
 No comment provided by engineer. */
-"Japanese" = "Японська";
+"Japanese" = "Japonez";
 /* en.lproj/Localizable.strings
 Key Animation
 No comment provided by engineer. */
-"Key Animation" = "Ключова анімація";
+"Key Animation" = "Animație cheie";
 /* en.lproj/Localizable.strings
 Key Animation (OP)
 No comment provided by engineer. */
-"Key Animation (OP)" = "Ключова анімація (OP)";
+"Key Animation (OP)" = "Animație cheie (OP)";
 /* en.lproj/Localizable.strings
 Key Animation Assistance
 No comment provided by engineer. */
-"Key Animation Assistance" = "Поміч із ключовою анімацією";
+"Key Animation Assistance" = "Asistență pentru animație cheie";
 /* en.lproj/Localizable.strings
 Last Added
 No comment provided by engineer. */
-"Last Added" = "Нещодавно додано";
+"Last Added" = "Ultimele adăugate";
 /* sort by update date */
-"Last Updated" = "Останнє оновлення";
+"Last Updated" = "Ultima actualizare";
 /* en.lproj/Localizable.strings
 Last used
 No comment provided by engineer. */
-"Last used" = "Останнє використане";
+"Last used" = "Ultima utilizare";
 /* en.lproj/Localizable.strings
 Layout
 No comment provided by engineer. */
-"Layout" = "Композиція";
+"Layout" = "Aspect";
 /* en.lproj/Localizable.strings
 Layout Animation Director
 No comment provided by engineer. */
-"Layout Animation Director" = "Режисер композиційної анімації";
+"Layout Animation Director" = "Director aspect de animație";
 /* en.lproj/Localizable.strings
 Layout Animation Supervisor
 No comment provided by engineer. */
-"Layout Animation Supervisor" = "Наглядач за верстальною анімацією";
+"Layout Animation Supervisor" = "Supervizor aspect de animație";
 /* en.lproj/Localizable.strings
 Layout Editor
 No comment provided by engineer. */
-"Layout Editor" = "Редактор композиції";
+"Layout Editor" = "Editor aspect";
 /* en.lproj/Localizable.strings
 Layout Supervisor
 No comment provided by engineer. */
-"Layout Supervisor" = "Наглядач за версткою";
+"Layout Supervisor" = "Supervizor aspect";
 /* Left swipe direction */
-"Left" = "Зліва";
+"Left" = "Stânga";
 /* en.lproj/Localizable.strings
 Lettering
 No comment provided by engineer. */
-"Lettering" = "Літерування";
+"Lettering" = "Inscripție";
 /* en.lproj/Localizable.strings
 Light novel
 No comment provided by engineer. */
-"Light novel" = "Ранобе";
+"Light novel" = "Light novel";
 /* en.lproj/Localizable.strings
 Line Producer
 No comment provided by engineer. */
-"Line Producer" = "Лінійний продюсер";
+"Line Producer" = "Producător de linie";
 /* en.lproj/Localizable.strings
 List Progress
 No comment provided by engineer. */
-"List Progress" = "Прогрес в Каталозі";
+"List Progress" = "Progresul listei";
 /* not a very important string. used for app intents */
-"List entry ID" = "ID запису в каталозі";
+"List entry ID" = "ID-ul de intrare al listei";
 /* en.lproj/Localizable.strings
 List style
 No comment provided by engineer. */
-"List style" = "Стиль каталогу";
+"List style" = "Stil listă";
 /* en.lproj/Localizable.strings
 Literary Arts
 No comment provided by engineer. */
-"Literary Arts" = "Координування сценарію";
+"Literary Arts" = "Arte literare";
 /* en.lproj/Localizable.strings
 Literary Arts Assistance
 No comment provided by engineer. */
-"Literary Arts Assistance" = "Поміч із координуванням сценарію";
+"Literary Arts Assistance" = "Asistență pentru arte literare";
 /* en.lproj/Localizable.strings
 Live action
 No comment provided by engineer. */
-"Live action" = "Лайв-екшн";
+"Live action" = "Acțiune live";
 /* en.lproj/Localizable.strings
 Loading
 No comment provided by engineer. */
-"Loading" = "Завантаження";
+"Loading" = "Încărcare";
 /* en.lproj/Localizable.strings
 Log out
 No comment provided by engineer. */
-"Log out" = "Вийти з облікового запису";
+"Log out" = "Deconectare";
 /* en.lproj/Localizable.strings
 Login
 No comment provided by engineer. */
-"Login" = "Увійти";
+"Login" = "Conectare";
 /* or (Swipe Direction) for short */
-"Long Swipe Direction" = "Напрямок довгого свайпу";
+"Long Swipe Direction" = "Direcția glisării lungi";
 /* en.lproj/Localizable.strings
 Mahou Shoujo
 No comment provided by engineer. */
-"Mahou Shoujo" = "Махо-шьоджьо (дівчина-чарівниця)";
+"Mahou Shoujo" = "Mahou shoujo";
 /* en.lproj/Localizable.strings
 Main
 No comment provided by engineer. */
-"Main" = "Головний";
+"Main" = "Principal";
 /* en.lproj/Localizable.strings
 Main Animator
 No comment provided by engineer. */
-"Main Animator" = "Головний аніматор";
+"Main Animator" = "Animator principal";
 /* en.lproj/Localizable.strings
 Male
 No comment provided by engineer. */
-"Male" = "Чоловічий";
+"Male" = "Bărbat";
 /* en.lproj/Localizable.strings
 Manga
 No comment provided by engineer. */
-"Manga" = "Манґа";
+"Manga" = "Manga";
 /* en.lproj/Localizable.strings
 Manga List
 No comment provided by engineer. */
-"Manga List" = "Каталог манґи";
+"Manga List" = "Lista manga";
 /* normalized score.
 You can translate it simply as (Score) */
-"Mean Score" = "Середній бал";
+"Mean Score" = "Scor";
 /* en.lproj/Localizable.strings
 Mean score
 No comment provided by engineer. */
-"Mean score" = "Середня оцінка";
+"Mean score" = "Scorul mediu";
 /* en.lproj/Localizable.strings
 Mecha
 No comment provided by engineer. */
-"Mecha" = "Меха";
+"Mecha" = "Mecha";
 /* en.lproj/Localizable.strings
 Mechanical Animation Director
 No comment provided by engineer. */
-"Mechanical Animation Director" = "Режисер механічної анімації";
+"Mechanical Animation Director" = "Director de animație mecanică";
 /* en.lproj/Localizable.strings
 Mechanical Design
 No comment provided by engineer. */
-"Mechanical Design" = "Механічний дизайн";
+"Mechanical Design" = "Aspect mecanic";
 /* en.lproj/Localizable.strings
 Mechanical Supervisor
 No comment provided by engineer. */
-"Mechanical Supervisor" = "Наглядач-механік";
+"Mechanical Supervisor" = "Supervizor mecanic";
 /* en.lproj/Localizable.strings
 Media
 No comment provided by engineer. */
-"Media" = "Медіа";
+"Media" = "Media";
 /* not a very important string. Used for app intents */
-"Media ID" = "ID медіа";
+"Media ID" = "ID media";
 /* Anime/Manga List */
-"Media List" = "Список медіа";
+"Media List" = "Lista mass-media";
 /* Anime or Manga */
-"Media Type" = "Тип медіа";
+"Media Type" = "Tipul de suport media";
 /* en.lproj/Localizable.strings
 Minimal
 No comment provided by engineer. */
-"Minimal" = "Мінімальний";
+"Minimal" = "Minimal";
 /* en.lproj/Localizable.strings
 Monitor Graphics
 No comment provided by engineer. */
-"Monitor Graphics" = "Графіка моніторів пристроїв";
+"Monitor Graphics" = "Grafică monitor";
 /* en.lproj/Localizable.strings
 Monster Design
 No comment provided by engineer. */
-"Monster Design" = "Дизайн монстрів";
+"Monster Design" = "Design monstruos";
 /* en.lproj/Localizable.strings
 More filters
 No comment provided by engineer. */
-"More filters" = "Більше фільтрів";
+"More filters" = "Mai multe filtre";
 /* ranking.
 Eg: #1 Most popular 2023 */
-"Most popular" = "Найбільш популярні";
+"Most popular" = "Cele mai populare";
 /* en.lproj/Localizable.strings
 Movie
 No comment provided by engineer. */
-"Movie" = "Фільм";
+"Movie" = "Film";
 /* en.lproj/Localizable.strings
 Multimedia project
 No comment provided by engineer. */
-"Multimedia project" = "Мультимедійний проєкт";
+"Multimedia project" = "Proiect multimedia";
 /* en.lproj/Localizable.strings
 Music
 No comment provided by engineer. */
-"Music" = "Музика";
+"Music" = "Muzică";
 /* en.lproj/Localizable.strings
 Music Arrangement
 No comment provided by engineer. */
-"Music Arrangement" = "Музичне аранжування";
+"Music Arrangement" = "Aranjament muzical";
 /* en.lproj/Localizable.strings
 Music Assistance
 No comment provided by engineer. */
-"Music Assistance" = "Поміч з музикою";
+"Music Assistance" = "Asistență muzicală";
 /* en.lproj/Localizable.strings
 Music Composition
 No comment provided by engineer. */
-"Music Composition" = "Музичний композитор";
+"Music Composition" = "Compoziție muzicală";
 /* en.lproj/Localizable.strings
 Music Director
 No comment provided by engineer. */
-"Music Director" = "Музикорежисер";
+"Music Director" = "Director muzical";
 /* en.lproj/Localizable.strings
 Music Lyrics
 No comment provided by engineer. */
-"Music Lyrics" = "Тексти пісень";
+"Music Lyrics" = "Versuri muzicale";
 /* en.lproj/Localizable.strings
 Music Performance
 No comment provided by engineer. */
-"Music Performance" = "Музичне виконання";
+"Music Performance" = "Interpretare muzicală";
 /* en.lproj/Localizable.strings
 Music Producer
 No comment provided by engineer. */
-"Music Producer" = "Музичний продюсер";
+"Music Producer" = "Producător muzical";
 /* en.lproj/Localizable.strings
 Music Production
 No comment provided by engineer. */
-"Music Production" = "Продюсування музики";
+"Music Production" = "Producție muzicală";
 /* en.lproj/Localizable.strings
 Music Production Assistance
 No comment provided by engineer. */
-"Music Production Assistance" = "Поміч із продюсуванням музики";
+"Music Production Assistance" = "Asistență în producția muzicală";
 /* en.lproj/Localizable.strings
 Music Selection
 No comment provided by engineer. */
-"Music Selection" = "Вибір музики";
+"Music Selection" = "Selecție muzicală";
 /* en.lproj/Localizable.strings
 Music Supervisor
 No comment provided by engineer. */
-"Music Supervisor" = "Наглядач за музикою";
+"Music Supervisor" = "Supervizor muzical";
 /* en.lproj/Localizable.strings
 Musical Instrument Supervisor
 No comment provided by engineer. */
-"Musical Instrument Supervisor" = "Наглядач за музичними інструментами";
+"Musical Instrument Supervisor" = "Supervizor instrumente muzicale";
 /* en.lproj/Localizable.strings
 Mystery
 No comment provided by engineer. */
-"Mystery" = "Детектив";
+"Mystery" = "Mister";
 /* en.lproj/Localizable.strings
 Native
 No comment provided by engineer. */
-"Native" = "Оригінальна";
+"Native" = "Nativ";
 /* en.lproj/Localizable.strings
 Newly Added Anime
 No comment provided by engineer. */
-"Newly Added Anime" = "Нещодавно додане аніме";
+"Newly Added Anime" = "Anime nou adăugate";
 /* en.lproj/Localizable.strings
 Newly Added Manga
 No comment provided by engineer. */
-"Newly Added Manga" = "Нещодавно додана манґа";
+"Newly Added Manga" = "Manga nou adăugate";
 /* en.lproj/Localizable.strings
 Next Season
 No comment provided by engineer. */
-"Next Season" = "Наступний сезон";
+"Next Season" = "Sezonul următor";
 /* toggle off */
-"No" = "Ні";
+"No" = "Nu";
 /* en.lproj/Localizable.strings
 No airing anime in your list
 (*´-`)
 No comment provided by engineer. */
 "No airing anime in your list
-(*´-`)" = "Немає аніме-онгоінгів у вашому каталозі\n(*\'-`)";
+(*´-`)" = "Nu ai niciun anime în lista ta d\n(*´-`)";
 /* en.lproj/Localizable.strings
 No anime for today
 (*´-`)
 No comment provided by engineer. */
 "No anime for today
-(*´-`)" = "На сьогодні аніме немає\n(*\'-`)";
+(*´-`)" = "Astăzi nu este anime pe\n(*´-`)";
 /* en.lproj/Localizable.strings
 No media
 No comment provided by engineer. */
-"No media" = "Немає медіа";
+"No media" = "Fără mass-media";
 /* en.lproj/Localizable.strings
 No recommendations
 No comment provided by engineer. */
-"No recommendations" = "Немає рекомендацій";
+"No recommendations" = "Nu există recomandări";
 /* en.lproj/Localizable.strings
 No reviews
 No comment provided by engineer. */
-"No reviews" = "Немає відгуків";
+"No reviews" = "Nu există recenzii";
 /* en.lproj/Localizable.strings
 Non-binary
 No comment provided by engineer. */
-"Non-binary" = "Небінарний";
+"Non-binary" = "Non-binar";
 /* nothing selected */
-"None" = "Немає";
+"None" = "Niciuna";
 /* en.lproj/Localizable.strings
 Not yet released
 No comment provided by engineer. */
-"Not yet released" = "Ще не випущено";
+"Not yet released" = "Încă nu a fost lansat";
 /* en.lproj/Localizable.strings
 Notes
 No comment provided by engineer. */
-"Notes" = "Примітки";
+"Notes" = "Note";
 /* en.lproj/Localizable.strings
 Nothing in your list
 No comment provided by engineer. */
-"Nothing in your list" = "Ваш каталог порожній";
+"Nothing in your list" = "Nimic în lista ta";
 /* en.lproj/Localizable.strings
 Notifications
 No comment provided by engineer. */
-"Notifications" = "Сповіщення";
+"Notifications" = "Notificări";
 /* en.lproj/Localizable.strings
 Novel
 No comment provided by engineer. */
-"Novel" = "Новела";
+"Novel" = "Roman";
 /* en.lproj/Localizable.strings
 OK
 No comment provided by engineer. */
-"OK" = "ОК";
+"OK" = "OK";
 /* en.lproj/Localizable.strings
 ONA
 No comment provided by engineer. */
@@ -1294,600 +1286,600 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Occupations
 No comment provided by engineer. */
-"Occupations" = "Професії";
+"Occupations" = "Ocupații";
 /* en.lproj/Localizable.strings
 Offline Editing
 No comment provided by engineer. */
-"Offline Editing" = "Офлайн монтаж";
+"Offline Editing" = "Editare offline";
 /* en.lproj/Localizable.strings
 Offline Editing Manager
 No comment provided by engineer. */
-"Offline Editing Manager" = "Менеджер офлайн монтажу";
+"Offline Editing Manager" = "Manager de editare offline";
 /* en.lproj/Localizable.strings
 On my list
 No comment provided by engineer. */
-"On my list" = "У моєму каталозі";
+"On my list" = "Pe lista mea";
 /* en.lproj/Localizable.strings
 OneShot
 No comment provided by engineer. */
-"OneShot" = "Ваншот";
+"OneShot" = "OneShot";
 /* en.lproj/Localizable.strings
 Online Editing
 No comment provided by engineer. */
-"Online Editing" = "Онлайн монтаж";
+"Online Editing" = "Editare online";
 /* en.lproj/Localizable.strings
 Online Editing Manager
 No comment provided by engineer. */
-"Online Editing Manager" = "Менеджер онлайн монтажу";
+"Online Editing Manager" = "Manager de editare online";
 /* en.lproj/Localizable.strings
 Online HD Editing
 No comment provided by engineer. */
-"Online HD Editing" = "Онлайн монтаж HD";
+"Online HD Editing" = "Editare HD online";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */
-"Optical Recording" = "Оптичне записування";
+"Optical Recording" = "Înregistrare optică";
 /* not a very important string. used for app intents */
-"Optional status to update the list entry to (e.g. COMPLETED)" = "Необов\'язковий статус для оновлення запису в каталозі (наприклад, ЗАВЕРШЕНО)";
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Stare opțională pentru actualizarea intrării din listă (de exemplu, COMPLETAT)";
 /* sort order */
-"Order" = "Порядок";
+"Order" = "Comandă";
 /* en.lproj/Localizable.strings
 Original
 No comment provided by engineer. */
-"Original" = "Оригінальне";
+"Original" = "Original";
 /* en.lproj/Localizable.strings
 Original Character Design
 No comment provided by engineer. */
-"Original Character Design" = "Оригінальний дизайн персонажів";
+"Original Character Design" = "Design original al personajelor";
 /* en.lproj/Localizable.strings
 Original Creator
 No comment provided by engineer. */
-"Original Creator" = "Автор оригіналу";
+"Original Creator" = "Creator original";
 /* en.lproj/Localizable.strings
 Original Illustration
 No comment provided by engineer. */
-"Original Illustration" = "Оригінальні ілюстрації";
+"Original Illustration" = "Ilustrație originală";
 /* en.lproj/Localizable.strings
 Original Plan
 No comment provided by engineer. */
-"Original Plan" = "Оригінальна ідея";
+"Original Plan" = "Planul inițial";
 /* en.lproj/Localizable.strings
 Original Story
 No comment provided by engineer. */
-"Original Story" = "Оригінальна історія";
+"Original Story" = "Povestea originală";
 /* en.lproj/Localizable.strings
 Other
 No comment provided by engineer. */
-"Other" = "Інше";
+"Other" = "Altele";
 /* text for a button that opens AniList website */
-"Other account settings" = "Інші налаштування облікового запису";
+"Other account settings" = "Alte setări ale contului";
 /* en.lproj/Localizable.strings
 Overseas Advertising Producer
 No comment provided by engineer. */
-"Overseas Advertising Producer" = "Продюсер реклами закордон";
+"Overseas Advertising Producer" = "Producător de publicitate în străinătate";
 /* en.lproj/Localizable.strings
 Overview
 No comment provided by engineer. */
-"Overview" = "Огляд";
+"Overview" = "Prezentare generală";
 /* en.lproj/Localizable.strings
 Paint
 No comment provided by engineer. */
-"Paint" = "Малювання";
+"Paint" = "Vopsea";
 /* en.lproj/Localizable.strings
 Parent
 No comment provided by engineer. */
-"Parent" = "Джерело";
+"Parent" = "Părinte";
 /* en.lproj/Localizable.strings
 Paused */
-"Paused" = "Призупинено";
+"Paused" = "Pauză";
 /* (User) Paused [Anime/Manga Title] */
-"Paused %@" = "Зупинено %@";
+"Paused %@" = "Pauză %@";
 /* en.lproj/Localizable.strings
 Photography
 No comment provided by engineer. */
-"Photography" = "Фотографія";
+"Photography" = "Fotografie";
 /* en.lproj/Localizable.strings
 Photography Assistance
 No comment provided by engineer. */
-"Photography Assistance" = "Поміч з фотографією";
+"Photography Assistance" = "Asistență fotografie";
 /* en.lproj/Localizable.strings
 Photography Chief
 No comment provided by engineer. */
-"Photography Chief" = "Головний оператор";
+"Photography Chief" = "Șef departament fotografie";
 /* en.lproj/Localizable.strings
 Photography Manager
 No comment provided by engineer. */
-"Photography Manager" = "Оператор-менеджер";
+"Photography Manager" = "Manager fotografie";
 /* en.lproj/Localizable.strings
 Picture book
 No comment provided by engineer. */
-"Picture book" = "Книжка з малюнками";
+"Picture book" = "Carte ilustrată";
 /* en.lproj/Localizable.strings
 Planning */
-"Planning" = "Планується";
+"Planning" = "Planificare";
 /* en.lproj/Localizable.strings
 Planning Assistance
 No comment provided by engineer. */
-"Planning Assistance" = "Поміч з плануванням";
+"Planning Assistance" = "Asistență în planificare";
 /* en.lproj/Localizable.strings
 Planning Producer
 No comment provided by engineer. */
-"Planning Producer" = "Продюсер планування";
+"Planning Producer" = "Producător de planificare";
 /* Plans to read [Manga Title] */
-"Plans to read %@" = "У планах прочитати %@";
+"Plans to read %@" = "Planuri de lectură %@";
 /* Plans to watch [Anime Title] */
-"Plans to watch %@" = "Плани на перегляд %@";
+"Plans to watch %@" = "Planuri de vizionare %@";
 /* en.lproj/Localizable.strings
 Please login to use this feature
 No comment provided by engineer. */
-"Please login to use this feature" = "Будь ласка, увійдіть, щоб скористатися цією функцією";
+"Please login to use this feature" = "Vă rugăm să vă autentificați pentru a utiliza această funcție.";
 /* en.lproj/Localizable.strings
 Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch
 No comment provided by engineer. */
-"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Будь ласка, відкрийте застосунок AniHyou на вашому iPhone та перейдіть до профілю -> Налаштування -> Синхронізуйте обліковий запис з Apple Watch";
+"Please open the AniHyou app on your iPhone and go to Profile -> Settings -> Sync account with Apple Watch" = "Deschideți aplicația AniHyou pe iPhone și accesați Profil -> Setări -> Sincronizați contul cu Apple Watch";
 /* en.lproj/Localizable.strings
 Popular Anime
 No comment provided by engineer. */
-"Popular Anime" = "Популярні аніме";
+"Popular Anime" = "Anime populare";
 /* en.lproj/Localizable.strings
 Popular Manga
 No comment provided by engineer. */
-"Popular Manga" = "Популярна манґа";
+"Popular Manga" = "Manga populare";
 /* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
-"Popularity" = "За популярністю";
+"Popularity" = "Popularitate";
 /* en.lproj/Localizable.strings
 Prequel
 No comment provided by engineer. */
-"Prequel" = "Передісторія";
+"Prequel" = "Prequel";
 /* en.lproj/Localizable.strings
 Priority
 No comment provided by engineer. */
-"Priority" = "Пріоритет";
+"Priority" = "Prioritate";
 /* en.lproj/Localizable.strings
 Private
 No comment provided by engineer. */
-"Private" = "Приватне";
+"Private" = "Privat";
 /* en.lproj/Localizable.strings
 Producer
 No comment provided by engineer. */
-"Producer" = "Продюсер";
+"Producer" = "Producător";
 /* en.lproj/Localizable.strings
 Producers
 No comment provided by engineer. */
-"Producers" = "Продюсери";
+"Producers" = "Producători";
 /* en.lproj/Localizable.strings
 Production
 No comment provided by engineer. */
-"Production" = "Виробництво";
+"Production" = "Producție";
 /* en.lproj/Localizable.strings
 Production Assistance
 No comment provided by engineer. */
-"Production Assistance" = "Виробнича поміч";
+"Production Assistance" = "Asistență la producție";
 /* en.lproj/Localizable.strings
 Production Assistant
 No comment provided by engineer. */
-"Production Assistant" = "Виробничий помічник";
+"Production Assistant" = "Asistent de producție";
 /* en.lproj/Localizable.strings
 Production Committee
 No comment provided by engineer. */
-"Production Committee" = "Виробничий комітет";
+"Production Committee" = "Comitetul de producție";
 /* en.lproj/Localizable.strings
 Production Design
 No comment provided by engineer. */
-"Production Design" = "Художня постановка";
+"Production Design" = "Design de producție";
 /* en.lproj/Localizable.strings
 Production Desk
 No comment provided by engineer. */
-"Production Desk" = "Виробничий відділ";
+"Production Desk" = "Birou de producție";
 /* as short as possible */
-"Profile" = "Профіль";
+"Profile" = "Profil";
 /* list entry progress */
-"Progress" = "Прогрес";
+"Progress" = "Progres";
 /* en.lproj/Localizable.strings
 Prop Design
 No comment provided by engineer. */
-"Prop Design" = "Дизайн реквізитів";
+"Prop Design" = "Proiectare recuzită";
 /* en.lproj/Localizable.strings
 Psychological
 No comment provided by engineer. */
-"Psychological" = "Психологічне";
+"Psychological" = "Psihologic";
 /* en.lproj/Localizable.strings
 Publishing
 No comment provided by engineer. */
-"Publishing" = "Публікується";
+"Publishing" = "Publicare";
 /* screen title.
 Manga that are being published */
-"Publishing Manga" = "Манґа, що публікується";
+"Publishing Manga" = "Publicarea manga";
 /* en.lproj/Localizable.strings
 Push notifications
 No comment provided by engineer. */
-"Push notifications" = "Push-сповіщення";
+"Push notifications" = "Notificări push";
 /* widget description */
-"Quick access to your anime or manga list." = "Швидкий доступ до вашого каталогу аніме або манґи.";
+"Quick access to your anime or manga list." = "Acces rapid la lista ta de anime sau manga.";
 /* en.lproj/Localizable.strings
 Random
 No comment provided by engineer. */
-"Random" = "Випадкове";
+"Random" = "Aleatoriu";
 /* en.lproj/Localizable.strings
 Rankings
 No comment provided by engineer. */
-"Rankings" = "Рейтинги";
+"Rankings" = "Clasamente";
 /* en.lproj/Localizable.strings
 Read Year
 No comment provided by engineer. */
-"Read Year" = "Рік читання";
+"Read Year" = "Citiți anul";
 /* Eg: (User) Read chapter [25] of [Manga Title] */
-"Read chapter %1$@ of %2$@" = "Прочитати розділ %1$@ в %2$@";
+"Read chapter %1$@ of %2$@" = "Citiți capitolul %1$@ din %2$@";
 /* en.lproj/Localizable.strings
 Reading
 No comment provided by engineer. */
-"Reading" = "Читаю";
+"Reading" = "Citire";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
-"Recommendations" = "Рекомендації";
+"Recommendations" = "Recomandări";
 /* en.lproj/Localizable.strings
 Recording
 No comment provided by engineer. */
-"Recording" = "Записування";
+"Recording" = "Înregistrare";
 /* en.lproj/Localizable.strings
 Recording Adjustment
 No comment provided by engineer. */
-"Recording Adjustment" = "Вивірення запису";
+"Recording Adjustment" = "Reglarea înregistrării";
 /* en.lproj/Localizable.strings
 Recording Assistant
 No comment provided by engineer. */
-"Recording Assistant" = "Помічник записування";
+"Recording Assistant" = "Asistent de înregistrare";
 /* en.lproj/Localizable.strings
 Recording Engineer
 No comment provided by engineer. */
-"Recording Engineer" = "Записоінженер";
+"Recording Engineer" = "Inginer de înregistrare";
 /* Related anime/manga */
-"Relations" = "Зв\'язки";
+"Relations" = "Relații";
 /* en.lproj/Localizable.strings
 Relations and Recommendations
 No comment provided by engineer. */
-"Relations and Recommendations" = "Зв\'язки та рекомендації";
+"Relations and Recommendations" = "Relații și recomandări";
 /* en.lproj/Localizable.strings
 Release Date
 No comment provided by engineer. */
-"Release Date" = "Дата випуску";
+"Release Date" = "Data lansării";
 /* en.lproj/Localizable.strings
 Release Year
 No comment provided by engineer. */
-"Release Year" = "Рік виходу";
+"Release Year" = "Anul lansării";
 /* en.lproj/Localizable.strings
 Releasing
 No comment provided by engineer. */
-"Releasing" = "Реліз";
+"Releasing" = "Eliberare";
 /* sort by repeat count */
-"Repeat" = "Повторити";
+"Repeat" = "Repetă";
 /* en.lproj/Localizable.strings
 Repeat Count
 No comment provided by engineer. */
-"Repeat Count" = "Кількість повторів";
+"Repeat Count" = "Număr repetări";
 /* en.lproj/Localizable.strings
 Repeating */
-"Repeating" = "Повторювані";
+"Repeating" = "Repetare";
 /* Reread [Kimetsu no Yaiba] */
-"Reread %@" = "Перечитані %@";
+"Reread %@" = "Recitiți %@";
 /* (User) Reread chapter [1 - 27] of [Kimetsu no Yaiba] */
-"Reread chapter %1$@ of %2$@" = "Перечитано розділ %1$@ з %2$@";
+"Reread chapter %1$@ of %2$@" = "Recitiți capitolul %1$@ din %2$@";
 /* en.lproj/Localizable.strings
 Rereading */
-"Rereading" = "Перечитую";
+"Rereading" = "Recitire";
 /* en.lproj/Localizable.strings
 Restore purchases
 No comment provided by engineer. */
-"Restore purchases" = "Відновити покупки";
+"Restore purchases" = "Restabiliți achizițiile";
 /* en.lproj/Localizable.strings
 Review and Threads
 No comment provided by engineer. */
-"Review and Threads" = "Огляд та теми";
+"Review and Threads" = "Recenzii și discuții";
 /* en.lproj/Localizable.strings
 Reviews
 No comment provided by engineer. */
-"Reviews" = "Відгуки";
+"Reviews" = "Recenzii";
 /* Rewatched [Kimetsu no Yaiba] */
-"Rewatched %@" = "Повторно переглянуті %@";
+"Rewatched %@" = "Revăzut %@";
 /* (User) Rewatched episode [1 - 27] of [Kimetsu no Yaiba] */
-"Rewatched episode %1$@ of %2$@" = "Повторно переглянуто епізод %1$@ з %2$@";
+"Rewatched episode %1$@ of %2$@" = "Am revăzut episodul %1$@ din %2$@";
 /* en.lproj/Localizable.strings
 Rewatching */
-"Rewatching" = "Пере-передивляюсь";
+"Rewatching" = "Revizionare";
 /* en.lproj/Localizable.strings
 Right
 No comment provided by engineer. */
-"Right" = "Праворуч";
+"Right" = "Dreapta";
 /* en.lproj/Localizable.strings
 Romaji
 No comment provided by engineer. */
-"Romaji" = "Романджі";
+"Romaji" = "Romaji";
 /* en.lproj/Localizable.strings
 Romaji (Western Order)
 No comment provided by engineer. */
-"Romaji (Western Order)" = "Романджі (Західний порядок)";
+"Romaji (Western Order)" = "Romaji (ordinea occidentală)";
 /* en.lproj/Localizable.strings
 Romance
 No comment provided by engineer. */
-"Romance" = "Романтика";
+"Romance" = "Romantism";
 /* en.lproj/Localizable.strings
 Save
 No comment provided by engineer. */
-"Save" = "Зберегти";
+"Save" = "Salvați";
 /* en.lproj/Localizable.strings
 Sci-Fi
 No comment provided by engineer. */
-"Sci-Fi" = "Наукова фантастика";
+"Sci-Fi" = "Științifico-fantastic";
 /* en.lproj/Localizable.strings
 Score
 No comment provided by engineer. */
-"Score" = "За оцінкою";
+"Score" = "Scor";
 /* en.lproj/Localizable.strings
 Score distribution
 No comment provided by engineer. */
-"Score distribution" = "Розподіл балів";
+"Score distribution" = "Distribuția punctajelor";
 /* en.lproj/Localizable.strings
 Score format
 No comment provided by engineer. */
-"Score format" = "Формат оцінки";
+"Score format" = "Format scor";
 /* en.lproj/Localizable.strings
 Script
 No comment provided by engineer. */
-"Script" = "Сценарій";
+"Script" = "Scenariu";
 /* en.lproj/Localizable.strings
 Script Assistance
 No comment provided by engineer. */
-"Script Assistance" = "Поміч зі сценарієм";
+"Script Assistance" = "Asistență scenariu";
 /* en.lproj/Localizable.strings
 Search type
 No comment provided by engineer. */
-"Search type" = "Тип пошуку";
+"Search type" = "Tipul căutării";
 /* en.lproj/Localizable.strings
 Season
 No comment provided by engineer. */
-"Season" = "Сезон";
+"Season" = "Sezon";
 /* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
-"Select Media Type" = "Виберіть тип медіа";
+"Select Media Type" = "Selectați tipul de suport";
 /* en.lproj/Localizable.strings
 Selection type
 No comment provided by engineer. */
-"Selection type" = "Тип відбору";
+"Selection type" = "Tip selecție";
 /* en.lproj/Localizable.strings
 Sequel
 No comment provided by engineer. */
-"Sequel" = "Продовження";
+"Sequel" = "Continuare";
 /* en.lproj/Localizable.strings
 Series Composition
 No comment provided by engineer. */
-"Series Composition" = "Композиція серії";
+"Series Composition" = "Compoziția seriei";
 /* en.lproj/Localizable.strings
 Series Composition Assistance
 No comment provided by engineer. */
-"Series Composition Assistance" = "Поміч із композицією серії";
+"Series Composition Assistance" = "Asistență pentru compoziția seriei";
 /* Set to Status.
 Example: Set as Completed */
-"Set as %@" = "Встановити як %@";
+"Set as %@" = "Setat ca %@";
 /* not a very important string. used for app intents */
-"Set progress" = "Встановити прогрес";
+"Set progress" = "Setare progres";
 /* not a very important string. used for app intents */
-"Sets a list entry progress to the specified number." = "Встановлює прогрес ведення каталогу до вказаного числа.";
+"Sets a list entry progress to the specified number." = "Setează progresul unei intrări din listă la numărul specificat.";
 /* en.lproj/Localizable.strings
 Setting Design
 No comment provided by engineer. */
-"Setting Design" = "Дизайн обстанови";
+"Setting Design" = "Setare design";
 /* en.lproj/Localizable.strings
 Settings
 No comment provided by engineer. */
-"Settings" = "Налаштування";
+"Settings" = "Setări";
 /* en.lproj/Localizable.strings
 Share
 No comment provided by engineer. */
-"Share" = "Поділитися";
+"Share" = "Distribuiți";
 /* Show less text */
-"Show less" = "Показати менше";
+"Show less" = "Afișați mai puțin";
 /* en.lproj/Localizable.strings
 Show more
 No comment provided by engineer. */
-"Show more" = "Показати більше";
+"Show more" = "Afișează mai multe";
 /* en.lproj/Localizable.strings
 Show only airing soon anime that are in your list
 No comment provided by engineer. */
-"Show only airing soon anime that are in your list" = "Показувати тільки ті аніме, що вийдуть найближчим часом та додані до вашого каталогу";
+"Show only airing soon anime that are in your list" = "Afișează numai anime-urile care vor fi difuzate în curând și care se află în lista ta";
 /* en.lproj/Localizable.strings
 Show spoiler
 No comment provided by engineer. */
-"Show spoiler" = "Показати спойлер";
+"Show spoiler" = "Afișează spoiler";
 /* widget description */
-"Shows the animes with behind episodes in your list." = "Показує аніме з простроченими серіями з вашого каталогу.";
+"Shows the animes with behind episodes in your list." = "Afișează anime-urile cu episoade restante din lista ta.";
 /* widget description */
-"Shows the next airing animes in your list." = "Показує аніме з вашого каталогу, які вийдуть найближчим часом.";
+"Shows the next airing animes in your list." = "Afișează următoarele anime-uri din lista ta.";
 /* en.lproj/Localizable.strings
 Side Story
 No comment provided by engineer. */
-"Side Story" = "Побічна історія";
+"Side Story" = "Poveste secundară";
 /* en.lproj/Localizable.strings
 Slice of Life
 No comment provided by engineer. */
-"Slice of Life" = "Буденність";
+"Slice of Life" = "Felie de viață";
 /* en.lproj/Localizable.strings
 Social
 No comment provided by engineer. */
-"Social" = "Соціальні мережі";
+"Social" = "Social";
 /* en.lproj/Localizable.strings
 Sort
 No comment provided by engineer. */
-"Sort" = "Сортування";
+"Sort" = "Sortați";
 /* en.lproj/Localizable.strings
 Sound Design
 No comment provided by engineer. */
-"Sound Design" = "Звукове оформлення";
+"Sound Design" = "Proiectare sunet";
 /* en.lproj/Localizable.strings
 Sound Director
 No comment provided by engineer. */
-"Sound Director" = "Звукорежисер";
+"Sound Director" = "Regizor de sunet";
 /* en.lproj/Localizable.strings
 Sound Effects
 No comment provided by engineer. */
-"Sound Effects" = "Звукові ефекти";
+"Sound Effects" = "Efecte sonore";
 /* en.lproj/Localizable.strings
 Sound Effects Assistance
 No comment provided by engineer. */
-"Sound Effects Assistance" = "Поміч зі звуковими ефектами";
+"Sound Effects Assistance" = "Asistență pentru efecte sonore";
 /* en.lproj/Localizable.strings
 Sound Producer
 No comment provided by engineer. */
-"Sound Producer" = "Звукопродюсер";
+"Sound Producer" = "Producător de sunet";
 /* en.lproj/Localizable.strings
 Sound Production
 No comment provided by engineer. */
-"Sound Production" = "Звукорежисура";
+"Sound Production" = "Producție de sunet";
 /* en.lproj/Localizable.strings
 Sound Production Manager
 No comment provided by engineer. */
-"Sound Production Manager" = "Менеджер звукорежисури";
+"Sound Production Manager" = "Manager producție audio";
 /* en.lproj/Localizable.strings
 Sound Supervisor
 No comment provided by engineer. */
-"Sound Supervisor" = "Наглядач за звуком";
+"Sound Supervisor" = "Supervizor sunet";
 /* en.lproj/Localizable.strings
 Source
 No comment provided by engineer. */
-"Source" = "Першоджерело";
+"Source" = "Sursă";
 /* en.lproj/Localizable.strings
 South Korea
 No comment provided by engineer. */
-"South Korea" = "Південна Корея";
+"South Korea" = "Coreea de Sud";
 /* en.lproj/Localizable.strings
 Special
 No comment provided by engineer. */
-"Special" = "Спешл";
+"Special" = "Special";
 /* en.lproj/Localizable.strings
 Special Design
 No comment provided by engineer. */
-"Special Design" = "Особливий дизайн";
+"Special Design" = "Design special";
 /* en.lproj/Localizable.strings
 Special Effects
 No comment provided by engineer. */
-"Special Effects" = "Спеціальні ефекти";
+"Special Effects" = "Efecte speciale";
 /* en.lproj/Localizable.strings
 Special Effects Assistant
 No comment provided by engineer. */
-"Special Effects Assistant" = "Помічник зі спеціальних ефектів";
+"Special Effects Assistant" = "Asistent efecte speciale";
 /* en.lproj/Localizable.strings
 Spin Off
 No comment provided by engineer. */
-"Spin Off" = "Спін-офф";
+"Spin Off" = "Spin Off";
 /* en.lproj/Localizable.strings
 Sports
 No comment provided by engineer. */
-"Sports" = "Спорт";
+"Sports" = "Sport";
 /* en.lproj/Localizable.strings
 Spring */
-"Spring" = "Весна";
+"Spring" = "Primăvara";
 /* en.lproj/Localizable.strings
 Staff
 No comment provided by engineer. */
-"Staff" = "Персонал";
+"Staff" = "Personal";
 /* you can use (and) instead of (&) */
-"Staff & Character name language" = "Персонал & Мова імен персонажів";
+"Staff & Character name language" = "Personal & Limba numelui personajului";
 /* en.lproj/Localizable.strings
 Standard
 No comment provided by engineer. */
-"Standard" = "Стандартний";
+"Standard" = "Standard";
 /* en.lproj/Localizable.strings
 Start Date
 No comment provided by engineer. */
-"Start Date" = "Дата початку";
+"Start Date" = "Data începerii";
 /* en.lproj/Localizable.strings
 Start date
 No comment provided by engineer. */
-"Start date" = "Дата початку";
+"Start date" = "Data începerii";
 /* sort by date started */
-"Started" = "Почато";
+"Started" = "A început";
 /* en.lproj/Localizable.strings
 Stats
 No comment provided by engineer. */
-"Stats" = "Статистика";
+"Stats" = "Statistici";
 /* en.lproj/Localizable.strings
 Status
 No comment provided by engineer. */
-"Status" = "Статус";
+"Status" = "Stare";
 /* en.lproj/Localizable.strings
 Status Distribution
 No comment provided by engineer. */
-"Status Distribution" = "Розподіл статусу";
+"Status Distribution" = "Distribuirea statutului";
 /* en.lproj/Localizable.strings
 Status distribution
 No comment provided by engineer. */
-"Status distribution" = "Розподіл статусу";
+"Status distribution" = "Distribuirea statutului";
 /* en.lproj/Localizable.strings
 Story
 No comment provided by engineer. */
-"Story" = "Сюжет";
+"Story" = "Poveste";
 /* en.lproj/Localizable.strings
 Story & Art
 No comment provided by engineer. */
-"Story & Art" = "Сюжет і зображення";
+"Story & Art" = "Poveste & Artă";
 /* en.lproj/Localizable.strings
 Story & Illustration
 No comment provided by engineer. */
-"Story & Illustration" = "Сюжет та ілюстрації";
+"Story & Illustration" = "Poveste & Ilustrație";
 /* en.lproj/Localizable.strings
 Storyboard
 No comment provided by engineer. */
-"Storyboard" = "Розкадрування";
+"Storyboard" = "Scenariu";
 /* en.lproj/Localizable.strings
 Streaming sites
 No comment provided by engineer. */
-"Streaming sites" = "Сторінки трансляцій";
+"Streaming sites" = "Site-uri de streaming";
 /* en.lproj/Localizable.strings
 Studios
 No comment provided by engineer. */
-"Studios" = "Студії";
+"Studios" = "Studii";
 /* en.lproj/Localizable.strings
 Sub Character Design
 No comment provided by engineer. */
-"Sub Character Design" = "Дизайн другорядних персонажів";
+"Sub Character Design" = "Design personaje secundare";
 /* en.lproj/Localizable.strings
 Summary
 No comment provided by engineer. */
-"Summary" = "Зведення";
+"Summary" = "Rezumat";
 /* en.lproj/Localizable.strings
 Summer */
-"Summer" = "Літо";
+"Summer" = "Vara";
 /* en.lproj/Localizable.strings
 Supernatural
 No comment provided by engineer. */
-"Supernatural" = "Надприродне";
+"Supernatural" = "Supranatural";
 /* en.lproj/Localizable.strings
 Supervisor
 No comment provided by engineer. */
-"Supervisor" = "Наглядач";
+"Supervisor" = "Supervizor";
 /* en.lproj/Localizable.strings
 Support the development of AniHyou!
 No comment provided by engineer. */
-"Support the development of AniHyou!" = "Підтримати розробку AniHyou!";
+"Support the development of AniHyou!" = "Susțineți dezvoltarea AniHyou!";
 /* en.lproj/Localizable.strings
 Supporting
 No comment provided by engineer. */
-"Supporting" = "Другорядний";
+"Supporting" = "Asistență";
 /* en.lproj/Localizable.strings
 Supporting Staff
 No comment provided by engineer. */
-"Supporting Staff" = "Допоміжний персонал";
+"Supporting Staff" = "Personal auxiliar";
 /* en.lproj/Localizable.strings
 Sync account with Apple Watch
 No comment provided by engineer. */
-"Sync account with Apple Watch" = "Синхронізація облікового запису з Apple Watch";
+"Sync account with Apple Watch" = "Sincronizează contul cu Apple Watch";
 /* en.lproj/Localizable.strings
 Synonyms
 No comment provided by engineer. */
-"Synonyms" = "Інші назви";
+"Synonyms" = "Sinonime";
 /* en.lproj/Localizable.strings
 TV
 No comment provided by engineer. */
@@ -1895,329 +1887,325 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 TV Short
 No comment provided by engineer. */
-"TV Short" = "Короткометражний фільм";
+"TV Short" = "Scurtmetraj TV";
 /* en.lproj/Localizable.strings
 Tags
 No comment provided by engineer. */
-"Tags" = "Мітки";
+"Tags" = "Etichete";
 /* en.lproj/Localizable.strings
 Taiwan
 No comment provided by engineer. */
-"Taiwan" = "Тайвань";
+"Taiwan" = "Taiwan";
 /* en.lproj/Localizable.strings
 Technical Director
 No comment provided by engineer. */
-"Technical Director" = "Технічний режисер";
+"Technical Director" = "Director tehnic";
 /* en.lproj/Localizable.strings
 Text Status
 No comment provided by engineer. */
-"Text Status" = "Статус тексту";
+"Text Status" = "Stare text";
 /* en.lproj/Localizable.strings
 Thank you :)
 No comment provided by engineer. */
-"Thank you :)" = "Дякую :)";
+"Thank you :)" = "Mulțumesc :)";
 /* not a very important string. used for app intents */
-"The amount of episodes/chapters consumed by the user" = "Кількість серій/розділів, які  переглянув користувач";
+"The amount of episodes/chapters consumed by the user" = "Numărul de episoade/capitole consumate de utilizator";
 /* not a very important string. used for app intents */
-"The id of the media the entry is of" = "Id носія, до якого належить запис";
+"The id of the media the entry is of" = "ID-ul suportului media căruia îi aparține intrarea";
 /* en.lproj/Localizable.strings
 Theme Song Arrangement
 No comment provided by engineer. */
-"Theme Song Arrangement" = "Аранжування тематичної пісні";
+"Theme Song Arrangement" = "Aranjament melodie temă";
 /* en.lproj/Localizable.strings
 Theme Song Arrangement (ED)
 No comment provided by engineer. */
-"Theme Song Arrangement (ED)" = "Аранжування тематичної пісні (ED)";
+"Theme Song Arrangement (ED)" = "Aranjament melodie temă (ED)";
 /* en.lproj/Localizable.strings
 Theme Song Arrangement (OP)
 No comment provided by engineer. */
-"Theme Song Arrangement (OP)" = "Аранжування тематичної пісні (OP)";
+"Theme Song Arrangement (OP)" = "Aranjament melodie temă (OP)";
 /* en.lproj/Localizable.strings
 Theme Song Arrangement (OP, ED)
 No comment provided by engineer. */
-"Theme Song Arrangement (OP, ED)" = "Аранжувальник тематичної пісні (OP, ED)";
+"Theme Song Arrangement (OP, ED)" = "Aranjament melodie tematică (OP, ED)";
 /* en.lproj/Localizable.strings
 Theme Song Composition
 No comment provided by engineer. */
-"Theme Song Composition" = "Композитор тематичної пісні";
+"Theme Song Composition" = "Compoziție melodie tematică";
 /* en.lproj/Localizable.strings
 Theme Song Composition (ED)
 No comment provided by engineer. */
-"Theme Song Composition (ED)" = "Композитор тематичної пісні (ED)";
+"Theme Song Composition (ED)" = "Compoziție melodie tematică (ED)";
 /* en.lproj/Localizable.strings
 Theme Song Composition (OP)
 No comment provided by engineer. */
-"Theme Song Composition (OP)" = "Композитор тематичної пісні (OP)";
+"Theme Song Composition (OP)" = "Compoziție melodie temă (OP)";
 /* en.lproj/Localizable.strings
 Theme Song Composition (OP, ED)
 No comment provided by engineer. */
-"Theme Song Composition (OP, ED)" = "Композитор тематичної пісні (OP, ED)";
+"Theme Song Composition (OP, ED)" = "Compoziție melodie temă (OP, ED)";
 /* en.lproj/Localizable.strings
 Theme Song Lyrics
 No comment provided by engineer. */
-"Theme Song Lyrics" = "Текст тематичної пісні";
+"Theme Song Lyrics" = "Versuri melodie tematică";
 /* en.lproj/Localizable.strings
 Theme Song Lyrics (ED)
 No comment provided by engineer. */
-"Theme Song Lyrics (ED)" = "Текст тематичної пісні (ED)";
+"Theme Song Lyrics (ED)" = "Versuri melodie temă (ED)";
 /* en.lproj/Localizable.strings
 Theme Song Lyrics (OP)
 No comment provided by engineer. */
-"Theme Song Lyrics (OP)" = "Текст тематичної пісні (OP)";
+"Theme Song Lyrics (OP)" = "Versuri melodie temă (OP)";
 /* en.lproj/Localizable.strings
 Theme Song Lyrics (OP, ED)
 No comment provided by engineer. */
-"Theme Song Lyrics (OP, ED)" = "Текст тематичної пісні (OP, ED)";
+"Theme Song Lyrics (OP, ED)" = "Versuri melodii tematice (OP, ED)";
 /* en.lproj/Localizable.strings
 Theme Song Performance
 No comment provided by engineer. */
-"Theme Song Performance" = "Виконання тематичної пісні";
+"Theme Song Performance" = "Interpretarea melodiei tematice";
 /* en.lproj/Localizable.strings
 Theme Song Performance (ED)
 No comment provided by engineer. */
-"Theme Song Performance (ED)" = "Виконання тематичної пісні (ED)";
+"Theme Song Performance (ED)" = "Interpretarea melodiei tematice (ED)";
 /* en.lproj/Localizable.strings
 Theme Song Performance (OP)
 No comment provided by engineer. */
-"Theme Song Performance (OP)" = "Виконавець тематичної пісні (OP)";
+"Theme Song Performance (OP)" = "Interpretarea melodiei tematice (OP)";
 /* en.lproj/Localizable.strings
 Theme Song Performance (OP, ED)
 No comment provided by engineer. */
-"Theme Song Performance (OP, ED)" = "Виконавець тематичної пісні (OP, ED)";
+"Theme Song Performance (OP, ED)" = "Interpretarea melodiei tematice (OP, ED)";
 /* feel free to translate so it sounds better in your language */
-"This feature will be unlocked when you make a donation, even the smallest count!" = "Ця функція буде розблокована, коли ви зробите пожертву, навіть найменшу!";
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Această funcție va fi deblocată atunci când veți face o donație, chiar și cea mai mică!";
 /* en.lproj/Localizable.strings
 Threads
 No comment provided by engineer. */
-"Threads" = "Обговорення";
+"Threads" = "Fire";
 /* en.lproj/Localizable.strings
 Thriller
 No comment provided by engineer. */
-"Thriller" = "Трилер";
+"Thriller" = "Thriller";
 /* en.lproj/Localizable.strings
 Time spent
 No comment provided by engineer. */
-"Time spent" = "Витрачено часу";
+"Time spent" = "Timpul petrecut";
 /* en.lproj/Localizable.strings
 Title
 No comment provided by engineer. */
-"Title" = "Назва";
+"Title" = "Titlu";
 /* en.lproj/Localizable.strings
 Title Logo Design
 No comment provided by engineer. */
-"Title Logo Design" = "Дизайн титульного лого";
+"Title Logo Design" = "Design logo titlu";
 /* en.lproj/Localizable.strings
 Title Logo Design Assistance
 No comment provided by engineer. */
-"Title Logo Design Assistance" = "Поміч з дизайном лого тайтлу";
+"Title Logo Design Assistance" = "Asistență la proiectarea logo-ului titlului";
 /* en.lproj/Localizable.strings
 Title count
 No comment provided by engineer. */
-"Title count" = "Кількість назв";
+"Title count" = "Număr titluri";
 /* en.lproj/Localizable.strings
 Title language
 No comment provided by engineer. */
-"Title language" = "Мова назви";
+"Title language" = "Limba titlului";
 /* this is a stat. num of anime or manga in your list */
-"Titles Count" = "Кількість назв";
-/* en.lproj/Localizable.strings
-To year
-No comment provided by engineer. */
-"To year" = "До року";
+"Titles Count" = "Numărul titlurilor";
 /* en.lproj/Localizable.strings
 Top 100
 No comment provided by engineer. */
-"Top 100" = "Найкраща сотня";
+"Top 100" = "Top 100";
 /* en.lproj/Localizable.strings
 Top 100 Anime
 No comment provided by engineer. */
-"Top 100 Anime" = "Топ 100 аніме";
+"Top 100 Anime" = "Top 100 Anime";
 /* en.lproj/Localizable.strings
 Top 100 Manga
 No comment provided by engineer. */
-"Top 100 Manga" = "Топ 100 манґ";
+"Top 100 Manga" = "Top 100 Manga";
 /* en.lproj/Localizable.strings
 Top Movies
 No comment provided by engineer. */
-"Top Movies" = "Найпопулярніші фільми";
+"Top Movies" = "Top Filme";
 /* en.lproj/Localizable.strings
 Top Popular
 No comment provided by engineer. */
-"Top Popular" = "Найбільш популярні";
+"Top Popular" = "Cele mai populare";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */
-"Total Anime" = "Всього аніме";
+"Total Anime" = "Total Anime";
 /* en.lproj/Localizable.strings
 Total Manga
 No comment provided by engineer. */
-"Total Manga" = "Всього манґ";
+"Total Manga" = "Total Manga";
 /* en.lproj/Localizable.strings
 Touch-up Art
 No comment provided by engineer. */
-"Touch-up Art" = "Підмальовування";
+"Touch-up Art" = "Retușuri artistice";
 /* en.lproj/Localizable.strings
 Touch-up Art & Lettering
 No comment provided by engineer. */
-"Touch-up Art & Lettering" = "Підмальовування та літерування";
+"Touch-up Art & Lettering" = "Artă de retușare & Lettering";
 /* en.lproj/Localizable.strings
 Trailer
 No comment provided by engineer. */
-"Trailer" = "Трейлер";
+"Trailer" = "Remorcă";
 /* en.lproj/Localizable.strings
 Translate
 No comment provided by engineer. */
-"Translate" = "Перекласти";
+"Translate" = "Traduce";
 /* en.lproj/Localizable.strings
 Translations
 No comment provided by engineer. */
-"Translations" = "Перекладачі";
+"Translations" = "Traduceri";
 /* en.lproj/Localizable.strings
 Translator
 No comment provided by engineer. */
-"Translator" = "Перекладач";
+"Translator" = "Traducător";
 /* en.lproj/Localizable.strings
 Trending
 No comment provided by engineer. */
-"Trending" = "Популярне";
+"Trending" = "În tendințe";
 /* en.lproj/Localizable.strings
 Trending Anime
 No comment provided by engineer. */
-"Trending Anime" = "Популярні аніме";
+"Trending Anime" = "Anime în tendințe";
 /* en.lproj/Localizable.strings
 Trending Manga
 No comment provided by engineer. */
-"Trending Manga" = "Популярна манґа";
+"Trending Manga" = "Manga în tendințe";
 /* en.lproj/Localizable.strings
 Unfollow
 No comment provided by engineer. */
-"Unfollow" = "Відписатися";
+"Unfollow" = "Nu mai urmări";
 /* en.lproj/Localizable.strings
 Unit Director
 No comment provided by engineer. */
-"Unit Director" = "Директор відділу";
+"Unit Director" = "Director de unitate";
 /* en.lproj/Localizable.strings
 Unknown
 Localizable.strings
   AniHyou
 
   Created by Axel Lopez on 13/10/2023. */
-"Unknown" = "Невідомо";
+"Unknown" = "Necunoscut";
 /* en.lproj/Localizable.strings
 Upcoming
 No comment provided by engineer. */
-"Upcoming" = "Незабаром";
+"Upcoming" = "În curând";
 /* en.lproj/Localizable.strings
 Upcoming Anime
 No comment provided by engineer. */
-"Upcoming Anime" = "Майбутні Аніме";
+"Upcoming Anime" = "Anime Viitoare";
 /* en.lproj/Localizable.strings
 Upcoming Manga
 No comment provided by engineer. */
-"Upcoming Manga" = "Майбутня Манґа";
+"Upcoming Manga" = "Manga Viitoare";
 /* en.lproj/Localizable.strings
 Update interval
 No comment provided by engineer. */
-"Update interval" = "Частота оновлення";
+"Update interval" = "Interval de actualizare";
 /* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
-"Updated" = "Оновлено";
+"Updated" = "Actualizat";
 /* en.lproj/Localizable.strings
 Users
 No comment provided by engineer. */
-"Users" = "Користувачі";
+"Users" = "Utilizatori";
 /* en.lproj/Localizable.strings
 Users likes
 No comment provided by engineer. */
-"Users likes" = "Вподобання користувачів";
+"Users likes" = "Utilizatorilor le place";
 /* en.lproj/Localizable.strings
 Version %@
 No comment provided by engineer. */
-"Version %@" = "Версія %@";
+"Version %@" = "Versiune %@";
 /* en.lproj/Localizable.strings
 Video Editing
 No comment provided by engineer. */
-"Video Editing" = "Відеомонтаж";
+"Video Editing" = "Editare video";
 /* en.lproj/Localizable.strings
 VideoGame
 No comment provided by engineer. */
-"VideoGame" = "Відеоігри";
+"VideoGame" = "Joc video";
 /* en.lproj/Localizable.strings
 Visual Coordinator
 No comment provided by engineer. */
-"Visual Coordinator" = "Координатор образів";
+"Visual Coordinator" = "Coordonator vizual";
 /* en.lproj/Localizable.strings
 Visual Director
 No comment provided by engineer. */
-"Visual Director" = "Режисер образів";
+"Visual Director" = "Director vizual";
 /* en.lproj/Localizable.strings
 Visual Effects
 No comment provided by engineer. */
-"Visual Effects" = "Візуальні ефекти";
+"Visual Effects" = "Efecte vizuale";
 /* en.lproj/Localizable.strings
 Visual novel
 No comment provided by engineer. */
-"Visual novel" = "Візуальна новела";
+"Visual novel" = "Roman vizual";
 /* en.lproj/Localizable.strings
 Voice Actors
 No comment provided by engineer. */
-"Voice Actors" = "Актори озвучування";
+"Voice Actors" = "Actori de voce";
 /* Volumes abbreviation */
-"Vol" = "Том";
+"Vol" = "Vol";
 /* en.lproj/Localizable.strings
 Volumes
 No comment provided by engineer. */
-"Volumes" = "Томи";
+"Volumes" = "Volume";
 /* num of volumes read */
-"Volumes Read" = "Прочитано розділів";
+"Volumes Read" = "Volumele citite";
 /* en.lproj/Localizable.strings
 Watch Year
 No comment provided by engineer. */
-"Watch Year" = "Рік відстеження";
+"Watch Year" = "Urmărește anul";
 /* Eg: (User) Watched episode [25] of [Anime Title] */
-"Watched episode %1$@ of %2$@" = "Переглянута серія %1$@ з %2$@";
+"Watched episode %1$@ of %2$@" = "A vizionat episodul %1$@ din %2$@";
 /* en.lproj/Localizable.strings
 Watching
 No comment provided by engineer. */
-"Watching" = "Переглядаю";
+"Watching" = "Privind";
 /* en.lproj/Localizable.strings
 Weapon Design
 No comment provided by engineer. */
-"Weapon Design" = "Дизайн зброї";
+"Weapon Design" = "Proiectarea armelor";
 /* en.lproj/Localizable.strings
 Web novel
 No comment provided by engineer. */
-"Web novel" = "Веб-роман";
+"Web novel" = "Roman web";
 /* en.lproj/Localizable.strings
 Weekday
 No comment provided by engineer. */
-"Weekday" = "Будні дні";
+"Weekday" = "Zi lucrătoare";
 /* en.lproj/Localizable.strings
 Winter */
-"Winter" = "Зима";
+"Winter" = "Iarna";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!
 No comment provided by engineer. */
-"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Маючи будь яку покупку, ви отримаєте доступ до ексклюзивних значків додатків і користувацьких кольорів!";
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Cu orice achiziție, veți avea acces la pictograme exclusive pentru aplicație și culori personalizate!";
 /* en.lproj/Localizable.strings
 World Design
 No comment provided by engineer. */
-"World Design" = "Дизайн світу";
+"World Design" = "Design mondial";
 /* en.lproj/Localizable.strings
 Year
 No comment provided by engineer. */
-"Year" = "Рік";
+"Year" = "An";
 /* en.lproj/Localizable.strings
 Years active
 No comment provided by engineer. */
-"Years active" = "Роки активності";
+"Years active" = "Ani de activitate";
 /* toggle on */
-"Yes" = "Так";
+"Yes" = "Da";
 /* en.lproj/Localizable.strings
 You may need to login again in your browser
 No comment provided by engineer. */
-"You may need to login again in your browser" = "Можливо, вам потрібно буде знову увійти у ваш браузер";
+"You may need to login again in your browser" = "Este posibil să fie necesar să vă autentificați din nou în browserul dvs.";
 /* please translate only the text inside the [].
 Eg: 1 episode behind */
-"^[%lld episode behind](inflect: true)" = "^[%lld серія позаду](inflect: true)";
+"^[%lld episode behind](inflect: true)" = "^[%lld episodul anterior](inflect: true)";

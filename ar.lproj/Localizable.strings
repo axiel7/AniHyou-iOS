@@ -113,8 +113,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "الأنمي المبث";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "يبث تالي";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "إشعارات بث الأنمي";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -326,10 +331,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "خادم الديسكورد";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "إكتشف";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "العرض";
@@ -404,8 +405,7 @@ External links
 No comment provided by engineer. */
 "External links" = "روابط خارجية";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "الخريف";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -627,6 +627,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "المانجا المضافة حديثاً";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "الموسم التالي";
 /* toggle off */
 "No" = "لا";
 /* en.lproj/Localizable.strings
@@ -839,10 +843,6 @@ Season
 No comment provided by engineer. */
 "Season" = "موسم";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "رؤية الكل";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "اختر نوع الوسائط";
@@ -907,8 +907,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "رياضي";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "الربيع";
 /* en.lproj/Localizable.strings
 Staff
@@ -955,8 +954,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "ملخص";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "الصيف";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -1100,6 +1098,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "المانجا القادمة";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "فترة التحديث";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "محدّث";
@@ -1136,8 +1138,7 @@ Web novel
 No comment provided by engineer. */
 "Web novel" = "رواية ويب";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "الشتاء";
 /* en.lproj/Localizable.strings
 Year

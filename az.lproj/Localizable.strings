@@ -77,8 +77,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "Yayımlanan Anime";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "Sonra Yayımlanacaqlar";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "Yayımlanacaq anime bildirişləri";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -281,10 +286,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Discord serveri";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "Kəşf et";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "Görüntü";
@@ -368,8 +369,7 @@ External links
 No comment provided by engineer. */
 "External links" = "Xarici Linklər";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Payız";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -612,6 +612,10 @@ No comment provided by engineer. */
 Native
 No comment provided by engineer. */
 "Native" = "Ana dili";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "Növbəti Sezon";
 /* toggle off */
 "No" = "Xeyr";
 /* en.lproj/Localizable.strings
@@ -881,10 +885,6 @@ Season
 No comment provided by engineer. */
 "Season" = "Sezon";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "Hamısını Gör";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "Media Tipi seç";
@@ -963,8 +963,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "İdman";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Yaz";
 /* en.lproj/Localizable.strings
 Staff
@@ -1015,8 +1014,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "Xülasə";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Yay";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -1174,6 +1172,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "Yayımlanacaq Manqa\'lar";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "Yeniləmə intervalı";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "Yeniləndi";
@@ -1226,8 +1228,7 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "Həftə içi";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Qış";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!

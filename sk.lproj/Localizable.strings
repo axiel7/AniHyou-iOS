@@ -107,8 +107,7 @@ Episodes
 No comment provided by engineer. */
 "Episodes" = "Epizódy";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Pád";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -316,8 +315,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "Športy";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Jar";
 /* en.lproj/Localizable.strings
 Standard
@@ -344,8 +342,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "Zhrnutie";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Leto";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -407,8 +404,7 @@ Watching
 No comment provided by engineer. */
 "Watching" = "Sledovanie";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Zima";
 /* en.lproj/Localizable.strings
 Year

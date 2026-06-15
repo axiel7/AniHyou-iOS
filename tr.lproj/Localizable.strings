@@ -13,6 +13,8 @@ Eg: 23 volumes */
 +1
 No comment provided by engineer. */
 "+1" = "+1";
+/* 1 hour interval */
+"1h" = "1sa";
 /* en.lproj/Localizable.strings
 1st Key Animation Director
 No comment provided by engineer. */
@@ -53,10 +55,14 @@ No comment provided by engineer. */
 3DCG
 No comment provided by engineer. */
 "3DCG" = "3DCG";
+/* 3 hours interval */
+"3h" = "3sa";
 /* en.lproj/Localizable.strings
 5 Star (3/5)
 No comment provided by engineer. */
 "5 Star (3/5)" = "5 Yıldız (3/5)";
+/* 6 hours interval */
+"6h" = "6sa";
 /* en.lproj/Localizable.strings
 10 Point (5/10)
 No comment provided by engineer. */
@@ -65,6 +71,10 @@ No comment provided by engineer. */
 10 Point Decimal (5.5/10)
 No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "10 puan ondalık (5.5/10)";
+/* 12 hours interval */
+"12h" = "12sa";
+/* 24 hours interval */
+"24h" = "24sa";
 /* en.lproj/Localizable.strings
 100 Point (55/100)
 No comment provided by engineer. */
@@ -153,8 +163,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "Yayınlanan Anime";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "Yakında Yayında";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "Anime yayınlanma bildirimi";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -324,6 +339,8 @@ No comment provided by engineer. */
 Blood type
 No comment provided by engineer. */
 "Blood type" = "Kan grubu";
+/* Hide poster covers for adult anime/manga */
+"Blur adult media" = "Yetişkin içeriği bulanıklaştır";
 /* en.lproj/Localizable.strings
 CG Animation
 No comment provided by engineer. */
@@ -637,10 +654,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Discord sunucusu";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "Keşfet";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "Görüntüle";
@@ -775,8 +788,7 @@ Eyecatch
 No comment provided by engineer. */
 "Eyecatch" = "Eyecatch";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Sonbahar";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -1223,6 +1235,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "Yeni Eklenen Manga";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "Gelecek Sezon";
 /* toggle off */
 "No" = "Hayır";
 /* en.lproj/Localizable.strings
@@ -1646,10 +1662,6 @@ Season
 No comment provided by engineer. */
 "Season" = "Sezon";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "Tümünü Gör";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "Medya Türünü Seçin";
@@ -1787,8 +1799,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "Spor";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Bahar";
 /* en.lproj/Localizable.strings
 Staff
@@ -1854,13 +1865,14 @@ No comment provided by engineer. */
 Sub Character Design
 No comment provided by engineer. */
 "Sub Character Design" = "Yan Karakter Tasarımı";
+/* Notification type for data submission requests to AniList database */
+"Submission" = "Gönderi";
 /* en.lproj/Localizable.strings
 Summary
 No comment provided by engineer. */
 "Summary" = "Özet";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Yaz";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -2118,6 +2130,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "Yaklaşan Mangalar";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "Güncelleme sıklığı";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "Güncellendi";
@@ -2192,8 +2208,7 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "Hafta içi";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Kış";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!

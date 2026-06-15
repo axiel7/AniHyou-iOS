@@ -149,8 +149,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "อนิเมะที่กำลังออกอากาศ";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "กำลังจะออกอากาศ";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "การแจ้งเตือนอนิเมะที่กำลังออกอากาศ";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -633,10 +638,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "เซิร์ฟเวอร์ Discord";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "ค้นพบ";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "การแสดงผล";
@@ -768,8 +769,7 @@ Eyecatch
 No comment provided by engineer. */
 "Eyecatch" = "ภาพคั่นตอน";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "ใบไม้ร่วง";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -1212,6 +1212,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "มังงะที่เพิ่มเข้ามาใหม่";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "ซีซั่นถัดไป";
 /* toggle off */
 "No" = "ไม่";
 /* en.lproj/Localizable.strings
@@ -1614,10 +1618,6 @@ Season
 No comment provided by engineer. */
 "Season" = "ฤดู";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "ดูทั้งหมด";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "เลือกประเภทสื่อ";
@@ -1753,8 +1753,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "กีฬา";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "ใบไม้ผลิ";
 /* en.lproj/Localizable.strings
 Staff
@@ -1823,8 +1822,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "บทสรุป";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "ร้อน";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -2076,6 +2074,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "มังงะใหม่เร็ว ๆ นี้";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "ช่วงเวลาการอัปเดต";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "อัปเดต";
@@ -2150,8 +2152,7 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "วันธรรมดา";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "หนาว";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!

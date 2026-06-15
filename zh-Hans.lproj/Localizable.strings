@@ -9,6 +9,8 @@ No comment provided by engineer. */
 /* num of volumes.
 Eg: 23 volumes */
 "%lld volumes" = "%lld 卷";
+/* 1 hour interval */
+"1h" = "1 小时";
 /* en.lproj/Localizable.strings
 1st Key Animation Director
 No comment provided by engineer. */
@@ -49,10 +51,14 @@ No comment provided by engineer. */
 3DCG
 No comment provided by engineer. */
 "3DCG" = "3DCG";
+/* 3 hours interval */
+"3h" = "3 小时";
 /* en.lproj/Localizable.strings
 5 Star (3/5)
 No comment provided by engineer. */
 "5 Star (3/5)" = "五星制 (3/5)";
+/* 6 hours interval */
+"6h" = "6 小时";
 /* en.lproj/Localizable.strings
 10 Point (5/10)
 No comment provided by engineer. */
@@ -61,6 +67,10 @@ No comment provided by engineer. */
 10 Point Decimal (5.5/10)
 No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "十分制（带小数） (5.5/10)";
+/* 12 hours interval */
+"12h" = "12 小时";
+/* 24 hours interval */
+"24h" = "24 小时";
 /* en.lproj/Localizable.strings
 100 Point (55/100)
 No comment provided by engineer. */
@@ -96,7 +106,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Action Animation Supervisor
 No comment provided by engineer. */
-"Action Animation Supervisor" = "动作动画主管";
+"Action Animation Supervisor" = "动作动画指导";
 /* en.lproj/Localizable.strings
 Action Animator
 No comment provided by engineer. */
@@ -149,8 +159,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "正在热播";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "即将放送";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "动漫播出通知";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -180,7 +195,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Animation Supervisor
 No comment provided by engineer. */
-"Animation Supervisor" = "动画主管";
+"Animation Supervisor" = "动画指导";
 /* en.lproj/Localizable.strings
 Anime
 No comment provided by engineer. */
@@ -247,7 +262,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Assistant Art Director
 No comment provided by engineer. */
-"Assistant Art Director" = "美术副监督";
+"Assistant Art Director" = "副美术监督";
 /* en.lproj/Localizable.strings
 Assistant Chief Animation Director
 No comment provided by engineer. */
@@ -320,6 +335,8 @@ No comment provided by engineer. */
 Blood type
 No comment provided by engineer. */
 "Blood type" = "血型";
+/* Hide poster covers for adult anime/manga */
+"Blur adult media" = "模糊成人内容";
 /* en.lproj/Localizable.strings
 CG Animation
 No comment provided by engineer. */
@@ -363,7 +380,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 CG Supervisor
 No comment provided by engineer. */
-"CG Supervisor" = "CG主管";
+"CG Supervisor" = "CG指导";
 /* en.lproj/Localizable.strings
 CG Technical Director
 No comment provided by engineer. */
@@ -443,7 +460,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Chief Supervisor
 No comment provided by engineer. */
-"Chief Supervisor" = "首席主管";
+"Chief Supervisor" = "首席指导";
 /* en.lproj/Localizable.strings
 Chief Unit Director
 No comment provided by engineer. */
@@ -633,10 +650,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Discord伺服器";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "探索";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "显示";
@@ -757,7 +770,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Executive Supervisor
 No comment provided by engineer. */
-"Executive Supervisor" = "执行主管";
+"Executive Supervisor" = "执行总监";
 /* en.lproj/Localizable.strings
 Explore
 No comment provided by engineer. */
@@ -771,9 +784,8 @@ Eyecatch
 No comment provided by engineer. */
 "Eyecatch" = "中场过渡";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
-"Fall" = "10月番";
+Fall */
+"Fall" = "秋季";
 /* en.lproj/Localizable.strings
 Fantasy
 No comment provided by engineer. */
@@ -1012,7 +1024,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Layout Supervisor
 No comment provided by engineer. */
-"Layout Supervisor" = "布局主管";
+"Layout Supervisor" = "布局指导";
 /* Left swipe direction */
 "Left" = "左侧";
 /* en.lproj/Localizable.strings
@@ -1109,7 +1121,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Mechanical Supervisor
 No comment provided by engineer. */
-"Mechanical Supervisor" = "机械动画主管";
+"Mechanical Supervisor" = "机械动画指导";
 /* en.lproj/Localizable.strings
 Media
 No comment provided by engineer. */
@@ -1194,11 +1206,11 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Music Supervisor
 No comment provided by engineer. */
-"Music Supervisor" = "音乐主管";
+"Music Supervisor" = "音乐指导";
 /* en.lproj/Localizable.strings
 Musical Instrument Supervisor
 No comment provided by engineer. */
-"Musical Instrument Supervisor" = "乐器主管";
+"Musical Instrument Supervisor" = "乐器指导";
 /* en.lproj/Localizable.strings
 Mystery
 No comment provided by engineer. */
@@ -1215,6 +1227,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "新增漫画";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "下一季度";
 /* toggle off */
 "No" = "否";
 /* en.lproj/Localizable.strings
@@ -1381,7 +1397,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Photography Chief
 No comment provided by engineer. */
-"Photography Chief" = "摄影主管";
+"Photography Chief" = "摄影指导";
 /* en.lproj/Localizable.strings
 Photography Manager
 No comment provided by engineer. */
@@ -1484,7 +1500,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Publishing
 No comment provided by engineer. */
-"Publishing" = "发布中";
+"Publishing" = "正在连载";
 /* screen title.
 Manga that are being published */
 "Publishing Manga" = "发布中漫画";
@@ -1638,10 +1654,6 @@ Season
 No comment provided by engineer. */
 "Season" = "季度";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "查看所有";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "选择媒体类型";
@@ -1745,7 +1757,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Sound Supervisor
 No comment provided by engineer. */
-"Sound Supervisor" = "音响主管";
+"Sound Supervisor" = "音响指导";
 /* en.lproj/Localizable.strings
 Source
 No comment provided by engineer. */
@@ -1779,9 +1791,8 @@ Sports
 No comment provided by engineer. */
 "Sports" = "运动";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
-"Spring" = "4月番";
+Spring */
+"Spring" = "春季";
 /* en.lproj/Localizable.strings
 Staff
 No comment provided by engineer. */
@@ -1846,14 +1857,15 @@ No comment provided by engineer. */
 Sub Character Design
 No comment provided by engineer. */
 "Sub Character Design" = "次要角色设计";
+/* Notification type for data submission requests to AniList database */
+"Submission" = "提交";
 /* en.lproj/Localizable.strings
 Summary
 No comment provided by engineer. */
 "Summary" = "总集篇";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
-"Summer" = "7月番";
+Summer */
+"Summer" = "夏季";
 /* en.lproj/Localizable.strings
 Supernatural
 No comment provided by engineer. */
@@ -2106,6 +2118,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "即将发布的漫画";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "更新频率";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "已更新";
@@ -2180,9 +2196,8 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "工作日";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
-"Winter" = "1月番";
+Winter */
+"Winter" = "冬季";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!
 No comment provided by engineer. */

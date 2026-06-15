@@ -89,8 +89,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "配信中のアニメ";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "配信中";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "配信中のアニメ通知";
 /* for this one use the masculine form when applied. */
 "All" = "すべて";
 /* en.lproj/Localizable.strings
@@ -278,10 +283,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Discordサーバー";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "見つける";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "ディスプレー";
@@ -361,8 +362,7 @@ External links
 No comment provided by engineer. */
 "External links" = "外部リンク";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "秋";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -617,6 +617,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "新着マンガ";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "次のシーズン";
 /* toggle off */
 "No" = "いいえ";
 /* en.lproj/Localizable.strings
@@ -882,10 +886,6 @@ Season
 No comment provided by engineer. */
 "Season" = "季節";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "すべてを表示";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "メディアタイプを選択";
@@ -957,8 +957,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "スポーツ";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "春";
 /* en.lproj/Localizable.strings
 Staff
@@ -1009,8 +1008,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "摘要";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "夏";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -1154,6 +1152,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "近日公開のマンガ";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "更新間隔";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "更新";
@@ -1206,8 +1208,7 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "平日";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "冬";
 /* en.lproj/Localizable.strings
 Year

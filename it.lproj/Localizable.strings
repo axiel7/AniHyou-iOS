@@ -149,8 +149,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "Anime in onda";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "In onda prossimamente";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "Notifiche di anime in onda";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -207,6 +212,10 @@ No comment provided by engineer. */
 Art
 No comment provided by engineer. */
 "Art" = "Opere";
+/* en.lproj/Localizable.strings
+Art Board
+No comment provided by engineer. */
+"Art Board" = "Pannello d\'arte";
 /* en.lproj/Localizable.strings
 Art Composition
 No comment provided by engineer. */
@@ -287,9 +296,21 @@ Background
 No comment provided by engineer. */
 "Background" = "Sfondo";
 /* en.lproj/Localizable.strings
+Background Art
+No comment provided by engineer. */
+"Background Art" = "Immagine sfondo";
+/* en.lproj/Localizable.strings
+Background Art Assistance
+No comment provided by engineer. */
+"Background Art Assistance" = "Assistenza per l\'immagine di sfondo";
+/* en.lproj/Localizable.strings
 Background Manager
 No comment provided by engineer. */
 "Background Manager" = "Responsabile sfondi";
+/* en.lproj/Localizable.strings
+Background Production
+No comment provided by engineer. */
+"Background Production" = "Produzione sfondo";
 /* Birthday */
 "Birth" = "Compleanno";
 /* en.lproj/Localizable.strings
@@ -304,6 +325,8 @@ No comment provided by engineer. */
 Blood type
 No comment provided by engineer. */
 "Blood type" = "Gruppo sanguigno";
+/* Hide poster covers for adult anime/manga */
+"Blur adult media" = "Sfocatura media per adulti";
 /* en.lproj/Localizable.strings
 CG Animation
 No comment provided by engineer. */
@@ -316,6 +339,10 @@ No comment provided by engineer. */
 CG Assistant Director
 No comment provided by engineer. */
 "CG Assistant Director" = "Assistente Direttore CG";
+/* en.lproj/Localizable.strings
+CG Background Modeling
+No comment provided by engineer. */
+"CG Background Modeling" = "Modellazione dello sfondo in CG";
 /* en.lproj/Localizable.strings
 CG Director
 No comment provided by engineer. */
@@ -565,9 +592,29 @@ Design Assistance
 No comment provided by engineer. */
 "Design Assistance" = "Assistenza al design";
 /* en.lproj/Localizable.strings
+Design Works
+No comment provided by engineer. */
+"Design Works" = "Opere di design";
+/* en.lproj/Localizable.strings
 Developers
 No comment provided by engineer. */
 "Developers" = "Sviluppatori";
+/* en.lproj/Localizable.strings
+Digital Animation
+No comment provided by engineer. */
+"Digital Animation" = "Animazione digitale";
+/* en.lproj/Localizable.strings
+Digital Art
+No comment provided by engineer. */
+"Digital Art" = "Arte digitale";
+/* en.lproj/Localizable.strings
+Digital Coloring
+No comment provided by engineer. */
+"Digital Coloring" = "Colorazione digitale";
+/* en.lproj/Localizable.strings
+Digital Optical Recording
+No comment provided by engineer. */
+"Digital Optical Recording" = "Registrazione ottica digitale";
 /* en.lproj/Localizable.strings
 Digital Paint
 No comment provided by engineer. */
@@ -592,10 +639,6 @@ No comment provided by engineer. */
 Discord server
 No comment provided by engineer. */
 "Discord server" = "Server Discord";
-/* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "Scopri";
 /* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
@@ -727,8 +770,7 @@ External links
 No comment provided by engineer. */
 "External links" = "Link esterni";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Autunno";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -761,9 +803,21 @@ Finishing
 No comment provided by engineer. */
 "Finishing" = "Rifiniture";
 /* en.lproj/Localizable.strings
+Finishing Assistance
+No comment provided by engineer. */
+"Finishing Assistance" = "Assistenza alla finitura";
+/* en.lproj/Localizable.strings
+Finishing Check
+No comment provided by engineer. */
+"Finishing Check" = "Controllo di finitura";
+/* en.lproj/Localizable.strings
 Finishing Manager
 No comment provided by engineer. */
 "Finishing Manager" = "Responsabile rifiniture";
+/* en.lproj/Localizable.strings
+Finishing Production
+No comment provided by engineer. */
+"Finishing Production" = "Produzione finitura";
 /* en.lproj/Localizable.strings
 Follow
 No comment provided by engineer. */
@@ -867,6 +921,18 @@ No comment provided by engineer. */
 Illustration
 No comment provided by engineer. */
 "Illustration" = "Illustrazione";
+/* en.lproj/Localizable.strings
+In-Between Animation
+No comment provided by engineer. */
+"In-Between Animation" = "Animazione intermezzo";
+/* en.lproj/Localizable.strings
+In-Between Animation Assistance
+No comment provided by engineer. */
+"In-Between Animation Assistance" = "Assistenza per le animazioni intermezzo";
+/* en.lproj/Localizable.strings
+In-Betweens Check
+No comment provided by engineer. */
+"In-Betweens Check" = "Controllo intermezzi";
 /* en.lproj/Localizable.strings
 In-Betweens Manager
 No comment provided by engineer. */
@@ -1087,6 +1153,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "Manga appena aggiunti";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "Prossima stagione";
 /* toggle off */
 "No" = "No";
 /* en.lproj/Localizable.strings
@@ -1450,10 +1520,6 @@ Season
 No comment provided by engineer. */
 "Season" = "Stagione";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "Vedi tutti";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "Seleziona tipo media";
@@ -1555,8 +1621,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "Sport";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Primavera";
 /* en.lproj/Localizable.strings
 Staff
@@ -1602,13 +1667,14 @@ No comment provided by engineer. */
 Studios
 No comment provided by engineer. */
 "Studios" = "Studi";
+/* Notification type for data submission requests to AniList database */
+"Submission" = "Richiesta";
 /* en.lproj/Localizable.strings
 Summary
 No comment provided by engineer. */
 "Summary" = "Riepilogo";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Estate";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -1731,6 +1797,10 @@ Translations
 No comment provided by engineer. */
 "Translations" = "Traduzioni";
 /* en.lproj/Localizable.strings
+Translator
+No comment provided by engineer. */
+"Translator" = "Traduttore";
+/* en.lproj/Localizable.strings
 Trending
 No comment provided by engineer. */
 "Trending" = "Tendenze";
@@ -1746,6 +1816,10 @@ No comment provided by engineer. */
 Unfollow
 No comment provided by engineer. */
 "Unfollow" = "Smetti di seguire";
+/* en.lproj/Localizable.strings
+Unit Director
+No comment provided by engineer. */
+"Unit Director" = "Direttore dell\'unità";
 /* en.lproj/Localizable.strings
 Unknown
 Localizable.strings
@@ -1766,6 +1840,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "Manga in arrivo";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "Intervallo aggiornamento";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "Aggiornato";
@@ -1782,9 +1860,25 @@ Version %@
 No comment provided by engineer. */
 "Version %@" = "Versione %@";
 /* en.lproj/Localizable.strings
+Video Editing
+No comment provided by engineer. */
+"Video Editing" = "Editing video";
+/* en.lproj/Localizable.strings
 VideoGame
 No comment provided by engineer. */
 "VideoGame" = "Videogioco";
+/* en.lproj/Localizable.strings
+Visual Coordinator
+No comment provided by engineer. */
+"Visual Coordinator" = "Coordinatore visivo";
+/* en.lproj/Localizable.strings
+Visual Director
+No comment provided by engineer. */
+"Visual Director" = "Direttore visivo";
+/* en.lproj/Localizable.strings
+Visual Effects
+No comment provided by engineer. */
+"Visual Effects" = "Effetti visivi";
 /* en.lproj/Localizable.strings
 Visual novel
 No comment provided by engineer. */
@@ -1812,6 +1906,10 @@ Watching
 No comment provided by engineer. */
 "Watching" = "Guardando";
 /* en.lproj/Localizable.strings
+Weapon Design
+No comment provided by engineer. */
+"Weapon Design" = "Design dell\'arma";
+/* en.lproj/Localizable.strings
 Web novel
 No comment provided by engineer. */
 "Web novel" = "Romanzo web";
@@ -1820,13 +1918,16 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "Giorno della settimana";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Inverno";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!
 No comment provided by engineer. */
 "With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Con qualsiasi acquisto avrete accesso a icone esclusive per le app e a colori dei dettagli personalizzati!";
+/* en.lproj/Localizable.strings
+World Design
+No comment provided by engineer. */
+"World Design" = "Design del mondo";
 /* en.lproj/Localizable.strings
 Year
 No comment provided by engineer. */

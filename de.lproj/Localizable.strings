@@ -153,8 +153,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "Ausstrahlende Animes";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "Ausstrahlend";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "Benachrichtigungen über die Ausstrahlung von Anime";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -629,10 +634,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Discord-Server";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "Entdecken";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "Anzeigen";
@@ -767,8 +768,7 @@ Eyecatch
 No comment provided by engineer. */
 "Eyecatch" = "Blickfang";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Herbst";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -1051,6 +1051,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "Neu hinzugefügte Manga";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "Nächste Saison";
 /* toggle off */
 "No" = "Nein";
 /* en.lproj/Localizable.strings
@@ -1356,10 +1360,6 @@ Season
 No comment provided by engineer. */
 "Season" = "Saison";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "Alle ansehen";
-/* en.lproj/Localizable.strings
 Sequel
 No comment provided by engineer. */
 "Sequel" = "Sequel";
@@ -1404,8 +1404,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "Sport";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Frühling";
 /* en.lproj/Localizable.strings
 Staff
@@ -1452,8 +1451,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "Zusammenfassung";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Sommer";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -1563,6 +1561,10 @@ Upcoming
 No comment provided by engineer. */
 "Upcoming" = "Demnächst";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "Aktualisierungsintervall";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "Aktualisiert";
@@ -1613,8 +1615,7 @@ Web novel
 No comment provided by engineer. */
 "Web novel" = "Web Novel";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Winter";
 /* en.lproj/Localizable.strings
 World Design

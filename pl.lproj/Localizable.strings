@@ -93,8 +93,13 @@ No comment provided by engineer. */
 Airing Anime
 No comment provided by engineer. */
 "Airing Anime" = "Emitowane anime";
-/* you can translate it simply as (Airing) */
+/* en.lproj/Localizable.strings
+Airing Next */
 "Airing Next" = "Następnie emitowane";
+/* en.lproj/Localizable.strings
+Airing anime notifications
+No comment provided by engineer. */
+"Airing anime notifications" = "Powiadomienia o emisji anime";
 /* en.lproj/Localizable.strings
 Airing on my list
 No comment provided by engineer. */
@@ -309,10 +314,6 @@ Discord server
 No comment provided by engineer. */
 "Discord server" = "Serwer Discord";
 /* en.lproj/Localizable.strings
-Discover
-No comment provided by engineer. */
-"Discover" = "Odkryj";
-/* en.lproj/Localizable.strings
 Display
 No comment provided by engineer. */
 "Display" = "Widok";
@@ -399,8 +400,7 @@ External links
 No comment provided by engineer. */
 "External links" = "Linki zewnętrzne";
 /* en.lproj/Localizable.strings
-Fall
-No comment provided by engineer. */
+Fall */
 "Fall" = "Jesień";
 /* en.lproj/Localizable.strings
 Fantasy
@@ -667,6 +667,10 @@ No comment provided by engineer. */
 Newly Added Manga
 No comment provided by engineer. */
 "Newly Added Manga" = "Nowo Dodana Manga";
+/* en.lproj/Localizable.strings
+Next Season
+No comment provided by engineer. */
+"Next Season" = "Następny Sezon";
 /* toggle off */
 "No" = "Nie";
 /* en.lproj/Localizable.strings
@@ -954,10 +958,6 @@ Season
 No comment provided by engineer. */
 "Season" = "Sezon";
 /* en.lproj/Localizable.strings
-See All
-No comment provided by engineer. */
-"See All" = "Zobacz Wszystkie";
-/* en.lproj/Localizable.strings
 Select Media Type
 No comment provided by engineer. */
 "Select Media Type" = "Wybierz typ mediów";
@@ -1039,8 +1039,7 @@ Sports
 No comment provided by engineer. */
 "Sports" = "Sport";
 /* en.lproj/Localizable.strings
-Spring
-No comment provided by engineer. */
+Spring */
 "Spring" = "Wiosna";
 /* en.lproj/Localizable.strings
 Staff
@@ -1091,8 +1090,7 @@ Summary
 No comment provided by engineer. */
 "Summary" = "Podsumowanie";
 /* en.lproj/Localizable.strings
-Summer
-No comment provided by engineer. */
+Summer */
 "Summer" = "Lato";
 /* en.lproj/Localizable.strings
 Supernatural
@@ -1250,6 +1248,10 @@ Upcoming Manga
 No comment provided by engineer. */
 "Upcoming Manga" = "Nadchodząca Manga";
 /* en.lproj/Localizable.strings
+Update interval
+No comment provided by engineer. */
+"Update interval" = "Częstotliwość aktualizacji";
+/* en.lproj/Localizable.strings
 Updated
 No comment provided by engineer. */
 "Updated" = "Zaktualizowane";
@@ -1304,8 +1306,7 @@ Weekday
 No comment provided by engineer. */
 "Weekday" = "Dzień tygodnia";
 /* en.lproj/Localizable.strings
-Winter
-No comment provided by engineer. */
+Winter */
 "Winter" = "Zima";
 /* en.lproj/Localizable.strings
 With any purchase you will gain access to exclusive app icons and custom accent colors!

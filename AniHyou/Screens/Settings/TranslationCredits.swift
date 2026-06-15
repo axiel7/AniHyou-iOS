@@ -14,6 +14,7 @@ private let translations = [
     "zh_Hant": "Gholts, jhih_yu_lin, web790709",
     "fr_FR": "0xybo, mamanamgae, frosqh, Eria78, nesquick",
     "de-DE": "LittleFreak, Secresa, MaximilianGT500, notsakin",
+    "he_HE": "swaphat",
     "in_ID": "Clxf12, naturbrilian",
     "it_IT": "maicol07, DomeF, fraluc06",
     "ja_JP": "axiel7",
