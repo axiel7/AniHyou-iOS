@@ -10,7 +10,6 @@ import AniListAPI
 
 struct DiscoverMediaListView: View {
 
-    var viewModel: DiscoverViewModel
     let mediaType: MediaType
     
     let media: [MediaSortedQuery.Data.Page.Medium]
@@ -56,7 +55,6 @@ struct DiscoverMediaListView: View {
 
 #Preview {
     DiscoverMediaListView(
-        viewModel: DiscoverViewModel(),
         mediaType: .anime,
         media: [],
         hasNextPage: false,

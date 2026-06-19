@@ -50,7 +50,6 @@ struct DiscoverView: View {
                     media: viewModel.trendingAnimes,
                     headerDestination: {
                         DiscoverMediaListView(
-                            viewModel: viewModel,
                             mediaType: .anime,
                             media: viewModel.trendingAnimes,
                             hasNextPage: viewModel.hasNextPageTrendingAnime,
@@ -79,7 +78,6 @@ struct DiscoverView: View {
                     media: viewModel.trendingManga,
                     headerDestination: {
                         DiscoverMediaListView(
-                            viewModel: viewModel,
                             mediaType: .manga,
                             media: viewModel.trendingManga,
                             hasNextPage: viewModel.hasNextPageTrendingManga,
@@ -100,7 +98,6 @@ struct DiscoverView: View {
                     media: viewModel.newlyAnime,
                     headerDestination: {
                         DiscoverMediaListView(
-                            viewModel: viewModel,
                             mediaType: .anime,
                             media: viewModel.newlyAnime,
                             hasNextPage: viewModel.hasNextPageNewlyAnime,
@@ -121,7 +118,6 @@ struct DiscoverView: View {
                     media: viewModel.newlyManga,
                     headerDestination: {
                         DiscoverMediaListView(
-                            viewModel: viewModel,
                             mediaType: .manga,
                             media: viewModel.newlyManga,
                             hasNextPage: viewModel.hasNextPageNewlyManga,

@@ -10,7 +10,7 @@ import AniListAPI
 
 struct CurrentView: View {
     
-    @State private var viewModel = CurrentViewModel()
+    @Bindable var viewModel: CurrentViewModel
     @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     private let oneGirdRow = [GridItem(.fixed(CurrentListItemView.height))]
@@ -52,9 +52,6 @@ struct CurrentView: View {
             }
         }
         .padding(.bottom, 8)
-        .refreshable {
-            await viewModel.fetchLists(refresh: true)
-        }
         .onAppear {
             Task {
                 await viewModel.fetchLists()
@@ -117,5 +114,5 @@ struct CurrentView: View {
 }
 
 #Preview {
-    CurrentView()
+    CurrentView(viewModel: CurrentViewModel())
 }

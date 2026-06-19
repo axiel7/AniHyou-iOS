@@ -12,6 +12,8 @@ struct HomeView: View {
     let isLoggedIn: Bool
     @AppStorage(HOME_TAB_KEY) var currentTab: HomeTab = .activity
     @State private var viewModel = HomeViewModel()
+    @State private var activityViewModel = ActivityFeedViewModel()
+    @State private var currentViewModel = CurrentViewModel()
     @State private var showNotificationsSheet = false
     @State private var mediaId = 0
     @State private var showingMediaDetails = false
@@ -27,16 +29,19 @@ struct HomeView: View {
                     Section {
                         switch currentTab {
                         case .activity:
-                            ActivityFeedView()
+                            ActivityFeedView(viewModel: activityViewModel)
                                 .navigationTitle("Home")
                         case .current:
                             Group {
                                 if isLoggedIn {
-                                    CurrentView()
+                                    CurrentView(viewModel: currentViewModel)
                                 } else {
-                                    Spacer()
-                                    NotLoggedView()
-                                    Spacer()
+                                    HStack(alignment: .center) {
+                                        Spacer()
+                                        NotLoggedView()
+                                        Spacer()
+                                    }
+                                    .padding(.top)
                                 }
                             }
                             .navigationTitle("Home")
@@ -62,6 +67,13 @@ struct HomeView: View {
             }
             .toolbar {
                 toolbarContent
+            }
+            .refreshable {
+                if currentTab == .activity {
+                    await activityViewModel.refresh()
+                } else if currentTab == .current && isLoggedIn {
+                    await currentViewModel.fetchLists(refresh: true)
+                }
             }
             .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
         }

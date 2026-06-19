@@ -15,7 +15,7 @@ import AniListAPI
     private var currentPage: Int32 = 1
     var hasNextPage = false
     
-    var type = ActivityFeedType.all
+    var type: ActivityFeedType = .all
     var isFollowing = true
     
     var activities = [ActivityFeedQuery.Data.Page.Activity]()

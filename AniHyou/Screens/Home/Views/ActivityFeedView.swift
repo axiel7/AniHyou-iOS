@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityFeedView: View {
     
-    @State private var viewModel = ActivityFeedViewModel()
+    @Bindable var viewModel: ActivityFeedViewModel
     @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     var body: some View {
@@ -68,9 +68,6 @@ struct ActivityFeedView: View {
                 .tint(nil)
             }
         }
-        .refreshable {
-            await viewModel.refresh()
-        }
         .onAppear {
             Task {
                 await viewModel.refresh()
@@ -80,5 +77,5 @@ struct ActivityFeedView: View {
 }
 
 #Preview {
-    ActivityFeedView()
+    ActivityFeedView(viewModel: ActivityFeedViewModel())
 }
