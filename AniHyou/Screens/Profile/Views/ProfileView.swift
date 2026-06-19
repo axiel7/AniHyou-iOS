@@ -216,8 +216,10 @@ struct ProfileView: View {
                     }
                     .pickerStyle(.segmented)
                     .labelStyle(.iconOnly)
-                    .padding()
+                    .padding(3)
                     .pinnedViewBackground(hasScrolled: hasScrolled)
+                    .padding(.horizontal)
+                    .padding(.bottom, 2)
                     if #unavailable(iOS 26) {
                         Divider()
                     }

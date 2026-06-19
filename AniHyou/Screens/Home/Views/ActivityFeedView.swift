@@ -13,32 +13,27 @@ struct ActivityFeedView: View {
     @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical) {
-                LazyVStack(alignment: .leading) {
-                    ForEach(viewModel.activities, id: \.self) {
-                        if let textActivity = $0.asTextActivity?.fragments.textActivityFragment {
-                            TextActivityItemView(activity: textActivity)
-                            Divider()
-                        } else if let listActivity = $0.asListActivity?.fragments.listActivityFragment {
-                            ListActivityItemView(
-                                activity: listActivity,
-                                blurCover: blurAdultMedia && listActivity.media?.isAdult == true
-                            )
-                            Divider()
+        VStack {
+            ForEach(viewModel.activities, id: \.self) {
+                if let textActivity = $0.asTextActivity?.fragments.textActivityFragment {
+                    TextActivityItemView(activity: textActivity)
+                    Divider()
+                } else if let listActivity = $0.asListActivity?.fragments.listActivityFragment {
+                    ListActivityItemView(
+                        activity: listActivity,
+                        blurCover: blurAdultMedia && listActivity.media?.isAdult == true
+                    )
+                    Divider()
+                }
+            }
+            if viewModel.hasNextPage || viewModel.isLoading {
+                HorizontalProgressView()
+                    .padding()
+                    .task {
+                        if viewModel.hasNextPage {
+                            await viewModel.getActivities()
                         }
                     }
-                    if viewModel.hasNextPage || viewModel.isLoading {
-                        HorizontalProgressView()
-                            .padding()
-                            .task {
-                                if viewModel.hasNextPage {
-                                    await viewModel.getActivities()
-                                }
-                            }
-                    }
-                }
-                .padding(.top, 12)
             }
         }
         .toolbar {

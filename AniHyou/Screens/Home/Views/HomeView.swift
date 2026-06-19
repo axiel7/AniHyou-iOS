@@ -10,43 +10,60 @@ import SwiftUI
 struct HomeView: View {
     
     let isLoggedIn: Bool
-    @AppStorage(HOME_TAB_KEY) var currentTab: HomeTab?
+    @AppStorage(HOME_TAB_KEY) var currentTab: HomeTab = .activity
     @State private var viewModel = HomeViewModel()
     @State private var showNotificationsSheet = false
     @State private var mediaId = 0
     @State private var showingMediaDetails = false
+    @State private var hasScrolled = false
 
     var body: some View {
-        NavigationSplitView {
-            List(HomeTab.allCases, id: \.self, selection: $currentTab) { tab in
-                Label(tab.localizedName, systemImage: tab.systemImage)
-            }
-            .navigationTitle("Home")
-        } detail: {
-            switch currentTab {
-            case .activity:
-                ActivityFeedView()
-                    .navigationTitle("Activity")
-                    .toolbar {
-                        toolbarContent
-                    }
-                    .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
-            case .current:
-                Group {
-                    if isLoggedIn {
-                        CurrentView()
-                    } else {
-                        NotLoggedView()
+        NavigationStack {
+            ScrollViewWithOffset(
+                showsIndicators: false,
+                onScroll: { hasScrolled = $0.y < 0 }
+            ) {
+                LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
+                    Section {
+                        switch currentTab {
+                        case .activity:
+                            ActivityFeedView()
+                                .navigationTitle("Home")
+                        case .current:
+                            Group {
+                                if isLoggedIn {
+                                    CurrentView()
+                                } else {
+                                    Spacer()
+                                    NotLoggedView()
+                                    Spacer()
+                                }
+                            }
+                            .navigationTitle("Home")
+                        }
+                    } header: {
+                        VStack(spacing: 0) {
+                            Picker("", selection: $currentTab) {
+                                ForEach(HomeTab.allCases, id: \.self) { tab in
+                                    Label(tab.localizedName, systemImage: tab.systemImage)
+                                        .tag(tab)
+                                }
+                            }
+                            .pickerStyle(.segmented)
+                            .padding(3)
+                            .pinnedViewBackground(hasScrolled: hasScrolled)
+                            .padding(.horizontal)
+                            if #unavailable(iOS 26) {
+                                Divider()
+                            }
+                        }
                     }
                 }
-                .navigationTitle("Current")
-                .toolbar {
-                    toolbarContent
-                }
-                .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
-            case nil:
-                EmptyView()
             }
+            .toolbar {
+                toolbarContent
+            }
+            .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
         }
         .task {
             await viewModel.getUnreadNotificationsCount()

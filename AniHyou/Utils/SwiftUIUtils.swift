@@ -69,7 +69,7 @@ extension View {
     func pinnedViewBackground(hasScrolled: Bool) -> some View {
         if #available(iOS 26, *) {
             self
-                .glassEffectCompat(isEnabled: hasScrolled)
+                .glassEffectCompat()
         } else {
             self
                 .background(hasScrolled ? Material.bar.opacity(1.0) : Material.ultraThin.opacity(0.0))

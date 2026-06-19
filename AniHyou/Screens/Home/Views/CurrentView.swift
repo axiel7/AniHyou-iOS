@@ -20,45 +20,40 @@ struct CurrentView: View {
     ]
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    ForEach(CurrentListType.allCases, id: \.self) { type in
-                        let items = switch type {
-                        case .airing:
-                            viewModel.airingList
-                        case .behind:
-                            viewModel.behindList
-                        case .anime:
-                            viewModel.animeList
-                        case .manga:
-                            viewModel.mangaList
-                        case .nextSeason:
-                            viewModel.nextSeasonList
-                        }
-                        if !items.isEmpty {
-                            list(type: type, items: items)
-                        }
-                    }
-                    
-                    if viewModel.isLoading {
-                        HorizontalProgressView()
-                    }
-                    
-                    if viewModel.hasNothing {
-                        HStack {
-                            Spacer()
-                            Text("Nothing in your list")
-                            Spacer()
-                        }
-                    }
+        VStack {
+            ForEach(CurrentListType.allCases, id: \.self) { type in
+                let items = switch type {
+                case .airing:
+                    viewModel.airingList
+                case .behind:
+                    viewModel.behindList
+                case .anime:
+                    viewModel.animeList
+                case .manga:
+                    viewModel.mangaList
+                case .nextSeason:
+                    viewModel.nextSeasonList
                 }
-                .padding(.top, 12)
-                .padding(.bottom, 8)
+                if !items.isEmpty {
+                    list(type: type, items: items)
+                }
             }
-            .refreshable {
-                await viewModel.fetchLists(refresh: true)
+            
+            if viewModel.isLoading {
+                HorizontalProgressView()
             }
+            
+            if viewModel.hasNothing {
+                HStack {
+                    Spacer()
+                    Text("Nothing in your list")
+                    Spacer()
+                }
+            }
+        }
+        .padding(.bottom, 8)
+        .refreshable {
+            await viewModel.fetchLists(refresh: true)
         }
         .onAppear {
             Task {
