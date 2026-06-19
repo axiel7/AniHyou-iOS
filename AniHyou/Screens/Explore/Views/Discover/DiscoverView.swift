@@ -204,6 +204,17 @@ struct DiscoverView: View {
                             .foregroundStyle(.teal, .indigo)
                     }
                 }
+                
+                ForEach(MediaSeason.allCases, id: \.self) { season in
+                    NavigationLink(
+                        destination: AnimeSeasonListView(initSeason: season)
+                    ) {
+                        Chip(title: season.localizedName) {
+                            Image(systemName: season.systemImage)
+                                .foregroundStyle(season.color)
+                        }
+                    }
+                }
             }
             .buttonStyle(.plain)
             .padding(.horizontal)
