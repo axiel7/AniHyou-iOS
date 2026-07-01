@@ -212,6 +212,7 @@ struct SearchView: View {
     private var mediaSortSelector: some View {
         Picker("Sort", selection: $viewModel.sortMedia) {
             Text("Default").tag(MediaSort.searchMatch)
+            Text("Title").tag(MediaSort.titleRomajiDesc)
             Text("Popularity").tag(MediaSort.popularityDesc)
             Text("Score").tag(MediaSort.scoreDesc)
             Text("Trending").tag(MediaSort.trendingDesc)

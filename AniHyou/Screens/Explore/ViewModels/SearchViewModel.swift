@@ -9,6 +9,7 @@ import Foundation
 import AniListAPI
 
 @MainActor
+// swiftlint:disable:next type_body_length
 @Observable class SearchViewModel {
 
     private let perPage = 25
@@ -100,33 +101,42 @@ import AniListAPI
         }
     }
 
-    // swiftlint:disable:next cyclomatic_complexity
     func onChangeSortOrder() async {
-        switch sortMedia {
-        case .popularity:
-            sortMedia = .popularityDesc
-        case .popularityDesc:
-            sortMedia = .popularity
-        case .score:
-            sortMedia = .scoreDesc
-        case .scoreDesc:
-            sortMedia = .score
-        case .trending:
-            sortMedia = .trendingDesc
-        case .trendingDesc:
-            sortMedia = .trending
-        case .favourites:
-            sortMedia = .favouritesDesc
-        case .favouritesDesc:
-            sortMedia = .favourites
-        case .startDate:
-            sortMedia = .startDateDesc
-        case .startDateDesc:
-            sortMedia = .startDate
-        default:
-            sortMedia = .searchMatch
-        }
+        sortMedia = switchSortOrder(sort: sortMedia)
+        
         await runSearch()
+    }
+    
+    // swiftlint:disable:next cyclomatic_complexity
+    private func switchSortOrder(sort: MediaSort) -> MediaSort {
+        switch sort {
+        case .titleRomaji:
+            return .titleRomajiDesc
+        case .titleRomajiDesc:
+            return .titleRomaji
+        case .popularity:
+            return .popularityDesc
+        case .popularityDesc:
+            return .popularity
+        case .score:
+            return .scoreDesc
+        case .scoreDesc:
+            return .score
+        case .trending:
+            return .trendingDesc
+        case .trendingDesc:
+            return .trending
+        case .favourites:
+            return .favouritesDesc
+        case .favouritesDesc:
+            return .favourites
+        case .startDate:
+            return .startDateDesc
+        case .startDateDesc:
+            return .startDate
+        default:
+            return .searchMatch
+        }
     }
 
     var searchedMedia = [SearchMediaQuery.Data.Page.Medium]()
@@ -149,10 +159,12 @@ import AniListAPI
             sortMedia = .popularityDesc
         }
         
+        let sort = getTitleSortForSearch(sortMedia: sortMedia)
+        
         if let result = await MediaRepository.searchMedia(
             search: search,
             type: type,
-            sort: [sortMedia],
+            sort: sort,
             genreIn: Array(selectedGenres),
             tagIn: Array(selectedTags),
             formatIn: Array(selectedMediaFormat),
@@ -176,6 +188,32 @@ import AniListAPI
             hasNextPageMedia = result.hasNextPage
         }
         isLoading = false
+    }
+    
+    private func getTitleSortForSearch(sortMedia: MediaSort) -> [MediaSort] {
+        var sort = [sortMedia]
+        if sortMedia == .titleRomaji || sortMedia == .titleRomajiDesc {
+            if let rawValue = UserDefaults.standard.string(forKey: USER_TITLE_LANG_KEY) {
+                let titleLang = UserTitleLanguage(rawValue: rawValue)
+                switch titleLang {
+                case .english, .englishStylised:
+                    sort = if sortMedia == .titleRomaji {
+                        [.titleEnglish]
+                    } else {
+                        [.titleEnglishDesc]
+                    }
+                case .native, .nativeStylised:
+                    sort = if sortMedia == .titleRomaji {
+                        [.titleNative]
+                    } else {
+                        [.titleNativeDesc]
+                    }
+                default:
+                    break
+                }
+            }
+        }
+        return sort
     }
 
     var searchedCharacters = [SearchCharacterQuery.Data.Page.Character]()
