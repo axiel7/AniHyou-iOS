@@ -4,12 +4,12 @@
 @_spi(Internal) import ApolloAPI
 
 nonisolated public enum MediaSeason: String, EnumType {
-  /// Months December to February
+  /// Predominantly started airing between January and March
   case winter = "WINTER"
-  /// Months March to May
+  /// Predominantly started airing between April and June
   case spring = "SPRING"
-  /// Months June to August
+  /// Predominantly started airing between July and September
   case summer = "SUMMER"
-  /// Months September to November
+  /// Predominantly started airing between October and November
   case fall = "FALL"
 }

@@ -9,7 +9,9 @@ nonisolated public enum ThreadSort: String, EnumType {
   case idDesc = "ID_DESC"
   case title = "TITLE"
   case titleDesc = "TITLE_DESC"
+  /// **Deprecated**: Use ID instead
   case createdAt = "CREATED_AT"
+  /// **Deprecated**: Use ID_DESC instead
   case createdAtDesc = "CREATED_AT_DESC"
   case updatedAt = "UPDATED_AT"
   case updatedAtDesc = "UPDATED_AT_DESC"
