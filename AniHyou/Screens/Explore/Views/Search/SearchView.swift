@@ -137,9 +137,11 @@ struct SearchView: View {
         
         Picker("To year", selection: $viewModel.yearTo) {
             Text("None").tag(Optional<Int>(nil))
-            let startYear = (viewModel.yearFrom ?? 1940) + 1
-            ForEach((startYear...(currentYear+1)).reversed(), id: \.self) {
-                Text(String($0)).tag(Optional($0))
+            let yearFrom = (viewModel.yearFrom ?? 1940)
+            if yearFrom <= currentYear {
+                ForEach((yearFrom...(currentYear+1)).reversed(), id: \.self) {
+                    Text(String($0)).tag(Optional($0))
+                }
             }
         }
         .onChange(of: viewModel.yearTo) {
