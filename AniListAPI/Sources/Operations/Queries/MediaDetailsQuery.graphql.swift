@@ -8,7 +8,7 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "MediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails idMal title { __typename userPreferred romaji english native } synonyms format status(version: 2) description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
+      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails idMal title { __typename userPreferred romaji english native } synonyms format status(version: 2) description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language notes } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
       fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IsFavouriteMedia.self]
     ))
 
@@ -479,6 +479,7 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
           .field("site", String.self),
           .field("type", GraphQLEnum<AniListAPI.ExternalLinkType>?.self),
           .field("language", String?.self),
+          .field("notes", String?.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
           MediaDetailsQuery.Data.Media.ExternalLink.self
@@ -493,6 +494,7 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
         public var type: GraphQLEnum<AniListAPI.ExternalLinkType>? { __data["type"] }
         /// Language the site content is in. See Staff language field for values.
         public var language: String? { __data["language"] }
+        public var notes: String? { __data["notes"] }
       }
 
       /// Media.Trailer

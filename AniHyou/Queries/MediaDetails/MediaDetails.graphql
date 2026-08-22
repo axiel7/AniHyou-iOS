@@ -60,6 +60,7 @@ query MediaDetails($mediaId: Int) {
       site
       type
       language
+      notes
     }
     trailer {
       id
