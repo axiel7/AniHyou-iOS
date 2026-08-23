@@ -563,9 +563,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "Уміст";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Співавтори";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -764,6 +762,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "Прикінцевий малюнок";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Ендінґи";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1399,6 +1401,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "Онлайн HD-монтаж ";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Опенінґи";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */
@@ -2357,9 +2363,11 @@ You may need to login again in your browser
 No comment provided by engineer. */
 "You may need to login again in your browser" = "Можливо, вам доведеться ще раз увійти у своєму браузері";
 /* Translate only the "chapter" text */
-"^[%lld chapter](inflect: true)" = "^[%lld розділ](inflect: true)";
+"^[%lld chapter](inflect: true)" = "^[%lld розділ.](inflect: true)";
 /* please translate only the text inside the [].
 Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[%lld нов. епізод.](inflect: true)";
 /* Translate only the "episode" text */
 "^[%lld episode](inflect: true)" = "^[%lld епізод](inflect: true)";
+/* Translate only the "volume" text. Manga/Novel volumes */
+"^[%lld volume](inflect: true)" = "^[%lld том.](inflect: true)";

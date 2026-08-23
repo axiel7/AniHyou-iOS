@@ -721,6 +721,10 @@ Endcard
 No comment provided by engineer. */
 "Endcard" = "כרטיס סיום";
 /* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "סופים";
+/* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
 "English" = "אנגלית";
@@ -1225,6 +1229,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "עריכת HD מקוונת";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "פתיחות";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */

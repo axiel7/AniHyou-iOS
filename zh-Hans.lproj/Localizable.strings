@@ -2,10 +2,16 @@
 %lld chapters
 No comment provided by engineer. */
 "%lld chapters" = "%lld 章";
+/* Character (text) count. Appears when writing a review */
+"%lld characters" = "%lld 章";
 /* en.lproj/Localizable.strings
 %lld episodes
 No comment provided by engineer. */
 "%lld episodes" = "%lld 集";
+/* Character (text) required count. Appears when writing a review.
+
+Example: "45 more characters required" */
+"%lld more characters required" = "还差 %lld 个字符";
 /* num of volumes.
 Eg: 23 volumes */
 "%lld volumes" = "%lld 卷";
@@ -553,6 +559,8 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "内容";
+/* List of people who contributed to the AniHyou project */
+"Contributors" = "贡献者";
 /* en.lproj/Localizable.strings
 Costume Design
 No comment provided by engineer. */
@@ -604,10 +612,16 @@ No comment provided by engineer. */
 Delete
 No comment provided by engineer. */
 "Delete" = "删除";
+/* Delete published Anime/Manga Review */
+"Delete Review" = "删除评论";
 /* en.lproj/Localizable.strings
 Delete this entry?
 No comment provided by engineer. */
 "Delete this entry?" = "删除此条目？";
+/* en.lproj/Localizable.strings
+Delete this review?
+No comment provided by engineer. */
+"Delete this review?" = "要删除这条评论吗？";
 /* en.lproj/Localizable.strings
 Descending
 No comment provided by engineer. */
@@ -713,6 +727,10 @@ Edit
 No comment provided by engineer. */
 "Edit" = "编辑";
 /* en.lproj/Localizable.strings
+Edit Review
+No comment provided by engineer. */
+"Edit Review" = "编辑评论";
+/* en.lproj/Localizable.strings
 Editing
 No comment provided by engineer. */
 "Editing" = "编辑";
@@ -740,6 +758,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "片尾插画";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "片尾曲";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -774,6 +796,10 @@ No comment provided by engineer. */
 "Episodes" = "集";
 /* stats */
 "Episodes Watched" = "已观看的剧集";
+/* en.lproj/Localizable.strings
+Error
+No comment provided by engineer. */
+"Error" = "错误";
 /* en.lproj/Localizable.strings
 Executive Producer
 No comment provided by engineer. */
@@ -1368,6 +1394,10 @@ Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "在线高清编辑";
 /* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "片头曲";
+/* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */
 "Optical Recording" = "光盘录制";
@@ -1647,6 +1677,10 @@ Restore purchases
 No comment provided by engineer. */
 "Restore purchases" = "恢复购买";
 /* en.lproj/Localizable.strings
+Review
+No comment provided by engineer. */
+"Review" = "评论";
+/* en.lproj/Localizable.strings
 Review and Threads
 No comment provided by engineer. */
 "Review and Threads" = "评论";
@@ -1701,6 +1735,8 @@ No comment provided by engineer. */
 Score format
 No comment provided by engineer. */
 "Score format" = "分数格式";
+/* label for setting number of increments when editing a score using +/- buttons */
+"Score steps" = "评分步长";
 /* en.lproj/Localizable.strings
 Script
 No comment provided by engineer. */
@@ -1921,6 +1957,8 @@ No comment provided by engineer. */
 Streaming sites
 No comment provided by engineer. */
 "Streaming sites" = "在线发布网站";
+/* text style option button. A text style that puts a horizontal line right through the middle of words */
+"Strikethough" = "删除线";
 /* en.lproj/Localizable.strings
 Studios
 No comment provided by engineer. */
@@ -2162,6 +2200,8 @@ No comment provided by engineer. */
 Trending Manga
 No comment provided by engineer. */
 "Trending Manga" = "热门漫画";
+/* text style option button */
+"Underline" = "下划线";
 /* en.lproj/Localizable.strings
 Unfollow
 No comment provided by engineer. */
@@ -2285,6 +2325,14 @@ World Design
 No comment provided by engineer. */
 "World Design" = "世界观设计";
 /* en.lproj/Localizable.strings
+Write Review
+No comment provided by engineer. */
+"Write Review" = "写评论";
+/* en.lproj/Localizable.strings
+Write a Review
+No comment provided by engineer. */
+"Write a Review" = "写一段评论";
+/* en.lproj/Localizable.strings
 Write something…
 No comment provided by engineer. */
 "Write something…" = "写点什么…";
@@ -2302,6 +2350,10 @@ No comment provided by engineer. */
 You may need to login again in your browser
 No comment provided by engineer. */
 "You may need to login again in your browser" = "您可能需要在浏览器中重新登录";
+/* Translate only the "chapter" text */
+"^[%lld chapter](inflect: true)" = "^[%lld 章](inflect: true)";
 /* please translate only the text inside the [].
 Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[落后%lld集](inflect：true)";
+/* Translate only the "episode" text */
+"^[%lld episode](inflect: true)" = "^[%lld 集](inflect: true)";

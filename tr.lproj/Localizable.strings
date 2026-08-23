@@ -557,9 +557,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "İçerik";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Katkıda Bulunanlar";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -748,6 +746,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "Bitiş Kartı";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Kapanış müzikleri";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1384,6 +1386,10 @@ Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "Çevrimiçi HD Düzenleme";
 /* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Açılış müzikleri";
+/* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */
 "Optical Recording" = "Optik Kayıt";
@@ -1937,6 +1943,8 @@ No comment provided by engineer. */
 Streaming sites
 No comment provided by engineer. */
 "Streaming sites" = "Yayınlayan platformlar";
+/* text style option button. A text style that puts a horizontal line right through the middle of words */
+"Strikethough" = "Üstü çizili";
 /* en.lproj/Localizable.strings
 Studios
 No comment provided by engineer. */
@@ -2182,6 +2190,8 @@ No comment provided by engineer. */
 Trending Manga
 No comment provided by engineer. */
 "Trending Manga" = "Popüler Manga";
+/* text style option button */
+"Underline" = "Altı çizili";
 /* en.lproj/Localizable.strings
 Unfollow
 No comment provided by engineer. */
@@ -2264,7 +2274,7 @@ Voice Actors
 No comment provided by engineer. */
 "Voice Actors" = "Seslendirenler";
 /* Volumes abbreviation */
-"Vol" = "Vol";
+"Vol" = "Cilt";
 /* en.lproj/Localizable.strings
 Volumes
 No comment provided by engineer. */
@@ -2333,3 +2343,5 @@ Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[%lld bölüm izlenecek](inflect: true)";
 /* Translate only the "episode" text */
 "^[%lld episode](inflect: true)" = "^[%lld bölüm](inflect: true)";
+/* Translate only the "volume" text. Manga/Novel volumes */
+"^[%lld volume](inflect: true)" = "^[%lld cilt](inflect: true)";

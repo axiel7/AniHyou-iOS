@@ -347,6 +347,10 @@ End date
 No comment provided by engineer. */
 "End date" = "終了日";
 /* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "エンディング";
+/* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
 "English" = "英語";
@@ -713,6 +717,10 @@ No comment provided by engineer. */
 OneShot
 No comment provided by engineer. */
 "OneShot" = "ワンショット";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "オープニング";
 /* sort order */
 "Order" = "順序";
 /* en.lproj/Localizable.strings

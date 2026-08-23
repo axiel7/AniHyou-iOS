@@ -357,9 +357,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "Conteúdo";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Contribuidores";
 /* en.lproj/Localizable.strings
 Country
@@ -492,6 +490,10 @@ No comment provided by engineer. */
 End date
 No comment provided by engineer. */
 "End date" = "Data de término";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Encerramentos";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -889,6 +891,10 @@ No comment provided by engineer. */
 OneShot
 No comment provided by engineer. */
 "OneShot" = "OneShot";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Aberturas";
 /* not a very important string. used for app intents */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Status opcional para atualizar um item da lista (ex. COMPLETO)";
 /* sort order */

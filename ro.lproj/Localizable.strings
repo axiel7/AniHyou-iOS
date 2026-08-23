@@ -729,6 +729,10 @@ Endcard
 No comment provided by engineer. */
 "Endcard" = "Card final";
 /* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Finaluri";
+/* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
 "English" = "Engleză";
@@ -1339,6 +1343,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "Editare HD online";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Deschideri";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */

@@ -553,9 +553,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "Contenuto";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Contributori";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -744,6 +742,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "Scheda finale";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Sigle di chiusura";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1311,6 +1313,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "Editing HD online";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Sigle";
 /* not a very important string. used for app intents */
 "Optional status to update the list entry to (e.g. COMPLETED)" = "Stato facoltativo per aggiornare la voce della lista (ad es. COMPLETATO)";
 /* sort order */

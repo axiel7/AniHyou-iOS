@@ -396,6 +396,10 @@ End date
 No comment provided by engineer. */
 "End date" = "تاريخ الانتهاء";
 /* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "شارة النهاية";
+/* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
 "English" = "الإنجليزية";
@@ -725,6 +729,10 @@ No comment provided by engineer. */
 On my list
 No comment provided by engineer. */
 "On my list" = "في قائمتي";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "شارة البداية";
 /* en.lproj/Localizable.strings
 Ordered list
 No comment provided by engineer. */

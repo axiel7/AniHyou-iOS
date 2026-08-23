@@ -726,6 +726,10 @@ Endcard
 No comment provided by engineer. */
 "Endcard" = "การ์ดท้ายตอน";
 /* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "เพลงปิด";
+/* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
 "English" = "ภาษาอังกฤษ";
@@ -1336,6 +1340,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "ตัดต่อ HD ออนไลน์";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "เพลงเปิด";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */

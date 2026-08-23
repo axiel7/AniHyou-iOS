@@ -541,9 +541,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "內容";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "貢獻者";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -732,6 +730,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "片尾插畫";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "片尾曲";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1359,6 +1361,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "線上 HD 編輯";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "片頭曲";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */

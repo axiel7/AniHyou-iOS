@@ -543,9 +543,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "Inhalt";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Mitwirkende";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -734,6 +732,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "Abspann";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Abspann";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1185,6 +1187,10 @@ No comment provided by engineer. */
 OneShot
 No comment provided by engineer. */
 "OneShot" = "One Shot";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Vorspann";
 /* sort order */
 "Order" = "Sortierung";
 /* en.lproj/Localizable.strings

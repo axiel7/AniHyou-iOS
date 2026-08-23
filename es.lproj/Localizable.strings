@@ -565,9 +565,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "Contenido";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Contribuidores";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -766,6 +764,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "Tarjeta final";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Endings";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1401,6 +1403,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "Edición HD Online";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Openings";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */
@@ -2369,3 +2375,5 @@ Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[%lld episodio atrasado](inflect: true)";
 /* Translate only the "episode" text */
 "^[%lld episode](inflect: true)" = "^[%lld episodio](inflect: true)";
+/* Translate only the "volume" text. Manga/Novel volumes */
+"^[%lld volume](inflect: true)" = "^[%lld volumen](inflect: true)";

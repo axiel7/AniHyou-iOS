@@ -557,9 +557,7 @@ No comment provided by engineer. */
 Content
 No comment provided by engineer. */
 "Content" = "Контент";
-/* en.lproj/Localizable.strings
-Contributors
-No comment provided by engineer. */
+/* List of people who contributed to the AniHyou project */
 "Contributors" = "Вкладчики";
 /* en.lproj/Localizable.strings
 Costume Design
@@ -748,6 +746,10 @@ No comment provided by engineer. */
 Endcard
 No comment provided by engineer. */
 "Endcard" = "Конечная карточка";
+/* en.lproj/Localizable.strings
+Endings
+No comment provided by engineer. */
+"Endings" = "Концовки";
 /* en.lproj/Localizable.strings
 English
 No comment provided by engineer. */
@@ -1379,6 +1381,10 @@ No comment provided by engineer. */
 Online HD Editing
 No comment provided by engineer. */
 "Online HD Editing" = "Онлайн-редактирование в формате HD";
+/* en.lproj/Localizable.strings
+Openings
+No comment provided by engineer. */
+"Openings" = "Заставки";
 /* en.lproj/Localizable.strings
 Optical Recording
 No comment provided by engineer. */
