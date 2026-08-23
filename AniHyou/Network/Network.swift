@@ -39,8 +39,8 @@ final class Network: Sendable {
             return try JSONDecoder().decode(T.self, from: data)
         } catch {
             print(error)
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: "networkError", object: "\(error)")
+            if let urlError = error as? URLError {
+                handleUrlError(urlError)
             }
             return nil
         }
@@ -80,6 +80,31 @@ final class Network: Sendable {
                 }
             }
             return nil
+        }
+    }
+    
+    private func handleUrlError(_ error: URLError) {
+        var message: String?
+        switch error.code {
+        case .badServerResponse:
+            message = "Bad server response"
+        case .cannotConnectToHost, .notConnectedToInternet:
+            message = "No internet connection"
+        case .cannotFindHost:
+            message = "Cannot find host"
+        case .cannotDecodeContentData, .cannotDecodeRawData, .cannotParseResponse:
+            message = "Error decoding data"
+        case .resourceUnavailable:
+            message = "Resource unavailable"
+        case .timedOut:
+            message = "Timeout"
+        default:
+            message = nil
+        }
+        if let message = message {
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: "networkError", object: message)
+            }
         }
     }
 }
