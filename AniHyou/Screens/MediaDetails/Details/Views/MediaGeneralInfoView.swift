@@ -269,7 +269,7 @@ struct MediaGeneralInfoView: View {
     
     @ViewBuilder
     func themesList(
-        title: String,
+        title: LocalizedStringKey,
         themes: [AnimeThemes.Theme],
         showingDialog: Binding<Bool>
     ) -> some View {
