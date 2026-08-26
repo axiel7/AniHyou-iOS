@@ -96,6 +96,41 @@ import AniListAPI
             nextSeasonAnimes = result.data
         }
     }
+    
+    // MARK: Popular anime
+    var popularAnime = [MediaSortedQuery.Data.Page.Medium]()
+    func getPopularAnime(forceReload: Bool = false) async {
+        guard forceReload || popularAnime.isEmpty else { return }
+        if let result = await MediaRepository.getMediaSorted(
+            sort: [.popularityDesc],
+            mediaType: .anime,
+            page: 1,
+            perPage: 15,
+            forceReload: forceReload
+        ) {
+            popularAnime = result.data
+        }
+    }
+    
+    // MARK: Newly anime
+    var pageNewlyAnime: Int32 = 1
+    var hasNextPageNewlyAnime = true
+    var newlyAnime = [MediaSortedQuery.Data.Page.Medium]()
+    
+    func getNewlyAnime(forceReload: Bool = false) async {
+        guard forceReload || newlyAnime.isEmpty else { return }
+        if let result = await MediaRepository.getMediaSorted(
+            sort: [.idDesc],
+            mediaType: .anime,
+            page: pageNewlyAnime,
+            perPage: 15,
+            forceReload: forceReload
+        ) {
+            newlyAnime += result.data
+            hasNextPageNewlyAnime = result.hasNextPage
+            pageNewlyAnime = result.page
+        }
+    }
 
     // MARK: Trending manga
     var pageTrendingManga: Int32 = 1
@@ -117,23 +152,34 @@ import AniListAPI
         }
     }
     
-    // MARK: Newly anime
-    var pageNewlyAnime: Int32 = 1
-    var hasNextPageNewlyAnime = true
-    var newlyAnime = [MediaSortedQuery.Data.Page.Medium]()
-    
-    func getNewlyAnime(forceReload: Bool = false) async {
-        guard forceReload || newlyAnime.isEmpty else { return }
+    // MARK: Popular manga
+    var popularManga = [MediaSortedQuery.Data.Page.Medium]()
+    func getPopularManga(forceReload: Bool = false) async {
+        guard forceReload || popularManga.isEmpty else { return }
         if let result = await MediaRepository.getMediaSorted(
-            sort: [.idDesc],
-            mediaType: .anime,
-            page: pageNewlyAnime,
+            sort: [.popularityDesc],
+            mediaType: .manga,
+            page: 1,
             perPage: 15,
             forceReload: forceReload
         ) {
-            newlyAnime += result.data
-            hasNextPageNewlyAnime = result.hasNextPage
-            pageNewlyAnime = result.page
+            popularManga = result.data
+        }
+    }
+    
+    // MARK: Popular manhwa
+    var popularManhwa = [MediaSortedQuery.Data.Page.Medium]()
+    func getPopularManhwa(forceReload: Bool = false) async {
+        guard forceReload || popularManhwa.isEmpty else { return }
+        if let result = await MediaRepository.getMediaSorted(
+            sort: [.popularityDesc],
+            mediaType: .manga,
+            country: .southKorea,
+            page: 1,
+            perPage: 15,
+            forceReload: forceReload
+        ) {
+            popularManhwa = result.data
         }
     }
     
@@ -174,16 +220,25 @@ import AniListAPI
         if !nextSeasonAnimes.isEmpty {
             await getNextSeasonAnimes(forceReload: true)
         }
+        if !popularAnime.isEmpty {
+            await getPopularAnime(forceReload: true)
+        }
+        if !newlyAnime.isEmpty {
+            pageNewlyAnime = 1
+            hasNextPageNewlyAnime = true
+            await getNewlyAnime(forceReload: true)
+        }
+        
         if !trendingManga.isEmpty {
             pageTrendingManga = 1
             hasNextPageTrendingManga = true
             await getTrendingManga(forceReload: true)
         }
-        
-        if !newlyAnime.isEmpty {
-            pageNewlyAnime = 1
-            hasNextPageNewlyAnime = true
-            await getNewlyAnime(forceReload: true)
+        if !popularManga.isEmpty {
+            await getPopularManga(forceReload: true)
+        }
+        if !popularManhwa.isEmpty {
+            await getPopularManhwa(forceReload: true)
         }
         if !newlyManga.isEmpty {
             pageNewlyManga = 1

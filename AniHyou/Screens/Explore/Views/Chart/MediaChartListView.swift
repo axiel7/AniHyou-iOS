@@ -15,6 +15,7 @@ struct MediaChartListView: View {
     let sort: MediaSort
     var status: MediaStatus?
     var format: MediaFormat?
+    var country: CountryCode?
     @State private var viewModel = ChartViewModel()
     @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = false
 
@@ -52,7 +53,8 @@ struct MediaChartListView: View {
                             type: type,
                             sort: sort,
                             status: status,
-                            format: format
+                            format: format,
+                            country: country
                         )
                     }
             }

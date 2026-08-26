@@ -12,138 +12,197 @@ import AniListAPI
 struct DiscoverView: View {
     
     @State private var viewModel = DiscoverViewModel()
+    @AppStorage(DISCOVER_TAB) private var discoverTab = DiscoverTab.anime
     @AppStorage(AIRING_ON_MY_LIST_KEY) private var airingOnMyList = false
     @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
+    @State private var hasScrolled = false
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollViewWithOffset(
+            showsIndicators: false,
+            onScroll: { hasScrolled = $0.y < 0 }
+        ) {
             LazyVStack(alignment: .leading) {
-                
-                Text("Anime")
-                    .font(.title2)
-                    .bold()
-                    .padding(.horizontal)
-
-                animeCharts
-                    .padding(.bottom)
-
-                Text("Manga")
-                    .font(.title2)
-                    .bold()
-                    .padding(.horizontal)
-
-                mangaCharts
-                    .padding(.bottom)
-                
-                airingNext
-                    .task {
-                        if airingOnMyList {
-                            await viewModel.getAiringOnMyList()
-                        } else {
-                            await viewModel.getAiringAnimes()
+                Section {
+                    switch discoverTab {
+                    case .anime:
+                        animeTabContent
+                    case .manga:
+                        mangaTabContent
+                    }
+                } header: {
+                    VStack(spacing: 0) {
+                        Picker("", selection: $discoverTab) {
+                            ForEach(DiscoverTab.allCases, id: \.self) { tab in
+                                Label(tab.localizedName, systemImage: tab.systemImage).tag(tab)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(3)
+                        .pinnedViewBackground(hasScrolled: hasScrolled)
+                        if #unavailable(iOS 26), hasScrolled {
+                            Divider()
                         }
                     }
-                
-                mediaSeason(
-                    season: viewModel.nowAnimeSeason,
-                    media: viewModel.seasonAnimes
-                )
-                .task {
-                    await viewModel.getSeasonAnimes()
                 }
-                
-                mediaContent(
-                    title: "Trending Anime",
-                    mediaType: .anime,
-                    media: viewModel.trendingAnimes,
-                    headerDestination: {
-                        DiscoverMediaListView(
-                            mediaType: .anime,
-                            media: viewModel.trendingAnimes,
-                            hasNextPage: viewModel.hasNextPageTrendingAnime,
-                            loadMore: {
-                                await viewModel.getTrendingAnimes()
-                            }
-                        )
-                        .navigationTitle("Trending Anime")
-                    }
-                )
-                .task {
-                    await viewModel.getTrendingAnimes()
-                }
-                
-                mediaSeason(
-                    season: viewModel.nextAnimeSeason,
-                    media: viewModel.nextSeasonAnimes
-                )
-                .task {
-                    await viewModel.getNextSeasonAnimes()
-                }
-                
-                mediaContent(
-                    title: "Trending Manga",
-                    mediaType: .manga,
-                    media: viewModel.trendingManga,
-                    headerDestination: {
-                        DiscoverMediaListView(
-                            mediaType: .manga,
-                            media: viewModel.trendingManga,
-                            hasNextPage: viewModel.hasNextPageTrendingManga,
-                            loadMore: {
-                                await viewModel.getTrendingManga()
-                            }
-                        )
-                        .navigationTitle("Trending Manga")
-                    }
-                )
-                .task {
-                    await viewModel.getTrendingManga()
-                }
-                
-                mediaContent(
-                    title: "Newly Added Anime",
-                    mediaType: .anime,
-                    media: viewModel.newlyAnime,
-                    headerDestination: {
-                        DiscoverMediaListView(
-                            mediaType: .anime,
-                            media: viewModel.newlyAnime,
-                            hasNextPage: viewModel.hasNextPageNewlyAnime,
-                            loadMore: {
-                                await viewModel.getNewlyAnime()
-                            }
-                        )
-                        .navigationTitle("Newly Added Anime")
-                    }
-                )
-                .task {
-                    await viewModel.getNewlyAnime()
-                }
-                
-                mediaContent(
-                    title: "Newly Added Manga",
-                    mediaType: .manga,
-                    media: viewModel.newlyManga,
-                    headerDestination: {
-                        DiscoverMediaListView(
-                            mediaType: .manga,
-                            media: viewModel.newlyManga,
-                            hasNextPage: viewModel.hasNextPageNewlyManga,
-                            loadMore: {
-                                await viewModel.getNewlyManga()
-                            }
-                        )
-                        .navigationTitle("Newly Added Manga")
-                    }
-                )
-                .task {
-                    await viewModel.getNewlyManga()
-                }
-            }//:VStack
+            }
             .padding(.top)
         }
         .refreshable {
             await viewModel.onRefresh()
+        }
+    }
+    
+    @ViewBuilder
+    private var animeTabContent: some View {
+        animeCharts
+            .padding(.vertical)
+        
+        airingNext
+            .task {
+                if airingOnMyList {
+                    await viewModel.getAiringOnMyList()
+                } else {
+                    await viewModel.getAiringAnimes()
+                }
+            }
+        
+        mediaSeason(
+            season: viewModel.nowAnimeSeason,
+            media: viewModel.seasonAnimes
+        )
+        .task {
+            await viewModel.getSeasonAnimes()
+        }
+        
+        mediaContent(
+            title: "Trending Anime",
+            mediaType: .anime,
+            media: viewModel.trendingAnimes,
+            headerDestination: {
+                DiscoverMediaListView(
+                    mediaType: .anime,
+                    media: viewModel.trendingAnimes,
+                    hasNextPage: viewModel.hasNextPageTrendingAnime,
+                    loadMore: {
+                        await viewModel.getTrendingAnimes()
+                    }
+                )
+                .navigationTitle("Trending Anime")
+            }
+        )
+        .task {
+            await viewModel.getTrendingAnimes()
+        }
+        
+        mediaSeason(
+            season: viewModel.nextAnimeSeason,
+            media: viewModel.nextSeasonAnimes
+        )
+        .task {
+            await viewModel.getNextSeasonAnimes()
+        }
+        
+        mediaContent(
+            title: "Popular Anime",
+            mediaType: .anime,
+            media: viewModel.popularAnime,
+            headerDestination: {
+                MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)
+            }
+        )
+        .task {
+            await viewModel.getPopularAnime()
+        }
+        
+        mediaContent(
+            title: "Newly Added Anime",
+            mediaType: .anime,
+            media: viewModel.newlyAnime,
+            headerDestination: {
+                DiscoverMediaListView(
+                    mediaType: .anime,
+                    media: viewModel.newlyAnime,
+                    hasNextPage: viewModel.hasNextPageNewlyAnime,
+                    loadMore: {
+                        await viewModel.getNewlyAnime()
+                    }
+                )
+                .navigationTitle("Newly Added Anime")
+            }
+        )
+        .task {
+            await viewModel.getNewlyAnime()
+        }
+    }
+    
+    @ViewBuilder
+    private var mangaTabContent: some View {
+        mangaCharts
+            .padding(.vertical)
+        
+        mediaContent(
+            title: "Trending Manga",
+            mediaType: .manga,
+            media: viewModel.trendingManga,
+            headerDestination: {
+                DiscoverMediaListView(
+                    mediaType: .manga,
+                    media: viewModel.trendingManga,
+                    hasNextPage: viewModel.hasNextPageTrendingManga,
+                    loadMore: {
+                        await viewModel.getTrendingManga()
+                    }
+                )
+                .navigationTitle("Trending Manga")
+            }
+        )
+        .task {
+            await viewModel.getTrendingManga()
+        }
+        
+        mediaContent(
+            title: "Popular Manga",
+            mediaType: .manga,
+            media: viewModel.popularManga,
+            headerDestination: {
+                MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)
+            }
+        )
+        .task {
+            await viewModel.getPopularManga()
+        }
+        
+        mediaContent(
+            title: "Popular Manhwa",
+            mediaType: .manga,
+            media: viewModel.popularManhwa,
+            headerDestination: {
+                MediaChartListView(title: "Popular Manhwa", type: .manga, sort: .popularityDesc, country: .southKorea)
+            }
+        )
+        .task {
+            await viewModel.getPopularManhwa()
+        }
+        
+        mediaContent(
+            title: "Newly Added Manga",
+            mediaType: .manga,
+            media: viewModel.newlyManga,
+            headerDestination: {
+                DiscoverMediaListView(
+                    mediaType: .manga,
+                    media: viewModel.newlyManga,
+                    hasNextPage: viewModel.hasNextPageNewlyManga,
+                    loadMore: {
+                        await viewModel.getNewlyManga()
+                    }
+                )
+                .navigationTitle("Newly Added Manga")
+            }
+        )
+        .task {
+            await viewModel.getNewlyManga()
         }
     }
     
@@ -172,12 +231,15 @@ struct DiscoverView: View {
                             .foregroundStyle(.yellow)
                     }
                 }
-                NavigationLink(
-                    destination: MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)
-                ) {
-                    Chip(title: "Top Popular") {
-                        Image(systemName: "chart.line.uptrend.xyaxis")
-                            .foregroundStyle(.red, .blue)
+                NavigationLink(destination: MediaChartListView(
+                    title: "Top Movies",
+                    type: .anime,
+                    sort: .scoreDesc,
+                    format: .movie
+                )) {
+                    Chip(title: "Top Movies") {
+                        Image(systemName: "movieclapper")
+                            .foregroundStyle(.teal)
                     }
                 }
                 NavigationLink(
@@ -191,17 +253,6 @@ struct DiscoverView: View {
                     Chip(title: "Upcoming") {
                         Image(systemName: "clock")
                             .foregroundStyle(.mint, .yellow)
-                    }
-                }
-                NavigationLink(destination: MediaChartListView(
-                    title: "Top Movies",
-                    type: .anime,
-                    sort: .scoreDesc,
-                    format: .movie
-                )) {
-                    Chip(title: "Top Movies") {
-                        Image(systemName: "movieclapper")
-                            .foregroundStyle(.teal)
                     }
                 }
                 NavigationLink(
@@ -244,14 +295,6 @@ struct DiscoverView: View {
                     Chip(title: "Top 100") {
                         Image(systemName: "trophy.fill")
                             .foregroundStyle(.orange)
-                    }
-                }
-                NavigationLink(
-                    destination: MediaChartListView(title: "Popular Manga", type: .manga, sort: .popularityDesc)
-                ) {
-                    Chip(title: "Top Popular") {
-                        Image(systemName: "chart.line.uptrend.xyaxis")
-                            .foregroundStyle(.blue, .red)
                     }
                 }
                 NavigationLink(
@@ -351,7 +394,6 @@ struct DiscoverView: View {
             .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
             .frame(height: 145)
         }//:ZStack
-        Divider()
     }
     
     @ViewBuilder
@@ -392,7 +434,6 @@ struct DiscoverView: View {
             }//:HScrollView
             .frame(minHeight: 180)
         }//:ZStack
-        Divider()
     }
     
     @ViewBuilder

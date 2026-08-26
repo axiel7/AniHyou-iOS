@@ -8,7 +8,7 @@ nonisolated public struct MediaSortedQuery: GraphQLQuery {
   public static let operationName: String = "MediaSorted"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
+      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort], $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort, countryOfOrigin: $country) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -16,24 +16,28 @@ nonisolated public struct MediaSortedQuery: GraphQLQuery {
   public var perPage: GraphQLNullable<Int32>
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
+  public var country: GraphQLNullable<CountryCode>
 
   public init(
     page: GraphQLNullable<Int32>,
     perPage: GraphQLNullable<Int32>,
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
-    sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
+    sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
+    country: GraphQLNullable<CountryCode>
   ) {
     self.page = page
     self.perPage = perPage
     self.type = type
     self.sort = sort
+    self.country = country
   }
 
   @_spi(Unsafe) public var __variables: Variables? { [
     "page": page,
     "perPage": perPage,
     "type": type,
-    "sort": sort
+    "sort": sort,
+    "country": country
   ] }
 
   nonisolated public struct Data: AniListAPI.SelectionSet {
@@ -65,7 +69,8 @@ nonisolated public struct MediaSortedQuery: GraphQLQuery {
         .field("__typename", String.self),
         .field("media", [Medium?]?.self, arguments: [
           "type": .variable("type"),
-          "sort": .variable("sort")
+          "sort": .variable("sort"),
+          "countryOfOrigin": .variable("country")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }

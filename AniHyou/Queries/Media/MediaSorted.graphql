@@ -1,6 +1,6 @@
-query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) {
+query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort], $country: CountryCode) {
   Page(page: $page, perPage: $perPage) {
-    media(type: $type, sort: $sort) {
+    media(type: $type, sort: $sort, countryOfOrigin: $country) {
       id
       title {
         userPreferred

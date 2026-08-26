@@ -22,13 +22,15 @@ import AniListAPI
         type: MediaType,
         sort: MediaSort,
         status: MediaStatus?,
-        format: MediaFormat? = nil
+        format: MediaFormat? = nil,
+        country: CountryCode?
     ) async {
         if let result = await MediaRepository.getMediaChart(
             type: type,
             sort: sort,
             status: status,
             format: format,
+            country: country,
             page: currentPage,
             perPage: perPage
         ) {

@@ -61,6 +61,7 @@ let BLUR_ADULT_MEDIA = "blur_adult_media"
 let HIDE_SCORES = "hide_scores"
 let SCORE_STEPS = "score_steps"
 let SHOW_LOW_PRIORITY = "show_low_priority"
+let DISCOVER_TAB = "discover_tab"
 
 let ANIHYOU_COLOR = "#526CFD"
 let ANIHYOU_GROUP = "group.com.axiel7.AniHyou"

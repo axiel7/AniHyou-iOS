@@ -14,6 +14,7 @@ struct MediaRepository {
     static func getMediaSorted(
         sort: [MediaSort],
         mediaType: MediaType,
+        country: CountryCode? = nil,
         page: Int32,
         perPage: Int32 = 25,
         forceReload: Bool = false
@@ -23,7 +24,8 @@ struct MediaRepository {
                 page: .some(page),
                 perPage: .some(perPage),
                 type: .some(.case(mediaType)),
-                sort: .some(sort.map({ .case($0) }))
+                sort: .some(sort.map({ .case($0) })),
+                country: someIfNotNil(country)
             ),
             forceReload: forceReload,
             extractItems: { $0.page?.media?.compactMap { $0 } },
@@ -36,6 +38,7 @@ struct MediaRepository {
         sort: MediaSort,
         status: MediaStatus?,
         format: MediaFormat? = nil,
+        country: CountryCode? = nil,
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<MediaChartQuery.Data.Page.Medium>? {
@@ -46,7 +49,8 @@ struct MediaRepository {
                 sort: .some([.case(sort)]),
                 type: .some(.case(type)),
                 status: someIfNotNil(status),
-                format: someIfNotNil(format)
+                format: someIfNotNil(format),
+                country: someIfNotNil(country)
             ),
             extractItems: { $0.page?.media?.compactMap { $0 } },
             extractPage: { $0.page?.pageInfo?.fragments.commonPage }

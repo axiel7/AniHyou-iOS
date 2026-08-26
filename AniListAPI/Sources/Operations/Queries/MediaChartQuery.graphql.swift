@@ -8,7 +8,7 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
   public static let operationName: String = "MediaChart"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus, $format: MediaFormat) { Page(page: $page, perPage: $perPage) { __typename media(sort: $sort, type: $type, status: $status, format: $format) { __typename id title { __typename userPreferred } type format startDate { __typename year } coverImage { __typename large } meanScore status genres episodes chapters duration mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
+      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus, $format: MediaFormat, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( sort: $sort type: $type status: $status format: $format countryOfOrigin: $country ) { __typename id title { __typename userPreferred } type format startDate { __typename year } coverImage { __typename large } meanScore status genres episodes chapters duration mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -18,6 +18,7 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
   public var type: GraphQLNullable<GraphQLEnum<MediaType>>
   public var status: GraphQLNullable<GraphQLEnum<MediaStatus>>
   public var format: GraphQLNullable<GraphQLEnum<MediaFormat>>
+  public var country: GraphQLNullable<CountryCode>
 
   public init(
     page: GraphQLNullable<Int32>,
@@ -25,7 +26,8 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
     sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
     type: GraphQLNullable<GraphQLEnum<MediaType>>,
     status: GraphQLNullable<GraphQLEnum<MediaStatus>>,
-    format: GraphQLNullable<GraphQLEnum<MediaFormat>>
+    format: GraphQLNullable<GraphQLEnum<MediaFormat>>,
+    country: GraphQLNullable<CountryCode>
   ) {
     self.page = page
     self.perPage = perPage
@@ -33,6 +35,7 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
     self.type = type
     self.status = status
     self.format = format
+    self.country = country
   }
 
   @_spi(Unsafe) public var __variables: Variables? { [
@@ -41,7 +44,8 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
     "sort": sort,
     "type": type,
     "status": status,
-    "format": format
+    "format": format,
+    "country": country
   ] }
 
   nonisolated public struct Data: AniListAPI.SelectionSet {
@@ -75,7 +79,8 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
           "sort": .variable("sort"),
           "type": .variable("type"),
           "status": .variable("status"),
-          "format": .variable("format")
+          "format": .variable("format"),
+          "countryOfOrigin": .variable("country")
         ]),
         .field("pageInfo", PageInfo?.self),
       ] }
