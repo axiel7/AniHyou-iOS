@@ -1667,9 +1667,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "Ditonton Ulang";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "Kanan";
 /* en.lproj/Localizable.strings
 Romaji
@@ -1784,9 +1782,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "Potongan Kehidupan";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "Sosial";
 /* en.lproj/Localizable.strings
 Sort

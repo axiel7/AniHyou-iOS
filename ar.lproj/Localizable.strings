@@ -948,9 +948,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "شريحة من الحياة";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "اجتماعي";
 /* en.lproj/Localizable.strings
 Sort

@@ -2,10 +2,16 @@
 %lld chapters
 No comment provided by engineer. */
 "%lld chapters" = "%lld Kapitel";
+/* Character (text) count. Appears when writing a review */
+"%lld characters" = "%lld Zeichen";
 /* en.lproj/Localizable.strings
 %lld episodes
 No comment provided by engineer. */
 "%lld episodes" = "%lld Folgen";
+/* Character (text) required count. Appears when writing a review.
+
+Example: "45 more characters required" */
+"%lld more characters required" = "%lld mehr Zeichen erforderlich";
 /* num of volumes.
 Eg: 23 volumes */
 "%lld volumes" = "%lld Bände";
@@ -13,6 +19,8 @@ Eg: 23 volumes */
 +1
 No comment provided by engineer. */
 "+1" = "+1";
+/* 1 hour interval */
+"1h" = "1h";
 /* en.lproj/Localizable.strings
 1st Key Animation Director
 No comment provided by engineer. */
@@ -53,10 +61,14 @@ No comment provided by engineer. */
 3DCG
 No comment provided by engineer. */
 "3DCG" = "3DCG";
+/* 3 hours interval */
+"3h" = "3h";
 /* en.lproj/Localizable.strings
 5 Star (3/5)
 No comment provided by engineer. */
 "5 Star (3/5)" = "5 Sterne (3/5)";
+/* 6 hours interval */
+"6h" = "6h";
 /* en.lproj/Localizable.strings
 10 Point (5/10)
 No comment provided by engineer. */
@@ -65,6 +77,10 @@ No comment provided by engineer. */
 10 Point Decimal (5.5/10)
 No comment provided by engineer. */
 "10 Point Decimal (5.5/10)" = "10 Punkte-Dezimalzahl (5.5/10)";
+/* 12 hours interval */
+"12h" = "12h";
+/* 24 hours interval */
+"24h" = "24h";
 /* en.lproj/Localizable.strings
 100 Point (55/100)
 No comment provided by engineer. */
@@ -435,6 +451,10 @@ Characters
 No comment provided by engineer. */
 "Characters" = "Charaktere";
 /* en.lproj/Localizable.strings
+Characters and Staff
+No comment provided by engineer. */
+"Characters and Staff" = "Charaktere und Mitarbeiter";
+/* en.lproj/Localizable.strings
 Chief Animation Director
 No comment provided by engineer. */
 "Chief Animation Director" = "Hauptanimationsregisseur";
@@ -596,10 +616,16 @@ No comment provided by engineer. */
 Delete
 No comment provided by engineer. */
 "Delete" = "Löschen";
+/* Delete published Anime/Manga Review */
+"Delete Review" = "Rezensionen löschen";
 /* en.lproj/Localizable.strings
 Delete this entry?
 No comment provided by engineer. */
 "Delete this entry?" = "Diesen Eintrag löschen?";
+/* en.lproj/Localizable.strings
+Delete this review?
+No comment provided by engineer. */
+"Delete this review?" = "Diese Rezensionen löschen?";
 /* en.lproj/Localizable.strings
 Descending
 No comment provided by engineer. */
@@ -705,6 +731,10 @@ Edit
 No comment provided by engineer. */
 "Edit" = "Bearbeiten";
 /* en.lproj/Localizable.strings
+Edit Review
+No comment provided by engineer. */
+"Edit Review" = "Rezensionen bearbeiten";
+/* en.lproj/Localizable.strings
 Editing
 No comment provided by engineer. */
 "Editing" = "Schnitt";
@@ -770,6 +800,10 @@ No comment provided by engineer. */
 "Episodes" = "Folgen";
 /* stats */
 "Episodes Watched" = "Gesehene Folgen";
+/* en.lproj/Localizable.strings
+Error
+No comment provided by engineer. */
+"Error" = "Fehler";
 /* en.lproj/Localizable.strings
 Executive Producer
 No comment provided by engineer. */
@@ -896,6 +930,10 @@ Global
 No comment provided by engineer. */
 "Global" = "Global";
 /* en.lproj/Localizable.strings
+HD Editing
+No comment provided by engineer. */
+"HD Editing" = "HD-Bearbeitung";
+/* en.lproj/Localizable.strings
 Heading
 No comment provided by engineer. */
 "Heading" = "Überschrift";
@@ -953,6 +991,22 @@ Image
 No comment provided by engineer. */
 "Image" = "Bild";
 /* en.lproj/Localizable.strings
+In-Between Animation
+No comment provided by engineer. */
+"In-Between Animation" = "Zwischenphasenanimation";
+/* en.lproj/Localizable.strings
+In-Between Animation Assistance
+No comment provided by engineer. */
+"In-Between Animation Assistance" = "Assistenz Zwischenphasenanimation";
+/* en.lproj/Localizable.strings
+In-Betweens Check
+No comment provided by engineer. */
+"In-Betweens Check" = "Zwischenphasenprüfung";
+/* en.lproj/Localizable.strings
+In-Betweens Manager
+No comment provided by engineer. */
+"In-Betweens Manager" = "Zwischenphasenmanager";
+/* en.lproj/Localizable.strings
 Info type
 No comment provided by engineer. */
 "Info type" = "Infotyp";
@@ -961,6 +1015,22 @@ Information
 No comment provided by engineer. */
 "Information" = "Informationen";
 /* en.lproj/Localizable.strings
+Insert Song Arrangement
+No comment provided by engineer. */
+"Insert Song Arrangement" = "Zwischensong Arrangement";
+/* en.lproj/Localizable.strings
+Insert Song Composition
+No comment provided by engineer. */
+"Insert Song Composition" = "Zwischensong Komposition";
+/* en.lproj/Localizable.strings
+Insert Song Lyrics
+No comment provided by engineer. */
+"Insert Song Lyrics" = "Zwischensongtext";
+/* en.lproj/Localizable.strings
+Insert Song Performance
+No comment provided by engineer. */
+"Insert Song Performance" = "Interpretation eines Zwischensongs";
+/* en.lproj/Localizable.strings
 Italic
 No comment provided by engineer. */
 "Italic" = "Kursiv";
@@ -968,6 +1038,18 @@ No comment provided by engineer. */
 Japan
 No comment provided by engineer. */
 "Japan" = "Japan";
+/* en.lproj/Localizable.strings
+Key Animation
+No comment provided by engineer. */
+"Key Animation" = "Schlüsselanimation";
+/* en.lproj/Localizable.strings
+Key Animation (OP)
+No comment provided by engineer. */
+"Key Animation (OP)" = "Schlüsselanimation (OP)";
+/* en.lproj/Localizable.strings
+Key Animation Assistance
+No comment provided by engineer. */
+"Key Animation Assistance" = "Assistenz Schlüsselanimation";
 /* en.lproj/Localizable.strings
 Language
 No comment provided by engineer. */
@@ -980,12 +1062,40 @@ No comment provided by engineer. */
 Last used
 No comment provided by engineer. */
 "Last used" = "Zuletzt verwendet";
+/* en.lproj/Localizable.strings
+Layout
+No comment provided by engineer. */
+"Layout" = "Layout";
+/* en.lproj/Localizable.strings
+Layout Animation Director
+No comment provided by engineer. */
+"Layout Animation Director" = "Layout-Animationsleitung";
+/* en.lproj/Localizable.strings
+Layout Animation Supervisor
+No comment provided by engineer. */
+"Layout Animation Supervisor" = "Layout-Animationsaufsicht";
+/* en.lproj/Localizable.strings
+Layout Editor
+No comment provided by engineer. */
+"Layout Editor" = "Layout-Editor";
+/* en.lproj/Localizable.strings
+Layout Supervisor
+No comment provided by engineer. */
+"Layout Supervisor" = "Layout-Aufsicht";
 /* Left swipe direction */
 "Left" = "Links";
+/* en.lproj/Localizable.strings
+Lettering
+No comment provided by engineer. */
+"Lettering" = "Lettering";
 /* en.lproj/Localizable.strings
 Light novel
 No comment provided by engineer. */
 "Light novel" = "Light Novel";
+/* en.lproj/Localizable.strings
+Line Producer
+No comment provided by engineer. */
+"Line Producer" = "Herstellungsleitung";
 /* en.lproj/Localizable.strings
 Link
 No comment provided by engineer. */
@@ -1002,6 +1112,14 @@ No comment provided by engineer. */
 List style
 No comment provided by engineer. */
 "List style" = "Listen-Stil";
+/* en.lproj/Localizable.strings
+Literary Arts
+No comment provided by engineer. */
+"Literary Arts" = "Literarische Kunst";
+/* en.lproj/Localizable.strings
+Literary Arts Assistance
+No comment provided by engineer. */
+"Literary Arts Assistance" = "Assistenz Literarische Kunst";
 /* en.lproj/Localizable.strings
 Live action
 No comment provided by engineer. */
@@ -1033,6 +1151,10 @@ Main
 No comment provided by engineer. */
 "Main" = "Primär";
 /* en.lproj/Localizable.strings
+Main Animator
+No comment provided by engineer. */
+"Main Animator" = "Hauptanimator";
+/* en.lproj/Localizable.strings
 Male
 No comment provided by engineer. */
 "Male" = "Männlich";
@@ -1055,9 +1177,23 @@ Mecha
 No comment provided by engineer. */
 "Mecha" = "Mecha";
 /* en.lproj/Localizable.strings
+Mechanical Animation Director
+No comment provided by engineer. */
+"Mechanical Animation Director" = "Mechanik-Animationsleitung";
+/* en.lproj/Localizable.strings
+Mechanical Design
+No comment provided by engineer. */
+"Mechanical Design" = "Mechanik-Design";
+/* en.lproj/Localizable.strings
+Mechanical Supervisor
+No comment provided by engineer. */
+"Mechanical Supervisor" = "Mechanik-Aufsicht";
+/* en.lproj/Localizable.strings
 Media
 No comment provided by engineer. */
 "Media" = "Medien";
+/* not a very important string. Used for app intents */
+"Media ID" = "Medien ID";
 /* Anime/Manga List */
 "Media List" = "Medienliste";
 /* Anime or Manga */
@@ -1070,6 +1206,14 @@ No comment provided by engineer. */
 Minimal
 No comment provided by engineer. */
 "Minimal" = "Minimal";
+/* en.lproj/Localizable.strings
+Monitor Graphics
+No comment provided by engineer. */
+"Monitor Graphics" = "Monitor-Grafik";
+/* en.lproj/Localizable.strings
+Monster Design
+No comment provided by engineer. */
+"Monster Design" = "Monster-Design";
 /* en.lproj/Localizable.strings
 More filters
 No comment provided by engineer. */
@@ -1089,6 +1233,54 @@ No comment provided by engineer. */
 Music
 No comment provided by engineer. */
 "Music" = "Musik";
+/* en.lproj/Localizable.strings
+Music Arrangement
+No comment provided by engineer. */
+"Music Arrangement" = "Musikarrangement";
+/* en.lproj/Localizable.strings
+Music Assistance
+No comment provided by engineer. */
+"Music Assistance" = "Musikassistenz";
+/* en.lproj/Localizable.strings
+Music Composition
+No comment provided by engineer. */
+"Music Composition" = "Musikkomposition";
+/* en.lproj/Localizable.strings
+Music Director
+No comment provided by engineer. */
+"Music Director" = "Musikleitung";
+/* en.lproj/Localizable.strings
+Music Lyrics
+No comment provided by engineer. */
+"Music Lyrics" = "Songtext";
+/* en.lproj/Localizable.strings
+Music Performance
+No comment provided by engineer. */
+"Music Performance" = "Musikdarbietung";
+/* en.lproj/Localizable.strings
+Music Producer
+No comment provided by engineer. */
+"Music Producer" = "Musikproduzent";
+/* en.lproj/Localizable.strings
+Music Production
+No comment provided by engineer. */
+"Music Production" = "Musikproduktion";
+/* en.lproj/Localizable.strings
+Music Production Assistance
+No comment provided by engineer. */
+"Music Production Assistance" = "Assistenz Musikproduktion";
+/* en.lproj/Localizable.strings
+Music Selection
+No comment provided by engineer. */
+"Music Selection" = "Musikauswahl";
+/* en.lproj/Localizable.strings
+Music Supervisor
+No comment provided by engineer. */
+"Music Supervisor" = "Musikaufsicht";
+/* en.lproj/Localizable.strings
+Musical Instrument Supervisor
+No comment provided by engineer. */
+"Musical Instrument Supervisor" = "Instrumentenaufsicht";
 /* en.lproj/Localizable.strings
 Mystery
 No comment provided by engineer. */
@@ -1180,6 +1372,10 @@ Offline Editing
 No comment provided by engineer. */
 "Offline Editing" = "Offline-Bearbeitung";
 /* en.lproj/Localizable.strings
+Offline Editing Manager
+No comment provided by engineer. */
+"Offline Editing Manager" = "Offline-Schnitt-Manager";
+/* en.lproj/Localizable.strings
 On my list
 No comment provided by engineer. */
 "On my list" = "Auf meiner Liste";
@@ -1188,9 +1384,27 @@ OneShot
 No comment provided by engineer. */
 "OneShot" = "One Shot";
 /* en.lproj/Localizable.strings
+Online Editing
+No comment provided by engineer. */
+"Online Editing" = "Online-Editing-Manager";
+/* en.lproj/Localizable.strings
+Online Editing Manager
+No comment provided by engineer. */
+"Online Editing Manager" = "Online-Editing-Manager";
+/* en.lproj/Localizable.strings
+Online HD Editing
+No comment provided by engineer. */
+"Online HD Editing" = "Online HD-Bearbeitung";
+/* en.lproj/Localizable.strings
 Openings
 No comment provided by engineer. */
 "Openings" = "Vorspann";
+/* en.lproj/Localizable.strings
+Optical Recording
+No comment provided by engineer. */
+"Optical Recording" = "Optische Aufnahme";
+/* not a very important string. used for app intents */
+"Optional status to update the list entry to (e.g. COMPLETED)" = "Optionaler Status, auf den der Listeneintrag aktualisiert werden soll (z.B. „ABGESCHLOSSEN“)";
 /* sort order */
 "Order" = "Sortierung";
 /* en.lproj/Localizable.strings
@@ -1202,15 +1416,43 @@ Original
 No comment provided by engineer. */
 "Original" = "Original";
 /* en.lproj/Localizable.strings
+Original Character Design
+No comment provided by engineer. */
+"Original Character Design" = "Originelles Charakterdesign";
+/* en.lproj/Localizable.strings
+Original Creator
+No comment provided by engineer. */
+"Original Creator" = "Originale Schöpfer";
+/* en.lproj/Localizable.strings
+Original Illustration
+No comment provided by engineer. */
+"Original Illustration" = "Originale Illustration";
+/* en.lproj/Localizable.strings
+Original Plan
+No comment provided by engineer. */
+"Original Plan" = "Originalplan";
+/* en.lproj/Localizable.strings
+Original Story
+No comment provided by engineer. */
+"Original Story" = "Originale Story";
+/* en.lproj/Localizable.strings
 Other
 No comment provided by engineer. */
 "Other" = "Anderes";
 /* text for a button that opens AniList website */
 "Other account settings" = "AniList-Accounteinstellungen";
 /* en.lproj/Localizable.strings
+Overseas Advertising Producer
+No comment provided by engineer. */
+"Overseas Advertising Producer" = "Auslandsmarketing-Produzent";
+/* en.lproj/Localizable.strings
 Overview
 No comment provided by engineer. */
 "Overview" = "Überblick";
+/* en.lproj/Localizable.strings
+Paint
+No comment provided by engineer. */
+"Paint" = "Zeichnen";
 /* en.lproj/Localizable.strings
 Parent
 No comment provided by engineer. */
@@ -1233,6 +1475,10 @@ Photography Assistance
 No comment provided by engineer. */
 "Photography Assistance" = "Kameraassistenz";
 /* en.lproj/Localizable.strings
+Photography Chief
+No comment provided by engineer. */
+"Photography Chief" = "Fotografie-Chef";
+/* en.lproj/Localizable.strings
 Photography Manager
 No comment provided by engineer. */
 "Photography Manager" = "Fotografie Manager";
@@ -1247,6 +1493,10 @@ Planning */
 Planning Assistance
 No comment provided by engineer. */
 "Planning Assistance" = "Planungsassistenz";
+/* en.lproj/Localizable.strings
+Planning Producer
+No comment provided by engineer. */
+"Planning Producer" = "Planungsproduzent";
 /* Plans to read [Manga Title] */
 "Plans to read %@" = "Plant %@ zu lesen";
 /* Plans to watch [Anime Title] */
@@ -1371,9 +1621,21 @@ Recommendations
 No comment provided by engineer. */
 "Recommendations" = "Empfehlungen";
 /* en.lproj/Localizable.strings
+Recording
+No comment provided by engineer. */
+"Recording" = "Aufnahme";
+/* en.lproj/Localizable.strings
+Recording Adjustment
+No comment provided by engineer. */
+"Recording Adjustment" = "Anpassung der Aufzeichnung";
+/* en.lproj/Localizable.strings
 Recording Assistant
 No comment provided by engineer. */
 "Recording Assistant" = "Tonassistenz";
+/* en.lproj/Localizable.strings
+Recording Engineer
+No comment provided by engineer. */
+"Recording Engineer" = "Toningenieur";
 /* Related anime/manga */
 "Relations" = "Verwandt";
 /* en.lproj/Localizable.strings
@@ -1392,6 +1654,8 @@ No comment provided by engineer. */
 Releasing
 No comment provided by engineer. */
 "Releasing" = "Wird Veröffentlicht";
+/* sort by repeat count */
+"Repeat" = "Wiederholen";
 /* en.lproj/Localizable.strings
 Repeat Count
 No comment provided by engineer. */
@@ -1411,6 +1675,18 @@ No comment provided by engineer. */
 Rereading */
 "Rereading" = "Erneut Lesen";
 /* en.lproj/Localizable.strings
+Restore purchases
+No comment provided by engineer. */
+"Restore purchases" = "Kauf wiederherstellen";
+/* en.lproj/Localizable.strings
+Review
+No comment provided by engineer. */
+"Review" = "Rezensionen";
+/* en.lproj/Localizable.strings
+Review and Threads
+No comment provided by engineer. */
+"Review and Threads" = "Rezension und Themen";
+/* en.lproj/Localizable.strings
 Reviews
 No comment provided by engineer. */
 "Reviews" = "Rezensionen";
@@ -1421,6 +1697,8 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "Erneut Anschauen";
+/* Swipe direction */
+"Right" = "Rechts";
 /* en.lproj/Localizable.strings
 Romaji
 No comment provided by engineer. */
@@ -1450,6 +1728,10 @@ Score
 No comment provided by engineer. */
 "Score" = "Bewertung";
 /* en.lproj/Localizable.strings
+Score distribution
+No comment provided by engineer. */
+"Score distribution" = "Bewertungsverteilung";
+/* en.lproj/Localizable.strings
 Score format
 No comment provided by engineer. */
 "Score format" = "Score-Format";
@@ -1464,13 +1746,44 @@ Script Assistance
 No comment provided by engineer. */
 "Script Assistance" = "Drehbuchassistenz";
 /* en.lproj/Localizable.strings
+Search type
+No comment provided by engineer. */
+"Search type" = "Suchtyp";
+/* en.lproj/Localizable.strings
 Season
 No comment provided by engineer. */
 "Season" = "Saison";
 /* en.lproj/Localizable.strings
+Select Media Type
+No comment provided by engineer. */
+"Select Media Type" = "Medientyp auswählen";
+/* en.lproj/Localizable.strings
+Selection type
+No comment provided by engineer. */
+"Selection type" = "Auswahltyp";
+/* en.lproj/Localizable.strings
 Sequel
 No comment provided by engineer. */
 "Sequel" = "Sequel";
+/* en.lproj/Localizable.strings
+Series Composition
+No comment provided by engineer. */
+"Series Composition" = "Serienkomposition";
+/* en.lproj/Localizable.strings
+Series Composition Assistance
+No comment provided by engineer. */
+"Series Composition Assistance" = "Assistenz Serienkomposition";
+/* Set to Status.
+Example: Set as Completed */
+"Set as %@" = "Setzen als %@";
+/* not a very important string. used for app intents */
+"Set progress" = "Fortschritt setzten";
+/* not a very important string. used for app intents */
+"Sets a list entry progress to the specified number." = "Fortschritt eines Listeneintrags auf die angegebene Zahl setzen.";
+/* en.lproj/Localizable.strings
+Setting Design
+No comment provided by engineer. */
+"Setting Design" = "Einstellungsdesign";
 /* en.lproj/Localizable.strings
 Settings
 No comment provided by engineer. */
@@ -1479,22 +1792,74 @@ No comment provided by engineer. */
 Share
 No comment provided by engineer. */
 "Share" = "Teilen";
+/* Show less text */
+"Show less" = "Weniger anzeigen";
 /* en.lproj/Localizable.strings
 Show low priority
 No comment provided by engineer. */
 "Show low priority" = "Niedrige Priorität anzeigen";
 /* en.lproj/Localizable.strings
+Show more
+No comment provided by engineer. */
+"Show more" = "Mehr anzeigen";
+/* en.lproj/Localizable.strings
 Show only airing soon anime that are in your list
 No comment provided by engineer. */
 "Show only airing soon anime that are in your list" = "Zeige nur bald ausgestrahlte Anime, die in deiner Liste stehen";
 /* en.lproj/Localizable.strings
+Show spoiler
+No comment provided by engineer. */
+"Show spoiler" = "Spoiler anzeigen";
+/* widget description */
+"Shows the animes with behind episodes in your list." = "Zeigt die Animes mit ausstehenden Folgen in deiner Liste an.";
+/* widget description */
+"Shows the next airing animes in your list." = "Zeigt die Animes an, die als nächstes ausgestrahlt werden.";
+/* en.lproj/Localizable.strings
+Side Story
+No comment provided by engineer. */
+"Side Story" = "Nebengeschichte";
+/* en.lproj/Localizable.strings
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "Slice of Life";
+/* label description for screen readers. Profile tab for following/followers list */
+"Social" = "Soziales";
 /* en.lproj/Localizable.strings
 Sort
 No comment provided by engineer. */
 "Sort" = "Sortieren";
+/* en.lproj/Localizable.strings
+Sound Design
+No comment provided by engineer. */
+"Sound Design" = "Tongestaltung";
+/* en.lproj/Localizable.strings
+Sound Director
+No comment provided by engineer. */
+"Sound Director" = "Klangregie";
+/* en.lproj/Localizable.strings
+Sound Effects
+No comment provided by engineer. */
+"Sound Effects" = "Sound-Effekte";
+/* en.lproj/Localizable.strings
+Sound Effects Assistance
+No comment provided by engineer. */
+"Sound Effects Assistance" = "Assistenz Sound-Effekte";
+/* en.lproj/Localizable.strings
+Sound Producer
+No comment provided by engineer. */
+"Sound Producer" = "Tonproduzent";
+/* en.lproj/Localizable.strings
+Sound Production
+No comment provided by engineer. */
+"Sound Production" = "Tonproduktion";
+/* en.lproj/Localizable.strings
+Sound Production Manager
+No comment provided by engineer. */
+"Sound Production Manager" = "Tonproduktionsmanager";
+/* en.lproj/Localizable.strings
+Sound Supervisor
+No comment provided by engineer. */
+"Sound Supervisor" = "Soundaufsicht";
 /* en.lproj/Localizable.strings
 Source
 No comment provided by engineer. */
@@ -1507,6 +1872,18 @@ No comment provided by engineer. */
 Special
 No comment provided by engineer. */
 "Special" = "Spezial";
+/* en.lproj/Localizable.strings
+Special Design
+No comment provided by engineer. */
+"Special Design" = "Spezialdesign";
+/* en.lproj/Localizable.strings
+Special Effects
+No comment provided by engineer. */
+"Special Effects" = "Szeneeffekte";
+/* en.lproj/Localizable.strings
+Special Effects Assistant
+No comment provided by engineer. */
+"Special Effects Assistant" = "Assistenz Spezialeffekte";
 /* en.lproj/Localizable.strings
 Spin Off
 No comment provided by engineer. */
@@ -1526,6 +1903,8 @@ Spring */
 Staff
 No comment provided by engineer. */
 "Staff" = "Team";
+/* you can use "and" instead of "&amp;" */
+"Staff & Character name language" = "Sprache der Personal- und Charakternamen";
 /* en.lproj/Localizable.strings
 Standard
 No comment provided by engineer. */
@@ -1538,6 +1917,8 @@ No comment provided by engineer. */
 Start date
 No comment provided by engineer. */
 "Start date" = "Startdatum";
+/* sort by date started */
+"Started" = "Gestartet";
 /* en.lproj/Localizable.strings
 Stats
 No comment provided by engineer. */
@@ -1555,13 +1936,35 @@ Status distribution
 No comment provided by engineer. */
 "Status distribution" = "Statusverteilung";
 /* en.lproj/Localizable.strings
+Story
+No comment provided by engineer. */
+"Story" = "Story";
+/* en.lproj/Localizable.strings
+Story & Art
+No comment provided by engineer. */
+"Story & Art" = "Story & Kunst";
+/* en.lproj/Localizable.strings
+Story & Illustration
+No comment provided by engineer. */
+"Story & Illustration" = "Story & Illustration";
+/* en.lproj/Localizable.strings
+Storyboard
+No comment provided by engineer. */
+"Storyboard" = "Sto­ry­board";
+/* en.lproj/Localizable.strings
 Streaming sites
 No comment provided by engineer. */
 "Streaming sites" = "Streaming-Websites";
+/* text style option button. A text style that puts a horizontal line right through the middle of words */
+"Strikethough" = "Durchgestrichen";
 /* en.lproj/Localizable.strings
 Studios
 No comment provided by engineer. */
 "Studios" = "Studios";
+/* en.lproj/Localizable.strings
+Sub Character Design
+No comment provided by engineer. */
+"Sub Character Design" = "Design der Nebenfiguren";
 /* Notification type for data submission requests to AniList database */
 "Submission" = "Einsendung";
 /* en.lproj/Localizable.strings
@@ -1576,9 +1979,21 @@ Supernatural
 No comment provided by engineer. */
 "Supernatural" = "Übernatürlich";
 /* en.lproj/Localizable.strings
+Supervisor
+No comment provided by engineer. */
+"Supervisor" = "Aufsicht";
+/* en.lproj/Localizable.strings
+Support the development of AniHyou!
+No comment provided by engineer. */
+"Support the development of AniHyou!" = "Unterstütze das Entwicklerteam von AniHyou!";
+/* en.lproj/Localizable.strings
 Supporting
 No comment provided by engineer. */
 "Supporting" = "Sekundäres";
+/* en.lproj/Localizable.strings
+Supporting Staff
+No comment provided by engineer. */
+"Supporting Staff" = "Unterstützendes Personal";
 /* en.lproj/Localizable.strings
 Sync account with Apple Watch
 No comment provided by engineer. */
@@ -1604,9 +2019,87 @@ Taiwan
 No comment provided by engineer. */
 "Taiwan" = "Taiwan";
 /* en.lproj/Localizable.strings
+Technical Director
+No comment provided by engineer. */
+"Technical Director" = "Technikregie";
+/* en.lproj/Localizable.strings
 Text Status
 No comment provided by engineer. */
 "Text Status" = "Text-Status";
+/* en.lproj/Localizable.strings
+Thank you :)
+No comment provided by engineer. */
+"Thank you :)" = "Vielen Dank :)";
+/* not a very important string. used for app intents */
+"The amount of episodes/chapters consumed by the user" = "Die Anzahl der vom Benutzer angesehenen Episoden oder gelesenen Kapitel";
+/* not a very important string. used for app intents */
+"The id of the media the entry is of" = "Die ID der Medien, von denen der Eintrag ist";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement
+No comment provided by engineer. */
+"Theme Song Arrangement" = "Titelsong Arrangement";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Titelsong Arrangement (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Titelsong Arrangement (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP, ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Titelsong Arrangement (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Composition
+No comment provided by engineer. */
+"Theme Song Composition" = "Titelsong Komposition";
+/* en.lproj/Localizable.strings
+Theme Song Composition (ED)
+No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Titelsong Komposition (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP)
+No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Titelsong Komposition (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP, ED)
+No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Titelsong Komposition (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics
+No comment provided by engineer. */
+"Theme Song Lyrics" = "Titelsongtext";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Titelsongtext (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Titelsongtext (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP, ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Titelsongtext (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Performance
+No comment provided by engineer. */
+"Theme Song Performance" = "Interpretation Titelsong";
+/* en.lproj/Localizable.strings
+Theme Song Performance (ED)
+No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Interpretation Titelsong (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP)
+No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Interpretation Titelsong (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP, ED)
+No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Interpretation Titelsong (OP, ED)";
+/* feel free to translate so it sounds better in your language */
+"This feature will be unlocked when you make a donation, even the smallest count!" = "Diese Funktion wird freigeschaltet, wenn du eine Spende tätigst, selbst die Kleinsten zählen!";
 /* en.lproj/Localizable.strings
 Threads
 No comment provided by engineer. */
@@ -1624,6 +2117,14 @@ Title
 No comment provided by engineer. */
 "Title" = "Titel";
 /* en.lproj/Localizable.strings
+Title Logo Design
+No comment provided by engineer. */
+"Title Logo Design" = "Titel-Logo Design";
+/* en.lproj/Localizable.strings
+Title Logo Design Assistance
+No comment provided by engineer. */
+"Title Logo Design Assistance" = "Assistenz beim Design des Titel-Logos";
+/* en.lproj/Localizable.strings
 Title count
 No comment provided by engineer. */
 "Title count" = "Anzahl der Titel";
@@ -1631,6 +2132,8 @@ No comment provided by engineer. */
 Title language
 No comment provided by engineer. */
 "Title language" = "Titelsprache";
+/* this is a stat. num of anime or manga in your list */
+"Titles Count" = "Titelanzahl";
 /* en.lproj/Localizable.strings
 To year
 No comment provided by engineer. */
@@ -1640,6 +2143,14 @@ Top 100
 No comment provided by engineer. */
 "Top 100" = "Top 100";
 /* en.lproj/Localizable.strings
+Top 100 Anime
+No comment provided by engineer. */
+"Top 100 Anime" = "Top 100 Anime";
+/* en.lproj/Localizable.strings
+Top 100 Manga
+No comment provided by engineer. */
+"Top 100 Manga" = "Top 100 Manga";
+/* en.lproj/Localizable.strings
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Filme";
@@ -1647,6 +2158,22 @@ No comment provided by engineer. */
 Top Popular
 No comment provided by engineer. */
 "Top Popular" = "Top Beliebtheit";
+/* en.lproj/Localizable.strings
+Total Anime
+No comment provided by engineer. */
+"Total Anime" = "Animeanzahl";
+/* en.lproj/Localizable.strings
+Total Manga
+No comment provided by engineer. */
+"Total Manga" = "Mangaanzahl";
+/* en.lproj/Localizable.strings
+Touch-up Art
+No comment provided by engineer. */
+"Touch-up Art" = "Retusche";
+/* en.lproj/Localizable.strings
+Touch-up Art & Lettering
+No comment provided by engineer. */
+"Touch-up Art & Lettering" = "Retusche & Lettering";
 /* en.lproj/Localizable.strings
 Trailer
 No comment provided by engineer. */
@@ -1668,9 +2195,23 @@ Trending
 No comment provided by engineer. */
 "Trending" = "Beliebt";
 /* en.lproj/Localizable.strings
+Trending Anime
+No comment provided by engineer. */
+"Trending Anime" = "Animetrends";
+/* en.lproj/Localizable.strings
 Trending Manga
 No comment provided by engineer. */
 "Trending Manga" = "Mangatrends";
+/* text style option button */
+"Underline" = "Unterstrichen";
+/* en.lproj/Localizable.strings
+Unfollow
+No comment provided by engineer. */
+"Unfollow" = "Entfolgen";
+/* en.lproj/Localizable.strings
+Unit Director
+No comment provided by engineer. */
+"Unit Director" = "Abteilungsregie";
 /* en.lproj/Localizable.strings
 Unknown
 Localizable.strings
@@ -1687,6 +2228,14 @@ Upcoming
 No comment provided by engineer. */
 "Upcoming" = "Demnächst";
 /* en.lproj/Localizable.strings
+Upcoming Anime
+No comment provided by engineer. */
+"Upcoming Anime" = "Demnächst erscheinende Animes";
+/* en.lproj/Localizable.strings
+Upcoming Manga
+No comment provided by engineer. */
+"Upcoming Manga" = "Demnächst erscheinende Mangas";
+/* en.lproj/Localizable.strings
 Update interval
 No comment provided by engineer. */
 "Update interval" = "Aktualisierungsintervall";
@@ -1701,6 +2250,10 @@ No comment provided by engineer. */
 /* count of review likes */
 "Users likes" = "Benutzer gefällt";
 /* en.lproj/Localizable.strings
+Version %@
+No comment provided by engineer. */
+"Version %@" = "Version %@";
+/* en.lproj/Localizable.strings
 Video
 No comment provided by engineer. */
 "Video" = "Video";
@@ -1708,6 +2261,14 @@ No comment provided by engineer. */
 Video Editing
 No comment provided by engineer. */
 "Video Editing" = "Videobearbeitung";
+/* en.lproj/Localizable.strings
+VideoGame
+No comment provided by engineer. */
+"VideoGame" = "Videospiel";
+/* en.lproj/Localizable.strings
+Visual Coordinator
+No comment provided by engineer. */
+"Visual Coordinator" = "Visueller Koordinator";
 /* en.lproj/Localizable.strings
 Visual Director
 No comment provided by engineer. */
@@ -1721,9 +2282,17 @@ Visual novel
 No comment provided by engineer. */
 "Visual novel" = "Visual Novel";
 /* en.lproj/Localizable.strings
+Voice Actors
+No comment provided by engineer. */
+"Voice Actors" = "Synchronsprecher";
+/* Volumes abbreviation */
+"Vol" = "Bde";
+/* en.lproj/Localizable.strings
 Volumes
 No comment provided by engineer. */
 "Volumes" = "Bände";
+/* num of volumes read */
+"Volumes Read" = "Bände gelesen";
 /* en.lproj/Localizable.strings
 Watch Year
 No comment provided by engineer. */
@@ -1743,12 +2312,28 @@ Web novel
 No comment provided by engineer. */
 "Web novel" = "Web Novel";
 /* en.lproj/Localizable.strings
+Weekday
+No comment provided by engineer. */
+"Weekday" = "Wochentag";
+/* en.lproj/Localizable.strings
 Winter */
 "Winter" = "Winter";
+/* en.lproj/Localizable.strings
+With any purchase you will gain access to exclusive app icons and custom accent colors!
+No comment provided by engineer. */
+"With any purchase you will gain access to exclusive app icons and custom accent colors!" = "Mit jedem Kauf erhältst du Zugriff auf exklusive App-Symbole und individuell anpassbare Akzentfarben!";
 /* en.lproj/Localizable.strings
 World Design
 No comment provided by engineer. */
 "World Design" = "Weltdesign";
+/* en.lproj/Localizable.strings
+Write Review
+No comment provided by engineer. */
+"Write Review" = "Rezension schreiben";
+/* en.lproj/Localizable.strings
+Write a Review
+No comment provided by engineer. */
+"Write a Review" = "Eine Rezension schreiben";
 /* en.lproj/Localizable.strings
 Write something…
 No comment provided by engineer. */
@@ -1761,3 +2346,18 @@ No comment provided by engineer. */
 Years active
 No comment provided by engineer. */
 "Years active" = "Jahre aktiv";
+/* toggle on */
+"Yes" = "Ja";
+/* en.lproj/Localizable.strings
+You may need to login again in your browser
+No comment provided by engineer. */
+"You may need to login again in your browser" = "Möglicherweise musst du dich in Ihrem Browser erneut anmelden";
+/* Translate only the "chapter" text */
+"^[%lld chapter](inflect: true)" = "^[%lld Kapitel](inflect: true)";
+/* please translate only the text inside the [].
+Eg: 1 episode behind */
+"^[%lld episode behind](inflect: true)" = "^[%lld Episode ausstehend](inflect: true)";
+/* Translate only the "episode" text */
+"^[%lld episode](inflect: true)" = "^[%lld Episoden](inflect: true)";
+/* Translate only the "volume" text. Manga/Novel volumes */
+"^[%lld volume](inflect: true)" = "^[%lld Bände](inflect: true)";

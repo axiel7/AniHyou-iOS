@@ -895,9 +895,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "見直し中";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "右";
 /* en.lproj/Localizable.strings
 Romaji
@@ -982,9 +980,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "日常";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "ソーシャル";
 /* en.lproj/Localizable.strings
 Sort

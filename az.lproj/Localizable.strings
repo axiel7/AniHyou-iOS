@@ -886,9 +886,7 @@ No comment provided by engineer. */
 Reviews
 No comment provided by engineer. */
 "Reviews" = "İncələmələr";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "Sağ";
 /* en.lproj/Localizable.strings
 Romaji
@@ -980,9 +978,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "Həyatdan bir parça";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "Sosial";
 /* en.lproj/Localizable.strings
 Sort

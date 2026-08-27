@@ -1679,9 +1679,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "Снова учение";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "Вправо";
 /* en.lproj/Localizable.strings
 Romaji
@@ -1796,9 +1794,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "Повседневность";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "Соцсети";
 /* en.lproj/Localizable.strings
 Sort

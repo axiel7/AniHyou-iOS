@@ -2,10 +2,16 @@
 %lld chapters
 No comment provided by engineer. */
 "%lld chapters" = "%lld bölüm";
+/* Character (text) count. Appears when writing a review */
+"%lld characters" = "%lld karakter";
 /* en.lproj/Localizable.strings
 %lld episodes
 No comment provided by engineer. */
 "%lld episodes" = "%lld bölüm";
+/* Character (text) required count. Appears when writing a review.
+
+Example: "45 more characters required" */
+"%lld more characters required" = "%lld daha fazla karakter girilmesi gerekiyor";
 /* num of volumes.
 Eg: 23 volumes */
 "%lld volumes" = "%lld cilt";
@@ -610,10 +616,16 @@ No comment provided by engineer. */
 Delete
 No comment provided by engineer. */
 "Delete" = "Sil";
+/* Delete published Anime/Manga Review */
+"Delete Review" = "Değerlendirmeyi Sil";
 /* en.lproj/Localizable.strings
 Delete this entry?
 No comment provided by engineer. */
 "Delete this entry?" = "Bu girdi silinsin mi?";
+/* en.lproj/Localizable.strings
+Delete this review?
+No comment provided by engineer. */
+"Delete this review?" = "Bu değerlendirme silinsin mi?";
 /* en.lproj/Localizable.strings
 Descending
 No comment provided by engineer. */
@@ -718,6 +730,10 @@ No comment provided by engineer. */
 Edit
 No comment provided by engineer. */
 "Edit" = "Düzenle";
+/* en.lproj/Localizable.strings
+Edit Review
+No comment provided by engineer. */
+"Edit Review" = "Değerlendirmeyi Düzenle";
 /* en.lproj/Localizable.strings
 Editing
 No comment provided by engineer. */
@@ -1669,6 +1685,10 @@ Restore purchases
 No comment provided by engineer. */
 "Restore purchases" = "Satın alımları geri yükle";
 /* en.lproj/Localizable.strings
+Review
+No comment provided by engineer. */
+"Review" = "Değerlendirme";
+/* en.lproj/Localizable.strings
 Review and Threads
 No comment provided by engineer. */
 "Review and Threads" = "İncelemeler ve Konular";
@@ -1683,9 +1703,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "Yeniden izleniyor";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "Sağ";
 /* en.lproj/Localizable.strings
 Romaji
@@ -1723,6 +1741,8 @@ No comment provided by engineer. */
 Score format
 No comment provided by engineer. */
 "Score format" = "Puanlama türü";
+/* label for setting number of increments when editing a score using +/- buttons */
+"Score steps" = "Puanlama miktarı";
 /* en.lproj/Localizable.strings
 Script
 No comment provided by engineer. */
@@ -1808,9 +1828,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "Gündelik Hayat";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "Sosyal";
 /* en.lproj/Localizable.strings
 Sort
@@ -2314,6 +2332,10 @@ No comment provided by engineer. */
 World Design
 No comment provided by engineer. */
 "World Design" = "Dünya Tasarımı";
+/* en.lproj/Localizable.strings
+Write Review
+No comment provided by engineer. */
+"Write Review" = "Değerlendirme Yaz";
 /* en.lproj/Localizable.strings
 Write a Review
 No comment provided by engineer. */

@@ -1703,9 +1703,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "Пере-переглядаю";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "Право";
 /* en.lproj/Localizable.strings
 Romaji
@@ -1830,9 +1828,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "Повсякденність";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "Соцмережі";
 /* en.lproj/Localizable.strings
 Sort
@@ -2368,6 +2364,6 @@ No comment provided by engineer. */
 Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[%lld нов. епізод.](inflect: true)";
 /* Translate only the "episode" text */
-"^[%lld episode](inflect: true)" = "^[%lld епізод](inflect: true)";
+"^[%lld episode](inflect: true)" = "^[%lld епізод.](inflect: true)";
 /* Translate only the "volume" text. Manga/Novel volumes */
 "^[%lld volume](inflect: true)" = "^[%lld том.](inflect: true)";

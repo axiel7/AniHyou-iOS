@@ -1617,9 +1617,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Rewatching */
 "Rewatching" = "ดูซ้ำ";
-/* en.lproj/Localizable.strings
-Right
-No comment provided by engineer. */
+/* Swipe direction */
 "Right" = "ขวา";
 /* en.lproj/Localizable.strings
 Romaji
@@ -1732,9 +1730,7 @@ No comment provided by engineer. */
 Slice of Life
 No comment provided by engineer. */
 "Slice of Life" = "ชีวิตประจำวัน";
-/* en.lproj/Localizable.strings
-Social
-No comment provided by engineer. */
+/* label description for screen readers. Profile tab for following/followers list */
 "Social" = "โซเชียล";
 /* en.lproj/Localizable.strings
 Sort
