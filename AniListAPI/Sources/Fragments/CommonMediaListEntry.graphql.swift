@@ -96,6 +96,8 @@ nonisolated public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragmen
     public var title: Title? { __data["title"] }
     /// The amount of episodes the anime has when complete
     public var episodes: Int? { __data["episodes"] }
+    /// The general length of each anime episode in minutes
+    public var duration: Int? { __data["duration"] }
     /// The amount of chapters the manga has when complete
     public var chapters: Int? { __data["chapters"] }
     /// The amount of volumes the manga has when complete

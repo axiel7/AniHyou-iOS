@@ -11,6 +11,7 @@ import SwiftUI
 enum DiscoverTab: Int, CaseIterable {
     case anime = 0
     case manga = 1
+    case recommendations = 2
 }
 
 extension DiscoverTab {
@@ -20,6 +21,8 @@ extension DiscoverTab {
             "Anime"
         case .manga:
             "Manga"
+        case .recommendations:
+            "Recommendations"
         }
     }
     
@@ -29,6 +32,8 @@ extension DiscoverTab {
             "play.tv"
         case .manga:
             "book"
+        case .recommendations:
+            "shuffle"
         }
     }
 }

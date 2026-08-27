@@ -9,6 +9,7 @@ import Foundation
 import AniListAPI
 import Apollo
 
+//swiftlint:disable:next type_body_length
 struct UserRepository {
 
     static func getUserOptions() async -> UserOptionsFragment? {
@@ -161,6 +162,10 @@ struct UserRepository {
             UserDefaults.standard.set(
                 viewer.options?.profileColor?.profileHexColor,
                 forKey: USER_COLOR_KEY
+            )
+            UserDefaults.standard.set(
+                viewer.options?.displayAdultContent,
+                forKey: DISPLAY_ADULT
             )
             UserDefaults.standard.set(
                 viewer.options?.staffNameLanguage?.value?.rawValue,

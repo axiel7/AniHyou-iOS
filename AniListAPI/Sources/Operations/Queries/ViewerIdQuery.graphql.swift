@@ -8,7 +8,7 @@ nonisolated public struct ViewerIdQuery: GraphQLQuery {
   public static let operationName: String = "ViewerId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query ViewerId { Viewer { __typename id options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists sectionOrder } mangaList { __typename customLists sectionOrder } } } }"#
+      #"query ViewerId { Viewer { __typename id options { __typename profileColor displayAdultContent staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists sectionOrder } mangaList { __typename customLists sectionOrder } } } }"#
     ))
 
   public init() {}
@@ -64,6 +64,7 @@ nonisolated public struct ViewerIdQuery: GraphQLQuery {
         @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("profileColor", String?.self),
+          .field("displayAdultContent", Bool?.self),
           .field("staffNameLanguage", GraphQLEnum<AniListAPI.UserStaffNameLanguage>?.self),
           .field("titleLanguage", GraphQLEnum<AniListAPI.UserTitleLanguage>?.self),
         ] }
@@ -73,6 +74,8 @@ nonisolated public struct ViewerIdQuery: GraphQLQuery {
 
         /// Profile highlight color (blue, purple, pink, orange, red, green, gray)
         public var profileColor: String? { __data["profileColor"] }
+        /// Whether the user has enabled viewing of 18+ content
+        public var displayAdultContent: Bool? { __data["displayAdultContent"] }
         /// The language the user wants to see staff and character names in
         public var staffNameLanguage: GraphQLEnum<AniListAPI.UserStaffNameLanguage>? { __data["staffNameLanguage"] }
         /// The language the user wants to see media titles in

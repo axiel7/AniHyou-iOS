@@ -101,6 +101,7 @@ fragment BasicMediaDetails on Media {
     userPreferred
   }
   episodes
+  duration
   chapters
   volumes
   type

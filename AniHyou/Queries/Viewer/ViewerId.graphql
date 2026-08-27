@@ -3,6 +3,7 @@ query ViewerId {
     id
     options {
       profileColor
+      displayAdultContent
       staffNameLanguage
       titleLanguage
     }

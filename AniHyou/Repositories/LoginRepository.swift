@@ -69,6 +69,7 @@ struct LoginRepository {
                 WatchConnectivityManager.shared.send(key: USER_ID_KEY, data: String(viewer.id))
                 #endif
                 UserDefaults.standard.set(viewer.options?.profileColor?.profileHexColor, forKey: USER_COLOR_KEY)
+                UserDefaults.standard.set(viewer.options?.displayAdultContent, forKey: DISPLAY_ADULT)
                 UserDefaults.standard.set(
                     viewer.options?.staffNameLanguage?.value?.rawValue,
                     forKey: USER_NAMES_LANG_KEY

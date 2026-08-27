@@ -1,0 +1,48 @@
+query MediaRecommendations($onList: Boolean, $sort: [RecommendationSort], $page: Int, $perPage: Int) {
+    Page(page: $page, perPage: $perPage) {
+        recommendations(onList: $onList, sort: $sort) {
+            ...CommonRecommendation
+        }
+        pageInfo {
+            ...CommonPage
+        }
+    }
+}
+
+fragment CommonRecommendation on Recommendation @apollo_client_ios_localCacheMutation {
+    id
+    rating
+    userRating
+    media {
+        ...BasicMediaDetails
+        mediaListEntry {
+            ...BasicMediaListEntry
+        }
+        coverImage {
+            large
+        }
+        startDate {
+            year
+        }
+        meanScore
+        genres
+        status(version: 2)
+        format
+    }
+    mediaRecommendation {
+        ...BasicMediaDetails
+        mediaListEntry {
+            ...BasicMediaListEntry
+        }
+        coverImage {
+            large
+        }
+        startDate {
+            year
+        }
+        meanScore
+        genres
+        status(version: 2)
+        format
+    }
+}

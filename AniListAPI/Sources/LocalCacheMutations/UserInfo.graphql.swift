@@ -6,7 +6,7 @@
 
 nonisolated public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment, Identifiable {
   public static var fragmentDefinition: StaticString {
-    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists sectionOrder } mangaList { __typename customLists sectionOrder } } isFollowing isFollower donatorBadge donatorTier }"#
+    #"fragment UserInfo on User { __typename id name avatar { __typename large } bannerImage about(asHtml: true) options { __typename profileColor displayAdultContent staffNameLanguage titleLanguage } mediaListOptions { __typename scoreFormat animeList { __typename advancedScoring advancedScoringEnabled customLists sectionOrder } mangaList { __typename customLists sectionOrder } } isFollowing isFollower donatorBadge donatorTier }"#
   }
 
   @_spi(Unsafe) public var __data: DataDict
@@ -159,6 +159,7 @@ nonisolated public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment, Id
     @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("profileColor", String?.self),
+      .field("displayAdultContent", Bool?.self),
       .field("staffNameLanguage", GraphQLEnum<AniListAPI.UserStaffNameLanguage>?.self),
       .field("titleLanguage", GraphQLEnum<AniListAPI.UserTitleLanguage>?.self),
     ] }
@@ -170,6 +171,11 @@ nonisolated public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment, Id
     public var profileColor: String? {
       get { __data["profileColor"] }
       set { __data["profileColor"] = newValue }
+    }
+    /// Whether the user has enabled viewing of 18+ content
+    public var displayAdultContent: Bool? {
+      get { __data["displayAdultContent"] }
+      set { __data["displayAdultContent"] = newValue }
     }
     /// The language the user wants to see staff and character names in
     public var staffNameLanguage: GraphQLEnum<AniListAPI.UserStaffNameLanguage>? {
@@ -184,12 +190,14 @@ nonisolated public struct UserInfo: AniListAPI.MutableSelectionSet, Fragment, Id
 
     public init(
       profileColor: String? = nil,
+      displayAdultContent: Bool? = nil,
       staffNameLanguage: GraphQLEnum<AniListAPI.UserStaffNameLanguage>? = nil,
       titleLanguage: GraphQLEnum<AniListAPI.UserTitleLanguage>? = nil
     ) {
       self.init(unsafelyWithData: [
         "__typename": AniListAPI.Objects.UserOptions.typename,
         "profileColor": profileColor,
+        "displayAdultContent": displayAdultContent,
         "staffNameLanguage": staffNameLanguage,
         "titleLanguage": titleLanguage,
       ])

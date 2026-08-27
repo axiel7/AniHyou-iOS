@@ -15,6 +15,7 @@ fragment UserInfo on User
   about(asHtml: true)
   options {
     profileColor
+    displayAdultContent
     staffNameLanguage
     titleLanguage
   }

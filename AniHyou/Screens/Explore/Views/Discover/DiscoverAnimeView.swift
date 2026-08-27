@@ -1,0 +1,293 @@
+//
+//  DiscoverAnimeView.swift
+//  AniHyou
+//
+//  Created by Axel on 26/08/2026.
+//
+
+import SwiftUI
+import AniListAPI
+
+// swiftlint:disable type_body_length
+struct DiscoverAnimeView: View {
+    
+    var viewModel: DiscoverAnimeViewModel
+    @AppStorage(AIRING_ON_MY_LIST_KEY) private var airingOnMyList = false
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
+    
+    var body: some View {
+        animeCharts
+            .padding(.vertical)
+        
+        airingNext
+            .task {
+                if airingOnMyList {
+                    await viewModel.getAiringOnMyList()
+                } else {
+                    await viewModel.getAiringAnimes()
+                }
+            }
+        
+        mediaSeason(
+            season: viewModel.nowAnimeSeason,
+            media: viewModel.seasonAnimes
+        )
+        .task {
+            await viewModel.getSeasonAnimes()
+        }
+        
+        mediaContent(
+            title: "Trending Anime",
+            mediaType: .anime,
+            media: viewModel.trendingAnimes,
+            blurAdultMedia: blurAdultMedia,
+            headerDestination: {
+                DiscoverMediaListView(
+                    mediaType: .anime,
+                    media: viewModel.trendingAnimes,
+                    hasNextPage: viewModel.hasNextPageTrendingAnime,
+                    loadMore: {
+                        await viewModel.getTrendingAnimes()
+                    }
+                )
+                .navigationTitle("Trending Anime")
+            }
+        )
+        .task {
+            await viewModel.getTrendingAnimes()
+        }
+        
+        mediaSeason(
+            season: viewModel.nextAnimeSeason,
+            media: viewModel.nextSeasonAnimes
+        )
+        .task {
+            await viewModel.getNextSeasonAnimes()
+        }
+        
+        mediaContent(
+            title: "Popular Anime",
+            mediaType: .anime,
+            media: viewModel.popularAnime,
+            blurAdultMedia: blurAdultMedia,
+            headerDestination: {
+                MediaChartListView(title: "Popular Anime", type: .anime, sort: .popularityDesc)
+            }
+        )
+        .task {
+            await viewModel.getPopularAnime()
+        }
+        
+        mediaContent(
+            title: "Newly Added Anime",
+            mediaType: .anime,
+            media: viewModel.newlyAnime,
+            blurAdultMedia: blurAdultMedia,
+            headerDestination: {
+                DiscoverMediaListView(
+                    mediaType: .anime,
+                    media: viewModel.newlyAnime,
+                    hasNextPage: viewModel.hasNextPageNewlyAnime,
+                    loadMore: {
+                        await viewModel.getNewlyAnime()
+                    }
+                )
+                .navigationTitle("Newly Added Anime")
+            }
+        )
+        .task {
+            await viewModel.getNewlyAnime()
+        }
+    }
+    
+    @ViewBuilder
+    private var animeCharts: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                NavigationLink(
+                    destination: CalendarAnimeView()
+                ) {
+                    Chip(title: "Calendar") {
+                        Image(systemName: "calendar")
+                            .foregroundStyle(.red)
+                    }
+                }
+                
+                NavigationLink(
+                    destination: MediaChartListView(
+                        title: "Top 100 Anime",
+                        type: .anime,
+                        sort: .scoreDesc
+                    )
+                ) {
+                    Chip(title: "Top 100") {
+                        Image(systemName: "trophy.fill")
+                            .foregroundStyle(.yellow)
+                    }
+                }
+                NavigationLink(destination: MediaChartListView(
+                    title: "Top Movies",
+                    type: .anime,
+                    sort: .scoreDesc,
+                    format: .movie
+                )) {
+                    Chip(title: "Top Movies") {
+                        Image(systemName: "movieclapper")
+                            .foregroundStyle(.teal)
+                    }
+                }
+                NavigationLink(
+                    destination: MediaChartListView(
+                        title: "Upcoming Anime",
+                        type: .anime,
+                        sort: .popularityDesc,
+                        status: .notYetReleased
+                    )
+                ) {
+                    Chip(title: "Upcoming") {
+                        Image(systemName: "clock")
+                            .foregroundStyle(.mint, .yellow)
+                    }
+                }
+                NavigationLink(
+                    destination: MediaChartListView(
+                        title: "Airing Anime",
+                        type: .anime,
+                        sort: .scoreDesc,
+                        status: .releasing
+                    )
+                ) {
+                    Chip(title: "Airing") {
+                        Image(systemName: "antenna.radiowaves.left.and.right")
+                            .foregroundStyle(.teal, .indigo)
+                    }
+                }
+                
+                ForEach(MediaSeason.allCases, id: \.self) { season in
+                    NavigationLink(
+                        destination: AnimeSeasonListView(initSeason: season)
+                    ) {
+                        Chip(title: season.localizedName) {
+                            Image(systemName: season.systemImage)
+                                .foregroundStyle(season.color)
+                        }
+                    }
+                }
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal)
+        }
+    }
+    
+    @ViewBuilder
+    var airingNext: some View {
+        ListHeader(key: "Airing Next", destination: { CalendarAnimeView() })
+        
+        ZStack {
+            if viewModel.airingAnimes.count == 0 && viewModel.airingOnMyList.count == 0 {
+                Text("No anime for today\n(*´-`)")
+                    .multilineTextAlignment(.center)
+                    .frame(alignment: .center)
+            }
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack {
+                    if airingOnMyList {
+                        ForEach(viewModel.airingOnMyList, id: \.id) { item in
+                            NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                                AiringMediaHorizontalItemView(
+                                    title: item.title?.userPreferred,
+                                    imageUrl: item.coverImage?.large,
+                                    meanScore: item.meanScore,
+                                    nextEpisode: item.nextAiringEpisode?.episode,
+                                    airingAt: item.nextAiringEpisode?.airingAt,
+                                    status: item.mediaListEntry?.status?.value,
+                                    blurCover: blurAdultMedia && item.isAdult == true
+                                )
+                                .padding(.leading, 4)
+                                .frame(width: 280, alignment: .leading)
+                                .mediaContextMenu(
+                                    mediaId: item.id,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.mediaListEntry?.status?.value
+                                )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    } else {
+                        ForEach(viewModel.airingAnimes, id: \.mediaId) { item in
+                            NavigationLink(destination: MediaDetailsView(mediaId: item.mediaId)) {
+                                AiringMediaHorizontalItemView(
+                                    title: item.media?.title?.userPreferred,
+                                    imageUrl: item.media?.coverImage?.large,
+                                    meanScore: item.media?.meanScore,
+                                    nextEpisode: item.episode,
+                                    airingAt: item.airingAt,
+                                    status: item.media?.mediaListEntry?.status?.value,
+                                    blurCover: blurAdultMedia && item.media?.isAdult == true
+                                )
+                                .padding(.leading, 4)
+                                .frame(width: 280, alignment: .leading)
+                                .mediaContextMenu(
+                                    mediaId: item.mediaId,
+                                    mediaType: .anime,
+                                    mediaListStatus: item.media?.mediaListEntry?.status?.value
+                                )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }//:HStack
+                .scrollTargetLayout()
+                .padding(.leading)
+            }//:HScrollView
+            .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
+            .frame(height: 145)
+        }//:ZStack
+    }
+    
+    @ViewBuilder
+    func mediaSeason(
+        season: AnimeSeason,
+        media: [SeasonalAnimeQuery.Data.Page.Medium]
+    ) -> some View {
+        let seasonName = String.LocalizationValue(stringLiteral: season.season.localizedStringKey)
+        ListHeader(title: "\(String(localized: seasonName)) \(season.year.stringValue)") {
+            AnimeSeasonListView(initSeason: season.season, initYear: season.year)
+        }
+        ZStack {
+            if media.count == 0 {
+                ProgressView()
+            }
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top) {
+                    ForEach(media, id: \.id) { item in
+                        NavigationLink(destination: MediaDetailsView(mediaId: item.id)) {
+                            VListItemView(
+                                title: item.title?.userPreferred ?? "",
+                                imageUrl: item.coverImage?.large,
+                                meanScore: item.meanScore,
+                                status: item.mediaListEntry?.status?.value,
+                                blurCover: blurAdultMedia && item.isAdult == true
+                            )
+                            .padding(.trailing, 4)
+                            .mediaContextMenu(
+                                mediaId: item.id,
+                                mediaType: .anime,
+                                mediaListStatus: item.mediaListEntry?.status?.value
+                            )
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }//:HStack
+                .padding(.leading, 18)
+            }//:HScrollView
+            .frame(minHeight: 180)
+        }//:ZStack
+    }
+}
+
+#Preview {
+    DiscoverAnimeView(viewModel: DiscoverAnimeViewModel())
+    // swiftlint:enable type_body_length
+}

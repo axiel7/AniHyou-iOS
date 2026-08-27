@@ -311,6 +311,70 @@ struct MediaRepository {
         )
     }
     
+    static func getMediaRecommendations(
+        onList: Bool?,
+        sort: [RecommendationSort],
+        displayAdult: Bool?,
+        page: Int32,
+        perPage: Int32 = 25,
+        forceReload: Bool = false
+    ) async -> PagedResult<CommonRecommendation>? {
+        await Network.fetchPagedResult(
+            MediaRecommendationsQuery(
+                onList: someIfNotNil(onList),
+                sort: .some(sort.map { .case($0) }),
+                page: .some(page),
+                perPage: .some(perPage)
+            ),
+            forceReload: forceReload,
+            extractItems: {
+                $0.page?.recommendations?.compactMap {
+                    // recommendations endpoint doesn't have a isAdult param so we filter locally
+                    let hasAdult = $0?.media?.isAdult == true || $0?.mediaRecommendation?.isAdult == true
+                    if displayAdult == false, hasAdult {
+                        return nil
+                    } else {
+                        return $0?.fragments.commonRecommendation
+                    }
+                }
+            },
+            extractPage: { $0.page?.pageInfo?.fragments.commonPage }
+        )
+    }
+    
+    static func saveRecommendation(
+        mediaId: Int32,
+        mediaRecommendationId: Int32,
+        rating: RecommendationRating
+    ) async -> CommonRecommendation? {
+        do {
+            let result = try await Network.shared.apollo.perform(
+                mutation: SaveRecommendationMutation(
+                    mediaId: .some(mediaId),
+                    mediaRecommendationId: .some(mediaRecommendationId),
+                    rating: .some(.case(rating))
+                )
+            )
+            if let data = result.data?.saveRecommendation {
+                return try await Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+                    let key = "Recommendation:\(data.id)"
+                    try await transaction.updateObject(
+                        ofType: CommonRecommendation.self,
+                        withKey: key
+                    ) { (cachedData: inout CommonRecommendation) in
+                        cachedData.rating = data.rating
+                        cachedData.userRating = data.userRating
+                    }
+                    
+                    return try await transaction.readObject(ofType: CommonRecommendation.self, withKey: key)
+                }
+            } else { return nil }
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
     static func getAnimeThemes(idMal: Int) async -> AnimeThemes? {
         let fields = "opening_themes,ending_themes"
         guard let url = URL(string: "\(MAL_API_URL)anime/\(idMal)?fields=\(fields)") else { return nil }

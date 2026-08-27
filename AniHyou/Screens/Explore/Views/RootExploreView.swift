@@ -18,7 +18,6 @@ struct RootExploreView: View {
     var body: some View {
         NavigationStack {
             ExploreView(viewModel: viewModel)
-                .navigationTitle("Explore")
                 .addOnOpenMediaUrl($showingMediaDetails, $mediaId)
         }
         .searchable(
