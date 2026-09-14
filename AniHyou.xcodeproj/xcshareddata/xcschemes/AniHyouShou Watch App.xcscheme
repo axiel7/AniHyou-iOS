@@ -72,7 +72,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48F27909296EFE77000827F7"
             BuildableName = "AniHyou.app"
-            BlueprintName = "AniHyouShou Watch App"
             ReferencedContainer = "container:AniHyou.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -89,7 +88,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48F27909296EFE77000827F7"
             BuildableName = "AniHyou.app"
-            BlueprintName = "AniHyouShou Watch App"
             ReferencedContainer = "container:AniHyou.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
