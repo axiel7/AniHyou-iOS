@@ -1007,6 +1007,10 @@ In-Betweens Manager
 No comment provided by engineer. */
 "In-Betweens Manager" = "Zwischenphasenmanager";
 /* en.lproj/Localizable.strings
+Increment Episode / Chapter
+No comment provided by engineer. */
+"Increment Episode / Chapter" = "Kapitel / Folge erhöhen";
+/* en.lproj/Localizable.strings
 Info type
 No comment provided by engineer. */
 "Info type" = "Infotyp";
@@ -1108,6 +1112,8 @@ No comment provided by engineer. */
 List Progress
 No comment provided by engineer. */
 "List Progress" = "Listen-Fortschritt";
+/* not a very important string. used for app intents */
+"List entry ID" = "Listeneintrag ID";
 /* en.lproj/Localizable.strings
 List style
 No comment provided by engineer. */

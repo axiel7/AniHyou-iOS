@@ -2,13 +2,21 @@
 %lld chapters
 No comment provided by engineer. */
 "%lld chapters" = "%lld فصول";
+/* Character (text) count. Appears when writing a review */
+"%lld characters" = "%lld حرفًا";
 /* en.lproj/Localizable.strings
 %lld episodes
 No comment provided by engineer. */
 "%lld episodes" = "%lld حلقات";
+/* Character (text) required count. Appears when writing a review.
+
+Example: "45 more characters required" */
+"%lld more characters required" = "مطلوب %lld أحرف إضافية";
 /* num of volumes.
 Eg: 23 volumes */
 "%lld volumes" = "%lld مجلدات";
+/* 1 hour interval */
+"1h" = "ساعة واحدة";
 /* en.lproj/Localizable.strings
 3 Point Smiley :)
 No comment provided by engineer. */
@@ -515,6 +523,10 @@ Hide from status lists
 No comment provided by engineer. */
 "Hide from status lists" = "عدم الظهور في قائمة الحالة";
 /* en.lproj/Localizable.strings
+Hide scores
+No comment provided by engineer. */
+"Hide scores" = "إخفاء النقاط";
+/* en.lproj/Localizable.strings
 High
 No comment provided by engineer. */
 "High" = "عالي";
@@ -885,6 +897,10 @@ Romance
 No comment provided by engineer. */
 "Romance" = "رومانسي";
 /* en.lproj/Localizable.strings
+Same universe
+No comment provided by engineer. */
+"Same universe" = "نفس الإحساس";
+/* en.lproj/Localizable.strings
 Save
 No comment provided by engineer. */
 "Save" = "حفظ";
@@ -928,6 +944,10 @@ No comment provided by engineer. */
 Share
 No comment provided by engineer. */
 "Share" = "مشاركة";
+/* en.lproj/Localizable.strings
+Show low priority
+No comment provided by engineer. */
+"Show low priority" = "إظهار الأولوية المنخفضة";
 /* en.lproj/Localizable.strings
 Show more
 No comment provided by engineer. */

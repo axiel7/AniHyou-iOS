@@ -2353,3 +2353,5 @@ Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[落后%lld集](inflect：true)";
 /* Translate only the "episode" text */
 "^[%lld episode](inflect: true)" = "^[%lld 集](inflect: true)";
+/* Translate only the "volume" text. Manga/Novel volumes */
+"^[%lld volume](inflect: true)" = "^[%lld 卷](inflect: true)";

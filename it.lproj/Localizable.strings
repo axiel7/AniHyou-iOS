@@ -2,10 +2,16 @@
 %lld chapters
 No comment provided by engineer. */
 "%lld chapters" = "%lld capitoli";
+/* Character (text) count. Appears when writing a review */
+"%lld characters" = "%lld caratteri";
 /* en.lproj/Localizable.strings
 %lld episodes
 No comment provided by engineer. */
 "%lld episodes" = "%lld episodi";
+/* Character (text) required count. Appears when writing a review.
+
+Example: "45 more characters required" */
+"%lld more characters required" = "ancora %lld caratteri richiesti";
 /* num of volumes.
 Eg: 23 volumes */
 "%lld volumes" = "%lld volumi";
@@ -606,10 +612,16 @@ No comment provided by engineer. */
 Delete
 No comment provided by engineer. */
 "Delete" = "Elimina";
+/* Delete published Anime/Manga Review */
+"Delete Review" = "Elimina recensione";
 /* en.lproj/Localizable.strings
 Delete this entry?
 No comment provided by engineer. */
 "Delete this entry?" = "Eliminare questa voce?";
+/* en.lproj/Localizable.strings
+Delete this review?
+No comment provided by engineer. */
+"Delete this review?" = "Eliminare questa recensione?";
 /* en.lproj/Localizable.strings
 Descending
 No comment provided by engineer. */
@@ -714,6 +726,10 @@ No comment provided by engineer. */
 Edit
 No comment provided by engineer. */
 "Edit" = "Modifica";
+/* en.lproj/Localizable.strings
+Edit Review
+No comment provided by engineer. */
+"Edit Review" = "Modifica recensione";
 /* en.lproj/Localizable.strings
 Editing
 No comment provided by engineer. */
@@ -1030,8 +1046,20 @@ No comment provided by engineer. */
 Layout
 No comment provided by engineer. */
 "Layout" = "Layout";
+/* en.lproj/Localizable.strings
+Layout Editor
+No comment provided by engineer. */
+"Layout Editor" = "Editor Layout";
+/* en.lproj/Localizable.strings
+Layout Supervisor
+No comment provided by engineer. */
+"Layout Supervisor" = "Supervisore Layout";
 /* Left swipe direction */
 "Left" = "Sinistra";
+/* en.lproj/Localizable.strings
+Lettering
+No comment provided by engineer. */
+"Lettering" = "Lettering";
 /* en.lproj/Localizable.strings
 Light novel
 No comment provided by engineer. */
@@ -1701,6 +1729,18 @@ Special
 No comment provided by engineer. */
 "Special" = "Speciale";
 /* en.lproj/Localizable.strings
+Special Design
+No comment provided by engineer. */
+"Special Design" = "Design Speciale";
+/* en.lproj/Localizable.strings
+Special Effects
+No comment provided by engineer. */
+"Special Effects" = "Effetti Speciali";
+/* en.lproj/Localizable.strings
+Special Effects Assistant
+No comment provided by engineer. */
+"Special Effects Assistant" = "Assistente Effetti Speciali";
+/* en.lproj/Localizable.strings
 Spin Off
 No comment provided by engineer. */
 "Spin Off" = "Spin Off";
@@ -1832,6 +1872,70 @@ No comment provided by engineer. */
 "The amount of episodes/chapters consumed by the user" = "La quantità di episodi/capitoli fruiti dall\'utente";
 /* not a very important string. used for app intents */
 "The id of the media the entry is of" = "L\'id della voce è di";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement
+No comment provided by engineer. */
+"Theme Song Arrangement" = "Arrangiamento della sigla";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (ED)" = "Arrangiamento della sigla (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP)" = "Arrangiamento della sigla (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Arrangement (OP, ED)
+No comment provided by engineer. */
+"Theme Song Arrangement (OP, ED)" = "Arrangiamento della sigla (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Composition
+No comment provided by engineer. */
+"Theme Song Composition" = "Composizione della sigla";
+/* en.lproj/Localizable.strings
+Theme Song Composition (ED)
+No comment provided by engineer. */
+"Theme Song Composition (ED)" = "Composizione della sigla (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP)
+No comment provided by engineer. */
+"Theme Song Composition (OP)" = "Composizione della sigla (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Composition (OP, ED)
+No comment provided by engineer. */
+"Theme Song Composition (OP, ED)" = "Composizione delle sigle (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics
+No comment provided by engineer. */
+"Theme Song Lyrics" = "Testo della sigla";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (ED)" = "Testo della sigla (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP)" = "Testo della sigla (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Lyrics (OP, ED)
+No comment provided by engineer. */
+"Theme Song Lyrics (OP, ED)" = "Testo della sigla (OP, ED)";
+/* en.lproj/Localizable.strings
+Theme Song Performance
+No comment provided by engineer. */
+"Theme Song Performance" = "Performance della sigla";
+/* en.lproj/Localizable.strings
+Theme Song Performance (ED)
+No comment provided by engineer. */
+"Theme Song Performance (ED)" = "Performance della sigla (ED)";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP)
+No comment provided by engineer. */
+"Theme Song Performance (OP)" = "Performance della sigla (OP)";
+/* en.lproj/Localizable.strings
+Theme Song Performance (OP, ED)
+No comment provided by engineer. */
+"Theme Song Performance (OP, ED)" = "Performance della sigla (OP, ED)";
 /* feel free to translate so it sounds better in your language */
 "This feature will be unlocked when you make a donation, even the smallest count!" = "Questa funzione verrà sbloccata quando effettuerete una donazione, anche la più piccola!";
 /* en.lproj/Localizable.strings
@@ -2051,6 +2155,14 @@ World Design
 No comment provided by engineer. */
 "World Design" = "Design del mondo";
 /* en.lproj/Localizable.strings
+Write Review
+No comment provided by engineer. */
+"Write Review" = "Scrivi recensione";
+/* en.lproj/Localizable.strings
+Write a Review
+No comment provided by engineer. */
+"Write a Review" = "Scrivi una recensione";
+/* en.lproj/Localizable.strings
 Write something…
 No comment provided by engineer. */
 "Write something…" = "Scrivi qualcosa…";
@@ -2075,3 +2187,5 @@ Eg: 1 episode behind */
 "^[%lld episode behind](inflect: true)" = "^[%lld episodi indietro](inflect: true)";
 /* Translate only the "episode" text */
 "^[%lld episode](inflect: true)" = "^[%lld episodio](inflect: true)";
+/* Translate only the "volume" text. Manga/Novel volumes */
+"^[%lld volume](inflect: true)" = "^[%lld volume](inflect: true)";
