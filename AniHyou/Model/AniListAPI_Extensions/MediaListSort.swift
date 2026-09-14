@@ -75,6 +75,10 @@ extension MediaListSort {
         }
     }
     
+    func isEqual(_ other: MediaListSort) -> Bool {
+        self == other || self == other.toAscending()
+    }
+    
     // swiftlint:disable:next cyclomatic_complexity
     func toAscending() -> MediaListSort {
         switch self {

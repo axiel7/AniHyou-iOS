@@ -6,7 +6,7 @@
 
 nonisolated public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment CommonMediaListEntry on MediaList { __typename ...BasicMediaListEntry id mediaId media { __typename ...BasicMediaDetails coverImage { __typename large } nextAiringEpisode { __typename ...AiringEpisode } status } }"#
+    #"fragment CommonMediaListEntry on MediaList { __typename ...BasicMediaListEntry id mediaId media { __typename ...BasicMediaDetails coverImage { __typename large } nextAiringEpisode { __typename ...AiringEpisode } status format countryOfOrigin startDate { __typename year } } }"#
   }
 
   @_spi(Unsafe) public let __data: DataDict
@@ -77,6 +77,9 @@ nonisolated public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragmen
       .field("coverImage", CoverImage?.self),
       .field("nextAiringEpisode", NextAiringEpisode?.self),
       .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self),
+      .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
+      .field("countryOfOrigin", AniListAPI.CountryCode?.self),
+      .field("startDate", StartDate?.self),
       .fragment(BasicMediaDetails.self),
     ] }
     @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
@@ -90,6 +93,12 @@ nonisolated public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragmen
     public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
     /// The current releasing status of the media
     public var status: GraphQLEnum<AniListAPI.MediaStatus>? { __data["status"] }
+    /// The format the media was released in
+    public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
+    /// Where the media was created. (ISO 3166-1 alpha-2)
+    public var countryOfOrigin: AniListAPI.CountryCode? { __data["countryOfOrigin"] }
+    /// The first official release date of the media
+    public var startDate: StartDate? { __data["startDate"] }
     /// The id of the media
     public var id: Int { __data["id"] }
     /// The official titles of the media in various languages
@@ -162,6 +171,26 @@ nonisolated public struct CommonMediaListEntry: AniListAPI.SelectionSet, Fragmen
 
         public var airingEpisode: AiringEpisode { _toFragment() }
       }
+    }
+
+    /// Media.StartDate
+    ///
+    /// Parent Type: `FuzzyDate`
+    nonisolated public struct StartDate: AniListAPI.SelectionSet {
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.FuzzyDate }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
+        .field("year", Int?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        CommonMediaListEntry.Media.StartDate.self
+      ] }
+
+      /// Numeric Year (2017)
+      public var year: Int? { __data["year"] }
     }
 
     public typealias Title = BasicMediaDetails.Title

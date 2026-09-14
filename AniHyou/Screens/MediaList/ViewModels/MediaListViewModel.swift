@@ -23,11 +23,24 @@ import AniListAPI
     var forceReload = false
 
     var mediaType: MediaType = .anime
+    var mediaFormat: MediaFormat?
+    var mediaStatus: MediaStatus?
+    var country: CountryOfOrigin?
+    var year: Int?
+    
     private(set) var selectedListName: String?
     private var sort: MediaListSort?
     
+    var hasFilters: Bool {
+        mediaFormat != nil || mediaStatus != nil || country != nil || year != nil
+    }
+    
     var searchText = ""
     var isLoading = false
+    
+    var hasQuery: Bool {
+        !searchText.isEmpty && searchText.count > 2
+    }
     
     var showingRandomEntry = false
     var randomId: Int?
@@ -93,14 +106,35 @@ import AniListAPI
     var filteredMedia = [CommonMediaListEntry]()
     
     func filterList() async {
-        if searchText.isEmpty || searchText.count < 3 { return }
+        if !hasFilters && !hasQuery { return }
         isLoading = true
         filteredMedia = mediaList.filter {
-            if let title = $0.media?.title?.userPreferred {
-                title.range(of: searchText, options: .caseInsensitive) != nil
-            } else {
-                false
+            var titleMatch = true
+            if hasQuery, let title = $0.media?.title?.userPreferred {
+                titleMatch = title.range(of: searchText, options: .caseInsensitive) != nil
             }
+            
+            var formatMatch = true
+            if let mediaFormat {
+                formatMatch = mediaFormat == $0.media?.format?.value
+            }
+            
+            var statusMatch = true
+            if let mediaStatus {
+                statusMatch = mediaStatus == $0.media?.status?.value
+            }
+            
+            var countryMatch = true
+            if let country {
+                countryMatch = country == $0.media?.countryOfOrigin
+            }
+            
+            var yearMatch = true
+            if let year {
+                yearMatch = year == $0.media?.startDate?.year
+            }
+            
+            return titleMatch && formatMatch && statusMatch && countryMatch && yearMatch
         }
         isLoading = false
     }
@@ -161,6 +195,14 @@ import AniListAPI
             sort = newValueOrdered
             await refreshList()
         }
+    }
+    
+    func clearFilters() async {
+        mediaFormat = nil
+        mediaStatus = nil
+        country = nil
+        year = nil
+        await filterList()
     }
     
     func getRandomEntryId() {

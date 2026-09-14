@@ -19,6 +19,7 @@ private extension View {
     }
 }
 
+// swiftlint:disable:next type_body_length
 struct MediaListView: View {
 
     let type: MediaType
@@ -26,6 +27,7 @@ struct MediaListView: View {
     var isMyList: Bool {
         userId == nil
     }
+    private let currentYear = Date.now.year
     @Bindable var viewModel: MediaListViewModel
     @State private var showingEditSheet = false
 
@@ -44,16 +46,6 @@ struct MediaListView: View {
         .refreshable {
             if viewModel.searchText.isEmpty {
                 await viewModel.refreshList()
-            }
-        }
-        .onChange(of: sort) {
-            Task {
-                await viewModel.onSortChanged(sort, isAscending: sortAscending)
-            }
-        }
-        .onChange(of: sortAscending) {
-            Task {
-                await viewModel.onSortChanged(sort, isAscending: sortAscending)
             }
         }
         .onSubmit(of: .search) {
@@ -122,16 +114,88 @@ struct MediaListView: View {
     
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
-        ToolbarItem(placement: .primaryAction) {
+        ToolbarItemGroup(placement: .primaryAction) {
             Menu {
-                Picker("Sort", selection: $sort) {
-                    ForEach(MediaListSort.allCasesForUi, id: \.self) {
-                        Text($0.localizedName).tag($0)
+                Menu("Sort") {
+                    Picker("Sort", selection: $sort) {
+                        ForEach(MediaListSort.allCasesForUi, id: \.self) {
+                            Text($0.localizedName).tag($0)
+                        }
+                    }
+                    .onChange(of: sort) {
+                        Task {
+                            await viewModel.onSortChanged(sort, isAscending: sortAscending)
+                        }
+                    }
+                    
+                    Picker("Order", selection: $sortAscending) {
+                        Text("Ascending").tag(true)
+                        Text("Descending").tag(false)
+                    }
+                    .onChange(of: sortAscending) {
+                        Task {
+                            await viewModel.onSortChanged(sort, isAscending: sortAscending)
+                        }
                     }
                 }
-                Picker("Order", selection: $sortAscending) {
-                    Text("Ascending").tag(true)
-                    Text("Descending").tag(false)
+                
+                Menu("Format") {
+                    Picker("Format", selection: $viewModel.mediaFormat) {
+                        let cases = if type == .anime {
+                            MediaFormat.animeCases
+                        } else {
+                            MediaFormat.mangaCases
+                        }
+                        Text("None").tag(nil as MediaFormat?)
+                        ForEach(cases, id: \.self) {
+                            Text($0.localizedName).tag($0)
+                        }
+                    }
+                    .onChange(of: viewModel.mediaFormat) {
+                        Task { await viewModel.filterList() }
+                    }
+                }
+                
+                Menu("Status") {
+                    Picker("Status", selection: $viewModel.mediaStatus) {
+                        Text("None").tag(nil as MediaStatus?)
+                        ForEach(MediaStatus.allCases, id: \.self) {
+                            Text($0.localizedName).tag($0)
+                        }
+                    }
+                    .onChange(of: viewModel.mediaStatus) {
+                        Task { await viewModel.filterList() }
+                    }
+                }
+                
+                Menu("Country") {
+                    Picker("Country", selection: $viewModel.country) {
+                        Text("None").tag(nil as CountryOfOrigin?)
+                        ForEach(CountryOfOrigin.allCases, id: \.self) {
+                            Text($0.localizedName).tag($0)
+                        }
+                    }
+                    .onChange(of: viewModel.country) {
+                        Task { await viewModel.filterList() }
+                    }
+                }
+                
+                Menu("Year") {
+                    Picker("Year", selection: $viewModel.year) {
+                        Text("None").tag(nil as Int?)
+                        ForEach((1940...(currentYear+1)).reversed(), id: \.self) {
+                            Text(String($0)).tag($0)
+                        }
+                    }
+                    .onChange(of: viewModel.year) {
+                        Task { await viewModel.filterList() }
+                    }
+                }
+                
+                Button("Clear", role: .destructive) {
+                    Task {
+                        await viewModel.clearFilters()
+                    }
                 }
                 
                 Button("Random", systemImage: "shuffle") {
@@ -139,11 +203,7 @@ struct MediaListView: View {
                 }
                 .tint(nil)
             } label: {
-                if #available(iOS 26, *) {
-                    Image(systemName: "ellipsis")
-                } else {
-                    Image(systemName: "ellipsis.circle")
-                }
+                Image(systemName: "line.3.horizontal.decrease")
             }
             .tint(nil)
         }
@@ -151,8 +211,8 @@ struct MediaListView: View {
     
     @ViewBuilder
     private var listContent: some View {
-        if viewModel.searchText.isEmpty {
-            ForEach(viewModel.mediaList, id: \.uniqueListId) { item in
+        if viewModel.hasFilters || viewModel.hasQuery {
+            ForEach(viewModel.filteredMedia, id: \.uniqueListId) { item in
                 if let details = item.media?.fragments.basicMediaDetails {
                     buildListItem(
                         details: details,
@@ -163,7 +223,7 @@ struct MediaListView: View {
                 }
             }
         } else {
-            ForEach(viewModel.filteredMedia, id: \.uniqueListId) { item in
+            ForEach(viewModel.mediaList, id: \.uniqueListId) { item in
                 if let details = item.media?.fragments.basicMediaDetails {
                     buildListItem(
                         details: details,

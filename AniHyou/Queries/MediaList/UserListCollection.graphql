@@ -59,6 +59,11 @@ fragment CommonMediaListEntry on MediaList {
             ...AiringEpisode
         }
         status
+        format
+        countryOfOrigin
+        startDate {
+            year
+        }
     }
 }
 
