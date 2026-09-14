@@ -158,56 +158,60 @@ struct UserRepository {
             let result = try await Network.shared.apollo.fetch(query: ViewerQuery())
             guard let viewer = result.data?.viewer?.fragments.userInfo else { return nil }
 
-            //update preferences
-            UserDefaults.standard.set(
-                viewer.options?.profileColor?.profileHexColor,
-                forKey: USER_COLOR_KEY
-            )
-            UserDefaults.standard.set(
-                viewer.options?.displayAdultContent,
-                forKey: DISPLAY_ADULT
-            )
-            UserDefaults.standard.set(
-                viewer.options?.staffNameLanguage?.value?.rawValue,
-                forKey: USER_NAMES_LANG_KEY
-            )
-            UserDefaults.standard.set(
-                viewer.options?.titleLanguage?.value?.rawValue,
-                forKey: USER_TITLE_LANG_KEY
-            )
-            UserDefaults.standard.set(
-                viewer.mediaListOptions?.scoreFormat?.value?.rawValue,
-                forKey: USER_SCORE_KEY
-            )
-            UserDefaults.standard.setValue(
-                viewer.mediaListOptions?.animeList?.advancedScoringEnabled,
-                forKey: ADVANCED_SCORING_ENABLED_KEY
-            )
-            UserDefaults.standard.setValue(
-                viewer.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
-                forKey: ADVANCED_SCORES_KEY
-            )
-            UserDefaults.standard.setValue(
-                viewer.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
-                forKey: ANIME_CUSTOM_LISTS_KEY
-            )
-            UserDefaults.standard.setValue(
-                viewer.mediaListOptions?.animeList?.sectionOrder?.compactMap { $0 } ?? [],
-                forKey: ANIME_SECTION_ORDER
-            )
-            UserDefaults.standard.setValue(
-                viewer.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
-                forKey: MANGA_CUSTOM_LISTS_KEY
-            )
-            UserDefaults.standard.setValue(
-                viewer.mediaListOptions?.mangaList?.sectionOrder?.compactMap { $0 } ?? [],
-                forKey: MANGA_SECTION_ORDER
-            )
+            updateUserInfoDefaults(viewer)
+            
             return viewer
         } catch {
             print(error)
             return nil
         }
+    }
+    
+    private static func updateUserInfoDefaults(_ data: UserInfo) {
+        UserDefaults.standard.set(
+            data.options?.profileColor?.profileHexColor,
+            forKey: USER_COLOR_KEY
+        )
+        UserDefaults.standard.set(
+            data.options?.displayAdultContent,
+            forKey: DISPLAY_ADULT
+        )
+        UserDefaults.standard.set(
+            data.options?.staffNameLanguage?.value?.rawValue,
+            forKey: USER_NAMES_LANG_KEY
+        )
+        UserDefaults.standard.set(
+            data.options?.titleLanguage?.value?.rawValue,
+            forKey: USER_TITLE_LANG_KEY
+        )
+        UserDefaults.standard.set(
+            data.mediaListOptions?.scoreFormat?.value?.rawValue,
+            forKey: USER_SCORE_KEY
+        )
+        UserDefaults.standard.setValue(
+            data.mediaListOptions?.animeList?.advancedScoringEnabled,
+            forKey: ADVANCED_SCORING_ENABLED_KEY
+        )
+        UserDefaults.standard.setValue(
+            data.mediaListOptions?.animeList?.advancedScoring?.compactMap { $0 },
+            forKey: ADVANCED_SCORES_KEY
+        )
+        UserDefaults.standard.setValue(
+            data.mediaListOptions?.animeList?.customLists?.compactMap { $0 } ?? [],
+            forKey: ANIME_CUSTOM_LISTS_KEY
+        )
+        UserDefaults.standard.setValue(
+            data.mediaListOptions?.animeList?.sectionOrder?.compactMap { $0 } ?? [],
+            forKey: ANIME_SECTION_ORDER
+        )
+        UserDefaults.standard.setValue(
+            data.mediaListOptions?.mangaList?.customLists?.compactMap { $0 } ?? [],
+            forKey: MANGA_CUSTOM_LISTS_KEY
+        )
+        UserDefaults.standard.setValue(
+            data.mediaListOptions?.mangaList?.sectionOrder?.compactMap { $0 } ?? [],
+            forKey: MANGA_SECTION_ORDER
+        )
     }
     
     static func getUserInfo(userId: Int32) async -> UserInfo? {

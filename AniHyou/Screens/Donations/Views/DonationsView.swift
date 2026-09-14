@@ -40,7 +40,7 @@ struct DonationsView: View {
                         Spacer()
                         Button(product.displayPrice) {
                             Task {
-                                try await viewModel.purchase(product)
+                                try? await viewModel.purchase(product)
                             }
                         }
                     }
