@@ -206,7 +206,11 @@ import AniListAPI
     }
     
     func getRandomEntryId() {
-        randomId = mediaList.randomElement()?.mediaId
+        randomId = if hasFilters {
+            filteredMedia.randomElement()?.mediaId
+        } else {
+            mediaList.randomElement()?.mediaId
+        }
         showingRandomEntry = randomId != nil
     }
     
