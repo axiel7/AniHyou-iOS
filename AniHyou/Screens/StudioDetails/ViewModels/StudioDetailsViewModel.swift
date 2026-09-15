@@ -15,6 +15,8 @@ import AniListAPI
     var studioMedia = [StudioMedia]()
     var currentPage: Int32 = 1
     var hasNextPage = false
+    var sort = MediaSort.startDateDesc
+    var onMyList: Bool?
 
     func getStudioDetails(studioId: Int) async {
         if let result = await StudioRepository.getStudioDetails(studioId: Int32(studioId)) {
@@ -58,10 +60,25 @@ import AniListAPI
     }
     
     func getStudioMedia(studioId: Int) async {
-        if let result = await StudioRepository.getStudioMedia(studioId: Int32(studioId), page: currentPage) {
+        if let result = await StudioRepository.getStudioMedia(
+            studioId: Int32(studioId),
+            sort: [sort],
+            onList: onMyList,
+            page: currentPage
+        ) {
+            if currentPage == 1 {
+                studioMedia.removeAll()
+            }
             studioMedia.append(contentsOf: result.data)
             currentPage = result.page
             hasNextPage = result.hasNextPage
         }
+    }
+    
+    func refresh() async {
+        guard let studioId = studio?.id else { return }
+        currentPage = 1
+        hasNextPage = false
+        await getStudioMedia(studioId: studioId)
     }
 }

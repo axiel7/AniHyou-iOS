@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AniListAPI
 
 struct StudioDetailsView: View {
 
@@ -54,14 +55,41 @@ struct StudioDetailsView: View {
             }//:VScrollView
             .navigationTitle(studio.name)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        Task {
-                            await viewModel.toggleFavorite()
-                        }
-                    }) {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button {
+                        Task { await viewModel.toggleFavorite() }
+                    } label: {
                         Text((studio.favourites ?? 0).formatted())
                         Image(systemName: studio.isFavourite ? "heart.fill" : "heart")
+                    }
+                    .tint(nil)
+                    
+                    Menu("Filter", systemImage: "line.3.horizontal.decrease") {
+                        Button {
+                            if viewModel.onMyList == nil {
+                                viewModel.onMyList = true
+                            } else {
+                                viewModel.onMyList = nil
+                            }
+                        } label: {
+                            if viewModel.onMyList == true {
+                                Label("On my list", systemImage: "checkmark")
+                            } else {
+                                Text("On my list")
+                            }
+                        }
+                        .onChange(of: viewModel.onMyList) {
+                            Task { await viewModel.refresh() }
+                        }
+                        
+                        Picker("Sort", selection: $viewModel.sort) {
+                            ForEach(MediaSort.allCasesStudio, id: \.self) {
+                                Text($0.localizedName).tag($0)
+                            }
+                        }
+                        .onChange(of: viewModel.sort) {
+                            Task { await viewModel.refresh() }
+                        }
                     }
                     .tint(nil)
                 }

@@ -88,4 +88,8 @@ extension MediaSort {
             "Favorites"
         }
     }
+    
+    static var allCasesStudio: [MediaSort] {
+        [.popularityDesc, .scoreDesc, .favouritesDesc, .startDateDesc]
+    }
 }

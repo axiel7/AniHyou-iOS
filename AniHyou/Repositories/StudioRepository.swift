@@ -47,12 +47,16 @@ struct StudioRepository {
 
     static func getStudioMedia(
         studioId: Int32,
+        sort: [MediaSort],
+        onList: Bool?,
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<StudioMedia>? {
         await Network.fetchPagedResult(
             StudioMediaQuery(
                 studioId: .some(studioId),
+                sort: .some(sort.map { .case($0) }),
+                onList: someIfNotNil(onList),
                 page: .some(page),
                 perPage: .some(perPage)
             ),

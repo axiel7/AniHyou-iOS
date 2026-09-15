@@ -8,26 +8,34 @@ nonisolated public struct StudioMediaQuery: GraphQLQuery {
   public static let operationName: String = "StudioMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StudioMedia($studioId: Int, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename media(isMain: true, page: $page, perPage: $perPage, sort: [START_DATE_DESC]) { __typename nodes { __typename ...StudioMedia } pageInfo { __typename ...CommonPage } } } }"#,
+      #"query StudioMedia($studioId: Int, $sort: [MediaSort], $onList: Boolean, $page: Int, $perPage: Int) { Studio(id: $studioId) { __typename media( isMain: true page: $page perPage: $perPage sort: $sort onList: $onList ) { __typename nodes { __typename ...StudioMedia } pageInfo { __typename ...CommonPage } } } }"#,
       fragments: [CommonPage.self, StudioMedia.self]
     ))
 
   public var studioId: GraphQLNullable<Int32>
+  public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
+  public var onList: GraphQLNullable<Bool>
   public var page: GraphQLNullable<Int32>
   public var perPage: GraphQLNullable<Int32>
 
   public init(
     studioId: GraphQLNullable<Int32>,
+    sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
+    onList: GraphQLNullable<Bool>,
     page: GraphQLNullable<Int32>,
     perPage: GraphQLNullable<Int32>
   ) {
     self.studioId = studioId
+    self.sort = sort
+    self.onList = onList
     self.page = page
     self.perPage = perPage
   }
 
   @_spi(Unsafe) public var __variables: Variables? { [
     "studioId": studioId,
+    "sort": sort,
+    "onList": onList,
     "page": page,
     "perPage": perPage
   ] }
@@ -61,7 +69,8 @@ nonisolated public struct StudioMediaQuery: GraphQLQuery {
           "isMain": true,
           "page": .variable("page"),
           "perPage": .variable("perPage"),
-          "sort": ["START_DATE_DESC"]
+          "sort": .variable("sort"),
+          "onList": .variable("onList")
         ]),
       ] }
       @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
