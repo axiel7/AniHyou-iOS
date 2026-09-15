@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarAnimeView: View {
 
     @State private var weekday = Date.now.weekday
-    @State private var onMylist = false
+    @State private var onMylist: Bool?
     @State private var hasScrolled = false
 
     var body: some View {
@@ -39,25 +39,28 @@ struct CalendarAnimeView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Menu(
-                    content: {
-                        Button(action: { onMylist.toggle() }, label: {
-                            if onMylist {
-                                Label("On my list", systemImage: "checkmark")
-                            } else {
-                                Text("On my list")
-                            }
-                        })
-                    },
-                    label: {
-                        let icon = if #available(iOS 26, *) {
-                            "line.3.horizontal.decrease"
+                Menu {
+                    Button {
+                        if onMylist != nil {
+                            onMylist = true
                         } else {
-                            "line.3.horizontal.decrease.circle"
+                            onMylist = nil
                         }
-                        Label("Filter", systemImage: icon)
+                    } label: {
+                        if onMylist == true {
+                            Label("On my list", systemImage: "checkmark")
+                        } else {
+                            Text("On my list")
+                        }
                     }
-                )
+                } label: {
+                    let icon = if #available(iOS 26, *) {
+                        "line.3.horizontal.decrease"
+                    } else {
+                        "line.3.horizontal.decrease.circle"
+                    }
+                    Label("Filter", systemImage: icon)
+                }
                 .tint(nil)
             }
         }
@@ -67,7 +70,7 @@ struct CalendarAnimeView: View {
 struct WeekAnimeListView: View {
 
     let weekday: Int
-    let onMyList: Bool
+    let onMyList: Bool?
     @State private var viewModel = CalendarViewModel()
     @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
 

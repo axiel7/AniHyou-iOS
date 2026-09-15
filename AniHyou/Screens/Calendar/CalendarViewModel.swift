@@ -15,7 +15,7 @@ import AniListAPI
     var currentPage: Int32 = 1
     var hasNextPage = true
 
-    func getAiringAnimes(weekday: Int, onMyList: Bool, resetPage: Bool = false) async {
+    func getAiringAnimes(weekday: Int, onMyList: Bool?, resetPage: Bool = false) async {
         if resetPage { currentPage = 1 }
         
         if let result = await MediaRepository.getAiringAnimes(
