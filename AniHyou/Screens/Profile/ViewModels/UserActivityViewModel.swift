@@ -18,11 +18,15 @@ import AniListAPI
 
     var activities = [UserActivityQuery.Data.Page.Activity]()
 
-    func getUserActivity() async {
+    func getUserActivity(forceReload: Bool = false) async {
         guard let userId, !isLoading, hasNextPage else { return }
         isLoading = true
         defer { isLoading = false }
-        if let result = await UserRepository.getUserActivity(userId: Int32(userId), page: currentPage) {
+        if let result = await UserRepository.getUserActivity(
+            userId: Int32(userId),
+            forceReload: forceReload,
+            page: currentPage
+        ) {
             activities.append(contentsOf: result.data)
             currentPage = result.page
             hasNextPage = result.hasNextPage
@@ -33,6 +37,7 @@ import AniListAPI
         hasNextPage = false
         currentPage = 1
         activities.removeAll()
-        await getUserActivity()
+        hasNextPage = true
+        await getUserActivity(forceReload: true)
     }
 }

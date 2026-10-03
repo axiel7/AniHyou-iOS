@@ -246,6 +246,7 @@ struct UserRepository {
     
     static func getUserActivity(
         userId: Int32,
+        forceReload: Bool = false,
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<UserActivityQuery.Data.Page.Activity>? {
@@ -256,6 +257,7 @@ struct UserRepository {
                 userId: .some(userId),
                 sort: .some([.case(.idDesc)])
             ),
+            forceReload: forceReload,
             extractItems: { $0.page?.activities?.compactMap { $0 } },
             extractPage: { $0.page?.pageInfo?.fragments.commonPage }
         )
