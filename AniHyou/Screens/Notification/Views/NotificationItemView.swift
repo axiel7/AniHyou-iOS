@@ -43,7 +43,7 @@ struct NotificationItemView: View {
     var destination: some View {
         if let contentId = notification.contentId {
             switch notification.type {
-            case .airing, .relatedMediaAddition, .mediaDataChange, .mediaMerge:
+            case .airing, .relatedMediaAddition, .mediaDataChange, .mediaMerge, .mediaSubmissionUpdate:
                 MediaDetailsView(mediaId: contentId)
             case .following:
                 ProfileView(userId: contentId)
@@ -52,6 +52,10 @@ struct NotificationItemView: View {
                 ActivityDetailsView(activityId: contentId)
             case .threadCommentMention, .threadCommentReply, .threadSubscribed, .threadCommentLike, .threadLike:
                 ThreadDetailsView(threadId: contentId)
+            case .staffSubmissionUpdate:
+                StaffDetailsView(staffId: contentId)
+            case .characterSubmissionUpdate:
+                CharacterDetailsView(characterId: contentId)
             default:
                 Text(notification.text)
             }

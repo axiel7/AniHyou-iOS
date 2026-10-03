@@ -217,6 +217,36 @@ extension NotificationsQuery.Data.Page.Notification {
                 createdAt: noti.createdAt ?? 0,
                 isAdultMedia: nil
             )
+        } else if let noti = self.asMediaSubmissionUpdateNotification {
+            return GenericNotification(
+                id: noti.id,
+                text: noti.contexts?.compactMap { $0 }.joined(separator: " ") ?? "",
+                imageUrl: noti.media?.coverImage?.medium,
+                contentId: noti.media?.id,
+                type: noti.type!.value!,
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: noti.media?.isAdult
+            )
+        } else if let noti = self.asStaffSubmissionUpdateNotification {
+            return GenericNotification(
+                id: noti.id,
+                text: noti.contexts?.compactMap { $0 }.joined(separator: " ") ?? "",
+                imageUrl: noti.staff?.image?.medium,
+                contentId: noti.staff?.id,
+                type: noti.type!.value!,
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
+            )
+        } else if let noti = self.asCharacterSubmissionUpdateNotification {
+            return GenericNotification(
+                id: noti.id,
+                text: noti.contexts?.compactMap { $0 }.joined(separator: " ") ?? "",
+                imageUrl: noti.character?.image?.medium,
+                contentId: noti.character?.id,
+                type: noti.type!.value!,
+                createdAt: noti.createdAt ?? 0,
+                isAdultMedia: nil
+            )
         }
         return nil
     }

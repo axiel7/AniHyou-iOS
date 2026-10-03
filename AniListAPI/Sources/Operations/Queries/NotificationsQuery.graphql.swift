@@ -8,7 +8,7 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
   public static let operationName: String = "Notifications"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType], $resetNotificationCount: Boolean) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: $resetNotificationCount, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query Notifications($page: Int, $perPage: Int, $typeIn: [NotificationType], $resetNotificationCount: Boolean) { Page(page: $page, perPage: $perPage) { __typename notifications(resetNotificationCount: $resetNotificationCount, type_in: $typeIn) { __typename ... on AiringNotification { id contexts animeId episode media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on FollowingNotification { id context userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMessageNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityMentionNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplySubscribedNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ActivityReplyLikeNotification { id context activityId userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentMentionNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentReplyNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentSubscribedNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadCommentLikeNotification { id context commentId thread { __typename id } userId user { __typename name avatar { __typename medium } } type createdAt } ... on ThreadLikeNotification { id context threadId userId user { __typename name avatar { __typename medium } } type createdAt } ... on RelatedMediaAdditionNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaDataChangeNotification { id context mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaMergeNotification { id context reason mediaId media { __typename title { __typename userPreferred } coverImage { __typename medium } isAdult } type createdAt } ... on MediaDeletionNotification { id context reason deletedMediaTitle type createdAt } ... on MediaSubmissionUpdateNotification { id contexts media { __typename id coverImage { __typename medium large } isAdult } type createdAt } ... on StaffSubmissionUpdateNotification { id contexts staff { __typename id image { __typename medium large } } type createdAt } ... on CharacterSubmissionUpdateNotification { id contexts character { __typename id image { __typename medium large } } type createdAt } } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -104,6 +104,9 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
           .inlineFragment(AsMediaDataChangeNotification.self),
           .inlineFragment(AsMediaMergeNotification.self),
           .inlineFragment(AsMediaDeletionNotification.self),
+          .inlineFragment(AsMediaSubmissionUpdateNotification.self),
+          .inlineFragment(AsStaffSubmissionUpdateNotification.self),
+          .inlineFragment(AsCharacterSubmissionUpdateNotification.self),
         ] }
         @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
           NotificationsQuery.Data.Page.Notification.self
@@ -126,6 +129,9 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
         public var asMediaDataChangeNotification: AsMediaDataChangeNotification? { _asInlineFragment() }
         public var asMediaMergeNotification: AsMediaMergeNotification? { _asInlineFragment() }
         public var asMediaDeletionNotification: AsMediaDeletionNotification? { _asInlineFragment() }
+        public var asMediaSubmissionUpdateNotification: AsMediaSubmissionUpdateNotification? { _asInlineFragment() }
+        public var asStaffSubmissionUpdateNotification: AsStaffSubmissionUpdateNotification? { _asInlineFragment() }
+        public var asCharacterSubmissionUpdateNotification: AsCharacterSubmissionUpdateNotification? { _asInlineFragment() }
 
         /// Page.Notification.AsAiringNotification
         ///
@@ -1648,6 +1654,246 @@ nonisolated public struct NotificationsQuery: GraphQLQuery {
           public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
           /// The time the notification was created at
           public var createdAt: Int? { __data["createdAt"] }
+        }
+
+        /// Page.Notification.AsMediaSubmissionUpdateNotification
+        ///
+        /// Parent Type: `MediaSubmissionUpdateNotification`
+        nonisolated public struct AsMediaSubmissionUpdateNotification: AniListAPI.InlineFragment {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaSubmissionUpdateNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+            .field("id", Int.self),
+            .field("contexts", [String?]?.self),
+            .field("media", Media?.self),
+            .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
+            .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsMediaSubmissionUpdateNotification.self
+          ] }
+
+          /// The id of the Notification
+          public var id: Int { __data["id"] }
+          /// The notification context text
+          public var contexts: [String?]? { __data["contexts"] }
+          /// The media that was created or modified. If this submission was to create a new media and it was rejected, this will be null.
+          public var media: Media? { __data["media"] }
+          /// The type of notification
+          public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
+          /// The time the notification was created at
+          public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsMediaSubmissionUpdateNotification.Media
+          ///
+          /// Parent Type: `Media`
+          nonisolated public struct Media: AniListAPI.SelectionSet, Identifiable {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+              .field("coverImage", CoverImage?.self),
+              .field("isAdult", Bool?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsMediaSubmissionUpdateNotification.Media.self
+            ] }
+
+            /// The id of the media
+            public var id: Int { __data["id"] }
+            /// The cover images of the media
+            public var coverImage: CoverImage? { __data["coverImage"] }
+            /// If the media is intended only for 18+ adult audiences
+            public var isAdult: Bool? { __data["isAdult"] }
+
+            /// Page.Notification.AsMediaSubmissionUpdateNotification.Media.CoverImage
+            ///
+            /// Parent Type: `MediaCoverImage`
+            nonisolated public struct CoverImage: AniListAPI.SelectionSet {
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.MediaCoverImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .field("medium", String?.self),
+                .field("large", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsMediaSubmissionUpdateNotification.Media.CoverImage.self
+              ] }
+
+              /// The cover image url of the media at medium size
+              public var medium: String? { __data["medium"] }
+              /// The cover image url of the media at a large size
+              public var large: String? { __data["large"] }
+            }
+          }
+        }
+
+        /// Page.Notification.AsStaffSubmissionUpdateNotification
+        ///
+        /// Parent Type: `StaffSubmissionUpdateNotification`
+        nonisolated public struct AsStaffSubmissionUpdateNotification: AniListAPI.InlineFragment {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffSubmissionUpdateNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+            .field("id", Int.self),
+            .field("contexts", [String?]?.self),
+            .field("staff", Staff?.self),
+            .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
+            .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsStaffSubmissionUpdateNotification.self
+          ] }
+
+          /// The id of the Notification
+          public var id: Int { __data["id"] }
+          /// The notification context text
+          public var contexts: [String?]? { __data["contexts"] }
+          /// The staff that was modified.
+          public var staff: Staff? { __data["staff"] }
+          /// The type of notification
+          public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
+          /// The time the notification was created at
+          public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsStaffSubmissionUpdateNotification.Staff
+          ///
+          /// Parent Type: `Staff`
+          nonisolated public struct Staff: AniListAPI.SelectionSet, Identifiable {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Staff }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+              .field("image", Image?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsStaffSubmissionUpdateNotification.Staff.self
+            ] }
+
+            /// The id of the staff member
+            public var id: Int { __data["id"] }
+            /// The staff images
+            public var image: Image? { __data["image"] }
+
+            /// Page.Notification.AsStaffSubmissionUpdateNotification.Staff.Image
+            ///
+            /// Parent Type: `StaffImage`
+            nonisolated public struct Image: AniListAPI.SelectionSet {
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.StaffImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .field("medium", String?.self),
+                .field("large", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsStaffSubmissionUpdateNotification.Staff.Image.self
+              ] }
+
+              /// The person's image of media at medium size
+              public var medium: String? { __data["medium"] }
+              /// The person's image of media at its largest size
+              public var large: String? { __data["large"] }
+            }
+          }
+        }
+
+        /// Page.Notification.AsCharacterSubmissionUpdateNotification
+        ///
+        /// Parent Type: `CharacterSubmissionUpdateNotification`
+        nonisolated public struct AsCharacterSubmissionUpdateNotification: AniListAPI.InlineFragment {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public typealias RootEntityType = NotificationsQuery.Data.Page.Notification
+          @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterSubmissionUpdateNotification }
+          @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+            .field("id", Int.self),
+            .field("contexts", [String?]?.self),
+            .field("character", Character?.self),
+            .field("type", GraphQLEnum<AniListAPI.NotificationType>?.self),
+            .field("createdAt", Int?.self),
+          ] }
+          @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+            NotificationsQuery.Data.Page.Notification.self,
+            NotificationsQuery.Data.Page.Notification.AsCharacterSubmissionUpdateNotification.self
+          ] }
+
+          /// The id of the Notification
+          public var id: Int { __data["id"] }
+          /// The notification context text
+          public var contexts: [String?]? { __data["contexts"] }
+          /// The character that was modified.
+          public var character: Character? { __data["character"] }
+          /// The type of notification
+          public var type: GraphQLEnum<AniListAPI.NotificationType>? { __data["type"] }
+          /// The time the notification was created at
+          public var createdAt: Int? { __data["createdAt"] }
+
+          /// Page.Notification.AsCharacterSubmissionUpdateNotification.Character
+          ///
+          /// Parent Type: `Character`
+          nonisolated public struct Character: AniListAPI.SelectionSet, Identifiable {
+            @_spi(Unsafe) public let __data: DataDict
+            @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+            @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Character }
+            @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+              .field("__typename", String.self),
+              .field("id", Int.self),
+              .field("image", Image?.self),
+            ] }
+            @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+              NotificationsQuery.Data.Page.Notification.AsCharacterSubmissionUpdateNotification.Character.self
+            ] }
+
+            /// The id of the character
+            public var id: Int { __data["id"] }
+            /// Character images
+            public var image: Image? { __data["image"] }
+
+            /// Page.Notification.AsCharacterSubmissionUpdateNotification.Character.Image
+            ///
+            /// Parent Type: `CharacterImage`
+            nonisolated public struct Image: AniListAPI.SelectionSet {
+              @_spi(Unsafe) public let __data: DataDict
+              @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+              @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.CharacterImage }
+              @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+                .field("__typename", String.self),
+                .field("medium", String?.self),
+                .field("large", String?.self),
+              ] }
+              @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+                NotificationsQuery.Data.Page.Notification.AsCharacterSubmissionUpdateNotification.Character.Image.self
+              ] }
+
+              /// The character's image of media at medium size
+              public var medium: String? { __data["medium"] }
+              /// The character's image of media at its largest size
+              public var large: String? { __data["large"] }
+            }
+          }
         }
       }
 
