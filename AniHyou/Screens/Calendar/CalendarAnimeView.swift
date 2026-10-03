@@ -41,10 +41,10 @@ struct CalendarAnimeView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
                     Button {
-                        if onMylist != nil {
-                            onMylist = true
-                        } else {
+                        if onMylist == true {
                             onMylist = nil
+                        } else {
+                            onMylist = true
                         }
                     } label: {
                         if onMylist == true {
