@@ -61,14 +61,14 @@ import AniListAPI
     private func getSeasonList(refresh: Bool) async -> [CommonMediaListEntry] {
         let nowSeasonList = await MediaListRepository.getMySeasonalAnimeList(
             season: nowSeason,
-            sort: [.popularityDesc],
+            sort: [.startDate, .popularityDesc],
             page: 1,
             forceReload: refresh
         )?.data ?? []
         
         let nextSeasonList = await MediaListRepository.getMySeasonalAnimeList(
             season: nextSeason,
-            sort: [.popularityDesc],
+            sort: [.startDate, .popularityDesc],
             page: 1,
             forceReload: refresh
         )?.data ?? []
