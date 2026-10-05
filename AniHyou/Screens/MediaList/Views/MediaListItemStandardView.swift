@@ -17,6 +17,7 @@ struct MediaListItemStandardView: View {
     let entry: BasicMediaListEntry?
     let schedule: AiringEpisode?
     var showStatus: Bool = false
+    let blurCover: Bool
     let showLowPriority: Bool
 
     var body: some View {
@@ -25,7 +26,8 @@ struct MediaListItemStandardView: View {
                 MediaCoverView(
                     imageUrl: details?.coverImage?.large,
                     width: coverWidth,
-                    height: coverHeight
+                    height: coverHeight,
+                    blurEnabled: blurCover
                 )
                 if showStatus, let status = entry?.status?.value {
                     Image(systemName: status.systemImage)
@@ -98,6 +100,7 @@ struct MediaListItemStandardView: View {
                     details: nil,
                     entry: nil,
                     schedule: nil,
+                    blurCover: false,
                     showLowPriority: true
                 )
             })

@@ -35,6 +35,7 @@ struct MediaListView: View {
     @AppStorage(LIST_SORT_ORDER) private var sortAscending = false
     @AppStorage(LIST_STYLE_KEY) private var listItemsStyle = 0
     @AppStorage(INCREMENT_LONG_SWIPE_DIRECTION_KEY) private var incrementLongSwipeDirection: LongSwipeDirection = .right
+    @AppStorage(BLUR_ADULT_MEDIA) private var blurAdultMedia = true
     @AppStorage(SHOW_LOW_PRIORITY) private var showLowPriority = false
 
     var body: some View {
@@ -264,6 +265,7 @@ struct MediaListView: View {
                     entry: entry,
                     schedule: schedule,
                     showStatus: showStatus,
+                    blurCover: blurAdultMedia && details.isAdult == true,
                     showLowPriority: showLowPriority
                 )
             default:
@@ -272,6 +274,7 @@ struct MediaListView: View {
                     entry: entry,
                     schedule: schedule,
                     showStatus: showStatus,
+                    blurCover: blurAdultMedia && details.isAdult == true,
                     showLowPriority: showLowPriority
                 )
             }
