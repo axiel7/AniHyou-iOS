@@ -27,6 +27,8 @@ extension WidgetFamily {
             return 2
         case .accessoryInline:
             return 1
+        case .systemExtraLargePortrait:
+            return 7
         @unknown default:
             return 3
         }
