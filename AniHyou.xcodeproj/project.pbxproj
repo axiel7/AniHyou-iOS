@@ -175,6 +175,7 @@
 		488C26912853A10D0005EE15 /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C26902853A10D0005EE15 /* NotLoggedView.swift */; };
 		488FCDB42C64C63C00D8B47D /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
 		488FCDB52C64C63C00D8B47D /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7ABEE2BB4214A0047998F /* NumberUtils.swift */; };
+		488FD42B3085F98C00D9BA86 /* AniHyou-White.icon in Resources */ = {isa = PBXBuildFile; fileRef = 488FD42A3085F98C00D9BA86 /* AniHyou-White.icon */; };
 		48921337303287AA0001752B /* AutoSizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48921336303287A10001752B /* AutoSizeTextField.swift */; };
 		4892AB7D2A52E6CE004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
 		4892AB7E2A52E6CE004F07C9 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */; };
@@ -606,6 +607,7 @@
 		488C268B28539E240005EE15 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
 		488C268E28539F320005EE15 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		488C26902853A10D0005EE15 /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
+		488FD42A3085F98C00D9BA86 /* AniHyou-White.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "AniHyou-White.icon"; sourceTree = "<group>"; };
 		48921336303287A10001752B /* AutoSizeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizeTextField.swift; sourceTree = "<group>"; };
 		4892AB7C2A52E6CE004F07C9 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		4892DDE92A2DD768009AFB63 /* NotificationCount.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = NotificationCount.graphql; sourceTree = "<group>"; };
@@ -1862,6 +1864,7 @@
 				48F3E84E300B848B00DE2881 /* AniHyou-Pink.icon */,
 				48F3E84F300B848B00DE2881 /* AniHyou-Purple.icon */,
 				48F3E850300B848B00DE2881 /* AniHyou-Red.icon */,
+				488FD42A3085F98C00D9BA86 /* AniHyou-White.icon */,
 				48F13555301FEA89000852C1 /* AniHyou-Rainbow.icon */,
 			);
 			path = AppIcons;
@@ -2351,6 +2354,7 @@
 				481AD4E52851CE74001779EE /* Preview Assets.xcassets in Resources */,
 				481AD4E22851CE74001779EE /* Assets.xcassets in Resources */,
 				48F3E84B300B83B400DE2881 /* AniHyou-Gray.icon in Resources */,
+				488FD42B3085F98C00D9BA86 /* AniHyou-White.icon in Resources */,
 				48FFC8BC2E10969900831B8E /* AniHyou.icon in Resources */,
 				48218B002BC57B9300A03421 /* StudioMedia.graphql in Resources */,
 				48F13556301FEA89000852C1 /* AniHyou-Rainbow.icon in Resources */,

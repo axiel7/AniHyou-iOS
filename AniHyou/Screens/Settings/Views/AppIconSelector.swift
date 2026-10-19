@@ -13,7 +13,7 @@ struct AppIconSelector: View {
     private let appIcons = [
         "AniHyou-Default", "AniHyou-Green", "AniHyou-Red",
         "AniHyou-Purple", "AniHyou-Pink", "AniHyou-Orange", "AniHyou-Gray",
-        "AniHyou-Rainbow"
+        "AniHyou-White", "AniHyou-Rainbow"
     ]
     @AppStorage(APP_ICON_KEY) private var selectedAppIcon = "AniHyou-Default"
     @AppStorage(HAS_DONATED_KEY, store: UserDefaults(suiteName: ANIHYOU_GROUP)) private var hasDonated = false
