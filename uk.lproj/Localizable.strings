@@ -214,7 +214,7 @@ No comment provided by engineer. */
 Anime */
 "Anime" = "Аніме";
 /* anime with unwatched episodes */
-"Anime Behind" = "Аніме позаду";
+"Anime Behind" = "Непереглянуті аніме";
 /* en.lproj/Localizable.strings
 Anime List
 No comment provided by engineer. */
@@ -312,8 +312,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Асоційований продюсер";
-/* weighted Average Score */
-"Average Score" = "Середня оцінка";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1524,6 +1522,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "Популярна манґа";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "Популярна манхва";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "Популярне";
@@ -1622,6 +1624,10 @@ No comment provided by engineer. */
 Reading
 No comment provided by engineer. */
 "Reading" = "Читаю";
+/* en.lproj/Localizable.strings
+Recent
+No comment provided by engineer. */
+"Recent" = "Нещодавні";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
@@ -2161,10 +2167,6 @@ Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Найкращі фільми";
 /* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Найбільш популярні";
-/* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */
 "Total Anime" = "Усього аніме";
@@ -2286,7 +2288,7 @@ No comment provided by engineer. */
 /* en.lproj/Localizable.strings
 Visual novel
 No comment provided by engineer. */
-"Visual novel" = "Візуальна новела";
+"Visual novel" = "Візуальний роман";
 /* en.lproj/Localizable.strings
 Voice Actors
 No comment provided by engineer. */

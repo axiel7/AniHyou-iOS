@@ -298,8 +298,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "מפיק משנה";
-/* weighted Average Score */
-"Average Score" = "דירוג ממוצע";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1612,10 +1610,6 @@ No comment provided by engineer. */
 Top 100
 No comment provided by engineer. */
 "Top 100" = "100 המובילים";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "הפופולריים ביותר";
 /* en.lproj/Localizable.strings
 Trending
 No comment provided by engineer. */

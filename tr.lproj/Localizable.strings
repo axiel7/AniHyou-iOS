@@ -312,8 +312,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Yardımcı Yapımcı";
-/* weighted Average Score */
-"Average Score" = "Ortalama Puan";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1524,6 +1522,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "Popüler Manga";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "Popüler Manhwa";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "Popülerlik";
@@ -1622,6 +1624,10 @@ No comment provided by engineer. */
 Reading
 No comment provided by engineer. */
 "Reading" = "Okunuyor";
+/* en.lproj/Localizable.strings
+Recent
+No comment provided by engineer. */
+"Recent" = "En son";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
@@ -1904,7 +1910,7 @@ No comment provided by engineer. */
 "Sports" = "Spor";
 /* en.lproj/Localizable.strings
 Spring */
-"Spring" = "Bahar";
+"Spring" = "İlkbahar";
 /* en.lproj/Localizable.strings
 Staff
 No comment provided by engineer. */
@@ -2161,10 +2167,6 @@ Top Movies
 No comment provided by engineer. */
 "Top Movies" = "En İyi Filmler";
 /* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "En Popüler";
-/* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */
 "Total Anime" = "Toplam Anime";
@@ -2321,6 +2323,10 @@ No comment provided by engineer. */
 Weekday
 No comment provided by engineer. */
 "Weekday" = "Hafta içi";
+/* en.lproj/Localizable.strings
+Weighted Score
+No comment provided by engineer. */
+"Weighted Score" = "Ağırlıklı Puan";
 /* en.lproj/Localizable.strings
 Winter */
 "Winter" = "Kış";

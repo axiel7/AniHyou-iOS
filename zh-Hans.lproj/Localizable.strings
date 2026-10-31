@@ -308,8 +308,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "协同制作人";
-/* weighted Average Score */
-"Average Score" = "平均评分";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1516,6 +1514,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "热门漫画";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "热门漫画";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "人气";
@@ -1614,6 +1616,10 @@ No comment provided by engineer. */
 Reading
 No comment provided by engineer. */
 "Reading" = "阅读中";
+/* en.lproj/Localizable.strings
+Recent
+No comment provided by engineer. */
+"Recent" = "最近";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
@@ -2148,10 +2154,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "热门电影";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "热门排行";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

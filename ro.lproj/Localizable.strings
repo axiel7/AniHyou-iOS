@@ -292,8 +292,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Producător asociat";
-/* weighted Average Score */
-"Average Score" = "Scor mediu";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -2080,10 +2078,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Filme";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Cele mai populare";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

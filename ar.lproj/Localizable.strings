@@ -191,8 +191,6 @@ No comment provided by engineer. */
 Ascending
 No comment provided by engineer. */
 "Ascending" = "تصاعدي";
-/* weighted Average Score */
-"Average Score" = "متوسط الدرجة";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -792,6 +790,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "مانغا شعبية";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "مانهوا شعبية";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "الشعبية";
@@ -851,6 +853,10 @@ No comment provided by engineer. */
 Reading
 No comment provided by engineer. */
 "Reading" = "أقرأُه";
+/* en.lproj/Localizable.strings
+Recent
+No comment provided by engineer. */
+"Recent" = "الأخيرة";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
@@ -1130,10 +1136,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "أفضل الأفلام";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "أعلى شعبية";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

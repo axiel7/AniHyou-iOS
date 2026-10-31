@@ -306,8 +306,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Ассоциированный продюсер";
-/* weighted Average Score */
-"Average Score" = "Средний счет";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -2124,10 +2122,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Топ фильмы";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Топ Популярных";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

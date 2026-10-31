@@ -296,8 +296,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Producteur associé";
-/* weighted Average Score */
-"Average Score" = "Note moyenne";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -2102,10 +2100,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Film";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Top Populaire";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

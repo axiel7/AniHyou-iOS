@@ -228,8 +228,6 @@ No comment provided by engineer. */
 Assistant Producer
 No comment provided by engineer. */
 "Assistant Producer" = "Produtor Assistente";
-/* weighted Average Score */
-"Average Score" = "Nota média";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1356,10 +1354,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Principais Filmes";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Top Popular";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

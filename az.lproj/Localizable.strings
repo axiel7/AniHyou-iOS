@@ -128,8 +128,6 @@ development, maintenance, and new features." = "Bildiyiniz kimi tamamilə pulsuz
 Ascending
 No comment provided by engineer. */
 "Ascending" = "Artan sırada";
-/* weighted Average Score */
-"Average Score" = "Ortalama Xal";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1158,10 +1156,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Filmlər";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Top Populyar";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

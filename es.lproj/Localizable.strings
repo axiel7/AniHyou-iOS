@@ -312,8 +312,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Productor Asociado";
-/* weighted Average Score */
-"Average Score" = "Puntuación Ponderada";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1526,6 +1524,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "Manga Popular";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "Manhwa Popular";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "Popularidad";
@@ -1624,6 +1626,10 @@ No comment provided by engineer. */
 Reading
 No comment provided by engineer. */
 "Reading" = "Leyendo";
+/* en.lproj/Localizable.strings
+Recent
+No comment provided by engineer. */
+"Recent" = "Reciente";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
@@ -2163,10 +2169,6 @@ Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Películas";
 /* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Top Popular";
-/* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */
 "Total Anime" = "Anime Total";
@@ -2323,6 +2325,10 @@ No comment provided by engineer. */
 Weekday
 No comment provided by engineer. */
 "Weekday" = "Día de la semana";
+/* en.lproj/Localizable.strings
+Weighted Score
+No comment provided by engineer. */
+"Weighted Score" = "Nota Ponderada";
 /* en.lproj/Localizable.strings
 Winter */
 "Winter" = "Invierno";

@@ -188,8 +188,6 @@ development, maintenance, and new features." = "Jak być może wiesz, ta aplikac
 Ascending
 No comment provided by engineer. */
 "Ascending" = "Rosnąco";
-/* weighted Average Score */
-"Average Score" = "Średnia ocena";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1302,10 +1300,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Najlepsze filmy";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Najpopularniejsze";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

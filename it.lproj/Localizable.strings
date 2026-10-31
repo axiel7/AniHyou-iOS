@@ -308,8 +308,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Produttore associato";
-/* weighted Average Score */
-"Average Score" = "Punteggio Medio";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1452,6 +1450,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "Manga popolari";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "Manhwa Popolari";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "Popolarità";
@@ -1992,10 +1994,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Film";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Top Popolari";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

@@ -292,8 +292,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "副製片人";
-/* weighted Average Score */
-"Average Score" = "平均評分";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -2098,10 +2096,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "熱門電影";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "熱門排行";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */

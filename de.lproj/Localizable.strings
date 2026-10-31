@@ -312,8 +312,6 @@ No comment provided by engineer. */
 Associate Producer
 No comment provided by engineer. */
 "Associate Producer" = "Produktionsassistent";
-/* weighted Average Score */
-"Average Score" = "Durchschnittliche Bewertung";
 /* en.lproj/Localizable.strings
 Background
 No comment provided by engineer. */
@@ -1524,6 +1522,10 @@ Popular Manga
 No comment provided by engineer. */
 "Popular Manga" = "Beliebte Manga";
 /* en.lproj/Localizable.strings
+Popular Manhwa
+No comment provided by engineer. */
+"Popular Manhwa" = "Beliebte Manhwa";
+/* en.lproj/Localizable.strings
 Popularity
 No comment provided by engineer. */
 "Popularity" = "Beliebtheit";
@@ -1622,6 +1624,10 @@ No comment provided by engineer. */
 Reading
 No comment provided by engineer. */
 "Reading" = "Am Lesen";
+/* en.lproj/Localizable.strings
+Recent
+No comment provided by engineer. */
+"Recent" = "Kürzlich";
 /* en.lproj/Localizable.strings
 Recommendations
 No comment provided by engineer. */
@@ -2160,10 +2166,6 @@ No comment provided by engineer. */
 Top Movies
 No comment provided by engineer. */
 "Top Movies" = "Top Filme";
-/* en.lproj/Localizable.strings
-Top Popular
-No comment provided by engineer. */
-"Top Popular" = "Top Beliebtheit";
 /* en.lproj/Localizable.strings
 Total Anime
 No comment provided by engineer. */
