@@ -61,6 +61,7 @@ struct MediaDetailsView: View {
                         placeholderHexColor: details.coverImage?.color,
                         height: bannerHeight
                     )
+                    .ignoresSafeArea()
                     
                     // MARK: - Main info
                     MediaDetailsMainInfo(mediaId: mediaId, viewModel: viewModel)
