@@ -42,12 +42,39 @@ struct StaffDetailsView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 if let staff = viewModel.staff {
-                    Button(action: {
-                        Task {
-                            await viewModel.toggleFavorite()
-                        }
-                    }) {
+                    Button {
+                        Task { await viewModel.toggleFavorite() }
+                    } label: {
                         Image(systemName: staff.isFavourite ? "heart.fill" : "heart")
+                    }
+                    .tint(nil)
+                }
+            }
+            if infoType == .media || infoType == .characters {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Menu("On my list") {
+                            TriPicker("On my list", selection: $viewModel.onMyList)
+                                .onChange(of: viewModel.onMyList) {
+                                    viewModel.resetStaffMedia()
+                                    viewModel.resetStaffCharacters()
+                                }
+                        }
+                        if infoType == .media {
+                            Menu("Media Type") {
+                                Picker("Media Type", selection: $viewModel.mediaType) {
+                                    Text("None").tag(nil as MediaType?)
+                                    ForEach(MediaType.allCases, id: \.self) {
+                                        Text($0.localizedName).tag($0)
+                                    }
+                                }
+                                .onChange(of: viewModel.mediaType) {
+                                    viewModel.resetStaffMedia()
+                                }
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "line.3.horizontal.decrease")
                     }
                     .tint(nil)
                 }
@@ -116,15 +143,6 @@ struct StaffDetailsView: View {
     @ViewBuilder
     var staffMedia: some View {
         LazyVStack(alignment: .leading) {
-            HStack {
-                Text("On my list")
-                Spacer()
-                TriPicker("On my list", selection: $viewModel.mediaOnMyList)
-                    .onChange(of: viewModel.mediaOnMyList) {
-                        viewModel.resetStaffMedia()
-                    }
-            }
-
             ForEach(viewModel.staffMedia, id: \.value.id) { item in
                 if let media = item.value.node {
                     NavigationLink(destination: MediaDetailsView(mediaId: media.id)) {
@@ -159,15 +177,6 @@ struct StaffDetailsView: View {
     @ViewBuilder
     var staffCharacters: some View {
         LazyVStack(alignment: .leading) {
-            HStack {
-                Text("On my list")
-                Spacer()
-                TriPicker("On my list", selection: $viewModel.charactersOnMyList)
-                    .onChange(of: viewModel.charactersOnMyList) {
-                        viewModel.resetStaffCharacters()
-                    }
-            }
-            
             ForEach(viewModel.staffCharacters, id: \.id) {
                 if let characters = $0.characters,
                     let node = $0.node {

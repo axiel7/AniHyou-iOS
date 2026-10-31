@@ -8,23 +8,26 @@ nonisolated public struct StaffMediaQuery: GraphQLQuery {
   public static let operationName: String = "StaffMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query StaffMedia($staffId: Int, $onList: Boolean, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } isAdult } staffRole } pageInfo { __typename ...CommonPage } } } }"#,
+      #"query StaffMedia($staffId: Int, $onList: Boolean, $mediaType: MediaType, $page: Int, $perPage: Int) { Staff(id: $staffId) { __typename staffMedia( page: $page perPage: $perPage sort: [START_DATE_DESC] onList: $onList type: $mediaType ) { __typename edges { __typename id node { __typename id title { __typename userPreferred } type coverImage { __typename large } mediaListEntry { __typename status } startDate { __typename ...FuzzyDateFragment } isAdult } staffRole } pageInfo { __typename ...CommonPage } } } }"#,
       fragments: [CommonPage.self, FuzzyDateFragment.self]
     ))
 
   public var staffId: GraphQLNullable<Int32>
   public var onList: GraphQLNullable<Bool>
+  public var mediaType: GraphQLNullable<GraphQLEnum<MediaType>>
   public var page: GraphQLNullable<Int32>
   public var perPage: GraphQLNullable<Int32>
 
   public init(
     staffId: GraphQLNullable<Int32>,
     onList: GraphQLNullable<Bool>,
+    mediaType: GraphQLNullable<GraphQLEnum<MediaType>>,
     page: GraphQLNullable<Int32>,
     perPage: GraphQLNullable<Int32>
   ) {
     self.staffId = staffId
     self.onList = onList
+    self.mediaType = mediaType
     self.page = page
     self.perPage = perPage
   }
@@ -32,6 +35,7 @@ nonisolated public struct StaffMediaQuery: GraphQLQuery {
   @_spi(Unsafe) public var __variables: Variables? { [
     "staffId": staffId,
     "onList": onList,
+    "mediaType": mediaType,
     "page": page,
     "perPage": perPage
   ] }
@@ -65,7 +69,8 @@ nonisolated public struct StaffMediaQuery: GraphQLQuery {
           "page": .variable("page"),
           "perPage": .variable("perPage"),
           "sort": ["START_DATE_DESC"],
-          "onList": .variable("onList")
+          "onList": .variable("onList"),
+          "type": .variable("mediaType")
         ]),
       ] }
       @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [

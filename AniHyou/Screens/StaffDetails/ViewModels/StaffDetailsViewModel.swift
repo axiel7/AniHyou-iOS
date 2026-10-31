@@ -46,8 +46,10 @@ import AniListAPI
             }
         })
     }
+    
+    var onMyList: Bool?
 
-    var mediaOnMyList: Bool?
+    var mediaType: MediaType?
     var staffMedia = [StaffMediaGrouped]()
     var pageMedia: Int32 = 1
     var hasNextPageMedia = true
@@ -55,7 +57,8 @@ import AniListAPI
     func getStaffMedia(staffId: Int) async {
         if let result = await StaffRepository.getStaffMedia(
             staffId: Int32(staffId),
-            onMyList: mediaOnMyList,
+            onMyList: onMyList,
+            mediaType: mediaType,
             page: pageMedia
         ) {
             staffMedia.append(contentsOf: result.data)
@@ -70,7 +73,6 @@ import AniListAPI
         hasNextPageMedia = true
     }
 
-    var charactersOnMyList: Bool?
     var staffCharacters = [StaffCharacterQuery.Data.Staff.CharacterMedia.Edge]()
     var pageCharacters: Int32 = 1
     var hasNextPageCharacters = true
@@ -78,7 +80,7 @@ import AniListAPI
     func getStaffCharacters(staffId: Int) async {
         if let result = await StaffRepository.getStaffCharacters(
             staffId: Int32(staffId),
-            onMyList: charactersOnMyList,
+            onMyList: onMyList,
             page: pageCharacters
         ) {
             staffCharacters.append(contentsOf: result.data)

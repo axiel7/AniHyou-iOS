@@ -41,6 +41,7 @@ struct StaffRepository {
     static func getStaffMedia(
         staffId: Int32,
         onMyList: Bool?,
+        mediaType: MediaType?,
         page: Int32,
         perPage: Int32 = 25
     ) async -> PagedResult<StaffMediaGrouped>? {
@@ -48,6 +49,7 @@ struct StaffRepository {
             StaffMediaQuery(
                 staffId: .some(staffId),
                 onList: someIfNotNil(onMyList),
+                mediaType: someIfNotNil(mediaType),
                 page: .some(page),
                 perPage: .some(perPage)
             ),
