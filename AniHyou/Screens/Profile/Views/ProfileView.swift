@@ -83,7 +83,7 @@ struct ProfileView: View {
                     placeholderHexColor: viewModel.userInfo?.options?.profileColor?.profileHexColor,
                     height: bannerHeight
                 )
-                .ignoresSafeArea(edges: .top)
+                .ignoresSafeArea()
                 
                 mainProfileInfo
                     .padding(.top, -50)
