@@ -12,7 +12,7 @@ query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, 
             countryOfOrigin: $country, source_in: $source_in
         ) {
             ...BasicMediaDetails
-            meanScore
+            weightedScore
             format
             mediaListEntry {
                 ...BasicMediaListEntry

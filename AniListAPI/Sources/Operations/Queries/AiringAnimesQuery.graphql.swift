@@ -8,7 +8,7 @@ nonisolated public struct AiringAnimesQuery: GraphQLQuery {
   public static let operationName: String = "AiringAnimes"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } isAdult } episode airingAt } pageInfo { __typename ...CommonPage } } }"#,
+      #"query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGreater: Int, $airingAtLesser: Int) { Page(page: $page, perPage: $perPage) { __typename airingSchedules( sort: $sort airingAt_greater: $airingAtGreater airingAt_lesser: $airingAtLesser ) { __typename id mediaId media { __typename title { __typename userPreferred } coverImage { __typename large } weightedScore mediaListEntry { __typename status } isAdult } episode airingAt } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -125,7 +125,7 @@ nonisolated public struct AiringAnimesQuery: GraphQLQuery {
             .field("__typename", String.self),
             .field("title", Title?.self),
             .field("coverImage", CoverImage?.self),
-            .field("meanScore", Int?.self),
+            .field("weightedScore", Int?.self),
             .field("mediaListEntry", MediaListEntry?.self),
             .field("isAdult", Bool?.self),
           ] }
@@ -137,8 +137,8 @@ nonisolated public struct AiringAnimesQuery: GraphQLQuery {
           public var title: Title? { __data["title"] }
           /// The cover images of the media
           public var coverImage: CoverImage? { __data["coverImage"] }
-          /// Mean score of all the user's scores of the media
-          public var meanScore: Int? { __data["meanScore"] }
+          /// A weighted average score of all the users' scores of the media
+          public var weightedScore: Int? { __data["weightedScore"] }
           /// The authenticated user's media list entry for the media
           public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
           /// If the media is intended only for 18+ adult audiences

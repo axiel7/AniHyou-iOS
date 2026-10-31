@@ -103,8 +103,8 @@ struct MediaDetailsView: View {
                         )
                     }
                     MediaStatView(
-                        name: "Mean Score",
-                        value: "\(viewModel.mediaDetails?.meanScore ?? 0)%"
+                        name: "Weighted Score",
+                        value: "\(viewModel.mediaDetails?.weightedScore ?? 0)%"
                     )
                     .redacted(isEnabled: hideScores && hiddenScores)
                     .onTapGesture {
@@ -112,8 +112,8 @@ struct MediaDetailsView: View {
                     }
                     
                     MediaStatView(
-                        name: "Average Score",
-                        value: "\(viewModel.mediaDetails?.averageScore ?? 0)%"
+                        name: "Mean Score",
+                        value: "\(viewModel.mediaDetails?.meanScore ?? 0)%"
                     )
                     .redacted(isEnabled: hideScores && hiddenScores)
                     .onTapGesture {

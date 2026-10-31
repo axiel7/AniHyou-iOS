@@ -6,7 +6,7 @@
 
 nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
-    #"fragment CommonRecommendation on Recommendation { __typename id rating userRating media { __typename ...BasicMediaDetails mediaListEntry { __typename ...BasicMediaListEntry } coverImage { __typename large } startDate { __typename year } meanScore genres status(version: 2) format } mediaRecommendation { __typename ...BasicMediaDetails mediaListEntry { __typename ...BasicMediaListEntry } coverImage { __typename large } startDate { __typename year } meanScore genres status(version: 2) format } }"#
+    #"fragment CommonRecommendation on Recommendation { __typename id rating userRating media { __typename ...BasicMediaDetails mediaListEntry { __typename ...BasicMediaListEntry } coverImage { __typename large } startDate { __typename year } weightedScore genres status(version: 2) format } mediaRecommendation { __typename ...BasicMediaDetails mediaListEntry { __typename ...BasicMediaListEntry } coverImage { __typename large } startDate { __typename year } weightedScore genres status(version: 2) format } }"#
   }
 
   @_spi(Unsafe) public var __data: DataDict
@@ -81,7 +81,7 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
       .field("mediaListEntry", MediaListEntry?.self),
       .field("coverImage", CoverImage?.self),
       .field("startDate", StartDate?.self),
-      .field("meanScore", Int?.self),
+      .field("weightedScore", Int?.self),
       .field("genres", [String?]?.self),
       .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self, arguments: ["version": 2]),
       .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
@@ -107,10 +107,10 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
       get { __data["startDate"] }
       set { __data["startDate"] = newValue }
     }
-    /// Mean score of all the user's scores of the media
-    public var meanScore: Int? {
-      get { __data["meanScore"] }
-      set { __data["meanScore"] = newValue }
+    /// A weighted average score of all the users' scores of the media
+    public var weightedScore: Int? {
+      get { __data["weightedScore"] }
+      set { __data["weightedScore"] = newValue }
     }
     /// The genres of the media
     public var genres: [String?]? {
@@ -182,7 +182,7 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
       mediaListEntry: MediaListEntry? = nil,
       coverImage: CoverImage? = nil,
       startDate: StartDate? = nil,
-      meanScore: Int? = nil,
+      weightedScore: Int? = nil,
       genres: [String?]? = nil,
       status: GraphQLEnum<AniListAPI.MediaStatus>? = nil,
       format: GraphQLEnum<AniListAPI.MediaFormat>? = nil,
@@ -200,7 +200,7 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
         "mediaListEntry": mediaListEntry._fieldData,
         "coverImage": coverImage._fieldData,
         "startDate": startDate._fieldData,
-        "meanScore": meanScore,
+        "weightedScore": weightedScore,
         "genres": genres,
         "status": status,
         "format": format,
@@ -440,7 +440,7 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
       .field("mediaListEntry", MediaListEntry?.self),
       .field("coverImage", CoverImage?.self),
       .field("startDate", StartDate?.self),
-      .field("meanScore", Int?.self),
+      .field("weightedScore", Int?.self),
       .field("genres", [String?]?.self),
       .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self, arguments: ["version": 2]),
       .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
@@ -466,10 +466,10 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
       get { __data["startDate"] }
       set { __data["startDate"] = newValue }
     }
-    /// Mean score of all the user's scores of the media
-    public var meanScore: Int? {
-      get { __data["meanScore"] }
-      set { __data["meanScore"] = newValue }
+    /// A weighted average score of all the users' scores of the media
+    public var weightedScore: Int? {
+      get { __data["weightedScore"] }
+      set { __data["weightedScore"] = newValue }
     }
     /// The genres of the media
     public var genres: [String?]? {
@@ -541,7 +541,7 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
       mediaListEntry: MediaListEntry? = nil,
       coverImage: CoverImage? = nil,
       startDate: StartDate? = nil,
-      meanScore: Int? = nil,
+      weightedScore: Int? = nil,
       genres: [String?]? = nil,
       status: GraphQLEnum<AniListAPI.MediaStatus>? = nil,
       format: GraphQLEnum<AniListAPI.MediaFormat>? = nil,
@@ -559,7 +559,7 @@ nonisolated public struct CommonRecommendation: AniListAPI.MutableSelectionSet, 
         "mediaListEntry": mediaListEntry._fieldData,
         "coverImage": coverImage._fieldData,
         "startDate": startDate._fieldData,
-        "meanScore": meanScore,
+        "weightedScore": weightedScore,
         "genres": genres,
         "status": status,
         "format": format,

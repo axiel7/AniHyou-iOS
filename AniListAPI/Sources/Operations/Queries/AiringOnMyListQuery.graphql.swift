@@ -8,7 +8,7 @@ nonisolated public struct AiringOnMyListQuery: GraphQLQuery {
   public static let operationName: String = "AiringOnMyList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query AiringOnMyList($page: Int, $perPage: Int) { Page(page: $page, perPage: $perPage) { __typename media(type: ANIME, status: RELEASING, onList: true, sort: [POPULARITY_DESC]) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore nextAiringEpisode { __typename episode airingAt } mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
+      #"query AiringOnMyList($page: Int, $perPage: Int) { Page(page: $page, perPage: $perPage) { __typename media(type: ANIME, status: RELEASING, onList: true, sort: [POPULARITY_DESC]) { __typename id title { __typename userPreferred } coverImage { __typename large } weightedScore nextAiringEpisode { __typename episode airingAt } mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -84,7 +84,7 @@ nonisolated public struct AiringOnMyListQuery: GraphQLQuery {
           .field("id", Int.self),
           .field("title", Title?.self),
           .field("coverImage", CoverImage?.self),
-          .field("meanScore", Int?.self),
+          .field("weightedScore", Int?.self),
           .field("nextAiringEpisode", NextAiringEpisode?.self),
           .field("mediaListEntry", MediaListEntry?.self),
           .field("isAdult", Bool?.self),
@@ -99,8 +99,8 @@ nonisolated public struct AiringOnMyListQuery: GraphQLQuery {
         public var title: Title? { __data["title"] }
         /// The cover images of the media
         public var coverImage: CoverImage? { __data["coverImage"] }
-        /// Mean score of all the user's scores of the media
-        public var meanScore: Int? { __data["meanScore"] }
+        /// A weighted average score of all the users' scores of the media
+        public var weightedScore: Int? { __data["weightedScore"] }
         /// The media's next episode airing schedule
         public var nextAiringEpisode: NextAiringEpisode? { __data["nextAiringEpisode"] }
         /// The authenticated user's media list entry for the media

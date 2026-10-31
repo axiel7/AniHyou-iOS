@@ -8,7 +8,7 @@ nonisolated public struct SeasonalAnimeQuery: GraphQLQuery {
   public static let operationName: String = "SeasonalAnime"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } nextAiringEpisode { __typename episode airingAt } genres isAdult } pageInfo { __typename ...CommonPage } } }"#,
+      #"query SeasonalAnime($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int, $sort: [MediaSort]) { Page(page: $page, perPage: $perPage) { __typename media(season: $season, seasonYear: $seasonYear, sort: $sort) { __typename id title { __typename userPreferred } coverImage { __typename large } weightedScore mediaListEntry { __typename status } nextAiringEpisode { __typename episode airingAt } genres isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -95,7 +95,7 @@ nonisolated public struct SeasonalAnimeQuery: GraphQLQuery {
           .field("id", Int.self),
           .field("title", Title?.self),
           .field("coverImage", CoverImage?.self),
-          .field("meanScore", Int?.self),
+          .field("weightedScore", Int?.self),
           .field("mediaListEntry", MediaListEntry?.self),
           .field("nextAiringEpisode", NextAiringEpisode?.self),
           .field("genres", [String?]?.self),
@@ -111,8 +111,8 @@ nonisolated public struct SeasonalAnimeQuery: GraphQLQuery {
         public var title: Title? { __data["title"] }
         /// The cover images of the media
         public var coverImage: CoverImage? { __data["coverImage"] }
-        /// Mean score of all the user's scores of the media
-        public var meanScore: Int? { __data["meanScore"] }
+        /// A weighted average score of all the users' scores of the media
+        public var weightedScore: Int? { __data["weightedScore"] }
         /// The authenticated user's media list entry for the media
         public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
         /// The media's next episode airing schedule

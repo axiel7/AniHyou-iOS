@@ -8,7 +8,7 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "MediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails idMal title { __typename userPreferred romaji english native } synonyms format status(version: 2) description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage averageScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language notes } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
+      #"query MediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename ...BasicMediaDetails idMal title { __typename userPreferred romaji english native } synonyms format status(version: 2) description(asHtml: true) startDate { __typename ...FuzzyDateFragment } endDate { __typename ...FuzzyDateFragment } season seasonYear duration coverImage { __typename large extraLarge color } bannerImage weightedScore meanScore popularity genres studios { __typename nodes { __typename id name isAnimationStudio } } favourites ...IsFavouriteMedia nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename ...BasicMediaListEntry startedAt { __typename ...FuzzyDateFragment } completedAt { __typename ...FuzzyDateFragment } } source externalLinks { __typename id url site type language notes } trailer { __typename id site thumbnail } streamingEpisodes { __typename url title site thumbnail } tags { __typename id name description rank isMediaSpoiler } } }"#,
       fragments: [BasicMediaDetails.self, BasicMediaListEntry.self, FuzzyDateFragment.self, IsFavouriteMedia.self]
     ))
 
@@ -58,7 +58,7 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
         .field("duration", Int?.self),
         .field("coverImage", CoverImage?.self),
         .field("bannerImage", String?.self),
-        .field("averageScore", Int?.self),
+        .field("weightedScore", Int?.self),
         .field("meanScore", Int?.self),
         .field("popularity", Int?.self),
         .field("genres", [String?]?.self),
@@ -106,8 +106,8 @@ nonisolated public struct MediaDetailsQuery: GraphQLQuery {
       public var coverImage: CoverImage? { __data["coverImage"] }
       /// The banner image of the media
       public var bannerImage: String? { __data["bannerImage"] }
-      /// A weighted average score of all the user's scores of the media
-      public var averageScore: Int? { __data["averageScore"] }
+      /// A weighted average score of all the users' scores of the media
+      public var weightedScore: Int? { __data["weightedScore"] }
       /// Mean score of all the user's scores of the media
       public var meanScore: Int? { __data["meanScore"] }
       /// The number of users with the media on their list

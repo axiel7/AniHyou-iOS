@@ -10,7 +10,7 @@ query AiringAnimes($page: Int, $perPage: Int, $sort: [AiringSort], $airingAtGrea
         coverImage {
           large
         }
-        meanScore
+        weightedScore
         mediaListEntry {
           status
         }

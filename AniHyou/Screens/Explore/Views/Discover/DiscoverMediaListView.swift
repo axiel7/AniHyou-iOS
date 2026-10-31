@@ -30,7 +30,7 @@ struct DiscoverMediaListView: View {
                         VListItemView(
                             title: media.title?.userPreferred ?? "",
                             imageUrl: media.coverImage?.large,
-                            meanScore: media.meanScore,
+                            score: media.weightedScore,
                             status: media.mediaListEntry?.status?.value,
                             blurCover: blurAdultMedia && media.isAdult == true
                         )

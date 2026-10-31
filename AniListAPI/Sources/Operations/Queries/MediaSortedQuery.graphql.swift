@@ -8,7 +8,7 @@ nonisolated public struct MediaSortedQuery: GraphQLQuery {
   public static let operationName: String = "MediaSorted"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort], $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort, countryOfOrigin: $country) { __typename id title { __typename userPreferred } coverImage { __typename large } meanScore mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
+      #"query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort], $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media(type: $type, sort: $sort, countryOfOrigin: $country) { __typename id title { __typename userPreferred } coverImage { __typename large } weightedScore mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -95,7 +95,7 @@ nonisolated public struct MediaSortedQuery: GraphQLQuery {
           .field("id", Int.self),
           .field("title", Title?.self),
           .field("coverImage", CoverImage?.self),
-          .field("meanScore", Int?.self),
+          .field("weightedScore", Int?.self),
           .field("mediaListEntry", MediaListEntry?.self),
           .field("isAdult", Bool?.self),
         ] }
@@ -109,8 +109,8 @@ nonisolated public struct MediaSortedQuery: GraphQLQuery {
         public var title: Title? { __data["title"] }
         /// The cover images of the media
         public var coverImage: CoverImage? { __data["coverImage"] }
-        /// Mean score of all the user's scores of the media
-        public var meanScore: Int? { __data["meanScore"] }
+        /// A weighted average score of all the users' scores of the media
+        public var weightedScore: Int? { __data["weightedScore"] }
         /// The authenticated user's media list entry for the media
         public var mediaListEntry: MediaListEntry? { __data["mediaListEntry"] }
         /// If the media is intended only for 18+ adult audiences

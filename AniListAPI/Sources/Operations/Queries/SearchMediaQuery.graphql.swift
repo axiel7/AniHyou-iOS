@@ -8,7 +8,7 @@ nonisolated public struct SearchMediaQuery: GraphQLQuery {
   public static let operationName: String = "SearchMedia"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $season: MediaSeason, $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode, $source_in: [MediaSource]) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in season: $season startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country source_in: $source_in ) { __typename ...BasicMediaDetails meanScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } status genres episodes chapters duration nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename ...CommonPage } } }"#,
+      #"query SearchMedia($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort], $genre_in: [String], $genre_not_in: [String], $tag_in: [String], $tag_not_in: [String], $format_in: [MediaFormat], $status_in: [MediaStatus], $season: MediaSeason, $startDateGreater: FuzzyDateInt, $startDateLesser: FuzzyDateInt, $onList: Boolean, $isLicensed: Boolean, $isAdult: Boolean, $country: CountryCode, $source_in: [MediaSource]) { Page(page: $page, perPage: $perPage) { __typename media( search: $search type: $type sort: $sort genre_in: $genre_in genre_not_in: $genre_not_in tag_in: $tag_in tag_not_in: $tag_not_in format_in: $format_in status_in: $status_in season: $season startDate_greater: $startDateGreater startDate_lesser: $startDateLesser onList: $onList isLicensed: $isLicensed isAdult: $isAdult countryOfOrigin: $country source_in: $source_in ) { __typename ...BasicMediaDetails weightedScore format mediaListEntry { __typename ...BasicMediaListEntry } startDate { __typename year } status genres episodes chapters duration nextAiringEpisode { __typename ...AiringEpisode } } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [AiringEpisode.self, BasicMediaDetails.self, BasicMediaListEntry.self, CommonPage.self, FuzzyDateFragment.self]
     ))
 
@@ -162,7 +162,7 @@ nonisolated public struct SearchMediaQuery: GraphQLQuery {
         @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Media }
         @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("meanScore", Int?.self),
+          .field("weightedScore", Int?.self),
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
           .field("mediaListEntry", MediaListEntry?.self),
           .field("startDate", StartDate?.self),
@@ -179,8 +179,8 @@ nonisolated public struct SearchMediaQuery: GraphQLQuery {
           BasicMediaDetails.self
         ] }
 
-        /// Mean score of all the user's scores of the media
-        public var meanScore: Int? { __data["meanScore"] }
+        /// A weighted average score of all the users' scores of the media
+        public var weightedScore: Int? { __data["weightedScore"] }
         /// The format the media was released in
         public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
         /// The authenticated user's media list entry for the media

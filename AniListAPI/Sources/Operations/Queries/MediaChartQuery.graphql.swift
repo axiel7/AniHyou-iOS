@@ -8,7 +8,7 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
   public static let operationName: String = "MediaChart"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus, $format: MediaFormat, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( sort: $sort type: $type status: $status format: $format countryOfOrigin: $country ) { __typename id title { __typename userPreferred } type format startDate { __typename year } coverImage { __typename large } meanScore status genres episodes chapters duration mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
+      #"query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType, $status: MediaStatus, $format: MediaFormat, $country: CountryCode) { Page(page: $page, perPage: $perPage) { __typename media( sort: $sort type: $type status: $status format: $format countryOfOrigin: $country ) { __typename id title { __typename userPreferred } type format startDate { __typename year } coverImage { __typename large } weightedScore status genres episodes chapters duration mediaListEntry { __typename status } isAdult } pageInfo { __typename ...CommonPage } } }"#,
       fragments: [CommonPage.self]
     ))
 
@@ -108,7 +108,7 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
           .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
           .field("startDate", StartDate?.self),
           .field("coverImage", CoverImage?.self),
-          .field("meanScore", Int?.self),
+          .field("weightedScore", Int?.self),
           .field("status", GraphQLEnum<AniListAPI.MediaStatus>?.self),
           .field("genres", [String?]?.self),
           .field("episodes", Int?.self),
@@ -133,8 +133,8 @@ nonisolated public struct MediaChartQuery: GraphQLQuery {
         public var startDate: StartDate? { __data["startDate"] }
         /// The cover images of the media
         public var coverImage: CoverImage? { __data["coverImage"] }
-        /// Mean score of all the user's scores of the media
-        public var meanScore: Int? { __data["meanScore"] }
+        /// A weighted average score of all the users' scores of the media
+        public var weightedScore: Int? { __data["weightedScore"] }
         /// The current releasing status of the media
         public var status: GraphQLEnum<AniListAPI.MediaStatus>? { __data["status"] }
         /// The genres of the media

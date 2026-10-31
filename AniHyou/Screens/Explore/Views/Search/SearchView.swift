@@ -56,7 +56,7 @@ struct SearchView: View {
                             mediaFormat: item.format?.value,
                             year: item.startDate?.year,
                             mediaStatus: item.status?.value,
-                            meanScore: item.meanScore,
+                            score: item.weightedScore,
                             episodes: item.episodes,
                             chapters: item.chapters,
                             duration: item.duration,

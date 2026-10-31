@@ -8,7 +8,7 @@ query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort
       coverImage {
         large
       }
-      meanScore
+      weightedScore
       mediaListEntry {
         status
       }

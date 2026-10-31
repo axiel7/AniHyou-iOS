@@ -24,7 +24,7 @@ fragment CommonRecommendation on Recommendation @apollo_client_ios_localCacheMut
         startDate {
             year
         }
-        meanScore
+        weightedScore
         genres
         status(version: 2)
         format
@@ -40,7 +40,7 @@ fragment CommonRecommendation on Recommendation @apollo_client_ios_localCacheMut
         startDate {
             year
         }
-        meanScore
+        weightedScore
         genres
         status(version: 2)
         format

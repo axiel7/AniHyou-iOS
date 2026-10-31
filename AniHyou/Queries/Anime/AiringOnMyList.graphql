@@ -8,7 +8,7 @@ query AiringOnMyList($page: Int, $perPage: Int) {
             coverImage {
                 large
             }
-            meanScore
+            weightedScore
             nextAiringEpisode {
                 episode
                 airingAt

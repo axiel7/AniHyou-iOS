@@ -14,14 +14,14 @@ struct VListItemView: View {
 
     let title: String
     let imageUrl: String?
-    var meanScore: Int?
+    var score: Int?
     var nextEpisode: Int?
     var airingAt: Int?
     var status: MediaListStatus?
     var blurCover: Bool = false
     
     var scoreColor: Color {
-        ScoreFormat.point100.color(score: meanScore)
+        ScoreFormat.point100.color(score: score)
     }
     
     @AppStorage(HIDE_SCORES) private var hideScores = false
@@ -53,10 +53,10 @@ struct VListItemView: View {
                 .frame(width: VListItemView.coverWidth, alignment: .leading)
 
             Group {
-                if let meanScore, !hideScores {
+                if let score, !hideScores {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
-                        Text("\(meanScore)%")
+                        Text("\(score)%")
                     }
                     .padding(.bottom, 1)
                     .foregroundStyle(scoreColor)
@@ -78,7 +78,7 @@ struct VListItemView: View {
 
 #Preview(traits: .sizeThatFitsLayout) {
     LazyHStack(alignment: .top) {
-        VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
+        VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", score: 78)
         VListItemView(title: "One Piece", imageUrl: "", blurCover: true)
         VListItemView(title: "One Piece", imageUrl: "", nextEpisode: 123, airingAt: 1228328)
     }

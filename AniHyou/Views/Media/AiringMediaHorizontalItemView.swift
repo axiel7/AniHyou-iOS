@@ -15,14 +15,14 @@ struct AiringMediaHorizontalItemView: View {
 
     var title: String?
     var imageUrl: String?
-    var meanScore: Int?
+    var score: Int?
     var nextEpisode: Int?
     var airingAt: Int?
     var status: MediaListStatus?
     var blurCover = false
     
     var scoreColor: Color {
-        ScoreFormat.point100.color(score: meanScore)
+        ScoreFormat.point100.color(score: score)
     }
     
     @AppStorage(HIDE_SCORES) private var hideScores = false
@@ -65,10 +65,10 @@ struct AiringMediaHorizontalItemView: View {
                     .multilineTextAlignment(.leading)
                 }
 
-                if let meanScore, !hideScores {
+                if let score, !hideScores {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "star.fill")
-                        Text("\(meanScore)%")
+                        Text("\(score)%")
                     }
                     .padding(.vertical, 1)
                     .font(.footnote)
@@ -83,7 +83,7 @@ struct AiringMediaHorizontalItemView: View {
     AiringMediaHorizontalItemView(
         title: "Cowboy Bebop: Tengoku no Tobira and a large title",
         imageUrl: "https://picsum.photos/300/200",
-        meanScore: 78,
+        score: 78,
         nextEpisode: 2,
         airingAt: 102839281
     )

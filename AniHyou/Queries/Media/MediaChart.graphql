@@ -13,7 +13,7 @@ query MediaChart($page: Int, $perPage: Int, $sort: [MediaSort], $type: MediaType
       coverImage {
         large
       }
-      meanScore
+      weightedScore
       status
       genres
       episodes

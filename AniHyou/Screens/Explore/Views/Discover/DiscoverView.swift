@@ -136,7 +136,7 @@ func mediaContent(
                         VListItemView(
                             title: item.title?.userPreferred ?? "",
                             imageUrl: item.coverImage?.large,
-                            meanScore: item.meanScore,
+                            score: item.weightedScore,
                             status: item.mediaListEntry?.status?.value,
                             blurCover: blurAdultMedia && item.isAdult == true
                         )

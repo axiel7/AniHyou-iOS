@@ -20,7 +20,7 @@ struct HListItemWithSubtitleView: View {
     var subtitle2Text: Text?
     var twoSubtitleTexts: (LocalizedStringKey?, LocalizedStringKey?)?
     var imageUrl: String?
-    var meanScore: Int?
+    var score: Int?
     var status: MediaListStatus?
     var blurCover = false
 
@@ -66,9 +66,9 @@ struct HListItemWithSubtitleView: View {
                 .foregroundStyle(.secondary)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
-                if let meanScore {
-                    Label("\(meanScore)%", systemImage: "star.fill")
-                        .foregroundStyle(ScoreFormat.point100.color(score: meanScore))
+                if let score {
+                    Label("\(score)%", systemImage: "star.fill")
+                        .foregroundStyle(ScoreFormat.point100.color(score: score))
                         .font(.footnote)
                         .padding(.vertical, 1)
                 }
@@ -92,7 +92,7 @@ struct HListItemWithSubtitleView: View {
         subtitle: "Airing in 59 min",
         twoSubtitleTexts: ("Winter", "\(2020)"),
         imageUrl: "https://picsum.photos/300/200",
-        meanScore: 78
+        score: 78
     )
     .frame(width: 280, alignment: .leading)
     .padding(.leading, 8)

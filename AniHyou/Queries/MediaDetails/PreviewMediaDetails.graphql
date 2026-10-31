@@ -6,7 +6,7 @@ query PreviewMediaDetails($mediaId: Int) {
     coverImage {
       large
     }
-    meanScore
+    weightedScore
     format
     episodes
     chapters

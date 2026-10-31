@@ -20,7 +20,7 @@ struct MediaItemHorizontal: View {
     let mediaFormat: MediaFormat?
     let year: Int?
     let mediaStatus: MediaStatus?
-    let meanScore: Int?
+    let score: Int?
     let episodes: Int?
     let chapters: Int?
     let duration: Int?
@@ -96,13 +96,13 @@ struct MediaItemHorizontal: View {
     
     @ViewBuilder
     var subtitle2: some View {
-        let meanScore = meanScore ?? 0
-        let scoreColor = ScoreFormat.point100.color(score: meanScore)
+        let score = score ?? 0
+        let scoreColor = ScoreFormat.point100.color(score: score)
         
         HStack {
             HStack(alignment: .bottom, spacing: 4) {
                 Image(systemName: "star.fill")
-                Text("\(meanScore)%")
+                Text("\(score)%")
             }
             .foregroundStyle(scoreColor)
             
@@ -143,7 +143,7 @@ struct MediaItemHorizontal: View {
         mediaFormat: .movie,
         year: 2026,
         mediaStatus: .notYetReleased,
-        meanScore: 89,
+        score: 89,
         episodes: 1,
         chapters: 1,
         duration: 100,

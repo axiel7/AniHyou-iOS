@@ -8,7 +8,7 @@ nonisolated public struct PreviewMediaDetailsQuery: GraphQLQuery {
   public static let operationName: String = "PreviewMediaDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query PreviewMediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename title { __typename userPreferred } coverImage { __typename large } meanScore format episodes chapters volumes genres nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename status progress } } }"#
+      #"query PreviewMediaDetails($mediaId: Int) { Media(id: $mediaId) { __typename title { __typename userPreferred } coverImage { __typename large } weightedScore format episodes chapters volumes genres nextAiringEpisode { __typename airingAt episode } mediaListEntry { __typename status progress } } }"#
     ))
 
   public var mediaId: GraphQLNullable<Int32>
@@ -46,7 +46,7 @@ nonisolated public struct PreviewMediaDetailsQuery: GraphQLQuery {
         .field("__typename", String.self),
         .field("title", Title?.self),
         .field("coverImage", CoverImage?.self),
-        .field("meanScore", Int?.self),
+        .field("weightedScore", Int?.self),
         .field("format", GraphQLEnum<AniListAPI.MediaFormat>?.self),
         .field("episodes", Int?.self),
         .field("chapters", Int?.self),
@@ -63,8 +63,8 @@ nonisolated public struct PreviewMediaDetailsQuery: GraphQLQuery {
       public var title: Title? { __data["title"] }
       /// The cover images of the media
       public var coverImage: CoverImage? { __data["coverImage"] }
-      /// Mean score of all the user's scores of the media
-      public var meanScore: Int? { __data["meanScore"] }
+      /// A weighted average score of all the users' scores of the media
+      public var weightedScore: Int? { __data["weightedScore"] }
       /// The format the media was released in
       public var format: GraphQLEnum<AniListAPI.MediaFormat>? { __data["format"] }
       /// The amount of episodes the anime has when complete

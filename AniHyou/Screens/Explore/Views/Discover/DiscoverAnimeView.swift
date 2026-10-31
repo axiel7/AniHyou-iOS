@@ -198,7 +198,7 @@ struct DiscoverAnimeView: View {
                                 AiringMediaHorizontalItemView(
                                     title: item.title?.userPreferred,
                                     imageUrl: item.coverImage?.large,
-                                    meanScore: item.meanScore,
+                                    score: item.weightedScore,
                                     nextEpisode: item.nextAiringEpisode?.episode,
                                     airingAt: item.nextAiringEpisode?.airingAt,
                                     status: item.mediaListEntry?.status?.value,
@@ -220,7 +220,7 @@ struct DiscoverAnimeView: View {
                                 AiringMediaHorizontalItemView(
                                     title: item.media?.title?.userPreferred,
                                     imageUrl: item.media?.coverImage?.large,
-                                    meanScore: item.media?.meanScore,
+                                    score: item.media?.weightedScore,
                                     nextEpisode: item.episode,
                                     airingAt: item.airingAt,
                                     status: item.media?.mediaListEntry?.status?.value,
@@ -266,7 +266,7 @@ struct DiscoverAnimeView: View {
                             VListItemView(
                                 title: item.title?.userPreferred ?? "",
                                 imageUrl: item.coverImage?.large,
-                                meanScore: item.meanScore,
+                                score: item.weightedScore,
                                 status: item.mediaListEntry?.status?.value,
                                 blurCover: blurAdultMedia && item.isAdult == true
                             )
