@@ -90,6 +90,10 @@ struct CharacterDetailsView: View {
                             value: character.dateOfBirth?.fragments.fuzzyDateFragment.formatted()
                         )
                         HInfoView(name: "Age", value: character.age)
+                        HInfoView(
+                            name: "Height",
+                            value: character.height?.fragments.heightFragment.formatted()
+                        )
                         if let genderLocalized = character.genderLocalized {
                             HInfoView(name: "Gender", valueLocalized: genderLocalized)
                         } else {

@@ -38,6 +38,8 @@ nonisolated public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     "Favourites": AniListAPI.Objects.Favourites,
     "FollowingNotification": AniListAPI.Objects.FollowingNotification,
     "FuzzyDate": AniListAPI.Objects.FuzzyDate,
+    "Height": AniListAPI.Objects.Height,
+    "HeightValue": AniListAPI.Objects.HeightValue,
     "ListActivity": AniListAPI.Objects.ListActivity,
     "Media": AniListAPI.Objects.Media,
     "MediaConnection": AniListAPI.Objects.MediaConnection,

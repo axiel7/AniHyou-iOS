@@ -112,6 +112,10 @@ struct StaffDetailsView: View {
                                 value: dateOfDeath.fragments.fuzzyDateFragment.formatted()
                             )
                         }
+                        HInfoView(
+                            name: "Height",
+                            value: staff.height?.fragments.heightFragment.formatted()
+                        )
                         HInfoView(name: "Age", value: staff.age?.stringValue)
                         HInfoView(name: "Gender", value: staff.gender)
                         HInfoView(name: "Blood Type", value: staff.bloodType)

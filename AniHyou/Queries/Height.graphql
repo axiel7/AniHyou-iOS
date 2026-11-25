@@ -1,0 +1,14 @@
+fragment HeightFragment on Height {
+    initial {
+        imperial
+        metric
+    }
+    min {
+        imperial
+        metric
+    }
+    max {
+        imperial
+        metric
+    }
+}

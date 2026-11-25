@@ -8,8 +8,8 @@ nonisolated public struct CharacterDetailsQuery: GraphQLQuery {
   public static let operationName: String = "CharacterDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query CharacterDetails($characterId: Int) { Character(id: $characterId) { __typename id name { __typename userPreferred native alternative alternativeSpoiler } image { __typename large } description(asHtml: true) gender dateOfBirth { __typename ...FuzzyDateFragment } age bloodType ...IsFavouriteCharacter favourites } }"#,
-      fragments: [FuzzyDateFragment.self, IsFavouriteCharacter.self]
+      #"query CharacterDetails($characterId: Int) { Character(id: $characterId) { __typename id name { __typename userPreferred native alternative alternativeSpoiler } image { __typename large } description(asHtml: true) gender dateOfBirth { __typename ...FuzzyDateFragment } height { __typename ...HeightFragment } age bloodType ...IsFavouriteCharacter favourites } }"#,
+      fragments: [FuzzyDateFragment.self, HeightFragment.self, IsFavouriteCharacter.self]
     ))
 
   public var characterId: GraphQLNullable<Int32>
@@ -51,6 +51,7 @@ nonisolated public struct CharacterDetailsQuery: GraphQLQuery {
         .field("description", String?.self, arguments: ["asHtml": true]),
         .field("gender", String?.self),
         .field("dateOfBirth", DateOfBirth?.self),
+        .field("height", Height?.self),
         .field("age", String?.self),
         .field("bloodType", String?.self),
         .field("favourites", Int?.self),
@@ -73,6 +74,8 @@ nonisolated public struct CharacterDetailsQuery: GraphQLQuery {
       public var gender: String? { __data["gender"] }
       /// The character's birth date
       public var dateOfBirth: DateOfBirth? { __data["dateOfBirth"] }
+      /// The characters height
+      public var height: Height? { __data["height"] }
       /// The character's age. Note this is a string, not an int, it may contain further text and additional ages.
       public var age: String? { __data["age"] }
       /// The characters blood type
@@ -168,6 +171,44 @@ nonisolated public struct CharacterDetailsQuery: GraphQLQuery {
 
           public var fuzzyDateFragment: FuzzyDateFragment { _toFragment() }
         }
+      }
+
+      /// Character.Height
+      ///
+      /// Parent Type: `Height`
+      nonisolated public struct Height: AniListAPI.SelectionSet {
+        @_spi(Unsafe) public let __data: DataDict
+        @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+        @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { AniListAPI.Objects.Height }
+        @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .fragment(HeightFragment.self),
+        ] }
+        @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+          CharacterDetailsQuery.Data.Character.Height.self,
+          HeightFragment.self
+        ] }
+
+        /// The height when first introduced, if it changes later. Min and max are null when this is set.
+        public var initial: Initial? { __data["initial"] }
+        /// The lowest height in the range
+        public var min: Min? { __data["min"] }
+        /// The highest height in the range
+        public var max: Max? { __data["max"] }
+
+        public struct Fragments: FragmentContainer {
+          @_spi(Unsafe) public let __data: DataDict
+          @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var heightFragment: HeightFragment { _toFragment() }
+        }
+
+        public typealias Initial = HeightFragment.Initial
+
+        public typealias Min = HeightFragment.Min
+
+        public typealias Max = HeightFragment.Max
       }
     }
   }
