@@ -927,6 +927,11 @@ type Query {
   Markdown(
     """The markdown to be parsed to html"""
     markdown: String!
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): ParsedMarkdown
   AniChartUser: AniChartUser
 
@@ -1747,6 +1752,11 @@ type User {
   about(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The user's avatar images"""
@@ -2733,6 +2743,11 @@ type Character {
   description(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """
@@ -2750,6 +2765,9 @@ type Character {
 
   """The characters blood type"""
   bloodType: String
+
+  """The characters height"""
+  height: Height
 
   """
   If the character is marked as favourite by the currently authenticated user
@@ -2818,6 +2836,31 @@ type CharacterImage {
 
   """The character's image of media at medium size"""
   medium: String
+}
+
+"""
+A height, height range, or initial height. A single height has equal min and max.
+"""
+type Height {
+  """
+  The height when first introduced, if it changes later. Min and max are null when this is set.
+  """
+  initial: HeightValue
+
+  """The lowest height in the range"""
+  min: HeightValue
+
+  """The highest height in the range"""
+  max: HeightValue
+}
+
+"""A height in metric and imperial units"""
+type HeightValue {
+  """Height in centimetres (169.5)"""
+  metric: Float
+
+  """Height in feet and inches, rounded to the nearest inch (5'7")"""
+  imperial: String
 }
 
 """Media sort enums"""
@@ -2933,6 +2976,11 @@ type Staff {
   description(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The person's primary occupations"""
@@ -2958,6 +3006,9 @@ type Staff {
 
   """The persons blood type"""
   bloodType: String
+
+  """The persons height"""
+  height: Height
 
   """
   If the staff member is marked as favourite by the currently authenticated user
@@ -3074,6 +3125,9 @@ type StaffRoleType {
   Used for grouping roles where multiple dubs exist for the same language. Either dubbing company name or language variant.
   """
   dubGroup: String
+
+  """Media specific character name for this voice actor role"""
+  characterName: String
 }
 
 type StaffConnection {
@@ -3472,6 +3526,11 @@ type Review {
   body(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The total user rating of the review"""
@@ -4118,6 +4177,11 @@ type MessageActivity {
   message(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """If the activity is locked and can receive replies"""
@@ -4192,6 +4256,11 @@ type ActivityReply {
   text(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The amount of likes the reply has"""
@@ -4260,6 +4329,11 @@ type TextActivity {
   text(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The url for the activity page on the AniList website"""
@@ -4503,6 +4577,11 @@ type Thread {
   body(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The id of the thread owner user"""
@@ -4589,6 +4668,11 @@ type ThreadComment {
   comment(
     """Return the string in pre-parsed html instead of markdown"""
     asHtml: Boolean
+
+    """
+    Provide 2 to use the new pre-sanitized HTML with advanced spoilers (labels, inline & nested spoilers)
+    """
+    htmlVersion: Int
   ): String
 
   """The amount of likes the comment has"""
@@ -5657,6 +5741,9 @@ type InternalPage {
     """Filter by the media's type"""
     type: MediaType
 
+    """Filter by the kind of changes in the submission"""
+    filter: MediaSubmissionCategory
+
     """The order the results will be returned in"""
     sort: [SubmissionSort]
   ): [MediaSubmission]
@@ -5670,6 +5757,9 @@ type InternalPage {
     """Filter by the status of the submission"""
     status: SubmissionStatus
 
+    """Filter by the kind of changes in the submission"""
+    filter: CharacterStaffSubmissionCategory
+
     """The order the results will be returned in"""
     sort: [SubmissionSort]
   ): [CharacterSubmission]
@@ -5682,6 +5772,9 @@ type InternalPage {
 
     """Filter by the status of the submission"""
     status: SubmissionStatus
+
+    """Filter by the kind of changes in the submission"""
+    filter: CharacterStaffSubmissionCategory
 
     """The order the results will be returned in"""
     sort: [SubmissionSort]
@@ -6488,6 +6581,43 @@ enum SubmissionStatus {
   ACCEPTED
 }
 
+"""Media submission categories, also used to filter by"""
+enum MediaSubmissionCategory {
+  """
+  Submissions for currently releasing media, or current-season media that hasn't started airing
+  """
+  RELEASING
+
+  """Submissions for entries releasing next season"""
+  NEXT_SEASON
+
+  """Submissions for media that doesn't exist yet"""
+  NEW
+
+  """
+  Submissions adding ADR staff or voice actors not in the anime's original language
+  """
+  DUB
+
+  """Submissions by users with 50+ accepted and a 90%+ acceptance rate"""
+  TRUSTED_SUBMITTER
+
+  """Submissions with exactly one change"""
+  SINGLE_CHANGE
+
+  """Submissions that only change characters"""
+  CHARACTERS_ONLY
+
+  """Submissions that only change staff"""
+  STAFF_ONLY
+
+  """Submissions that only change the cover or banner image"""
+  IMAGES_ONLY
+
+  """Submissions with a note but no changes"""
+  NOTE_ONLY
+}
+
 """Submission sort enums"""
 enum SubmissionSort {
   ID
@@ -6511,6 +6641,9 @@ type MediaSubmission {
   notes: String
   source: String
   changes: [String]
+
+  """Filter categories the submission falls into"""
+  categories: [MediaSubmissionCategory]
 
   """Whether the submission is locked"""
   locked: Boolean
@@ -6573,6 +6706,21 @@ type MediaCharacter {
   voiceActor: Staff
 }
 
+"""Character and staff submission categories, also used to filter by"""
+enum CharacterStaffSubmissionCategory {
+  """Submissions by users with 50+ accepted and a 90%+ acceptance rate"""
+  TRUSTED_SUBMITTER
+
+  """Submissions with exactly one change"""
+  SINGLE_CHANGE
+
+  """Submissions that only change the image"""
+  IMAGES_ONLY
+
+  """Submissions with a note but no changes"""
+  NOTE_ONLY
+}
+
 """A submission for a character that features in an anime or manga"""
 type CharacterSubmission {
   """The id of the submission"""
@@ -6596,6 +6744,9 @@ type CharacterSubmission {
   """Inner details of submission status"""
   notes: String
   source: String
+
+  """Filter categories the submission falls into"""
+  categories: [CharacterStaffSubmissionCategory]
 
   """Whether the submission is locked"""
   locked: Boolean
@@ -6625,6 +6776,9 @@ type StaffSubmission {
   """Inner details of submission status"""
   notes: String
   source: String
+
+  """Filter categories the submission falls into"""
+  categories: [CharacterStaffSubmissionCategory]
 
   """Whether the submission is locked"""
   locked: Boolean
@@ -6703,6 +6857,7 @@ enum ModActionType {
   REPORT
   RESET
   ANON
+  PIN
 }
 
 """The official titles of the media in various languages"""
@@ -6794,6 +6949,26 @@ input StaffNameInput {
 
   """Other names the character might be referred by"""
   alternative: [String]
+}
+
+"""A height (equal min and max), height range, or initial height"""
+input HeightInput {
+  """
+  The height when first introduced, if it changes later. Cannot be combined with min and max.
+  """
+  initial: HeightValueInput
+
+  """The lowest height in the range, required with max"""
+  min: HeightValueInput
+
+  """The highest height in the range, required with min"""
+  max: HeightValueInput
+}
+
+"""A height in centimetres"""
+input HeightValueInput {
+  """Height in centimetres (169.5)"""
+  metric: Float!
 }
 
 """User data for moderators"""
